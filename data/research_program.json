@@ -7,11 +7,11 @@
       "stage": "benchmark_reproduced",
       "method": "Directed graph extremal search",
       "hypothesis": "For each explicit pair (n,r), any loopless n-vertex digraph of minimum outdegree at least r contains a directed cycle of length at most ceil(n/r).",
-      "first_proof_obligation": "Generate the complete n=18,r=6 directed-triangle counterexample CNF and seek a sound SAT witness or a verified UNSAT proof.",
-      "next_experiment": "Apply reproducible, proof-logging SAT with symmetry constraints justified by vertex relabeling; independently check any witness or UNSAT trace.",
+      "first_proof_obligation": "Independently audit the public computer-assisted fixed-r=6 proof claim, including proof-to-CNF reductions, finite certificates and cited premises; distinguish restricted result from full CH.",
+      "next_experiment": "Replay the external fixed-r=6 proof corpus on an independent host, verify its published hash and proof traces, and audit the hand-reduction steps before launching duplicate SAT search.",
       "falsification": "An explicitly checked digraph with min outdegree r and no directed cycle of length <=ceil(n/r).",
-      "blocker": "No solver/model certificate or independently checked UNSAT proof exists in this repository; recent outside r=6 proof claims require specialist review.",
-      "dossier": "research/M074_CH.md",
+      "blocker": "External fixed-r=6 proof corpus (438 MB) and independent specialist review have not been reproduced in this repo; neither encoding supplies a SAT/UNSAT certificate.",
+      "dossier": "research/M074_PRIOR_ART.md",
       "verifier": "python3 scripts/digraph_orbits.py --n 5"
     },
     {

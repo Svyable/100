@@ -1026,7 +1026,7 @@
     "name": "Caccetta–Häggkvist conjecture",
     "field": "Combinatorics",
     "question": "Does minimum digraph outdegree r force a directed cycle of length at most ceil(n/r)?",
-    "first_attack": "Verify all five-vertex digraphs modulo relabeling, then attack the exact n=18,r=6 directed-triangle SAT instance with independently checkable certificates",
+    "first_attack": "Prior-art-first independent verification of 2026 fixed-outdegree-6 proof claim and smaller independent exact-degree SAT encoding; no full-conjecture proof claimed",
     "impact": 5,
     "attackability": 4,
     "verifiability": 5,

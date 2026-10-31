@@ -1,0 +1,32 @@
+{
+  "target": "Caccetta–Häggkvist n=18 r=6",
+  "version": "2026-10-31",
+  "direct": {
+    "source": "scripts/ch_sat.py",
+    "mode": "minimum-outdegree",
+    "variables": 306,
+    "clauses": 113169,
+    "bytes": 5125375,
+    "sha256": "32ae7c559724172e1213fbc9ee34053b2d02b791b2db47a6521482d2587f13e2"
+  },
+  "compact": {
+    "source": "scripts/ch_compact.py",
+    "mode": "exact-outdegree",
+    "variables": 2070,
+    "arc_variables": 306,
+    "auxiliary_variables": 1764,
+    "clauses": 8445,
+    "bytes": 127597,
+    "sha256": "8a2eebf9618bbc9b5dcf2c1fcc5f35736acf852d6466869cb569641fafc00fca"
+  },
+  "equivalence": "Any graph with min outdegree >=r and no cycles of length <=ceil(n/r) can have outgoing arcs deleted until every outdegree equals r without creating a short cycle.",
+  "validation": "Gate equivalences truth-table checked and semantic equivalence to exact-degree graph predicates exhaustively tested at (n=3,r=1) and (n=4,r=2); both encodings are unproved as SAT/UNSAT instances at (18,6).",
+  "proof_result": "none",
+  "prior_art_claim": {
+    "kind": "unreviewed_external_fixed_r6_proof",
+    "source": "https://github.com/joshp123/solve-a-maths-problem-dont-care-which-make-no-mistakes",
+    "archive_bytes": 438808162,
+    "published_sha256": "3d00174851a213fdf81085bd38bbb7e573f36f8b1e691e5eded8ac43d8937285",
+    "independently_replayed_here": false
+  }
+}
