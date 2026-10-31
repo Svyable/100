@@ -15,6 +15,8 @@ jobs:
           python-version: "3.12"
       - name: Exact Ramsey benchmark
         run: python3 scripts/ramsey.py demo
+      - name: Independently replay McKay's published 328 K42 Ramsey graphs
+        run: python3 scripts/verify_mckay.py --check
       - name: Exact union-closed benchmark
         run: python3 scripts/union_closed.py exhaustive --n 4
       - name: Exact directed-graph benchmark
