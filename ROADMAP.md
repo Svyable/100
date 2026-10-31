@@ -30,11 +30,11 @@ Solved has no target on purpose: it grows only through the promotion gate in [do
 | Research engine | Evidence-aware readiness, campaigns and a strict promotion gate to Solved. | 2 | 0 | 0 | 1 |
 | Exact probe lab | Every computable problem gets a search plus an independent checker on a reusable engine. | 2 | 3 | 3 | 0 |
 | Proof campaigns | Push the highest-ranked targets toward reviewed restricted results. | 3 | 2 | 1 | 0 |
-| Claim audit | Check announced resolutions for exact scope before spending effort on them. | 1 | 0 | 1 | 0 |
+| Claim audit | Check announced resolutions for exact scope before spending effort on them. | 2 | 0 | 1 | 0 |
 | Trust & reproducibility | Pinned artifacts, proof certificates and CI that reruns everything. | 2 | 0 | 1 | 1 |
 | Site & community | A public dashboard and a contribution path that keeps the bar high. | 2 | 0 | 0 | 1 |
 
-## Shipped (15)
+## Shipped (16)
 
 _Merged on main with evidence in the repository._
 
@@ -54,6 +54,8 @@ _Merged on main with evidence in the repository._
 - [x] **R10 · Computational modality for every problem** (Exact probe lab) — Each problem tagged; engine roadmap lists every computable problem without a probe. [Evidence](data/engine_roadmap.json)
 - [x] **R11 · Scope triage of all 15 claimed 2026 resolutions** (Claim audit) — Primary sources, quantifier comparison and next checks; M098 de-scoped; no status upgraded. [Evidence](research/CLAIM_REVIEWS_2026.md)
   - Problems: M014 Hilbert's tenth problem over Q, M030 Abundance conjecture, M037 Hilbert–Smith conjecture, M038 Complex structure on S6 +11 more
+- [x] **R16 · Separate first-order Vaught from the 2026 infinitary counterexample** (Claim audit) — M098 is verified_open on the Pillay-Tanovic survey plus the authors' own exclusion. The infinitary manuscript cannot promote it to resolved. [Evidence](research/M098_VAUGHT.md)
+  - Problems: M098 Vaught conjecture
 - [x] **R12 · Pinned external proof corpus with hash verifier** (Trust & reproducibility) — Streaming SHA-256 check with negative tests. [Evidence](data/external_claims.json)
   - Problems: M074 Caccetta–Häggkvist conjecture
 - [x] **R13 · CI and weekly deep reruns** (Trust & reproducibility) — Every generated file drift-checked on each PR; weekly deep probe and M074 reruns. [Evidence](.github/workflows/validate.yml)

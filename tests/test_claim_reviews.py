@@ -98,6 +98,32 @@ class ClaimReviewTests(unittest.TestCase):
         m049 = next(r for r in self.audit["reviews"] if r["id"] == "M049")
         self.assertIn("does not assert", m049["known_caveats"])
 
+    def test_m098_infinitary_source_cannot_resolve_first_order_target(self):
+        review = next(r for r in self.audit["reviews"] if r["id"] == "M098")
+        entry = self.registry["M098"]
+        status = review["first_order_status"]
+        blocked = review["non_resolving_urls"]
+        self.assertEqual(review["scope_relation"], "different_statement")
+        self.assertIn("2610.15217", review["primary_url"])
+        self.assertIn("L_{omega_1,omega}", review["claimed_theorem"])
+        self.assertEqual(review["formalization_commit"], "e9f465e1a6b328788d9bf4691f7887a5f535b41d")
+        self.assertIn("/blob/" + review["formalization_commit"] + "/", review["formalization_scope_url"])
+        self.assertIn("not the first-order", review["known_caveats"])
+        self.assertEqual(status["source_url"], entry["source_url"])
+        self.assertEqual(status["submitted"], "2025-08-09")
+        self.assertEqual(status["checked_on"], entry["checked_on"])
+        self.assertIn("2508.06854", entry["source_url"])
+        self.assertEqual(entry["evidence_state"], "verified_open")
+        self.assertEqual(entry["checked_on"], "2026-10-31")
+        for url in blocked:
+            self.assertNotIn(url, entry["source_url"])
+            self.assertNotEqual(entry["source_url"], url)
+        # The infinitary manuscript stays a different-statement claim. It is not
+        # a legal closing citation even if a later edit marks the row resolved.
+        self.assertNotEqual(entry["evidence_state"], "resolved")
+        self.assertTrue(blocked)
+        self.assertTrue(all(source_url(u) for u in blocked))
+
     def test_no_unsupported_solved_archive_entries(self):
         solved = json.loads((ROOT / "data/solved.json").read_text(encoding="utf-8"))
         self.assertFalse(IDS & {row["original_problem_id"] for row in solved})

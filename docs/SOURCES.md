@@ -13,10 +13,12 @@ Initial review date: **2026-10-30**. This is not a comprehensive status verifica
 
 ## Status caution
 
-The following IDs are `claim_needs_review`: M014, M030, M037, M038, M044, M049, M054, M055, M056, M060, M071, M073, M085, M098, M100.
+The following IDs are `claim_needs_review`: M014, M030, M037, M038, M044, M049, M054, M055, M056, M060, M071, M073, M085, M100.
+
+M098 is `verified_open` as of 2026-10-31. Its first-order status source is Pillay–Tanović, [arXiv:2508.06854](https://arxiv.org/abs/2508.06854). The 2026 infinitary counterexample remains in the claim ledger as a different statement and cannot close the entry; see [the M098 note](../research/M098_VAUGHT.md).
 
 A related 2026 manuscript may solve a restricted case, propose a full proof, or claim a counterexample. **Do not infer acceptance or full resolution from its title or from the existence of formal code.** Fetch the specific paper, compare hypotheses, and document independent assessment.
 
-**2026-10-31 screening update:** [All 15 flagged claims now have an original-paper and scope-review ledger](../research/CLAIM_REVIEWS_2026.md), with [machine-readable details](../data/claim_reviews_2026.json). This is a first-pass manuscript and scope audit, *not* independent proof validation or accepted resolution. M098's 2026 infinitary-logic counterexample does not address the registered first-order problem; M038 has an independent reconstruction preprint requiring specialist adjudication. No ID has yet met the repository's Solved criteria.
+**2026-10-31 screening update:** [All 15 flagged claims now have an original-paper and scope-review ledger](../research/CLAIM_REVIEWS_2026.md), with [machine-readable details](../data/claim_reviews_2026.json). This is a first-pass manuscript and scope audit, *not* independent proof validation or accepted resolution. M098's 2026 infinitary-logic counterexample does not address the registered first-order problem, so that ID is `verified_open` rather than a claim awaiting scope comparison. M038 has an independent reconstruction preprint requiring specialist adjudication. No ID has yet met the repository's Solved criteria.
 
 For records with `source_url: null` in `data/problems.json`, the canonical **registry status** has not been promoted; see the above per-claim ledger for original manuscript URLs and audit dates. Later, update the registry only alongside a defensible evidence-state decision, regenerate derived artifacts and satisfy CI.

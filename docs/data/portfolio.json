@@ -10,9 +10,10 @@
     "interpretation": "Editorial priority score, not an estimated proof probability"
   },
   "status_counts": {
-    "claim_needs_review": 15,
+    "claim_needs_review": 14,
     "needs_review": 80,
-    "official_open": 5
+    "official_open": 5,
+    "verified_open": 1
   },
   "program_as_of": "2026-10-31",
   "summary": {
@@ -674,16 +675,16 @@
       "id": "M098",
       "name": "Vaught conjecture",
       "field": "Mathematical physics / finite structures",
-      "question": "Does a complete countable-language first-order theory have countably or continuum many countable models?",
-      "first_attack": "Audit precise statement and prove a restricted case",
+      "question": "For every complete first-order theory in a countable language, is the number of countable models up to isomorphism either countable or equal to the continuum?",
+      "first_attack": "Keep the first-order statement separate from infinitary counterexamples and cite a restricted case",
       "impact": 4,
       "attackability": 4,
       "verifiability": 4,
       "spillover": 4,
       "modality": "structural",
-      "evidence_state": "claim_needs_review",
-      "checked_on": null,
-      "source_url": null,
+      "evidence_state": "verified_open",
+      "checked_on": "2026-10-31",
+      "source_url": "https://arxiv.org/abs/2508.06854",
       "rank": 30,
       "score": 80,
       "execution_rank": 30,
@@ -3075,6 +3076,17 @@
         ]
       },
       {
+        "id": "R16",
+        "track": "claims",
+        "horizon": "shipped",
+        "title": "Separate first-order Vaught from the 2026 infinitary counterexample",
+        "outcome": "M098 is verified_open on the Pillay-Tanovic survey plus the authors' own exclusion. The infinitary manuscript cannot promote it to resolved.",
+        "evidence": "research/M098_VAUGHT.md",
+        "problems": [
+          "M098"
+        ]
+      },
+      {
         "id": "R12",
         "track": "trust",
         "horizon": "shipped",
@@ -3297,7 +3309,7 @@
       }
     ],
     "counts": {
-      "shipped": 15,
+      "shipped": 16,
       "now": 5,
       "next": 6,
       "later": 4
