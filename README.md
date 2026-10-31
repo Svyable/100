@@ -14,6 +14,7 @@
 - [Ramsey R(5,5) certificate campaign](research/M095_RAMSEY.md) and [Frankl finite verification](research/M075_FRANKL.md) — reproducible small cases; neither resolves the full problem.
 - [Research and verification protocol](docs/RESEARCH_PROTOCOL.md) — rules for advancing, scoring and retiring candidates.
 - [Starting status sources](docs/SOURCES.md) — official Clay status and recent 2026 proof-claim precautions.
+- [2026 claimed-resolution triage](research/CLAIM_REVIEWS_2026.md) — primary manuscripts, exact scope comparisons, independent review gaps and next checks for the 15 flagged IDs ([structured ledger](data/claim_reviews_2026.json)).
 
 **Important:** This is a *provisional candidate pool*, **not** a claim that all 100 are currently independently verified as unsolved. Five official Millennium entries have official status citations; the remaining 95 need closer status and precise-statement review. Recent claims are explicitly flagged. The first task is the status audit and selection of tractable restricted lemmas.
 
