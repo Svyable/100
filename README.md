@@ -14,6 +14,7 @@
 - **[Execution-priority queue](ATTACK_QUEUE.md)** — ordered by dispatch score (editorial + readiness + an action bonus), not by readiness alone. Claimed finite witnesses, missing engines and published certificates move up. A range extension the campaign itself says is already known mathematics is refused. Cohort jobs and the shared attack shapes are in [APPROACH.md](APPROACH.md).
 - **[Solved archive](data/solved.json)** — strict full-resolution ledger, initially empty; known finite benchmarks are kept separate.
 - [Caccetta–Häggkvist finite census and 18-vertex SAT target](research/M074_CH.md) — exact symmetry coverage, independent cycle check and reproducible CNF encoding; no new proof claimed.
+- [CH (21,7) elementary finite exclusion](research/M074_ELEMENTARY_21.md) — seven-vertex degree rigidity plus a 145-vs-147 arc-budget contradiction excludes the 21-vertex triangle-free case; no general resolution or originality claim.
 - [CH (18,6) elementary finite exclusion](research/M074_ELEMENTARY_18.md) — a saturated-pivot/indegree contradiction removes the need for a SAT proof for this **finite case**, while retaining frozen CNFs as independent audit targets; no full-conjecture or novel-result claim.
 - [CH 18-vertex regularity reduction](research/M074_REGULARITY.md) — self-contained six-vertex lemma, proof-derived in/out-regularity and symmetry-fixed CNF; SAT/UNSAT certificate still pending.
 - [Research engine and verification rules](docs/RESEARCH_ENGINE.md) — how results, readiness, rankings and CI interact.
