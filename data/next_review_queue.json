@@ -1,0 +1,110 @@
+[
+  {
+    "priority": 1,
+    "candidate_id": "N0153",
+    "status": "queued",
+    "review_question": "Does correlated well measurement noise destroy the greedy submodularity argument?",
+    "smallest_test": "Construct a 3-well linear aquifer with correlated errors and compare all sensor subsets.",
+    "context_url": "https://water.usgs.gov/ogw/networks.html",
+    "review_gap": "Literature on experimental-design submodularity for correlated groundwater observations is unaudited."
+  },
+  {
+    "priority": 2,
+    "candidate_id": "N0145",
+    "status": "queued",
+    "review_question": "Can an interval solver enclose wet/dry moving boundaries without becoming vacuous?",
+    "smallest_test": "Certify maximum inundation on a 1-D sloped beach under two uncertain boundary inputs.",
+    "context_url": "https://www.nhc.noaa.gov/nationalsurge/",
+    "review_gap": "Prior rigorous shallow-water enclosure and SLOSH methods need an exact comparison."
+  },
+  {
+    "priority": 3,
+    "candidate_id": "N0137",
+    "status": "queued",
+    "review_question": "Which reliability measure is still nontrivial under adversarial missed scheduled links?",
+    "smallest_test": "Enumerate four-node time-expanded contact graphs with one deleted transmission window.",
+    "context_url": "https://www.nasa.gov/communicating-with-missions/delay-disruption-tolerant-networking/",
+    "review_gap": "Current store-and-forward guarantees and known DTN routing theorems must be checked."
+  },
+  {
+    "priority": 4,
+    "candidate_id": "N0161",
+    "status": "queued",
+    "review_question": "Do robust water-allocation certificates hold for nonconcave but realistic yield functions?",
+    "smallest_test": "Solve a two-field three-weather-state water allocation with piecewise response curves.",
+    "context_url": "https://www.nal.usda.gov/research-tools/food-safety-research-projects/advancing-water-management-and-conservation-irrigated",
+    "review_gap": "Need literature on robust irrigation scheduling and realistic yield model assumptions."
+  },
+  {
+    "priority": 5,
+    "candidate_id": "N0193",
+    "status": "queued",
+    "review_question": "Which covariance summaries suffice when calibrations share correlated reference standards?",
+    "smallest_test": "Prove or refute sufficiency of edge covariance labels in a four-node calibration DAG.",
+    "context_url": "https://www.nist.gov/metrology/metrological-traceability",
+    "review_gap": "NIST uncertainty requirements provide context, not novelty or proof status."
+  },
+  {
+    "priority": 6,
+    "candidate_id": "N0171",
+    "status": "queued",
+    "review_question": "Can compact dual certificates survive integer boarding and accessibility constraints?",
+    "smallest_test": "Encode a 5-node road-rail-foot evacuation and compare LP gap with integer optimum.",
+    "context_url": "https://ops.fhwa.dot.gov/publications/evac_primer/00_evac_primer.htm",
+    "review_gap": "Existing time-expanded evacuation models and integrality gaps remain unaudited."
+  },
+  {
+    "priority": 7,
+    "candidate_id": "N0185",
+    "status": "queued",
+    "review_question": "Which rate assumptions allow safely pruning kinetically irrelevant reaction paths?",
+    "smallest_test": "Exhaust a five-species reversible mass-action network with competing paths.",
+    "context_url": "https://science.osti.gov/bes/csgb/Research-Areas/Quantum-Information-Sciences",
+    "review_gap": "Mechanism reduction results and counterexamples to energy-only pruning need specialist review."
+  },
+  {
+    "priority": 8,
+    "candidate_id": "N0025",
+    "status": "queued",
+    "review_question": "Can a nonvacuous finite-sample risk certificate be computed from bounded drift?",
+    "smallest_test": "Prove coverage for binary classification under a two-point covariate shift family.",
+    "context_url": "https://www.nist.gov/itl/ai-risk-management-framework",
+    "review_gap": "Compare distributional robustness and PAC-Bayes guarantees before claiming novelty."
+  },
+  {
+    "priority": 9,
+    "candidate_id": "N0029",
+    "status": "queued",
+    "review_question": "What is the weakest independently checkable witness for constrained predictive outputs?",
+    "smallest_test": "Construct and replay certificates for bounded integer constraint inference.",
+    "context_url": "https://www.nsf.gov/funding/opportunities/mfai-mathematical-foundations-artificial-intelligence",
+    "review_gap": "Check certifying algorithms and formally verified inference literature."
+  },
+  {
+    "priority": 10,
+    "candidate_id": "N0121",
+    "status": "queued",
+    "review_question": "Is there a strict information-rate gap between acting and reconstructing observations?",
+    "smallest_test": "Solve a binary-state action problem under 0-1 task loss and Hamming distortion.",
+    "context_url": "https://science.osti.gov/-/media/grants/pdf/foas/2026/DE-FOA-0003612.pdf",
+    "review_gap": "Rate-distortion-for-control and information bottleneck prior art must be distinguished."
+  },
+  {
+    "priority": 11,
+    "candidate_id": "N0130",
+    "status": "queued",
+    "review_question": "Can bounded-latency codes improve a risk-weighted objective at equal length?",
+    "smallest_test": "Enumerate binary length-six linear codes for two packet importance classes.",
+    "context_url": "https://www.nasa.gov/reference/delay-disruption-tolerant-networking-overview/",
+    "review_gap": "Known unequal error protection codes and operational priority semantics are unreviewed."
+  },
+  {
+    "priority": 12,
+    "candidate_id": "N0189",
+    "status": "queued",
+    "review_question": "When do voltage and impedance jointly identify hidden battery side-reaction rates?",
+    "smallest_test": "Calculate symbolic Jacobian ranks for a two-reaction battery equivalent circuit.",
+    "context_url": "https://science.osti.gov/bes/mse/Research-Areas/Quantum-Information-Science",
+    "review_gap": "This link is general materials context; battery-specific identifiability sources are missing."
+  }
+]
