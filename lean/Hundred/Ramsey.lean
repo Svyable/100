@@ -32,16 +32,28 @@ instance finiteForall : (n : Nat) → (p : Fin n → Prop) →
       | isTrue hs => isTrue (fun i => Fin.cases h0 hs i)
       | isFalse hs => isFalse (fun h => hs (fun i => h i.succ))
 
+/-- Explicitly compose finite quantifiers; no classical decision oracle. -/
+def certificateDecidable {n : Nat} (edge : Fin n → Fin n → Bool) :
+    Decidable (AvoidsMonochromaticTriangle edge) :=
+  @instDecidableAnd _ _
+    (@instDecidableAnd _ _
+      (@finiteForall n _ (fun a => inferInstance))
+      (@finiteForall n _ (fun a => @finiteForall n _ (fun b => inferInstance))))
+    (@instDecidableAnd _ _
+      (@finiteForall n _ (fun a => @finiteForall n _ (fun b =>
+        @finiteForall n _ (fun c => inferInstance))))
+      (@finiteForall n _ (fun a => @finiteForall n _ (fun b =>
+        @finiteForall n _ (fun c => inferInstance)))))
+
 /-- Executable checker for any finite red/blue adjacency function. -/
-def check {n : Nat} (edge : Fin n → Fin n → Bool)
-    [Decidable (AvoidsMonochromaticTriangle edge)] : Bool :=
-  decide (AvoidsMonochromaticTriangle edge)
+def check {n : Nat} (edge : Fin n → Fin n → Bool) : Bool :=
+  @decide (AvoidsMonochromaticTriangle edge) (certificateDecidable edge)
 
 /-- A true checker result entails the full graph certificate, for arbitrary n. -/
 theorem check_sound {n : Nat} {edge : Fin n → Fin n → Bool}
-    [Decidable (AvoidsMonochromaticTriangle edge)]
-    (h : check edge = true) : AvoidsMonochromaticTriangle edge :=
-  of_decide_eq_true h
+    (h : check edge = true) : AvoidsMonochromaticTriangle edge := by
+  letI := certificateDecidable edge
+  exact of_decide_eq_true h
 
 /-- Modular adjacency of the five-cycle, independently encoded from the JSON witness. -/
 def cycle5 (a b : Fin 5) : Bool :=
