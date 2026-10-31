@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f5f0">
-  <meta name="description" content="100 concrete open mathematical questions, ranked for rigorous research. Explore conjectures, proof campaigns, verification status, and reproducible mathematics.">
+  <meta name="description" content="100 provisional mathematical research targets, ranked with explicit evidence states. Explore conjectures, proof campaigns, and reproducible verification.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="100 — The Svyable mathematical research portfolio">
   <meta property="og:description" content="A hundred mathematical questions. One rigorous result at a time.">
@@ -40,7 +40,7 @@
         <div class="hero-copy">
           <p class="eyebrow"><span class="eyebrow-line"></span> THE MATHEMATICAL FRONTIER / EST. 2026</p>
           <h1 id="hero-heading">A hundred questions.<br><em>One new theorem.</em></h1>
-          <p class="hero-lead">An evolving portfolio of concrete open mathematical problems. Ranked for significance, tractability, independent verification, and the discoveries they might unlock.</p>
+          <p class="hero-lead">An evolving portfolio of candidate mathematical problems, ranked by editorial research priority, with open-status evidence recorded separately from proof readiness.</p>
           <div class="hero-actions">
             <a class="button button-dark" href="#rankings">Explore the 100 <span aria-hidden="true">↗</span></a>
             <a class="button button-ghost" href="#campaigns">See the proof campaigns <span aria-hidden="true">→</span></a>
@@ -63,7 +63,7 @@
         <div class="stat"><strong id="stat-benchmarks">3</strong><span>Reproduced known results</span></div>
         <div class="stat"><strong id="stat-solved">0</strong><span>Full resolutions verified</span></div>
       </section>
-      <p class="status-note">* “Active candidate” does not mean independently confirmed unsolved. Status flags distinguish official listings from conjectures still needing literature review; <strong><span id="status-claim-count">15</span> currently have proof claims requiring review.</strong></p>
+      <p class="status-note">* “Active candidate” does not mean independently confirmed unsolved. <strong><span id="status-open-audited-count">5</span> have an official or specialist open-status reference; <span id="status-open-pending-count">95</span> still require an independent exact-status audit, including <span id="status-claim-count">15</span> with proof claims under review.</strong> <a href="https://github.com/Svyable/100/blob/main/docs/PORTFOLIO_SELECTION.md">Read the selection and evidence rules ↗</a></p>
 
       <aside class="next-home-link" aria-label="Next 100 reservoir" style="margin-top:32px;padding:28px 33px;background:#e9eee9;border-left:4px solid #264c47;display:flex;justify-content:space-between;align-items:center;gap:25px;flex-wrap:wrap">
         <div><p class="eyebrow" style="margin:0 0 6px">THE NEXT 100 / IDEA RESERVOIR</p><h2 style="font-size:clamp(22px,2.6vw,36px);letter-spacing:-.04em;margin:0">A growing reservoir. Room for thousands.</h2><p style="font-size:13px;color:#53605b;margin:8px 0 0">Cross-domain, unvetted ideas queued for rigorous scrutiny and potential promotion into the active 100.</p></div>
@@ -75,7 +75,7 @@
             <p class="eyebrow">01 / THE PORTFOLIO</p>
             <h2 id="rankings-heading">The ranked <em>100.</em></h2>
           </div>
-          <p>Two rankings, one standard of proof: execution order reflects verifiable research readiness; editorial rank preserves long-term mathematical significance.</p>
+          <p>Two distinct research priorities: execution order adds documented readiness to an editorial score, which also rewards impact and tractability. Neither is a certified prestige ranking.</p>
         </div>
         <div class="ranking-panel">
           <div class="filters" role="search" aria-label="Search and filter problems">
@@ -112,7 +112,7 @@
               <label for="sort-problems">Order</label>
               <select id="sort-problems">
                 <option value="execution">Execution priority</option>
-                <option value="rank">Mathematical significance rank</option>
+                <option value="rank">Editorial priority (includes attackability)</option>
                 <option value="impact">Impact first</option>
                 <option value="attackability">Attackability first</option>
                 <option value="verifiability">Verifiability first</option>

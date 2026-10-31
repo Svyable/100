@@ -16,6 +16,22 @@ class TriageTests(unittest.TestCase):
     def test_valid_screening(self):
         self.assertEqual(sum(t.validate(self.doc, self.active).values()), 15)
 
+    def test_scope_drafts_are_complete_and_non_authoritative(self):
+        scope = json.loads(t.SCOPE.read_text(encoding="utf-8"))
+        self.assertEqual(t.validate_scope(scope, self.doc), 5)
+        bad = copy.deepcopy(scope)
+        bad["reviews"][0]["evidence_level"] = "verified_open"
+        with self.assertRaises(ValueError):
+            t.validate_scope(bad, self.doc)
+        bad = copy.deepcopy(scope)
+        bad["reviews"].pop()
+        with self.assertRaises(ValueError):
+            t.validate_scope(bad, self.doc)
+        bad = copy.deepcopy(scope)
+        bad["reviews"][0]["source_urls"] = []
+        with self.assertRaises(ValueError):
+            t.validate_scope(bad, self.doc)
+
     def test_duplicate_unknown_id_rejected(self):
         bad = copy.deepcopy(self.doc)
         bad["entries"].append(copy.deepcopy(bad["entries"][0]))

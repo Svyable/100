@@ -1,0 +1,82 @@
+{
+  "as_of": "2026-10-31",
+  "purpose": "statement_scope_drafts_not_verified_open_status",
+  "reviews": [
+    {
+      "id": "M017",
+      "current_ambiguity": "Global functoriality ranges over different groups and L-group homomorphisms; there is no single finite verification obligation.",
+      "draft_scope": "Choose a specific pair of reductive groups over a named number field class, a single L-group map, and the associated cuspidal automorphic transfer with local/global hypotheses; do not select a particular lift without comparing recent solved cases.",
+      "open_questions": [
+        "Which named transfer remains open after recent special-case advances?",
+        "Does the theorem target existence alone or cuspidality and characterization at ramified places?",
+        "Which restricted transfer has a specialist-defined proof obligation?"
+      ],
+      "source_urls": [
+        "https://annals.math.princeton.edu/2026/203-1/p04"
+      ],
+      "evidence_level": "background_only",
+      "promotion_barrier": "The cited 2026 symmetric-power result covers important Hilbert modular cases; select a *different demonstrably open residue* before changing M017."
+    },
+    {
+      "id": "M053",
+      "current_ambiguity": "Weak cosmic censorship uses genericity and nakedness conditions that depend on matter model, asymptotics, regularity and initial-data topology.",
+      "draft_scope": "For one fixed Einstein evolution model and a specified class of asymptotically flat Cauchy data, formulate the precise genericity topology, maximal-development assumptions, completeness of future null infinity, and visibility criterion; this is a scope template, not a new accepted conjecture.",
+      "open_questions": [
+        "Which data class, matter model and norm define admissible perturbations?",
+        "Is genericity openness, density, residuality or full measure in a stated topology?",
+        "Does the chosen statement concern weak censorship at null infinity rather than strong censorship at a Cauchy horizon?"
+      ],
+      "source_urls": [
+        "https://annals.math.princeton.edu/2025/202-2/p01",
+        "https://kerrproblems.com/problems/K-669/"
+      ],
+      "evidence_level": "background_only",
+      "promotion_barrier": "Do not use results about strong cosmic censorship or a provisional near-Kerr problem list as evidence that this full weak censorship scope is solved or open."
+    },
+    {
+      "id": "M056",
+      "current_ambiguity": "The registry omits dimension, surface, exponents, and whether endpoint and broad versus diagonal extension estimates are included.",
+      "draft_scope": "Distinguish (a) Fourier extension from smooth positively curved surfaces in R^3 in the diagonal p-to-p range, (b) bounded-data extension in R^3, and (c) the sharp sphere restriction/extension program in arbitrary dimensions with explicit p and q and endpoint conventions.",
+      "open_questions": [
+        "Which of the distinct Euclidean extension inequalities should own M056?",
+        "What exponent and endpoint ranges remain after 2026 diagonal and bounded-data manuscript claims?",
+        "Are both higher-dimensional cases and endpoints intended or is a single finite-dimensional statement preferable?"
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/main/preprints/Diagonal-Fourier-extension-for-positively-curved-surfaces-in-three-dimensions-September-24-2026/Diagonal-Fourier-extension-for-positively-curved-surfaces-in-three-dimensions-September-24-2026.pdf"
+      ],
+      "evidence_level": "background_only",
+      "promotion_barrier": "The 2026 manuscript claims an R^3 diagonal nonendpoint result, not an audited resolution of every dimension/exponent/endpoint case."
+    },
+    {
+      "id": "M063",
+      "current_ambiguity": "A planar first-passage fluctuation exponent needs an edge-weight law, point-to-point observable, and asymptotic interpretation; exactly solvable last-passage models are not the same question.",
+      "draft_scope": "As a candidate precise target: on nearest-neighbor Z^2 with independent rate-one exponential nonnegative edge passage times, let T_n be the minimal total edge weight from the origin to (n,0); ask whether Var(T_n) = n^(2/3+o(1)) as n tends to infinity.",
+      "open_questions": [
+        "Does the exponent claim hold for point-to-point passage time along the coordinate axis under this law?",
+        "Should the target concern a broader class of continuous weight laws or this specific benchmark model?",
+        "Which prior variance bounds and exact finite-scale simulation results apply to this model?"
+      ],
+      "source_urls": [
+        "https://londmathsoc.onlinelibrary.wiley.com/doi/10.1112/blms.12941"
+      ],
+      "evidence_level": "background_only",
+      "promotion_barrier": "The cited article discusses KPZ predictions and solvable *last*-passage benchmarks. It is not a contemporary primary verification that this specific FPP variance statement remains open."
+    },
+    {
+      "id": "M070",
+      "current_ambiguity": "The 3D Ising conjecture conflates field existence, non-Gaussianity, conformal covariance, universality and possible regularity conditions.",
+      "draft_scope": "Choose critical nearest-neighbor Ising on the cubic lattice in dimension three and identify a correctly normalized magnetization distribution, a named scaling topology, and finite-dimensional correlation/covariance properties; only then formulate non-Gaussian conformal covariance as an exact theorem.",
+      "open_questions": [
+        "Which field observable and normalization are intended: spin/magnetization, energy, or both?",
+        "In what space/topology is tightness and scaling convergence claimed?",
+        "Which conformal transformations and boundary conditions are part of the target?"
+      ],
+      "source_urls": [
+        "https://link.springer.com/article/10.1007/s11040-025-09515-1"
+      ],
+      "evidence_level": "background_only",
+      "promotion_barrier": "A 2025 review provides context about the Ising frontier but is not a specialist verification of the chosen exact 3D scaling-limit claim."
+    }
+  ]
+}

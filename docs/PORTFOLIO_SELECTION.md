@@ -48,6 +48,27 @@ the stronger [Solved archive rules](RESEARCH_ENGINE.md). A duplicate,
 underspecified target or deprioritized target is not a solved problem.
 Stable IDs and prior campaign history must be preserved.
 
+
+## Initial statement-scope dossiers (2026-10-31)
+
+The [five source-annotated statement drafts](../data/statement_scope_reviews.json)
+cover M017, M053, M056, M063, and M070. They record exact modeling
+choices still to settle, example formulations, and primary/background links.
+All are marked `background_only`: inspecting these sources does **not** verify
+that the example target is the final canonical formulation or still open.
+
+A concrete distinction: planar exponential **first**-passage fluctuations
+(M063) are not interchangeable with solvable exponential **last**-passage
+models. The proposed M063 benchmark asks whether variance is
+`n^(2/3+o(1))` for passage time from `(0,0)` to `(n,0)` with i.i.d.
+rate-one exponential nearest-neighbor edge weights. It is a formulation
+for independent specialist review, not an accepted theorem or registry change.
+
+M017 requires selection of a still-open functorial transfer after modern
+symmetric-power results. M053 requires explicit genericity and data topology.
+M056 must separate 3D diagonal, bounded-data and higher-dimensional sharp
+exponent regimes. M070 requires specifying fields, rescaling and convergence.
+
 ## Next audit passes, in order
 
 1. **Statement fidelity:** M017, M053, M056, M063, M070.
