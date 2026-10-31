@@ -7,7 +7,7 @@
     {
       "id": "M014",
       "primary_title": "Hilbert's tenth problem over the rational numbers",
-      "primary_url": "https://github.com/openai/math/blob/main/preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf",
+      "primary_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf",
       "preprint_date": "2026-10-06",
       "claimed_theorem": "No algorithm decides whether an arbitrary integer-coefficient polynomial, with the number of variables part of the input, has a rational zero.",
       "scope_relation": "matches",
@@ -20,7 +20,7 @@
     {
       "id": "M030",
       "primary_title": "Log abundance in characteristic zero",
-      "primary_url": "https://github.com/openai/math/blob/main/preprints/Log-abundance-in-characteristic-zero-September-24-2026/paper.pdf",
+      "primary_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/Log-abundance-in-characteristic-zero-September-24-2026/paper.pdf",
       "preprint_date": "2026-09-24",
       "claimed_theorem": "For projective log-canonical pairs with effective rational boundary over an algebraically closed field of characteristic zero, a nef Q-Cartier K_X+B is semiample, in every dimension.",
       "scope_relation": "matches_with_qualification",
@@ -33,7 +33,7 @@
     {
       "id": "M037",
       "primary_title": "The Hilbert–Smith conjecture in every finite dimension",
-      "primary_url": "https://github.com/openai/math/blob/main/preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/paper.pdf",
+      "primary_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/paper.pdf",
       "preprint_date": "2026-09-23",
       "claimed_theorem": "Every locally compact second-countable Hausdorff group acting faithfully and jointly continuously on a connected, second-countable, Hausdorff finite-dimensional topological manifold without boundary is Lie.",
       "scope_relation": "matches_with_qualification",
@@ -61,7 +61,7 @@
     {
       "id": "M044",
       "primary_title": "A torsion-free group algebra that is not directly finite",
-      "primary_url": "https://github.com/openai/math/blob/main/preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/direct-finiteness.pdf",
+      "primary_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/direct-finiteness.pdf",
       "preprint_date": "2026-10-04",
       "claimed_theorem": "For a finitely presented torsion-free group G, there exist a,b in F_2[G] with ab=1 but ba != 1.",
       "scope_relation": "matches",
@@ -69,20 +69,22 @@
       "independent_validation": "not_established",
       "independent_evidence_urls": [],
       "known_caveats": "The construction is large and has not been independently reproduced in this audit; underlying group presentation and algebra calculations are central proof obligations.",
-      "next_review": "Reproduce a finite presentation and a,b products using a genuinely independent group-ring checker; check the claimed equalities and non-equality."
+      "next_review": "Reproduce a finite presentation and a,b products using a genuinely independent group-ring checker; check the claimed equalities and non-equality.",
+      "formalization_scope_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/197.md"
     },
     {
       "id": "M049",
       "primary_title": "A torsion-free group algebra that is not directly finite",
-      "primary_url": "https://github.com/openai/math/blob/main/preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/direct-finiteness.pdf",
+      "primary_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/direct-finiteness.pdf",
       "preprint_date": "2026-10-04",
       "claimed_theorem": "The constructed finitely presented torsion-free group is nonsofic; its group ring over F_2 is not directly finite.",
       "scope_relation": "matches",
       "scope_note": "A finitely presented nonsofic group is countable and refutes the universal soficity conjecture. The claimed nonsoficity may follow from the direct-finiteness obstruction, but is not an independently checked example.",
       "independent_validation": "not_established",
       "independent_evidence_urls": [],
-      "known_caveats": "Shares one manuscript and underlying construction with M044; do not count these as two independent proof sources. Soficity inference depends on correct direct-finiteness obstruction and the sofic-group finiteness theorem.",
-      "next_review": "Independently verify M044's group algebra witness, then audit the Elek–Szabó implication from soficity to direct finiteness in the claimed coefficient field."
+      "known_caveats": "Shares one manuscript and underlying construction with M044; do not count these as two independent proof sources. Soficity inference depends on correct direct-finiteness obstruction and the sofic-group finiteness theorem. The upstream author-described Lean comparator does not assert that the group is nonsofic; that conclusion needs a separate mathematical audit.",
+      "next_review": "Independently verify M044's group algebra witness, then audit the Elek–Szabó implication from soficity to direct finiteness in the claimed coefficient field.",
+      "formalization_scope_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/197.md"
     },
     {
       "id": "M054",
@@ -102,7 +104,7 @@
     {
       "id": "M055",
       "primary_title": "Local smoothing for the Euclidean wave equation",
-      "primary_url": "https://github.com/openai/math/blob/main/preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf",
+      "primary_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf",
       "preprint_date": "2026-10-25",
       "claimed_theorem": "Sharp local smoothing for Euclidean waves in every spatial dimension n>=2 is claimed, with the Kakeya maximal conjectures and full Hausdorff dimension for all Euclidean Kakeya sets as consequences.",
       "scope_relation": "matches_if_consequence_valid",
@@ -110,20 +112,22 @@
       "independent_validation": "not_established",
       "independent_evidence_urls": [],
       "known_caveats": "A full-dimensional Kakeya consequence must be proved for each n>=4; the 4D paper alone does not settle the registered universal statement.",
-      "next_review": "Check the all-dimensional local smoothing theorem, its Kakeya maximal corollary and exact hypotheses; distinguish 4D direct theorem from universal consequence."
+      "next_review": "Check the all-dimensional local smoothing theorem, its Kakeya maximal corollary and exact hypotheses; distinguish 4D direct theorem from universal consequence.",
+      "formalization_scope_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/079.md"
     },
     {
       "id": "M056",
-      "primary_title": "Diagonal Fourier extension for positively curved surfaces in three dimensions",
-      "primary_url": "https://github.com/openai/math/blob/main/preprints/Diagonal-Fourier-extension-for-positively-curved-surfaces-in-three-dimensions-September-24-2026/Diagonal-Fourier-extension-for-positively-curved-surfaces-in-three-dimensions-September-24-2026.pdf",
-      "preprint_date": "2026-09-24",
-      "claimed_theorem": "For compact positively curved smooth surfaces Sigma in R^3, extension L^p(Sigma) -> L^p(R^3) is bounded for p>3.",
+      "primary_title": "Local smoothing for the Euclidean wave equation",
+      "primary_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf",
+      "preprint_date": "2026-10-25",
+      "claimed_theorem": "The October 25 manuscript claims local smoothing in all spatial dimensions, implying Fourier restriction for spheres in the interior of the predicted exponent range; a September 24 paper separately claims diagonal extension for curved surfaces in R^3.",
       "scope_relation": "narrower",
-      "scope_note": "A diagonal three-dimensional theorem is not automatically the full sharp restriction conjecture. The October 25 local-smoothing manuscript separately claims the interior range for sphere/paraboloid/cone, not endpoints.",
+      "scope_note": "This is substantially broader than the 3D diagonal paper, but it still states strict interior exponent bounds; the registry does not specify dimension, Lp-Lq mapping, or endpoint conventions. Treat it as a provisional scope-sensitive restricted/interior claim, not an accepted resolution.",
       "independent_validation": "not_established",
       "independent_evidence_urls": [],
-      "known_caveats": "The registry's 'predicted sharp range' is underspecified (dimension, exponents, endpoints and surface). Cannot mark universally resolved from interior/diagonal results.",
-      "next_review": "First rewrite M056 as a quantified restriction statement; then check each claimed interior estimate and list remaining endpoints and dimensions."
+      "known_caveats": "An all-dimensional local-smoothing consequence and author-described Lean scope are not independent theorem verification. Without quantified exponent-region and endpoint conventions, an interior result cannot be labelled a full sharp-range settlement.",
+      "next_review": "State M056's exact dimension and p/q exponent range, audit the October 25 local-smoothing-to-restriction implication (including endpoint exclusions), compare the author Lean scope to its paper, and obtain independent harmonic-analysis review.",
+      "formalization_scope_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/079.md"
     },
     {
       "id": "M060",
@@ -141,7 +145,7 @@
     {
       "id": "M071",
       "primary_title": "A counterexample to Hadwiger's conjecture",
-      "primary_url": "https://github.com/openai/math/blob/main/preprints/A-counterexample-to-Hadwigers-conjecture-September-23-2026/paper.pdf",
+      "primary_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/A-counterexample-to-Hadwigers-conjecture-September-23-2026/paper.pdf",
       "preprint_date": "2026-09-23",
       "claimed_theorem": "Arbitrarily large finite simple graphs have fractional chromatic number chi_f(G) > h(G), where h is largest clique-minor order.",
       "scope_relation": "matches",
@@ -151,27 +155,29 @@
         "https://mathcommunity.github.io/oai-math-revised/papers/A-counterexample-to-Hadwigers-conjecture-September-23-2026/"
       ],
       "known_caveats": "Comparator acceptance of some Lean artifact is proof-object checking, not independent verification of exactly the paper's graph construction and claimed theorem; explicit checkable witnesses were not supplied in the independent audit consulted.",
-      "next_review": "Audit the Lean quantifiers and graph encoding against the theorem; reproduce or extract an explicit graph plus an independently checkable minor-bound obstruction."
+      "next_review": "Audit the Lean quantifiers and graph encoding against the theorem; reproduce or extract an explicit graph plus an independently checkable minor-bound obstruction.",
+      "formalization_scope_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/157.md"
     },
     {
       "id": "M073",
       "primary_title": "A counterexample to Sidorenko's conjecture",
-      "primary_url": "https://github.com/openai/math/blob/main/preprints/A-counterexample-to-Sidorenkos-conjecture-September-23-2026/paper.pdf",
+      "primary_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/A-counterexample-to-Sidorenkos-conjecture-September-23-2026/paper.pdf",
       "preprint_date": "2026-09-23",
       "claimed_theorem": "A connected bipartite H on 35 vertices with 66 edges and a finite host G satisfy t(H,G)<t(K_2,G)^66.",
       "scope_relation": "matches",
       "scope_note": "The strict homomorphism-density violation is a direct counterexample to the registered universal Sidorenko inequality.",
       "independent_validation": "formal_statement_check_only",
       "independent_evidence_urls": [
-        "https://github.com/openai/math/blob/main/lean/docs/161.md"
+        "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/161.md"
       ],
       "known_caveats": "OpenAI's Lean scope note covers the Sidorenko counterexample but not the forcing-conjecture consequence; kernel acceptance is not a published independently audited finite witness. The host G is proved to exist rather than explicitly listed.",
-      "next_review": "Check H and the host-existence construction against Lean and paper; independently compute exact graphon/homomorphism inequalities or generate an explicit finite G."
+      "next_review": "Check H and the host-existence construction against Lean and paper; independently compute exact graphon/homomorphism inequalities or generate an explicit finite G.",
+      "formalization_scope_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/161.md"
     },
     {
       "id": "M085",
       "primary_title": "The Unique Games Theorem",
-      "primary_url": "https://github.com/openai/math/blob/main/preprints/The-Unique-Games-Theorem-September-23-2026/paper.pdf",
+      "primary_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/The-Unique-Games-Theorem-September-23-2026/paper.pdf",
       "preprint_date": "2026-09-23",
       "claimed_theorem": "For any fixed epsilon,delta in (0,1/2), a polynomial-time reduction from 3SAT to Unique Games over a fixed finite alphabet has completeness at least 1-epsilon and soundness at most delta.",
       "scope_relation": "matches",
@@ -179,7 +185,8 @@
       "independent_validation": "not_established",
       "independent_evidence_urls": [],
       "known_caveats": "Unrefereed preprint; inspect alphabet dependence on epsilon,delta, polynomial bounds, and soundness reductions. Consequent Max-Cut hardness claims do not independently validate UGC.",
-      "next_review": "Independently audit the reduction's completeness and soundness estimates and its quantitative dependence on gap parameters."
+      "next_review": "Independently audit the reduction's completeness and soundness estimates and its quantitative dependence on gap parameters.",
+      "formalization_scope_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/102.md"
     },
     {
       "id": "M098",
@@ -200,17 +207,24 @@
     {
       "id": "M100",
       "primary_title": "The Falconer distance conjecture in all dimensions",
-      "primary_url": "https://github.com/openai/math/blob/main/preprints/The-Falconer-distance-conjecture-in-all-dimensions-September-23-2026/paper.pdf",
+      "primary_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/The-Falconer-distance-conjecture-in-all-dimensions-September-23-2026/paper.pdf",
       "preprint_date": "2026-09-23",
       "claimed_theorem": "For every integer d>=2 and compact E subset R^d with Hausdorff dimension greater than d/2, the Euclidean distance set Delta(E) has positive one-dimensional Lebesgue measure.",
       "scope_relation": "matches",
       "scope_note": "The strict threshold and positive-measure conclusion match the registered Falconer formulation; no endpoint equality or pinned-distance result is claimed.",
       "independent_validation": "formal_statement_check_only",
       "independent_evidence_urls": [
-        "https://github.com/openai/math/blob/main/lean/docs/073.md"
+        "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/073.md"
       ],
       "known_caveats": "The repository describes Lean theorem scope, but a stated source/Lean match has not been established by two independent specialist proof audits.",
-      "next_review": "Audit FalconerAllDimensions.lean definition fidelity, measure conventions and proof dependencies; obtain independent harmonic-analysis review."
+      "next_review": "Audit FalconerAllDimensions.lean definition fidelity, measure conventions and proof dependencies; obtain independent harmonic-analysis review.",
+      "formalization_scope_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/073.md"
     }
-  ]
+  ],
+  "source_revision": {
+    "repository": "openai/math",
+    "commit": "4eaee87548250b2682affda7d05d947c05554bae",
+    "checked_on": "2026-10-31",
+    "note": "Pinned snapshot for primary sources and author-described Lean scope; does not certify proof validity."
+  }
 }
