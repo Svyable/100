@@ -54,7 +54,7 @@ class TestPages(unittest.TestCase):
         self.assertTrue({"rankings", "campaigns", "method", "problem-list",
                          "results-count", "load-more", "search-problems",
                          "filter-field", "filter-status", "sort-problems",
-                         "workbench", "execution-queue", "solved", "solved-list",
+                         "workbench", "execution-queue", "campaign-grid", "status-claim-count", "solved", "solved-list",
                          "stat-solved", "milestone-list", "nav-solved-count"}.issubset(page.ids))
         self.assertIn("./assets/app.js", page.links)
         self.assertIn("./assets/style.css", page.links)

@@ -47,7 +47,7 @@
         <div class="hero-art" aria-hidden="true">
           <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
           <span class="orbit-point orbit-point-a"></span><span class="orbit-point orbit-point-b"></span><span class="orbit-point orbit-point-c"></span>
-          <div class="art-center"><span>100</span><small>OPEN<br>QUESTIONS*</small></div>
+          <div class="art-center"><span>100</span><small>ACTIVE<br>QUESTIONS*</small></div>
           <span class="art-note art-note-a">THE UNSOLVED</span>
           <span class="art-note art-note-b">THE PROVABLE</span>
           <span class="art-note art-note-c">THE POSSIBLE</span>
@@ -60,7 +60,7 @@
         <div class="stat"><strong id="stat-benchmarks">3</strong><span>Reproduced known results</span></div>
         <div class="stat"><strong id="stat-solved">0</strong><span>Full resolutions verified</span></div>
       </section>
-      <p class="status-note">* “Active candidate” does not mean independently confirmed unsolved. Status flags distinguish official listings from conjectures still needing literature review; <strong>15 currently have proof claims requiring review.</strong></p>
+      <p class="status-note">* “Active candidate” does not mean independently confirmed unsolved. Status flags distinguish official listings from conjectures still needing literature review; <strong><span id="status-claim-count">15</span> currently have proof claims requiring review.</strong></p>
 
       <section class="rankings section-block" id="rankings" aria-labelledby="rankings-heading">
         <div class="section-heading">
@@ -124,49 +124,10 @@
             <p class="eyebrow">02 / FROM QUESTIONS TO EVIDENCE</p>
             <h2 id="campaigns-heading">Proof <em>campaigns.</em></h2>
           </div>
-          <p>Five complementary attack surfaces. Each has a bounded first experiment, an explicit verifier, and clear limits on what can be claimed.</p>
+          <p>Active research tracks with bounded proof obligations, falsifiers, source links, and honest limits on what can be claimed.</p>
         </div>
-        <div class="campaign-grid">
-          <article class="campaign-card campaign-feature">
-            <div class="campaign-top"><span>CAMPAIGN 01 / FINITE CERTIFICATES</span><span class="campaign-mark">↗</span></div>
-            <span class="campaign-code">M095</span>
-            <h3>Ramsey R(5,5)</h3>
-            <p>Determine the exact Ramsey number. Verify candidate colorings independently; require auditable UNSAT certificates for exclusions.</p>
-            <div class="campaign-tags"><span>Graph theory</span><span>SAT</span><span>Exact checking</span></div>
-            <a href="https://github.com/Svyable/100/blob/main/research/M095_RAMSEY.md" target="_blank" rel="noopener noreferrer">Read campaign <span aria-hidden="true">↗</span></a>
-          </article>
-          <article class="campaign-card">
-            <div class="campaign-top"><span>CAMPAIGN 02 / SET FAMILIES</span><span class="campaign-mark">↗</span></div>
-            <span class="campaign-code">M075</span>
-            <h3>Frankl’s conjecture</h3>
-            <p>Explore exact union-closed families, minimal obstructions, and inequalities approaching the one-half threshold.</p>
-            <div class="campaign-tags"><span>Combinatorics</span><span>Enumeration</span></div>
-            <a href="https://github.com/Svyable/100/blob/main/research/M075_FRANKL.md" target="_blank" rel="noopener noreferrer">Read campaign <span aria-hidden="true">↗</span></a>
-          </article>
-          <article class="campaign-card">
-            <div class="campaign-top"><span>CAMPAIGN 03 / ALGEBRAIC METHODS</span><span class="campaign-mark">↗</span></div>
-            <span class="campaign-code">M088</span>
-            <h3>Polynomial identity testing</h3>
-            <p>Seek deterministic hitting sets for precisely specified circuit classes. Separate restricted progress from the general case.</p>
-            <div class="campaign-tags"><span>Complexity</span><span>Algorithms</span></div>
-            <a href="https://github.com/Svyable/100/blob/main/research/CAMPAIGNS.md" target="_blank" rel="noopener noreferrer">Read campaign <span aria-hidden="true">↗</span></a>
-          </article>
-          <article class="campaign-card">
-            <div class="campaign-top"><span>CAMPAIGN 04 / EXACT GEOMETRY</span><span class="campaign-mark">↗</span></div>
-            <span class="campaign-code">M092</span>
-            <h3>Zauner SIC existence</h3>
-            <p>Construct and check exact equiangular lines. Look for algebraic methods that generalize across dimensions.</p>
-            <div class="campaign-tags"><span>Quantum math</span><span>Algebra</span></div>
-            <a href="https://github.com/Svyable/100/blob/main/research/CAMPAIGNS.md" target="_blank" rel="noopener noreferrer">Read campaign <span aria-hidden="true">↗</span></a>
-          </article>
-          <article class="campaign-card campaign-wide">
-            <div class="campaign-top"><span>CAMPAIGN 05 / DIRECTED GRAPHS</span><span class="campaign-mark">↗</span></div>
-            <span class="campaign-code">M074</span>
-            <h3>Caccetta–Häggkvist</h3>
-            <p>Find short directed cycles forced by minimum outdegree. Search small extremal digraphs and prove structural reductions that survive arbitrary size.</p>
-            <div class="campaign-tags"><span>Combinatorics</span><span>Digraphs</span><span>Structural proof</span></div>
-            <a href="https://github.com/Svyable/100/blob/main/research/CAMPAIGNS.md" target="_blank" rel="noopener noreferrer">Read campaign <span aria-hidden="true">↗</span></a>
-          </article>
+        <div class="campaign-grid" id="campaign-grid">
+          <p class="loading-state">Loading active proof campaigns…</p>
         </div>
         <div class="campaign-foot"><span><span class="little-spark">✳</span> Passing a small-case test is a verified computation, not a proof of an unrestricted conjecture.</span><a href="https://github.com/Svyable/100/issues" target="_blank" rel="noopener noreferrer">View open research issues ↗</a></div>
       </section>

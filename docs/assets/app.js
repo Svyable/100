@@ -118,6 +118,42 @@
     state.limit = 20;
     renderProblems();
   }
+  function renderCampaigns(data) {
+    const root = $("campaign-grid");
+    const active = new Map(data.problems.map(p => [p.id,p]));
+    const campaigns = data.campaigns
+      .filter(c => active.has(c.problem_id))
+      .sort((a,b) => active.get(a.problem_id).execution_rank -
+                      active.get(b.problem_id).execution_rank);
+    const fragment = document.createDocumentFragment();
+    for (const [i,c] of campaigns.entries()) {
+      const p = active.get(c.problem_id);
+      const card = document.createElement("article");
+      card.className = "campaign-card" + (i === 0 ? " campaign-feature" : "") +
+        (campaigns.length > 2 && i === campaigns.length - 1 && campaigns.length % 2 ? " campaign-wide" : "");
+      const dossier = repoFile(c.dossier);
+      card.innerHTML =
+        '<div class="campaign-top"><span>CAMPAIGN ' +
+        String(i+1).padStart(2,"0") + ' / ' + escapeHTML(c.method) +
+        '</span><span class="campaign-mark">↗</span></div>' +
+        '<span class="campaign-code">' + escapeHTML(c.problem_id) +
+        ' · ATTACK #' + p.execution_rank + '</span>' +
+        '<h3>' + escapeHTML(p.name) + '</h3>' +
+        '<p>' + escapeHTML(c.first_proof_obligation) + '</p>' +
+        '<div class="campaign-tags"><span>' + escapeHTML(p.field) + '</span>' +
+        '<span>' + escapeHTML(c.stage.replaceAll("_"," ")) + '</span></div>' +
+        (dossier ? '<a href="' + escapeHTML(dossier) +
+          '" target="_blank" rel="noopener noreferrer">Read campaign ↗</a>' : '');
+      fragment.appendChild(card);
+    }
+    if (!campaigns.length) {
+      const empty = document.createElement("p");
+      empty.className = "empty-state";
+      empty.textContent = "No active research campaigns currently defined.";
+      fragment.appendChild(empty);
+    }
+    root.replaceChildren(fragment);
+  }
   function renderQueue(data) {
     const root = $("execution-queue");
     const fragment = document.createDocumentFragment();
@@ -226,6 +262,7 @@
       }
       $("stat-total").textContent = String(data.problems.length);
       $("stat-campaigns").textContent = String(data.summary.campaigns);
+      $("status-claim-count").textContent = String(data.status_counts.claim_needs_review || 0);
       $("snapshot-date").textContent = "Latest recorded source intake: " +
         (data.source_review_as_of || "varies") + ".";
       for (const id of ["search-problems","filter-field","filter-status","sort-problems"]) {
@@ -239,6 +276,7 @@
       $("load-more").addEventListener("click", () => {
         state.limit += 20; renderProblems();
       });
+      renderCampaigns(data);
       renderQueue(data);
       renderSolved(data);
       renderMilestones(data);
@@ -257,6 +295,7 @@
     } catch (error) {
       $("problem-list").textContent = "Portfolio data could not be loaded; view the source registry on GitHub.";
       $("results-count").textContent = "Registry unavailable";
+      $("campaign-grid").textContent = "Campaigns unavailable";
       $("execution-queue").textContent = "Proof queue unavailable";
       $("solved-list").textContent = "Solved archive unavailable";
       $("milestone-list").textContent = "Verification milestones unavailable";
