@@ -96,7 +96,7 @@ class ClaimReviewTests(unittest.TestCase):
         self.assertEqual(m056["scope_relation"], "narrower")
         self.assertIn("local-smoothing", m056["primary_url"].lower())
         m049 = next(r for r in self.audit["reviews"] if r["id"] == "M049")
-        self.assertIn("outside", m049["known_caveats"])
+        self.assertIn("does not assert", m049["known_caveats"])
 
     def test_no_unsupported_solved_archive_entries(self):
         solved = json.loads((ROOT / "data/solved.json").read_text(encoding="utf-8"))
