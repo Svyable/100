@@ -3,6 +3,7 @@
 **Purpose:** Preserve, refine, and stack-rank 100 concrete mathematical proof/counterexample targets, looking for results and methods that create new branches of discovery.
 
 - **[Roadmap](ROADMAP.md)** ([on the dashboard](https://svyable.github.io/100/#roadmap)) — live scoreboard against targets, and every shipped, current, next and later item with evidence and exit criteria. Source: [data/roadmap.json](data/roadmap.json).
+- **[Next 100 hypothesis reservoir](https://svyable.github.io/100/next/)** — 120 initial cross-domain, unvetted proposals in a scalable pipeline; ranked discovery priorities, not claimed new open results ([protocol](NEXT_100.md)). The active 100 remains capped.
 - **[Public research dashboard](https://svyable.github.io/100/)** (once GitHub Pages is enabled: [activation guide](docs/PAGES_SETUP.md)) — ranked search, evidence filters, active proof campaigns.
 - **[Exact probe lab](LAB.md)**: 15 independently checked probes on 11 reusable engines give **17 of the 100 problems** an exact verifier (previously 3), including 16 of the 19 problems where finite computation can refute or settle the claim. All ranges are known mathematics; see [the lab dossier](research/LAB_CAMPAIGNS.md).
 - **[Execution-priority queue](ATTACK_QUEUE.md)** — evidence-aware ordering of the top 100 with precise proof obligations for active campaigns.

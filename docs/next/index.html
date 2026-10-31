@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5f0">
+  <meta name="description" content="Next 100: a rigorously labeled, unvetted reservoir of cross-domain mathematical hypotheses to investigate and potentially promote into the active 100.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Next 100 — The hypothesis reservoir">
+  <meta property="og:description" content="Thousands of ideas can enter. Only independently justified targets rise into the 100.">
+  <meta property="og:url" content="https://svyable.github.io/100/next/">
+  <link rel="canonical" href="https://svyable.github.io/100/next/">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="./next.css">
+  <script src="./app.js" defer></script>
+  <title>Next 100 — Hypothesis reservoir</title>
+</head>
+<body>
+  <a class="skip-link" href="#reservoir">Skip to hypothesis reservoir</a>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="../" aria-label="100, home">
+        <span class="brand-mark">100<span class="brand-dot">.</span></span>
+        <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="../#rankings">The 100</a>
+        <a href="./" aria-current="page">Next 100</a>
+        <a href="../#campaigns">Campaigns</a>
+        <a href="../#lab">Lab</a>
+        <a class="nav-source" href="https://github.com/Svyable/100">Source on GitHub ↗</a>
+      </nav>
+    </header>
+    <main>
+      <section class="next-hero" aria-labelledby="next-title">
+        <div>
+          <p class="eyebrow">02 / THE DISCOVERY PIPELINE</p>
+          <h1 id="next-title">The next hundred.<br><em>And the thousand after.</em></h1>
+          <p class="hero-lead">A reservoir of consequential, cross-domain hypotheses: ideas worth specifying, trying to refute, and checking against existing work. The active 100 stays capped at 100. This is where the next candidate comes from.</p>
+          <a class="button button-dark" href="#reservoir">Explore candidate statements ↘</a>
+        </div>
+        <aside class="next-hero-index" aria-label="Reservoir summary">
+          <span>DISCOVERY / NEVER CERTIFICATION</span>
+          <strong id="hero-count">120</strong>
+          <p>Seed hypotheses, with room for thousands. No candidate on this page is represented as a newly discovered unsolved theorem.</p>
+        </aside>
+      </section>
+
+      <div class="next-stats" aria-label="Current intake">
+        <div><strong id="stat-available">—</strong><span>Available hypotheses</span></div>
+        <div><strong id="stat-domains">—</strong><span>Research domains</span></div>
+        <div><strong id="stat-promoted">—</strong><span>Promoted into the 100</span></div>
+      </div>
+
+      <section class="intake-standards" aria-label="Evidence boundaries">
+        <div><span class="eyebrow">HYPOTHESIS ≠ OPEN PROBLEM</span><h2>Every idea begins<br>under review.</h2></div>
+        <p>A statement may already be known, false, ill-posed, or a special case of established mathematics. Scores measure potential <em>discovery priority</em>, not novelty, truth, or likelihood of proof. Promotion requires a precise statement, literature audit, a first falsifiable attack, cross-field consequences, and an auditable portfolio decision.</p>
+      </section>
+
+      <section class="section-block" id="reservoir" aria-labelledby="reservoir-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">01 / THE RESERVOIR</p><h2 id="reservoir-title">Find the next <em>question.</em></h2></div>
+          <p>Search by mathematical mechanism or real-world consequence. Expand any entry to see the statement, relevance, and first attack.</p>
+        </div>
+        <div class="next-panel">
+          <div class="next-filters" role="search" aria-label="Filter hypotheses">
+            <label class="search-wrap" for="next-search"><span aria-hidden="true">⌕</span><input type="search" id="next-search" placeholder="Search hypotheses, applications, IDs…" autocomplete="off"></label>
+            <div class="filter-select"><label for="next-domain">Domain</label><select id="next-domain"><option value="">All domains</option></select></div>
+            <div class="filter-select"><label for="next-stage">Preparation</label><select id="next-stage"><option value="">All stages</option><option value="formalize">Formalize first</option><option value="prior_art_review">Prior-art review</option></select></div>
+            <div class="filter-select"><label for="next-status">Pipeline</label><select id="next-status"><option value="available">Available</option><option value="all">All candidates</option><option value="promoted">Promoted</option></select></div>
+            <div class="filter-select"><label for="next-sort">Order</label><select id="next-sort"><option value="priority">Discovery priority</option><option value="tractability">Tractability</option><option value="impact">Potential impact</option><option value="name">Alphabetical</option><option value="id">Stable ID</option></select></div>
+          </div>
+          <div class="results-bar"><span id="next-results" role="status" aria-live="polite">Loading candidates…</span><button type="button" id="next-reset" class="plain-button">Clear filters ↺</button></div>
+          <div id="next-list" class="next-list"><p class="loading-state">Loading source-backed hypotheses…</p></div>
+          <div class="pagination"><button class="button button-outline" type="button" id="next-more" hidden>Show 24 more ↓</button></div>
+        </div>
+        <p class="table-footnote">The list is generated from version-controlled <a href="https://github.com/Svyable/100/blob/main/data/next_candidates.json">seed records</a> and <a href="https://github.com/Svyable/100/tree/main/data/next_batches">future batches</a>. Each ID remains stable if promoted. <a href="https://github.com/Svyable/100/blob/main/NEXT_100.md">Read intake and promotion rules ↗</a></p>
+      </section>
+
+      <section class="next-process section-block" aria-labelledby="process-title">
+        <div class="section-heading"><div><p class="eyebrow">02 / PROMOTION GATE</p><h2 id="process-title">From reservoir<br>to <em>research.</em></h2></div></div>
+        <div class="next-steps">
+          <article><b>01</b><h3>Frame</h3><p>Choose a precise domain, quantifiers, exceptions, and meaningful consequence.</p></article>
+          <article><b>02</b><h3>Audit</h3><p>Check for known proofs, counterexamples, equivalent statements, and primary sources.</p></article>
+          <article><b>03</b><h3>Attack</h3><p>Define an independently checkable restricted target, verifier, or falsifier.</p></article>
+          <article><b>04</b><h3>Promote</h3><p>Use a reviewed PR to replace an active slot; preserve the old ID and a public trail.</p></article>
+        </div>
+        <p class="next-closing">A high score only earns a closer look. It never constitutes evidence. <a href="https://github.com/Svyable/100/issues/new">Propose a hypothesis or correction ↗</a></p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div><span class="footer-mark">100.</span><span>A research reservoir by Svyable.<br>Proofs over promises.</span></div>
+      <div><a href="../">The 100 ↗</a><a href="https://github.com/Svyable/100">Repository ↗</a><a href="https://github.com/Svyable/100/blob/main/NEXT_100.md">Intake standard ↗</a></div>
+      <small>© 2026 SVYABLE / MATHEMATICAL FRONTIER</small>
+    </footer>
+  </div>
+</body>
+</html>

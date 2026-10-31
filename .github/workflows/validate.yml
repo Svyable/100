@@ -13,9 +13,10 @@ jobs:
           python-version: "3.12"
       - run: python3 scripts/rank.py --check
       - run: python3 scripts/build_site.py --check
-      - run: python3 scripts/roadmap.py --check
+      - run: python3 scripts/next.py --check
       - run: python3 scripts/research.py --check
       - run: python3 scripts/lab.py --check
       - run: python3 scripts/check_external_artifact.py --validate-only
       - run: node --check docs/assets/app.js
+      - run: node --check docs/next/app.js
       - run: python3 -m unittest discover -s tests -v
