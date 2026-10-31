@@ -37,7 +37,15 @@ class TestPages(unittest.TestCase):
         self.assertEqual(sorted(p, key=lambda x: (-x["score"],x["id"])), p)
         self.assertTrue(all(20 <= item["score"] <= 100 for item in p))
         self.assertEqual(sorted(x["execution_rank"] for x in p),list(range(1,101)))
+        self.assertEqual(sorted(x["dispatch_rank"] for x in p),list(range(1,101)))
         self.assertTrue(all(x["execution_score"]==x["score"]+x["readiness"] for x in p))
+        self.assertTrue(all(
+            x["dispatch_score"]==x["score"]+x["readiness"]+x["action_bonus"] for x in p))
+        self.assertEqual(p[0]["id"], "M074")  # editorial order is unchanged
+        by_dispatch = sorted(p, key=lambda x: x["dispatch_rank"])
+        self.assertEqual(by_dispatch[0]["action"], "replay_claim_witness")
+        self.assertIn("jobs", doc["approach"])
+        self.assertGreaterEqual(len(doc["approach"]["jobs"]), 1)
         self.assertEqual(len(doc["execution_queue"]),doc["summary"]["campaigns"])
         self.assertEqual(doc["summary"]["reproduced_known"],
                          sum(x["classification"]=="reproduced_known" for x in doc["milestones"]))
@@ -66,7 +74,8 @@ class TestPages(unittest.TestCase):
                          "lab", "lab-probe-list", "lab-engine-list", "lab-roadmap",
                          "lab-stat-covered", "lab-stat-computable", "lab-stat-probes",
                          "lab-stat-engines", "filter-modality",
-                         "roadmap", "roadmap-metrics", "roadmap-board", "roadmap-tracks"}.issubset(page.ids))
+                         "roadmap", "roadmap-metrics", "roadmap-board", "roadmap-tracks",
+                         "approach-jobs"}.issubset(page.ids))
         self.assertIn("./assets/app.js", page.links)
         self.assertIn("./assets/style.css", page.links)
         self.assertIn("./assets/favicon.svg", page.links)

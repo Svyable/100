@@ -75,7 +75,7 @@
             <p class="eyebrow">01 / THE PORTFOLIO</p>
             <h2 id="rankings-heading">The ranked <em>100.</em></h2>
           </div>
-          <p>Two rankings, one standard of proof: execution order reflects verifiable research readiness; editorial rank preserves long-term mathematical significance.</p>
+          <p>Dispatch order is what to do next. Readiness is documented evidence only. Editorial rank keeps long-term mathematical significance. None of the three is a probability of proof.</p>
         </div>
         <div class="ranking-panel">
           <div class="filters" role="search" aria-label="Search and filter problems">
@@ -111,7 +111,8 @@
             <div class="filter-select">
               <label for="sort-problems">Order</label>
               <select id="sort-problems">
-                <option value="execution">Execution priority</option>
+                <option value="dispatch">Dispatch (do this next)</option>
+                <option value="execution">Readiness index</option>
                 <option value="rank">Mathematical significance rank</option>
                 <option value="impact">Impact first</option>
                 <option value="attackability">Attackability first</option>
@@ -126,14 +127,14 @@
             <button class="plain-button" id="reset-filters" type="button">Clear filters <span aria-hidden="true">↺</span></button>
           </div>
           <div class="list-head" aria-hidden="true">
-            <span>ATTACK RANK / ID</span><span>PROBLEM &amp; DOMAIN</span><span>EXECUTION INDEX</span><span>EVIDENCE</span><span></span>
+            <span>DISPATCH / ID</span><span>PROBLEM &amp; DOMAIN</span><span>DISPATCH SCORE</span><span>EVIDENCE</span><span></span>
           </div>
           <div id="problem-list" class="problem-list" aria-live="off">
             <div class="loading-state">Loading 100 questions from the repository’s generated snapshot…</div>
           </div>
           <div class="pagination"><button id="load-more" type="button" class="button button-outline" hidden>Show 20 more questions <span aria-hidden="true">↓</span></button></div>
         </div>
-        <p class="table-footnote">Execution index = editorial score (20–100) + documented readiness (0–10). <strong>Neither score is a probability of proof.</strong> Records are pulled from a versioned snapshot of <a href="https://github.com/Svyable/100/blob/main/data/problems.json">data/problems.json</a>. <span id="snapshot-date">Source review dates vary.</span></p>
+        <p class="table-footnote">Default order is the dispatch score: editorial score + readiness + an action bonus. The bonus schedules a claimed witness, a missing engine or a published certificate, and it sinks a range extension already inside a cited theorem. <strong>It is not evidence and not a probability.</strong> Readiness-only order stays in the sort menu. Records come from <a href="https://github.com/Svyable/100/blob/main/data/problems.json">data/problems.json</a>. <span id="snapshot-date">Source review dates vary.</span></p>
       </section>
 
       <section class="campaigns section-block" id="campaigns" aria-labelledby="campaigns-heading">
@@ -187,14 +188,27 @@
           <p>Concrete hypotheses, proof obligations, falsifiers and next experiments—not another undifferentiated list of grand questions.</p>
         </div>
         <div class="engine-intro">
-          <div><span class="engine-kicker">TWO SEPARATE METRICS</span><h3>Ambition × readiness</h3>
-          <p>We preserve the original editorial score, then add at most ten readiness points for documented research briefs, executable checks, reproduced known results, or independently verified restricted theorems.</p></div>
-          <div class="engine-formula">EDITORIAL SCORE <strong>+</strong> VERIFIED READINESS <strong>=</strong> EXECUTION INDEX</div>
+          <div><span class="engine-kicker">WHAT TO DO NEXT</span><h3>One shape, many problems</h3>
+          <p>Editorial score and readiness are unchanged. Dispatch adds an action bonus so a claimed finite witness, a missing engine or a published certificate outranks another vertex inside a theorem we already cite. Problems that share a shape move as one job.</p></div>
+          <div class="engine-formula">EDITORIAL <strong>+</strong> READINESS <strong>+</strong> ACTION BONUS <strong>=</strong> DISPATCH</div>
+        </div>
+        <div class="benchmark-heading"><div>
+          <span class="eyebrow">ONE JOB, MANY PROBLEMS</span>
+          <h3>Do the cohort, not the next vertex</h3></div>
+          <p>Each card is one action on one shared shape. The problems on the card move together.</p>
+        </div>
+        <div id="approach-jobs" class="execution-queue">
+          <p class="loading-state">Loading cohort jobs…</p>
+        </div>
+        <div class="benchmark-heading"><div>
+          <span class="eyebrow">CAMPAIGNS, SAME ORDER</span>
+          <h3>Where a campaign already exists</h3></div>
+          <p>Instrumented problems, in dispatch order. An experiment the dispatcher refused is shown under the replacement.</p>
         </div>
         <div id="execution-queue" class="execution-queue">
           <p class="loading-state">Loading active proof campaigns…</p>
         </div>
-        <p class="table-footnote">A baseline verification increases operational readiness, <strong>not</strong> evidence that a new theorem has been proved. <a href="https://github.com/Svyable/100/blob/main/ATTACK_QUEUE.md">Full 100-problem execution queue ↗</a></p>
+        <p class="table-footnote">A baseline verification increases operational readiness, <strong>not</strong> evidence that a new theorem has been proved. <a href="https://github.com/Svyable/100/blob/main/ATTACK_QUEUE.md">Full 100-problem queue ↗</a> · <a href="https://github.com/Svyable/100/blob/main/APPROACH.md">Shapes and jobs ↗</a></p>
       </section>
 
       <section class="roadmap section-block" id="roadmap" aria-labelledby="roadmap-heading">
@@ -244,7 +258,7 @@
       </section>
 
       <section class="scoring section-block" aria-labelledby="scoring-heading">
-        <div><p class="eyebrow">07 / RANKING TRANSPARENCY</p><h2 id="scoring-heading">How we <em>prioritize.</em></h2><p>Four editorial factors, each scored 1–5. The execution queue adds only documented readiness, and neither number predicts when a conjecture will be solved. Only independently verified full resolutions enter the Solved ledger.</p></div>
+        <div><p class="eyebrow">07 / RANKING TRANSPARENCY</p><h2 id="scoring-heading">How we <em>prioritize.</em></h2><p>Four editorial factors, each scored 1–5. Readiness adds at most ten points for documented evidence. Dispatch adds a scheduling bonus on top of those and is the default order. None of the three predicts when a conjecture will be solved. Only independently verified full resolutions enter the Solved ledger.</p></div>
         <div class="scoring-metrics">
           <div class="metric"><span>Mathematical impact</span><b>30%</b><div class="meter"><i style="width:60%"></i></div></div>
           <div class="metric"><span>Attackability</span><b>30%</b><div class="meter"><i style="width:60%"></i></div></div>

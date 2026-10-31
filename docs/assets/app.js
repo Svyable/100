@@ -17,7 +17,7 @@
   let campaignIds = new Set();
   let verifiedIds = new Set();
   const state = {
-    all: [], filtered: [], limit: 20, sort: "execution",
+    all: [], filtered: [], limit: 20, sort: "dispatch",
     search: "", field: "", status: "", modality: ""
   };
   const escapeHTML = s => String(s ?? "").replace(/[&<>"']/g,
@@ -55,26 +55,38 @@
     entry.id = "problem-" + p.id;
     entry.innerHTML =
       '<summary aria-label="Expand ' + escapeHTML(p.name) + '">' +
-      '<span class="entry-index"><span class="ordinal">' + p.execution_rank +
+      '<span class="entry-index"><span class="ordinal">' + p.dispatch_rank +
       '</span><span class="entry-id">' + escapeHTML(p.id) + '</span></span>' +
       '<span class="entry-info"><span class="entry-name">' + escapeHTML(p.name) +
       '</span><span class="entry-field">' + escapeHTML(p.field) + '</span></span>' +
-      '<span class="entry-score" aria-label="Execution index ' + p.execution_score +
-      ': editorial ' + p.score + ', readiness plus ' + p.readiness + '">' +
-      '<strong>' + p.execution_score + '</strong><span class="small-bar" aria-hidden="true">' +
-      '<i style="width:' + Math.min(100,p.execution_score) + '%"></i></span></span>' +
+      '<span class="entry-score" aria-label="Dispatch score ' + p.dispatch_score +
+      ': editorial ' + p.score + ', readiness plus ' + p.readiness +
+      ', action bonus ' + p.action_bonus + '">' +
+      '<strong>' + p.dispatch_score + '</strong><span class="small-bar" aria-hidden="true">' +
+      '<i style="width:' + Math.min(100, Math.round(p.dispatch_score * 100 / 140)) +
+      '%"></i></span></span>' +
       '<span><span class="status-pill status-' + knownStatus + '">' + evidenceName(p) +
       '</span></span><span class="entry-chevron" aria-hidden="true">+</span></summary>' +
       '<div class="entry-detail"><div><span class="detail-label">THE OPEN QUESTION</span>' +
       '<p class="detail-question">' + escapeHTML(p.question) + '</p>' +
+      '<span class="detail-label">DO THIS NEXT</span>' +
+      '<p class="detail-attack">' + escapeHTML(p.dispatch_next) + '</p>' +
       '<span class="detail-label">CURRENT FIRST ATTACK</span>' +
       '<p class="detail-attack">' + escapeHTML(p.first_attack) + '</p>' +
       '<div class="detail-links">' + links + '</div></div>' +
       '<div><span class="detail-label">PRIORITY DECOMPOSITION</span>' +
-      '<p class="detail-note"><strong>Execution rank:</strong> #' + p.execution_rank +
-      ' · <strong>Editorial rank:</strong> #' + p.rank + '</p>' +
+      '<p class="detail-note"><span class="action-pill">' + escapeHTML(p.action_label) +
+      '</span></p>' +
+      '<p class="detail-note"><strong>Dispatch rank:</strong> #' + p.dispatch_rank +
+      ' · <strong>Shape:</strong> ' + escapeHTML(p.method_title) +
+      ' (<code>' + escapeHTML(p.method_id) + '</code>)</p>' +
+      '<p class="detail-note">' + escapeHTML(p.dispatch_why) + '</p>' +
+      '<p class="detail-note"><strong>Editorial rank:</strong> #' + p.rank +
+      ' · <strong>Readiness rank:</strong> #' + p.execution_rank + '</p>' +
       '<p class="detail-note"><strong>Editorial score:</strong> ' + p.score +
       ' · <strong>Readiness:</strong> +' + p.readiness +
+      ' · <strong>Action bonus:</strong> ' + (p.action_bonus > 0 ? '+' : '') + p.action_bonus +
+      ' · <strong>Dispatch score:</strong> ' + p.dispatch_score +
       ' · <strong>Execution index:</strong> ' + p.execution_score + '</p>' +
       '<div class="detail-metrics">' +
       metric("Impact",p.impact) + metric("Attackability",p.attackability) +
@@ -95,6 +107,7 @@
 
   function compare(a,b) {
     if (state.sort === "name") return a.name.localeCompare(b.name);
+    if (state.sort === "dispatch") return a.dispatch_rank - b.dispatch_rank;
     if (state.sort === "execution") return a.execution_rank - b.execution_rank;
     if (state.sort === "rank") return a.rank - b.rank;
     const difference = Number(b[state.sort]) - Number(a[state.sort]);
@@ -106,7 +119,8 @@
       (!state.field || p.field === state.field) &&
       (!state.status || p.evidence_state === state.status) &&
       (!state.modality || p.modality === state.modality) &&
-      (!query || [p.id,p.name,p.field,p.question,p.first_attack].some(
+      (!query || [p.id,p.name,p.field,p.question,p.first_attack,p.action,
+        p.action_label,p.method_id,p.method_title,p.dispatch_next].some(
         value => String(value ?? "").toLocaleLowerCase().includes(query)))
     ).sort(compare);
     const fragment = document.createDocumentFragment();
@@ -136,8 +150,8 @@
     const active = new Map(data.problems.map(p => [p.id,p]));
     const campaigns = data.campaigns
       .filter(c => active.has(c.problem_id))
-      .sort((a,b) => active.get(a.problem_id).execution_rank -
-                      active.get(b.problem_id).execution_rank);
+      .sort((a,b) => active.get(a.problem_id).dispatch_rank -
+                      active.get(b.problem_id).dispatch_rank);
     const fragment = document.createDocumentFragment();
     for (const [i,c] of campaigns.entries()) {
       const p = active.get(c.problem_id);
@@ -150,7 +164,7 @@
         String(i+1).padStart(2,"0") + ' / ' + escapeHTML(c.method) +
         '</span><span class="campaign-mark">↗</span></div>' +
         '<span class="campaign-code">' + escapeHTML(c.problem_id) +
-        ' · ATTACK #' + p.execution_rank + '</span>' +
+        ' · DISPATCH #' + p.dispatch_rank + '</span>' +
         '<h3>' + escapeHTML(p.name) + '</h3>' +
         '<p>' + escapeHTML(c.first_proof_obligation) + '</p>' +
         '<div class="campaign-tags"><span>' + escapeHTML(p.field) + '</span>' +
@@ -175,14 +189,17 @@
       card.className = "execution-card";
       const dossierUrl = repoFile(c.dossier);
       card.innerHTML =
-        '<div class="execution-card-top"><span>ATTACK #' + c.execution_rank +
+        '<div class="execution-card-top"><span>DISPATCH #' + c.dispatch_rank +
         ' · ' + escapeHTML(c.problem_id) + '</span>' +
-        '<span class="execution-score">INDEX ' + c.execution_score + '</span></div>' +
+        '<span class="execution-score">' + escapeHTML(c.action_label) + '</span></div>' +
         '<h3>' + escapeHTML(c.name) + '</h3>' +
         '<span class="step-label">FIRST PROOF OBLIGATION</span>' +
         '<p>' + escapeHTML(c.first_proof_obligation) + '</p>' +
-        '<span class="step-label">NEXT EXECUTABLE STEP</span>' +
+        '<span class="step-label">RECOMMENDED STEP</span>' +
         '<p>' + escapeHTML(c.next_experiment) + '</p>' +
+        (c.recorded_experiment && c.recorded_experiment !== c.next_experiment ?
+          '<span class="step-label">NOT THE CURRENT RECOMMENDATION</span><p>' +
+          escapeHTML(c.recorded_experiment) + '</p>' : '') +
         (dossierUrl ? '<a href="' + escapeHTML(dossierUrl) +
          '" target="_blank" rel="noopener noreferrer">Research dossier ↗</a>' : '');
       fragment.appendChild(card);
@@ -373,6 +390,26 @@
     }
     board();
   }
+  function renderApproach(data) {
+    const root = $("approach-jobs");
+    if (!root) return;
+    const fragment = document.createDocumentFragment();
+    data.approach.jobs.slice(0, 8).forEach((job, i) => {
+      const card = document.createElement("article");
+      card.className = "execution-card";
+      const ids = job.problem_ids.map(id =>
+        '<a href="?focus=' + encodeURIComponent(id) + '#rankings">' + escapeHTML(id) + '</a>'
+      ).join(" ");
+      card.innerHTML =
+        '<div class="execution-card-top"><span>JOB ' + String(i + 1).padStart(2, "0") +
+        '</span><span class="execution-score">' + escapeHTML(job.action_label) + '</span></div>' +
+        '<h3>' + escapeHTML(job.method_title) + '</h3>' +
+        '<p class="approach-note">' + ids + '</p>' +
+        '<p>' + escapeHTML(job.summary) + '</p>';
+      fragment.appendChild(card);
+    });
+    root.replaceChildren(fragment);
+  }
   async function start() {
     try {
       const response = await fetch("./data/portfolio.json", {cache:"no-store"});
@@ -382,7 +419,8 @@
           !Array.isArray(data.execution_queue) || !Array.isArray(data.solved) ||
           !Array.isArray(data.milestones) || !data.lab ||
           !Array.isArray(data.lab.probes) ||
-          !data.roadmap || !Array.isArray(data.roadmap.items)) throw new Error("Malformed portfolio snapshot");
+          !data.roadmap || !Array.isArray(data.roadmap.items) ||
+          !data.approach || !Array.isArray(data.approach.jobs)) throw new Error("Malformed portfolio snapshot");
       state.all = data.problems;
       campaignIds = new Set(data.campaigns.map(c => c.problem_id));
       verifiedIds = new Set(data.lab.covered_problems);
@@ -403,13 +441,14 @@
       $("reset-filters").addEventListener("click", () => {
         $("search-problems").value = ""; $("filter-field").value = "";
         $("filter-status").value = ""; $("filter-modality").value = "";
-        $("sort-problems").value = "execution";
+        $("sort-problems").value = "dispatch";
         filterChanged(); $("search-problems").focus();
       });
       $("load-more").addEventListener("click", () => {
         state.limit += 20; renderProblems();
       });
       renderCampaigns(data);
+      renderApproach(data);
       renderLab(data);
       renderQueue(data);
       renderRoadmap(data);
@@ -433,6 +472,8 @@
       $("campaign-grid").textContent = "Campaigns unavailable";
       $("lab-probe-list").textContent = "Probe lab unavailable";
       $("execution-queue").textContent = "Proof queue unavailable";
+      const jobs = $("approach-jobs");
+      if (jobs) jobs.textContent = "Cohort jobs unavailable";
       $("roadmap-board").textContent = "Roadmap unavailable";
       $("solved-list").textContent = "Solved archive unavailable";
       $("milestone-list").textContent = "Verification milestones unavailable";

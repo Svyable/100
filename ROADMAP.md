@@ -27,14 +27,14 @@ Solved has no target on purpose: it grows only through the promotion gate in [do
 | Track | Goal | Shipped | Now | Next | Later |
 |---|---|---:|---:|---:|---:|
 | Registry & ranking | One canonical, scored, provenance-tracked list of exactly 100 targets. | 3 | 0 | 0 | 1 |
-| Research engine | Evidence-aware readiness, campaigns and a strict promotion gate to Solved. | 2 | 0 | 0 | 1 |
+| Research engine | Evidence-aware readiness, campaigns and a strict promotion gate to Solved. | 3 | 0 | 0 | 1 |
 | Exact probe lab | Every computable problem gets a search plus an independent checker on a reusable engine. | 2 | 3 | 3 | 0 |
 | Proof campaigns | Push the highest-ranked targets toward reviewed restricted results. | 3 | 2 | 1 | 0 |
 | Claim audit | Check announced resolutions for exact scope before spending effort on them. | 1 | 0 | 1 | 0 |
 | Trust & reproducibility | Pinned artifacts, proof certificates and CI that reruns everything. | 2 | 0 | 1 | 1 |
 | Site & community | A public dashboard and a contribution path that keeps the bar high. | 2 | 0 | 0 | 1 |
 
-## Shipped (15)
+## Shipped (16)
 
 _Merged on main with evidence in the repository._
 
@@ -59,6 +59,7 @@ _Merged on main with evidence in the repository._
 - [x] **R13 · CI and weekly deep reruns** (Trust & reproducibility) — Every generated file drift-checked on each PR; weekly deep probe and M074 reruns. [Evidence](.github/workflows/validate.yml)
 - [x] **R14 · Public research dashboard** (Site & community) — Ranked search, campaigns, lab, proof queue, Solved ledger and this roadmap, all from verified records. [Evidence](docs/index.html)
 - [x] **R15 · Contribution workflow and evidence templates** (Site & community) — Issue and PR templates that demand exact scope and reproducible evidence. [Evidence](CONTRIBUTING.md)
+- [x] **R16 · Leverage dispatch across shared attack shapes** (Research engine) — Every problem has one action and one shared shape. Dispatch score, not readiness alone, orders the attack queue. A range extension inside a cited theorem is refused. [Evidence](data/methods.json)
 
 ## Now (5)
 
@@ -96,9 +97,9 @@ _Scoped and ready to start once a current item finishes._
 - [ ] **R33 · DRAT/LRAT proofs from SAT pipelines** (Trust & reproducibility) — Every UNSAT verdict ships a proof checked by an independent checker. [Evidence](scripts/ch_sat.py)
   - Done when: CI checks proofs for the M074 and M096 encodings.
   - Problems: M074 Caccetta–Häggkvist conjecture, M096 Projective plane order 12
-- [ ] **R34 · Deeper probes** (Exact probe lab) — 8-9 vertex census (M071), step-graphon search (M073), degree-4 Jacobian maps (M041), flip-graph rank search (M084), published K42 witness (M095). [Evidence](ATTACK_QUEUE.md)
-  - Done when: Each probe's deep range extended and re-certified.
-  - Problems: M041 Plane Jacobian conjecture, M071 Hadwiger conjecture, M073 Sidorenko conjecture, M084 Matrix multiplication exponent omega=2 +1 more
+- [ ] **R34 · Replay published certificates the lab does not yet check** (Exact probe lab) — Import the published K42 colouring and one published small-format tensor decomposition, each replayed by the existing checker. Do not extend a range the dispatcher marks stop_range. [Evidence](ATTACK_QUEUE.md)
+  - Done when: Both certificates replayed, or a precise gap reported for each.
+  - Problems: M084 Matrix multiplication exponent omega=2, M095 Exact Ramsey number R(5,5)
 - [ ] **R35 · Restricted lemmas for the zero-readiness tier** (Proof campaigns) — Falsifiable restricted statements and prior-art audits for sunflowers, Dixmier, Erdős-Hajnal, Komlós and complexity targets. [Evidence](ATTACK_QUEUE.md)
   - Done when: Five new campaign briefs, each with a falsifier.
   - Problems: M076 Erdős–Rado sunflower conjecture, M042 Dixmier conjecture A1, M072 Erdős–Hajnal conjecture, M077 Komlós discrepancy conjecture +1 more

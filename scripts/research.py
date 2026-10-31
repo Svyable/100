@@ -197,39 +197,50 @@ def execution_order(items, program):
 
 
 def render_queue(items, program, solved):
+    import approach
     ranked = execution_order(items, program)
+    dispatched = {row["problem_id"]: row for row in approach.rows(items, program)}
     by_id = {c["problem_id"]: c for c in program["campaigns"]}
-    ordered = sorted(items, key=lambda p: ranked[p["id"]]["execution_rank"])
+    ordered = sorted(items, key=lambda p: dispatched[p["id"]]["dispatch_rank"])
     lines = [
         "# Execution queue — evidence-aware research priorities", "",
         f"Program intake: {program['as_of']}. **{len(solved)} independently reviewed full solutions** archived.",
-        "These ranks measure *where to deploy proof effort*, not the likelihood of proving a conjecture.", "",
-        "Execution index = editorial 20–100 score + readiness (0–10). Readiness counts a specific",
-        "campaign brief (+2), an allowlisted exact verifier (+3), a reproduced **known** benchmark",
-        "(+2), and an independently reviewed new restricted result (+3). A known benchmark never",
-        "counts as a new theorem, and unreviewed claims receive no bonus.", "",
-        "| Attack rank | ID | Problem | Base | Readiness | Index | Next step |",
-        "|---:|---|---|---:|---:|---:|---|",
+        "These ranks measure *where to deploy proof effort*, not the likelihood of proving a conjecture.",
+        "Full shapes and the cohort jobs are in [APPROACH.md](APPROACH.md).", "",
+        "Dispatch score = editorial score + readiness + an action bonus from "
+        "[data/methods.json](data/methods.json). Readiness counts a campaign brief (+2),",
+        "an allowlisted exact verifier (+3), a reproduced **known** benchmark (+2), and an",
+        "independently reviewed new restricted result (+3). The action bonus schedules work:",
+        "it lifts a claimed finite witness, a missing engine and a published certificate, and",
+        "it sinks a range extension the campaign itself says cannot be a theorem. A known",
+        "benchmark never counts as a new theorem. The bonus is not evidence.", "",
+        "| Dispatch | ID | Problem | Action | Base | Ready | Bonus | Score | Next step |",
+        "|---:|---|---|---|---:|---:|---:|---:|---|",
     ]
     for p in ordered:
         mark = ranked[p["id"]]
-        c = by_id.get(p["id"])
-        next_step = c["next_experiment"] if c else "Specify a falsifiable restricted lemma and audit prior art"
-        next_step = next_step.replace("|", "\\|").replace("\n", " ")
+        row = dispatched[p["id"]]
+        step = row["next_step"].replace("|", "\\|").replace("\n", " ")
         lines.append(
-            f"| {mark['execution_rank']} | {p['id']} | {p['name']} | {score(p)} "
-            f"| +{mark['readiness']} | {mark['execution_score']} | {next_step} |"
+            f"| {row['dispatch_rank']} | {p['id']} | {p['name']} | `{row['action']}` | {score(p)} "
+            f"| +{mark['readiness']} | {row['action_bonus']:+d} | {row['dispatch_score']} | {step} |"
         )
     lines += ["", "## Active proof campaigns", ""]
     for p in ordered:
         c = by_id.get(p["id"])
         if not c:
             continue
+        row = dispatched[p["id"]]
         lines += [
             f"### {p['id']} — {p['name']}", "",
+            f"**Dispatch:** `{row['action']}` · rank {row['dispatch_rank']} · {row['why']}", "",
             f"**Proof obligation:** {c['first_proof_obligation']}", "",
             f"**Falsifier:** {c['falsification']}", "",
-            f"**Next experiment:** {c['next_experiment']}", "",
+            f"**Recommended step:** {row['next_step']}", "",
+        ]
+        if row["next_step"] != c["next_experiment"]:
+            lines += [f"**Not the current recommendation:** {c['next_experiment']}", ""]
+        lines += [
             f"**Current blocker:** {c['blocker']}", "",
             f"**Stage:** `{c['stage']}` · [Dossier]({c['dossier']})", "",
         ]
