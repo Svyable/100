@@ -12,10 +12,10 @@ Current values are computed from the repository on every build, not typed in.
 
 | Metric | Start | Now | Target |
 |---|---:|---:|---:|
-| Problems with an exact verifier (of 100) | 3 | **17** | 25 |
-| Computable problems covered (of 19) | 0 | **16** | 19 |
-| Reusable exact engines (engines) | 0 | **11** | 15 |
-| Active proof campaigns (campaigns) | 0 | **18** | 25 |
+| Problems with an exact verifier (of 100) | 3 | **19** | 25 |
+| Computable problems covered (of 19) | 0 | **18** | 19 |
+| Reusable exact engines (engines) | 0 | **12** | 15 |
+| Active proof campaigns (campaigns) | 0 | **20** | 25 |
 | 2026 claims triaged for scope (of 15) | 0 | **15** | 15 |
 | Independently reviewed restricted results (results) | 0 | **0** | 1 |
 | Solved archive entries (entries) | 0 | **0** | — |
@@ -28,13 +28,13 @@ Solved has no target on purpose: it grows only through the promotion gate in [do
 |---|---|---:|---:|---:|---:|
 | Registry & ranking | One canonical, scored, provenance-tracked list of exactly 100 targets. | 3 | 0 | 0 | 1 |
 | Research engine | Evidence-aware readiness, campaigns and a strict promotion gate to Solved. | 2 | 0 | 0 | 1 |
-| Exact probe lab | Every computable problem gets a search plus an independent checker on a reusable engine. | 2 | 3 | 3 | 0 |
+| Exact probe lab | Every computable problem gets a search plus an independent checker on a reusable engine. | 3 | 3 | 2 | 0 |
 | Proof campaigns | Push the highest-ranked targets toward reviewed restricted results. | 3 | 2 | 1 | 0 |
 | Claim audit | Check announced resolutions for exact scope before spending effort on them. | 1 | 0 | 1 | 0 |
 | Trust & reproducibility | Pinned artifacts, proof certificates and CI that reruns everything. | 2 | 0 | 1 | 1 |
 | Site & community | A public dashboard and a contribution path that keeps the bar high. | 2 | 0 | 0 | 1 |
 
-## Shipped (15)
+## Shipped (16)
 
 _Merged on main with evidence in the repository._
 
@@ -59,6 +59,8 @@ _Merged on main with evidence in the repository._
 - [x] **R13 · CI and weekly deep reruns** (Trust & reproducibility) — Every generated file drift-checked on each PR; weekly deep probe and M074 reruns. [Evidence](.github/workflows/validate.yml)
 - [x] **R14 · Public research dashboard** (Site & community) — Ranked search, campaigns, lab, proof queue, Solved ledger and this roadmap, all from verified records. [Evidence](docs/index.html)
 - [x] **R15 · Contribution workflow and evidence templates** (Site & community) — Issue and PR templates that demand exact scope and reproducible evidence. [Evidence](CONTRIBUTING.md)
+- [x] **R30 · Interval-arithmetic zero counts for zeta and L(s, chi_4)** (Exact probe lab) — Rigorous N(T) for zeta up to height 36 and for L(s, chi_4) up to height 17, each matched to Hardy sign changes and replayed at a second truncation. [Evidence](research/LAB_CAMPAIGNS.md)
+  - Problems: M001 Riemann Hypothesis, M002 Generalized Riemann Hypothesis
 
 ## Now (5)
 
@@ -80,13 +82,10 @@ _Being worked on; top of the execution queue._
   - Done when: All Hadamard orders 4k <= 172 constructed except literature-open ones.
   - Problems: M093 Linear MDS code main conjecture, M094 Hadamard matrix conjecture
 
-## Next (6)
+## Next (5)
 
 _Scoped and ready to start once a current item finishes._
 
-- [ ] **R30 · Interval-arithmetic engine** (Exact probe lab) — Rigorous zeta zero counts to small height, then Dirichlet L-functions of small conductor. [Evidence](data/engine_roadmap.json)
-  - Done when: Replayable zero-count certificates; computable coverage 17/19.
-  - Problems: M001 Riemann Hypothesis, M002 Generalized Riemann Hypothesis
 - [ ] **R31 · Group-character engine** (Exact probe lab) — Exact Brauer-character and weight counts for small groups and primes. [Evidence](data/engine_roadmap.json)
   - Done when: Computable coverage 19/19.
   - Problems: M048 Alperin weight conjecture

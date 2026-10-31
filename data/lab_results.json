@@ -2,6 +2,27 @@
   "format": "svyable.lab.v1",
   "levels": {
     "deep": {
+      "dirichlet_l": {
+        "certificate_sha256": "97c916d3b3bdc62997216a76ae387cacfdaefc7a7ba10bc5348e31d3f0a2441b",
+        "engines": [
+          "interval_arithmetic"
+        ],
+        "holds": true,
+        "level": "deep",
+        "params": {
+          "height": 17,
+          "zeros": 4
+        },
+        "probe": "dirichlet_l",
+        "problem_id": "M002",
+        "scope": "Every non-trivial zero of L(s, χ₄) with imaginary part in (0, 17] is simple and lies on the critical line: the argument principle gives N(17) = 4, equal to the number of disjoint intervals where the associated real Z-function changes sign.",
+        "summary": {
+          "character": "chi_4",
+          "height": 17,
+          "truncation": "N=16, M=8, stirling=6",
+          "zeros": 4
+        }
+      },
       "erdos_straus": {
         "certificate_sha256": "60a148c35e2dedbf39a8233554ad50f67de47d69cf5b3bfa24b02f64fe315911",
         "engines": [
@@ -569,6 +590,26 @@
           "census_sha256": "3a4701b2aeb0061d4a18263b1214afef6970890c5f6eb773e985a3a4135b0dba"
         }
       },
+      "riemann": {
+        "certificate_sha256": "431426eb0717174480383187cbd4c1bd327c302ae461baafdbeaca361c26cf8f",
+        "engines": [
+          "interval_arithmetic"
+        ],
+        "holds": true,
+        "level": "deep",
+        "params": {
+          "height": 36,
+          "zeros": 5
+        },
+        "probe": "riemann",
+        "problem_id": "M001",
+        "scope": "Every non-trivial zero of zeta with imaginary part in (0, 36] is simple and lies on the critical line: the argument principle gives N(36) = 5, equal to the number of disjoint intervals where the Hardy Z-function changes sign.",
+        "summary": {
+          "height": 36,
+          "truncation": "N=16, M=8, stirling=6",
+          "zeros": 5
+        }
+      },
       "rota": {
         "certificate_sha256": "11850515563d8ffff2173e9ef65281e58782dfbbbc6052ae93ab2f600563c533",
         "engines": [
@@ -723,6 +764,27 @@
       }
     },
     "smoke": {
+      "dirichlet_l": {
+        "certificate_sha256": "c0331948605f0bba8ddd08f7c38fc3658c198cd9033b2ebf49b487b9c19ce754",
+        "engines": [
+          "interval_arithmetic"
+        ],
+        "holds": true,
+        "level": "smoke",
+        "params": {
+          "height": 11,
+          "zeros": 2
+        },
+        "probe": "dirichlet_l",
+        "problem_id": "M002",
+        "scope": "Every non-trivial zero of L(s, χ₄) with imaginary part in (0, 11] is simple and lies on the critical line: the argument principle gives N(11) = 2, equal to the number of disjoint intervals where the associated real Z-function changes sign.",
+        "summary": {
+          "character": "chi_4",
+          "height": 11,
+          "truncation": "N=16, M=8, stirling=6",
+          "zeros": 2
+        }
+      },
       "erdos_straus": {
         "certificate_sha256": "0076b8bf095e84632fdb686cd77255a4e37b0c0f6e762d2538f0de2f38c6a855",
         "engines": [
@@ -1081,6 +1143,26 @@
             "graphs": 156
           },
           "census_sha256": "2b1be7e121a27d25d8005718fa562c2098ee2b5af018b41d2d03c75575475e47"
+        }
+      },
+      "riemann": {
+        "certificate_sha256": "c33d7a31f28dc53b14a3f111127ace52dd6378a2f6a162287a01bd7f9018ba17",
+        "engines": [
+          "interval_arithmetic"
+        ],
+        "holds": true,
+        "level": "smoke",
+        "params": {
+          "height": 23,
+          "zeros": 2
+        },
+        "probe": "riemann",
+        "problem_id": "M001",
+        "scope": "Every non-trivial zero of zeta with imaginary part in (0, 23] is simple and lies on the critical line: the argument principle gives N(23) = 2, equal to the number of disjoint intervals where the Hardy Z-function changes sign.",
+        "summary": {
+          "height": 23,
+          "truncation": "N=16, M=8, stirling=6",
+          "zeros": 2
         }
       },
       "rota": {

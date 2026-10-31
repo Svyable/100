@@ -42,64 +42,64 @@ counts as a new theorem, and unreviewed claims receive no bonus.
 | 30 | M098 | Vaught conjecture | 80 | +0 | 80 | Specify a falsifiable restricted lemma and audit prior art |
 | 31 | M099 | Decidability of real exponential field | 80 | +0 | 80 | Specify a falsifiable restricted lemma and audit prior art |
 | 32 | M100 | Falconer distance-set conjecture | 80 | +0 | 80 | Specify a falsifiable restricted lemma and audit prior art |
-| 33 | M006 | Strong Goldbach conjecture | 72 | +7 | 79 | Use the least-partition certificates to test conjectured growth bounds for the least prime p(n), then attempt a sieve-theoretic restricted statement with explicit constants. |
-| 34 | M043 | Kaplansky idempotent conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 35 | M044 | Kaplansky direct-finiteness conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 36 | M045 | Finitistic dimension conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 37 | M046 | Auslander–Reiten conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 38 | M047 | Broué abelian defect conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 39 | M048 | Alperin weight conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 40 | M049 | Soficity conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 41 | M050 | Cherlin–Zilber algebraicity conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 42 | M061 | 2D self-avoiding walk exponents | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 43 | M062 | Critical percolation no-infinite-cluster conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 44 | M063 | Planar first-passage KPZ exponent | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 45 | M064 | FPP limit-shape strict convexity | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 46 | M065 | Mandelbrot local-connectivity conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 47 | M066 | Birkhoff billiard conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 48 | M067 | Sarnak Möbius disjointness conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 49 | M068 | Furstenberg times-two times-three conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 50 | M069 | Standard map positive metric entropy | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 51 | M070 | 3D Ising conformal scaling conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 52 | M002 | Generalized Riemann Hypothesis | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 53 | M003 | Birch–Swinnerton-Dyer conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 54 | M004 | abc conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 55 | M005 | Twin prime conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 56 | M007 | Bateman–Horn conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 57 | M008 | Elliott–Halberstam conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 58 | M009 | Montgomery pair-correlation conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 59 | M010 | Generalized Ramanujan conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 60 | M011 | Schanuel's conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 61 | M012 | Artin primitive-root conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 62 | M013 | Leopoldt's conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 63 | M014 | Hilbert's tenth problem over Q | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 64 | M015 | Inverse Galois problem | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 65 | M016 | Fontaine–Mazur conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 66 | M017 | Global Langlands functoriality | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 67 | M018 | Infinitely many primes n²+1 | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 68 | M020 | Lehmer's Mahler-measure conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 69 | M021 | Hodge conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 70 | M022 | Generalized Hodge conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 71 | M023 | Tate conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 72 | M024 | Lefschetz standard conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 73 | M025 | Grothendieck section conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 74 | M026 | Bombieri–Lang conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 75 | M027 | Vojta main conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 76 | M028 | Zilber–Pink conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 77 | M029 | Mumford–Tate conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 78 | M030 | Abundance conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 79 | M081 | P versus NP | 71 | +0 | 71 | Specify a falsifiable restricted lemma and audit prior art |
-| 80 | M051 | 3D Euler regularity | 69 | +0 | 69 | Specify a falsifiable restricted lemma and audit prior art |
-| 81 | M052 | Inviscid SQG regularity | 69 | +0 | 69 | Specify a falsifiable restricted lemma and audit prior art |
-| 82 | M053 | Weak cosmic censorship | 69 | +0 | 69 | Specify a falsifiable restricted lemma and audit prior art |
-| 83 | M054 | Nonlinear Kerr stability | 69 | +0 | 69 | Specify a falsifiable restricted lemma and audit prior art |
-| 84 | M055 | Higher-dimensional Kakeya conjecture | 69 | +0 | 69 | Specify a falsifiable restricted lemma and audit prior art |
-| 85 | M056 | Fourier restriction conjecture | 69 | +0 | 69 | Specify a falsifiable restricted lemma and audit prior art |
-| 86 | M057 | Bochner–Riesz conjecture | 69 | +0 | 69 | Specify a falsifiable restricted lemma and audit prior art |
-| 87 | M058 | Kannan–Lovász–Simonovits conjecture | 69 | +0 | 69 | Specify a falsifiable restricted lemma and audit prior art |
-| 88 | M059 | Hilbert invariant subspace problem | 69 | +0 | 69 | Specify a falsifiable restricted lemma and audit prior art |
-| 89 | M060 | Morrey 2x2 conjecture | 69 | +0 | 69 | Specify a falsifiable restricted lemma and audit prior art |
-| 90 | M001 | Riemann Hypothesis | 66 | +0 | 66 | Specify a falsifiable restricted lemma and audit prior art |
+| 33 | M002 | Generalized Riemann Hypothesis | 72 | +7 | 79 | Reuse the zero-count certificate for the non-principal character modulo 3, including an independent replay of its Gauss sum. |
+| 34 | M006 | Strong Goldbach conjecture | 72 | +7 | 79 | Use the least-partition certificates to test conjectured growth bounds for the least prime p(n), then attempt a sieve-theoretic restricted statement with explicit constants. |
+| 35 | M043 | Kaplansky idempotent conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 36 | M044 | Kaplansky direct-finiteness conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 37 | M045 | Finitistic dimension conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 38 | M046 | Auslander–Reiten conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 39 | M047 | Broué abelian defect conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 40 | M048 | Alperin weight conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 41 | M049 | Soficity conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 42 | M050 | Cherlin–Zilber algebraicity conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 43 | M061 | 2D self-avoiding walk exponents | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 44 | M062 | Critical percolation no-infinite-cluster conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 45 | M063 | Planar first-passage KPZ exponent | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 46 | M064 | FPP limit-shape strict convexity | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 47 | M065 | Mandelbrot local-connectivity conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 48 | M066 | Birkhoff billiard conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 49 | M067 | Sarnak Möbius disjointness conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 50 | M068 | Furstenberg times-two times-three conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 51 | M069 | Standard map positive metric entropy | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 52 | M070 | 3D Ising conformal scaling conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 53 | M001 | Riemann Hypothesis | 66 | +7 | 73 | Raise the certified height by tightening the contour enclosures, then compare the isolating intervals against a published zero table entry by entry. |
+| 54 | M003 | Birch–Swinnerton-Dyer conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 55 | M004 | abc conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 56 | M005 | Twin prime conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 57 | M007 | Bateman–Horn conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 58 | M008 | Elliott–Halberstam conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 59 | M009 | Montgomery pair-correlation conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 60 | M010 | Generalized Ramanujan conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 61 | M011 | Schanuel's conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 62 | M012 | Artin primitive-root conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 63 | M013 | Leopoldt's conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 64 | M014 | Hilbert's tenth problem over Q | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 65 | M015 | Inverse Galois problem | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 66 | M016 | Fontaine–Mazur conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 67 | M017 | Global Langlands functoriality | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 68 | M018 | Infinitely many primes n²+1 | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 69 | M020 | Lehmer's Mahler-measure conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 70 | M021 | Hodge conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 71 | M022 | Generalized Hodge conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 72 | M023 | Tate conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 73 | M024 | Lefschetz standard conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 74 | M025 | Grothendieck section conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 75 | M026 | Bombieri–Lang conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 76 | M027 | Vojta main conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 77 | M028 | Zilber–Pink conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 78 | M029 | Mumford–Tate conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 79 | M030 | Abundance conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 80 | M081 | P versus NP | 71 | +0 | 71 | Specify a falsifiable restricted lemma and audit prior art |
+| 81 | M051 | 3D Euler regularity | 69 | +0 | 69 | Specify a falsifiable restricted lemma and audit prior art |
+| 82 | M052 | Inviscid SQG regularity | 69 | +0 | 69 | Specify a falsifiable restricted lemma and audit prior art |
+| 83 | M053 | Weak cosmic censorship | 69 | +0 | 69 | Specify a falsifiable restricted lemma and audit prior art |
+| 84 | M054 | Nonlinear Kerr stability | 69 | +0 | 69 | Specify a falsifiable restricted lemma and audit prior art |
+| 85 | M055 | Higher-dimensional Kakeya conjecture | 69 | +0 | 69 | Specify a falsifiable restricted lemma and audit prior art |
+| 86 | M056 | Fourier restriction conjecture | 69 | +0 | 69 | Specify a falsifiable restricted lemma and audit prior art |
+| 87 | M057 | Bochner–Riesz conjecture | 69 | +0 | 69 | Specify a falsifiable restricted lemma and audit prior art |
+| 88 | M058 | Kannan–Lovász–Simonovits conjecture | 69 | +0 | 69 | Specify a falsifiable restricted lemma and audit prior art |
+| 89 | M059 | Hilbert invariant subspace problem | 69 | +0 | 69 | Specify a falsifiable restricted lemma and audit prior art |
+| 90 | M060 | Morrey 2x2 conjecture | 69 | +0 | 69 | Specify a falsifiable restricted lemma and audit prior art |
 | 91 | M031 | Smooth 4D Poincaré conjecture | 63 | +0 | 63 | Specify a falsifiable restricted lemma and audit prior art |
 | 92 | M032 | Smooth 4D Schoenflies conjecture | 63 | +0 | 63 | Specify a falsifiable restricted lemma and audit prior art |
 | 93 | M033 | 11/8 conjecture | 63 | +0 | 63 | Specify a falsifiable restricted lemma and audit prior art |
@@ -317,6 +317,18 @@ counts as a new theorem, and unreviewed claims receive no bonus.
 
 **Stage:** `benchmark_reproduced` · [Dossier](research/M095_RAMSEY.md)
 
+### M002 — Generalized Riemann Hypothesis
+
+**Proof obligation:** Certify one further primitive character, of conductor 3 or 5, to a height where the root number and the gamma factor are checked by the same argument principle.
+
+**Falsifier:** A primitive character and a height T at which the certified argument count exceeds the number of critical-line sign changes.
+
+**Next experiment:** Reuse the zero-count certificate for the non-principal character modulo 3, including an independent replay of its Gauss sum.
+
+**Current blocker:** One character at height 17 does not constrain the other characters. Conductor 3 is the smallest untouched case.
+
+**Stage:** `benchmark_reproduced` · [Dossier](research/LAB_CAMPAIGNS.md)
+
 ### M006 — Strong Goldbach conjecture
 
 **Proof obligation:** State a restricted, checkable lemma (for example an explicit bound on the least Goldbach prime in a named residue class or range) that is not already implied by the 4*10^18 verification or by the ternary Goldbach theorem.
@@ -326,6 +338,18 @@ counts as a new theorem, and unreviewed claims receive no bonus.
 **Next experiment:** Use the least-partition certificates to test conjectured growth bounds for the least prime p(n), then attempt a sieve-theoretic restricted statement with explicit constants.
 
 **Current blocker:** Range extension cannot compete with the published 4*10^18 verification; real progress needs a new restricted theorem.
+
+**Stage:** `benchmark_reproduced` · [Dossier](research/LAB_CAMPAIGNS.md)
+
+### M001 — Riemann Hypothesis
+
+**Proof obligation:** A finite height is already classical. The next obligation is a zero-free statement with an explicit constant that does not follow from plugging this height into a known explicit formula, or a machine-checked count past the range a hand calculation can audit.
+
+**Falsifier:** A height T at which the certified argument count N(T) strictly exceeds the number of disjoint intervals where Z changes sign.
+
+**Next experiment:** Raise the certified height by tightening the contour enclosures, then compare the isolating intervals against a published zero table entry by entry.
+
+**Current blocker:** T = 36 is far below Platt–Trudgian (at least 3*10^12). Extending the height needs a faster contour, not a new idea about the hypothesis.
 
 **Stage:** `benchmark_reproduced` · [Dossier](research/LAB_CAMPAIGNS.md)
 

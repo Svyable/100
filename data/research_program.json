@@ -3,6 +3,30 @@
   "as_of": "2026-10-31",
   "campaigns": [
     {
+      "problem_id": "M001",
+      "stage": "benchmark_reproduced",
+      "method": "Interval-arithmetic argument principle and Hardy Z sign changes",
+      "hypothesis": "Every non-trivial zero of the Riemann zeta function has real part 1/2.",
+      "first_proof_obligation": "A finite height is already classical. The next obligation is a zero-free statement with an explicit constant that does not follow from plugging this height into a known explicit formula, or a machine-checked count past the range a hand calculation can audit.",
+      "next_experiment": "Raise the certified height by tightening the contour enclosures, then compare the isolating intervals against a published zero table entry by entry.",
+      "falsification": "A height T at which the certified argument count N(T) strictly exceeds the number of disjoint intervals where Z changes sign.",
+      "blocker": "T = 36 is far below Platt–Trudgian (at least 3*10^12). Extending the height needs a faster contour, not a new idea about the hypothesis.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe riemann"
+    },
+    {
+      "problem_id": "M002",
+      "stage": "benchmark_reproduced",
+      "method": "The zeta interval engine applied to L(s, chi_4)",
+      "hypothesis": "Every non-trivial zero of every Dirichlet L-function has real part 1/2.",
+      "first_proof_obligation": "Certify one further primitive character, of conductor 3 or 5, to a height where the root number and the gamma factor are checked by the same argument principle.",
+      "next_experiment": "Reuse the zero-count certificate for the non-principal character modulo 3, including an independent replay of its Gauss sum.",
+      "falsification": "A primitive character and a height T at which the certified argument count exceeds the number of critical-line sign changes.",
+      "blocker": "One character at height 17 does not constrain the other characters. Conductor 3 is the smallest untouched case.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe dirichlet_l"
+    },
+    {
       "problem_id": "M006",
       "stage": "benchmark_reproduced",
       "method": "Verified-range certificates and least-partition statistics",
@@ -419,6 +443,28 @@
       "description": "240 maps have constant nonzero Jacobian (matching brute force); each has an explicit inverse of degree <= 2 checked by composition in both orders, and completeness is re-derived from a separate evaluation-based linear system. The deep run covers all 387,420,489 maps of degree <= 3 (816 with constant Jacobian), every one inverted.",
       "verifier": "python3 scripts/lab.py --probe jacobian",
       "artifact": "scripts/probes/jacobian.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-ZETA-001",
+      "problem_id": "M001",
+      "classification": "reproduced_known",
+      "title": "The first two non-trivial zeta zeros are simple and on the critical line",
+      "scope": "N(23) = 2, a classical height; not a proof of the Riemann hypothesis",
+      "description": "Argument-principle count N(T) matched to Hardy Z sign changes on (14, 15) and (21, 22). The checker repeats the count with a different Euler-Maclaurin and Stirling truncation. The deep run reaches N(36) = 5.",
+      "verifier": "python3 scripts/lab.py --probe riemann",
+      "artifact": "scripts/probes/riemann.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-LCHI4-001",
+      "problem_id": "M002",
+      "classification": "reproduced_known",
+      "title": "The first two non-trivial zeros of L(s, chi_4) are simple and on the critical line",
+      "scope": "One Dirichlet character, N(11) = 2; not the generalized Riemann hypothesis",
+      "description": "Argument count for L(s, chi_4) matched to sign changes of the real form on (6, 7) and (10, 11), replayed at a second truncation. The deep run reaches N(17) = 4.",
+      "verifier": "python3 scripts/lab.py --probe dirichlet_l",
+      "artifact": "scripts/probes/dirichlet_l.py",
       "verified_on": "2026-10-31"
     }
   ]
