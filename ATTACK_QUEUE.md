@@ -16,7 +16,7 @@ counts as a new theorem, and unreviewed claims receive no bonus.
 | 4 | M078 | Graph reconstruction conjecture | 91 | +7 | 98 | Tabulate which deck invariants already separate every deck in the census, as a data-driven route to a reconstruction lemma for a named family. |
 | 5 | M079 | One-third–two-thirds conjecture | 91 | +7 | 98 | Tabulate the best balance of every poset in the census, identify extremal families near 1/3 and test structural invariants that predict a balanced pair. |
 | 6 | M093 | Linear MDS code main conjecture | 91 | +7 | 98 | Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9. |
-| 7 | M094 | Hadamard matrix conjecture | 91 | +7 | 98 | Implement a Williamson-type search with a circulant-block certificate format and replay order 92 exactly. |
+| 7 | M094 | Hadamard matrix conjecture | 91 | +7 | 98 | Add multiplier-group symmetry reduction to the Williamson meet-in-the-middle search so that n = 29 (order 116) becomes feasible, then implement Goethals-Seidel arrays for orders 156 and 172. |
 | 8 | M041 | Plane Jacobian conjecture | 89 | +7 | 96 | Enlarge the class to degree 4 with coefficients in {-1,0,1} using kernel enumeration per monomial support, and record the distribution of inverse degrees and of tame decompositions. |
 | 9 | M088 | Deterministic polynomial identity testing | 94 | +2 | 96 | Implement small exact arithmetic circuits and a falsifier that searches for circuits escaping a proposed hitting set. |
 | 10 | M071 | Hadwiger conjecture | 85 | +7 | 92 | Extend the census engine to 8-9 vertices with a faster canonical labeller, then target contraction-critical 7-chromatic graphs where a K7 minor model must be certified. |
@@ -187,13 +187,13 @@ counts as a new theorem, and unreviewed claims receive no bonus.
 
 ### M094 — Hadamard matrix conjecture
 
-**Proof obligation:** Close the engine gaps (92, 116, 156, 172, ...) with Williamson and Goethals-Seidel constructions, then document the first order no implemented method reaches.
+**Proof obligation:** Close the remaining engine gaps (116, 156, 172, ...) with symmetry-reduced Williamson and Goethals-Seidel constructions, then document the first order no implemented method reaches.
 
 **Falsifier:** A proof that no Hadamard matrix of some order 4k exists; a finite search failure is not sufficient.
 
-**Next experiment:** Implement a Williamson-type search with a circulant-block certificate format and replay order 92 exactly.
+**Next experiment:** Add multiplier-group symmetry reduction to the Williamson meet-in-the-middle search so that n = 29 (order 116) becomes feasible, then implement Goethals-Seidel arrays for orders 156 and 172.
 
-**Current blocker:** Order 668 is the smallest open case and needs constructions beyond the current engines.
+**Current blocker:** Plain meet-in-the-middle over symmetric circulants is practical up to n = 23 in pure Python; n = 29 needs symmetry reduction, and order 668 remains the smallest open case.
 
 **Stage:** `benchmark_reproduced` · [Dossier](research/LAB_CAMPAIGNS.md)
 

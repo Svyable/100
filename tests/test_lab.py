@@ -233,6 +233,18 @@ class TamperTests(unittest.TestCase):
         del bad["certificate"]["matrices"]["20"]
         self.assertRejects(m, params, bad)
 
+    def test_williamson_quadruples(self):
+        had = probes.load("hadamard")
+        for n in (3, 5, 7, 9):
+            rows = had.williamson(n)
+            self.assertIsNotNone(rows, n)
+            size = 4 * n
+            self.assertTrue(all(bin(rows[i] ^ rows[j]).count("1") == size // 2
+                                for i in range(size) for j in range(i + 1, size)), n)
+        A, B, C, D = had.williamson_quadruple(7)
+        for t in range(1, 7):
+            self.assertEqual(sum(sum(X[i] * X[(i + t) % 7] for i in range(7)) for X in (A, B, C, D)), 0)
+
     def test_ramsey_witnesses(self):
         params = {"witnesses": ["paley5", "circ8_1_4", "paley17"]}
         m, r = run("ramsey_witnesses", params)

@@ -1,8 +1,10 @@
 """M094 - Hadamard conjecture: exact Hadamard matrices for many orders 4k <= N.
 
 Constructions (search side): Sylvester doubling, Paley I (q = 3 mod 4) and
-Paley II (q = 1 mod 4) over GF(q) for prime powers q, closed under Kronecker
-products. Check side: every row pair is verified orthogonal, i.e. H H^T = nI,
+Paley II (q = 1 mod 4) over GF(q) for prime powers q, Williamson quadruples of
+symmetric circulants (meet-in-the-middle on periodic autocorrelations) for
+remaining gap orders 4n with odd n <= williamson_max, all closed under
+Kronecker products. Check side: every row pair is verified orthogonal, i.e. H H^T = nI,
 with popcount arithmetic on +-1 bit rows. Orders the engine cannot reach are
 reported as *engine gaps*, which the literature fills by other constructions.
 """
@@ -17,13 +19,14 @@ PROBE = {
     "frontier": ("Known: constructions exist for every order 4k < 668; 668 is the smallest "
                  "order with no known Hadamard matrix (after order 428, Kharaghani & "
                  "Tayfeh-Rezaie 2005). Engine gaps below are NOT open cases."),
-    "levels": {"smoke": {"limit": 128}, "deep": {"limit": 400}},
+    "levels": {"smoke": {"limit": 128, "williamson_max": 23},
+               "deep": {"limit": 400, "williamson_max": 23}},
 }
 
 
 def scope(params):
     limit = params["limit"]
-    built = sum(1 for n in recipes(limit) if n % 4 == 0)
+    built = sum(1 for n in recipes(limit, params.get("williamson_max", 0)) if n % 4 == 0)
     return (f"Explicit (+1/-1) matrices with H H^T = nI for {built} of the {limit // 4} orders "
             f"4k <= {limit} (the rest are engine gaps, not open cases).")
 
@@ -83,6 +86,56 @@ def _pack(M):
     return [sum(1 << j for j, x in enumerate(row) if x == -1) for row in M]
 
 
+def symmetric_circulants(n):
+    """All symmetric circulant +-1 first rows of odd order n with leading entry 1, by row sum."""
+    half = (n - 1) // 2
+    by_sum = {}
+    for bits in range(1 << half):
+        row = [1] * n
+        for j in range(1, half + 1):
+            if bits >> (j - 1) & 1:
+                row[j] = row[n - j] = -1
+        paf = tuple(sum(row[i] * row[(i + t) % n] for i in range(n)) for t in range(1, half + 1))
+        by_sum.setdefault(sum(row), []).append((row, paf))
+    return by_sum
+
+
+def williamson_quadruple(n):
+    """First rows of symmetric circulants A, B, C, D with A^2 + B^2 + C^2 + D^2 = 4n I, or None."""
+    by_sum = symmetric_circulants(n)
+    sums = sorted(by_sum, key=lambda r: (abs(r), r))
+    for ra in sums:
+        for rb in sums:
+            for rc in sums:
+                rest = 4 * n - ra * ra - rb * rb - rc * rc
+                rd = next((r for r in sums if r * r == rest), None)
+                if rd is None or not (abs(ra), abs(rb)) <= (abs(rc), abs(rd)):
+                    continue
+                table = {}
+                for A, pa in by_sum[ra]:
+                    for B, pb in by_sum[rb]:
+                        table.setdefault(tuple(x + y for x, y in zip(pa, pb)), (A, B))
+                for C, pc in by_sum[rc]:
+                    for D, pd in by_sum[rd]:
+                        hit = table.get(tuple(-(x + y) for x, y in zip(pc, pd)))
+                        if hit:
+                            return hit[0], hit[1], C, D
+    return None
+
+
+def williamson(n):
+    """Hadamard matrix of order 4n from the Williamson array, or None."""
+    quad = williamson_quadruple(n)
+    if quad is None:
+        return None
+    circ = [[[row[(j - i) % n] for j in range(n)] for i in range(n)] for row in quad]
+    A, B, C, D = circ
+    neg = lambda X: [[-v for v in r] for r in X]
+    blocks = [[A, B, C, D], [neg(B), A, neg(D), C], [neg(C), D, A, neg(B)], [neg(D), neg(C), B, A]]
+    M = [sum((blk[i] for blk in brow), []) for brow in blocks for i in range(n)]
+    return _pack(M)
+
+
 def kron(A, B):
     nb, full = len(B), (1 << len(B)) - 1
     rows = []
@@ -95,7 +148,7 @@ def kron(A, B):
     return rows
 
 
-def recipes(limit):
+def recipes(limit, williamson_max=0):
     """Map order -> recipe tuple, preferring the simplest construction."""
     base = {1: ("sylvester", 0), 2: ("sylvester", 1)}
     for q in range(3, limit):
@@ -110,16 +163,31 @@ def recipes(limit):
     while 1 << k <= limit:
         base.setdefault(1 << k, ("sylvester", k))
         k += 1
-    found = dict(base)
-    changed = True
-    while changed:
-        changed = False
-        for a in sorted(found):
-            for b in sorted(found):
-                if 1 < a <= b and a * b <= limit and a * b not in found:
-                    found[a * b] = ("kron", a, b)
-                    changed = True
+    def close(found):
+        changed = True
+        while changed:
+            changed = False
+            for a in sorted(found):
+                for b in sorted(found):
+                    if 1 < a <= b and a * b <= limit and a * b not in found:
+                        found[a * b] = ("kron", a, b)
+                        changed = True
+        return found
+    found = close(dict(base))
+    for n in range(3, williamson_max + 1, 2):  # Williamson only where the cheaper methods leave a gap
+        if 4 * n <= limit and 4 * n not in found and _williamson_cached(n) is not None:
+            found[4 * n] = ("williamson", n)
+            found = close(found)
     return found
+
+
+_WILLIAMSON = {}
+
+
+def _williamson_cached(n):
+    if n not in _WILLIAMSON:
+        _WILLIAMSON[n] = williamson(n)
+    return _WILLIAMSON[n]
 
 
 def build(order, plan, cache):
@@ -132,6 +200,8 @@ def build(order, plan, cache):
         rows = paley1(kind[1])
     elif kind[0] == "paley2":
         rows = paley2(kind[1])
+    elif kind[0] == "williamson":
+        rows = _williamson_cached(kind[1])
     else:
         rows = kron(build(kind[1], plan, cache), build(kind[2], plan, cache))
     cache[order] = rows
@@ -140,7 +210,7 @@ def build(order, plan, cache):
 
 def search(params):
     limit = params["limit"]
-    plan = recipes(limit)
+    plan = recipes(limit, params.get("williamson_max", 0))
     cache, matrices = {}, {}
     for order in sorted(plan):
         if order % 4 == 0:

@@ -96,8 +96,12 @@ for odd q, as theory predicts. For q ≤ 4 it brute-forces all subsets with no s
 
 ### M094 — Hadamard (`hadamard`, engine `finite_fields`)
 Builds matrices with Sylvester, Paley I/II over every prime-power field, and Kronecker closure.
-Each one is checked as H Hᵀ = nI via popcounts. Orders the engine cannot reach, such as 92 and
-116, are reported as **engine gaps**; they are not open cases. **Next:** Williamson constructions.
+Orders those miss get Williamson quadruples: four symmetric circulant ±1 matrices with
+A² + B² + C² + D² = 4nI, found by meet-in-the-middle on periodic autocorrelations and assembled
+with the Williamson array. Order 92 (n = 23, row sums 3, 3, −5, 7) is the historic 1962 case. Each
+matrix is checked as H Hᵀ = nI via popcounts, without trusting any construction. The remaining
+orders, such as 116 and 156, are **engine gaps**, not open cases.
+**Next:** symmetry-reduced Williamson search for n = 29, then Goethals–Seidel arrays.
 
 ### M095 — Ramsey witnesses (`ramsey_witnesses`, engines `finite_fields`, `clique_search`)
 Certifies classical lower bounds with Paley and circulant colourings. The deep run checks
