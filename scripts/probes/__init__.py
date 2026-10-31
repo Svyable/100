@@ -68,6 +68,11 @@ ENGINES = {
         "modules": ["scripts/probes/intervals.py", "scripts/probes/zeta.py"],
         "use": "Rigorous zero counts on the critical line via the argument principle.",
     },
+    "group_characters": {
+        "name": "Exact conjugacy, radical p-subgroups and character-degree counts",
+        "modules": ["scripts/probes/groups.py"],
+        "use": "Alperin weight counts, Brauer-character enumerations and small modular checks.",
+    },
 }
 
 # probe id -> module name (ordered by problem id)
@@ -89,6 +94,7 @@ PROBES = {
     "ramsey_witnesses": "ramsey_witness",
     "projective_planes": "planes",
     "held_karp": "held_karp",
+    "alperin": "alperin",
 }
 
 

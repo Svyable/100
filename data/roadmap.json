@@ -377,11 +377,10 @@
     {
       "id": "R31",
       "track": "lab",
-      "horizon": "next",
+      "horizon": "shipped",
       "title": "Group-character engine",
-      "outcome": "Exact Brauer-character and weight counts for small groups and primes.",
-      "exit": "Computable coverage 19/19.",
-      "evidence": "data/engine_roadmap.json",
+      "outcome": "Exact conjugacy, radical p-subgroups and character-degree counts; Alperin weight probe matches p-regular classes on named groups through A5.",
+      "evidence": "scripts/probes/alperin.py",
       "problems": [
         "M048"
       ]

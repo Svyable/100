@@ -259,6 +259,18 @@
       "blocker": "One character at height 17 does not constrain the other characters. Conductor 3 is the smallest untouched case.",
       "dossier": "research/LAB_CAMPAIGNS.md",
       "verifier": "python3 scripts/lab.py --probe dirichlet_l"
+    },
+    {
+      "problem_id": "M048",
+      "stage": "benchmark_reproduced",
+      "method": "Exact Alperin weight counts via radical p-subgroups and character degrees",
+      "hypothesis": "For every finite group G and every prime p, the number of conjugacy classes of Alperin p-weights equals the number of simple modules of FG over an algebraically closed field of characteristic p.",
+      "first_proof_obligation": "State a restricted family of blocks (for example a named defect-group isomorphism type outside the order-100 census) and prove or refute the weight count for that family.",
+      "next_experiment": "Do not enlarge the named catalog inside order 100: that range is already covered by the 2007 computational verification. State a restricted family (for example blocks with a named defect-group isomorphism type) and a lemma outside that census.",
+      "falsification": "A finite group G and prime p for which the independently recomputed weight count differs from the number of p-regular conjugacy classes.",
+      "blocker": "Every group of order at most 100 is already covered by published computational verification; a larger named catalog inside that bound is not a theorem.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe alperin"
     }
   ],
   "milestones": [
@@ -535,6 +547,17 @@
       "description": "Argument count for L(s, chi_4) matched to sign changes of the real form on (6, 7) and (10, 11), replayed at a second truncation. The deep run reaches N(17) = 4.",
       "verifier": "python3 scripts/lab.py --probe dirichlet_l",
       "artifact": "scripts/probes/dirichlet_l.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-ALPERIN-001",
+      "problem_id": "M048",
+      "classification": "reproduced_known",
+      "title": "Alperin weight counts match p-regular class counts on named groups through A5",
+      "scope": "Finite named catalog only; every case sits inside the published order-100 verification",
+      "description": "For each listed group and each prime dividing its order, the number of radical-subgroup defect-zero weights equals the number of p-regular conjugacy classes. Smoke covers nine groups through D10; deep adds C5, C6, D12, S4 and A5. The checker rebuilds every count independently.",
+      "verifier": "python3 scripts/lab.py --probe alperin",
+      "artifact": "scripts/probes/alperin.py",
       "verified_on": "2026-10-31"
     }
   ]

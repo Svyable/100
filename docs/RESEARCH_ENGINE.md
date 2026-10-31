@@ -83,6 +83,8 @@ a theorem. Mathematical scope review is different from code correctness.
 | `exact_lp` | `exact_lp.py` | M097 |
 | `graph_homomorphisms` | `homomorphisms.py` | M073 |
 | `polynomial_algebra` | `polynomials.py` | M041 |
+| `interval_arithmetic` | `intervals.py`, `zeta.py` | M001, M002 |
+| `group_characters` | `groups.py` | M048 |
 
 A probe is a short module containing `PROBE` metadata, `search(params)`, an **independent**
 `check(params, result)`, and `scope(params)`. The checker uses a different code path from the

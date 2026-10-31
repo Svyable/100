@@ -16,13 +16,13 @@
   },
   "program_as_of": "2026-10-31",
   "summary": {
-    "campaigns": 20,
-    "reproduced_known": 25,
+    "campaigns": 21,
+    "reproduced_known": 26,
     "restricted_verified": 0,
     "fully_solved": 0,
-    "problems_with_exact_verifier": 19,
-    "exact_probes": 17,
-    "engines": 12
+    "problems_with_exact_verifier": 20,
+    "exact_probes": 18,
+    "engines": 13
   },
   "execution_scoring": {
     "brief": 2,
@@ -175,7 +175,7 @@
       "execution_rank": 15,
       "execution_score": 91,
       "readiness": 0,
-      "dispatch_rank": 22,
+      "dispatch_rank": 21,
       "dispatch_score": 91,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -330,7 +330,7 @@
       "execution_rank": 8,
       "execution_score": 96,
       "readiness": 7,
-      "dispatch_rank": 99,
+      "dispatch_rank": 98,
       "dispatch_score": 60,
       "action": "stop_range",
       "action_label": "Stop: range is dominated",
@@ -361,7 +361,7 @@
       "execution_rank": 18,
       "execution_score": 89,
       "readiness": 0,
-      "dispatch_rank": 24,
+      "dispatch_rank": 23,
       "dispatch_score": 89,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -423,7 +423,7 @@
       "execution_rank": 20,
       "execution_score": 85,
       "readiness": 0,
-      "dispatch_rank": 27,
+      "dispatch_rank": 26,
       "dispatch_score": 85,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -485,7 +485,7 @@
       "execution_rank": 21,
       "execution_score": 85,
       "readiness": 0,
-      "dispatch_rank": 28,
+      "dispatch_rank": 27,
       "dispatch_score": 85,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -609,7 +609,7 @@
       "execution_rank": 22,
       "execution_score": 83,
       "readiness": 0,
-      "dispatch_rank": 29,
+      "dispatch_rank": 28,
       "dispatch_score": 83,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -640,7 +640,7 @@
       "execution_rank": 23,
       "execution_score": 83,
       "readiness": 0,
-      "dispatch_rank": 30,
+      "dispatch_rank": 29,
       "dispatch_score": 83,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -702,7 +702,7 @@
       "execution_rank": 24,
       "execution_score": 83,
       "readiness": 0,
-      "dispatch_rank": 23,
+      "dispatch_rank": 22,
       "dispatch_score": 91,
       "action": "scope_audit",
       "action_label": "Audit claim scope",
@@ -733,7 +733,7 @@
       "execution_rank": 25,
       "execution_score": 83,
       "readiness": 0,
-      "dispatch_rank": 31,
+      "dispatch_rank": 30,
       "dispatch_score": 83,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -764,7 +764,7 @@
       "execution_rank": 26,
       "execution_score": 83,
       "readiness": 0,
-      "dispatch_rank": 32,
+      "dispatch_rank": 31,
       "dispatch_score": 83,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -795,7 +795,7 @@
       "execution_rank": 27,
       "execution_score": 83,
       "readiness": 0,
-      "dispatch_rank": 33,
+      "dispatch_rank": 32,
       "dispatch_score": 83,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -826,7 +826,7 @@
       "execution_rank": 28,
       "execution_score": 83,
       "readiness": 0,
-      "dispatch_rank": 34,
+      "dispatch_rank": 33,
       "dispatch_score": 83,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -916,10 +916,10 @@
       "source_url": "https://www.claymath.org/millennium-problems/",
       "rank": 29,
       "score": 80,
-      "execution_rank": 29,
+      "execution_rank": 30,
       "execution_score": 80,
       "readiness": 0,
-      "dispatch_rank": 37,
+      "dispatch_rank": 36,
       "dispatch_score": 80,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -947,7 +947,7 @@
       "source_url": null,
       "rank": 30,
       "score": 80,
-      "execution_rank": 30,
+      "execution_rank": 31,
       "execution_score": 80,
       "readiness": 0,
       "dispatch_rank": 18,
@@ -978,10 +978,10 @@
       "source_url": null,
       "rank": 31,
       "score": 80,
-      "execution_rank": 31,
+      "execution_rank": 32,
       "execution_score": 80,
       "readiness": 0,
-      "dispatch_rank": 38,
+      "dispatch_rank": 37,
       "dispatch_score": 80,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -1009,10 +1009,10 @@
       "source_url": null,
       "rank": 32,
       "score": 80,
-      "execution_rank": 32,
+      "execution_rank": 33,
       "execution_score": 80,
       "readiness": 0,
-      "dispatch_rank": 25,
+      "dispatch_rank": 24,
       "dispatch_score": 88,
       "action": "scope_audit",
       "action_label": "Audit claim scope",
@@ -1040,10 +1040,10 @@
       "source_url": null,
       "rank": 33,
       "score": 74,
-      "execution_rank": 35,
+      "execution_rank": 36,
       "execution_score": 74,
       "readiness": 0,
-      "dispatch_rank": 43,
+      "dispatch_rank": 42,
       "dispatch_score": 74,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -1071,7 +1071,7 @@
       "source_url": null,
       "rank": 34,
       "score": 74,
-      "execution_rank": 36,
+      "execution_rank": 37,
       "execution_score": 74,
       "readiness": 0,
       "dispatch_rank": 3,
@@ -1102,10 +1102,10 @@
       "source_url": null,
       "rank": 35,
       "score": 74,
-      "execution_rank": 37,
+      "execution_rank": 38,
       "execution_score": 74,
       "readiness": 0,
-      "dispatch_rank": 44,
+      "dispatch_rank": 43,
       "dispatch_score": 74,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -1133,10 +1133,10 @@
       "source_url": null,
       "rank": 36,
       "score": 74,
-      "execution_rank": 38,
+      "execution_rank": 39,
       "execution_score": 74,
       "readiness": 0,
-      "dispatch_rank": 45,
+      "dispatch_rank": 44,
       "dispatch_score": 74,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -1164,10 +1164,10 @@
       "source_url": null,
       "rank": 37,
       "score": 74,
-      "execution_rank": 39,
+      "execution_rank": 40,
       "execution_score": 74,
       "readiness": 0,
-      "dispatch_rank": 46,
+      "dispatch_rank": 45,
       "dispatch_score": 74,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -1195,20 +1195,20 @@
       "source_url": null,
       "rank": 38,
       "score": 74,
-      "execution_rank": 40,
-      "execution_score": 74,
-      "readiness": 0,
-      "dispatch_rank": 20,
-      "dispatch_score": 92,
-      "action": "build_engine",
-      "action_label": "Build the missing engine",
-      "action_bonus": 18,
+      "execution_rank": 29,
+      "execution_score": 81,
+      "readiness": 7,
+      "dispatch_rank": 99,
+      "dispatch_score": 45,
+      "action": "stop_range",
+      "action_label": "Stop: range is dominated",
+      "action_bonus": -36,
       "method_id": "modular_representations",
       "method_title": "One block, weights against simples",
-      "dispatch_next": "Build engine group_characters once. Exact Brauer-character and weight counts for small finite groups and primes, compared entrywise. One build serves this shape, including M047.",
-      "dispatch_why": "Computable modality, no verifier, and the engine roadmap names the missing engine.",
-      "campaign_stage": null,
-      "milestone_count": 0
+      "dispatch_next": "Do not enlarge the named catalog inside order 100: that range is already covered by the 2007 computational verification. State a restricted family (for example blocks with a named defect-group isomorphism type) and a lemma outside that census.",
+      "dispatch_why": "Computational verification already covers every group of order at most 100. Extending the named catalog inside that bound cannot be a new theorem.",
+      "campaign_stage": "benchmark_reproduced",
+      "milestone_count": 1
     },
     {
       "id": "M049",
@@ -1260,7 +1260,7 @@
       "execution_rank": 42,
       "execution_score": 74,
       "readiness": 0,
-      "dispatch_rank": 47,
+      "dispatch_rank": 46,
       "dispatch_score": 74,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -1291,7 +1291,7 @@
       "execution_rank": 43,
       "execution_score": 74,
       "readiness": 0,
-      "dispatch_rank": 48,
+      "dispatch_rank": 47,
       "dispatch_score": 74,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -1322,7 +1322,7 @@
       "execution_rank": 44,
       "execution_score": 74,
       "readiness": 0,
-      "dispatch_rank": 49,
+      "dispatch_rank": 48,
       "dispatch_score": 74,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -1353,7 +1353,7 @@
       "execution_rank": 45,
       "execution_score": 74,
       "readiness": 0,
-      "dispatch_rank": 50,
+      "dispatch_rank": 49,
       "dispatch_score": 74,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -1384,7 +1384,7 @@
       "execution_rank": 46,
       "execution_score": 74,
       "readiness": 0,
-      "dispatch_rank": 51,
+      "dispatch_rank": 50,
       "dispatch_score": 74,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -1415,7 +1415,7 @@
       "execution_rank": 47,
       "execution_score": 74,
       "readiness": 0,
-      "dispatch_rank": 52,
+      "dispatch_rank": 51,
       "dispatch_score": 74,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -1446,7 +1446,7 @@
       "execution_rank": 48,
       "execution_score": 74,
       "readiness": 0,
-      "dispatch_rank": 53,
+      "dispatch_rank": 52,
       "dispatch_score": 74,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -1477,7 +1477,7 @@
       "execution_rank": 49,
       "execution_score": 74,
       "readiness": 0,
-      "dispatch_rank": 54,
+      "dispatch_rank": 53,
       "dispatch_score": 74,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -1508,7 +1508,7 @@
       "execution_rank": 50,
       "execution_score": 74,
       "readiness": 0,
-      "dispatch_rank": 55,
+      "dispatch_rank": 54,
       "dispatch_score": 74,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -1539,7 +1539,7 @@
       "execution_rank": 51,
       "execution_score": 74,
       "readiness": 0,
-      "dispatch_rank": 56,
+      "dispatch_rank": 55,
       "dispatch_score": 74,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -1570,7 +1570,7 @@
       "execution_rank": 52,
       "execution_score": 74,
       "readiness": 0,
-      "dispatch_rank": 57,
+      "dispatch_rank": 56,
       "dispatch_score": 74,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -1598,10 +1598,10 @@
       "source_url": null,
       "rank": 51,
       "score": 72,
-      "execution_rank": 33,
+      "execution_rank": 34,
       "execution_score": 79,
       "readiness": 7,
-      "dispatch_rank": 21,
+      "dispatch_rank": 20,
       "dispatch_score": 91,
       "action": "replay_published",
       "action_label": "Replay a published certificate",
@@ -1632,7 +1632,7 @@
       "execution_rank": 54,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 58,
+      "dispatch_rank": 57,
       "dispatch_score": 72,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -1663,7 +1663,7 @@
       "execution_rank": 55,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 59,
+      "dispatch_rank": 58,
       "dispatch_score": 72,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -1694,7 +1694,7 @@
       "execution_rank": 56,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 60,
+      "dispatch_rank": 59,
       "dispatch_score": 72,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -1722,10 +1722,10 @@
       "source_url": null,
       "rank": 55,
       "score": 72,
-      "execution_rank": 34,
+      "execution_rank": 35,
       "execution_score": 79,
       "readiness": 7,
-      "dispatch_rank": 26,
+      "dispatch_rank": 25,
       "dispatch_score": 85,
       "action": "mine_structure",
       "action_label": "Mine structure from certificates",
@@ -1756,7 +1756,7 @@
       "execution_rank": 57,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 61,
+      "dispatch_rank": 60,
       "dispatch_score": 72,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -1787,7 +1787,7 @@
       "execution_rank": 58,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 62,
+      "dispatch_rank": 61,
       "dispatch_score": 72,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -1818,7 +1818,7 @@
       "execution_rank": 59,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 63,
+      "dispatch_rank": 62,
       "dispatch_score": 72,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -1849,7 +1849,7 @@
       "execution_rank": 60,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 64,
+      "dispatch_rank": 63,
       "dispatch_score": 72,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -1880,7 +1880,7 @@
       "execution_rank": 61,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 65,
+      "dispatch_rank": 64,
       "dispatch_score": 72,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -1911,7 +1911,7 @@
       "execution_rank": 62,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 66,
+      "dispatch_rank": 65,
       "dispatch_score": 72,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -1942,7 +1942,7 @@
       "execution_rank": 63,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 67,
+      "dispatch_rank": 66,
       "dispatch_score": 72,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -1973,7 +1973,7 @@
       "execution_rank": 64,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 35,
+      "dispatch_rank": 34,
       "dispatch_score": 80,
       "action": "scope_audit",
       "action_label": "Audit claim scope",
@@ -2004,7 +2004,7 @@
       "execution_rank": 65,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 68,
+      "dispatch_rank": 67,
       "dispatch_score": 72,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -2035,7 +2035,7 @@
       "execution_rank": 66,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 69,
+      "dispatch_rank": 68,
       "dispatch_score": 72,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -2066,7 +2066,7 @@
       "execution_rank": 67,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 70,
+      "dispatch_rank": 69,
       "dispatch_score": 72,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -2097,7 +2097,7 @@
       "execution_rank": 68,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 71,
+      "dispatch_rank": 70,
       "dispatch_score": 72,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -2128,7 +2128,7 @@
       "execution_rank": 69,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 72,
+      "dispatch_rank": 71,
       "dispatch_score": 72,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -2159,7 +2159,7 @@
       "execution_rank": 70,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 73,
+      "dispatch_rank": 72,
       "dispatch_score": 72,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -2190,7 +2190,7 @@
       "execution_rank": 71,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 74,
+      "dispatch_rank": 73,
       "dispatch_score": 72,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -2221,7 +2221,7 @@
       "execution_rank": 72,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 75,
+      "dispatch_rank": 74,
       "dispatch_score": 72,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -2252,7 +2252,7 @@
       "execution_rank": 73,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 76,
+      "dispatch_rank": 75,
       "dispatch_score": 72,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -2283,7 +2283,7 @@
       "execution_rank": 74,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 77,
+      "dispatch_rank": 76,
       "dispatch_score": 72,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -2314,7 +2314,7 @@
       "execution_rank": 75,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 78,
+      "dispatch_rank": 77,
       "dispatch_score": 72,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -2345,7 +2345,7 @@
       "execution_rank": 76,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 79,
+      "dispatch_rank": 78,
       "dispatch_score": 72,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -2376,7 +2376,7 @@
       "execution_rank": 77,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 80,
+      "dispatch_rank": 79,
       "dispatch_score": 72,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -2407,7 +2407,7 @@
       "execution_rank": 78,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 81,
+      "dispatch_rank": 80,
       "dispatch_score": 72,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -2438,7 +2438,7 @@
       "execution_rank": 79,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 36,
+      "dispatch_rank": 35,
       "dispatch_score": 80,
       "action": "scope_audit",
       "action_label": "Audit claim scope",
@@ -2469,7 +2469,7 @@
       "execution_rank": 80,
       "execution_score": 71,
       "readiness": 0,
-      "dispatch_rank": 84,
+      "dispatch_rank": 83,
       "dispatch_score": 71,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -2500,7 +2500,7 @@
       "execution_rank": 81,
       "execution_score": 69,
       "readiness": 0,
-      "dispatch_rank": 85,
+      "dispatch_rank": 84,
       "dispatch_score": 69,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -2531,7 +2531,7 @@
       "execution_rank": 82,
       "execution_score": 69,
       "readiness": 0,
-      "dispatch_rank": 86,
+      "dispatch_rank": 85,
       "dispatch_score": 69,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -2562,7 +2562,7 @@
       "execution_rank": 83,
       "execution_score": 69,
       "readiness": 0,
-      "dispatch_rank": 87,
+      "dispatch_rank": 86,
       "dispatch_score": 69,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -2593,7 +2593,7 @@
       "execution_rank": 84,
       "execution_score": 69,
       "readiness": 0,
-      "dispatch_rank": 39,
+      "dispatch_rank": 38,
       "dispatch_score": 77,
       "action": "scope_audit",
       "action_label": "Audit claim scope",
@@ -2624,7 +2624,7 @@
       "execution_rank": 85,
       "execution_score": 69,
       "readiness": 0,
-      "dispatch_rank": 40,
+      "dispatch_rank": 39,
       "dispatch_score": 77,
       "action": "scope_audit",
       "action_label": "Audit claim scope",
@@ -2655,7 +2655,7 @@
       "execution_rank": 86,
       "execution_score": 69,
       "readiness": 0,
-      "dispatch_rank": 41,
+      "dispatch_rank": 40,
       "dispatch_score": 77,
       "action": "scope_audit",
       "action_label": "Audit claim scope",
@@ -2686,7 +2686,7 @@
       "execution_rank": 87,
       "execution_score": 69,
       "readiness": 0,
-      "dispatch_rank": 88,
+      "dispatch_rank": 87,
       "dispatch_score": 69,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -2717,7 +2717,7 @@
       "execution_rank": 88,
       "execution_score": 69,
       "readiness": 0,
-      "dispatch_rank": 89,
+      "dispatch_rank": 88,
       "dispatch_score": 69,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -2748,7 +2748,7 @@
       "execution_rank": 89,
       "execution_score": 69,
       "readiness": 0,
-      "dispatch_rank": 90,
+      "dispatch_rank": 89,
       "dispatch_score": 69,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -2779,7 +2779,7 @@
       "execution_rank": 90,
       "execution_score": 69,
       "readiness": 0,
-      "dispatch_rank": 42,
+      "dispatch_rank": 41,
       "dispatch_score": 77,
       "action": "scope_audit",
       "action_label": "Audit claim scope",
@@ -2841,7 +2841,7 @@
       "execution_rank": 91,
       "execution_score": 63,
       "readiness": 0,
-      "dispatch_rank": 91,
+      "dispatch_rank": 90,
       "dispatch_score": 63,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -2872,7 +2872,7 @@
       "execution_rank": 92,
       "execution_score": 63,
       "readiness": 0,
-      "dispatch_rank": 92,
+      "dispatch_rank": 91,
       "dispatch_score": 63,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -2903,7 +2903,7 @@
       "execution_rank": 93,
       "execution_score": 63,
       "readiness": 0,
-      "dispatch_rank": 93,
+      "dispatch_rank": 92,
       "dispatch_score": 63,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -2934,7 +2934,7 @@
       "execution_rank": 94,
       "execution_score": 63,
       "readiness": 0,
-      "dispatch_rank": 94,
+      "dispatch_rank": 93,
       "dispatch_score": 63,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -2965,7 +2965,7 @@
       "execution_rank": 95,
       "execution_score": 63,
       "readiness": 0,
-      "dispatch_rank": 95,
+      "dispatch_rank": 94,
       "dispatch_score": 63,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -2996,7 +2996,7 @@
       "execution_rank": 96,
       "execution_score": 63,
       "readiness": 0,
-      "dispatch_rank": 96,
+      "dispatch_rank": 95,
       "dispatch_score": 63,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -3027,7 +3027,7 @@
       "execution_rank": 97,
       "execution_score": 63,
       "readiness": 0,
-      "dispatch_rank": 82,
+      "dispatch_rank": 81,
       "dispatch_score": 71,
       "action": "scope_audit",
       "action_label": "Audit claim scope",
@@ -3058,7 +3058,7 @@
       "execution_rank": 98,
       "execution_score": 63,
       "readiness": 0,
-      "dispatch_rank": 83,
+      "dispatch_rank": 82,
       "dispatch_score": 71,
       "action": "scope_audit",
       "action_label": "Audit claim scope",
@@ -3089,7 +3089,7 @@
       "execution_rank": 99,
       "execution_score": 63,
       "readiness": 0,
-      "dispatch_rank": 97,
+      "dispatch_rank": 96,
       "dispatch_score": 63,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -3120,7 +3120,7 @@
       "execution_rank": 100,
       "execution_score": 63,
       "readiness": 0,
-      "dispatch_rank": 98,
+      "dispatch_rank": 97,
       "dispatch_score": 63,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -3140,6 +3140,7 @@
       "M006",
       "M019",
       "M041",
+      "M048",
       "M071",
       "M073",
       "M074",
@@ -3181,7 +3182,7 @@
         "modality": "finite_refutable",
         "description": "One finite, checkable object would refute it; computation can search and certify ranges.",
         "problems": 15,
-        "with_verifier": 14
+        "with_verifier": 15
       },
       {
         "modality": "finite_parameter",
@@ -3351,6 +3352,17 @@
         "problems": [
           "M001",
           "M002"
+        ]
+      },
+      {
+        "id": "group_characters",
+        "name": "Exact conjugacy, radical p-subgroups and character-degree counts",
+        "use": "Alperin weight counts, Brauer-character enumerations and small modular checks.",
+        "modules": [
+          "scripts/probes/groups.py"
+        ],
+        "problems": [
+          "M048"
         ]
       }
     ],
@@ -3767,16 +3779,33 @@
             "certificate_sha256": "b2100a56d71d281128a48fc3cd2746d955ecd1d855a1f72e51627e10f337498b"
           }
         }
+      },
+      {
+        "id": "alperin",
+        "problem_id": "M048",
+        "name": "Alperin weight conjecture",
+        "title": "Alperin weight counts on named groups of small order",
+        "engines": [
+          "group_characters"
+        ],
+        "frontier": "Known: Alperin's weight conjecture has been verified computationally for all groups of order at most 100 over prime fields (Revista Colombiana de Matemáticas 41 (2007)), and for many larger simple groups. The cases here are classical reproductions only.",
+        "artifact": "scripts/probes/alperin.py",
+        "command": "python3 scripts/lab.py --probe alperin",
+        "runs": {
+          "smoke": {
+            "holds": true,
+            "scope": "For each named group G in {C2, C3, C4, C2xC2, S3, D8, Q8, A4, D10} and every prime p dividing |G|, the number of conjugacy classes of Alperin p-weights equals the number of p-regular conjugacy classes.",
+            "certificate_sha256": "5ec9940f814f3190ef28cebd65452d67ca2f9f36b958a17925aee7345a4bb119"
+          },
+          "deep": {
+            "holds": true,
+            "scope": "For each named group G in {C2, C3, C4, C5, C6, C2xC2, S3, D8, Q8, A4, D10, D12, S4, A5} and every prime p dividing |G|, the number of conjugacy classes of Alperin p-weights equals the number of p-regular conjugacy classes.",
+            "certificate_sha256": "196b894d4e076ba2e56a2628d4ee560deb3e2e8a8bb882bc2c197044ad17d384"
+          }
+        }
       }
     ],
-    "roadmap": [
-      {
-        "problem_id": "M048",
-        "engine": "group_characters",
-        "first_probe": "Exact Brauer-character and weight counts for small finite groups and primes, compared entrywise.",
-        "name": "Alperin weight conjecture"
-      }
-    ]
+    "roadmap": []
   },
   "mines": {
     "format": "svyable.mines.v1",
@@ -4036,7 +4065,7 @@
         "baseline": 3,
         "target": 25,
         "unit": "of 100",
-        "value": 19
+        "value": 20
       },
       {
         "id": "computable_coverage",
@@ -4044,7 +4073,7 @@
         "baseline": 0,
         "target": 19,
         "unit": "of 19",
-        "value": 18
+        "value": 19
       },
       {
         "id": "engines",
@@ -4052,7 +4081,7 @@
         "baseline": 0,
         "target": 15,
         "unit": "engines",
-        "value": 12
+        "value": 13
       },
       {
         "id": "campaigns",
@@ -4060,7 +4089,7 @@
         "baseline": 0,
         "target": 25,
         "unit": "campaigns",
-        "value": 20
+        "value": 21
       },
       {
         "id": "claims_triaged",
@@ -4367,11 +4396,10 @@
       {
         "id": "R31",
         "track": "lab",
-        "horizon": "next",
+        "horizon": "shipped",
         "title": "Group-character engine",
-        "outcome": "Exact Brauer-character and weight counts for small groups and primes.",
-        "exit": "Computable coverage 19/19.",
-        "evidence": "data/engine_roadmap.json",
+        "outcome": "Exact conjugacy, radical p-subgroups and character-degree counts; Alperin weight probe matches p-regular classes on named groups through A5.",
+        "evidence": "scripts/probes/alperin.py",
         "problems": [
           "M048"
         ]
@@ -4471,9 +4499,9 @@
       }
     ],
     "counts": {
-      "shipped": 18,
+      "shipped": 19,
       "now": 5,
-      "next": 5,
+      "next": 4,
       "later": 4
     }
   },
@@ -4735,6 +4763,18 @@
       "blocker": "One character at height 17 does not constrain the other characters. Conductor 3 is the smallest untouched case.",
       "dossier": "research/LAB_CAMPAIGNS.md",
       "verifier": "python3 scripts/lab.py --probe dirichlet_l"
+    },
+    {
+      "problem_id": "M048",
+      "stage": "benchmark_reproduced",
+      "method": "Exact Alperin weight counts via radical p-subgroups and character degrees",
+      "hypothesis": "For every finite group G and every prime p, the number of conjugacy classes of Alperin p-weights equals the number of simple modules of FG over an algebraically closed field of characteristic p.",
+      "first_proof_obligation": "State a restricted family of blocks (for example a named defect-group isomorphism type outside the order-100 census) and prove or refute the weight count for that family.",
+      "next_experiment": "Do not enlarge the named catalog inside order 100: that range is already covered by the 2007 computational verification. State a restricted family (for example blocks with a named defect-group isomorphism type) and a lemma outside that census.",
+      "falsification": "A finite group G and prime p for which the independently recomputed weight count differs from the number of p-regular conjugacy classes.",
+      "blocker": "Every group of order at most 100 is already covered by published computational verification; a larger named catalog inside that bound is not a theorem.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe alperin"
     }
   ],
   "milestones": [
@@ -5012,6 +5052,17 @@
       "verifier": "python3 scripts/lab.py --probe dirichlet_l",
       "artifact": "scripts/probes/dirichlet_l.py",
       "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-ALPERIN-001",
+      "problem_id": "M048",
+      "classification": "reproduced_known",
+      "title": "Alperin weight counts match p-regular class counts on named groups through A5",
+      "scope": "Finite named catalog only; every case sits inside the published order-100 verification",
+      "description": "For each listed group and each prime dividing its order, the number of radical-subgroup defect-zero weights equals the number of p-regular conjugacy classes. Smoke covers nine groups through D10; deep adds C5, C6, D12, S4 and A5. The checker rebuilds every count independently.",
+      "verifier": "python3 scripts/lab.py --probe alperin",
+      "artifact": "scripts/probes/alperin.py",
+      "verified_on": "2026-10-31"
     }
   ],
   "solved": [],
@@ -5204,18 +5255,6 @@
         "why": ""
       },
       {
-        "action": "build_engine",
-        "action_label": "Build the missing engine",
-        "method_id": "modular_representations",
-        "method_title": "One block, weights against simples",
-        "problem_ids": [
-          "M048"
-        ],
-        "best_rank": 20,
-        "summary": "Build engine group_characters once. Exact Brauer-character and weight counts for small finite groups and primes, compared entrywise. One build serves this shape, including M047.",
-        "why": "Computable modality, no verifier, and the engine roadmap names the missing engine."
-      },
-      {
         "action": "replay_published",
         "action_label": "Replay a published certificate",
         "method_id": "critical_zeros",
@@ -5223,7 +5262,7 @@
         "problem_ids": [
           "M002"
         ],
-        "best_rank": 21,
+        "best_rank": 20,
         "summary": "Reproduce a published primitive character modulo 3 or 5 with the correct root number, branch conventions and independently checked zero count; document why this is known mathematics, not GRH progress.",
         "why": "The new engine verifies χ4 only; the generalized Riemann hypothesis concerns all Dirichlet characters. Replaying a separate primitive-character certificate tests the reusable contour and gamma-factor implementation."
       },
@@ -5237,7 +5276,7 @@
           "M072",
           "M077"
         ],
-        "best_rank": 22,
+        "best_rank": 21,
         "summary": "Shape extremal_asymptotics (3 problems, one write-up): Name a structured family and an explicit constant, and compare it with a cited general bound before calling it an improvement. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
       },
@@ -5249,7 +5288,7 @@
         "problem_ids": [
           "M085"
         ],
-        "best_rank": 23,
+        "best_rank": 22,
         "summary": "Independently audit the reduction's completeness and soundness estimates and its quantitative dependence on gap parameters.",
         "why": "A manuscript may already settle this entry. The next step is the review's own check, not a new lemma."
       },
@@ -5261,7 +5300,7 @@
         "problem_ids": [
           "M042"
         ],
-        "best_rank": 24,
+        "best_rank": 23,
         "summary": "Shape polynomial_maps (2 problems, one write-up): Name a polynomial or Weyl family that published degree bounds do not cover, and refuse exhaustive search inside those bounds. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
       },
@@ -5273,7 +5312,7 @@
         "problem_ids": [
           "M100"
         ],
-        "best_rank": 25,
+        "best_rank": 24,
         "summary": "Audit FalconerAllDimensions.lean definition fidelity, measure conventions and proof dependencies; obtain independent harmonic-analysis review.",
         "why": "A manuscript may already settle this entry. The next step is the review's own check, not a new lemma."
       },
@@ -5289,7 +5328,7 @@
           "M090",
           "M081"
         ],
-        "best_rank": 29,
+        "best_rank": 28,
         "summary": "Shape complexity_barriers (6 problems, one write-up): Name the model and audit any claimed reduction's alphabet, completeness and soundness before writing a new reduction. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
       },
@@ -5302,7 +5341,7 @@
           "M083",
           "M089"
         ],
-        "best_rank": 30,
+        "best_rank": 29,
         "summary": "Shape algebraic_complexity (4 problems, one write-up): Fix the field and the format, then replay a published certificate or state the class a new hitting set claims to cover. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
       },
@@ -5314,7 +5353,7 @@
         "problem_ids": [
           "M030"
         ],
-        "best_rank": 36,
+        "best_rank": 35,
         "summary": "Check the main theorem and dependencies against the canonical klt characteristic-zero formulation, particularly section production and actual basepoint-freeness.",
         "why": "A manuscript may already settle this entry. The next step is the review's own check, not a new lemma."
       },
@@ -5326,7 +5365,7 @@
         "problem_ids": [
           "M091"
         ],
-        "best_rank": 37,
+        "best_rank": 36,
         "summary": "Shape gauge_theory (1 problems, one write-up): The mass gap is not finitely falsifiable; name the lattice, the gauge group, and which Clay axiom the restriction drops. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
       },
@@ -5339,7 +5378,7 @@
           "M099",
           "M011"
         ],
-        "best_rank": 38,
+        "best_rank": 37,
         "summary": "Shape exponential_fields (2 problems, one write-up): Treat Schanuel and the real exponential field as one shape: one explicit tuple or one explicit exponential sentence, certified. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
       },
@@ -5352,7 +5391,7 @@
           "M054",
           "M060"
         ],
-        "best_rank": 39,
+        "best_rank": 38,
         "summary": "M054: Compare Hintz v2 and Szeftel hypotheses and companion dependencies, and seek expert adjudication of scattering and asymptotic completeness. M060: Compare v3 withdrawal notice with v5, audit the set-valued fixed-point and laminate-to-gradient argument, and request a calculus-of-variations review.",
         "why": "A manuscript may already settle this entry. The next step is the review's own check, not a new lemma."
       },
@@ -5365,7 +5404,7 @@
           "M055",
           "M056"
         ],
-        "best_rank": 40,
+        "best_rank": 39,
         "summary": "M055: Check the all-dimensional local smoothing theorem, its Kakeya maximal corollary and exact hypotheses; distinguish 4D direct theorem from universal consequence. M056: State M056's exact dimension and p/q exponent range, audit the October 25 local-smoothing-to-restriction implication (including endpoint exclusions), compare the author Lean scope to its paper, and obtain independent harmonic-analysis review.",
         "why": "A manuscript may already settle this entry. The next step is the review's own check, not a new lemma."
       },
@@ -5377,7 +5416,7 @@
         "problem_ids": [
           "M043"
         ],
-        "best_rank": 43,
+        "best_rank": 42,
         "summary": "Shape group_rings (3 problems, one write-up): Take one finitely presented group and one coefficient field, and check a product or an idempotent by an independent multiplication. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
       },
@@ -5390,7 +5429,7 @@
           "M045",
           "M046"
         ],
-        "best_rank": 44,
+        "best_rank": 43,
         "summary": "Shape artin_algebras (2 problems, one write-up): Fix one finite-dimensional algebra by a quiver and relations, and recompute its finitistic dimension or the Auslander-Reiten vanishing. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
       },
@@ -5402,7 +5441,7 @@
         "problem_ids": [
           "M047"
         ],
-        "best_rank": 46,
+        "best_rank": 45,
         "summary": "Shape modular_representations (2 problems, one write-up): Take one finite group and one prime, and compare the number of weights with the number of simple modules in a block. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
       },
@@ -5414,7 +5453,7 @@
         "problem_ids": [
           "M050"
         ],
-        "best_rank": 47,
+        "best_rank": 46,
         "summary": "Shape homogeneous_structures (1 problems, one write-up): State the language, then check amalgamation for one explicit finite relational structure. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
       },
@@ -5430,7 +5469,7 @@
           "M064",
           "M070"
         ],
-        "best_rank": 48,
+        "best_rank": 47,
         "summary": "Shape lattice_models (5 problems, one write-up): Name the lattice and the exponent, then certify an exact count or inequality on one finite torus. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
       },
@@ -5446,7 +5485,7 @@
           "M068",
           "M069"
         ],
-        "best_rank": 52,
+        "best_rank": 51,
         "summary": "Shape rigidity_dynamics (5 problems, one write-up): Name the map or the billiard, and certify one periodic orbit, one entropy enclosure, or one correlation check. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
       },
@@ -5463,7 +5502,7 @@
           "M016",
           "M017"
         ],
-        "best_rank": 58,
+        "best_rank": 57,
         "summary": "Shape galois_representations (6 problems, one write-up): Pick one explicit number field or elliptic curve and one finite invariant the conjecture predicts, and compute it two ways. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
       },
@@ -5476,7 +5515,7 @@
           "M004",
           "M020"
         ],
-        "best_rank": 59,
+        "best_rank": 58,
         "summary": "Shape effective_diophantine (4 problems, one write-up): State one explicit identity or inequality on a named class that a cited theorem or computation does not already settle. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
       },
@@ -5492,7 +5531,7 @@
           "M012",
           "M018"
         ],
-        "best_rank": 60,
+        "best_rank": 59,
         "summary": "Shape sieve_infinitude (5 problems, one write-up): Name one modulus, admissible tuple or polynomial that a cited sieve theorem does not already settle, and write the missing estimate. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
       },
@@ -5504,7 +5543,7 @@
         "problem_ids": [
           "M009"
         ],
-        "best_rank": 63,
+        "best_rank": 62,
         "summary": "Shape critical_zeros (3 problems, one write-up): Build one interval-arithmetic zero-count certificate and reuse it for every problem in this shape. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
       },
@@ -5520,7 +5559,7 @@
           "M024",
           "M029"
         ],
-        "best_rank": 73,
+        "best_rank": 72,
         "summary": "Shape motivic_cycles (5 problems, one write-up): Fix dimension, codimension and coefficients, then compute one cycle class on one explicit variety in a range a cited source still treats as open. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
       },
@@ -5535,7 +5574,7 @@
           "M027",
           "M028"
         ],
-        "best_rank": 77,
+        "best_rank": 76,
         "summary": "Shape diophantine_geometry (4 problems, one write-up): Fix dimension and the geometric hypothesis, then certify a rational-point or section search up to an explicit height on one variety. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
       },
@@ -5548,7 +5587,7 @@
           "M037",
           "M038"
         ],
-        "best_rank": 82,
+        "best_rank": 81,
         "summary": "M037: Compare exact source hypotheses to a specialist formulation and obtain an expert check of the central p-adic action argument. M038: Read Engel's independent proof and its dependency on Alpöge's construction, verify smooth gluing and topological invariants, and solicit further specialist assessment.",
         "why": "A manuscript may already settle this entry. The next step is the review's own check, not a new lemma."
       },
@@ -5562,7 +5601,7 @@
           "M052",
           "M053"
         ],
-        "best_rank": 85,
+        "best_rank": 84,
         "summary": "Shape pde_regularity (5 problems, one write-up): Write the equation, the dimension and the function space, and certify one symmetric ansatz the literature has already isolated. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
       },
@@ -5576,7 +5615,7 @@
           "M058",
           "M059"
         ],
-        "best_rank": 88,
+        "best_rank": 87,
         "summary": "Shape harmonic_analysis (5 problems, one write-up): Fix the dimension and the exponent endpoint before treating a corollary as a settlement of the registered conjecture. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
       },
@@ -5590,7 +5629,7 @@
           "M032",
           "M033"
         ],
-        "best_rank": 91,
+        "best_rank": 90,
         "summary": "Shape four_manifolds (3 problems, one write-up): Restrict to one homeomorphism type or one unimodular form, and certify either a Kirby diagram or a named obstruction for that form. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
       },
@@ -5605,7 +5644,7 @@
           "M036",
           "M039"
         ],
-        "best_rank": 94,
+        "best_rank": 93,
         "summary": "Shape index_rigidity (4 problems, one write-up): Name the group or the manifold and compute one index or signature identity on one explicit complex of small dimension. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
       },
@@ -5617,7 +5656,7 @@
         "problem_ids": [
           "M040"
         ],
-        "best_rank": 98,
+        "best_rank": 97,
         "summary": "Shape geometric_topology (3 problems, one write-up): Name the dimension, boundary and smoothness, then compare a manuscript or certify one Reeb orbit on one explicit manifold. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
       },
@@ -5629,9 +5668,21 @@
         "problem_ids": [
           "M041"
         ],
-        "best_rank": 99,
+        "best_rank": 98,
         "summary": "Do not enumerate degree-4 maps with coefficients in {-1,0,1}: Moh (1983) already covers plane maps of degree at most 100. Name one Newton-polygon family outside that degree bound and state the coefficient ring before any search.",
         "why": "Moh (1983) covers plane maps of degree at most 100. Degree-4 search on coefficients in {-1,0,1} sits inside that theorem, so the recorded experiment is refused."
+      },
+      {
+        "action": "stop_range",
+        "action_label": "Stop: range is dominated",
+        "method_id": "modular_representations",
+        "method_title": "One block, weights against simples",
+        "problem_ids": [
+          "M048"
+        ],
+        "best_rank": 99,
+        "summary": "Do not enlarge the named catalog inside order 100: that range is already covered by the 2007 computational verification. State a restricted family (for example blocks with a named defect-group isomorphism type) and a lemma outside that census.",
+        "why": "Computational verification already covers every group of order at most 100. Extending the named catalog inside that bound cannot be a new theorem."
       },
       {
         "action": "stop_range",
@@ -6291,9 +6342,9 @@
     {
       "problem_id": "M002",
       "name": "Generalized Riemann Hypothesis",
-      "execution_rank": 33,
+      "execution_rank": 34,
       "execution_score": 79,
-      "dispatch_rank": 21,
+      "dispatch_rank": 20,
       "dispatch_score": 91,
       "action": "replay_published",
       "action_label": "Replay a published certificate",
@@ -6308,9 +6359,9 @@
     {
       "problem_id": "M006",
       "name": "Strong Goldbach conjecture",
-      "execution_rank": 34,
+      "execution_rank": 35,
       "execution_score": 79,
-      "dispatch_rank": 26,
+      "dispatch_rank": 25,
       "dispatch_score": 85,
       "action": "mine_structure",
       "action_label": "Mine structure from certificates",
@@ -6327,7 +6378,7 @@
       "name": "Plane Jacobian conjecture",
       "execution_rank": 8,
       "execution_score": 96,
-      "dispatch_rank": 99,
+      "dispatch_rank": 98,
       "dispatch_score": 60,
       "action": "stop_range",
       "action_label": "Stop: range is dominated",
@@ -6337,6 +6388,23 @@
       "next_experiment": "Do not enumerate degree-4 maps with coefficients in {-1,0,1}: Moh (1983) already covers plane maps of degree at most 100. Name one Newton-polygon family outside that degree bound and state the coefficient ring before any search.",
       "recorded_experiment": "Enlarge the class to degree 4 with coefficients in {-1,0,1} using kernel enumeration per monomial support, and record the distribution of inverse degrees and of tame decompositions.",
       "blocker": "Known results already cover plane maps of degree <= 100, so exhaustive small classes cannot reach new territory; novelty needs structural families.",
+      "dossier": "research/LAB_CAMPAIGNS.md"
+    },
+    {
+      "problem_id": "M048",
+      "name": "Alperin weight conjecture",
+      "execution_rank": 29,
+      "execution_score": 81,
+      "dispatch_rank": 99,
+      "dispatch_score": 45,
+      "action": "stop_range",
+      "action_label": "Stop: range is dominated",
+      "baseline_rank": 38,
+      "stage": "benchmark_reproduced",
+      "first_proof_obligation": "State a restricted family of blocks (for example a named defect-group isomorphism type outside the order-100 census) and prove or refute the weight count for that family.",
+      "next_experiment": "Do not enlarge the named catalog inside order 100: that range is already covered by the 2007 computational verification. State a restricted family (for example blocks with a named defect-group isomorphism type) and a lemma outside that census.",
+      "recorded_experiment": "Do not enlarge the named catalog inside order 100: that range is already covered by the 2007 computational verification. State a restricted family (for example blocks with a named defect-group isomorphism type) and a lemma outside that census.",
+      "blocker": "Every group of order at most 100 is already covered by published computational verification; a larger named catalog inside that bound is not a theorem.",
       "dossier": "research/LAB_CAMPAIGNS.md"
     },
     {

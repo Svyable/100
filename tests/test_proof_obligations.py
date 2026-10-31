@@ -38,8 +38,8 @@ class ProofObligationTests(unittest.TestCase):
 
     def test_pilots_are_current_and_unproved(self):
         entries = obligations.load()
-        self.assertEqual(len(entries), 6)
-        self.assertEqual({x["problem_id"] for x in entries}, {"M074", "M075", "M095"})
+        self.assertEqual(len(entries), 7)
+        self.assertEqual({x["problem_id"] for x in entries}, {"M048", "M074", "M075", "M095"})
         self.assertTrue(all(x["status"] in {"open", "blocked"} for x in entries))
         self.assertTrue(all(x["evidence"] is None for x in entries))
 

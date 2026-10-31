@@ -77,6 +77,18 @@
       "depends_on": [],
       "status": "open",
       "evidence": null
+    },
+    {
+      "id": "O-M048-01",
+      "problem_id": "M048",
+      "kind": "lemma",
+      "statement": "There is an explicitly named family of p-blocks, with a fixed defect-group isomorphism type outside the published order-100 census, for which the number of Alperin weights equals the number of irreducible Brauer characters.",
+      "prior_art_boundary": "The named-group probe through A5, and the published verification for every group of order at most 100, are known finite benchmarks. A restricted block-family lemma is not established here.",
+      "falsifier": "A block in the named family whose independently recomputed weight count differs from its Brauer-character count, or a definition of the family that collapses into the order-100 census.",
+      "next_action": "Name the defect-group isomorphism type and the ambient groups, write the exact weight-count lemma, and state the finite certificate an independent checker would accept.",
+      "depends_on": [],
+      "status": "open",
+      "evidence": null
     }
   ]
 }

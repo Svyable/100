@@ -13,17 +13,26 @@ checked as soon as it appears, and so the engines carry over to the next problem
 
 Before the lab, each campaign needed its own hand-built verifier, and three problems had one.
 The lab separates **engines** (finite fields, graph and poset censuses, cyclotomic arithmetic,
-tensor certificates, symmetry reductions, clique search, primes) from **probes** (about 100
-lines that state one finite claim, search, and check independently). Most new probes reuse an
-existing engine. For example, the finite-field engine serves five problems: Hadamard, projective
-planes, MDS codes, Ramsey colourings and Rota's conjecture.
+tensor certificates, symmetry reductions, clique search, primes, interval arithmetic, group
+characters) from **probes** (about 100 lines that state one finite claim, search, and check
+independently). Most new probes reuse an existing engine. For example, the finite-field engine
+serves five problems: Hadamard, projective planes, MDS codes, Ramsey colourings and Rota's
+conjecture.
 
 Every problem also has a `modality` (see [the protocol](../docs/RESEARCH_PROTOCOL.md)) recording
-whether finite computation can refute it at all. Of the 19 problems where it can, 18 now have
-exact verifiers. The remaining one is listed with the engine it needs in
-[data/engine_roadmap.json](../data/engine_roadmap.json).
+whether finite computation can refute it at all. All 19 problems where it can now have exact
+verifiers. [data/engine_roadmap.json](../data/engine_roadmap.json) is empty.
 
 ## Per-problem notes
+
+### M048 — Alperin weight conjecture (`alperin`, engine `group_characters`)
+For each named group G and each prime p dividing |G|, counts p-regular conjugacy classes
+(simple FG-modules) and Alperin weights (defect-zero ordinary degrees of N_G(Q)/Q summed over
+radical p-subgroup representatives). Character degrees of groups of order ≤ 60 are recovered
+from (|G|, class number, |G:G'|), which uniquely determines the degree multiset in this range.
+Smoke: nine groups through D10. Deep: adds C5, C6, D12, S4 and A5. **Frontier:** published
+computational verification covers every group of order ≤ 100; enlarging the catalog inside that
+bound is not a theorem.
 
 ### M001 — Riemann hypothesis (`riemann`, engine `interval_arithmetic`)
 Certifies N(T) by the argument principle and matches it to sign changes of the Hardy

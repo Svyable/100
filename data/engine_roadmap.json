@@ -1,11 +1,5 @@
 {
   "as_of": "2026-10-31",
-  "note": "Computable-modality problems that still lack an exact probe, with the reusable engine each one needs next. Editorial plan, not evidence.",
-  "entries": [
-    {
-      "problem_id": "M048",
-      "engine": "group_characters",
-      "first_probe": "Exact Brauer-character and weight counts for small finite groups and primes, compared entrywise."
-    }
-  ]
+  "note": "Computable-modality problems that still lack an exact probe, with the reusable engine each one needs next. Editorial plan, not evidence. Empty when every computable problem already has a verifier.",
+  "entries": []
 }

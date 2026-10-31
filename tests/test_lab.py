@@ -12,7 +12,7 @@ import lab
 import probes
 import rank
 import research
-from probes import core, cyclotomic, exact_lp, fields, graphs, homomorphisms, polynomials, primes, zeta
+from probes import core, cyclotomic, exact_lp, fields, graphs, groups, homomorphisms, polynomials, primes, zeta
 from probes import intervals as iv
 from probes.core import ProbeFailure
 
@@ -133,6 +133,26 @@ class EngineTests(unittest.TestCase):
         self.assertEqual(core.digest({"b": 1, "a": [Fraction(1, 3)]}),
                          core.digest({"a": ["1/3"], "b": 1}))
 
+    def test_group_character_degrees_and_alperin_counts(self):
+        for name, order, degrees in (
+            ("S3", 6, [1, 1, 2]),
+            ("D8", 8, [1, 1, 1, 1, 2]),
+            ("Q8", 8, [1, 1, 1, 1, 2]),
+            ("A4", 12, [1, 1, 1, 3]),
+            ("S4", 24, [1, 1, 2, 3, 3]),
+            ("A5", 60, [1, 3, 3, 4, 5]),
+        ):
+            G = groups.named(name)
+            self.assertEqual(len(G), order)
+            self.assertTrue(groups.is_group(G))
+            self.assertEqual(groups.character_degrees(G), degrees)
+            self.assertEqual(sum(d * d for d in degrees), order)
+        G = groups.named("S3")
+        self.assertEqual(groups.simple_module_count(G, 2), 2)
+        self.assertEqual(groups.alperin_weight_count(G, 2)[0], 2)
+        self.assertEqual(groups.simple_module_count(G, 3), 2)
+        self.assertEqual(groups.alperin_weight_count(G, 3)[0], 2)
+
 
 class TamperTests(unittest.TestCase):
     """Every checker must reject a corrupted certificate."""
@@ -175,6 +195,21 @@ class TamperTests(unittest.TestCase):
         m, r = run("erdos_straus", params)
         bad = copy.deepcopy(r)
         bad["certificate"]["triples"][100][2] += 1
+        self.assertRejects(m, params, bad)
+
+    def test_alperin(self):
+        params = {"groups": ["C2", "S3", "A4"]}
+        m, r = run("alperin", params)
+        self.assertTrue(r["holds"])
+        self.assertEqual(r["summary"]["matched"], r["summary"]["cases"])
+        bad = copy.deepcopy(r)
+        bad["certificate"]["cases"][0]["simples"] += 1
+        self.assertRejects(m, params, bad)
+        bad = copy.deepcopy(r)
+        bad["certificate"]["cases"][1]["weights"] += 1
+        self.assertRejects(m, params, bad)
+        bad = copy.deepcopy(r)
+        bad["certificate"]["cases"].pop()
         self.assertRejects(m, params, bad)
 
     def test_hadwiger(self):
