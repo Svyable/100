@@ -1,0 +1,2796 @@
+{
+  "title": "Next 100 — hypothesis reservoir",
+  "source": "data/next_candidates.json",
+  "seeded_as_of": "2026-10-31",
+  "count": 120,
+  "score_description": "Editorial discovery priority, not a probability of truth or proof",
+  "scoring": {
+    "impact": 30,
+    "tractability": 30,
+    "verifiability": 25,
+    "transfer": 15
+  },
+  "stages": {
+    "formalize": 116,
+    "prior_art_review": 4
+  },
+  "domains": [
+    "AI and learning theory",
+    "Algorithms and complexity",
+    "Biology and medicine",
+    "Climate and energy",
+    "Combinatorics and optimization",
+    "Control and robotics",
+    "Cryptography and privacy",
+    "Distributed systems",
+    "Economics and mechanism design",
+    "Geometry and topology",
+    "Logic and formal methods",
+    "Networks and cascades",
+    "Number theory and computation",
+    "Physics and materials",
+    "Probability and statistics"
+  ],
+  "candidates": [
+    {
+      "id": "N0025",
+      "title": "Generalization under shift certificates",
+      "statement": "A meaningful class of learned predictors admits finite-sample certificates on risk under explicitly bounded distribution shift",
+      "domain": "AI and learning theory",
+      "spillovers": [
+        "Healthcare AI",
+        "Autonomous systems",
+        "Statistics"
+      ],
+      "consequence": "Could make deployment risk measurable beyond training accuracy",
+      "first_attack": "Choose divergence class and seek nonvacuous bounds",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 5,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 100,
+      "discovery_rank": 1
+    },
+    {
+      "id": "N0029",
+      "title": "Proof-carrying inference",
+      "statement": "Certain high-stakes model outputs can be paired with compact independently checkable certificates that imply task-specific validity",
+      "domain": "AI and learning theory",
+      "spillovers": [
+        "Healthcare",
+        "Scientific computing",
+        "AI safety"
+      ],
+      "consequence": "Could separate fast generation from dependable verification",
+      "first_attack": "Restrict to constraint-solving and structured predictions",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 5,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 100,
+      "discovery_rank": 2
+    },
+    {
+      "id": "N0030",
+      "title": "Feedback-safe model adaptation",
+      "statement": "Online policy learning can be constrained to preserve a formally specified safety invariant while improving regret in a nontrivial environment family",
+      "domain": "AI and learning theory",
+      "spillovers": [
+        "Robotics",
+        "Energy control",
+        "AI safety"
+      ],
+      "consequence": "Could support safer adaptive control",
+      "first_attack": "Define shielded MDP family and performance baseline",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 5,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 100,
+      "discovery_rank": 3
+    },
+    {
+      "id": "N0033",
+      "title": "Safe exploration with certificates",
+      "statement": "For a useful class of uncertain dynamical systems, an adaptive controller can learn while maintaining a machine-checkable invariant at every step",
+      "domain": "Control and robotics",
+      "spillovers": [
+        "Robotics",
+        "Manufacturing",
+        "Transport"
+      ],
+      "consequence": "Could make learning controllers auditable in safety-critical settings",
+      "first_attack": "Start with linear systems and bounded disturbances",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 5,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 100,
+      "discovery_rank": 4
+    },
+    {
+      "id": "N0045",
+      "title": "Cross-layer systemic risk",
+      "statement": "A small collection of coupled-network invariants bounds the worst cascade size across infrastructure dependencies",
+      "domain": "Networks and cascades",
+      "spillovers": [
+        "Water systems",
+        "Electric grids",
+        "Telecommunications"
+      ],
+      "consequence": "Could support cross-sector infrastructure stress testing",
+      "first_attack": "Formalize interlayer failure and dependency semantics",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 5,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 100,
+      "discovery_rank": 5
+    },
+    {
+      "id": "N0057",
+      "title": "Dispatch resilience frontier",
+      "statement": "There are computable tight bounds on simultaneous cost emissions and outage risk for a restricted grid-planning model",
+      "domain": "Climate and energy",
+      "spillovers": [
+        "Power grids",
+        "Climate policy",
+        "Optimization"
+      ],
+      "consequence": "Could expose the tradeoffs hidden by single-metric energy plans",
+      "first_attack": "Define uncertainty and benchmark small networks",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 5,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 100,
+      "discovery_rank": 6
+    },
+    {
+      "id": "N0060",
+      "title": "Climate model surrogate guarantees",
+      "statement": "A reduced surrogate of a specified physical climate subsystem admits uniform forecast-error bounds on a meaningful parameter domain",
+      "domain": "Climate and energy",
+      "spillovers": [
+        "Climate science",
+        "Scientific AI",
+        "Numerical analysis"
+      ],
+      "consequence": "Could make accelerated physical forecasts more defensible",
+      "first_attack": "Begin with a tractable radiative-convective model",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 5,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 100,
+      "discovery_rank": 7
+    },
+    {
+      "id": "N0065",
+      "title": "Robust causal biomarker selection",
+      "statement": "For a restricted causal model class, a selected biomarker set retains predictive validity across a defined family of hospital interventions",
+      "domain": "Biology and medicine",
+      "spillovers": [
+        "Clinical research",
+        "Statistics",
+        "AI medicine"
+      ],
+      "consequence": "Could reduce brittle biomarkers that fail after practice changes",
+      "first_attack": "Specify structural causal assumptions and identifiability tests",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 5,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 100,
+      "discovery_rank": 8
+    },
+    {
+      "id": "N0066",
+      "title": "Drug-combination interaction bounds",
+      "statement": "For a limited mechanistic pathway model, drug interaction effects can be bounded using substantially fewer experiments than exhaustive pairwise testing",
+      "domain": "Biology and medicine",
+      "spillovers": [
+        "Drug development",
+        "Experimental design",
+        "Optimization"
+      ],
+      "consequence": "Could accelerate safe combination screening",
+      "first_attack": "Use synthetic pathway networks and compare exhaustive baselines",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 5,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 100,
+      "discovery_rank": 9
+    },
+    {
+      "id": "N0069",
+      "title": "Adaptive trials with invariants",
+      "statement": "A meaningful family of adaptive clinical-trial rules can retain specified error guarantees under bounded outcome reporting delays",
+      "domain": "Biology and medicine",
+      "spillovers": [
+        "Clinical trials",
+        "Statistics",
+        "Regulation"
+      ],
+      "consequence": "Could improve trial adaptability without invalidating inference",
+      "first_attack": "Formalize delayed observations and optional stopping",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 5,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 100,
+      "discovery_rank": 10
+    },
+    {
+      "id": "N0074",
+      "title": "Manipulation-resistant public allocation",
+      "statement": "A nontrivial allocation rule can jointly bound strategic manipulation and subgroup disparity under explicit resource constraints",
+      "domain": "Economics and mechanism design",
+      "spillovers": [
+        "Housing policy",
+        "Mechanism design",
+        "Algorithmic fairness"
+      ],
+      "consequence": "Could improve transparent public-resource allocation",
+      "first_attack": "Test axiom incompatibility on small instances",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 5,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 100,
+      "discovery_rank": 11
+    },
+    {
+      "id": "N0077",
+      "title": "Systemic liquidity graph certificates",
+      "statement": "Bounded balance-sheet data and a financial-exposure graph yield certifiable lower bounds on cascading default risk under a chosen contagion model",
+      "domain": "Economics and mechanism design",
+      "spillovers": [
+        "Finance",
+        "Network science",
+        "Regulation"
+      ],
+      "consequence": "Could strengthen interpretable stress testing",
+      "first_attack": "State clearing model and compare exact small graphs",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 5,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 100,
+      "discovery_rank": 12
+    },
+    {
+      "id": "N0082",
+      "title": "Sequential multiple testing under dependence",
+      "statement": "A sequential discovery procedure controls false discoveries under a useful class of adaptive dependent observations with nonvacuous power",
+      "domain": "Probability and statistics",
+      "spillovers": [
+        "Genomics",
+        "Online experimentation",
+        "Scientific research"
+      ],
+      "consequence": "Could reduce false positives in ongoing research",
+      "first_attack": "Compare existing dependence corrections and impossibility results",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 5,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 100,
+      "discovery_rank": 13
+    },
+    {
+      "id": "N0084",
+      "title": "Transportable causal bounds",
+      "statement": "A finite set of observed invariances suffices to bound intervention effects across related populations in a class of causal graphs",
+      "domain": "Probability and statistics",
+      "spillovers": [
+        "Healthcare policy",
+        "Economics",
+        "Statistics"
+      ],
+      "consequence": "Could help distinguish transferable findings from local ones",
+      "first_attack": "Use causal graphs with hidden confounders",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 5,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 100,
+      "discovery_rank": 14
+    },
+    {
+      "id": "N0109",
+      "title": "Independent audit of mixed-integer solvers",
+      "statement": "A broad bounded class of solver outputs admits small machine-checkable certificates for claimed optimality or infeasibility",
+      "domain": "Combinatorics and optimization",
+      "spillovers": [
+        "Supply chains",
+        "Manufacturing",
+        "Financial planning"
+      ],
+      "consequence": "Could make optimization claims less dependent on proprietary solvers",
+      "first_attack": "Build branch-and-bound proof log format",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 5,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 100,
+      "discovery_rank": 15
+    },
+    {
+      "id": "N0113",
+      "title": "Formalized scientific assumptions",
+      "statement": "A usable formal language can capture the assumptions of an entire nontrivial class of empirical models and automatically detect incompatible model combinations",
+      "domain": "Logic and formal methods",
+      "spillovers": [
+        "Scientific computing",
+        "AI safety",
+        "Formal verification"
+      ],
+      "consequence": "Could make hidden modeling contradictions visible",
+      "first_attack": "Formalize a restricted dynamical-model library",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 5,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 100,
+      "discovery_rank": 16
+    },
+    {
+      "id": "N0115",
+      "title": "Cross-prover certificate portability",
+      "statement": "A restricted but expressive proof-certificate format can be checked by several independently implemented theorem provers without trusting translation code",
+      "domain": "Logic and formal methods",
+      "spillovers": [
+        "Formal mathematics",
+        "Cybersecurity",
+        "Programming languages"
+      ],
+      "consequence": "Could strengthen confidence in mechanized results",
+      "first_attack": "Start with first-order equality and expand",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 5,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 100,
+      "discovery_rank": 17
+    },
+    {
+      "id": "N0117",
+      "title": "Proof search with reliable abstention",
+      "statement": "A theorem-proving agent can provide calibrated abstention on a precisely defined distribution of proof tasks without mislabeling failed search as disproof",
+      "domain": "Logic and formal methods",
+      "spillovers": [
+        "AI research",
+        "Formal mathematics",
+        "Verification"
+      ],
+      "consequence": "Could make machine-assisted theorem discovery more trustworthy",
+      "first_attack": "Measure selective risk on synthetic theorem families",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 5,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 100,
+      "discovery_rank": 18
+    },
+    {
+      "id": "N0055",
+      "title": "Scale-bridging fluid error bounds",
+      "statement": "Selected multiscale fluid regimes admit a posteriori error estimates linking molecular approximation to continuum flow",
+      "domain": "Physics and materials",
+      "spillovers": [
+        "Aerospace",
+        "Climate modeling",
+        "Applied mathematics"
+      ],
+      "consequence": "Could clarify when continuum simulations can be trusted",
+      "first_attack": "Study simple shear flow with quantified limits",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 5,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 95,
+      "discovery_rank": 19
+    },
+    {
+      "id": "N0081",
+      "title": "Uniform rare-event confidence",
+      "statement": "A nontrivial family of heavy-tailed processes admits finite-sample confidence bounds for rare events without unrealistic moment assumptions",
+      "domain": "Probability and statistics",
+      "spillovers": [
+        "Insurance",
+        "Finance",
+        "Reliability"
+      ],
+      "consequence": "Could improve quantification of extreme losses",
+      "first_attack": "State tail assumptions and derive minimax lower bounds",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 5,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 95,
+      "discovery_rank": 20
+    },
+    {
+      "id": "N0083",
+      "title": "Conformal inference for evolving networks",
+      "statement": "Valid coverage can be maintained under explicitly bounded network interference and temporal drift without exchangeability",
+      "domain": "Probability and statistics",
+      "spillovers": [
+        "Epidemiology",
+        "Social networks",
+        "Machine learning"
+      ],
+      "consequence": "Could extend reliable prediction intervals to interacting systems",
+      "first_attack": "Define coverage target and adversarial drift budget",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 5,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 95,
+      "discovery_rank": 21
+    },
+    {
+      "id": "N0004",
+      "title": "Dynamic graph locality threshold",
+      "statement": "There is a sharp structural boundary where fully dynamic graph queries transition from polylogarithmic to polynomial worst-case update time",
+      "domain": "Algorithms and complexity",
+      "spillovers": [
+        "Graph theory",
+        "Databases",
+        "Network monitoring"
+      ],
+      "consequence": "Would guide system design and data-structure investment",
+      "first_attack": "Fix query language and reduction model",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 94,
+      "discovery_rank": 22
+    },
+    {
+      "id": "N0009",
+      "title": "Composable leakage budgets",
+      "statement": "For a specified class of adaptive queries, privacy leakage can be bounded compositionally more sharply than generic worst-case composition",
+      "domain": "Cryptography and privacy",
+      "spillovers": [
+        "Medical data",
+        "Machine learning",
+        "Statistics"
+      ],
+      "consequence": "Could increase useful analysis per privacy budget",
+      "first_attack": "Specify adjacency notion and construct extremal mechanisms",
+      "stage": "prior_art_review",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 94,
+      "discovery_rank": 23
+    },
+    {
+      "id": "N0015",
+      "title": "Verifiable federated aggregation",
+      "statement": "A practical protocol can certify that all accepted federated updates satisfy bounded-norm and eligibility rules without exposing each update",
+      "domain": "Cryptography and privacy",
+      "spillovers": [
+        "Machine learning",
+        "Privacy",
+        "Distributed systems"
+      ],
+      "consequence": "Could improve integrity of cross-institutional training",
+      "first_attack": "Separate privacy claims from poisoning resistance",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 94,
+      "discovery_rank": 24
+    },
+    {
+      "id": "N0018",
+      "title": "Proof-carrying database migrations",
+      "statement": "Schema transformations in a restricted database language admit compositional proofs that all declared invariants survive migration",
+      "domain": "Distributed systems",
+      "spillovers": [
+        "Databases",
+        "Finance",
+        "Medical records"
+      ],
+      "consequence": "Could make live data migrations safer",
+      "first_attack": "Define invariant language and verify toy migrations",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 94,
+      "discovery_rank": 25
+    },
+    {
+      "id": "N0026",
+      "title": "Data valuation stability",
+      "statement": "A cooperative data-value allocation rule can satisfy useful fairness axioms while remaining stable under small training-set perturbations",
+      "domain": "AI and learning theory",
+      "spillovers": [
+        "Data markets",
+        "Machine learning",
+        "Economics"
+      ],
+      "consequence": "Could enable more defensible data compensation",
+      "first_attack": "Test axiom incompatibilities on linear models",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 94,
+      "discovery_rank": 26
+    },
+    {
+      "id": "N0041",
+      "title": "Cascades from local motifs",
+      "statement": "In a specified class of contagion networks, cascade thresholds are determined approximately by a finite catalog of local subgraph statistics",
+      "domain": "Networks and cascades",
+      "spillovers": [
+        "Epidemiology",
+        "Finance",
+        "Social networks"
+      ],
+      "consequence": "Could improve prediction of systemic shocks",
+      "first_attack": "Compare random graph ensembles with matching motifs",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 94,
+      "discovery_rank": 27
+    },
+    {
+      "id": "N0049",
+      "title": "Microstructure-to-strength bounds",
+      "statement": "For a bounded class of crystalline microstructures, a computable invariant gives rigorous upper and lower bounds on macroscopic strength",
+      "domain": "Physics and materials",
+      "spillovers": [
+        "Materials engineering",
+        "Aerospace",
+        "Manufacturing"
+      ],
+      "consequence": "Could enable certified material selection",
+      "first_attack": "Start with periodic idealized microstructures",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 94,
+      "discovery_rank": 28
+    },
+    {
+      "id": "N0061",
+      "title": "Emissions measurement identifiability",
+      "statement": "A sensor placement rule guarantees uniquely recoverable regional emissions within bounded uncertainty for a limited transport model",
+      "domain": "Climate and energy",
+      "spillovers": [
+        "Environmental monitoring",
+        "Public policy",
+        "Inverse problems"
+      ],
+      "consequence": "Could improve accountable emissions estimates",
+      "first_attack": "Prove observability for synthetic plume dynamics",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 94,
+      "discovery_rank": 29
+    },
+    {
+      "id": "N0073",
+      "title": "Auditable market-clearing certificates",
+      "statement": "Useful discrete markets admit concise certificates that an allocation satisfies stated feasibility and approximate welfare guarantees",
+      "domain": "Economics and mechanism design",
+      "spillovers": [
+        "Electricity markets",
+        "Public procurement",
+        "Optimization"
+      ],
+      "consequence": "Could make complex market outcomes independently checkable",
+      "first_attack": "Choose auction class and characterize duality gaps",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 94,
+      "discovery_rank": 30
+    },
+    {
+      "id": "N0075",
+      "title": "Robust matching under preference drift",
+      "statement": "A dynamic matching algorithm keeps specified fairness and stability losses bounded as preferences change gradually",
+      "domain": "Economics and mechanism design",
+      "spillovers": [
+        "Labor markets",
+        "Education",
+        "Healthcare placement"
+      ],
+      "consequence": "Could make matching systems more responsive",
+      "first_attack": "Define perturbation metric and prove regret bounds",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 94,
+      "discovery_rank": 31
+    },
+    {
+      "id": "N0103",
+      "title": "Sparse polynomial root certificates",
+      "statement": "Certain sparse high-degree polynomial families permit short exact certificates for all roots in a prescribed interval",
+      "domain": "Number theory and computation",
+      "spillovers": [
+        "Engineering control",
+        "Computer algebra",
+        "Verification"
+      ],
+      "consequence": "Could make difficult root isolation practically auditable",
+      "first_attack": "Compare Descartes-based and sparse methods",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 94,
+      "discovery_rank": 32
+    },
+    {
+      "id": "N0106",
+      "title": "Robust sparsifier for constrained flows",
+      "statement": "Graph flow feasibility under several simultaneous capacity constraints can be preserved by a sparse provably bounded summary",
+      "domain": "Combinatorics and optimization",
+      "spillovers": [
+        "Logistics",
+        "Transportation",
+        "Network engineering"
+      ],
+      "consequence": "Could speed large multi-commodity planning",
+      "first_attack": "Derive small counterexamples and restricted positive results",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 94,
+      "discovery_rank": 33
+    },
+    {
+      "id": "N0003",
+      "title": "Approximation with reusable witnesses",
+      "statement": "Every constant-factor approximation for a specified family of packing problems admits a comparably efficient independently checkable quality certificate",
+      "domain": "Algorithms and complexity",
+      "spillovers": [
+        "Operations research",
+        "Optimization",
+        "Auditability"
+      ],
+      "consequence": "Could make approximate decisions certifiable without rerunning expensive optimizers",
+      "first_attack": "Separate objective certificates from optimality-gap certificates",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 34
+    },
+    {
+      "id": "N0006",
+      "title": "Certified heuristic search",
+      "statement": "Nontrivial NP-hard benchmark families admit learned search policies with short independently checked unsatisfiability certificates",
+      "domain": "Algorithms and complexity",
+      "spillovers": [
+        "AI systems",
+        "Formal methods",
+        "Optimization"
+      ],
+      "consequence": "Could convert useful solver intuition into verifiable conclusions",
+      "first_attack": "Start with bounded graph coloring families",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 35
+    },
+    {
+      "id": "N0010",
+      "title": "Post-quantum proof portability",
+      "statement": "Security reductions for a nontrivial family of lattice protocols can be expressed in a reusable machine-checked framework preserving concrete parameters",
+      "domain": "Cryptography and privacy",
+      "spillovers": [
+        "Cybersecurity",
+        "Formal verification",
+        "Cryptography"
+      ],
+      "consequence": "Could lower auditing cost for deployed post-quantum systems",
+      "first_attack": "Formalize one standard assumption and one reduction",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 36
+    },
+    {
+      "id": "N0011",
+      "title": "Threshold signature robustness",
+      "statement": "There exists an asynchronous threshold-signature construction with optimal fault tolerance and practically bounded communication under explicit network assumptions",
+      "domain": "Cryptography and privacy",
+      "spillovers": [
+        "Distributed systems",
+        "Finance",
+        "Secure infrastructure"
+      ],
+      "consequence": "Could improve robust custody and critical coordination",
+      "first_attack": "Fix corruption model and derive lower bounds",
+      "stage": "prior_art_review",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 37
+    },
+    {
+      "id": "N0012",
+      "title": "Secure computation from narrow primitives",
+      "statement": "Useful classes of collaborative statistics admit secure computation protocols with communication proportional to sufficient-statistic size rather than raw dataset size",
+      "domain": "Cryptography and privacy",
+      "spillovers": [
+        "Healthcare",
+        "Statistics",
+        "Confidential computing"
+      ],
+      "consequence": "Could make privacy-preserving collaborations cheaper",
+      "first_attack": "Choose model family and leakage definition",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 38
+    },
+    {
+      "id": "N0013",
+      "title": "Quantum-resistant identity migration",
+      "statement": "An authenticated transition protocol can preserve forward security and rollback resistance across a mixed classical and post-quantum network",
+      "domain": "Cryptography and privacy",
+      "spillovers": [
+        "Identity systems",
+        "Cybersecurity",
+        "Public infrastructure"
+      ],
+      "consequence": "Could make cryptographic migrations easier to verify",
+      "first_attack": "Model downgrade and key-compromise attacks",
+      "stage": "prior_art_review",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 39
+    },
+    {
+      "id": "N0017",
+      "title": "Byzantine locality principle",
+      "statement": "In geographically clustered partially synchronous networks, fault-tolerant consensus can exploit locality without sacrificing global safety",
+      "domain": "Distributed systems",
+      "spillovers": [
+        "Payments",
+        "Cloud infrastructure",
+        "Coordination"
+      ],
+      "consequence": "Could reduce latency in critical distributed services",
+      "first_attack": "State latency model and impossibility boundaries",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 40
+    },
+    {
+      "id": "N0022",
+      "title": "Failure-transparent service composition",
+      "statement": "A restricted class of microservice workflows permits compositional proofs of bounded failure propagation",
+      "domain": "Distributed systems",
+      "spillovers": [
+        "Cloud operations",
+        "Healthcare IT",
+        "Financial infrastructure"
+      ],
+      "consequence": "Could prevent small outages from cascading",
+      "first_attack": "Formalize dependency semantics and fault injections",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 41
+    },
+    {
+      "id": "N0023",
+      "title": "Auditability of eventual consistency",
+      "statement": "For a nontrivial class of conflict-resolution rules, every converged state admits a compact witness of valid event order",
+      "domain": "Distributed systems",
+      "spillovers": [
+        "Databases",
+        "Legal records",
+        "Distributed coordination"
+      ],
+      "consequence": "Could make eventually consistent systems independently auditable",
+      "first_attack": "Search small conflicting execution traces",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 42
+    },
+    {
+      "id": "N0027",
+      "title": "Compute-efficient calibration",
+      "statement": "For an identified model family, predictive calibration can be maintained under gradual drift with sublinear retraining cost",
+      "domain": "AI and learning theory",
+      "spillovers": [
+        "Medical diagnostics",
+        "Forecasting",
+        "Machine learning"
+      ],
+      "consequence": "Could lower cost of maintaining trustworthy predictions",
+      "first_attack": "Define drift budget and online calibration regret",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 43
+    },
+    {
+      "id": "N0028",
+      "title": "Mechanistic circuit invariants",
+      "statement": "Nontrivial neural-network behaviors admit architecture-independent causal circuit descriptions conserved across independently trained models",
+      "domain": "AI and learning theory",
+      "spillovers": [
+        "AI interpretability",
+        "Neuroscience",
+        "Verification"
+      ],
+      "consequence": "Could make explanations more portable than model-specific probes",
+      "first_attack": "Test invariants on small networks with causal interventions",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 5,
+        "tractability": 4,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 44
+    },
+    {
+      "id": "N0032",
+      "title": "Synthetic-data utility frontier",
+      "statement": "For a bounded statistical task family there is a tight relation between synthetic-data privacy and downstream estimation utility",
+      "domain": "AI and learning theory",
+      "spillovers": [
+        "Data privacy",
+        "Statistics",
+        "AI development"
+      ],
+      "consequence": "Could show when synthetic records are useful or misleading",
+      "first_attack": "Choose privacy definition and derive minimax lower bounds",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 45
+    },
+    {
+      "id": "N0034",
+      "title": "Multiagent coordination locality",
+      "statement": "Large fleets under local communication restrictions can achieve bounded global performance loss with purely neighborhood-level decisions",
+      "domain": "Control and robotics",
+      "spillovers": [
+        "Warehouse robotics",
+        "Traffic",
+        "Distributed optimization"
+      ],
+      "consequence": "Could scale cooperative robots without central bottlenecks",
+      "first_attack": "Define topology and derive adversarial examples",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 46
+    },
+    {
+      "id": "N0035",
+      "title": "Control from intermittent sensing",
+      "statement": "An identifiable family of nonlinear plants remains stabilizable with formally bounded performance using sparse event-triggered observations",
+      "domain": "Control and robotics",
+      "spillovers": [
+        "Industrial automation",
+        "Space systems",
+        "Energy grids"
+      ],
+      "consequence": "Could reduce sensor and communication requirements",
+      "first_attack": "Use a precise observability class and small counterexamples",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 47
+    },
+    {
+      "id": "N0036",
+      "title": "Robust planner compilation",
+      "statement": "A useful class of motion-planning constraints can be compiled into verifiable controllers with bounded real-time complexity",
+      "domain": "Control and robotics",
+      "spillovers": [
+        "Autonomous vehicles",
+        "Robotics",
+        "Formal methods"
+      ],
+      "consequence": "Could make planner-to-actuator guarantees more rigorous",
+      "first_attack": "Restrict geometry and actuator models",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 48
+    },
+    {
+      "id": "N0037",
+      "title": "Networked safety margins",
+      "statement": "The stability margin of a network-controlled system can be bounded by a small set of graph and delay invariants",
+      "domain": "Control and robotics",
+      "spillovers": [
+        "Electric grids",
+        "Network infrastructure",
+        "Control theory"
+      ],
+      "consequence": "Could turn network topology into a quantitative control risk measure",
+      "first_attack": "Prove for linear time-invariant subsystems",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 49
+    },
+    {
+      "id": "N0038",
+      "title": "Human-robot intent uncertainty",
+      "statement": "Assumption-bounded human-intent prediction can be integrated into a controller with explicit collision-risk guarantees",
+      "domain": "Control and robotics",
+      "spillovers": [
+        "Assistive robotics",
+        "Transportation",
+        "Human factors"
+      ],
+      "consequence": "Could formalize the boundary between guessing intent and guaranteeing safety",
+      "first_attack": "State distribution and physical contact assumptions",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 50
+    },
+    {
+      "id": "N0039",
+      "title": "Graceful degradation theorem",
+      "statement": "A modular controller architecture retains a provable minimum service level after any bounded number of component faults",
+      "domain": "Control and robotics",
+      "spillovers": [
+        "Aerospace",
+        "Healthcare devices",
+        "Infrastructure"
+      ],
+      "consequence": "Could guide fail-operational system design",
+      "first_attack": "Define fault budget and composition operator",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 51
+    },
+    {
+      "id": "N0042",
+      "title": "Intervention transfer across networks",
+      "statement": "A network intervention ranking remains stable under explicit bounded changes in topology and transmission parameters",
+      "domain": "Networks and cascades",
+      "spillovers": [
+        "Epidemiology",
+        "Cybersecurity",
+        "Infrastructure"
+      ],
+      "consequence": "Could make intervention choices less brittle",
+      "first_attack": "Define robustness metric and adversarial rewiring tests",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 52
+    },
+    {
+      "id": "N0044",
+      "title": "Recovery-oriented percolation",
+      "statement": "A network design that minimizes disconnection under failures also approximately minimizes restoration time under bounded repair capacity",
+      "domain": "Networks and cascades",
+      "spillovers": [
+        "Power grids",
+        "Telecommunications",
+        "Logistics"
+      ],
+      "consequence": "Could align resilience design with recovery operations",
+      "first_attack": "Find counterexamples in small graphs",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 53
+    },
+    {
+      "id": "N0046",
+      "title": "Adaptive epidemic edge controls",
+      "statement": "Local risk-triggered edge policies can attain near-global suppression efficiency under a precisely specified stochastic epidemic model",
+      "domain": "Networks and cascades",
+      "spillovers": [
+        "Public health",
+        "Transport",
+        "Network science"
+      ],
+      "consequence": "Could make local responses more effective and measurable",
+      "first_attack": "Derive performance guarantee on bounded-degree graphs",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 54
+    },
+    {
+      "id": "N0048",
+      "title": "Temporal graph sparsification",
+      "statement": "Temporal reachability on certain dynamic graph classes can be preserved using a provably sparse event summary",
+      "domain": "Networks and cascades",
+      "spillovers": [
+        "Transportation",
+        "Security logs",
+        "Network analysis"
+      ],
+      "consequence": "Could reduce historical network computation costs",
+      "first_attack": "Define time-respecting paths and lower bounds",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 55
+    },
+    {
+      "id": "N0050",
+      "title": "Inverse-design uniqueness zones",
+      "statement": "Nontrivial families of wave-propagating materials admit parameter ranges where inverse reconstruction is unique and stable",
+      "domain": "Physics and materials",
+      "spillovers": [
+        "Medical imaging",
+        "Metamaterials",
+        "Geophysics"
+      ],
+      "consequence": "Could clarify when measurements identify material structure",
+      "first_attack": "Prove restricted inverse-scattering inequalities",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 56
+    },
+    {
+      "id": "N0051",
+      "title": "Fast defect-tolerant simulation",
+      "statement": "A specified family of lattice models permits rigorously bounded approximations of macroscopic properties despite sparse defects",
+      "domain": "Physics and materials",
+      "spillovers": [
+        "Semiconductors",
+        "Energy materials",
+        "Numerical analysis"
+      ],
+      "consequence": "Could speed trustworthy materials screening",
+      "first_attack": "Compare perturbation bounds to exact small lattices",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 57
+    },
+    {
+      "id": "N0052",
+      "title": "Certified phase boundaries",
+      "statement": "Phase transitions of an experimentally relevant reduced material model can be enclosed by mathematically certified intervals",
+      "domain": "Physics and materials",
+      "spillovers": [
+        "Materials discovery",
+        "Statistical physics",
+        "Computation"
+      ],
+      "consequence": "Could replace heuristic phase diagrams with checked bounds",
+      "first_attack": "Choose a lattice model and interval arithmetic scheme",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 58
+    },
+    {
+      "id": "N0053",
+      "title": "Quantum noise structural reduction",
+      "statement": "A nontrivial class of correlated quantum noise channels admits reliable effective descriptions with fewer parameters and explicit error bounds",
+      "domain": "Physics and materials",
+      "spillovers": [
+        "Quantum computing",
+        "Metrology",
+        "Information theory"
+      ],
+      "consequence": "Could improve device calibration and error analysis",
+      "first_attack": "Find correlated-noise examples and tight approximation error",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 59
+    },
+    {
+      "id": "N0054",
+      "title": "Topology-protected transport criteria",
+      "statement": "A small set of verifiable spectral conditions is sufficient to guarantee robust transport in a realistic disordered reduced model",
+      "domain": "Physics and materials",
+      "spillovers": [
+        "Electronics",
+        "Materials science",
+        "Mathematical physics"
+      ],
+      "consequence": "Could help identify dependable topological-device regimes",
+      "first_attack": "Specify model and edge-condition stability",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 60
+    },
+    {
+      "id": "N0058",
+      "title": "Storage diversity theorem",
+      "statement": "On identified correlated weather-demand processes, diversified storage technologies beat any single storage technology at matched capital under a quantified reliability measure",
+      "domain": "Climate and energy",
+      "spillovers": [
+        "Renewable energy",
+        "Finance",
+        "Operations research"
+      ],
+      "consequence": "Could sharpen storage investment decisions",
+      "first_attack": "Model storage dynamics and produce counterexamples",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 61
+    },
+    {
+      "id": "N0059",
+      "title": "Grid restoration locality",
+      "statement": "For a class of regional transmission networks, local restoration plans achieve provably bounded delay versus centralized optimization",
+      "domain": "Climate and energy",
+      "spillovers": [
+        "Disaster response",
+        "Energy systems",
+        "Distributed algorithms"
+      ],
+      "consequence": "Could improve recovery after wide outages",
+      "first_attack": "Fix switching safety constraints and exact small cases",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 62
+    },
+    {
+      "id": "N0062",
+      "title": "Water-energy joint optimization",
+      "statement": "Joint water and electricity network planning improves worst-case drought resilience over sequential planning by a provable factor in a specified region model",
+      "domain": "Climate and energy",
+      "spillovers": [
+        "Water systems",
+        "Energy",
+        "Climate adaptation"
+      ],
+      "consequence": "Could justify integrated infrastructure investment",
+      "first_attack": "Construct a coupled flow optimization model",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 63
+    },
+    {
+      "id": "N0063",
+      "title": "Demand response fairness bounds",
+      "statement": "Demand flexibility can be allocated with guarantees on both system reliability and bounded burden across participant classes",
+      "domain": "Climate and energy",
+      "spillovers": [
+        "Utility policy",
+        "Algorithmic fairness",
+        "Optimization"
+      ],
+      "consequence": "Could make reliability programs less inequitable",
+      "first_attack": "Formalize burden metric and search feasibility boundaries",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 64
+    },
+    {
+      "id": "N0064",
+      "title": "Certified wildfire spread envelopes",
+      "statement": "For a reduced wind-fuel propagation model, set-valued predictions tightly enclose all trajectories allowed by bounded input uncertainty",
+      "domain": "Climate and energy",
+      "spillovers": [
+        "Wildfire management",
+        "Control theory",
+        "Environmental science"
+      ],
+      "consequence": "Could improve honest risk mapping without false precision",
+      "first_attack": "Compare reachability envelopes to numerical simulations",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 65
+    },
+    {
+      "id": "N0067",
+      "title": "Immune repertoire summary sufficiency",
+      "statement": "A low-dimensional summary of defined immune-receptor sequences preserves specified prediction tasks within explicit error bounds",
+      "domain": "Biology and medicine",
+      "spillovers": [
+        "Immunology",
+        "Machine learning",
+        "Information theory"
+      ],
+      "consequence": "Could improve interpretable immune profiling",
+      "first_attack": "Define task and test impossibility limits",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 66
+    },
+    {
+      "id": "N0068",
+      "title": "Cell-lineage reconstruction limits",
+      "statement": "The exact conditions for reconstructing cell ancestry from noisy somatic mutations can be characterized for a tractable stochastic model",
+      "domain": "Biology and medicine",
+      "spillovers": [
+        "Cancer biology",
+        "Phylogenetics",
+        "Statistics"
+      ],
+      "consequence": "Could prevent overconfident lineage narratives",
+      "first_attack": "Derive information-theoretic identifiability bounds",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 67
+    },
+    {
+      "id": "N0070",
+      "title": "Epidemic genomic sampling thresholds",
+      "statement": "There is a measurable sampling threshold beyond which a restricted pathogen transmission model becomes identifiable from genomic and timing data",
+      "domain": "Biology and medicine",
+      "spillovers": [
+        "Epidemiology",
+        "Public health",
+        "Information theory"
+      ],
+      "consequence": "Could guide surveillance resources",
+      "first_attack": "Compare likelihood-identifiability on simulated outbreaks",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 68
+    },
+    {
+      "id": "N0071",
+      "title": "Multi-omic uncertainty propagation",
+      "statement": "An integration method for selected molecular measurements gives calibrated uncertainty bounds under specified missingness models",
+      "domain": "Biology and medicine",
+      "spillovers": [
+        "Biology",
+        "Statistics",
+        "Machine learning"
+      ],
+      "consequence": "Could make multimodal findings more reproducible",
+      "first_attack": "Start with linear latent variable systems",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 69
+    },
+    {
+      "id": "N0072",
+      "title": "Tissue growth stability criteria",
+      "statement": "A reduced growth-and-mechanics model has verifiable criteria separating stable tissue patterns from uncontrolled morphological transitions",
+      "domain": "Biology and medicine",
+      "spillovers": [
+        "Regenerative medicine",
+        "Mechanics",
+        "Mathematical biology"
+      ],
+      "consequence": "Could clarify modeling limits in tissue engineering",
+      "first_attack": "Analyze reaction-diffusion-mechanics toy systems",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 70
+    },
+    {
+      "id": "N0076",
+      "title": "Data contribution pricing consistency",
+      "statement": "A market rule for pooled training data can be budget-balanced and approximately incentive-compatible for a defined model family",
+      "domain": "Economics and mechanism design",
+      "spillovers": [
+        "AI markets",
+        "Economics",
+        "Data governance"
+      ],
+      "consequence": "Could enable responsible data compensation",
+      "first_attack": "Find impossibility boundaries in small cooperative games",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 71
+    },
+    {
+      "id": "N0078",
+      "title": "Infrastructure options under uncertainty",
+      "statement": "A staged infrastructure investment policy provably outperforms fixed commitment in some identifiable uncertainty regimes without exceeding risk ceilings",
+      "domain": "Economics and mechanism design",
+      "spillovers": [
+        "Public finance",
+        "Climate adaptation",
+        "Operations research"
+      ],
+      "consequence": "Could formalize the value of flexible capital plans",
+      "first_attack": "Derive two-stage stochastic programming conditions",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 72
+    },
+    {
+      "id": "N0080",
+      "title": "Truthful information acquisition",
+      "statement": "Mechanisms can reward costly evidence gathering while limiting incentives to fabricate or suppress findings in a restricted verification model",
+      "domain": "Economics and mechanism design",
+      "spillovers": [
+        "Scientific funding",
+        "Auditing",
+        "Mechanism design"
+      ],
+      "consequence": "Could improve reward design for hard-to-verify knowledge",
+      "first_attack": "Specify evidence verification and principal-agent constraints",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 73
+    },
+    {
+      "id": "N0085",
+      "title": "Exact audit sampling plans",
+      "statement": "An optimal or near-optimal sequential audit rule can certify bounded aggregate error using fewer samples than fixed audit plans under explicit constraints",
+      "domain": "Probability and statistics",
+      "spillovers": [
+        "Elections auditing",
+        "Accounting",
+        "Quality assurance"
+      ],
+      "consequence": "Could improve efficient independent auditing",
+      "first_attack": "Choose finite-population model and prove risk guarantee",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 74
+    },
+    {
+      "id": "N0086",
+      "title": "Nonstationary uncertainty lower bounds",
+      "statement": "Predictive intervals for bounded-drift time series have a tight width-versus-coverage frontier under a realistic adversarial model",
+      "domain": "Probability and statistics",
+      "spillovers": [
+        "Finance",
+        "Weather forecasting",
+        "Machine learning"
+      ],
+      "consequence": "Could expose unavoidable uncertainty in changing environments",
+      "first_attack": "Derive simple one-dimensional lower bounds",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 75
+    },
+    {
+      "id": "N0087",
+      "title": "Missingness identifiability map",
+      "statement": "For selected graphical data models, recoverable parameters under informative missingness can be characterized algorithmically",
+      "domain": "Probability and statistics",
+      "spillovers": [
+        "Medical data",
+        "Survey research",
+        "Statistics"
+      ],
+      "consequence": "Could prevent inference from impossible-to-identify data",
+      "first_attack": "Classify small missingness graphs",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 76
+    },
+    {
+      "id": "N0088",
+      "title": "Reproducibility from summary statistics",
+      "statement": "A defined family of scientific claims can be independently checked from a sufficient set of published summary statistics without raw data access",
+      "domain": "Probability and statistics",
+      "spillovers": [
+        "Meta-science",
+        "Privacy",
+        "Clinical research"
+      ],
+      "consequence": "Could raise auditability while respecting restricted datasets",
+      "first_attack": "State claim language and prove sufficiency or failure",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 77
+    },
+    {
+      "id": "N0089",
+      "title": "Geometric reconstruction from sparse distances",
+      "statement": "A broad restricted class of embedded shapes is uniquely reconstructible from near-minimal noisy pairwise distance samples",
+      "domain": "Geometry and topology",
+      "spillovers": [
+        "Medical imaging",
+        "Robotics",
+        "Sensor networks"
+      ],
+      "consequence": "Could improve imaging and localization from limited measurements",
+      "first_attack": "Start with graph rigidity and perturbation bounds",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 78
+    },
+    {
+      "id": "N0090",
+      "title": "Topology-preserving mesh simplification",
+      "statement": "Certain discretized manifolds admit near-linear-time simplification with certificates preserving selected homological invariants",
+      "domain": "Geometry and topology",
+      "spillovers": [
+        "Engineering simulation",
+        "Computer graphics",
+        "Topology"
+      ],
+      "consequence": "Could accelerate reliable geometry processing",
+      "first_attack": "Fix manifold class and derive certificate scheme",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 79
+    },
+    {
+      "id": "N0091",
+      "title": "Certified shape optimization",
+      "statement": "For a bounded geometry language, optimized structures can carry short proofs of stress constraints and quantified approximation error",
+      "domain": "Geometry and topology",
+      "spillovers": [
+        "Architecture",
+        "Manufacturing",
+        "Numerical analysis"
+      ],
+      "consequence": "Could make generated designs safer to audit",
+      "first_attack": "Restrict to planar trusses and convex relaxations",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 80
+    },
+    {
+      "id": "N0093",
+      "title": "Robust topological data signatures",
+      "statement": "Persistent-homology features can be proved stable under a broader specified class of structured missing-data perturbations",
+      "domain": "Geometry and topology",
+      "spillovers": [
+        "Biology",
+        "Sensor analytics",
+        "Topological data analysis"
+      ],
+      "consequence": "Could make topological features useful under realistic data gaps",
+      "first_attack": "Construct perturbation metric and prove bottleneck bounds",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 81
+    },
+    {
+      "id": "N0094",
+      "title": "Discrete-continuum surface bridge",
+      "statement": "A computable local criterion guarantees convergence of a selected discrete geometric flow to its continuum limit",
+      "domain": "Geometry and topology",
+      "spillovers": [
+        "Computer graphics",
+        "Geometry",
+        "Physical simulation"
+      ],
+      "consequence": "Could improve reliability of mesh-based dynamics",
+      "first_attack": "Prove for highly regular initial meshes",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 82
+    },
+    {
+      "id": "N0095",
+      "title": "Inverse geometry ambiguity classification",
+      "statement": "All nonuniqueness mechanisms for a selected boundary-reconstruction problem can be described by finite geometric symmetries",
+      "domain": "Geometry and topology",
+      "spillovers": [
+        "Medical tomography",
+        "Geophysics",
+        "Differential geometry"
+      ],
+      "consequence": "Could reveal which measurements determine shape",
+      "first_attack": "Fix measurement operator and known obstructions",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 83
+    },
+    {
+      "id": "N0097",
+      "title": "Certified prime-structure heuristics",
+      "statement": "For selected arithmetic search sequences, computable secondary terms produce provably tighter counts than naive density heuristics on explicit ranges",
+      "domain": "Number theory and computation",
+      "spillovers": [
+        "Cryptography",
+        "Number theory",
+        "Scientific computing"
+      ],
+      "consequence": "Could strengthen reliability of arithmetic searches",
+      "first_attack": "Select sequences with available sieve machinery",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 84
+    },
+    {
+      "id": "N0098",
+      "title": "Arithmetic proof certificate reuse",
+      "statement": "Large classes of Diophantine infeasibility results admit modular certificates reusable across parameterized instances",
+      "domain": "Number theory and computation",
+      "spillovers": [
+        "Formal methods",
+        "Number theory",
+        "Symbolic computation"
+      ],
+      "consequence": "Could make arithmetic verification scalable",
+      "first_attack": "Start with bounded-degree equation families",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 85
+    },
+    {
+      "id": "N0099",
+      "title": "Efficient p-adic precision allocation",
+      "statement": "An adaptive precision scheme gives certified optimal or near-optimal resource use for a specified class of p-adic calculations",
+      "domain": "Number theory and computation",
+      "spillovers": [
+        "Algebraic geometry",
+        "Cryptography",
+        "Computer algebra"
+      ],
+      "consequence": "Could lower cost of rigorous arithmetic computation",
+      "first_attack": "Use a controlled Hensel-lifting benchmark",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 86
+    },
+    {
+      "id": "N0100",
+      "title": "Local-global obstruction discovery",
+      "statement": "A machine-checkable invariant family finds every obstruction within a nontrivial restricted class of local-global Diophantine problems",
+      "domain": "Number theory and computation",
+      "spillovers": [
+        "Arithmetic geometry",
+        "Formal verification",
+        "Algorithm design"
+      ],
+      "consequence": "Could turn isolated obstructions into a systematic tool",
+      "first_attack": "Enumerate constrained curves with known obstructions",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 87
+    },
+    {
+      "id": "N0101",
+      "title": "Modular reconstruction thresholds",
+      "statement": "There are tight general bounds on the number of modular images needed to certify an exact algebraic answer in a structured problem family",
+      "domain": "Number theory and computation",
+      "spillovers": [
+        "Symbolic computation",
+        "Signal processing",
+        "Mathematics"
+      ],
+      "consequence": "Could guide exact distributed calculations",
+      "first_attack": "Prove for bounded-height polynomial systems",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 88
+    },
+    {
+      "id": "N0102",
+      "title": "Finite-field pseudorandomness transfer",
+      "statement": "A constructive algebraic family exhibits provable pseudorandomness simultaneously for several signal-processing and algorithmic tests",
+      "domain": "Number theory and computation",
+      "spillovers": [
+        "Communication systems",
+        "Cryptography",
+        "Combinatorics"
+      ],
+      "consequence": "Could deliver reusable explicit test sequences",
+      "first_attack": "State statistical tests and examine character-sum bounds",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 89
+    },
+    {
+      "id": "N0104",
+      "title": "Arithmetic circuit factorization boundary",
+      "statement": "A natural restricted arithmetic-circuit model has a provably sharp boundary between tractable and intractable polynomial factorization",
+      "domain": "Number theory and computation",
+      "spillovers": [
+        "Symbolic AI",
+        "Complexity theory",
+        "Coding theory"
+      ],
+      "consequence": "Could clarify the limits of algebraic automation",
+      "first_attack": "Identify model and build size-preserving reductions",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 90
+    },
+    {
+      "id": "N0105",
+      "title": "Certificate-rich combinatorial optimization",
+      "statement": "A structured family of integer programs admits strong dual-like certificates even when generic relaxations have a large gap",
+      "domain": "Combinatorics and optimization",
+      "spillovers": [
+        "Logistics",
+        "Optimization",
+        "Verification"
+      ],
+      "consequence": "Could improve the auditability of complex schedules",
+      "first_attack": "Specify constraint matrices and obstruction families",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 91
+    },
+    {
+      "id": "N0107",
+      "title": "Extremal designs from limited templates",
+      "statement": "A finite library of algebraic templates produces asymptotically near-optimal constructions for a nontrivial family of incidence problems",
+      "domain": "Combinatorics and optimization",
+      "spillovers": [
+        "Experimental design",
+        "Coding theory",
+        "Combinatorics"
+      ],
+      "consequence": "Could turn ad hoc constructions into reusable design methods",
+      "first_attack": "Formalize incidence objective and candidate templates",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 92
+    },
+    {
+      "id": "N0108",
+      "title": "Submodular optimization with changing costs",
+      "statement": "Online submodular resource selection permits provably bounded regret and constraint violation under selected nonstationary costs",
+      "domain": "Combinatorics and optimization",
+      "spillovers": [
+        "Cloud allocation",
+        "Public policy",
+        "Machine learning"
+      ],
+      "consequence": "Could make adaptive resource allocation dependable",
+      "first_attack": "Set budget variation and oracle model",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 93
+    },
+    {
+      "id": "N0110",
+      "title": "Rounding under correlated constraints",
+      "statement": "A dependent rounding scheme can preserve multiple fairness and capacity guarantees with controlled concentration",
+      "domain": "Combinatorics and optimization",
+      "spillovers": [
+        "Labor scheduling",
+        "Healthcare operations",
+        "Algorithm design"
+      ],
+      "consequence": "Could improve fair constrained allocation",
+      "first_attack": "Seek tight impossibility limits for small instances",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 94
+    },
+    {
+      "id": "N0111",
+      "title": "Online matching with certified regret",
+      "statement": "In a restricted stochastic arrival model, online matching decisions admit local certificates of bounded regret versus hindsight optimum",
+      "domain": "Combinatorics and optimization",
+      "spillovers": [
+        "Labor platforms",
+        "Transportation",
+        "Market design"
+      ],
+      "consequence": "Could increase trust in dynamic allocations",
+      "first_attack": "Start with bipartite arrivals and known impossibility bounds",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 95
+    },
+    {
+      "id": "N0114",
+      "title": "Proof dependency risk scores",
+      "statement": "A mathematically justified dependency metric predicts how local axiom or lemma changes propagate through a machine-checked theorem library",
+      "domain": "Logic and formal methods",
+      "spillovers": [
+        "Software maintenance",
+        "Mathematical publishing",
+        "Proof assistants"
+      ],
+      "consequence": "Could improve long-lived formal proof maintenance",
+      "first_attack": "Study dependency DAGs with controlled edits",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 96
+    },
+    {
+      "id": "N0116",
+      "title": "Executable specification refinement",
+      "statement": "A useful class of natural-language requirements can be translated into unambiguous formal contracts with ambiguity witnesses rather than silent guesses",
+      "domain": "Logic and formal methods",
+      "spillovers": [
+        "Legal technology",
+        "Software engineering",
+        "AI assurance"
+      ],
+      "consequence": "Could expose specification gaps early",
+      "first_attack": "Define controlled language and ambiguity metric",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 97
+    },
+    {
+      "id": "N0118",
+      "title": "Compositional model-checking boundaries",
+      "statement": "The precise conditions for sublinear compositional verification can be characterized for a realistic parameterized concurrent-system model",
+      "domain": "Logic and formal methods",
+      "spillovers": [
+        "Cybersecurity",
+        "Distributed systems",
+        "Formal methods"
+      ],
+      "consequence": "Could guide scalable safety verification",
+      "first_attack": "Compare assume-guarantee rules with communication lower bounds",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 98
+    },
+    {
+      "id": "N0119",
+      "title": "Specification mutation completeness",
+      "statement": "A finite mutation basis is complete for detecting defined categories of omissions in a restricted safety specification language",
+      "domain": "Logic and formal methods",
+      "spillovers": [
+        "Software testing",
+        "Medical devices",
+        "Formal verification"
+      ],
+      "consequence": "Could test specification quality rather than just code",
+      "first_attack": "Define defect grammar and completeness theorem",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 99
+    },
+    {
+      "id": "N0120",
+      "title": "Long-term proof artifact survivability",
+      "statement": "A small self-contained verification kernel and open proof format can preserve checkability of a broad theorem class across implementation changes",
+      "domain": "Logic and formal methods",
+      "spillovers": [
+        "Scientific archives",
+        "Mathematical research",
+        "Cybersecurity"
+      ],
+      "consequence": "Could protect mathematical evidence from software obsolescence",
+      "first_attack": "Design minimal proof calculus and prove translation preservation",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 5,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 89,
+      "discovery_rank": 100
+    },
+    {
+      "id": "N0008",
+      "title": "Reusable reduction library",
+      "statement": "A finite collection of machine-checkable reductions captures every NP-completeness transfer inside a nontrivial restricted problem grammar",
+      "domain": "Algorithms and complexity",
+      "spillovers": [
+        "Education",
+        "Proof assistants",
+        "Complexity theory"
+      ],
+      "consequence": "Could make entire classes of hardness claims mechanically auditable",
+      "first_attack": "Define finite grammar and completeness criterion",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 3,
+        "tractability": 5,
+        "verifiability": 5,
+        "transfer": 4
+      },
+      "score": 85,
+      "discovery_rank": 101
+    },
+    {
+      "id": "N0005",
+      "title": "Average-case hardness transfer",
+      "statement": "A natural distributional hardness assumption for one combinatorial problem yields average-case hardness for several unrelated optimization tasks",
+      "domain": "Algorithms and complexity",
+      "spillovers": [
+        "Cryptography",
+        "Complexity theory",
+        "Optimization"
+      ],
+      "consequence": "Could unify hardness evidence across security and optimization",
+      "first_attack": "Identify distribution-preserving reductions",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 5,
+        "tractability": 3,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 83,
+      "discovery_rank": 102
+    },
+    {
+      "id": "N0007",
+      "title": "Input-sensitive lower bounds",
+      "statement": "The computational hardness of a broad family of geometric search tasks is characterized by a small set of measurable input invariants",
+      "domain": "Algorithms and complexity",
+      "spillovers": [
+        "Geometry",
+        "Robotics",
+        "Data indexing"
+      ],
+      "consequence": "Could predict when practical search systems degrade",
+      "first_attack": "Choose dimension and computation model then prove restricted bounds",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 4,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 83,
+      "discovery_rank": 103
+    },
+    {
+      "id": "N0014",
+      "title": "Zero-knowledge scientific provenance",
+      "statement": "A nontrivial class of computational science pipelines can prove data-processing compliance without revealing underlying restricted datasets",
+      "domain": "Cryptography and privacy",
+      "spillovers": [
+        "Research reproducibility",
+        "Privacy",
+        "Public policy"
+      ],
+      "consequence": "Could support independent audits of sensitive analyses",
+      "first_attack": "Formalize one pipeline and circuit cost",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 4,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 83,
+      "discovery_rank": 104
+    },
+    {
+      "id": "N0016",
+      "title": "Minimal trusted computing bases",
+      "statement": "Useful cryptographic services admit a formally verified core small enough for independent end-to-end inspection without prohibitive performance overhead",
+      "domain": "Cryptography and privacy",
+      "spillovers": [
+        "Security engineering",
+        "Formal methods",
+        "Cloud computing"
+      ],
+      "consequence": "Could reduce systemic dependence on opaque implementations",
+      "first_attack": "Benchmark a narrow service with explicit threat model",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 4,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 83,
+      "discovery_rank": 105
+    },
+    {
+      "id": "N0019",
+      "title": "Energy-aware replication bounds",
+      "statement": "For a realistic fault model there is an optimal frontier relating energy cost, geographical redundancy and guaranteed recovery",
+      "domain": "Distributed systems",
+      "spillovers": [
+        "Energy systems",
+        "Cloud reliability",
+        "Optimization"
+      ],
+      "consequence": "Could guide lower-energy resilient infrastructure",
+      "first_attack": "Define fault distribution and optimize small topologies",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 4,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 83,
+      "discovery_rank": 106
+    },
+    {
+      "id": "N0021",
+      "title": "Causal consistency compression",
+      "statement": "Certain distributed application workloads permit exact causal histories encoded sublinearly in event count",
+      "domain": "Distributed systems",
+      "spillovers": [
+        "Collaboration software",
+        "Distributed databases",
+        "Communication networks"
+      ],
+      "consequence": "Could reduce synchronization overhead while preserving causal meaning",
+      "first_attack": "Identify workload restrictions and counterexamples",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 4,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 83,
+      "discovery_rank": 107
+    },
+    {
+      "id": "N0031",
+      "title": "Representation transfer boundary",
+      "statement": "A quantitative geometric invariant predicts which learned representations transfer across tasks without fine-tuning",
+      "domain": "AI and learning theory",
+      "spillovers": [
+        "Education",
+        "Medical imaging",
+        "Machine learning"
+      ],
+      "consequence": "Could reduce data and compute needed for transfer learning",
+      "first_attack": "Construct benchmark with known latent factors",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 4,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 83,
+      "discovery_rank": 108
+    },
+    {
+      "id": "N0040",
+      "title": "Distributed estimation minimality",
+      "statement": "For selected sensor-network models, global state estimation accuracy can be maintained using near-minimal message exchanges",
+      "domain": "Control and robotics",
+      "spillovers": [
+        "Environmental monitoring",
+        "Industrial sensing",
+        "Communications"
+      ],
+      "consequence": "Could conserve energy across distributed sensors",
+      "first_attack": "Compare estimator lower bounds with constructive protocol",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 4,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 83,
+      "discovery_rank": 109
+    },
+    {
+      "id": "N0043",
+      "title": "Early-warning identifiability",
+      "statement": "Critical transition probability can be inferred consistently from partial observations in a restricted stochastic network family",
+      "domain": "Networks and cascades",
+      "spillovers": [
+        "Finance",
+        "Ecology",
+        "Public health"
+      ],
+      "consequence": "Could reveal how early warnings depend on observed nodes",
+      "first_attack": "Study finite-state models with hidden nodes",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 4,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 83,
+      "discovery_rank": 110
+    },
+    {
+      "id": "N0047",
+      "title": "Network repair certificate",
+      "statement": "A sequence of graph repairs can carry a compact proof of monotone improvement in a defined resilience metric",
+      "domain": "Networks and cascades",
+      "spillovers": [
+        "Disaster recovery",
+        "Operations research",
+        "Communications"
+      ],
+      "consequence": "Could make recovery strategies independently auditable",
+      "first_attack": "Choose connectivity or flow metric and verify greedily",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 4,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 83,
+      "discovery_rank": 111
+    },
+    {
+      "id": "N0056",
+      "title": "Manufacturing process invariants",
+      "statement": "Certain process variables can guarantee defect-density ceilings in a constrained additive-manufacturing model",
+      "domain": "Physics and materials",
+      "spillovers": [
+        "Manufacturing",
+        "Materials",
+        "Control theory"
+      ],
+      "consequence": "Could turn process tuning into certifiable quality guarantees",
+      "first_attack": "State thermal and geometry assumptions",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 4,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 83,
+      "discovery_rank": 112
+    },
+    {
+      "id": "N0079",
+      "title": "Interoperability welfare threshold",
+      "statement": "In a modeled network market there is a computable threshold at which mandatory interoperability improves welfare without undermining participation incentives",
+      "domain": "Economics and mechanism design",
+      "spillovers": [
+        "Digital markets",
+        "Policy",
+        "Network economics"
+      ],
+      "consequence": "Could discipline platform regulation tradeoffs",
+      "first_attack": "Analyze two-sided market equilibrium assumptions",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 4,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 83,
+      "discovery_rank": 113
+    },
+    {
+      "id": "N0092",
+      "title": "Curvature-driven network embeddings",
+      "statement": "A class of sparse networks admits geometric embeddings where curvature constraints bound routing stretch",
+      "domain": "Geometry and topology",
+      "spillovers": [
+        "Communications",
+        "Graph theory",
+        "Geometric analysis"
+      ],
+      "consequence": "Could improve geometric routing and network interpretation",
+      "first_attack": "Define curvature and small-graph extremizers",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 4,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 83,
+      "discovery_rank": 114
+    },
+    {
+      "id": "N0096",
+      "title": "Packing stability under perturbation",
+      "statement": "Near-optimal packings in a chosen geometric domain must lie close to a bounded family of extremal configurations",
+      "domain": "Geometry and topology",
+      "spillovers": [
+        "Materials",
+        "Optimization",
+        "Discrete geometry"
+      ],
+      "consequence": "Could guide robust physical packing design",
+      "first_attack": "Study low-dimensional compact cases",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 4,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 83,
+      "discovery_rank": 115
+    },
+    {
+      "id": "N0112",
+      "title": "Discrete optimization phase transitions",
+      "statement": "A small set of structural instance parameters predicts sharp performance transitions for a nontrivial family of exact solvers",
+      "domain": "Combinatorics and optimization",
+      "spillovers": [
+        "Industrial planning",
+        "Algorithms",
+        "Statistical physics"
+      ],
+      "consequence": "Could help allocate compute between exact and approximate methods",
+      "first_attack": "Define solver-independent hardness measure",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 4,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 83,
+      "discovery_rank": 116
+    },
+    {
+      "id": "N0001",
+      "title": "Proof-to-program compression",
+      "statement": "Every theorem in a restricted bounded-arithmetic fragment has a proof-producing algorithm whose overhead is polynomial in the shortest proof",
+      "domain": "Algorithms and complexity",
+      "spillovers": [
+        "Software verification",
+        "Computational complexity",
+        "Automated theorem proving"
+      ],
+      "consequence": "Could convert more mathematical proofs into practical certifying algorithms",
+      "first_attack": "Choose a fragment and seek proof-length lower bounds",
+      "stage": "prior_art_review",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 3,
+        "tractability": 4,
+        "verifiability": 5,
+        "transfer": 5
+      },
+      "score": 82,
+      "discovery_rank": 117
+    },
+    {
+      "id": "N0020",
+      "title": "Long-lived storage integrity",
+      "statement": "An append-only storage design can preserve publicly verifiable inclusion and non-equivocation across decades of cryptographic algorithm migrations",
+      "domain": "Distributed systems",
+      "spillovers": [
+        "Archives",
+        "Public records",
+        "Cybersecurity"
+      ],
+      "consequence": "Could protect high-value records from algorithm obsolescence",
+      "first_attack": "Specify trust transitions and adversarial rewriting model",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 4,
+        "verifiability": 3,
+        "transfer": 5
+      },
+      "score": 78,
+      "discovery_rank": 118
+    },
+    {
+      "id": "N0002",
+      "title": "Parameterized certificate sparsity",
+      "statement": "Every fixed-parameter tractable graph property with bounded local witnesses admits sublinear certificates on bounded-expansion graphs",
+      "domain": "Algorithms and complexity",
+      "spillovers": [
+        "Graph algorithms",
+        "Verification",
+        "Network infrastructure"
+      ],
+      "consequence": "Would enable compact independently checkable decisions on large sparse networks",
+      "first_attack": "Test against known kernelization lower bounds",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 3,
+        "tractability": 4,
+        "verifiability": 4,
+        "transfer": 5
+      },
+      "score": 77,
+      "discovery_rank": 119
+    },
+    {
+      "id": "N0024",
+      "title": "Coordinated recovery without central clocks",
+      "statement": "An asynchronous replicated system can produce minimal recovery checkpoints with safety proved without a trusted physical clock",
+      "domain": "Distributed systems",
+      "spillovers": [
+        "Disaster response",
+        "Networks",
+        "Critical infrastructure"
+      ],
+      "consequence": "Could improve recovery where timing infrastructure is unreliable",
+      "first_attack": "Fix crash/recovery model and prove lower bounds",
+      "stage": "formalize",
+      "evidence_state": "unvetted_hypothesis",
+      "scores": {
+        "impact": 4,
+        "tractability": 4,
+        "verifiability": 3,
+        "transfer": 4
+      },
+      "score": 75,
+      "discovery_rank": 120
+    }
+  ]
+}
