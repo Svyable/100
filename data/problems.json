@@ -1026,28 +1026,28 @@
     "name": "Caccetta–Häggkvist conjecture",
     "field": "Combinatorics",
     "question": "Does minimum digraph outdegree r force a directed cycle of length at most ceil(n/r)?",
-    "first_attack": "Find extremal digraph structure at small outdegree",
+    "first_attack": "Encode fixed (n,r) minimum-outdegree and forbidden short cycles; verify structural reductions on exact digraphs",
     "impact": 5,
     "attackability": 4,
     "verifiability": 5,
     "spillover": 5,
     "evidence_state": "needs_review",
-    "checked_on": null,
-    "source_url": null
+    "checked_on": "2026-10-30",
+    "source_url": "https://doi.org/10.1016/0012-365X(87)90122-1"
   },
   {
     "id": "M075",
     "name": "Frankl union-closed sets conjecture",
     "field": "Combinatorics",
     "question": "Must a finite nontrivial union-closed family have some element in at least half of its sets?",
-    "first_attack": "Sharpen frequency inequalities on extremal union-closed families",
+    "first_attack": "Reproduce exact small-family enumeration; seek an isomorph-free minimal-counterexample lemma or certified entropy inequality",
     "impact": 4,
     "attackability": 5,
     "verifiability": 5,
     "spillover": 4,
     "evidence_state": "needs_review",
-    "checked_on": null,
-    "source_url": "https://mathdb.com/p/355601/the-union-closed-sets-conjecture"
+    "checked_on": "2026-10-30",
+    "source_url": "https://arxiv.org/abs/2610.02295"
   },
   {
     "id": "M076",
@@ -1222,14 +1222,14 @@
     "name": "Deterministic polynomial identity testing",
     "field": "Complexity",
     "question": "Is there a deterministic polynomial-time identity test for general arithmetic circuits?",
-    "first_attack": "Derandomize a new arithmetic circuit class",
+    "first_attack": "Specify the field/circuit/degree model; prove a deterministic hitting set for one explicit restricted class",
     "impact": 5,
     "attackability": 4,
     "verifiability": 5,
     "spillover": 5,
     "evidence_state": "needs_review",
-    "checked_on": null,
-    "source_url": null
+    "checked_on": "2026-10-30",
+    "source_url": "https://www.cs.sfu.ca/~kabanets/Research/poly.html"
   },
   {
     "id": "M089",
@@ -1278,14 +1278,14 @@
     "name": "Zauner SIC conjecture",
     "field": "Mathematical physics / finite structures",
     "question": "Do SIC equiangular complex lines exist in every finite dimension d at least two?",
-    "first_attack": "Produce exact algebraic SIC certificates and verified symmetry computations",
+    "first_attack": "Verify small-dimension SICs using exact algebraic arithmetic; audit uniform constructions and their Galois assumptions",
     "impact": 5,
     "attackability": 4,
     "verifiability": 5,
     "spillover": 5,
     "evidence_state": "needs_review",
-    "checked_on": null,
-    "source_url": null
+    "checked_on": "2026-10-30",
+    "source_url": "https://papex.org/problems/zauners-conjecture"
   },
   {
     "id": "M093",
@@ -1320,13 +1320,13 @@
     "name": "Exact Ramsey number R(5,5)",
     "field": "Mathematical physics / finite structures",
     "question": "Which integer from 43 to 46 is the exact value of R(5,5)?",
-    "first_attack": "Develop SAT certificates with independent checking",
+    "first_attack": "Verify published K42 witness; pursue independently checked K43 coloring or K45 UNSAT proof certificate",
     "impact": 3,
     "attackability": 5,
     "verifiability": 5,
     "spillover": 3,
     "evidence_state": "needs_review",
-    "checked_on": null,
+    "checked_on": "2026-10-30",
     "source_url": "https://doi.org/10.1002/jgt.70029"
   },
   {
