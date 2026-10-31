@@ -16,10 +16,13 @@
   },
   "program_as_of": "2026-10-31",
   "summary": {
-    "campaigns": 5,
-    "reproduced_known": 3,
+    "campaigns": 15,
+    "reproduced_known": 15,
     "restricted_verified": 0,
-    "fully_solved": 0
+    "fully_solved": 0,
+    "problems_with_exact_verifier": 14,
+    "exact_probes": 12,
+    "engines": 8
   },
   "execution_scoring": {
     "brief": 2,
@@ -39,6 +42,7 @@
       "attackability": 4,
       "verifiability": 5,
       "spillover": 5,
+      "modality": "finite_refutable",
       "evidence_state": "needs_review",
       "checked_on": "2026-10-31",
       "source_url": "https://lemon.cs.elte.hu/egres/open/Caccetta-H%C3%A4ggkvist_conjecture",
@@ -60,12 +64,13 @@
       "attackability": 4,
       "verifiability": 5,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": "2026-10-30",
       "source_url": "https://www.cs.sfu.ca/~kabanets/Research/poly.html",
       "rank": 2,
       "score": 94,
-      "execution_rank": 3,
+      "execution_rank": 8,
       "execution_score": 96,
       "readiness": 2,
       "campaign_stage": "specified",
@@ -81,16 +86,17 @@
       "attackability": 4,
       "verifiability": 5,
       "spillover": 5,
+      "modality": "existence_family",
       "evidence_state": "needs_review",
       "checked_on": "2026-10-30",
       "source_url": "https://papex.org/problems/zauners-conjecture",
       "rank": 3,
       "score": 94,
-      "execution_rank": 4,
-      "execution_score": 96,
-      "readiness": 2,
-      "campaign_stage": "specified",
-      "milestone_count": 0
+      "execution_rank": 2,
+      "execution_score": 101,
+      "readiness": 7,
+      "campaign_stage": "benchmark_reproduced",
+      "milestone_count": 1
     },
     {
       "id": "M075",
@@ -102,12 +108,13 @@
       "attackability": 5,
       "verifiability": 5,
       "spillover": 4,
+      "modality": "finite_refutable",
       "evidence_state": "needs_review",
       "checked_on": "2026-10-30",
       "source_url": "https://arxiv.org/abs/2610.02295",
       "rank": 4,
       "score": 91,
-      "execution_rank": 2,
+      "execution_rank": 3,
       "execution_score": 98,
       "readiness": 7,
       "campaign_stage": "benchmark_reproduced",
@@ -123,12 +130,13 @@
       "attackability": 5,
       "verifiability": 5,
       "spillover": 4,
+      "modality": "asymptotic",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 5,
       "score": 91,
-      "execution_rank": 5,
+      "execution_rank": 12,
       "execution_score": 91,
       "readiness": 0,
       "campaign_stage": null,
@@ -144,16 +152,17 @@
       "attackability": 5,
       "verifiability": 5,
       "spillover": 4,
+      "modality": "finite_refutable",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 6,
       "score": 91,
-      "execution_rank": 6,
-      "execution_score": 91,
-      "readiness": 0,
-      "campaign_stage": null,
-      "milestone_count": 0
+      "execution_rank": 4,
+      "execution_score": 98,
+      "readiness": 7,
+      "campaign_stage": "benchmark_reproduced",
+      "milestone_count": 1
     },
     {
       "id": "M079",
@@ -165,16 +174,17 @@
       "attackability": 5,
       "verifiability": 5,
       "spillover": 4,
+      "modality": "finite_refutable",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 7,
       "score": 91,
-      "execution_rank": 7,
-      "execution_score": 91,
-      "readiness": 0,
-      "campaign_stage": null,
-      "milestone_count": 0
+      "execution_rank": 5,
+      "execution_score": 98,
+      "readiness": 7,
+      "campaign_stage": "benchmark_reproduced",
+      "milestone_count": 1
     },
     {
       "id": "M093",
@@ -186,16 +196,17 @@
       "attackability": 5,
       "verifiability": 5,
       "spillover": 4,
+      "modality": "finite_refutable",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 8,
       "score": 91,
-      "execution_rank": 8,
-      "execution_score": 91,
-      "readiness": 0,
-      "campaign_stage": null,
-      "milestone_count": 0
+      "execution_rank": 6,
+      "execution_score": 98,
+      "readiness": 7,
+      "campaign_stage": "benchmark_reproduced",
+      "milestone_count": 1
     },
     {
       "id": "M094",
@@ -207,16 +218,17 @@
       "attackability": 5,
       "verifiability": 5,
       "spillover": 4,
+      "modality": "existence_family",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 9,
       "score": 91,
-      "execution_rank": 9,
-      "execution_score": 91,
-      "readiness": 0,
-      "campaign_stage": null,
-      "milestone_count": 0
+      "execution_rank": 7,
+      "execution_score": 98,
+      "readiness": 7,
+      "campaign_stage": "benchmark_reproduced",
+      "milestone_count": 1
     },
     {
       "id": "M041",
@@ -228,12 +240,13 @@
       "attackability": 4,
       "verifiability": 4,
       "spillover": 5,
+      "modality": "finite_refutable",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": "https://arxiv.org/abs/2608.00222",
       "rank": 10,
       "score": 89,
-      "execution_rank": 10,
+      "execution_rank": 15,
       "execution_score": 89,
       "readiness": 0,
       "campaign_stage": null,
@@ -249,12 +262,13 @@
       "attackability": 4,
       "verifiability": 4,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 11,
       "score": 89,
-      "execution_rank": 11,
+      "execution_rank": 16,
       "execution_score": 89,
       "readiness": 0,
       "campaign_stage": null,
@@ -270,16 +284,17 @@
       "attackability": 4,
       "verifiability": 5,
       "spillover": 4,
+      "modality": "finite_refutable",
       "evidence_state": "claim_needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 12,
       "score": 85,
-      "execution_rank": 13,
-      "execution_score": 85,
-      "readiness": 0,
-      "campaign_stage": null,
-      "milestone_count": 0
+      "execution_rank": 9,
+      "execution_score": 92,
+      "readiness": 7,
+      "campaign_stage": "benchmark_reproduced",
+      "milestone_count": 1
     },
     {
       "id": "M072",
@@ -291,12 +306,13 @@
       "attackability": 4,
       "verifiability": 5,
       "spillover": 4,
+      "modality": "asymptotic",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 13,
       "score": 85,
-      "execution_rank": 14,
+      "execution_rank": 18,
       "execution_score": 85,
       "readiness": 0,
       "campaign_stage": null,
@@ -312,12 +328,13 @@
       "attackability": 4,
       "verifiability": 5,
       "spillover": 4,
+      "modality": "finite_refutable",
       "evidence_state": "claim_needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 14,
       "score": 85,
-      "execution_rank": 15,
+      "execution_rank": 19,
       "execution_score": 85,
       "readiness": 0,
       "campaign_stage": null,
@@ -333,12 +350,13 @@
       "attackability": 4,
       "verifiability": 5,
       "spillover": 4,
+      "modality": "asymptotic",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 15,
       "score": 85,
-      "execution_rank": 16,
+      "execution_rank": 20,
       "execution_score": 85,
       "readiness": 0,
       "campaign_stage": null,
@@ -354,16 +372,17 @@
       "attackability": 4,
       "verifiability": 5,
       "spillover": 4,
+      "modality": "finite_refutable",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 16,
       "score": 85,
-      "execution_rank": 17,
-      "execution_score": 85,
-      "readiness": 0,
-      "campaign_stage": null,
-      "milestone_count": 0
+      "execution_rank": 10,
+      "execution_score": 92,
+      "readiness": 7,
+      "campaign_stage": "benchmark_reproduced",
+      "milestone_count": 1
     },
     {
       "id": "M096",
@@ -375,16 +394,17 @@
       "attackability": 4,
       "verifiability": 5,
       "spillover": 4,
+      "modality": "finite_parameter",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": "https://mathworld.wolfram.com/ProjectivePlane.html",
       "rank": 17,
       "score": 85,
-      "execution_rank": 18,
-      "execution_score": 85,
-      "readiness": 0,
-      "campaign_stage": null,
-      "milestone_count": 0
+      "execution_rank": 11,
+      "execution_score": 92,
+      "readiness": 7,
+      "campaign_stage": "benchmark_reproduced",
+      "milestone_count": 1
     },
     {
       "id": "M097",
@@ -396,12 +416,13 @@
       "attackability": 4,
       "verifiability": 5,
       "spillover": 4,
+      "modality": "finite_refutable",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 18,
       "score": 85,
-      "execution_rank": 19,
+      "execution_rank": 21,
       "execution_score": 85,
       "readiness": 0,
       "campaign_stage": null,
@@ -417,12 +438,13 @@
       "attackability": 3,
       "verifiability": 4,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 19,
       "score": 83,
-      "execution_rank": 20,
+      "execution_rank": 22,
       "execution_score": 83,
       "readiness": 0,
       "campaign_stage": null,
@@ -438,12 +460,13 @@
       "attackability": 3,
       "verifiability": 4,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 20,
       "score": 83,
-      "execution_rank": 21,
+      "execution_rank": 23,
       "execution_score": 83,
       "readiness": 0,
       "campaign_stage": null,
@@ -459,16 +482,17 @@
       "attackability": 3,
       "verifiability": 4,
       "spillover": 5,
+      "modality": "asymptotic",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 21,
       "score": 83,
-      "execution_rank": 22,
-      "execution_score": 83,
-      "readiness": 0,
-      "campaign_stage": null,
-      "milestone_count": 0
+      "execution_rank": 13,
+      "execution_score": 90,
+      "readiness": 7,
+      "campaign_stage": "benchmark_reproduced",
+      "milestone_count": 1
     },
     {
       "id": "M085",
@@ -480,12 +504,13 @@
       "attackability": 3,
       "verifiability": 4,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "claim_needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 22,
       "score": 83,
-      "execution_rank": 23,
+      "execution_rank": 24,
       "execution_score": 83,
       "readiness": 0,
       "campaign_stage": null,
@@ -501,12 +526,13 @@
       "attackability": 3,
       "verifiability": 4,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 23,
       "score": 83,
-      "execution_rank": 24,
+      "execution_rank": 25,
       "execution_score": 83,
       "readiness": 0,
       "campaign_stage": null,
@@ -522,12 +548,13 @@
       "attackability": 3,
       "verifiability": 4,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 24,
       "score": 83,
-      "execution_rank": 25,
+      "execution_rank": 26,
       "execution_score": 83,
       "readiness": 0,
       "campaign_stage": null,
@@ -543,12 +570,13 @@
       "attackability": 3,
       "verifiability": 4,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 25,
       "score": 83,
-      "execution_rank": 26,
+      "execution_rank": 27,
       "execution_score": 83,
       "readiness": 0,
       "campaign_stage": null,
@@ -564,12 +592,13 @@
       "attackability": 3,
       "verifiability": 4,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 26,
       "score": 83,
-      "execution_rank": 27,
+      "execution_rank": 28,
       "execution_score": 83,
       "readiness": 0,
       "campaign_stage": null,
@@ -585,16 +614,17 @@
       "attackability": 5,
       "verifiability": 5,
       "spillover": 3,
+      "modality": "finite_refutable",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 27,
       "score": 82,
-      "execution_rank": 28,
-      "execution_score": 82,
-      "readiness": 0,
-      "campaign_stage": null,
-      "milestone_count": 0
+      "execution_rank": 14,
+      "execution_score": 89,
+      "readiness": 7,
+      "campaign_stage": "benchmark_reproduced",
+      "milestone_count": 1
     },
     {
       "id": "M095",
@@ -606,16 +636,17 @@
       "attackability": 5,
       "verifiability": 5,
       "spillover": 3,
+      "modality": "finite_parameter",
       "evidence_state": "needs_review",
       "checked_on": "2026-10-30",
       "source_url": "https://doi.org/10.1002/jgt.70029",
       "rank": 28,
       "score": 82,
-      "execution_rank": 12,
+      "execution_rank": 17,
       "execution_score": 89,
       "readiness": 7,
       "campaign_stage": "benchmark_reproduced",
-      "milestone_count": 1
+      "milestone_count": 2
     },
     {
       "id": "M091",
@@ -627,6 +658,7 @@
       "attackability": 4,
       "verifiability": 4,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "official_open",
       "checked_on": "2026-10-30",
       "source_url": "https://www.claymath.org/millennium-problems/",
@@ -648,6 +680,7 @@
       "attackability": 4,
       "verifiability": 4,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "claim_needs_review",
       "checked_on": null,
       "source_url": null,
@@ -669,6 +702,7 @@
       "attackability": 4,
       "verifiability": 4,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -690,6 +724,7 @@
       "attackability": 4,
       "verifiability": 4,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "claim_needs_review",
       "checked_on": null,
       "source_url": null,
@@ -711,12 +746,13 @@
       "attackability": 3,
       "verifiability": 4,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 33,
       "score": 74,
-      "execution_rank": 33,
+      "execution_rank": 34,
       "execution_score": 74,
       "readiness": 0,
       "campaign_stage": null,
@@ -732,12 +768,13 @@
       "attackability": 3,
       "verifiability": 4,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "claim_needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 34,
       "score": 74,
-      "execution_rank": 34,
+      "execution_rank": 35,
       "execution_score": 74,
       "readiness": 0,
       "campaign_stage": null,
@@ -753,12 +790,13 @@
       "attackability": 3,
       "verifiability": 4,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 35,
       "score": 74,
-      "execution_rank": 35,
+      "execution_rank": 36,
       "execution_score": 74,
       "readiness": 0,
       "campaign_stage": null,
@@ -774,12 +812,13 @@
       "attackability": 3,
       "verifiability": 4,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 36,
       "score": 74,
-      "execution_rank": 36,
+      "execution_rank": 37,
       "execution_score": 74,
       "readiness": 0,
       "campaign_stage": null,
@@ -795,12 +834,13 @@
       "attackability": 3,
       "verifiability": 4,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 37,
       "score": 74,
-      "execution_rank": 37,
+      "execution_rank": 38,
       "execution_score": 74,
       "readiness": 0,
       "campaign_stage": null,
@@ -816,12 +856,13 @@
       "attackability": 3,
       "verifiability": 4,
       "spillover": 4,
+      "modality": "finite_refutable",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 38,
       "score": 74,
-      "execution_rank": 38,
+      "execution_rank": 39,
       "execution_score": 74,
       "readiness": 0,
       "campaign_stage": null,
@@ -837,12 +878,13 @@
       "attackability": 3,
       "verifiability": 4,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "claim_needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 39,
       "score": 74,
-      "execution_rank": 39,
+      "execution_rank": 40,
       "execution_score": 74,
       "readiness": 0,
       "campaign_stage": null,
@@ -858,12 +900,13 @@
       "attackability": 3,
       "verifiability": 4,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 40,
       "score": 74,
-      "execution_rank": 40,
+      "execution_rank": 41,
       "execution_score": 74,
       "readiness": 0,
       "campaign_stage": null,
@@ -879,12 +922,13 @@
       "attackability": 3,
       "verifiability": 4,
       "spillover": 4,
+      "modality": "asymptotic",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 41,
       "score": 74,
-      "execution_rank": 41,
+      "execution_rank": 42,
       "execution_score": 74,
       "readiness": 0,
       "campaign_stage": null,
@@ -900,12 +944,13 @@
       "attackability": 3,
       "verifiability": 4,
       "spillover": 4,
+      "modality": "asymptotic",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 42,
       "score": 74,
-      "execution_rank": 42,
+      "execution_rank": 43,
       "execution_score": 74,
       "readiness": 0,
       "campaign_stage": null,
@@ -921,12 +966,13 @@
       "attackability": 3,
       "verifiability": 4,
       "spillover": 4,
+      "modality": "asymptotic",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 43,
       "score": 74,
-      "execution_rank": 43,
+      "execution_rank": 44,
       "execution_score": 74,
       "readiness": 0,
       "campaign_stage": null,
@@ -942,12 +988,13 @@
       "attackability": 3,
       "verifiability": 4,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 44,
       "score": 74,
-      "execution_rank": 44,
+      "execution_rank": 45,
       "execution_score": 74,
       "readiness": 0,
       "campaign_stage": null,
@@ -963,12 +1010,13 @@
       "attackability": 3,
       "verifiability": 4,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 45,
       "score": 74,
-      "execution_rank": 45,
+      "execution_rank": 46,
       "execution_score": 74,
       "readiness": 0,
       "campaign_stage": null,
@@ -984,12 +1032,13 @@
       "attackability": 3,
       "verifiability": 4,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 46,
       "score": 74,
-      "execution_rank": 46,
+      "execution_rank": 47,
       "execution_score": 74,
       "readiness": 0,
       "campaign_stage": null,
@@ -1005,12 +1054,13 @@
       "attackability": 3,
       "verifiability": 4,
       "spillover": 4,
+      "modality": "asymptotic",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 47,
       "score": 74,
-      "execution_rank": 47,
+      "execution_rank": 48,
       "execution_score": 74,
       "readiness": 0,
       "campaign_stage": null,
@@ -1026,12 +1076,13 @@
       "attackability": 3,
       "verifiability": 4,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 48,
       "score": 74,
-      "execution_rank": 48,
+      "execution_rank": 49,
       "execution_score": 74,
       "readiness": 0,
       "campaign_stage": null,
@@ -1047,12 +1098,13 @@
       "attackability": 3,
       "verifiability": 4,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 49,
       "score": 74,
-      "execution_rank": 49,
+      "execution_rank": 50,
       "execution_score": 74,
       "readiness": 0,
       "campaign_stage": null,
@@ -1068,12 +1120,13 @@
       "attackability": 3,
       "verifiability": 4,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 50,
       "score": 74,
-      "execution_rank": 50,
+      "execution_rank": 51,
       "execution_score": 74,
       "readiness": 0,
       "campaign_stage": null,
@@ -1089,12 +1142,13 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "finite_refutable",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 51,
       "score": 72,
-      "execution_rank": 51,
+      "execution_rank": 52,
       "execution_score": 72,
       "readiness": 0,
       "campaign_stage": null,
@@ -1110,12 +1164,13 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "official_open",
       "checked_on": "2026-10-30",
       "source_url": "https://www.claymath.org/millennium-problems/",
       "rank": 52,
       "score": 72,
-      "execution_rank": 52,
+      "execution_rank": 53,
       "execution_score": 72,
       "readiness": 0,
       "campaign_stage": null,
@@ -1131,12 +1186,13 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "asymptotic",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 53,
       "score": 72,
-      "execution_rank": 53,
+      "execution_rank": 54,
       "execution_score": 72,
       "readiness": 0,
       "campaign_stage": null,
@@ -1152,12 +1208,13 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "asymptotic",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 54,
       "score": 72,
-      "execution_rank": 54,
+      "execution_rank": 55,
       "execution_score": 72,
       "readiness": 0,
       "campaign_stage": null,
@@ -1173,16 +1230,17 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "finite_refutable",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
       "rank": 55,
       "score": 72,
-      "execution_rank": 55,
-      "execution_score": 72,
-      "readiness": 0,
-      "campaign_stage": null,
-      "milestone_count": 0
+      "execution_rank": 33,
+      "execution_score": 79,
+      "readiness": 7,
+      "campaign_stage": "benchmark_reproduced",
+      "milestone_count": 1
     },
     {
       "id": "M007",
@@ -1194,6 +1252,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "asymptotic",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1215,6 +1274,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "asymptotic",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1236,6 +1296,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "asymptotic",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1257,6 +1318,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1278,6 +1340,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1299,6 +1362,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "asymptotic",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1320,6 +1384,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1341,6 +1406,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "claim_needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1362,6 +1428,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1383,6 +1450,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1404,6 +1472,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1425,6 +1494,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "asymptotic",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1446,6 +1516,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "asymptotic",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1467,6 +1538,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "official_open",
       "checked_on": "2026-10-30",
       "source_url": "https://www.claymath.org/millennium-problems/",
@@ -1488,6 +1560,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1509,6 +1582,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1530,6 +1604,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1551,6 +1626,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1572,6 +1648,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1593,6 +1670,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1614,6 +1692,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1635,6 +1714,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1656,6 +1736,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "claim_needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1677,6 +1758,7 @@
       "attackability": 1,
       "verifiability": 4,
       "spillover": 5,
+      "modality": "structural",
       "evidence_state": "official_open",
       "checked_on": "2026-10-30",
       "source_url": "https://www.claymath.org/millennium-problems/",
@@ -1698,6 +1780,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1719,6 +1802,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1740,6 +1824,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1761,6 +1846,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "claim_needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1782,6 +1868,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "claim_needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1803,6 +1890,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "claim_needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1824,6 +1912,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1845,6 +1934,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1866,6 +1956,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1887,6 +1978,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "claim_needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1908,6 +2000,7 @@
       "attackability": 1,
       "verifiability": 3,
       "spillover": 5,
+      "modality": "finite_refutable",
       "evidence_state": "official_open",
       "checked_on": "2026-10-30",
       "source_url": "https://www.claymath.org/millennium-problems/",
@@ -1929,6 +2022,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1950,6 +2044,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1971,6 +2066,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -1992,6 +2088,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -2013,6 +2110,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -2034,6 +2132,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -2055,6 +2154,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "claim_needs_review",
       "checked_on": null,
       "source_url": null,
@@ -2076,6 +2176,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "claim_needs_review",
       "checked_on": null,
       "source_url": null,
@@ -2097,6 +2198,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -2118,6 +2220,7 @@
       "attackability": 2,
       "verifiability": 3,
       "spillover": 4,
+      "modality": "structural",
       "evidence_state": "needs_review",
       "checked_on": null,
       "source_url": null,
@@ -2130,7 +2233,543 @@
       "milestone_count": 0
     }
   ],
+  "lab": {
+    "covered_problems": [
+      "M006",
+      "M019",
+      "M071",
+      "M074",
+      "M075",
+      "M078",
+      "M079",
+      "M080",
+      "M084",
+      "M092",
+      "M093",
+      "M094",
+      "M095",
+      "M096"
+    ],
+    "computable_problems": [
+      "M001",
+      "M002",
+      "M006",
+      "M019",
+      "M041",
+      "M048",
+      "M071",
+      "M073",
+      "M074",
+      "M075",
+      "M078",
+      "M079",
+      "M080",
+      "M092",
+      "M093",
+      "M094",
+      "M095",
+      "M096",
+      "M097"
+    ],
+    "modalities": [
+      {
+        "modality": "finite_refutable",
+        "description": "One finite, checkable object would refute it; computation can search and certify ranges.",
+        "problems": 15,
+        "with_verifier": 9
+      },
+      {
+        "modality": "finite_parameter",
+        "description": "Asks for one specific finite value or object; exhaustive search or a certificate can settle it.",
+        "problems": 2,
+        "with_verifier": 2
+      },
+      {
+        "modality": "existence_family",
+        "description": "Existence for infinitely many finite parameters; constructions certify cases, one certified nonexistence refutes.",
+        "problems": 2,
+        "with_verifier": 2
+      },
+      {
+        "modality": "asymptotic",
+        "description": "Limiting or infinitary statement; computation gives data and certified bounds, never a refutation.",
+        "problems": 16,
+        "with_verifier": 1
+      },
+      {
+        "modality": "structural",
+        "description": "About infinite or continuous objects; computation helps only through restricted finite analogues.",
+        "problems": 65,
+        "with_verifier": 0
+      }
+    ],
+    "engines": [
+      {
+        "id": "primes",
+        "name": "Prime sieve + deterministic Miller-Rabin",
+        "use": "Verified-range certificates for additive and unit-fraction problems.",
+        "modules": [
+          "scripts/probes/primes.py"
+        ],
+        "problems": [
+          "M006",
+          "M019"
+        ]
+      },
+      {
+        "id": "finite_fields",
+        "name": "GF(q) arithmetic for every prime power, with quadratic characters",
+        "use": "Paley constructions, projective geometries, arcs/MDS codes, Ramsey colourings, matroids.",
+        "modules": [
+          "scripts/probes/fields.py"
+        ],
+        "problems": [
+          "M080",
+          "M093",
+          "M094",
+          "M095",
+          "M096"
+        ]
+      },
+      {
+        "id": "graph_census",
+        "name": "Isomorphism-free graph census with Burnside completeness certificate",
+        "use": "Exhaustive checks of graph conjectures on all graphs up to 7 vertices.",
+        "modules": [
+          "scripts/probes/graphs.py"
+        ],
+        "problems": [
+          "M071",
+          "M078"
+        ]
+      },
+      {
+        "id": "poset_census",
+        "name": "Poset census with orbit-counting certificate and linear-extension DP",
+        "use": "Exhaustive order-theoretic checks on all posets up to 7 elements.",
+        "modules": [
+          "scripts/probes/posets.py"
+        ],
+        "problems": [
+          "M079"
+        ]
+      },
+      {
+        "id": "cyclotomic",
+        "name": "Exact arithmetic in cyclotomic rings Z[zeta_m]",
+        "use": "Floating-point-free verification of complex configurations (SICs, MUBs, codes).",
+        "modules": [
+          "scripts/probes/cyclotomic.py"
+        ],
+        "problems": [
+          "M092"
+        ]
+      },
+      {
+        "id": "tensor_certificates",
+        "name": "Sparse exact tensor-decomposition checker",
+        "use": "Replay any bilinear algorithm or rank decomposition as an exact certificate.",
+        "modules": [
+          "scripts/probes/tensor.py"
+        ],
+        "problems": [
+          "M084"
+        ]
+      },
+      {
+        "id": "symmetry_reduction",
+        "name": "Group-transitivity reductions (frames in PG(2,q), bases under GL(n,p))",
+        "use": "Shrinks exhaustive searches by fixing a canonical starting configuration.",
+        "modules": [
+          "scripts/probes/arcs.py",
+          "scripts/probes/rota.py"
+        ],
+        "problems": [
+          "M080",
+          "M093"
+        ]
+      },
+      {
+        "id": "clique_search",
+        "name": "Branch-and-bound clique search with exhaustive subset re-check",
+        "use": "Ramsey and coding lower-bound witnesses.",
+        "modules": [
+          "scripts/probes/ramsey_witness.py"
+        ],
+        "problems": [
+          "M095"
+        ]
+      }
+    ],
+    "probes": [
+      {
+        "id": "goldbach",
+        "problem_id": "M006",
+        "name": "Strong Goldbach conjecture",
+        "title": "Goldbach partitions for every even integer up to N",
+        "engines": [
+          "primes"
+        ],
+        "frontier": "Known: verified for every even n <= 4*10^18 (Oliveira e Silva, Herzog & Pardi, Math. Comp. 83 (2014)). This range reproduces known mathematics only.",
+        "artifact": "scripts/probes/goldbach.py",
+        "command": "python3 scripts/lab.py --probe goldbach",
+        "runs": {
+          "smoke": {
+            "holds": true,
+            "scope": "Every even integer 4 <= n <= 200,000 is p + q with p, q prime.",
+            "certificate_sha256": "063ed3ae3efccc5b690cbfb1d8ae5dbd70fd117c1b61376a5f0116ff61c04ea8"
+          },
+          "deep": {
+            "holds": true,
+            "scope": "Every even integer 4 <= n <= 4,000,000 is p + q with p, q prime.",
+            "certificate_sha256": "8776164f5545168a55d2c4be4c3542a959c6066e008842f8d3a8895e581257b0"
+          }
+        }
+      },
+      {
+        "id": "erdos_straus",
+        "problem_id": "M019",
+        "name": "Erdős–Straus conjecture",
+        "title": "Erdos-Straus unit-fraction certificates for every n up to N",
+        "engines": [
+          "primes"
+        ],
+        "frontier": "Known: computational verification is reported far beyond this range (at least 10^14 in the literature). Reproduction only.",
+        "artifact": "scripts/probes/erdos_straus.py",
+        "command": "python3 scripts/lab.py --probe erdos_straus",
+        "runs": {
+          "smoke": {
+            "holds": true,
+            "scope": "For every integer 2 <= n <= 20,000, explicit positive integers x <= y <= z with 4xyz = n(xy + yz + zx).",
+            "certificate_sha256": "0076b8bf095e84632fdb686cd77255a4e37b0c0f6e762d2538f0de2f38c6a855"
+          },
+          "deep": {
+            "holds": true,
+            "scope": "For every integer 2 <= n <= 1,000,000, explicit positive integers x <= y <= z with 4xyz = n(xy + yz + zx).",
+            "certificate_sha256": "60a148c35e2dedbf39a8233554ad50f67de47d69cf5b3bfa24b02f64fe315911"
+          }
+        }
+      },
+      {
+        "id": "hadwiger",
+        "problem_id": "M071",
+        "name": "Hadwiger conjecture",
+        "title": "Hadwiger's conjecture on every graph up to N vertices",
+        "engines": [
+          "graph_census"
+        ],
+        "frontier": "Known: proved for chromatic number <= 6 (Robertson, Seymour & Thomas 1993), so every graph on <= 7 vertices is a known case. Reproduction only.",
+        "artifact": "scripts/probes/hadwiger.py",
+        "command": "python3 scripts/lab.py --probe hadwiger",
+        "runs": {
+          "smoke": {
+            "holds": true,
+            "scope": "Every graph on 1..6 vertices has a proper t-colouring and a K_t minor model for t = its chromatic number.",
+            "certificate_sha256": "108fe9f19d66a0fa7c259e2e4209d930f0c3047efa65e91a038be5f7bc6f1327"
+          },
+          "deep": {
+            "holds": true,
+            "scope": "Every graph on 1..7 vertices has a proper t-colouring and a K_t minor model for t = its chromatic number.",
+            "certificate_sha256": "90cdd7bbe904ef96948bd16235b804fb77aec22aaf9d5073d403320946e0bc15"
+          }
+        }
+      },
+      {
+        "id": "reconstruction",
+        "problem_id": "M078",
+        "name": "Graph reconstruction conjecture",
+        "title": "Vertex-deck reconstruction for every graph up to N vertices",
+        "engines": [
+          "graph_census"
+        ],
+        "frontier": "Known: verified by computer for all graphs on at most 11 vertices (McKay 1997) and beyond; proved for trees, regular and disconnected graphs (Kelly 1957).",
+        "artifact": "scripts/probes/reconstruction.py",
+        "command": "python3 scripts/lab.py --probe reconstruction",
+        "runs": {
+          "smoke": {
+            "holds": true,
+            "scope": "For every n with 3 <= n <= 6, the 6-vertex census is complete (Burnside-certified) and no two non-isomorphic graphs share a vertex-deleted deck.",
+            "certificate_sha256": "2b1be7e121a27d25d8005718fa562c2098ee2b5af018b41d2d03c75575475e47"
+          },
+          "deep": {
+            "holds": true,
+            "scope": "For every n with 3 <= n <= 7, the 7-vertex census is complete (Burnside-certified) and no two non-isomorphic graphs share a vertex-deleted deck.",
+            "certificate_sha256": "3a4701b2aeb0061d4a18263b1214afef6970890c5f6eb773e985a3a4135b0dba"
+          }
+        }
+      },
+      {
+        "id": "one_third",
+        "problem_id": "M079",
+        "name": "One-third–two-thirds conjecture",
+        "title": "Balanced pairs (1/3-2/3 conjecture) for every poset up to N elements",
+        "engines": [
+          "poset_census"
+        ],
+        "frontier": "Known: verified for all posets with at most 11 elements (Peczarski) and for width-2 posets (Linial 1984); best general bound ~0.276 (Brightwell-Felsner-Trotter).",
+        "artifact": "scripts/probes/posets.py",
+        "command": "python3 scripts/lab.py --probe one_third",
+        "runs": {
+          "smoke": {
+            "holds": true,
+            "scope": "Every non-chain poset with 2..6 elements has an incomparable pair x, y with 1/3 <= Pr[x < y] <= 2/3 over uniformly random linear extensions.",
+            "certificate_sha256": "6fd6a1a31455f7b1a5a3785f8343ee28cf20fbfd6ade0f2daa83943c953299b4"
+          },
+          "deep": {
+            "holds": true,
+            "scope": "Every non-chain poset with 2..7 elements has an incomparable pair x, y with 1/3 <= Pr[x < y] <= 2/3 over uniformly random linear extensions.",
+            "certificate_sha256": "f9ec908650914013ee375d32e21a1ddcee3fd6708967b2e247ed65c79a528b06"
+          }
+        }
+      },
+      {
+        "id": "rota",
+        "problem_id": "M080",
+        "name": "Rota basis conjecture",
+        "title": "Rota's basis conjecture: exhaustive grids over GF(p)^n",
+        "engines": [
+          "finite_fields",
+          "symmetry_reduction"
+        ],
+        "frontier": "Known: true for every matroid of rank <= 3 (Chan 1995) and other special cases; open in general. These cases are reproductions only.",
+        "artifact": "scripts/probes/rota.py",
+        "command": "python3 scripts/lab.py --probe rota",
+        "runs": {
+          "smoke": {
+            "holds": true,
+            "scope": "Every choice of n bases of GF(2)^2, GF(3)^2, GF(5)^2, GF(7)^2, GF(2)^3 admits a Rota grid (B_1 fixed by GL-transitivity).",
+            "certificate_sha256": "b29d1181728dc6e357e6fb69d5447fbe013ad4491b3edf4c60bdd4332a348e96"
+          },
+          "deep": {
+            "holds": true,
+            "scope": "Every choice of n bases of GF(2)^2, GF(3)^2, GF(5)^2, GF(7)^2, GF(2)^3, GF(3)^3 admits a Rota grid (B_1 fixed by GL-transitivity).",
+            "certificate_sha256": "11850515563d8ffff2173e9ef65281e58782dfbbbc6052ae93ab2f600563c533"
+          }
+        }
+      },
+      {
+        "id": "strassen",
+        "problem_id": "M084",
+        "name": "Matrix multiplication exponent omega=2",
+        "title": "Exact matrix-multiplication tensor decompositions (Strassen and Kronecker powers)",
+        "engines": [
+          "tensor_certificates"
+        ],
+        "frontier": "Known: omega <= log2(7) ~ 2.807 (Strassen 1969); the best published bounds are below 2.372 via the laser method. rank<2,2,2> = 7 exactly (Winograd 1971).",
+        "artifact": "scripts/probes/tensor.py",
+        "command": "python3 scripts/lab.py --probe strassen",
+        "runs": {
+          "smoke": {
+            "holds": true,
+            "scope": "Exact integer rank-7^k decompositions of the <2^k,2^k,2^k> matmul tensor for k in {1, 2}, hence omega <= log2(7).",
+            "certificate_sha256": "36b9015e19e73c7a824706876692d126f7f9ece229ac3c87ef6ddd1b4e139a8f"
+          },
+          "deep": {
+            "holds": true,
+            "scope": "Exact integer rank-7^k decompositions of the <2^k,2^k,2^k> matmul tensor for k in {1, 2, 3}, hence omega <= log2(7).",
+            "certificate_sha256": "9b0f284202bb37815dfbc33930d30c8e061e0c360015e999f0b45c81bfa80ef2"
+          }
+        }
+      },
+      {
+        "id": "sic",
+        "problem_id": "M092",
+        "name": "Zauner SIC conjecture",
+        "title": "Exact SIC-POVMs in d = 2 (tetrahedron) and d = 3 (Weyl-Heisenberg in Z[w])",
+        "engines": [
+          "cyclotomic"
+        ],
+        "frontier": "Known: exact SICs are known in many dimensions and numerical ones far beyond; no construction for every d. d = 2, 3 are classical (Zauner 1999, Renes et al. 2004).",
+        "artifact": "scripts/probes/sic.py",
+        "command": "python3 scripts/lab.py --probe sic",
+        "runs": {
+          "smoke": {
+            "holds": true,
+            "scope": "d=2: 4 exact equiangular qubit states with overlap 1/3; d=3: every Weyl-Heisenberg fiducial with entries in {0, +-1, +-w, +-w^2} found and its 9 states certified with pairwise squared overlap 1/4.",
+            "certificate_sha256": "621c08975771a3b04e5771d0b174a99225c323d4d60c122d62fed71dd56d1ca5"
+          },
+          "deep": {
+            "holds": true,
+            "scope": "d=2: 4 exact equiangular qubit states with overlap 1/3; d=3: every Weyl-Heisenberg fiducial with entries in {a + b*w : a, b in [-1, 1]} found and its 9 states certified with pairwise squared overlap 1/4.",
+            "certificate_sha256": "b21c45a5c3e644f4bd0f9a1edaeb154072a5e10d361abcdeb2225fc9ea9fd0fe"
+          }
+        }
+      },
+      {
+        "id": "mds_arcs",
+        "problem_id": "M093",
+        "name": "Linear MDS code main conjecture",
+        "title": "Maximum arcs in PG(2,q) = longest 3-dimensional linear MDS codes",
+        "engines": [
+          "finite_fields",
+          "symmetry_reduction"
+        ],
+        "frontier": "Known for k = 3 by Segre (q odd) and Bose (q even); the MDS conjecture is proved for prime q (Ball 2012) and open for general prime powers.",
+        "artifact": "scripts/probes/arcs.py",
+        "command": "python3 scripts/lab.py --probe mds_arcs",
+        "runs": {
+          "smoke": {
+            "holds": true,
+            "scope": "For q in {2, 3, 4, 5, 7}: an explicit maximum arc and exhaustive exclusion of larger arcs (MDS length bound for k = 3).",
+            "certificate_sha256": "f815a3328c125253639c9e8db80c920872858986662deb1976f89c39e58108ab"
+          },
+          "deep": {
+            "holds": true,
+            "scope": "For q in {2, 3, 4, 5, 7, 8, 9}: an explicit maximum arc and exhaustive exclusion of larger arcs (MDS length bound for k = 3).",
+            "certificate_sha256": "c91322d26a67ede8745369a9995743c9f53be49aeca2c75285d4566d82639a4e"
+          }
+        }
+      },
+      {
+        "id": "hadamard",
+        "problem_id": "M094",
+        "name": "Hadamard matrix conjecture",
+        "title": "Exact Hadamard matrices from Sylvester, Paley I/II and Kronecker products",
+        "engines": [
+          "finite_fields"
+        ],
+        "frontier": "Known: constructions exist for every order 4k < 668; 668 is the smallest order with no known Hadamard matrix (after order 428, Kharaghani & Tayfeh-Rezaie 2005). Engine gaps below are NOT open cases.",
+        "artifact": "scripts/probes/hadamard.py",
+        "command": "python3 scripts/lab.py --probe hadamard",
+        "runs": {
+          "smoke": {
+            "holds": true,
+            "scope": "Explicit (+1/-1) matrices with H H^T = nI for 30 of the 32 orders 4k <= 128 (the rest are engine gaps, not open cases).",
+            "certificate_sha256": "d6e19ddbd19c29bfaed6bbfab2f0fce29773cc4ca9432831cd91a480a0a6dabc"
+          },
+          "deep": {
+            "holds": true,
+            "scope": "Explicit (+1/-1) matrices with H H^T = nI for 85 of the 100 orders 4k <= 400 (the rest are engine gaps, not open cases).",
+            "certificate_sha256": "208ef2df6a7ccaa6f5b4fcb8723fa0fecf233b7086da79820826a46179e14999"
+          }
+        }
+      },
+      {
+        "id": "ramsey_witnesses",
+        "problem_id": "M095",
+        "name": "Exact Ramsey number R(5,5)",
+        "title": "Exact Ramsey lower-bound colourings (Paley and circulant graphs)",
+        "engines": [
+          "finite_fields",
+          "clique_search"
+        ],
+        "frontier": "Known: R(3,3)=6, R(3,4)=9, R(3,5)=14, R(4,4)=18; 43 <= R(5,5) <= 46 (lower bound Exoo 1989). Witnesses here reproduce classical lower bounds.",
+        "artifact": "scripts/probes/ramsey_witness.py",
+        "command": "python3 scripts/lab.py --probe ramsey_witnesses",
+        "runs": {
+          "smoke": {
+            "holds": true,
+            "scope": "Explicit colourings certify R(3,3) > 5, R(3,4) > 8, R(3,5) > 13, R(4,4) > 17.",
+            "certificate_sha256": "c601047d86b55741559f792d148dfc9855335e89ea1109c5cfbe509837f32492"
+          },
+          "deep": {
+            "holds": true,
+            "scope": "Explicit colourings certify R(3,3) > 5, R(3,4) > 8, R(3,5) > 13, R(4,4) > 17, R(5,5) > 37.",
+            "certificate_sha256": "b2008e6347fb2007ebcb77c8bed4c287b77b034e003d1f089cbd961d74fbcc8e"
+          }
+        }
+      },
+      {
+        "id": "projective_planes",
+        "problem_id": "M096",
+        "name": "Projective plane order 12",
+        "title": "Projective planes of prime-power order and the Bruck-Ryser order sieve",
+        "engines": [
+          "finite_fields"
+        ],
+        "frontier": "Known: order 10 excluded by computer search (Lam, Thiel & Swiercz 1989); 12 is the smallest order whose existence is open. Every known plane has prime-power order.",
+        "artifact": "scripts/probes/planes.py",
+        "command": "python3 scripts/lab.py --probe projective_planes",
+        "runs": {
+          "smoke": {
+            "holds": true,
+            "scope": "PG(2,q) satisfies the projective-plane axioms for every prime power q <= 9; Bruck-Ryser classification of every order n <= 50.",
+            "certificate_sha256": "a6567093aa70bc6b4458545085109922cb1b2dc03ddd5443f389c09c6c387888"
+          },
+          "deep": {
+            "holds": true,
+            "scope": "PG(2,q) satisfies the projective-plane axioms for every prime power q <= 27; Bruck-Ryser classification of every order n <= 200.",
+            "certificate_sha256": "adec7b7494938090b26f15707434c1fcd04876889b1cd6111386e3d2f94d0aac"
+          }
+        }
+      }
+    ],
+    "roadmap": [
+      {
+        "problem_id": "M001",
+        "engine": "interval_arithmetic",
+        "first_probe": "Rigorous count of zeta zeros up to a small height T with interval arithmetic (sign changes on the critical line plus a Turing-method bound), replayable as a certificate.",
+        "name": "Riemann Hypothesis"
+      },
+      {
+        "problem_id": "M002",
+        "engine": "interval_arithmetic",
+        "first_probe": "Reuse the zero-count certificate format for Dirichlet L-functions of small conductor.",
+        "name": "Generalized Riemann Hypothesis"
+      },
+      {
+        "problem_id": "M041",
+        "engine": "polynomial_algebra",
+        "first_probe": "Enumerate constant-Jacobian plane maps with small integer coefficients and degree <= 3, and certify each by an explicit polynomial inverse checked by exact composition.",
+        "name": "Plane Jacobian conjecture"
+      },
+      {
+        "problem_id": "M048",
+        "engine": "group_characters",
+        "first_probe": "Exact Brauer-character and weight counts for small finite groups and primes, compared entrywise.",
+        "name": "Alperin weight conjecture"
+      },
+      {
+        "problem_id": "M073",
+        "engine": "graph_homomorphisms",
+        "first_probe": "Exact homomorphism-density search over small weighted host graphs for the smallest open case H = K_{5,5} minus a Hamiltonian cycle.",
+        "name": "Sidorenko conjecture"
+      },
+      {
+        "problem_id": "M097",
+        "engine": "exact_lp",
+        "first_probe": "Exact rational simplex for the Held-Karp relaxation; recompute integrality gaps on all small metric instances and known near-4/3 families.",
+        "name": "Metric TSP four-thirds conjecture"
+      }
+    ]
+  },
   "campaigns": [
+    {
+      "problem_id": "M006",
+      "stage": "benchmark_reproduced",
+      "method": "Verified-range certificates and least-partition statistics",
+      "hypothesis": "Every even integer n >= 4 is a sum of two primes.",
+      "first_proof_obligation": "State a restricted, checkable lemma (for example an explicit bound on the least Goldbach prime in a named residue class or range) that is not already implied by the 4*10^18 verification or by the ternary Goldbach theorem.",
+      "next_experiment": "Use the least-partition certificates to test conjectured growth bounds for the least prime p(n), then attempt a sieve-theoretic restricted statement with explicit constants.",
+      "falsification": "An even n >= 4 with no prime p <= n/2 such that n - p is prime, confirmed by an independent primality oracle.",
+      "blocker": "Range extension cannot compete with the published 4*10^18 verification; real progress needs a new restricted theorem.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe goldbach"
+    },
+    {
+      "problem_id": "M019",
+      "stage": "benchmark_reproduced",
+      "method": "Modular covering identities with unit-fraction certificates",
+      "hypothesis": "For every integer n >= 2, 4/n = 1/x + 1/y + 1/z has a solution in positive integers.",
+      "first_proof_obligation": "Find a polynomial identity family covering a residue class of primes not covered by the classical Mordell identities, and prove it symbolically.",
+      "next_experiment": "Mine the certificate table for primes n = 1 mod 24, cluster solutions by (x mod n, divisor pattern) and propose parametric identities for symbolic verification.",
+      "falsification": "An n together with a proof that no positive-integer triple exists; a finite search failure is not a counterexample.",
+      "blocker": "Classical identities leave quadratic-residue classes uncovered, and known results show identities of the standard polynomial type cannot cover them all; a different idea is needed.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe erdos_straus"
+    },
+    {
+      "problem_id": "M071",
+      "stage": "benchmark_reproduced",
+      "method": "Colouring and minor-model certificates over exhaustive graph censuses",
+      "hypothesis": "Every graph with chromatic number t has K_t as a minor.",
+      "first_proof_obligation": "Choose a restricted class beyond the proved t <= 6 range (for example 7-chromatic graphs with small independence number) and state a checkable lemma absent from the literature.",
+      "next_experiment": "Extend the census engine to 8-9 vertices with a faster canonical labeller, then target contraction-critical 7-chromatic graphs where a K7 minor model must be certified.",
+      "falsification": "A graph with a certified chromatic-number lower bound t and an exhaustive certificate that no K_t minor model exists.",
+      "blocker": "Every graph a naive census reaches is inside the proved t <= 6 range; t = 7 needs much larger graphs and exact chromatic lower-bound certificates.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe hadwiger"
+    },
     {
       "problem_id": "M074",
       "stage": "benchmark_reproduced",
@@ -2156,6 +2795,54 @@
       "verifier": "python3 scripts/union_closed.py exhaustive --n 4"
     },
     {
+      "problem_id": "M078",
+      "stage": "benchmark_reproduced",
+      "method": "Deck-collision search over certified graph censuses",
+      "hypothesis": "Every finite simple graph on at least 3 vertices is determined up to isomorphism by its vertex-deleted deck.",
+      "first_proof_obligation": "Pick a graph family not yet known to be reconstructible and isolate a lemma that reconstructs a new invariant for it.",
+      "next_experiment": "Tabulate which deck invariants already separate every deck in the census, as a data-driven route to a reconstruction lemma for a named family.",
+      "falsification": "Two non-isomorphic graphs with identical decks, confirmed by independent canonical forms.",
+      "blocker": "Computer verification already reaches at least 11 vertices; novelty has to come from a structural lemma, not from range.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe reconstruction"
+    },
+    {
+      "problem_id": "M079",
+      "stage": "benchmark_reproduced",
+      "method": "Exact linear-extension counting over certified poset censuses",
+      "hypothesis": "Every finite poset that is not a chain has an incomparable pair x, y with 1/3 <= Pr[x < y] <= 2/3.",
+      "first_proof_obligation": "State and prove a balance bound for a restricted poset class (bounded width or height) that improves on published results.",
+      "next_experiment": "Tabulate the best balance of every poset in the census, identify extremal families near 1/3 and test structural invariants that predict a balanced pair.",
+      "falsification": "A non-chain poset whose every incomparable pair has balance below 1/3, with linear extensions counted exactly by two independent methods.",
+      "blocker": "Published verification already reaches 11 elements; a new structural invariant is needed.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe one_third"
+    },
+    {
+      "problem_id": "M080",
+      "stage": "benchmark_reproduced",
+      "method": "Exhaustive grid search over GF(p)^n with GL-symmetry reduction",
+      "hypothesis": "Any n bases of an n-dimensional vector space can be arranged in an n x n grid whose rows are the given bases and whose columns are bases.",
+      "first_proof_obligation": "Specify the next finite case not yet covered here (GF(2)^4) with an orbit-reduced instance count and a per-orbit certificate format.",
+      "next_experiment": "Quotient instances by the stabiliser of the standard basis so that GF(2)^4 becomes exhaustive, storing one grid certificate per orbit.",
+      "falsification": "n bases of GF(p)^n with an exhaustive certificate that no valid grid exists.",
+      "blocker": "GF(2)^4 has about 10^8 raw instances; orbit reduction under the stabiliser is not implemented yet.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe rota"
+    },
+    {
+      "problem_id": "M084",
+      "stage": "benchmark_reproduced",
+      "method": "Exact tensor-decomposition certificates",
+      "hypothesis": "The exponent of matrix multiplication equals 2.",
+      "first_proof_obligation": "Replay published small-format decompositions (rank-23 <3,3,3> and recent flip-graph or learned schemes) as exact certificates and record the implied exponent bounds.",
+      "next_experiment": "Add a JSON import path and a flip-graph rank-reduction search over small formats, with every candidate replayed by the exact checker.",
+      "falsification": "Not finitely falsifiable: omega is a limit, and certified decompositions only give upper bounds.",
+      "blocker": "Small-format ranks cannot beat laser-method bounds below 2.372; the probe is certificate infrastructure.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe strassen"
+    },
+    {
       "problem_id": "M088",
       "stage": "specified",
       "method": "Algebraic circuit hitting sets",
@@ -2169,15 +2856,39 @@
     },
     {
       "problem_id": "M092",
-      "stage": "specified",
+      "stage": "benchmark_reproduced",
       "method": "Exact algebraic SIC verification",
       "hypothesis": "Exact families of d^2 equiangular lines exist beyond individually constructed dimensions.",
-      "first_proof_obligation": "Choose a dimension and certify pairwise squared overlaps with exact algebraic arithmetic.",
-      "next_experiment": "Formalize a candidate fiducial in a low dimension with rational/algebraic coordinates, then generalize a symmetry identity.",
+      "first_proof_obligation": "Replay a published exact fiducial beyond d = 3 with exact arithmetic, and state the precise Galois hypotheses of any proposed uniform family.",
+      "next_experiment": "Extend the cyclotomic engine to the number fields needed for d = 4..8 and replay published exact fiducials there.",
       "falsification": "An exact failed Gram matrix relation or a missing required vector under the stated algebraic construction.",
-      "blocker": "Floating-point numerical SIC examples are not universal existence proofs.",
+      "blocker": "Exact fiducials beyond d = 3 live in larger number fields than the current Z[zeta_m] engine supports; floating-point SICs are not proofs.",
       "dossier": "research/CAMPAIGNS.md",
-      "verifier": null
+      "verifier": "python3 scripts/lab.py --probe sic"
+    },
+    {
+      "problem_id": "M093",
+      "stage": "benchmark_reproduced",
+      "method": "Exhaustive arc search in projective spaces with frame-fixing symmetry reduction",
+      "hypothesis": "A linear [n,k] MDS code over GF(q) with k <= q has n <= q+1, except n = q+2 when q is even and k is 3 or q-1.",
+      "first_proof_obligation": "Extend from k = 3 (Segre/Bose) to k = 4 arcs in PG(3,q) for small non-prime q (q = 8, 9), certifying maximum arc sizes.",
+      "next_experiment": "Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9.",
+      "falsification": "An explicit n-arc exceeding the bound, verified by exact determinant checks.",
+      "blocker": "The conjecture is proved for prime q (Ball 2012); open non-prime cases need far larger searches than k = 3.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe mds_arcs"
+    },
+    {
+      "problem_id": "M094",
+      "stage": "benchmark_reproduced",
+      "method": "Algebraic constructions with exact orthogonality certificates",
+      "hypothesis": "A Hadamard matrix exists for every order divisible by 4.",
+      "first_proof_obligation": "Close the engine gaps (92, 116, 156, 172, ...) with Williamson and Goethals-Seidel constructions, then document the first order no implemented method reaches.",
+      "next_experiment": "Implement a Williamson-type search with a circulant-block certificate format and replay order 92 exactly.",
+      "falsification": "A proof that no Hadamard matrix of some order 4k exists; a finite search failure is not sufficient.",
+      "blocker": "Order 668 is the smallest open case and needs constructions beyond the current engines.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe hadamard"
     },
     {
       "problem_id": "M095",
@@ -2189,7 +2900,22 @@
       "falsification": "A verified K43 coloring would refute any claimed R(5,5)<=43; a valid K45 coloring would refute R(5,5)<=45.",
       "blocker": "A SAT solver UNSAT output without a verified proof trace does not establish an upper bound.",
       "dossier": "research/M095_RAMSEY.md",
-      "verifier": "python3 scripts/ramsey.py demo"
+      "verifier": "python3 scripts/ramsey.py demo",
+      "additional_verifiers": [
+        "python3 scripts/lab.py --probe ramsey_witnesses"
+      ]
+    },
+    {
+      "problem_id": "M096",
+      "stage": "benchmark_reproduced",
+      "method": "Incidence-axiom certificates, Bruck-Ryser sieve and constrained exhaustive search",
+      "hypothesis": "Decide whether a finite projective plane of order 12 exists.",
+      "first_proof_obligation": "Reproduce a published partial nonexistence result for order 12 (for example a restriction on collineations) before any search.",
+      "next_experiment": "Encode order-12 planes with a prescribed collineation as SAT with DRAT proof output, starting from cases the literature already excludes.",
+      "falsification": "An explicit order-12 incidence structure passing the combinatorial axiom check would settle existence.",
+      "blocker": "Unconstrained search is far out of reach; the order-10 nonexistence proof needed a massive computation.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe projective_planes"
     }
   ],
   "milestones": [
@@ -2225,6 +2951,138 @@
       "verifier": "python3 scripts/digraph_orbits.py --n 5",
       "artifact": "scripts/digraph_orbits.py",
       "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-GOLDBACH-001",
+      "problem_id": "M006",
+      "classification": "reproduced_known",
+      "title": "Goldbach partitions certified for every even n <= 200,000",
+      "scope": "Finite range only; far inside the published 4*10^18 verification",
+      "description": "Least Goldbach prime recorded for all 99,999 even n in [4, 200000], each re-checked by deterministic Miller-Rabin; the deep run extends to 4*10^6 (record least prime 751 at n = 3,807,404).",
+      "verifier": "python3 scripts/lab.py --probe goldbach",
+      "artifact": "scripts/probes/goldbach.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-ES-001",
+      "problem_id": "M019",
+      "classification": "reproduced_known",
+      "title": "Erdos-Straus triples certified for every 2 <= n <= 20,000",
+      "scope": "Finite range only; known computational verification is far larger",
+      "description": "Explicit (x, y, z) with 4xyz = n(xy + yz + zx) for all 19,999 integers, each re-checked by exact integer arithmetic; the deep run covers n <= 10^6.",
+      "verifier": "python3 scripts/lab.py --probe erdos_straus",
+      "artifact": "scripts/probes/erdos_straus.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-HADWIGER-001",
+      "problem_id": "M071",
+      "classification": "reproduced_known",
+      "title": "Hadwiger's conjecture certified on all 208 graphs with at most 6 vertices",
+      "scope": "Known case (chromatic number <= 6 theorem); not new",
+      "description": "Each graph carries a proper t-colouring and a K_t minor model (t = chromatic number); the census is complete by Burnside counting. Deep run: all 1,252 graphs on <= 7 vertices.",
+      "verifier": "python3 scripts/lab.py --probe hadwiger",
+      "artifact": "scripts/probes/hadwiger.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-RECON-001",
+      "problem_id": "M078",
+      "classification": "reproduced_known",
+      "title": "Graph reconstruction verified for every graph on 3-6 vertices",
+      "scope": "Known computational range; not new",
+      "description": "Burnside-certified census of 4, 11, 34 and 156 graphs; all decks pairwise distinct under an independent canonical form. Deep run adds all 1,044 graphs on 7 vertices.",
+      "verifier": "python3 scripts/lab.py --probe reconstruction",
+      "artifact": "scripts/probes/reconstruction.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-POSET-001",
+      "problem_id": "M079",
+      "classification": "reproduced_known",
+      "title": "1/3-2/3 conjecture verified for every poset with at most 6 elements",
+      "scope": "Known computational range; not new",
+      "description": "All 1, 2, 5, 16, 63, 318 posets (orbit-counting certified against OEIS A001035); each non-chain poset has an exactly counted pair with balance >= 1/3, minimum exactly 1/3. Deep run: all 2,045 posets on 7 elements.",
+      "verifier": "python3 scripts/lab.py --probe one_third",
+      "artifact": "scripts/probes/posets.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-ROTA-001",
+      "problem_id": "M080",
+      "classification": "reproduced_known",
+      "title": "Rota's basis conjecture verified exhaustively for GF(2)^2, GF(3)^2, GF(5)^2, GF(7)^2 and GF(2)^3",
+      "scope": "Known small cases (rank <= 3); not new",
+      "description": "Every choice of bases (first fixed by GL-transitivity) has a certified grid; basis counts match |GL(n,p)|/n!. The deep run adds all 1,753,128 instances over GF(3)^3.",
+      "verifier": "python3 scripts/lab.py --probe rota",
+      "artifact": "scripts/probes/rota.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-STRASSEN-001",
+      "problem_id": "M084",
+      "classification": "reproduced_known",
+      "title": "Strassen rank-7 <2,2,2> and rank-49 <4,4,4> decompositions checked exactly",
+      "scope": "Classical upper bound omega <= log2 7; not new",
+      "description": "Sparse exact expansion over Z matches the matrix multiplication tensor coefficient by coefficient; the deep run adds the rank-343 <8,8,8> Kronecker cube.",
+      "verifier": "python3 scripts/lab.py --probe strassen",
+      "artifact": "scripts/probes/tensor.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-SIC-001",
+      "problem_id": "M092",
+      "classification": "reproduced_known",
+      "title": "Exact SIC-POVMs in dimensions 2 and 3",
+      "scope": "Classical small dimensions; says nothing about general d",
+      "description": "d = 2 tetrahedron overlaps 1/3 exactly; in d = 3 all 108 Weyl-Heisenberg fiducials with entries in {0, +-1, +-w, +-w^2} found in exact Z[w] arithmetic, each Gram matrix recomputed independently.",
+      "verifier": "python3 scripts/lab.py --probe sic",
+      "artifact": "scripts/probes/sic.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-MDS-001",
+      "problem_id": "M093",
+      "classification": "reproduced_known",
+      "title": "Maximum arcs (3-dimensional MDS codes) in PG(2,q) for q = 2, 3, 4, 5, 7",
+      "scope": "Known (Segre/Bose); not new",
+      "description": "Maximum arc sizes 4, 4, 6, 6, 8 with explicit witnesses and exhaustive exclusion of larger arcs; arcs through a frame recount q-2 conics for odd q. Deep run adds q = 8, 9.",
+      "verifier": "python3 scripts/lab.py --probe mds_arcs",
+      "artifact": "scripts/probes/arcs.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-HADAMARD-001",
+      "problem_id": "M094",
+      "classification": "reproduced_known",
+      "title": "Exact Hadamard matrices for 30 of the 32 orders 4k <= 128",
+      "scope": "Known orders; engine gaps 92 and 116 are not open cases",
+      "description": "Sylvester, Paley I/II and Kronecker products, each matrix checked as H H^T = nI; the deep run certifies 85 of 100 orders up to 400.",
+      "verifier": "python3 scripts/lab.py --probe hadamard",
+      "artifact": "scripts/probes/hadamard.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-RAMSEY-002",
+      "problem_id": "M095",
+      "classification": "reproduced_known",
+      "title": "Ramsey lower bounds R(3,4) > 8, R(3,5) > 13, R(4,4) > 17 certified",
+      "scope": "Classical lower bounds; not a new bound on R(5,5)",
+      "description": "Circulant and Paley colourings checked by exhaustive subset enumeration; the deep run adds Paley(37), certifying R(5,5) > 37 (the best known lower bound is 43).",
+      "verifier": "python3 scripts/lab.py --probe ramsey_witnesses",
+      "artifact": "scripts/probes/ramsey_witness.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-PLANES-001",
+      "problem_id": "M096",
+      "classification": "reproduced_known",
+      "title": "Projective planes of every prime-power order <= 9 and the Bruck-Ryser table to 50",
+      "scope": "Known constructions and exclusions; order 12 remains open",
+      "description": "PG(2,q) incidence axioms verified combinatorially; Bruck-Ryser exclusions recomputed by brute-force sums of two squares; deep run to q = 27 and orders <= 200.",
+      "verifier": "python3 scripts/lab.py --probe projective_planes",
+      "artifact": "scripts/probes/planes.py",
+      "verified_on": "2026-10-31"
     }
   ],
   "solved": [],
@@ -2242,9 +3100,21 @@
       "dossier": "research/M074_PRIOR_ART.md"
     },
     {
+      "problem_id": "M092",
+      "name": "Zauner SIC conjecture",
+      "execution_rank": 2,
+      "execution_score": 101,
+      "baseline_rank": 3,
+      "stage": "benchmark_reproduced",
+      "first_proof_obligation": "Replay a published exact fiducial beyond d = 3 with exact arithmetic, and state the precise Galois hypotheses of any proposed uniform family.",
+      "next_experiment": "Extend the cyclotomic engine to the number fields needed for d = 4..8 and replay published exact fiducials there.",
+      "blocker": "Exact fiducials beyond d = 3 live in larger number fields than the current Z[zeta_m] engine supports; floating-point SICs are not proofs.",
+      "dossier": "research/CAMPAIGNS.md"
+    },
+    {
       "problem_id": "M075",
       "name": "Frankl union-closed sets conjecture",
-      "execution_rank": 2,
+      "execution_rank": 3,
       "execution_score": 98,
       "baseline_rank": 4,
       "stage": "benchmark_reproduced",
@@ -2254,9 +3124,57 @@
       "dossier": "research/M075_FRANKL.md"
     },
     {
+      "problem_id": "M078",
+      "name": "Graph reconstruction conjecture",
+      "execution_rank": 4,
+      "execution_score": 98,
+      "baseline_rank": 6,
+      "stage": "benchmark_reproduced",
+      "first_proof_obligation": "Pick a graph family not yet known to be reconstructible and isolate a lemma that reconstructs a new invariant for it.",
+      "next_experiment": "Tabulate which deck invariants already separate every deck in the census, as a data-driven route to a reconstruction lemma for a named family.",
+      "blocker": "Computer verification already reaches at least 11 vertices; novelty has to come from a structural lemma, not from range.",
+      "dossier": "research/LAB_CAMPAIGNS.md"
+    },
+    {
+      "problem_id": "M079",
+      "name": "One-third–two-thirds conjecture",
+      "execution_rank": 5,
+      "execution_score": 98,
+      "baseline_rank": 7,
+      "stage": "benchmark_reproduced",
+      "first_proof_obligation": "State and prove a balance bound for a restricted poset class (bounded width or height) that improves on published results.",
+      "next_experiment": "Tabulate the best balance of every poset in the census, identify extremal families near 1/3 and test structural invariants that predict a balanced pair.",
+      "blocker": "Published verification already reaches 11 elements; a new structural invariant is needed.",
+      "dossier": "research/LAB_CAMPAIGNS.md"
+    },
+    {
+      "problem_id": "M093",
+      "name": "Linear MDS code main conjecture",
+      "execution_rank": 6,
+      "execution_score": 98,
+      "baseline_rank": 8,
+      "stage": "benchmark_reproduced",
+      "first_proof_obligation": "Extend from k = 3 (Segre/Bose) to k = 4 arcs in PG(3,q) for small non-prime q (q = 8, 9), certifying maximum arc sizes.",
+      "next_experiment": "Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9.",
+      "blocker": "The conjecture is proved for prime q (Ball 2012); open non-prime cases need far larger searches than k = 3.",
+      "dossier": "research/LAB_CAMPAIGNS.md"
+    },
+    {
+      "problem_id": "M094",
+      "name": "Hadamard matrix conjecture",
+      "execution_rank": 7,
+      "execution_score": 98,
+      "baseline_rank": 9,
+      "stage": "benchmark_reproduced",
+      "first_proof_obligation": "Close the engine gaps (92, 116, 156, 172, ...) with Williamson and Goethals-Seidel constructions, then document the first order no implemented method reaches.",
+      "next_experiment": "Implement a Williamson-type search with a circulant-block certificate format and replay order 92 exactly.",
+      "blocker": "Order 668 is the smallest open case and needs constructions beyond the current engines.",
+      "dossier": "research/LAB_CAMPAIGNS.md"
+    },
+    {
       "problem_id": "M088",
       "name": "Deterministic polynomial identity testing",
-      "execution_rank": 3,
+      "execution_rank": 8,
       "execution_score": 96,
       "baseline_rank": 2,
       "stage": "specified",
@@ -2266,21 +3184,69 @@
       "dossier": "research/CAMPAIGNS.md"
     },
     {
-      "problem_id": "M092",
-      "name": "Zauner SIC conjecture",
-      "execution_rank": 4,
-      "execution_score": 96,
-      "baseline_rank": 3,
-      "stage": "specified",
-      "first_proof_obligation": "Choose a dimension and certify pairwise squared overlaps with exact algebraic arithmetic.",
-      "next_experiment": "Formalize a candidate fiducial in a low dimension with rational/algebraic coordinates, then generalize a symmetry identity.",
-      "blocker": "Floating-point numerical SIC examples are not universal existence proofs.",
-      "dossier": "research/CAMPAIGNS.md"
+      "problem_id": "M071",
+      "name": "Hadwiger conjecture",
+      "execution_rank": 9,
+      "execution_score": 92,
+      "baseline_rank": 12,
+      "stage": "benchmark_reproduced",
+      "first_proof_obligation": "Choose a restricted class beyond the proved t <= 6 range (for example 7-chromatic graphs with small independence number) and state a checkable lemma absent from the literature.",
+      "next_experiment": "Extend the census engine to 8-9 vertices with a faster canonical labeller, then target contraction-critical 7-chromatic graphs where a K7 minor model must be certified.",
+      "blocker": "Every graph a naive census reaches is inside the proved t <= 6 range; t = 7 needs much larger graphs and exact chromatic lower-bound certificates.",
+      "dossier": "research/LAB_CAMPAIGNS.md"
+    },
+    {
+      "problem_id": "M080",
+      "name": "Rota basis conjecture",
+      "execution_rank": 10,
+      "execution_score": 92,
+      "baseline_rank": 16,
+      "stage": "benchmark_reproduced",
+      "first_proof_obligation": "Specify the next finite case not yet covered here (GF(2)^4) with an orbit-reduced instance count and a per-orbit certificate format.",
+      "next_experiment": "Quotient instances by the stabiliser of the standard basis so that GF(2)^4 becomes exhaustive, storing one grid certificate per orbit.",
+      "blocker": "GF(2)^4 has about 10^8 raw instances; orbit reduction under the stabiliser is not implemented yet.",
+      "dossier": "research/LAB_CAMPAIGNS.md"
+    },
+    {
+      "problem_id": "M096",
+      "name": "Projective plane order 12",
+      "execution_rank": 11,
+      "execution_score": 92,
+      "baseline_rank": 17,
+      "stage": "benchmark_reproduced",
+      "first_proof_obligation": "Reproduce a published partial nonexistence result for order 12 (for example a restriction on collineations) before any search.",
+      "next_experiment": "Encode order-12 planes with a prescribed collineation as SAT with DRAT proof output, starting from cases the literature already excludes.",
+      "blocker": "Unconstrained search is far out of reach; the order-10 nonexistence proof needed a massive computation.",
+      "dossier": "research/LAB_CAMPAIGNS.md"
+    },
+    {
+      "problem_id": "M084",
+      "name": "Matrix multiplication exponent omega=2",
+      "execution_rank": 13,
+      "execution_score": 90,
+      "baseline_rank": 21,
+      "stage": "benchmark_reproduced",
+      "first_proof_obligation": "Replay published small-format decompositions (rank-23 <3,3,3> and recent flip-graph or learned schemes) as exact certificates and record the implied exponent bounds.",
+      "next_experiment": "Add a JSON import path and a flip-graph rank-reduction search over small formats, with every candidate replayed by the exact checker.",
+      "blocker": "Small-format ranks cannot beat laser-method bounds below 2.372; the probe is certificate infrastructure.",
+      "dossier": "research/LAB_CAMPAIGNS.md"
+    },
+    {
+      "problem_id": "M019",
+      "name": "Erdős–Straus conjecture",
+      "execution_rank": 14,
+      "execution_score": 89,
+      "baseline_rank": 27,
+      "stage": "benchmark_reproduced",
+      "first_proof_obligation": "Find a polynomial identity family covering a residue class of primes not covered by the classical Mordell identities, and prove it symbolically.",
+      "next_experiment": "Mine the certificate table for primes n = 1 mod 24, cluster solutions by (x mod n, divisor pattern) and propose parametric identities for symbolic verification.",
+      "blocker": "Classical identities leave quadratic-residue classes uncovered, and known results show identities of the standard polynomial type cannot cover them all; a different idea is needed.",
+      "dossier": "research/LAB_CAMPAIGNS.md"
     },
     {
       "problem_id": "M095",
       "name": "Exact Ramsey number R(5,5)",
-      "execution_rank": 12,
+      "execution_rank": 17,
       "execution_score": 89,
       "baseline_rank": 28,
       "stage": "benchmark_reproduced",
@@ -2288,6 +3254,18 @@
       "next_experiment": "Import and check the published K42 witness; reproduce a small structural exclusion with a trusted proof checker.",
       "blocker": "A SAT solver UNSAT output without a verified proof trace does not establish an upper bound.",
       "dossier": "research/M095_RAMSEY.md"
+    },
+    {
+      "problem_id": "M006",
+      "name": "Strong Goldbach conjecture",
+      "execution_rank": 33,
+      "execution_score": 79,
+      "baseline_rank": 55,
+      "stage": "benchmark_reproduced",
+      "first_proof_obligation": "State a restricted, checkable lemma (for example an explicit bound on the least Goldbach prime in a named residue class or range) that is not already implied by the 4*10^18 verification or by the ternary Goldbach theorem.",
+      "next_experiment": "Use the least-partition certificates to test conjectured growth bounds for the least prime p(n), then attempt a sieve-theoretic restricted statement with explicit constants.",
+      "blocker": "Range extension cannot compete with the published 4*10^18 verification; real progress needs a new restricted theorem.",
+      "dossier": "research/LAB_CAMPAIGNS.md"
     }
   ]
 }

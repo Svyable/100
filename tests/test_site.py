@@ -43,6 +43,12 @@ class TestPages(unittest.TestCase):
                          sum(x["classification"]=="reproduced_known" for x in doc["milestones"]))
         self.assertEqual(doc["summary"]["fully_solved"],len(doc["solved"]))
         self.assertGreaterEqual(len(doc["milestones"]),1)
+        lab = doc["lab"]
+        self.assertEqual(doc["summary"]["problems_with_exact_verifier"], len(lab["covered_problems"]))
+        self.assertEqual(doc["summary"]["exact_probes"], len(lab["probes"]))
+        self.assertTrue(all(item["modality"] for item in p))
+        self.assertTrue(all(run["holds"] for probe in lab["probes"] for run in probe["runs"].values()))
+        self.assertTrue(set(lab["covered_problems"]) <= {item["id"] for item in p})
 
     def test_static_pages_assets(self):
         docs = ROOT / "docs"
@@ -55,7 +61,10 @@ class TestPages(unittest.TestCase):
                          "results-count", "load-more", "search-problems",
                          "filter-field", "filter-status", "sort-problems",
                          "workbench", "execution-queue", "campaign-grid", "status-claim-count", "solved", "solved-list",
-                         "stat-solved", "milestone-list", "nav-solved-count"}.issubset(page.ids))
+                         "stat-solved", "milestone-list", "nav-solved-count",
+                         "lab", "lab-probe-list", "lab-engine-list", "lab-roadmap",
+                         "lab-stat-covered", "lab-stat-computable", "lab-stat-probes",
+                         "lab-stat-engines", "filter-modality"}.issubset(page.ids))
         self.assertIn("./assets/app.js", page.links)
         self.assertIn("./assets/style.css", page.links)
         self.assertIn("./assets/favicon.svg", page.links)

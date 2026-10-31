@@ -26,6 +26,7 @@
       <nav class="main-nav" aria-label="Primary navigation">
         <a href="#rankings">The 100</a>
         <a href="#campaigns">Campaigns</a>
+        <a href="#lab">Lab</a>
         <a href="#workbench">Proof queue</a>
         <a href="#solved">Solved <span class="nav-count" id="nav-solved-count">0</span></a>
         <a class="nav-source" href="https://github.com/Svyable/100" target="_blank" rel="noopener noreferrer">Source on GitHub <span aria-hidden="true">↗</span></a>
@@ -91,6 +92,17 @@
               </select>
             </div>
             <div class="filter-select">
+              <label for="filter-modality">Computation</label>
+              <select id="filter-modality">
+                <option value="">All modalities</option>
+                <option value="finite_refutable">Finitely refutable</option>
+                <option value="finite_parameter">Finite parameter</option>
+                <option value="existence_family">Existence family</option>
+                <option value="asymptotic">Asymptotic</option>
+                <option value="structural">Structural</option>
+              </select>
+            </div>
+            <div class="filter-select">
               <label for="sort-problems">Order</label>
               <select id="sort-problems">
                 <option value="execution">Execution priority</option>
@@ -132,9 +144,39 @@
         <div class="campaign-foot"><span><span class="little-spark">✳</span> Passing a small-case test is a verified computation, not a proof of an unrestricted conjecture.</span><a href="https://github.com/Svyable/100/issues" target="_blank" rel="noopener noreferrer">View open research issues ↗</a></div>
       </section>
 
+      <section class="lab section-block" id="lab" aria-labelledby="lab-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">03 / THE EXACT PROBE LAB</p>
+            <h2 id="lab-heading">Engines, not <em>one-offs.</em></h2>
+          </div>
+          <p>Reusable exact engines drive small probes across many of the 100. Every probe has a separate checker. Every range shown is already known; the lab exists so a genuinely new case can be checked the moment it appears.</p>
+        </div>
+        <div class="stats-strip lab-stats" aria-label="Lab snapshot">
+          <div class="stat"><strong id="lab-stat-covered">–</strong><span>Problems with exact verifiers</span></div>
+          <div class="stat"><strong id="lab-stat-computable">–</strong><span>Computable problems covered</span></div>
+          <div class="stat"><strong id="lab-stat-probes">–</strong><span>Independently checked probes</span></div>
+          <div class="stat"><strong id="lab-stat-engines">–</strong><span>Reusable engines</span></div>
+        </div>
+        <div id="lab-probe-list" class="milestone-list lab-probes"><p class="loading-state">Loading exact probes…</p></div>
+        <div class="benchmark-heading"><div>
+          <span class="eyebrow">SHARED MACHINERY</span>
+          <h3>Engines and the problems they serve</h3></div>
+          <p>Each engine is built once and reused. Finite fields alone power Hadamard matrices, projective planes, MDS codes, Ramsey colourings and Rota grids.</p>
+        </div>
+        <div id="lab-engine-list" class="lab-rows"><p class="loading-state">Loading engines…</p></div>
+        <div class="benchmark-heading"><div>
+          <span class="eyebrow">WHAT TO BUILD NEXT</span>
+          <h3>Computable problems still waiting</h3></div>
+          <p>Every problem where a finite object could refute or settle it either has a probe or appears here with the engine it needs.</p>
+        </div>
+        <div id="lab-roadmap" class="lab-rows"><p class="loading-state">Loading engine roadmap…</p></div>
+        <p class="table-footnote">Run everything with <code>python3 scripts/lab.py</code>. Full report: <a href="https://github.com/Svyable/100/blob/main/LAB.md">LAB.md</a>. <strong>A passing probe certifies a finite range, never an unrestricted conjecture.</strong></p>
+      </section>
+
       <section class="workbench section-block" id="workbench" aria-labelledby="workbench-heading">
         <div class="section-heading">
-          <div><p class="eyebrow">03 / EXECUTION PRIORITIES</p>
+          <div><p class="eyebrow">04 / EXECUTION PRIORITIES</p>
           <h2 id="workbench-heading">The proof <em>queue.</em></h2></div>
           <p>Concrete hypotheses, proof obligations, falsifiers and next experiments—not another undifferentiated list of grand questions.</p>
         </div>
@@ -151,7 +193,7 @@
 
       <section class="solved section-block" id="solved" aria-labelledby="solved-heading">
         <div class="section-heading">
-          <div><p class="eyebrow">04 / INDEPENDENTLY CHECKED MATHEMATICS</p>
+          <div><p class="eyebrow">05 / INDEPENDENTLY CHECKED MATHEMATICS</p>
           <h2 id="solved-heading">The <em>solved ledger.</em></h2></div>
           <p>Full proofs and counterexamples enter the archive only after their exact scope survives independent review. A limited-case computation never turns an entire conjecture green.</p>
         </div>
@@ -170,7 +212,7 @@
 
       <section class="method section-block" id="method" aria-labelledby="method-heading">
         <div class="method-intro">
-          <p class="eyebrow">05 / OUR STANDARD OF EVIDENCE</p>
+          <p class="eyebrow">06 / OUR STANDARD OF EVIDENCE</p>
           <h2 id="method-heading">No breakthroughs<br>by <em>announcement.</em></h2>
           <p>A proof has to establish the stated theorem, survive independent scrutiny, and leave behind enough detail to reproduce the claim. That is the whole point.</p>
           <a class="inline-link" href="https://github.com/Svyable/100/blob/main/docs/RESEARCH_PROTOCOL.md" target="_blank" rel="noopener noreferrer">Read the research protocol ↗</a>
@@ -184,7 +226,7 @@
       </section>
 
       <section class="scoring section-block" aria-labelledby="scoring-heading">
-        <div><p class="eyebrow">06 / RANKING TRANSPARENCY</p><h2 id="scoring-heading">How we <em>prioritize.</em></h2><p>Four editorial factors, each scored 1–5. The execution queue adds only documented readiness, and neither number predicts when a conjecture will be solved. Only independently verified full resolutions enter the Solved ledger.</p></div>
+        <div><p class="eyebrow">07 / RANKING TRANSPARENCY</p><h2 id="scoring-heading">How we <em>prioritize.</em></h2><p>Four editorial factors, each scored 1–5. The execution queue adds only documented readiness, and neither number predicts when a conjecture will be solved. Only independently verified full resolutions enter the Solved ledger.</p></div>
         <div class="scoring-metrics">
           <div class="metric"><span>Mathematical impact</span><b>30%</b><div class="meter"><i style="width:60%"></i></div></div>
           <div class="metric"><span>Attackability</span><b>30%</b><div class="meter"><i style="width:60%"></i></div></div>

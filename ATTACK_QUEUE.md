@@ -11,60 +11,60 @@ counts as a new theorem, and unreviewed claims receive no bonus.
 | Attack rank | ID | Problem | Base | Readiness | Index | Next step |
 |---:|---|---|---:|---:|---:|---|
 | 1 | M074 | Caccetta–Häggkvist conjecture | 94 | +7 | 101 | Replay the external fixed-r=6 proof corpus on an independent host, verify its published hash and proof traces, and audit the hand-reduction steps before launching duplicate SAT search. |
-| 2 | M075 | Frankl union-closed sets conjecture | 91 | +7 | 98 | Canonicalize families under ground-set permutations; prove or disprove a restricted lemma on minimal counterexamples. |
-| 3 | M088 | Deterministic polynomial identity testing | 94 | +2 | 96 | Implement small exact arithmetic circuits and a falsifier that searches for circuits escaping a proposed hitting set. |
-| 4 | M092 | Zauner SIC conjecture | 94 | +2 | 96 | Formalize a candidate fiducial in a low dimension with rational/algebraic coordinates, then generalize a symmetry identity. |
-| 5 | M076 | Erdős–Rado sunflower conjecture | 91 | +0 | 91 | Specify a falsifiable restricted lemma and audit prior art |
-| 6 | M078 | Graph reconstruction conjecture | 91 | +0 | 91 | Specify a falsifiable restricted lemma and audit prior art |
-| 7 | M079 | One-third–two-thirds conjecture | 91 | +0 | 91 | Specify a falsifiable restricted lemma and audit prior art |
-| 8 | M093 | Linear MDS code main conjecture | 91 | +0 | 91 | Specify a falsifiable restricted lemma and audit prior art |
-| 9 | M094 | Hadamard matrix conjecture | 91 | +0 | 91 | Specify a falsifiable restricted lemma and audit prior art |
-| 10 | M041 | Plane Jacobian conjecture | 89 | +0 | 89 | Specify a falsifiable restricted lemma and audit prior art |
-| 11 | M042 | Dixmier conjecture A1 | 89 | +0 | 89 | Specify a falsifiable restricted lemma and audit prior art |
-| 12 | M095 | Exact Ramsey number R(5,5) | 82 | +7 | 89 | Import and check the published K42 witness; reproduce a small structural exclusion with a trusted proof checker. |
-| 13 | M071 | Hadwiger conjecture | 85 | +0 | 85 | Specify a falsifiable restricted lemma and audit prior art |
-| 14 | M072 | Erdős–Hajnal conjecture | 85 | +0 | 85 | Specify a falsifiable restricted lemma and audit prior art |
-| 15 | M073 | Sidorenko conjecture | 85 | +0 | 85 | Specify a falsifiable restricted lemma and audit prior art |
-| 16 | M077 | Komlós discrepancy conjecture | 85 | +0 | 85 | Specify a falsifiable restricted lemma and audit prior art |
-| 17 | M080 | Rota basis conjecture | 85 | +0 | 85 | Specify a falsifiable restricted lemma and audit prior art |
-| 18 | M096 | Projective plane order 12 | 85 | +0 | 85 | Specify a falsifiable restricted lemma and audit prior art |
-| 19 | M097 | Metric TSP four-thirds conjecture | 85 | +0 | 85 | Specify a falsifiable restricted lemma and audit prior art |
-| 20 | M082 | NP versus coNP | 83 | +0 | 83 | Specify a falsifiable restricted lemma and audit prior art |
-| 21 | M083 | Valiant VP versus VNP | 83 | +0 | 83 | Specify a falsifiable restricted lemma and audit prior art |
-| 22 | M084 | Matrix multiplication exponent omega=2 | 83 | +0 | 83 | Specify a falsifiable restricted lemma and audit prior art |
-| 23 | M085 | Unique Games conjecture | 83 | +0 | 83 | Specify a falsifiable restricted lemma and audit prior art |
-| 24 | M086 | Quantum PCP conjecture | 83 | +0 | 83 | Specify a falsifiable restricted lemma and audit prior art |
-| 25 | M087 | P versus BPP | 83 | +0 | 83 | Specify a falsifiable restricted lemma and audit prior art |
-| 26 | M089 | Strongly polynomial linear programming | 83 | +0 | 83 | Specify a falsifiable restricted lemma and audit prior art |
-| 27 | M090 | Graph isomorphism in polynomial time | 83 | +0 | 83 | Specify a falsifiable restricted lemma and audit prior art |
-| 28 | M019 | Erdős–Straus conjecture | 82 | +0 | 82 | Specify a falsifiable restricted lemma and audit prior art |
+| 2 | M092 | Zauner SIC conjecture | 94 | +7 | 101 | Extend the cyclotomic engine to the number fields needed for d = 4..8 and replay published exact fiducials there. |
+| 3 | M075 | Frankl union-closed sets conjecture | 91 | +7 | 98 | Canonicalize families under ground-set permutations; prove or disprove a restricted lemma on minimal counterexamples. |
+| 4 | M078 | Graph reconstruction conjecture | 91 | +7 | 98 | Tabulate which deck invariants already separate every deck in the census, as a data-driven route to a reconstruction lemma for a named family. |
+| 5 | M079 | One-third–two-thirds conjecture | 91 | +7 | 98 | Tabulate the best balance of every poset in the census, identify extremal families near 1/3 and test structural invariants that predict a balanced pair. |
+| 6 | M093 | Linear MDS code main conjecture | 91 | +7 | 98 | Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9. |
+| 7 | M094 | Hadamard matrix conjecture | 91 | +7 | 98 | Implement a Williamson-type search with a circulant-block certificate format and replay order 92 exactly. |
+| 8 | M088 | Deterministic polynomial identity testing | 94 | +2 | 96 | Implement small exact arithmetic circuits and a falsifier that searches for circuits escaping a proposed hitting set. |
+| 9 | M071 | Hadwiger conjecture | 85 | +7 | 92 | Extend the census engine to 8-9 vertices with a faster canonical labeller, then target contraction-critical 7-chromatic graphs where a K7 minor model must be certified. |
+| 10 | M080 | Rota basis conjecture | 85 | +7 | 92 | Quotient instances by the stabiliser of the standard basis so that GF(2)^4 becomes exhaustive, storing one grid certificate per orbit. |
+| 11 | M096 | Projective plane order 12 | 85 | +7 | 92 | Encode order-12 planes with a prescribed collineation as SAT with DRAT proof output, starting from cases the literature already excludes. |
+| 12 | M076 | Erdős–Rado sunflower conjecture | 91 | +0 | 91 | Specify a falsifiable restricted lemma and audit prior art |
+| 13 | M084 | Matrix multiplication exponent omega=2 | 83 | +7 | 90 | Add a JSON import path and a flip-graph rank-reduction search over small formats, with every candidate replayed by the exact checker. |
+| 14 | M019 | Erdős–Straus conjecture | 82 | +7 | 89 | Mine the certificate table for primes n = 1 mod 24, cluster solutions by (x mod n, divisor pattern) and propose parametric identities for symbolic verification. |
+| 15 | M041 | Plane Jacobian conjecture | 89 | +0 | 89 | Specify a falsifiable restricted lemma and audit prior art |
+| 16 | M042 | Dixmier conjecture A1 | 89 | +0 | 89 | Specify a falsifiable restricted lemma and audit prior art |
+| 17 | M095 | Exact Ramsey number R(5,5) | 82 | +7 | 89 | Import and check the published K42 witness; reproduce a small structural exclusion with a trusted proof checker. |
+| 18 | M072 | Erdős–Hajnal conjecture | 85 | +0 | 85 | Specify a falsifiable restricted lemma and audit prior art |
+| 19 | M073 | Sidorenko conjecture | 85 | +0 | 85 | Specify a falsifiable restricted lemma and audit prior art |
+| 20 | M077 | Komlós discrepancy conjecture | 85 | +0 | 85 | Specify a falsifiable restricted lemma and audit prior art |
+| 21 | M097 | Metric TSP four-thirds conjecture | 85 | +0 | 85 | Specify a falsifiable restricted lemma and audit prior art |
+| 22 | M082 | NP versus coNP | 83 | +0 | 83 | Specify a falsifiable restricted lemma and audit prior art |
+| 23 | M083 | Valiant VP versus VNP | 83 | +0 | 83 | Specify a falsifiable restricted lemma and audit prior art |
+| 24 | M085 | Unique Games conjecture | 83 | +0 | 83 | Specify a falsifiable restricted lemma and audit prior art |
+| 25 | M086 | Quantum PCP conjecture | 83 | +0 | 83 | Specify a falsifiable restricted lemma and audit prior art |
+| 26 | M087 | P versus BPP | 83 | +0 | 83 | Specify a falsifiable restricted lemma and audit prior art |
+| 27 | M089 | Strongly polynomial linear programming | 83 | +0 | 83 | Specify a falsifiable restricted lemma and audit prior art |
+| 28 | M090 | Graph isomorphism in polynomial time | 83 | +0 | 83 | Specify a falsifiable restricted lemma and audit prior art |
 | 29 | M091 | Yang–Mills existence and mass gap | 80 | +0 | 80 | Specify a falsifiable restricted lemma and audit prior art |
 | 30 | M098 | Vaught conjecture | 80 | +0 | 80 | Specify a falsifiable restricted lemma and audit prior art |
 | 31 | M099 | Decidability of real exponential field | 80 | +0 | 80 | Specify a falsifiable restricted lemma and audit prior art |
 | 32 | M100 | Falconer distance-set conjecture | 80 | +0 | 80 | Specify a falsifiable restricted lemma and audit prior art |
-| 33 | M043 | Kaplansky idempotent conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 34 | M044 | Kaplansky direct-finiteness conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 35 | M045 | Finitistic dimension conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 36 | M046 | Auslander–Reiten conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 37 | M047 | Broué abelian defect conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 38 | M048 | Alperin weight conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 39 | M049 | Soficity conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 40 | M050 | Cherlin–Zilber algebraicity conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 41 | M061 | 2D self-avoiding walk exponents | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 42 | M062 | Critical percolation no-infinite-cluster conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 43 | M063 | Planar first-passage KPZ exponent | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 44 | M064 | FPP limit-shape strict convexity | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 45 | M065 | Mandelbrot local-connectivity conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 46 | M066 | Birkhoff billiard conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 47 | M067 | Sarnak Möbius disjointness conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 48 | M068 | Furstenberg times-two times-three conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 49 | M069 | Standard map positive metric entropy | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 50 | M070 | 3D Ising conformal scaling conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
-| 51 | M002 | Generalized Riemann Hypothesis | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 52 | M003 | Birch–Swinnerton-Dyer conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 53 | M004 | abc conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 54 | M005 | Twin prime conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
-| 55 | M006 | Strong Goldbach conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 33 | M006 | Strong Goldbach conjecture | 72 | +7 | 79 | Use the least-partition certificates to test conjectured growth bounds for the least prime p(n), then attempt a sieve-theoretic restricted statement with explicit constants. |
+| 34 | M043 | Kaplansky idempotent conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 35 | M044 | Kaplansky direct-finiteness conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 36 | M045 | Finitistic dimension conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 37 | M046 | Auslander–Reiten conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 38 | M047 | Broué abelian defect conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 39 | M048 | Alperin weight conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 40 | M049 | Soficity conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 41 | M050 | Cherlin–Zilber algebraicity conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 42 | M061 | 2D self-avoiding walk exponents | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 43 | M062 | Critical percolation no-infinite-cluster conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 44 | M063 | Planar first-passage KPZ exponent | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 45 | M064 | FPP limit-shape strict convexity | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 46 | M065 | Mandelbrot local-connectivity conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 47 | M066 | Birkhoff billiard conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 48 | M067 | Sarnak Möbius disjointness conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 49 | M068 | Furstenberg times-two times-three conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 50 | M069 | Standard map positive metric entropy | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 51 | M070 | 3D Ising conformal scaling conjecture | 74 | +0 | 74 | Specify a falsifiable restricted lemma and audit prior art |
+| 52 | M002 | Generalized Riemann Hypothesis | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 53 | M003 | Birch–Swinnerton-Dyer conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 54 | M004 | abc conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
+| 55 | M005 | Twin prime conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
 | 56 | M007 | Bateman–Horn conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
 | 57 | M008 | Elliott–Halberstam conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
 | 58 | M009 | Montgomery pair-correlation conjecture | 72 | +0 | 72 | Specify a falsifiable restricted lemma and audit prior art |
@@ -125,6 +125,18 @@ counts as a new theorem, and unreviewed claims receive no bonus.
 
 **Stage:** `benchmark_reproduced` · [Dossier](research/M074_PRIOR_ART.md)
 
+### M092 — Zauner SIC conjecture
+
+**Proof obligation:** Replay a published exact fiducial beyond d = 3 with exact arithmetic, and state the precise Galois hypotheses of any proposed uniform family.
+
+**Falsifier:** An exact failed Gram matrix relation or a missing required vector under the stated algebraic construction.
+
+**Next experiment:** Extend the cyclotomic engine to the number fields needed for d = 4..8 and replay published exact fiducials there.
+
+**Current blocker:** Exact fiducials beyond d = 3 live in larger number fields than the current Z[zeta_m] engine supports; floating-point SICs are not proofs.
+
+**Stage:** `benchmark_reproduced` · [Dossier](research/CAMPAIGNS.md)
+
 ### M075 — Frankl union-closed sets conjecture
 
 **Proof obligation:** Verify the exact conjecture for bounded universes before deriving any universal structural reduction.
@@ -136,6 +148,54 @@ counts as a new theorem, and unreviewed claims receive no bonus.
 **Current blocker:** Naive exhaustive enumeration scales as 2^(2^n); structural quotient required.
 
 **Stage:** `benchmark_reproduced` · [Dossier](research/M075_FRANKL.md)
+
+### M078 — Graph reconstruction conjecture
+
+**Proof obligation:** Pick a graph family not yet known to be reconstructible and isolate a lemma that reconstructs a new invariant for it.
+
+**Falsifier:** Two non-isomorphic graphs with identical decks, confirmed by independent canonical forms.
+
+**Next experiment:** Tabulate which deck invariants already separate every deck in the census, as a data-driven route to a reconstruction lemma for a named family.
+
+**Current blocker:** Computer verification already reaches at least 11 vertices; novelty has to come from a structural lemma, not from range.
+
+**Stage:** `benchmark_reproduced` · [Dossier](research/LAB_CAMPAIGNS.md)
+
+### M079 — One-third–two-thirds conjecture
+
+**Proof obligation:** State and prove a balance bound for a restricted poset class (bounded width or height) that improves on published results.
+
+**Falsifier:** A non-chain poset whose every incomparable pair has balance below 1/3, with linear extensions counted exactly by two independent methods.
+
+**Next experiment:** Tabulate the best balance of every poset in the census, identify extremal families near 1/3 and test structural invariants that predict a balanced pair.
+
+**Current blocker:** Published verification already reaches 11 elements; a new structural invariant is needed.
+
+**Stage:** `benchmark_reproduced` · [Dossier](research/LAB_CAMPAIGNS.md)
+
+### M093 — Linear MDS code main conjecture
+
+**Proof obligation:** Extend from k = 3 (Segre/Bose) to k = 4 arcs in PG(3,q) for small non-prime q (q = 8, 9), certifying maximum arc sizes.
+
+**Falsifier:** An explicit n-arc exceeding the bound, verified by exact determinant checks.
+
+**Next experiment:** Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9.
+
+**Current blocker:** The conjecture is proved for prime q (Ball 2012); open non-prime cases need far larger searches than k = 3.
+
+**Stage:** `benchmark_reproduced` · [Dossier](research/LAB_CAMPAIGNS.md)
+
+### M094 — Hadamard matrix conjecture
+
+**Proof obligation:** Close the engine gaps (92, 116, 156, 172, ...) with Williamson and Goethals-Seidel constructions, then document the first order no implemented method reaches.
+
+**Falsifier:** A proof that no Hadamard matrix of some order 4k exists; a finite search failure is not sufficient.
+
+**Next experiment:** Implement a Williamson-type search with a circulant-block certificate format and replay order 92 exactly.
+
+**Current blocker:** Order 668 is the smallest open case and needs constructions beyond the current engines.
+
+**Stage:** `benchmark_reproduced` · [Dossier](research/LAB_CAMPAIGNS.md)
 
 ### M088 — Deterministic polynomial identity testing
 
@@ -149,17 +209,65 @@ counts as a new theorem, and unreviewed claims receive no bonus.
 
 **Stage:** `specified` · [Dossier](research/CAMPAIGNS.md)
 
-### M092 — Zauner SIC conjecture
+### M071 — Hadwiger conjecture
 
-**Proof obligation:** Choose a dimension and certify pairwise squared overlaps with exact algebraic arithmetic.
+**Proof obligation:** Choose a restricted class beyond the proved t <= 6 range (for example 7-chromatic graphs with small independence number) and state a checkable lemma absent from the literature.
 
-**Falsifier:** An exact failed Gram matrix relation or a missing required vector under the stated algebraic construction.
+**Falsifier:** A graph with a certified chromatic-number lower bound t and an exhaustive certificate that no K_t minor model exists.
 
-**Next experiment:** Formalize a candidate fiducial in a low dimension with rational/algebraic coordinates, then generalize a symmetry identity.
+**Next experiment:** Extend the census engine to 8-9 vertices with a faster canonical labeller, then target contraction-critical 7-chromatic graphs where a K7 minor model must be certified.
 
-**Current blocker:** Floating-point numerical SIC examples are not universal existence proofs.
+**Current blocker:** Every graph a naive census reaches is inside the proved t <= 6 range; t = 7 needs much larger graphs and exact chromatic lower-bound certificates.
 
-**Stage:** `specified` · [Dossier](research/CAMPAIGNS.md)
+**Stage:** `benchmark_reproduced` · [Dossier](research/LAB_CAMPAIGNS.md)
+
+### M080 — Rota basis conjecture
+
+**Proof obligation:** Specify the next finite case not yet covered here (GF(2)^4) with an orbit-reduced instance count and a per-orbit certificate format.
+
+**Falsifier:** n bases of GF(p)^n with an exhaustive certificate that no valid grid exists.
+
+**Next experiment:** Quotient instances by the stabiliser of the standard basis so that GF(2)^4 becomes exhaustive, storing one grid certificate per orbit.
+
+**Current blocker:** GF(2)^4 has about 10^8 raw instances; orbit reduction under the stabiliser is not implemented yet.
+
+**Stage:** `benchmark_reproduced` · [Dossier](research/LAB_CAMPAIGNS.md)
+
+### M096 — Projective plane order 12
+
+**Proof obligation:** Reproduce a published partial nonexistence result for order 12 (for example a restriction on collineations) before any search.
+
+**Falsifier:** An explicit order-12 incidence structure passing the combinatorial axiom check would settle existence.
+
+**Next experiment:** Encode order-12 planes with a prescribed collineation as SAT with DRAT proof output, starting from cases the literature already excludes.
+
+**Current blocker:** Unconstrained search is far out of reach; the order-10 nonexistence proof needed a massive computation.
+
+**Stage:** `benchmark_reproduced` · [Dossier](research/LAB_CAMPAIGNS.md)
+
+### M084 — Matrix multiplication exponent omega=2
+
+**Proof obligation:** Replay published small-format decompositions (rank-23 <3,3,3> and recent flip-graph or learned schemes) as exact certificates and record the implied exponent bounds.
+
+**Falsifier:** Not finitely falsifiable: omega is a limit, and certified decompositions only give upper bounds.
+
+**Next experiment:** Add a JSON import path and a flip-graph rank-reduction search over small formats, with every candidate replayed by the exact checker.
+
+**Current blocker:** Small-format ranks cannot beat laser-method bounds below 2.372; the probe is certificate infrastructure.
+
+**Stage:** `benchmark_reproduced` · [Dossier](research/LAB_CAMPAIGNS.md)
+
+### M019 — Erdős–Straus conjecture
+
+**Proof obligation:** Find a polynomial identity family covering a residue class of primes not covered by the classical Mordell identities, and prove it symbolically.
+
+**Falsifier:** An n together with a proof that no positive-integer triple exists; a finite search failure is not a counterexample.
+
+**Next experiment:** Mine the certificate table for primes n = 1 mod 24, cluster solutions by (x mod n, divisor pattern) and propose parametric identities for symbolic verification.
+
+**Current blocker:** Classical identities leave quadratic-residue classes uncovered, and known results show identities of the standard polynomial type cannot cover them all; a different idea is needed.
+
+**Stage:** `benchmark_reproduced` · [Dossier](research/LAB_CAMPAIGNS.md)
 
 ### M095 — Exact Ramsey number R(5,5)
 
@@ -172,6 +280,18 @@ counts as a new theorem, and unreviewed claims receive no bonus.
 **Current blocker:** A SAT solver UNSAT output without a verified proof trace does not establish an upper bound.
 
 **Stage:** `benchmark_reproduced` · [Dossier](research/M095_RAMSEY.md)
+
+### M006 — Strong Goldbach conjecture
+
+**Proof obligation:** State a restricted, checkable lemma (for example an explicit bound on the least Goldbach prime in a named residue class or range) that is not already implied by the 4*10^18 verification or by the ternary Goldbach theorem.
+
+**Falsifier:** An even n >= 4 with no prime p <= n/2 such that n - p is prime, confirmed by an independent primality oracle.
+
+**Next experiment:** Use the least-partition certificates to test conjectured growth bounds for the least prime p(n), then attempt a sieve-theoretic restricted statement with explicit constants.
+
+**Current blocker:** Range extension cannot compete with the published 4*10^18 verification; real progress needs a new restricted theorem.
+
+**Stage:** `benchmark_reproduced` · [Dossier](research/LAB_CAMPAIGNS.md)
 
 ## What counts as solved?
 

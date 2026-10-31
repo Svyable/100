@@ -24,6 +24,21 @@ Score = 6*impact + 6*attackability + 5*verifiability + 3*spillover. This is a **
 
 Resolved and retired targets should be replaced to keep 100 *active* candidates; do not recycle the old IDs. Never confuse a special-case proof with resolution of a universal claim.
 
+## Computational modality
+
+Every candidate has a `modality`: an editorial judgment of how finite exact computation can bear
+on the exact statement. It is not a difficulty score.
+
+- `finite_refutable`: a single finite, checkable object would refute the claim (Goldbach, Hadwiger, Frankl, reconstruction, ...). Computation can certify ranges and search for counterexamples.
+- `finite_parameter`: the question is one specific finite value or object (R(5,5), the order-12 plane). Exhaustive search or a certificate could settle it.
+- `existence_family`: existence over infinitely many finite parameters (Hadamard, SIC). Constructions certify cases; one certified nonexistence would refute.
+- `asymptotic`: limiting or infinitary statements (twin primes, ω = 2, sunflowers). Computation gives data and certified bounds, never a refutation.
+- `structural`: statements about infinite or continuous objects, where computation helps only through restricted finite analogues.
+
+The first three are "computable". Each computable problem must have an exact verifier or an entry
+in `data/engine_roadmap.json` naming the engine still needed. Changing a modality needs a reason in
+the PR, just like a score change.
+
 ## Research campaign for every promoted problem
 
 1. **Status audit:** original theorem statement, precise quantifiers, exceptions, current literature and citations.

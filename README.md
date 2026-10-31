@@ -3,6 +3,7 @@
 **Purpose:** Preserve, refine, and stack-rank 100 concrete mathematical proof/counterexample targets, looking for results and methods that create new branches of discovery.
 
 - **[Public research dashboard](https://svyable.github.io/100/)** (once GitHub Pages is enabled: [activation guide](docs/PAGES_SETUP.md)) — ranked search, evidence filters, active proof campaigns.
+- **[Exact probe lab](LAB.md)**: 12 independently checked probes on 8 reusable engines give **14 of the 100 problems** an exact verifier (previously 3), including 13 of the 19 problems where finite computation can refute or settle the claim. All ranges are known mathematics; see [the lab dossier](research/LAB_CAMPAIGNS.md).
 - **[Execution-priority queue](ATTACK_QUEUE.md)** — evidence-aware ordering of the top 100 with precise proof obligations for active campaigns.
 - **[Solved archive](data/solved.json)** — strict full-resolution ledger, initially empty; known finite benchmarks are kept separate.
 - [Caccetta–Häggkvist finite census and 18-vertex SAT target](research/M074_CH.md) — exact symmetry coverage, independent cycle check and reproducible CNF encoding; no new proof claimed.
@@ -19,6 +20,10 @@
 The initial scores are **editorial judgments, not estimated probabilities of success**. We optimize a portfolio of ambitious results *and* independently checkable early progress: 30% mathematical impact, 30% attackability, 25% verifiability, 15% spillover. Rank and evidence state are separate.
 
 ```sh
+python3 scripts/lab.py --list
+python3 scripts/lab.py
+python3 scripts/lab.py --check
+python3 scripts/lab.py --level deep --check
 python3 scripts/rank.py
 python3 scripts/rank.py --check
 python3 scripts/research.py
@@ -30,4 +35,6 @@ python3 -m unittest discover -s tests -v
 
 When changing scores or evidence states, include a dated source and a reason in the commit/PR. A Lean-checked result only proves what was *encoded*; inspect whether that exactly matches the claimed conjecture. Never label a problem solved on the basis of an announcement alone.
 
-The scheduled GitHub workflow reproduces existing finite baselines weekly when GitHub Actions scheduling is enabled. It does not autonomously invent proofs or check the changing research literature.
+Every problem has an editorial computational `modality` (finitely refutable, finite parameter, existence family, asymptotic, structural), and [data/engine_roadmap.json](data/engine_roadmap.json) names the engine still needed for each computable problem without a probe. A passing probe certifies a finite range only. Exit code 3 from the lab means a confirmed violation inside known mathematics, which almost certainly indicates a bug; it never adds anything to Solved.
+
+The scheduled GitHub workflow reproduces existing finite baselines weekly when GitHub Actions scheduling is enabled. It also reruns every lab probe at deep level. It does not invent proofs or check the changing research literature on its own.

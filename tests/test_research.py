@@ -76,8 +76,21 @@ class ResearchProgramTests(unittest.TestCase):
             "python3 scripts/digraph.py exhaustive --n 4",
         }.issubset(set(research.RUNNABLE)))
         for c in self.program["campaigns"]:
-            if c["verifier"]:
-                self.assertIn(c["verifier"],research.RUNNABLE)
+            for verifier in research.campaign_verifiers(c):
+                self.assertIn(verifier,research.RUNNABLE)
+
+    def test_probes_are_wired_into_campaigns(self):
+        broken=copy.deepcopy(self.program)
+        broken["campaigns"]=[c for c in broken["campaigns"] if c["problem_id"]!="M094"]
+        broken["milestones"]=[m for m in broken["milestones"] if m["problem_id"]!="M094"]
+        with self.assertRaises(ValueError):
+            research.load(broken)
+        extra=copy.deepcopy(self.program)
+        for c in extra["campaigns"]:
+            if c["problem_id"]=="M095":
+                c["additional_verifiers"]=["python3 scripts/evil.py"]
+        with self.assertRaises(ValueError):
+            research.load(extra)
 
 
 if __name__=="__main__":

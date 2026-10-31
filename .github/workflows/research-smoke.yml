@@ -27,3 +27,5 @@ jobs:
         run: python3 -m unittest discover -s tests -p "test_ch_compact.py" -v
       - name: Check research ledger and execution queue
         run: python3 scripts/research.py --check
+      - name: Exact probe lab, deep level (all probes re-searched and independently re-checked)
+        run: python3 scripts/lab.py --level deep --check

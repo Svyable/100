@@ -7,10 +7,18 @@
     needs_review: "Needs review",
     claim_needs_review: "Claim under review"
   });
-  const campaignIds = new Set(["M074","M075","M088","M092","M095"]);
+  const modalityNames = Object.freeze({
+    finite_refutable: "Finitely refutable",
+    finite_parameter: "Finite parameter",
+    existence_family: "Existence family",
+    asymptotic: "Asymptotic",
+    structural: "Structural"
+  });
+  let campaignIds = new Set();
+  let verifiedIds = new Set();
   const state = {
     all: [], filtered: [], limit: 20, sort: "execution",
-    search: "", field: "", status: ""
+    search: "", field: "", status: "", modality: ""
   };
   const escapeHTML = s => String(s ?? "").replace(/[&<>"']/g,
     ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
@@ -71,7 +79,10 @@
       '<div class="detail-metrics">' +
       metric("Impact",p.impact) + metric("Attackability",p.attackability) +
       metric("Verifiability",p.verifiability) + metric("Spillover",p.spillover) +
-      '</div><p class="detail-note"><strong>Evidence:</strong> ' +
+      '</div><p class="detail-note"><strong>Computation:</strong> ' +
+      escapeHTML(modalityNames[p.modality] || "Unclassified") +
+      (verifiedIds.has(p.id) ? ' · exact verifier in the probe lab' : '') + '.</p>' +
+      '<p class="detail-note"><strong>Evidence:</strong> ' +
       escapeHTML(evidenceName(p)) + '. ' + description +
       'This classification is not a universal proof-status certification.</p>' +
       (campaignIds.has(p.id) ?
@@ -94,6 +105,7 @@
     state.filtered = state.all.filter(p =>
       (!state.field || p.field === state.field) &&
       (!state.status || p.evidence_state === state.status) &&
+      (!state.modality || p.modality === state.modality) &&
       (!query || [p.id,p.name,p.field,p.question,p.first_attack].some(
         value => String(value ?? "").toLocaleLowerCase().includes(query)))
     ).sort(compare);
@@ -114,6 +126,7 @@
     state.search = $("search-problems").value;
     state.field = $("filter-field").value;
     state.status = $("filter-status").value;
+    state.modality = $("filter-modality").value;
     state.sort = $("sort-problems").value;
     state.limit = 20;
     renderProblems();
@@ -181,6 +194,61 @@
       fragment.appendChild(empty);
     }
     root.replaceChildren(fragment);
+  }
+  function renderLab(data) {
+    const lab = data.lab;
+    const names = new Map(data.problems.map(p => [p.id, p.name]));
+    $("lab-stat-covered").textContent = String(lab.covered_problems.length);
+    $("lab-stat-computable").textContent =
+      lab.computable_problems.filter(id => lab.covered_problems.includes(id)).length +
+      "/" + lab.computable_problems.length;
+    $("lab-stat-probes").textContent = String(lab.probes.length);
+    $("lab-stat-engines").textContent = String(lab.engines.length);
+    const probeRoot = document.createDocumentFragment();
+    for (const probe of lab.probes) {
+      const run = probe.runs.deep || probe.runs.smoke;
+      const card = document.createElement("article");
+      card.className = "milestone-card";
+      const artifact = repoFile(probe.artifact);
+      card.innerHTML = '<span class="milestone-type">' + escapeHTML(probe.problem_id) +
+        ' · ' + (run && run.holds ? "VERIFIED FINITE RANGE" : "NEEDS ATTENTION") + '</span>' +
+        '<h4>' + escapeHTML(probe.name) + '</h4>' +
+        '<p>' + escapeHTML(run ? run.scope : "Not yet run.") + '</p>' +
+        '<p class="probe-frontier">' + escapeHTML(probe.frontier) + '</p>' +
+        '<div class="probe-engines">' + probe.engines.map(e => '<span>' + escapeHTML(e) + '</span>').join("") + '</div>' +
+        '<code>' + escapeHTML(probe.command) + '</code>' +
+        (artifact ? '<a href="' + escapeHTML(artifact) +
+          '" target="_blank" rel="noopener noreferrer">Inspect search and checker ↗</a>' : '');
+      probeRoot.appendChild(card);
+    }
+    $("lab-probe-list").replaceChildren(probeRoot);
+    const engineRoot = document.createDocumentFragment();
+    for (const engine of lab.engines) {
+      const row = document.createElement("div");
+      row.className = "lab-row";
+      row.innerHTML = '<div><h4>' + escapeHTML(engine.name) + '</h4><code>' + escapeHTML(engine.id) + '</code></div>' +
+        '<p>' + escapeHTML(engine.use) + '</p>' +
+        '<div class="chips">' + engine.problems.map(id =>
+          '<span title="' + escapeHTML(names.get(id) || id) + '">' + escapeHTML(id) + '</span>').join("") + '</div>';
+      engineRoot.appendChild(row);
+    }
+    $("lab-engine-list").replaceChildren(engineRoot);
+    const roadRoot = document.createDocumentFragment();
+    for (const entry of lab.roadmap) {
+      const row = document.createElement("div");
+      row.className = "lab-row";
+      row.innerHTML = '<div><h4>' + escapeHTML(entry.problem_id) + ' · ' + escapeHTML(entry.name) + '</h4>' +
+        '<code>' + escapeHTML(entry.engine) + '</code></div>' +
+        '<p>' + escapeHTML(entry.first_probe) + '</p><div class="chips"><span>ENGINE TO BUILD</span></div>';
+      roadRoot.appendChild(row);
+    }
+    if (!lab.roadmap.length) {
+      const empty = document.createElement("p");
+      empty.className = "empty-state";
+      empty.textContent = "Every computable problem has an exact probe.";
+      roadRoot.appendChild(empty);
+    }
+    $("lab-roadmap").replaceChildren(roadRoot);
   }
   function renderSolved(data) {
     const root = $("solved-list");
@@ -252,8 +320,11 @@
       const data = await response.json();
       if (!data || !Array.isArray(data.problems) || data.problems.length !== 100 ||
           !Array.isArray(data.execution_queue) || !Array.isArray(data.solved) ||
-          !Array.isArray(data.milestones)) throw new Error("Malformed portfolio snapshot");
+          !Array.isArray(data.milestones) || !data.lab ||
+          !Array.isArray(data.lab.probes)) throw new Error("Malformed portfolio snapshot");
       state.all = data.problems;
+      campaignIds = new Set(data.campaigns.map(c => c.problem_id));
+      verifiedIds = new Set(data.lab.covered_problems);
       for (const field of [...new Set(state.all.map(p => p.field))].sort()) {
         const opt = document.createElement("option");
         opt.value = field;
@@ -265,18 +336,20 @@
       $("status-claim-count").textContent = String(data.status_counts.claim_needs_review || 0);
       $("snapshot-date").textContent = "Latest recorded source intake: " +
         (data.source_review_as_of || "varies") + ".";
-      for (const id of ["search-problems","filter-field","filter-status","sort-problems"]) {
+      for (const id of ["search-problems","filter-field","filter-status","filter-modality","sort-problems"]) {
         $(id).addEventListener(id === "search-problems" ? "input" : "change", filterChanged);
       }
       $("reset-filters").addEventListener("click", () => {
         $("search-problems").value = ""; $("filter-field").value = "";
-        $("filter-status").value = ""; $("sort-problems").value = "execution";
+        $("filter-status").value = ""; $("filter-modality").value = "";
+        $("sort-problems").value = "execution";
         filterChanged(); $("search-problems").focus();
       });
       $("load-more").addEventListener("click", () => {
         state.limit += 20; renderProblems();
       });
       renderCampaigns(data);
+      renderLab(data);
       renderQueue(data);
       renderSolved(data);
       renderMilestones(data);
@@ -296,6 +369,7 @@
       $("problem-list").textContent = "Portfolio data could not be loaded; view the source registry on GitHub.";
       $("results-count").textContent = "Registry unavailable";
       $("campaign-grid").textContent = "Campaigns unavailable";
+      $("lab-probe-list").textContent = "Probe lab unavailable";
       $("execution-queue").textContent = "Proof queue unavailable";
       $("solved-list").textContent = "Solved archive unavailable";
       $("milestone-list").textContent = "Verification milestones unavailable";

@@ -1,7 +1,43 @@
 {
-  "version": 1,
+  "version": 2,
   "as_of": "2026-10-31",
   "campaigns": [
+    {
+      "problem_id": "M006",
+      "stage": "benchmark_reproduced",
+      "method": "Verified-range certificates and least-partition statistics",
+      "hypothesis": "Every even integer n >= 4 is a sum of two primes.",
+      "first_proof_obligation": "State a restricted, checkable lemma (for example an explicit bound on the least Goldbach prime in a named residue class or range) that is not already implied by the 4*10^18 verification or by the ternary Goldbach theorem.",
+      "next_experiment": "Use the least-partition certificates to test conjectured growth bounds for the least prime p(n), then attempt a sieve-theoretic restricted statement with explicit constants.",
+      "falsification": "An even n >= 4 with no prime p <= n/2 such that n - p is prime, confirmed by an independent primality oracle.",
+      "blocker": "Range extension cannot compete with the published 4*10^18 verification; real progress needs a new restricted theorem.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe goldbach"
+    },
+    {
+      "problem_id": "M019",
+      "stage": "benchmark_reproduced",
+      "method": "Modular covering identities with unit-fraction certificates",
+      "hypothesis": "For every integer n >= 2, 4/n = 1/x + 1/y + 1/z has a solution in positive integers.",
+      "first_proof_obligation": "Find a polynomial identity family covering a residue class of primes not covered by the classical Mordell identities, and prove it symbolically.",
+      "next_experiment": "Mine the certificate table for primes n = 1 mod 24, cluster solutions by (x mod n, divisor pattern) and propose parametric identities for symbolic verification.",
+      "falsification": "An n together with a proof that no positive-integer triple exists; a finite search failure is not a counterexample.",
+      "blocker": "Classical identities leave quadratic-residue classes uncovered, and known results show identities of the standard polynomial type cannot cover them all; a different idea is needed.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe erdos_straus"
+    },
+    {
+      "problem_id": "M071",
+      "stage": "benchmark_reproduced",
+      "method": "Colouring and minor-model certificates over exhaustive graph censuses",
+      "hypothesis": "Every graph with chromatic number t has K_t as a minor.",
+      "first_proof_obligation": "Choose a restricted class beyond the proved t <= 6 range (for example 7-chromatic graphs with small independence number) and state a checkable lemma absent from the literature.",
+      "next_experiment": "Extend the census engine to 8-9 vertices with a faster canonical labeller, then target contraction-critical 7-chromatic graphs where a K7 minor model must be certified.",
+      "falsification": "A graph with a certified chromatic-number lower bound t and an exhaustive certificate that no K_t minor model exists.",
+      "blocker": "Every graph a naive census reaches is inside the proved t <= 6 range; t = 7 needs much larger graphs and exact chromatic lower-bound certificates.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe hadwiger"
+    },
     {
       "problem_id": "M074",
       "stage": "benchmark_reproduced",
@@ -27,6 +63,54 @@
       "verifier": "python3 scripts/union_closed.py exhaustive --n 4"
     },
     {
+      "problem_id": "M078",
+      "stage": "benchmark_reproduced",
+      "method": "Deck-collision search over certified graph censuses",
+      "hypothesis": "Every finite simple graph on at least 3 vertices is determined up to isomorphism by its vertex-deleted deck.",
+      "first_proof_obligation": "Pick a graph family not yet known to be reconstructible and isolate a lemma that reconstructs a new invariant for it.",
+      "next_experiment": "Tabulate which deck invariants already separate every deck in the census, as a data-driven route to a reconstruction lemma for a named family.",
+      "falsification": "Two non-isomorphic graphs with identical decks, confirmed by independent canonical forms.",
+      "blocker": "Computer verification already reaches at least 11 vertices; novelty has to come from a structural lemma, not from range.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe reconstruction"
+    },
+    {
+      "problem_id": "M079",
+      "stage": "benchmark_reproduced",
+      "method": "Exact linear-extension counting over certified poset censuses",
+      "hypothesis": "Every finite poset that is not a chain has an incomparable pair x, y with 1/3 <= Pr[x < y] <= 2/3.",
+      "first_proof_obligation": "State and prove a balance bound for a restricted poset class (bounded width or height) that improves on published results.",
+      "next_experiment": "Tabulate the best balance of every poset in the census, identify extremal families near 1/3 and test structural invariants that predict a balanced pair.",
+      "falsification": "A non-chain poset whose every incomparable pair has balance below 1/3, with linear extensions counted exactly by two independent methods.",
+      "blocker": "Published verification already reaches 11 elements; a new structural invariant is needed.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe one_third"
+    },
+    {
+      "problem_id": "M080",
+      "stage": "benchmark_reproduced",
+      "method": "Exhaustive grid search over GF(p)^n with GL-symmetry reduction",
+      "hypothesis": "Any n bases of an n-dimensional vector space can be arranged in an n x n grid whose rows are the given bases and whose columns are bases.",
+      "first_proof_obligation": "Specify the next finite case not yet covered here (GF(2)^4) with an orbit-reduced instance count and a per-orbit certificate format.",
+      "next_experiment": "Quotient instances by the stabiliser of the standard basis so that GF(2)^4 becomes exhaustive, storing one grid certificate per orbit.",
+      "falsification": "n bases of GF(p)^n with an exhaustive certificate that no valid grid exists.",
+      "blocker": "GF(2)^4 has about 10^8 raw instances; orbit reduction under the stabiliser is not implemented yet.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe rota"
+    },
+    {
+      "problem_id": "M084",
+      "stage": "benchmark_reproduced",
+      "method": "Exact tensor-decomposition certificates",
+      "hypothesis": "The exponent of matrix multiplication equals 2.",
+      "first_proof_obligation": "Replay published small-format decompositions (rank-23 <3,3,3> and recent flip-graph or learned schemes) as exact certificates and record the implied exponent bounds.",
+      "next_experiment": "Add a JSON import path and a flip-graph rank-reduction search over small formats, with every candidate replayed by the exact checker.",
+      "falsification": "Not finitely falsifiable: omega is a limit, and certified decompositions only give upper bounds.",
+      "blocker": "Small-format ranks cannot beat laser-method bounds below 2.372; the probe is certificate infrastructure.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe strassen"
+    },
+    {
       "problem_id": "M088",
       "stage": "specified",
       "method": "Algebraic circuit hitting sets",
@@ -40,15 +124,39 @@
     },
     {
       "problem_id": "M092",
-      "stage": "specified",
+      "stage": "benchmark_reproduced",
       "method": "Exact algebraic SIC verification",
       "hypothesis": "Exact families of d^2 equiangular lines exist beyond individually constructed dimensions.",
-      "first_proof_obligation": "Choose a dimension and certify pairwise squared overlaps with exact algebraic arithmetic.",
-      "next_experiment": "Formalize a candidate fiducial in a low dimension with rational/algebraic coordinates, then generalize a symmetry identity.",
+      "first_proof_obligation": "Replay a published exact fiducial beyond d = 3 with exact arithmetic, and state the precise Galois hypotheses of any proposed uniform family.",
+      "next_experiment": "Extend the cyclotomic engine to the number fields needed for d = 4..8 and replay published exact fiducials there.",
       "falsification": "An exact failed Gram matrix relation or a missing required vector under the stated algebraic construction.",
-      "blocker": "Floating-point numerical SIC examples are not universal existence proofs.",
+      "blocker": "Exact fiducials beyond d = 3 live in larger number fields than the current Z[zeta_m] engine supports; floating-point SICs are not proofs.",
       "dossier": "research/CAMPAIGNS.md",
-      "verifier": null
+      "verifier": "python3 scripts/lab.py --probe sic"
+    },
+    {
+      "problem_id": "M093",
+      "stage": "benchmark_reproduced",
+      "method": "Exhaustive arc search in projective spaces with frame-fixing symmetry reduction",
+      "hypothesis": "A linear [n,k] MDS code over GF(q) with k <= q has n <= q+1, except n = q+2 when q is even and k is 3 or q-1.",
+      "first_proof_obligation": "Extend from k = 3 (Segre/Bose) to k = 4 arcs in PG(3,q) for small non-prime q (q = 8, 9), certifying maximum arc sizes.",
+      "next_experiment": "Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9.",
+      "falsification": "An explicit n-arc exceeding the bound, verified by exact determinant checks.",
+      "blocker": "The conjecture is proved for prime q (Ball 2012); open non-prime cases need far larger searches than k = 3.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe mds_arcs"
+    },
+    {
+      "problem_id": "M094",
+      "stage": "benchmark_reproduced",
+      "method": "Algebraic constructions with exact orthogonality certificates",
+      "hypothesis": "A Hadamard matrix exists for every order divisible by 4.",
+      "first_proof_obligation": "Close the engine gaps (92, 116, 156, 172, ...) with Williamson and Goethals-Seidel constructions, then document the first order no implemented method reaches.",
+      "next_experiment": "Implement a Williamson-type search with a circulant-block certificate format and replay order 92 exactly.",
+      "falsification": "A proof that no Hadamard matrix of some order 4k exists; a finite search failure is not sufficient.",
+      "blocker": "Order 668 is the smallest open case and needs constructions beyond the current engines.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe hadamard"
     },
     {
       "problem_id": "M095",
@@ -60,7 +168,22 @@
       "falsification": "A verified K43 coloring would refute any claimed R(5,5)<=43; a valid K45 coloring would refute R(5,5)<=45.",
       "blocker": "A SAT solver UNSAT output without a verified proof trace does not establish an upper bound.",
       "dossier": "research/M095_RAMSEY.md",
-      "verifier": "python3 scripts/ramsey.py demo"
+      "verifier": "python3 scripts/ramsey.py demo",
+      "additional_verifiers": [
+        "python3 scripts/lab.py --probe ramsey_witnesses"
+      ]
+    },
+    {
+      "problem_id": "M096",
+      "stage": "benchmark_reproduced",
+      "method": "Incidence-axiom certificates, Bruck-Ryser sieve and constrained exhaustive search",
+      "hypothesis": "Decide whether a finite projective plane of order 12 exists.",
+      "first_proof_obligation": "Reproduce a published partial nonexistence result for order 12 (for example a restriction on collineations) before any search.",
+      "next_experiment": "Encode order-12 planes with a prescribed collineation as SAT with DRAT proof output, starting from cases the literature already excludes.",
+      "falsification": "An explicit order-12 incidence structure passing the combinatorial axiom check would settle existence.",
+      "blocker": "Unconstrained search is far out of reach; the order-10 nonexistence proof needed a massive computation.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe projective_planes"
     }
   ],
   "milestones": [
@@ -95,6 +218,138 @@
       "description": "Exhaustive n=5 census: 2^20=1,048,576 labeled graphs partition into 9,608 isomorphism orbits (matching Burnside and OEIS A000273); two independent cycle detectors agree. Known result only.",
       "verifier": "python3 scripts/digraph_orbits.py --n 5",
       "artifact": "scripts/digraph_orbits.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-GOLDBACH-001",
+      "problem_id": "M006",
+      "classification": "reproduced_known",
+      "title": "Goldbach partitions certified for every even n <= 200,000",
+      "scope": "Finite range only; far inside the published 4*10^18 verification",
+      "description": "Least Goldbach prime recorded for all 99,999 even n in [4, 200000], each re-checked by deterministic Miller-Rabin; the deep run extends to 4*10^6 (record least prime 751 at n = 3,807,404).",
+      "verifier": "python3 scripts/lab.py --probe goldbach",
+      "artifact": "scripts/probes/goldbach.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-ES-001",
+      "problem_id": "M019",
+      "classification": "reproduced_known",
+      "title": "Erdos-Straus triples certified for every 2 <= n <= 20,000",
+      "scope": "Finite range only; known computational verification is far larger",
+      "description": "Explicit (x, y, z) with 4xyz = n(xy + yz + zx) for all 19,999 integers, each re-checked by exact integer arithmetic; the deep run covers n <= 10^6.",
+      "verifier": "python3 scripts/lab.py --probe erdos_straus",
+      "artifact": "scripts/probes/erdos_straus.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-HADWIGER-001",
+      "problem_id": "M071",
+      "classification": "reproduced_known",
+      "title": "Hadwiger's conjecture certified on all 208 graphs with at most 6 vertices",
+      "scope": "Known case (chromatic number <= 6 theorem); not new",
+      "description": "Each graph carries a proper t-colouring and a K_t minor model (t = chromatic number); the census is complete by Burnside counting. Deep run: all 1,252 graphs on <= 7 vertices.",
+      "verifier": "python3 scripts/lab.py --probe hadwiger",
+      "artifact": "scripts/probes/hadwiger.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-RECON-001",
+      "problem_id": "M078",
+      "classification": "reproduced_known",
+      "title": "Graph reconstruction verified for every graph on 3-6 vertices",
+      "scope": "Known computational range; not new",
+      "description": "Burnside-certified census of 4, 11, 34 and 156 graphs; all decks pairwise distinct under an independent canonical form. Deep run adds all 1,044 graphs on 7 vertices.",
+      "verifier": "python3 scripts/lab.py --probe reconstruction",
+      "artifact": "scripts/probes/reconstruction.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-POSET-001",
+      "problem_id": "M079",
+      "classification": "reproduced_known",
+      "title": "1/3-2/3 conjecture verified for every poset with at most 6 elements",
+      "scope": "Known computational range; not new",
+      "description": "All 1, 2, 5, 16, 63, 318 posets (orbit-counting certified against OEIS A001035); each non-chain poset has an exactly counted pair with balance >= 1/3, minimum exactly 1/3. Deep run: all 2,045 posets on 7 elements.",
+      "verifier": "python3 scripts/lab.py --probe one_third",
+      "artifact": "scripts/probes/posets.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-ROTA-001",
+      "problem_id": "M080",
+      "classification": "reproduced_known",
+      "title": "Rota's basis conjecture verified exhaustively for GF(2)^2, GF(3)^2, GF(5)^2, GF(7)^2 and GF(2)^3",
+      "scope": "Known small cases (rank <= 3); not new",
+      "description": "Every choice of bases (first fixed by GL-transitivity) has a certified grid; basis counts match |GL(n,p)|/n!. The deep run adds all 1,753,128 instances over GF(3)^3.",
+      "verifier": "python3 scripts/lab.py --probe rota",
+      "artifact": "scripts/probes/rota.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-STRASSEN-001",
+      "problem_id": "M084",
+      "classification": "reproduced_known",
+      "title": "Strassen rank-7 <2,2,2> and rank-49 <4,4,4> decompositions checked exactly",
+      "scope": "Classical upper bound omega <= log2 7; not new",
+      "description": "Sparse exact expansion over Z matches the matrix multiplication tensor coefficient by coefficient; the deep run adds the rank-343 <8,8,8> Kronecker cube.",
+      "verifier": "python3 scripts/lab.py --probe strassen",
+      "artifact": "scripts/probes/tensor.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-SIC-001",
+      "problem_id": "M092",
+      "classification": "reproduced_known",
+      "title": "Exact SIC-POVMs in dimensions 2 and 3",
+      "scope": "Classical small dimensions; says nothing about general d",
+      "description": "d = 2 tetrahedron overlaps 1/3 exactly; in d = 3 all 108 Weyl-Heisenberg fiducials with entries in {0, +-1, +-w, +-w^2} found in exact Z[w] arithmetic, each Gram matrix recomputed independently.",
+      "verifier": "python3 scripts/lab.py --probe sic",
+      "artifact": "scripts/probes/sic.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-MDS-001",
+      "problem_id": "M093",
+      "classification": "reproduced_known",
+      "title": "Maximum arcs (3-dimensional MDS codes) in PG(2,q) for q = 2, 3, 4, 5, 7",
+      "scope": "Known (Segre/Bose); not new",
+      "description": "Maximum arc sizes 4, 4, 6, 6, 8 with explicit witnesses and exhaustive exclusion of larger arcs; arcs through a frame recount q-2 conics for odd q. Deep run adds q = 8, 9.",
+      "verifier": "python3 scripts/lab.py --probe mds_arcs",
+      "artifact": "scripts/probes/arcs.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-HADAMARD-001",
+      "problem_id": "M094",
+      "classification": "reproduced_known",
+      "title": "Exact Hadamard matrices for 30 of the 32 orders 4k <= 128",
+      "scope": "Known orders; engine gaps 92 and 116 are not open cases",
+      "description": "Sylvester, Paley I/II and Kronecker products, each matrix checked as H H^T = nI; the deep run certifies 85 of 100 orders up to 400.",
+      "verifier": "python3 scripts/lab.py --probe hadamard",
+      "artifact": "scripts/probes/hadamard.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-RAMSEY-002",
+      "problem_id": "M095",
+      "classification": "reproduced_known",
+      "title": "Ramsey lower bounds R(3,4) > 8, R(3,5) > 13, R(4,4) > 17 certified",
+      "scope": "Classical lower bounds; not a new bound on R(5,5)",
+      "description": "Circulant and Paley colourings checked by exhaustive subset enumeration; the deep run adds Paley(37), certifying R(5,5) > 37 (the best known lower bound is 43).",
+      "verifier": "python3 scripts/lab.py --probe ramsey_witnesses",
+      "artifact": "scripts/probes/ramsey_witness.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-PLANES-001",
+      "problem_id": "M096",
+      "classification": "reproduced_known",
+      "title": "Projective planes of every prime-power order <= 9 and the Bruck-Ryser table to 50",
+      "scope": "Known constructions and exclusions; order 12 remains open",
+      "description": "PG(2,q) incidence axioms verified combinatorially; Bruck-Ryser exclusions recomputed by brute-force sums of two squares; deep run to q = 27 and orders <= 200.",
+      "verifier": "python3 scripts/lab.py --probe projective_planes",
+      "artifact": "scripts/probes/planes.py",
       "verified_on": "2026-10-31"
     }
   ]
