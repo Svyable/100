@@ -1,0 +1,36 @@
+[
+  {
+    "id": "L001",
+    "problem_id": "M095",
+    "stage": "implemented",
+    "statement": "The modular five-cycle is a symmetric, loop-free red/blue coloring with no monochromatic triangle; injective vertex restrictions preserve this property.",
+    "scope_gap": "Known R(3,3) lower-bound witness only. No R(3,3) upper bound or R(5,5) determination. Independent statement review pending.",
+    "next_step": "Match every edge to examples/R33_C5.json; then generalize certificate replay to clique sizes s and t.",
+    "declarations": [
+      "Hundred.Ramsey.cycle5_valid",
+      "Hundred.Ramsey.cycle5_triangleFree",
+      "Hundred.Ramsey.cycle5_independentTripleFree",
+      "Hundred.Ramsey.cycle5_certificate",
+      "Hundred.Ramsey.five_vertex_witness",
+      "Hundred.Ramsey.restrict"
+    ]
+  },
+  {
+    "id": "L002",
+    "problem_id": "M075",
+    "stage": "planned",
+    "statement": "Finite union-closed family certificate: explicit nonempty family containing a nonempty set, closure under union, and a member occurring in at least half the sets.",
+    "scope_gap": "Finite witness validation is not the universal Frankl conjecture. Exclude the family containing only the empty set.",
+    "next_step": "Encode bitmask membership, prove counting equivalence, and replay FRANKL_SMALL.json.",
+    "declarations": []
+  },
+  {
+    "id": "L003",
+    "problem_id": "M074",
+    "stage": "planned",
+    "statement": "Soundness of decoding a directed-graph SAT assignment into a loop-free graph with minimum outdegree and absence of short directed cycles.",
+    "scope_gap": "SAT search output alone is not a theorem. UNSAT requires a checked proof and a separately proved encoding completeness theorem.",
+    "next_step": "Formalize graph semantics and assignment decoder before attempting the 18-vertex target.",
+    "declarations": []
+  }
+]

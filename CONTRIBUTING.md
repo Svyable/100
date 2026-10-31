@@ -68,3 +68,9 @@ Use the GitHub issue templates to propose evidence reviews or proof campaigns.
 See [research protocol](docs/RESEARCH_PROTOCOL.md),
 [source intake](docs/AUDIT_QUEUE.md), and
 [Pages guide](docs/PAGES_SETUP.md).
+
+## Lean contributions
+
+Follow [the Lean proof pipeline](LEAN.md). Register exact theorem exports and scope gaps in
+`data/lean_targets.json`; run `python3 scripts/lean_verify.py`. A kernel check is evidence
+for the encoded statement, not automatic novelty or full-problem resolution.
