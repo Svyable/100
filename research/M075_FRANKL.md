@@ -26,6 +26,25 @@ A certificate declares a universe {0,...,n-1} and enumerates every distinct set 
 
 The exhaustive command considers **all 2^(2^n) possible families** for n≤4 and filters the nontrivial union-closed ones. Any hypothetical counterexample would terminate the run with an explicit family. Passing the test proves only the **restricted** n≤4 statement; no new result is claimed.
 
+## Closure-pruned canonical orbit generator (2026-10-31)
+
+[Exact construction and mathematical proof](M075_CANONICAL.md) and
+[standalone checker](../scripts/frankl_canonical.py) make the previously
+informal S5 symmetry step executable.
+
+- Proves algebraically that the lexicographically least relabeling is constant on and separates every S_n orbit; unlike a finite-only test, the group-action argument works for any finite n.
+- Gives a closure-preserving, descending-size include/exclude generator. It enumerates full-support union-closed families **without examining every possible set system**, and a canonical filter emits precisely one representative per orbit.
+- Reproduces 4,542 labeled full-support families and 330 orbits at n=4, reconciling with 4,958 labeled families and 366 orbits over all possible supports.
+- Reproduces **2,747,402 labeled full-support families at n=5**, agreeing with the pre-existing entry in [OEIS A326906](https://oeis.org/A326906). The n=5 orbit total is deliberately **not** claimed checked.
+- The 2006 published small-ground-set results already cover n=5. This is infrastructure, not a new restricted theorem or proof of Frankl's conjecture.
+
+```sh
+python3 scripts/frankl_canonical.py --check
+python3 scripts/frankl_canonical.py --n 5 --limit 30
+```
+
+The next frontier is a **canonical augmentation** that prunes relabeling-equivalent *partial states* before exploring them. Obtain independent mathematical scope review of the two lemmas; a full n=5 orbit audit and an n≥10 structural target would be separate work.
+
 ## Possible next proof steps
 
 1. Analyze minimal counterexamples under reductions in the contemporary literature; precisely distinguish 'ground-set size' from 'family height'.
