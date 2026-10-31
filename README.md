@@ -2,7 +2,7 @@
 
 **Purpose:** Preserve, refine, and stack-rank 100 concrete mathematical proof/counterexample targets, looking for results and methods that create new branches of discovery.
 
-- [Current rank order](RANKED.md) — deterministic generated ranking of 100 candidates.
+- **[Public research dashboard](https://svyable.github.io/100/)** (once GitHub Pages is enabled: [activation guide](docs/PAGES_SETUP.md)) — ranked search, evidence filters, active proof campaigns.\n- [Current rank order](RANKED.md) — deterministic generated ranking of 100 candidates.
 - [Machine-readable registry](data/problems.json) — stable IDs, working questions, first attacks, weighted scores, evidence status and provenance.
 - [Active proof campaigns](research/CAMPAIGNS.md) — precise statements, verifiers and bounded first attacks.
 - [Ramsey R(5,5) certificate campaign](research/M095_RAMSEY.md) and [Frankl finite verification](research/M075_FRANKL.md) — reproducible small cases; neither resolves the full problem.
