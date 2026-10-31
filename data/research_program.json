@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "as_of": "2026-10-31",
+  "campaigns": [
+    {
+      "problem_id": "M074",
+      "stage": "specified",
+      "method": "Directed graph extremal search",
+      "hypothesis": "For each explicit pair (n,r), any loopless n-vertex digraph of minimum outdegree at least r contains a directed cycle of length at most ceil(n/r).",
+      "first_proof_obligation": "Independently check all small n digraphs with fixed r; produce a shortest-cycle witness or a validated obstruction.",
+      "next_experiment": "Construct a bitset digraph verifier and enumerate n<=4; identify the first nontrivial unproved structural case.",
+      "falsification": "An explicitly checked digraph with min outdegree r and no directed cycle of length <=ceil(n/r).",
+      "blocker": "No independent digraph enumeration checker committed yet.",
+      "dossier": "research/CAMPAIGNS.md",
+      "verifier": null
+    },
+    {
+      "problem_id": "M075",
+      "stage": "benchmark_reproduced",
+      "method": "Finite family enumeration and entropy inequalities",
+      "hypothesis": "Every nontrivial finite union-closed family contains an element in at least half its members.",
+      "first_proof_obligation": "Verify the exact conjecture for bounded universes before deriving any universal structural reduction.",
+      "next_experiment": "Canonicalize families under ground-set permutations; prove or disprove a restricted lemma on minimal counterexamples.",
+      "falsification": "An exact union-closed family whose maximum element frequency is less than half the family size.",
+      "blocker": "Naive exhaustive enumeration scales as 2^(2^n); structural quotient required.",
+      "dossier": "research/M075_FRANKL.md",
+      "verifier": "python3 scripts/union_closed.py exhaustive --n 4"
+    },
+    {
+      "problem_id": "M088",
+      "stage": "specified",
+      "method": "Algebraic circuit hitting sets",
+      "hypothesis": "A deterministic polynomial-size hitting set can be obtained for a named restricted arithmetic circuit class.",
+      "first_proof_obligation": "State field characteristic, circuit shape, degree and oracle model, then prove the exact hitting property.",
+      "next_experiment": "Implement small exact arithmetic circuits and a falsifier that searches for circuits escaping a proposed hitting set.",
+      "falsification": "A nonzero circuit in the declared class vanishing at every proposed hitting-set point.",
+      "blocker": "No restricted circuit class or field is locked down yet.",
+      "dossier": "research/CAMPAIGNS.md",
+      "verifier": null
+    },
+    {
+      "problem_id": "M092",
+      "stage": "specified",
+      "method": "Exact algebraic SIC verification",
+      "hypothesis": "Exact families of d^2 equiangular lines exist beyond individually constructed dimensions.",
+      "first_proof_obligation": "Choose a dimension and certify pairwise squared overlaps with exact algebraic arithmetic.",
+      "next_experiment": "Formalize a candidate fiducial in a low dimension with rational/algebraic coordinates, then generalize a symmetry identity.",
+      "falsification": "An exact failed Gram matrix relation or a missing required vector under the stated algebraic construction.",
+      "blocker": "Floating-point numerical SIC examples are not universal existence proofs.",
+      "dossier": "research/CAMPAIGNS.md",
+      "verifier": null
+    },
+    {
+      "problem_id": "M095",
+      "stage": "benchmark_reproduced",
+      "method": "Graph coloring and proof-carrying SAT",
+      "hypothesis": "The exact value of R(5,5) can be determined by an independently checked construction and exclusion.",
+      "first_proof_obligation": "Verify a candidate K43 two-coloring or independently certify the nonexistence of a K45 valid coloring.",
+      "next_experiment": "Import and check the published K42 witness; reproduce a small structural exclusion with a trusted proof checker.",
+      "falsification": "A verified K43 coloring would refute any claimed R(5,5)<=43; a valid K45 coloring would refute R(5,5)<=45.",
+      "blocker": "A SAT solver UNSAT output without a verified proof trace does not establish an upper bound.",
+      "dossier": "research/M095_RAMSEY.md",
+      "verifier": "python3 scripts/ramsey.py demo"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "B-R33-001",
+      "problem_id": "M095",
+      "classification": "reproduced_known",
+      "title": "Ramsey R(3,3)=6 reproduced",
+      "scope": "Finite toy theorem; not a new bound on R(5,5)",
+      "description": "C5 witnesses R(3,3)>5; all 32,768 labeled K6 two-colorings fail to avoid both triangles.",
+      "verifier": "python3 scripts/ramsey.py demo",
+      "artifact": "scripts/ramsey.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-FRANKL-001",
+      "problem_id": "M075",
+      "classification": "reproduced_known",
+      "title": "Frankl threshold verified for ground sets of size <=4",
+      "scope": "Finite exhaustive test only; not a proof for arbitrary finite ground sets",
+      "description": "Enumerates all 2^(2^4)=65,536 families, filters union closure, checks exact frequencies.",
+      "verifier": "python3 scripts/union_closed.py exhaustive --n 4",
+      "artifact": "scripts/union_closed.py",
+      "verified_on": "2026-10-31"
+    }
+  ]
+}
