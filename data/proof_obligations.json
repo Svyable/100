@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "obligations": [
+    {
+      "id": "O-M074-01",
+      "problem_id": "M074",
+      "kind": "witness",
+      "statement": "Each published UNSAT trace used in the fixed-outdegree-six Caccetta-Häggkvist computation is accepted by an independent proof-trace checker on its exact published input.",
+      "prior_art_boundary": "The external fixed-r=6 proof corpus is already reported in the literature; this repository has not independently replayed the 438 MB corpus. Replay would reproduce a claim, not establish novelty.",
+      "falsifier": "One reported UNSAT certificate fails an independent checker, or a published input digest differs from the input actually replayed.",
+      "next_action": "Acquire the cited proof corpus with exact hashes; replay every proof trace with an independently pinned checker and preserve the input-to-trace manifest.",
+      "depends_on": [],
+      "status": "blocked",
+      "evidence": null
+    },
+    {
+      "id": "O-M074-02",
+      "problem_id": "M074",
+      "kind": "reduction",
+      "statement": "The published hand reductions and case split for minimum outdegree six cover every digraph admissible under the stated restricted theorem without dropping an exceptional case.",
+      "prior_art_boundary": "An accepted UNSAT trace does not prove that the originating CNFs exhaust the mathematical cases. The published fixed-r=6 argument is not a resolution of the unrestricted Caccetta-Häggkvist conjecture.",
+      "falsifier": "A digraph admissible under the restricted statement is not represented by any certified case, or a reduction changes an outdegree/cycle quantifier.",
+      "next_action": "Write a finite, numbered reduction ledger from the original quantified statement to each CNF family; check edge cases and the exact r=6, n and cycle-bound conventions.",
+      "depends_on": [],
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "O-M074-03",
+      "problem_id": "M074",
+      "kind": "lemma",
+      "statement": "The claimed fixed-outdegree-six Caccetta-Häggkvist result follows from the published exhaustive case split and the independently replayed UNSAT proof traces, for exactly the parameter range and graph conventions stated in the source.",
+      "prior_art_boundary": "This is a conditional audit target for an already claimed restricted result, not a new solution and not a promotion to the full Caccetta-Häggkvist conjecture.",
+      "falsifier": "Either a traced case is not certified or an admissible case is absent from the reduction; failure of either dependency blocks this conclusion.",
+      "next_action": "After the trace and reduction obligations are discharged, independently check the implication from both premises to the exact restricted theorem.",
+      "depends_on": [
+        "O-M074-01",
+        "O-M074-02"
+      ],
+      "status": "blocked",
+      "evidence": null
+    },
+    {
+      "id": "O-M075-01",
+      "problem_id": "M075",
+      "kind": "lemma",
+      "statement": "For union-closed families over a five-element ground set, a canonical encoding is constant on each relabeling orbit and separates distinct relabeling orbits.",
+      "prior_art_boundary": "The existing n=4 census and its 366 relabeling orbits are known finite benchmark data; an n=5 canonicalization lemma is a proposed structural step, not established.",
+      "falsifier": "Two relabeling-equivalent families receive different codes, or two inequivalent families receive the same code.",
+      "next_action": "Specify a canonical map under S_5 and prove both directions of the orbit-equivalence condition, then adversarially check constructed orbit collisions.",
+      "depends_on": [],
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "O-M075-02",
+      "problem_id": "M075",
+      "kind": "lemma",
+      "statement": "A canonical family generator over a five-element ground set emits exactly one union-closed family per relabeling orbit without enumerating all 2^(2^5) set systems.",
+      "prior_art_boundary": "No speedup claim follows from the n=4 orbit table; completeness and no-duplication are separate from empirical speed.",
+      "falsifier": "An omitted relabeling orbit, a duplicated orbit, an emitted non-union-closed family, or a fallback that enumerates every set system.",
+      "next_action": "Construct an extension rule on canonical representatives, prove soundness, uniqueness and exhaustiveness, and independently audit the resulting counts.",
+      "depends_on": [
+        "O-M075-01"
+      ],
+      "status": "blocked",
+      "evidence": null
+    },
+    {
+      "id": "O-M095-01",
+      "problem_id": "M095",
+      "kind": "witness",
+      "statement": "The cited 42-vertex two-colouring of the complete graph has neither a red K5 nor a blue K5, as checked directly from its published adjacency data.",
+      "prior_art_boundary": "A known K42 witness would reproduce a published Ramsey lower bound. It does not yield an upper bound or determine R(5,5).",
+      "falsifier": "An explicit five-vertex monochromatic clique in the imported colouring, or a vertex/edge count inconsistent with K42.",
+      "next_action": "Import the published exact K42 adjacency data; run the independent clique checker and archive the hash and original source.",
+      "depends_on": [],
+      "status": "open",
+      "evidence": null
+    }
+  ]
+}
