@@ -49,7 +49,37 @@ default sort is execution order; the original editorial rank is always available
 A failed search or an unreviewed manuscript is logged as a research lead, not
 a theorem. Mathematical scope review is different from code correctness.
 
-## Three distinct exact verification baselines
+## The exact probe lab
+
+`scripts/probes/` separates reusable **engines** from per-problem **probes**:
+
+| Engine | Module | Problems served |
+|---|---|---|
+| `primes` | `primes.py` | M006, M019 |
+| `finite_fields` | `fields.py` | M080, M093, M094, M095, M096 |
+| `graph_census` | `graphs.py` | M071, M078 |
+| `poset_census` | `posets.py` | M079 |
+| `cyclotomic` | `cyclotomic.py` | M092 |
+| `tensor_certificates` | `tensor.py` | M084 |
+| `symmetry_reduction` | `arcs.py`, `rota.py` | M080, M093 |
+| `clique_search` | `ramsey_witness.py` | M095 |
+
+A probe is a short module containing `PROBE` metadata, `search(params)`, an **independent**
+`check(params, result)`, and `scope(params)`. The checker uses a different code path from the
+search: Miller–Rabin instead of a sieve, combinatorial incidence axioms instead of field
+arithmetic, Burnside or orbit-counting completeness certificates, and a field rebuilt from the
+certified modulus. `python3 scripts/lab.py` runs every probe, records a deterministic ledger
+in `data/lab_results.json` (summaries and certificate SHA-256 only), and regenerates `LAB.md`.
+`--check` reruns probes and fails on any drift. `--emit` writes full certificates and `--replay`
+re-verifies them, so an outside reviewer can check results without trusting the search.
+
+Probes are allowlisted in `scripts/probes/__init__.py`; data files cannot add executables.
+Each probe has to be a verifier of its problem's campaign and have a `reproduced_known` milestone,
+and `research.py` enforces this. Every problem also carries a `modality`. Each computable
+problem (finitely refutable, finite parameter, existence family) must either have a verifier or
+appear in `data/engine_roadmap.json`, and the lab enforces this too.
+
+## Exact verification baselines
 
 ```sh
 python3 scripts/ramsey.py demo
@@ -57,9 +87,10 @@ python3 scripts/union_closed.py exhaustive --n 4
 python3 scripts/digraph.py exhaustive --n 4
 python3 scripts/digraph_orbits.py --n 5
 python3 scripts/ch_sat.py cnf --n 18 --r 6 --output /tmp/ch18-6.cnf
+python3 scripts/lab.py --level deep
 ```
 
-The first four reproduce **known** statements in finite domains. The fifth command generates a SAT problem encoding only, not a result. They do not resolve
+The first four reproduce **known** statements in finite domains. The fifth command generates a SAT problem encoding only, not a result. The sixth reruns all twelve lab probes at their larger size; these are also known statements. They do not resolve
 Ramsey R(5,5), Frankl, or Caccetta–Häggkvist in general. Each script is
 independently exercised in the test suite and in a weekly GitHub Actions
 reproducibility workflow (when Actions scheduling is enabled by GitHub).
@@ -94,14 +125,16 @@ A reproduced previously known theorem also stays out of Solved.
 ```sh
 python3 scripts/rank.py
 python3 scripts/research.py
+python3 scripts/lab.py
 python3 scripts/build_site.py
+python3 scripts/lab.py --check
 python3 scripts/rank.py --check
 python3 scripts/research.py --check
 python3 scripts/build_site.py --check
 python3 -m unittest discover -s tests -v
 ```
 
-Do not hand-edit generated `RANKED.md`, `ATTACK_QUEUE.md` or
-`docs/data/portfolio.json`. CI checks all three for consistency.
+Do not hand-edit generated `RANKED.md`, `ATTACK_QUEUE.md`, `LAB.md`,
+`data/lab_results.json` or `docs/data/portfolio.json`. CI checks all of them for consistency.
 The site exposes evidence and ranked research priorities, never asserts a
 universal proof merely because a finite verifier passed.

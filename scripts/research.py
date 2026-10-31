@@ -11,6 +11,7 @@ import json
 from pathlib import Path
 from urllib.parse import urlparse
 from rank import ROOT, REGISTRY, score, validate
+import probes
 
 PROGRAM = ROOT / "data" / "research_program.json"
 SOLVED = ROOT / "data" / "solved.json"
@@ -22,7 +23,15 @@ RUNNABLE = {
     "python3 scripts/union_closed.py exhaustive --n 4": "scripts/union_closed.py",
     "python3 scripts/digraph.py exhaustive --n 4": "scripts/digraph.py",
     "python3 scripts/digraph_orbits.py --n 5": "scripts/digraph_orbits.py",
+    # Exact probe lab: every registered probe (allowlisted in scripts/probes/__init__.py).
+    **{probes.command(pid): probes.artifact(pid) for pid in probes.PROBES},
 }
+
+
+def campaign_verifiers(c):
+    """Primary verifier plus any additional allowlisted verifiers for a campaign."""
+    extra = c.get("additional_verifiers", [])
+    return ([c["verifier"]] if c.get("verifier") else []) + list(extra)
 
 
 def https(value):
@@ -78,10 +87,12 @@ def validate_solved(solved, active):
     return solved
 
 
-def load():
+def load(program=None):
+    """Validate registry, research program (default: data file) and solved archive."""
     items = validate(json.loads(REGISTRY.read_text(encoding="utf-8")))
     indexed = {p["id"]: p for p in items}
-    program = json.loads(PROGRAM.read_text(encoding="utf-8"))
+    if program is None:
+        program = json.loads(PROGRAM.read_text(encoding="utf-8"))
     solved = validate_solved(json.loads(SOLVED.read_text(encoding="utf-8")), indexed)
     if type(program.get("version")) is not int or not valid_date(program.get("as_of")):
         raise ValueError("Program version/as_of invalid")
@@ -105,8 +116,14 @@ def load():
         if not (ROOT / c["dossier"]).is_file():
             raise ValueError(f"Missing dossier: {c['dossier']}")
         verifier = c.get("verifier")
-        if verifier is not None and verifier not in RUNNABLE:
-            raise ValueError(f"Unallowlisted verifier: {verifier}")
+        extra = c.get("additional_verifiers", [])
+        if not isinstance(extra, list) or (extra and not verifier):
+            raise ValueError(f"additional_verifiers needs a primary verifier: {pid}")
+        for v in [verifier] + extra if verifier is not None else []:
+            if v not in RUNNABLE:
+                raise ValueError(f"Unallowlisted verifier: {v}")
+        if len(set(campaign_verifiers(c))) != len(campaign_verifiers(c)):
+            raise ValueError(f"Duplicate verifier in campaign {pid}")
         if verifier and c["stage"] == "specified":
             raise ValueError("Runnable campaign must declare benchmark stage")
         if c["stage"] == "benchmark_reproduced" and not verifier:
@@ -122,8 +139,8 @@ def load():
         seen_milestones.add(m["id"])
         if m["classification"] not in MILESTONE_CLASSES:
             raise ValueError("Unverified/ambiguous milestone class")
-        if m["verifier"] not in RUNNABLE or m["verifier"] != campaigns_by_id[pid]["verifier"]:
-            raise ValueError("Milestone verifier must be approved and match campaign")
+        if m["verifier"] not in RUNNABLE or m["verifier"] not in campaign_verifiers(campaigns_by_id[pid]):
+            raise ValueError("Milestone verifier must be approved and belong to its campaign")
         if m["artifact"] != RUNNABLE[m["verifier"]] or not (ROOT / m["artifact"]).is_file():
             raise ValueError("Missing or mismatched exact verification artifact")
         if not valid_date(m["verified_on"]):
@@ -136,6 +153,14 @@ def load():
                 raise ValueError("New restricted-theorem reviews must be independent")
         elif m.get("independent_review_urls"):
             raise ValueError("Known theorem reproduction is not independently new")
+    for pid_probe in probes.PROBES:
+        module = probes.load(pid_probe)
+        owner = campaigns_by_id.get(module.PROBE["problem_id"])
+        cmd = probes.command(pid_probe)
+        if owner is None or cmd not in campaign_verifiers(owner):
+            raise ValueError(f"Probe {pid_probe} must be a verifier of the {module.PROBE['problem_id']} campaign")
+        if not any(x["verifier"] == cmd and x["classification"] == "reproduced_known" for x in milestones):
+            raise ValueError(f"Probe {pid_probe} needs a reproduced_known milestone")
     for c in campaigns:
         m = [x for x in milestones if x["problem_id"] == c["problem_id"]]
         if c["stage"] == "benchmark_reproduced" and not any(

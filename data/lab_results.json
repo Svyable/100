@@ -1,0 +1,1052 @@
+{
+  "format": "svyable.lab.v1",
+  "levels": {
+    "deep": {
+      "erdos_straus": {
+        "certificate_sha256": "60a148c35e2dedbf39a8233554ad50f67de47d69cf5b3bfa24b02f64fe315911",
+        "engines": [
+          "primes"
+        ],
+        "holds": true,
+        "level": "deep",
+        "params": {
+          "limit": 1000000
+        },
+        "probe": "erdos_straus",
+        "problem_id": "M019",
+        "scope": "For every integer 2 <= n <= 1,000,000, explicit positive integers x <= y <= z with 4xyz = n(xy + yz + zx).",
+        "summary": {
+          "integers_certified": 999999,
+          "limit": 1000000,
+          "searched_n_equiv_1_mod_4": 249999,
+          "triples_sha256": "e7905f9ee8a104df2ff6273add5bf86190d0cfaefcbe532b8f4b3b2840cfbf93"
+        }
+      },
+      "goldbach": {
+        "certificate_sha256": "8776164f5545168a55d2c4be4c3542a959c6066e008842f8d3a8895e581257b0",
+        "engines": [
+          "primes"
+        ],
+        "holds": true,
+        "level": "deep",
+        "params": {
+          "limit": 4000000
+        },
+        "probe": "goldbach",
+        "problem_id": "M006",
+        "scope": "Every even integer 4 <= n <= 4,000,000 is p + q with p, q prime.",
+        "summary": {
+          "attained_at": 3807404,
+          "even_integers_checked": 1999999,
+          "largest_least_prime": 751,
+          "limit": 4000000,
+          "partitions_sha256": "bac184f71ca3e69e6b91c853e74afdec21e9b473937dc3dd6d6714ad90cc6467"
+        }
+      },
+      "hadamard": {
+        "certificate_sha256": "208ef2df6a7ccaa6f5b4fcb8723fa0fecf233b7086da79820826a46179e14999",
+        "engines": [
+          "finite_fields"
+        ],
+        "holds": true,
+        "level": "deep",
+        "params": {
+          "limit": 400
+        },
+        "probe": "hadamard",
+        "problem_id": "M094",
+        "scope": "Explicit (+1/-1) matrices with H H^T = nI for 85 of the 100 orders 4k <= 400 (the rest are engine gaps, not open cases).",
+        "summary": {
+          "constructed_orders": 85,
+          "engine_gaps": [
+            92,
+            116,
+            156,
+            172,
+            184,
+            188,
+            232,
+            236,
+            260,
+            268,
+            292,
+            324,
+            356,
+            372,
+            376
+          ],
+          "limit": 400,
+          "matrices_sha256": "5d30328a401dedd07b4057049972cb12d2e196a1d12361759a5ff2ceb3fd6482",
+          "orders_divisible_by_4": 100,
+          "recipes": {
+            "100": "paley2/49",
+            "104": "paley1/103",
+            "108": "paley2/53",
+            "112": "kron/4/28",
+            "12": "paley2/5",
+            "120": "kron/2/60",
+            "124": "paley2/61",
+            "128": "paley1/127",
+            "132": "paley1/131",
+            "136": "kron/2/68",
+            "140": "paley1/139",
+            "144": "kron/2/72",
+            "148": "paley2/73",
+            "152": "paley1/151",
+            "16": "sylvester/4",
+            "160": "kron/2/80",
+            "164": "paley2/81",
+            "168": "paley1/167",
+            "176": "kron/4/44",
+            "180": "paley2/89",
+            "192": "paley1/191",
+            "196": "paley2/97",
+            "20": "paley2/9",
+            "200": "paley1/199",
+            "204": "paley2/101",
+            "208": "kron/2/104",
+            "212": "paley1/211",
+            "216": "kron/2/108",
+            "220": "paley2/109",
+            "224": "paley1/223",
+            "228": "paley2/113",
+            "24": "paley1/23",
+            "240": "paley1/239",
+            "244": "paley2/121",
+            "248": "kron/2/124",
+            "252": "paley2/125",
+            "256": "sylvester/8",
+            "264": "paley1/263",
+            "272": "paley1/271",
+            "276": "paley2/137",
+            "28": "paley2/13",
+            "280": "kron/2/140",
+            "284": "paley1/283",
+            "288": "kron/4/72",
+            "296": "kron/2/148",
+            "300": "paley2/149",
+            "304": "kron/2/152",
+            "308": "paley1/307",
+            "312": "paley1/311",
+            "316": "paley2/157",
+            "32": "paley1/31",
+            "320": "kron/4/80",
+            "328": "kron/2/164",
+            "332": "paley1/331",
+            "336": "kron/2/168",
+            "340": "paley2/169",
+            "344": "paley1/343",
+            "348": "paley2/173",
+            "352": "kron/4/88",
+            "36": "paley2/17",
+            "360": "paley1/359",
+            "364": "paley2/181",
+            "368": "paley1/367",
+            "380": "paley1/379",
+            "384": "paley1/383",
+            "388": "paley2/193",
+            "392": "kron/2/196",
+            "396": "paley2/197",
+            "4": "paley1/3",
+            "40": "kron/2/20",
+            "400": "kron/2/200",
+            "44": "paley1/43",
+            "48": "paley1/47",
+            "52": "paley2/25",
+            "56": "kron/2/28",
+            "60": "paley2/29",
+            "64": "sylvester/6",
+            "68": "paley1/67",
+            "72": "paley1/71",
+            "76": "paley2/37",
+            "8": "paley1/7",
+            "80": "paley1/79",
+            "84": "paley2/41",
+            "88": "kron/2/44",
+            "96": "kron/2/48"
+          }
+        }
+      },
+      "hadwiger": {
+        "certificate_sha256": "90cdd7bbe904ef96948bd16235b804fb77aec22aaf9d5073d403320946e0bc15",
+        "engines": [
+          "graph_census"
+        ],
+        "holds": true,
+        "level": "deep",
+        "params": {
+          "max_n": 7
+        },
+        "probe": "hadwiger",
+        "problem_id": "M071",
+        "scope": "Every graph on 1..7 vertices has a proper t-colouring and a K_t minor model for t = its chromatic number.",
+        "summary": {
+          "by_chromatic_number": {
+            "1": 7,
+            "2": 142,
+            "3": 683,
+            "4": 354,
+            "5": 58,
+            "6": 7,
+            "7": 1
+          },
+          "certificate_sha256": "90cdd7bbe904ef96948bd16235b804fb77aec22aaf9d5073d403320946e0bc15",
+          "graphs_certified": 1252
+        }
+      },
+      "mds_arcs": {
+        "certificate_sha256": "c91322d26a67ede8745369a9995743c9f53be49aeca2c75285d4566d82639a4e",
+        "engines": [
+          "finite_fields",
+          "symmetry_reduction"
+        ],
+        "holds": true,
+        "level": "deep",
+        "params": {
+          "qs": [
+            2,
+            3,
+            4,
+            5,
+            7,
+            8,
+            9
+          ]
+        },
+        "probe": "mds_arcs",
+        "problem_id": "M093",
+        "scope": "For q in {2, 3, 4, 5, 7, 8, 9}: an explicit maximum arc and exhaustive exclusion of larger arcs (MDS length bound for k = 3).",
+        "summary": {
+          "2": {
+            "max_arc_size": 4,
+            "maximum_arcs_through_frame": 1
+          },
+          "3": {
+            "max_arc_size": 4,
+            "maximum_arcs_through_frame": 1
+          },
+          "4": {
+            "max_arc_size": 6,
+            "maximum_arcs_through_frame": 1
+          },
+          "5": {
+            "max_arc_size": 6,
+            "maximum_arcs_through_frame": 3
+          },
+          "7": {
+            "max_arc_size": 8,
+            "maximum_arcs_through_frame": 5
+          },
+          "8": {
+            "max_arc_size": 10,
+            "maximum_arcs_through_frame": 10
+          },
+          "9": {
+            "max_arc_size": 10,
+            "maximum_arcs_through_frame": 7
+          }
+        }
+      },
+      "one_third": {
+        "certificate_sha256": "f9ec908650914013ee375d32e21a1ddcee3fd6708967b2e247ed65c79a528b06",
+        "engines": [
+          "poset_census"
+        ],
+        "holds": true,
+        "level": "deep",
+        "params": {
+          "max_n": 7
+        },
+        "probe": "one_third",
+        "problem_id": "M079",
+        "scope": "Every non-chain poset with 2..7 elements has an incomparable pair x, y with 1/3 <= Pr[x < y] <= 2/3 over uniformly random linear extensions.",
+        "summary": {
+          "certificate_sha256": "f9ec908650914013ee375d32e21a1ddcee3fd6708967b2e247ed65c79a528b06",
+          "least_best_balance": "1/3",
+          "posets": {
+            "1": 1,
+            "2": 2,
+            "3": 5,
+            "4": 16,
+            "5": 63,
+            "6": 318,
+            "7": 2045
+          }
+        }
+      },
+      "projective_planes": {
+        "certificate_sha256": "adec7b7494938090b26f15707434c1fcd04876889b1cd6111386e3d2f94d0aac",
+        "engines": [
+          "finite_fields"
+        ],
+        "holds": true,
+        "level": "deep",
+        "params": {
+          "max_q": 27,
+          "table_limit": 200
+        },
+        "probe": "projective_planes",
+        "problem_id": "M096",
+        "scope": "PG(2,q) satisfies the projective-plane axioms for every prime power q <= 27; Bruck-Ryser classification of every order n <= 200.",
+        "summary": {
+          "bruck_ryser_excluded": [
+            6,
+            14,
+            21,
+            22,
+            30,
+            33,
+            38,
+            42,
+            46,
+            54,
+            57,
+            62,
+            66,
+            69,
+            70,
+            77,
+            78,
+            86,
+            93,
+            94,
+            102,
+            105,
+            110,
+            114,
+            118,
+            126,
+            129,
+            133,
+            134,
+            138,
+            141,
+            142,
+            150,
+            154,
+            158,
+            161,
+            165,
+            166,
+            174,
+            177,
+            182,
+            186,
+            189,
+            190,
+            198
+          ],
+          "open_orders": [
+            12,
+            15,
+            18,
+            20,
+            24,
+            26,
+            28,
+            34,
+            35,
+            36,
+            39,
+            40,
+            44,
+            45,
+            48,
+            50,
+            51,
+            52,
+            55,
+            56,
+            58,
+            60,
+            63,
+            65,
+            68,
+            72,
+            74,
+            75,
+            76,
+            80,
+            82,
+            84,
+            85,
+            87,
+            88,
+            90,
+            91,
+            92,
+            95,
+            96,
+            98,
+            99,
+            100,
+            104,
+            106,
+            108,
+            111,
+            112,
+            115,
+            116,
+            117,
+            119,
+            120,
+            122,
+            123,
+            124,
+            130,
+            132,
+            135,
+            136,
+            140,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            152,
+            153,
+            155,
+            156,
+            159,
+            160,
+            162,
+            164,
+            168,
+            170,
+            171,
+            172,
+            175,
+            176,
+            178,
+            180,
+            183,
+            184,
+            185,
+            187,
+            188,
+            192,
+            194,
+            195,
+            196,
+            200
+          ],
+          "orders_constructed": [
+            2,
+            3,
+            4,
+            5,
+            7,
+            8,
+            9,
+            11,
+            13,
+            16,
+            17,
+            19,
+            23,
+            25,
+            27
+          ],
+          "planes_sha256": "2e99d4eaf78a0e3b70c4fd72647e7527ff593296da945719113bef62eb0199f9",
+          "smallest_open_order": 12
+        }
+      },
+      "ramsey_witnesses": {
+        "certificate_sha256": "b2008e6347fb2007ebcb77c8bed4c287b77b034e003d1f089cbd961d74fbcc8e",
+        "engines": [
+          "finite_fields",
+          "clique_search"
+        ],
+        "holds": true,
+        "level": "deep",
+        "params": {
+          "witnesses": [
+            "paley5",
+            "circ8_1_4",
+            "circ13_1_5",
+            "paley17",
+            "paley37"
+          ]
+        },
+        "probe": "ramsey_witnesses",
+        "problem_id": "M095",
+        "scope": "Explicit colourings certify R(3,3) > 5, R(3,4) > 8, R(3,5) > 13, R(4,4) > 17, R(5,5) > 37.",
+        "summary": {
+          "circ13_1_5": "R(3,5) > 13",
+          "circ8_1_4": "R(3,4) > 8",
+          "paley17": "R(4,4) > 17",
+          "paley37": "R(5,5) > 37",
+          "paley5": "R(3,3) > 5",
+          "witnesses_sha256": "b2008e6347fb2007ebcb77c8bed4c287b77b034e003d1f089cbd961d74fbcc8e"
+        }
+      },
+      "reconstruction": {
+        "certificate_sha256": "3a4701b2aeb0061d4a18263b1214afef6970890c5f6eb773e985a3a4135b0dba",
+        "engines": [
+          "graph_census"
+        ],
+        "holds": true,
+        "level": "deep",
+        "params": {
+          "max_n": 7
+        },
+        "probe": "reconstruction",
+        "problem_id": "M078",
+        "scope": "For every n with 3 <= n <= 7, the 7-vertex census is complete (Burnside-certified) and no two non-isomorphic graphs share a vertex-deleted deck.",
+        "summary": {
+          "3": {
+            "distinct_decks": 4,
+            "graphs": 4
+          },
+          "4": {
+            "distinct_decks": 11,
+            "graphs": 11
+          },
+          "5": {
+            "distinct_decks": 34,
+            "graphs": 34
+          },
+          "6": {
+            "distinct_decks": 156,
+            "graphs": 156
+          },
+          "7": {
+            "distinct_decks": 1044,
+            "graphs": 1044
+          },
+          "census_sha256": "3a4701b2aeb0061d4a18263b1214afef6970890c5f6eb773e985a3a4135b0dba"
+        }
+      },
+      "rota": {
+        "certificate_sha256": "11850515563d8ffff2173e9ef65281e58782dfbbbc6052ae93ab2f600563c533",
+        "engines": [
+          "finite_fields",
+          "symmetry_reduction"
+        ],
+        "holds": true,
+        "level": "deep",
+        "params": {
+          "cases": [
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              3
+            ]
+          ]
+        },
+        "probe": "rota",
+        "problem_id": "M080",
+        "scope": "Every choice of n bases of GF(2)^2, GF(3)^2, GF(5)^2, GF(7)^2, GF(2)^3, GF(3)^3 admits a Rota grid (B_1 fixed by GL-transitivity).",
+        "summary": {
+          "2^2": {
+            "bases": 3,
+            "instances": 3
+          },
+          "2^3": {
+            "bases": 28,
+            "instances": 406
+          },
+          "3^2": {
+            "bases": 24,
+            "instances": 24
+          },
+          "3^3": {
+            "bases": 1872,
+            "instances": 1753128
+          },
+          "5^2": {
+            "bases": 240,
+            "instances": 240
+          },
+          "7^2": {
+            "bases": 1008,
+            "instances": 1008
+          },
+          "certificate_sha256": "11850515563d8ffff2173e9ef65281e58782dfbbbc6052ae93ab2f600563c533"
+        }
+      },
+      "sic": {
+        "certificate_sha256": "b21c45a5c3e644f4bd0f9a1edaeb154072a5e10d361abcdeb2225fc9ea9fd0fe",
+        "engines": [
+          "cyclotomic"
+        ],
+        "holds": true,
+        "level": "deep",
+        "params": {
+          "coefficient_bound": 1
+        },
+        "probe": "sic",
+        "problem_id": "M092",
+        "scope": "d=2: 4 exact equiangular qubit states with overlap 1/3; d=3: every Weyl-Heisenberg fiducial with entries in {a + b*w : a, b in [-1, 1]} found and its 9 states certified with pairwise squared overlap 1/4.",
+        "summary": {
+          "certificate_sha256": "e5bf03cedba6c44d5e070c061834c79225d6d9ee2f4befbfd2a3c89f112510ed",
+          "d2_overlap": "1/3",
+          "d3_fiducials_in_alphabet": 120,
+          "d3_overlap": "1/4"
+        }
+      },
+      "strassen": {
+        "certificate_sha256": "9b0f284202bb37815dfbc33930d30c8e061e0c360015e999f0b45c81bfa80ef2",
+        "engines": [
+          "tensor_certificates"
+        ],
+        "holds": true,
+        "level": "deep",
+        "params": {
+          "powers": [
+            1,
+            2,
+            3
+          ]
+        },
+        "probe": "strassen",
+        "problem_id": "M084",
+        "scope": "Exact integer rank-7^k decompositions of the <2^k,2^k,2^k> matmul tensor for k in {1, 2, 3}, hence omega <= log2(7).",
+        "summary": {
+          "decompositions_sha256": "976607ac8613c497ce933db4b4467fabb1ffbbab9b9243cce4d600a68bbbc0b0",
+          "omega_upper_bound": 2.807355,
+          "ranks": {
+            "2": 7,
+            "4": 49,
+            "8": 343
+          }
+        }
+      }
+    },
+    "smoke": {
+      "erdos_straus": {
+        "certificate_sha256": "0076b8bf095e84632fdb686cd77255a4e37b0c0f6e762d2538f0de2f38c6a855",
+        "engines": [
+          "primes"
+        ],
+        "holds": true,
+        "level": "smoke",
+        "params": {
+          "limit": 20000
+        },
+        "probe": "erdos_straus",
+        "problem_id": "M019",
+        "scope": "For every integer 2 <= n <= 20,000, explicit positive integers x <= y <= z with 4xyz = n(xy + yz + zx).",
+        "summary": {
+          "integers_certified": 19999,
+          "limit": 20000,
+          "searched_n_equiv_1_mod_4": 4999,
+          "triples_sha256": "4ebf97851dc567b2d50c957e04115544ab28a13e71c53a4ea4871e22bbb2b412"
+        }
+      },
+      "goldbach": {
+        "certificate_sha256": "063ed3ae3efccc5b690cbfb1d8ae5dbd70fd117c1b61376a5f0116ff61c04ea8",
+        "engines": [
+          "primes"
+        ],
+        "holds": true,
+        "level": "smoke",
+        "params": {
+          "limit": 200000
+        },
+        "probe": "goldbach",
+        "problem_id": "M006",
+        "scope": "Every even integer 4 <= n <= 200,000 is p + q with p, q prime.",
+        "summary": {
+          "attained_at": 194470,
+          "even_integers_checked": 99999,
+          "largest_least_prime": 383,
+          "limit": 200000,
+          "partitions_sha256": "c430e7b5a1ec95488c1cc72c77ea4d973d79112ee23ea80a74590b689acc151d"
+        }
+      },
+      "hadamard": {
+        "certificate_sha256": "d6e19ddbd19c29bfaed6bbfab2f0fce29773cc4ca9432831cd91a480a0a6dabc",
+        "engines": [
+          "finite_fields"
+        ],
+        "holds": true,
+        "level": "smoke",
+        "params": {
+          "limit": 128
+        },
+        "probe": "hadamard",
+        "problem_id": "M094",
+        "scope": "Explicit (+1/-1) matrices with H H^T = nI for 30 of the 32 orders 4k <= 128 (the rest are engine gaps, not open cases).",
+        "summary": {
+          "constructed_orders": 30,
+          "engine_gaps": [
+            92,
+            116
+          ],
+          "limit": 128,
+          "matrices_sha256": "b995e5934882ce6ec98266afb285dcb2a82dab4706a13fd811fdaeca253b92de",
+          "orders_divisible_by_4": 32,
+          "recipes": {
+            "100": "paley2/49",
+            "104": "paley1/103",
+            "108": "paley2/53",
+            "112": "kron/4/28",
+            "12": "paley2/5",
+            "120": "kron/2/60",
+            "124": "paley2/61",
+            "128": "paley1/127",
+            "16": "sylvester/4",
+            "20": "paley2/9",
+            "24": "paley1/23",
+            "28": "paley2/13",
+            "32": "paley1/31",
+            "36": "paley2/17",
+            "4": "paley1/3",
+            "40": "kron/2/20",
+            "44": "paley1/43",
+            "48": "paley1/47",
+            "52": "paley2/25",
+            "56": "kron/2/28",
+            "60": "paley2/29",
+            "64": "sylvester/6",
+            "68": "paley1/67",
+            "72": "paley1/71",
+            "76": "paley2/37",
+            "8": "paley1/7",
+            "80": "paley1/79",
+            "84": "paley2/41",
+            "88": "kron/2/44",
+            "96": "kron/2/48"
+          }
+        }
+      },
+      "hadwiger": {
+        "certificate_sha256": "108fe9f19d66a0fa7c259e2e4209d930f0c3047efa65e91a038be5f7bc6f1327",
+        "engines": [
+          "graph_census"
+        ],
+        "holds": true,
+        "level": "smoke",
+        "params": {
+          "max_n": 6
+        },
+        "probe": "hadwiger",
+        "problem_id": "M071",
+        "scope": "Every graph on 1..6 vertices has a proper t-colouring and a K_t minor model for t = its chromatic number.",
+        "summary": {
+          "by_chromatic_number": {
+            "1": 6,
+            "2": 55,
+            "3": 104,
+            "4": 36,
+            "5": 6,
+            "6": 1
+          },
+          "certificate_sha256": "108fe9f19d66a0fa7c259e2e4209d930f0c3047efa65e91a038be5f7bc6f1327",
+          "graphs_certified": 208
+        }
+      },
+      "mds_arcs": {
+        "certificate_sha256": "f815a3328c125253639c9e8db80c920872858986662deb1976f89c39e58108ab",
+        "engines": [
+          "finite_fields",
+          "symmetry_reduction"
+        ],
+        "holds": true,
+        "level": "smoke",
+        "params": {
+          "qs": [
+            2,
+            3,
+            4,
+            5,
+            7
+          ]
+        },
+        "probe": "mds_arcs",
+        "problem_id": "M093",
+        "scope": "For q in {2, 3, 4, 5, 7}: an explicit maximum arc and exhaustive exclusion of larger arcs (MDS length bound for k = 3).",
+        "summary": {
+          "2": {
+            "max_arc_size": 4,
+            "maximum_arcs_through_frame": 1
+          },
+          "3": {
+            "max_arc_size": 4,
+            "maximum_arcs_through_frame": 1
+          },
+          "4": {
+            "max_arc_size": 6,
+            "maximum_arcs_through_frame": 1
+          },
+          "5": {
+            "max_arc_size": 6,
+            "maximum_arcs_through_frame": 3
+          },
+          "7": {
+            "max_arc_size": 8,
+            "maximum_arcs_through_frame": 5
+          }
+        }
+      },
+      "one_third": {
+        "certificate_sha256": "6fd6a1a31455f7b1a5a3785f8343ee28cf20fbfd6ade0f2daa83943c953299b4",
+        "engines": [
+          "poset_census"
+        ],
+        "holds": true,
+        "level": "smoke",
+        "params": {
+          "max_n": 6
+        },
+        "probe": "one_third",
+        "problem_id": "M079",
+        "scope": "Every non-chain poset with 2..6 elements has an incomparable pair x, y with 1/3 <= Pr[x < y] <= 2/3 over uniformly random linear extensions.",
+        "summary": {
+          "certificate_sha256": "6fd6a1a31455f7b1a5a3785f8343ee28cf20fbfd6ade0f2daa83943c953299b4",
+          "least_best_balance": "1/3",
+          "posets": {
+            "1": 1,
+            "2": 2,
+            "3": 5,
+            "4": 16,
+            "5": 63,
+            "6": 318
+          }
+        }
+      },
+      "projective_planes": {
+        "certificate_sha256": "a6567093aa70bc6b4458545085109922cb1b2dc03ddd5443f389c09c6c387888",
+        "engines": [
+          "finite_fields"
+        ],
+        "holds": true,
+        "level": "smoke",
+        "params": {
+          "max_q": 9,
+          "table_limit": 50
+        },
+        "probe": "projective_planes",
+        "problem_id": "M096",
+        "scope": "PG(2,q) satisfies the projective-plane axioms for every prime power q <= 9; Bruck-Ryser classification of every order n <= 50.",
+        "summary": {
+          "bruck_ryser_excluded": [
+            6,
+            14,
+            21,
+            22,
+            30,
+            33,
+            38,
+            42,
+            46
+          ],
+          "open_orders": [
+            12,
+            15,
+            18,
+            20,
+            24,
+            26,
+            28,
+            34,
+            35,
+            36,
+            39,
+            40,
+            44,
+            45,
+            48,
+            50
+          ],
+          "orders_constructed": [
+            2,
+            3,
+            4,
+            5,
+            7,
+            8,
+            9
+          ],
+          "planes_sha256": "5bac8d3884b0034df5f9e5ad690f16eb609c5e573a735bb9bf6af50167c68654",
+          "smallest_open_order": 12
+        }
+      },
+      "ramsey_witnesses": {
+        "certificate_sha256": "c601047d86b55741559f792d148dfc9855335e89ea1109c5cfbe509837f32492",
+        "engines": [
+          "finite_fields",
+          "clique_search"
+        ],
+        "holds": true,
+        "level": "smoke",
+        "params": {
+          "witnesses": [
+            "paley5",
+            "circ8_1_4",
+            "circ13_1_5",
+            "paley17"
+          ]
+        },
+        "probe": "ramsey_witnesses",
+        "problem_id": "M095",
+        "scope": "Explicit colourings certify R(3,3) > 5, R(3,4) > 8, R(3,5) > 13, R(4,4) > 17.",
+        "summary": {
+          "circ13_1_5": "R(3,5) > 13",
+          "circ8_1_4": "R(3,4) > 8",
+          "paley17": "R(4,4) > 17",
+          "paley5": "R(3,3) > 5",
+          "witnesses_sha256": "c601047d86b55741559f792d148dfc9855335e89ea1109c5cfbe509837f32492"
+        }
+      },
+      "reconstruction": {
+        "certificate_sha256": "2b1be7e121a27d25d8005718fa562c2098ee2b5af018b41d2d03c75575475e47",
+        "engines": [
+          "graph_census"
+        ],
+        "holds": true,
+        "level": "smoke",
+        "params": {
+          "max_n": 6
+        },
+        "probe": "reconstruction",
+        "problem_id": "M078",
+        "scope": "For every n with 3 <= n <= 6, the 6-vertex census is complete (Burnside-certified) and no two non-isomorphic graphs share a vertex-deleted deck.",
+        "summary": {
+          "3": {
+            "distinct_decks": 4,
+            "graphs": 4
+          },
+          "4": {
+            "distinct_decks": 11,
+            "graphs": 11
+          },
+          "5": {
+            "distinct_decks": 34,
+            "graphs": 34
+          },
+          "6": {
+            "distinct_decks": 156,
+            "graphs": 156
+          },
+          "census_sha256": "2b1be7e121a27d25d8005718fa562c2098ee2b5af018b41d2d03c75575475e47"
+        }
+      },
+      "rota": {
+        "certificate_sha256": "b29d1181728dc6e357e6fb69d5447fbe013ad4491b3edf4c60bdd4332a348e96",
+        "engines": [
+          "finite_fields",
+          "symmetry_reduction"
+        ],
+        "holds": true,
+        "level": "smoke",
+        "params": {
+          "cases": [
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        "probe": "rota",
+        "problem_id": "M080",
+        "scope": "Every choice of n bases of GF(2)^2, GF(3)^2, GF(5)^2, GF(7)^2, GF(2)^3 admits a Rota grid (B_1 fixed by GL-transitivity).",
+        "summary": {
+          "2^2": {
+            "bases": 3,
+            "instances": 3
+          },
+          "2^3": {
+            "bases": 28,
+            "instances": 406
+          },
+          "3^2": {
+            "bases": 24,
+            "instances": 24
+          },
+          "5^2": {
+            "bases": 240,
+            "instances": 240
+          },
+          "7^2": {
+            "bases": 1008,
+            "instances": 1008
+          },
+          "certificate_sha256": "b29d1181728dc6e357e6fb69d5447fbe013ad4491b3edf4c60bdd4332a348e96"
+        }
+      },
+      "sic": {
+        "certificate_sha256": "621c08975771a3b04e5771d0b174a99225c323d4d60c122d62fed71dd56d1ca5",
+        "engines": [
+          "cyclotomic"
+        ],
+        "holds": true,
+        "level": "smoke",
+        "params": {
+          "coefficient_bound": 0
+        },
+        "probe": "sic",
+        "problem_id": "M092",
+        "scope": "d=2: 4 exact equiangular qubit states with overlap 1/3; d=3: every Weyl-Heisenberg fiducial with entries in {0, +-1, +-w, +-w^2} found and its 9 states certified with pairwise squared overlap 1/4.",
+        "summary": {
+          "certificate_sha256": "6186d38cc720fcde8e5b66335138c6b1b86041f4e4f09373692d284bc3127f04",
+          "d2_overlap": "1/3",
+          "d3_fiducials_in_alphabet": 108,
+          "d3_overlap": "1/4"
+        }
+      },
+      "strassen": {
+        "certificate_sha256": "36b9015e19e73c7a824706876692d126f7f9ece229ac3c87ef6ddd1b4e139a8f",
+        "engines": [
+          "tensor_certificates"
+        ],
+        "holds": true,
+        "level": "smoke",
+        "params": {
+          "powers": [
+            1,
+            2
+          ]
+        },
+        "probe": "strassen",
+        "problem_id": "M084",
+        "scope": "Exact integer rank-7^k decompositions of the <2^k,2^k,2^k> matmul tensor for k in {1, 2}, hence omega <= log2(7).",
+        "summary": {
+          "decompositions_sha256": "ba2a2bda72a82720e5d1a8f176986a92fb9070420613c116e1a5a28e330a2a7a",
+          "omega_upper_bound": 2.807355,
+          "ranks": {
+            "2": 7,
+            "4": 49
+          }
+        }
+      }
+    }
+  }
+}

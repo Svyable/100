@@ -8,6 +8,7 @@ import argparse
 import json
 from rank import score, ROOT
 from research import load, execution_order
+import lab
 
 OUTPUT = ROOT / "docs" / "data" / "portfolio.json"
 
@@ -46,6 +47,9 @@ def build():
             "restricted_verified": sum(
                 m["classification"] == "restricted_verified" for m in program["milestones"]),
             "fully_solved": len(solved),
+            "problems_with_exact_verifier": len(lab.coverage(items, program)),
+            "exact_probes": len(lab.probes.PROBES),
+            "engines": len(lab.probes.ENGINES),
         },
         "execution_scoring": {
             "brief": 2,
@@ -63,6 +67,7 @@ def build():
             }
             for number, item in enumerate(baseline, start=1)
         ],
+        "lab": lab.snapshot(),
         "campaigns": program["campaigns"],
         "milestones": program["milestones"],
         "solved": solved,

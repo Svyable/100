@@ -14,7 +14,11 @@ produce **independently checkable advances**.
    resource usage, and a reproducing command. No unverifiable solver verdicts.
 4. **New candidate** — propose replacing a resolved, duplicated or weak
    candidate; preserve stable IDs and history. Do not silently exceed 100.
-5. **Pages improvements** — submit accessible changes in `docs/`, keep all
+5. **Exact probe** — add a module to `scripts/probes/` (search plus an *independent*
+   checker, ideally on an existing engine), register it, add tamper tests, and wire it to a
+   campaign and `reproduced_known` milestone. See "Add a probe" in [LAB.md](LAB.md). Building
+   an engine from [the roadmap](data/engine_roadmap.json) unlocks a whole class of problems.
+6. **Pages improvements** — submit accessible changes in `docs/`, keep all
    browser assets local, and use the generated snapshot rather than an
    independently maintained data copy.
 
@@ -36,14 +40,19 @@ explain why restricted results or recent claim releases do not already settle it
 
 ```sh
 python3 scripts/rank.py
+python3 scripts/research.py
+python3 scripts/lab.py
 python3 scripts/build_site.py
 python3 scripts/rank.py --check
+python3 scripts/research.py --check
+python3 scripts/lab.py --check
 python3 scripts/build_site.py --check
 node --check docs/assets/app.js
 python3 -m unittest discover -s tests -v
 ```
 
-Only edit `data/problems.json`; the ranking in `RANKED.md` and web
+Only edit `data/problems.json`, `data/research_program.json`, `data/engine_roadmap.json`
+and source code; `RANKED.md`, `ATTACK_QUEUE.md`, `LAB.md`, `data/lab_results.json` and
 `docs/data/portfolio.json` are generated artifacts. CI rejects drift.
 
 ## Research contributions checklist

@@ -8,6 +8,9 @@ ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / "data/problems.json"
 RANKED = ROOT / "RANKED.md"
 STATES = {"official_open", "needs_review", "claim_needs_review", "verified_open", "resolved", "retired"}
+# How finite exact computation can bear on the statement (editorial, see docs/RESEARCH_PROTOCOL.md).
+MODALITIES = {"finite_refutable", "finite_parameter", "existence_family", "asymptotic", "structural"}
+COMPUTABLE = {"finite_refutable", "finite_parameter", "existence_family"}
 
 def score(p):
     return 6*p["impact"] + 6*p["attackability"] + 5*p["verifiability"] + 3*p["spillover"]
@@ -23,6 +26,8 @@ def validate(items):
         for key in ("impact","attackability","verifiability","spillover"):
             if type(p[key]) is not int or not 1 <= p[key] <= 5:
                 raise ValueError("Invalid score field: " + p["id"])
+        if p.get("modality") not in MODALITIES:
+            raise ValueError("Missing or unknown computational modality: " + p["id"])
         for key in ("name","field","question","first_attack"):
             if not isinstance(p[key],str) or not p[key].strip():
                 raise ValueError("Missing text field: " + p["id"])
