@@ -96,7 +96,7 @@ The closure-pruned generator reproduces the **known** counts:
 | 2 | 8 | 6 |
 | 3 | 90 | 28 |
 | 4 | 4,542 | 330 |
-| 5 | 2,747,402 | Not exhaustively counted by the routine CI gate |
+| 5 | 2,747,402 | 28,960 (independently counted by [Burnside's lemma](M075_BURNSIDE.md)) |
 
 There is no contradiction with the existing 4,958-family/366-orbit
 \(n=4\) mine: those totals allow families with **unused elements**.
