@@ -59,7 +59,7 @@
       "statement": "A canonical family generator over a five-element ground set emits exactly one union-closed family per relabeling orbit without enumerating all 2^(2^5) set systems.",
       "prior_art_boundary": "No speedup claim follows from the n=4 orbit table; completeness and no-duplication are separate from empirical speed.",
       "falsifier": "An omitted relabeling orbit, a duplicated orbit, an emitted non-union-closed family, or a fallback that enumerates every set system.",
-      "next_action": "The descending-size closure-pruned generator and its exact-once proof are in research/M075_CANONICAL.md; the n5 labeled count 2747402 is reproduced. Next independently replay all n5 orbit classes with a structurally distinct checker, and develop canonical augmentation that prunes noncanonical partial states.",
+      "next_action": "The n5 labeled full-support count 2747402 and n5 orbit count 28960 now have independent closure-pruned and Burnside checkers (research/M075_CANONICAL.md and M075_BURNSIDE.md), with a written exact-once proof. Obtain independent scope and mathematical reviews before discharge. Next performance goal is canonical augmentation pruning noncanonical partial states, not repeating known finite enumerations.",
       "depends_on": [
         "O-M075-01"
       ],
