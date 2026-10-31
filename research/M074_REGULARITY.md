@@ -57,3 +57,24 @@ This has **more** clauses than the 8,445-clause exact-outdegree CNF; the practic
 - The separate [joshp123 fixed-outdegree-six manuscript](https://github.com/joshp123/solve-a-maths-problem-dont-care-which-make-no-mistakes) claims the *entire* `r=6` case, with a published 438 MB proof corpus. Its status remains an unpeer-reviewed external claim, not an independently accepted theorem here.
 
 **Next proof gate:** obtain a proof-logged UNSAT trace for the *exact hash* of the new CNF and replay it with an independent checker; alternatively retrieve the external trace and independently reconstruct/check its CNF, symmetry assumptions, and partition coverage. No solver has been run on the new CNF here. A positive assignment needs independent graph-level verification. Even a verified `(18,6)` UNSAT theorem does not prove CH for all `n,r`, and the `Solved` ledger must remain unchanged.
+
+## Second structural corollary: two rooted pivots (2026-10-31)
+
+Assume a hypothetical (18,6) counterexample has already been thinned to a triangle-free oriented graph with all in- and outdegrees equal to six. Pin a root 0, its outneighbors A={1,...,6}, its inneighbors B={7,...,12} and its five nonneighbors C={13,...,17} as above.
+
+**Outgoing pivot.** Each vertex in A has six outgoing arcs, none to the root or B, because of digon and triangle exclusion. At most five arcs can target C, so the induced oriented graph on the six vertices of A has minimum outdegree at least one. It cannot have minimum outdegree at least two, by the six-vertex lemma. Consequently some a in A has exactly one A-outneighbor and sends arcs to all five of C. Relabel within A: a=1 and its unique A-outneighbor is 2. The ten resulting units assert 1->2, forbid 1->3,4,5,6, and require 1->c for all c in C.
+
+**Incoming pivot.** Each vertex in B has six incoming arcs, none from the root or A. Hence the six-vertex graph induced on B has minimum indegree at least one. Applying the six-vertex lemma after reversing all arcs shows that some b in B has exactly one B-predecessor and all five vertices of C as predecessors. Relabel within B: b=7 with its unique B-predecessor 8. The ten units assert 8->7, forbid 9,10,11,12->7, and require c->7 for all c in C.
+
+Since 1->c->7 for every c in C, triangle-freeness further forces the single unit forbidding 7->1. The root labeling and the two permutations within its disjoint neighbor blocks are independent; these 21 additional units lose no unlabeled candidate. They are not assumptions about an unverified solver outcome.
+
+The deterministic pivot encoder is scripts/ch_pivot.py. Run:
+
+    python3 scripts/ch_pivot.py --output /tmp/ch18-pivot.cnf
+    python3 -m unittest discover -s tests -p 'test_ch_pivot.py' -v
+
+The full pivot CNF contains 3,834 variables (306 arcs, 3,528 auxiliary), 15,160 clauses (15,139 regularity clauses plus 21 pivot units), and 233,876 bytes. Its frozen SHA-256 is:
+
+    18f4a672b3294b59202f4656641d361e8e2ca6b9fc63af7a823ee85108825fff
+
+**Evidence boundary:** This is a mathematical reduction and tested CNF identity, **not** an independently checked SAT/UNSAT certificate or a resolution of the finite (18,6) case. Independent proof-trace verification and prior-art scope review remain necessary before promotion.
