@@ -68,7 +68,7 @@ If both arrays have an entry five, every eligible pair lies in that one row or t
 
 Apply Lemma 2 with r=8. Both induced 8-vertex graphs D[A] and the arc-reversal of D[B] have minimum outdegree at least two. Lemma 1 gives m_A<=21 and m_B<=21. Thus Lemma 2 forces **t=e(B,A)>=64−42=22**.
 
-On the other hand, Lemma 2 permits an arc b→a only when α(a)+β(b)>=9. Lemma 3 says there are at most **15** such ordered pairs. Hence **18<=t<=15**, a contradiction. QED.
+On the other hand, Lemma 2 permits an arc b→a only when α(a)+β(b)>=9. Lemma 3 says there are at most **15** such ordered pairs. Hence **22<=t<=15**, a contradiction. QED.
 
 ## What remains for the *full finite* (24,8) statement
 
