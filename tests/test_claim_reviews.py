@@ -75,6 +75,29 @@ class ClaimReviewTests(unittest.TestCase):
         self.assertEqual(by_id["M038"]["independent_validation"], "independent_reconstruction_preprint")
         self.assertEqual(by_id["M044"]["primary_url"], by_id["M049"]["primary_url"])
 
+    def test_source_revision_and_upstream_formalization_scope(self):
+        release = self.audit["source_revision"]
+        sha = release["commit"]
+        self.assertEqual(release["repository"], "openai/math")
+        self.assertEqual(len(sha), 40)
+        for item in self.audit["reviews"]:
+            with self.subTest(id=item["id"]):
+                urls = [item["primary_url"], *item["independent_evidence_urls"]]
+                if item.get("formalization_scope_url"):
+                    urls.append(item["formalization_scope_url"])
+                for url in urls:
+                    if "github.com/openai/math/blob/" in url:
+                        self.assertIn("/blob/" + sha + "/", url)
+                        self.assertNotIn("/blob/main/", url)
+        # The later all-dimensional claim is now the review's primary source,
+        # but its strict interior range still needs an exact statement match.
+        m056 = next(r for r in self.audit["reviews"] if r["id"] == "M056")
+        self.assertEqual(m056["preprint_date"], "2026-10-25")
+        self.assertEqual(m056["scope_relation"], "narrower")
+        self.assertIn("local-smoothing", m056["primary_url"])
+        m049 = next(r for r in self.audit["reviews"] if r["id"] == "M049")
+        self.assertIn("outside", m049["known_caveats"])
+
     def test_no_unsupported_solved_archive_entries(self):
         solved = json.loads((ROOT / "data/solved.json").read_text(encoding="utf-8"))
         self.assertFalse(IDS & {row["original_problem_id"] for row in solved})
