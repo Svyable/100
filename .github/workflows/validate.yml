@@ -15,8 +15,10 @@ jobs:
       - run: python3 scripts/rank.py --check
       - run: python3 scripts/build_site.py --check
       - run: python3 scripts/next.py --check
+      - run: python3 scripts/approach.py --check
       - run: python3 scripts/research.py --check
       - run: python3 scripts/lab.py --check
+      - run: python3 scripts/mine.py --check
       - run: python3 scripts/check_external_artifact.py --validate-only
       - run: node --check docs/assets/app.js
       - run: node --check docs/next/app.js

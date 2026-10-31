@@ -14,7 +14,7 @@ reproduced known result, partial bound, experiment, or unverified proposal.
 - [ ] Registry source remains authoritative; generated ranking + Pages snapshot updated
 - [ ] `python3 scripts/rank.py --check`
 - [ ] `python3 scripts/build_site.py --check`
-- [ ] `python3 scripts/research.py --check` and `python3 scripts/lab.py --check`
+- [ ] `python3 scripts/research.py --check`, `python3 scripts/approach.py --check`, `python3 scripts/lab.py --check`, and `python3 scripts/mine.py --check`
 - [ ] New or changed probes: independent checker plus tamper tests in `tests/test_lab.py`
 - [ ] `node --check docs/assets/app.js`
 - [ ] `python3 -m unittest discover -s tests -v`
