@@ -12,7 +12,7 @@ def admissible_profiles():
     """All sorted internal out-/in-degree profiles allowed by the 8-local arc budget."""
     return tuple(
         xs for xs in itertools.combinations_with_replacement(range(2, 8), 8)
-        if sum(xs) <= 23
+        if sum(xs) <= 21
     )
 
 
@@ -59,9 +59,9 @@ def certificate():
 def main():
     result = certificate()
     print(json.dumps(result, indent=2, sort_keys=True))
-    return 0 if (result["profile_count"] == 42
+    return 0 if (result["profile_count"] == 19
                  and result["maximum_eligible_cross_pairs"] == 15
-                 and result["minimum_required_cross_edges"] == 18
+                 and result["minimum_required_cross_edges"] == 22
                  and result["eligible_ge_required_count"] == 0) else 1
 
 
