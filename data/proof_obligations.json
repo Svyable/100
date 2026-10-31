@@ -47,7 +47,7 @@
       "statement": "For union-closed families over a five-element ground set, a canonical encoding is constant on each relabeling orbit and separates distinct relabeling orbits.",
       "prior_art_boundary": "The existing n=4 census and its 366 relabeling orbits are known finite benchmark data; an n=5 canonicalization lemma is a proposed structural step, not established.",
       "falsifier": "Two relabeling-equivalent families receive different codes, or two inequivalent families receive the same code.",
-      "next_action": "Specify a canonical map under S_5 and prove both directions of the orbit-equivalence condition, then adversarially check constructed orbit collisions.",
+      "next_action": "A paper proof of the minimum S5 orbit invariant and implementation are in research/M075_CANONICAL.md and scripts/frankl_canonical.py. Obtain independent mathematical and statement-fidelity review before discharge; the existing n4 mine provides a second finite cross-check.",
       "depends_on": [],
       "status": "open",
       "evidence": null
@@ -59,7 +59,7 @@
       "statement": "A canonical family generator over a five-element ground set emits exactly one union-closed family per relabeling orbit without enumerating all 2^(2^5) set systems.",
       "prior_art_boundary": "No speedup claim follows from the n=4 orbit table; completeness and no-duplication are separate from empirical speed.",
       "falsifier": "An omitted relabeling orbit, a duplicated orbit, an emitted non-union-closed family, or a fallback that enumerates every set system.",
-      "next_action": "Construct an extension rule on canonical representatives, prove soundness, uniqueness and exhaustiveness, and independently audit the resulting counts.",
+      "next_action": "The descending-size closure-pruned generator and its exact-once proof are in research/M075_CANONICAL.md; the n5 labeled count 2747402 is reproduced. Next independently replay all n5 orbit classes with a structurally distinct checker, and develop canonical augmentation that prunes noncanonical partial states.",
       "depends_on": [
         "O-M075-01"
       ],
