@@ -59,8 +59,8 @@
     "status": "queued",
     "review_question": "Which rate assumptions allow safely pruning kinetically irrelevant reaction paths?",
     "smallest_test": "Exhaust a five-species reversible mass-action network with competing paths.",
-    "context_url": "https://science.osti.gov/bes/csgb/Research-Areas/Quantum-Information-Sciences",
-    "review_gap": "Mechanism reduction results and counterexamples to energy-only pruning need specialist review."
+    "context_url": "https://www.alcf.anl.gov/science/projects/exascale-catalytic-chemistry-0",
+    "review_gap": "Review pathway-reduction theorems and prior numerical microkinetic models; background is not evidence of novelty."
   },
   {
     "priority": 8,
@@ -104,7 +104,7 @@
     "status": "queued",
     "review_question": "When do voltage and impedance jointly identify hidden battery side-reaction rates?",
     "smallest_test": "Calculate symbolic Jacobian ranks for a two-reaction battery equivalent circuit.",
-    "context_url": "https://science.osti.gov/bes/mse/Research-Areas/Quantum-Information-Science",
-    "review_gap": "This link is general materials context; battery-specific identifiability sources are missing."
+    "context_url": "https://www.sciencedirect.com/science/article/pii/S0306261926003880",
+    "review_gap": "Review electrode-level EIS identifiability studies and battery aging parameter ambiguities."
   }
 ]

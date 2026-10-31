@@ -136,7 +136,7 @@ def validate(entries, promotions, active):
                 or any(type(scores[k]) is not int or not 1 <= scores[k] <= 5
                        for k in FIELDS)):
             raise ValueError(f"{uid}: scores must be four editorial integers 1-5")
-    close = [p for p in similarity_pairs(entries, minimum=0.0)
+    close = [p for p in similarity_pairs(entries, minimum=0.70)
              if (p[3] >= 0.84 and p[4] >= 0.25)
              or (p[4] >= 0.83 and p[3] >= 0.25)
              or p[4] >= 0.92]
