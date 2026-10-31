@@ -10,7 +10,7 @@ from ch_six_check import has_triangle
 
 
 def profiles_independent():
-    """Enumerate partitions of <=7 surplus units into eight slots, not combinations_with_replacement."""
+    """Enumerate partitions of <=5 surplus units into eight slots, not combinations_with_replacement."""
     def distribute(slots, remaining, lower):
         if slots == 0:
             if remaining == 0:
@@ -21,7 +21,7 @@ def profiles_independent():
                         for rest in distribute(slots - 1, remaining - x, x))
     return {
         tuple(2 + x for x in p)
-        for total in range(8)
+        for total in range(6)
         for p in distribute(8, total, 0)
         if max(p) <= 5
     }
@@ -32,14 +32,14 @@ class CrossCutTests(unittest.TestCase):
         left = set(ch24_crosscut.admissible_profiles())
         right = profiles_independent()
         self.assertEqual(left, right)
-        self.assertEqual(len(left), 42)
+        self.assertEqual(len(left), 19)
 
     def test_full_integer_bound(self):
         result = ch24_crosscut.certificate()
-        self.assertEqual(result["ordered_profile_pairs"], 1764)
+        self.assertEqual(result["ordered_profile_pairs"], 361)
         self.assertEqual(result["maximum_eligible_cross_pairs"], 15)
-        self.assertEqual(result["minimum_required_cross_edges"], 18)
-        self.assertEqual(result["maximum_allowed_minus_required"], -3)
+        self.assertEqual(result["minimum_required_cross_edges"], 22)
+        self.assertEqual(result["maximum_allowed_minus_required"], -7)
         self.assertEqual(result["eligible_ge_required_count"], 0)
 
     def test_sharp_abstract_upper_bound_and_tamper(self):
@@ -50,6 +50,18 @@ class CrossCutTests(unittest.TestCase):
         bad = (2, 2, 2, 2, 2, 2, 6, 7)
         self.assertEqual(sum(bad), 25)
         self.assertGreater(ch24_crosscut.admissible_cross_pairs(bad, bad), 15)
+
+    def test_sharp_21_arc_local_example(self):
+        # Z7 with steps {1,2} has 14 arcs, and a new dominating
+        # source contributes exactly seven more without creating C3.
+        n = 8
+        out = [sum(1 << ((u + d) % 7) for d in (1, 2)) for u in range(7)]
+        out.append((1 << 7) - 1)
+        self.assertEqual(sum(row.bit_count() for row in out), 21)
+        self.assertTrue(all(row.bit_count() >= 2 for row in out))
+        self.assertFalse(has_triangle(out))
+        self.assertEqual(max(sum(out[u] >> v & 1 for u in range(n))
+                             for v in range(n)), 3)
 
     def test_eight_vertex_local_degree_count(self):
         # The local counting inequality for minimum outdegree k forces
