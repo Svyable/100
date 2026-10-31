@@ -2,6 +2,7 @@
 
 **Purpose:** Preserve, refine, and stack-rank 100 concrete mathematical proof/counterexample targets, looking for results and methods that create new branches of discovery.
 
+- **[Proof exchange / scaling protocol](docs/PROOF_EXCHANGE.md)** — source-bound packets for agent-to-agent research handoffs, dependency-gated proof obligations and evidence-bounded cross-problem coverage scheduling (`python3 scripts/scale.py --budget 5 --json`).
 - **[Roadmap](ROADMAP.md)** ([on the dashboard](https://svyable.github.io/100/#roadmap)) — live scoreboard against targets, and every shipped, current, next and later item with evidence and exit criteria. Source: [data/roadmap.json](data/roadmap.json).
 - **[Next 100 hypothesis reservoir](https://svyable.github.io/100/next/)** — 216 cross-domain, unvetted proposals across 27 research domains in a scalable pipeline; ranked discovery priorities, not claimed new open results ([protocol](NEXT_100.md)). The active 100 remains capped.
 - **[Public research dashboard](https://svyable.github.io/100/)** (once GitHub Pages is enabled: [activation guide](docs/PAGES_SETUP.md)) — ranked search, evidence filters, active proof campaigns.
