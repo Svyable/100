@@ -107,9 +107,10 @@ different support sizes add instead: \(2+6+28+330=366\).
 
 The \(n=5\) labeled count is a full offline reproduction of a
 published sequence, not a proof of the conjecture and not a novel
-improvement. We do not claim to have exhausted the orbit classes
-for \(n=5\) in CI. Their complete canonical list is a separate,
-potentially expensive check.
+improvement. A separate [Burnside fixed-point certificate](M075_BURNSIDE.md) now
+computes the **complete orbit count** for \(n=5\) without enumerating
+and retaining all canonical representatives. Producing the complete
+representative list remains a separate, potentially expensive task.
 
 ## Reproduction and next missing step
 
