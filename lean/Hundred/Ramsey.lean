@@ -37,13 +37,13 @@ def certificateDecidable {n : Nat} (edge : Fin n → Fin n → Bool) :
     Decidable (AvoidsMonochromaticTriangle edge) :=
   @instDecidableAnd _ _
     (@instDecidableAnd _ _
-      (@finiteForall n _ (fun a => inferInstance))
-      (@finiteForall n _ (fun a => @finiteForall n _ (fun b => inferInstance))))
+      (@finiteForall n _ (fun _a => inferInstance))
+      (@finiteForall n _ (fun _a => @finiteForall n _ (fun _b => inferInstance))))
     (@instDecidableAnd _ _
-      (@finiteForall n _ (fun a => @finiteForall n _ (fun b =>
-        @finiteForall n _ (fun c => inferInstance))))
-      (@finiteForall n _ (fun a => @finiteForall n _ (fun b =>
-        @finiteForall n _ (fun c => inferInstance)))))
+      (@finiteForall n _ (fun _a => @finiteForall n _ (fun _b =>
+        @finiteForall n _ (fun _c => inferInstance))))
+      (@finiteForall n _ (fun _a => @finiteForall n _ (fun _b =>
+        @finiteForall n _ (fun _c => inferInstance)))))
 
 /-- Executable checker for any finite red/blue adjacency function. -/
 def check {n : Nat} (edge : Fin n → Fin n → Bool) : Bool :=
