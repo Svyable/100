@@ -1,0 +1,18 @@
+[
+  {
+    "id": "CH-R6-2026-CORPUS",
+    "problem_id": "M074",
+    "claim_scope": "All finite loopless digraphs with minimum outdegree >=6 satisfy the Caccetta–Häggkvist girth bound (restricted fixed-r case).",
+    "claim_state": "external_unreviewed",
+    "source_url": "https://github.com/joshp123/solve-a-maths-problem-dont-care-which-make-no-mistakes",
+    "source_commit": "ec9fc66e5f3b59ea961e5045bca3b8698613489d",
+    "source_version": "0.2.0",
+    "source_published_doi": "https://doi.org/10.5281/zenodo.21495432",
+    "artifact_filename": "proof-corpus-v0.1.0.tar.zst",
+    "expected_bytes": 438808162,
+    "expected_sha256": "3d00174851a213fdf81085bd38bbb7e573f36f8b1e691e5eded8ac43d8937285",
+    "integrity_checked_here": false,
+    "mathematical_proof_reviewed_here": false,
+    "note": "Checksums copied from source README, NOT independently downloaded or replayed in Svyable/100."
+  }
+]

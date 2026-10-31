@@ -34,6 +34,13 @@ be treated as a journal acceptance.
 Source: [upstream README](https://github.com/joshp123/solve-a-maths-problem-dont-care-which-make-no-mistakes/blob/main/README.md)
 and [reproduction guide](https://github.com/joshp123/solve-a-maths-problem-dont-care-which-make-no-mistakes/blob/main/REPRODUCING.md).
 
+An [offline asset integrity checker](../scripts/check_external_artifact.py) now validates a locally obtained copy against [our pinned external manifest](../data/external_claims.json):
+
+```sh
+python3 scripts/check_external_artifact.py --validate-only
+python3 scripts/check_external_artifact.py --id CH-R6-2026-CORPUS --file /path/to/proof-corpus-v0.1.0.tar.zst
+```
+
 **No claim that we downloaded, hashed, ran, or independently certified the
 438 MB corpus is made.** The published checksum is a *target for future
 verification*, not a checksum already established by Svyable.
