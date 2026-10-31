@@ -12,7 +12,7 @@ import lab
 import probes
 import rank
 import research
-from probes import core, cyclotomic, exact_lp, fields, graphs, primes
+from probes import core, cyclotomic, exact_lp, fields, graphs, homomorphisms, primes
 from probes.core import ProbeFailure
 
 
@@ -84,6 +84,21 @@ class EngineTests(unittest.TestCase):
             exact_lp.solve([1, 1], [[1, 1]], [1], [[1, 1]], [3])
         with self.assertRaises(ValueError):  # a non-optimal primal point fails certification
             exact_lp.certify([1, 1], [], [], [[1, 2], [3, 1]], [4, 6], [4, 0], [], [0, 0])
+
+    def test_homomorphism_counts_match_brute_force(self):
+        sid = probes.load("sidorenko")
+        for name, H in sid.patterns().items():
+            if H["A"] + H["B"] > 6:
+                continue
+            for n in range(1, 4):
+                for code in graphs.census(n):
+                    adj = graphs.to_adjacency(n, code)
+                    brute = homomorphisms.brute_count(H, n, adj)
+                    self.assertEqual(homomorphisms.count_from_side(H, n, adj, "A"), brute, name)
+                    self.assertEqual(homomorphisms.count_from_side(H, n, adj, "B"), brute, name)
+        k4 = graphs.to_adjacency(4, (1 << 6) - 1)
+        c4 = sid.patterns()["C4"]
+        self.assertEqual(homomorphisms.count_from_side(c4, 4, k4), 4 * 3 * 7)  # n(n-1)(n^2-3n+3)
 
     def test_canonical_json_is_order_independent(self):
         self.assertEqual(core.digest({"b": 1, "a": [Fraction(1, 3)]}),
@@ -239,6 +254,20 @@ class TamperTests(unittest.TestCase):
         self.assertRejects(m, params, bad)
         bad = copy.deepcopy(r)
         bad["certificate"].pop()
+        self.assertRejects(m, params, bad)
+
+
+    def test_sidorenko(self):
+        params = {"max_host": 4}
+        m, r = run("sidorenko", params)
+        bad = copy.deepcopy(r)
+        bad["certificate"]["K55_minus_C10"]["hosts"][-1][2] += 1
+        self.assertRejects(m, params, bad)
+        bad = copy.deepcopy(r)
+        bad["certificate"]["C4"]["hosts"].pop()
+        self.assertRejects(m, params, bad)
+        bad = copy.deepcopy(r)
+        bad["certificate"]["K33"]["min_ratio"] = "1/1"
         self.assertRejects(m, params, bad)
 
 

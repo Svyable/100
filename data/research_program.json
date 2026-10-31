@@ -39,6 +39,18 @@
       "verifier": "python3 scripts/lab.py --probe hadwiger"
     },
     {
+      "problem_id": "M073",
+      "stage": "benchmark_reproduced",
+      "method": "Exact homomorphism-density search over certified host censuses",
+      "hypothesis": "For every bipartite graph H and every graph G, t(H,G) >= t(K2,G)^e(H).",
+      "first_proof_obligation": "Confirm in current literature that K_{5,5} minus a Hamiltonian cycle is still the smallest open pattern, then fix a restricted host class (vertex-transitive graphs or small rational step graphons) where the inequality can be proved or exhausted.",
+      "next_experiment": "Extend hosts from unweighted graphs to rational step graphons and run exact local search that minimises t(H,W)/t(K2,W)^15, replaying every candidate with the exact counter.",
+      "falsification": "A host graph or rational step graphon W with exactly computed t(H,W) < t(K2,W)^e(H).",
+      "blocker": "Any counterexample is expected to need large or finely weighted hosts; unweighted hosts on at most 7 vertices give a minimum ratio of about 1.025 for the open pattern.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe sidorenko"
+    },
+    {
       "problem_id": "M074",
       "stage": "benchmark_reproduced",
       "method": "Directed graph extremal search",
@@ -373,6 +385,17 @@
       "description": "Every instance carries an exact LP-duality certificate checked against all subtour constraints and a brute-force optimal tour; the maximum ratio is 1 for n <= 6. The deep run covers 994 instances up to n = 7, with maximum gap 16/15.",
       "verifier": "python3 scripts/lab.py --probe held_karp",
       "artifact": "scripts/probes/held_karp.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-SIDORENKO-001",
+      "problem_id": "M073",
+      "classification": "reproduced_known",
+      "title": "Sidorenko inequality reproduced for proven patterns C4, C6, K_{3,3} and P4 on all hosts with at most 5 vertices",
+      "scope": "Known families on a finite host range; the open-pattern data in the same run is exploratory, unreviewed and not a result",
+      "description": "Exact homomorphism counts, recounted from the opposite bipartition side, compared by integer arithmetic on all 52 host graphs; P4 attains equality on regular hosts. The run also records K_{5,5} minus C_10 on the same hosts (and on all 1,252 hosts up to 7 vertices at deep level, minimum ratio about 1.0248) purely as falsifier data.",
+      "verifier": "python3 scripts/lab.py --probe sidorenko",
+      "artifact": "scripts/probes/sidorenko.py",
       "verified_on": "2026-10-31"
     }
   ]

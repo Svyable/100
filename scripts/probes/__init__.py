@@ -48,6 +48,11 @@ ENGINES = {
         "modules": ["scripts/probes/exact_lp.py"],
         "use": "Certified LP relaxations (Held-Karp, fractional covers, LP bounds) with no floating point.",
     },
+    "graph_homomorphisms": {
+        "name": "Exact homomorphism counting for bipartite patterns, recountable from either side",
+        "modules": ["scripts/probes/homomorphisms.py"],
+        "use": "Homomorphism-density inequalities (Sidorenko, forcing, common graphs) on certified host sets.",
+    },
     "clique_search": {
         "name": "Branch-and-bound clique search with exhaustive subset re-check",
         "modules": ["scripts/probes/ramsey_witness.py"],
@@ -60,6 +65,7 @@ PROBES = {
     "goldbach": "goldbach",
     "erdos_straus": "erdos_straus",
     "hadwiger": "hadwiger",
+    "sidorenko": "sidorenko",
     "reconstruction": "reconstruction",
     "one_third": "posets",
     "rota": "rota",

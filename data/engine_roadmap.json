@@ -21,11 +21,6 @@
       "problem_id": "M048",
       "engine": "group_characters",
       "first_probe": "Exact Brauer-character and weight counts for small finite groups and primes, compared entrywise."
-    },
-    {
-      "problem_id": "M073",
-      "engine": "graph_homomorphisms",
-      "first_probe": "Exact homomorphism-density search over small weighted host graphs for the smallest open case H = K_{5,5} minus a Hamiltonian cycle."
     }
   ]
 }

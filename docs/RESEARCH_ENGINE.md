@@ -57,13 +57,14 @@ a theorem. Mathematical scope review is different from code correctness.
 |---|---|---|
 | `primes` | `primes.py` | M006, M019 |
 | `finite_fields` | `fields.py` | M080, M093, M094, M095, M096 |
-| `graph_census` | `graphs.py` | M071, M078, M097 |
+| `graph_census` | `graphs.py` | M071, M073, M078, M097 |
 | `poset_census` | `posets.py` | M079 |
 | `cyclotomic` | `cyclotomic.py` | M092 |
 | `tensor_certificates` | `tensor.py` | M084 |
 | `symmetry_reduction` | `arcs.py`, `rota.py` | M080, M093 |
 | `clique_search` | `ramsey_witness.py` | M095 |
 | `exact_lp` | `exact_lp.py` | M097 |
+| `graph_homomorphisms` | `homomorphisms.py` | M073 |
 
 A probe is a short module containing `PROBE` metadata, `search(params)`, an **independent**
 `check(params, result)`, and `scope(params)`. The checker uses a different code path from the

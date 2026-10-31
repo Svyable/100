@@ -16,13 +16,13 @@
   },
   "program_as_of": "2026-10-31",
   "summary": {
-    "campaigns": 16,
-    "reproduced_known": 16,
+    "campaigns": 17,
+    "reproduced_known": 17,
     "restricted_verified": 0,
     "fully_solved": 0,
-    "problems_with_exact_verifier": 15,
-    "exact_probes": 13,
-    "engines": 9
+    "problems_with_exact_verifier": 16,
+    "exact_probes": 14,
+    "engines": 10
   },
   "execution_scoring": {
     "brief": 2,
@@ -136,7 +136,7 @@
       "source_url": null,
       "rank": 5,
       "score": 91,
-      "execution_rank": 13,
+      "execution_rank": 14,
       "execution_score": 91,
       "readiness": 0,
       "campaign_stage": null,
@@ -246,7 +246,7 @@
       "source_url": "https://arxiv.org/abs/2608.00222",
       "rank": 10,
       "score": 89,
-      "execution_rank": 16,
+      "execution_rank": 17,
       "execution_score": 89,
       "readiness": 0,
       "campaign_stage": null,
@@ -268,7 +268,7 @@
       "source_url": null,
       "rank": 11,
       "score": 89,
-      "execution_rank": 17,
+      "execution_rank": 18,
       "execution_score": 89,
       "readiness": 0,
       "campaign_stage": null,
@@ -312,7 +312,7 @@
       "source_url": null,
       "rank": 13,
       "score": 85,
-      "execution_rank": 19,
+      "execution_rank": 20,
       "execution_score": 85,
       "readiness": 0,
       "campaign_stage": null,
@@ -334,11 +334,11 @@
       "source_url": null,
       "rank": 14,
       "score": 85,
-      "execution_rank": 20,
-      "execution_score": 85,
-      "readiness": 0,
-      "campaign_stage": null,
-      "milestone_count": 0
+      "execution_rank": 10,
+      "execution_score": 92,
+      "readiness": 7,
+      "campaign_stage": "benchmark_reproduced",
+      "milestone_count": 1
     },
     {
       "id": "M077",
@@ -378,7 +378,7 @@
       "source_url": null,
       "rank": 16,
       "score": 85,
-      "execution_rank": 10,
+      "execution_rank": 11,
       "execution_score": 92,
       "readiness": 7,
       "campaign_stage": "benchmark_reproduced",
@@ -400,7 +400,7 @@
       "source_url": "https://mathworld.wolfram.com/ProjectivePlane.html",
       "rank": 17,
       "score": 85,
-      "execution_rank": 11,
+      "execution_rank": 12,
       "execution_score": 92,
       "readiness": 7,
       "campaign_stage": "benchmark_reproduced",
@@ -422,7 +422,7 @@
       "source_url": null,
       "rank": 18,
       "score": 85,
-      "execution_rank": 12,
+      "execution_rank": 13,
       "execution_score": 92,
       "readiness": 7,
       "campaign_stage": "benchmark_reproduced",
@@ -488,7 +488,7 @@
       "source_url": null,
       "rank": 21,
       "score": 83,
-      "execution_rank": 14,
+      "execution_rank": 15,
       "execution_score": 90,
       "readiness": 7,
       "campaign_stage": "benchmark_reproduced",
@@ -620,7 +620,7 @@
       "source_url": null,
       "rank": 27,
       "score": 82,
-      "execution_rank": 15,
+      "execution_rank": 16,
       "execution_score": 89,
       "readiness": 7,
       "campaign_stage": "benchmark_reproduced",
@@ -642,7 +642,7 @@
       "source_url": "https://doi.org/10.1002/jgt.70029",
       "rank": 28,
       "score": 82,
-      "execution_rank": 18,
+      "execution_rank": 19,
       "execution_score": 89,
       "readiness": 7,
       "campaign_stage": "benchmark_reproduced",
@@ -2238,6 +2238,7 @@
       "M006",
       "M019",
       "M071",
+      "M073",
       "M074",
       "M075",
       "M078",
@@ -2277,7 +2278,7 @@
         "modality": "finite_refutable",
         "description": "One finite, checkable object would refute it; computation can search and certify ranges.",
         "problems": 15,
-        "with_verifier": 10
+        "with_verifier": 11
       },
       {
         "modality": "finite_parameter",
@@ -2341,6 +2342,7 @@
         ],
         "problems": [
           "M071",
+          "M073",
           "M078",
           "M097"
         ]
@@ -2400,6 +2402,17 @@
         ],
         "problems": [
           "M097"
+        ]
+      },
+      {
+        "id": "graph_homomorphisms",
+        "name": "Exact homomorphism counting for bipartite patterns, recountable from either side",
+        "use": "Homomorphism-density inequalities (Sidorenko, forcing, common graphs) on certified host sets.",
+        "modules": [
+          "scripts/probes/homomorphisms.py"
+        ],
+        "problems": [
+          "M073"
         ]
       },
       {
@@ -2484,6 +2497,31 @@
             "holds": true,
             "scope": "Every graph on 1..7 vertices has a proper t-colouring and a K_t minor model for t = its chromatic number.",
             "certificate_sha256": "90cdd7bbe904ef96948bd16235b804fb77aec22aaf9d5073d403320946e0bc15"
+          }
+        }
+      },
+      {
+        "id": "sidorenko",
+        "problem_id": "M073",
+        "name": "Sidorenko conjecture",
+        "title": "Sidorenko inequality for K_{5,5} minus C_10 and controls on every small host graph",
+        "engines": [
+          "graph_homomorphisms",
+          "graph_census"
+        ],
+        "frontier": "Known for trees, even cycles, complete bipartite graphs, hypercubes and many families; K_{5,5} minus a Hamiltonian cycle is commonly cited as the smallest open case (check current literature). Finite hosts this small are not expected to refute it.",
+        "artifact": "scripts/probes/sidorenko.py",
+        "command": "python3 scripts/lab.py --probe sidorenko",
+        "runs": {
+          "smoke": {
+            "holds": true,
+            "scope": "t(H,G) >= t(K2,G)^e(H) for every graph G on 1..5 vertices and H in {K_{5,5} minus C_10, C4, C6, K_{3,3}, P4}.",
+            "certificate_sha256": "d59b7e6cb2d91343eacb4b0f9501d21f21547fded406dd7249c1e8ab59f7d56f"
+          },
+          "deep": {
+            "holds": true,
+            "scope": "t(H,G) >= t(K2,G)^e(H) for every graph G on 1..7 vertices and H in {K_{5,5} minus C_10, C4, C6, K_{3,3}, P4}.",
+            "certificate_sha256": "0e921e72ed2cd1584dff39e96153f462405d8bacfd34e15d7131b763bbe4e199"
           }
         }
       },
@@ -2756,12 +2794,6 @@
         "engine": "group_characters",
         "first_probe": "Exact Brauer-character and weight counts for small finite groups and primes, compared entrywise.",
         "name": "Alperin weight conjecture"
-      },
-      {
-        "problem_id": "M073",
-        "engine": "graph_homomorphisms",
-        "first_probe": "Exact homomorphism-density search over small weighted host graphs for the smallest open case H = K_{5,5} minus a Hamiltonian cycle.",
-        "name": "Sidorenko conjecture"
       }
     ]
   },
@@ -2801,6 +2833,18 @@
       "blocker": "Every graph a naive census reaches is inside the proved t <= 6 range; t = 7 needs much larger graphs and exact chromatic lower-bound certificates.",
       "dossier": "research/LAB_CAMPAIGNS.md",
       "verifier": "python3 scripts/lab.py --probe hadwiger"
+    },
+    {
+      "problem_id": "M073",
+      "stage": "benchmark_reproduced",
+      "method": "Exact homomorphism-density search over certified host censuses",
+      "hypothesis": "For every bipartite graph H and every graph G, t(H,G) >= t(K2,G)^e(H).",
+      "first_proof_obligation": "Confirm in current literature that K_{5,5} minus a Hamiltonian cycle is still the smallest open pattern, then fix a restricted host class (vertex-transitive graphs or small rational step graphons) where the inequality can be proved or exhausted.",
+      "next_experiment": "Extend hosts from unweighted graphs to rational step graphons and run exact local search that minimises t(H,W)/t(K2,W)^15, replaying every candidate with the exact counter.",
+      "falsification": "A host graph or rational step graphon W with exactly computed t(H,W) < t(K2,W)^e(H).",
+      "blocker": "Any counterexample is expected to need large or finely weighted hosts; unweighted hosts on at most 7 vertices give a minimum ratio of about 1.025 for the open pattern.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe sidorenko"
     },
     {
       "problem_id": "M074",
@@ -3138,6 +3182,17 @@
       "verifier": "python3 scripts/lab.py --probe held_karp",
       "artifact": "scripts/probes/held_karp.py",
       "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-SIDORENKO-001",
+      "problem_id": "M073",
+      "classification": "reproduced_known",
+      "title": "Sidorenko inequality reproduced for proven patterns C4, C6, K_{3,3} and P4 on all hosts with at most 5 vertices",
+      "scope": "Known families on a finite host range; the open-pattern data in the same run is exploratory, unreviewed and not a result",
+      "description": "Exact homomorphism counts, recounted from the opposite bipartition side, compared by integer arithmetic on all 52 host graphs; P4 attains equality on regular hosts. The run also records K_{5,5} minus C_10 on the same hosts (and on all 1,252 hosts up to 7 vertices at deep level, minimum ratio about 1.0248) purely as falsifier data.",
+      "verifier": "python3 scripts/lab.py --probe sidorenko",
+      "artifact": "scripts/probes/sidorenko.py",
+      "verified_on": "2026-10-31"
     }
   ],
   "solved": [],
@@ -3251,9 +3306,21 @@
       "dossier": "research/LAB_CAMPAIGNS.md"
     },
     {
+      "problem_id": "M073",
+      "name": "Sidorenko conjecture",
+      "execution_rank": 10,
+      "execution_score": 92,
+      "baseline_rank": 14,
+      "stage": "benchmark_reproduced",
+      "first_proof_obligation": "Confirm in current literature that K_{5,5} minus a Hamiltonian cycle is still the smallest open pattern, then fix a restricted host class (vertex-transitive graphs or small rational step graphons) where the inequality can be proved or exhausted.",
+      "next_experiment": "Extend hosts from unweighted graphs to rational step graphons and run exact local search that minimises t(H,W)/t(K2,W)^15, replaying every candidate with the exact counter.",
+      "blocker": "Any counterexample is expected to need large or finely weighted hosts; unweighted hosts on at most 7 vertices give a minimum ratio of about 1.025 for the open pattern.",
+      "dossier": "research/LAB_CAMPAIGNS.md"
+    },
+    {
       "problem_id": "M080",
       "name": "Rota basis conjecture",
-      "execution_rank": 10,
+      "execution_rank": 11,
       "execution_score": 92,
       "baseline_rank": 16,
       "stage": "benchmark_reproduced",
@@ -3265,7 +3332,7 @@
     {
       "problem_id": "M096",
       "name": "Projective plane order 12",
-      "execution_rank": 11,
+      "execution_rank": 12,
       "execution_score": 92,
       "baseline_rank": 17,
       "stage": "benchmark_reproduced",
@@ -3277,7 +3344,7 @@
     {
       "problem_id": "M097",
       "name": "Metric TSP four-thirds conjecture",
-      "execution_rank": 12,
+      "execution_rank": 13,
       "execution_score": 92,
       "baseline_rank": 18,
       "stage": "benchmark_reproduced",
@@ -3289,7 +3356,7 @@
     {
       "problem_id": "M084",
       "name": "Matrix multiplication exponent omega=2",
-      "execution_rank": 14,
+      "execution_rank": 15,
       "execution_score": 90,
       "baseline_rank": 21,
       "stage": "benchmark_reproduced",
@@ -3301,7 +3368,7 @@
     {
       "problem_id": "M019",
       "name": "Erdős–Straus conjecture",
-      "execution_rank": 15,
+      "execution_rank": 16,
       "execution_score": 89,
       "baseline_rank": 27,
       "stage": "benchmark_reproduced",
@@ -3313,7 +3380,7 @@
     {
       "problem_id": "M095",
       "name": "Exact Ramsey number R(5,5)",
-      "execution_rank": 18,
+      "execution_rank": 19,
       "execution_score": 89,
       "baseline_rank": 28,
       "stage": "benchmark_reproduced",

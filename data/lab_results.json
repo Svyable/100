@@ -629,6 +629,44 @@
           "d3_overlap": "1/4"
         }
       },
+      "sidorenko": {
+        "certificate_sha256": "0e921e72ed2cd1584dff39e96153f462405d8bacfd34e15d7131b763bbe4e199",
+        "engines": [
+          "graph_homomorphisms",
+          "graph_census"
+        ],
+        "holds": true,
+        "level": "deep",
+        "params": {
+          "max_host": 7
+        },
+        "probe": "sidorenko",
+        "problem_id": "M073",
+        "scope": "t(H,G) >= t(K2,G)^e(H) for every graph G on 1..7 vertices and H in {K_{5,5} minus C_10, C4, C6, K_{3,3}, P4}.",
+        "summary": {
+          "C4": {
+            "hosts": 1252,
+            "min_ratio": "217/216"
+          },
+          "C6": {
+            "hosts": 1252,
+            "min_ratio": "7777/7776"
+          },
+          "K33": {
+            "hosts": 1252,
+            "min_ratio": "1755131/1679616"
+          },
+          "K55_minus_C10": {
+            "hosts": 1252,
+            "min_ratio": "26769500513/26121388032"
+          },
+          "P4": {
+            "hosts": 1252,
+            "min_ratio": "1/1"
+          },
+          "certificate_sha256": "0e921e72ed2cd1584dff39e96153f462405d8bacfd34e15d7131b763bbe4e199"
+        }
+      },
       "strassen": {
         "certificate_sha256": "9b0f284202bb37815dfbc33930d30c8e061e0c360015e999f0b45c81bfa80ef2",
         "engines": [
@@ -1068,6 +1106,44 @@
           "d2_overlap": "1/3",
           "d3_fiducials_in_alphabet": 108,
           "d3_overlap": "1/4"
+        }
+      },
+      "sidorenko": {
+        "certificate_sha256": "d59b7e6cb2d91343eacb4b0f9501d21f21547fded406dd7249c1e8ab59f7d56f",
+        "engines": [
+          "graph_homomorphisms",
+          "graph_census"
+        ],
+        "holds": true,
+        "level": "smoke",
+        "params": {
+          "max_host": 5
+        },
+        "probe": "sidorenko",
+        "problem_id": "M073",
+        "scope": "t(H,G) >= t(K2,G)^e(H) for every graph G on 1..5 vertices and H in {K_{5,5} minus C_10, C4, C6, K_{3,3}, P4}.",
+        "summary": {
+          "C4": {
+            "hosts": 52,
+            "min_ratio": "65/64"
+          },
+          "C6": {
+            "hosts": 52,
+            "min_ratio": "1025/1024"
+          },
+          "K33": {
+            "hosts": 52,
+            "min_ratio": "75625/65536"
+          },
+          "K55_minus_C10": {
+            "hosts": 52,
+            "min_ratio": "293171875/268435456"
+          },
+          "P4": {
+            "hosts": 52,
+            "min_ratio": "1/1"
+          },
+          "certificate_sha256": "d59b7e6cb2d91343eacb4b0f9501d21f21547fded406dd7249c1e8ab59f7d56f"
         }
       },
       "strassen": {

@@ -42,6 +42,16 @@ Each graph gets a proper t-colouring and a K_t minor model with t branch sets. S
 K_t contains every smaller complete minor, the checker never has to trust a chromatic-number
 computation. **Caveat:** every graph on at most 7 vertices falls under the proved t ≤ 6 theorem.
 
+### M073 — Sidorenko (`sidorenko`, engines `graph_homomorphisms`, `graph_census`)
+For each bipartite pattern H and every host graph G in the census, the probe compares
+t(H,G) with t(K2,G)^e(H) exactly, as hom(H,G)·n^(2e−v) ≥ (2e(G))^e in integers.
+Homomorphisms are counted by enumerating one side of H. The checker recounts them from the other
+side, and the tests cross-check both against full brute-force enumeration on tiny hosts. The
+**proven** controls (C4, C6, K₃,₃, P4) are the reproduced milestone. P4 attains equality on
+regular hosts, as theory predicts. The open pattern K_{5,5}∖C₁₀ is recorded on the same hosts
+as **exploratory falsifier data only** (minimum ratio ≈ 1.0248 over all 1,252 hosts on ≤ 7
+vertices). That is not a result. **Next:** rational step-graphon hosts and exact local search.
+
 ### M078 — Graph reconstruction (`reconstruction`, engine `graph_census`)
 The census is complete because its size matches Burnside's count and its members are pairwise
 non-isomorphic under an independent canonical form. All decks are distinct.
