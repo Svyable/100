@@ -11,6 +11,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - run: python3 scripts/portfolio_triage.py --check
       - run: python3 scripts/rank.py --check
       - run: python3 scripts/build_site.py --check
       - run: python3 scripts/next.py --check
