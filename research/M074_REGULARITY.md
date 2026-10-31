@@ -2,6 +2,13 @@
 
 **Date:** 2026-10-31. **Status:** proved structural reduction plus a reproducible CNF; **not** an UNSAT result and **not** a new resolution of Caccetta–Häggkvist. Mathematical novelty is **not** claimed. This dossier supplements [M074_CH.md](M074_CH.md), [M074_PRIOR_ART.md](M074_PRIOR_ART.md) and the independent compact encoding.
 
+> **Subsequent result (2026-10-31):** [M074_ELEMENTARY_18.md](M074_ELEMENTARY_18.md)
+> closes the finite (18,6) directed-triangle case by an elementary
+> saturated-pivot contradiction. The CNFs and SAT gates in this earlier
+> dossier remain reproducible independent audits, not the only route to
+> a finite proof. Neither the full conjecture nor the fixed-r=6 case
+> at arbitrary orders has been proved here; no novelty is asserted.
+
 ## Hypotheses and exact scope
 
 All digraphs are loopless. In a counterexample to CH at `(18,6)` there is no directed cycle of length 2 or 3. Therefore it is an **oriented** digraph with no directed triangles. We may delete excess outgoing arcs independently for each vertex, leaving exact outdegree 6; this cannot create a directed cycle.
