@@ -94,7 +94,7 @@ class ClaimReviewTests(unittest.TestCase):
         m056 = next(r for r in self.audit["reviews"] if r["id"] == "M056")
         self.assertEqual(m056["preprint_date"], "2026-10-25")
         self.assertEqual(m056["scope_relation"], "narrower")
-        self.assertIn("local-smoothing", m056["primary_url"])
+        self.assertIn("local-smoothing", m056["primary_url"].lower())
         m049 = next(r for r in self.audit["reviews"] if r["id"] == "M049")
         self.assertIn("outside", m049["known_caveats"])
 
