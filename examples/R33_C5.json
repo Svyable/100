@@ -1,0 +1,6 @@
+{
+  "format": "svyable.ramsey.red-edges.v1",
+  "n": 5,
+  "red_edges": [[0, 1], [1, 2], [2, 3], [3, 4], [0, 4]],
+  "note": "C5 edges are red; all other pairs are blue. Demonstrates R(3,3)>5, not any new theorem."
+}
