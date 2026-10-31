@@ -26,7 +26,8 @@
       <nav class="main-nav" aria-label="Primary navigation">
         <a href="#rankings">The 100</a>
         <a href="#campaigns">Campaigns</a>
-        <a href="#method">Method</a>
+        <a href="#workbench">Proof queue</a>
+        <a href="#solved">Solved <span class="nav-count" id="nav-solved-count">0</span></a>
         <a class="nav-source" href="https://github.com/Svyable/100" target="_blank" rel="noopener noreferrer">Source on GitHub <span aria-hidden="true">↗</span></a>
       </nav>
     </header>
@@ -55,11 +56,11 @@
 
       <section class="stats-strip" aria-label="Portfolio snapshot">
         <div class="stat"><strong id="stat-total">100</strong><span>Active candidates</span></div>
-        <div class="stat"><strong id="stat-official">5</strong><span>Officially open</span></div>
-        <div class="stat"><strong id="stat-claims">15</strong><span>Claims needing review</span></div>
-        <div class="stat"><strong>05</strong><span>Research campaigns</span></div>
+        <div class="stat"><strong id="stat-campaigns">5</strong><span>Active proof campaigns</span></div>
+        <div class="stat"><strong id="stat-benchmarks">3</strong><span>Reproduced known results</span></div>
+        <div class="stat"><strong id="stat-solved">0</strong><span>Full resolutions verified</span></div>
       </section>
-      <p class="status-note">* “Active candidate” does not mean independently confirmed unsolved. Status flags distinguish official listings from conjectures still needing literature review.</p>
+      <p class="status-note">* “Active candidate” does not mean independently confirmed unsolved. Status flags distinguish official listings from conjectures still needing literature review; <strong>15 currently have proof claims requiring review.</strong></p>
 
       <section class="rankings section-block" id="rankings" aria-labelledby="rankings-heading">
         <div class="section-heading">
@@ -67,7 +68,7 @@
             <p class="eyebrow">01 / THE PORTFOLIO</p>
             <h2 id="rankings-heading">The ranked <em>100.</em></h2>
           </div>
-          <p>Not a popularity contest. A working research index. Open a problem to see its exact question, first proposed attack, and source status.</p>
+          <p>Two rankings, one standard of proof: execution order reflects verifiable research readiness; editorial rank preserves long-term mathematical significance.</p>
         </div>
         <div class="ranking-panel">
           <div class="filters" role="search" aria-label="Search and filter problems">
@@ -92,7 +93,8 @@
             <div class="filter-select">
               <label for="sort-problems">Order</label>
               <select id="sort-problems">
-                <option value="rank">Portfolio rank</option>
+                <option value="execution">Execution priority</option>
+                <option value="rank">Mathematical significance rank</option>
                 <option value="impact">Impact first</option>
                 <option value="attackability">Attackability first</option>
                 <option value="verifiability">Verifiability first</option>
@@ -106,14 +108,14 @@
             <button class="plain-button" id="reset-filters" type="button">Clear filters <span aria-hidden="true">↺</span></button>
           </div>
           <div class="list-head" aria-hidden="true">
-            <span>RANK / ID</span><span>PROBLEM &amp; DOMAIN</span><span>RESEARCH SCORE</span><span>EVIDENCE</span><span></span>
+            <span>ATTACK RANK / ID</span><span>PROBLEM &amp; DOMAIN</span><span>EXECUTION INDEX</span><span>EVIDENCE</span><span></span>
           </div>
           <div id="problem-list" class="problem-list" aria-live="off">
             <div class="loading-state">Loading 100 questions from the repository’s generated snapshot…</div>
           </div>
           <div class="pagination"><button id="load-more" type="button" class="button button-outline" hidden>Show 20 more questions <span aria-hidden="true">↓</span></button></div>
         </div>
-        <p class="table-footnote">Scores are editorial priorities, <strong>not</strong> probabilities of proof. Records are pulled from a versioned snapshot of <a href="https://github.com/Svyable/100/blob/main/data/problems.json">data/problems.json</a>. <span id="snapshot-date">Source review dates vary.</span></p>
+        <p class="table-footnote">Execution index = editorial score (20–100) + documented readiness (0–10). <strong>Neither score is a probability of proof.</strong> Records are pulled from a versioned snapshot of <a href="https://github.com/Svyable/100/blob/main/data/problems.json">data/problems.json</a>. <span id="snapshot-date">Source review dates vary.</span></p>
       </section>
 
       <section class="campaigns section-block" id="campaigns" aria-labelledby="campaigns-heading">
@@ -169,9 +171,45 @@
         <div class="campaign-foot"><span><span class="little-spark">✳</span> Passing a small-case test is a verified computation, not a proof of an unrestricted conjecture.</span><a href="https://github.com/Svyable/100/issues" target="_blank" rel="noopener noreferrer">View open research issues ↗</a></div>
       </section>
 
+      <section class="workbench section-block" id="workbench" aria-labelledby="workbench-heading">
+        <div class="section-heading">
+          <div><p class="eyebrow">03 / EXECUTION PRIORITIES</p>
+          <h2 id="workbench-heading">The proof <em>queue.</em></h2></div>
+          <p>Concrete hypotheses, proof obligations, falsifiers and next experiments—not another undifferentiated list of grand questions.</p>
+        </div>
+        <div class="engine-intro">
+          <div><span class="engine-kicker">TWO SEPARATE METRICS</span><h3>Ambition × readiness</h3>
+          <p>We preserve the original editorial score, then add at most ten readiness points for documented research briefs, executable checks, reproduced known results, or independently verified restricted theorems.</p></div>
+          <div class="engine-formula">EDITORIAL SCORE <strong>+</strong> VERIFIED READINESS <strong>=</strong> EXECUTION INDEX</div>
+        </div>
+        <div id="execution-queue" class="execution-queue">
+          <p class="loading-state">Loading active proof campaigns…</p>
+        </div>
+        <p class="table-footnote">A baseline verification increases operational readiness, <strong>not</strong> evidence that a new theorem has been proved. <a href="https://github.com/Svyable/100/blob/main/ATTACK_QUEUE.md">Full 100-problem execution queue ↗</a></p>
+      </section>
+
+      <section class="solved section-block" id="solved" aria-labelledby="solved-heading">
+        <div class="section-heading">
+          <div><p class="eyebrow">04 / INDEPENDENTLY CHECKED MATHEMATICS</p>
+          <h2 id="solved-heading">The <em>solved ledger.</em></h2></div>
+          <p>Full proofs and counterexamples enter the archive only after their exact scope survives independent review. A limited-case computation never turns an entire conjecture green.</p>
+        </div>
+        <div class="solved-panel">
+          <div class="solved-panel-head"><span>FULLY RESOLVED FROM THIS PORTFOLIO</span><span id="solved-badge">0 VERIFIED</span></div>
+          <div id="solved-list"><p class="loading-state">Loading the verified resolution archive…</p></div>
+        </div>
+        <div class="benchmark-heading"><div>
+          <span class="eyebrow">REPRODUCIBLE PROGRESS ≠ A NEW SOLUTION</span>
+          <h3>Verified known benchmarks</h3></div>
+          <p>These are executable reproductions of established mathematics. They test the machinery and support further proof search; they do not resolve our open targets.</p>
+        </div>
+        <div id="milestone-list" class="milestone-list"><p class="loading-state">Loading reproducibility milestones…</p></div>
+        <p class="table-footnote">Archive source: <a href="https://github.com/Svyable/100/blob/main/data/solved.json">data/solved.json</a>. Full resolutions require precise theorem scope, cited proof, at least two independent review sources, and a replacement active candidate to retain 100 questions.</p>
+      </section>
+
       <section class="method section-block" id="method" aria-labelledby="method-heading">
         <div class="method-intro">
-          <p class="eyebrow">03 / OUR STANDARD OF EVIDENCE</p>
+          <p class="eyebrow">05 / OUR STANDARD OF EVIDENCE</p>
           <h2 id="method-heading">No breakthroughs<br>by <em>announcement.</em></h2>
           <p>A proof has to establish the stated theorem, survive independent scrutiny, and leave behind enough detail to reproduce the claim. That is the whole point.</p>
           <a class="inline-link" href="https://github.com/Svyable/100/blob/main/docs/RESEARCH_PROTOCOL.md" target="_blank" rel="noopener noreferrer">Read the research protocol ↗</a>
@@ -185,7 +223,7 @@
       </section>
 
       <section class="scoring section-block" aria-labelledby="scoring-heading">
-        <div><p class="eyebrow">04 / RANKING TRANSPARENCY</p><h2 id="scoring-heading">How we <em>prioritize.</em></h2><p>Four editorial factors, each scored 1–5. Ranking changes require a reason and a source; an exciting proof claim does not automatically change evidence status.</p></div>
+        <div><p class="eyebrow">06 / RANKING TRANSPARENCY</p><h2 id="scoring-heading">How we <em>prioritize.</em></h2><p>Four editorial factors, each scored 1–5. The execution queue adds only documented readiness, and neither number predicts when a conjecture will be solved. Only independently verified full resolutions enter the Solved ledger.</p></div>
         <div class="scoring-metrics">
           <div class="metric"><span>Mathematical impact</span><b>30%</b><div class="meter"><i style="width:60%"></i></div></div>
           <div class="metric"><span>Attackability</span><b>30%</b><div class="meter"><i style="width:60%"></i></div></div>
