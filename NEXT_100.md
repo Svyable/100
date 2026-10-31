@@ -11,7 +11,9 @@ real world. Some are research sketches awaiting exact formalization.
 Some may be already proved, false, equivalent to known results, or impossible
 under their stated assumptions. **Do not present them as discoveries.**
 
-The first release seeds **120 editorial hypotheses across 15 domains**.
+The first release seeded **120 editorial hypotheses across 15 domains**. The
+second controlled intake adds **96 distinct hypotheses across 12 new domains**
+(216 total; 27 domains). Changes are submitted as reviewable cohort files.
 The format and statically paginated browser can grow to thousands without
 changing the 100-slot active list. Favor quality over numerical inflation.
 
@@ -20,6 +22,8 @@ changing the 100-slot active list. Favor quality over numerical inflation.
 - `data/next_candidates.json`: seed cohort with immutable `N0001` IDs.
 - `data/next_batches/*.json`: optional additional arrays of candidates. Use
   a fresh batch per intake round so review diffs remain manageable.
+- `data/next_review_queue.json`: a deliberately small cross-domain prior-art
+  queue with bounded first tests and *context-only*, not open-status, sources.
 - `data/next_promotions.json`: immutable provenance records mapping an `N`
   candidate into the active `M` slot it eventually replaces.
 - `scripts/next.py`: schema, duplicate, promotion and active-cap validator;
@@ -30,7 +34,10 @@ changing the 100-slot active list. Favor quality over numerical inflation.
 
 Run `python3 scripts/next.py` after source edits. Run
 `python3 scripts/next.py --check` or `python3 scripts/next.py --top 20`.
-CI checks the generated artifact and browser JavaScript syntax.
+CI checks the generated artifact and browser JavaScript syntax. The
+`--similarity 20` option reports closest lexical pairs for human triage;
+CI rejects highly overlapping titles or statements. Lexical distance
+cannot establish mathematical novelty or independence.
 
 ## Candidate schema and editorial scores
 
@@ -48,6 +55,21 @@ tractability 30%, independent verifiability 25%, cross-domain transfer 15%.
 The discovery index = 6×impact + 6×tractability + 5×verifiability + 3×transfer.
 It is **not** a probability of success, novelty, truth or scientific validity.
 Ties are broken by stable ID. Promotions do not rewrite historical hypotheses.
+
+## Cohort-02 intake and review discipline
+
+- 96 proposals in `data/next_batches/2026-10-cohort-02.json` cover information
+  theory, codes, space, ocean, water, agriculture, transportation, geophysics,
+  computational chemistry, measurement, institutional choice, and education.
+  They diversify mathematical mechanisms and downstream applications.
+- The 12-item queue is **not** a completed status audit. Its institutional links
+  are background starting points, not endorsements of the conjectures.
+  Each item names a research question, a minimum toy experiment, and a literature gap.
+- `scripts/next.py --similarity 20` exposes lexical overlap for review.
+  A matching word set may indicate unrelated problems; semantically equivalent
+  hypotheses can still evade lexical screening. Human review remains necessary.
+- Intake batches should generally contain **50–100 genuinely differentiated**
+  proposals. Hold back redundant ideas and items without two credible spillovers.
 
 ## Intake → active 100
 
