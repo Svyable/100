@@ -36,6 +36,13 @@ class TestPages(unittest.TestCase):
         self.assertEqual(sum(doc["status_counts"].values()), 100)
         self.assertEqual(sorted(p, key=lambda x: (-x["score"],x["id"])), p)
         self.assertTrue(all(20 <= item["score"] <= 100 for item in p))
+        self.assertEqual(sorted(x["execution_rank"] for x in p),list(range(1,101)))
+        self.assertTrue(all(x["execution_score"]==x["score"]+x["readiness"] for x in p))
+        self.assertEqual(len(doc["execution_queue"]),5)
+        self.assertEqual(doc["summary"]["reproduced_known"],3)
+        self.assertEqual(doc["summary"]["fully_solved"],0)
+        self.assertEqual(doc["solved"],[])
+        self.assertEqual(len(doc["milestones"]),3)
 
     def test_static_pages_assets(self):
         docs = ROOT / "docs"
@@ -46,7 +53,9 @@ class TestPages(unittest.TestCase):
         page.feed((docs / "index.html").read_text(encoding="utf-8"))
         self.assertTrue({"rankings", "campaigns", "method", "problem-list",
                          "results-count", "load-more", "search-problems",
-                         "filter-field", "filter-status", "sort-problems"}.issubset(page.ids))
+                         "filter-field", "filter-status", "sort-problems",
+                         "workbench", "execution-queue", "solved", "solved-list",
+                         "stat-solved", "milestone-list", "nav-solved-count"}.issubset(page.ids))
         self.assertIn("./assets/app.js", page.links)
         self.assertIn("./assets/style.css", page.links)
         self.assertIn("./assets/favicon.svg", page.links)

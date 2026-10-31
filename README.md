@@ -3,6 +3,9 @@
 **Purpose:** Preserve, refine, and stack-rank 100 concrete mathematical proof/counterexample targets, looking for results and methods that create new branches of discovery.
 
 - **[Public research dashboard](https://svyable.github.io/100/)** (once GitHub Pages is enabled: [activation guide](docs/PAGES_SETUP.md)) — ranked search, evidence filters, active proof campaigns.
+- **[Execution-priority queue](ATTACK_QUEUE.md)** — evidence-aware ordering of the top 100 with precise proof obligations for active campaigns.
+- **[Solved archive](data/solved.json)** — strict full-resolution ledger, initially empty; known finite benchmarks are kept separate.
+- [Research engine and verification rules](docs/RESEARCH_ENGINE.md) — how results, readiness, rankings and CI interact.
 - [Current rank order](RANKED.md) — deterministic generated ranking of 100 candidates.
 - [Machine-readable registry](data/problems.json) — stable IDs, working questions, first attacks, weighted scores, evidence status and provenance.
 - [Active proof campaigns](research/CAMPAIGNS.md) — precise statements, verifiers and bounded first attacks.
@@ -17,6 +20,8 @@ The initial scores are **editorial judgments, not estimated probabilities of suc
 ```sh
 python3 scripts/rank.py
 python3 scripts/rank.py --check
+python3 scripts/research.py
+python3 scripts/research.py --check
 python3 scripts/build_site.py
 python3 scripts/build_site.py --check
 python3 -m unittest discover -s tests -v
@@ -24,4 +29,4 @@ python3 -m unittest discover -s tests -v
 
 When changing scores or evidence states, include a dated source and a reason in the commit/PR. A Lean-checked result only proves what was *encoded*; inspect whether that exactly matches the claimed conjecture. Never label a problem solved on the basis of an announcement alone.
 
-No ongoing research, tracking, or updates occur automatically unless separately scheduled or implemented.
+The scheduled GitHub workflow reproduces existing finite baselines weekly when GitHub Actions scheduling is enabled. It does not autonomously invent proofs or check the changing research literature.
