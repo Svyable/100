@@ -113,11 +113,11 @@ potentially expensive check.
 
 ## Reproduction and next missing step
 
-\`\`\`sh
+```sh
 python3 scripts/frankl_canonical.py --check
 python3 scripts/frankl_canonical.py --n 5 --limit 30
 python3 -m unittest discover -s tests -p 'test_frankl_canonical.py' -v
-\`\`\`
+```
 
 The first command counts all full-support \(n=5\) labeled families,
 then all orbit classes for \(n\leq4\). The second prints a deterministic
