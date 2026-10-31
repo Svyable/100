@@ -115,6 +115,20 @@ class TamperTests(unittest.TestCase):
         codes[1] = codes[0]
         self.assertRejects(m, params, bad)
 
+    def test_jacobian(self):
+        params = {"max_degree": 2, "bound": 1}
+        m, r = run("jacobian", params)
+        self.assertEqual(r["summary"]["constant_jacobian_maps"], 5)  # identity and four shears (x+y^2, x-y^2, y+x^2, y-x^2)
+        bad = copy.deepcopy(r)
+        bad["certificate"]["maps"][-1]["inverse"][0].append([1, 1, 1])  # wrong inverse
+        self.assertRejects(m, params, bad)
+        bad = copy.deepcopy(r)
+        bad["certificate"]["maps"].pop()  # incomplete census
+        self.assertRejects(m, params, bad)
+        bad = copy.deepcopy(r)
+        bad["holds"] = False  # unverified "counterexample" must be refused
+        self.assertRejects(m, params, bad)
+
     def test_one_third(self):
         params = {"max_n": 5}
         m, r = run("one_third", params)

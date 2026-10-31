@@ -62,6 +62,7 @@ a theorem. Mathematical scope review is different from code correctness.
 | `cyclotomic` | `cyclotomic.py` | M092 |
 | `tensor_certificates` | `tensor.py` | M084 |
 | `symmetry_reduction` | `arcs.py`, `rota.py` | M080, M093 |
+| `polynomial_algebra` | `polyalg.py` | M041 |
 | `clique_search` | `ramsey_witness.py` | M095 |
 
 A probe is a short module containing `PROBE` metadata, `search(params)`, an **independent**

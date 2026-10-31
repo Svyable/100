@@ -43,6 +43,11 @@ ENGINES = {
         "modules": ["scripts/probes/arcs.py", "scripts/probes/rota.py"],
         "use": "Shrinks exhaustive searches by fixing a canonical starting configuration.",
     },
+    "polynomial_algebra": {
+        "name": "Exact sparse bivariate polynomial algebra over Z (composition, Jacobians, grid evaluation)",
+        "modules": ["scripts/probes/polyalg.py"],
+        "use": "Polynomial-map censuses and explicit inverse certificates (Jacobian, Dixmier-type problems).",
+    },
     "clique_search": {
         "name": "Branch-and-bound clique search with exhaustive subset re-check",
         "modules": ["scripts/probes/ramsey_witness.py"],
@@ -57,6 +62,7 @@ PROBES = {
     "hadwiger": "hadwiger",
     "reconstruction": "reconstruction",
     "one_third": "posets",
+    "jacobian": "jacobian",
     "rota": "rota",
     "strassen": "tensor",
     "sic": "sic",

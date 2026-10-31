@@ -17,14 +17,14 @@ counts as a new theorem, and unreviewed claims receive no bonus.
 | 5 | M079 | One-third–two-thirds conjecture | 91 | +7 | 98 | Tabulate the best balance of every poset in the census, identify extremal families near 1/3 and test structural invariants that predict a balanced pair. |
 | 6 | M093 | Linear MDS code main conjecture | 91 | +7 | 98 | Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9. |
 | 7 | M094 | Hadamard matrix conjecture | 91 | +7 | 98 | Implement a Williamson-type search with a circulant-block certificate format and replay order 92 exactly. |
-| 8 | M088 | Deterministic polynomial identity testing | 94 | +2 | 96 | Implement small exact arithmetic circuits and a falsifier that searches for circuits escaping a proposed hitting set. |
-| 9 | M071 | Hadwiger conjecture | 85 | +7 | 92 | Extend the census engine to 8-9 vertices with a faster canonical labeller, then target contraction-critical 7-chromatic graphs where a K7 minor model must be certified. |
-| 10 | M080 | Rota basis conjecture | 85 | +7 | 92 | Quotient instances by the stabiliser of the standard basis so that GF(2)^4 becomes exhaustive, storing one grid certificate per orbit. |
-| 11 | M096 | Projective plane order 12 | 85 | +7 | 92 | Encode order-12 planes with a prescribed collineation as SAT with DRAT proof output, starting from cases the literature already excludes. |
-| 12 | M076 | Erdős–Rado sunflower conjecture | 91 | +0 | 91 | Specify a falsifiable restricted lemma and audit prior art |
-| 13 | M084 | Matrix multiplication exponent omega=2 | 83 | +7 | 90 | Add a JSON import path and a flip-graph rank-reduction search over small formats, with every candidate replayed by the exact checker. |
-| 14 | M019 | Erdős–Straus conjecture | 82 | +7 | 89 | Mine the certificate table for primes n = 1 mod 24, cluster solutions by (x mod n, divisor pattern) and propose parametric identities for symbolic verification. |
-| 15 | M041 | Plane Jacobian conjecture | 89 | +0 | 89 | Specify a falsifiable restricted lemma and audit prior art |
+| 8 | M041 | Plane Jacobian conjecture | 89 | +7 | 96 | Widen coefficient bounds and relax the identity-linear-part normalisation; extend the engine to degree-d leading-form classification, then to the Dixmier (first Weyl algebra) analogue M042. |
+| 9 | M088 | Deterministic polynomial identity testing | 94 | +2 | 96 | Implement small exact arithmetic circuits and a falsifier that searches for circuits escaping a proposed hitting set. |
+| 10 | M071 | Hadwiger conjecture | 85 | +7 | 92 | Extend the census engine to 8-9 vertices with a faster canonical labeller, then target contraction-critical 7-chromatic graphs where a K7 minor model must be certified. |
+| 11 | M080 | Rota basis conjecture | 85 | +7 | 92 | Quotient instances by the stabiliser of the standard basis so that GF(2)^4 becomes exhaustive, storing one grid certificate per orbit. |
+| 12 | M096 | Projective plane order 12 | 85 | +7 | 92 | Encode order-12 planes with a prescribed collineation as SAT with DRAT proof output, starting from cases the literature already excludes. |
+| 13 | M076 | Erdős–Rado sunflower conjecture | 91 | +0 | 91 | Specify a falsifiable restricted lemma and audit prior art |
+| 14 | M084 | Matrix multiplication exponent omega=2 | 83 | +7 | 90 | Add a JSON import path and a flip-graph rank-reduction search over small formats, with every candidate replayed by the exact checker. |
+| 15 | M019 | Erdős–Straus conjecture | 82 | +7 | 89 | Mine the certificate table for primes n = 1 mod 24, cluster solutions by (x mod n, divisor pattern) and propose parametric identities for symbolic verification. |
 | 16 | M042 | Dixmier conjecture A1 | 89 | +0 | 89 | Specify a falsifiable restricted lemma and audit prior art |
 | 17 | M095 | Exact Ramsey number R(5,5) | 82 | +7 | 89 | Import and check the published K42 witness; reproduce a small structural exclusion with a trusted proof checker. |
 | 18 | M072 | Erdős–Hajnal conjecture | 85 | +0 | 85 | Specify a falsifiable restricted lemma and audit prior art |
@@ -194,6 +194,18 @@ counts as a new theorem, and unreviewed claims receive no bonus.
 **Next experiment:** Implement a Williamson-type search with a circulant-block certificate format and replay order 92 exactly.
 
 **Current blocker:** Order 668 is the smallest open case and needs constructions beyond the current engines.
+
+**Stage:** `benchmark_reproduced` · [Dossier](research/LAB_CAMPAIGNS.md)
+
+### M041 — Plane Jacobian conjecture
+
+**Proof obligation:** State a restricted, checkable lemma beyond the proved degree <= 100 range (for example a classification of maps with a fixed Newton polygon or fixed leading-form structure) that is absent from the literature.
+
+**Falsifier:** A map with constant nonzero Jacobian and a certified proof that no polynomial inverse exists (for example via a non-injectivity witness F(p) = F(q), p != q).
+
+**Next experiment:** Widen coefficient bounds and relax the identity-linear-part normalisation; extend the engine to degree-d leading-form classification, then to the Dixmier (first Weyl algebra) analogue M042.
+
+**Current blocker:** Every map a naive coefficient census reaches is inside the proved degree <= 100 range; a counterexample would need an injectivity-failure witness, not just a failed inverse search.
 
 **Stage:** `benchmark_reproduced` · [Dossier](research/LAB_CAMPAIGNS.md)
 

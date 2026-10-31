@@ -37,6 +37,14 @@ Gives an explicit triple for every n, found with a divisor solver for 1/y + 1/z 
 tests only the identity 4xyz = n(xy + yz + zx). **Next:** mine solutions for primes n ≡ 1 (mod 24)
 to look for parametric identities.
 
+### M041 — Plane Jacobian conjecture (`jacobian`, engine `polynomial_algebra`)
+Enumerates every map (x+f, y+g) with f, g of total degree 2..d and bounded coefficients, keeps those
+with Jacobian identically 1, and certifies each with an explicit polynomial inverse. The search prunes
+layer by layer on exact coefficients; the checker re-derives the census by brute force on a unisolvent
+integer grid and verifies inverses by integer evaluation in both composition orders.
+**Caveats:** the identity linear part is a normalisation, and every map in range is already covered by
+the proved degree ≤ 100 theorem. A failed inverse search is never reported as a counterexample.
+
 ### M071 — Hadwiger (`hadwiger`, engine `graph_census`)
 Each graph gets a proper t-colouring and a K_t minor model with t branch sets. Since χ ≤ t, and
 K_t contains every smaller complete minor, the checker never has to trust a chromatic-number

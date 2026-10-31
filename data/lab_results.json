@@ -194,6 +194,30 @@
           "graphs_certified": 1252
         }
       },
+      "jacobian": {
+        "certificate_sha256": "417f056796123dd4bf298bd68384894648add6a5efb0bf0ec29998c552e49b14",
+        "engines": [
+          "polynomial_algebra"
+        ],
+        "holds": true,
+        "level": "deep",
+        "params": {
+          "bound": 1,
+          "max_degree": 3
+        },
+        "probe": "jacobian",
+        "problem_id": "M041",
+        "scope": "Every map (x+f, y+g) with f, g of total degree 2..3, coefficients in [-1, 1] and constant Jacobian 1 has an explicit polynomial inverse (complete census of all 4,782,969 candidate maps).",
+        "summary": {
+          "bound": 1,
+          "candidates": 4782969,
+          "constant_jacobian_maps": 17,
+          "maps_sha256": "1144b5c308c880d79244c03c73a3cee0a8bb7d2d5b4ff3a85162d8d6c75b025e",
+          "max_degree": 3,
+          "max_inverse_degree": 3,
+          "nontrivial_maps": 16
+        }
+      },
       "mds_arcs": {
         "certificate_sha256": "c91322d26a67ede8745369a9995743c9f53be49aeca2c75285d4566d82639a4e",
         "engines": [
@@ -755,6 +779,30 @@
           },
           "certificate_sha256": "108fe9f19d66a0fa7c259e2e4209d930f0c3047efa65e91a038be5f7bc6f1327",
           "graphs_certified": 208
+        }
+      },
+      "jacobian": {
+        "certificate_sha256": "956368a534a24958ce79e608d2d07bb7a8853efa037a0f189623c58aa11c5f7b",
+        "engines": [
+          "polynomial_algebra"
+        ],
+        "holds": true,
+        "level": "smoke",
+        "params": {
+          "bound": 2,
+          "max_degree": 2
+        },
+        "probe": "jacobian",
+        "problem_id": "M041",
+        "scope": "Every map (x+f, y+g) with f, g of total degree 2..2, coefficients in [-2, 2] and constant Jacobian 1 has an explicit polynomial inverse (complete census of all 15,625 candidate maps).",
+        "summary": {
+          "bound": 2,
+          "candidates": 15625,
+          "constant_jacobian_maps": 13,
+          "maps_sha256": "506df4d79ee45e28ba9920ea40966225bf0fca94e4c1a9e852e279d9b47438d3",
+          "max_degree": 2,
+          "max_inverse_degree": 2,
+          "nontrivial_maps": 12
         }
       },
       "mds_arcs": {

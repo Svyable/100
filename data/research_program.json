@@ -39,6 +39,18 @@
       "verifier": "python3 scripts/lab.py --probe hadwiger"
     },
     {
+      "problem_id": "M041",
+      "stage": "benchmark_reproduced",
+      "method": "Exhaustive census of low-degree plane maps (x+f, y+g) with constant Jacobian and explicit polynomial inverse certificates",
+      "hypothesis": "Every polynomial map C^2 -> C^2 with constant nonzero Jacobian determinant has a polynomial inverse.",
+      "first_proof_obligation": "State a restricted, checkable lemma beyond the proved degree <= 100 range (for example a classification of maps with a fixed Newton polygon or fixed leading-form structure) that is absent from the literature.",
+      "next_experiment": "Widen coefficient bounds and relax the identity-linear-part normalisation; extend the engine to degree-d leading-form classification, then to the Dixmier (first Weyl algebra) analogue M042.",
+      "falsification": "A map with constant nonzero Jacobian and a certified proof that no polynomial inverse exists (for example via a non-injectivity witness F(p) = F(q), p != q).",
+      "blocker": "Every map a naive coefficient census reaches is inside the proved degree <= 100 range; a counterexample would need an injectivity-failure witness, not just a failed inverse search.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe jacobian"
+    },
+    {
       "problem_id": "M074",
       "stage": "benchmark_reproduced",
       "method": "Directed graph extremal search",
@@ -251,6 +263,17 @@
       "description": "Each graph carries a proper t-colouring and a K_t minor model (t = chromatic number); the census is complete by Burnside counting. Deep run: all 1,252 graphs on <= 7 vertices.",
       "verifier": "python3 scripts/lab.py --probe hadwiger",
       "artifact": "scripts/probes/hadwiger.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-JACOBIAN-001",
+      "problem_id": "M041",
+      "classification": "reproduced_known",
+      "title": "Plane Jacobian maps (x+f, y+g) of degree <= 3 with coefficients in [-1,1]: complete census, every map has an explicit inverse",
+      "scope": "Known case (Wang 1980 for degree <= 2; Moh 1983 for degree <= 100); not new",
+      "description": "Every constant-Jacobian map in the box is found by layered exact pruning and confirmed by an independent brute-force grid census; each inverse is verified by integer evaluation in both directions. Deep run: 17 maps among 4,782,969 candidates.",
+      "verifier": "python3 scripts/lab.py --probe jacobian",
+      "artifact": "scripts/probes/jacobian.py",
       "verified_on": "2026-10-31"
     },
     {
