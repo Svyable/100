@@ -19,5 +19,9 @@ jobs:
         run: python3 scripts/union_closed.py exhaustive --n 4
       - name: Exact directed-graph benchmark
         run: python3 scripts/digraph.py exhaustive --n 4
+      - name: Symmetry-certified five-vertex directed-graph census
+        run: python3 scripts/digraph_orbits.py --n 5
+      - name: Reproduce exact 18-vertex SAT encoding hash and small-model equivalence
+        run: python3 -m unittest discover -s tests -p "test_ch_sat.py" -v
       - name: Check research ledger and execution queue
         run: python3 scripts/research.py --check
