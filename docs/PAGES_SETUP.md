@@ -34,7 +34,7 @@ python3 -m unittest discover -s tests -v
 Commit `RANKED.md` and `docs/data/portfolio.json` with the source data.
 The existing validation workflow fails on a stale generated artifact.
 
-## Features and boundaries
+The standalone [Next 100](https://svyable.github.io/100/next/) explorer uses\n`docs/next/` and the generated `docs/data/next.json` snapshot. Refresh it with\n`python3 scripts/next.py`; CI validates its snapshot and JavaScript.\n\n## Features and boundaries
 
 - Full 100-entry client-side explorer: search, field/evidence filter, ranking sort,
   detailed open questions, score breakdown, source links, and deep links by ID.

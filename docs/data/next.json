@@ -1,8 +1,10 @@
 {
   "title": "Next 100 — hypothesis reservoir",
-  "source": "data/next_candidates.json",
+  "source": "data/next_candidates.json + data/next_batches/*.json",
   "seeded_as_of": "2026-10-31",
   "count": 120,
+  "available_count": 120,
+  "promoted_count": 0,
   "score_description": "Editorial discovery priority, not a probability of truth or proof",
   "scoring": {
     "impact": 30,
@@ -31,6 +33,7 @@
     "Physics and materials",
     "Probability and statistics"
   ],
+  "promotions": [],
   "candidates": [
     {
       "id": "N0025",
@@ -53,7 +56,8 @@
         "transfer": 5
       },
       "score": 100,
-      "discovery_rank": 1
+      "discovery_rank": 1,
+      "promoted_to": null
     },
     {
       "id": "N0029",
@@ -76,7 +80,8 @@
         "transfer": 5
       },
       "score": 100,
-      "discovery_rank": 2
+      "discovery_rank": 2,
+      "promoted_to": null
     },
     {
       "id": "N0030",
@@ -99,7 +104,8 @@
         "transfer": 5
       },
       "score": 100,
-      "discovery_rank": 3
+      "discovery_rank": 3,
+      "promoted_to": null
     },
     {
       "id": "N0033",
@@ -122,7 +128,8 @@
         "transfer": 5
       },
       "score": 100,
-      "discovery_rank": 4
+      "discovery_rank": 4,
+      "promoted_to": null
     },
     {
       "id": "N0045",
@@ -145,7 +152,8 @@
         "transfer": 5
       },
       "score": 100,
-      "discovery_rank": 5
+      "discovery_rank": 5,
+      "promoted_to": null
     },
     {
       "id": "N0057",
@@ -168,7 +176,8 @@
         "transfer": 5
       },
       "score": 100,
-      "discovery_rank": 6
+      "discovery_rank": 6,
+      "promoted_to": null
     },
     {
       "id": "N0060",
@@ -191,7 +200,8 @@
         "transfer": 5
       },
       "score": 100,
-      "discovery_rank": 7
+      "discovery_rank": 7,
+      "promoted_to": null
     },
     {
       "id": "N0065",
@@ -214,7 +224,8 @@
         "transfer": 5
       },
       "score": 100,
-      "discovery_rank": 8
+      "discovery_rank": 8,
+      "promoted_to": null
     },
     {
       "id": "N0066",
@@ -237,7 +248,8 @@
         "transfer": 5
       },
       "score": 100,
-      "discovery_rank": 9
+      "discovery_rank": 9,
+      "promoted_to": null
     },
     {
       "id": "N0069",
@@ -260,7 +272,8 @@
         "transfer": 5
       },
       "score": 100,
-      "discovery_rank": 10
+      "discovery_rank": 10,
+      "promoted_to": null
     },
     {
       "id": "N0074",
@@ -283,7 +296,8 @@
         "transfer": 5
       },
       "score": 100,
-      "discovery_rank": 11
+      "discovery_rank": 11,
+      "promoted_to": null
     },
     {
       "id": "N0077",
@@ -306,7 +320,8 @@
         "transfer": 5
       },
       "score": 100,
-      "discovery_rank": 12
+      "discovery_rank": 12,
+      "promoted_to": null
     },
     {
       "id": "N0082",
@@ -329,7 +344,8 @@
         "transfer": 5
       },
       "score": 100,
-      "discovery_rank": 13
+      "discovery_rank": 13,
+      "promoted_to": null
     },
     {
       "id": "N0084",
@@ -352,7 +368,8 @@
         "transfer": 5
       },
       "score": 100,
-      "discovery_rank": 14
+      "discovery_rank": 14,
+      "promoted_to": null
     },
     {
       "id": "N0109",
@@ -375,7 +392,8 @@
         "transfer": 5
       },
       "score": 100,
-      "discovery_rank": 15
+      "discovery_rank": 15,
+      "promoted_to": null
     },
     {
       "id": "N0113",
@@ -398,7 +416,8 @@
         "transfer": 5
       },
       "score": 100,
-      "discovery_rank": 16
+      "discovery_rank": 16,
+      "promoted_to": null
     },
     {
       "id": "N0115",
@@ -421,7 +440,8 @@
         "transfer": 5
       },
       "score": 100,
-      "discovery_rank": 17
+      "discovery_rank": 17,
+      "promoted_to": null
     },
     {
       "id": "N0117",
@@ -444,7 +464,8 @@
         "transfer": 5
       },
       "score": 100,
-      "discovery_rank": 18
+      "discovery_rank": 18,
+      "promoted_to": null
     },
     {
       "id": "N0055",
@@ -467,7 +488,8 @@
         "transfer": 5
       },
       "score": 95,
-      "discovery_rank": 19
+      "discovery_rank": 19,
+      "promoted_to": null
     },
     {
       "id": "N0081",
@@ -490,7 +512,8 @@
         "transfer": 5
       },
       "score": 95,
-      "discovery_rank": 20
+      "discovery_rank": 20,
+      "promoted_to": null
     },
     {
       "id": "N0083",
@@ -513,7 +536,8 @@
         "transfer": 5
       },
       "score": 95,
-      "discovery_rank": 21
+      "discovery_rank": 21,
+      "promoted_to": null
     },
     {
       "id": "N0004",
@@ -536,7 +560,8 @@
         "transfer": 5
       },
       "score": 94,
-      "discovery_rank": 22
+      "discovery_rank": 22,
+      "promoted_to": null
     },
     {
       "id": "N0009",
@@ -559,7 +584,8 @@
         "transfer": 5
       },
       "score": 94,
-      "discovery_rank": 23
+      "discovery_rank": 23,
+      "promoted_to": null
     },
     {
       "id": "N0015",
@@ -582,7 +608,8 @@
         "transfer": 5
       },
       "score": 94,
-      "discovery_rank": 24
+      "discovery_rank": 24,
+      "promoted_to": null
     },
     {
       "id": "N0018",
@@ -605,7 +632,8 @@
         "transfer": 5
       },
       "score": 94,
-      "discovery_rank": 25
+      "discovery_rank": 25,
+      "promoted_to": null
     },
     {
       "id": "N0026",
@@ -628,7 +656,8 @@
         "transfer": 5
       },
       "score": 94,
-      "discovery_rank": 26
+      "discovery_rank": 26,
+      "promoted_to": null
     },
     {
       "id": "N0041",
@@ -651,7 +680,8 @@
         "transfer": 5
       },
       "score": 94,
-      "discovery_rank": 27
+      "discovery_rank": 27,
+      "promoted_to": null
     },
     {
       "id": "N0049",
@@ -674,7 +704,8 @@
         "transfer": 5
       },
       "score": 94,
-      "discovery_rank": 28
+      "discovery_rank": 28,
+      "promoted_to": null
     },
     {
       "id": "N0061",
@@ -697,7 +728,8 @@
         "transfer": 5
       },
       "score": 94,
-      "discovery_rank": 29
+      "discovery_rank": 29,
+      "promoted_to": null
     },
     {
       "id": "N0073",
@@ -720,7 +752,8 @@
         "transfer": 5
       },
       "score": 94,
-      "discovery_rank": 30
+      "discovery_rank": 30,
+      "promoted_to": null
     },
     {
       "id": "N0075",
@@ -743,7 +776,8 @@
         "transfer": 5
       },
       "score": 94,
-      "discovery_rank": 31
+      "discovery_rank": 31,
+      "promoted_to": null
     },
     {
       "id": "N0103",
@@ -766,7 +800,8 @@
         "transfer": 5
       },
       "score": 94,
-      "discovery_rank": 32
+      "discovery_rank": 32,
+      "promoted_to": null
     },
     {
       "id": "N0106",
@@ -789,7 +824,8 @@
         "transfer": 5
       },
       "score": 94,
-      "discovery_rank": 33
+      "discovery_rank": 33,
+      "promoted_to": null
     },
     {
       "id": "N0003",
@@ -812,7 +848,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 34
+      "discovery_rank": 34,
+      "promoted_to": null
     },
     {
       "id": "N0006",
@@ -835,7 +872,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 35
+      "discovery_rank": 35,
+      "promoted_to": null
     },
     {
       "id": "N0010",
@@ -858,7 +896,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 36
+      "discovery_rank": 36,
+      "promoted_to": null
     },
     {
       "id": "N0011",
@@ -881,7 +920,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 37
+      "discovery_rank": 37,
+      "promoted_to": null
     },
     {
       "id": "N0012",
@@ -904,7 +944,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 38
+      "discovery_rank": 38,
+      "promoted_to": null
     },
     {
       "id": "N0013",
@@ -927,7 +968,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 39
+      "discovery_rank": 39,
+      "promoted_to": null
     },
     {
       "id": "N0017",
@@ -950,7 +992,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 40
+      "discovery_rank": 40,
+      "promoted_to": null
     },
     {
       "id": "N0022",
@@ -973,7 +1016,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 41
+      "discovery_rank": 41,
+      "promoted_to": null
     },
     {
       "id": "N0023",
@@ -996,7 +1040,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 42
+      "discovery_rank": 42,
+      "promoted_to": null
     },
     {
       "id": "N0027",
@@ -1019,7 +1064,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 43
+      "discovery_rank": 43,
+      "promoted_to": null
     },
     {
       "id": "N0028",
@@ -1042,7 +1088,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 44
+      "discovery_rank": 44,
+      "promoted_to": null
     },
     {
       "id": "N0032",
@@ -1065,7 +1112,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 45
+      "discovery_rank": 45,
+      "promoted_to": null
     },
     {
       "id": "N0034",
@@ -1088,7 +1136,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 46
+      "discovery_rank": 46,
+      "promoted_to": null
     },
     {
       "id": "N0035",
@@ -1111,7 +1160,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 47
+      "discovery_rank": 47,
+      "promoted_to": null
     },
     {
       "id": "N0036",
@@ -1134,7 +1184,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 48
+      "discovery_rank": 48,
+      "promoted_to": null
     },
     {
       "id": "N0037",
@@ -1157,7 +1208,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 49
+      "discovery_rank": 49,
+      "promoted_to": null
     },
     {
       "id": "N0038",
@@ -1180,7 +1232,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 50
+      "discovery_rank": 50,
+      "promoted_to": null
     },
     {
       "id": "N0039",
@@ -1203,7 +1256,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 51
+      "discovery_rank": 51,
+      "promoted_to": null
     },
     {
       "id": "N0042",
@@ -1226,7 +1280,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 52
+      "discovery_rank": 52,
+      "promoted_to": null
     },
     {
       "id": "N0044",
@@ -1249,7 +1304,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 53
+      "discovery_rank": 53,
+      "promoted_to": null
     },
     {
       "id": "N0046",
@@ -1272,7 +1328,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 54
+      "discovery_rank": 54,
+      "promoted_to": null
     },
     {
       "id": "N0048",
@@ -1295,7 +1352,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 55
+      "discovery_rank": 55,
+      "promoted_to": null
     },
     {
       "id": "N0050",
@@ -1318,7 +1376,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 56
+      "discovery_rank": 56,
+      "promoted_to": null
     },
     {
       "id": "N0051",
@@ -1341,7 +1400,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 57
+      "discovery_rank": 57,
+      "promoted_to": null
     },
     {
       "id": "N0052",
@@ -1364,7 +1424,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 58
+      "discovery_rank": 58,
+      "promoted_to": null
     },
     {
       "id": "N0053",
@@ -1387,7 +1448,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 59
+      "discovery_rank": 59,
+      "promoted_to": null
     },
     {
       "id": "N0054",
@@ -1410,7 +1472,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 60
+      "discovery_rank": 60,
+      "promoted_to": null
     },
     {
       "id": "N0058",
@@ -1433,7 +1496,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 61
+      "discovery_rank": 61,
+      "promoted_to": null
     },
     {
       "id": "N0059",
@@ -1456,7 +1520,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 62
+      "discovery_rank": 62,
+      "promoted_to": null
     },
     {
       "id": "N0062",
@@ -1479,7 +1544,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 63
+      "discovery_rank": 63,
+      "promoted_to": null
     },
     {
       "id": "N0063",
@@ -1502,7 +1568,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 64
+      "discovery_rank": 64,
+      "promoted_to": null
     },
     {
       "id": "N0064",
@@ -1525,7 +1592,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 65
+      "discovery_rank": 65,
+      "promoted_to": null
     },
     {
       "id": "N0067",
@@ -1548,7 +1616,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 66
+      "discovery_rank": 66,
+      "promoted_to": null
     },
     {
       "id": "N0068",
@@ -1571,7 +1640,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 67
+      "discovery_rank": 67,
+      "promoted_to": null
     },
     {
       "id": "N0070",
@@ -1594,7 +1664,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 68
+      "discovery_rank": 68,
+      "promoted_to": null
     },
     {
       "id": "N0071",
@@ -1617,7 +1688,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 69
+      "discovery_rank": 69,
+      "promoted_to": null
     },
     {
       "id": "N0072",
@@ -1640,7 +1712,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 70
+      "discovery_rank": 70,
+      "promoted_to": null
     },
     {
       "id": "N0076",
@@ -1663,7 +1736,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 71
+      "discovery_rank": 71,
+      "promoted_to": null
     },
     {
       "id": "N0078",
@@ -1686,7 +1760,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 72
+      "discovery_rank": 72,
+      "promoted_to": null
     },
     {
       "id": "N0080",
@@ -1709,7 +1784,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 73
+      "discovery_rank": 73,
+      "promoted_to": null
     },
     {
       "id": "N0085",
@@ -1732,7 +1808,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 74
+      "discovery_rank": 74,
+      "promoted_to": null
     },
     {
       "id": "N0086",
@@ -1755,7 +1832,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 75
+      "discovery_rank": 75,
+      "promoted_to": null
     },
     {
       "id": "N0087",
@@ -1778,7 +1856,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 76
+      "discovery_rank": 76,
+      "promoted_to": null
     },
     {
       "id": "N0088",
@@ -1801,7 +1880,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 77
+      "discovery_rank": 77,
+      "promoted_to": null
     },
     {
       "id": "N0089",
@@ -1824,7 +1904,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 78
+      "discovery_rank": 78,
+      "promoted_to": null
     },
     {
       "id": "N0090",
@@ -1847,7 +1928,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 79
+      "discovery_rank": 79,
+      "promoted_to": null
     },
     {
       "id": "N0091",
@@ -1870,7 +1952,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 80
+      "discovery_rank": 80,
+      "promoted_to": null
     },
     {
       "id": "N0093",
@@ -1893,7 +1976,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 81
+      "discovery_rank": 81,
+      "promoted_to": null
     },
     {
       "id": "N0094",
@@ -1916,7 +2000,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 82
+      "discovery_rank": 82,
+      "promoted_to": null
     },
     {
       "id": "N0095",
@@ -1939,7 +2024,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 83
+      "discovery_rank": 83,
+      "promoted_to": null
     },
     {
       "id": "N0097",
@@ -1962,7 +2048,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 84
+      "discovery_rank": 84,
+      "promoted_to": null
     },
     {
       "id": "N0098",
@@ -1985,7 +2072,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 85
+      "discovery_rank": 85,
+      "promoted_to": null
     },
     {
       "id": "N0099",
@@ -2008,7 +2096,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 86
+      "discovery_rank": 86,
+      "promoted_to": null
     },
     {
       "id": "N0100",
@@ -2031,7 +2120,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 87
+      "discovery_rank": 87,
+      "promoted_to": null
     },
     {
       "id": "N0101",
@@ -2054,7 +2144,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 88
+      "discovery_rank": 88,
+      "promoted_to": null
     },
     {
       "id": "N0102",
@@ -2077,7 +2168,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 89
+      "discovery_rank": 89,
+      "promoted_to": null
     },
     {
       "id": "N0104",
@@ -2100,7 +2192,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 90
+      "discovery_rank": 90,
+      "promoted_to": null
     },
     {
       "id": "N0105",
@@ -2123,7 +2216,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 91
+      "discovery_rank": 91,
+      "promoted_to": null
     },
     {
       "id": "N0107",
@@ -2146,7 +2240,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 92
+      "discovery_rank": 92,
+      "promoted_to": null
     },
     {
       "id": "N0108",
@@ -2169,7 +2264,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 93
+      "discovery_rank": 93,
+      "promoted_to": null
     },
     {
       "id": "N0110",
@@ -2192,7 +2288,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 94
+      "discovery_rank": 94,
+      "promoted_to": null
     },
     {
       "id": "N0111",
@@ -2215,7 +2312,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 95
+      "discovery_rank": 95,
+      "promoted_to": null
     },
     {
       "id": "N0114",
@@ -2238,7 +2336,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 96
+      "discovery_rank": 96,
+      "promoted_to": null
     },
     {
       "id": "N0116",
@@ -2261,7 +2360,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 97
+      "discovery_rank": 97,
+      "promoted_to": null
     },
     {
       "id": "N0118",
@@ -2284,7 +2384,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 98
+      "discovery_rank": 98,
+      "promoted_to": null
     },
     {
       "id": "N0119",
@@ -2307,7 +2408,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 99
+      "discovery_rank": 99,
+      "promoted_to": null
     },
     {
       "id": "N0120",
@@ -2330,7 +2432,8 @@
         "transfer": 5
       },
       "score": 89,
-      "discovery_rank": 100
+      "discovery_rank": 100,
+      "promoted_to": null
     },
     {
       "id": "N0008",
@@ -2353,7 +2456,8 @@
         "transfer": 4
       },
       "score": 85,
-      "discovery_rank": 101
+      "discovery_rank": 101,
+      "promoted_to": null
     },
     {
       "id": "N0005",
@@ -2376,7 +2480,8 @@
         "transfer": 5
       },
       "score": 83,
-      "discovery_rank": 102
+      "discovery_rank": 102,
+      "promoted_to": null
     },
     {
       "id": "N0007",
@@ -2399,7 +2504,8 @@
         "transfer": 5
       },
       "score": 83,
-      "discovery_rank": 103
+      "discovery_rank": 103,
+      "promoted_to": null
     },
     {
       "id": "N0014",
@@ -2422,7 +2528,8 @@
         "transfer": 5
       },
       "score": 83,
-      "discovery_rank": 104
+      "discovery_rank": 104,
+      "promoted_to": null
     },
     {
       "id": "N0016",
@@ -2445,7 +2552,8 @@
         "transfer": 5
       },
       "score": 83,
-      "discovery_rank": 105
+      "discovery_rank": 105,
+      "promoted_to": null
     },
     {
       "id": "N0019",
@@ -2468,7 +2576,8 @@
         "transfer": 5
       },
       "score": 83,
-      "discovery_rank": 106
+      "discovery_rank": 106,
+      "promoted_to": null
     },
     {
       "id": "N0021",
@@ -2491,7 +2600,8 @@
         "transfer": 5
       },
       "score": 83,
-      "discovery_rank": 107
+      "discovery_rank": 107,
+      "promoted_to": null
     },
     {
       "id": "N0031",
@@ -2514,7 +2624,8 @@
         "transfer": 5
       },
       "score": 83,
-      "discovery_rank": 108
+      "discovery_rank": 108,
+      "promoted_to": null
     },
     {
       "id": "N0040",
@@ -2537,7 +2648,8 @@
         "transfer": 5
       },
       "score": 83,
-      "discovery_rank": 109
+      "discovery_rank": 109,
+      "promoted_to": null
     },
     {
       "id": "N0043",
@@ -2560,7 +2672,8 @@
         "transfer": 5
       },
       "score": 83,
-      "discovery_rank": 110
+      "discovery_rank": 110,
+      "promoted_to": null
     },
     {
       "id": "N0047",
@@ -2583,7 +2696,8 @@
         "transfer": 5
       },
       "score": 83,
-      "discovery_rank": 111
+      "discovery_rank": 111,
+      "promoted_to": null
     },
     {
       "id": "N0056",
@@ -2606,7 +2720,8 @@
         "transfer": 5
       },
       "score": 83,
-      "discovery_rank": 112
+      "discovery_rank": 112,
+      "promoted_to": null
     },
     {
       "id": "N0079",
@@ -2629,7 +2744,8 @@
         "transfer": 5
       },
       "score": 83,
-      "discovery_rank": 113
+      "discovery_rank": 113,
+      "promoted_to": null
     },
     {
       "id": "N0092",
@@ -2652,7 +2768,8 @@
         "transfer": 5
       },
       "score": 83,
-      "discovery_rank": 114
+      "discovery_rank": 114,
+      "promoted_to": null
     },
     {
       "id": "N0096",
@@ -2675,7 +2792,8 @@
         "transfer": 5
       },
       "score": 83,
-      "discovery_rank": 115
+      "discovery_rank": 115,
+      "promoted_to": null
     },
     {
       "id": "N0112",
@@ -2698,7 +2816,8 @@
         "transfer": 5
       },
       "score": 83,
-      "discovery_rank": 116
+      "discovery_rank": 116,
+      "promoted_to": null
     },
     {
       "id": "N0001",
@@ -2721,7 +2840,8 @@
         "transfer": 5
       },
       "score": 82,
-      "discovery_rank": 117
+      "discovery_rank": 117,
+      "promoted_to": null
     },
     {
       "id": "N0020",
@@ -2744,7 +2864,8 @@
         "transfer": 5
       },
       "score": 78,
-      "discovery_rank": 118
+      "discovery_rank": 118,
+      "promoted_to": null
     },
     {
       "id": "N0002",
@@ -2767,7 +2888,8 @@
         "transfer": 5
       },
       "score": 77,
-      "discovery_rank": 119
+      "discovery_rank": 119,
+      "promoted_to": null
     },
     {
       "id": "N0024",
@@ -2790,7 +2912,8 @@
         "transfer": 4
       },
       "score": 75,
-      "discovery_rank": 120
+      "discovery_rank": 120,
+      "promoted_to": null
     }
   ]
 }
