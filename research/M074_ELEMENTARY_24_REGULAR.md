@@ -16,7 +16,7 @@ Let H be a directed-triangle-free oriented graph on eight vertices with minimum 
 2. The total number of arcs of H is at most **23**.
 3. No such graph has minimum outdegree at least three.
 
-**Proof.** Fix a vertex, with outdegree a and indegree b; set A=N+(v) and C=V(H)\\(A∪N-(v)∪{v}). For k=2 or 3, if every vertex has outdegree at least k, then each vertex of A sends at least k arcs to A∪C. Because H has neither digons nor directed triangles,
+**Proof.** Fix a vertex, with outdegree a and indegree b; set A=N+(v) and C the vertices outside A, N-(v), and v. For k=2 or 3, if every vertex has outdegree at least k, then each vertex of A sends at least k arcs to A∪C. Because H has neither digons nor directed triangles,
 
     k a <= e(A,A) + e(A,C)
         <= a(a-1)/2 + a(7-a-b),
@@ -27,7 +27,7 @@ For k=3 this forces b<=2 (since a>=3), contrary to average indegree at least thr
 
 ### Lemma 2 — cross-cut edge demand in any regular 3r-vertex candidate
 
-Suppose D is an oriented, directed-triangle-free graph on 3r vertices with every indegree and outdegree equal to r. Fix a root v. Put A=N+(v), B=N-(v), C=V\\(A∪B∪{v}), so |A|=|B|=r and |C|=r-1. Set
+Suppose D is an oriented, directed-triangle-free graph on 3r vertices with every indegree and outdegree equal to r. Fix a root v. Put A=N+(v), B=N-(v), C the remaining vertices, so |A|=|B|=r and |C|=r-1. Set
 
 - α(a)=outdegree of a *inside A*, for a∈A;
 - β(b)=indegree of b *inside B*, for b∈B;
