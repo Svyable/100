@@ -48,6 +48,7 @@ class TestPages(unittest.TestCase):
         self.assertEqual(doc["summary"]["exact_probes"], len(lab["probes"]))
         self.assertTrue(all(item["modality"] for item in p))
         self.assertTrue(all(run["holds"] for probe in lab["probes"] for run in probe["runs"].values()))
+        self.assertEqual(len(doc["roadmap"]["items"]), sum(doc["roadmap"]["counts"].values()))
         self.assertTrue(set(lab["covered_problems"]) <= {item["id"] for item in p})
 
     def test_static_pages_assets(self):
@@ -64,7 +65,8 @@ class TestPages(unittest.TestCase):
                          "stat-solved", "milestone-list", "nav-solved-count",
                          "lab", "lab-probe-list", "lab-engine-list", "lab-roadmap",
                          "lab-stat-covered", "lab-stat-computable", "lab-stat-probes",
-                         "lab-stat-engines", "filter-modality"}.issubset(page.ids))
+                         "lab-stat-engines", "filter-modality",
+                         "roadmap", "roadmap-metrics", "roadmap-board", "roadmap-tracks"}.issubset(page.ids))
         self.assertIn("./assets/app.js", page.links)
         self.assertIn("./assets/style.css", page.links)
         self.assertIn("./assets/favicon.svg", page.links)
