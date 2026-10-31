@@ -14,6 +14,20 @@
     "needs_review": 80,
     "official_open": 5
   },
+  "program_as_of": "2026-10-31",
+  "summary": {
+    "campaigns": 5,
+    "reproduced_known": 2,
+    "restricted_verified": 0,
+    "fully_solved": 0
+  },
+  "execution_scoring": {
+    "brief": 2,
+    "runnable_verifier": 3,
+    "known_reproduction": 2,
+    "independently_verified_restricted_theorem": 3,
+    "interpretation": "Operational readiness bonus (0–10), not mathematical proof progress"
+  },
   "problems": [
     {
       "id": "M074",
@@ -29,7 +43,12 @@
       "checked_on": "2026-10-30",
       "source_url": "https://doi.org/10.1016/0012-365X(87)90122-1",
       "rank": 1,
-      "score": 94
+      "score": 94,
+      "execution_rank": 2,
+      "execution_score": 96,
+      "readiness": 2,
+      "campaign_stage": "specified",
+      "milestone_count": 0
     },
     {
       "id": "M088",
@@ -45,7 +64,12 @@
       "checked_on": "2026-10-30",
       "source_url": "https://www.cs.sfu.ca/~kabanets/Research/poly.html",
       "rank": 2,
-      "score": 94
+      "score": 94,
+      "execution_rank": 3,
+      "execution_score": 96,
+      "readiness": 2,
+      "campaign_stage": "specified",
+      "milestone_count": 0
     },
     {
       "id": "M092",
@@ -61,7 +85,12 @@
       "checked_on": "2026-10-30",
       "source_url": "https://papex.org/problems/zauners-conjecture",
       "rank": 3,
-      "score": 94
+      "score": 94,
+      "execution_rank": 4,
+      "execution_score": 96,
+      "readiness": 2,
+      "campaign_stage": "specified",
+      "milestone_count": 0
     },
     {
       "id": "M075",
@@ -77,7 +106,12 @@
       "checked_on": "2026-10-30",
       "source_url": "https://arxiv.org/abs/2610.02295",
       "rank": 4,
-      "score": 91
+      "score": 91,
+      "execution_rank": 1,
+      "execution_score": 98,
+      "readiness": 7,
+      "campaign_stage": "benchmark_reproduced",
+      "milestone_count": 1
     },
     {
       "id": "M076",
@@ -93,7 +127,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 5,
-      "score": 91
+      "score": 91,
+      "execution_rank": 5,
+      "execution_score": 91,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M078",
@@ -109,7 +148,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 6,
-      "score": 91
+      "score": 91,
+      "execution_rank": 6,
+      "execution_score": 91,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M079",
@@ -125,7 +169,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 7,
-      "score": 91
+      "score": 91,
+      "execution_rank": 7,
+      "execution_score": 91,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M093",
@@ -141,7 +190,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 8,
-      "score": 91
+      "score": 91,
+      "execution_rank": 8,
+      "execution_score": 91,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M094",
@@ -157,7 +211,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 9,
-      "score": 91
+      "score": 91,
+      "execution_rank": 9,
+      "execution_score": 91,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M041",
@@ -173,7 +232,12 @@
       "checked_on": null,
       "source_url": "https://arxiv.org/abs/2608.00222",
       "rank": 10,
-      "score": 89
+      "score": 89,
+      "execution_rank": 10,
+      "execution_score": 89,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M042",
@@ -189,7 +253,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 11,
-      "score": 89
+      "score": 89,
+      "execution_rank": 11,
+      "execution_score": 89,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M071",
@@ -205,7 +274,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 12,
-      "score": 85
+      "score": 85,
+      "execution_rank": 13,
+      "execution_score": 85,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M072",
@@ -221,7 +295,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 13,
-      "score": 85
+      "score": 85,
+      "execution_rank": 14,
+      "execution_score": 85,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M073",
@@ -237,7 +316,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 14,
-      "score": 85
+      "score": 85,
+      "execution_rank": 15,
+      "execution_score": 85,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M077",
@@ -253,7 +337,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 15,
-      "score": 85
+      "score": 85,
+      "execution_rank": 16,
+      "execution_score": 85,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M080",
@@ -269,7 +358,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 16,
-      "score": 85
+      "score": 85,
+      "execution_rank": 17,
+      "execution_score": 85,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M096",
@@ -285,7 +379,12 @@
       "checked_on": null,
       "source_url": "https://mathworld.wolfram.com/ProjectivePlane.html",
       "rank": 17,
-      "score": 85
+      "score": 85,
+      "execution_rank": 18,
+      "execution_score": 85,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M097",
@@ -301,7 +400,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 18,
-      "score": 85
+      "score": 85,
+      "execution_rank": 19,
+      "execution_score": 85,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M082",
@@ -317,7 +421,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 19,
-      "score": 83
+      "score": 83,
+      "execution_rank": 20,
+      "execution_score": 83,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M083",
@@ -333,7 +442,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 20,
-      "score": 83
+      "score": 83,
+      "execution_rank": 21,
+      "execution_score": 83,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M084",
@@ -349,7 +463,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 21,
-      "score": 83
+      "score": 83,
+      "execution_rank": 22,
+      "execution_score": 83,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M085",
@@ -365,7 +484,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 22,
-      "score": 83
+      "score": 83,
+      "execution_rank": 23,
+      "execution_score": 83,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M086",
@@ -381,7 +505,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 23,
-      "score": 83
+      "score": 83,
+      "execution_rank": 24,
+      "execution_score": 83,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M087",
@@ -397,7 +526,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 24,
-      "score": 83
+      "score": 83,
+      "execution_rank": 25,
+      "execution_score": 83,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M089",
@@ -413,7 +547,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 25,
-      "score": 83
+      "score": 83,
+      "execution_rank": 26,
+      "execution_score": 83,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M090",
@@ -429,7 +568,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 26,
-      "score": 83
+      "score": 83,
+      "execution_rank": 27,
+      "execution_score": 83,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M019",
@@ -445,7 +589,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 27,
-      "score": 82
+      "score": 82,
+      "execution_rank": 28,
+      "execution_score": 82,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M095",
@@ -461,7 +610,12 @@
       "checked_on": "2026-10-30",
       "source_url": "https://doi.org/10.1002/jgt.70029",
       "rank": 28,
-      "score": 82
+      "score": 82,
+      "execution_rank": 12,
+      "execution_score": 89,
+      "readiness": 7,
+      "campaign_stage": "benchmark_reproduced",
+      "milestone_count": 1
     },
     {
       "id": "M091",
@@ -477,7 +631,12 @@
       "checked_on": "2026-10-30",
       "source_url": "https://www.claymath.org/millennium-problems/",
       "rank": 29,
-      "score": 80
+      "score": 80,
+      "execution_rank": 29,
+      "execution_score": 80,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M098",
@@ -493,7 +652,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 30,
-      "score": 80
+      "score": 80,
+      "execution_rank": 30,
+      "execution_score": 80,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M099",
@@ -509,7 +673,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 31,
-      "score": 80
+      "score": 80,
+      "execution_rank": 31,
+      "execution_score": 80,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M100",
@@ -525,7 +694,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 32,
-      "score": 80
+      "score": 80,
+      "execution_rank": 32,
+      "execution_score": 80,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M043",
@@ -541,7 +715,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 33,
-      "score": 74
+      "score": 74,
+      "execution_rank": 33,
+      "execution_score": 74,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M044",
@@ -557,7 +736,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 34,
-      "score": 74
+      "score": 74,
+      "execution_rank": 34,
+      "execution_score": 74,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M045",
@@ -573,7 +757,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 35,
-      "score": 74
+      "score": 74,
+      "execution_rank": 35,
+      "execution_score": 74,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M046",
@@ -589,7 +778,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 36,
-      "score": 74
+      "score": 74,
+      "execution_rank": 36,
+      "execution_score": 74,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M047",
@@ -605,7 +799,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 37,
-      "score": 74
+      "score": 74,
+      "execution_rank": 37,
+      "execution_score": 74,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M048",
@@ -621,7 +820,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 38,
-      "score": 74
+      "score": 74,
+      "execution_rank": 38,
+      "execution_score": 74,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M049",
@@ -637,7 +841,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 39,
-      "score": 74
+      "score": 74,
+      "execution_rank": 39,
+      "execution_score": 74,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M050",
@@ -653,7 +862,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 40,
-      "score": 74
+      "score": 74,
+      "execution_rank": 40,
+      "execution_score": 74,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M061",
@@ -669,7 +883,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 41,
-      "score": 74
+      "score": 74,
+      "execution_rank": 41,
+      "execution_score": 74,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M062",
@@ -685,7 +904,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 42,
-      "score": 74
+      "score": 74,
+      "execution_rank": 42,
+      "execution_score": 74,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M063",
@@ -701,7 +925,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 43,
-      "score": 74
+      "score": 74,
+      "execution_rank": 43,
+      "execution_score": 74,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M064",
@@ -717,7 +946,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 44,
-      "score": 74
+      "score": 74,
+      "execution_rank": 44,
+      "execution_score": 74,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M065",
@@ -733,7 +967,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 45,
-      "score": 74
+      "score": 74,
+      "execution_rank": 45,
+      "execution_score": 74,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M066",
@@ -749,7 +988,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 46,
-      "score": 74
+      "score": 74,
+      "execution_rank": 46,
+      "execution_score": 74,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M067",
@@ -765,7 +1009,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 47,
-      "score": 74
+      "score": 74,
+      "execution_rank": 47,
+      "execution_score": 74,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M068",
@@ -781,7 +1030,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 48,
-      "score": 74
+      "score": 74,
+      "execution_rank": 48,
+      "execution_score": 74,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M069",
@@ -797,7 +1051,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 49,
-      "score": 74
+      "score": 74,
+      "execution_rank": 49,
+      "execution_score": 74,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M070",
@@ -813,7 +1072,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 50,
-      "score": 74
+      "score": 74,
+      "execution_rank": 50,
+      "execution_score": 74,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M002",
@@ -829,7 +1093,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 51,
-      "score": 72
+      "score": 72,
+      "execution_rank": 51,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M003",
@@ -845,7 +1114,12 @@
       "checked_on": "2026-10-30",
       "source_url": "https://www.claymath.org/millennium-problems/",
       "rank": 52,
-      "score": 72
+      "score": 72,
+      "execution_rank": 52,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M004",
@@ -861,7 +1135,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 53,
-      "score": 72
+      "score": 72,
+      "execution_rank": 53,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M005",
@@ -877,7 +1156,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 54,
-      "score": 72
+      "score": 72,
+      "execution_rank": 54,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M006",
@@ -893,7 +1177,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 55,
-      "score": 72
+      "score": 72,
+      "execution_rank": 55,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M007",
@@ -909,7 +1198,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 56,
-      "score": 72
+      "score": 72,
+      "execution_rank": 56,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M008",
@@ -925,7 +1219,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 57,
-      "score": 72
+      "score": 72,
+      "execution_rank": 57,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M009",
@@ -941,7 +1240,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 58,
-      "score": 72
+      "score": 72,
+      "execution_rank": 58,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M010",
@@ -957,7 +1261,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 59,
-      "score": 72
+      "score": 72,
+      "execution_rank": 59,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M011",
@@ -973,7 +1282,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 60,
-      "score": 72
+      "score": 72,
+      "execution_rank": 60,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M012",
@@ -989,7 +1303,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 61,
-      "score": 72
+      "score": 72,
+      "execution_rank": 61,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M013",
@@ -1005,7 +1324,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 62,
-      "score": 72
+      "score": 72,
+      "execution_rank": 62,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M014",
@@ -1021,7 +1345,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 63,
-      "score": 72
+      "score": 72,
+      "execution_rank": 63,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M015",
@@ -1037,7 +1366,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 64,
-      "score": 72
+      "score": 72,
+      "execution_rank": 64,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M016",
@@ -1053,7 +1387,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 65,
-      "score": 72
+      "score": 72,
+      "execution_rank": 65,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M017",
@@ -1069,7 +1408,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 66,
-      "score": 72
+      "score": 72,
+      "execution_rank": 66,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M018",
@@ -1085,7 +1429,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 67,
-      "score": 72
+      "score": 72,
+      "execution_rank": 67,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M020",
@@ -1101,7 +1450,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 68,
-      "score": 72
+      "score": 72,
+      "execution_rank": 68,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M021",
@@ -1117,7 +1471,12 @@
       "checked_on": "2026-10-30",
       "source_url": "https://www.claymath.org/millennium-problems/",
       "rank": 69,
-      "score": 72
+      "score": 72,
+      "execution_rank": 69,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M022",
@@ -1133,7 +1492,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 70,
-      "score": 72
+      "score": 72,
+      "execution_rank": 70,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M023",
@@ -1149,7 +1513,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 71,
-      "score": 72
+      "score": 72,
+      "execution_rank": 71,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M024",
@@ -1165,7 +1534,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 72,
-      "score": 72
+      "score": 72,
+      "execution_rank": 72,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M025",
@@ -1181,7 +1555,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 73,
-      "score": 72
+      "score": 72,
+      "execution_rank": 73,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M026",
@@ -1197,7 +1576,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 74,
-      "score": 72
+      "score": 72,
+      "execution_rank": 74,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M027",
@@ -1213,7 +1597,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 75,
-      "score": 72
+      "score": 72,
+      "execution_rank": 75,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M028",
@@ -1229,7 +1618,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 76,
-      "score": 72
+      "score": 72,
+      "execution_rank": 76,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M029",
@@ -1245,7 +1639,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 77,
-      "score": 72
+      "score": 72,
+      "execution_rank": 77,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M030",
@@ -1261,7 +1660,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 78,
-      "score": 72
+      "score": 72,
+      "execution_rank": 78,
+      "execution_score": 72,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M081",
@@ -1277,7 +1681,12 @@
       "checked_on": "2026-10-30",
       "source_url": "https://www.claymath.org/millennium-problems/",
       "rank": 79,
-      "score": 71
+      "score": 71,
+      "execution_rank": 79,
+      "execution_score": 71,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M051",
@@ -1293,7 +1702,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 80,
-      "score": 69
+      "score": 69,
+      "execution_rank": 80,
+      "execution_score": 69,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M052",
@@ -1309,7 +1723,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 81,
-      "score": 69
+      "score": 69,
+      "execution_rank": 81,
+      "execution_score": 69,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M053",
@@ -1325,7 +1744,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 82,
-      "score": 69
+      "score": 69,
+      "execution_rank": 82,
+      "execution_score": 69,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M054",
@@ -1341,7 +1765,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 83,
-      "score": 69
+      "score": 69,
+      "execution_rank": 83,
+      "execution_score": 69,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M055",
@@ -1357,7 +1786,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 84,
-      "score": 69
+      "score": 69,
+      "execution_rank": 84,
+      "execution_score": 69,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M056",
@@ -1373,7 +1807,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 85,
-      "score": 69
+      "score": 69,
+      "execution_rank": 85,
+      "execution_score": 69,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M057",
@@ -1389,7 +1828,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 86,
-      "score": 69
+      "score": 69,
+      "execution_rank": 86,
+      "execution_score": 69,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M058",
@@ -1405,7 +1849,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 87,
-      "score": 69
+      "score": 69,
+      "execution_rank": 87,
+      "execution_score": 69,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M059",
@@ -1421,7 +1870,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 88,
-      "score": 69
+      "score": 69,
+      "execution_rank": 88,
+      "execution_score": 69,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M060",
@@ -1437,7 +1891,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 89,
-      "score": 69
+      "score": 69,
+      "execution_rank": 89,
+      "execution_score": 69,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M001",
@@ -1453,7 +1912,12 @@
       "checked_on": "2026-10-30",
       "source_url": "https://www.claymath.org/millennium-problems/",
       "rank": 90,
-      "score": 66
+      "score": 66,
+      "execution_rank": 90,
+      "execution_score": 66,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M031",
@@ -1469,7 +1933,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 91,
-      "score": 63
+      "score": 63,
+      "execution_rank": 91,
+      "execution_score": 63,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M032",
@@ -1485,7 +1954,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 92,
-      "score": 63
+      "score": 63,
+      "execution_rank": 92,
+      "execution_score": 63,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M033",
@@ -1501,7 +1975,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 93,
-      "score": 63
+      "score": 63,
+      "execution_rank": 93,
+      "execution_score": 63,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M034",
@@ -1517,7 +1996,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 94,
-      "score": 63
+      "score": 63,
+      "execution_rank": 94,
+      "execution_score": 63,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M035",
@@ -1533,7 +2017,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 95,
-      "score": 63
+      "score": 63,
+      "execution_rank": 95,
+      "execution_score": 63,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M036",
@@ -1549,7 +2038,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 96,
-      "score": 63
+      "score": 63,
+      "execution_rank": 96,
+      "execution_score": 63,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M037",
@@ -1565,7 +2059,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 97,
-      "score": 63
+      "score": 63,
+      "execution_rank": 97,
+      "execution_score": 63,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M038",
@@ -1581,7 +2080,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 98,
-      "score": 63
+      "score": 63,
+      "execution_rank": 98,
+      "execution_score": 63,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M039",
@@ -1597,7 +2101,12 @@
       "checked_on": null,
       "source_url": null,
       "rank": 99,
-      "score": 63
+      "score": 63,
+      "execution_rank": 99,
+      "execution_score": 63,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
     },
     {
       "id": "M040",
@@ -1613,7 +2122,161 @@
       "checked_on": null,
       "source_url": null,
       "rank": 100,
-      "score": 63
+      "score": 63,
+      "execution_rank": 100,
+      "execution_score": 63,
+      "readiness": 0,
+      "campaign_stage": null,
+      "milestone_count": 0
+    }
+  ],
+  "campaigns": [
+    {
+      "problem_id": "M074",
+      "stage": "specified",
+      "method": "Directed graph extremal search",
+      "hypothesis": "For each explicit pair (n,r), any loopless n-vertex digraph of minimum outdegree at least r contains a directed cycle of length at most ceil(n/r).",
+      "first_proof_obligation": "Independently check all small n digraphs with fixed r; produce a shortest-cycle witness or a validated obstruction.",
+      "next_experiment": "Construct a bitset digraph verifier and enumerate n<=4; identify the first nontrivial unproved structural case.",
+      "falsification": "An explicitly checked digraph with min outdegree r and no directed cycle of length <=ceil(n/r).",
+      "blocker": "No independent digraph enumeration checker committed yet.",
+      "dossier": "research/CAMPAIGNS.md",
+      "verifier": null
+    },
+    {
+      "problem_id": "M075",
+      "stage": "benchmark_reproduced",
+      "method": "Finite family enumeration and entropy inequalities",
+      "hypothesis": "Every nontrivial finite union-closed family contains an element in at least half its members.",
+      "first_proof_obligation": "Verify the exact conjecture for bounded universes before deriving any universal structural reduction.",
+      "next_experiment": "Canonicalize families under ground-set permutations; prove or disprove a restricted lemma on minimal counterexamples.",
+      "falsification": "An exact union-closed family whose maximum element frequency is less than half the family size.",
+      "blocker": "Naive exhaustive enumeration scales as 2^(2^n); structural quotient required.",
+      "dossier": "research/M075_FRANKL.md",
+      "verifier": "python3 scripts/union_closed.py exhaustive --n 4"
+    },
+    {
+      "problem_id": "M088",
+      "stage": "specified",
+      "method": "Algebraic circuit hitting sets",
+      "hypothesis": "A deterministic polynomial-size hitting set can be obtained for a named restricted arithmetic circuit class.",
+      "first_proof_obligation": "State field characteristic, circuit shape, degree and oracle model, then prove the exact hitting property.",
+      "next_experiment": "Implement small exact arithmetic circuits and a falsifier that searches for circuits escaping a proposed hitting set.",
+      "falsification": "A nonzero circuit in the declared class vanishing at every proposed hitting-set point.",
+      "blocker": "No restricted circuit class or field is locked down yet.",
+      "dossier": "research/CAMPAIGNS.md",
+      "verifier": null
+    },
+    {
+      "problem_id": "M092",
+      "stage": "specified",
+      "method": "Exact algebraic SIC verification",
+      "hypothesis": "Exact families of d^2 equiangular lines exist beyond individually constructed dimensions.",
+      "first_proof_obligation": "Choose a dimension and certify pairwise squared overlaps with exact algebraic arithmetic.",
+      "next_experiment": "Formalize a candidate fiducial in a low dimension with rational/algebraic coordinates, then generalize a symmetry identity.",
+      "falsification": "An exact failed Gram matrix relation or a missing required vector under the stated algebraic construction.",
+      "blocker": "Floating-point numerical SIC examples are not universal existence proofs.",
+      "dossier": "research/CAMPAIGNS.md",
+      "verifier": null
+    },
+    {
+      "problem_id": "M095",
+      "stage": "benchmark_reproduced",
+      "method": "Graph coloring and proof-carrying SAT",
+      "hypothesis": "The exact value of R(5,5) can be determined by an independently checked construction and exclusion.",
+      "first_proof_obligation": "Verify a candidate K43 two-coloring or independently certify the nonexistence of a K45 valid coloring.",
+      "next_experiment": "Import and check the published K42 witness; reproduce a small structural exclusion with a trusted proof checker.",
+      "falsification": "A verified K43 coloring would refute any claimed R(5,5)<=43; a valid K45 coloring would refute R(5,5)<=45.",
+      "blocker": "A SAT solver UNSAT output without a verified proof trace does not establish an upper bound.",
+      "dossier": "research/M095_RAMSEY.md",
+      "verifier": "python3 scripts/ramsey.py demo"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "B-R33-001",
+      "problem_id": "M095",
+      "classification": "reproduced_known",
+      "title": "Ramsey R(3,3)=6 reproduced",
+      "scope": "Finite toy theorem; not a new bound on R(5,5)",
+      "description": "C5 witnesses R(3,3)>5; all 32,768 labeled K6 two-colorings fail to avoid both triangles.",
+      "verifier": "python3 scripts/ramsey.py demo",
+      "artifact": "scripts/ramsey.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-FRANKL-001",
+      "problem_id": "M075",
+      "classification": "reproduced_known",
+      "title": "Frankl threshold verified for ground sets of size <=4",
+      "scope": "Finite exhaustive test only; not a proof for arbitrary finite ground sets",
+      "description": "Enumerates all 2^(2^4)=65,536 families, filters union closure, checks exact frequencies.",
+      "verifier": "python3 scripts/union_closed.py exhaustive --n 4",
+      "artifact": "scripts/union_closed.py",
+      "verified_on": "2026-10-31"
+    }
+  ],
+  "solved": [],
+  "execution_queue": [
+    {
+      "problem_id": "M075",
+      "name": "Frankl union-closed sets conjecture",
+      "execution_rank": 1,
+      "execution_score": 98,
+      "baseline_rank": 4,
+      "stage": "benchmark_reproduced",
+      "first_proof_obligation": "Verify the exact conjecture for bounded universes before deriving any universal structural reduction.",
+      "next_experiment": "Canonicalize families under ground-set permutations; prove or disprove a restricted lemma on minimal counterexamples.",
+      "blocker": "Naive exhaustive enumeration scales as 2^(2^n); structural quotient required.",
+      "dossier": "research/M075_FRANKL.md"
+    },
+    {
+      "problem_id": "M074",
+      "name": "Caccetta–Häggkvist conjecture",
+      "execution_rank": 2,
+      "execution_score": 96,
+      "baseline_rank": 1,
+      "stage": "specified",
+      "first_proof_obligation": "Independently check all small n digraphs with fixed r; produce a shortest-cycle witness or a validated obstruction.",
+      "next_experiment": "Construct a bitset digraph verifier and enumerate n<=4; identify the first nontrivial unproved structural case.",
+      "blocker": "No independent digraph enumeration checker committed yet.",
+      "dossier": "research/CAMPAIGNS.md"
+    },
+    {
+      "problem_id": "M088",
+      "name": "Deterministic polynomial identity testing",
+      "execution_rank": 3,
+      "execution_score": 96,
+      "baseline_rank": 2,
+      "stage": "specified",
+      "first_proof_obligation": "State field characteristic, circuit shape, degree and oracle model, then prove the exact hitting property.",
+      "next_experiment": "Implement small exact arithmetic circuits and a falsifier that searches for circuits escaping a proposed hitting set.",
+      "blocker": "No restricted circuit class or field is locked down yet.",
+      "dossier": "research/CAMPAIGNS.md"
+    },
+    {
+      "problem_id": "M092",
+      "name": "Zauner SIC conjecture",
+      "execution_rank": 4,
+      "execution_score": 96,
+      "baseline_rank": 3,
+      "stage": "specified",
+      "first_proof_obligation": "Choose a dimension and certify pairwise squared overlaps with exact algebraic arithmetic.",
+      "next_experiment": "Formalize a candidate fiducial in a low dimension with rational/algebraic coordinates, then generalize a symmetry identity.",
+      "blocker": "Floating-point numerical SIC examples are not universal existence proofs.",
+      "dossier": "research/CAMPAIGNS.md"
+    },
+    {
+      "problem_id": "M095",
+      "name": "Exact Ramsey number R(5,5)",
+      "execution_rank": 12,
+      "execution_score": 89,
+      "baseline_rank": 28,
+      "stage": "benchmark_reproduced",
+      "first_proof_obligation": "Verify a candidate K43 two-coloring or independently certify the nonexistence of a K45 valid coloring.",
+      "next_experiment": "Import and check the published K42 witness; reproduce a small structural exclusion with a trusted proof checker.",
+      "blocker": "A SAT solver UNSAT output without a verified proof trace does not establish an upper bound.",
+      "dossier": "research/M095_RAMSEY.md"
     }
   ]
 }

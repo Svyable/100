@@ -1,21 +1,27 @@
 #!/usr/bin/env python3
-"""Generate the GitHub Pages JSON snapshot deterministically from the registry.
+"""Build Pages data from canonical registry, proof campaigns, milestones and archive.
 
-The source of truth is data/problems.json, NOT docs/data/portfolio.json.
-No network, timestamps generated at runtime, or external dependencies.
+The snapshot cannot be edited independently. Both portfolio prestige rank and
+execution-ready attack rank are deterministic and their meanings are distinct.
 """
 import argparse
 import json
-from pathlib import Path
-from rank import validate, score, REGISTRY, ROOT
+from rank import score, ROOT
+from research import load, execution_order
 
 OUTPUT = ROOT / "docs" / "data" / "portfolio.json"
 
 
 def build():
-    items = validate(json.loads(REGISTRY.read_text(encoding="utf-8")))
-    sorted_items = sorted(items, key=lambda item: (-score(item), item["id"]))
-    states = sorted({p["evidence_state"] for p in items})
+    items, program, solved = load()
+    baseline = sorted(items, key=lambda p: (-score(p), p["id"]))
+    execution = execution_order(items, program)
+    campaign_by_id = {c["problem_id"]: c for c in program["campaigns"]}
+    milestones_by_id = {
+        p["id"]: [m for m in program["milestones"] if m["problem_id"] == p["id"]]
+        for p in items
+    }
+    active_rank = {p["id"]: i for i, p in enumerate(baseline, 1)}
     return {
         "title": "100 — A living mathematical research portfolio",
         "source": "data/problems.json",
@@ -29,11 +35,51 @@ def build():
         },
         "status_counts": {
             status: sum(p["evidence_state"] == status for p in items)
-            for status in states
+            for status in sorted({p["evidence_state"] for p in items})
+        },
+        "program_as_of": program["as_of"],
+        "summary": {
+            "campaigns": len(program["campaigns"]),
+            "reproduced_known": sum(
+                m["classification"] == "reproduced_known" for m in program["milestones"]),
+            "restricted_verified": sum(
+                m["classification"] == "restricted_verified" for m in program["milestones"]),
+            "fully_solved": len(solved),
+        },
+        "execution_scoring": {
+            "brief": 2,
+            "runnable_verifier": 3,
+            "known_reproduction": 2,
+            "independently_verified_restricted_theorem": 3,
+            "interpretation": "Operational readiness bonus (0–10), not mathematical proof progress",
         },
         "problems": [
-            {**item, "rank": number, "score": score(item)}
-            for number, item in enumerate(sorted_items, start=1)
+            {
+                **item, "rank": number, "score": score(item),
+                **execution[item["id"]],
+                "campaign_stage": campaign_by_id.get(item["id"], {}).get("stage"),
+                "milestone_count": len(milestones_by_id[item["id"]]),
+            }
+            for number, item in enumerate(baseline, start=1)
+        ],
+        "campaigns": program["campaigns"],
+        "milestones": program["milestones"],
+        "solved": solved,
+        "execution_queue": [
+            {
+                "problem_id": c["problem_id"],
+                "name": next(p["name"] for p in items if p["id"] == c["problem_id"]),
+                "execution_rank": execution[c["problem_id"]]["execution_rank"],
+                "execution_score": execution[c["problem_id"]]["execution_score"],
+                "baseline_rank": active_rank[c["problem_id"]],
+                "stage": c["stage"],
+                "first_proof_obligation": c["first_proof_obligation"],
+                "next_experiment": c["next_experiment"],
+                "blocker": c["blocker"],
+                "dossier": c["dossier"],
+            }
+            for c in sorted(program["campaigns"],
+                            key=lambda c: execution[c["problem_id"]]["execution_rank"])
         ],
     }
 
@@ -45,13 +91,13 @@ def render():
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true",
-                        help="fail if the committed site snapshot is stale")
-    options = parser.parse_args()
+                        help="fail if the committed snapshot is stale")
+    opts = parser.parse_args()
     expected = render()
-    if options.check:
+    if opts.check:
         if not OUTPUT.exists() or OUTPUT.read_text(encoding="utf-8") != expected:
-            raise SystemExit("Stale GitHub Pages data: run python3 scripts/build_site.py")
-        print("OK: Pages snapshot matches all 100 ranked registry records")
+            raise SystemExit("Stale GitHub Pages snapshot: run python3 scripts/build_site.py")
+        print("OK: Pages snapshot includes 100 problems, evidence, execution ranks, and solved archive")
     else:
         OUTPUT.parent.mkdir(parents=True, exist_ok=True)
         OUTPUT.write_text(expected, encoding="utf-8")
