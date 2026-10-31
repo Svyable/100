@@ -67,7 +67,7 @@ discover a lemma, or verify newly published claims on its own.
 ## Promote a result to Solved
 
 Only a **full** proof or counterexample of the exact archived statement
-qualifies. The archive is intentionally empty initially. Every entry must
+qualifies. The archive is intentionally empty initially, and may grow only through reviewed full resolutions. Every entry must
 include:
 
 1. A stable ID removed from the 100 active candidates (without recycling it).
@@ -75,7 +75,8 @@ include:
 3. A published full proof URL and dated acceptance record.
 4. **Two distinct independent external review URLs** with the result checked
    for the same exact theorem scope.
-5. Verification notes and a new active candidate replacing the solved one.
+5. Verification notes and a unique new active candidate replacing the solved one.
+6. If the prior target had a campaign, move it to the `resolved_archived` stage so its research history remains accessible without entering the active execution queue.
 
 Schema and consistency checks reject entries lacking those references or
 whose old ID remains active. These checks cannot replace real specialist

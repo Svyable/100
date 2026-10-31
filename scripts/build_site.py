@@ -17,6 +17,7 @@ def build():
     baseline = sorted(items, key=lambda p: (-score(p), p["id"]))
     execution = execution_order(items, program)
     campaign_by_id = {c["problem_id"]: c for c in program["campaigns"]}
+    active_ids = {p["id"] for p in items}
     milestones_by_id = {
         p["id"]: [m for m in program["milestones"] if m["problem_id"] == p["id"]]
         for p in items
@@ -39,7 +40,7 @@ def build():
         },
         "program_as_of": program["as_of"],
         "summary": {
-            "campaigns": len(program["campaigns"]),
+            "campaigns": sum(c["problem_id"] in active_ids for c in program["campaigns"]),
             "reproduced_known": sum(
                 m["classification"] == "reproduced_known" for m in program["milestones"]),
             "restricted_verified": sum(
@@ -78,7 +79,7 @@ def build():
                 "blocker": c["blocker"],
                 "dossier": c["dossier"],
             }
-            for c in sorted(program["campaigns"],
+            for c in sorted((c for c in program["campaigns"] if c["problem_id"] in active_ids),
                             key=lambda c: execution[c["problem_id"]]["execution_rank"])
         ],
     }

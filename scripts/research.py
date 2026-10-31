@@ -15,7 +15,7 @@ from rank import ROOT, REGISTRY, score, validate
 PROGRAM = ROOT / "data" / "research_program.json"
 SOLVED = ROOT / "data" / "solved.json"
 QUEUE = ROOT / "ATTACK_QUEUE.md"
-STAGES = {"specified", "benchmark_reproduced", "restricted_verified", "claim_under_review"}
+STAGES = {"specified", "benchmark_reproduced", "restricted_verified", "claim_under_review", "resolved_archived"}
 MILESTONE_CLASSES = {"reproduced_known", "restricted_verified"}
 RUNNABLE = {
     "python3 scripts/ramsey.py demo": "scripts/ramsey.py",
@@ -49,7 +49,7 @@ def validate_solved(solved, active):
     """Archive is intentionally empty until full resolutions pass strict gates."""
     if not isinstance(solved, list):
         raise ValueError("Solved archive must be an array")
-    seen = set()
+    seen, replaced = set(), set()
     for record in solved:
         required(record, (
             "original_problem_id", "name", "full_statement", "resolution",
@@ -61,8 +61,9 @@ def validate_solved(solved, active):
         seen.add(old_id)
         if record["resolution"] not in {"proved", "refuted"}:
             raise ValueError("Only fully proved or refuted statements enter Solved")
-        if record["replacement_id"] not in active:
-            raise ValueError("Solved entry needs an active replacement ID")
+        if record["replacement_id"] not in active or record["replacement_id"] in replaced:
+            raise ValueError("Solved entry needs a unique active replacement ID")
+        replaced.add(record["replacement_id"])
         if not valid_date(record["accepted_on"]) or not https(record["proof_url"]):
             raise ValueError("Solved entry needs accepted date and HTTPS proof")
         sources = record.get("independent_review_urls")
@@ -87,14 +88,17 @@ def load():
     milestones = program.get("milestones")
     if not isinstance(campaigns, list) or not isinstance(milestones, list):
         raise ValueError("Campaigns and milestones must be arrays")
+    archived_ids = {entry["original_problem_id"] for entry in solved}
     seen_campaigns, seen_milestones = set(), set()
     campaigns_by_id = {}
     for c in campaigns:
         required(c, ["problem_id", "stage", "method", "hypothesis", "first_proof_obligation",
                      "next_experiment", "falsification", "blocker", "dossier"], "campaign")
         pid = c["problem_id"]
-        if pid not in indexed or pid in seen_campaigns or c["stage"] not in STAGES:
+        if (pid not in indexed and pid not in archived_ids) or pid in seen_campaigns or c["stage"] not in STAGES:
             raise ValueError(f"Invalid/duplicate campaign: {pid}")
+        if (pid in archived_ids) != (c["stage"] == "resolved_archived"):
+            raise ValueError(f"Solved campaign must be archived, active campaigns cannot: {pid}")
         if c["dossier"].startswith("/") or ".." in Path(c["dossier"]).parts:
             raise ValueError("Invalid dossier path")
         if not (ROOT / c["dossier"]).is_file():
