@@ -34,6 +34,9 @@ class RegularityTests(unittest.TestCase):
         })
         self.assertEqual(out.getvalue().count(b"\n") - 3, meta["clauses"])
         self.assertEqual(len(out.getvalue()), meta["bytes"])
+        self.assertEqual(meta["bytes"], 233697)
+        self.assertEqual(meta["sha256"],
+                         "16448ff34866b74e7b98ea38e599841363503de88590eca564ae29e2b9891d35")
 
     def test_incoming_cardinality_gates(self):
         f = ch_regularity.RegularCNF()
