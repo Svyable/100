@@ -17,7 +17,7 @@
   "program_as_of": "2026-10-31",
   "summary": {
     "campaigns": 5,
-    "reproduced_known": 2,
+    "reproduced_known": 3,
     "restricted_verified": 0,
     "fully_solved": 0
   },
@@ -44,11 +44,11 @@
       "source_url": "https://doi.org/10.1016/0012-365X(87)90122-1",
       "rank": 1,
       "score": 94,
-      "execution_rank": 2,
-      "execution_score": 96,
-      "readiness": 2,
-      "campaign_stage": "specified",
-      "milestone_count": 0
+      "execution_rank": 1,
+      "execution_score": 101,
+      "readiness": 7,
+      "campaign_stage": "benchmark_reproduced",
+      "milestone_count": 1
     },
     {
       "id": "M088",
@@ -107,7 +107,7 @@
       "source_url": "https://arxiv.org/abs/2610.02295",
       "rank": 4,
       "score": 91,
-      "execution_rank": 1,
+      "execution_rank": 2,
       "execution_score": 98,
       "readiness": 7,
       "campaign_stage": "benchmark_reproduced",
@@ -2133,15 +2133,15 @@
   "campaigns": [
     {
       "problem_id": "M074",
-      "stage": "specified",
+      "stage": "benchmark_reproduced",
       "method": "Directed graph extremal search",
       "hypothesis": "For each explicit pair (n,r), any loopless n-vertex digraph of minimum outdegree at least r contains a directed cycle of length at most ceil(n/r).",
       "first_proof_obligation": "Independently check all small n digraphs with fixed r; produce a shortest-cycle witness or a validated obstruction.",
-      "next_experiment": "Construct a bitset digraph verifier and enumerate n<=4; identify the first nontrivial unproved structural case.",
+      "next_experiment": "Extend the independent directed-girth validator to isomorphism classes on n=5 and compare extremal degree patterns against known theorems.",
       "falsification": "An explicitly checked digraph with min outdegree r and no directed cycle of length <=ceil(n/r).",
-      "blocker": "No independent digraph enumeration checker committed yet.",
+      "blocker": "Naive search grows as 2^(n(n-1)); canonical labeling or constrained SAT is needed beyond tiny n.",
       "dossier": "research/CAMPAIGNS.md",
-      "verifier": null
+      "verifier": "python3 scripts/digraph.py exhaustive --n 4"
     },
     {
       "problem_id": "M075",
@@ -2214,14 +2214,37 @@
       "verifier": "python3 scripts/union_closed.py exhaustive --n 4",
       "artifact": "scripts/union_closed.py",
       "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-CH-001",
+      "problem_id": "M074",
+      "classification": "reproduced_known",
+      "title": "Short-cycle conjecture verified by exhaustive small-digraph search",
+      "scope": "All loopless labeled digraphs on 2–4 vertices only; not a new general theorem",
+      "description": "Enumerates all 2^(n(n-1)) digraphs for n<=4 and all eligible minimum-outdegree thresholds r, checking exact directed girth.",
+      "verifier": "python3 scripts/digraph.py exhaustive --n 4",
+      "artifact": "scripts/digraph.py",
+      "verified_on": "2026-10-31"
     }
   ],
   "solved": [],
   "execution_queue": [
     {
+      "problem_id": "M074",
+      "name": "Caccetta–Häggkvist conjecture",
+      "execution_rank": 1,
+      "execution_score": 101,
+      "baseline_rank": 1,
+      "stage": "benchmark_reproduced",
+      "first_proof_obligation": "Independently check all small n digraphs with fixed r; produce a shortest-cycle witness or a validated obstruction.",
+      "next_experiment": "Extend the independent directed-girth validator to isomorphism classes on n=5 and compare extremal degree patterns against known theorems.",
+      "blocker": "Naive search grows as 2^(n(n-1)); canonical labeling or constrained SAT is needed beyond tiny n.",
+      "dossier": "research/CAMPAIGNS.md"
+    },
+    {
       "problem_id": "M075",
       "name": "Frankl union-closed sets conjecture",
-      "execution_rank": 1,
+      "execution_rank": 2,
       "execution_score": 98,
       "baseline_rank": 4,
       "stage": "benchmark_reproduced",
@@ -2229,18 +2252,6 @@
       "next_experiment": "Canonicalize families under ground-set permutations; prove or disprove a restricted lemma on minimal counterexamples.",
       "blocker": "Naive exhaustive enumeration scales as 2^(2^n); structural quotient required.",
       "dossier": "research/M075_FRANKL.md"
-    },
-    {
-      "problem_id": "M074",
-      "name": "Caccetta–Häggkvist conjecture",
-      "execution_rank": 2,
-      "execution_score": 96,
-      "baseline_rank": 1,
-      "stage": "specified",
-      "first_proof_obligation": "Independently check all small n digraphs with fixed r; produce a shortest-cycle witness or a validated obstruction.",
-      "next_experiment": "Construct a bitset digraph verifier and enumerate n<=4; identify the first nontrivial unproved structural case.",
-      "blocker": "No independent digraph enumeration checker committed yet.",
-      "dossier": "research/CAMPAIGNS.md"
     },
     {
       "problem_id": "M088",

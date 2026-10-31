@@ -10,8 +10,8 @@ counts as a new theorem, and unreviewed claims receive no bonus.
 
 | Attack rank | ID | Problem | Base | Readiness | Index | Next step |
 |---:|---|---|---:|---:|---:|---|
-| 1 | M075 | Frankl union-closed sets conjecture | 91 | +7 | 98 | Canonicalize families under ground-set permutations; prove or disprove a restricted lemma on minimal counterexamples. |
-| 2 | M074 | Caccetta–Häggkvist conjecture | 94 | +2 | 96 | Construct a bitset digraph verifier and enumerate n<=4; identify the first nontrivial unproved structural case. |
+| 1 | M074 | Caccetta–Häggkvist conjecture | 94 | +7 | 101 | Extend the independent directed-girth validator to isomorphism classes on n=5 and compare extremal degree patterns against known theorems. |
+| 2 | M075 | Frankl union-closed sets conjecture | 91 | +7 | 98 | Canonicalize families under ground-set permutations; prove or disprove a restricted lemma on minimal counterexamples. |
 | 3 | M088 | Deterministic polynomial identity testing | 94 | +2 | 96 | Implement small exact arithmetic circuits and a falsifier that searches for circuits escaping a proposed hitting set. |
 | 4 | M092 | Zauner SIC conjecture | 94 | +2 | 96 | Formalize a candidate fiducial in a low dimension with rational/algebraic coordinates, then generalize a symmetry identity. |
 | 5 | M076 | Erdős–Rado sunflower conjecture | 91 | +0 | 91 | Specify a falsifiable restricted lemma and audit prior art |
@@ -113,6 +113,18 @@ counts as a new theorem, and unreviewed claims receive no bonus.
 
 ## Active proof campaigns
 
+### M074 — Caccetta–Häggkvist conjecture
+
+**Proof obligation:** Independently check all small n digraphs with fixed r; produce a shortest-cycle witness or a validated obstruction.
+
+**Falsifier:** An explicitly checked digraph with min outdegree r and no directed cycle of length <=ceil(n/r).
+
+**Next experiment:** Extend the independent directed-girth validator to isomorphism classes on n=5 and compare extremal degree patterns against known theorems.
+
+**Current blocker:** Naive search grows as 2^(n(n-1)); canonical labeling or constrained SAT is needed beyond tiny n.
+
+**Stage:** `benchmark_reproduced` · [Dossier](research/CAMPAIGNS.md)
+
 ### M075 — Frankl union-closed sets conjecture
 
 **Proof obligation:** Verify the exact conjecture for bounded universes before deriving any universal structural reduction.
@@ -124,18 +136,6 @@ counts as a new theorem, and unreviewed claims receive no bonus.
 **Current blocker:** Naive exhaustive enumeration scales as 2^(2^n); structural quotient required.
 
 **Stage:** `benchmark_reproduced` · [Dossier](research/M075_FRANKL.md)
-
-### M074 — Caccetta–Häggkvist conjecture
-
-**Proof obligation:** Independently check all small n digraphs with fixed r; produce a shortest-cycle witness or a validated obstruction.
-
-**Falsifier:** An explicitly checked digraph with min outdegree r and no directed cycle of length <=ceil(n/r).
-
-**Next experiment:** Construct a bitset digraph verifier and enumerate n<=4; identify the first nontrivial unproved structural case.
-
-**Current blocker:** No independent digraph enumeration checker committed yet.
-
-**Stage:** `specified` · [Dossier](research/CAMPAIGNS.md)
 
 ### M088 — Deterministic polynomial identity testing
 
