@@ -6,6 +6,19 @@ There is one membership bit per set, so duplicates cannot inflate frequencies.
 -/
 namespace Hundred.Frankl
 
+/-- Constructive finite existential search, with a witness or a refutation. -/
+instance finiteExists : (n : Nat) → (p : Fin n → Prop) →
+    [DecidablePred p] → Decidable (∃ i, p i)
+  | 0, _, _ => isFalse (fun ⟨i, _⟩ => Fin.elim0 i)
+  | n + 1, p, dp =>
+    match dp 0 with
+    | isTrue h0 => isTrue ⟨0, h0⟩
+    | isFalse h0 =>
+      match @finiteExists n (fun i => p i.succ) (fun i => dp i.succ) with
+      | isTrue hs => isTrue (by rcases hs with ⟨i, hi⟩; exact ⟨i.succ, hi⟩)
+      | isFalse hs => isFalse (fun ⟨i, hi⟩ =>
+          Fin.cases (fun h => h0 h) (fun j h => hs ⟨j, h⟩) i hi)
+
 abbrev Set2 := Fin 4
 abbrev Family2 := Fin 16
 
