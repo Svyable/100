@@ -1026,14 +1026,14 @@
     "name": "Caccetta–Häggkvist conjecture",
     "field": "Combinatorics",
     "question": "Does minimum digraph outdegree r force a directed cycle of length at most ceil(n/r)?",
-    "first_attack": "Encode fixed (n,r) minimum-outdegree and forbidden short cycles; verify structural reductions on exact digraphs",
+    "first_attack": "Verify all five-vertex digraphs modulo relabeling, then attack the exact n=18,r=6 directed-triangle SAT instance with independently checkable certificates",
     "impact": 5,
     "attackability": 4,
     "verifiability": 5,
     "spillover": 5,
     "evidence_state": "needs_review",
-    "checked_on": "2026-10-30",
-    "source_url": "https://doi.org/10.1016/0012-365X(87)90122-1"
+    "checked_on": "2026-10-31",
+    "source_url": "https://lemon.cs.elte.hu/egres/open/Caccetta-H%C3%A4ggkvist_conjecture"
   },
   {
     "id": "M075",

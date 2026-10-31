@@ -55,9 +55,11 @@ a theorem. Mathematical scope review is different from code correctness.
 python3 scripts/ramsey.py demo
 python3 scripts/union_closed.py exhaustive --n 4
 python3 scripts/digraph.py exhaustive --n 4
+python3 scripts/digraph_orbits.py --n 5
+python3 scripts/ch_sat.py cnf --n 18 --r 6 --output /tmp/ch18-6.cnf
 ```
 
-These reproduce **known** statements in finite domains. They do not resolve
+The first four reproduce **known** statements in finite domains. The fifth command generates a SAT problem encoding only, not a result. They do not resolve
 Ramsey R(5,5), Frankl, or Caccetta–Häggkvist in general. Each script is
 independently exercised in the test suite and in a weekly GitHub Actions
 reproducibility workflow (when Actions scheduling is enabled by GitHub).

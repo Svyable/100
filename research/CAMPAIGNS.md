@@ -4,6 +4,8 @@
 
 ## M074 — Caccetta–Häggkvist (directed graphs)
 
+**Current executable attack:** [dedicated orbit census and (18,6) SAT dossier](M074_CH.md).
+
 **Statement.** Every finite loopless simple digraph on n vertices with minimum outdegree at least r≥1 has a directed cycle of length at most ceil(n/r).
 
 **Source:** [Hoàng–Reed, *A note on short cycles in digraphs* (1987)](https://doi.org/10.1016/0012-365X(87)90122-1) discusses exact low-outdegree cases. [EGRES Open overview](https://lemon.cs.elte.hu/egres/open/Caccetta-H%C3%A4ggkvist_conjecture) distinguishes the directed-triangle form from the full statement.

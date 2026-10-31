@@ -5,6 +5,7 @@
 - **[Public research dashboard](https://svyable.github.io/100/)** (once GitHub Pages is enabled: [activation guide](docs/PAGES_SETUP.md)) — ranked search, evidence filters, active proof campaigns.
 - **[Execution-priority queue](ATTACK_QUEUE.md)** — evidence-aware ordering of the top 100 with precise proof obligations for active campaigns.
 - **[Solved archive](data/solved.json)** — strict full-resolution ledger, initially empty; known finite benchmarks are kept separate.
+- [Caccetta–Häggkvist finite census and 18-vertex SAT target](research/M074_CH.md) — exact symmetry coverage, independent cycle check and reproducible CNF encoding; no new proof claimed.
 - [Research engine and verification rules](docs/RESEARCH_ENGINE.md) — how results, readiness, rankings and CI interact.
 - [Current rank order](RANKED.md) — deterministic generated ranking of 100 candidates.
 - [Machine-readable registry](data/problems.json) — stable IDs, working questions, first attacks, weighted scores, evidence status and provenance.

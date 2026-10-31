@@ -21,6 +21,7 @@ RUNNABLE = {
     "python3 scripts/ramsey.py demo": "scripts/ramsey.py",
     "python3 scripts/union_closed.py exhaustive --n 4": "scripts/union_closed.py",
     "python3 scripts/digraph.py exhaustive --n 4": "scripts/digraph.py",
+    "python3 scripts/digraph_orbits.py --n 5": "scripts/digraph_orbits.py",
 }
 
 

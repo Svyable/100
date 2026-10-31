@@ -1,0 +1,24 @@
+{
+  "problem_id": "M074",
+  "target": "Caccetta–Häggkvist fixed n=18, r=6, no directed 2- or 3-cycles",
+  "statement": "There is no loopless digraph on 18 vertices with minimum outdegree >=6 and directed girth >=4.",
+  "status": "CNF_ENCODING_ONLY_NOT_SOLVED",
+  "variables": 306,
+  "clauses": 113169,
+  "bytes": 5125375,
+  "components": {
+    "no_2cycles": 153,
+    "no_3cycles": 1632,
+    "min_outdegree": 111384
+  },
+  "sha256": "32ae7c559724172e1213fbc9ee34053b2d02b791b2db47a6521482d2587f13e2",
+  "generation_command": "python3 scripts/ch_sat.py cnf --n 18 --r 6 --output /tmp/ch18-6.cnf",
+  "requirement": "A satisfying assignment must be independently decoded and checked; an UNSAT solver verdict alone is not a proof and requires an externally checked proof trace.",
+  "source_check": "2026-10-31",
+  "references": [
+    "https://lemon.cs.elte.hu/egres/open/Caccetta-H%C3%A4ggkvist_conjecture",
+    "https://oeis.org/A000273",
+    "https://oeis.org/A001174",
+    "https://www.combinatorics.org/ojs/index.php/eljc/article/download/v24i2p19/pdf"
+  ]
+}
