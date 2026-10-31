@@ -70,7 +70,7 @@ def verify(root=ROOT):
     names = validate_registry(root)
     pinned = (work / 'lean-toolchain').read_text().strip()
     version = run(['lake', 'env', 'lean', '--version'], work)
-    if f"version {pinned.rsplit(':v', 1)[1]} " not in version:
+    if not re.search(r"version " + re.escape(pinned.rsplit(':v', 1)[1]) + r"(?:,|\s)", version):
         raise ValueError('toolchain mismatch')
     run(['lake', 'build'], work)
     for path in sorted(work.glob('Hundred/**/*.lean')) + [work / 'Negative.lean']:
