@@ -10,7 +10,7 @@ counts as a new theorem, and unreviewed claims receive no bonus.
 
 | Attack rank | ID | Problem | Base | Readiness | Index | Next step |
 |---:|---|---|---:|---:|---:|---|
-| 1 | M074 | Caccetta–Häggkvist conjecture | 94 | +7 | 101 | Apply reproducible, proof-logging SAT with symmetry constraints justified by vertex relabeling; independently check any witness or UNSAT trace. |
+| 1 | M074 | Caccetta–Häggkvist conjecture | 94 | +7 | 101 | Replay the external fixed-r=6 proof corpus on an independent host, verify its published hash and proof traces, and audit the hand-reduction steps before launching duplicate SAT search. |
 | 2 | M075 | Frankl union-closed sets conjecture | 91 | +7 | 98 | Canonicalize families under ground-set permutations; prove or disprove a restricted lemma on minimal counterexamples. |
 | 3 | M088 | Deterministic polynomial identity testing | 94 | +2 | 96 | Implement small exact arithmetic circuits and a falsifier that searches for circuits escaping a proposed hitting set. |
 | 4 | M092 | Zauner SIC conjecture | 94 | +2 | 96 | Formalize a candidate fiducial in a low dimension with rational/algebraic coordinates, then generalize a symmetry identity. |
@@ -115,15 +115,15 @@ counts as a new theorem, and unreviewed claims receive no bonus.
 
 ### M074 — Caccetta–Häggkvist conjecture
 
-**Proof obligation:** Generate the complete n=18,r=6 directed-triangle counterexample CNF and seek a sound SAT witness or a verified UNSAT proof.
+**Proof obligation:** Independently audit the public computer-assisted fixed-r=6 proof claim, including proof-to-CNF reductions, finite certificates and cited premises; distinguish restricted result from full CH.
 
 **Falsifier:** An explicitly checked digraph with min outdegree r and no directed cycle of length <=ceil(n/r).
 
-**Next experiment:** Apply reproducible, proof-logging SAT with symmetry constraints justified by vertex relabeling; independently check any witness or UNSAT trace.
+**Next experiment:** Replay the external fixed-r=6 proof corpus on an independent host, verify its published hash and proof traces, and audit the hand-reduction steps before launching duplicate SAT search.
 
-**Current blocker:** No solver/model certificate or independently checked UNSAT proof exists in this repository; recent outside r=6 proof claims require specialist review.
+**Current blocker:** External fixed-r=6 proof corpus (438 MB) and independent specialist review have not been reproduced in this repo; neither encoding supplies a SAT/UNSAT certificate.
 
-**Stage:** `benchmark_reproduced` · [Dossier](research/M074_CH.md)
+**Stage:** `benchmark_reproduced` · [Dossier](research/M074_PRIOR_ART.md)
 
 ### M075 — Frankl union-closed sets conjecture
 
