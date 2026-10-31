@@ -87,6 +87,38 @@ def validate(triage, active):
             raise ValueError("Candidate needs HTTPS source leads")
     return Counter(entry["concern"] for entry in entries)
 
+
+SCOPE = ROOT / "data" / "statement_scope_reviews.json"
+
+def validate_scope(scope, triage):
+    """Draft statements are context only, never an open-status upgrade."""
+    if not isinstance(scope, dict) or set(scope) != {"as_of", "purpose", "reviews"}:
+        raise ValueError("Scope-review schema invalid")
+    if (not valid_day(scope["as_of"])
+            or scope["purpose"] != "statement_scope_drafts_not_verified_open_status"):
+        raise ValueError("Scope review must be a dated, explicitly provisional record")
+    entries = {p["id"] for p in triage["entries"] if p["concern"] == "scope"}
+    reviews = scope["reviews"]
+    if not isinstance(reviews, list) or {p["id"] for p in reviews} != entries or len(reviews) != len(entries):
+        raise ValueError("Every and only scope-flagged target must have one draft review")
+    for r in reviews:
+        if not isinstance(r, dict) or set(r) != {
+                "id", "current_ambiguity", "draft_scope", "open_questions",
+                "source_urls", "evidence_level", "promotion_barrier"}:
+            raise ValueError("Scope-review entry schema invalid")
+        if r["evidence_level"] != "background_only":
+            raise ValueError("Scope draft cannot be marked verified, solved or current-status audited")
+        for key in ("current_ambiguity", "draft_scope", "promotion_barrier"):
+            if not substantial(r[key], 70):
+                raise ValueError("Scope review lacks a substantive qualification")
+        if (not isinstance(r["open_questions"], list) or len(r["open_questions"]) < 2
+                or any(not substantial(q, 20) for q in r["open_questions"])):
+            raise ValueError("Scope review needs open verification questions")
+        if (not isinstance(r["source_urls"], list) or not r["source_urls"]
+                or any(not https(url) for url in r["source_urls"])):
+            raise ValueError("Scope review needs starting citations")
+    return len(reviews)
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true")
@@ -94,11 +126,13 @@ def main():
     active = json.loads(REGISTRY.read_text(encoding="utf-8"))
     triage = json.loads(TRIAGE.read_text(encoding="utf-8"))
     counts = validate(triage, active)
+    scope_count = validate_scope(json.loads(SCOPE.read_text(encoding="utf-8")), triage)
     print(f"OK: 100 active unchanged; {len(triage['entries'])} targeted flags; "
           f"{len(triage['admission_candidates'])} unvetted candidates; "
           f"{100-len(triage['entries'])} not screened in this pass")
     for concern in sorted(counts):
         print(f"{concern}: {counts[concern]}")
+    print(f"{scope_count} provisional statement reviews linked; no current-status certification.")
     print("No resolution, independent open status or replacement certified.")
 
 if __name__ == "__main__":

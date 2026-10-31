@@ -395,6 +395,10 @@
       $("stat-total").textContent = String(data.problems.length);
       $("stat-campaigns").textContent = String(data.summary.campaigns);
       $("status-claim-count").textContent = String(data.status_counts.claim_needs_review || 0);
+      const auditedOpen = (data.status_counts.official_open || 0) +
+        (data.status_counts.verified_open || 0);
+      $("status-open-audited-count").textContent = String(auditedOpen);
+      $("status-open-pending-count").textContent = String(data.problems.length - auditedOpen);
       $("snapshot-date").textContent = "Latest recorded source intake: " +
         (data.source_review_as_of || "varies") + ".";
       for (const id of ["search-problems","filter-field","filter-status","filter-modality","sort-problems"]) {

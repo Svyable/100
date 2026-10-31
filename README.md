@@ -6,6 +6,7 @@
 - **[Next 100 hypothesis reservoir](https://svyable.github.io/100/next/)** — 120 initial cross-domain, unvetted proposals in a scalable pipeline; ranked discovery priorities, not claimed new open results ([protocol](NEXT_100.md)). The active 100 remains capped.
 - **[Public research dashboard](https://svyable.github.io/100/)** (once GitHub Pages is enabled: [activation guide](docs/PAGES_SETUP.md)) — ranked search, evidence filters, active proof campaigns.
 - **[Exact probe lab](LAB.md)**: 15 independently checked probes on 11 reusable engines give **17 of the 100 problems** an exact verifier (previously 3), including 16 of the 19 problems where finite computation can refute or settle the claim. All ranges are known mathematics; see [the lab dossier](research/LAB_CAMPAIGNS.md).
+- **[Statement-scope review drafts](data/statement_scope_reviews.json)** — five provisional problem formulations and exact unresolved assumptions; *not* independent open-status confirmations.
 - **[Evidence-gated portfolio curation](docs/PORTFOLIO_SELECTION.md)** — targeted review flags, replacement standards, and [unvetted admission alternatives](data/portfolio_triage.json).
 - **[Execution-priority queue](ATTACK_QUEUE.md)** — evidence-aware ordering of the top 100 with precise proof obligations for active campaigns.
 - **[Solved archive](data/solved.json)** — strict full-resolution ledger, initially empty; known finite benchmarks are kept separate.
