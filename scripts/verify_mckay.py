@@ -53,7 +53,7 @@ def decode_graph6(line):
     if spare and payload[-1] & ((1 << spare) - 1):
         raise ValueError("nonzero graph6 padding")
     adjacency = [0] * n
-    for index, (u, v) in enumerate(combinations(range(n), 2)):
+    for index, (u, v) in enumerate((u, v) for v in range(1, n) for u in range(v)):
         if payload[index // 6] & (1 << (5 - index % 6)):
             adjacency[u] |= 1 << v
             adjacency[v] |= 1 << u
