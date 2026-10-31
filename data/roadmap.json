@@ -10,56 +10,474 @@
     "later": "Committed direction; scope still to be set."
   },
   "tracks": [
-    {"id": "foundation", "name": "Registry & ranking", "goal": "One canonical, scored, provenance-tracked list of exactly 100 targets."},
-    {"id": "engine", "name": "Research engine", "goal": "Evidence-aware readiness, campaigns and a strict promotion gate to Solved."},
-    {"id": "lab", "name": "Exact probe lab", "goal": "Every computable problem gets a search plus an independent checker on a reusable engine."},
-    {"id": "campaigns", "name": "Proof campaigns", "goal": "Push the highest-ranked targets toward reviewed restricted results."},
-    {"id": "claims", "name": "Claim audit", "goal": "Check announced resolutions for exact scope before spending effort on them."},
-    {"id": "trust", "name": "Trust & reproducibility", "goal": "Pinned artifacts, proof certificates and CI that reruns everything."},
-    {"id": "community", "name": "Site & community", "goal": "A public dashboard and a contribution path that keeps the bar high."}
+    {
+      "id": "foundation",
+      "name": "Registry & ranking",
+      "goal": "One canonical, scored, provenance-tracked list of exactly 100 targets."
+    },
+    {
+      "id": "engine",
+      "name": "Research engine",
+      "goal": "Evidence-aware readiness, campaigns and a strict promotion gate to Solved."
+    },
+    {
+      "id": "lab",
+      "name": "Exact probe lab",
+      "goal": "Every computable problem gets a search plus an independent checker on a reusable engine."
+    },
+    {
+      "id": "campaigns",
+      "name": "Proof campaigns",
+      "goal": "Push the highest-ranked targets toward reviewed restricted results."
+    },
+    {
+      "id": "claims",
+      "name": "Claim audit",
+      "goal": "Check announced resolutions for exact scope before spending effort on them."
+    },
+    {
+      "id": "trust",
+      "name": "Trust & reproducibility",
+      "goal": "Pinned artifacts, proof certificates and CI that reruns everything."
+    },
+    {
+      "id": "community",
+      "name": "Site & community",
+      "goal": "A public dashboard and a contribution path that keeps the bar high."
+    }
   ],
   "metrics": [
-    {"id": "verifier_coverage", "label": "Problems with an exact verifier", "baseline": 3, "target": 25, "unit": "of 100"},
-    {"id": "computable_coverage", "label": "Computable problems covered", "baseline": 0, "target": 19, "unit": "of 19"},
-    {"id": "engines", "label": "Reusable exact engines", "baseline": 0, "target": 15, "unit": "engines"},
-    {"id": "campaigns", "label": "Active proof campaigns", "baseline": 0, "target": 25, "unit": "campaigns"},
-    {"id": "claims_triaged", "label": "2026 claims triaged for scope", "baseline": 0, "target": 15, "unit": "of 15"},
-    {"id": "restricted_verified", "label": "Independently reviewed restricted results", "baseline": 0, "target": 1, "unit": "results"},
-    {"id": "solved", "label": "Solved archive entries", "baseline": 0, "target": null, "unit": "entries"}
+    {
+      "id": "verifier_coverage",
+      "label": "Problems with an exact verifier",
+      "baseline": 3,
+      "target": 25,
+      "unit": "of 100"
+    },
+    {
+      "id": "computable_coverage",
+      "label": "Computable problems covered",
+      "baseline": 0,
+      "target": 19,
+      "unit": "of 19"
+    },
+    {
+      "id": "engines",
+      "label": "Reusable exact engines",
+      "baseline": 0,
+      "target": 15,
+      "unit": "engines"
+    },
+    {
+      "id": "campaigns",
+      "label": "Active proof campaigns",
+      "baseline": 0,
+      "target": 25,
+      "unit": "campaigns"
+    },
+    {
+      "id": "claims_triaged",
+      "label": "2026 claims triaged for scope",
+      "baseline": 0,
+      "target": 15,
+      "unit": "of 15"
+    },
+    {
+      "id": "restricted_verified",
+      "label": "Independently reviewed restricted results",
+      "baseline": 0,
+      "target": 1,
+      "unit": "results"
+    },
+    {
+      "id": "solved",
+      "label": "Solved archive entries",
+      "baseline": 0,
+      "target": null,
+      "unit": "entries"
+    }
   ],
   "items": [
-    {"id": "R01", "track": "foundation", "horizon": "shipped", "title": "Registry of 100 scored problems", "outcome": "Stable IDs, working questions, first attacks, weighted scores (30/30/25/15) and provenance.", "evidence": "data/problems.json", "problems": []},
-    {"id": "R02", "track": "foundation", "horizon": "shipped", "title": "Deterministic ranking with drift check", "outcome": "Generated rank order that CI rejects if stale.", "evidence": "RANKED.md", "problems": []},
-    {"id": "R03", "track": "foundation", "horizon": "shipped", "title": "Research protocol and source policy", "outcome": "Rules for advancing, scoring and retiring candidates; official Clay citations.", "evidence": "docs/RESEARCH_PROTOCOL.md", "problems": []},
-    {"id": "R04", "track": "engine", "horizon": "shipped", "title": "Milestones, readiness and strict Solved gate", "outcome": "Readiness bonus (0-10) kept separate from editorial score; promotion gate tested.", "evidence": "docs/RESEARCH_ENGINE.md", "problems": []},
-    {"id": "R05", "track": "engine", "horizon": "shipped", "title": "Execution-priority queue", "outcome": "Evidence-aware ordering of all 100 with a next step per problem.", "evidence": "ATTACK_QUEUE.md", "problems": []},
-    {"id": "R06", "track": "campaigns", "horizon": "shipped", "title": "Proof campaigns with bounded first attacks", "outcome": "Precise statements, verifiers and proof obligations.", "evidence": "research/CAMPAIGNS.md", "problems": ["M074", "M075", "M095"]},
-    {"id": "R07", "track": "campaigns", "horizon": "shipped", "title": "Caccetta-Häggkvist census and SAT target", "outcome": "Symmetry-certified 5-vertex census, two independent SAT encodings with semantic tests, n=18 r=6 target.", "evidence": "research/M074_CH.md", "problems": ["M074"]},
-    {"id": "R08", "track": "campaigns", "horizon": "shipped", "title": "Frankl and Ramsey small-case benchmarks", "outcome": "Exhaustive union-closed check and small Ramsey certificates; known cases only.", "evidence": "research/M075_FRANKL.md", "problems": ["M075", "M095"]},
-    {"id": "R09", "track": "lab", "horizon": "shipped", "title": "Exact probe lab: 15 probes on 11 engines", "outcome": "Search plus independent checker at smoke and deep levels; verifier coverage 3 -> 17.", "evidence": "LAB.md", "problems": ["M006", "M019", "M041", "M071", "M073", "M078", "M079", "M080", "M084", "M092", "M093", "M094", "M095", "M096", "M097"]},
-    {"id": "R10", "track": "lab", "horizon": "shipped", "title": "Computational modality for every problem", "outcome": "Each problem tagged; engine roadmap lists every computable problem without a probe.", "evidence": "data/engine_roadmap.json", "problems": []},
-    {"id": "R11", "track": "claims", "horizon": "shipped", "title": "Scope triage of all 15 claimed 2026 resolutions", "outcome": "Primary sources, quantifier comparison and next checks; M098 de-scoped; no status upgraded.", "evidence": "research/CLAIM_REVIEWS_2026.md", "problems": ["M014", "M030", "M037", "M038", "M044", "M049", "M054", "M055", "M056", "M060", "M071", "M073", "M085", "M098", "M100"]},
-    {"id": "R12", "track": "trust", "horizon": "shipped", "title": "Pinned external proof corpus with hash verifier", "outcome": "Streaming SHA-256 check with negative tests.", "evidence": "data/external_claims.json", "problems": ["M074"]},
-    {"id": "R13", "track": "trust", "horizon": "shipped", "title": "CI and weekly deep reruns", "outcome": "Every generated file drift-checked on each PR; weekly deep probe and M074 reruns.", "evidence": ".github/workflows/validate.yml", "problems": []},
-    {"id": "R14", "track": "community", "horizon": "shipped", "title": "Public research dashboard", "outcome": "Ranked search, campaigns, lab, proof queue, Solved ledger and this roadmap, all from verified records.", "evidence": "docs/index.html", "problems": []},
-    {"id": "R15", "track": "community", "horizon": "shipped", "title": "Contribution workflow and evidence templates", "outcome": "Issue and PR templates that demand exact scope and reproducible evidence.", "evidence": "CONTRIBUTING.md", "problems": []},
-    {"id": "R30", "track": "lab", "horizon": "shipped", "title": "Interval-arithmetic zero counts for zeta and L(s, chi_4)", "outcome": "Rigorous N(T) for zeta up to height 36 and for L(s, chi_4) up to height 17, each matched to Hardy sign changes and replayed at a second truncation.", "evidence": "research/LAB_CAMPAIGNS.md", "problems": ["M001", "M002"]},
-
-    {"id": "R20", "track": "campaigns", "horizon": "now", "title": "Independent replay of the external r=6 corpus", "outcome": "Replay on a second host, verify hash and proof traces, audit hand reductions before duplicate SAT search.", "exit": "Replay log and audit notes committed; discrepancies filed as issues.", "evidence": "research/M074_PRIOR_ART.md", "problems": ["M074"]},
-    {"id": "R21", "track": "lab", "horizon": "now", "title": "SIC fiducials in d = 4..8", "outcome": "Extend the cyclotomic engine to the needed number fields and replay published exact fiducials.", "exit": "Deep probe passes for d <= 8 with an independent overlap checker.", "evidence": "scripts/probes/sic.py", "problems": ["M092"]},
-    {"id": "R22", "track": "campaigns", "horizon": "now", "title": "Frankl minimal-counterexample lemma", "outcome": "Canonical families under ground-set permutations; prove or refute a restricted lemma.", "exit": "Written lemma with a finite certificate, submitted for independent review.", "evidence": "research/M075_FRANKL.md", "problems": ["M075"]},
-    {"id": "R23", "track": "lab", "horizon": "now", "title": "Census mining for reconstruction and 1/3-2/3", "outcome": "Tabulate deck invariants that separate every deck, and posets with balance near 1/3.", "exit": "Published tables and a named family with a conjectured lemma.", "evidence": "LAB.md", "problems": ["M078", "M079"]},
-    {"id": "R24", "track": "lab", "horizon": "now", "title": "Arcs in PG(3,q) and Hadamard orders 116, 156, 172", "outcome": "5-point frames for q <= 9; multiplier symmetry for Williamson n=29; Goethals-Seidel arrays.", "exit": "All Hadamard orders 4k <= 172 constructed except literature-open ones.", "evidence": "scripts/probes/hadamard.py", "problems": ["M093", "M094"]},
-
-    {"id": "R31", "track": "lab", "horizon": "next", "title": "Group-character engine", "outcome": "Exact Brauer-character and weight counts for small groups and primes.", "exit": "Computable coverage 19/19.", "evidence": "data/engine_roadmap.json", "problems": ["M048"]},
-    {"id": "R32", "track": "claims", "horizon": "next", "title": "Computational checks of claimed witnesses", "outcome": "Independent group-ring checker for M044/M049; explicit graph for the M071 claim; explicit host for the M073 claim.", "exit": "Each witness reproduced or a precise gap reported.", "evidence": "data/claim_reviews_2026.json", "problems": ["M044", "M049", "M071", "M073"]},
-    {"id": "R33", "track": "trust", "horizon": "next", "title": "DRAT/LRAT proofs from SAT pipelines", "outcome": "Every UNSAT verdict ships a proof checked by an independent checker.", "exit": "CI checks proofs for the M074 and M096 encodings.", "evidence": "scripts/ch_sat.py", "problems": ["M074", "M096"]},
-    {"id": "R34", "track": "lab", "horizon": "next", "title": "Deeper probes", "outcome": "8-9 vertex census (M071), step-graphon search (M073), degree-4 Jacobian maps (M041), flip-graph rank search (M084), published K42 witness (M095).", "exit": "Each probe's deep range extended and re-certified.", "evidence": "ATTACK_QUEUE.md", "problems": ["M041", "M071", "M073", "M084", "M095"]},
-    {"id": "R35", "track": "campaigns", "horizon": "next", "title": "Restricted lemmas for the zero-readiness tier", "outcome": "Falsifiable restricted statements and prior-art audits for sunflowers, Dixmier, Erdős-Hajnal, Komlós and complexity targets.", "exit": "Five new campaign briefs, each with a falsifier.", "evidence": "ATTACK_QUEUE.md", "problems": ["M076", "M042", "M072", "M077", "M088"]},
-
-    {"id": "R40", "track": "foundation", "horizon": "later", "title": "Status audit of the 95 non-Millennium entries", "outcome": "Dated specialist sources for each; replace resolved or duplicate candidates without exceeding 100.", "evidence": "docs/AUDIT_QUEUE.md", "problems": []},
-    {"id": "R41", "track": "trust", "horizon": "later", "title": "Formal statement fidelity", "outcome": "Lean encodings where the statement can be checked against the registered conjecture.", "evidence": "docs/RESEARCH_PROTOCOL.md", "problems": []},
-    {"id": "R42", "track": "engine", "horizon": "later", "title": "First independently reviewed new restricted result", "outcome": "Earn the +3 readiness bonus that no problem has yet.", "evidence": "docs/RESEARCH_ENGINE.md", "problems": []},
-    {"id": "R43", "track": "community", "horizon": "later", "title": "Outside contributor pipeline", "outcome": "Certificate issue templates, a reproducibility bot and published compute budgets per probe.", "evidence": "CONTRIBUTING.md", "problems": []}
+    {
+      "id": "R01",
+      "track": "foundation",
+      "horizon": "shipped",
+      "title": "Registry of 100 scored problems",
+      "outcome": "Stable IDs, working questions, first attacks, weighted scores (30/30/25/15) and provenance.",
+      "evidence": "data/problems.json",
+      "problems": []
+    },
+    {
+      "id": "R02",
+      "track": "foundation",
+      "horizon": "shipped",
+      "title": "Deterministic ranking with drift check",
+      "outcome": "Generated rank order that CI rejects if stale.",
+      "evidence": "RANKED.md",
+      "problems": []
+    },
+    {
+      "id": "R03",
+      "track": "foundation",
+      "horizon": "shipped",
+      "title": "Research protocol and source policy",
+      "outcome": "Rules for advancing, scoring and retiring candidates; official Clay citations.",
+      "evidence": "docs/RESEARCH_PROTOCOL.md",
+      "problems": []
+    },
+    {
+      "id": "R04",
+      "track": "engine",
+      "horizon": "shipped",
+      "title": "Milestones, readiness and strict Solved gate",
+      "outcome": "Readiness bonus (0-10) kept separate from editorial score; promotion gate tested.",
+      "evidence": "docs/RESEARCH_ENGINE.md",
+      "problems": []
+    },
+    {
+      "id": "R05",
+      "track": "engine",
+      "horizon": "shipped",
+      "title": "Execution-priority queue",
+      "outcome": "Evidence-aware ordering of all 100 with a next step per problem.",
+      "evidence": "ATTACK_QUEUE.md",
+      "problems": []
+    },
+    {
+      "id": "R06",
+      "track": "campaigns",
+      "horizon": "shipped",
+      "title": "Proof campaigns with bounded first attacks",
+      "outcome": "Precise statements, verifiers and proof obligations.",
+      "evidence": "research/CAMPAIGNS.md",
+      "problems": [
+        "M074",
+        "M075",
+        "M095"
+      ]
+    },
+    {
+      "id": "R07",
+      "track": "campaigns",
+      "horizon": "shipped",
+      "title": "Caccetta-Häggkvist census and SAT target",
+      "outcome": "Symmetry-certified 5-vertex census, two independent SAT encodings with semantic tests, n=18 r=6 target.",
+      "evidence": "research/M074_CH.md",
+      "problems": [
+        "M074"
+      ]
+    },
+    {
+      "id": "R08",
+      "track": "campaigns",
+      "horizon": "shipped",
+      "title": "Frankl and Ramsey small-case benchmarks",
+      "outcome": "Exhaustive union-closed check and small Ramsey certificates; known cases only.",
+      "evidence": "research/M075_FRANKL.md",
+      "problems": [
+        "M075",
+        "M095"
+      ]
+    },
+    {
+      "id": "R09",
+      "track": "lab",
+      "horizon": "shipped",
+      "title": "Exact probe lab: 15 probes on 11 engines",
+      "outcome": "Search plus independent checker at smoke and deep levels; verifier coverage 3 -> 17.",
+      "evidence": "LAB.md",
+      "problems": [
+        "M006",
+        "M019",
+        "M041",
+        "M071",
+        "M073",
+        "M078",
+        "M079",
+        "M080",
+        "M084",
+        "M092",
+        "M093",
+        "M094",
+        "M095",
+        "M096",
+        "M097"
+      ]
+    },
+    {
+      "id": "R10",
+      "track": "lab",
+      "horizon": "shipped",
+      "title": "Computational modality for every problem",
+      "outcome": "Each problem tagged; engine roadmap lists every computable problem without a probe.",
+      "evidence": "data/engine_roadmap.json",
+      "problems": []
+    },
+    {
+      "id": "R11",
+      "track": "claims",
+      "horizon": "shipped",
+      "title": "Scope triage of all 15 claimed 2026 resolutions",
+      "outcome": "Primary sources, quantifier comparison and next checks; M098 de-scoped; no status upgraded.",
+      "evidence": "research/CLAIM_REVIEWS_2026.md",
+      "problems": [
+        "M014",
+        "M030",
+        "M037",
+        "M038",
+        "M044",
+        "M049",
+        "M054",
+        "M055",
+        "M056",
+        "M060",
+        "M071",
+        "M073",
+        "M085",
+        "M098",
+        "M100"
+      ]
+    },
+    {
+      "id": "R12",
+      "track": "trust",
+      "horizon": "shipped",
+      "title": "Pinned external proof corpus with hash verifier",
+      "outcome": "Streaming SHA-256 check with negative tests.",
+      "evidence": "data/external_claims.json",
+      "problems": [
+        "M074"
+      ]
+    },
+    {
+      "id": "R13",
+      "track": "trust",
+      "horizon": "shipped",
+      "title": "CI and weekly deep reruns",
+      "outcome": "Every generated file drift-checked on each PR; weekly deep probe and M074 reruns.",
+      "evidence": ".github/workflows/validate.yml",
+      "problems": []
+    },
+    {
+      "id": "R14",
+      "track": "community",
+      "horizon": "shipped",
+      "title": "Public research dashboard",
+      "outcome": "Ranked search, campaigns, lab, proof queue, Solved ledger and this roadmap, all from verified records.",
+      "evidence": "docs/index.html",
+      "problems": []
+    },
+    {
+      "id": "R15",
+      "track": "community",
+      "horizon": "shipped",
+      "title": "Contribution workflow and evidence templates",
+      "outcome": "Issue and PR templates that demand exact scope and reproducible evidence.",
+      "evidence": "CONTRIBUTING.md",
+      "problems": []
+    },
+    {
+      "id": "R16",
+      "track": "engine",
+      "horizon": "shipped",
+      "title": "Leverage dispatch across shared attack shapes",
+      "outcome": "Every problem has one action and one shared shape. Dispatch score, not readiness alone, orders the attack queue. A range extension inside a cited theorem is refused.",
+      "evidence": "data/methods.json",
+      "problems": []
+    },
+    {
+      "id": "R17",
+      "track": "lab",
+      "horizon": "shipped",
+      "title": "Certified structure mines on five campaigns",
+      "outcome": "Deck invariants, poset balances, Goldbach record primes, Erdos-Straus residue patterns and Frankl orbits, each recomputed by a second code path.",
+      "evidence": "MINES.md",
+      "problems": [
+        "M006",
+        "M019",
+        "M075",
+        "M078",
+        "M079"
+      ]
+    },
+    {
+      "id": "R20",
+      "track": "campaigns",
+      "horizon": "now",
+      "title": "Independent replay of the external r=6 corpus",
+      "outcome": "Replay on a second host, verify hash and proof traces, audit hand reductions before duplicate SAT search.",
+      "exit": "Replay log and audit notes committed; discrepancies filed as issues.",
+      "evidence": "research/M074_PRIOR_ART.md",
+      "problems": [
+        "M074"
+      ]
+    },
+    {
+      "id": "R21",
+      "track": "lab",
+      "horizon": "now",
+      "title": "SIC fiducials in d = 4..8",
+      "outcome": "Extend the cyclotomic engine to the needed number fields and replay published exact fiducials.",
+      "exit": "Deep probe passes for d <= 8 with an independent overlap checker.",
+      "evidence": "scripts/probes/sic.py",
+      "problems": [
+        "M092"
+      ]
+    },
+    {
+      "id": "R22",
+      "track": "campaigns",
+      "horizon": "now",
+      "title": "Frankl minimal-counterexample lemma",
+      "outcome": "Canonical families under ground-set permutations; prove or refute a restricted lemma.",
+      "exit": "Written lemma with a finite certificate, submitted for independent review.",
+      "evidence": "research/M075_FRANKL.md",
+      "problems": [
+        "M075"
+      ]
+    },
+    {
+      "id": "R23",
+      "track": "lab",
+      "horizon": "now",
+      "title": "Census mining for reconstruction and 1/3-2/3",
+      "outcome": "Deck and balance tables are certified in MINES.md. The remaining work is a lemma for width at least 3, and a deck invariant stronger than degree plus triangles.",
+      "exit": "Published tables and a named family with a conjectured lemma.",
+      "evidence": "LAB.md",
+      "problems": [
+        "M078",
+        "M079"
+      ]
+    },
+    {
+      "id": "R24",
+      "track": "lab",
+      "horizon": "now",
+      "title": "Arcs in PG(3,q) and Hadamard orders 116, 156, 172",
+      "outcome": "5-point frames for q <= 9; multiplier symmetry for Williamson n=29; Goethals-Seidel arrays.",
+      "exit": "All Hadamard orders 4k <= 172 constructed except literature-open ones.",
+      "evidence": "scripts/probes/hadamard.py",
+      "problems": [
+        "M093",
+        "M094"
+      ]
+    },
+    {
+      "id": "R30",
+      "track": "lab",
+      "horizon": "shipped",
+      "title": "Interval-arithmetic zero counts for zeta and L(s, chi_4)",
+      "outcome": "Rigorous N(T) for zeta up to height 36 and for L(s, chi_4) up to height 17, each matched to Hardy sign changes and replayed at a second truncation.",
+      "evidence": "research/LAB_CAMPAIGNS.md",
+      "problems": [
+        "M001",
+        "M002"
+      ]
+    },
+    {
+      "id": "R31",
+      "track": "lab",
+      "horizon": "next",
+      "title": "Group-character engine",
+      "outcome": "Exact Brauer-character and weight counts for small groups and primes.",
+      "exit": "Computable coverage 19/19.",
+      "evidence": "data/engine_roadmap.json",
+      "problems": [
+        "M048"
+      ]
+    },
+    {
+      "id": "R32",
+      "track": "claims",
+      "horizon": "next",
+      "title": "Computational checks of claimed witnesses",
+      "outcome": "Independent group-ring checker for M044/M049; explicit graph for the M071 claim; explicit host for the M073 claim.",
+      "exit": "Each witness reproduced or a precise gap reported.",
+      "evidence": "data/claim_reviews_2026.json",
+      "problems": [
+        "M044",
+        "M049",
+        "M071",
+        "M073"
+      ]
+    },
+    {
+      "id": "R33",
+      "track": "trust",
+      "horizon": "next",
+      "title": "DRAT/LRAT proofs from SAT pipelines",
+      "outcome": "Every UNSAT verdict ships a proof checked by an independent checker.",
+      "exit": "CI checks proofs for the M074 and M096 encodings.",
+      "evidence": "scripts/ch_sat.py",
+      "problems": [
+        "M074",
+        "M096"
+      ]
+    },
+    {
+      "id": "R34",
+      "track": "lab",
+      "horizon": "next",
+      "title": "Replay published certificates the lab does not yet check",
+      "outcome": "Import the published K42 colouring and one published small-format tensor decomposition, each replayed by the existing checker. Do not extend a range the dispatcher marks stop_range.",
+      "exit": "Both certificates replayed, or a precise gap reported for each.",
+      "evidence": "ATTACK_QUEUE.md",
+      "problems": [
+        "M084",
+        "M095"
+      ]
+    },
+    {
+      "id": "R35",
+      "track": "campaigns",
+      "horizon": "next",
+      "title": "Restricted lemmas for the zero-readiness tier",
+      "outcome": "Falsifiable restricted statements and prior-art audits for sunflowers, Dixmier, Erdős-Hajnal, Komlós and complexity targets.",
+      "exit": "Five new campaign briefs, each with a falsifier.",
+      "evidence": "ATTACK_QUEUE.md",
+      "problems": [
+        "M076",
+        "M042",
+        "M072",
+        "M077",
+        "M088"
+      ]
+    },
+    {
+      "id": "R40",
+      "track": "foundation",
+      "horizon": "later",
+      "title": "Status audit of the 95 non-Millennium entries",
+      "outcome": "Dated specialist sources for each; replace resolved or duplicate candidates without exceeding 100.",
+      "evidence": "docs/AUDIT_QUEUE.md",
+      "problems": []
+    },
+    {
+      "id": "R41",
+      "track": "trust",
+      "horizon": "later",
+      "title": "Formal statement fidelity",
+      "outcome": "Lean encodings where the statement can be checked against the registered conjecture.",
+      "evidence": "docs/RESEARCH_PROTOCOL.md",
+      "problems": []
+    },
+    {
+      "id": "R42",
+      "track": "engine",
+      "horizon": "later",
+      "title": "First independently reviewed new restricted result",
+      "outcome": "Earn the +3 readiness bonus that no problem has yet.",
+      "evidence": "docs/RESEARCH_ENGINE.md",
+      "problems": []
+    },
+    {
+      "id": "R43",
+      "track": "community",
+      "horizon": "later",
+      "title": "Outside contributor pipeline",
+      "outcome": "Certificate issue templates, a reproducibility bot and published compute budgets per probe.",
+      "evidence": "CONTRIBUTING.md",
+      "problems": []
+    }
   ]
 }

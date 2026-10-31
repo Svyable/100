@@ -76,6 +76,33 @@
     const el=byId("candidate-"+id);
     if(el) {el.querySelector("details").open=true;el.scrollIntoView({block:"center"});}
   }
+  function renderReviewQueue(data) {
+    const target = byId("next-review-list");
+    target.replaceChildren();
+    const names = new Map(state.all.map(p => [p.id, p]));
+    for (const brief of data.review_queue || []) {
+      const candidate = names.get(brief.candidate_id);
+      if (!candidate) continue;
+      const card = document.createElement("article");
+      card.className = "next-review-card";
+      const source = new URL(brief.context_url);
+      const safeUrl = source.protocol === "https:" ? source.href : null;
+      card.innerHTML =
+        '<span>REVIEW ' + brief.priority + ' / ' + escapeHTML(brief.candidate_id) +
+        ' / ' + escapeHTML(brief.status.replace("_"," ")) + '</span>' +
+        '<h3>' + escapeHTML(candidate.title) + '</h3>' +
+        '<p><strong>Key question:</strong> ' + escapeHTML(brief.review_question) + '</p>' +
+        '<b>SMALLEST REPRODUCIBLE TEST</b><p>' + escapeHTML(brief.smallest_test) + '</p>' +
+        '<b>REMAINING AUDIT GAP</b><p>' + escapeHTML(brief.review_gap) + '</p>' +
+        '<a href="?focus=' + encodeURIComponent(brief.candidate_id) +
+        '#reservoir">Candidate ↗</a>' +
+        (safeUrl ? '<a href="' + escapeHTML(safeUrl) +
+         '" target="_blank" rel="noopener noreferrer">Context source ↗</a>' : '');
+      target.appendChild(card);
+    }
+    if (!target.children.length) target.textContent = "No reviews scheduled.";
+  }
+
   async function start() {
     try {
       const response=await fetch("../data/next.json",{cache:"no-cache"});
@@ -100,10 +127,12 @@
       });
       byId("next-more").addEventListener("click",()=>{state.limit+=24;render();});
       change();
+      renderReviewQueue(data);
       focusCandidate(new URLSearchParams(location.search).get("focus") || "");
     } catch(error) {
       byId("next-list").textContent="Unable to load the reservoir; inspect the canonical records on GitHub.";
       byId("next-results").textContent="Snapshot unavailable";
+      byId("next-review-list").textContent="Review queue unavailable";
       console.error(error);
     }
   }
