@@ -113,7 +113,7 @@ strengthened hypothesis is not a shorter proof.
 | M075 Frankl | Define an S5 orbit-canonical invariant, then prove an exact-once representative generator | Canonicalization lemma, collision falsifier, audited n=5 enumeration | The existing n=4 orbit census is known mathematics |
 | M095 Ramsey | Independently review the now-pinned 328-record K42 source and the two exact checkers | Offline replay: 656 colorings including complements; source digest and scope audit | The known lower bound R(5,5) ≥ 43 does not prove the upper bound |
 
-The live nodes encode these dependencies. Do not dispatch a costly search when
+The n=5 Frankl orbit-counting dependency now has a second exact route: [Burnside fixed-point certification](../research/M075_BURNSIDE.md) reproduces the known 28,960 full-support relabeling orbits without individual canonicalization. Neither the new finite calculation nor a paper argument replaces independent mathematical scope review. The live nodes encode these dependencies. Do not dispatch a costly search when
 the missing operation is a scope audit, a proof-trace replay or a symbolic lemma.
 
 ## 5. Proof throughput, not activity throughput
