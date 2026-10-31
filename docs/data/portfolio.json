@@ -1,7 +1,7 @@
 {
   "title": "100 — A living mathematical research portfolio",
   "source": "data/problems.json",
-  "source_review_as_of": "2026-10-30",
+  "source_review_as_of": "2026-10-31",
   "scoring": {
     "impact": 30,
     "attackability": 30,
@@ -34,14 +34,14 @@
       "name": "Caccetta–Häggkvist conjecture",
       "field": "Combinatorics",
       "question": "Does minimum digraph outdegree r force a directed cycle of length at most ceil(n/r)?",
-      "first_attack": "Encode fixed (n,r) minimum-outdegree and forbidden short cycles; verify structural reductions on exact digraphs",
+      "first_attack": "Verify all five-vertex digraphs modulo relabeling, then attack the exact n=18,r=6 directed-triangle SAT instance with independently checkable certificates",
       "impact": 5,
       "attackability": 4,
       "verifiability": 5,
       "spillover": 5,
       "evidence_state": "needs_review",
-      "checked_on": "2026-10-30",
-      "source_url": "https://doi.org/10.1016/0012-365X(87)90122-1",
+      "checked_on": "2026-10-31",
+      "source_url": "https://lemon.cs.elte.hu/egres/open/Caccetta-H%C3%A4ggkvist_conjecture",
       "rank": 1,
       "score": 94,
       "execution_rank": 1,
@@ -2136,12 +2136,12 @@
       "stage": "benchmark_reproduced",
       "method": "Directed graph extremal search",
       "hypothesis": "For each explicit pair (n,r), any loopless n-vertex digraph of minimum outdegree at least r contains a directed cycle of length at most ceil(n/r).",
-      "first_proof_obligation": "Independently check all small n digraphs with fixed r; produce a shortest-cycle witness or a validated obstruction.",
-      "next_experiment": "Extend the independent directed-girth validator to isomorphism classes on n=5 and compare extremal degree patterns against known theorems.",
+      "first_proof_obligation": "Generate the complete n=18,r=6 directed-triangle counterexample CNF and seek a sound SAT witness or a verified UNSAT proof.",
+      "next_experiment": "Apply reproducible, proof-logging SAT with symmetry constraints justified by vertex relabeling; independently check any witness or UNSAT trace.",
       "falsification": "An explicitly checked digraph with min outdegree r and no directed cycle of length <=ceil(n/r).",
-      "blocker": "Naive search grows as 2^(n(n-1)); canonical labeling or constrained SAT is needed beyond tiny n.",
-      "dossier": "research/CAMPAIGNS.md",
-      "verifier": "python3 scripts/digraph.py exhaustive --n 4"
+      "blocker": "No solver/model certificate or independently checked UNSAT proof exists in this repository; recent outside r=6 proof claims require specialist review.",
+      "dossier": "research/M074_CH.md",
+      "verifier": "python3 scripts/digraph_orbits.py --n 5"
     },
     {
       "problem_id": "M075",
@@ -2219,11 +2219,11 @@
       "id": "B-CH-001",
       "problem_id": "M074",
       "classification": "reproduced_known",
-      "title": "Short-cycle conjecture verified by exhaustive small-digraph search",
-      "scope": "All loopless labeled digraphs on 2–4 vertices only; not a new general theorem",
-      "description": "Enumerates all 2^(n(n-1)) digraphs for n<=4 and all eligible minimum-outdegree thresholds r, checking exact directed girth.",
-      "verifier": "python3 scripts/digraph.py exhaustive --n 4",
-      "artifact": "scripts/digraph.py",
+      "title": "Caccetta–Häggkvist verified on all digraphs of size at most five",
+      "scope": "Every labeled loopless directed graph on 2–5 vertices (known finite cases only), checked modulo relabeling",
+      "description": "Exhaustive n=5 census: 2^20=1,048,576 labeled graphs partition into 9,608 isomorphism orbits (matching Burnside and OEIS A000273); two independent cycle detectors agree. Known result only.",
+      "verifier": "python3 scripts/digraph_orbits.py --n 5",
+      "artifact": "scripts/digraph_orbits.py",
       "verified_on": "2026-10-31"
     }
   ],
@@ -2236,10 +2236,10 @@
       "execution_score": 101,
       "baseline_rank": 1,
       "stage": "benchmark_reproduced",
-      "first_proof_obligation": "Independently check all small n digraphs with fixed r; produce a shortest-cycle witness or a validated obstruction.",
-      "next_experiment": "Extend the independent directed-girth validator to isomorphism classes on n=5 and compare extremal degree patterns against known theorems.",
-      "blocker": "Naive search grows as 2^(n(n-1)); canonical labeling or constrained SAT is needed beyond tiny n.",
-      "dossier": "research/CAMPAIGNS.md"
+      "first_proof_obligation": "Generate the complete n=18,r=6 directed-triangle counterexample CNF and seek a sound SAT witness or a verified UNSAT proof.",
+      "next_experiment": "Apply reproducible, proof-logging SAT with symmetry constraints justified by vertex relabeling; independently check any witness or UNSAT trace.",
+      "blocker": "No solver/model certificate or independently checked UNSAT proof exists in this repository; recent outside r=6 proof claims require specialist review.",
+      "dossier": "research/M074_CH.md"
     },
     {
       "problem_id": "M075",

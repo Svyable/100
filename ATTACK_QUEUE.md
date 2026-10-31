@@ -10,7 +10,7 @@ counts as a new theorem, and unreviewed claims receive no bonus.
 
 | Attack rank | ID | Problem | Base | Readiness | Index | Next step |
 |---:|---|---|---:|---:|---:|---|
-| 1 | M074 | Caccetta–Häggkvist conjecture | 94 | +7 | 101 | Extend the independent directed-girth validator to isomorphism classes on n=5 and compare extremal degree patterns against known theorems. |
+| 1 | M074 | Caccetta–Häggkvist conjecture | 94 | +7 | 101 | Apply reproducible, proof-logging SAT with symmetry constraints justified by vertex relabeling; independently check any witness or UNSAT trace. |
 | 2 | M075 | Frankl union-closed sets conjecture | 91 | +7 | 98 | Canonicalize families under ground-set permutations; prove or disprove a restricted lemma on minimal counterexamples. |
 | 3 | M088 | Deterministic polynomial identity testing | 94 | +2 | 96 | Implement small exact arithmetic circuits and a falsifier that searches for circuits escaping a proposed hitting set. |
 | 4 | M092 | Zauner SIC conjecture | 94 | +2 | 96 | Formalize a candidate fiducial in a low dimension with rational/algebraic coordinates, then generalize a symmetry identity. |
@@ -115,15 +115,15 @@ counts as a new theorem, and unreviewed claims receive no bonus.
 
 ### M074 — Caccetta–Häggkvist conjecture
 
-**Proof obligation:** Independently check all small n digraphs with fixed r; produce a shortest-cycle witness or a validated obstruction.
+**Proof obligation:** Generate the complete n=18,r=6 directed-triangle counterexample CNF and seek a sound SAT witness or a verified UNSAT proof.
 
 **Falsifier:** An explicitly checked digraph with min outdegree r and no directed cycle of length <=ceil(n/r).
 
-**Next experiment:** Extend the independent directed-girth validator to isomorphism classes on n=5 and compare extremal degree patterns against known theorems.
+**Next experiment:** Apply reproducible, proof-logging SAT with symmetry constraints justified by vertex relabeling; independently check any witness or UNSAT trace.
 
-**Current blocker:** Naive search grows as 2^(n(n-1)); canonical labeling or constrained SAT is needed beyond tiny n.
+**Current blocker:** No solver/model certificate or independently checked UNSAT proof exists in this repository; recent outside r=6 proof claims require specialist review.
 
-**Stage:** `benchmark_reproduced` · [Dossier](research/CAMPAIGNS.md)
+**Stage:** `benchmark_reproduced` · [Dossier](research/M074_CH.md)
 
 ### M075 — Frankl union-closed sets conjecture
 
