@@ -73,7 +73,7 @@
       "statement": "The cited 42-vertex two-colouring of the complete graph has neither a red K5 nor a blue K5, as checked directly from its published adjacency data.",
       "prior_art_boundary": "A known K42 witness would reproduce a published Ramsey lower bound. It does not yield an upper bound or determine R(5,5).",
       "falsifier": "An explicit five-vertex monochromatic clique in the imported colouring, or a vertex/edge count inconsistent with K42.",
-      "next_action": "Import the published exact K42 adjacency data; run the independent clique checker and archive the hash and original source.",
+      "next_action": "The cited 328-graph K42 catalog has a pinned offline, dual-checker reproduction (scripts/verify_mckay.py). Obtain genuinely independent mathematical and statement-scope review of that exact replay before discharging this known-witness node; a K43 counterexample or full upper-bound proof remains a separate open target.",
       "depends_on": [],
       "status": "open",
       "evidence": null

@@ -17,6 +17,7 @@
 - [Current rank order](RANKED.md) — deterministic generated ranking of 100 candidates.
 - [Machine-readable registry](data/problems.json) — stable IDs, working questions, first attacks, weighted scores, evidence status and provenance.
 - [Active proof campaigns](research/CAMPAIGNS.md) — precise statements, verifiers and bounded first attacks.
+- [Published Ramsey K42 replay](research/M095_RAMSEY.md) — offline SHA-256-pinned McKay catalog, 328 known 42-vertex graph6 witnesses plus color-swapped complements, checked by two independent exact K5 algorithms; reproduces R(5,5) ≥ 43, not a novel bound.
 - [Ramsey R(5,5) certificate campaign](research/M095_RAMSEY.md) and [Frankl finite verification](research/M075_FRANKL.md) — reproducible small cases; neither resolves the full problem.
 - [Research and verification protocol](docs/RESEARCH_PROTOCOL.md) — rules for advancing, scoring and retiring candidates.
 - [Starting status sources](docs/SOURCES.md) — official Clay status and recent 2026 proof-claim precautions.
