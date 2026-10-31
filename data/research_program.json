@@ -4,15 +4,15 @@
   "campaigns": [
     {
       "problem_id": "M074",
-      "stage": "specified",
+      "stage": "benchmark_reproduced",
       "method": "Directed graph extremal search",
       "hypothesis": "For each explicit pair (n,r), any loopless n-vertex digraph of minimum outdegree at least r contains a directed cycle of length at most ceil(n/r).",
       "first_proof_obligation": "Independently check all small n digraphs with fixed r; produce a shortest-cycle witness or a validated obstruction.",
-      "next_experiment": "Construct a bitset digraph verifier and enumerate n<=4; identify the first nontrivial unproved structural case.",
+      "next_experiment": "Extend the independent directed-girth validator to isomorphism classes on n=5 and compare extremal degree patterns against known theorems.",
       "falsification": "An explicitly checked digraph with min outdegree r and no directed cycle of length <=ceil(n/r).",
-      "blocker": "No independent digraph enumeration checker committed yet.",
+      "blocker": "Naive search grows as 2^(n(n-1)); canonical labeling or constrained SAT is needed beyond tiny n.",
       "dossier": "research/CAMPAIGNS.md",
-      "verifier": null
+      "verifier": "python3 scripts/digraph.py exhaustive --n 4"
     },
     {
       "problem_id": "M075",
@@ -84,6 +84,17 @@
       "description": "Enumerates all 2^(2^4)=65,536 families, filters union closure, checks exact frequencies.",
       "verifier": "python3 scripts/union_closed.py exhaustive --n 4",
       "artifact": "scripts/union_closed.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-CH-001",
+      "problem_id": "M074",
+      "classification": "reproduced_known",
+      "title": "Short-cycle conjecture verified by exhaustive small-digraph search",
+      "scope": "All loopless labeled digraphs on 2–4 vertices only; not a new general theorem",
+      "description": "Enumerates all 2^(n(n-1)) digraphs for n<=4 and all eligible minimum-outdegree thresholds r, checking exact directed girth.",
+      "verifier": "python3 scripts/digraph.py exhaustive --n 4",
+      "artifact": "scripts/digraph.py",
       "verified_on": "2026-10-31"
     }
   ]

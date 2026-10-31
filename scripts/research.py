@@ -20,6 +20,7 @@ MILESTONE_CLASSES = {"reproduced_known", "restricted_verified"}
 RUNNABLE = {
     "python3 scripts/ramsey.py demo": "scripts/ramsey.py",
     "python3 scripts/union_closed.py exhaustive --n 4": "scripts/union_closed.py",
+    "python3 scripts/digraph.py exhaustive --n 4": "scripts/digraph.py",
 }
 
 
