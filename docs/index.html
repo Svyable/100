@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5f0">
+  <meta name="description" content="100 concrete open mathematical questions, ranked for rigorous research. Explore conjectures, proof campaigns, verification status, and reproducible mathematics.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="100 — The Svyable mathematical research portfolio">
+  <meta property="og:description" content="A hundred mathematical questions. One rigorous result at a time.">
+  <meta property="og:url" content="https://svyable.github.io/100/">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <link rel="stylesheet" href="./assets/style.css">
+  <link rel="canonical" href="https://svyable.github.io/100/">
+  <script src="./assets/app.js" defer></script>
+  <title>100 — A living index of theorems worth proving</title>
+</head>
+<body>
+  <a class="skip-link" href="#rankings">Skip to the ranked problems</a>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="100, home">
+        <span class="brand-mark">100<span class="brand-dot">.</span></span>
+        <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="#rankings">The 100</a>
+        <a href="#campaigns">Campaigns</a>
+        <a href="#method">Method</a>
+        <a class="nav-source" href="https://github.com/Svyable/100" target="_blank" rel="noopener noreferrer">Source on GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> THE MATHEMATICAL FRONTIER / EST. 2026</p>
+          <h1 id="hero-heading">A hundred questions.<br><em>One new theorem.</em></h1>
+          <p class="hero-lead">An evolving portfolio of concrete open mathematical problems. Ranked for significance, tractability, independent verification, and the discoveries they might unlock.</p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#rankings">Explore the 100 <span aria-hidden="true">↗</span></a>
+            <a class="button button-ghost" href="#campaigns">See the proof campaigns <span aria-hidden="true">→</span></a>
+          </div>
+          <p class="hero-annotation"><span class="annotation-star">✳</span> Every claim needs a proof. Every proof needs a checker.</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
+          <span class="orbit-point orbit-point-a"></span><span class="orbit-point orbit-point-b"></span><span class="orbit-point orbit-point-c"></span>
+          <div class="art-center"><span>100</span><small>OPEN<br>QUESTIONS*</small></div>
+          <span class="art-note art-note-a">THE UNSOLVED</span>
+          <span class="art-note art-note-b">THE PROVABLE</span>
+          <span class="art-note art-note-c">THE POSSIBLE</span>
+        </div>
+      </section>
+
+      <section class="stats-strip" aria-label="Portfolio snapshot">
+        <div class="stat"><strong id="stat-total">100</strong><span>Active candidates</span></div>
+        <div class="stat"><strong id="stat-official">5</strong><span>Officially open</span></div>
+        <div class="stat"><strong id="stat-claims">15</strong><span>Claims needing review</span></div>
+        <div class="stat"><strong>04</strong><span>Research campaigns</span></div>
+      </section>
+      <p class="status-note">* “Active candidate” does not mean independently confirmed unsolved. Status flags distinguish official listings from conjectures still needing literature review.</p>
+
+      <section class="rankings section-block" id="rankings" aria-labelledby="rankings-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">01 / THE PORTFOLIO</p>
+            <h2 id="rankings-heading">The ranked <em>100.</em></h2>
+          </div>
+          <p>Not a popularity contest. A working research index. Open a problem to see its exact question, first proposed attack, and source status.</p>
+        </div>
+        <div class="ranking-panel">
+          <div class="filters" role="search" aria-label="Search and filter problems">
+            <label class="search-wrap" for="search-problems">
+              <span aria-hidden="true">⌕</span>
+              <input id="search-problems" type="search" placeholder="Search conjectures, fields, or IDs…" autocomplete="off">
+            </label>
+            <div class="filter-select">
+              <label for="filter-field">Field</label>
+              <select id="filter-field"><option value="">All fields</option></select>
+            </div>
+            <div class="filter-select">
+              <label for="filter-status">Evidence</label>
+              <select id="filter-status">
+                <option value="">All statuses</option>
+                <option value="official_open">Officially open</option>
+                <option value="verified_open">Specialist verified</option>
+                <option value="needs_review">Needs review</option>
+                <option value="claim_needs_review">Claim under review</option>
+              </select>
+            </div>
+            <div class="filter-select">
+              <label for="sort-problems">Order</label>
+              <select id="sort-problems">
+                <option value="rank">Portfolio rank</option>
+                <option value="impact">Impact first</option>
+                <option value="attackability">Attackability first</option>
+                <option value="verifiability">Verifiability first</option>
+                <option value="spillover">Spillover first</option>
+                <option value="name">Alphabetical</option>
+              </select>
+            </div>
+          </div>
+          <div class="results-bar">
+            <span id="results-count" role="status" aria-live="polite">Loading the verified registry snapshot…</span>
+            <button class="plain-button" id="reset-filters" type="button">Clear filters <span aria-hidden="true">↺</span></button>
+          </div>
+          <div class="list-head" aria-hidden="true">
+            <span>RANK / ID</span><span>PROBLEM &amp; DOMAIN</span><span>RESEARCH SCORE</span><span>EVIDENCE</span><span></span>
+          </div>
+          <div id="problem-list" class="problem-list" aria-live="off">
+            <div class="loading-state">Loading 100 questions from the repository’s generated snapshot…</div>
+          </div>
+          <div class="pagination"><button id="load-more" type="button" class="button button-outline" hidden>Show 20 more questions <span aria-hidden="true">↓</span></button></div>
+        </div>
+        <p class="table-footnote">Scores are editorial priorities, <strong>not</strong> probabilities of proof. Records are pulled from a versioned snapshot of <a href="https://github.com/Svyable/100/blob/main/data/problems.json">data/problems.json</a>. <span id="snapshot-date">Source review dates vary.</span></p>
+      </section>
+
+      <section class="campaigns section-block" id="campaigns" aria-labelledby="campaigns-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">02 / FROM QUESTIONS TO EVIDENCE</p>
+            <h2 id="campaigns-heading">Proof <em>campaigns.</em></h2>
+          </div>
+          <p>Four complementary attack surfaces. Each has a bounded first experiment, an explicit verifier, and clear limits on what can be claimed.</p>
+        </div>
+        <div class="campaign-grid">
+          <article class="campaign-card campaign-feature">
+            <div class="campaign-top"><span>CAMPAIGN 01 / FINITE CERTIFICATES</span><span class="campaign-mark">↗</span></div>
+            <span class="campaign-code">M095</span>
+            <h3>Ramsey R(5,5)</h3>
+            <p>Determine the exact Ramsey number. Verify candidate colorings independently; require auditable UNSAT certificates for exclusions.</p>
+            <div class="campaign-tags"><span>Graph theory</span><span>SAT</span><span>Exact checking</span></div>
+            <a href="https://github.com/Svyable/100/blob/main/research/M095_RAMSEY.md" target="_blank" rel="noopener noreferrer">Read campaign <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="campaign-card">
+            <div class="campaign-top"><span>CAMPAIGN 02 / SET FAMILIES</span><span class="campaign-mark">↗</span></div>
+            <span class="campaign-code">M075</span>
+            <h3>Frankl’s conjecture</h3>
+            <p>Explore exact union-closed families, minimal obstructions, and inequalities approaching the one-half threshold.</p>
+            <div class="campaign-tags"><span>Combinatorics</span><span>Enumeration</span></div>
+            <a href="https://github.com/Svyable/100/blob/main/research/M075_FRANKL.md" target="_blank" rel="noopener noreferrer">Read campaign <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="campaign-card">
+            <div class="campaign-top"><span>CAMPAIGN 03 / ALGEBRAIC METHODS</span><span class="campaign-mark">↗</span></div>
+            <span class="campaign-code">M088</span>
+            <h3>Polynomial identity testing</h3>
+            <p>Seek deterministic hitting sets for precisely specified circuit classes. Separate restricted progress from the general case.</p>
+            <div class="campaign-tags"><span>Complexity</span><span>Algorithms</span></div>
+            <a href="https://github.com/Svyable/100/blob/main/research/CAMPAIGNS.md" target="_blank" rel="noopener noreferrer">Read campaign <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="campaign-card">
+            <div class="campaign-top"><span>CAMPAIGN 04 / EXACT GEOMETRY</span><span class="campaign-mark">↗</span></div>
+            <span class="campaign-code">M092</span>
+            <h3>Zauner SIC existence</h3>
+            <p>Construct and check exact equiangular lines. Look for algebraic methods that generalize across dimensions.</p>
+            <div class="campaign-tags"><span>Quantum math</span><span>Algebra</span></div>
+            <a href="https://github.com/Svyable/100/blob/main/research/CAMPAIGNS.md" target="_blank" rel="noopener noreferrer">Read campaign <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+        <div class="campaign-foot"><span><span class="little-spark">✳</span> Passing a small-case test is a verified computation, not a proof of an unrestricted conjecture.</span><a href="https://github.com/Svyable/100/issues" target="_blank" rel="noopener noreferrer">View open research issues ↗</a></div>
+      </section>
+
+      <section class="method section-block" id="method" aria-labelledby="method-heading">
+        <div class="method-intro">
+          <p class="eyebrow">03 / OUR STANDARD OF EVIDENCE</p>
+          <h2 id="method-heading">No breakthroughs<br>by <em>announcement.</em></h2>
+          <p>A proof has to establish the stated theorem, survive independent scrutiny, and leave behind enough detail to reproduce the claim. That is the whole point.</p>
+          <a class="inline-link" href="https://github.com/Svyable/100/blob/main/docs/RESEARCH_PROTOCOL.md" target="_blank" rel="noopener noreferrer">Read the research protocol ↗</a>
+        </div>
+        <div class="method-right">
+          <div class="method-step"><b>01</b><div><h3>Specify</h3><p>Exact quantifiers, exceptions, source, and the frontier of known results.</p></div></div>
+          <div class="method-step"><b>02</b><div><h3>Attack</h3><p>Constrain a lemma, construct an example, or search for a falsifying instance.</p></div></div>
+          <div class="method-step"><b>03</b><div><h3>Verify</h3><p>Independent checking of mathematical meaning, not merely syntactic validity.</p></div></div>
+          <div class="method-step"><b>04</b><div><h3>Compound</h3><p>Preserve reusable tools and generalize verified results to the next problem.</p></div></div>
+        </div>
+      </section>
+
+      <section class="scoring section-block" aria-labelledby="scoring-heading">
+        <div><p class="eyebrow">04 / RANKING TRANSPARENCY</p><h2 id="scoring-heading">How we <em>prioritize.</em></h2><p>Four editorial factors, each scored 1–5. Ranking changes require a reason and a source; an exciting proof claim does not automatically change evidence status.</p></div>
+        <div class="scoring-metrics">
+          <div class="metric"><span>Mathematical impact</span><b>30%</b><div class="meter"><i style="width:60%"></i></div></div>
+          <div class="metric"><span>Attackability</span><b>30%</b><div class="meter"><i style="width:60%"></i></div></div>
+          <div class="metric"><span>Independent verifiability</span><b>25%</b><div class="meter"><i style="width:50%"></i></div></div>
+          <div class="metric"><span>Method spillover</span><b>15%</b><div class="meter"><i style="width:30%"></i></div></div>
+          <p class="formula">Score = 6 × impact + 6 × attackability + 5 × verifiability + 3 × spillover</p>
+        </div>
+      </section>
+
+      <aside class="closing-banner">
+        <div><span class="eyebrow">THE MISSION</span><h2>Not just more answers.<br><em>More ways to prove.</em></h2></div>
+        <a class="button button-light" href="https://github.com/Svyable/100" target="_blank" rel="noopener noreferrer">Explore the source ↗</a>
+      </aside>
+    </main>
+    <footer class="site-footer">
+      <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+      <div><a href="https://github.com/Svyable/100">Repository ↗</a><a href="https://github.com/Svyable/100/issues">Research issues ↗</a><a href="https://github.com/Svyable/100/blob/main/docs/SOURCES.md">Sources ↗</a></div>
+      <small>© 2026 SVYABLE / MATHEMATICAL FRONTIER</small>
+    </footer>
+  </div>
+</body>
+</html>
