@@ -313,6 +313,66 @@
     root.replaceChildren(fragment);
     $("stat-benchmarks").textContent = String(data.summary.reproduced_known);
   }
+  function renderRoadmap(data) {
+    const rm = data.roadmap;
+    const names = new Map(data.problems.map(p => [p.id, p.name]));
+    const metrics = document.createDocumentFragment();
+    for (const m of rm.metrics) {
+      const el = document.createElement("div");
+      el.className = "roadmap-metric";
+      const pct = m.target ? Math.min(100, Math.round(100 * m.value / m.target)) : 0;
+      el.innerHTML = '<strong>' + m.value + (m.target !== null ? '<small> / ' + m.target + '</small>' : '') +
+        '</strong><span>' + escapeHTML(m.label) + '</span>' +
+        (m.target !== null ? '<div class="meter" role="img" aria-label="' + pct + '% of target"><i style="width:' + pct + '%"></i></div>'
+                           : '<em class="roadmap-note">No target: review only</em>');
+      metrics.appendChild(el);
+    }
+    $("roadmap-metrics").replaceChildren(metrics);
+    const trackName = new Map(rm.tracks.map(t => [t.id, t.name]));
+    let active = "";
+    const titles = {shipped:"Shipped", now:"Now", next:"Next", later:"Later"};
+    function board() {
+      const frag = document.createDocumentFragment();
+      for (const h of Object.keys(rm.horizons)) {
+        const col = document.createElement("div");
+        col.className = "roadmap-col roadmap-" + h;
+        const items = rm.items.filter(i => i.horizon === h && (!active || i.track === active));
+        col.innerHTML = '<div class="roadmap-col-head"><b>' + titles[h] + '</b><span>' + items.length +
+          '</span></div><p class="roadmap-col-note">' + escapeHTML(rm.horizons[h]) + '</p>';
+        for (const it of items) {
+          const card = document.createElement("article");
+          card.className = "roadmap-card";
+          const url = repoFile(it.evidence);
+          const probs = it.problems.slice(0, 5).map(p =>
+            '<a href="?focus=' + escapeHTML(p) + '#rankings" title="' + escapeHTML(names.get(p) || p) + '">' + escapeHTML(p) + '</a>').join("");
+          card.innerHTML = '<span class="roadmap-card-top">' + escapeHTML(it.id) + ' · ' +
+            escapeHTML(trackName.get(it.track)) + '</span><h4>' + escapeHTML(it.title) + '</h4>' +
+            '<p>' + escapeHTML(it.outcome) + '</p>' +
+            (it.exit ? '<p class="roadmap-exit"><b>Done when</b> ' + escapeHTML(it.exit) + '</p>' : '') +
+            (probs ? '<div class="chips">' + probs + (it.problems.length > 5 ? '<span>+' + (it.problems.length - 5) + '</span>' : '') + '</div>' : '') +
+            (url ? '<a class="roadmap-evidence" href="' + escapeHTML(url) + '" target="_blank" rel="noopener noreferrer">Evidence ↗</a>' : '');
+          col.appendChild(card);
+        }
+        frag.appendChild(col);
+      }
+      $("roadmap-board").replaceChildren(frag);
+    }
+    const filters = $("roadmap-tracks");
+    for (const t of [{id:"", name:"All tracks"}, ...rm.tracks]) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.textContent = t.name;
+      b.setAttribute("aria-pressed", String(t.id === active));
+      if (t.goal) b.title = t.goal;
+      b.addEventListener("click", () => {
+        active = t.id;
+        for (const x of filters.children) x.setAttribute("aria-pressed", String(x === b));
+        board();
+      });
+      filters.appendChild(b);
+    }
+    board();
+  }
   async function start() {
     try {
       const response = await fetch("./data/portfolio.json", {cache:"no-store"});
@@ -321,7 +381,8 @@
       if (!data || !Array.isArray(data.problems) || data.problems.length !== 100 ||
           !Array.isArray(data.execution_queue) || !Array.isArray(data.solved) ||
           !Array.isArray(data.milestones) || !data.lab ||
-          !Array.isArray(data.lab.probes)) throw new Error("Malformed portfolio snapshot");
+          !Array.isArray(data.lab.probes) ||
+          !data.roadmap || !Array.isArray(data.roadmap.items)) throw new Error("Malformed portfolio snapshot");
       state.all = data.problems;
       campaignIds = new Set(data.campaigns.map(c => c.problem_id));
       verifiedIds = new Set(data.lab.covered_problems);
@@ -351,6 +412,7 @@
       renderCampaigns(data);
       renderLab(data);
       renderQueue(data);
+      renderRoadmap(data);
       renderSolved(data);
       renderMilestones(data);
       const focus = new URLSearchParams(location.search).get("focus");
@@ -371,6 +433,7 @@
       $("campaign-grid").textContent = "Campaigns unavailable";
       $("lab-probe-list").textContent = "Probe lab unavailable";
       $("execution-queue").textContent = "Proof queue unavailable";
+      $("roadmap-board").textContent = "Roadmap unavailable";
       $("solved-list").textContent = "Solved archive unavailable";
       $("milestone-list").textContent = "Verification milestones unavailable";
       console.error("Portfolio failed to load",error);
