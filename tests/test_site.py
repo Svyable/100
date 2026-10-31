@@ -73,6 +73,7 @@ class TestPages(unittest.TestCase):
                          "filter-field", "filter-status", "sort-problems",
                          "workbench", "execution-queue", "campaign-grid", "status-claim-count", "solved", "solved-list",
                          "stat-solved", "milestone-list", "nav-solved-count",
+                         "status-open-audited-count", "status-open-pending-count",
                          "lab", "lab-probe-list", "lab-engine-list", "lab-roadmap",
                          "lab-stat-covered", "lab-stat-computable", "lab-stat-probes",
                          "lab-stat-engines", "lab-mines", "filter-modality",
