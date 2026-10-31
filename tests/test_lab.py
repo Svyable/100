@@ -12,7 +12,7 @@ import lab
 import probes
 import rank
 import research
-from probes import core, cyclotomic, fields, graphs, primes
+from probes import core, cyclotomic, exact_lp, fields, graphs, homomorphisms, polynomials, primes
 from probes.core import ProbeFailure
 
 
@@ -62,6 +62,55 @@ class EngineTests(unittest.TestCase):
             degree = {graphs.degree_canonical(n, graphs.edge_set(n, c)) for c in codes}
             self.assertEqual(len(brute), len(codes))
             self.assertEqual(len(degree), len(codes))
+
+    def test_exact_lp_random_programs_are_certified(self):
+        import random
+        rng = random.Random(20261031)
+        for _ in range(80):
+            n, m = rng.randint(2, 4), rng.randint(2, 5)
+            x0 = [rng.randint(0, 3) for _ in range(n)]  # a known feasible point
+            c = [rng.randint(0, 6) for _ in range(n)]   # c >= 0 keeps the program bounded
+            A_ge = [[rng.randint(-2, 4) for _ in range(n)] for _ in range(m)]
+            b_ge = [sum(a * v for a, v in zip(row, x0)) - rng.randint(0, 3) for row in A_ge]
+            if rng.random() < 0.5:
+                A_eq = [[rng.randint(0, 3) for _ in range(n)]]
+                b_eq = [sum(a * v for a, v in zip(A_eq[0], x0))]
+            else:
+                A_eq, b_eq = [], []
+            value, x, y, z = exact_lp.solve(c, A_eq, b_eq, A_ge, b_ge)
+            self.assertEqual(exact_lp.certify(c, A_eq, b_eq, A_ge, b_ge, x, y, z), value)
+            self.assertLessEqual(value, sum(a * v for a, v in zip(c, x0)))
+        with self.assertRaises(exact_lp.Infeasible):
+            exact_lp.solve([1, 1], [[1, 1]], [1], [[1, 1]], [3])
+        with self.assertRaises(ValueError):  # a non-optimal primal point fails certification
+            exact_lp.certify([1, 1], [], [], [[1, 2], [3, 1]], [4, 6], [4, 0], [], [0, 0])
+
+    def test_homomorphism_counts_match_brute_force(self):
+        sid = probes.load("sidorenko")
+        for name, H in sid.patterns().items():
+            if H["A"] + H["B"] > 6:
+                continue
+            for n in range(1, 4):
+                for code in graphs.census(n):
+                    adj = graphs.to_adjacency(n, code)
+                    brute = homomorphisms.brute_count(H, n, adj)
+                    self.assertEqual(homomorphisms.count_from_side(H, n, adj, "A"), brute, name)
+                    self.assertEqual(homomorphisms.count_from_side(H, n, adj, "B"), brute, name)
+        k4 = graphs.to_adjacency(4, (1 << 6) - 1)
+        c4 = sid.patterns()["C4"]
+        self.assertEqual(homomorphisms.count_from_side(c4, 4, k4), 4 * 3 * 7)  # n(n-1)(n^2-3n+3)
+
+    def test_polynomial_algebra(self):
+        P = polynomials
+        f, g = {(1, 0): 1, (0, 2): 1}, {(0, 1): 1}                     # (x + y^2, y)
+        self.assertEqual(P.jacobian(f, g), {(0, 0): 1})
+        jac = probes.load("jacobian")
+        p, q = jac.inverse(f, g, 2)
+        self.assertEqual((p, q), ({(1, 0): 1, (0, 2): -1}, {(0, 1): 1}))  # (x - y^2, y)
+        self.assertEqual(P.compose(p, f, g), {(1, 0): 1})
+        self.assertIsNone(jac.inverse({(1, 0): 1}, {(1, 0): 1}, 1))     # (x, x) is not invertible
+        kernel = P.lattice_kernel([[1, 1, 0], [0, 1, 1]], [-1, 0, 1])
+        self.assertEqual(sorted(map(tuple, kernel)), [(-1, 1, -1), (0, 0, 0), (1, -1, 1)])
 
     def test_canonical_json_is_order_independent(self):
         self.assertEqual(core.digest({"b": 1, "a": [Fraction(1, 3)]}),
@@ -184,6 +233,18 @@ class TamperTests(unittest.TestCase):
         del bad["certificate"]["matrices"]["20"]
         self.assertRejects(m, params, bad)
 
+    def test_williamson_quadruples(self):
+        had = probes.load("hadamard")
+        for n in (3, 5, 7, 9):
+            rows = had.williamson(n)
+            self.assertIsNotNone(rows, n)
+            size = 4 * n
+            self.assertTrue(all(bin(rows[i] ^ rows[j]).count("1") == size // 2
+                                for i in range(size) for j in range(i + 1, size)), n)
+        A, B, C, D = had.williamson_quadruple(7)
+        for t in range(1, 7):
+            self.assertEqual(sum(sum(X[i] * X[(i + t) % 7] for i in range(7)) for X in (A, B, C, D)), 0)
+
     def test_ramsey_witnesses(self):
         params = {"witnesses": ["paley5", "circ8_1_4", "paley17"]}
         m, r = run("ramsey_witnesses", params)
@@ -200,6 +261,53 @@ class TamperTests(unittest.TestCase):
         self.assertRejects(m, params, bad)
         bad = copy.deepcopy(r)
         bad["certificate"]["table"]["6"] = "open"
+        self.assertRejects(m, params, bad)
+
+
+    def test_held_karp(self):
+        params = {"max_n": 5}
+        m, r = run("held_karp", params)
+        bad = copy.deepcopy(r)
+        bad["certificate"][-1]["x"][0] = "0"
+        self.assertRejects(m, params, bad)
+        bad = copy.deepcopy(r)
+        bad["certificate"][-1]["hk"] = "1/1"
+        self.assertRejects(m, params, bad)
+        bad = copy.deepcopy(r)
+        bad["certificate"][-1]["opt"] += 1
+        self.assertRejects(m, params, bad)
+        bad = copy.deepcopy(r)
+        bad["certificate"].pop()
+        self.assertRejects(m, params, bad)
+
+
+    def test_sidorenko(self):
+        params = {"max_host": 4}
+        m, r = run("sidorenko", params)
+        bad = copy.deepcopy(r)
+        bad["certificate"]["K55_minus_C10"]["hosts"][-1][2] += 1
+        self.assertRejects(m, params, bad)
+        bad = copy.deepcopy(r)
+        bad["certificate"]["C4"]["hosts"].pop()
+        self.assertRejects(m, params, bad)
+        bad = copy.deepcopy(r)
+        bad["certificate"]["K33"]["min_ratio"] = "1/1"
+        self.assertRejects(m, params, bad)
+
+
+    def test_jacobian(self):
+        params = {"degree": 2, "coefficients": [-1, 0, 1]}
+        m, r = run("jacobian", params)
+        self.assertEqual(r["summary"]["constant_jacobian_maps"], 240)
+        bad = copy.deepcopy(r)
+        row = next(x for x in bad["certificate"]["rows"] if len(x["p"]) > 1)
+        row["p"][0][1] = str(Fraction(row["p"][0][1]) + 1)
+        self.assertRejects(m, params, bad)
+        bad = copy.deepcopy(r)
+        bad["certificate"]["rows"].pop()
+        self.assertRejects(m, params, bad)
+        bad = copy.deepcopy(r)
+        bad["certificate"]["rows"][0]["p"].append([[2, 1], "1"])  # exceeds the degree bound
         self.assertRejects(m, params, bad)
 
 

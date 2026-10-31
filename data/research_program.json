@@ -27,6 +27,18 @@
       "verifier": "python3 scripts/lab.py --probe erdos_straus"
     },
     {
+      "problem_id": "M041",
+      "stage": "benchmark_reproduced",
+      "method": "Exhaustive integer plane maps with inverses certified under Gabber's degree bound",
+      "hypothesis": "Every polynomial map C^2 -> C^2 with constant nonzero Jacobian determinant has a polynomial inverse.",
+      "first_proof_obligation": "Reproduce the classical low-degree cases (Wang: degree <= 2; Moh: plane degree <= 100) on exhaustive integer classes, then isolate a structured family, such as maps with a prescribed Newton polygon, not covered by known degree bounds.",
+      "next_experiment": "Enlarge the class to degree 4 with coefficients in {-1,0,1} using kernel enumeration per monomial support, and record the distribution of inverse degrees and of tame decompositions.",
+      "falsification": "A plane map with exactly verified constant nonzero Jacobian and an exact proof (an infeasible linear system under Gabber's bound) that no inverse of degree <= deg F exists.",
+      "blocker": "Known results already cover plane maps of degree <= 100, so exhaustive small classes cannot reach new territory; novelty needs structural families.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe jacobian"
+    },
+    {
       "problem_id": "M071",
       "stage": "benchmark_reproduced",
       "method": "Colouring and minor-model certificates over exhaustive graph censuses",
@@ -37,6 +49,18 @@
       "blocker": "Every graph a naive census reaches is inside the proved t <= 6 range; t = 7 needs much larger graphs and exact chromatic lower-bound certificates.",
       "dossier": "research/LAB_CAMPAIGNS.md",
       "verifier": "python3 scripts/lab.py --probe hadwiger"
+    },
+    {
+      "problem_id": "M073",
+      "stage": "benchmark_reproduced",
+      "method": "Exact homomorphism-density search over certified host censuses",
+      "hypothesis": "For every bipartite graph H and every graph G, t(H,G) >= t(K2,G)^e(H).",
+      "first_proof_obligation": "Confirm in current literature that K_{5,5} minus a Hamiltonian cycle is still the smallest open pattern, then fix a restricted host class (vertex-transitive graphs or small rational step graphons) where the inequality can be proved or exhausted.",
+      "next_experiment": "Extend hosts from unweighted graphs to rational step graphons and run exact local search that minimises t(H,W)/t(K2,W)^15, replaying every candidate with the exact counter.",
+      "falsification": "A host graph or rational step graphon W with exactly computed t(H,W) < t(K2,W)^e(H).",
+      "blocker": "Any counterexample is expected to need large or finely weighted hosts; unweighted hosts on at most 7 vertices give a minimum ratio of about 1.025 for the open pattern.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe sidorenko"
     },
     {
       "problem_id": "M074",
@@ -149,12 +173,12 @@
     {
       "problem_id": "M094",
       "stage": "benchmark_reproduced",
-      "method": "Algebraic constructions with exact orthogonality certificates",
+      "method": "Algebraic constructions (Sylvester, Paley, Williamson) with exact orthogonality certificates",
       "hypothesis": "A Hadamard matrix exists for every order divisible by 4.",
-      "first_proof_obligation": "Close the engine gaps (92, 116, 156, 172, ...) with Williamson and Goethals-Seidel constructions, then document the first order no implemented method reaches.",
-      "next_experiment": "Implement a Williamson-type search with a circulant-block certificate format and replay order 92 exactly.",
+      "first_proof_obligation": "Close the remaining engine gaps (116, 156, 172, ...) with symmetry-reduced Williamson and Goethals-Seidel constructions, then document the first order no implemented method reaches.",
+      "next_experiment": "Add multiplier-group symmetry reduction to the Williamson meet-in-the-middle search so that n = 29 (order 116) becomes feasible, then implement Goethals-Seidel arrays for orders 156 and 172.",
       "falsification": "A proof that no Hadamard matrix of some order 4k exists; a finite search failure is not sufficient.",
-      "blocker": "Order 668 is the smallest open case and needs constructions beyond the current engines.",
+      "blocker": "Plain meet-in-the-middle over symmetric circulants is practical up to n = 23 in pure Python; n = 29 needs symmetry reduction, and order 668 remains the smallest open case.",
       "dossier": "research/LAB_CAMPAIGNS.md",
       "verifier": "python3 scripts/lab.py --probe hadamard"
     },
@@ -184,6 +208,18 @@
       "blocker": "Unconstrained search is far out of reach; the order-10 nonexistence proof needed a massive computation.",
       "dossier": "research/LAB_CAMPAIGNS.md",
       "verifier": "python3 scripts/lab.py --probe projective_planes"
+    },
+    {
+      "problem_id": "M097",
+      "stage": "benchmark_reproduced",
+      "method": "Exact rational LP with duality certificates over graphic metrics",
+      "hypothesis": "For every metric TSP instance the optimal tour costs at most 4/3 of the Held-Karp (subtour LP) bound.",
+      "first_proof_obligation": "Reproduce published exact maximum integrality gaps for all small metrics (Benoit-Boyd) with LP-duality certificates, then target a structured class such as graphic metrics of subcubic graphs beyond published ranges.",
+      "next_experiment": "Extend from graphic metrics to 1-2 and vertex-weighted metrics, and enumerate extreme points of the subtour polytope at n = 8 to search for gap-maximising instances.",
+      "falsification": "A metric instance with an exactly certified Held-Karp value and a brute-force optimal tour longer than 4/3 of it.",
+      "blocker": "Exhaustive extreme-point enumeration grows very quickly beyond n = 10; graphic metrics up to 7 vertices reach only a 16/15 gap.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe held_karp"
     }
   ],
   "milestones": [
@@ -323,9 +359,9 @@
       "id": "B-HADAMARD-001",
       "problem_id": "M094",
       "classification": "reproduced_known",
-      "title": "Exact Hadamard matrices for 30 of the 32 orders 4k <= 128",
-      "scope": "Known orders; engine gaps 92 and 116 are not open cases",
-      "description": "Sylvester, Paley I/II and Kronecker products, each matrix checked as H H^T = nI; the deep run certifies 85 of 100 orders up to 400.",
+      "title": "Exact Hadamard matrices for 31 of the 32 orders 4k <= 128, including order 92",
+      "scope": "Known orders; the remaining engine gap 116 is not an open case",
+      "description": "Sylvester, Paley I/II, a Williamson quadruple of symmetric circulants of order 23 (order 92, found by meet-in-the-middle on periodic autocorrelations) and Kronecker products; each matrix checked as H H^T = nI. The deep run certifies 87 of the 100 orders up to 400.",
       "verifier": "python3 scripts/lab.py --probe hadamard",
       "artifact": "scripts/probes/hadamard.py",
       "verified_on": "2026-10-31"
@@ -350,6 +386,39 @@
       "description": "PG(2,q) incidence axioms verified combinatorially; Bruck-Ryser exclusions recomputed by brute-force sums of two squares; deep run to q = 27 and orders <= 200.",
       "verifier": "python3 scripts/lab.py --probe projective_planes",
       "artifact": "scripts/probes/planes.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-HK-001",
+      "problem_id": "M097",
+      "classification": "reproduced_known",
+      "title": "Held-Karp integrality gap certified on all 141 graphic metrics with 3-6 vertices",
+      "scope": "Known small range; not new",
+      "description": "Every instance carries an exact LP-duality certificate checked against all subtour constraints and a brute-force optimal tour; the maximum ratio is 1 for n <= 6. The deep run covers 994 instances up to n = 7, with maximum gap 16/15.",
+      "verifier": "python3 scripts/lab.py --probe held_karp",
+      "artifact": "scripts/probes/held_karp.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-SIDORENKO-001",
+      "problem_id": "M073",
+      "classification": "reproduced_known",
+      "title": "Sidorenko inequality reproduced for proven patterns C4, C6, K_{3,3} and P4 on all hosts with at most 5 vertices",
+      "scope": "Known families on a finite host range; the open-pattern data in the same run is exploratory, unreviewed and not a result",
+      "description": "Exact homomorphism counts, recounted from the opposite bipartition side, compared by integer arithmetic on all 52 host graphs; P4 attains equality on regular hosts. The run also records K_{5,5} minus C_10 on the same hosts (and on all 1,252 hosts up to 7 vertices at deep level, minimum ratio about 1.0248) purely as falsifier data.",
+      "verifier": "python3 scripts/lab.py --probe sidorenko",
+      "artifact": "scripts/probes/sidorenko.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-JACOBIAN-001",
+      "problem_id": "M041",
+      "classification": "reproduced_known",
+      "title": "Plane Jacobian conjecture verified on all 59,049 integer maps of degree <= 2 with coefficients in {-1,0,1}",
+      "scope": "Known (Wang 1980; Moh 1983); not new",
+      "description": "240 maps have constant nonzero Jacobian (matching brute force); each has an explicit inverse of degree <= 2 checked by composition in both orders, and completeness is re-derived from a separate evaluation-based linear system. The deep run covers all 387,420,489 maps of degree <= 3 (816 with constant Jacobian), every one inverted.",
+      "verifier": "python3 scripts/lab.py --probe jacobian",
+      "artifact": "scripts/probes/jacobian.py",
       "verified_on": "2026-10-31"
     }
   ]

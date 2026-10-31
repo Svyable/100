@@ -37,10 +37,30 @@ Gives an explicit triple for every n, found with a divisor solver for 1/y + 1/z 
 tests only the identity 4xyz = n(xy + yz + zx). **Next:** mine solutions for primes n ≡ 1 (mod 24)
 to look for parametric identities.
 
+### M041 — Plane Jacobian conjecture (`jacobian`, engine `polynomial_algebra`)
+The class is every map (f, g) of degree ≤ d with zero constant terms and coefficients in a small
+set. J(f,g) is linear in g's coefficients, so the maps with constant Jacobian are the lattice points
+of an exact kernel. Each one gets an inverse G of degree ≤ d from an exact linear system; by
+Gabber's bound, an F with no such inverse would be a counterexample. The checker re-derives the
+set of constant-Jacobian maps from a different linear system (evaluations on a grid, with
+fraction-free integer elimination), and verifies G∘F = F∘G = id by independent dense composition.
+Smoke: all 59,049 maps of degree ≤ 2 (240 with constant Jacobian, matching brute force).
+Deep: all 387,420,489 maps of degree ≤ 3 (816). **Frontier:** degree ≤ 100 in the plane (Moh).
+
 ### M071 — Hadwiger (`hadwiger`, engine `graph_census`)
 Each graph gets a proper t-colouring and a K_t minor model with t branch sets. Since χ ≤ t, and
 K_t contains every smaller complete minor, the checker never has to trust a chromatic-number
 computation. **Caveat:** every graph on at most 7 vertices falls under the proved t ≤ 6 theorem.
+
+### M073 — Sidorenko (`sidorenko`, engines `graph_homomorphisms`, `graph_census`)
+For each bipartite pattern H and every host graph G in the census, the probe compares
+t(H,G) with t(K2,G)^e(H) exactly, as hom(H,G)·n^(2e−v) ≥ (2e(G))^e in integers.
+Homomorphisms are counted by enumerating one side of H. The checker recounts them from the other
+side, and the tests cross-check both against full brute-force enumeration on tiny hosts. The
+**proven** controls (C4, C6, K₃,₃, P4) are the reproduced milestone. P4 attains equality on
+regular hosts, as theory predicts. The open pattern K_{5,5}∖C₁₀ is recorded on the same hosts
+as **exploratory falsifier data only** (minimum ratio ≈ 1.0248 over all 1,252 hosts on ≤ 7
+vertices). That is not a result. **Next:** rational step-graphon hosts and exact local search.
 
 ### M078 — Graph reconstruction (`reconstruction`, engine `graph_census`)
 The census is complete because its size matches Burnside's count and its members are pairwise
@@ -76,8 +96,12 @@ for odd q, as theory predicts. For q ≤ 4 it brute-forces all subsets with no s
 
 ### M094 — Hadamard (`hadamard`, engine `finite_fields`)
 Builds matrices with Sylvester, Paley I/II over every prime-power field, and Kronecker closure.
-Each one is checked as H Hᵀ = nI via popcounts. Orders the engine cannot reach, such as 92 and
-116, are reported as **engine gaps**; they are not open cases. **Next:** Williamson constructions.
+Orders those miss get Williamson quadruples: four symmetric circulant ±1 matrices with
+A² + B² + C² + D² = 4nI, found by meet-in-the-middle on periodic autocorrelations and assembled
+with the Williamson array. Order 92 (n = 23, row sums 3, 3, −5, 7) is the historic 1962 case. Each
+matrix is checked as H Hᵀ = nI via popcounts, without trusting any construction. The remaining
+orders, such as 116 and 156, are **engine gaps**, not open cases.
+**Next:** symmetry-reduced Williamson search for n = 29, then Goethals–Seidel arrays.
 
 ### M095 — Ramsey witnesses (`ramsey_witnesses`, engines `finite_fields`, `clique_search`)
 Certifies classical lower bounds with Paley and circulant colourings. The deep run checks
@@ -88,6 +112,16 @@ Paley(37) for R(5,5) > 37, every 5-subset enumerated. This complements the exist
 Checks PG(2,q) axioms purely combinatorially from the line lists, and recomputes Bruck–Ryser
 exclusions by brute force. Order 10 is recorded as an external computer proof.
 12 remains the smallest open order.
+
+### M097 — Metric TSP 4/3 (`held_karp`, engines `exact_lp`, `graph_census`)
+For the shortest-path metric of every connected graph in the census, the probe solves the Held–Karp
+(subtour) LP exactly. It uses cutting planes over a rational simplex, then finds the optimal tour
+by dynamic programming. The checker never trusts the simplex. It re-proves LP optimality from the
+duality certificate (primal feasible for **every** subtour constraint, dual feasible, equal
+objectives) and recomputes the optimal tour by brute force over all Hamiltonian cycles.
+Every graph on up to 6 vertices has gap exactly 1. On 7 vertices the largest gap is 16/15
+(OPT 8, HK 15/2, a genuinely fractional optimum). **Frontier:** exact maximum gaps for all metrics
+on small n (Benoit–Boyd 2008); 4/3 ≤ gap ≤ 3/2 in general.
 
 ## Reproduce
 

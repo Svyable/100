@@ -13,24 +13,9 @@
       "first_probe": "Reuse the zero-count certificate format for Dirichlet L-functions of small conductor."
     },
     {
-      "problem_id": "M041",
-      "engine": "polynomial_algebra",
-      "first_probe": "Enumerate constant-Jacobian plane maps with small integer coefficients and degree <= 3, and certify each by an explicit polynomial inverse checked by exact composition."
-    },
-    {
       "problem_id": "M048",
       "engine": "group_characters",
       "first_probe": "Exact Brauer-character and weight counts for small finite groups and primes, compared entrywise."
-    },
-    {
-      "problem_id": "M073",
-      "engine": "graph_homomorphisms",
-      "first_probe": "Exact homomorphism-density search over small weighted host graphs for the smallest open case H = K_{5,5} minus a Hamiltonian cycle."
-    },
-    {
-      "problem_id": "M097",
-      "engine": "exact_lp",
-      "first_probe": "Exact rational simplex for the Held-Karp relaxation; recompute integrality gaps on all small metric instances and known near-4/3 families."
     }
   ]
 }
