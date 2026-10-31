@@ -1,0 +1,40 @@
+name: Evidence or status correction
+description: Submit a primary-source status update for a mathematical target
+title: "[Evidence] M0XX — "
+labels: []
+body:
+  - type: input
+    id: problem
+    attributes:
+      label: Candidate ID
+      placeholder: M075
+    validations:
+      required: true
+  - type: textarea
+    id: exact_statement
+    attributes:
+      label: Exact claim and scope
+      description: Quantifiers, exceptions, fields, dimensions, and any restrictions.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Primary source URL or DOI
+      description: Prefer the original paper, preprint, or recognized mathematical authority.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: What has actually been established?
+      description: Distinguish proof, partial theorem, announced claim, and independent acceptance.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_change
+    attributes:
+      label: Proposed registry change and rationale
+      description: Keep current evidence state provisional until exact scope is independently checked.
+    validations:
+      required: true

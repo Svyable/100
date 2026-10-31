@@ -1,0 +1,40 @@
+name: Proof or counterexample campaign
+description: Propose a sharply defined first theorem or falsifying construction
+title: "[Campaign] M0XX — "
+labels: []
+body:
+  - type: input
+    id: target
+    attributes:
+      label: Candidate ID
+      placeholder: M095
+    validations:
+      required: true
+  - type: textarea
+    id: lemma
+    attributes:
+      label: Exact restricted claim or counterexample target
+      description: State all quantifiers and assumptions, not just a broad direction.
+    validations:
+      required: true
+  - type: textarea
+    id: prior
+    attributes:
+      label: Known boundary and source
+      description: What is already proved? Include original papers and any relevant 2026 claims.
+    validations:
+      required: true
+  - type: textarea
+    id: experiment
+    attributes:
+      label: Experiment or proof strategy
+      description: List reproducible inputs, expected output, and computational limits.
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Independent verification criterion
+      description: Specify proof assistant theorem, algebraic identity, SAT certificate, or conventional checker.
+    validations:
+      required: true

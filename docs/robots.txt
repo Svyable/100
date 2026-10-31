@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://svyable.github.io/100/sitemap.xml
