@@ -21,11 +21,13 @@ abbrev AvoidsMonochromaticTriangle {n : Nat} (edge : Fin n → Fin n → Bool) :
   ValidColoring edge ∧ TriangleFree edge ∧ IndependentTripleFree edge
 
 /-- Executable checker for any finite red/blue adjacency function. -/
-def check {n : Nat} (edge : Fin n → Fin n → Bool) : Bool :=
+def check {n : Nat} (edge : Fin n → Fin n → Bool)
+    [Decidable (AvoidsMonochromaticTriangle edge)] : Bool :=
   decide (AvoidsMonochromaticTriangle edge)
 
 /-- A true checker result entails the full graph certificate, for arbitrary n. -/
 theorem check_sound {n : Nat} {edge : Fin n → Fin n → Bool}
+    [Decidable (AvoidsMonochromaticTriangle edge)]
     (h : check edge = true) : AvoidsMonochromaticTriangle edge :=
   of_decide_eq_true h
 
