@@ -1,0 +1,13 @@
+{
+  "source_url": "https://users.cecs.anu.edu.au/~bdm/data/r55_42some.g6",
+  "source_sha256": "067902e853d87b49bcef0d1d4c0e3bbadd238ee18bc65341b079a3ca4780eccb",
+  "source_records_checked": 328,
+  "vertices_per_graph": 42,
+  "witnesses_including_color_swaps": 656,
+  "checkers": [
+    "recursive_bitset_K5",
+    "triangle_common_neighborhood_K5"
+  ],
+  "known_lower_bound": "R(5,5) >= 43",
+  "scope": "Reproduced known valid K42 graph colorings only. No completeness proof for all K42 colorings, no K43 nonexistence proof, no resolution of R(5,5)."
+}

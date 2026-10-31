@@ -47,7 +47,7 @@
       "statement": "For union-closed families over a five-element ground set, a canonical encoding is constant on each relabeling orbit and separates distinct relabeling orbits.",
       "prior_art_boundary": "The existing n=4 census and its 366 relabeling orbits are known finite benchmark data; an n=5 canonicalization lemma is a proposed structural step, not established.",
       "falsifier": "Two relabeling-equivalent families receive different codes, or two inequivalent families receive the same code.",
-      "next_action": "Specify a canonical map under S_5 and prove both directions of the orbit-equivalence condition, then adversarially check constructed orbit collisions.",
+      "next_action": "A paper proof of the minimum S5 orbit invariant and implementation are in research/M075_CANONICAL.md and scripts/frankl_canonical.py. Obtain independent mathematical and statement-fidelity review before discharge; the existing n4 mine provides a second finite cross-check.",
       "depends_on": [],
       "status": "open",
       "evidence": null
@@ -59,7 +59,7 @@
       "statement": "A canonical family generator over a five-element ground set emits exactly one union-closed family per relabeling orbit without enumerating all 2^(2^5) set systems.",
       "prior_art_boundary": "No speedup claim follows from the n=4 orbit table; completeness and no-duplication are separate from empirical speed.",
       "falsifier": "An omitted relabeling orbit, a duplicated orbit, an emitted non-union-closed family, or a fallback that enumerates every set system.",
-      "next_action": "Construct an extension rule on canonical representatives, prove soundness, uniqueness and exhaustiveness, and independently audit the resulting counts.",
+      "next_action": "The n5 labeled full-support count 2747402 and n5 orbit count 28960 now have independent closure-pruned and Burnside checkers (research/M075_CANONICAL.md and M075_BURNSIDE.md), with a written exact-once proof. Obtain independent scope and mathematical reviews before discharge. Next performance goal is canonical augmentation pruning noncanonical partial states, not repeating known finite enumerations.",
       "depends_on": [
         "O-M075-01"
       ],
@@ -73,7 +73,7 @@
       "statement": "The cited 42-vertex two-colouring of the complete graph has neither a red K5 nor a blue K5, as checked directly from its published adjacency data.",
       "prior_art_boundary": "A known K42 witness would reproduce a published Ramsey lower bound. It does not yield an upper bound or determine R(5,5).",
       "falsifier": "An explicit five-vertex monochromatic clique in the imported colouring, or a vertex/edge count inconsistent with K42.",
-      "next_action": "Import the published exact K42 adjacency data; run the independent clique checker and archive the hash and original source.",
+      "next_action": "The cited 328-graph K42 catalog has a pinned offline, dual-checker reproduction (scripts/verify_mckay.py). Obtain genuinely independent mathematical and statement-scope review of that exact replay before discharging this known-witness node; a K43 counterexample or full upper-bound proof remains a separate open target.",
       "depends_on": [],
       "status": "open",
       "evidence": null
