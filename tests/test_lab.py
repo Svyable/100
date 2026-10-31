@@ -12,7 +12,8 @@ import lab
 import probes
 import rank
 import research
-from probes import core, cyclotomic, exact_lp, fields, graphs, homomorphisms, polynomials, primes
+from probes import core, cyclotomic, exact_lp, fields, graphs, homomorphisms, polynomials, primes, zeta
+from probes import intervals as iv
 from probes.core import ProbeFailure
 
 
@@ -112,6 +113,22 @@ class EngineTests(unittest.TestCase):
         kernel = P.lattice_kernel([[1, 1, 0], [0, 1, 1]], [-1, 0, 1])
         self.assertEqual(sorted(map(tuple, kernel)), [(-1, 1, -1), (0, 0, 0), (1, -1, 1)])
 
+    def test_zeta_enclosures_contain_classical_values(self):
+        import math
+        self.assertEqual(zeta.bernoulli(2), __import__("fractions").Fraction(1, 6))
+        self.assertLess(iv.pi().lo / iv.SCALE, math.pi)
+        self.assertGreater(iv.pi().hi / iv.SCALE, math.pi)
+        zero = zeta.zeta(iv.Cv(iv.iv_int(0), iv.iv_int(0)), zeta.SEARCH)
+        self.assertLessEqual(zero.re.lo / iv.SCALE, -0.5)
+        self.assertGreaterEqual(zero.re.hi / iv.SCALE, -0.5)
+        two = zeta.zeta(iv.Cv(iv.iv_int(2), iv.iv_int(0)), zeta.CHECK)
+        truth = math.pi ** 2 / 6
+        self.assertLess(two.re.lo / iv.SCALE, truth)
+        self.assertGreater(two.re.hi / iv.SCALE, truth)
+        gamma = zeta.log_gamma(iv.Cv(iv.iv_int(5), iv.iv_int(0)), 6)
+        self.assertLess(gamma.re.lo / iv.SCALE, math.lgamma(5))
+        self.assertGreater(gamma.re.hi / iv.SCALE, math.lgamma(5))
+
     def test_canonical_json_is_order_independent(self):
         self.assertEqual(core.digest({"b": 1, "a": [Fraction(1, 3)]}),
                          core.digest({"a": ["1/3"], "b": 1}))
@@ -123,6 +140,25 @@ class TamperTests(unittest.TestCase):
     def assertRejects(self, module, params, result):
         with self.assertRaises(ProbeFailure):
             module.check(params, result)
+
+    def test_riemann_zero_count(self):
+        params = {"height": 15, "zeros": 1}
+        m, r = run("riemann", params)
+        self.assertEqual(r["certificate"]["intervals"], [["14/1", "15/1"]])
+        bad = copy.deepcopy(r)
+        bad["certificate"]["intervals"] = [["12/1", "13/1"]]
+        self.assertRejects(m, params, bad)
+        bad = copy.deepcopy(r)
+        bad["certificate"]["intervals"] = []
+        self.assertRejects(m, params, bad)
+
+    def test_dirichlet_character_zero_count(self):
+        params = {"height": 8, "zeros": 1}
+        m, r = run("dirichlet_l", params)
+        self.assertEqual(r["certificate"]["intervals"], [["6/1", "7/1"]])
+        bad = copy.deepcopy(r)
+        bad["certificate"]["intervals"] = [["4/1", "5/1"]]
+        self.assertRejects(m, params, bad)
 
     def test_goldbach(self):
         params = {"limit": 2000}

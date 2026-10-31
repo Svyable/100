@@ -45,7 +45,12 @@
       "meaning": "The recorded experiment only lengthens a range the campaign blocker already places inside a cited theorem. Refuse it. The replacement step is the one that starts with 'Do not'."
     }
   },
-  "witness_replay": ["M044", "M049", "M071", "M073"],
+  "witness_replay": [
+    "M044",
+    "M049",
+    "M071",
+    "M073"
+  ],
   "campaign_actions": {
     "M006": {
       "action": "mine_structure",
@@ -121,6 +126,16 @@
     "M097": {
       "action": "mine_structure",
       "why": "Graphic metrics through 7 vertices are a certified reproduction. The next experiment changes the metric class rather than adding vertices inside the published small-n range."
+    },
+    "M001": {
+      "action": "stop_range",
+      "why": "The new exact interval verifier reaches T = 36, but published computations cover zeta zeros vastly farther. Increasing a tiny certified height is not a new attack on the Riemann hypothesis.",
+      "next_step": "Do not prioritize extending T = 36 inside the already-published critical-line verification range. First identify a mathematically new zero-free region, explicit bound, or verified statement not implied by existing computations."
+    },
+    "M002": {
+      "action": "replay_published",
+      "why": "The new engine verifies χ4 only; the generalized Riemann hypothesis concerns all Dirichlet characters. Replaying a separate primitive-character certificate tests the reusable contour and gamma-factor implementation.",
+      "next_step": "Reproduce a published primitive character modulo 3 or 5 with the correct root number, branch conventions and independently checked zero count; document why this is known mathematics, not GRH progress."
     }
   },
   "methods": [
@@ -131,8 +146,14 @@
       "shape": "Build one interval-arithmetic zero-count certificate and reuse it for every problem in this shape. For the Riemann Hypothesis and the Generalized Riemann Hypothesis the certificate must show there is no zero with real part greater than 1/2 and imaginary part at most an explicit height, by sign changes on the critical line plus a Turing bound. Pair correlation uses the same ordinates as a certified statistic up to that height and has no finite falsifier. A count inside a published verification is a reproduction, not a theorem.",
       "certificate": "Interval enclosures, sign-change ordinates and the Turing bound, recomputed by an independent evaluator.",
       "falsifier": "A zero whose real-part enclosure lies strictly above 1/2. Pair correlation is not finitely falsifiable.",
-      "engines": ["interval_arithmetic"],
-      "problems": ["M001", "M002", "M009"]
+      "engines": [
+        "interval_arithmetic"
+      ],
+      "problems": [
+        "M001",
+        "M002",
+        "M009"
+      ]
     },
     {
       "id": "effective_diophantine",
@@ -141,8 +162,15 @@
       "shape": "State one explicit identity or inequality on a named class that a cited theorem or computation does not already settle. The class is a residue class, a radical range, or a Mahler-measure bound with a constant. Certify the identity by exact arithmetic. Extending a probe deeper into a published verification is not this attack.",
       "certificate": "An exact integer or rational identity, re-expanded by an independent arithmetic checker.",
       "falsifier": "One integer in the named class that violates the explicit inequality, or an identity that fails when substituted.",
-      "engines": ["primes"],
-      "problems": ["M004", "M006", "M019", "M020"]
+      "engines": [
+        "primes"
+      ],
+      "problems": [
+        "M004",
+        "M006",
+        "M019",
+        "M020"
+      ]
     },
     {
       "id": "sieve_infinitude",
@@ -152,7 +180,13 @@
       "certificate": "A finite admissibility or singular-series check, plus a citation of the theorem that would apply if the missing estimate were proved. The citation is not the proof.",
       "falsifier": "The named tuple is inadmissible, or the claimed singular series is zero.",
       "engines": [],
-      "problems": ["M005", "M007", "M008", "M012", "M018"]
+      "problems": [
+        "M005",
+        "M007",
+        "M008",
+        "M012",
+        "M018"
+      ]
     },
     {
       "id": "galois_representations",
@@ -162,7 +196,14 @@
       "certificate": "The curve or polynomial, its conductor, and both computations with enough intermediate data to recompute.",
       "falsifier": "An explicit curve or field, inside the stated hypotheses, whose two invariants disagree.",
       "engines": [],
-      "problems": ["M003", "M010", "M013", "M015", "M016", "M017"]
+      "problems": [
+        "M003",
+        "M010",
+        "M013",
+        "M015",
+        "M016",
+        "M017"
+      ]
     },
     {
       "id": "exponential_fields",
@@ -172,7 +213,10 @@
       "certificate": "The tuple or the sentence, and the recomputed algebraic relations.",
       "falsifier": "An explicit tuple whose certified transcendence degree is smaller than the lower bound of the restricted statement, inside that restriction's hypotheses.",
       "engines": [],
-      "problems": ["M011", "M099"]
+      "problems": [
+        "M011",
+        "M099"
+      ]
     },
     {
       "id": "motivic_cycles",
@@ -182,7 +226,13 @@
       "certificate": "Equations of the variety and a cycle whose class is recomputed in cohomology or in the Chow ring of a quotient.",
       "falsifier": "A variety inside the stated hypotheses whose Hodge or Tate class is certified not to be algebraic.",
       "engines": [],
-      "problems": ["M021", "M022", "M023", "M024", "M029"]
+      "problems": [
+        "M021",
+        "M022",
+        "M023",
+        "M024",
+        "M029"
+      ]
     },
     {
       "id": "diophantine_geometry",
@@ -192,7 +242,12 @@
       "certificate": "The model, the height bound, and every point found, each rechecked on the equation.",
       "falsifier": "A rational point or section that the restricted statement claims does not exist, verified on the equation.",
       "engines": [],
-      "problems": ["M025", "M026", "M027", "M028"]
+      "problems": [
+        "M025",
+        "M026",
+        "M027",
+        "M028"
+      ]
     },
     {
       "id": "birational_pairs",
@@ -202,7 +257,9 @@
       "certificate": "A quantifier table: the hypothesis in the registry, the hypothesis in the manuscript, and whether they match.",
       "falsifier": "There is no finite counterexample object here. A mismatched hypothesis means the manuscript does not settle the registered statement.",
       "engines": [],
-      "problems": ["M030"]
+      "problems": [
+        "M030"
+      ]
     },
     {
       "id": "four_manifolds",
@@ -212,7 +269,11 @@
       "certificate": "The diagram or the form, and an independent recomputation of the intersection form or the obstruction.",
       "falsifier": "A smooth structure whose certified invariants violate the restricted claim, or a diffeomorphism the restricted claim forbids.",
       "engines": [],
-      "problems": ["M031", "M032", "M033"]
+      "problems": [
+        "M031",
+        "M032",
+        "M033"
+      ]
     },
     {
       "id": "index_rigidity",
@@ -222,7 +283,12 @@
       "certificate": "The complex or manifold presentation and the recomputed index, signature, or Euler characteristic.",
       "falsifier": "An explicit complex in the named class where the restricted identity fails.",
       "engines": [],
-      "problems": ["M034", "M035", "M036", "M039"]
+      "problems": [
+        "M034",
+        "M035",
+        "M036",
+        "M039"
+      ]
     },
     {
       "id": "geometric_topology",
@@ -232,7 +298,11 @@
       "certificate": "A hypothesis-comparison table, or the contact form together with a recomputed closed Reeb orbit.",
       "falsifier": "A hypothesis mismatch that stops the manuscript from settling the registry entry, or a contact form in the named class with no closed Reeb orbit.",
       "engines": [],
-      "problems": ["M037", "M038", "M040"]
+      "problems": [
+        "M037",
+        "M038",
+        "M040"
+      ]
     },
     {
       "id": "polynomial_maps",
@@ -241,8 +311,13 @@
       "shape": "Name a polynomial or Weyl family that published degree bounds do not cover, and refuse exhaustive search inside those bounds. A Newton polygon or a filtration is a family. A certificate is an automorphism, an inverse, or an infeasible linear system under a cited degree bound.",
       "certificate": "The map and an independent composition check, or a certified infeasible linear system.",
       "falsifier": "A map in the named family with constant nonzero Jacobian and a proof that no polynomial inverse exists inside the cited degree bound.",
-      "engines": ["polynomial_algebra"],
-      "problems": ["M041", "M042"]
+      "engines": [
+        "polynomial_algebra"
+      ],
+      "problems": [
+        "M041",
+        "M042"
+      ]
     },
     {
       "id": "group_rings",
@@ -252,7 +327,11 @@
       "certificate": "The presentation, the elements, and a recomputed product in the group ring.",
       "falsifier": "The recomputed product disagrees with the claimed witness, or a torsion element appears in a group that was claimed to be torsion-free.",
       "engines": [],
-      "problems": ["M043", "M044", "M049"]
+      "problems": [
+        "M043",
+        "M044",
+        "M049"
+      ]
     },
     {
       "id": "artin_algebras",
@@ -262,7 +341,10 @@
       "certificate": "The quiver, the relations, and the projective resolutions up to the claimed bound.",
       "falsifier": "An algebra in the named class whose finitistic dimension exceeds the bound the restriction claimed, or a module where the vanishing fails.",
       "engines": [],
-      "problems": ["M045", "M046"]
+      "problems": [
+        "M045",
+        "M046"
+      ]
     },
     {
       "id": "modular_representations",
@@ -271,8 +353,13 @@
       "shape": "Take one finite group and one prime, and compare the number of weights with the number of simple modules in a block. Give the group by a concrete presentation or a named group small enough to write down. An abelian-defect derived equivalence, if attacked, uses the same character table and only when the defect group is abelian and written down.",
       "certificate": "The character table or Brauer characters and the weight list, recomputed independently and compared entry by entry.",
       "falsifier": "A block whose weight count differs from its simple-module count.",
-      "engines": ["group_characters"],
-      "problems": ["M047", "M048"]
+      "engines": [
+        "group_characters"
+      ],
+      "problems": [
+        "M047",
+        "M048"
+      ]
     },
     {
       "id": "homogeneous_structures",
@@ -282,7 +369,9 @@
       "certificate": "The structure on a finite domain and the amalgamation checks.",
       "falsifier": "A finite obstacle to amalgamation inside the class the restriction named. A configuration outside that class does not touch the full conjecture.",
       "engines": [],
-      "problems": ["M050"]
+      "problems": [
+        "M050"
+      ]
     },
     {
       "id": "pde_regularity",
@@ -292,7 +381,13 @@
       "certificate": "The ansatz, the reduced equation, and an independent interval enclosure or an exact inequality.",
       "falsifier": "An explicit solution inside the ansatz whose norm enclosure blows up, or stays smooth, against what the restricted claim says.",
       "engines": [],
-      "problems": ["M051", "M052", "M053", "M054", "M060"]
+      "problems": [
+        "M051",
+        "M052",
+        "M053",
+        "M054",
+        "M060"
+      ]
     },
     {
       "id": "harmonic_analysis",
@@ -302,7 +397,13 @@
       "certificate": "The object and a recomputed dimension, norm, or isotropic constant.",
       "falsifier": "Only inside a restriction that admits one: an explicit set or operator in the named class that violates the restricted inequality.",
       "engines": [],
-      "problems": ["M055", "M056", "M057", "M058", "M059"]
+      "problems": [
+        "M055",
+        "M056",
+        "M057",
+        "M058",
+        "M059"
+      ]
     },
     {
       "id": "lattice_models",
@@ -312,7 +413,13 @@
       "certificate": "The finite graph, the counts, and an independent recount.",
       "falsifier": "For a no-infinite-cluster restriction, an explicit infinite cluster in the setting the restriction called subcritical or critical. For a shape restriction, a certified facet the restriction forbids. Exponent identities have no finite falsifier.",
       "engines": [],
-      "problems": ["M061", "M062", "M063", "M064", "M070"]
+      "problems": [
+        "M061",
+        "M062",
+        "M063",
+        "M064",
+        "M070"
+      ]
     },
     {
       "id": "rigidity_dynamics",
@@ -322,7 +429,13 @@
       "certificate": "Interval enclosures of the orbit or of the entropy, recomputed at a stated precision.",
       "falsifier": "An orbit enclosure that escapes the caustic the restriction claimed, or a sequence in the named class whose correlation stays bounded away from the decay the restriction claimed, on a certified range.",
       "engines": [],
-      "problems": ["M065", "M066", "M067", "M068", "M069"]
+      "problems": [
+        "M065",
+        "M066",
+        "M067",
+        "M068",
+        "M069"
+      ]
     },
     {
       "id": "extremal_certificates",
@@ -331,8 +444,21 @@
       "shape": "Use the census or certificate engine already built: replay a claimed or published object, or tabulate an invariant. Invariants already supported are decks, balances, orbits and union-closed quotients. Do not add vertices inside a range a cited theorem already settles.",
       "certificate": "The object plus the independent checker already registered for that probe, or a new checker on the same engine.",
       "falsifier": "A graph, family, poset or grid that the probe's checker accepts as a counterexample to the restricted statement.",
-      "engines": ["graph_census", "graph_homomorphisms", "poset_census", "symmetry_reduction"],
-      "problems": ["M071", "M073", "M074", "M075", "M078", "M079", "M080"]
+      "engines": [
+        "graph_census",
+        "graph_homomorphisms",
+        "poset_census",
+        "symmetry_reduction"
+      ],
+      "problems": [
+        "M071",
+        "M073",
+        "M074",
+        "M075",
+        "M078",
+        "M079",
+        "M080"
+      ]
     },
     {
       "id": "extremal_asymptotics",
@@ -342,7 +468,11 @@
       "certificate": "The family parameters and an exact counting or discrepancy computation that a second script repeats.",
       "falsifier": "A member of the family whose sunflower size, clique or independent set, or discrepancy violates the proposed constant.",
       "engines": [],
-      "problems": ["M072", "M076", "M077"]
+      "problems": [
+        "M072",
+        "M076",
+        "M077"
+      ]
     },
     {
       "id": "complexity_barriers",
@@ -352,7 +482,14 @@
       "certificate": "The reduction on one explicit size, or the algorithm's trace, checked by an independent implementation.",
       "falsifier": "An instance where the claimed reduction maps a yes-case to a no-case, or misses the stated soundness gap.",
       "engines": [],
-      "problems": ["M081", "M082", "M085", "M086", "M087", "M090"]
+      "problems": [
+        "M081",
+        "M082",
+        "M085",
+        "M086",
+        "M087",
+        "M090"
+      ]
     },
     {
       "id": "algebraic_complexity",
@@ -361,8 +498,16 @@
       "shape": "Fix the field and the format, then replay a published certificate or state the class a new hitting set claims to cover. The format is a tensor format, a circuit shape and degree, or an LP bit model and pivot rule. A hitting set is false if one circuit in the declared class escapes it. A numerical solver log is not a certificate of a strongly polynomial rule.",
       "certificate": "The tensor decomposition, the hitting set, or the potential function, replayed in exact arithmetic.",
       "falsifier": "A nonzero circuit in the declared class that vanishes on the proposed hitting set, or a tensor outside the claimed rank.",
-      "engines": ["exact_lp", "tensor_certificates"],
-      "problems": ["M083", "M084", "M088", "M089"]
+      "engines": [
+        "exact_lp",
+        "tensor_certificates"
+      ],
+      "problems": [
+        "M083",
+        "M084",
+        "M088",
+        "M089"
+      ]
     },
     {
       "id": "gauge_theory",
@@ -372,7 +517,9 @@
       "certificate": "The lattice specification and the recomputed plaquette or Wilson observable bounds.",
       "falsifier": "None for the continuum mass gap. A restriction that claims a uniform lattice gap is refuted by a certified configuration whose energy lies below that gap.",
       "engines": [],
-      "problems": ["M091"]
+      "problems": [
+        "M091"
+      ]
     },
     {
       "id": "finite_geometry",
@@ -381,8 +528,17 @@
       "shape": "Replay one published exact object the current engine does not yet check, and keep engine gaps separate from open cases. The object is a SIC fiducial in a named dimension, a maximum arc in PG(3,q), a Hadamard matrix at an order the literature already constructs, or a collineation case of a projective plane the literature already excludes.",
       "certificate": "The matrix, the arc, or the incidence list, checked by the existing independent checker or by a DRAT proof.",
       "falsifier": "An arc or a plane that violates the stated bound and passes the axiom checker. A missing Hadamard matrix in a finite search is not a counterexample.",
-      "engines": ["cyclotomic", "finite_fields", "symmetry_reduction"],
-      "problems": ["M092", "M093", "M094", "M096"]
+      "engines": [
+        "cyclotomic",
+        "finite_fields",
+        "symmetry_reduction"
+      ],
+      "problems": [
+        "M092",
+        "M093",
+        "M094",
+        "M096"
+      ]
     },
     {
       "id": "ramsey_parameter",
@@ -391,8 +547,13 @@
       "shape": "Import a published colouring that raises the certified lower bound, and require a proof trace for any upper bound. Check the colouring by exhaustive subset enumeration. A solver verdict without a proof trace does not establish an upper bound.",
       "certificate": "The colouring and the independent clique check.",
       "falsifier": "A verified colouring on more vertices than the registered upper bound, which would refute that bound.",
-      "engines": ["clique_search", "finite_fields"],
-      "problems": ["M095"]
+      "engines": [
+        "clique_search",
+        "finite_fields"
+      ],
+      "problems": [
+        "M095"
+      ]
     },
     {
       "id": "tsp_gap",
@@ -401,8 +562,13 @@
       "shape": "Leave pure graphic metrics once their gap is certified, and certify both optima on one named new metric class. The class is 1-2 metrics or vertex-weighted metrics. The Held-Karp optimum carries an LP-duality certificate and the tour optimum is exhaustive.",
       "certificate": "The metric, the dual solution and the tour, replayed by the exact LP checker.",
       "falsifier": "A metric whose certified tour exceeds 4/3 of the certified Held-Karp value.",
-      "engines": ["exact_lp", "graph_census"],
-      "problems": ["M097"]
+      "engines": [
+        "exact_lp",
+        "graph_census"
+      ],
+      "problems": [
+        "M097"
+      ]
     },
     {
       "id": "logic_decision",
@@ -412,7 +578,10 @@
       "certificate": "The sentence and the witness, or a quantifier-comparison table against the manuscript.",
       "falsifier": "A sentence inside the restricted theory that a claimed decision procedure misclassifies.",
       "engines": [],
-      "problems": ["M014", "M098"]
+      "problems": [
+        "M014",
+        "M098"
+      ]
     },
     {
       "id": "distance_sets",
@@ -422,7 +591,9 @@
       "certificate": "The iterated-function data and the interval enclosures, recomputed independently.",
       "falsifier": "A set whose dimension enclosure lies above the threshold of a named restriction while the distance-set measure enclosure contains only zero.",
       "engines": [],
-      "problems": ["M100"]
+      "problems": [
+        "M100"
+      ]
     }
   ]
 }

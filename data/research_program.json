@@ -9,7 +9,9 @@
       "hypothesis": "Every even integer n >= 4 is a sum of two primes.",
       "first_proof_obligation": "State a restricted, checkable lemma (for example an explicit bound on the least Goldbach prime in a named residue class or range) that is not already implied by the 4*10^18 verification or by the ternary Goldbach theorem.",
       "next_experiment": "The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification.",
-      "additional_verifiers": ["python3 scripts/mine.py --mine goldbach_growth"],
+      "additional_verifiers": [
+        "python3 scripts/mine.py --mine goldbach_growth"
+      ],
       "falsification": "An even n >= 4 with no prime p <= n/2 such that n - p is prime, confirmed by an independent primality oracle.",
       "blocker": "Range extension cannot compete with the published 4*10^18 verification; real progress needs a new restricted theorem.",
       "dossier": "research/LAB_CAMPAIGNS.md",
@@ -22,7 +24,9 @@
       "hypothesis": "For every integer n >= 2, 4/n = 1/x + 1/y + 1/z has a solution in positive integers.",
       "first_proof_obligation": "Find a polynomial identity family covering a residue class of primes not covered by the classical Mordell identities, and prove it symbolically.",
       "next_experiment": "The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity.",
-      "additional_verifiers": ["python3 scripts/mine.py --mine straus_patterns"],
+      "additional_verifiers": [
+        "python3 scripts/mine.py --mine straus_patterns"
+      ],
       "falsification": "An n together with a proof that no positive-integer triple exists; a finite search failure is not a counterexample.",
       "blocker": "Classical identities leave quadratic-residue classes uncovered, and known results show identities of the standard polynomial type cannot cover them all; a different idea is needed.",
       "dossier": "research/LAB_CAMPAIGNS.md",
@@ -83,7 +87,9 @@
       "hypothesis": "Every nontrivial finite union-closed family contains an element in at least half its members.",
       "first_proof_obligation": "Verify the exact conjecture for bounded universes before deriving any universal structural reduction.",
       "next_experiment": "The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5).",
-      "additional_verifiers": ["python3 scripts/mine.py --mine frankl_orbits"],
+      "additional_verifiers": [
+        "python3 scripts/mine.py --mine frankl_orbits"
+      ],
       "falsification": "An exact union-closed family whose maximum element frequency is less than half the family size.",
       "blocker": "Naive exhaustive enumeration scales as 2^(2^n); structural quotient required.",
       "dossier": "research/M075_FRANKL.md",
@@ -96,7 +102,9 @@
       "hypothesis": "Every finite simple graph on at least 3 vertices is determined up to isomorphism by its vertex-deleted deck.",
       "first_proof_obligation": "Pick a graph family not yet known to be reconstructible and isolate a lemma that reconstructs a new invariant for it.",
       "next_experiment": "The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two.",
-      "additional_verifiers": ["python3 scripts/mine.py --mine deck_invariants"],
+      "additional_verifiers": [
+        "python3 scripts/mine.py --mine deck_invariants"
+      ],
       "falsification": "Two non-isomorphic graphs with identical decks, confirmed by independent canonical forms.",
       "blocker": "Computer verification already reaches at least 11 vertices; novelty has to come from a structural lemma, not from range.",
       "dossier": "research/LAB_CAMPAIGNS.md",
@@ -109,7 +117,9 @@
       "hypothesis": "Every finite poset that is not a chain has an incomparable pair x, y with 1/3 <= Pr[x < y] <= 2/3.",
       "first_proof_obligation": "State and prove a balance bound for a restricted poset class (bounded width or height) that improves on published results.",
       "next_experiment": "The certified mine poset_balance finds 11 posets on at most 6 elements with best balance exactly 1/3, and every one of them has width 2, which Linial already settled. A new lemma has to treat width at least 3; this census has no tight example there.",
-      "additional_verifiers": ["python3 scripts/mine.py --mine poset_balance"],
+      "additional_verifiers": [
+        "python3 scripts/mine.py --mine poset_balance"
+      ],
       "falsification": "A non-chain poset whose every incomparable pair has balance below 1/3, with linear extensions counted exactly by two independent methods.",
       "blocker": "Published verification already reaches 11 elements; a new structural invariant is needed.",
       "dossier": "research/LAB_CAMPAIGNS.md",
@@ -225,6 +235,30 @@
       "blocker": "Exhaustive extreme-point enumeration grows very quickly beyond n = 10; graphic metrics up to 7 vertices reach only a 16/15 gap.",
       "dossier": "research/LAB_CAMPAIGNS.md",
       "verifier": "python3 scripts/lab.py --probe held_karp"
+    },
+    {
+      "problem_id": "M001",
+      "stage": "benchmark_reproduced",
+      "method": "Interval-arithmetic argument principle and Hardy Z sign changes",
+      "hypothesis": "Every non-trivial zero of the Riemann zeta function has real part 1/2.",
+      "first_proof_obligation": "A finite height is already classical. The next obligation is a zero-free statement with an explicit constant that does not follow from plugging this height into a known explicit formula, or a machine-checked count past the range a hand calculation can audit.",
+      "next_experiment": "Raise the certified height by tightening the contour enclosures, then compare the isolating intervals against a published zero table entry by entry.",
+      "falsification": "A height T at which the certified argument count N(T) strictly exceeds the number of disjoint intervals where Z changes sign.",
+      "blocker": "T = 36 is far below Platt–Trudgian (at least 3*10^12). Extending the height needs a faster contour, not a new idea about the hypothesis.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe riemann"
+    },
+    {
+      "problem_id": "M002",
+      "stage": "benchmark_reproduced",
+      "method": "The zeta interval engine applied to L(s, chi_4)",
+      "hypothesis": "Every non-trivial zero of every Dirichlet L-function has real part 1/2.",
+      "first_proof_obligation": "Certify one further primitive character, of conductor 3 or 5, to a height where the root number and the gamma factor are checked by the same argument principle.",
+      "next_experiment": "Reuse the zero-count certificate for the non-principal character modulo 3, including an independent replay of its Gauss sum.",
+      "falsification": "A primitive character and a height T at which the certified argument count exceeds the number of critical-line sign changes.",
+      "blocker": "One character at height 17 does not constrain the other characters. Conductor 3 is the smallest untouched case.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe dirichlet_l"
     }
   ],
   "milestones": [
@@ -479,6 +513,28 @@
       "description": "Eleven posets attain best balance 1/3. Their width-height types are 2x2, 2x3, 2x4 and 2x5. Balances are recounted by removing minimal elements.",
       "verifier": "python3 scripts/mine.py --mine poset_balance",
       "artifact": "scripts/mines/poset_balance.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-ZETA-001",
+      "problem_id": "M001",
+      "classification": "reproduced_known",
+      "title": "The first two non-trivial zeta zeros are simple and on the critical line",
+      "scope": "N(23) = 2, a classical height; not a proof of the Riemann hypothesis",
+      "description": "Argument-principle count N(T) matched to Hardy Z sign changes on (14, 15) and (21, 22). The checker repeats the count with a different Euler-Maclaurin and Stirling truncation. The deep run reaches N(36) = 5.",
+      "verifier": "python3 scripts/lab.py --probe riemann",
+      "artifact": "scripts/probes/riemann.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-LCHI4-001",
+      "problem_id": "M002",
+      "classification": "reproduced_known",
+      "title": "The first two non-trivial zeros of L(s, chi_4) are simple and on the critical line",
+      "scope": "One Dirichlet character, N(11) = 2; not the generalized Riemann hypothesis",
+      "description": "Argument count for L(s, chi_4) matched to sign changes of the real form on (6, 7) and (10, 11), replayed at a second truncation. The deep run reaches N(17) = 4.",
+      "verifier": "python3 scripts/lab.py --probe dirichlet_l",
+      "artifact": "scripts/probes/dirichlet_l.py",
       "verified_on": "2026-10-31"
     }
   ]

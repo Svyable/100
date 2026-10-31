@@ -1,4 +1,4 @@
-# Lab campaigns: twelve problems under exact computation
+# Lab campaigns: problems under exact computation
 
 **Date:** 2026-10-31. This dossier covers the campaigns driven by the [exact probe lab](../LAB.md).
 Each probe has a search and a separate checker, runs in CI at a small "smoke" size, and can be
@@ -19,11 +19,21 @@ existing engine. For example, the finite-field engine serves five problems: Hada
 planes, MDS codes, Ramsey colourings and Rota's conjecture.
 
 Every problem also has a `modality` (see [the protocol](../docs/RESEARCH_PROTOCOL.md)) recording
-whether finite computation can refute it at all. Of the 19 problems where it can, 13 now have
-exact verifiers. The other six are listed with the engine each one needs in
+whether finite computation can refute it at all. Of the 19 problems where it can, 18 now have
+exact verifiers. The remaining one is listed with the engine it needs in
 [data/engine_roadmap.json](../data/engine_roadmap.json).
 
 ## Per-problem notes
+
+### M001 — Riemann hypothesis (`riemann`, engine `interval_arithmetic`)
+Certifies N(T) by the argument principle and matches it to sign changes of the Hardy
+Z-function. The checker repeats both counts with a different Euler–Maclaurin and Stirling
+truncation. Smoke: N(23) = 2. Deep: N(36) = 5. **Frontier:** direct verification already
+passes height 3·10^12. This is a certificate format for the low zeros, not a new region.
+
+### M002 — Generalized Riemann hypothesis (`dirichlet_l`, engine `interval_arithmetic`)
+The same engine on L(s, χ₄). Smoke: N(11) = 2. Deep: N(17) = 4. One primitive character
+at a classical height. **Next:** the non-principal character modulo 3, including its Gauss sum.
 
 ### M006 — Strong Goldbach (`goldbach`, engine `primes`)
 Certifies the least Goldbach prime for every even n up to the run limit. The search side uses a

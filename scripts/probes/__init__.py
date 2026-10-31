@@ -63,10 +63,17 @@ ENGINES = {
         "modules": ["scripts/probes/ramsey_witness.py"],
         "use": "Ramsey and coding lower-bound witnesses.",
     },
+    "interval_arithmetic": {
+        "name": "Directed fixed-point intervals for zeta and Dirichlet L-functions",
+        "modules": ["scripts/probes/intervals.py", "scripts/probes/zeta.py"],
+        "use": "Rigorous zero counts on the critical line via the argument principle.",
+    },
 }
 
 # probe id -> module name (ordered by problem id)
 PROBES = {
+    "riemann": "riemann",
+    "dirichlet_l": "dirichlet_l",
     "goldbach": "goldbach",
     "erdos_straus": "erdos_straus",
     "jacobian": "jacobian",

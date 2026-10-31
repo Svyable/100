@@ -91,7 +91,7 @@ def render(ledger):
             f"{record['scope']} | `{record['certificate_sha256'][:12]}` |"
         )
     lines += ["", "## Tables", ""]
-    for mine_id in present: 
+    for mine_id in present:
         record = ledger["mines"][mine_id]
         lines += [
             f"### {record['problem_id']} · {record['title']}", "",
