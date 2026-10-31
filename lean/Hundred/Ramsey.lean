@@ -20,6 +20,11 @@ abbrev ValidColoring {n : Nat} (edge : Fin n → Fin n → Bool) : Prop :=
 abbrev AvoidsMonochromaticTriangle {n : Nat} (edge : Fin n → Fin n → Bool) : Prop :=
   ValidColoring edge ∧ TriangleFree edge ∧ IndependentTripleFree edge
 
+instance {n : Nat} (edge : Fin n → Fin n → Bool) :
+    Decidable (AvoidsMonochromaticTriangle edge) := by
+  unfold AvoidsMonochromaticTriangle ValidColoring TriangleFree IndependentTripleFree
+  infer_instance
+
 /-- Executable checker for any finite red/blue adjacency function. -/
 def check {n : Nat} (edge : Fin n → Fin n → Bool)
     [Decidable (AvoidsMonochromaticTriangle edge)] : Bool :=
