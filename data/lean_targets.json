@@ -12,7 +12,8 @@
       "Hundred.Ramsey.cycle5_independentTripleFree",
       "Hundred.Ramsey.cycle5_certificate",
       "Hundred.Ramsey.five_vertex_witness",
-      "Hundred.Ramsey.restrict"
+      "Hundred.Ramsey.restrict",
+      "Hundred.Ramsey.check_sound"
     ]
   },
   {

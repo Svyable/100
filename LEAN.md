@@ -2,7 +2,7 @@
 
 The objective is more independently checked, reusable mathematics per unit of effort.
 “100x” is an ambition, not a measured speedup or a promise to solve the portfolio.
-The initial implementation has six named declarations for one known Ramsey benchmark;
+The initial implementation has seven named declarations for one known Ramsey benchmark;
 Frankl and Caccetta–Häggkvist are explicitly queued, not formalized.
 
 ## Run the gate
@@ -53,8 +53,10 @@ and [axiom reference](https://lean-lang.org/doc/reference/latest/Axioms/).
 Canonical target contracts: [data/lean_targets.json](data/lean_targets.json).
 The C5 encoding is deliberately independent of the Python implementation. Its positive
 certificate is accompanied by complete-graph, empty-graph, self-loop and asymmetric-edge
-negative cases. The `restrict` theorem is a reusable transport lemma, not another
-independent experimental discovery. Six declarations do not mean six solved problems.
+negative cases. The generic `check_sound` theorem proves that every accepted finite checker result
+entails the encoded certificate. It does not claim the checker accepts every graph.
+The `restrict` theorem is a reusable transport lemma, not another
+independent experimental discovery. Seven declarations do not mean six solved problems.
 
 For each target, split work into definitions → semantic equivalence → checker soundness
 → concrete certificate → scope review. Keep the hard mathematics visible rather than

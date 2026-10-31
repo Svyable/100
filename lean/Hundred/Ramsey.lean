@@ -6,19 +6,28 @@ All three distinctness conditions are required to exclude repeated vertices.
 -/
 namespace Hundred.Ramsey
 
-def TriangleFree {n : Nat} (edge : Fin n → Fin n → Bool) : Prop :=
+abbrev TriangleFree {n : Nat} (edge : Fin n → Fin n → Bool) : Prop :=
   ∀ a b c, a ≠ b → b ≠ c → a ≠ c →
     ¬ (edge a b = true ∧ edge b c = true ∧ edge a c = true)
 
-def IndependentTripleFree {n : Nat} (edge : Fin n → Fin n → Bool) : Prop :=
+abbrev IndependentTripleFree {n : Nat} (edge : Fin n → Fin n → Bool) : Prop :=
   ∀ a b c, a ≠ b → b ≠ c → a ≠ c →
     ¬ (edge a b = false ∧ edge b c = false ∧ edge a c = false)
 
-def ValidColoring {n : Nat} (edge : Fin n → Fin n → Bool) : Prop :=
+abbrev ValidColoring {n : Nat} (edge : Fin n → Fin n → Bool) : Prop :=
   (∀ a, edge a a = false) ∧ (∀ a b, edge a b = edge b a)
 
-def AvoidsMonochromaticTriangle {n : Nat} (edge : Fin n → Fin n → Bool) : Prop :=
+abbrev AvoidsMonochromaticTriangle {n : Nat} (edge : Fin n → Fin n → Bool) : Prop :=
   ValidColoring edge ∧ TriangleFree edge ∧ IndependentTripleFree edge
+
+/-- Executable checker for any finite red/blue adjacency function. -/
+def check {n : Nat} (edge : Fin n → Fin n → Bool) : Bool :=
+  decide (AvoidsMonochromaticTriangle edge)
+
+/-- A true checker result entails the full graph certificate, for arbitrary n. -/
+theorem check_sound {n : Nat} {edge : Fin n → Fin n → Bool}
+    (h : check edge = true) : AvoidsMonochromaticTriangle edge :=
+  of_decide_eq_true h
 
 /-- Modular adjacency of the five-cycle, independently encoded from the JSON witness. -/
 def cycle5 (a b : Fin 5) : Bool :=
