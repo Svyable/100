@@ -53,6 +53,11 @@ ENGINES = {
         "modules": ["scripts/probes/homomorphisms.py"],
         "use": "Homomorphism-density inequalities (Sidorenko, forcing, common graphs) on certified host sets.",
     },
+    "polynomial_algebra": {
+        "name": "Exact bivariate polynomial algebra with lattice kernels and inverse construction",
+        "modules": ["scripts/probes/polynomials.py"],
+        "use": "Jacobians, compositions and certified inverses of polynomial maps; exhaustive integer classes.",
+    },
     "clique_search": {
         "name": "Branch-and-bound clique search with exhaustive subset re-check",
         "modules": ["scripts/probes/ramsey_witness.py"],
@@ -64,6 +69,7 @@ ENGINES = {
 PROBES = {
     "goldbach": "goldbach",
     "erdos_straus": "erdos_straus",
+    "jacobian": "jacobian",
     "hadwiger": "hadwiger",
     "sidorenko": "sidorenko",
     "reconstruction": "reconstruction",

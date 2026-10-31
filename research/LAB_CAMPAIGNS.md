@@ -37,6 +37,16 @@ Gives an explicit triple for every n, found with a divisor solver for 1/y + 1/z 
 tests only the identity 4xyz = n(xy + yz + zx). **Next:** mine solutions for primes n ≡ 1 (mod 24)
 to look for parametric identities.
 
+### M041 — Plane Jacobian conjecture (`jacobian`, engine `polynomial_algebra`)
+The class is every map (f, g) of degree ≤ d with zero constant terms and coefficients in a small
+set. J(f,g) is linear in g's coefficients, so the maps with constant Jacobian are the lattice points
+of an exact kernel. Each one gets an inverse G of degree ≤ d from an exact linear system; by
+Gabber's bound, an F with no such inverse would be a counterexample. The checker re-derives the
+set of constant-Jacobian maps from a different linear system (evaluations on a grid, with
+fraction-free integer elimination), and verifies G∘F = F∘G = id by independent dense composition.
+Smoke: all 59,049 maps of degree ≤ 2 (240 with constant Jacobian, matching brute force).
+Deep: all 387,420,489 maps of degree ≤ 3 (816). **Frontier:** degree ≤ 100 in the plane (Moh).
+
 ### M071 — Hadwiger (`hadwiger`, engine `graph_census`)
 Each graph gets a proper t-colouring and a K_t minor model with t branch sets. Since χ ≤ t, and
 K_t contains every smaller complete minor, the checker never has to trust a chromatic-number

@@ -218,6 +218,32 @@
           }
         }
       },
+      "jacobian": {
+        "certificate_sha256": "4dbd31dd962e7ba1ac8ea39b0d3b252dd2bff68101c952d6638d537d9bf409bb",
+        "engines": [
+          "polynomial_algebra"
+        ],
+        "holds": true,
+        "level": "deep",
+        "params": {
+          "coefficients": [
+            -1,
+            0,
+            1
+          ],
+          "degree": 3
+        },
+        "probe": "jacobian",
+        "problem_id": "M041",
+        "scope": "Every plane map (f, g) with deg <= 3, zero constant terms and coefficients in {-1, 0, 1} whose Jacobian is a nonzero constant has an explicit polynomial inverse of degree <= 3.",
+        "summary": {
+          "certificate_sha256": "c91909ea006cc6e05a970a5282a410e2859fcca6783d0caf0eadb50d99b04bdf",
+          "class_size": 387420489,
+          "constant_jacobian_maps": 816,
+          "max_inverse_terms": 11,
+          "monomials": 9
+        }
+      },
       "mds_arcs": {
         "certificate_sha256": "c91322d26a67ede8745369a9995743c9f53be49aeca2c75285d4566d82639a4e",
         "engines": [
@@ -841,6 +867,32 @@
             "graph": 6,
             "n": 3
           }
+        }
+      },
+      "jacobian": {
+        "certificate_sha256": "f44c7cda2ef9e9849c9b185a750809eb2d476d530cbded36e692ccd5b9ea4632",
+        "engines": [
+          "polynomial_algebra"
+        ],
+        "holds": true,
+        "level": "smoke",
+        "params": {
+          "coefficients": [
+            -1,
+            0,
+            1
+          ],
+          "degree": 2
+        },
+        "probe": "jacobian",
+        "problem_id": "M041",
+        "scope": "Every plane map (f, g) with deg <= 2, zero constant terms and coefficients in {-1, 0, 1} whose Jacobian is a nonzero constant has an explicit polynomial inverse of degree <= 2.",
+        "summary": {
+          "certificate_sha256": "6261c4a947d7d2f7e97625dd05d32cb5118fe70d03fab7e27fc2b410f7098ccf",
+          "class_size": 59049,
+          "constant_jacobian_maps": 240,
+          "max_inverse_terms": 7,
+          "monomials": 5
         }
       },
       "mds_arcs": {

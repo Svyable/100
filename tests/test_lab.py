@@ -12,7 +12,7 @@ import lab
 import probes
 import rank
 import research
-from probes import core, cyclotomic, exact_lp, fields, graphs, homomorphisms, primes
+from probes import core, cyclotomic, exact_lp, fields, graphs, homomorphisms, polynomials, primes
 from probes.core import ProbeFailure
 
 
@@ -99,6 +99,18 @@ class EngineTests(unittest.TestCase):
         k4 = graphs.to_adjacency(4, (1 << 6) - 1)
         c4 = sid.patterns()["C4"]
         self.assertEqual(homomorphisms.count_from_side(c4, 4, k4), 4 * 3 * 7)  # n(n-1)(n^2-3n+3)
+
+    def test_polynomial_algebra(self):
+        P = polynomials
+        f, g = {(1, 0): 1, (0, 2): 1}, {(0, 1): 1}                     # (x + y^2, y)
+        self.assertEqual(P.jacobian(f, g), {(0, 0): 1})
+        jac = probes.load("jacobian")
+        p, q = jac.inverse(f, g, 2)
+        self.assertEqual((p, q), ({(1, 0): 1, (0, 2): -1}, {(0, 1): 1}))  # (x - y^2, y)
+        self.assertEqual(P.compose(p, f, g), {(1, 0): 1})
+        self.assertIsNone(jac.inverse({(1, 0): 1}, {(1, 0): 1}, 1))     # (x, x) is not invertible
+        kernel = P.lattice_kernel([[1, 1, 0], [0, 1, 1]], [-1, 0, 1])
+        self.assertEqual(sorted(map(tuple, kernel)), [(-1, 1, -1), (0, 0, 0), (1, -1, 1)])
 
     def test_canonical_json_is_order_independent(self):
         self.assertEqual(core.digest({"b": 1, "a": [Fraction(1, 3)]}),
@@ -268,6 +280,22 @@ class TamperTests(unittest.TestCase):
         self.assertRejects(m, params, bad)
         bad = copy.deepcopy(r)
         bad["certificate"]["K33"]["min_ratio"] = "1/1"
+        self.assertRejects(m, params, bad)
+
+
+    def test_jacobian(self):
+        params = {"degree": 2, "coefficients": [-1, 0, 1]}
+        m, r = run("jacobian", params)
+        self.assertEqual(r["summary"]["constant_jacobian_maps"], 240)
+        bad = copy.deepcopy(r)
+        row = next(x for x in bad["certificate"]["rows"] if len(x["p"]) > 1)
+        row["p"][0][1] = str(Fraction(row["p"][0][1]) + 1)
+        self.assertRejects(m, params, bad)
+        bad = copy.deepcopy(r)
+        bad["certificate"]["rows"].pop()
+        self.assertRejects(m, params, bad)
+        bad = copy.deepcopy(r)
+        bad["certificate"]["rows"][0]["p"].append([[2, 1], "1"])  # exceeds the degree bound
         self.assertRejects(m, params, bad)
 
 

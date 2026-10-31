@@ -16,13 +16,13 @@
   },
   "program_as_of": "2026-10-31",
   "summary": {
-    "campaigns": 17,
-    "reproduced_known": 17,
+    "campaigns": 18,
+    "reproduced_known": 18,
     "restricted_verified": 0,
     "fully_solved": 0,
-    "problems_with_exact_verifier": 16,
-    "exact_probes": 14,
-    "engines": 10
+    "problems_with_exact_verifier": 17,
+    "exact_probes": 15,
+    "engines": 11
   },
   "execution_scoring": {
     "brief": 2,
@@ -70,7 +70,7 @@
       "source_url": "https://www.cs.sfu.ca/~kabanets/Research/poly.html",
       "rank": 2,
       "score": 94,
-      "execution_rank": 8,
+      "execution_rank": 9,
       "execution_score": 96,
       "readiness": 2,
       "campaign_stage": "specified",
@@ -136,7 +136,7 @@
       "source_url": null,
       "rank": 5,
       "score": 91,
-      "execution_rank": 14,
+      "execution_rank": 15,
       "execution_score": 91,
       "readiness": 0,
       "campaign_stage": null,
@@ -246,11 +246,11 @@
       "source_url": "https://arxiv.org/abs/2608.00222",
       "rank": 10,
       "score": 89,
-      "execution_rank": 17,
-      "execution_score": 89,
-      "readiness": 0,
-      "campaign_stage": null,
-      "milestone_count": 0
+      "execution_rank": 8,
+      "execution_score": 96,
+      "readiness": 7,
+      "campaign_stage": "benchmark_reproduced",
+      "milestone_count": 1
     },
     {
       "id": "M042",
@@ -290,7 +290,7 @@
       "source_url": null,
       "rank": 12,
       "score": 85,
-      "execution_rank": 9,
+      "execution_rank": 10,
       "execution_score": 92,
       "readiness": 7,
       "campaign_stage": "benchmark_reproduced",
@@ -334,7 +334,7 @@
       "source_url": null,
       "rank": 14,
       "score": 85,
-      "execution_rank": 10,
+      "execution_rank": 11,
       "execution_score": 92,
       "readiness": 7,
       "campaign_stage": "benchmark_reproduced",
@@ -378,7 +378,7 @@
       "source_url": null,
       "rank": 16,
       "score": 85,
-      "execution_rank": 11,
+      "execution_rank": 12,
       "execution_score": 92,
       "readiness": 7,
       "campaign_stage": "benchmark_reproduced",
@@ -400,7 +400,7 @@
       "source_url": "https://mathworld.wolfram.com/ProjectivePlane.html",
       "rank": 17,
       "score": 85,
-      "execution_rank": 12,
+      "execution_rank": 13,
       "execution_score": 92,
       "readiness": 7,
       "campaign_stage": "benchmark_reproduced",
@@ -422,7 +422,7 @@
       "source_url": null,
       "rank": 18,
       "score": 85,
-      "execution_rank": 13,
+      "execution_rank": 14,
       "execution_score": 92,
       "readiness": 7,
       "campaign_stage": "benchmark_reproduced",
@@ -488,7 +488,7 @@
       "source_url": null,
       "rank": 21,
       "score": 83,
-      "execution_rank": 15,
+      "execution_rank": 16,
       "execution_score": 90,
       "readiness": 7,
       "campaign_stage": "benchmark_reproduced",
@@ -620,7 +620,7 @@
       "source_url": null,
       "rank": 27,
       "score": 82,
-      "execution_rank": 16,
+      "execution_rank": 17,
       "execution_score": 89,
       "readiness": 7,
       "campaign_stage": "benchmark_reproduced",
@@ -2237,6 +2237,7 @@
     "covered_problems": [
       "M006",
       "M019",
+      "M041",
       "M071",
       "M073",
       "M074",
@@ -2278,7 +2279,7 @@
         "modality": "finite_refutable",
         "description": "One finite, checkable object would refute it; computation can search and certify ranges.",
         "problems": 15,
-        "with_verifier": 11
+        "with_verifier": 12
       },
       {
         "modality": "finite_parameter",
@@ -2416,6 +2417,17 @@
         ]
       },
       {
+        "id": "polynomial_algebra",
+        "name": "Exact bivariate polynomial algebra with lattice kernels and inverse construction",
+        "use": "Jacobians, compositions and certified inverses of polynomial maps; exhaustive integer classes.",
+        "modules": [
+          "scripts/probes/polynomials.py"
+        ],
+        "problems": [
+          "M041"
+        ]
+      },
+      {
         "id": "clique_search",
         "name": "Branch-and-bound clique search with exhaustive subset re-check",
         "use": "Ramsey and coding lower-bound witnesses.",
@@ -2473,6 +2485,30 @@
             "holds": true,
             "scope": "For every integer 2 <= n <= 1,000,000, explicit positive integers x <= y <= z with 4xyz = n(xy + yz + zx).",
             "certificate_sha256": "60a148c35e2dedbf39a8233554ad50f67de47d69cf5b3bfa24b02f64fe315911"
+          }
+        }
+      },
+      {
+        "id": "jacobian",
+        "problem_id": "M041",
+        "name": "Plane Jacobian conjecture",
+        "title": "Plane Jacobian conjecture on exhaustive classes of small integer polynomial maps",
+        "engines": [
+          "polynomial_algebra"
+        ],
+        "frontier": "Known: true for plane maps of degree <= 100 (Moh 1983) and in degree <= 2 in every dimension (Wang 1980); open in general. Reproduction only.",
+        "artifact": "scripts/probes/jacobian.py",
+        "command": "python3 scripts/lab.py --probe jacobian",
+        "runs": {
+          "smoke": {
+            "holds": true,
+            "scope": "Every plane map (f, g) with deg <= 2, zero constant terms and coefficients in {-1, 0, 1} whose Jacobian is a nonzero constant has an explicit polynomial inverse of degree <= 2.",
+            "certificate_sha256": "f44c7cda2ef9e9849c9b185a750809eb2d476d530cbded36e692ccd5b9ea4632"
+          },
+          "deep": {
+            "holds": true,
+            "scope": "Every plane map (f, g) with deg <= 3, zero constant terms and coefficients in {-1, 0, 1} whose Jacobian is a nonzero constant has an explicit polynomial inverse of degree <= 3.",
+            "certificate_sha256": "4dbd31dd962e7ba1ac8ea39b0d3b252dd2bff68101c952d6638d537d9bf409bb"
           }
         }
       },
@@ -2784,12 +2820,6 @@
         "name": "Generalized Riemann Hypothesis"
       },
       {
-        "problem_id": "M041",
-        "engine": "polynomial_algebra",
-        "first_probe": "Enumerate constant-Jacobian plane maps with small integer coefficients and degree <= 3, and certify each by an explicit polynomial inverse checked by exact composition.",
-        "name": "Plane Jacobian conjecture"
-      },
-      {
         "problem_id": "M048",
         "engine": "group_characters",
         "first_probe": "Exact Brauer-character and weight counts for small finite groups and primes, compared entrywise.",
@@ -2821,6 +2851,18 @@
       "blocker": "Classical identities leave quadratic-residue classes uncovered, and known results show identities of the standard polynomial type cannot cover them all; a different idea is needed.",
       "dossier": "research/LAB_CAMPAIGNS.md",
       "verifier": "python3 scripts/lab.py --probe erdos_straus"
+    },
+    {
+      "problem_id": "M041",
+      "stage": "benchmark_reproduced",
+      "method": "Exhaustive integer plane maps with inverses certified under Gabber's degree bound",
+      "hypothesis": "Every polynomial map C^2 -> C^2 with constant nonzero Jacobian determinant has a polynomial inverse.",
+      "first_proof_obligation": "Reproduce the classical low-degree cases (Wang: degree <= 2; Moh: plane degree <= 100) on exhaustive integer classes, then isolate a structured family, such as maps with a prescribed Newton polygon, not covered by known degree bounds.",
+      "next_experiment": "Enlarge the class to degree 4 with coefficients in {-1,0,1} using kernel enumeration per monomial support, and record the distribution of inverse degrees and of tame decompositions.",
+      "falsification": "A plane map with exactly verified constant nonzero Jacobian and an exact proof (an infeasible linear system under Gabber's bound) that no inverse of degree <= deg F exists.",
+      "blocker": "Known results already cover plane maps of degree <= 100, so exhaustive small classes cannot reach new territory; novelty needs structural families.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe jacobian"
     },
     {
       "problem_id": "M071",
@@ -3193,6 +3235,17 @@
       "verifier": "python3 scripts/lab.py --probe sidorenko",
       "artifact": "scripts/probes/sidorenko.py",
       "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-JACOBIAN-001",
+      "problem_id": "M041",
+      "classification": "reproduced_known",
+      "title": "Plane Jacobian conjecture verified on all 59,049 integer maps of degree <= 2 with coefficients in {-1,0,1}",
+      "scope": "Known (Wang 1980; Moh 1983); not new",
+      "description": "240 maps have constant nonzero Jacobian (matching brute force); each has an explicit inverse of degree <= 2 checked by composition in both orders, and completeness is re-derived from a separate evaluation-based linear system. The deep run covers all 387,420,489 maps of degree <= 3 (816 with constant Jacobian), every one inverted.",
+      "verifier": "python3 scripts/lab.py --probe jacobian",
+      "artifact": "scripts/probes/jacobian.py",
+      "verified_on": "2026-10-31"
     }
   ],
   "solved": [],
@@ -3282,9 +3335,21 @@
       "dossier": "research/LAB_CAMPAIGNS.md"
     },
     {
+      "problem_id": "M041",
+      "name": "Plane Jacobian conjecture",
+      "execution_rank": 8,
+      "execution_score": 96,
+      "baseline_rank": 10,
+      "stage": "benchmark_reproduced",
+      "first_proof_obligation": "Reproduce the classical low-degree cases (Wang: degree <= 2; Moh: plane degree <= 100) on exhaustive integer classes, then isolate a structured family, such as maps with a prescribed Newton polygon, not covered by known degree bounds.",
+      "next_experiment": "Enlarge the class to degree 4 with coefficients in {-1,0,1} using kernel enumeration per monomial support, and record the distribution of inverse degrees and of tame decompositions.",
+      "blocker": "Known results already cover plane maps of degree <= 100, so exhaustive small classes cannot reach new territory; novelty needs structural families.",
+      "dossier": "research/LAB_CAMPAIGNS.md"
+    },
+    {
       "problem_id": "M088",
       "name": "Deterministic polynomial identity testing",
-      "execution_rank": 8,
+      "execution_rank": 9,
       "execution_score": 96,
       "baseline_rank": 2,
       "stage": "specified",
@@ -3296,7 +3361,7 @@
     {
       "problem_id": "M071",
       "name": "Hadwiger conjecture",
-      "execution_rank": 9,
+      "execution_rank": 10,
       "execution_score": 92,
       "baseline_rank": 12,
       "stage": "benchmark_reproduced",
@@ -3308,7 +3373,7 @@
     {
       "problem_id": "M073",
       "name": "Sidorenko conjecture",
-      "execution_rank": 10,
+      "execution_rank": 11,
       "execution_score": 92,
       "baseline_rank": 14,
       "stage": "benchmark_reproduced",
@@ -3320,7 +3385,7 @@
     {
       "problem_id": "M080",
       "name": "Rota basis conjecture",
-      "execution_rank": 11,
+      "execution_rank": 12,
       "execution_score": 92,
       "baseline_rank": 16,
       "stage": "benchmark_reproduced",
@@ -3332,7 +3397,7 @@
     {
       "problem_id": "M096",
       "name": "Projective plane order 12",
-      "execution_rank": 12,
+      "execution_rank": 13,
       "execution_score": 92,
       "baseline_rank": 17,
       "stage": "benchmark_reproduced",
@@ -3344,7 +3409,7 @@
     {
       "problem_id": "M097",
       "name": "Metric TSP four-thirds conjecture",
-      "execution_rank": 13,
+      "execution_rank": 14,
       "execution_score": 92,
       "baseline_rank": 18,
       "stage": "benchmark_reproduced",
@@ -3356,7 +3421,7 @@
     {
       "problem_id": "M084",
       "name": "Matrix multiplication exponent omega=2",
-      "execution_rank": 15,
+      "execution_rank": 16,
       "execution_score": 90,
       "baseline_rank": 21,
       "stage": "benchmark_reproduced",
@@ -3368,7 +3433,7 @@
     {
       "problem_id": "M019",
       "name": "Erdős–Straus conjecture",
-      "execution_rank": 16,
+      "execution_rank": 17,
       "execution_score": 89,
       "baseline_rank": 27,
       "stage": "benchmark_reproduced",

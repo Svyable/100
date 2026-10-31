@@ -13,11 +13,6 @@
       "first_probe": "Reuse the zero-count certificate format for Dirichlet L-functions of small conductor."
     },
     {
-      "problem_id": "M041",
-      "engine": "polynomial_algebra",
-      "first_probe": "Enumerate constant-Jacobian plane maps with small integer coefficients and degree <= 3, and certify each by an explicit polynomial inverse checked by exact composition."
-    },
-    {
       "problem_id": "M048",
       "engine": "group_characters",
       "first_probe": "Exact Brauer-character and weight counts for small finite groups and primes, compared entrywise."
