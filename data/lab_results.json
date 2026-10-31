@@ -194,6 +194,30 @@
           "graphs_certified": 1252
         }
       },
+      "held_karp": {
+        "certificate_sha256": "b2100a56d71d281128a48fc3cd2746d955ecd1d855a1f72e51627e10f337498b",
+        "engines": [
+          "exact_lp",
+          "graph_census"
+        ],
+        "holds": true,
+        "level": "deep",
+        "params": {
+          "max_n": 7
+        },
+        "probe": "held_karp",
+        "problem_id": "M097",
+        "scope": "For the shortest-path metric of every connected graph on 3..7 vertices, OPT <= (4/3) * HK with both values certified exactly.",
+        "summary": {
+          "certificate_sha256": "b2100a56d71d281128a48fc3cd2746d955ecd1d855a1f72e51627e10f337498b",
+          "instances": 994,
+          "max_ratio": "16/15",
+          "max_ratio_instance": {
+            "graph": 1762068,
+            "n": 7
+          }
+        }
+      },
       "mds_arcs": {
         "certificate_sha256": "c91322d26a67ede8745369a9995743c9f53be49aeca2c75285d4566d82639a4e",
         "engines": [
@@ -755,6 +779,30 @@
           },
           "certificate_sha256": "108fe9f19d66a0fa7c259e2e4209d930f0c3047efa65e91a038be5f7bc6f1327",
           "graphs_certified": 208
+        }
+      },
+      "held_karp": {
+        "certificate_sha256": "705abe69797b7a55f2124926eb17eeae816ae0a8f4c536c0f3484358023ba60b",
+        "engines": [
+          "exact_lp",
+          "graph_census"
+        ],
+        "holds": true,
+        "level": "smoke",
+        "params": {
+          "max_n": 6
+        },
+        "probe": "held_karp",
+        "problem_id": "M097",
+        "scope": "For the shortest-path metric of every connected graph on 3..6 vertices, OPT <= (4/3) * HK with both values certified exactly.",
+        "summary": {
+          "certificate_sha256": "705abe69797b7a55f2124926eb17eeae816ae0a8f4c536c0f3484358023ba60b",
+          "instances": 141,
+          "max_ratio": "1/1",
+          "max_ratio_instance": {
+            "graph": 6,
+            "n": 3
+          }
         }
       },
       "mds_arcs": {

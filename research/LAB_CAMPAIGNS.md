@@ -89,6 +89,16 @@ Checks PG(2,q) axioms purely combinatorially from the line lists, and recomputes
 exclusions by brute force. Order 10 is recorded as an external computer proof.
 12 remains the smallest open order.
 
+### M097 — Metric TSP 4/3 (`held_karp`, engines `exact_lp`, `graph_census`)
+For the shortest-path metric of every connected graph in the census, the probe solves the Held–Karp
+(subtour) LP exactly. It uses cutting planes over a rational simplex, then finds the optimal tour
+by dynamic programming. The checker never trusts the simplex. It re-proves LP optimality from the
+duality certificate (primal feasible for **every** subtour constraint, dual feasible, equal
+objectives) and recomputes the optimal tour by brute force over all Hamiltonian cycles.
+Every graph on up to 6 vertices has gap exactly 1. On 7 vertices the largest gap is 16/15
+(OPT 8, HK 15/2, a genuinely fractional optimum). **Frontier:** exact maximum gaps for all metrics
+on small n (Benoit–Boyd 2008); 4/3 ≤ gap ≤ 3/2 in general.
+
 ## Reproduce
 
 ```sh

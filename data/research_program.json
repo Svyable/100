@@ -184,6 +184,18 @@
       "blocker": "Unconstrained search is far out of reach; the order-10 nonexistence proof needed a massive computation.",
       "dossier": "research/LAB_CAMPAIGNS.md",
       "verifier": "python3 scripts/lab.py --probe projective_planes"
+    },
+    {
+      "problem_id": "M097",
+      "stage": "benchmark_reproduced",
+      "method": "Exact rational LP with duality certificates over graphic metrics",
+      "hypothesis": "For every metric TSP instance the optimal tour costs at most 4/3 of the Held-Karp (subtour LP) bound.",
+      "first_proof_obligation": "Reproduce published exact maximum integrality gaps for all small metrics (Benoit-Boyd) with LP-duality certificates, then target a structured class such as graphic metrics of subcubic graphs beyond published ranges.",
+      "next_experiment": "Extend from graphic metrics to 1-2 and vertex-weighted metrics, and enumerate extreme points of the subtour polytope at n = 8 to search for gap-maximising instances.",
+      "falsification": "A metric instance with an exactly certified Held-Karp value and a brute-force optimal tour longer than 4/3 of it.",
+      "blocker": "Exhaustive extreme-point enumeration grows very quickly beyond n = 10; graphic metrics up to 7 vertices reach only a 16/15 gap.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe held_karp"
     }
   ],
   "milestones": [
@@ -350,6 +362,17 @@
       "description": "PG(2,q) incidence axioms verified combinatorially; Bruck-Ryser exclusions recomputed by brute-force sums of two squares; deep run to q = 27 and orders <= 200.",
       "verifier": "python3 scripts/lab.py --probe projective_planes",
       "artifact": "scripts/probes/planes.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-HK-001",
+      "problem_id": "M097",
+      "classification": "reproduced_known",
+      "title": "Held-Karp integrality gap certified on all 141 graphic metrics with 3-6 vertices",
+      "scope": "Known small range; not new",
+      "description": "Every instance carries an exact LP-duality certificate checked against all subtour constraints and a brute-force optimal tour; the maximum ratio is 1 for n <= 6. The deep run covers 994 instances up to n = 7, with maximum gap 16/15.",
+      "verifier": "python3 scripts/lab.py --probe held_karp",
+      "artifact": "scripts/probes/held_karp.py",
       "verified_on": "2026-10-31"
     }
   ]

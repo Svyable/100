@@ -16,13 +16,13 @@
   },
   "program_as_of": "2026-10-31",
   "summary": {
-    "campaigns": 15,
-    "reproduced_known": 15,
+    "campaigns": 16,
+    "reproduced_known": 16,
     "restricted_verified": 0,
     "fully_solved": 0,
-    "problems_with_exact_verifier": 14,
-    "exact_probes": 12,
-    "engines": 8
+    "problems_with_exact_verifier": 15,
+    "exact_probes": 13,
+    "engines": 9
   },
   "execution_scoring": {
     "brief": 2,
@@ -136,7 +136,7 @@
       "source_url": null,
       "rank": 5,
       "score": 91,
-      "execution_rank": 12,
+      "execution_rank": 13,
       "execution_score": 91,
       "readiness": 0,
       "campaign_stage": null,
@@ -246,7 +246,7 @@
       "source_url": "https://arxiv.org/abs/2608.00222",
       "rank": 10,
       "score": 89,
-      "execution_rank": 15,
+      "execution_rank": 16,
       "execution_score": 89,
       "readiness": 0,
       "campaign_stage": null,
@@ -268,7 +268,7 @@
       "source_url": null,
       "rank": 11,
       "score": 89,
-      "execution_rank": 16,
+      "execution_rank": 17,
       "execution_score": 89,
       "readiness": 0,
       "campaign_stage": null,
@@ -312,7 +312,7 @@
       "source_url": null,
       "rank": 13,
       "score": 85,
-      "execution_rank": 18,
+      "execution_rank": 19,
       "execution_score": 85,
       "readiness": 0,
       "campaign_stage": null,
@@ -334,7 +334,7 @@
       "source_url": null,
       "rank": 14,
       "score": 85,
-      "execution_rank": 19,
+      "execution_rank": 20,
       "execution_score": 85,
       "readiness": 0,
       "campaign_stage": null,
@@ -356,7 +356,7 @@
       "source_url": null,
       "rank": 15,
       "score": 85,
-      "execution_rank": 20,
+      "execution_rank": 21,
       "execution_score": 85,
       "readiness": 0,
       "campaign_stage": null,
@@ -422,11 +422,11 @@
       "source_url": null,
       "rank": 18,
       "score": 85,
-      "execution_rank": 21,
-      "execution_score": 85,
-      "readiness": 0,
-      "campaign_stage": null,
-      "milestone_count": 0
+      "execution_rank": 12,
+      "execution_score": 92,
+      "readiness": 7,
+      "campaign_stage": "benchmark_reproduced",
+      "milestone_count": 1
     },
     {
       "id": "M082",
@@ -488,7 +488,7 @@
       "source_url": null,
       "rank": 21,
       "score": 83,
-      "execution_rank": 13,
+      "execution_rank": 14,
       "execution_score": 90,
       "readiness": 7,
       "campaign_stage": "benchmark_reproduced",
@@ -620,7 +620,7 @@
       "source_url": null,
       "rank": 27,
       "score": 82,
-      "execution_rank": 14,
+      "execution_rank": 15,
       "execution_score": 89,
       "readiness": 7,
       "campaign_stage": "benchmark_reproduced",
@@ -642,7 +642,7 @@
       "source_url": "https://doi.org/10.1002/jgt.70029",
       "rank": 28,
       "score": 82,
-      "execution_rank": 17,
+      "execution_rank": 18,
       "execution_score": 89,
       "readiness": 7,
       "campaign_stage": "benchmark_reproduced",
@@ -2248,7 +2248,8 @@
       "M093",
       "M094",
       "M095",
-      "M096"
+      "M096",
+      "M097"
     ],
     "computable_problems": [
       "M001",
@@ -2276,7 +2277,7 @@
         "modality": "finite_refutable",
         "description": "One finite, checkable object would refute it; computation can search and certify ranges.",
         "problems": 15,
-        "with_verifier": 9
+        "with_verifier": 10
       },
       {
         "modality": "finite_parameter",
@@ -2340,7 +2341,8 @@
         ],
         "problems": [
           "M071",
-          "M078"
+          "M078",
+          "M097"
         ]
       },
       {
@@ -2387,6 +2389,17 @@
         "problems": [
           "M080",
           "M093"
+        ]
+      },
+      {
+        "id": "exact_lp",
+        "name": "Exact rational simplex with LP-duality optimality certificates",
+        "use": "Certified LP relaxations (Held-Karp, fractional covers, LP bounds) with no floating point.",
+        "modules": [
+          "scripts/probes/exact_lp.py"
+        ],
+        "problems": [
+          "M097"
         ]
       },
       {
@@ -2692,6 +2705,31 @@
             "certificate_sha256": "adec7b7494938090b26f15707434c1fcd04876889b1cd6111386e3d2f94d0aac"
           }
         }
+      },
+      {
+        "id": "held_karp",
+        "problem_id": "M097",
+        "name": "Metric TSP four-thirds conjecture",
+        "title": "Held-Karp integrality gap on all graphic metrics up to N vertices",
+        "engines": [
+          "exact_lp",
+          "graph_census"
+        ],
+        "frontier": "Known: the integrality gap is at least 4/3 and at most 3/2 (Wolsey; Shmoys-Williamson); exact maximum gaps have been computed for all metrics on small n (Benoit-Boyd 2008).",
+        "artifact": "scripts/probes/held_karp.py",
+        "command": "python3 scripts/lab.py --probe held_karp",
+        "runs": {
+          "smoke": {
+            "holds": true,
+            "scope": "For the shortest-path metric of every connected graph on 3..6 vertices, OPT <= (4/3) * HK with both values certified exactly.",
+            "certificate_sha256": "705abe69797b7a55f2124926eb17eeae816ae0a8f4c536c0f3484358023ba60b"
+          },
+          "deep": {
+            "holds": true,
+            "scope": "For the shortest-path metric of every connected graph on 3..7 vertices, OPT <= (4/3) * HK with both values certified exactly.",
+            "certificate_sha256": "b2100a56d71d281128a48fc3cd2746d955ecd1d855a1f72e51627e10f337498b"
+          }
+        }
       }
     ],
     "roadmap": [
@@ -2724,12 +2762,6 @@
         "engine": "graph_homomorphisms",
         "first_probe": "Exact homomorphism-density search over small weighted host graphs for the smallest open case H = K_{5,5} minus a Hamiltonian cycle.",
         "name": "Sidorenko conjecture"
-      },
-      {
-        "problem_id": "M097",
-        "engine": "exact_lp",
-        "first_probe": "Exact rational simplex for the Held-Karp relaxation; recompute integrality gaps on all small metric instances and known near-4/3 families.",
-        "name": "Metric TSP four-thirds conjecture"
       }
     ]
   },
@@ -2916,6 +2948,18 @@
       "blocker": "Unconstrained search is far out of reach; the order-10 nonexistence proof needed a massive computation.",
       "dossier": "research/LAB_CAMPAIGNS.md",
       "verifier": "python3 scripts/lab.py --probe projective_planes"
+    },
+    {
+      "problem_id": "M097",
+      "stage": "benchmark_reproduced",
+      "method": "Exact rational LP with duality certificates over graphic metrics",
+      "hypothesis": "For every metric TSP instance the optimal tour costs at most 4/3 of the Held-Karp (subtour LP) bound.",
+      "first_proof_obligation": "Reproduce published exact maximum integrality gaps for all small metrics (Benoit-Boyd) with LP-duality certificates, then target a structured class such as graphic metrics of subcubic graphs beyond published ranges.",
+      "next_experiment": "Extend from graphic metrics to 1-2 and vertex-weighted metrics, and enumerate extreme points of the subtour polytope at n = 8 to search for gap-maximising instances.",
+      "falsification": "A metric instance with an exactly certified Held-Karp value and a brute-force optimal tour longer than 4/3 of it.",
+      "blocker": "Exhaustive extreme-point enumeration grows very quickly beyond n = 10; graphic metrics up to 7 vertices reach only a 16/15 gap.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe held_karp"
     }
   ],
   "milestones": [
@@ -3083,6 +3127,17 @@
       "verifier": "python3 scripts/lab.py --probe projective_planes",
       "artifact": "scripts/probes/planes.py",
       "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-HK-001",
+      "problem_id": "M097",
+      "classification": "reproduced_known",
+      "title": "Held-Karp integrality gap certified on all 141 graphic metrics with 3-6 vertices",
+      "scope": "Known small range; not new",
+      "description": "Every instance carries an exact LP-duality certificate checked against all subtour constraints and a brute-force optimal tour; the maximum ratio is 1 for n <= 6. The deep run covers 994 instances up to n = 7, with maximum gap 16/15.",
+      "verifier": "python3 scripts/lab.py --probe held_karp",
+      "artifact": "scripts/probes/held_karp.py",
+      "verified_on": "2026-10-31"
     }
   ],
   "solved": [],
@@ -3220,9 +3275,21 @@
       "dossier": "research/LAB_CAMPAIGNS.md"
     },
     {
+      "problem_id": "M097",
+      "name": "Metric TSP four-thirds conjecture",
+      "execution_rank": 12,
+      "execution_score": 92,
+      "baseline_rank": 18,
+      "stage": "benchmark_reproduced",
+      "first_proof_obligation": "Reproduce published exact maximum integrality gaps for all small metrics (Benoit-Boyd) with LP-duality certificates, then target a structured class such as graphic metrics of subcubic graphs beyond published ranges.",
+      "next_experiment": "Extend from graphic metrics to 1-2 and vertex-weighted metrics, and enumerate extreme points of the subtour polytope at n = 8 to search for gap-maximising instances.",
+      "blocker": "Exhaustive extreme-point enumeration grows very quickly beyond n = 10; graphic metrics up to 7 vertices reach only a 16/15 gap.",
+      "dossier": "research/LAB_CAMPAIGNS.md"
+    },
+    {
       "problem_id": "M084",
       "name": "Matrix multiplication exponent omega=2",
-      "execution_rank": 13,
+      "execution_rank": 14,
       "execution_score": 90,
       "baseline_rank": 21,
       "stage": "benchmark_reproduced",
@@ -3234,7 +3301,7 @@
     {
       "problem_id": "M019",
       "name": "Erdős–Straus conjecture",
-      "execution_rank": 14,
+      "execution_rank": 15,
       "execution_score": 89,
       "baseline_rank": 27,
       "stage": "benchmark_reproduced",
@@ -3246,7 +3313,7 @@
     {
       "problem_id": "M095",
       "name": "Exact Ramsey number R(5,5)",
-      "execution_rank": 17,
+      "execution_rank": 18,
       "execution_score": 89,
       "baseline_rank": 28,
       "stage": "benchmark_reproduced",

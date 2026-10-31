@@ -26,11 +26,6 @@
       "problem_id": "M073",
       "engine": "graph_homomorphisms",
       "first_probe": "Exact homomorphism-density search over small weighted host graphs for the smallest open case H = K_{5,5} minus a Hamiltonian cycle."
-    },
-    {
-      "problem_id": "M097",
-      "engine": "exact_lp",
-      "first_probe": "Exact rational simplex for the Held-Karp relaxation; recompute integrality gaps on all small metric instances and known near-4/3 families."
     }
   ]
 }

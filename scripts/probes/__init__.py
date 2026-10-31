@@ -43,6 +43,11 @@ ENGINES = {
         "modules": ["scripts/probes/arcs.py", "scripts/probes/rota.py"],
         "use": "Shrinks exhaustive searches by fixing a canonical starting configuration.",
     },
+    "exact_lp": {
+        "name": "Exact rational simplex with LP-duality optimality certificates",
+        "modules": ["scripts/probes/exact_lp.py"],
+        "use": "Certified LP relaxations (Held-Karp, fractional covers, LP bounds) with no floating point.",
+    },
     "clique_search": {
         "name": "Branch-and-bound clique search with exhaustive subset re-check",
         "modules": ["scripts/probes/ramsey_witness.py"],
@@ -64,6 +69,7 @@ PROBES = {
     "hadamard": "hadamard",
     "ramsey_witnesses": "ramsey_witness",
     "projective_planes": "planes",
+    "held_karp": "held_karp",
 }
 
 

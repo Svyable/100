@@ -12,7 +12,7 @@ import lab
 import probes
 import rank
 import research
-from probes import core, cyclotomic, fields, graphs, primes
+from probes import core, cyclotomic, exact_lp, fields, graphs, primes
 from probes.core import ProbeFailure
 
 
@@ -62,6 +62,28 @@ class EngineTests(unittest.TestCase):
             degree = {graphs.degree_canonical(n, graphs.edge_set(n, c)) for c in codes}
             self.assertEqual(len(brute), len(codes))
             self.assertEqual(len(degree), len(codes))
+
+    def test_exact_lp_random_programs_are_certified(self):
+        import random
+        rng = random.Random(20261031)
+        for _ in range(80):
+            n, m = rng.randint(2, 4), rng.randint(2, 5)
+            x0 = [rng.randint(0, 3) for _ in range(n)]  # a known feasible point
+            c = [rng.randint(0, 6) for _ in range(n)]   # c >= 0 keeps the program bounded
+            A_ge = [[rng.randint(-2, 4) for _ in range(n)] for _ in range(m)]
+            b_ge = [sum(a * v for a, v in zip(row, x0)) - rng.randint(0, 3) for row in A_ge]
+            if rng.random() < 0.5:
+                A_eq = [[rng.randint(0, 3) for _ in range(n)]]
+                b_eq = [sum(a * v for a, v in zip(A_eq[0], x0))]
+            else:
+                A_eq, b_eq = [], []
+            value, x, y, z = exact_lp.solve(c, A_eq, b_eq, A_ge, b_ge)
+            self.assertEqual(exact_lp.certify(c, A_eq, b_eq, A_ge, b_ge, x, y, z), value)
+            self.assertLessEqual(value, sum(a * v for a, v in zip(c, x0)))
+        with self.assertRaises(exact_lp.Infeasible):
+            exact_lp.solve([1, 1], [[1, 1]], [1], [[1, 1]], [3])
+        with self.assertRaises(ValueError):  # a non-optimal primal point fails certification
+            exact_lp.certify([1, 1], [], [], [[1, 2], [3, 1]], [4, 6], [4, 0], [], [0, 0])
 
     def test_canonical_json_is_order_independent(self):
         self.assertEqual(core.digest({"b": 1, "a": [Fraction(1, 3)]}),
@@ -200,6 +222,23 @@ class TamperTests(unittest.TestCase):
         self.assertRejects(m, params, bad)
         bad = copy.deepcopy(r)
         bad["certificate"]["table"]["6"] = "open"
+        self.assertRejects(m, params, bad)
+
+
+    def test_held_karp(self):
+        params = {"max_n": 5}
+        m, r = run("held_karp", params)
+        bad = copy.deepcopy(r)
+        bad["certificate"][-1]["x"][0] = "0"
+        self.assertRejects(m, params, bad)
+        bad = copy.deepcopy(r)
+        bad["certificate"][-1]["hk"] = "1/1"
+        self.assertRejects(m, params, bad)
+        bad = copy.deepcopy(r)
+        bad["certificate"][-1]["opt"] += 1
+        self.assertRejects(m, params, bad)
+        bad = copy.deepcopy(r)
+        bad["certificate"].pop()
         self.assertRejects(m, params, bad)
 
 
