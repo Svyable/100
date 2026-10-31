@@ -32,11 +32,6 @@ instance finiteForall : (n : Nat) → (p : Fin n → Prop) →
       | isTrue hs => isTrue (fun i => Fin.cases h0 hs i)
       | isFalse hs => isFalse (fun h => hs (fun i => h i.succ))
 
-instance {n : Nat} (edge : Fin n → Fin n → Bool) :
-    Decidable (AvoidsMonochromaticTriangle edge) := by
-  unfold AvoidsMonochromaticTriangle ValidColoring TriangleFree IndependentTripleFree
-  infer_instance
-
 /-- Executable checker for any finite red/blue adjacency function. -/
 def check {n : Nat} (edge : Fin n → Fin n → Bool)
     [Decidable (AvoidsMonochromaticTriangle edge)] : Bool :=
