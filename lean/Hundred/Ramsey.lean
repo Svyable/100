@@ -21,17 +21,16 @@ abbrev AvoidsMonochromaticTriangle {n : Nat} (edge : Fin n → Fin n → Bool) :
   ValidColoring edge ∧ TriangleFree edge ∧ IndependentTripleFree edge
 
 /-- Constructive finite universal quantification, including symbolic bounds. -/
-instance finiteForall (n : Nat) (p : Fin n → Prop) [DecidablePred p] :
-    Decidable (∀ i, p i) :=
-  match n with
-  | 0 => isTrue (fun i => Fin.elim0 i)
-  | n + 1 =>
-    if h0 : p 0 then
-      match finiteForall n (fun i => p i.succ) with
+instance finiteForall : (n : Nat) → (p : Fin n → Prop) →
+    [DecidablePred p] → Decidable (∀ i, p i)
+  | 0, _, _ => isTrue (fun i => Fin.elim0 i)
+  | n + 1, p, dp =>
+    match dp 0 with
+    | isFalse h0 => isFalse (fun h => h0 (h 0))
+    | isTrue h0 =>
+      match @finiteForall n (fun i => p i.succ) (fun i => dp i.succ) with
       | isTrue hs => isTrue (fun i => Fin.cases h0 hs i)
       | isFalse hs => isFalse (fun h => hs (fun i => h i.succ))
-    else
-      isFalse (fun h => h0 (h 0))
 
 instance {n : Nat} (edge : Fin n → Fin n → Bool) :
     Decidable (AvoidsMonochromaticTriangle edge) := by
