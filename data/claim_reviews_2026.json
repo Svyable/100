@@ -81,7 +81,7 @@
       "scope_note": "A finitely presented nonsofic group is countable and refutes the universal soficity conjecture. The claimed nonsoficity may follow from the direct-finiteness obstruction, but is not an independently checked example.",
       "independent_validation": "not_established",
       "independent_evidence_urls": [],
-      "known_caveats": "Shares one manuscript and underlying construction with M044; do not count these as two independent proof sources. Soxicity inference depends on correct direct-finiteness obstruction and the sofic-group finiteness theorem.",
+      "known_caveats": "Shares one manuscript and underlying construction with M044; do not count these as two independent proof sources. Soficity inference depends on correct direct-finiteness obstruction and the sofic-group finiteness theorem.",
       "next_review": "Independently verify M044's group algebra witness, then audit the Elek–Szabó implication from soficity to direct finiteness in the claimed coefficient field."
     },
     {
