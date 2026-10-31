@@ -266,6 +266,23 @@
       roadRoot.appendChild(empty);
     }
     $("lab-roadmap").replaceChildren(roadRoot);
+    const mineRoot = document.createDocumentFragment();
+    const mineRows = data.mines && data.mines.mines ? Object.entries(data.mines.mines) : [];
+    for (const [id, rec] of mineRows) {
+      const row = document.createElement("div");
+      row.className = "lab-row";
+      row.innerHTML = '<div><h4>' + escapeHTML(rec.problem_id) + ' · ' + escapeHTML(rec.title) +
+        '</h4><code>' + escapeHTML(id) + '</code></div><p>' + escapeHTML(rec.scope) + '</p>';
+      mineRoot.appendChild(row);
+    }
+    if (!mineRows.length) {
+      const empty = document.createElement("p");
+      empty.className = "empty-state";
+      empty.textContent = "No structure mines have been certified.";
+      mineRoot.appendChild(empty);
+    }
+    const mineHost = $("lab-mines");
+    if (mineHost) mineHost.replaceChildren(mineRoot);
   }
   function renderSolved(data) {
     const root = $("solved-list");
@@ -420,7 +437,8 @@
           !Array.isArray(data.milestones) || !data.lab ||
           !Array.isArray(data.lab.probes) ||
           !data.roadmap || !Array.isArray(data.roadmap.items) ||
-          !data.approach || !Array.isArray(data.approach.jobs)) throw new Error("Malformed portfolio snapshot");
+          !data.approach || !Array.isArray(data.approach.jobs) ||
+          !data.mines || !data.mines.mines) throw new Error("Malformed portfolio snapshot");
       state.all = data.problems;
       campaignIds = new Set(data.campaigns.map(c => c.problem_id));
       verifiedIds = new Set(data.lab.covered_problems);

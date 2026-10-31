@@ -22,23 +22,23 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 | 7 | M093 | Linear MDS code main conjecture | `replay_published` | 91 | +7 | +12 | 110 | Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9. |
 | 8 | M094 | Hadamard matrix conjecture | `replay_published` | 91 | +7 | +12 | 110 | Add multiplier-group symmetry reduction to the Williamson meet-in-the-middle search so that n = 29 (order 116) becomes feasible, then implement Goethals-Seidel arrays for orders 156 and 172. |
 | 9 | M088 | Deterministic polynomial identity testing | `lock_restriction` | 94 | +2 | +10 | 106 | Lock the field, the circuit shape, the degree and the oracle model in one paragraph inside the algebraic-complexity shape. Only then implement a falsifier. A checker with no declared class does not raise readiness. |
-| 10 | M075 | Frankl union-closed sets conjecture | `mine_structure` | 91 | +7 | +6 | 104 | Canonicalize families under ground-set permutations; prove or disprove a restricted lemma on minimal counterexamples. |
-| 11 | M078 | Graph reconstruction conjecture | `mine_structure` | 91 | +7 | +6 | 104 | Tabulate which deck invariants already separate every deck in the census, as a data-driven route to a reconstruction lemma for a named family. |
-| 12 | M079 | One-third–two-thirds conjecture | `mine_structure` | 91 | +7 | +6 | 104 | Tabulate the best balance of every poset in the census, identify extremal families near 1/3 and test structural invariants that predict a balanced pair. |
+| 10 | M075 | Frankl union-closed sets conjecture | `mine_structure` | 91 | +7 | +6 | 104 | The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5). |
+| 11 | M078 | Graph reconstruction conjecture | `mine_structure` | 91 | +7 | +6 | 104 | The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two. |
+| 12 | M079 | One-third–two-thirds conjecture | `mine_structure` | 91 | +7 | +6 | 104 | The certified mine poset_balance finds 11 posets on at most 6 elements with best balance exactly 1/3, and every one of them has width 2, which Linial already settled. A new lemma has to treat width at least 3; this census has no tight example there. |
 | 13 | M096 | Projective plane order 12 | `replay_published` | 85 | +7 | +12 | 104 | Encode order-12 planes with a prescribed collineation as SAT with DRAT proof output, starting from cases the literature already excludes. |
 | 14 | M084 | Matrix multiplication exponent omega=2 | `replay_published` | 83 | +7 | +12 | 102 | Import one published exact decomposition, such as a cited rank-23 scheme for the <3,3,3> tensor, and replay it on the tensor checker. A flip-graph search is not the next step: small formats cannot beat the laser-method bounds the blocker cites. |
 | 15 | M095 | Exact Ramsey number R(5,5) | `replay_published` | 82 | +7 | +12 | 101 | Import and check the published K42 witness; reproduce a small structural exclusion with a trusted proof checker. |
 | 16 | M080 | Rota basis conjecture | `mine_structure` | 85 | +7 | +6 | 98 | Quotient instances by the stabiliser of the standard basis so that GF(2)^4 becomes exhaustive, storing one grid certificate per orbit. |
 | 17 | M097 | Metric TSP four-thirds conjecture | `mine_structure` | 85 | +7 | +6 | 98 | Extend from graphic metrics to 1-2 and vertex-weighted metrics, and enumerate extreme points of the subtour polytope at n = 8 to search for gap-maximising instances. |
 | 18 | M098 | Vaught conjecture | `scope_audit` | 80 | +0 | +16 | 96 | De-scope the 2026 infinitary result from M098's resolution watch; retain the first-order problem and cite a current specialist open-status source before changing evidence state. |
-| 19 | M019 | Erdős–Straus conjecture | `mine_structure` | 82 | +7 | +6 | 95 | Mine the certificate table for primes n = 1 mod 24, cluster solutions by (x mod n, divisor pattern) and propose parametric identities for symbolic verification. |
+| 19 | M019 | Erdős–Straus conjecture | `mine_structure` | 82 | +7 | +6 | 95 | The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity. |
 | 20 | M048 | Alperin weight conjecture | `build_engine` | 74 | +0 | +18 | 92 | Build engine group_characters once. Exact Brauer-character and weight counts for small finite groups and primes, compared entrywise. One build serves this shape, including M047. |
 | 21 | M076 | Erdős–Rado sunflower conjecture | `specify_shape` | 91 | +0 | +0 | 91 | Shape extremal_asymptotics (3 problems, one write-up): Name a structured family and an explicit constant, and compare it with a cited general bound before calling it an improvement. Full shape, certificate and falsifier are in APPROACH.md. |
 | 22 | M085 | Unique Games conjecture | `scope_audit` | 83 | +0 | +8 | 91 | Independently audit the reduction's completeness and soundness estimates and its quantitative dependence on gap parameters. |
 | 23 | M002 | Generalized Riemann Hypothesis | `build_engine` | 72 | +0 | +18 | 90 | Build engine interval_arithmetic once. Reuse the zero-count certificate format for Dirichlet L-functions of small conductor. One build serves this shape, including M001, M009. |
 | 24 | M042 | Dixmier conjecture A1 | `specify_shape` | 89 | +0 | +0 | 89 | Shape polynomial_maps (2 problems, one write-up): Name a polynomial or Weyl family that published degree bounds do not cover, and refuse exhaustive search inside those bounds. Full shape, certificate and falsifier are in APPROACH.md. |
 | 25 | M100 | Falconer distance-set conjecture | `scope_audit` | 80 | +0 | +8 | 88 | Audit FalconerAllDimensions.lean definition fidelity, measure conventions and proof dependencies; obtain independent harmonic-analysis review. |
-| 26 | M006 | Strong Goldbach conjecture | `mine_structure` | 72 | +7 | +6 | 85 | Use the least-partition certificates to test conjectured growth bounds for the least prime p(n), then attempt a sieve-theoretic restricted statement with explicit constants. |
+| 26 | M006 | Strong Goldbach conjecture | `mine_structure` | 72 | +7 | +6 | 85 | The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification. |
 | 27 | M072 | Erdős–Hajnal conjecture | `specify_shape` | 85 | +0 | +0 | 85 | Shape extremal_asymptotics (3 problems, one write-up): Name a structured family and an explicit constant, and compare it with a cited general bound before calling it an improvement. Full shape, certificate and falsifier are in APPROACH.md. |
 | 28 | M077 | Komlós discrepancy conjecture | `specify_shape` | 85 | +0 | +0 | 85 | Shape extremal_asymptotics (3 problems, one write-up): Name a structured family and an explicit constant, and compare it with a cited general bound before calling it an improvement. Full shape, certificate and falsifier are in APPROACH.md. |
 | 29 | M001 | Riemann Hypothesis | `build_engine` | 66 | +0 | +18 | 84 | Build engine interval_arithmetic once. Rigorous count of zeta zeros up to a small height T with interval arithmetic (sign changes on the critical line plus a Turing-method bound), replayable as a certificate. One build serves this shape, including M002, M009. |
@@ -222,13 +222,13 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 
 ### M075 — Frankl union-closed sets conjecture
 
-**Dispatch:** `mine_structure` · rank 10 · The next experiment is an isomorphism-free minimal-counterexample lemma. The blocker is naive 2^(2^n) enumeration, which is not the plan.
+**Dispatch:** `mine_structure` · rank 10 · The frankl_orbits mine has quotiented the n <= 4 census. Naive 2^(2^n) enumeration is still the blocker at n = 5, so the next step is a generator that does not list every family.
 
 **Proof obligation:** Verify the exact conjecture for bounded universes before deriving any universal structural reduction.
 
 **Falsifier:** An exact union-closed family whose maximum element frequency is less than half the family size.
 
-**Recommended step:** Canonicalize families under ground-set permutations; prove or disprove a restricted lemma on minimal counterexamples.
+**Recommended step:** The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5).
 
 **Current blocker:** Naive exhaustive enumeration scales as 2^(2^n); structural quotient required.
 
@@ -236,13 +236,13 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 
 ### M078 — Graph reconstruction conjecture
 
-**Dispatch:** `mine_structure` · rank 11 · The next experiment tabulates deck invariants on the certified census. A larger census sits inside the published computational range cited in the blocker.
+**Dispatch:** `mine_structure` · rank 11 · The deck_invariants mine shows degree sequence plus triangle count still leaves collisions at 6 vertices. A larger census sits inside the published computational range.
 
 **Proof obligation:** Pick a graph family not yet known to be reconstructible and isolate a lemma that reconstructs a new invariant for it.
 
 **Falsifier:** Two non-isomorphic graphs with identical decks, confirmed by independent canonical forms.
 
-**Recommended step:** Tabulate which deck invariants already separate every deck in the census, as a data-driven route to a reconstruction lemma for a named family.
+**Recommended step:** The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two.
 
 **Current blocker:** Computer verification already reaches at least 11 vertices; novelty has to come from a structural lemma, not from range.
 
@@ -250,13 +250,13 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 
 ### M079 — One-third–two-thirds conjecture
 
-**Dispatch:** `mine_structure` · rank 12 · The next experiment tabulates balance on the certified census and looks for a structural invariant. Published verification already reaches 11 elements.
+**Dispatch:** `mine_structure` · rank 12 · The poset_balance mine shows every tight example on at most 6 elements has width 2, which is Linial's settled case. Published verification already reaches 11 elements.
 
 **Proof obligation:** State and prove a balance bound for a restricted poset class (bounded width or height) that improves on published results.
 
 **Falsifier:** A non-chain poset whose every incomparable pair has balance below 1/3, with linear extensions counted exactly by two independent methods.
 
-**Recommended step:** Tabulate the best balance of every poset in the census, identify extremal families near 1/3 and test structural invariants that predict a balanced pair.
+**Recommended step:** The certified mine poset_balance finds 11 posets on at most 6 elements with best balance exactly 1/3, and every one of them has width 2, which Linial already settled. A new lemma has to treat width at least 3; this census has no tight example there.
 
 **Current blocker:** Published verification already reaches 11 elements; a new structural invariant is needed.
 
@@ -336,13 +336,13 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 
 ### M019 — Erdős–Straus conjecture
 
-**Dispatch:** `mine_structure` · rank 19 · The next experiment clusters Erdos-Straus certificates into parametric identities. Extending the verified range stays inside published computations.
+**Dispatch:** `mine_structure` · rank 19 · The straus_patterns mine already clusters the primes that are 1 mod 24. Extending the verified range stays inside published computations; the missing piece is an identity for one residue.
 
 **Proof obligation:** Find a polynomial identity family covering a residue class of primes not covered by the classical Mordell identities, and prove it symbolically.
 
 **Falsifier:** An n together with a proof that no positive-integer triple exists; a finite search failure is not a counterexample.
 
-**Recommended step:** Mine the certificate table for primes n = 1 mod 24, cluster solutions by (x mod n, divisor pattern) and propose parametric identities for symbolic verification.
+**Recommended step:** The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity.
 
 **Current blocker:** Classical identities leave quadratic-residue classes uncovered, and known results show identities of the standard polynomial type cannot cover them all; a different idea is needed.
 
@@ -350,13 +350,13 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 
 ### M006 — Strong Goldbach conjecture
 
-**Dispatch:** `mine_structure` · rank 26 · The next experiment mines least-prime growth from certificates already in hand. The blocker says a longer verified range cannot compete with the published 4*10^18 check.
+**Dispatch:** `mine_structure` · rank 26 · The goldbach_growth mine already lists the record least primes through 20,000. A longer verified range cannot compete with the published 4*10^18 check.
 
 **Proof obligation:** State a restricted, checkable lemma (for example an explicit bound on the least Goldbach prime in a named residue class or range) that is not already implied by the 4*10^18 verification or by the ternary Goldbach theorem.
 
 **Falsifier:** An even n >= 4 with no prime p <= n/2 such that n - p is prime, confirmed by an independent primality oracle.
 
-**Recommended step:** Use the least-partition certificates to test conjectured growth bounds for the least prime p(n), then attempt a sieve-theoretic restricted statement with explicit constants.
+**Recommended step:** The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification.
 
 **Current blocker:** Range extension cannot compete with the published 4*10^18 verification; real progress needs a new restricted theorem.
 

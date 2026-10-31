@@ -11,6 +11,7 @@ import json
 from pathlib import Path
 from urllib.parse import urlparse
 from rank import ROOT, REGISTRY, score, validate
+import mines as structure_mines
 import probes
 
 PROGRAM = ROOT / "data" / "research_program.json"
@@ -25,6 +26,7 @@ RUNNABLE = {
     "python3 scripts/digraph_orbits.py --n 5": "scripts/digraph_orbits.py",
     # Exact probe lab: every registered probe (allowlisted in scripts/probes/__init__.py).
     **{probes.command(pid): probes.artifact(pid) for pid in probes.PROBES},
+    **{structure_mines.command(mid): structure_mines.artifact(mid) for mid in structure_mines.MINES},
 }
 
 

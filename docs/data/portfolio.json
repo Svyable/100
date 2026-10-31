@@ -17,7 +17,7 @@
   "program_as_of": "2026-10-31",
   "summary": {
     "campaigns": 18,
-    "reproduced_known": 18,
+    "reproduced_known": 23,
     "restricted_verified": 0,
     "fully_solved": 0,
     "problems_with_exact_verifier": 17,
@@ -151,10 +151,10 @@
       "action_bonus": 6,
       "method_id": "extremal_certificates",
       "method_title": "Replay the object, or mine the census",
-      "dispatch_next": "Canonicalize families under ground-set permutations; prove or disprove a restricted lemma on minimal counterexamples.",
-      "dispatch_why": "The next experiment is an isomorphism-free minimal-counterexample lemma. The blocker is naive 2^(2^n) enumeration, which is not the plan.",
+      "dispatch_next": "The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5).",
+      "dispatch_why": "The frankl_orbits mine has quotiented the n <= 4 census. Naive 2^(2^n) enumeration is still the blocker at n = 5, so the next step is a generator that does not list every family.",
       "campaign_stage": "benchmark_reproduced",
-      "milestone_count": 1
+      "milestone_count": 2
     },
     {
       "id": "M076",
@@ -213,10 +213,10 @@
       "action_bonus": 6,
       "method_id": "extremal_certificates",
       "method_title": "Replay the object, or mine the census",
-      "dispatch_next": "Tabulate which deck invariants already separate every deck in the census, as a data-driven route to a reconstruction lemma for a named family.",
-      "dispatch_why": "The next experiment tabulates deck invariants on the certified census. A larger census sits inside the published computational range cited in the blocker.",
+      "dispatch_next": "The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two.",
+      "dispatch_why": "The deck_invariants mine shows degree sequence plus triangle count still leaves collisions at 6 vertices. A larger census sits inside the published computational range.",
       "campaign_stage": "benchmark_reproduced",
-      "milestone_count": 1
+      "milestone_count": 2
     },
     {
       "id": "M079",
@@ -244,10 +244,10 @@
       "action_bonus": 6,
       "method_id": "extremal_certificates",
       "method_title": "Replay the object, or mine the census",
-      "dispatch_next": "Tabulate the best balance of every poset in the census, identify extremal families near 1/3 and test structural invariants that predict a balanced pair.",
-      "dispatch_why": "The next experiment tabulates balance on the certified census and looks for a structural invariant. Published verification already reaches 11 elements.",
+      "dispatch_next": "The certified mine poset_balance finds 11 posets on at most 6 elements with best balance exactly 1/3, and every one of them has width 2, which Linial already settled. A new lemma has to treat width at least 3; this census has no tight example there.",
+      "dispatch_why": "The poset_balance mine shows every tight example on at most 6 elements has width 2, which is Linial's settled case. Published verification already reaches 11 elements.",
       "campaign_stage": "benchmark_reproduced",
-      "milestone_count": 1
+      "milestone_count": 2
     },
     {
       "id": "M093",
@@ -864,10 +864,10 @@
       "action_bonus": 6,
       "method_id": "effective_diophantine",
       "method_title": "Explicit Diophantine certificates",
-      "dispatch_next": "Mine the certificate table for primes n = 1 mod 24, cluster solutions by (x mod n, divisor pattern) and propose parametric identities for symbolic verification.",
-      "dispatch_why": "The next experiment clusters Erdos-Straus certificates into parametric identities. Extending the verified range stays inside published computations.",
+      "dispatch_next": "The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity.",
+      "dispatch_why": "The straus_patterns mine already clusters the primes that are 1 mod 24. Extending the verified range stays inside published computations; the missing piece is an identity for one residue.",
       "campaign_stage": "benchmark_reproduced",
-      "milestone_count": 1
+      "milestone_count": 2
     },
     {
       "id": "M095",
@@ -1732,10 +1732,10 @@
       "action_bonus": 6,
       "method_id": "effective_diophantine",
       "method_title": "Explicit Diophantine certificates",
-      "dispatch_next": "Use the least-partition certificates to test conjectured growth bounds for the least prime p(n), then attempt a sieve-theoretic restricted statement with explicit constants.",
-      "dispatch_why": "The next experiment mines least-prime growth from certificates already in hand. The blocker says a longer verified range cannot compete with the published 4*10^18 check.",
+      "dispatch_next": "The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification.",
+      "dispatch_why": "The goldbach_growth mine already lists the record least primes through 20,000. A longer verified range cannot compete with the published 4*10^18 check.",
       "campaign_stage": "benchmark_reproduced",
-      "milestone_count": 1
+      "milestone_count": 2
     },
     {
       "id": "M007",
@@ -3727,6 +3727,209 @@
       }
     ]
   },
+  "mines": {
+    "format": "svyable.mines.v1",
+    "mines": {
+      "deck_invariants": {
+        "certificate_sha256": "31a81e041e99425698ec71cbf58b6c04eb9baf8cbe814c22dfb0624011b59ec1",
+        "engines": [
+          "graph_census"
+        ],
+        "frontier": "Reconstruction is already verified by computer through at least 11 vertices (McKay 1997). This table only says which coarse deck invariants separate the small census.",
+        "holds": true,
+        "mine": "deck_invariants",
+        "params": {
+          "max_n": 6
+        },
+        "problem_id": "M078",
+        "scope": "On the complete graph census for 3 <= n <= 6, the excess of graphs over classes of the deck-certified degree sequence, and over degree sequence plus triangle count.",
+        "summary": {
+          "degree_and_triangles_excess": {
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 20
+          },
+          "degree_and_triangles_separate_through": 5,
+          "degree_excess": {
+            "3": 0,
+            "4": 0,
+            "5": 3,
+            "6": 54
+          },
+          "degree_separates_through": 4,
+          "max_n": 6
+        },
+        "title": "Deck invariants that separate the census"
+      },
+      "frankl_orbits": {
+        "certificate_sha256": "dbae6e1504f6614d18ee24f95b77286069fa34bc253f203bfb878f3c9a937735",
+        "engines": [
+          "symmetry_reduction"
+        ],
+        "frontier": "Exhaustive verification for ground sets of size at most 4 is already in this repository. The orbit count is the symmetry reduction the n = 5 enumeration still needs. Not a theorem.",
+        "holds": true,
+        "mine": "frankl_orbits",
+        "params": {
+          "max_n": 4
+        },
+        "problem_id": "M075",
+        "scope": "Every nontrivial union-closed family on a ground set of size at most 4 satisfies Frankl's abundance bound, and the number of families up to relabelling is the recorded orbit count.",
+        "summary": {
+          "families": {
+            "1": 2,
+            "2": 12,
+            "3": 120,
+            "4": 4958
+          },
+          "max_n": 4,
+          "minimum_abundance": "1/2",
+          "orbits": {
+            "1": 2,
+            "2": 8,
+            "3": 36,
+            "4": 366
+          }
+        },
+        "title": "Orbits of union-closed families under ground-set permutation"
+      },
+      "goldbach_growth": {
+        "certificate_sha256": "aec113d543d3caf78326a8c5c9e2e9128159a670363b398402f58e7d0d18f36f",
+        "engines": [
+          "primes"
+        ],
+        "frontier": "Known through 4*10^18 (Oliveira e Silva, Herzog and Pardi, 2014). This table only locates the record least primes inside a tiny initial segment.",
+        "holds": true,
+        "mine": "goldbach_growth",
+        "params": {
+          "limit": 20000
+        },
+        "problem_id": "M006",
+        "scope": "For every even n with 4 <= n <= 20000, the least prime p such that n-p is prime, and the pairs (n, p) where that least prime sets a new record.",
+        "summary": {
+          "attained_at": 7426,
+          "even_integers": 9999,
+          "largest_least_prime": 173,
+          "limit": 20000,
+          "record_count": 12,
+          "records": [
+            [
+              4,
+              2
+            ],
+            [
+              6,
+              3
+            ],
+            [
+              12,
+              5
+            ],
+            [
+              30,
+              7
+            ],
+            [
+              98,
+              19
+            ],
+            [
+              220,
+              23
+            ],
+            [
+              308,
+              31
+            ],
+            [
+              556,
+              47
+            ],
+            [
+              992,
+              73
+            ],
+            [
+              2642,
+              103
+            ],
+            [
+              5372,
+              139
+            ],
+            [
+              7426,
+              173
+            ]
+          ],
+          "records_sha256": "0382974f247c86f7d0a52cb4ab1b04ab68f58aa7e2761d9efd782221d77e00a0"
+        },
+        "title": "Running-maximum least Goldbach prime"
+      },
+      "poset_balance": {
+        "certificate_sha256": "30a01221ce5f08602c6a438fe9b9b4751b3b2e8ce15d5e4586eec10baa4642df",
+        "engines": [
+          "poset_census"
+        ],
+        "frontier": "The conjecture is verified through 11 elements (Peczarski) and proved for width 2 (Linial 1984). The table names the extremal posets inside this census.",
+        "holds": true,
+        "mine": "poset_balance",
+        "params": {
+          "max_n": 6
+        },
+        "problem_id": "M079",
+        "scope": "Every non-chain poset on at most 6 elements has best balance at least 1/3, and the width-height profile of those whose best balance is exactly 1/3 is the recorded multiset.",
+        "summary": {
+          "least_balance": "1/3",
+          "max_n": 6,
+          "one_third_posets": 11,
+          "width_height": {
+            "2x2": 1,
+            "2x3": 2,
+            "2x4": 4,
+            "2x5": 4
+          }
+        },
+        "title": "Posets attaining balance exactly 1/3"
+      },
+      "straus_patterns": {
+        "certificate_sha256": "a58457c801a98d2f56eb087719079eaad5e2e66842b09e7e66763083b11dd035",
+        "engines": [
+          "primes"
+        ],
+        "frontier": "Classical identities leave n = 1 (mod 24) uncovered. The table clusters one explicit solution per such prime in a finite range. It is not an identity and not a proof.",
+        "holds": true,
+        "mine": "straus_patterns",
+        "params": {
+          "limit": 8000
+        },
+        "problem_id": "M019",
+        "scope": "Every prime n <= 8000 with n = 1 (mod 24) has an explicit positive solution of 4/n = 1/x + 1/y + 1/z, grouped by the residue 4x - n.",
+        "summary": {
+          "by_residue": {
+            "11": 8,
+            "15": 1,
+            "19": 1,
+            "23": 2,
+            "3": 48,
+            "7": 57
+          },
+          "limit": 8000,
+          "primes": 117,
+          "residues": [
+            3,
+            7,
+            11,
+            15,
+            19,
+            23
+          ],
+          "rows_sha256": "6b0c6ffd37c2158c8c74857c6f852369e6f4930cc0dae3d376d9d6d2a23e5823"
+        },
+        "title": "Erdos-Straus residue patterns for primes 1 mod 24"
+      }
+    }
+  },
   "roadmap": {
     "schema_version": 1,
     "as_of": "2026-10-31",
@@ -4022,6 +4225,21 @@
         "problems": []
       },
       {
+        "id": "R17",
+        "track": "lab",
+        "horizon": "shipped",
+        "title": "Certified structure mines on five campaigns",
+        "outcome": "Deck invariants, poset balances, Goldbach record primes, Erdos-Straus residue patterns and Frankl orbits, each recomputed by a second code path.",
+        "evidence": "MINES.md",
+        "problems": [
+          "M006",
+          "M019",
+          "M075",
+          "M078",
+          "M079"
+        ]
+      },
+      {
         "id": "R20",
         "track": "campaigns",
         "horizon": "now",
@@ -4062,7 +4280,7 @@
         "track": "lab",
         "horizon": "now",
         "title": "Census mining for reconstruction and 1/3-2/3",
-        "outcome": "Tabulate deck invariants that separate every deck, and posets with balance near 1/3.",
+        "outcome": "Deck and balance tables are certified in MINES.md. The remaining work is a lemma for width at least 3, and a deck invariant stronger than degree plus triangles.",
         "exit": "Published tables and a named family with a conjectured lemma.",
         "evidence": "LAB.md",
         "problems": [
@@ -4203,7 +4421,7 @@
       }
     ],
     "counts": {
-      "shipped": 16,
+      "shipped": 17,
       "now": 5,
       "next": 6,
       "later": 4
@@ -4216,7 +4434,10 @@
       "method": "Verified-range certificates and least-partition statistics",
       "hypothesis": "Every even integer n >= 4 is a sum of two primes.",
       "first_proof_obligation": "State a restricted, checkable lemma (for example an explicit bound on the least Goldbach prime in a named residue class or range) that is not already implied by the 4*10^18 verification or by the ternary Goldbach theorem.",
-      "next_experiment": "Use the least-partition certificates to test conjectured growth bounds for the least prime p(n), then attempt a sieve-theoretic restricted statement with explicit constants.",
+      "next_experiment": "The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification.",
+      "additional_verifiers": [
+        "python3 scripts/mine.py --mine goldbach_growth"
+      ],
       "falsification": "An even n >= 4 with no prime p <= n/2 such that n - p is prime, confirmed by an independent primality oracle.",
       "blocker": "Range extension cannot compete with the published 4*10^18 verification; real progress needs a new restricted theorem.",
       "dossier": "research/LAB_CAMPAIGNS.md",
@@ -4228,7 +4449,10 @@
       "method": "Modular covering identities with unit-fraction certificates",
       "hypothesis": "For every integer n >= 2, 4/n = 1/x + 1/y + 1/z has a solution in positive integers.",
       "first_proof_obligation": "Find a polynomial identity family covering a residue class of primes not covered by the classical Mordell identities, and prove it symbolically.",
-      "next_experiment": "Mine the certificate table for primes n = 1 mod 24, cluster solutions by (x mod n, divisor pattern) and propose parametric identities for symbolic verification.",
+      "next_experiment": "The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity.",
+      "additional_verifiers": [
+        "python3 scripts/mine.py --mine straus_patterns"
+      ],
       "falsification": "An n together with a proof that no positive-integer triple exists; a finite search failure is not a counterexample.",
       "blocker": "Classical identities leave quadratic-residue classes uncovered, and known results show identities of the standard polynomial type cannot cover them all; a different idea is needed.",
       "dossier": "research/LAB_CAMPAIGNS.md",
@@ -4288,7 +4512,10 @@
       "method": "Finite family enumeration and entropy inequalities",
       "hypothesis": "Every nontrivial finite union-closed family contains an element in at least half its members.",
       "first_proof_obligation": "Verify the exact conjecture for bounded universes before deriving any universal structural reduction.",
-      "next_experiment": "Canonicalize families under ground-set permutations; prove or disprove a restricted lemma on minimal counterexamples.",
+      "next_experiment": "The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5).",
+      "additional_verifiers": [
+        "python3 scripts/mine.py --mine frankl_orbits"
+      ],
       "falsification": "An exact union-closed family whose maximum element frequency is less than half the family size.",
       "blocker": "Naive exhaustive enumeration scales as 2^(2^n); structural quotient required.",
       "dossier": "research/M075_FRANKL.md",
@@ -4300,7 +4527,10 @@
       "method": "Deck-collision search over certified graph censuses",
       "hypothesis": "Every finite simple graph on at least 3 vertices is determined up to isomorphism by its vertex-deleted deck.",
       "first_proof_obligation": "Pick a graph family not yet known to be reconstructible and isolate a lemma that reconstructs a new invariant for it.",
-      "next_experiment": "Tabulate which deck invariants already separate every deck in the census, as a data-driven route to a reconstruction lemma for a named family.",
+      "next_experiment": "The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two.",
+      "additional_verifiers": [
+        "python3 scripts/mine.py --mine deck_invariants"
+      ],
       "falsification": "Two non-isomorphic graphs with identical decks, confirmed by independent canonical forms.",
       "blocker": "Computer verification already reaches at least 11 vertices; novelty has to come from a structural lemma, not from range.",
       "dossier": "research/LAB_CAMPAIGNS.md",
@@ -4312,7 +4542,10 @@
       "method": "Exact linear-extension counting over certified poset censuses",
       "hypothesis": "Every finite poset that is not a chain has an incomparable pair x, y with 1/3 <= Pr[x < y] <= 2/3.",
       "first_proof_obligation": "State and prove a balance bound for a restricted poset class (bounded width or height) that improves on published results.",
-      "next_experiment": "Tabulate the best balance of every poset in the census, identify extremal families near 1/3 and test structural invariants that predict a balanced pair.",
+      "next_experiment": "The certified mine poset_balance finds 11 posets on at most 6 elements with best balance exactly 1/3, and every one of them has width 2, which Linial already settled. A new lemma has to treat width at least 3; this census has no tight example there.",
+      "additional_verifiers": [
+        "python3 scripts/mine.py --mine poset_balance"
+      ],
       "falsification": "A non-chain poset whose every incomparable pair has balance below 1/3, with linear extensions counted exactly by two independent methods.",
       "blocker": "Published verification already reaches 11 elements; a new structural invariant is needed.",
       "dossier": "research/LAB_CAMPAIGNS.md",
@@ -4628,6 +4861,61 @@
       "verifier": "python3 scripts/lab.py --probe jacobian",
       "artifact": "scripts/probes/jacobian.py",
       "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-MINE-006",
+      "problem_id": "M006",
+      "classification": "reproduced_known",
+      "title": "Record least Goldbach primes through 20,000",
+      "scope": "Finite table inside the published 4*10^18 verification; not a new bound",
+      "description": "Twelve running-maximum least primes, the largest 173 at n = 7426. An independent odd-only sieve recomputes the same record list.",
+      "verifier": "python3 scripts/mine.py --mine goldbach_growth",
+      "artifact": "scripts/mines/goldbach_growth.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-MINE-019",
+      "problem_id": "M019",
+      "classification": "reproduced_known",
+      "title": "Erdos-Straus residues for primes 1 mod 24 through 8,000",
+      "scope": "Explicit solutions in a finite range; not an identity and not a proof",
+      "description": "All 117 such primes have a checked solution whose residue 4x-n lies in {3, 7, 11, 15, 19, 23}. The equation is rechecked without calling the search.",
+      "verifier": "python3 scripts/mine.py --mine straus_patterns",
+      "artifact": "scripts/mines/straus_patterns.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-MINE-075",
+      "problem_id": "M075",
+      "classification": "reproduced_known",
+      "title": "Union-closed families on at most 4 elements, up to relabelling",
+      "scope": "Exhaustive range already checked without symmetry; the orbit count is not a general proof",
+      "description": "4,958 nontrivial union-closed families on 4 elements form 366 orbits. Minimum abundance 1/2. A second canonisation, by sorted subset tuples, reproduces the orbit counts.",
+      "verifier": "python3 scripts/mine.py --mine frankl_orbits",
+      "artifact": "scripts/mines/frankl_orbits.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-MINE-078",
+      "problem_id": "M078",
+      "classification": "reproduced_known",
+      "title": "Deck-certified degree and triangle separation through 6 vertices",
+      "scope": "Census already known to be reconstructible far beyond 6 vertices; this only ranks coarse invariants",
+      "description": "Degree sequence separates through 4 vertices. Degree sequence plus triangle count separates through 5 and leaves 20 excess graphs at 6. Both invariants are recomputed from cards.",
+      "verifier": "python3 scripts/mine.py --mine deck_invariants",
+      "artifact": "scripts/mines/deck_invariants.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-MINE-079",
+      "problem_id": "M079",
+      "classification": "reproduced_known",
+      "title": "Posets of balance exactly 1/3 on at most 6 elements are width 2",
+      "scope": "Inside the published verification through 11 elements, and inside Linial's width-2 theorem; not a new case",
+      "description": "Eleven posets attain best balance 1/3. Their width-height types are 2x2, 2x3, 2x4 and 2x5. Balances are recounted by removing minimal elements.",
+      "verifier": "python3 scripts/mine.py --mine poset_balance",
+      "artifact": "scripts/mines/poset_balance.py",
+      "verified_on": "2026-10-31"
     }
   ],
   "solved": [],
@@ -4754,7 +5042,7 @@
           "M080"
         ],
         "best_rank": 10,
-        "summary": "M075: Canonicalize families under ground-set permutations; prove or disprove a restricted lemma on minimal counterexamples. M078: Tabulate which deck invariants already separate every deck in the census, as a data-driven route to a reconstruction lemma for a named family. M079: Tabulate the best balance of every poset in the census, identify extremal families near 1/3 and test structural invariants that predict a balanced pair. M080: Quotient instances by the stabiliser of the standard basis so that GF(2)^4 becomes exhaustive, storing one grid certificate per orbit.",
+        "summary": "M075: The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5). M078: The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two. M079: The certified mine poset_balance finds 11 posets on at most 6 elements with best balance exactly 1/3, and every one of them has width 2, which Linial already settled. A new lemma has to treat width at least 3; this census has no tight example there. M080: Quotient instances by the stabiliser of the standard basis so that GF(2)^4 becomes exhaustive, storing one grid certificate per orbit.",
         "why": ""
       },
       {
@@ -4816,7 +5104,7 @@
           "M006"
         ],
         "best_rank": 19,
-        "summary": "M019: Mine the certificate table for primes n = 1 mod 24, cluster solutions by (x mod n, divisor pattern) and propose parametric identities for symbolic verification. M006: Use the least-partition certificates to test conjectured growth bounds for the least prime p(n), then attempt a sieve-theoretic restricted statement with explicit constants.",
+        "summary": "M019: The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity. M006: The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification.",
         "why": ""
       },
       {
@@ -5752,8 +6040,8 @@
       "baseline_rank": 4,
       "stage": "benchmark_reproduced",
       "first_proof_obligation": "Verify the exact conjecture for bounded universes before deriving any universal structural reduction.",
-      "next_experiment": "Canonicalize families under ground-set permutations; prove or disprove a restricted lemma on minimal counterexamples.",
-      "recorded_experiment": "Canonicalize families under ground-set permutations; prove or disprove a restricted lemma on minimal counterexamples.",
+      "next_experiment": "The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5).",
+      "recorded_experiment": "The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5).",
       "blocker": "Naive exhaustive enumeration scales as 2^(2^n); structural quotient required.",
       "dossier": "research/M075_FRANKL.md"
     },
@@ -5769,8 +6057,8 @@
       "baseline_rank": 6,
       "stage": "benchmark_reproduced",
       "first_proof_obligation": "Pick a graph family not yet known to be reconstructible and isolate a lemma that reconstructs a new invariant for it.",
-      "next_experiment": "Tabulate which deck invariants already separate every deck in the census, as a data-driven route to a reconstruction lemma for a named family.",
-      "recorded_experiment": "Tabulate which deck invariants already separate every deck in the census, as a data-driven route to a reconstruction lemma for a named family.",
+      "next_experiment": "The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two.",
+      "recorded_experiment": "The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two.",
       "blocker": "Computer verification already reaches at least 11 vertices; novelty has to come from a structural lemma, not from range.",
       "dossier": "research/LAB_CAMPAIGNS.md"
     },
@@ -5786,8 +6074,8 @@
       "baseline_rank": 7,
       "stage": "benchmark_reproduced",
       "first_proof_obligation": "State and prove a balance bound for a restricted poset class (bounded width or height) that improves on published results.",
-      "next_experiment": "Tabulate the best balance of every poset in the census, identify extremal families near 1/3 and test structural invariants that predict a balanced pair.",
-      "recorded_experiment": "Tabulate the best balance of every poset in the census, identify extremal families near 1/3 and test structural invariants that predict a balanced pair.",
+      "next_experiment": "The certified mine poset_balance finds 11 posets on at most 6 elements with best balance exactly 1/3, and every one of them has width 2, which Linial already settled. A new lemma has to treat width at least 3; this census has no tight example there.",
+      "recorded_experiment": "The certified mine poset_balance finds 11 posets on at most 6 elements with best balance exactly 1/3, and every one of them has width 2, which Linial already settled. A new lemma has to treat width at least 3; this census has no tight example there.",
       "blocker": "Published verification already reaches 11 elements; a new structural invariant is needed.",
       "dossier": "research/LAB_CAMPAIGNS.md"
     },
@@ -5888,8 +6176,8 @@
       "baseline_rank": 27,
       "stage": "benchmark_reproduced",
       "first_proof_obligation": "Find a polynomial identity family covering a residue class of primes not covered by the classical Mordell identities, and prove it symbolically.",
-      "next_experiment": "Mine the certificate table for primes n = 1 mod 24, cluster solutions by (x mod n, divisor pattern) and propose parametric identities for symbolic verification.",
-      "recorded_experiment": "Mine the certificate table for primes n = 1 mod 24, cluster solutions by (x mod n, divisor pattern) and propose parametric identities for symbolic verification.",
+      "next_experiment": "The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity.",
+      "recorded_experiment": "The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity.",
       "blocker": "Classical identities leave quadratic-residue classes uncovered, and known results show identities of the standard polynomial type cannot cover them all; a different idea is needed.",
       "dossier": "research/LAB_CAMPAIGNS.md"
     },
@@ -5905,8 +6193,8 @@
       "baseline_rank": 55,
       "stage": "benchmark_reproduced",
       "first_proof_obligation": "State a restricted, checkable lemma (for example an explicit bound on the least Goldbach prime in a named residue class or range) that is not already implied by the 4*10^18 verification or by the ternary Goldbach theorem.",
-      "next_experiment": "Use the least-partition certificates to test conjectured growth bounds for the least prime p(n), then attempt a sieve-theoretic restricted statement with explicit constants.",
-      "recorded_experiment": "Use the least-partition certificates to test conjectured growth bounds for the least prime p(n), then attempt a sieve-theoretic restricted statement with explicit constants.",
+      "next_experiment": "The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification.",
+      "recorded_experiment": "The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification.",
       "blocker": "Range extension cannot compete with the published 4*10^18 verification; real progress needs a new restricted theorem.",
       "dossier": "research/LAB_CAMPAIGNS.md"
     },

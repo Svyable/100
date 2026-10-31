@@ -6,6 +6,7 @@
 - **[Next 100 hypothesis reservoir](https://svyable.github.io/100/next/)** — 120 initial cross-domain, unvetted proposals in a scalable pipeline; ranked discovery priorities, not claimed new open results ([protocol](NEXT_100.md)). The active 100 remains capped.
 - **[Public research dashboard](https://svyable.github.io/100/)** (once GitHub Pages is enabled: [activation guide](docs/PAGES_SETUP.md)) — ranked search, evidence filters, active proof campaigns.
 - **[Exact probe lab](LAB.md)**: 15 independently checked probes on 11 reusable engines give **17 of the 100 problems** an exact verifier (previously 3), including 16 of the 19 problems where finite computation can refute or settle the claim. All ranges are known mathematics; see [the lab dossier](research/LAB_CAMPAIGNS.md).
+- **[Structure mines](MINES.md)**: five certified tables read off those certificates (Goldbach records, Erdős–Straus residues, deck invariants, poset balances, Frankl orbits). Each table is recomputed by a second code path. A table is not a theorem.
 - **[Execution-priority queue](ATTACK_QUEUE.md)** — ordered by dispatch score (editorial + readiness + an action bonus), not by readiness alone. Claimed finite witnesses, missing engines and published certificates move up. A range extension the campaign itself says is already known mathematics is refused. Cohort jobs and the shared attack shapes are in [APPROACH.md](APPROACH.md).
 - **[Solved archive](data/solved.json)** — strict full-resolution ledger, initially empty; known finite benchmarks are kept separate.
 - [Caccetta–Häggkvist finite census and 18-vertex SAT target](research/M074_CH.md) — exact symmetry coverage, independent cycle check and reproducible CNF encoding; no new proof claimed.
@@ -27,6 +28,8 @@ python3 scripts/lab.py --list
 python3 scripts/lab.py
 python3 scripts/lab.py --check
 python3 scripts/lab.py --level deep --check
+python3 scripts/mine.py
+python3 scripts/mine.py --check
 python3 scripts/rank.py
 python3 scripts/rank.py --check
 python3 scripts/research.py

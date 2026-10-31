@@ -10,6 +10,7 @@ from rank import score, ROOT
 from research import load, execution_order
 import approach
 import lab
+import mine
 import roadmap
 
 OUTPUT = ROOT / "docs" / "data" / "portfolio.json"
@@ -80,6 +81,7 @@ def build():
             for number, item in enumerate(baseline, start=1)
         ],
         "lab": lab.snapshot(),
+        "mines": mine.snapshot(),
         "roadmap": roadmap.snapshot(),
         "campaigns": program["campaigns"],
         "milestones": program["milestones"],

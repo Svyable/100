@@ -48,11 +48,13 @@ python3 scripts/rank.py
 python3 scripts/research.py
 python3 scripts/approach.py
 python3 scripts/lab.py
+python3 scripts/mine.py
 python3 scripts/build_site.py
 python3 scripts/rank.py --check
 python3 scripts/research.py --check
 python3 scripts/approach.py --check
 python3 scripts/lab.py --check
+python3 scripts/mine.py --check
 python3 scripts/build_site.py --check
 node --check docs/assets/app.js\nnode --check docs/next/app.js
 python3 -m unittest discover -s tests -v
