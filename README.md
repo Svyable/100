@@ -4,7 +4,7 @@
 
 - [Current rank order](RANKED.md) — deterministic generated ranking of 100 candidates.
 - [Machine-readable registry](data/problems.json) — stable IDs, working questions, first attacks, weighted scores, evidence status and provenance.
-- [Research and verification protocol](docs/RESEARCH_PROTOCOL.md) — rules for advancing, scoring and retiring candidates.
+- [Active proof campaigns](research/CAMPAIGNS.md) — precise statements, verifiers and bounded first attacks.\n- [Ramsey R(5,5) certificate campaign](research/M095_RAMSEY.md) and [Frankl finite verification](research/M075_FRANKL.md) — reproducible small cases; neither resolves the full problem.\n- [Research and verification protocol](docs/RESEARCH_PROTOCOL.md) — rules for advancing, scoring and retiring candidates.
 - [Starting status sources](docs/SOURCES.md) — official Clay status and recent 2026 proof-claim precautions.
 
 **Important:** This is a *provisional candidate pool*, **not** a claim that all 100 are currently independently verified as unsolved. Five official Millennium entries have official status citations; the remaining 95 need closer status and precise-statement review. Recent claims are explicitly flagged. The first task is the status audit and selection of tractable restricted lemmas.

@@ -1,0 +1,6 @@
+{
+  "format": "svyable.unionclosed.family.v1",
+  "n": 2,
+  "sets": [[], [0]],
+  "note": "A tiny nontrivial union-closed family attaining the 1/2 threshold."
+}
