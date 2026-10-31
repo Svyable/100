@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-31",
+  "issue_url": "https://github.com/Svyable/100/issues/3",
+  "interpretation": "Bibliographic and theorem-scope screening, not independent mathematical validation. All 15 retain claim_needs_review in the active registry pending a deliberate status update; none qualifies for data/solved.json.",
+  "reviews": [
+    {
+      "id": "M014",
+      "primary_title": "Hilbert's tenth problem over the rational numbers",
+      "primary_url": "https://github.com/openai/math/blob/main/preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf",
+      "preprint_date": "2026-10-06",
+      "claimed_theorem": "No algorithm decides whether an arbitrary integer-coefficient polynomial, with the number of variables part of the input, has a rational zero.",
+      "scope_relation": "matches",
+      "scope_note": "This is the same rational-field decision problem, not the already-settled integer version or undecidability for proper subrings of Q.",
+      "independent_validation": "not_established",
+      "independent_evidence_urls": [],
+      "known_caveats": "Unrefereed manuscript; proof depends on companion pointwise elliptic 2-converse, valuation and height arguments. No independent line-by-line verification located.",
+      "next_review": "Verify the reduction from integer to rational decision tests and audit each cited arithmetic input, especially the October 7 pointwise 2-converse."
+    },
+    {
+      "id": "M030",
+      "primary_title": "Log abundance in characteristic zero",
+      "primary_url": "https://github.com/openai/math/blob/main/preprints/Log-abundance-in-characteristic-zero-September-24-2026/paper.pdf",
+      "preprint_date": "2026-09-24",
+      "claimed_theorem": "For projective log-canonical pairs with effective rational boundary over an algebraically closed field of characteristic zero, a nef Q-Cartier K_X+B is semiample, in every dimension.",
+      "scope_relation": "matches_with_qualification",
+      "scope_note": "Would imply the registered projective klt rational-boundary conjecture in characteristic zero. Do not substitute the October 3 numerical-semiampleness claim, which only yields numerical equivalence to a semiample divisor.",
+      "independent_validation": "not_established",
+      "independent_evidence_urls": [],
+      "known_caveats": "Unrefereed and depends on sophisticated Iitaka/vanishing inputs; exact coefficient, characteristic and linear-versus-numerical semiampleness hypotheses need verification.",
+      "next_review": "Check the main theorem and dependencies against the canonical klt characteristic-zero formulation, particularly section production and actual basepoint-freeness."
+    },
+    {
+      "id": "M037",
+      "primary_title": "The Hilbert–Smith conjecture in every finite dimension",
+      "primary_url": "https://github.com/openai/math/blob/main/preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/paper.pdf",
+      "preprint_date": "2026-09-23",
+      "claimed_theorem": "Every locally compact second-countable Hausdorff group acting faithfully and jointly continuously on a connected, second-countable, Hausdorff finite-dimensional topological manifold without boundary is Lie.",
+      "scope_relation": "matches_with_qualification",
+      "scope_note": "Very close to the classical manifold formulation, but connectedness, boundary, second-countability and joint continuity are explicit. Check equivalence to the intended M037 scope.",
+      "independent_validation": "not_established",
+      "independent_evidence_urls": [],
+      "known_caveats": "No independently accepted proof found; must scrutinize reduction to p-adic group actions and high-dimensional hypotheses, not just announced theorem wording.",
+      "next_review": "Compare exact source hypotheses to a specialist formulation and obtain an expert check of the central p-adic action argument."
+    },
+    {
+      "id": "M038",
+      "primary_title": "The (3,4,∞) modular-family construction of a complex structure on S6",
+      "primary_url": "https://alpo.ge/s6.pdf",
+      "preprint_date": "2026-08-24",
+      "claimed_theorem": "A compact complex threefold constructed from a family of complex two-tori and three special fibers is diffeomorphic to the standard smooth six-sphere.",
+      "scope_relation": "matches",
+      "scope_note": "If the gluing, complex smoothness and identification with the standard S6 all hold, this is a full positive answer to the registry's integrable-complex-structure question.",
+      "independent_validation": "independent_reconstruction_preprint",
+      "independent_evidence_urls": [
+        "https://arxiv.org/abs/2609.38442"
+      ],
+      "known_caveats": "Philip Engel's September 29 independent 25-page self-contained proof is substantive corroborating research, not a recorded refereed acceptance or two independent specialist reviews. Reconcile claimed geometry with Campana–Demailly–Peternell constraints.",
+      "next_review": "Read Engel's independent proof and its dependency on Alpöge's construction, verify smooth gluing and topological invariants, and solicit further specialist assessment."
+    },
+    {
+      "id": "M044",
+      "primary_title": "A torsion-free group algebra that is not directly finite",
+      "primary_url": "https://github.com/openai/math/blob/main/preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/direct-finiteness.pdf",
+      "preprint_date": "2026-10-04",
+      "claimed_theorem": "For a finitely presented torsion-free group G, there exist a,b in F_2[G] with ab=1 but ba != 1.",
+      "scope_relation": "matches",
+      "scope_note": "One valid characteristic-two example would refute the universal direct-finiteness claim; no result for every field is needed for a counterexample.",
+      "independent_validation": "not_established",
+      "independent_evidence_urls": [],
+      "known_caveats": "The construction is large and has not been independently reproduced in this audit; underlying group presentation and algebra calculations are central proof obligations.",
+      "next_review": "Reproduce a finite presentation and a,b products using a genuinely independent group-ring checker; check the claimed equalities and non-equality."
+    },
+    {
+      "id": "M049",
+      "primary_title": "A torsion-free group algebra that is not directly finite",
+      "primary_url": "https://github.com/openai/math/blob/main/preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/direct-finiteness.pdf",
+      "preprint_date": "2026-10-04",
+      "claimed_theorem": "The constructed finitely presented torsion-free group is nonsofic; its group ring over F_2 is not directly finite.",
+      "scope_relation": "matches",
+      "scope_note": "A finitely presented nonsofic group is countable and refutes the universal soficity conjecture. The claimed nonsoficity may follow from the direct-finiteness obstruction, but is not an independently checked example.",
+      "independent_validation": "not_established",
+      "independent_evidence_urls": [],
+      "known_caveats": "Shares one manuscript and underlying construction with M044; do not count these as two independent proof sources. Soficity inference depends on correct direct-finiteness obstruction and the sofic-group finiteness theorem.",
+      "next_review": "Independently verify M044's group algebra witness, then audit the Elek–Szabó implication from soficity to direct finiteness in the claimed coefficient field."
+    },
+    {
+      "id": "M054",
+      "primary_title": "Nonlinear stability of subextremal Kerr black holes",
+      "primary_url": "https://arxiv.org/abs/2606.28253",
+      "preprint_date": "2026-06-26",
+      "claimed_theorem": "Vacuum evolutions from sufficiently small asymptotically flat perturbations in a specified polyhomogeneous/weighted-decay class of any fixed subextremal Kerr solution settle to another Kerr solution.",
+      "scope_relation": "matches_with_qualification",
+      "scope_note": "Covers |a|<M for the stated initial-data classes, not literally every 'admissible' perturbation without quantified decay or gauge assumptions.",
+      "independent_validation": "separate_claim_not_verification",
+      "independent_evidence_urls": [
+        "https://arxiv.org/abs/2609.40068"
+      ],
+      "known_caveats": "Jérémie Szeftel also claims full subextremal stability in a separate September 30 manuscript, with its own companion estimates. Two claims are not the same as independent acceptance of either proof; compare data classes.",
+      "next_review": "Compare Hintz v2 and Szeftel hypotheses and companion dependencies, and seek expert adjudication of scattering and asymptotic completeness."
+    },
+    {
+      "id": "M055",
+      "primary_title": "Local smoothing for the Euclidean wave equation",
+      "primary_url": "https://github.com/openai/math/blob/main/preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf",
+      "preprint_date": "2026-10-25",
+      "claimed_theorem": "Sharp local smoothing for Euclidean waves in every spatial dimension n>=2 is claimed, with the Kakeya maximal conjectures and full Hausdorff dimension for all Euclidean Kakeya sets as consequences.",
+      "scope_relation": "matches_if_consequence_valid",
+      "scope_note": "The separate September 24 manuscript explicitly claims the 4D Hausdorff case only; M055 concerns all n>=4, so the October 25 local-smoothing-to-Kakeya corollary is essential.",
+      "independent_validation": "not_established",
+      "independent_evidence_urls": [],
+      "known_caveats": "A full-dimensional Kakeya consequence must be proved for each n>=4; the 4D paper alone does not settle the registered universal statement.",
+      "next_review": "Check the all-dimensional local smoothing theorem, its Kakeya maximal corollary and exact hypotheses; distinguish 4D direct theorem from universal consequence."
+    },
+    {
+      "id": "M056",
+      "primary_title": "Diagonal Fourier extension for positively curved surfaces in three dimensions",
+      "primary_url": "https://github.com/openai/math/blob/main/preprints/Diagonal-Fourier-extension-for-positively-curved-surfaces-in-three-dimensions-September-24-2026/Diagonal-Fourier-extension-for-positively-curved-surfaces-in-three-dimensions-September-24-2026.pdf",
+      "preprint_date": "2026-09-24",
+      "claimed_theorem": "For compact positively curved smooth surfaces Sigma in R^3, extension L^p(Sigma) -> L^p(R^3) is bounded for p>3.",
+      "scope_relation": "narrower",
+      "scope_note": "A diagonal three-dimensional theorem is not automatically the full sharp restriction conjecture. The October 25 local-smoothing manuscript separately claims the interior range for sphere/paraboloid/cone, not endpoints.",
+      "independent_validation": "not_established",
+      "independent_evidence_urls": [],
+      "known_caveats": "The registry's 'predicted sharp range' is underspecified (dimension, exponents, endpoints and surface). Cannot mark universally resolved from interior/diagonal results.",
+      "next_review": "First rewrite M056 as a quantified restriction statement; then check each claimed interior estimate and list remaining endpoints and dimensions."
+    },
+    {
+      "id": "M060",
+      "primary_title": "Morrey's conjecture: rank-one convexity implies quasi-convexity for two-dimensional, two-component maps",
+      "primary_url": "https://arxiv.org/abs/1905.06571",
+      "preprint_date": "2026-06-18",
+      "claimed_theorem": "For two-dimensional, two-component maps, finite-valued rank-one convex energies are claimed to be quasiconvex via a fixed-point/lamination argument.",
+      "scope_relation": "matches_with_qualification",
+      "scope_note": "The 2x2 setting matches M060, subject to the source theorem's function-domain and regularity assumptions.",
+      "independent_validation": "not_established",
+      "independent_evidence_urls": [],
+      "known_caveats": "This is arXiv v5 revised in June 2026, not a new 2026 submission. v3 was withdrawn in 2024, and the revised fixed-point/lamination step needs specialist independent reconstruction.",
+      "next_review": "Compare v3 withdrawal notice with v5, audit the set-valued fixed-point and laminate-to-gradient argument, and request a calculus-of-variations review."
+    },
+    {
+      "id": "M071",
+      "primary_title": "A counterexample to Hadwiger's conjecture",
+      "primary_url": "https://github.com/openai/math/blob/main/preprints/A-counterexample-to-Hadwigers-conjecture-September-23-2026/paper.pdf",
+      "preprint_date": "2026-09-23",
+      "claimed_theorem": "Arbitrarily large finite simple graphs have fractional chromatic number chi_f(G) > h(G), where h is largest clique-minor order.",
+      "scope_relation": "matches",
+      "scope_note": "Since chi(G)>=chi_f(G), such a graph would refute chi(G)<=h(G), the registered Hadwiger statement.",
+      "independent_validation": "formal_statement_check_only",
+      "independent_evidence_urls": [
+        "https://mathcommunity.github.io/oai-math-revised/papers/A-counterexample-to-Hadwigers-conjecture-September-23-2026/"
+      ],
+      "known_caveats": "Comparator acceptance of some Lean artifact is proof-object checking, not independent verification of exactly the paper's graph construction and claimed theorem; explicit checkable witnesses were not supplied in the independent audit consulted.",
+      "next_review": "Audit the Lean quantifiers and graph encoding against the theorem; reproduce or extract an explicit graph plus an independently checkable minor-bound obstruction."
+    },
+    {
+      "id": "M073",
+      "primary_title": "A counterexample to Sidorenko's conjecture",
+      "primary_url": "https://github.com/openai/math/blob/main/preprints/A-counterexample-to-Sidorenkos-conjecture-September-23-2026/paper.pdf",
+      "preprint_date": "2026-09-23",
+      "claimed_theorem": "A connected bipartite H on 35 vertices with 66 edges and a finite host G satisfy t(H,G)<t(K_2,G)^66.",
+      "scope_relation": "matches",
+      "scope_note": "The strict homomorphism-density violation is a direct counterexample to the registered universal Sidorenko inequality.",
+      "independent_validation": "formal_statement_check_only",
+      "independent_evidence_urls": [
+        "https://github.com/openai/math/blob/main/lean/docs/161.md"
+      ],
+      "known_caveats": "OpenAI's Lean scope note covers the Sidorenko counterexample but not the forcing-conjecture consequence; kernel acceptance is not a published independently audited finite witness. The host G is proved to exist rather than explicitly listed.",
+      "next_review": "Check H and the host-existence construction against Lean and paper; independently compute exact graphon/homomorphism inequalities or generate an explicit finite G."
+    },
+    {
+      "id": "M085",
+      "primary_title": "The Unique Games Theorem",
+      "primary_url": "https://github.com/openai/math/blob/main/preprints/The-Unique-Games-Theorem-September-23-2026/paper.pdf",
+      "preprint_date": "2026-09-23",
+      "claimed_theorem": "For any fixed epsilon,delta in (0,1/2), a polynomial-time reduction from 3SAT to Unique Games over a fixed finite alphabet has completeness at least 1-epsilon and soundness at most delta.",
+      "scope_relation": "matches",
+      "scope_note": "A uniform, valid hardness reduction with those quantifiers would resolve the registered Unique Games conjecture as normally formulated.",
+      "independent_validation": "not_established",
+      "independent_evidence_urls": [],
+      "known_caveats": "Unrefereed preprint; inspect alphabet dependence on epsilon,delta, polynomial bounds, and soundness reductions. Consequent Max-Cut hardness claims do not independently validate UGC.",
+      "next_review": "Independently audit the reduction's completeness and soundness estimates and its quantitative dependence on gap parameters."
+    },
+    {
+      "id": "M098",
+      "primary_title": "A counterexample to Vaught's Conjecture for L_{omega_1,omega}",
+      "primary_url": "https://arxiv.org/abs/2610.15217",
+      "preprint_date": "2026-10-10",
+      "claimed_theorem": "A sentence of infinitary L_{omega_1,omega} has exactly aleph_1 countable models (and no perfect set of non-isomorphic models).",
+      "scope_relation": "different_statement",
+      "scope_note": "M098 asks about complete first-order theories in a countable language, not infinitary L_{omega_1,omega} sentences. This manuscript does NOT refute or solve M098.",
+      "independent_validation": "formalized_different_statement",
+      "independent_evidence_urls": [
+        "https://github.com/cameronfreer/vaught-conjecture-counterexample",
+        "https://mathoverflow.net/questions/22142/has-vaughts-conjecture-been-solved/516156"
+      ],
+      "known_caveats": "The authors' repository explicitly says the formalization does not solve the first-order Vaught conjecture; a specialist MathOverflow discussion confirms the first-order version remains open.",
+      "next_review": "De-scope the 2026 infinitary result from M098's resolution watch; retain the first-order problem and cite a current specialist open-status source before changing evidence state."
+    },
+    {
+      "id": "M100",
+      "primary_title": "The Falconer distance conjecture in all dimensions",
+      "primary_url": "https://github.com/openai/math/blob/main/preprints/The-Falconer-distance-conjecture-in-all-dimensions-September-23-2026/paper.pdf",
+      "preprint_date": "2026-09-23",
+      "claimed_theorem": "For every integer d>=2 and compact E subset R^d with Hausdorff dimension greater than d/2, the Euclidean distance set Delta(E) has positive one-dimensional Lebesgue measure.",
+      "scope_relation": "matches",
+      "scope_note": "The strict threshold and positive-measure conclusion match the registered Falconer formulation; no endpoint equality or pinned-distance result is claimed.",
+      "independent_validation": "formal_statement_check_only",
+      "independent_evidence_urls": [
+        "https://github.com/openai/math/blob/main/lean/docs/073.md"
+      ],
+      "known_caveats": "The repository describes Lean theorem scope, but a stated source/Lean match has not been established by two independent specialist proof audits.",
+      "next_review": "Audit FalconerAllDimensions.lean definition fidelity, measure conventions and proof dependencies; obtain independent harmonic-analysis review."
+    }
+  ]
+}
