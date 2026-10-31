@@ -15,3 +15,12 @@
 @media(max-width:1180px){.next-filters{grid-template-columns:repeat(4,minmax(120px,1fr))}.next-filters .search-wrap{grid-column:1/-1}.next-steps{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:760px){.next-hero{grid-template-columns:1fr;padding:54px 0;gap:30px}.next-hero-index{min-height:auto}.next-hero-index strong{font-size:76px}.next-stats>div{padding:16px}.next-stats strong{font-size:30px}.next-stats span{font-size:11px}.intake-standards{grid-template-columns:1fr;padding:24px;gap:12px}.next-filters{grid-template-columns:repeat(2,minmax(0,1fr))}.next-card{padding:20px}.next-card-head{gap:9px;flex-wrap:wrap}.next-card-id{min-width:50px}.next-card-title{flex-basis:65%}.next-card-title h3{font-size:17px}.next-card-score{min-width:57px}.next-card>p,.next-lanes{padding-left:0}.next-card details{margin-left:0}.next-card-detail{grid-template-columns:1fr;gap:5px}.next-steps{grid-template-columns:1fr}.next-steps article{min-height:auto}}
 @media(max-width:410px){.next-filters{grid-template-columns:1fr}.next-filters .search-wrap{grid-column:auto}.next-stats{grid-template-columns:1fr}.next-stats>div{border-right:0;border-bottom:1px solid var(--line)}}
+
+.next-review-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.next-review-card{border:1px solid var(--line);background:#fcfbf7;padding:25px 27px}
+.next-review-card h3{font-size:19px;letter-spacing:-.035em;line-height:1.32;margin:7px 0 9px}
+.next-review-card>span{font-size:11px;font-weight:800;color:var(--accent-dark);letter-spacing:.1em}
+.next-review-card p{font-size:13px;color:var(--muted);margin:12px 0;line-height:1.72}
+.next-review-card b{display:block;margin-top:14px;font-size:10px;color:var(--forest);letter-spacing:.1em}
+.next-review-card a{font-size:12px;color:var(--accent-dark);font-weight:750;text-decoration:underline;display:inline-block;margin:9px 16px 0 0}
+@media(max-width:760px){.next-review-list{grid-template-columns:1fr}.next-review-card{padding:22px}}

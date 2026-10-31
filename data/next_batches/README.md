@@ -13,3 +13,9 @@ IDs or titles across the seed, all batches and the active 100.
 
 Large future intakes can be split into multiple small reviewable files.
 A new batch never changes the capped 100 without an explicit promotion PR.
+
+## Completed intakes
+
+- `2026-10-cohort-02.json`: N0121–N0216, 96 hypotheses across 12 additional
+  domains. Schema and lexical screening do **not** establish novelty.
+  See `../next_review_queue.json` for twelve bounded first-review briefs.
