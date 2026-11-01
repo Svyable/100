@@ -79,6 +79,12 @@ nonexistence from a restricted symmetry search.
   Solvers to the Williamson Conjecture* (2018/2019),
   https://arxiv.org/abs/1804.01172 — modern row-sum Diophantine
   prefilter and exact enumeration context; this work is not their result.
+* Kharaghani, Mohammadian and Tayfeh-Rezaie, *A search for Hadamard
+  matrices of Williamson type* (2026), https://arxiv.org/abs/2605.08661
+  — contemporary near-Williamson enumeration through odd n=35. Its class
+  allows one nonsymmetric circulant component and is **not** the four
+  symmetric-circulant model restricted by this note. No novelty inference
+  is drawn from that separate enumeration.
 * Baumert, *Hadamard matrices of orders 116 and 232*, Bull. Amer. Math.
   Soc. **72** (1966), p. 237 (cited by
   https://doi.org/10.1016/0012-365X(88)90040-4) — order 116 is
