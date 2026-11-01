@@ -215,6 +215,21 @@
         "agent_hours": 0.9
       },
       "note": "Author-derived elementary proof of conditional |X|<=6 at a CH27 indegree-ten root, with a tight z=2 tournament sink argument, exact arithmetic checks, independent-style regression tests, and 18-arc weakened-premise control. Pending outside mathematical proof review and originality audit; not the full finite case, a verified new theorem, or a conjecture resolution."
+    },
+    {
+      "work_id": "X-M073-ASSORTATIVE2",
+      "scope_sha256": "78fb3aa3bf89d35999dbe7a3da8533b76063a514b98e361b0b060bedb7974ae7",
+      "author": "ChatGPT (M073 two-spin cone proof)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/162",
+      "pr_url": "https://github.com/Svyable/100/pull/163",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.8
+      },
+      "note": "Estimated active author/tool effort. Outcome classification applies only once PR #163 merges and claim closes. Classical spin expansion; source-specific quantitative cone, exact independent-style checks and negative control. No external novelty audit, specialist independent review, universal Sidorenko resolution or finite host witness."
     }
   ]
 }
