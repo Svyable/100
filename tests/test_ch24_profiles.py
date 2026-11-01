@@ -33,7 +33,7 @@ class CH24ProfileTests(unittest.TestCase):
 
     def test_witness_rejects_digons_and_triangles(self):
         edges = list(ch24_profiles.LOCAL_EDGES)
-        edges[0] = (0, 2)  # Reverse an edge: profile check must reject.
+        edges[0] = (2, 2)  # A forbidden self-loop.
         with self.assertRaises(ValueError):
             ch24_profiles.local_witness_check(tuple(edges))
         edges = list(ch24_profiles.LOCAL_EDGES)
