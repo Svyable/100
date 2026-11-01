@@ -1,7 +1,31 @@
 {
   "version": 2,
-  "as_of": "2026-10-31",
+  "as_of": "2026-11-01",
   "campaigns": [
+    {
+      "problem_id": "M001",
+      "stage": "benchmark_reproduced",
+      "method": "Certified zero counting: rigorous interval Euler-Maclaurin and Stirling enclosures, the argument principle for N(T), and certified sign changes of Hardy's Z function",
+      "hypothesis": "Every nontrivial zero of the Riemann zeta function has real part 1/2.",
+      "first_proof_obligation": "Reproduce classical verifications of RH at small heights with a floating-point-free certificate: an exact zero count N(T) from the argument principle, matched by N(T) certified sign changes of Z(t). Then reuse the same certificate format to replay externally produced zero lists at larger heights.",
+      "next_experiment": "Add Turing's method with an explicit bound on the integral of S(t), and a Riemann-Siegel evaluator with explicit error terms, so that heights near 10^5 become reachable; cross-check against Odlyzko's published zero tables.",
+      "falsification": "A certified count N(T) strictly larger than the number of zeros that can be located on the critical line below T, together with an exact enclosure of a zero off the line: a box avoiding Re s = 1/2 whose argument-principle winding number is 1.",
+      "blocker": "Pure-Python interval Euler-Maclaurin costs O(T) per evaluation, and RH is already verified to height 3*10^12. Finite heights cannot reach new territory; the value is the certificate format and its replayability.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe zeta_zeros"
+    },
+    {
+      "problem_id": "M002",
+      "stage": "benchmark_reproduced",
+      "method": "Certified zero counting for real primitive Dirichlet L-functions: argument principle, Hardy Z sign changes, a Lipschitz-certified real segment and a Gauss-sum root-number check",
+      "hypothesis": "Every nontrivial zero of every Dirichlet L-function has real part 1/2.",
+      "first_proof_obligation": "Reproduce GRH verifications at small height for all real primitive characters of small conductor, including the absence of real zeros in (0, 1), with interval certificates. Then extend the engine to complex characters, whose zeros are not symmetric about the real axis and whose root numbers are not real.",
+      "next_experiment": "Support complex primitive characters (separate counts for positive and negative ordinates, exact Gauss sums in the cyclotomic engine) and certify every primitive character of conductor <= 50 to height 20.",
+      "falsification": "For some primitive character, a certified zero count exceeding the number of certified sign changes of Z on the critical line, plus an enclosure of an off-line zero; or a certified real zero of L(s, chi) in (0, 1).",
+      "blocker": "Euler-Maclaurin over residue classes needs about q|s|/2 terms per evaluation, so cost grows with conductor times height; GRH is verified far beyond these ranges (Platt).",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe dirichlet_zeros"
+    },
     {
       "problem_id": "M006",
       "stage": "benchmark_reproduced",
@@ -37,6 +61,18 @@
       "blocker": "Known results already cover plane maps of degree <= 100, so exhaustive small classes cannot reach new territory; novelty needs structural families.",
       "dossier": "research/LAB_CAMPAIGNS.md",
       "verifier": "python3 scripts/lab.py --probe jacobian"
+    },
+    {
+      "problem_id": "M048",
+      "stage": "benchmark_reproduced",
+      "method": "Exhaustive permutation-group computation: p-regular classes, radical p-subgroups up to conjugacy, and defect-zero characters of N(Q)/Q by Dixon's modular method",
+      "hypothesis": "For every finite group G and prime p, the number of irreducible p-Brauer characters equals the number of G-conjugacy classes of p-weights.",
+      "first_proof_obligation": "Reproduce the global weight conjecture l(G) = w(G) on small groups, including non-p-solvable and sporadic examples, with an independent re-enumeration of radical subgroups. Then add p-blocks (central characters mod p) to test the blockwise form.",
+      "next_experiment": "Add block decomposition from the mod-p reduction of central characters, test the blockwise conjecture on the same groups, and extend to groups of order up to about 10^5 (M12, PSL(3,4)) with subgroup-lattice pruning.",
+      "falsification": "A finite group and prime with exactly certified l(G) (p-regular class count) different from an exhaustively certified weight count w(G).",
+      "blocker": "Full element enumeration limits the engine to groups of order around 10^4; the conjecture is already known for all groups this small, so new evidence needs larger groups or blockwise refinements.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe alperin_weights"
     },
     {
       "problem_id": "M071",
@@ -420,6 +456,39 @@
       "verifier": "python3 scripts/lab.py --probe jacobian",
       "artifact": "scripts/probes/jacobian.py",
       "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-RH-001",
+      "problem_id": "M001",
+      "classification": "reproduced_known",
+      "title": "All 29 Riemann zeros below height 100 certified simple and on the critical line",
+      "scope": "Known small range; not new",
+      "description": "The argument principle certifies N(100) = 29 exactly from interval boxes along 2 -> 2+100i -> 1/2+100i, and Hardy's Z(t) has 29 certified sign changes on (0, 100]. All arithmetic is rigorous interval arithmetic with explicit series remainders, repeated by the checker at another precision and truncation. The deep run certifies all 649 zeros below height 1000 the same way.",
+      "verifier": "python3 scripts/lab.py --probe zeta_zeros",
+      "artifact": "scripts/probes/zeta_zeros.py",
+      "verified_on": "2026-11-01"
+    },
+    {
+      "id": "B-GRH-001",
+      "problem_id": "M002",
+      "classification": "reproduced_known",
+      "title": "GRH to height 20 for the real primitive characters of conductor 3, 4 and 5",
+      "scope": "Known small range; not new",
+      "description": "For D = -4, -3, 5, L(s, chi_D) has no real zero in (0, 1) (Lipschitz-certified point values), the argument principle certifies 5, 4 and 6 zeros with 0 < Im s < 20, and Z(t, chi_D) has exactly as many certified sign changes. The checker rebuilds each character and certifies the root number +1 from the Gauss sum. The deep run covers all 17 real primitive characters of conductor at most 24 to height 30 (248 zeros in the upper half-plane).",
+      "verifier": "python3 scripts/lab.py --probe dirichlet_zeros",
+      "artifact": "scripts/probes/dirichlet_zeros.py",
+      "verified_on": "2026-11-01"
+    },
+    {
+      "id": "B-ALPERIN-001",
+      "problem_id": "M048",
+      "classification": "reproduced_known",
+      "title": "Alperin's weight conjecture l(G) = w(G) on 15 group-prime cases from S3 to PSL(2,7)",
+      "scope": "Known small range; not new",
+      "description": "For S3, A4, S4, A5, S5 and PSL(2,7) at every prime dividing the order, the number of p-regular classes equals the number of conjugacy classes of p-weights, counted over all p-radical subgroups with defect-zero degrees of N(Q)/Q from Dixon's modular method. The checker re-enumerates radical subgroups by a different criterion and recomputes degrees with a different prime. The deep run covers 46 cases, adding GL(2,3), A6, S6, PSL(2,8), PSL(2,11), PSL(2,13), A7, S7 and the Mathieu group M11.",
+      "verifier": "python3 scripts/lab.py --probe alperin_weights",
+      "artifact": "scripts/probes/alperin.py",
+      "verified_on": "2026-11-01"
     }
   ]
 }

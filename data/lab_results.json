@@ -2,6 +2,288 @@
   "format": "svyable.lab.v1",
   "levels": {
     "deep": {
+      "alperin_weights": {
+        "certificate_sha256": "19d95779539969894da47fdaad874502c19935e6d985ad754c31136aa752fbe6",
+        "engines": [
+          "group_characters"
+        ],
+        "holds": true,
+        "level": "deep",
+        "params": {
+          "groups": [
+            "S3",
+            "A4",
+            "S4",
+            "A5",
+            "S5",
+            "PSL(2,7)",
+            "GL(2,3)",
+            "A6",
+            "S6",
+            "PSL(2,8)",
+            "PSL(2,11)",
+            "PSL(2,13)",
+            "A7",
+            "S7",
+            "M11"
+          ]
+        },
+        "probe": "alperin_weights",
+        "problem_id": "M048",
+        "scope": "l(G) = w(G) (p-regular classes = conjugacy classes of p-weights) for G in {S3, A4, S4, A5, S5, PSL(2,7), GL(2,3), A6, S6, PSL(2,8), PSL(2,11), PSL(2,13), A7, S7, M11} and every prime p dividing |G|.",
+        "summary": {
+          "cases": 46,
+          "certificate_sha256": "19d95779539969894da47fdaad874502c19935e6d985ad754c31136aa752fbe6",
+          "counterexample": null,
+          "groups": 15,
+          "radical_classes": 111,
+          "table": {
+            "A4 p=2": [
+              3,
+              3
+            ],
+            "A4 p=3": [
+              2,
+              2
+            ],
+            "A5 p=2": [
+              4,
+              4
+            ],
+            "A5 p=3": [
+              4,
+              4
+            ],
+            "A5 p=5": [
+              3,
+              3
+            ],
+            "A6 p=2": [
+              5,
+              5
+            ],
+            "A6 p=3": [
+              5,
+              5
+            ],
+            "A6 p=5": [
+              5,
+              5
+            ],
+            "A7 p=2": [
+              6,
+              6
+            ],
+            "A7 p=3": [
+              6,
+              6
+            ],
+            "A7 p=5": [
+              8,
+              8
+            ],
+            "A7 p=7": [
+              7,
+              7
+            ],
+            "GL(2,3) p=2": [
+              2,
+              2
+            ],
+            "GL(2,3) p=3": [
+              6,
+              6
+            ],
+            "M11 p=11": [
+              8,
+              8
+            ],
+            "M11 p=2": [
+              5,
+              5
+            ],
+            "M11 p=3": [
+              8,
+              8
+            ],
+            "M11 p=5": [
+              9,
+              9
+            ],
+            "PSL(2,11) p=11": [
+              6,
+              6
+            ],
+            "PSL(2,11) p=2": [
+              6,
+              6
+            ],
+            "PSL(2,11) p=3": [
+              6,
+              6
+            ],
+            "PSL(2,11) p=5": [
+              6,
+              6
+            ],
+            "PSL(2,13) p=13": [
+              7,
+              7
+            ],
+            "PSL(2,13) p=2": [
+              7,
+              7
+            ],
+            "PSL(2,13) p=3": [
+              7,
+              7
+            ],
+            "PSL(2,13) p=7": [
+              6,
+              6
+            ],
+            "PSL(2,7) p=2": [
+              4,
+              4
+            ],
+            "PSL(2,7) p=3": [
+              5,
+              5
+            ],
+            "PSL(2,7) p=7": [
+              4,
+              4
+            ],
+            "PSL(2,8) p=2": [
+              8,
+              8
+            ],
+            "PSL(2,8) p=3": [
+              5,
+              5
+            ],
+            "PSL(2,8) p=7": [
+              6,
+              6
+            ],
+            "S3 p=2": [
+              2,
+              2
+            ],
+            "S3 p=3": [
+              2,
+              2
+            ],
+            "S4 p=2": [
+              2,
+              2
+            ],
+            "S4 p=3": [
+              4,
+              4
+            ],
+            "S5 p=2": [
+              3,
+              3
+            ],
+            "S5 p=3": [
+              5,
+              5
+            ],
+            "S5 p=5": [
+              6,
+              6
+            ],
+            "S6 p=2": [
+              4,
+              4
+            ],
+            "S6 p=3": [
+              7,
+              7
+            ],
+            "S6 p=5": [
+              10,
+              10
+            ],
+            "S7 p=2": [
+              5,
+              5
+            ],
+            "S7 p=3": [
+              9,
+              9
+            ],
+            "S7 p=5": [
+              13,
+              13
+            ],
+            "S7 p=7": [
+              14,
+              14
+            ]
+          }
+        }
+      },
+      "dirichlet_zeros": {
+        "certificate_sha256": "69bff3789e5eb262d46ecd2dc511934f46491a3ab2dfd51a0e3eebfd62785fff",
+        "engines": [
+          "interval_arithmetic",
+          "l_functions"
+        ],
+        "holds": true,
+        "level": "deep",
+        "params": {
+          "discriminants": [
+            -3,
+            -4,
+            5,
+            -7,
+            8,
+            -8,
+            -11,
+            12,
+            13,
+            -15,
+            17,
+            -19,
+            -20,
+            21,
+            -23,
+            -24,
+            24
+          ],
+          "height": 30
+        },
+        "probe": "dirichlet_zeros",
+        "problem_id": "M002",
+        "scope": "For chi_D with D in {-3, -4, 5, -7, 8, -8, -11, 12, 13, -15, 17, -19, -20, 21, -23, -24, 24}: L(s, chi_D) has no real zero in (0, 1), and every zero with |Im s| < 30 is simple and on Re s = 1/2 (certified count = certified sign changes).",
+        "summary": {
+          "certificate_sha256": "69bff3789e5eb262d46ecd2dc511934f46491a3ab2dfd51a0e3eebfd62785fff",
+          "characters": 17,
+          "height": "30",
+          "per_character": {
+            "-11": 15,
+            "-15": 16,
+            "-19": 17,
+            "-20": 17,
+            "-23": 17,
+            "-24": 18,
+            "-3": 8,
+            "-4": 10,
+            "-7": 12,
+            "-8": 13,
+            "12": 14,
+            "13": 15,
+            "17": 16,
+            "21": 18,
+            "24": 18,
+            "5": 11,
+            "8": 13
+          },
+          "zeros_upper_half": 248
+        }
+      },
       "erdos_straus": {
         "certificate_sha256": "60a148c35e2dedbf39a8233554ad50f67de47d69cf5b3bfa24b02f64fe315911",
         "engines": [
@@ -720,9 +1002,161 @@
             "8": 343
           }
         }
+      },
+      "zeta_zeros": {
+        "certificate_sha256": "d7dd452449f4acbea77283ee1069c7fd1bae8ee8508ec2bcc00f9ca084126f8b",
+        "engines": [
+          "interval_arithmetic",
+          "l_functions"
+        ],
+        "holds": true,
+        "level": "deep",
+        "params": {
+          "height": 1000
+        },
+        "probe": "zeta_zeros",
+        "problem_id": "M001",
+        "scope": "Exactly N(T) zeros of zeta(s) with 0 < Im s < T = 1000 (counted with multiplicity, certified by the argument principle), and Z(t) has that many certified sign changes on (0, T]: all of them are simple zeros on Re s = 1/2.",
+        "summary": {
+          "boxes": 80,
+          "certificate_sha256": "d7dd452449f4acbea77283ee1069c7fd1bae8ee8508ec2bcc00f9ca084126f8b",
+          "first_zero_bracket": [
+            "9.666908",
+            "17.845600"
+          ],
+          "height": "1000",
+          "last_zero_bracket": [
+            "999.236223",
+            "1000.000000"
+          ],
+          "points": 1080,
+          "sign_changes": 649,
+          "zeros": 649
+        }
       }
     },
     "smoke": {
+      "alperin_weights": {
+        "certificate_sha256": "aa65ccfc6cba5e3996464430f202e32a7bac2ce2c8f4ddf7ddc1c0ead5c09b6a",
+        "engines": [
+          "group_characters"
+        ],
+        "holds": true,
+        "level": "smoke",
+        "params": {
+          "groups": [
+            "S3",
+            "A4",
+            "S4",
+            "A5",
+            "S5",
+            "PSL(2,7)"
+          ]
+        },
+        "probe": "alperin_weights",
+        "problem_id": "M048",
+        "scope": "l(G) = w(G) (p-regular classes = conjugacy classes of p-weights) for G in {S3, A4, S4, A5, S5, PSL(2,7)} and every prime p dividing |G|.",
+        "summary": {
+          "cases": 15,
+          "certificate_sha256": "aa65ccfc6cba5e3996464430f202e32a7bac2ce2c8f4ddf7ddc1c0ead5c09b6a",
+          "counterexample": null,
+          "groups": 6,
+          "radical_classes": 32,
+          "table": {
+            "A4 p=2": [
+              3,
+              3
+            ],
+            "A4 p=3": [
+              2,
+              2
+            ],
+            "A5 p=2": [
+              4,
+              4
+            ],
+            "A5 p=3": [
+              4,
+              4
+            ],
+            "A5 p=5": [
+              3,
+              3
+            ],
+            "PSL(2,7) p=2": [
+              4,
+              4
+            ],
+            "PSL(2,7) p=3": [
+              5,
+              5
+            ],
+            "PSL(2,7) p=7": [
+              4,
+              4
+            ],
+            "S3 p=2": [
+              2,
+              2
+            ],
+            "S3 p=3": [
+              2,
+              2
+            ],
+            "S4 p=2": [
+              2,
+              2
+            ],
+            "S4 p=3": [
+              4,
+              4
+            ],
+            "S5 p=2": [
+              3,
+              3
+            ],
+            "S5 p=3": [
+              5,
+              5
+            ],
+            "S5 p=5": [
+              6,
+              6
+            ]
+          }
+        }
+      },
+      "dirichlet_zeros": {
+        "certificate_sha256": "f6bf5d1d8c4e6ae52da72b2d2bbc10d8638e6e62ba10ceb8164e86aba74e5e79",
+        "engines": [
+          "interval_arithmetic",
+          "l_functions"
+        ],
+        "holds": true,
+        "level": "smoke",
+        "params": {
+          "discriminants": [
+            -4,
+            -3,
+            5
+          ],
+          "height": 20
+        },
+        "probe": "dirichlet_zeros",
+        "problem_id": "M002",
+        "scope": "For chi_D with D in {-4, -3, 5}: L(s, chi_D) has no real zero in (0, 1), and every zero with |Im s| < 20 is simple and on Re s = 1/2 (certified count = certified sign changes).",
+        "summary": {
+          "certificate_sha256": "f6bf5d1d8c4e6ae52da72b2d2bbc10d8638e6e62ba10ceb8164e86aba74e5e79",
+          "characters": 3,
+          "height": "20",
+          "per_character": {
+            "-3": 4,
+            "-4": 5,
+            "5": 6
+          },
+          "zeros_upper_half": 15
+        }
+      },
       "erdos_straus": {
         "certificate_sha256": "0076b8bf095e84632fdb686cd77255a4e37b0c0f6e762d2538f0de2f38c6a855",
         "engines": [
@@ -1223,6 +1657,37 @@
             "2": 7,
             "4": 49
           }
+        }
+      },
+      "zeta_zeros": {
+        "certificate_sha256": "9b98ff32535b5cf31aaeb2edd77e7069bfd110e7402e9a2ce7f7358b90414c3e",
+        "engines": [
+          "interval_arithmetic",
+          "l_functions"
+        ],
+        "holds": true,
+        "level": "smoke",
+        "params": {
+          "height": 100
+        },
+        "probe": "zeta_zeros",
+        "problem_id": "M001",
+        "scope": "Exactly N(T) zeros of zeta(s) with 0 < Im s < T = 100 (counted with multiplicity, certified by the argument principle), and Z(t) has that many certified sign changes on (0, T]: all of them are simple zeros on Re s = 1/2.",
+        "summary": {
+          "boxes": 16,
+          "certificate_sha256": "9b98ff32535b5cf31aaeb2edd77e7069bfd110e7402e9a2ce7f7358b90414c3e",
+          "first_zero_bracket": [
+            "9.666908",
+            "17.845600"
+          ],
+          "height": "100",
+          "last_zero_bracket": [
+            "97.714497",
+            "99.994528"
+          ],
+          "points": 49,
+          "sign_changes": 29,
+          "zeros": 29
         }
       }
     }

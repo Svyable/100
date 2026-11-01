@@ -58,6 +58,21 @@ ENGINES = {
         "modules": ["scripts/probes/polynomials.py"],
         "use": "Jacobians, compositions and certified inverses of polynomial maps; exhaustive integer classes.",
     },
+    "interval_arithmetic": {
+        "name": "Rigorous fixed-point interval arithmetic with certified exp, log, sin, cos, atan and pi",
+        "modules": ["scripts/probes/intervals.py"],
+        "use": "Floating-point-free enclosures for analytic computations; every series carries a remainder bound.",
+    },
+    "l_functions": {
+        "name": "Certified zeta and Dirichlet L-function evaluation with argument-principle zero counts",
+        "modules": ["scripts/probes/lfunctions.py"],
+        "use": "Euler-Maclaurin and Stirling with explicit remainders, Hardy Z sign changes, exact N(T).",
+    },
+    "group_characters": {
+        "name": "Permutation groups, quotients and character degrees by Dixon's modular method",
+        "modules": ["scripts/probes/groups.py"],
+        "use": "Conjugacy classes, Sylow and radical subgroups, irreducible degrees for groups up to ~10^4.",
+    },
     "clique_search": {
         "name": "Branch-and-bound clique search with exhaustive subset re-check",
         "modules": ["scripts/probes/ramsey_witness.py"],
@@ -67,9 +82,12 @@ ENGINES = {
 
 # probe id -> module name (ordered by problem id)
 PROBES = {
+    "zeta_zeros": "zeta_zeros",
+    "dirichlet_zeros": "dirichlet_zeros",
     "goldbach": "goldbach",
     "erdos_straus": "erdos_straus",
     "jacobian": "jacobian",
+    "alperin_weights": "alperin",
     "hadwiger": "hadwiger",
     "sidorenko": "sidorenko",
     "reconstruction": "reconstruction",

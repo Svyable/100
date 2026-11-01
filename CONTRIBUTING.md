@@ -16,8 +16,9 @@ produce **independently checkable advances**.
    candidate; preserve stable IDs and history. Do not silently exceed 100.
 5. **Exact probe** — add a module to `scripts/probes/` (search plus an *independent*
    checker, ideally on an existing engine), register it, add tamper tests, and wire it to a
-   campaign and `reproduced_known` milestone. See "Add a probe" in [LAB.md](LAB.md). Building
-   an engine from [the roadmap](data/engine_roadmap.json) unlocks a whole class of problems.
+   campaign and `reproduced_known` milestone. See "Add a probe" in [LAB.md](LAB.md). Every
+   computable problem now has a probe ([the roadmap](data/engine_roadmap.json) is empty), so
+   the highest-value probes push an existing campaign's `next_experiment` past known ranges.
 6. **Pages improvements** — submit accessible changes in `docs/`, keep all
    browser assets local, and use the generated snapshot rather than an
    independently maintained data copy.
