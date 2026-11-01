@@ -123,6 +123,22 @@
         "ci_minutes": 0
       },
       "note": "Approximate active implementation and test time for a fail-closed router admission prototype; 0 live workers launched, no model or mathematical result accepted. Execution adapter, distributed lease and independent review remain open."
+    },
+    {
+      "work_id": "X-M074-GIRTH-DEFICIT",
+      "scope_sha256": "b772e6a73edda56e9e551680b3fce860acc38e1451fd065159853e48341cbf72",
+      "author": "ChatGPT (M074 girth-deficit research)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/128",
+      "pr_url": "https://github.com/Svyable/100/pull/134",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 1,
+        "ci_minutes": 0
+      },
+      "note": "Approximate active research/tool time. Sharp directed-girth deficit and equality rigidity with direct proofs; new CH27 irregular z=4 integer necessary-profile reduction 295 to 103. Not a full finite counterexample exclusion, no claimed priority, no independent mathematical review."
     }
   ]
 }
