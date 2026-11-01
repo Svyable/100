@@ -124,6 +124,11 @@
   "external_claims": [],
   "mentioned_in": [
     {
+      "title": "Agent protocol",
+      "source": "AGENTS.md",
+      "url": "https://svyable.github.io/100/library/agents/"
+    },
+    {
       "title": "Approach — leverage dispatch",
       "source": "APPROACH.md",
       "url": "https://svyable.github.io/100/library/approach/"

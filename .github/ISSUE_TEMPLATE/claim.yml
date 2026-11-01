@@ -1,0 +1,40 @@
+name: Claim a work item
+description: Reserve one item from the work queue (docs/work, scripts/work.py) so parallel contributors never duplicate it
+title: "[Claim] W-ID — "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        One open claim per item. Before opening this, search open issues for `[Claim] <id>`.
+        Close this issue with the pull request that delivers the item, or close it unfinished
+        with a note on what you learned so the next contributor starts further ahead.
+  - type: input
+    id: item
+    attributes:
+      label: Work item id
+      description: Exactly as listed by `python3 scripts/work.py` (for example O-M074-02, F-M079, S-M012).
+      placeholder: F-M079
+    validations:
+      required: true
+  - type: input
+    id: digest
+    attributes:
+      label: Scope digest (first 16 hex characters)
+      description: From the item page or `python3 scripts/work.py --id <id>`. It pins the deliverable you are claiming.
+    validations:
+      required: true
+  - type: input
+    id: who
+    attributes:
+      label: Who is doing it
+      description: Your handle, or the agent/session doing the work, so collisions can be resolved quickly.
+    validations:
+      required: true
+  - type: textarea
+    id: plan
+    attributes:
+      label: Plan and expected evidence
+      description: The deliverable, which acceptance lines you will meet, and anything you expect to leave open.
+    validations:
+      required: true

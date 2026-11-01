@@ -1,0 +1,76 @@
+# Agent protocol
+
+Instructions for every automated or human contributor working in this repository,
+including parallel AI sessions. The goal is many concurrent contributions with no
+duplicated work, no broken generated files and no unsupported mathematical claims.
+
+## 1. Pick bounded work
+
+```sh
+python3 scripts/work.py --next 5                  # highest-priority runnable items
+python3 scripts/work.py --next 5 --kind comparator  # or: obligation, lean, job, roadmap, status_audit
+python3 scripts/work.py --id F-M079               # one item: deliverable, acceptance, boundary, digest
+```
+
+The queue is derived from the ledgers (proof obligations, Lean targets, the dispatcher,
+the roadmap, the formal catalogue and the status-audit drafts). It is browsable at
+`/work/` on the site and machine-readable at `docs/api/work.json`. An item disappears
+when its ledger records the result; nobody edits the queue by hand.
+
+## 2. Claim before you start
+
+Search open issues for the item's claim title, `[Claim] <id>`. If one is open, pick
+another item. Otherwise open a claim with `.github/ISSUE_TEMPLATE/claim.yml`, including
+the scope digest. Close the claim with the PR that delivers the item, or close it
+unfinished with what you learned. Two pipelines for the same thing is the most expensive
+failure here; a claim costs one minute.
+
+## 3. Do only the deliverable
+
+Meet every acceptance line and respect the item's boundary. A different idea is a new
+item (add it to the ledger that should own it), not a wider PR. Keep PRs small: many
+small PRs land faster than one large one.
+
+## 4. Regenerate, never hand-merge generated files
+
+```sh
+python3 scripts/regen.py                  # rewrite every derived file (~3 s)
+python3 scripts/regen.py --check --fast   # quick gate while iterating
+python3 scripts/regen.py --check          # full gate (reruns lab probes, ~1 min)
+python3 -m unittest discover -s tests     # full test suite
+```
+
+`python3 scripts/regen.py --list` prints the generated paths (RANKED.md, ATTACK_QUEUE.md,
+LAB.md, MINES.md, APPROACH.md, ROADMAP.md, docs/data/next.json and the generated part
+of `docs/`). On a merge conflict in any of them: take either side
+(`git checkout --theirs -- <paths>`), run `python3 scripts/regen.py`, then commit.
+Never hand-edit `docs/` outside `docs/assets/`, `docs/next/` and `docs/*.md`.
+
+## 5. Lean
+
+- New comparator statements go in `lean/Hundred/Statements/`, are imported by
+  `lean/Hundred.lean` and catalogued in `data/formalization.json`
+  (see [lean/README.md](lean/README.md)).
+- Every exported theorem is registered in `data/lean_targets.json` so the Lean proof
+  gate audits its axioms ([LEAN.md](LEAN.md)). `python3 scripts/formal.py --check`
+  enforces this and forbids `sorry`, `admit`, `axiom`, `native_decide`.
+- Keep kernel certificates small: the gate builds everything twice under a 300 s limit
+  and prints per-module timings. A certificate that takes minutes belongs in the Python
+  lab, with Lean checking a smaller fidelity instance.
+- If you cannot run Lean locally, say so in the PR and treat the gate as the first compile.
+
+## 6. Evidence rules (non-negotiable)
+
+- Never mark a problem solved, or change an evidence state, on an announcement, a
+  preprint, a solver verdict or a finite computation alone. Follow
+  [docs/RESEARCH_PROTOCOL.md](docs/RESEARCH_PROTOCOL.md) and
+  [docs/PORTFOLIO_SELECTION.md](docs/PORTFOLIO_SELECTION.md).
+- A Lean proof proves only what was encoded; state what was not encoded.
+- Finite ranges inside known theorems are reproductions, never progress.
+- Independent review is done by someone else; an agent cannot record its own work as
+  independently reviewed.
+
+## 7. Ship
+
+Use the PR template, name the work item id in the title or body, include
+`Closes #<claim issue>`, and paste the output of `python3 scripts/regen.py --check`.
