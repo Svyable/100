@@ -1,8 +1,8 @@
 {
   "protocol": "svyable.work.v1",
-  "count": 348,
+  "count": 349,
   "by_kind": {
-    "obligation": 26,
+    "obligation": 27,
     "review": 47,
     "benchmark": 36,
     "lean": 9,
@@ -12,7 +12,7 @@
     "status_audit": 89
   },
   "by_status": {
-    "runnable": 341,
+    "runnable": 342,
     "externally_blocked": 4,
     "waiting_on_dependencies": 3
   },
@@ -292,6 +292,31 @@
       "claim_title": "[Claim] O-M079-01 — Lemma obligation for M079",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M079-01%20%E2%80%94%20Lemma%20obligation%20for%20M079",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M079-01%22"
+    },
+    {
+      "id": "O-M079-02",
+      "kind": "obligation",
+      "status": "runnable",
+      "problems": [
+        "M079"
+      ],
+      "title": "Lemma obligation for M079",
+      "deliverable": "Prove the all-orders insertion-gap reduction and exact finite residual bound, independently replay the sharp example and attack the 67392 normalized cases; then obtain specialist and novelty review.",
+      "context": "Every finite width-three poset consisting of a chain and three pairwise incomparable outsiders, each incomparable with at least one chain element, has balance constant at least 11/28; the constant is sharp.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M079-02 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "The unrestricted one-third–two-thirds conjecture is open. The previously proposed chain-plus-two 4/11 bound is a different class; finite verification and source searches do not establish historical novelty or independent mathematical acceptance.",
+      "falsifier": "A poset meeting the exact hypotheses with all incomparable-pair probabilities outside [11/28,17/28], a gap-coordinate counterexample, or an earlier source proving the same bound.",
+      "depends_on": [],
+      "source": "data/proof_obligations.json",
+      "priority_rank": 12,
+      "scope_sha256": "6f875a09c8b9a70a5312f268148ad4bdf3da80dd807cd9f8ec3a8c67a431ab44",
+      "claim_title": "[Claim] O-M079-02 — Lemma obligation for M079",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M079-02%20%E2%80%94%20Lemma%20obligation%20for%20M079",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M079-02%22"
     },
     {
       "id": "O-M096-01",

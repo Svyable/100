@@ -4,19 +4,19 @@
   "by_kind": {
     "benchmark": 0,
     "comparator": 0,
-    "job": 22,
+    "job": 21,
     "lean": 9,
-    "obligation": 22,
+    "obligation": 23,
     "review": 47,
     "roadmap": 0,
     "status_audit": 0
   },
-  "cohort_shapes_touched": 17,
+  "cohort_shapes_touched": 16,
   "evidence_boundary": "A filled slot is a claimable work packet with a scope digest. It is not a solved theorem, a readiness change, or a measured speedup.",
   "frontier_counts": {
     "discharged": 0,
     "externally_blocked": 1,
-    "runnable": 22,
+    "runnable": 23,
     "waiting_on_dependencies": 3
   },
   "naive_one_agent_per_problem": 100,
@@ -175,6 +175,18 @@
       "prior_art_boundary": "Linial settled width 2; published verification reaches 11 elements; the poset_balance mine's tight examples on at most 6 elements all have width 2.",
       "problem_id": "M079",
       "statement": "Every finite poset of width at least 3 that is not a chain has an incomparable pair with balance in [1/3, 2/3], for a named restricted class (for example bounded height) not already settled by Linial's width-2 theorem.",
+      "unmet": []
+    },
+    {
+      "category": "runnable",
+      "falsifier": "A poset meeting the exact hypotheses with all incomparable-pair probabilities outside [11/28,17/28], a gap-coordinate counterexample, or an earlier source proving the same bound.",
+      "id": "O-M079-02",
+      "immediate_dependents": 0,
+      "kind": "lemma",
+      "next_action": "Prove the all-orders insertion-gap reduction and exact finite residual bound, independently replay the sharp example and attack the 67392 normalized cases; then obtain specialist and novelty review.",
+      "prior_art_boundary": "The unrestricted one-third–two-thirds conjecture is open. The previously proposed chain-plus-two 4/11 bound is a different class; finite verification and source searches do not establish historical novelty or independent mathematical acceptance.",
+      "problem_id": "M079",
+      "statement": "Every finite width-three poset consisting of a chain and three pairwise incomparable outsiders, each incomparable with at least one chain element, has balance constant at least 11/28; the constant is sharp.",
       "unmet": []
     },
     {
@@ -363,7 +375,6 @@
     "M049",
     "M053",
     "M054",
-    "M055",
     "M056",
     "M060",
     "M061",
@@ -404,7 +415,7 @@
     "M097",
     "M100"
   ],
-  "problems_touched": 61,
+  "problems_touched": 60,
   "protocol": "svyable.proof-exchange.v2",
   "refused": [
     {
@@ -437,7 +448,7 @@
     }
   ],
   "refused_count": 7,
-  "runnable_in_queue": 341,
+  "runnable_in_queue": 342,
   "selected_packets": [
     {
       "acceptance": [
@@ -766,6 +777,36 @@
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
       "scope_sha256": "689967b7e922c89ed619eacf2758a84df91879639d191a41ec99c850d86233f2",
+      "status": "runnable",
+      "title": "Lemma obligation for M079"
+    },
+    {
+      "acceptance": [
+        "Discharge evidence recorded on O-M079-02 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "The unrestricted one-third–two-thirds conjecture is open. The previously proposed chain-plus-two 4/11 bound is a different class; finite verification and source searches do not establish historical novelty or independent mathematical acceptance.",
+      "claim_title": "[Claim] O-M079-02 — Lemma obligation for M079",
+      "deliverable": "Prove the all-orders insertion-gap reduction and exact finite residual bound, independently replay the sharp example and attack the 67392 normalized cases; then obtain specialist and novelty review.",
+      "depends_on": [],
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M079-02%22",
+      "falsifier": "A poset meeting the exact hypotheses with all incomparable-pair probabilities outside [11/28,17/28], a gap-coordinate counterexample, or an earlier source proving the same bound.",
+      "id": "O-M079-02",
+      "interpretation": "One claimable slot. Roles are a recommended split under that claim, not three independent truth votes.",
+      "kind": "obligation",
+      "leverage": 1188,
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M079-02%20%E2%80%94%20Lemma%20obligation%20for%20M079",
+      "priority_rank": 12,
+      "problems": [
+        "M079"
+      ],
+      "roles": {
+        "adversary": "Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.",
+        "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
+        "scout": "Produce the exact artifact or restricted statement named in the deliverable."
+      },
+      "scope_sha256": "482e9640e9ec4ffa4a0c93961400e47b872c1e9f6cea2b6a5a3d6ddfe563ff25",
       "status": "runnable",
       "title": "Lemma obligation for M079"
     },
@@ -3445,41 +3486,9 @@
       "scope_sha256": "fd23fdba282035c8048aa729ff8542b678a5b39e451ec6647793f67fb9f5f72b",
       "status": "runnable",
       "title": "Audit claim scope: One ansatz, one enclosure"
-    },
-    {
-      "acceptance": [
-        "Every problem on the job moves by the same action, or a precise gap is recorded per problem",
-        "Evidence lands in the ledger the action names (lab, claim review, campaign or obligation)",
-        "python3 scripts/regen.py && python3 scripts/regen.py --check",
-        "python3 -m unittest discover -s tests"
-      ],
-      "boundary": "A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.",
-      "claim_title": "[Claim] J-harmonic_analysis-scope_audit — Audit claim scope: One dimension, one endpoint",
-      "deliverable": "M055: Check the all-dimensional local smoothing theorem, its Kakeya maximal corollary and exact hypotheses; distinguish 4D direct theorem from universal consequence. M056: State M056's exact dimension and p/q exponent range, audit the October 25 local-smoothing-to-restriction implication (including endpoint exclusions), compare the author Lean scope to its paper, and obtain independent harmonic-analysis review.",
-      "depends_on": [],
-      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20J-harmonic_analysis-scope_audit%22",
-      "falsifier": "",
-      "id": "J-harmonic_analysis-scope_audit",
-      "interpretation": "One claimable slot. Roles are a recommended split under that claim, not three independent truth votes.",
-      "kind": "job",
-      "leverage": 779,
-      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-harmonic_analysis-scope_audit%20%E2%80%94%20Audit%20claim%20scope%3A%20One%20dimension%2C%20one%20endpoint",
-      "priority_rank": 39,
-      "problems": [
-        "M055",
-        "M056"
-      ],
-      "roles": {
-        "adversary": "Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.",
-        "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
-        "scout": "Produce the exact artifact or restricted statement named in the deliverable."
-      },
-      "scope_sha256": "d9a7075d1f9146794638501752ea6cd5b028386a53d8dfbdf56b6fd01bcd27cd",
-      "status": "runnable",
-      "title": "Audit claim scope: One dimension, one endpoint"
     }
   ],
   "shape_count": 30,
   "slots_filled": 100,
-  "work_queue_size": 348
+  "work_queue_size": 349
 }
