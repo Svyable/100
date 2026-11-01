@@ -43,7 +43,7 @@
 <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M088 — locked restricted circuit class</span></nav>
 <main id="main">
 <div class="doc-layout">
-<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#lock-one-paragraph">Lock (one paragraph)</a></li><li class="toc-l2"><a href="#falsifier-not-yet-implemented">Falsifier (not yet implemented)</a></li><li class="toc-l2"><a href="#prior-art-boundary">Prior-art boundary</a></li></ol></nav>
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#lock-one-paragraph">Lock (one paragraph)</a></li><li class="toc-l2"><a href="#falsifier-not-yet-implemented">Falsifier (not yet implemented)</a></li><li class="toc-l2"><a href="#prior-art-boundary">Prior-art boundary</a></li><li class="toc-l2"><a href="#subsequent-falsifier-scope-note-2026-11-01">Subsequent falsifier scope note (2026-11-01)</a></li></ol></nav>
 <div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M088/" title="Deterministic polynomial identity testing">M088</a></div></div>
 <p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M088_LOCK.md" rel="noopener noreferrer">research/M088_LOCK.md <span aria-hidden="true">↗</span></a></p></aside>
 <article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M088 — locked restricted circuit class</h1>
@@ -54,6 +54,8 @@
 <p>A nonzero circuit in this class that vanishes at every point of a proposed hitting set. The checker must rebuild the circuit from an explicit gate list and re-evaluate on an independent code path.</p>
 <h2 id="prior-art-boundary">Prior-art boundary<a class="anchor" href="#prior-art-boundary" aria-label="Link to this section">#</a></h2>
 <p>Black-box PIT is in randomized polynomial time. Deterministic poly-time PIT for <em>general</em> arithmetic circuits remains open and is not claimed by locking this toy class. A hitting set for the lock would be a restricted lemma, not a resolution of M088.</p>
+<h2 id="subsequent-falsifier-scope-note-2026-11-01">Subsequent falsifier scope note (2026-11-01)<a class="anchor" href="#subsequent-falsifier-scope-note-2026-11-01" aria-label="Link to this section">#</a></h2>
+<p>See <a href="../../library/m088-gf2-falsifier/">the exact two-path falsifier</a>. The lock&#x27;s oracle wording leaves formal-polynomial nonzeroness versus nonzero Boolean function unresolved. The two-gate formal polynomial x0^2+x0 is nonzero in GF(2)[x] but vanishes on every GF(2) input. This is a known algebraic obstruction to the formal-polynomial reading, not a proof of the originally proposed hitting-set lemma. The class lock above is preserved verbatim pending independent scope review.</p>
 </article></div>
 </main>
 <footer class="site-footer">

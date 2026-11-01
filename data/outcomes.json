@@ -32,6 +32,21 @@
         "agent_hours": 0.8
       },
       "note": "Estimated work time for this integration repair only; original PR author effort is unknown and excluded. No independent mathematical review."
+    },
+    {
+      "work_id": "O-M088-01",
+      "scope_sha256": "5204bcc35834d93882867d02268da6bfe4c98a2398ff94770255bf1f624a3ae5",
+      "author": "ChatGPT (M088 exact falsifier)",
+      "outcome": "gap_reported",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/108",
+      "pr_url": "https://github.com/Svyable/100/pull/109",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.5
+      },
+      "note": "Two-path exact falsifier, tests, known GF(2) formal/function obstruction and source audit. Approximate author/tool work time; no independent reviewer, no new theorem, no obligation discharge."
     }
   ]
 }

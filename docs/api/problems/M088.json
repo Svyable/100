@@ -123,6 +123,11 @@
       "url": "https://svyable.github.io/100/library/campaigns/"
     },
     {
+      "title": "M088 — exact GF(2) falsifier and a scope obstruction",
+      "source": "research/M088_GF2_FALSIFIER.md",
+      "url": "https://svyable.github.io/100/library/m088-gf2-falsifier/"
+    },
+    {
       "title": "M088 — locked restricted circuit class",
       "source": "research/M088_LOCK.md",
       "url": "https://svyable.github.io/100/library/m088-lock/"
