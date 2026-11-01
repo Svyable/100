@@ -107,6 +107,22 @@
         "agent_hours": 0.4
       },
       "note": "Elementary n29 row-sum-square no-go for common order-4 or order-14 multiplier invariance; independent-path exact arithmetic and 6 adversarial tests. Does not construct n29 Williamson quadruple, nor 116/156/172 Hadamard matrices; obligation and independent review remain open."
+    },
+    {
+      "work_id": "X-SUPERAGENT-ROUTER",
+      "scope_sha256": "ccfd3ebe789b4ac8e8d32e14541459f692b70816734b2d7e6f33bec37c3f577e",
+      "author": "ChatGPT (Project 100 superagent router)",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/118",
+      "pr_url": "https://github.com/Svyable/100/pull/119",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.5,
+        "ci_minutes": 0
+      },
+      "note": "Approximate active implementation and test time for a fail-closed router admission prototype; 0 live workers launched, no model or mathematical result accepted. Execution adapter, distributed lease and independent review remain open."
     }
   ]
 }
