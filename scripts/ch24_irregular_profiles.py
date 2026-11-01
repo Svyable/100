@@ -2,7 +2,7 @@
 """Necessary integer-profile certificate for CH (24,8), indegree-nine root.
 
 Searches small *relaxed* degree profiles, not 24-vertex digraphs.
-A surviving row need not be realizable. See research/M074_IRREGULAR_24.md.
+A surviving row need not be realizable. See proofs/M074_IRREGULAR_24.md.
 """
 from collections import Counter
 from itertools import combinations_with_replacement
