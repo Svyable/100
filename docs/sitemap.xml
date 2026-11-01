@@ -37,6 +37,7 @@
   <url><loc>https://svyable.github.io/100/library/m074-elementary-18/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m074-elementary-21/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m074-elementary-24-regular/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/m074-irregular-low4/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m074-prior-art/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m074-regularity/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m075-burnside/</loc><lastmod>2026-10-31</lastmod></url>
@@ -53,6 +54,7 @@
   <url><loc>https://svyable.github.io/100/library/research-engine/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/research-protocol/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/roadmap/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/scale/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/sources/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/problems/M001/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/problems/M002/</loc><lastmod>2026-10-31</lastmod></url>
@@ -300,13 +302,30 @@
   <url><loc>https://svyable.github.io/100/work/L007/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/L008/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/L009/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/O-M001-01/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/O-M002-01/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/O-M006-01/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/O-M019-01/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/O-M041-01/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/O-M048-01/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/O-M071-01/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/O-M073-01/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/O-M074-01/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/O-M074-02/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/O-M074-03/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/O-M075-01/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/O-M075-02/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/O-M078-01/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/O-M079-01/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/O-M080-01/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/O-M084-01/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/O-M088-01/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/O-M092-01/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/O-M093-01/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/O-M094-01/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/O-M095-01/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/O-M096-01/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/O-M097-01/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/R20/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/R21/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/R22/</loc><lastmod>2026-10-31</lastmod></url>

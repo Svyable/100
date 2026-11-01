@@ -145,6 +145,11 @@
       "url": "https://svyable.github.io/100/library/roadmap/"
     },
     {
+      "title": "Scale — proof-exchange wave",
+      "source": "SCALE.md",
+      "url": "https://svyable.github.io/100/library/scale/"
+    },
+    {
       "title": "Four concrete proof campaigns — first research tranche",
       "source": "research/CAMPAIGNS.md",
       "url": "https://svyable.github.io/100/library/campaigns/"
@@ -173,6 +178,11 @@
       "title": "M074 — the 24-vertex, degree-eight regular case is impossible",
       "source": "research/M074_ELEMENTARY_24_REGULAR.md",
       "url": "https://svyable.github.io/100/library/m074-elementary-24-regular/"
+    },
+    {
+      "title": "M074 — a four-neighbor obstruction in the irregular (24,8) branch",
+      "source": "research/M074_IRREGULAR_LOW4.md",
+      "url": "https://svyable.github.io/100/library/m074-irregular-low4/"
     },
     {
       "title": "M074 — external fixed-outdegree-six proof claim: verification docket",

@@ -1,8 +1,8 @@
 {
   "protocol": "svyable.work.v1",
-  "count": 250,
+  "count": 267,
   "by_kind": {
-    "obligation": 7,
+    "obligation": 24,
     "lean": 9,
     "job": 45,
     "roadmap": 9,
@@ -10,12 +10,62 @@
     "status_audit": 89
   },
   "by_status": {
-    "runnable": 247,
-    "externally_blocked": 1,
+    "runnable": 261,
+    "externally_blocked": 4,
     "waiting_on_dependencies": 2
   },
   "claim_protocol": "Search open issues for the claim title; if none is open, open one with .github/ISSUE_TEMPLATE/claim.yml before starting. Close it with the PR.",
   "items": [
+    {
+      "id": "O-M071-01",
+      "kind": "obligation",
+      "status": "runnable",
+      "problems": [
+        "M071"
+      ],
+      "title": "Witness obligation for M071",
+      "deliverable": "Obtain an explicit finite graph with independent chromatic and minor certificates, or specialist reviews of the existential proof. Do not treat the frozen no_explicit_finite_graph ledger entry as a discharged witness.",
+      "context": "The finite graph cited in the 2026 Hadwiger claim review has a certified chromatic-number lower bound t and an independently checked certificate that no K_t minor exists.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M071-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Chromatic number at most 6 is already settled by Robertson–Seymour–Thomas. The extractability audit (research/M071_M073_WITNESSES.md) found an existential/asymptotic Lean family with no published finite adjacency list; comparator acceptance alone cannot discharge this node.",
+      "falsifier": "The graph admits a K_t minor, its chromatic lower bound fails an independent check, or the encoding does not match the claimed manuscript object.",
+      "depends_on": [],
+      "source": "data/proof_obligations.json",
+      "priority_rank": 1,
+      "scope_sha256": "cdf456098afd4384447c06550601483f00f11febf0522d72db45ad96e0014634",
+      "claim_title": "[Claim] O-M071-01 — Witness obligation for M071",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M071-01%20%E2%80%94%20Witness%20obligation%20for%20M071",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M071-01%22"
+    },
+    {
+      "id": "O-M073-01",
+      "kind": "obligation",
+      "status": "runnable",
+      "problems": [
+        "M073"
+      ],
+      "title": "Witness obligation for M073",
+      "deliverable": "Derive or obtain the claimed host G and compute exact densities with two independent methods, or keep the pattern_reconstructed_host_missing gap. Pattern H alone does not discharge this node.",
+      "context": "The finite host G cited in the 2026 Sidorenko claim review, together with the stated bipartite pattern H, satisfies t(H,G) < t(K2,G)^e(H) under exact rational homomorphism densities computed by two independent methods.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M073-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "The extractability audit reconstructed pattern H (35 vertices, 66 edges) in data/reference/sidorenko_faces.json; the claimed host G remains unpublished. Small unweighted hosts already checked here are not that object.",
+      "falsifier": "Exact densities that obey the Sidorenko inequality, a mismatch with the manuscript construction, or a host that cannot be reconstructed from the cited data.",
+      "depends_on": [],
+      "source": "data/proof_obligations.json",
+      "priority_rank": 2,
+      "scope_sha256": "4f163ace79697a263a69092f249044339d4f0bf5ea87b68840be0fd30b8dcbd9",
+      "claim_title": "[Claim] O-M073-01 — Witness obligation for M073",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M073-01%20%E2%80%94%20Witness%20obligation%20for%20M073",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M073-01%22"
+    },
     {
       "id": "O-M074-02",
       "kind": "obligation",
@@ -40,6 +90,106 @@
       "claim_title": "[Claim] O-M074-02 — Reduction obligation for M074",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M074-02%20%E2%80%94%20Reduction%20obligation%20for%20M074",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M074-02%22"
+    },
+    {
+      "id": "O-M092-01",
+      "kind": "obligation",
+      "status": "runnable",
+      "problems": [
+        "M092"
+      ],
+      "title": "Witness obligation for M092",
+      "deliverable": "Extend the cyclotomic engine to the needed fields and replay published exact fiducials for d <= 8 with an independent overlap checker.",
+      "context": "A published exact SIC fiducial in some dimension d with 4 <= d <= 8 replays under exact arithmetic in the extended cyclotomic engine, with all equiangularity identities certified.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M092-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Exact fiducials beyond d = 3 are published; floating-point SICs are not proofs. Replaying them tests the number-field engine, not a uniform existence theorem.",
+      "falsifier": "A failed Gram identity, a missing vector under the stated construction, or a number-field encoding that does not match the published fiducial.",
+      "depends_on": [],
+      "source": "data/proof_obligations.json",
+      "priority_rank": 6,
+      "scope_sha256": "eaba3c39e8db2ecb903cc3ed24fc186e11cf22a1066ebc90b18624bfb0bdca2b",
+      "claim_title": "[Claim] O-M092-01 — Witness obligation for M092",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M092-01%20%E2%80%94%20Witness%20obligation%20for%20M092",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M092-01%22"
+    },
+    {
+      "id": "O-M093-01",
+      "kind": "obligation",
+      "status": "runnable",
+      "problems": [
+        "M093"
+      ],
+      "title": "Witness obligation for M093",
+      "deliverable": "Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9.",
+      "context": "For each q <= 9, the maximum size of a 4-arc in PG(3,q) computed by the frame-fixing engine matches a cited published value, with exact determinant checks.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M093-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "The MDS conjecture is proved for prime q (Ball 2012); k = 3 is the Segre–Bose range. Reproducing known maxima for small q is not a new bound.",
+      "falsifier": "An n-arc exceeding the cited maximum with verified determinants, or a search that misses a published arc.",
+      "depends_on": [],
+      "source": "data/proof_obligations.json",
+      "priority_rank": 7,
+      "scope_sha256": "e0d611142957b847b10e0b6d809c3bf8c175ca61a9a08b611c14610d1ebf6993",
+      "claim_title": "[Claim] O-M093-01 — Witness obligation for M093",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M093-01%20%E2%80%94%20Witness%20obligation%20for%20M093",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M093-01%22"
+    },
+    {
+      "id": "O-M094-01",
+      "kind": "obligation",
+      "status": "runnable",
+      "problems": [
+        "M094"
+      ],
+      "title": "Witness obligation for M094",
+      "deliverable": "Add multiplier-group symmetry for Williamson n = 29 and Goethals–Seidel arrays for 156 and 172; document the first order no implemented method reaches.",
+      "context": "Hadamard matrices of orders 116, 156 and 172 are constructed by the symmetry-reduced Williamson or Goethals–Seidel engines and pass exact orthogonality certificates.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M094-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "These orders are constructed in the literature; the open case begins at order 668. Closing engine gaps is reproduction, not a new existence theorem.",
+      "falsifier": "A constructed matrix failing H H^T = n I, or a symmetry reduction that omits a published construction class needed for these orders.",
+      "depends_on": [],
+      "source": "data/proof_obligations.json",
+      "priority_rank": 8,
+      "scope_sha256": "34e16102d6f22db90d9148603d18b052bb3c6829a7a55994f9c3e433b1a1d86f",
+      "claim_title": "[Claim] O-M094-01 — Witness obligation for M094",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M094-01%20%E2%80%94%20Witness%20obligation%20for%20M094",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M094-01%22"
+    },
+    {
+      "id": "O-M088-01",
+      "kind": "obligation",
+      "status": "runnable",
+      "problems": [
+        "M088"
+      ],
+      "title": "Lemma obligation for M088",
+      "deliverable": "Lock the field, circuit shape, degree and oracle model in one paragraph inside the algebraic-complexity shape; only then implement a falsifier.",
+      "context": "For an explicitly locked field characteristic, circuit shape, degree bound and oracle model, a deterministic polynomial-size hitting set hits every nonzero circuit in that class.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M088-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "No restricted circuit class is locked in this repository yet; a checker written before the class is fixed does not raise readiness.",
+      "falsifier": "A nonzero circuit in the locked class that vanishes at every hitting-set point, or a lock paragraph that leaves characteristic, shape, degree or oracle unspecified.",
+      "depends_on": [],
+      "source": "data/proof_obligations.json",
+      "priority_rank": 9,
+      "scope_sha256": "2a485cde985f9a99d3b888d3a308d99dc06bc2978fab80b3e3360e204e1bef4b",
+      "claim_title": "[Claim] O-M088-01 — Lemma obligation for M088",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M088-01%20%E2%80%94%20Lemma%20obligation%20for%20M088",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M088-01%22"
     },
     {
       "id": "O-M075-01",
@@ -67,6 +217,106 @@
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M075-01%22"
     },
     {
+      "id": "O-M078-01",
+      "kind": "obligation",
+      "status": "runnable",
+      "problems": [
+        "M078"
+      ],
+      "title": "Lemma obligation for M078",
+      "deliverable": "Name the invariant, recompute it on the twenty excess graphs at 6 vertices, and state the finite certificate format.",
+      "context": "There is a deck invariant, strictly stronger than the pair (degree sequence, triangle count), that separates every pair of non-isomorphic graphs on at most 6 vertices that the current mine leaves colliding.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M078-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Computer verification of reconstruction already reaches at least 11 vertices; degree-plus-triangles through 5 vertices with 20 collisions at 6 vertices is a certified reproduction, not a new theorem.",
+      "falsifier": "Two non-isomorphic 6-vertex graphs with identical proposed invariants and identical decks, or a proof that the invariant is equivalent to degree sequence plus triangles.",
+      "depends_on": [],
+      "source": "data/proof_obligations.json",
+      "priority_rank": 11,
+      "scope_sha256": "c25d1f1ccd3a55bdd178da6dcb4747199d51a0190d9321ccb7e1b21af505fe62",
+      "claim_title": "[Claim] O-M078-01 — Lemma obligation for M078",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M078-01%20%E2%80%94%20Lemma%20obligation%20for%20M078",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M078-01%22"
+    },
+    {
+      "id": "O-M079-01",
+      "kind": "obligation",
+      "status": "runnable",
+      "problems": [
+        "M079"
+      ],
+      "title": "Lemma obligation for M079",
+      "deliverable": "Name the restricted class and write the balance lemma; do not enlarge the width-2 census.",
+      "context": "Every finite poset of width at least 3 that is not a chain has an incomparable pair with balance in [1/3, 2/3], for a named restricted class (for example bounded height) not already settled by Linial's width-2 theorem.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M079-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Linial settled width 2; published verification reaches 11 elements; the poset_balance mine's tight examples on at most 6 elements all have width 2.",
+      "falsifier": "A non-chain poset of width at least 3 in the named class whose every incomparable pair has balance strictly outside [1/3, 2/3], with two independent exact extension counts.",
+      "depends_on": [],
+      "source": "data/proof_obligations.json",
+      "priority_rank": 12,
+      "scope_sha256": "964d45559b467d0b87968be82c006cf2c916e04bc8ad39c0b149dfe012b55411",
+      "claim_title": "[Claim] O-M079-01 — Lemma obligation for M079",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M079-01%20%E2%80%94%20Lemma%20obligation%20for%20M079",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M079-01%22"
+    },
+    {
+      "id": "O-M096-01",
+      "kind": "obligation",
+      "status": "runnable",
+      "problems": [
+        "M096"
+      ],
+      "title": "Witness obligation for M096",
+      "deliverable": "Encode order-12 planes with a prescribed collineation as SAT with DRAT output, starting from cases the literature already excludes.",
+      "context": "A published partial nonexistence restriction for a projective plane of order 12 (for example a prescribed collineation class) is reproduced as a SAT instance with an independently checked DRAT/LRAT proof.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M096-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Order-10 nonexistence required a massive computation; unconstrained order-12 search is out of reach. Replaying a published restriction is not a decision of existence.",
+      "falsifier": "A SAT encoding whose models are not planes of the stated class, a proof that fails an independent checker, or a restriction weaker than the cited published one.",
+      "depends_on": [],
+      "source": "data/proof_obligations.json",
+      "priority_rank": 13,
+      "scope_sha256": "6c6bd61ca4fc48823134ff2894b1538e52bf45216a453ceb454f0546e3a2133a",
+      "claim_title": "[Claim] O-M096-01 — Witness obligation for M096",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M096-01%20%E2%80%94%20Witness%20obligation%20for%20M096",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M096-01%22"
+    },
+    {
+      "id": "O-M084-01",
+      "kind": "obligation",
+      "status": "runnable",
+      "problems": [
+        "M084"
+      ],
+      "title": "Witness obligation for M084",
+      "deliverable": "Import one published exact decomposition onto the existing checker; do not launch a flip-graph search as the next step.",
+      "context": "A cited published exact decomposition of the <3,3,3> matrix-multiplication tensor of rank 23 (or another named small-format scheme) replays on the repository tensor checker with matching bilinear identities.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M084-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Small-format ranks cannot beat laser-method bounds below 2.372; replaying a published decomposition is certificate infrastructure, not progress toward omega = 2.",
+      "falsifier": "A bilinear identity failure under the checker, or a scheme whose published rank does not match the imported tensors.",
+      "depends_on": [],
+      "source": "data/proof_obligations.json",
+      "priority_rank": 14,
+      "scope_sha256": "e11d5c806c6a60680094a2e9f0bc6144c8acbb9a2081645480e89f9793f99697",
+      "claim_title": "[Claim] O-M084-01 — Witness obligation for M084",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M084-01%20%E2%80%94%20Witness%20obligation%20for%20M084",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M084-01%22"
+    },
+    {
       "id": "O-M095-01",
       "kind": "obligation",
       "status": "runnable",
@@ -92,6 +342,156 @@
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M095-01%22"
     },
     {
+      "id": "O-M080-01",
+      "kind": "obligation",
+      "status": "runnable",
+      "problems": [
+        "M080"
+      ],
+      "title": "Lemma obligation for M080",
+      "deliverable": "Implement the orbit quotient so GF(2)^4 becomes exhaustive and store one certificate per orbit.",
+      "context": "Under the stabilizer of the standard basis, every orbit of 4-tuples of bases of GF(2)^4 has an explicit representative together with a grid certificate or an exhaustive negative certificate.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M080-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Chan (1995) covers rank at most 3; GF(2)^4 is the next finite case and is not yet orbit-reduced in this repository.",
+      "falsifier": "An orbit with neither a valid grid nor a complete negative certificate, or a stabilizer quotient that drops an orbit.",
+      "depends_on": [],
+      "source": "data/proof_obligations.json",
+      "priority_rank": 16,
+      "scope_sha256": "df2853bdff4922bf543b7f15cdb7f739d6d9c86eaf6a0c7ac5391fe5ac54e2d0",
+      "claim_title": "[Claim] O-M080-01 — Lemma obligation for M080",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M080-01%20%E2%80%94%20Lemma%20obligation%20for%20M080",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M080-01%22"
+    },
+    {
+      "id": "O-M097-01",
+      "kind": "obligation",
+      "status": "runnable",
+      "problems": [
+        "M097"
+      ],
+      "title": "Lemma obligation for M097",
+      "deliverable": "Extend from graphic metrics to 1-2 and vertex-weighted metrics; enumerate extreme points of the subtour polytope at n = 8.",
+      "context": "For every 1-2 metric or vertex-weighted metric on at most 8 vertices, the exact Held–Karp integrality gap is at most the published graphic-metric maximum for that n, or an explicit gap-maximising instance is certified by LP duality and brute-force tour search.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M097-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Graphic metrics through 7 vertices are a certified reproduction of known small-n gaps; extending vertices inside that published range is not the next experiment.",
+      "falsifier": "A metric whose certified Held–Karp value and optimal tour give a gap above both the claimed bound and the published graphic maximum, or a duality certificate that fails independent replay.",
+      "depends_on": [],
+      "source": "data/proof_obligations.json",
+      "priority_rank": 17,
+      "scope_sha256": "ab4ed431000250b2bdd38480d33997b0e6c80a54ab3ec9d5f31a373be2e2214f",
+      "claim_title": "[Claim] O-M097-01 — Lemma obligation for M097",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M097-01%20%E2%80%94%20Lemma%20obligation%20for%20M097",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M097-01%22"
+    },
+    {
+      "id": "O-M019-01",
+      "kind": "obligation",
+      "status": "runnable",
+      "problems": [
+        "M019"
+      ],
+      "title": "Lemma obligation for M019",
+      "deliverable": "Prove a symbolic identity for residue 3 or residue 7; treat the certified table as a guide, not as the lemma.",
+      "context": "There is a polynomial identity that produces positive-integer solutions of 4/n = 1/x + 1/y + 1/z for every prime n = 1 (mod 24) with 4x - n equal to 3, or separately for every such prime with 4x - n equal to 7.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M019-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Classical Mordell-type identities leave quadratic-residue classes uncovered; the straus_patterns mine through 8000 is a certified table, not a symbolic identity.",
+      "falsifier": "A prime n = 1 (mod 24) in the claimed residue for which the proposed identity fails to give positive integers, or a citation showing the identity is already classical.",
+      "depends_on": [],
+      "source": "data/proof_obligations.json",
+      "priority_rank": 18,
+      "scope_sha256": "aed22f7409b059e5deaf541ca1c7bd9873dc7a471be1e4879d23c4c96216720b",
+      "claim_title": "[Claim] O-M019-01 — Lemma obligation for M019",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M019-01%20%E2%80%94%20Lemma%20obligation%20for%20M019",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M019-01%22"
+    },
+    {
+      "id": "O-M002-01",
+      "kind": "obligation",
+      "status": "runnable",
+      "problems": [
+        "M002"
+      ],
+      "title": "Witness obligation for M002",
+      "deliverable": "Replay a published primitive character modulo 3 or 5 with independent Gauss-sum and zero-count checks; document that this is known mathematics, not GRH progress.",
+      "context": "For one primitive Dirichlet character of conductor 3 or 5, the interval-arithmetic argument principle certifies N(T) matching Hardy-style critical-line sign changes up to an explicit height, with root number and gamma factor checked independently.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M002-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "The existing chi_4 certificate to height 17 is a known-method reproduction; GRH concerns all characters, so one more character tests the reusable contour, not the conjecture.",
+      "falsifier": "A mismatch between the certified argument count and the number of critical-line sign changes, or an incorrect root number/gamma-factor convention.",
+      "depends_on": [],
+      "source": "data/proof_obligations.json",
+      "priority_rank": 19,
+      "scope_sha256": "2e0d373691a3218efc8ca90cfb182d98f871468cf028691e54cb651ce137c186",
+      "claim_title": "[Claim] O-M002-01 — Witness obligation for M002",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M002-01%20%E2%80%94%20Witness%20obligation%20for%20M002",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M002-01%22"
+    },
+    {
+      "id": "O-M006-01",
+      "kind": "obligation",
+      "status": "runnable",
+      "problems": [
+        "M006"
+      ],
+      "title": "Lemma obligation for M006",
+      "deliverable": "Name the residue class and the candidate bound B; test it against the twelve record pairs in the goldbach_growth mine; do not extend the verified range toward 4*10^18.",
+      "context": "There is an explicit upper bound B on the least prime p in a Goldbach partition of every even n in a named infinite residue class, such that B is not already implied by the published 4*10^18 verification.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M006-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Even Goldbach through 4*10^18 and the ternary Goldbach theorem are known; the certified mine of record least primes through 20,000 is a reproduction, not a new bound.",
+      "falsifier": "An even n in the named class whose least Goldbach prime exceeds B, or a proof that B follows from already-published verification alone.",
+      "depends_on": [],
+      "source": "data/proof_obligations.json",
+      "priority_rank": 24,
+      "scope_sha256": "d8f798d252c5dd7325f1be862e7edd1365ca3399d95f9a662ae193d832e1c3ff",
+      "claim_title": "[Claim] O-M006-01 — Lemma obligation for M006",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M006-01%20%E2%80%94%20Lemma%20obligation%20for%20M006",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M006-01%22"
+    },
+    {
+      "id": "O-M041-01",
+      "kind": "obligation",
+      "status": "runnable",
+      "problems": [
+        "M041"
+      ],
+      "title": "Lemma obligation for M041",
+      "deliverable": "Name one Newton-polygon family outside the degree-100 bound and state the coefficient ring before any search; do not enumerate degree-4 maps with coefficients in {-1,0,1}.",
+      "context": "There is a named Newton-polygon family of plane polynomial maps, with coefficients in an explicit ring and degree outside Moh's degree-100 bound, for which the Jacobian conjecture is proved or an exact counterexample certificate is given.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M041-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Wang covers degree <= 2 and Moh covers plane degree <= 100; enumerating degree-4 maps with coefficients in {-1,0,1} is refused as dominated.",
+      "falsifier": "A family that collapses into degree <= 100 over C, or a Jacobian-nonvanishing map in the family with a certified missing inverse under Gabber's bound.",
+      "depends_on": [],
+      "source": "data/proof_obligations.json",
+      "priority_rank": 98,
+      "scope_sha256": "aad6e6707d2c15e9ab7098ea1da8504ef377649dc1439c655a04252fb6c68ac9",
+      "claim_title": "[Claim] O-M041-01 — Lemma obligation for M041",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M041-01%20%E2%80%94%20Lemma%20obligation%20for%20M041",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M041-01%22"
+    },
+    {
       "id": "O-M048-01",
       "kind": "obligation",
       "status": "runnable",
@@ -115,6 +515,31 @@
       "claim_title": "[Claim] O-M048-01 — Lemma obligation for M048",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M048-01%20%E2%80%94%20Lemma%20obligation%20for%20M048",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M048-01%22"
+    },
+    {
+      "id": "O-M001-01",
+      "kind": "obligation",
+      "status": "runnable",
+      "problems": [
+        "M001"
+      ],
+      "title": "Lemma obligation for M001",
+      "deliverable": "Do not prioritize extending T = 36. Identify a mathematically new zero-free region, explicit bound, or verified statement not implied by existing computations.",
+      "context": "There is an explicit zero-free region or verified analytic statement about zeta that is not implied by plugging any height covered by published critical-line computations into a known explicit formula.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M001-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "The interval verifier to T = 36 is far below Platt–Trudgian; extending that tiny height inside the published range is refused as dominated.",
+      "falsifier": "A proof that the proposed statement follows from existing published zero computations alone, or a counterexample inside the claimed region.",
+      "depends_on": [],
+      "source": "data/proof_obligations.json",
+      "priority_rank": 100,
+      "scope_sha256": "8d5c4952da434409c8b0663fa26ee49831c757f47274cc76364d4a4795baf35f",
+      "claim_title": "[Claim] O-M001-01 — Lemma obligation for M001",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M001-01%20%E2%80%94%20Lemma%20obligation%20for%20M001",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M001-01%22"
     },
     {
       "id": "L003",
@@ -1496,84 +1921,6 @@
       "claim_title": "[Claim] J-geometric_topology-specify_shape — Fill the shared attack shape: Hypotheses before constructions",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-geometric_topology-specify_shape%20%E2%80%94%20Fill%20the%20shared%20attack%20shape%3A%20Hypotheses%20before%20constructions",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20J-geometric_topology-specify_shape%22"
-    },
-    {
-      "id": "J-polynomial_maps-stop_range",
-      "kind": "job",
-      "status": "runnable",
-      "problems": [
-        "M041"
-      ],
-      "title": "Stop: range is dominated: Families outside proved degree bounds",
-      "deliverable": "Do not enumerate degree-4 maps with coefficients in {-1,0,1}: Moh (1983) already covers plane maps of degree at most 100. Name one Newton-polygon family outside that degree bound and state the coefficient ring before any search.",
-      "context": "Moh (1983) covers plane maps of degree at most 100. Degree-4 search on coefficients in {-1,0,1} sits inside that theorem, so the recorded experiment is refused.",
-      "acceptance": [
-        "Every problem on the job moves by the same action, or a precise gap is recorded per problem",
-        "Evidence lands in the ledger the action names (lab, claim review, campaign or obligation)",
-        "python3 scripts/regen.py && python3 scripts/regen.py --check",
-        "python3 -m unittest discover -s tests"
-      ],
-      "boundary": "A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.",
-      "falsifier": "",
-      "source": "scripts/approach.py",
-      "depends_on": [],
-      "priority_rank": 98,
-      "scope_sha256": "6d1b9e455c114a2ec9d15bc40e8e9e8a28a59054485b93af7d016c10e44e253c",
-      "claim_title": "[Claim] J-polynomial_maps-stop_range — Stop: range is dominated: Families outside proved degree bounds",
-      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-polynomial_maps-stop_range%20%E2%80%94%20Stop%3A%20range%20is%20dominated%3A%20Families%20outside%20proved%20degree%20bounds",
-      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20J-polynomial_maps-stop_range%22"
-    },
-    {
-      "id": "J-modular_representations-stop_range",
-      "kind": "job",
-      "status": "runnable",
-      "problems": [
-        "M048"
-      ],
-      "title": "Stop: range is dominated: One block, weights against simples",
-      "deliverable": "Do not enlarge the named catalog inside order 100: that range is already covered by the 2007 computational verification. State a restricted family (for example blocks with a named defect-group isomorphism type) and a lemma outside that census.",
-      "context": "Computational verification already covers every group of order at most 100. Extending the named catalog inside that bound cannot be a new theorem.",
-      "acceptance": [
-        "Every problem on the job moves by the same action, or a precise gap is recorded per problem",
-        "Evidence lands in the ledger the action names (lab, claim review, campaign or obligation)",
-        "python3 scripts/regen.py && python3 scripts/regen.py --check",
-        "python3 -m unittest discover -s tests"
-      ],
-      "boundary": "A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.",
-      "falsifier": "",
-      "source": "scripts/approach.py",
-      "depends_on": [],
-      "priority_rank": 99,
-      "scope_sha256": "debabf4b6e1895a610eeb3dce4582b931c5a628b04c2bdb97b62d3148fde643a",
-      "claim_title": "[Claim] J-modular_representations-stop_range — Stop: range is dominated: One block, weights against simples",
-      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-modular_representations-stop_range%20%E2%80%94%20Stop%3A%20range%20is%20dominated%3A%20One%20block%2C%20weights%20against%20simples",
-      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20J-modular_representations-stop_range%22"
-    },
-    {
-      "id": "J-critical_zeros-stop_range",
-      "kind": "job",
-      "status": "runnable",
-      "problems": [
-        "M001"
-      ],
-      "title": "Stop: range is dominated: Certified zero counts",
-      "deliverable": "Do not prioritize extending T = 36 inside the already-published critical-line verification range. First identify a mathematically new zero-free region, explicit bound, or verified statement not implied by existing computations.",
-      "context": "The new exact interval verifier reaches T = 36, but published computations cover zeta zeros vastly farther. Increasing a tiny certified height is not a new attack on the Riemann hypothesis.",
-      "acceptance": [
-        "Every problem on the job moves by the same action, or a precise gap is recorded per problem",
-        "Evidence lands in the ledger the action names (lab, claim review, campaign or obligation)",
-        "python3 scripts/regen.py && python3 scripts/regen.py --check",
-        "python3 -m unittest discover -s tests"
-      ],
-      "boundary": "A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.",
-      "falsifier": "",
-      "source": "scripts/approach.py",
-      "depends_on": [],
-      "priority_rank": 100,
-      "scope_sha256": "9fd8d11e9c0ff0ed8e0db4f6379b2553dfc94f5e0cc35353ca96800ee370a4e9",
-      "claim_title": "[Claim] J-critical_zeros-stop_range — Stop: range is dominated: Certified zero counts",
-      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-critical_zeros-stop_range%20%E2%80%94%20Stop%3A%20range%20is%20dominated%3A%20Certified%20zero%20counts",
-      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20J-critical_zeros-stop_range%22"
     },
     {
       "id": "R32",
@@ -6513,6 +6860,84 @@
       "claim_title": "[Claim] O-M074-01 — Witness obligation for M074",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M074-01%20%E2%80%94%20Witness%20obligation%20for%20M074",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M074-01%22"
+    },
+    {
+      "id": "J-polynomial_maps-stop_range",
+      "kind": "job",
+      "status": "externally_blocked",
+      "problems": [
+        "M041"
+      ],
+      "title": "Stop: range is dominated: Families outside proved degree bounds",
+      "deliverable": "Do not enumerate degree-4 maps with coefficients in {-1,0,1}: Moh (1983) already covers plane maps of degree at most 100. Name one Newton-polygon family outside that degree bound and state the coefficient ring before any search.",
+      "context": "Moh (1983) covers plane maps of degree at most 100. Degree-4 search on coefficients in {-1,0,1} sits inside that theorem, so the recorded experiment is refused.",
+      "acceptance": [
+        "Every problem on the job moves by the same action, or a precise gap is recorded per problem",
+        "Evidence lands in the ledger the action names (lab, claim review, campaign or obligation)",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check",
+        "python3 -m unittest discover -s tests"
+      ],
+      "boundary": "Refused range extension: the campaign blocker already places this range inside known mathematics. Do not claim this job; follow the replacement step that starts with 'Do not'.",
+      "falsifier": "",
+      "source": "scripts/approach.py",
+      "depends_on": [],
+      "priority_rank": 98,
+      "scope_sha256": "ac3407110d7badbcfbddcb28a2e9ef03931c62ceb935e4deff36c3c0b2bb2287",
+      "claim_title": "[Claim] J-polynomial_maps-stop_range — Stop: range is dominated: Families outside proved degree bounds",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-polynomial_maps-stop_range%20%E2%80%94%20Stop%3A%20range%20is%20dominated%3A%20Families%20outside%20proved%20degree%20bounds",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20J-polynomial_maps-stop_range%22"
+    },
+    {
+      "id": "J-modular_representations-stop_range",
+      "kind": "job",
+      "status": "externally_blocked",
+      "problems": [
+        "M048"
+      ],
+      "title": "Stop: range is dominated: One block, weights against simples",
+      "deliverable": "Do not enlarge the named catalog inside order 100: that range is already covered by the 2007 computational verification. State a restricted family (for example blocks with a named defect-group isomorphism type) and a lemma outside that census.",
+      "context": "Computational verification already covers every group of order at most 100. Extending the named catalog inside that bound cannot be a new theorem.",
+      "acceptance": [
+        "Every problem on the job moves by the same action, or a precise gap is recorded per problem",
+        "Evidence lands in the ledger the action names (lab, claim review, campaign or obligation)",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check",
+        "python3 -m unittest discover -s tests"
+      ],
+      "boundary": "Refused range extension: the campaign blocker already places this range inside known mathematics. Do not claim this job; follow the replacement step that starts with 'Do not'.",
+      "falsifier": "",
+      "source": "scripts/approach.py",
+      "depends_on": [],
+      "priority_rank": 99,
+      "scope_sha256": "0a154638b51f9c0dd6202dc0578d9d1682a976ff591ef19b0496b5e4c9f35cb8",
+      "claim_title": "[Claim] J-modular_representations-stop_range — Stop: range is dominated: One block, weights against simples",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-modular_representations-stop_range%20%E2%80%94%20Stop%3A%20range%20is%20dominated%3A%20One%20block%2C%20weights%20against%20simples",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20J-modular_representations-stop_range%22"
+    },
+    {
+      "id": "J-critical_zeros-stop_range",
+      "kind": "job",
+      "status": "externally_blocked",
+      "problems": [
+        "M001"
+      ],
+      "title": "Stop: range is dominated: Certified zero counts",
+      "deliverable": "Do not prioritize extending T = 36 inside the already-published critical-line verification range. First identify a mathematically new zero-free region, explicit bound, or verified statement not implied by existing computations.",
+      "context": "The new exact interval verifier reaches T = 36, but published computations cover zeta zeros vastly farther. Increasing a tiny certified height is not a new attack on the Riemann hypothesis.",
+      "acceptance": [
+        "Every problem on the job moves by the same action, or a precise gap is recorded per problem",
+        "Evidence lands in the ledger the action names (lab, claim review, campaign or obligation)",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check",
+        "python3 -m unittest discover -s tests"
+      ],
+      "boundary": "Refused range extension: the campaign blocker already places this range inside known mathematics. Do not claim this job; follow the replacement step that starts with 'Do not'.",
+      "falsifier": "",
+      "source": "scripts/approach.py",
+      "depends_on": [],
+      "priority_rank": 100,
+      "scope_sha256": "0f2318048302d1e40c9d91bbf18f9b3d4e83451b4ce511bd5879fc2d190c965d",
+      "claim_title": "[Claim] J-critical_zeros-stop_range — Stop: range is dominated: Certified zero counts",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-critical_zeros-stop_range%20%E2%80%94%20Stop%3A%20range%20is%20dominated%3A%20Certified%20zero%20counts",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20J-critical_zeros-stop_range%22"
     },
     {
       "id": "O-M074-03",

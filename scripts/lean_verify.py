@@ -15,6 +15,95 @@ ALLOWED = {"propext", "Quot.sound", "Classical.choice"}
 NAME = re.compile(r"Hundred(?:\.[A-Za-z_][A-Za-z_0-9]*)+")
 
 
+EXPORT = re.compile(
+    r"^\s*(?:@\[[^\]\n]*\]\s*)*"
+    r"(?P<modifiers>(?:(?:private|protected|noncomputable)\s+)*)"
+    r"(?:theorem|lemma)\s+(?P<name>[A-Za-z_][A-Za-z_0-9'.]*)"
+)
+
+
+def mask_comments(source):
+    """Mask Lean line and nested block comments, retaining line numbers."""
+    chars = list(source)
+    i = 0
+    depth = 0
+    while i < len(source):
+        if depth:
+            if source.startswith('/-', i):
+                depth += 1
+                chars[i:i + 2] = '  '
+                i += 2
+            elif source.startswith('-/', i):
+                depth -= 1
+                chars[i:i + 2] = '  '
+                i += 2
+            else:
+                if chars[i] != '\n':
+                    chars[i] = ' '
+                i += 1
+        elif source.startswith('/-', i):
+            depth = 1
+            chars[i:i + 2] = '  '
+            i += 2
+        elif source.startswith('--', i):
+            while i < len(source) and source[i] != '\n':
+                chars[i] = ' '
+                i += 1
+        elif source[i] == '"':
+            # Do not interpret declaration-like lines within strings as theorems.
+            chars[i] = ' '
+            i += 1
+            while i < len(source):
+                if source[i] == '\\' and i + 1 < len(source):
+                    chars[i:i + 2] = '  '
+                    i += 2
+                elif source[i] == '"':
+                    chars[i] = ' '
+                    i += 1
+                    break
+                else:
+                    if chars[i] != '\n':
+                        chars[i] = ' '
+                    i += 1
+        else:
+            i += 1
+    if depth:
+        raise ValueError('unterminated Lean block comment')
+    return ''.join(chars)
+
+
+def discover_theorems(root):
+    """Find public theorem/lemma exports for registry-completeness preflight.
+
+    The kernel and #print axioms remain authoritative. This source-level guard
+    catches ordinary newly exported theorems omitted from the audit registry.
+    """
+    found = {}
+    for path in sorted((root / 'lean/Hundred').rglob('*.lean')):
+        namespace = []
+        source = mask_comments(path.read_text(encoding='utf-8'))
+        for lineno, line in enumerate(source.splitlines(), 1):
+            opened = re.match(r'^\s*namespace\s+([A-Za-z_][A-Za-z_0-9.]*)\s*$', line)
+            closed = re.match(r'^\s*end\s+([A-Za-z_][A-Za-z_0-9.]*)\s*$', line)
+            if opened:
+                name = opened.group(1)
+                namespace.append(name if not namespace or name.startswith('Hundred.')
+                                 else namespace[-1] + '.' + name)
+            elif closed:
+                if namespace and closed.group(1) in (namespace[-1], namespace[-1].rsplit('.', 1)[-1]):
+                    namespace.pop()
+            else:
+                theorem = EXPORT.match(line)
+                if not theorem or 'private' in theorem.group('modifiers').split():
+                    continue
+                if not namespace:
+                    raise ValueError(f'{path.relative_to(root)}:{lineno}: theorem outside a namespace')
+                name = namespace[-1] + '.' + theorem.group('name')
+                if name in found:
+                    raise ValueError(f'duplicate Lean theorem {name}')
+                found[name] = f'{path.relative_to(root)}:{lineno}'
+    return found
+
 def validate_registry(root=ROOT):
     rows = json.loads((root / "data/lean_targets.json").read_text())
     ids, declarations = set(), []
@@ -38,6 +127,13 @@ def validate_registry(root=ROOT):
             declarations.append(name)
     if not declarations:
         raise ValueError('empty audit')
+    exported = discover_theorems(root)
+    unregistered = sorted(set(exported) - set(declarations))
+    if unregistered:
+        raise ValueError(f'unregistered Lean theorems: {unregistered}')
+    not_exported = sorted(set(declarations) - set(exported))
+    if not_exported:
+        raise ValueError(f'audit registrations without exported theorem: {not_exported}')
     return declarations
 
 

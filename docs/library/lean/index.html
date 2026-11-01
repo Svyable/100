@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lean proof pipeline · 100</title>
-<meta name="description" content="The objective is more independently checked, reusable mathematics per unit of effort. “100x” is an ambition, not a measured speedup or a promise to solve the portfolio. The implementation has thirteen audited declarations across Ramsey and ">
+<meta name="description" content="The objective is more independently checked, reusable mathematics per unit of effort. “100x” is an ambition for operating capacity (see SCALE.md and the proof-exchange wave), not a measured speedup or a promise to solve the portfolio. The i">
 <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
 <meta name="color-scheme" content="light dark">
@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="100 — Svyable research">
 <meta property="og:title" content="Lean proof pipeline · 100">
-<meta property="og:description" content="The objective is more independently checked, reusable mathematics per unit of effort. “100x” is an ambition, not a measured speedup or a promise to solve the portfolio. The implementation has thirteen audited declarations across Ramsey and ">
+<meta property="og:description" content="The objective is more independently checked, reusable mathematics per unit of effort. “100x” is an ambition for operating capacity (see SCALE.md and the proof-exchange wave), not a measured speedup or a promise to solve the portfolio. The i">
 <meta property="og:url" content="https://svyable.github.io/100/library/lean/">
 <meta name="twitter:card" content="summary">
 <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
@@ -45,7 +45,7 @@
 <div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M071/" title="Hadwiger conjecture">M071</a><a class="chip chip-link" href="../../problems/M074/" title="Caccetta–Häggkvist conjecture">M074</a><a class="chip chip-link" href="../../problems/M094/" title="Hadamard matrix conjecture">M094</a><a class="chip chip-link" href="../../problems/M075/" title="Frankl union-closed sets conjecture">M075</a><a class="chip chip-link" href="../../problems/M078/" title="Graph reconstruction conjecture">M078</a><a class="chip chip-link" href="../../problems/M096/" title="Projective plane order 12">M096</a><a class="chip chip-link" href="../../problems/M095/" title="Exact Ramsey number R(5,5)">M095</a><a class="chip chip-link" href="../../problems/M019/" title="Erdős–Straus conjecture">M019</a><a class="chip chip-link" href="../../problems/M006/" title="Strong Goldbach conjecture">M006</a></div></div>
 <p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/LEAN.md" rel="noopener noreferrer">LEAN.md <span aria-hidden="true">↗</span></a></p></aside>
 <article class="prose"><p class="eyebrow">METHOD &amp; GOVERNANCE</p><h1>Lean proof pipeline</h1>
-<p>The objective is more independently checked, reusable mathematics per unit of effort. “100x” is an ambition, not a measured speedup or a promise to solve the portfolio. The implementation has thirteen audited declarations across Ramsey and the two-element Frankl case. Caccetta–Häggkvist remains queued, not formalized.</p>
+<p>The objective is more independently checked, reusable mathematics per unit of effort. “100x” is an ambition for operating capacity (see <a href="../../library/scale/">SCALE.md</a> and the proof-exchange wave), not a measured speedup or a promise to solve the portfolio. The implementation has thirteen audited declarations across Ramsey and the two-element Frankl case. Caccetta–Häggkvist remains queued, not formalized.</p>
 <h2 id="comparator-statements">Comparator statements<a class="anchor" href="#comparator-statements" aria-label="Link to this section">#</a></h2>
 <p><code>lean/Hundred/Statements/</code> adds exact comparator statements for nine targets (M006, M019, M071, M074, M075, M078, M094, M095, M096) with fidelity examples and kernel-checked finite instances, catalogued in <a href="https://github.com/Svyable/100/blob/main/data/formalization.json" rel="noopener noreferrer">data/formalization.json</a> and described in <a href="../../library/lean-readme/">lean/README.md</a>. Their exported theorems are registered here as L004–L009 and pass through the same gate. <code>python3 scripts/formal.py --check</code> refuses a catalogue entry whose kernel-checked theorem is not registered for the axiom audit.</p>
 <h2 id="run-the-gate">Run the gate<a class="anchor" href="#run-the-gate" aria-label="Link to this section">#</a></h2>
