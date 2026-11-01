@@ -11,6 +11,9 @@
     "feed": "https://svyable.github.io/100/feed.xml",
     "work_queue": "https://svyable.github.io/100/api/work.json",
     "discovery": "https://svyable.github.io/100/api/discovery.json",
+    "agent_manifest": "https://svyable.github.io/100/api/agent.json",
+    "agent_shortlist": "https://svyable.github.io/100/api/agent/tasks.json",
+    "agent_text": "https://svyable.github.io/100/llms.txt",
     "discovery_trail": "https://svyable.github.io/100/api/discovery/{id}.json"
   },
   "counts": {

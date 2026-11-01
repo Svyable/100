@@ -30,12 +30,12 @@ BLOB = REPO + "/blob/main/"
 DOCS = ROOT / "docs"
 
 # Directories whose contents are fully owned by the generator (stale files fail --check).
-GENERATED_DIRS = ("problems", "fields", "atlas", "lab", "formal", "campaigns", "claims", "discovery",
+GENERATED_DIRS = ("problems", "fields", "atlas", "lab", "formal", "campaigns", "claims", "discovery", "start",
                   "roadmap", "ledger", "library", "api", "work")
 # docs/data/portfolio.json is generated here; docs/data/next.json belongs to scripts/next.py,
 # and docs/next/ is a hand-written page, so neither directory is swept for stale files.
 # Top-level generated files. Everything else in docs/ is hand-written.
-GENERATED_FILES = ("index.html", "404.html", "sitemap.xml", "robots.txt", "feed.xml")
+GENERATED_FILES = ("index.html", "404.html", "sitemap.xml", "robots.txt", "feed.xml", "llms.txt")
 
 EVIDENCE = {
     "official_open": "Officially open",
@@ -81,6 +81,7 @@ SERIES_LABEL = {1: "Officially or specialist open", 2: "Claim under review", 3: 
 
 NAV = (
     ("index", "The 100", ""),
+    ("start", "Start here", "start/"),
     ("work", "Work", "work/"),
     ("discovery", "Discovery", "discovery/"),
     ("next", "Next 100", "next/"),
@@ -357,6 +358,8 @@ def layout(site, page, title, description, body, active="", head_extra="", jsonl
 <link rel="stylesheet" href="{root}assets/style.css">
 <link rel="alternate" type="application/atom+xml" title="100 — research updates" href="{root}feed.xml">
 <link rel="alternate" type="application/json" title="100 — machine-readable API" href="{root}api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="{root}api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="{root}llms.txt">
 <script>try{{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}}catch(e){{}}</script>
 <script src="{root}assets/app.js" defer></script>
 {head_extra}{ld_html}
@@ -383,7 +386,7 @@ def layout(site, page, title, description, body, active="", head_extra="", jsonl
 <footer class="site-footer">
   <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
   <div class="footer-links">
-    <a href="{root}atlas/">Atlas</a><a href="{root}library/">Library</a><a href="{root}api/">Data &amp; API</a><a href="{root}feed.xml">Atom feed</a>
+    <a href="{root}start/">Start here</a><a href="{root}atlas/">Atlas</a><a href="{root}library/">Library</a><a href="{root}api/">Data &amp; API</a><a href="{root}api/agent.json">For agents</a><a href="{root}feed.xml">Atom feed</a>
     <a href="{REPO}" rel="noopener noreferrer">Repository ↗</a><a href="{REPO}/issues" rel="noopener noreferrer">Research issues ↗</a>
   </div>
   <small>Generated from the validated ledgers · data as of {E(site.updated)} · no tracking, no external scripts</small>
@@ -499,6 +502,100 @@ def problem_row(site, page, p):
             f'<span class="entry-chevron" aria-hidden="true">→</span></a></li>')
 
 
+def render_start(site):
+    """No-JS landing page: separate reader and contributor workflows."""
+    s = site
+    page = "start/index.html"
+    ranked = s.ordered[0]
+    top_work = next((w for w in s.work["items"] if w["status"] == "runnable"), None)
+    first_work = f'<a href="{rel(page, "work/" + top_work["id"] + "/")}">{E(top_work["id"])} · {E(top_work["title"])}</a>' if top_work else "See the queue"
+    guides = "".join(
+        f'<li><a href="{rel(page, s.problem_path(pid))}#reading-guide">'
+        f'{E(s.by_id[pid]["name"])}</a> — {E(s.reading_guides[pid]["summary"])}</li>'
+        for pid in ("M071", "M074", "M075")
+    )
+    body = page_head("START HERE / PEOPLE &amp; AGENTS", "Find your <em>first foothold.</em>",
+                     "Read an exact question, test a bounded claim, or contribute a scoped task. This site distinguishes verified computations, reviewed mathematics, and unverified research claims.") + f"""
+<section class="start-overview" aria-label="Paths into the research">
+  <a href="#people"><span class="detail-label">01 / HUMAN READER</span><strong>Understand what is known</strong><span>Explanations, citations, evidence limits</span></a>
+  <a href="#review"><span class="detail-label">02 / MATHEMATICIAN OR REVIEWER</span><strong>Check a claim</strong><span>Statements, adversarial tests, formal fidelity</span></a>
+  <a href="#agents"><span class="detail-label">03 / AGENT OR CONTRIBUTOR</span><strong>Deliver one bounded unit</strong><span>Scope digest, acceptance tests, claim protocol</span></a>
+</section>
+<section class="dossier-block start-section" id="people">
+<h2>For readers: follow the question</h2>
+<p class="block-lead">The ranked order tells you where the project is directing effort; it does not say which conjectures are likely to be true or when they will be solved. Begin with one of these short explanations:</p>
+<ul class="start-links">{guides}</ul>
+<p><a class="text-link" href="{rel(page, 'atlas/')}">Compare fields in the atlas →</a> · <a class="text-link" href="{rel(page, 'discovery/')}">Follow sourced discovery trails →</a></p>
+<div class="start-boundary"><strong>Learn to read the evidence.</strong> A known finite reproduction is not a new theorem. A Lean-checked statement is not the same as a checked unrestricted conjecture. A claim under review is not an accepted result. The <a href="{rel(page, 'ledger/')}">solved ledger</a> is separate from the research queue.</div>
+</section>
+<section class="dossier-block start-section" id="review">
+<h2>For reviewers: check the scope</h2>
+<ol class="steps">
+<li>Start with the <a href="{rel(page, s.problem_path(ranked['id']))}">{E(ranked["name"])} dossier</a> or <a href="{rel(page, 'claims/')}">claims index</a>; verify that the exact proposition matches the cited source.</li>
+<li>Inspect <a href="{rel(page, 'formal/')}">formal statement fidelity</a>, <a href="{rel(page, 'lab/')}">finite probes</a> and the <a href="{rel(page, 'discovery/')}">reasoning trail</a> separately. None establishes a result outside its own scope.</li>
+<li>Reproduce the specific checker, record the certificate and counterexamples, and distinguish independent specialist review from author/agent self-checking.</li>
+<li>Submit corrections with primary sources through the <a href="{rel(page, 'work/')}#review">review queue</a>; no declaration of a solved problem without the published acceptance gate.</li>
+</ol>
+</section>
+<section class="dossier-block start-section" id="agents">
+<h2>For agents: claim one task with a stable contract</h2>
+<p class="block-lead">A machine-readable, static snapshot helps you select work. It cannot tell you whether another contributor claimed that item seconds ago.</p>
+<div class="start-command">
+<span class="detail-label">DISCOVER</span><code>curl -fsSL {SITE_URL}api/agent.json</code>
+<span class="detail-label">SELECT</span><code>curl -fsSL {SITE_URL}api/agent/tasks.json</code>
+<span class="detail-label">VERIFY LOCALLY</span><code>python3 scripts/regen.py --check --fast</code>
+</div>
+<ol class="steps">
+<li>Fetch the <a href="{rel(page, 'api/agent.json')}">agent contract</a> and <a href="{rel(page, 'api/agent/tasks.json')}">runnable task shortlist</a>. The full queue is <a href="{rel(page, 'api/work.json')}">api/work.json</a>; use <code>python3 scripts/work.py --id &lt;ID&gt;</code> in the repository to confirm scope.</li>
+<li>Example bounded work: {first_work}. Before acting, check the item’s linked GitHub open-claim search and claim its exact scope digest. Queue status does <strong>not</strong> mean unclaimed.</li>
+<li>Respect every acceptance condition, dependency, and falsifier. Do not hand-edit generated HTML or treat model output as independent mathematical review.</li>
+<li>Regenerate with <code>python3 scripts/regen.py</code>, run <code>python3 scripts/regen.py --check</code> plus relevant tests, and record the outcome honestly in the PR.</li>
+</ol>
+<p>Agent-readable overview: <a href="{rel(page, 'llms.txt')}">llms.txt</a> · full governance: <a href="{library_href(s, page, 'AGENTS.md') or BLOB + 'AGENTS.md'}">AGENTS.md</a> · <a href="{rel(page, 'api/')}">API documentation</a>.</p>
+</section>"""
+    return layout(s, page, "Start here — humans and agents", "How to understand, verify and contribute rigorous research in the 100 portfolio.", body, active="start", crumbs=[("Start here", None)])
+
+
+def render_llms(site):
+    """Advisory site map for text agents; not an instruction to trust claims."""
+    s=site
+    return f"""# 100 — Svyable mathematical research
+
+> A curated portfolio of 100 candidate mathematical problems. This is a research index, NOT a list of 100 independently confirmed unsolved statements, and NOT a collection of 100 solved theorems.
+
+Canonical public site: {SITE_URL}
+Snapshot as of: {s.updated} (source-ledger date, not a live literature or claim check)
+Repository: {REPO}
+
+## For humans
+- [Start here]({SITE_URL}start/): separate reader, reviewer and agent paths.
+- [Ranked portfolio]({SITE_URL}): dispatch priority, not probability of proof.
+- [Hadwiger explanation]({SITE_URL}problems/M071/#reading-guide)
+- [Caccetta–Häggkvist explanation]({SITE_URL}problems/M074/#reading-guide)
+- [Frankl explanation]({SITE_URL}problems/M075/#reading-guide)
+- [Discovery trails]({SITE_URL}discovery/): attempts, limitations, sources.
+- [Claims under review]({SITE_URL}claims/)
+- [Verified ledger]({SITE_URL}ledger/): full solutions only with an independent acceptance gate.
+
+## For research agents
+- [Agent JSON contract]({SITE_URL}api/agent.json): machine-readable URLs, task rules and evidence boundaries.
+- [Runnable task shortlist]({SITE_URL}api/agent/tasks.json): static, ranked, NOT a live claim-availability check.
+- [All work items]({SITE_URL}api/work.json): full scope digests, dependencies, acceptance conditions and claim links.
+- [Individual problem data]({SITE_URL}api/problems/M071.json) (replace M071 with the problem ID).
+- [Complete API index]({SITE_URL}api/index.json)
+- [Research contributor protocol]({SITE_URL}library/agents/)
+- [Site source]({REPO})
+
+## Non-negotiable interpretation
+- Always check current GitHub open claims before taking a task.
+- Preserve the task ID and scope SHA-256; do not use a stale scope digest after the ledger changes.
+- Pass the local regeneration and relevant verification gates before submitting a PR.
+- A finite probe certifies only the stated finite range. A Lean declaration checks only the formalized proposition.
+- Independent review cannot be self-awarded. A preprint, agent output or a solver verdict alone cannot promote an unverified claim to solved.
+- JSON and this text are generated from the same repository snapshot; neither reflects live claim status or independently verifies current mathematical literature.
+"""
+
+
 def render_index(site):
     page = "index.html"
     s = site
@@ -542,11 +639,11 @@ def render_index(site):
     <h1 id="hero-heading">A hundred questions.<br><em>One new theorem.</em></h1>
     <p class="hero-lead">An evolving portfolio of concrete open mathematical problems, ranked for significance, tractability, independent verification and the discoveries they might unlock. Every problem has its own dossier page; every number on this site is regenerated from validated ledgers.</p>
     <div class="hero-actions">
-      <a class="button button-dark" href="#rankings">Explore the 100 <span aria-hidden="true">↓</span></a>
+      <a class="button button-dark" href="start/">Choose where to start <span aria-hidden="true">→</span></a>
       <a class="button button-ghost" href="atlas/">Open the atlas <span aria-hidden="true">→</span></a>
       <button class="button button-ghost" type="button" data-palette-open>Search everything <kbd>/</kbd></button>
     </div>
-    <p class="hero-annotation"><span class="annotation-star">✳</span> Every claim needs a proof. Every proof needs a checker.</p>
+    <p class="hero-annotation"><span class="annotation-star">✳</span> Start with the mathematics, then check the scope of every claim.</p>
   </div>
   <div class="hero-art" aria-hidden="true">
     <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
@@ -561,6 +658,12 @@ def render_index(site):
         ("Computable problems covered", f"{len(set(computable) & s.covered)}/{len(computable)}"),
         ("Full resolutions verified", len(s.solved))], "stats-6")}
 <p class="status-note">* “Active candidate” does not mean independently confirmed unsolved. <strong>{audited_open} have an official or specialist open-status reference; {len(s.items) - audited_open} still require an independent exact-status audit, including {claim_count} with proof claims under review</strong> — see the <a href="claims/">claim triage</a> and the <a href="{library_href(s, page, 'docs/PORTFOLIO_SELECTION.md') or BLOB + 'docs/PORTFOLIO_SELECTION.md'}">selection and evidence rules</a>.</p>
+<section class="audience-paths" aria-label="Choose a reading or contribution path">
+  <a class="audience-path" href="start/#people"><span class="detail-label">FOR PEOPLE</span>
+    <strong>Understand the problem before the proof.</strong><span>Plain-language guides, known limits, evidence status, and source-linked research trails.</span><b>Find your entry point →</b></a>
+  <a class="audience-path" href="start/#agents"><span class="detail-label">FOR AGENTS &amp; CONTRIBUTORS</span>
+    <strong>Take one verifiable task, not an open-ended theorem.</strong><span>Structured scope, acceptance checks, work claims, and reproducible validation.</span><b>Read the research contract →</b></a>
+</section>
 <aside class="next-band"><div><p class="eyebrow">THE NEXT 100 / IDEA RESERVOIR</p><h2>A growing reservoir. Room for thousands.</h2><p>Cross-domain, unvetted ideas queued for rigorous scrutiny and potential promotion into the active 100.</p></div><a class="button button-dark" href="next/">Explore the Next 100 →</a></aside>
 
 <section class="section-block" aria-labelledby="spot-heading">
@@ -1773,7 +1876,69 @@ def render_api(site):
     for key, label, href in NAV[1:]:
         search.append({"t": label, "k": "page", "s": "Section", "u": href, "x": ""})
     search.append({"t": "Data & API", "k": "page", "s": "Downloads", "u": "api/", "x": "json csv feed"})
+    search.append({"t": "Agent contract", "k": "page", "s": "Machine-readable research", "u": "api/agent.json", "x": "scope digest claims validation evidence"})
+    search.append({"t": "Agent task shortlist", "k": "page", "s": "Runnable tasks", "u": "api/agent/tasks.json", "x": "claim acceptance boundaries"})
     files["api/work.json"] = dumps(s.work)
+    selected = [w for w in s.work["items"] if w["status"] == "runnable"][:20]
+    tasks = [{
+        "id": w["id"], "kind": w["kind"], "title": w["title"],
+        "priority_rank": w["priority_rank"], "status": w["status"],
+        "problems": w["problems"], "deliverable": w["deliverable"],
+        "acceptance": w["acceptance"], "boundary": w["boundary"],
+        "depends_on": w["depends_on"], "scope_sha256": w["scope_sha256"],
+        "task_url": SITE_URL + "work/" + w["id"] + "/",
+        "existing_claims_url": w["existing_claims_url"],
+        "open_claim_url": w["open_claim_url"],
+    } for w in selected]
+    files["api/agent/tasks.json"] = dumps({
+        "schema_version": 1,
+        "snapshot_as_of": s.updated,
+        "selection": "First 20 runnable items in the derived work queue's priority order; use api/work.json for all tasks and other statuses.",
+        "runnable_in_snapshot": s.work["by_status"].get("runnable", 0),
+        "live_claim_status": "unknown; check existing_claims_url immediately before claiming",
+        "task_count": len(tasks),
+        "tasks": tasks,
+    })
+    files["api/agent.json"] = dumps({
+        "schema_version": 1,
+        "name": "100 — evidence-bound mathematical research",
+        "site": SITE_URL,
+        "repository": REPO,
+        "snapshot_as_of": s.updated,
+        "not_live": ["literature status", "GitHub claim availability", "review acceptance"],
+        "endpoints": {
+            "human_start": SITE_URL + "start/",
+            "agent_guide": SITE_URL + "llms.txt",
+            "runnable_shortlist": SITE_URL + "api/agent/tasks.json",
+            "work_queue": SITE_URL + "api/work.json",
+            "problem_registry": SITE_URL + "api/problems.json",
+            "individual_problem": SITE_URL + "api/problems/{id}.json",
+            "discovery_trails": SITE_URL + "api/discovery.json",
+            "index": SITE_URL + "api/index.json",
+        },
+        "workflow": [
+            "Choose a bounded runnable item, never an unrestricted proof promise.",
+            "Fetch the current item and compare scope_sha256 to the latest ledger.",
+            "Check existing_claims_url for a competing live GitHub claim before claiming.",
+            "Claim that exact ID and digest; obey dependencies, acceptance, boundaries and falsifiers.",
+            "Record evidence, regenerate all derived outputs and run validation/tests.",
+            "Open a small PR, close the claim, and record an honest outcome; do not self-approve independent review.",
+        ],
+        "commands": {
+            "inspect_item": "python3 scripts/work.py --id <ID>",
+            "regenerate": "python3 scripts/regen.py",
+            "fast_check": "python3 scripts/regen.py --check --fast",
+            "full_check": "python3 scripts/regen.py --check",
+            "tests": "python3 -m unittest discover -s tests",
+        },
+        "evidence_boundaries": {
+            "candidate": "Not necessarily independently confirmed unsolved.",
+            "finite_probe": "Only its recorded finite scope is checked; not a general theorem.",
+            "lean": "Kernel-checked theorem means the encoded proposition, not necessarily the intended unrestricted conjecture.",
+            "claim": "Preprints and solver announcements are not acceptance.",
+            "independent_review": "Reviewer must not be the author and must assess the exact current scope.",
+        },
+    })
     files["api/discovery.json"] = dumps(s.discovery_doc)
     for pid, trail in s.discovery.items():
         files[f"api/discovery/{pid}.json"] = dumps(trail)
@@ -1798,6 +1963,9 @@ def render_api(site):
             "feed": SITE_URL + "feed.xml",
             "work_queue": SITE_URL + "api/work.json",
             "discovery": SITE_URL + "api/discovery.json",
+            "agent_manifest": SITE_URL + "api/agent.json",
+            "agent_shortlist": SITE_URL + "api/agent/tasks.json",
+            "agent_text": SITE_URL + "llms.txt",
             "discovery_trail": SITE_URL + "api/discovery/{id}.json",
         },
         "counts": {"problems": len(s.items), "campaigns": len(s.campaign), "probes": len(s.lab["probes"]),
@@ -1820,6 +1988,9 @@ def render_api_page(site):
 <tr><td><a href="problems.csv">api/problems.csv</a></td><td>Spreadsheet-friendly registry.</td></tr>
 <tr><td><a href="discovery.json">api/discovery.json</a></td><td>Sourced motivated reasoning trails, cross-problem moves and their provenance.</td></tr>
 <tr><td><a href="search.json">api/search.json</a></td><td>The compact index behind the <kbd>/</kbd> command palette.</td></tr>
+<tr><td><a href="agent.json">api/agent.json</a></td><td>Agent research contract, evidence boundaries and stable API entry points.</td></tr>
+<tr><td><a href="agent/tasks.json">api/agent/tasks.json</a></td><td>First 20 runnable tasks with digests, acceptance tests and claim links. Not a live claim check.</td></tr>
+<tr><td><a href="../llms.txt">llms.txt</a></td><td>Plain-text site map for research agents and readers.</td></tr>
 <tr><td><a href="../data/portfolio.json">data/portfolio.json</a></td><td>The complete legacy snapshot (lab, campaigns, milestones, solved archive).</td></tr>
 <tr><td><a href="../feed.xml">feed.xml</a></td><td>Atom feed of milestones, claim reviews and program updates.</td></tr>
 </tbody></table></div></section>
@@ -1866,6 +2037,8 @@ def build_files(portfolio):
     site = Site(portfolio)
     files = {}
     files["index.html"] = render_index(site)
+    files["start/index.html"] = render_start(site)
+    files["llms.txt"] = render_llms(site)
     for k, p in enumerate(site.ordered):
         prev_id = site.ordered[k - 1]["id"] if k else None
         next_id = site.ordered[k + 1]["id"] if k + 1 < len(site.ordered) else None

@@ -19,6 +19,8 @@
 <link rel="stylesheet" href="./assets/style.css">
 <link rel="alternate" type="application/atom+xml" title="100 — research updates" href="./feed.xml">
 <link rel="alternate" type="application/json" title="100 — machine-readable API" href="./api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="./api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="./llms.txt">
 <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <script src="./assets/app.js" defer></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Dataset", "name": "100 — A living portfolio of mathematical grand challenges", "description": "Ranked registry of 100 open mathematical problems with evidence states, proof campaigns and exact verifiers.", "url": "https://svyable.github.io/100/", "isAccessibleForFree": true, "dateModified": "2026-11-01", "creator": {"@type": "Organization", "name": "Svyable"}, "distribution": [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://svyable.github.io/100/api/problems.json"}, {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://svyable.github.io/100/api/problems.csv"}]}</script>
@@ -31,7 +33,7 @@
     <span class="brand-mark">100<span class="brand-dot">.</span></span>
     <span class="brand-caption">SVYABLE<br>RESEARCH</span>
   </a>
-  <nav class="main-nav" aria-label="Primary navigation"><a href="./" aria-current="page">The 100</a><a href="./work/">Work</a><a href="./discovery/">Discovery</a><a href="./next/">Next 100</a><a href="./campaigns/">Campaigns</a><a href="./lab/">Lab</a><a href="./formal/">Formal</a><a href="./claims/">Claims</a><a href="./roadmap/">Roadmap</a><a href="./ledger/">Ledger</a><a href="./library/">Library</a></nav>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="./" aria-current="page">The 100</a><a href="./start/">Start here</a><a href="./work/">Work</a><a href="./discovery/">Discovery</a><a href="./next/">Next 100</a><a href="./campaigns/">Campaigns</a><a href="./lab/">Lab</a><a href="./formal/">Formal</a><a href="./claims/">Claims</a><a href="./roadmap/">Roadmap</a><a href="./ledger/">Ledger</a><a href="./library/">Library</a></nav>
   <div class="header-tools">
     <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
     <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
@@ -47,11 +49,11 @@
     <h1 id="hero-heading">A hundred questions.<br><em>One new theorem.</em></h1>
     <p class="hero-lead">An evolving portfolio of concrete open mathematical problems, ranked for significance, tractability, independent verification and the discoveries they might unlock. Every problem has its own dossier page; every number on this site is regenerated from validated ledgers.</p>
     <div class="hero-actions">
-      <a class="button button-dark" href="#rankings">Explore the 100 <span aria-hidden="true">↓</span></a>
+      <a class="button button-dark" href="start/">Choose where to start <span aria-hidden="true">→</span></a>
       <a class="button button-ghost" href="atlas/">Open the atlas <span aria-hidden="true">→</span></a>
       <button class="button button-ghost" type="button" data-palette-open>Search everything <kbd>/</kbd></button>
     </div>
-    <p class="hero-annotation"><span class="annotation-star">✳</span> Every claim needs a proof. Every proof needs a checker.</p>
+    <p class="hero-annotation"><span class="annotation-star">✳</span> Start with the mathematics, then check the scope of every claim.</p>
   </div>
   <div class="hero-art" aria-hidden="true">
     <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
@@ -62,6 +64,12 @@
 </section>
 <div class="stats-strip stats-6"><div class="stat"><strong>100</strong><span>Active candidates</span></div><div class="stat"><strong>21</strong><span>Active proof campaigns</span></div><div class="stat"><strong>20</strong><span>Problems with exact verifiers</span></div><div class="stat"><strong>9</strong><span>Formal statements in Lean</span></div><div class="stat"><strong>19/19</strong><span>Computable problems covered</span></div><div class="stat"><strong>0</strong><span>Full resolutions verified</span></div></div>
 <p class="status-note">* “Active candidate” does not mean independently confirmed unsolved. <strong>6 have an official or specialist open-status reference; 94 still require an independent exact-status audit, including 14 with proof claims under review</strong> — see the <a href="claims/">claim triage</a> and the <a href="library/portfolio-selection/">selection and evidence rules</a>.</p>
+<section class="audience-paths" aria-label="Choose a reading or contribution path">
+  <a class="audience-path" href="start/#people"><span class="detail-label">FOR PEOPLE</span>
+    <strong>Understand the problem before the proof.</strong><span>Plain-language guides, known limits, evidence status, and source-linked research trails.</span><b>Find your entry point →</b></a>
+  <a class="audience-path" href="start/#agents"><span class="detail-label">FOR AGENTS &amp; CONTRIBUTORS</span>
+    <strong>Take one verifiable task, not an open-ended theorem.</strong><span>Structured scope, acceptance checks, work claims, and reproducible validation.</span><b>Read the research contract →</b></a>
+</section>
 <aside class="next-band"><div><p class="eyebrow">THE NEXT 100 / IDEA RESERVOIR</p><h2>A growing reservoir. Room for thousands.</h2><p>Cross-domain, unvetted ideas queued for rigorous scrutiny and potential promotion into the active 100.</p></div><a class="button button-dark" href="next/">Explore the Next 100 →</a></aside>
 
 <section class="section-block" aria-labelledby="spot-heading">
@@ -146,7 +154,7 @@
 <footer class="site-footer">
   <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
   <div class="footer-links">
-    <a href="./atlas/">Atlas</a><a href="./library/">Library</a><a href="./api/">Data &amp; API</a><a href="./feed.xml">Atom feed</a>
+    <a href="./start/">Start here</a><a href="./atlas/">Atlas</a><a href="./library/">Library</a><a href="./api/">Data &amp; API</a><a href="./api/agent.json">For agents</a><a href="./feed.xml">Atom feed</a>
     <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
   </div>
   <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>

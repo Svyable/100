@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "name": "100 — evidence-bound mathematical research",
+  "site": "https://svyable.github.io/100/",
+  "repository": "https://github.com/Svyable/100",
+  "snapshot_as_of": "2026-11-01",
+  "not_live": [
+    "literature status",
+    "GitHub claim availability",
+    "review acceptance"
+  ],
+  "endpoints": {
+    "human_start": "https://svyable.github.io/100/start/",
+    "agent_guide": "https://svyable.github.io/100/llms.txt",
+    "runnable_shortlist": "https://svyable.github.io/100/api/agent/tasks.json",
+    "work_queue": "https://svyable.github.io/100/api/work.json",
+    "problem_registry": "https://svyable.github.io/100/api/problems.json",
+    "individual_problem": "https://svyable.github.io/100/api/problems/{id}.json",
+    "discovery_trails": "https://svyable.github.io/100/api/discovery.json",
+    "index": "https://svyable.github.io/100/api/index.json"
+  },
+  "workflow": [
+    "Choose a bounded runnable item, never an unrestricted proof promise.",
+    "Fetch the current item and compare scope_sha256 to the latest ledger.",
+    "Check existing_claims_url for a competing live GitHub claim before claiming.",
+    "Claim that exact ID and digest; obey dependencies, acceptance, boundaries and falsifiers.",
+    "Record evidence, regenerate all derived outputs and run validation/tests.",
+    "Open a small PR, close the claim, and record an honest outcome; do not self-approve independent review."
+  ],
+  "commands": {
+    "inspect_item": "python3 scripts/work.py --id <ID>",
+    "regenerate": "python3 scripts/regen.py",
+    "fast_check": "python3 scripts/regen.py --check --fast",
+    "full_check": "python3 scripts/regen.py --check",
+    "tests": "python3 -m unittest discover -s tests"
+  },
+  "evidence_boundaries": {
+    "candidate": "Not necessarily independently confirmed unsolved.",
+    "finite_probe": "Only its recorded finite scope is checked; not a general theorem.",
+    "lean": "Kernel-checked theorem means the encoded proposition, not necessarily the intended unrestricted conjecture.",
+    "claim": "Preprints and solver announcements are not acceptance.",
+    "independent_review": "Reviewer must not be the author and must assess the exact current scope."
+  }
+}

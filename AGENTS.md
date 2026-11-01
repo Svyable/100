@@ -13,6 +13,8 @@ python3 scripts/work.py --id F-M079               # one item: deliverable, accep
 python3 scripts/scale.py --budget 100             # 100-slot evidence-bound wave (see SCALE.md)
 ```
 
+Site discovery for independent contributors: [start here](https://svyable.github.io/100/start/), [JSON agent contract](https://svyable.github.io/100/api/agent.json), [runnable shortlist](https://svyable.github.io/100/api/agent/tasks.json), and [plain-text guide](https://svyable.github.io/100/llms.txt). These are **generated static snapshots**, not a live reservation/claim service. Always re-check the latest scope digest and current GitHub open claims before taking a task.
+
 The queue is derived from the ledgers (proof obligations, Lean targets, the dispatcher,
 the roadmap, the formal catalogue and the status-audit drafts). It is browsable at
 `/work/` on the site and machine-readable at `docs/api/work.json`. An item disappears
