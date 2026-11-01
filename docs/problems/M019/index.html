@@ -67,11 +67,11 @@
   <span class="tk-o">∀</span> n : <span class="tk-k">Nat</span>, 2 <span class="tk-o">≤</span> n <span class="tk-o">→</span> <span class="tk-o">∃</span> x y z, Solves n x y z</code></pre>
 <dl class="kv compact">
   <dt>Declaration</dt><dd><code>Hundred.Statements.ErdosStraus.Statement</code> in <a href="https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/ErdosStraus.lean" rel="noopener noreferrer">lean/Hundred/Statements/ErdosStraus.lean <span aria-hidden="true">↗</span></a></dd>
-  <dt>Not encoded</dt><dd>Distinct denominators; Parametric identities by residue class</dd>
+  <dt>Not encoded</dt><dd>Distinct denominators; A parametric solution for every residue class</dd>
   <dt>Fidelity</dt><dd><span class="chip">author checked</span> Encoding written and checked against the registry statement by its author; fidelity examples compile.</dd>
-  <dt>Kernel-checked</dt><dd><ul class="plain"><li><code>Hundred.Statements.ErdosStraus.holds_upTo_100</code> — Explicit positive solutions for every 2 ≤ n ≤ 100, re-checked by the kernel. Mirrors lab probe <a href="../../lab/#probe-erdos_straus"><code>erdos_straus</code></a>.</li></ul></dd>
+  <dt>Kernel-checked</dt><dd><ul class="plain"><li><code>Hundred.Statements.ErdosStraus.holds_upTo_100</code> — Explicit positive solutions for every 2 ≤ n ≤ 100, re-checked by the kernel. Mirrors lab probe <a href="../../lab/#probe-erdos_straus"><code>erdos_straus</code></a>.</li><li><code>Hundred.Statements.ErdosStraus.holds_mod_four_three</code> — For every n with n % 4 = 3, positive denominators exist; n=4k+3 uses (k+1, 2n(k+1), 2n(k+1)), with no finite bound.</li></ul></dd>
 </dl>
-<details class="table-view"><summary>Full Lean module (143 lines)</summary><pre class="lean"><code><span class="tk-k">import</span> Hundred.Statements.Basic
+<details class="table-view"><summary>Full Lean module (160 lines)</summary><pre class="lean"><code><span class="tk-k">import</span> Hundred.Statements.Basic
 
 <span class="tk-c">/-!
 # M019 — Erdős–Straus conjecture
@@ -83,7 +83,7 @@ solution in positive integers.
 `x, y, z &gt; 0` is equivalent to `4xyz = n(xy + yz + zx)`; no rationals are needed.
 
 **Not encoded.** Distinctness of `x, y, z` (not required by the conjecture) and
-any parametric family. **Frontier:** verified computationally far beyond `10^14`.
+residue classes other than the classical `n ≡ 3 mod 4` family below. **Frontier:** verified computationally far beyond `10^14`.
 -/</span>
 
 <span class="tk-k">namespace</span> Hundred.Statements.ErdosStraus
@@ -209,6 +209,23 @@ any parametric family. **Frontier:** verified computationally far beyond `10^14`
 <span class="tk-c">/-- **Kernel-checked:** the statement holds for every `2 ≤ n ≤ 100`. -/</span>
 <span class="tk-k">theorem</span> holds_upTo_100 : <span class="tk-o">∀</span> n, n <span class="tk-o">≤</span> 100 <span class="tk-o">→</span> 2 <span class="tk-o">≤</span> n <span class="tk-o">→</span> <span class="tk-o">∃</span> x y z, Solves n x y z <span class="tk-o">:=</span>
   <span class="tk-k">fun</span> n hn h2 =&gt; ⟨_, _, _, certified_100 n (Nat.lt_succ_of_le hn) h2⟩
+
+
+<span class="tk-c">/-- Classical infinite family. Repeated denominators are permitted by Solves. -/</span>
+<span class="tk-k">theorem</span> residue_three (k : <span class="tk-k">Nat</span>) :
+    Solves (4 * k + 3) (k + 1)
+      (2 * (4 * k + 3) * (k + 1)) (2 * (4 * k + 3) * (k + 1)) <span class="tk-o">:=</span> <span class="tk-k">by</span>
+  refine ⟨<span class="tk-k">by</span> omega, Nat.mul_pos (<span class="tk-k">by</span> omega) (<span class="tk-k">by</span> omega),
+    Nat.mul_pos (<span class="tk-k">by</span> omega) (<span class="tk-k">by</span> omega), ?_⟩
+  simp only [Nat.mul_add, Nat.add_mul, Nat.mul_assoc, Nat.mul_comm, Nat.mul_left_comm]
+  omega
+
+<span class="tk-c">/-- The residue-class statement, quantified over every natural n, with no upper bound. -/</span>
+<span class="tk-k">theorem</span> holds_mod_four_three (n : <span class="tk-k">Nat</span>) (hn : n % 4 = 3) :
+    <span class="tk-o">∃</span> x y z, Solves n x y z <span class="tk-o">:=</span> <span class="tk-k">by</span>
+  <span class="tk-k">have</span> heq : n = 4 * (n / 4) + 3 <span class="tk-o">:=</span> <span class="tk-k">by</span> omega
+  rw [heq]
+  <span class="tk-k">exact</span> ⟨_, _, _, residue_three (n / 4)⟩
 
 <span class="tk-c">/-! Fidelity: `4/5 = 1/2 + 1/4 + 1/20`. -/</span>
 <span class="tk-k">example</span> : Solves 5 2 4 20 <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span> +kernel
