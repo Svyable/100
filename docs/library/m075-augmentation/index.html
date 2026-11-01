@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M075 — Canonical parents can fail; safe augmentation survives · 100</title>
+<meta name="description" content="Status (2026-11-01): Explicit all-n counterexample to one naive canonical-parent rule, plus a complete parent-orbit augmentation lemma. This is not a proof of Frankl&#x27;s conjecture, and no independent novelty or scope review is yet recorded.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m075-augmentation/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M075 — Canonical parents can fail; safe augmentation survives · 100">
+<meta property="og:description" content="Status (2026-11-01): Explicit all-n counterexample to one naive canonical-parent rule, plus a complete parent-orbit augmentation lemma. This is not a proof of Frankl&#x27;s conjecture, and no independent novelty or scope review is yet recorded.">
+<meta property="og:url" content="https://svyable.github.io/100/library/m075-augmentation/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M075 — Canonical parents can fail; safe augmentation survives</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#definitions">Definitions</a></li><li class="toc-l2"><a href="#proposition-1--a-counterexample-for-every-n--3">Proposition 1 — A counterexample for every n ≥ 3</a></li><li class="toc-l2"><a href="#proposition-1b--even-choosing-among-all-minimum-deletions-can-fail">Proposition 1b — Even choosing among all minimum deletions can fail</a></li><li class="toc-l2"><a href="#lemma-2--minimum-member-deletion-preserves-closure">Lemma 2 — Minimum-member deletion preserves closure</a></li><li class="toc-l2"><a href="#theorem-3--safe-augmentation-from-parent-orbits">Theorem 3 — Safe augmentation from parent orbits</a></li><li class="toc-l2"><a href="#exact-finite-checks">Exact finite checks</a></li><li class="toc-l2"><a href="#prior-art-and-genuine-research-boundary">Prior art and genuine research boundary</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M075/" title="Frankl union-closed sets conjecture">M075</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M075_AUGMENTATION.md" rel="noopener noreferrer">research/M075_AUGMENTATION.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M075 — Canonical parents can fail; safe augmentation survives</h1>
+<p><strong>Status (2026-11-01):</strong> Explicit all-n counterexample to one naive canonical-parent rule, plus a complete parent-orbit augmentation lemma. This is <strong>not a proof of Frankl&#x27;s conjecture</strong>, and no independent novelty or scope review is yet recorded.</p>
+<h2 id="definitions">Definitions<a class="anchor" href="#definitions" aria-label="Link to this section">#</a></h2>
+<p>For n ≥ 1 set U = {0,...,n−1}. A union-closed family F of subsets of U has full support when its union is U; every such nonempty family includes U.</p>
+<p>For a subset S, m(S) = Σ_{i in S} 2^i. Encode a family by e(F) = Σ_{S in F} 2^{m(S)}. The canonical integer C_n(F) is the minimum e(πF) over every relabeling π in the symmetric group S_n. A family is canonical when e(F) = C_n(F).</p>
+<p>For a family with at least two members, define d(F) by removing a member S ≠ U with minimum cardinality, breaking ties by the smaller subset mask m(S). The tempting shortcut “canonical child implies canonical deletion-parent” is <strong>false</strong>.</p>
+<h2 id="proposition-1--a-counterexample-for-every-n--3">Proposition 1 — A counterexample for every n ≥ 3<a class="anchor" href="#proposition-1--a-counterexample-for-every-n--3" aria-label="Link to this section">#</a></h2>
+<p>For n ≥ 3 let F_n = { {0}, {1}, {0,1}, U }. Then F_n is union-closed, full-support and canonical, but d(F_n) is not canonical.</p>
+<p><strong>Proof.</strong> The union of the two singleton members is the doubleton already present; union with U remains U. Every relabeling selects two singleton indices a,b and retains their doubleton and U. The largest variable bit position in e(πF_n) is m({a,b}) = 2^a+2^b, which is minimized uniquely when {a,b}={0,1}. Hence F_n is canonical. Our deletion rule removes {0}. The remaining family is {{1},{0,1},U}; swapping 0 and 1 yields {{0},{0,1},U}, with a strictly smaller encoding. QED.</p>
+<p>At n=3, the exact bitmask witness is:</p>
+<div class="table-wrap"><table><thead><tr><th>Object</th><th>Subset masks</th><th class="al-right">Encoded family</th></tr></thead><tbody><tr><td>Canonical child</td><td>1,2,3,7</td><td class="al-right">142</td></tr><tr><td>Chosen deletion-parent</td><td>2,3,7</td><td class="al-right">140</td></tr><tr><td>Canonical relabeling of parent</td><td>1,3,7</td><td class="al-right">138</td></tr></tbody></table></div>
+<p>The <strong>all-n</strong> claim has the preceding proof; checking n=3,4,5 is only a finite diagnostic.</p>
+<h2 id="proposition-1b--even-choosing-among-all-minimum-deletions-can-fail">Proposition 1b — Even choosing among all minimum deletions can fail<a class="anchor" href="#proposition-1b--even-choosing-among-all-minimum-deletions-can-fail" aria-label="Link to this section">#</a></h2>
+<p>The previous witness has a <em>different</em> minimum-member deletion that happens to be canonical. A stronger obstruction removes that escape.</p>
+<p>For <strong>every n ≥ 4</strong>, define</p>
+<p>F*_n = { {1,2}, {0,3}, {0,1,2,3}, U }.</p>
+<p>At n=4 the last two members coincide, so this is a three-member family; at n&gt;4 it is a four-member family. It is union-closed because the two disjoint doubletons unite to the displayed four-set, which then unites with U to give U; all other unions are already present.</p>
+<p><strong>Canonicality for every n ≥ 4.</strong> Any relabeling preserves the pair of disjoint doubletons and their four-element union Q. The largest non-top subset mask is m(Q), minimized uniquely as an integer when Q={0,1,2,3} (mask 15). With Q fixed, the two disjoint doubletons partition Q. Their mask pairs are {3,12}, {5,10}, and {6,9}; lexicographic comparison of the high bit positions makes {6,9} the canonical choice. Thus F*_n is canonical under our exact integer encoding.</p>
+<p><strong>No canonical minimum parent.</strong> The two minimum-cardinality members have masks 6 and 9. Removing either leaves its partner plus Q and U; a relabeling inside Q sends the remaining doubleton to {0,1} (mask 3), which strictly decreases the encoding while fixing Q and U. Therefore <strong>neither</strong> minimum-member deletion gives a canonical labeled parent. This proves the all-n assertion. The code checks the instances n=4 and n=5 independently of this argument.</p>
+<p>For n=4, the fully certified example is</p>
+<p>F*_4 = { {1,2}, {0,3}, {0,1,2,3} },</p>
+<p>with family bitmask 33344 (subset masks 6,9,15). Removing {1,2} leaves subset masks {9,15}; removing {0,3} leaves {6,15}. Both parents are noncanonical: a relabeling makes their surviving doubleton {0,1}, of mask 3. The canonical parent bitmask is 32776 in either case.</p>
+<p><strong>Proof of n=4 canonicality.</strong> Any relabeling gives two disjoint doubletons A,B and the full set U. Two disjoint doubletons require four distinct ground elements. Their subset masks cannot both be below 9, because doubletons with masks below 9 are the three pairs among {0,1,2}, which intersect. The least possible larger mask is 9, with complementary smaller mask 6. Since encoding orders integer bit positions, {6,9} uniquely minimizes the family encoding. QED.</p>
+<p>The exhaustive n=4 orbit test finds <strong>five</strong> canonical full-support family representatives for which <em>no</em> minimum-cardinality member can be removed leaving a canonical labeled parent. This is a finite property of our exact encoding, not a theorem about all possible orbit-generation conventions.</p>
+<h2 id="lemma-2--minimum-member-deletion-preserves-closure">Lemma 2 — Minimum-member deletion preserves closure<a class="anchor" href="#lemma-2--minimum-member-deletion-preserves-closure" aria-label="Link to this section">#</a></h2>
+<p>Let F be full-support and union-closed with at least two members. Choose any minimum-cardinality member S ≠ U. Then F minus {S} remains union-closed and retains U.</p>
+<p><strong>Proof.</strong> If A and B are remaining members whose union equals S, then A,B are subsets of S. Since S had minimum cardinality, both would have to equal S, contradiction. Thus no required union is lost. The top set U remains. QED.</p>
+<h2 id="theorem-3--safe-augmentation-from-parent-orbits">Theorem 3 — Safe augmentation from parent orbits<a class="anchor" href="#theorem-3--safe-augmentation-from-parent-orbits" aria-label="Link to this section">#</a></h2>
+<p>Let L_k(n) contain exactly one canonical representative of each S_n-orbit of full-support union-closed families with k members. Begin with L_1(n) = {{U}}.</p>
+<p>For each canonical parent P in L_k(n), try all absent subsets S proper in U such that |S| ≤ min{|A| : A in P}. If P union {S} is union-closed, canonicalize it and deduplicate the resulting canonical integers to form L_{k+1}(n).</p>
+<p><strong>Claim.</strong> The process generates exactly one representative of each such orbit at every size, for all finite n.</p>
+<p><strong>Proof.</strong> Soundness follows from the closure test, preservation of U, and canonicalization. For completeness, take any family F with k+1 members, remove a minimum-cardinality member S by Lemma 2, and call the parent P. By induction a canonical representative C_n(P) of the parent orbit was already generated. Choose a ground-set permutation π with π(P)=C_n(P). Then π(F)=C_n(P) union {π(S)} is a valid augmentation; |π(S)| ≤ the size of every remaining parent member because S was minimum in F. Our procedure therefore tries this very subset and canonicalizes the child to C_n(F). Since canonical integers separate orbits, deduplication retains exactly one representative per orbit. Induct on k. QED.</p>
+<p><strong>The key correction:</strong> Do not require the chosen deletion-parent of the <em>canonicalized child</em> to be literally canonical. Proposition 1 refutes precisely that extra restriction. This is a standard orbitwise construction strategy, not a claimed new general algorithm.</p>
+<h2 id="exact-finite-checks">Exact finite checks<a class="anchor" href="#exact-finite-checks" aria-label="Link to this section">#</a></h2>
+<p>The implementation is <a href="https://github.com/Svyable/100/blob/main/scripts/frankl_augmentation.py" rel="noopener noreferrer">scripts/frankl_augmentation.py</a>.</p>
+<div class="table-wrap"><table><thead><tr><th class="al-right">Ground set n</th><th class="al-right">All full-support orbits</th><th class="al-right">Orbits reached by the specifically flawed strict-parent rule</th></tr></thead><tbody><tr><td class="al-right">1</td><td class="al-right">2</td><td class="al-right">not tested</td></tr><tr><td class="al-right">2</td><td class="al-right">6</td><td class="al-right">not tested</td></tr><tr><td class="al-right">3</td><td class="al-right"><strong>28</strong></td><td class="al-right"><strong>10</strong></td></tr><tr><td class="al-right">4</td><td class="al-right"><strong>330</strong></td><td class="al-right"><strong>32</strong></td></tr></tbody></table></div>
+<p>For n=4, the distribution by number of members from 1 to 16 is:</p>
+<p>(1, 4, 10, 20, 34, 45, 49, 49, 42, 30, 21, 13, 6, 3, 2, 1).</p>
+<p>These counts are known finite mathematics, not new Frankl progress. The second column under naive strict-parent pruning describes <strong>only</strong> the deliberately flawed choice d(C_n(child))=current canonical parent; no claim is made about other canonical-construction-path algorithms.</p>
+<p>Reproduce with:</p>
+<pre><code class="lang-sh">python3 scripts/frankl_augmentation.py --check
+python3 -m unittest discover -s tests -p &#x27;test_frankl_augmentation.py&#x27; -v</code></pre>
+<p>Independent checks use the existing descending-family generator through n=4, plus an unpruned raw Boolean-family truth table through n=3. Every one of the 4,542 labeled full-support n=4 families is checked for deletion closure. The all-n counterexample is instantiated at n=3,4,5. The orbit generator intentionally caps at n=4 and claims no measured n=5 efficiency.</p>
+<h2 id="prior-art-and-genuine-research-boundary">Prior art and genuine research boundary<a class="anchor" href="#prior-art-and-genuine-research-boundary" aria-label="Link to this section">#</a></h2>
+<p>Brendan McKay&#x27;s <a href="https://doi.org/10.1006/jagm.1997.0898" rel="noopener noreferrer">1998 isomorph-free exhaustive generation paper</a> already develops canonical construction paths. The <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7324030/" rel="noopener noreferrer">2020 formalization of Faradžev–Read exhaustive generation</a> explicitly treats union-closed families and symmetry-aware generation. We therefore claim <strong>no publication-level novelty</strong> for this generic method or these finite counts.</p>
+<p>What remains genuinely open <em>for our research pipeline</em> is a new, provably sound, cheaper canonical-parent certificate or structural invariant that prunes large-n search without losing orbits. Any purported speedup needs a fixed-budget benchmark. Any mathematical novelty needs specialist prior-art and independent scope review.</p>
+<p>This work does not establish an n=6 census, a minimal-counterexample obstruction, a new abundance bound, or Frankl&#x27;s universal one-half statement.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>
