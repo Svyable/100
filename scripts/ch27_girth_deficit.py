@@ -35,6 +35,23 @@ def first_girth_subset_violation(floors, missing=2):
     return None
 
 
+def first_rigidity_violation(floors):
+    """At equality, all induced outdegrees equal the rigid C4+sources sequence."""
+    if (len(floors) != 10 or tuple(sorted(floors, reverse=True)) != tuple(floors) or
+            any(type(x) is not int or x < 0 for x in floors)):
+        raise ValueError("expected descending nonnegative floors")
+    for s in range(4, 11):
+        if floors[s-1] < 11-s:
+            continue
+        if sum(floors[:s]) != s*(19-s)//2-2:
+            continue
+        internal = tuple(x-(10-s) for x in floors[:s])
+        rigid = tuple(range(s-1, 3, -1)) + (1,)*4
+        if internal != rigid:
+            return s
+    return None
+
+
 def c_cut_violation(alpha, k):
     """Only asserted for at least seven fully C-saturating A-neighbors."""
     if len(alpha) != 9 or len(k) != 10:
@@ -42,7 +59,7 @@ def c_cut_violation(alpha, k):
     return alpha.count(2) >= 7 and sum(k) < 65 - sum(alpha)
 
 
-def classify(alpha, k, missing=2, include_c=True):
+def classify(alpha, k, missing=2, include_c=True, include_rigidity=True):
     baseline = prior.classify(alpha, k)
     if baseline != "unresolved":
         return baseline
@@ -51,15 +68,19 @@ def classify(alpha, k, missing=2, include_c=True):
         return f"girth_subset_{violation}"
     if include_c and c_cut_violation(alpha, k):
         return "seven_vertex_c_cut"
+    if missing == 2 and include_rigidity:
+        rigid_s = first_rigidity_violation(prior.internal_B_floors(alpha, k))
+        if rigid_s is not None:
+            return f"equality_rigidity_{rigid_s}"
     return "unresolved"
 
 
-def audit(missing=2, include_c=True):
+def audit(missing=2, include_c=True, include_rigidity=True):
     counts = Counter()
     first_remaining = None
     for a in prior.alpha_profiles():
         for k in prior.k_profiles_with_four_zeros():
-            classification = classify(a, k, missing, include_c)
+            classification = classify(a, k, missing, include_c, include_rigidity)
             counts[classification] += 1
             if classification == "unresolved" and first_remaining is None:
                 first_remaining = (a, k)
@@ -76,6 +97,7 @@ def certificate():
         "girth4_missing_edge_deficit": required_missing_edges(4),
         "girth5_missing_edge_deficit": required_missing_edges(5),
         "exact": audit(),
+        "no_rigidity": audit(include_rigidity=False),
         "weakened_one_missing_edge": audit(missing=1),
         "no_new_B_cut": audit(missing=0),
     }
@@ -96,11 +118,12 @@ def main(argv=None):
             "minout_two_6": 24,
             "girth_subset_4": 74, "girth_subset_5": 49,
             "girth_subset_6": 29, "seven_vertex_c_cut": 15,
-            "unresolved": 128,
+            "equality_rigidity_6": 25, "unresolved": 103,
         }, x["classification"]
         assert x["first_remaining_relaxed_profile"] == (
             (2,)*7 + (7, 8), (0,)*4 + (5, 5, 6, 6, 7, 7)
         )
+        assert result["no_rigidity"]["remaining"] == 128
         assert result["weakened_one_missing_edge"]["remaining"] == 191
         assert result["no_new_B_cut"]["remaining"] == 275
         assert result["girth4_missing_edge_deficit"] == 2
