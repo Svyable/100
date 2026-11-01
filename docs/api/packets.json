@@ -456,6 +456,7 @@
       "kind": "obligation",
       "leverage": 1199,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M071-01%20%E2%80%94%20Witness%20obligation%20for%20M071",
+      "packet_sha256": "ea132cbc69c33d37cdfb48ee4f213ae4f40a05ae5538ffdcb4c3989b6af33cff",
       "priority_rank": 1,
       "problems": [
         "M071"
@@ -465,7 +466,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "ea132cbc69c33d37cdfb48ee4f213ae4f40a05ae5538ffdcb4c3989b6af33cff",
+      "scope_sha256": "cdf456098afd4384447c06550601483f00f11febf0522d72db45ad96e0014634",
       "status": "runnable",
       "title": "Witness obligation for M071"
     },
@@ -486,6 +487,7 @@
       "kind": "obligation",
       "leverage": 1198,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M073-01%20%E2%80%94%20Witness%20obligation%20for%20M073",
+      "packet_sha256": "b44b983f1a94a78aa75ba749db78ba7965e007544f5964b6af5d09851654ee0a",
       "priority_rank": 2,
       "problems": [
         "M073"
@@ -495,7 +497,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "b44b983f1a94a78aa75ba749db78ba7965e007544f5964b6af5d09851654ee0a",
+      "scope_sha256": "4f163ace79697a263a69092f249044339d4f0bf5ea87b68840be0fd30b8dcbd9",
       "status": "runnable",
       "title": "Witness obligation for M073"
     },
@@ -516,6 +518,7 @@
       "kind": "obligation",
       "leverage": 1197,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M044-01%20%E2%80%94%20Witness%20obligation%20for%20M044",
+      "packet_sha256": "66b5994711bfd4897d8e3878a198d2321e864d2858d1ee281118995c02531cb4",
       "priority_rank": 3,
       "problems": [
         "M044"
@@ -525,7 +528,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "66b5994711bfd4897d8e3878a198d2321e864d2858d1ee281118995c02531cb4",
+      "scope_sha256": "4f9c55ca7a8b68eb1673e4d122d950255a0def42d2c07e63126f90c698ad17fd",
       "status": "runnable",
       "title": "Witness obligation for M044"
     },
@@ -546,6 +549,7 @@
       "kind": "obligation",
       "leverage": 1195,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M074-02%20%E2%80%94%20Reduction%20obligation%20for%20M074",
+      "packet_sha256": "0f17dfaa5dd9b51da24bfda16f8c61c5efd389a32b33d8f0d9276966fbe476eb",
       "priority_rank": 5,
       "problems": [
         "M074"
@@ -555,7 +559,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "0f17dfaa5dd9b51da24bfda16f8c61c5efd389a32b33d8f0d9276966fbe476eb",
+      "scope_sha256": "2d1754ba3eaac302c141880f469d1e17509df015998281fe003f38d32e9dd717",
       "status": "runnable",
       "title": "Reduction obligation for M074"
     },
@@ -576,6 +580,7 @@
       "kind": "obligation",
       "leverage": 1194,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M092-01%20%E2%80%94%20Witness%20obligation%20for%20M092",
+      "packet_sha256": "bb7e9961db8cbad8e63e907ac3a3e7a501c168d5051629b01ce4a41ec820d4cd",
       "priority_rank": 6,
       "problems": [
         "M092"
@@ -585,7 +590,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "bb7e9961db8cbad8e63e907ac3a3e7a501c168d5051629b01ce4a41ec820d4cd",
+      "scope_sha256": "eaba3c39e8db2ecb903cc3ed24fc186e11cf22a1066ebc90b18624bfb0bdca2b",
       "status": "runnable",
       "title": "Witness obligation for M092"
     },
@@ -606,6 +611,7 @@
       "kind": "obligation",
       "leverage": 1193,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M093-01%20%E2%80%94%20Witness%20obligation%20for%20M093",
+      "packet_sha256": "af2cd27761d958621747d6881ee6754c0b9178597ae2349614574ccc07cff0a9",
       "priority_rank": 7,
       "problems": [
         "M093"
@@ -615,7 +621,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "af2cd27761d958621747d6881ee6754c0b9178597ae2349614574ccc07cff0a9",
+      "scope_sha256": "e0d611142957b847b10e0b6d809c3bf8c175ca61a9a08b611c14610d1ebf6993",
       "status": "runnable",
       "title": "Witness obligation for M093"
     },
@@ -636,6 +642,7 @@
       "kind": "obligation",
       "leverage": 1192,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M094-01%20%E2%80%94%20Witness%20obligation%20for%20M094",
+      "packet_sha256": "fb826fa95b7b7e588ab30494a4265c78a4b31e416ded96a70567e27498f4d5fd",
       "priority_rank": 8,
       "problems": [
         "M094"
@@ -645,7 +652,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "fb826fa95b7b7e588ab30494a4265c78a4b31e416ded96a70567e27498f4d5fd",
+      "scope_sha256": "34e16102d6f22db90d9148603d18b052bb3c6829a7a55994f9c3e433b1a1d86f",
       "status": "runnable",
       "title": "Witness obligation for M094"
     },
@@ -666,6 +673,7 @@
       "kind": "obligation",
       "leverage": 1191,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M088-01%20%E2%80%94%20Lemma%20obligation%20for%20M088",
+      "packet_sha256": "4dddac3de80a8e37020c2230f8a779467da62a40454cc0221a5f512f2f17b966",
       "priority_rank": 9,
       "problems": [
         "M088"
@@ -675,7 +683,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "4dddac3de80a8e37020c2230f8a779467da62a40454cc0221a5f512f2f17b966",
+      "scope_sha256": "5204bcc35834d93882867d02268da6bfe4c98a2398ff94770255bf1f624a3ae5",
       "status": "runnable",
       "title": "Lemma obligation for M088"
     },
@@ -696,6 +704,7 @@
       "kind": "obligation",
       "leverage": 1190,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M075-01%20%E2%80%94%20Lemma%20obligation%20for%20M075",
+      "packet_sha256": "9715133821a9e4f3ae8eff637b6d27bbe22fd1ef248e088e5ab9aa381df32d09",
       "priority_rank": 10,
       "problems": [
         "M075"
@@ -705,7 +714,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "9715133821a9e4f3ae8eff637b6d27bbe22fd1ef248e088e5ab9aa381df32d09",
+      "scope_sha256": "db036d38e93ee0f86bc11c625040e9cb686bb8ebb15c9a2bc7847919bed3dcc6",
       "status": "runnable",
       "title": "Lemma obligation for M075"
     },
@@ -726,6 +735,7 @@
       "kind": "obligation",
       "leverage": 1189,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M078-01%20%E2%80%94%20Lemma%20obligation%20for%20M078",
+      "packet_sha256": "0b9fea8033229973dded0fbaf45bc27e7739d2924d0ca0f248bb1729d29505da",
       "priority_rank": 11,
       "problems": [
         "M078"
@@ -735,7 +745,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "0b9fea8033229973dded0fbaf45bc27e7739d2924d0ca0f248bb1729d29505da",
+      "scope_sha256": "c25d1f1ccd3a55bdd178da6dcb4747199d51a0190d9321ccb7e1b21af505fe62",
       "status": "runnable",
       "title": "Lemma obligation for M078"
     },
@@ -756,6 +766,7 @@
       "kind": "obligation",
       "leverage": 1188,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M079-01%20%E2%80%94%20Lemma%20obligation%20for%20M079",
+      "packet_sha256": "689967b7e922c89ed619eacf2758a84df91879639d191a41ec99c850d86233f2",
       "priority_rank": 12,
       "problems": [
         "M079"
@@ -765,7 +776,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "689967b7e922c89ed619eacf2758a84df91879639d191a41ec99c850d86233f2",
+      "scope_sha256": "964d45559b467d0b87968be82c006cf2c916e04bc8ad39c0b149dfe012b55411",
       "status": "runnable",
       "title": "Lemma obligation for M079"
     },
@@ -786,6 +797,7 @@
       "kind": "obligation",
       "leverage": 1187,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M096-01%20%E2%80%94%20Witness%20obligation%20for%20M096",
+      "packet_sha256": "cdf105599685709dac4450612deb3992286f1d6a8c4fe831a26b538c9d006c7e",
       "priority_rank": 13,
       "problems": [
         "M096"
@@ -795,7 +807,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "cdf105599685709dac4450612deb3992286f1d6a8c4fe831a26b538c9d006c7e",
+      "scope_sha256": "6c6bd61ca4fc48823134ff2894b1538e52bf45216a453ceb454f0546e3a2133a",
       "status": "runnable",
       "title": "Witness obligation for M096"
     },
@@ -816,6 +828,7 @@
       "kind": "obligation",
       "leverage": 1186,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M084-01%20%E2%80%94%20Witness%20obligation%20for%20M084",
+      "packet_sha256": "23fd32201cbbb66693256ecc19a2342ffaea2fa246c83a4be1ba33189c0a6e96",
       "priority_rank": 14,
       "problems": [
         "M084"
@@ -825,7 +838,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "23fd32201cbbb66693256ecc19a2342ffaea2fa246c83a4be1ba33189c0a6e96",
+      "scope_sha256": "e11d5c806c6a60680094a2e9f0bc6144c8acbb9a2081645480e89f9793f99697",
       "status": "runnable",
       "title": "Witness obligation for M084"
     },
@@ -846,6 +859,7 @@
       "kind": "obligation",
       "leverage": 1185,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M095-01%20%E2%80%94%20Witness%20obligation%20for%20M095",
+      "packet_sha256": "34ae5d18490821809250bbf546d4f34e6231dfd8eb78ef664fb1ea123038d0b2",
       "priority_rank": 15,
       "problems": [
         "M095"
@@ -855,7 +869,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "34ae5d18490821809250bbf546d4f34e6231dfd8eb78ef664fb1ea123038d0b2",
+      "scope_sha256": "708c592ad664734fe62f9bea6316b8878c60354379282d05d1ba55bbd5e864ed",
       "status": "runnable",
       "title": "Witness obligation for M095"
     },
@@ -876,6 +890,7 @@
       "kind": "obligation",
       "leverage": 1184,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M080-01%20%E2%80%94%20Lemma%20obligation%20for%20M080",
+      "packet_sha256": "4ea4afd0bee1af7c16a1d83ab1ebebfa16cbe0658c462edb3beca85d6b0944da",
       "priority_rank": 16,
       "problems": [
         "M080"
@@ -885,7 +900,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "4ea4afd0bee1af7c16a1d83ab1ebebfa16cbe0658c462edb3beca85d6b0944da",
+      "scope_sha256": "df2853bdff4922bf543b7f15cdb7f739d6d9c86eaf6a0c7ac5391fe5ac54e2d0",
       "status": "runnable",
       "title": "Lemma obligation for M080"
     },
@@ -906,6 +921,7 @@
       "kind": "obligation",
       "leverage": 1183,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M097-01%20%E2%80%94%20Lemma%20obligation%20for%20M097",
+      "packet_sha256": "873699d1f7f3042243a6f21d29aa69eb422be54b0f87a2e2450b5fcb39a22cf7",
       "priority_rank": 17,
       "problems": [
         "M097"
@@ -915,7 +931,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "873699d1f7f3042243a6f21d29aa69eb422be54b0f87a2e2450b5fcb39a22cf7",
+      "scope_sha256": "ab4ed431000250b2bdd38480d33997b0e6c80a54ab3ec9d5f31a373be2e2214f",
       "status": "runnable",
       "title": "Lemma obligation for M097"
     },
@@ -936,6 +952,7 @@
       "kind": "obligation",
       "leverage": 1182,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M019-01%20%E2%80%94%20Lemma%20obligation%20for%20M019",
+      "packet_sha256": "588ecb5bd736f7d874bc2013aeebbc6a812835e99de29255438b67530871d01d",
       "priority_rank": 18,
       "problems": [
         "M019"
@@ -945,7 +962,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "588ecb5bd736f7d874bc2013aeebbc6a812835e99de29255438b67530871d01d",
+      "scope_sha256": "aed22f7409b059e5deaf541ca1c7bd9873dc7a471be1e4879d23c4c96216720b",
       "status": "runnable",
       "title": "Lemma obligation for M019"
     },
@@ -966,6 +983,7 @@
       "kind": "obligation",
       "leverage": 1181,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M002-01%20%E2%80%94%20Witness%20obligation%20for%20M002",
+      "packet_sha256": "6f48bd43704cc23bf1793383f176d01fa2ad58ea6dd5c98e391753fcc6e1f9c8",
       "priority_rank": 19,
       "problems": [
         "M002"
@@ -975,7 +993,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "6f48bd43704cc23bf1793383f176d01fa2ad58ea6dd5c98e391753fcc6e1f9c8",
+      "scope_sha256": "2e0d373691a3218efc8ca90cfb182d98f871468cf028691e54cb651ce137c186",
       "status": "runnable",
       "title": "Witness obligation for M002"
     },
@@ -996,6 +1014,7 @@
       "kind": "obligation",
       "leverage": 1176,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M006-01%20%E2%80%94%20Lemma%20obligation%20for%20M006",
+      "packet_sha256": "0dddf50a9635bcb0c5e22fa163c1bba57540c8c7eee16512229e121e3c01a86c",
       "priority_rank": 24,
       "problems": [
         "M006"
@@ -1005,7 +1024,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "0dddf50a9635bcb0c5e22fa163c1bba57540c8c7eee16512229e121e3c01a86c",
+      "scope_sha256": "d8f798d252c5dd7325f1be862e7edd1365ca3399d95f9a662ae193d832e1c3ff",
       "status": "runnable",
       "title": "Lemma obligation for M006"
     },
@@ -1026,6 +1045,7 @@
       "kind": "obligation",
       "leverage": 1102,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M041-01%20%E2%80%94%20Lemma%20obligation%20for%20M041",
+      "packet_sha256": "f455fbbb472585716f42627799e8c784c23f80ae50126013229431a3b4662e93",
       "priority_rank": 98,
       "problems": [
         "M041"
@@ -1035,7 +1055,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "f455fbbb472585716f42627799e8c784c23f80ae50126013229431a3b4662e93",
+      "scope_sha256": "aad6e6707d2c15e9ab7098ea1da8504ef377649dc1439c655a04252fb6c68ac9",
       "status": "runnable",
       "title": "Lemma obligation for M041"
     },
@@ -1056,6 +1076,7 @@
       "kind": "obligation",
       "leverage": 1101,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M048-01%20%E2%80%94%20Lemma%20obligation%20for%20M048",
+      "packet_sha256": "ef476581aa6540bfecac7c0372a11faa94e8a10c3367dd60a8619edf6949439c",
       "priority_rank": 99,
       "problems": [
         "M048"
@@ -1065,7 +1086,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "ef476581aa6540bfecac7c0372a11faa94e8a10c3367dd60a8619edf6949439c",
+      "scope_sha256": "f53f152e85e7b9589c256340c9efd9dfafaa2b35005e93c96159a9c33e793eae",
       "status": "runnable",
       "title": "Lemma obligation for M048"
     },
@@ -1086,6 +1107,7 @@
       "kind": "obligation",
       "leverage": 1100,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M001-01%20%E2%80%94%20Lemma%20obligation%20for%20M001",
+      "packet_sha256": "d8f2840ab46a8bb8b269e0f15cc4a34518e4f36ab9b547f2771ebcc81c74d56d",
       "priority_rank": 100,
       "problems": [
         "M001"
@@ -1095,7 +1117,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "d8f2840ab46a8bb8b269e0f15cc4a34518e4f36ab9b547f2771ebcc81c74d56d",
+      "scope_sha256": "8d5c4952da434409c8b0663fa26ee49831c757f47274cc76364d4a4795baf35f",
       "status": "runnable",
       "title": "Lemma obligation for M001"
     },
@@ -1116,6 +1138,7 @@
       "kind": "review",
       "leverage": 1099,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M071%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Hadwiger%20conjecture%20comparator",
+      "packet_sha256": "d28898bcec906d11c1c32eff235bdae92714d97a5cf3e564f5158962bc45b9e8",
       "priority_rank": 1,
       "problems": [
         "M071"
@@ -1124,7 +1147,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "d28898bcec906d11c1c32eff235bdae92714d97a5cf3e564f5158962bc45b9e8",
+      "scope_sha256": "df84b307c1074d4a39731eeca2c2cad931d2a42525aa9c520142f95ef9daa742",
       "status": "runnable",
       "title": "Independent fidelity review of the Hadwiger conjecture comparator"
     },
@@ -1146,6 +1169,7 @@
       "kind": "review",
       "leverage": 1099,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M071%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M071",
+      "packet_sha256": "78e4acfdd300b965a8dd8910e05d2d65ebeda33750ee1809b2864af26ec369f3",
       "priority_rank": 1,
       "problems": [
         "M071"
@@ -1154,7 +1178,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "78e4acfdd300b965a8dd8910e05d2d65ebeda33750ee1809b2864af26ec369f3",
+      "scope_sha256": "8cecc1d9aa290f8ccbf78932ce3bf6b5503c35f652897299db6a05a78ddd6969",
       "status": "runnable",
       "title": "Independent certificate and scope audit for M071"
     },
@@ -1175,6 +1199,7 @@
       "kind": "review",
       "leverage": 1098,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M073%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Sidorenko%20conjecture%20comparator",
+      "packet_sha256": "862974f28afa0f63873afd9681b84dab48d45d56f933cda31632793cd7b8bc2c",
       "priority_rank": 2,
       "problems": [
         "M073"
@@ -1183,7 +1208,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "862974f28afa0f63873afd9681b84dab48d45d56f933cda31632793cd7b8bc2c",
+      "scope_sha256": "914c04419ced5b1a611a5f37ff379ce84ae278e1910530cd6dd8b5d714ca14cc",
       "status": "runnable",
       "title": "Independent fidelity review of the Sidorenko conjecture comparator"
     },
@@ -1205,6 +1230,7 @@
       "kind": "review",
       "leverage": 1098,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M073%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M073",
+      "packet_sha256": "3b416c53d39ea87bc93734a1d4e1f2ded781deccb4a992d4e23111c195eff6eb",
       "priority_rank": 2,
       "problems": [
         "M073"
@@ -1213,7 +1239,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "3b416c53d39ea87bc93734a1d4e1f2ded781deccb4a992d4e23111c195eff6eb",
+      "scope_sha256": "e8d226fc468a8aac5f45e0a3bdd33b653783805ea6e27ad3e8e76ccfc53e3179",
       "status": "runnable",
       "title": "Independent certificate and scope audit for M073"
     },
@@ -1234,6 +1260,7 @@
       "kind": "review",
       "leverage": 1095,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M074%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Caccetta%E2%80%93H%C3%A4ggkvist%20conjecture%20comparator",
+      "packet_sha256": "e4428d7f8589973331b702df14652f95c0555298f78793f388edf8e82a5a926a",
       "priority_rank": 5,
       "problems": [
         "M074"
@@ -1242,7 +1269,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "e4428d7f8589973331b702df14652f95c0555298f78793f388edf8e82a5a926a",
+      "scope_sha256": "695bc9c004a27d7fd3f3ecb8fde9db58a6e9f83b3c25eebe2ef5f0694463989a",
       "status": "runnable",
       "title": "Independent fidelity review of the Caccetta–Häggkvist conjecture comparator"
     },
@@ -1264,6 +1291,7 @@
       "kind": "review",
       "leverage": 1095,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M074%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M074",
+      "packet_sha256": "a3c3acb14f8b52ac8fb095de1be6c8299e9659f01cffc9e7f277a51a688aebf1",
       "priority_rank": 5,
       "problems": [
         "M074"
@@ -1272,7 +1300,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "a3c3acb14f8b52ac8fb095de1be6c8299e9659f01cffc9e7f277a51a688aebf1",
+      "scope_sha256": "07ae7c3f4b6052bf3d471106414f37cc4acd35b6006294d114db99a428a44692",
       "status": "runnable",
       "title": "Independent certificate and scope audit for M074"
     },
@@ -1294,6 +1322,7 @@
       "kind": "review",
       "leverage": 1094,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M092%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M092",
+      "packet_sha256": "49853322dead10210e5ddec0abdb03566d92f4c31b0c0df088adb9d1e700b0e9",
       "priority_rank": 6,
       "problems": [
         "M092"
@@ -1302,7 +1331,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "49853322dead10210e5ddec0abdb03566d92f4c31b0c0df088adb9d1e700b0e9",
+      "scope_sha256": "c60c75c457077a1373caf9259a417294ddd6c0475ee84bfcef561dace6d242dd",
       "status": "runnable",
       "title": "Independent certificate and scope audit for M092"
     },
@@ -1324,6 +1353,7 @@
       "kind": "review",
       "leverage": 1093,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M093%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M093",
+      "packet_sha256": "7c51e8c8519eb30e33f73bb4d879d471eda826c4d4bd6c37466984873398e9fe",
       "priority_rank": 7,
       "problems": [
         "M093"
@@ -1332,7 +1362,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "7c51e8c8519eb30e33f73bb4d879d471eda826c4d4bd6c37466984873398e9fe",
+      "scope_sha256": "77a065d73c988fcd130b2a23821181c0342d08301532688c96cfec3ab38649e3",
       "status": "runnable",
       "title": "Independent certificate and scope audit for M093"
     },
@@ -1353,6 +1383,7 @@
       "kind": "review",
       "leverage": 1092,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M094%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Hadamard%20matrix%20conjecture%20comparator",
+      "packet_sha256": "fb4e8fdde7378da9a1eec2f4250a9be8b57dac5f167848737891e97b27f8fe10",
       "priority_rank": 8,
       "problems": [
         "M094"
@@ -1361,7 +1392,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "fb4e8fdde7378da9a1eec2f4250a9be8b57dac5f167848737891e97b27f8fe10",
+      "scope_sha256": "a1e9bc7a9b45d5f04c11b42c5de258b7eb0b6cb906814eb3c5dbfdcf7af59bf8",
       "status": "runnable",
       "title": "Independent fidelity review of the Hadamard matrix conjecture comparator"
     },
@@ -1382,6 +1413,7 @@
       "kind": "review",
       "leverage": 1092,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L007%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L007%20%28M094%29",
+      "packet_sha256": "7952d83b00b4235690862dc7ec0467c37308b14f443111e84d5c16166017ec90",
       "priority_rank": 8,
       "problems": [
         "M094"
@@ -1390,7 +1422,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "7952d83b00b4235690862dc7ec0467c37308b14f443111e84d5c16166017ec90",
+      "scope_sha256": "f9d0af0255bae075e882fb3ab1391df05fa315583bb17982c2a73de2fef40c8d",
       "status": "runnable",
       "title": "Independent scope review of Lean target L007 (M094)"
     },
@@ -1412,6 +1444,7 @@
       "kind": "review",
       "leverage": 1092,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M094%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M094",
+      "packet_sha256": "35231ac47ef703885ed5cd069ebad05f28a755ccc791c6d906e18eb74ff09765",
       "priority_rank": 8,
       "problems": [
         "M094"
@@ -1420,7 +1453,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "35231ac47ef703885ed5cd069ebad05f28a755ccc791c6d906e18eb74ff09765",
+      "scope_sha256": "e81a7880b403bfbbd24eb1140ed2e8e80eba9eb51ad71e9bf73ce92eaaeefa6c",
       "status": "runnable",
       "title": "Independent certificate and scope audit for M094"
     },
@@ -1441,6 +1474,7 @@
       "kind": "review",
       "leverage": 1091,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M088%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Deterministic%20polynomial%20identity%20testing%20comparator",
+      "packet_sha256": "d2b45ae15870121209eca15c15ba14834c2e73ab30d52e4835b8f00f38bf8667",
       "priority_rank": 9,
       "problems": [
         "M088"
@@ -1449,7 +1483,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "d2b45ae15870121209eca15c15ba14834c2e73ab30d52e4835b8f00f38bf8667",
+      "scope_sha256": "9a886fbf5007551bae7f2949eb0bad5db2713e85ff7f29e317da4fe878654052",
       "status": "runnable",
       "title": "Independent fidelity review of the Deterministic polynomial identity testing comparator"
     },
@@ -1470,6 +1504,7 @@
       "kind": "review",
       "leverage": 1090,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M075%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Frankl%20union-closed%20sets%20conjecture%20comparator",
+      "packet_sha256": "90a76bd04c12b7f7464d08988db31d9319a057a757ef46ffd5b9911a30f62442",
       "priority_rank": 10,
       "problems": [
         "M075"
@@ -1478,7 +1513,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "90a76bd04c12b7f7464d08988db31d9319a057a757ef46ffd5b9911a30f62442",
+      "scope_sha256": "1628b1da36451191d8b8f62871c55927083c6ec3f652a3d47122ffc5b0a1a9da",
       "status": "runnable",
       "title": "Independent fidelity review of the Frankl union-closed sets conjecture comparator"
     },
@@ -1499,6 +1534,7 @@
       "kind": "review",
       "leverage": 1090,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L002%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L002%20%28M075%29",
+      "packet_sha256": "3aec4a59bad58b1b0a8d733c7c7effedf62f94414413afa1490493a789c50198",
       "priority_rank": 10,
       "problems": [
         "M075"
@@ -1507,7 +1543,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "3aec4a59bad58b1b0a8d733c7c7effedf62f94414413afa1490493a789c50198",
+      "scope_sha256": "11be65017b30a387eb0dabf572a033c8f15fda8ded0f60b36999ae9881a49e7e",
       "status": "runnable",
       "title": "Independent scope review of Lean target L002 (M075)"
     },
@@ -1528,6 +1564,7 @@
       "kind": "review",
       "leverage": 1090,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L006%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L006%20%28M075%29",
+      "packet_sha256": "bd0f9514f174804d54a74f835944e8ce1a4d1360d98ea531eefdadd0e03383bc",
       "priority_rank": 10,
       "problems": [
         "M075"
@@ -1536,7 +1573,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "bd0f9514f174804d54a74f835944e8ce1a4d1360d98ea531eefdadd0e03383bc",
+      "scope_sha256": "2b4ce1c4cb754d5ad53e460d59d10d59eebdcb36e93628dfd017baa8b54c5900",
       "status": "runnable",
       "title": "Independent scope review of Lean target L006 (M075)"
     },
@@ -1558,6 +1595,7 @@
       "kind": "review",
       "leverage": 1090,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M075%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M075",
+      "packet_sha256": "0fae4c56e5ae7623bb3a93b2fbea48411401ac5c67bbc73bf9ae570da154d0dc",
       "priority_rank": 10,
       "problems": [
         "M075"
@@ -1566,7 +1604,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "0fae4c56e5ae7623bb3a93b2fbea48411401ac5c67bbc73bf9ae570da154d0dc",
+      "scope_sha256": "576409e402dc37c98b3f7c687991fac5fee29fe22f7eb23f27b86bf58fa32bec",
       "status": "runnable",
       "title": "Independent certificate and scope audit for M075"
     },
@@ -1587,6 +1625,7 @@
       "kind": "review",
       "leverage": 1089,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M078%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Graph%20reconstruction%20conjecture%20comparator",
+      "packet_sha256": "a53b54a78f19e63c79131e645e2f2b367df9cca5d31656fc32ce903925a9040d",
       "priority_rank": 11,
       "problems": [
         "M078"
@@ -1595,7 +1634,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "a53b54a78f19e63c79131e645e2f2b367df9cca5d31656fc32ce903925a9040d",
+      "scope_sha256": "a431014c54b558bee982e5162925481ba92f2dbcfb49cbdfb0f93bd1ca1b3ca1",
       "status": "runnable",
       "title": "Independent fidelity review of the Graph reconstruction conjecture comparator"
     },
@@ -1617,6 +1656,7 @@
       "kind": "review",
       "leverage": 1089,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M078%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M078",
+      "packet_sha256": "dc540713dc60f13c328e11e5db9780d671226d7a725aa1e700ba5025f536f44a",
       "priority_rank": 11,
       "problems": [
         "M078"
@@ -1625,7 +1665,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "dc540713dc60f13c328e11e5db9780d671226d7a725aa1e700ba5025f536f44a",
+      "scope_sha256": "3f515bc8cb22c0c78ba51aed431217eee332f6128b534a3a29278855f1ae06b1",
       "status": "runnable",
       "title": "Independent certificate and scope audit for M078"
     },
@@ -1646,6 +1686,7 @@
       "kind": "review",
       "leverage": 1088,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M079%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20One-third%E2%80%93two-thirds%20conjecture%20comparator",
+      "packet_sha256": "78664d304845bcb86de6b35f8f3ea79f9d118639976f70205ad50ef4dc7b1c70",
       "priority_rank": 12,
       "problems": [
         "M079"
@@ -1654,7 +1695,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "78664d304845bcb86de6b35f8f3ea79f9d118639976f70205ad50ef4dc7b1c70",
+      "scope_sha256": "ec4ff300ba15b879af26386a15e518acd092af55b2d3017e57fdea80214d6df7",
       "status": "runnable",
       "title": "Independent fidelity review of the One-third–two-thirds conjecture comparator"
     },
@@ -1676,6 +1717,7 @@
       "kind": "review",
       "leverage": 1088,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M079%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M079",
+      "packet_sha256": "1266fe0a753342adcc304f72d056791f4ba5c1904020e5ea2594000ab60116c9",
       "priority_rank": 12,
       "problems": [
         "M079"
@@ -1684,7 +1726,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "1266fe0a753342adcc304f72d056791f4ba5c1904020e5ea2594000ab60116c9",
+      "scope_sha256": "177625f6b1ddc7fedc1ec4eeb3660c27025196edaefac8425f412b14bb5d2255",
       "status": "runnable",
       "title": "Independent certificate and scope audit for M079"
     },
@@ -1705,6 +1747,7 @@
       "kind": "review",
       "leverage": 1087,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M096%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Projective%20plane%20order%2012%20comparator",
+      "packet_sha256": "fe0ceb5c537a20784519c7a50cf8f1b4799718350b6f076fcf9088ac6abc11b5",
       "priority_rank": 13,
       "problems": [
         "M096"
@@ -1713,7 +1756,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "fe0ceb5c537a20784519c7a50cf8f1b4799718350b6f076fcf9088ac6abc11b5",
+      "scope_sha256": "f85c48b8684bdbfe0ea54d2ed3644323e460b56ec60b1591c91b09607eccc4ea",
       "status": "runnable",
       "title": "Independent fidelity review of the Projective plane order 12 comparator"
     },
@@ -1734,6 +1777,7 @@
       "kind": "review",
       "leverage": 1087,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L009%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L009%20%28M096%29",
+      "packet_sha256": "553a147303bcc80c85dd8122b08136f22bcd9ffafdc4129617e3737c82f5e02f",
       "priority_rank": 13,
       "problems": [
         "M096"
@@ -1742,7 +1786,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "553a147303bcc80c85dd8122b08136f22bcd9ffafdc4129617e3737c82f5e02f",
+      "scope_sha256": "3a97d5e187aefdd5c1340a88cabe70244e0f0c5af3e7d4daa84e58bc7ed4ce95",
       "status": "runnable",
       "title": "Independent scope review of Lean target L009 (M096)"
     },
@@ -1764,6 +1808,7 @@
       "kind": "review",
       "leverage": 1087,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M096%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M096",
+      "packet_sha256": "644ee2809691ddea24aa89df0fff3acc715baf7f0326ee964dbc919b899f71b4",
       "priority_rank": 13,
       "problems": [
         "M096"
@@ -1772,7 +1817,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "644ee2809691ddea24aa89df0fff3acc715baf7f0326ee964dbc919b899f71b4",
+      "scope_sha256": "4097a54af7cf913da087e8b22f9c4a9c1a988beee31501342b3c0061574b8a16",
       "status": "runnable",
       "title": "Independent certificate and scope audit for M096"
     },
@@ -1794,6 +1839,7 @@
       "kind": "review",
       "leverage": 1086,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M084%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M084",
+      "packet_sha256": "b932a011bd8bebc28b0a311e89bd356150221e994f6aff4ff5fba2f5dd80ceb0",
       "priority_rank": 14,
       "problems": [
         "M084"
@@ -1802,7 +1848,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "b932a011bd8bebc28b0a311e89bd356150221e994f6aff4ff5fba2f5dd80ceb0",
+      "scope_sha256": "9b202bd3997b330e1affa9f9966963feac5d4898345c0cb8a42eab796abe9511",
       "status": "runnable",
       "title": "Independent certificate and scope audit for M084"
     },
@@ -1823,6 +1869,7 @@
       "kind": "review",
       "leverage": 1085,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M095%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Exact%20Ramsey%20number%20R%285%2C5%29%20comparator",
+      "packet_sha256": "8926980106069c7313afec86200670a3838d6cbba6c3b20a247e8485d99126f5",
       "priority_rank": 15,
       "problems": [
         "M095"
@@ -1831,7 +1878,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "8926980106069c7313afec86200670a3838d6cbba6c3b20a247e8485d99126f5",
+      "scope_sha256": "acc7cc3cab63680fe6652d841a2ca9d3df3526d31b46834c97a515ce940e5265",
       "status": "runnable",
       "title": "Independent fidelity review of the Exact Ramsey number R(5,5) comparator"
     },
@@ -1852,6 +1899,7 @@
       "kind": "review",
       "leverage": 1085,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L001%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L001%20%28M095%29",
+      "packet_sha256": "aa06d126fb7e2c83c79ea1b29defaae7bd0c334b4c5adfb3c94fe8d286dd6397",
       "priority_rank": 15,
       "problems": [
         "M095"
@@ -1860,7 +1908,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "aa06d126fb7e2c83c79ea1b29defaae7bd0c334b4c5adfb3c94fe8d286dd6397",
+      "scope_sha256": "0cec74a625dd0891516159827cfc1d80cd2c7bca412e6cf296bf14c705384e34",
       "status": "runnable",
       "title": "Independent scope review of Lean target L001 (M095)"
     },
@@ -1881,6 +1929,7 @@
       "kind": "review",
       "leverage": 1085,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L008%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L008%20%28M095%29",
+      "packet_sha256": "cd26274626088e1d7406857c9e1a6a4316affa8e606fb386d244424bb7b784e6",
       "priority_rank": 15,
       "problems": [
         "M095"
@@ -1889,7 +1938,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "cd26274626088e1d7406857c9e1a6a4316affa8e606fb386d244424bb7b784e6",
+      "scope_sha256": "7d5eaf8f697b94ed23195afa52e7a5b162cc0b12c40b32c8adb6f951f3bbcf64",
       "status": "runnable",
       "title": "Independent scope review of Lean target L008 (M095)"
     },
@@ -1911,6 +1960,7 @@
       "kind": "review",
       "leverage": 1085,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M095%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M095",
+      "packet_sha256": "856ea749fcbfb528d82c5b464af6ac7f2636c8d82d41eba8af93b81f211992f8",
       "priority_rank": 15,
       "problems": [
         "M095"
@@ -1919,7 +1969,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "856ea749fcbfb528d82c5b464af6ac7f2636c8d82d41eba8af93b81f211992f8",
+      "scope_sha256": "9f8271210d9470760c89309d52ed22a60f380e3915021a00d9875cf387a91e19",
       "status": "runnable",
       "title": "Independent certificate and scope audit for M095"
     },
@@ -1941,6 +1991,7 @@
       "kind": "review",
       "leverage": 1084,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M080%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M080",
+      "packet_sha256": "a49e3b9310e269b11cdf3701f6dd50c27dfc5a7b5ff732138201f605bb242787",
       "priority_rank": 16,
       "problems": [
         "M080"
@@ -1949,7 +2000,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "a49e3b9310e269b11cdf3701f6dd50c27dfc5a7b5ff732138201f605bb242787",
+      "scope_sha256": "ede9619aebb723f814558c6cdbafb2e55ca4ceb5c3292fd90144bb1844f847da",
       "status": "runnable",
       "title": "Independent certificate and scope audit for M080"
     },
@@ -1970,6 +2021,7 @@
       "kind": "review",
       "leverage": 1083,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M097%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Metric%20TSP%20four-thirds%20conjecture%20comparator",
+      "packet_sha256": "1b71db39b0c06f3b1465adbfb1b4285290cb28610f4b21beee0d92b5c85555d1",
       "priority_rank": 17,
       "problems": [
         "M097"
@@ -1978,7 +2030,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "1b71db39b0c06f3b1465adbfb1b4285290cb28610f4b21beee0d92b5c85555d1",
+      "scope_sha256": "685a835ff21dad4f0c9b9709251d02586d5057acf9ae5ba01cbcfeab6be7695a",
       "status": "runnable",
       "title": "Independent fidelity review of the Metric TSP four-thirds conjecture comparator"
     },
@@ -2000,6 +2052,7 @@
       "kind": "review",
       "leverage": 1083,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M097%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M097",
+      "packet_sha256": "897177bc2389b71e12c422c01c38d6859bbdd833f42eb3a3735586361d3c5def",
       "priority_rank": 17,
       "problems": [
         "M097"
@@ -2008,7 +2061,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "897177bc2389b71e12c422c01c38d6859bbdd833f42eb3a3735586361d3c5def",
+      "scope_sha256": "26b68744fbea48d3f516c611f355d7fcba9a92664a7b0abd29e42112111cdd20",
       "status": "runnable",
       "title": "Independent certificate and scope audit for M097"
     },
@@ -2029,6 +2082,7 @@
       "kind": "review",
       "leverage": 1082,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M019%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Erd%C5%91s%E2%80%93Straus%20conjecture%20comparator",
+      "packet_sha256": "1357b6c6e559c1da37bedc9b2d69828aeb8944520eeb61f83ae3e3d0f099f41f",
       "priority_rank": 18,
       "problems": [
         "M019"
@@ -2037,7 +2091,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "1357b6c6e559c1da37bedc9b2d69828aeb8944520eeb61f83ae3e3d0f099f41f",
+      "scope_sha256": "aee753e3dd5df21ca9266b8b588ae40c0d12fb461ec892307e6a75b2fbce7e58",
       "status": "runnable",
       "title": "Independent fidelity review of the Erdős–Straus conjecture comparator"
     },
@@ -2058,6 +2112,7 @@
       "kind": "review",
       "leverage": 1082,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L005%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L005%20%28M019%29",
+      "packet_sha256": "8e789ea03ae676393db63d5927c46d2749581679c3c3c1895632b5fa6233ac1a",
       "priority_rank": 18,
       "problems": [
         "M019"
@@ -2066,7 +2121,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "8e789ea03ae676393db63d5927c46d2749581679c3c3c1895632b5fa6233ac1a",
+      "scope_sha256": "620d8cbd723707a392363dffcd936a3405612e2b07210b2b46a18f6063e91a23",
       "status": "runnable",
       "title": "Independent scope review of Lean target L005 (M019)"
     },
@@ -2088,6 +2143,7 @@
       "kind": "review",
       "leverage": 1082,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M019%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M019",
+      "packet_sha256": "bbe547f6bb8fb7c8151f29a238ffadfc782aea3922d4e58910ad26cb5d79b3aa",
       "priority_rank": 18,
       "problems": [
         "M019"
@@ -2096,7 +2152,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "bbe547f6bb8fb7c8151f29a238ffadfc782aea3922d4e58910ad26cb5d79b3aa",
+      "scope_sha256": "4b78b0e38d05a0bf4428349be7e67adca8f31561487e6b1aa8174bc3066a3a4d",
       "status": "runnable",
       "title": "Independent certificate and scope audit for M019"
     },
@@ -2118,6 +2174,7 @@
       "kind": "review",
       "leverage": 1081,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M002%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M002",
+      "packet_sha256": "d4647680fcc9d08d41cf234adcae5a56b55dbc49e5a687dbc2e0b573cf439f87",
       "priority_rank": 19,
       "problems": [
         "M002"
@@ -2126,7 +2183,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "d4647680fcc9d08d41cf234adcae5a56b55dbc49e5a687dbc2e0b573cf439f87",
+      "scope_sha256": "31c93752a89c0d3bc49a4e313aea8a1f9480508bb9b94a35073211e374718155",
       "status": "runnable",
       "title": "Independent certificate and scope audit for M002"
     },
@@ -2147,6 +2204,7 @@
       "kind": "review",
       "leverage": 1076,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M006%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Strong%20Goldbach%20conjecture%20comparator",
+      "packet_sha256": "69902992dce5dd26bfbfc7d15fc867c4953aa1b7743b2a9aa26b6520cefeae16",
       "priority_rank": 24,
       "problems": [
         "M006"
@@ -2155,7 +2213,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "69902992dce5dd26bfbfc7d15fc867c4953aa1b7743b2a9aa26b6520cefeae16",
+      "scope_sha256": "394138ea68cb9ef208de07f67a4a1b819c9ac613d6416402151d758f65a11714",
       "status": "runnable",
       "title": "Independent fidelity review of the Strong Goldbach conjecture comparator"
     },
@@ -2176,6 +2234,7 @@
       "kind": "review",
       "leverage": 1076,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L004%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L004%20%28M006%29",
+      "packet_sha256": "01fc92a8cd1b46eb59cdecde8e6dc043ff20fdc194904c452476f8e4fdbc7a25",
       "priority_rank": 24,
       "problems": [
         "M006"
@@ -2184,7 +2243,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "01fc92a8cd1b46eb59cdecde8e6dc043ff20fdc194904c452476f8e4fdbc7a25",
+      "scope_sha256": "0c06bb9d670560bc5c8408ade29456ff101e598a4ffac2ee6a9bebad149a02f3",
       "status": "runnable",
       "title": "Independent scope review of Lean target L004 (M006)"
     },
@@ -2206,6 +2265,7 @@
       "kind": "review",
       "leverage": 1076,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M006%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M006",
+      "packet_sha256": "acf25006ba1268ddd2522fca9b33b7ade03cecbd2593e65caa60c86173d4fc5b",
       "priority_rank": 24,
       "problems": [
         "M006"
@@ -2214,7 +2274,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "acf25006ba1268ddd2522fca9b33b7ade03cecbd2593e65caa60c86173d4fc5b",
+      "scope_sha256": "eae1629c8b8d81de27f4545d43e758302f194463869a8b0d7d19e8814be6cc5f",
       "status": "runnable",
       "title": "Independent certificate and scope audit for M006"
     },
@@ -2235,6 +2295,7 @@
       "kind": "review",
       "leverage": 1060,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-S-M056%20%E2%80%94%20Independent%20review%20of%20the%20status%20draft%20for%20Fourier%20restriction%20conjecture",
+      "packet_sha256": "84e3c8dde2fef9854d1ab2c0fb04760226d583440a8005e2ded36ab0e98b311d",
       "priority_rank": 40,
       "problems": [
         "M056"
@@ -2243,7 +2304,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "84e3c8dde2fef9854d1ab2c0fb04760226d583440a8005e2ded36ab0e98b311d",
+      "scope_sha256": "e3ea2bfcfcb9d9edc8f088102db233112a861d0d24d6452ca7f21b7ef67b12c4",
       "status": "runnable",
       "title": "Independent review of the status draft for Fourier restriction conjecture"
     },
@@ -2264,6 +2325,7 @@
       "kind": "review",
       "leverage": 1051,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-S-M063%20%E2%80%94%20Independent%20review%20of%20the%20status%20draft%20for%20Planar%20first-passage%20KPZ%20exponent",
+      "packet_sha256": "9713d2af6b91c6ddb38f27f0829336416015244947b95372ecf8f472a293a8c6",
       "priority_rank": 49,
       "problems": [
         "M063"
@@ -2272,7 +2334,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "9713d2af6b91c6ddb38f27f0829336416015244947b95372ecf8f472a293a8c6",
+      "scope_sha256": "99056ace0acd665743fbf8466afea2f81105d2a091f1a58b97278ba44a83f57e",
       "status": "runnable",
       "title": "Independent review of the status draft for Planar first-passage KPZ exponent"
     },
@@ -2293,6 +2355,7 @@
       "kind": "review",
       "leverage": 1044,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-S-M070%20%E2%80%94%20Independent%20review%20of%20the%20status%20draft%20for%203D%20Ising%20conformal%20scaling%20conjecture",
+      "packet_sha256": "e45361dea0bef56b75e02fc94a7ff3ab315560ccfd368a908b83971721955d30",
       "priority_rank": 56,
       "problems": [
         "M070"
@@ -2301,7 +2364,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "e45361dea0bef56b75e02fc94a7ff3ab315560ccfd368a908b83971721955d30",
+      "scope_sha256": "b0b66f9a9dcdc982d47967abe32de2766d5b5d4abe826cf9c1a59f1ee5ee49a3",
       "status": "runnable",
       "title": "Independent review of the status draft for 3D Ising conformal scaling conjecture"
     },
@@ -2322,6 +2385,7 @@
       "kind": "review",
       "leverage": 1031,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-S-M017%20%E2%80%94%20Independent%20review%20of%20the%20status%20draft%20for%20Global%20Langlands%20functoriality",
+      "packet_sha256": "10a713a6d6bc270255b55937d6e893267a345e227ed2ab472c824b1034bac5f4",
       "priority_rank": 69,
       "problems": [
         "M017"
@@ -2330,7 +2394,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "10a713a6d6bc270255b55937d6e893267a345e227ed2ab472c824b1034bac5f4",
+      "scope_sha256": "aabd15a06c68480e6e58d30c762ed4bc79cf7bc4521196aabb1c808bdf18de57",
       "status": "runnable",
       "title": "Independent review of the status draft for Global Langlands functoriality"
     },
@@ -2351,6 +2415,7 @@
       "kind": "review",
       "leverage": 1014,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-S-M053%20%E2%80%94%20Independent%20review%20of%20the%20status%20draft%20for%20Weak%20cosmic%20censorship",
+      "packet_sha256": "3ea51a3b2cf93aac2f24779cc3d5bcf7cbdab6eb0908ed804656ddc3c8e55b3c",
       "priority_rank": 86,
       "problems": [
         "M053"
@@ -2359,7 +2424,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "3ea51a3b2cf93aac2f24779cc3d5bcf7cbdab6eb0908ed804656ddc3c8e55b3c",
+      "scope_sha256": "dad048849db378a750244f7a482438876e7c1c7360db67c705746652d119efb1",
       "status": "runnable",
       "title": "Independent review of the status draft for Weak cosmic censorship"
     },
@@ -2381,6 +2446,7 @@
       "kind": "review",
       "leverage": 1002,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M041%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M041",
+      "packet_sha256": "8a0fc249ea6068d37184fd315d15eb4d6e73160bf4fa94ff51995516f04a1a66",
       "priority_rank": 98,
       "problems": [
         "M041"
@@ -2389,7 +2455,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "8a0fc249ea6068d37184fd315d15eb4d6e73160bf4fa94ff51995516f04a1a66",
+      "scope_sha256": "5b62fde57b937f039c06094c1f47cc50dd69ee1921a767015049980887ea22c4",
       "status": "runnable",
       "title": "Independent certificate and scope audit for M041"
     },
@@ -2410,6 +2476,7 @@
       "kind": "review",
       "leverage": 1001,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M048%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Alperin%20weight%20conjecture%20comparator",
+      "packet_sha256": "552bb670ad7e53fd40f9b437d0eb6dad1ca8f5acc372443b74ae2b5f2042d016",
       "priority_rank": 99,
       "problems": [
         "M048"
@@ -2418,7 +2485,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "552bb670ad7e53fd40f9b437d0eb6dad1ca8f5acc372443b74ae2b5f2042d016",
+      "scope_sha256": "f15db15455a96905c2408ed95a2ee4792a1606ef48d23cc84727784d09f07c55",
       "status": "runnable",
       "title": "Independent fidelity review of the Alperin weight conjecture comparator"
     },
@@ -2440,6 +2507,7 @@
       "kind": "review",
       "leverage": 1001,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M048%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M048",
+      "packet_sha256": "e8e40fa721c47bcac6ea73fe388c61d1c332b76043a74fdd78f262a117eb74fc",
       "priority_rank": 99,
       "problems": [
         "M048"
@@ -2448,7 +2516,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "e8e40fa721c47bcac6ea73fe388c61d1c332b76043a74fdd78f262a117eb74fc",
+      "scope_sha256": "43dadb65c3606f72bd19302a2021dbc53e9bb4bf8b91ef6bf624561060697cce",
       "status": "runnable",
       "title": "Independent certificate and scope audit for M048"
     },
@@ -2470,6 +2538,7 @@
       "kind": "review",
       "leverage": 1000,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M001%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M001",
+      "packet_sha256": "12ef0108d12b83f0d3006169e963c03efacb891fe984c141310910b913ab6cdb",
       "priority_rank": 100,
       "problems": [
         "M001"
@@ -2478,7 +2547,7 @@
         "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
         "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source."
       },
-      "scope_sha256": "12ef0108d12b83f0d3006169e963c03efacb891fe984c141310910b913ab6cdb",
+      "scope_sha256": "9b2ca3af79affc16aa5667ecab7160bd558bbdb0b98ba2f216654feb6a91bd5a",
       "status": "runnable",
       "title": "Independent certificate and scope audit for M001"
     },
@@ -2500,6 +2569,7 @@
       "kind": "lean",
       "leverage": 995,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20L003%20%E2%80%94%20Implement%20Lean%20target%20L003%20%28M074%29",
+      "packet_sha256": "607dfb3dd1f2f9f1e86a645e034389a5e699db80e057680331160b962e7fbe17",
       "priority_rank": 5,
       "problems": [
         "M074"
@@ -2509,7 +2579,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "607dfb3dd1f2f9f1e86a645e034389a5e699db80e057680331160b962e7fbe17",
+      "scope_sha256": "e8f3a6e6f1e9d9e740456894ab20c3b296ba79303b17f86863ecfef012ee5b65",
       "status": "runnable",
       "title": "Implement Lean target L003 (M074)"
     },
@@ -2531,6 +2601,7 @@
       "kind": "lean",
       "leverage": 992,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20L007%20%E2%80%94%20Extend%20Lean%20target%20L007%20%28M094%29",
+      "packet_sha256": "ffe2ef2b0f9bef3969236549817f7470a0904419ce1b003d8b8dd151cbe1304d",
       "priority_rank": 8,
       "problems": [
         "M094"
@@ -2540,7 +2611,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "ffe2ef2b0f9bef3969236549817f7470a0904419ce1b003d8b8dd151cbe1304d",
+      "scope_sha256": "b08428f7a2a7f5260d4c22dc97ef6c965f8d68cfb251fc0c59d3c2c4593834e7",
       "status": "runnable",
       "title": "Extend Lean target L007 (M094)"
     },
@@ -2562,6 +2633,7 @@
       "kind": "lean",
       "leverage": 990,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20L002%20%E2%80%94%20Extend%20Lean%20target%20L002%20%28M075%29",
+      "packet_sha256": "8337faf0a92d8e4fdddf26c99064d69b3eb0f6a9f2ea4a33ec57e892378de69d",
       "priority_rank": 10,
       "problems": [
         "M075"
@@ -2571,7 +2643,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "8337faf0a92d8e4fdddf26c99064d69b3eb0f6a9f2ea4a33ec57e892378de69d",
+      "scope_sha256": "8c0f4e4999e0cbb4612175a7de2c9e3948fdef10385c61b0b9adb4b5f2bbb22f",
       "status": "runnable",
       "title": "Extend Lean target L002 (M075)"
     },
@@ -2593,6 +2665,7 @@
       "kind": "lean",
       "leverage": 990,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20L006%20%E2%80%94%20Extend%20Lean%20target%20L006%20%28M075%29",
+      "packet_sha256": "2042b0bf8c0727a24b1d0a8b83e07a83a38aada391f0657f6bb9d5fc2a593cc6",
       "priority_rank": 10,
       "problems": [
         "M075"
@@ -2602,7 +2675,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "2042b0bf8c0727a24b1d0a8b83e07a83a38aada391f0657f6bb9d5fc2a593cc6",
+      "scope_sha256": "d382570be457c9110dead9d24c77e5315b42d0f5942fdd92402c935c0d4551c9",
       "status": "runnable",
       "title": "Extend Lean target L006 (M075)"
     },
@@ -2624,6 +2697,7 @@
       "kind": "lean",
       "leverage": 987,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20L009%20%E2%80%94%20Extend%20Lean%20target%20L009%20%28M096%29",
+      "packet_sha256": "0bd45275bb85efa861804f97f8b5706ef3991c84379b4a876de91bae276a3708",
       "priority_rank": 13,
       "problems": [
         "M096"
@@ -2633,7 +2707,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "0bd45275bb85efa861804f97f8b5706ef3991c84379b4a876de91bae276a3708",
+      "scope_sha256": "d688a32214de37012910ada67c97bab0cfb64673b525ec8ddedfc19bd91d44e0",
       "status": "runnable",
       "title": "Extend Lean target L009 (M096)"
     },
@@ -2655,6 +2729,7 @@
       "kind": "lean",
       "leverage": 985,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20L001%20%E2%80%94%20Extend%20Lean%20target%20L001%20%28M095%29",
+      "packet_sha256": "efd6774db249805836dc89a89e482ad21fd54a9c254b81d65296bb0875cd1654",
       "priority_rank": 15,
       "problems": [
         "M095"
@@ -2664,7 +2739,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "efd6774db249805836dc89a89e482ad21fd54a9c254b81d65296bb0875cd1654",
+      "scope_sha256": "c0ae46e29a8b5ebc40f97a28fbd9553a8d6961f94031d1f1bccf0c29d25df6d6",
       "status": "runnable",
       "title": "Extend Lean target L001 (M095)"
     },
@@ -2686,6 +2761,7 @@
       "kind": "lean",
       "leverage": 985,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20L008%20%E2%80%94%20Extend%20Lean%20target%20L008%20%28M095%29",
+      "packet_sha256": "fbcbde307f4bdabc305f979fab71d00385aa5009b10e2745439cd096a09a75d9",
       "priority_rank": 15,
       "problems": [
         "M095"
@@ -2695,7 +2771,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "fbcbde307f4bdabc305f979fab71d00385aa5009b10e2745439cd096a09a75d9",
+      "scope_sha256": "c189832d67ff92c4406ce43d412c5b480b43d86416d099a2ebfcb9f1a6215fd4",
       "status": "runnable",
       "title": "Extend Lean target L008 (M095)"
     },
@@ -2717,6 +2793,7 @@
       "kind": "lean",
       "leverage": 982,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20L005%20%E2%80%94%20Extend%20Lean%20target%20L005%20%28M019%29",
+      "packet_sha256": "d75d7d4950fb1bb40a194b2140404023f4586177d5034d9a9bae822b49e2fc8e",
       "priority_rank": 18,
       "problems": [
         "M019"
@@ -2726,7 +2803,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "d75d7d4950fb1bb40a194b2140404023f4586177d5034d9a9bae822b49e2fc8e",
+      "scope_sha256": "85b0ec576fbcfef97479567db88e5a81f9e7b0389295089d602cd8ca44680691",
       "status": "runnable",
       "title": "Extend Lean target L005 (M019)"
     },
@@ -2748,6 +2825,7 @@
       "kind": "lean",
       "leverage": 976,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20L004%20%E2%80%94%20Extend%20Lean%20target%20L004%20%28M006%29",
+      "packet_sha256": "8336fc776900240b292e1876710c848e6383562f5362a70ec0d78cb5609ed27f",
       "priority_rank": 24,
       "problems": [
         "M006"
@@ -2757,7 +2835,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "8336fc776900240b292e1876710c848e6383562f5362a70ec0d78cb5609ed27f",
+      "scope_sha256": "5f2b50f1a48eb0c8aaf62ac6c448369e9a1b759ba5d18b97c7fb34bf1ba59208",
       "status": "runnable",
       "title": "Extend Lean target L004 (M006)"
     },
@@ -2779,6 +2857,7 @@
       "kind": "job",
       "leverage": 849,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-extremal_certificates-replay_claim_witness%20%E2%80%94%20Replay%20a%20claimed%20finite%20witness%3A%20Replay%20the%20object%2C%20or%20mine%20the%20census",
+      "packet_sha256": "80f0447f9e75a809b223888659ea66bdbbaa245b538bab07a211e8a4e4313d78",
       "priority_rank": 1,
       "problems": [
         "M071",
@@ -2789,7 +2868,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "80f0447f9e75a809b223888659ea66bdbbaa245b538bab07a211e8a4e4313d78",
+      "scope_sha256": "cac94bda7f479affbeb1ffeafa6f23da14d28d6ef957e2eb852bcd9e01e92e68",
       "status": "runnable",
       "title": "Replay a claimed finite witness: Replay the object, or mine the census"
     },
@@ -2811,6 +2890,7 @@
       "kind": "job",
       "leverage": 847,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-group_rings-replay_claim_witness%20%E2%80%94%20Replay%20a%20claimed%20finite%20witness%3A%20One%20presentation%2C%20one%20product",
+      "packet_sha256": "b18de3995e597eb0364de38f583434cc7f8eb616559a6fa23f55e0302c438d73",
       "priority_rank": 3,
       "problems": [
         "M044",
@@ -2821,7 +2901,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "b18de3995e597eb0364de38f583434cc7f8eb616559a6fa23f55e0302c438d73",
+      "scope_sha256": "d61cd62859cb7815a1e45315f1687c2d9dc210f5a320a8cfb180ad17ca43bbfd",
       "status": "runnable",
       "title": "Replay a claimed finite witness: One presentation, one product"
     },
@@ -2843,6 +2923,7 @@
       "kind": "job",
       "leverage": 836,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-finite_geometry-replay_published%20%E2%80%94%20Replay%20a%20published%20certificate%3A%20Replay%20a%20published%20geometric%20object",
+      "packet_sha256": "6319a37bb334dd1805e46e6f19e1996ae2fcc673760704ec4dfc6120a7efdcd7",
       "priority_rank": 6,
       "problems": [
         "M092",
@@ -2855,7 +2936,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "6319a37bb334dd1805e46e6f19e1996ae2fcc673760704ec4dfc6120a7efdcd7",
+      "scope_sha256": "7d970693c375ff21f11861444993ed9dec8e53975b0a032caa54b02d360b5e01",
       "status": "runnable",
       "title": "Replay a published certificate: Replay a published geometric object"
     },
@@ -2877,6 +2958,7 @@
       "kind": "job",
       "leverage": 826,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-extremal_certificates-mine_structure%20%E2%80%94%20Mine%20structure%20from%20certificates%3A%20Replay%20the%20object%2C%20or%20mine%20the%20census",
+      "packet_sha256": "dd74bb5d9a117fcfa7769393897899261898f6f9d66970fd648df905ec7728bc",
       "priority_rank": 10,
       "problems": [
         "M075",
@@ -2889,7 +2971,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "dd74bb5d9a117fcfa7769393897899261898f6f9d66970fd648df905ec7728bc",
+      "scope_sha256": "7c5ad134da84615e026cc51cc28ef2aa15b7268cedf56c11ed801f33fcd05f69",
       "status": "runnable",
       "title": "Mine structure from certificates: Replay the object, or mine the census"
     },
@@ -2911,6 +2993,7 @@
       "kind": "job",
       "leverage": 813,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-complexity_barriers-specify_shape%20%E2%80%94%20Fill%20the%20shared%20attack%20shape%3A%20One%20model%2C%20one%20gap",
+      "packet_sha256": "a096af37f3dc1eeddf05820068a794972ddc3125ba37f4799f016e63e149f259",
       "priority_rank": 27,
       "problems": [
         "M082",
@@ -2924,7 +3007,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "a096af37f3dc1eeddf05820068a794972ddc3125ba37f4799f016e63e149f259",
+      "scope_sha256": "b2132a1b1efb66f7dad596bd150e34efbd2e9be0518c0e6b4ddf0777b00c9d7f",
       "status": "runnable",
       "title": "Fill the shared attack shape: One model, one gap"
     },
@@ -2946,6 +3029,7 @@
       "kind": "job",
       "leverage": 807,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-extremal_certificates-replay_published%20%E2%80%94%20Replay%20a%20published%20certificate%3A%20Replay%20the%20object%2C%20or%20mine%20the%20census",
+      "packet_sha256": "852a50ff3b7360a6d988618dbb2032ec0cc0de4308f416385aabab87ea15fe59",
       "priority_rank": 5,
       "problems": [
         "M074"
@@ -2955,7 +3039,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "852a50ff3b7360a6d988618dbb2032ec0cc0de4308f416385aabab87ea15fe59",
+      "scope_sha256": "e8df0d87027f9418458a5b10c3e38a82dc849579c2daa1abee6adca754a52201",
       "status": "runnable",
       "title": "Replay a published certificate: Replay the object, or mine the census"
     },
@@ -2977,6 +3061,7 @@
       "kind": "job",
       "leverage": 801,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-algebraic_complexity-lock_restriction%20%E2%80%94%20Lock%20a%20restricted%20class%3A%20One%20format%2C%20replayed%20exactly",
+      "packet_sha256": "245bc80009bd19a0da44818021cca7d7e04468b9c7f8dd271ce9b3dc6cf1e566",
       "priority_rank": 9,
       "problems": [
         "M088"
@@ -2986,7 +3071,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "245bc80009bd19a0da44818021cca7d7e04468b9c7f8dd271ce9b3dc6cf1e566",
+      "scope_sha256": "762a51e861ce8772187923e23c663066873ec56d17247d022782e08232262b6d",
       "status": "runnable",
       "title": "Lock a restricted class: One format, replayed exactly"
     },
@@ -3008,6 +3093,7 @@
       "kind": "job",
       "leverage": 800,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-extremal_asymptotics-specify_shape%20%E2%80%94%20Fill%20the%20shared%20attack%20shape%3A%20One%20family%2C%20one%20explicit%20constant",
+      "packet_sha256": "3ed899ffd066ab6a32ebdcbd9623a0d90d364dcefadb63764a0c6db432641409",
       "priority_rank": 20,
       "problems": [
         "M076",
@@ -3019,7 +3105,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "3ed899ffd066ab6a32ebdcbd9623a0d90d364dcefadb63764a0c6db432641409",
+      "scope_sha256": "755e836959851d9aaeae239b227b8ee7e1b2a8f92aaf80a520bef3523e3c5aae",
       "status": "runnable",
       "title": "Fill the shared attack shape: One family, one explicit constant"
     },
@@ -3041,6 +3127,7 @@
       "kind": "job",
       "leverage": 798,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-algebraic_complexity-replay_published%20%E2%80%94%20Replay%20a%20published%20certificate%3A%20One%20format%2C%20replayed%20exactly",
+      "packet_sha256": "8f68591c9c5a303e155435f13c44f90453c4fb62ab4f18bf5c4b571ff4e4f46c",
       "priority_rank": 14,
       "problems": [
         "M084"
@@ -3050,7 +3137,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "8f68591c9c5a303e155435f13c44f90453c4fb62ab4f18bf5c4b571ff4e4f46c",
+      "scope_sha256": "5303a9b53023c363e2e945fbf492c07ce5186a5f5d2bf2ed75d9d433365b1127",
       "status": "runnable",
       "title": "Replay a published certificate: One format, replayed exactly"
     },
@@ -3072,6 +3159,7 @@
       "kind": "job",
       "leverage": 798,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-effective_diophantine-mine_structure%20%E2%80%94%20Mine%20structure%20from%20certificates%3A%20Explicit%20Diophantine%20certificates",
+      "packet_sha256": "ad6c3881e3806cb409ce3c0792aeaf812beb8c9388580063ec18a0da3bf4a855",
       "priority_rank": 18,
       "problems": [
         "M019",
@@ -3082,7 +3170,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "ad6c3881e3806cb409ce3c0792aeaf812beb8c9388580063ec18a0da3bf4a855",
+      "scope_sha256": "4271b9ffb1d63402c4854e33d66f7f293e1b449c21f43cdf1da2751789cb0123",
       "status": "runnable",
       "title": "Mine structure from certificates: Explicit Diophantine certificates"
     },
@@ -3104,6 +3192,7 @@
       "kind": "job",
       "leverage": 797,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-ramsey_parameter-replay_published%20%E2%80%94%20Replay%20a%20published%20certificate%3A%20A%20colouring%20with%20a%20proof%20trace",
+      "packet_sha256": "9dbc2f9c9c41dde8eedcba906508d76ed3754fecfd7e8b8a6022ee8ec5fd4e4a",
       "priority_rank": 15,
       "problems": [
         "M095"
@@ -3113,7 +3202,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "9dbc2f9c9c41dde8eedcba906508d76ed3754fecfd7e8b8a6022ee8ec5fd4e4a",
+      "scope_sha256": "eb87c7b7849e86e08efe215626241abc23423744d16d1751ce4bb66a74b25097",
       "status": "runnable",
       "title": "Replay a published certificate: A colouring with a proof trace"
     },
@@ -3135,6 +3224,7 @@
       "kind": "job",
       "leverage": 793,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-critical_zeros-replay_published%20%E2%80%94%20Replay%20a%20published%20certificate%3A%20Certified%20zero%20counts",
+      "packet_sha256": "7bbb2408a64d463872edad2fd3b89f1c23bd318d47796540b487e8aa47b46fa4",
       "priority_rank": 19,
       "problems": [
         "M002"
@@ -3144,7 +3234,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "7bbb2408a64d463872edad2fd3b89f1c23bd318d47796540b487e8aa47b46fa4",
+      "scope_sha256": "ccabccf578bbab89bdc10a7417fc0fba9eb8e57990bd3810c20dba0104106ce3",
       "status": "runnable",
       "title": "Replay a published certificate: Certified zero counts"
     },
@@ -3166,6 +3256,7 @@
       "kind": "job",
       "leverage": 793,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-lattice_models-specify_shape%20%E2%80%94%20Fill%20the%20shared%20attack%20shape%3A%20Exact%20counts%20on%20a%20finite%20torus",
+      "packet_sha256": "34aa8f6fd585d65c0df62fd2c02e4be07f0d38778c077744a811633f590c7448",
       "priority_rank": 47,
       "problems": [
         "M061",
@@ -3179,7 +3270,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "34aa8f6fd585d65c0df62fd2c02e4be07f0d38778c077744a811633f590c7448",
+      "scope_sha256": "b5f094592374174a1903d4e27b836e13f3b5bf65d1bb909545c44c6942247229",
       "status": "runnable",
       "title": "Fill the shared attack shape: Exact counts on a finite torus"
     },
@@ -3201,6 +3292,7 @@
       "kind": "job",
       "leverage": 793,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-galois_representations-specify_shape%20%E2%80%94%20Fill%20the%20shared%20attack%20shape%3A%20One%20field%2C%20two%20computations",
+      "packet_sha256": "6831835847fb756567680892283926a799528a36901e9434a8972235e8476d01",
       "priority_rank": 57,
       "problems": [
         "M003",
@@ -3215,7 +3307,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "6831835847fb756567680892283926a799528a36901e9434a8972235e8476d01",
+      "scope_sha256": "09f67e9b07ebc1db1e434cfc067a849fc1f74b2d2928cca54b5f41013594de28",
       "status": "runnable",
       "title": "Fill the shared attack shape: One field, two computations"
     },
@@ -3237,6 +3329,7 @@
       "kind": "job",
       "leverage": 789,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-tsp_gap-mine_structure%20%E2%80%94%20Mine%20structure%20from%20certificates%3A%20A%20new%20metric%20class%2C%20both%20optima%20certified",
+      "packet_sha256": "e3172396f1e4e88ec7ed913117eea8821df1714a2e29fd871238c0fff1f81837",
       "priority_rank": 17,
       "problems": [
         "M097"
@@ -3246,7 +3339,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "e3172396f1e4e88ec7ed913117eea8821df1714a2e29fd871238c0fff1f81837",
+      "scope_sha256": "1fbbc76d3191b359b9610d0746b17d908c8b5f588360430929e7fb3277b0126c",
       "status": "runnable",
       "title": "Mine structure from certificates: A new metric class, both optima certified"
     },
@@ -3268,6 +3361,7 @@
       "kind": "job",
       "leverage": 789,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-rigidity_dynamics-specify_shape%20%E2%80%94%20Fill%20the%20shared%20attack%20shape%3A%20One%20map%2C%20one%20enclosure",
+      "packet_sha256": "682cb00bb07e05c50102300303ba9f147731f65d1188f52df003d20dc2435a05",
       "priority_rank": 51,
       "problems": [
         "M065",
@@ -3281,7 +3375,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "682cb00bb07e05c50102300303ba9f147731f65d1188f52df003d20dc2435a05",
+      "scope_sha256": "d2810b8de4a7655b01ea3efc2a465fc7fabe297733f922439fa8364b9b4d59af",
       "status": "runnable",
       "title": "Fill the shared attack shape: One map, one enclosure"
     },
@@ -3303,6 +3397,7 @@
       "kind": "job",
       "leverage": 787,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-complexity_barriers-scope_audit%20%E2%80%94%20Audit%20claim%20scope%3A%20One%20model%2C%20one%20gap",
+      "packet_sha256": "b7dd6b1322c9ab33d27a80466e2a9aa471717a1329ebf83acf56da878fa3cd08",
       "priority_rank": 21,
       "problems": [
         "M085"
@@ -3312,7 +3407,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "b7dd6b1322c9ab33d27a80466e2a9aa471717a1329ebf83acf56da878fa3cd08",
+      "scope_sha256": "33d56a7af04046881efb85657bdae3380bf315f2dfe14cb62b6db26a23414112",
       "status": "runnable",
       "title": "Audit claim scope: One model, one gap"
     },
@@ -3334,6 +3429,7 @@
       "kind": "job",
       "leverage": 785,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-distance_sets-scope_audit%20%E2%80%94%20Audit%20claim%20scope%3A%20One%20set%2C%20dimension%20and%20measure%20enclosed",
+      "packet_sha256": "e3ec9d514236416eb2f9844983b5671d054524310c204e85fbd00ed978186e18",
       "priority_rank": 23,
       "problems": [
         "M100"
@@ -3343,7 +3439,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "e3ec9d514236416eb2f9844983b5671d054524310c204e85fbd00ed978186e18",
+      "scope_sha256": "95ad8934aea09b33b49b430b418f0ca21d3f3462f9cb59e1338313cd56f697c6",
       "status": "runnable",
       "title": "Audit claim scope: One set, dimension and measure enclosed"
     },
@@ -3365,6 +3461,7 @@
       "kind": "job",
       "leverage": 782,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-algebraic_complexity-specify_shape%20%E2%80%94%20Fill%20the%20shared%20attack%20shape%3A%20One%20format%2C%20replayed%20exactly",
+      "packet_sha256": "cb0ed16006dfd483219a1999c5ec27aeda038a3d357c3b3dc142ebf8d1700cbc",
       "priority_rank": 28,
       "problems": [
         "M083",
@@ -3375,7 +3472,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "cb0ed16006dfd483219a1999c5ec27aeda038a3d357c3b3dc142ebf8d1700cbc",
+      "scope_sha256": "d6fe792d689349685980023e10dc3d06da993110260abfe8779e376bb1847ba4",
       "status": "runnable",
       "title": "Fill the shared attack shape: One format, replayed exactly"
     },
@@ -3397,6 +3494,7 @@
       "kind": "job",
       "leverage": 781,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-sieve_infinitude-specify_shape%20%E2%80%94%20Fill%20the%20shared%20attack%20shape%3A%20Explicit%20sieve%20gaps",
+      "packet_sha256": "6fd0afc0b424f720ee7e48b3e8ab39e38c03eaf121724d3ae30492e3e0c6a261",
       "priority_rank": 59,
       "problems": [
         "M005",
@@ -3410,7 +3508,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "6fd0afc0b424f720ee7e48b3e8ab39e38c03eaf121724d3ae30492e3e0c6a261",
+      "scope_sha256": "be518b811dfd8ffc632eaa64aafe0ea2683c62127d43ffdea72277f737fd34e7",
       "status": "runnable",
       "title": "Fill the shared attack shape: Explicit sieve gaps"
     },
@@ -3432,6 +3530,7 @@
       "kind": "job",
       "leverage": 780,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-pde_regularity-scope_audit%20%E2%80%94%20Audit%20claim%20scope%3A%20One%20ansatz%2C%20one%20enclosure",
+      "packet_sha256": "fd23fdba282035c8048aa729ff8542b678a5b39e451ec6647793f67fb9f5f72b",
       "priority_rank": 38,
       "problems": [
         "M054",
@@ -3442,7 +3541,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "fd23fdba282035c8048aa729ff8542b678a5b39e451ec6647793f67fb9f5f72b",
+      "scope_sha256": "18686bf8a076aaf1b22812efe6cd15d039fc1ac1f0a5cfb18fa0aab787113063",
       "status": "runnable",
       "title": "Audit claim scope: One ansatz, one enclosure"
     },
@@ -3464,6 +3563,7 @@
       "kind": "job",
       "leverage": 779,
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-harmonic_analysis-scope_audit%20%E2%80%94%20Audit%20claim%20scope%3A%20One%20dimension%2C%20one%20endpoint",
+      "packet_sha256": "d9a7075d1f9146794638501752ea6cd5b028386a53d8dfbdf56b6fd01bcd27cd",
       "priority_rank": 39,
       "problems": [
         "M055",
@@ -3474,7 +3574,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "d9a7075d1f9146794638501752ea6cd5b028386a53d8dfbdf56b6fd01bcd27cd",
+      "scope_sha256": "47157c65e4a1eba717bb84e0079ce7bdac1b9db738e15f221b4e1da6a7cbc0ff",
       "status": "runnable",
       "title": "Audit claim scope: One dimension, one endpoint"
     }

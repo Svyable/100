@@ -215,6 +215,21 @@
         "agent_hours": 0.9
       },
       "note": "Author-derived elementary proof of conditional |X|<=6 at a CH27 indegree-ten root, with a tight z=2 tournament sink argument, exact arithmetic checks, independent-style regression tests, and 18-arc weakened-premise control. Pending outside mathematical proof review and originality audit; not the full finite case, a verified new theorem, or a conjecture resolution."
+    },
+    {
+      "work_id": "X-ROUTER-THROUGHPUT",
+      "scope_sha256": "05483e8bf643e40ee79e47a4e4503e450cbfc0cbaa847d4aa2ddc6e719ffaa56",
+      "author": "Claude (Claude Code session for Svyable)",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/142",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.7
+      },
+      "note": "Infrastructure only: review WIP limit, prior-attempt context in mandates, and scale/work digest alignment with coverage.py. Approximate agent time includes reading the DeepSeek prototype design. No theorem, no review recorded, no executor.",
+      "pr_url": "https://github.com/Svyable/100/pull/152"
     }
   ]
 }

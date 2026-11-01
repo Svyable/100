@@ -147,6 +147,42 @@ class RouterTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "max_workers"):
             self.route([issue(1)], max_workers=True)
 
+    def test_review_wip_limit_admits_only_review_work(self):
+        self.items[1]["kind"] = "review"
+        pending = [{"work_id": f"X-{i}", "outcome": "merged_pending_review"} for i in range(3)]
+        a = self.route([issue(1), issue(2)], outcomes=pending, review_wip=3)
+        self.assertTrue(a["review_only"])
+        self.assertEqual(a["review_backlog"], 3)
+        got = {d["work_id"]: (d["decision"], d["reason"]) for d in a["decisions"]}
+        self.assertEqual(got["F-M001"], ("queued", "review_wip_exceeded"))
+        self.assertEqual(got["F-M002"], ("reserved", "verified_single_claim"))
+        self.assertEqual(a["slots_occupied"], 1)
+        # Below the limit, or with the limit disabled, ordinary work is admitted again.
+        for kw in ({"outcomes": pending[:2], "review_wip": 3}, {"outcomes": pending, "review_wip": None}):
+            b = self.route([issue(1), issue(2)], **kw)
+            self.assertFalse(b["review_only"])
+            self.assertEqual(b["slots_occupied"], 2)
+        accepted = pending + [{"work_id": "X-9", "outcome": "accepted_independent"}]
+        self.assertEqual(router.review_backlog(accepted), 3)
+        with self.assertRaises(ValueError):
+            self.route([issue(1)], review_wip=0)
+
+    def test_mandate_carries_prior_attempts_on_same_problem_only(self):
+        outcomes = [
+            {"work_id": "O-M001-01", "outcome": "gap_reported", "closed_on": "2026-10-30",
+             "pr_url": "https://github.com/Svyable/100/pull/7", "note": "route A fails at n=5" + "x" * 2000},
+            {"work_id": "F-M001", "outcome": "falsified", "closed_on": "2026-10-31", "note": "encoding wrong"},
+            {"work_id": "F-M002", "outcome": "gap_reported", "closed_on": "2026-10-31", "note": "other problem"},
+            {"work_id": "X-INFRA", "outcome": "merged_pending_review"},
+            "not a record",
+        ]
+        a = self.route([issue(1)], outcomes=outcomes)
+        prior = a["actions"][0]["mandate"]["prior_attempts"]
+        self.assertEqual([p["work_id"] for p in prior], ["F-M001", "O-M001-01"])
+        self.assertLessEqual(len(prior[1]["note"]), router.PRIOR_NOTE_CHARS)
+        self.assertIn("prior_attempts", a["actions"][0]["mandate"]["instructions"])
+        self.assertEqual(self.route([issue(2)])["actions"][0]["mandate"]["prior_attempts"], [])
+
 
 if __name__ == "__main__":
     unittest.main()
