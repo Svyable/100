@@ -230,6 +230,21 @@
         "agent_hours": 0.8
       },
       "note": "Estimated active author/tool effort. Outcome classification applies only once PR #163 merges and claim closes. Classical spin expansion; source-specific quantitative cone, exact independent-style checks and negative control. No external novelty audit, specialist independent review, universal Sidorenko resolution or finite host witness."
+    },
+    {
+      "work_id": "X-M073-ANTIFERRO-STABILITY",
+      "scope_sha256": "b3fc98c402b57418d4f3d7e86e354bab5cf27887abf3de92ef5b6b0ccae42f94",
+      "author": "ChatGPT (M073 antiferromagnetic two-block stability)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/165",
+      "pr_url": "https://github.com/Svyable/100/pull/166",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 1.0
+      },
+      "note": "Approximate active author/tool work. General bipartite relative Ising stability bound and M073 off-diagonal rational cone certificate; two exact source-pinned density paths, 10 dedicated tests and negative triangle control. Classical correlation tools; originality and independent mathematical review unverified. Outcome status conditional on PR merge; not full Sidorenko or finite-host proof."
     }
   ]
 }
