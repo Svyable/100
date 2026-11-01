@@ -200,6 +200,19 @@ def full_census():
             tsp = int(costs.min())
             assert tsp == sum(cost[j] for j in tours[int(costs.argmin())])
             ratio = str(Fraction(tsp) / hk)
+            if ratio != "1":
+                # Separate interior-point LP path and integer DP on every
+                # fractional-gap case (62 in the pinned eight-vertex census).
+                alt = linprog(np.array(cost, dtype=float),
+                              A_ub=cut_matrix, b_ub=np.full(len(CUTS), -2.),
+                              A_eq=degree_matrix, b_eq=np.full(N, 2.),
+                              bounds=(0, None), method="highs-ipm")
+                if not alt.success:
+                    raise RuntimeError((total, alt.message, "IPM"))
+                assert check_lp(cost, rational(alt.x),
+                                rational(alt.eqlin.marginals),
+                                rational(-alt.ineqlin.marginals)) == hk
+                assert independent_tsp(cost) == tsp
             hist[ratio] += 1
             digest.update((g6 + "\t" + str(tsp) + "\t" + str(hk) + "\n").encode())
             if ratio == EXPECTED["max_ratio"]:
