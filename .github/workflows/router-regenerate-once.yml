@@ -1,0 +1,31 @@
+name: One-shot router PR regeneration
+on:
+  push:
+    branches: [feat/superagent-claim-router]
+permissions:
+  contents: write
+jobs:
+  regenerate:
+    if: github.ref == 'refs/heads/feat/superagent-claim-router'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/superagent-claim-router
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 scripts/regen.py
+      - run: python3 scripts/regen.py --check --fast
+      - run: python3 -m unittest discover -s tests -p 'test_router.py' -v
+      - name: Commit regenerated artifacts, then remove temporary workflow
+        run: |
+          rm .github/workflows/router-regenerate-once.yml
+          git add -A
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --cached --quiet; then
+            git commit -m "Regenerate claim-form-compatible router site"
+            git push origin HEAD:feat/superagent-claim-router
+          fi
