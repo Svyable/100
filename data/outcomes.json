@@ -62,6 +62,21 @@
         "agent_hours": 0.8
       },
       "note": "Pinned October 4 source supplies a probabilistically selected matching outcome, not concrete graph edges, relators or group-ring supports. Independently enumerated type-level PG(2,128) and Fano parity, with mutation controls; no group-ring products, independent reviewer, or obligation discharge."
+    },
+    {
+      "work_id": "O-M092-01",
+      "scope_sha256": "eaba3c39e8db2ecb903cc3ed24fc186e11cf22a1066ebc90b18624bfb0bdca2b",
+      "author": "ChatGPT (M092 exact d4 projector replay)",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/112",
+      "pr_url": "https://github.com/Svyable/100/pull/113",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.2
+      },
+      "note": "Approximate 0.2 agent-hours of active construction and checks; published Bengtsson 2017 d4 phase table reconstructed in exact radical arithmetic, 120 pairwise projector overlaps, character-sum cross-check and five tamper/field tests. No d5-8 fiducial replay, no independent mathematical review and no O-M092-01 discharge."
     }
   ]
 }
