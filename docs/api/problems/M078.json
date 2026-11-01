@@ -24,8 +24,8 @@
   "action_bonus": 6,
   "method_id": "extremal_certificates",
   "method_title": "Replay the object, or mine the census",
-  "dispatch_next": "The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two.",
-  "dispatch_why": "The deck_invariants mine shows degree sequence plus triangle count still leaves collisions at 6 vertices. A larger census sits inside the published computational range.",
+  "dispatch_next": "Degree + triangles + induced P4 now separates the census through 6 vertices (research/M078_P4.md). At n = 7 the same triple still leaves 116 excess graphs, or 36 with C4 added. Isolate a deck-readable invariant that finishes n = 7, or a structural family where those collisions concentrate; do not enlarge the verified reconstruction range.",
+  "dispatch_why": "Degree + triangles + induced P4 now separates through 6 vertices. The remaining collisions start at n = 7; enlarging the census sits inside McKay's published range.",
   "campaign_stage": "benchmark_reproduced",
   "milestone_count": 2,
   "url": "https://svyable.github.io/100/problems/M078/",
@@ -59,13 +59,13 @@
     "method": "Deck-collision search over certified graph censuses",
     "hypothesis": "Every finite simple graph on at least 3 vertices is determined up to isomorphism by its vertex-deleted deck.",
     "first_proof_obligation": "Pick a graph family not yet known to be reconstructible and isolate a lemma that reconstructs a new invariant for it.",
-    "next_experiment": "The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two.",
+    "next_experiment": "Degree + triangles + induced P4 now separates the census through 6 vertices (research/M078_P4.md). At n = 7 the same triple still leaves 116 excess graphs, or 36 with C4 added. Isolate a deck-readable invariant that finishes n = 7, or a structural family where those collisions concentrate; do not enlarge the verified reconstruction range.",
     "additional_verifiers": [
       "python3 scripts/mine.py --mine deck_invariants"
     ],
     "falsification": "Two non-isomorphic graphs with identical decks, confirmed by independent canonical forms.",
     "blocker": "Computer verification already reaches at least 11 vertices; novelty has to come from a structural lemma, not from range.",
-    "dossier": "research/LAB_CAMPAIGNS.md",
+    "dossier": "research/M078_P4.md",
     "verifier": "python3 scripts/lab.py --probe reconstruction"
   },
   "probes": [
@@ -110,12 +110,12 @@
       "id": "B-MINE-078",
       "problem_id": "M078",
       "classification": "reproduced_known",
-      "title": "Deck-certified degree and triangle separation through 6 vertices",
+      "title": "Deck-certified degree, triangle and induced-P4 separation through 6 vertices",
       "scope": "Census already known to be reconstructible far beyond 6 vertices; this only ranks coarse invariants",
-      "description": "Degree sequence separates through 4 vertices. Degree sequence plus triangle count separates through 5 and leaves 20 excess graphs at 6. Both invariants are recomputed from cards.",
+      "description": "Degree sequence separates through 4 vertices. Degree plus triangles separates through 5 and leaves 20 excess at 6. Adding the deck-readable induced P4 count finishes separation through 6. All three invariants are recomputed from cards.",
       "verifier": "python3 scripts/mine.py --mine deck_invariants",
       "artifact": "scripts/mines/deck_invariants.py",
-      "verified_on": "2026-10-31"
+      "verified_on": "2026-11-01"
     }
   ],
   "engine_roadmap": null,
@@ -187,6 +187,11 @@
       "title": "Lab campaigns: problems under exact computation",
       "source": "research/LAB_CAMPAIGNS.md",
       "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "M078 — induced P₄ finishes the n ≤ 6 deck-invariant census",
+      "source": "research/M078_P4.md",
+      "url": "https://svyable.github.io/100/library/m078-p4/"
     },
     {
       "title": "Proof-driven research engine",

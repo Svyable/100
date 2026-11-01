@@ -2,18 +2,18 @@
   "format": "svyable.mines.v1",
   "mines": {
     "deck_invariants": {
-      "certificate_sha256": "31a81e041e99425698ec71cbf58b6c04eb9baf8cbe814c22dfb0624011b59ec1",
+      "certificate_sha256": "6a4fcad80cb0663dfcd90b4c4c7f92f65219e766b9f1d7309a8e38c4976d465b",
       "engines": [
         "graph_census"
       ],
-      "frontier": "Reconstruction is already verified by computer through at least 11 vertices (McKay 1997). This table only says which coarse deck invariants separate the small census.",
+      "frontier": "Reconstruction is already verified by computer through at least 11 vertices (McKay 1997). Degree + triangles + induced P4 separates the census through 6 vertices here; that finite separation is not a general reconstruction proof.",
       "holds": true,
       "mine": "deck_invariants",
       "params": {
         "max_n": 6
       },
       "problem_id": "M078",
-      "scope": "On the complete graph census for 3 <= n <= 6, the excess of graphs over classes of the deck-certified degree sequence, and over degree sequence plus triangle count.",
+      "scope": "On the complete graph census for 3 <= n <= 6, the excess of graphs over classes of the deck-certified degree sequence, over degree sequence plus triangle count, and over those two plus the induced P4 count.",
       "summary": {
         "degree_and_triangles_excess": {
           "3": 0,
@@ -29,6 +29,13 @@
           "6": 54
         },
         "degree_separates_through": 4,
+        "degree_triangles_p4_excess": {
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "degree_triangles_p4_separate_through": 6,
         "max_n": 6
       },
       "title": "Deck invariants that separate the census"

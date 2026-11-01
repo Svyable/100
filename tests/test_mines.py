@@ -42,7 +42,10 @@ class MineTests(unittest.TestCase):
         self.assertEqual(deck["degree_separates_through"], 4)
         self.assertEqual(deck["degree_and_triangles_separate_through"], 5)
         self.assertEqual(deck["degree_and_triangles_excess"]["6"], 20)
-        self.assertIn("20 excess", campaigns["M078"]["next_experiment"])
+        self.assertEqual(deck["degree_triangles_p4_excess"]["6"], 0)
+        self.assertEqual(deck["degree_triangles_p4_separate_through"], 6)
+        self.assertIn("induced P4", campaigns["M078"]["next_experiment"])
+        self.assertEqual(campaigns["M078"]["dossier"], "research/M078_P4.md")
 
         poset = tables["poset_balance"]["summary"]
         self.assertEqual(poset["one_third_posets"], 11)

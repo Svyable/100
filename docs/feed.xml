@@ -14,6 +14,13 @@
 <summary>The argument principle certifies N(100) = 29 exactly from interval boxes along 2 -&gt; 2+100i -&gt; 1/2+100i, and Hardy&#x27;s Z(t) has 29 certified sign changes on (0, 100]. All arithmetic is rigorous interval arithmetic with explicit series remainders, repeated by the checker at another precision and truncation. The deep run certifies all 649 zeros below height 1000 the same way. Scope: Known small range; not new</summary>
 </entry>
 <entry>
+<title>Milestone: Deck-certified degree, triangle and induced-P4 separation through 6 vertices</title>
+<link href="https://svyable.github.io/100/ledger/#B-MINE-078"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-MINE-078</id>
+<updated>2026-11-01T00:00:00Z</updated>
+<summary>Degree sequence separates through 4 vertices. Degree plus triangles separates through 5 and leaves 20 excess at 6. Adding the deck-readable induced P4 count finishes separation through 6. All three invariants are recomputed from cards. Scope: Census already known to be reconstructible far beyond 6 vertices; this only ranks coarse invariants</summary>
+</entry>
+<entry>
 <title>Milestone: GRH to height 20 for the real primitive characters of conductor 3, 4 and 5</title>
 <link href="https://svyable.github.io/100/ledger/#B-GRH-001"/>
 <id>tag:svyable.github.io,2026:100/milestone-B-GRH-001</id>
@@ -110,13 +117,6 @@
 <id>tag:svyable.github.io,2026:100/milestone-B-MINE-079</id>
 <updated>2026-10-31T00:00:00Z</updated>
 <summary>Eleven posets attain best balance 1/3. Their width-height types are 2x2, 2x3, 2x4 and 2x5. Balances are recounted by removing minimal elements. Scope: Inside the published verification through 11 elements, and inside Linial&#x27;s width-2 theorem; not a new case</summary>
-</entry>
-<entry>
-<title>Milestone: Deck-certified degree and triangle separation through 6 vertices</title>
-<link href="https://svyable.github.io/100/ledger/#B-MINE-078"/>
-<id>tag:svyable.github.io,2026:100/milestone-B-MINE-078</id>
-<updated>2026-10-31T00:00:00Z</updated>
-<summary>Degree sequence separates through 4 vertices. Degree sequence plus triangle count separates through 5 and leaves 20 excess graphs at 6. Both invariants are recomputed from cards. Scope: Census already known to be reconstructible far beyond 6 vertices; this only ranks coarse invariants</summary>
 </entry>
 <entry>
 <title>Milestone: Union-closed families on at most 4 elements, up to relabelling</title>

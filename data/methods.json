@@ -83,7 +83,7 @@
     },
     "M078": {
       "action": "mine_structure",
-      "why": "The deck_invariants mine shows degree sequence plus triangle count still leaves collisions at 6 vertices. A larger census sits inside the published computational range."
+      "why": "Degree + triangles + induced P4 now separates through 6 vertices. The remaining collisions start at n = 7; enlarging the census sits inside McKay's published range."
     },
     "M079": {
       "action": "mine_structure",

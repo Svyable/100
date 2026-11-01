@@ -608,6 +608,17 @@
         "M075",
         "M074"
       ]
+    },
+    {
+      "id": "R50",
+      "track": "campaigns",
+      "horizon": "shipped",
+      "title": "Deck-readable induced P4 separates the n<=6 census",
+      "outcome": "Degree + triangles + induced P4, each recovered from the deck for n>=5, separates every graph through 6 vertices; n=7 excess remains.",
+      "evidence": "research/M078_P4.md",
+      "problems": [
+        "M078"
+      ]
     }
   ]
 }

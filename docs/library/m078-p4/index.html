@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M078 — induced P₄ finishes the n ≤ 6 deck-invariant census · 100</title>
+<meta name="description" content="Dated: 2026-11-01. Scope: a finite separation statement on the Burnside-certified graph census through 6 vertices. Not claimed: a proof of the graph reconstruction conjecture, novelty over McKay’s computational verification through 11 verti">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m078-p4/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M078 — induced P₄ finishes the n ≤ 6 deck-invariant census · 100">
+<meta property="og:description" content="Dated: 2026-11-01. Scope: a finite separation statement on the Burnside-certified graph census through 6 vertices. Not claimed: a proof of the graph reconstruction conjecture, novelty over McKay’s computational verification through 11 verti">
+<meta property="og:url" content="https://svyable.github.io/100/library/m078-p4/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M078 — induced P₄ finishes the n ≤ 6 deck-invariant census</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#the-overlooked-step">The overlooked step</a></li><li class="toc-l2"><a href="#deck-readable-induced-p₄">Deck-readable induced P₄</a></li><li class="toc-l2"><a href="#finite-separation-theorem">Finite separation theorem</a></li><li class="toc-l2"><a href="#evidence-boundary">Evidence boundary</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M078/" title="Graph reconstruction conjecture">M078</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M078_P4.md" rel="noopener noreferrer">research/M078_P4.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M078 — induced P₄ finishes the n ≤ 6 deck-invariant census</h1>
+<p><strong>Dated:</strong> 2026-11-01. <strong>Scope:</strong> a finite separation statement on the Burnside-certified graph census through 6 vertices. <strong>Not claimed:</strong> a proof of the graph reconstruction conjecture, novelty over McKay’s computational verification through 11 vertices, or separation at n = 7.</p>
+<h2 id="the-overlooked-step">The overlooked step<a class="anchor" href="#the-overlooked-step" aria-label="Link to this section">#</a></h2>
+<p>The certified mine <a href="https://github.com/Svyable/100/blob/main/scripts/mines/deck_invariants.py" rel="noopener noreferrer"><code>deck_invariants</code></a> already showed that Kelly’s degree sequence plus the triangle count separates every graph through 5 vertices and leaves <strong>20</strong> colliding pairs at 6 vertices. The campaign asked for a deck-readable invariant strictly stronger than those two. Extending the census is refused: reconstruction is already known by computer through at least 11 vertices.</p>
+<h2 id="deck-readable-induced-p₄">Deck-readable induced P₄<a class="anchor" href="#deck-readable-induced-p₄" aria-label="Link to this section">#</a></h2>
+<p>For n ≥ 5, every induced copy of P₄ in G uses four vertices and therefore survives in exactly the n − 4 cards that delete a vertex outside that copy. Consequently</p>
+<p>$$ #\{\text{induced }P_4\text{ in }G\} = \frac{1}{n-4}\sum_v #\{\text{induced }P_4\text{ in }G-v\}. $$</p>
+<p>The right-hand side is read from the deck alone. The independent checker in the mine recomputes the left-hand side from the adjacency matrix and rejects any mismatch.</p>
+<h2 id="finite-separation-theorem">Finite separation theorem<a class="anchor" href="#finite-separation-theorem" aria-label="Link to this section">#</a></h2>
+<p>On the complete unlabeled census for 3 ≤ n ≤ 6 (sizes 4, 11, 34, 156; Burnside certified against OEIS A000088):</p>
+<div class="table-wrap"><table><thead><tr><th>Invariants</th><th class="al-right">Separates through</th><th class="al-right">Excess at n = 6</th></tr></thead><tbody><tr><td>Degree sequence</td><td class="al-right">4</td><td class="al-right">54</td></tr><tr><td>Degree + triangles</td><td class="al-right">5</td><td class="al-right">20</td></tr><tr><td>Degree + triangles + induced P₄</td><td class="al-right"><strong>6</strong></td><td class="al-right"><strong>0</strong></td></tr></tbody></table></div>
+<p>So every graph on at most six vertices is separated from every other by the triple (degree sequence, triangle count, induced P₄ count), and each coordinate is deck-readable for n ≥ 5.</p>
+<p>At n = 7 the same triple still leaves 116 excess graphs among 1044; adding the subgraph C₄ count leaves 36. Those collisions are the next structural target, not a reason to enlarge the verified reconstruction range.</p>
+<h2 id="evidence-boundary">Evidence boundary<a class="anchor" href="#evidence-boundary" aria-label="Link to this section">#</a></h2>
+<ul><li>The reconstruction conjecture remains open. This note only ranks coarse deck-readable invariants on a census already known to be reconstructible.</li><li>Do not promote M078 toward Solved, and do not describe the table as a new general reconstruction lemma.</li><li>Run:</li></ul>
+<pre><code class="lang-sh">python3 scripts/mine.py --mine deck_invariants
+python3 -m unittest discover -s tests -p &#x27;test_mines.py&#x27; -v</code></pre>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

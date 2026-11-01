@@ -9,7 +9,7 @@ Each table below was recomputed by a second code path. The ranges are inside pub
 | [`goldbach_growth`](scripts/mines/goldbach_growth.py) | M006 | For every even n with 4 <= n <= 20000, the least prime p such that n-p is prime, and the pairs (n, p) where that least prime sets a new record. | `aec113d543d3` |
 | [`straus_patterns`](scripts/mines/straus_patterns.py) | M019 | Every prime n <= 8000 with n = 1 (mod 24) has an explicit positive solution of 4/n = 1/x + 1/y + 1/z, grouped by the residue 4x - n. | `a58457c801a9` |
 | [`straus_identities`](scripts/mines/straus_identities.py) | M019 | Nine polynomial identities give explicit 4/n = 1/x+1/y+1/z solutions on named arithmetic progressions inside n = 1 (mod 24); prime coverage is reported through 8000. | `94d399f83ea2` |
-| [`deck_invariants`](scripts/mines/deck_invariants.py) | M078 | On the complete graph census for 3 <= n <= 6, the excess of graphs over classes of the deck-certified degree sequence, and over degree sequence plus triangle count. | `31a81e041e99` |
+| [`deck_invariants`](scripts/mines/deck_invariants.py) | M078 | On the complete graph census for 3 <= n <= 6, the excess of graphs over classes of the deck-certified degree sequence, over degree sequence plus triangle count, and over those two plus the induced P4 count. | `6a4fcad80cb0` |
 | [`poset_balance`](scripts/mines/poset_balance.py) | M079 | Every non-chain poset on at most 6 elements has best balance at least 1/3, and the width-height profile of those whose best balance is exactly 1/3 is the recorded multiset. | `30a01221ce5f` |
 | [`frankl_orbits`](scripts/mines/frankl_orbits.py) | M075 | Every nontrivial union-closed family on a ground set of size at most 4 satisfies Frankl's abundance bound, and the number of families up to relabelling is the recorded orbit count. | `dbae6e1504f6` |
 
@@ -163,9 +163,9 @@ Run `python3 scripts/mine.py --mine straus_identities`.
 
 ### M078 · Deck invariants that separate the census
 
-On the complete graph census for 3 <= n <= 6, the excess of graphs over classes of the deck-certified degree sequence, and over degree sequence plus triangle count.
+On the complete graph census for 3 <= n <= 6, the excess of graphs over classes of the deck-certified degree sequence, over degree sequence plus triangle count, and over those two plus the induced P4 count.
 
-**Frontier.** Reconstruction is already verified by computer through at least 11 vertices (McKay 1997). This table only says which coarse deck invariants separate the small census.
+**Frontier.** Reconstruction is already verified by computer through at least 11 vertices (McKay 1997). Degree + triangles + induced P4 separates the census through 6 vertices here; that finite separation is not a general reconstruction proof.
 
 ```json
 {
@@ -183,6 +183,13 @@ On the complete graph census for 3 <= n <= 6, the excess of graphs over classes 
     "6": 54
   },
   "degree_separates_through": 4,
+  "degree_triangles_p4_excess": {
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "6": 0
+  },
+  "degree_triangles_p4_separate_through": 6,
   "max_n": 6
 }
 ```
