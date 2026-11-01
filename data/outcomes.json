@@ -92,6 +92,21 @@
         "agent_hours": 0.5
       },
       "note": "Exact frame-normalized GF(q) 4-arc maxima for q=2,3,4,5,7,8,9, all next sizes exhaustively excluded; separate Leibniz determinant witness checker and eight adversarial tests. Known finite reproduction; no independent mathematical review or O-M093-01 discharge."
+    },
+    {
+      "work_id": "O-M094-01",
+      "scope_sha256": "34e16102d6f22db90d9148603d18b052bb3c6829a7a55994f9c3e433b1a1d86f",
+      "author": "ChatGPT (M094 multiplier-symmetry audit)",
+      "outcome": "gap_reported",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/116",
+      "pr_url": "https://github.com/Svyable/100/pull/117",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.4
+      },
+      "note": "Elementary n29 row-sum-square no-go for common order-4 or order-14 multiplier invariance; independent-path exact arithmetic and 6 adversarial tests. Does not construct n29 Williamson quadruple, nor 116/156/172 Hadamard matrices; obligation and independent review remain open."
     }
   ]
 }
