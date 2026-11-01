@@ -34,6 +34,8 @@ enumeration unless a separately proved reduction covers the remaining domain.
 
 ## 2. The smallest state machine that is useful
 
+The public [Lamport proof map](https://svyable.github.io/100/lamport/) renders this DAG and each node's exact statement, falsifier, boundary, next action and evidence state. A [static JSON projection](https://svyable.github.io/100/api/lamport.json) supports independent reuse. Both are generated from the validated canonical registry; neither is an alternative discharge or Solved gate.
+
 Canonical source: [data/proof_obligations.json](../data/proof_obligations.json).
 Structural validator: [scripts/proof_obligations.py](../scripts/proof_obligations.py).
 

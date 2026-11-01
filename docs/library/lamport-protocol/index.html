@@ -19,6 +19,8 @@
 <link rel="stylesheet" href="../../assets/style.css">
 <link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
 <link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
 <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <script src="../../assets/app.js" defer></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
@@ -31,7 +33,7 @@
     <span class="brand-mark">100<span class="brand-dot">.</span></span>
     <span class="brand-caption">SVYABLE<br>RESEARCH</span>
   </a>
-  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
   <div class="header-tools">
     <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
     <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
@@ -52,6 +54,7 @@
 <ul><li><strong>Statement:</strong> domain, quantifiers, parameters, assumptions and conclusion.</li><li><strong>Known boundary:</strong> the strongest <em>applicable</em> published result; which cases or conditions it already covers.</li><li><strong>Smallest missing implication:</strong> A implies B, with no implicit step between.</li><li><strong>Falsifier:</strong> a concrete object or failure mode which would refute that implication; distinguish a failed search from a mathematical counterexample.</li><li><strong>Certificate:</strong> what an independent checker could accept, and exactly what it would certify.</li><li><strong>Exit:</strong> the observable artifact that closes the obligation, and the next action if it does not close.</li></ul>
 <p>Write a hierarchical proof whose children are named obligations, rather than asking a language model to fill a whole conjecture-sized hole. Every assumption is scoped where used. A universal statement is never inferred from finite enumeration unless a separately proved reduction covers the remaining domain.</p>
 <h2 id="2-the-smallest-state-machine-that-is-useful">2. The smallest state machine that is useful<a class="anchor" href="#2-the-smallest-state-machine-that-is-useful" aria-label="Link to this section">#</a></h2>
+<p>The public <a href="https://svyable.github.io/100/lamport/" rel="noopener noreferrer">Lamport proof map</a> renders this DAG and each node&#x27;s exact statement, falsifier, boundary, next action and evidence state. A <a href="https://svyable.github.io/100/api/lamport.json" rel="noopener noreferrer">static JSON projection</a> supports independent reuse. Both are generated from the validated canonical registry; neither is an alternative discharge or Solved gate.</p>
 <p>Canonical source: <a href="https://github.com/Svyable/100/blob/main/data/proof_obligations.json" rel="noopener noreferrer">data/proof_obligations.json</a>. Structural validator: <a href="https://github.com/Svyable/100/blob/main/scripts/proof_obligations.py" rel="noopener noreferrer">scripts/proof_obligations.py</a>.</p>
 <p>An obligation has an immutable ID, a problem ID, one precise statement, its prior-art boundary, a falsifier, a next action, dependencies, a kind and a state.</p>
 <p>States:</p>
@@ -82,7 +85,7 @@
 <footer class="site-footer">
   <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
   <div class="footer-links">
-    <a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
     <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
   </div>
   <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>

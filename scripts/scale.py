@@ -31,6 +31,7 @@ ROLES = ("scout", "adversary", "checker")
 FAMILY_BASE = {
     "obligation": 1000,
     "review": 900,  # independent acceptance is the bottleneck yield is measured on
+    "benchmark": 500,  # frozen experimental slots, not completed trials
     "lean": 800,
     "job": 600,
     "roadmap": 400,

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>V-P-M095: Independent certificate and scope audit for M095 · 100</title>
+<meta name="description" content="Reproduce the campaign verifier (python3 scripts/ramsey.py demo); inspect the independent checker, deliberately corrupt its input/certificate, and compare every computational claim against the registered finite scope and its cited published">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/work/V-P-M095/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="V-P-M095: Independent certificate and scope audit for M095 · 100">
+<meta property="og:description" content="Reproduce the campaign verifier (python3 scripts/ramsey.py demo); inspect the independent checker, deliberately corrupt its input/certificate, and compare every computational claim against the registered finite scope and its cited published">
+<meta property="og:url" content="https://svyable.github.io/100/work/V-P-M095/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Work", "item": "https://svyable.github.io/100/work/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/" aria-current="page">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../work/">Work</a><span aria-hidden="true">/</span><span aria-current="page">V-P-M095</span></nav>
+<main id="main">
+<article class="problem-page"><header class="problem-hero">
+<p class="eyebrow"><span class="eyebrow-line"></span> V-P-M095 · INDEPENDENT REVIEW · DISPATCH #15</p>
+<h1>Independent certificate and scope audit for M095</h1>
+<div class="chips"><span class="chip chip-good">Runnable</span><a class="chip chip-link" href="../../problems/M095/" title="Exact Ramsey number R(5,5)">M095</a></div>
+</header>
+<div class="work-detail">
+<section class="dossier-block"><h2>Deliverable</h2><p class="serif">Reproduce the campaign verifier (python3 scripts/ramsey.py demo); inspect the independent checker, deliberately corrupt its input/certificate, and compare every computational claim against the registered finite scope and its cited published boundary.</p>
+<p class="muted">Context: Command: python3 scripts/ramsey.py demo; project: Which integer from 43 to 46 is the exact value of R(5,5)?. Evidence: data/research_program.json, LAB.md and verifier source.</p></section>
+<section class="dossier-block"><h2>Acceptance</h2><ul class="plain checklist"><li>The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url</li><li>Publish exact command, pinned input SHA and output, negative control, numerical range and scope-vs-source assessment; record any discrepancy as a gap, never as a solved result</li><li><code>python3 scripts/regen.py &amp;&amp; python3 scripts/regen.py --check</code></li><li><code>python3 -m unittest discover -s tests</code></li></ul></section>
+<section class="dossier-block"><h2>Boundary</h2><p>Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.</p>
+<p><strong>Falsifier.</strong> A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.</p></section>
+
+<section class="dossier-block"><h2>Claim it</h2>
+<p>Check for an open claim first; if there is none, open one. One claim per item keeps parallel work from colliding.</p>
+<p class="card-links"><a class="button button-outline" href="https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-P-M095%22" rel="noopener noreferrer">Check existing claims ↗</a>
+<a class="button button-dark" href="https://github.com/Svyable/100/issues/new?template=claim.yml&amp;title=%5BClaim%5D%20V-P-M095%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M095" rel="noopener noreferrer">Claim this item ↗</a></p>
+<dl class="kv compact"><dt>Claim title</dt><dd><code>[Claim] V-P-M095 — Independent certificate and scope audit for M095</code></dd>
+<dt>Scope digest</dt><dd><code class="hash">9f8271210d9470760c89309d52ed22a60f380e3915021a00d9875cf387a91e19</code></dd>
+<dt>Defined by</dt><dd><a href="https://github.com/Svyable/100/blob/main/data/research_program.json" rel="noopener noreferrer">data/research_program.json <span aria-hidden="true">↗</span></a></dd>
+<dt>CLI</dt><dd><code>python3 scripts/work.py --id V-P-M095</code></dd></dl></section>
+</div></article>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

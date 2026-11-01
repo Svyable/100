@@ -11,7 +11,11 @@
     "feed": "https://svyable.github.io/100/feed.xml",
     "work_queue": "https://svyable.github.io/100/api/work.json",
     "discovery": "https://svyable.github.io/100/api/discovery.json",
-    "discovery_trail": "https://svyable.github.io/100/api/discovery/{id}.json"
+    "agent_manifest": "https://svyable.github.io/100/api/agent.json",
+    "agent_shortlist": "https://svyable.github.io/100/api/agent/tasks.json",
+    "agent_text": "https://svyable.github.io/100/llms.txt",
+    "discovery_trail": "https://svyable.github.io/100/api/discovery/{id}.json",
+    "proof_obligations": "https://svyable.github.io/100/api/lamport.json"
   },
   "counts": {
     "problems": 100,
@@ -21,7 +25,7 @@
     "claim_reviews": 15,
     "lean_statements": 9,
     "solved": 0,
-    "documents": 42,
+    "documents": 43,
     "discovery_trails": 4,
     "discovery_nodes": 13
   }

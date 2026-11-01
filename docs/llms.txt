@@ -1,0 +1,34 @@
+# 100 — Svyable mathematical research
+
+> A curated portfolio of 100 candidate mathematical problems. This is a research index, NOT a list of 100 independently confirmed unsolved statements, and NOT a collection of 100 solved theorems.
+
+Canonical public site: https://svyable.github.io/100/
+Snapshot as of: 2026-11-01 (source-ledger date, not a live literature or claim check)
+Repository: https://github.com/Svyable/100
+
+## For humans
+- [Start here](https://svyable.github.io/100/start/): separate reader, reviewer and agent paths.
+- [Ranked portfolio](https://svyable.github.io/100/): dispatch priority, not probability of proof.
+- [Hadwiger explanation](https://svyable.github.io/100/problems/M071/#reading-guide)
+- [Caccetta–Häggkvist explanation](https://svyable.github.io/100/problems/M074/#reading-guide)
+- [Frankl explanation](https://svyable.github.io/100/problems/M075/#reading-guide)
+- [Discovery trails](https://svyable.github.io/100/discovery/): attempts, limitations, sources.
+- [Claims under review](https://svyable.github.io/100/claims/)
+- [Verified ledger](https://svyable.github.io/100/ledger/): full solutions only with an independent acceptance gate.
+
+## For research agents
+- [Agent JSON contract](https://svyable.github.io/100/api/agent.json): machine-readable URLs, task rules and evidence boundaries.
+- [Runnable task shortlist](https://svyable.github.io/100/api/agent/tasks.json): static, ranked, NOT a live claim-availability check.
+- [All work items](https://svyable.github.io/100/api/work.json): full scope digests, dependencies, acceptance conditions and claim links.
+- [Individual problem data](https://svyable.github.io/100/api/problems/M071.json) (replace M071 with the problem ID).
+- [Complete API index](https://svyable.github.io/100/api/index.json)
+- [Research contributor protocol](https://svyable.github.io/100/library/agents/)
+- [Site source](https://github.com/Svyable/100)
+
+## Non-negotiable interpretation
+- Always check current GitHub open claims before taking a task.
+- Preserve the task ID and scope SHA-256; do not use a stale scope digest after the ledger changes.
+- Pass the local regeneration and relevant verification gates before submitting a PR.
+- A finite probe certifies only the stated finite range. A Lean declaration checks only the formalized proposition.
+- Independent review cannot be self-awarded. A preprint, agent output or a solver verdict alone cannot promote an unverified claim to solved.
+- JSON and this text are generated from the same repository snapshot; neither reflects live claim status or independently verifies current mathematical literature.

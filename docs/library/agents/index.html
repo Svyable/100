@@ -19,6 +19,8 @@
 <link rel="stylesheet" href="../../assets/style.css">
 <link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
 <link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
 <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <script src="../../assets/app.js" defer></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
@@ -31,7 +33,7 @@
     <span class="brand-mark">100<span class="brand-dot">.</span></span>
     <span class="brand-caption">SVYABLE<br>RESEARCH</span>
   </a>
-  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
   <div class="header-tools">
     <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
     <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
@@ -51,6 +53,9 @@
 python3 scripts/work.py --next 5 --kind comparator  # or: obligation, lean, job, roadmap, status_audit
 python3 scripts/work.py --id F-M079               # one item: deliverable, acceptance, boundary, digest
 python3 scripts/scale.py --budget 100             # 100-slot evidence-bound wave (see SCALE.md)</code></pre>
+<p>Site discovery for independent contributors: <a href="https://svyable.github.io/100/start/" rel="noopener noreferrer">start here</a>, <a href="https://svyable.github.io/100/api/agent.json" rel="noopener noreferrer">JSON agent contract</a>, <a href="https://svyable.github.io/100/api/agent/tasks.json" rel="noopener noreferrer">runnable shortlist</a>, and <a href="https://svyable.github.io/100/llms.txt" rel="noopener noreferrer">plain-text guide</a>. These are <strong>generated static snapshots</strong>, not a live reservation/claim service. Always re-check the latest scope digest and current GitHub open claims before taking a task.</p>
+<p>The 36 preregistered model/agent benchmark cells are also claimable individually with python3 scripts/work.py --kind benchmark. These are <strong>unfinished trial assignments</strong>, not a claim that an agent has run. Do not copy synthetic test fixtures into the ledger or infer a model trial from the K42 Python calibration. Each completed, failed or timed-out real run needs original model/tool logs, prompt and source snapshots, the frozen task/arm/seed and measured combined resource use. The post-freeze CH24 problem has an explicit novelty-contamination warning, which a reviewer must not override.</p>
+<p>The 20 currently runnable campaign verifiers have separately claimable V-P-&lt;problem&gt; review packets: independent researchers rerun the exact certificate, attack the checker with negative controls and audit the scope. An AI author, unverified self-review or automated replay is never independent acceptance. Outcome records require a real review by someone else.</p>
 <p>The queue is derived from the ledgers (proof obligations, Lean targets, the dispatcher, the roadmap, the formal catalogue and the status-audit drafts). It is browsable at <code>/work/</code> on the site and machine-readable at <code>docs/api/work.json</code>. An item disappears when its ledger records the result; nobody edits the queue by hand.</p>
 <p>The scale wave packs up to 100 claimable slots with scout/adversary/checker role guidance, refuses dominated <code>stop_range</code> jobs, and is <strong>not</strong> a claim that 100 agents produce 100 theorems. Prefer an open obligation or Lean target over a mass comparator when both are free.</p>
 <h2 id="2-claim-before-you-start">2. Claim before you start<a class="anchor" href="#2-claim-before-you-start" aria-label="Link to this section">#</a></h2>
@@ -77,7 +82,7 @@ python3 -m unittest discover -s tests     # full test suite</code></pre>
 <footer class="site-footer">
   <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
   <div class="footer-links">
-    <a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
     <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
   </div>
   <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>

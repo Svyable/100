@@ -22,6 +22,7 @@
   <url><loc>https://svyable.github.io/100/formal/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/lab/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/lamport/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/ledger/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/agents/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/approach/</loc><lastmod>2026-11-01</lastmod></url>
@@ -51,6 +52,7 @@
   <url><loc>https://svyable.github.io/100/library/m075-burnside/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m075-canonical/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m075-frankl/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/m075-triple7-sat/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m095-ramsey/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m098-vaught/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/mines/</loc><lastmod>2026-11-01</lastmod></url>
@@ -167,6 +169,43 @@
   <url><loc>https://svyable.github.io/100/problems/M099/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/problems/M100/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/roadmap/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/start/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-CH24-IRREGULAR-conversation-11/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-CH24-IRREGULAR-conversation-23/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-CH24-IRREGULAR-conversation-37/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-CH24-IRREGULAR-independent-11/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-CH24-IRREGULAR-independent-23/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-CH24-IRREGULAR-independent-37/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-CH24-IRREGULAR-proof_exchange-11/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-CH24-IRREGULAR-proof_exchange-23/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-CH24-IRREGULAR-proof_exchange-37/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-CH24-IRREGULAR-sequential-11/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-CH24-IRREGULAR-sequential-23/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-CH24-IRREGULAR-sequential-37/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-FRANKL-TRANSFER-conversation-11/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-FRANKL-TRANSFER-conversation-23/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-FRANKL-TRANSFER-conversation-37/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-FRANKL-TRANSFER-independent-11/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-FRANKL-TRANSFER-independent-23/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-FRANKL-TRANSFER-independent-37/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-FRANKL-TRANSFER-proof_exchange-11/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-FRANKL-TRANSFER-proof_exchange-23/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-FRANKL-TRANSFER-proof_exchange-37/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-FRANKL-TRANSFER-sequential-11/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-FRANKL-TRANSFER-sequential-23/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-FRANKL-TRANSFER-sequential-37/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-K42-REPLAY-conversation-11/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-K42-REPLAY-conversation-23/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-K42-REPLAY-conversation-37/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-K42-REPLAY-independent-11/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-K42-REPLAY-independent-23/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-K42-REPLAY-independent-37/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-K42-REPLAY-proof_exchange-11/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-K42-REPLAY-proof_exchange-23/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-K42-REPLAY-proof_exchange-37/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-K42-REPLAY-sequential-11/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-K42-REPLAY-sequential-23/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/B-K42-REPLAY-sequential-37/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/F-M001/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/F-M002/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/F-M003/</loc><lastmod>2026-11-01</lastmod></url>
@@ -451,6 +490,26 @@
   <url><loc>https://svyable.github.io/100/work/V-L007/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/V-L008/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/V-L009/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/V-P-M001/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/V-P-M002/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/V-P-M006/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/V-P-M019/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/V-P-M041/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/V-P-M048/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/V-P-M071/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/V-P-M073/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/V-P-M074/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/V-P-M075/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/V-P-M078/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/V-P-M079/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/V-P-M080/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/V-P-M084/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/V-P-M092/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/V-P-M093/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/V-P-M094/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/V-P-M095/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/V-P-M096/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/V-P-M097/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/V-S-M017/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/V-S-M053/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/V-S-M056/</loc><lastmod>2026-11-01</lastmod></url>

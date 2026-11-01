@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M075 — seven-element triple-local optimization · 100</title>
+<meta name="description" content="Status: exact, audited SAT encoding; first resource-bounded search inconclusive. This is issue #95, not an assertion about Frankl&#x27;s original conjecture.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m075-triple7-sat/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M075 — seven-element triple-local optimization · 100">
+<meta property="og:description" content="Status: exact, audited SAT encoding; first resource-bounded search inconclusive. This is issue #95, not an assertion about Frankl&#x27;s original conjecture.">
+<meta property="og:url" content="https://svyable.github.io/100/library/m075-triple7-sat/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M075 — seven-element triple-local optimization</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#perceive">Perceive</a></li><li class="toc-l2"><a href="#decide--exact-global-finite-predicate">Decide — exact global finite predicate</a></li><li class="toc-l2"><a href="#act--reproduce-the-experiment">Act — reproduce the experiment</a></li><li class="toc-l2"><a href="#evidence-boundary-and-next-decision">Evidence boundary and next decision</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M075/" title="Frankl union-closed sets conjecture">M075</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M075_TRIPLE7_SAT.md" rel="noopener noreferrer">research/M075_TRIPLE7_SAT.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M075 — seven-element triple-local optimization</h1>
+<p><strong>Status:</strong> exact, audited SAT <em>encoding</em>; first resource-bounded search <strong>inconclusive</strong>. This is issue <a href="https://github.com/Svyable/100/issues/95" rel="noopener noreferrer">#95</a>, not an assertion about Frankl&#x27;s original conjecture.</p>
+<h2 id="perceive">Perceive<a class="anchor" href="#perceive" aria-label="Link to this section">#</a></h2>
+<p>The independently checked 19-set example of van der Hout–Roos (2026; <a href="https://doi.org/10.23952/jano.8.2026.1.02" rel="noopener noreferrer">source</a>) is union-closed on seven points, includes the empty set and the exact triple T={0,1,2}, and has triple frequencies (9,9,9) out of 19. This disproves a stronger <strong>triple-local</strong> assertion, <em>not</em> Frankl&#x27;s original existential one. Other points appear in more than half the sets.</p>
+<p>Our existing inclusion-minimality checker rules out a <strong>proper subfamily of this specific example</strong> with the same triple-local failure. It does not rule out a different family of size 18 or less.</p>
+<h2 id="decide--exact-global-finite-predicate">Decide — exact global finite predicate<a class="anchor" href="#decide--exact-global-finite-predicate" aria-label="Link to this section">#</a></h2>
+<p>Fix n=7 and T={0,1,2}. There are exactly <strong>128 subsets</strong> of the universe; Boolean variable x_S (DIMACS identifier S+1, for bitmask S) represents membership of S in a family. For each <strong>separate exact size</strong> k=2,3,...,18, require:</p>
+<ol><li>Include the empty set and the exact triple T.</li><li>For every A and B, (x_A AND x_B) implies x_(A union B).</li><li>Exactly k of the 128 Boolean membership variables are true.</li><li>For each t in T, at most floor((k-1)/2) selected sets contain t.</li></ol>
+<p>These conditions are exactly the seven-element counterexample search. There is no unjustified full-support constraint, no symmetry reduction, no change to the original Frankl conjecture.</p>
+<p>A definitional prefix counter encodes at-least-j: g(i,j) iff g(i-1,j) OR (x_i AND g(i-1,j-1)), with g(0,0)=true and g(0,j&gt;0)=false. Four standard Tseitin implications define each auxiliary variable. Every set-membership vector has a uniquely determined auxiliary extension. Independent tests exhaust all 256 set families on n=3 across five exact sizes, fuzz n=4, and verify the real 19-set n=7 control both directly and through the CNF.</p>
+<h2 id="act--reproduce-the-experiment">Act — reproduce the experiment<a class="anchor" href="#act--reproduce-the-experiment" aria-label="Link to this section">#</a></h2>
+<p>From the repository root:</p>
+<pre><code class="lang-sh">python3 scripts/frankl_triple_sat.py --check-witness examples/FRANKL_VAN_DER_HOUT_ROOS_19.json
+python3 scripts/frankl_triple_sat.py --size 18 --out /tmp/triple18.cnf
+python3 scripts/frankl_triple_sat.py --size 17 --out /tmp/triple17.cnf
+python3 scripts/frankl_triple_experiment.py --check-record data/experiments/frankl_triple7_pilot.json
+python3 -m unittest discover -s tests -p &#x27;test_frankl_triple_sat.py&#x27; -v
+python3 -m unittest discover -s tests -p &#x27;test_frankl_triple_experiment.py&#x27; -v</code></pre>
+<p>The optional solver pilot uses python-sat (with CaDiCaL195); it is <em>not</em> a mandatory CI dependency. Reproduce in an isolated environment:</p>
+<pre><code class="lang-sh">python3 -m venv /tmp/frankl-sat-venv
+/tmp/frankl-sat-venv/bin/pip install &#x27;python-sat==1.9.dev17&#x27;
+/tmp/frankl-sat-venv/bin/python scripts/frankl_triple_experiment.py --sizes 18,17 --conflicts 200000 --out /tmp/triple-pilot.json</code></pre>
+<p>An actual local pilot used Python 3.14.2, python-sat 1.9.dev17, CaDiCaL195, with a 200,000 conflict cap per size. The immutable observed JSON is at <a href="https://github.com/Svyable/100/blob/main/data/experiments/frankl_triple7_pilot.json" rel="noopener noreferrer">data/experiments/frankl_triple7_pilot.json</a>.</p>
+<div class="table-wrap"><table><thead><tr><th class="al-right">Exact size</th><th class="al-right">CNF variables</th><th class="al-right">CNF clauses</th><th class="al-right">Observed conflicts</th><th>Result</th></tr></thead><tbody><tr><td class="al-right">18</td><td class="al-right">4,009</td><td class="al-right">21,234</td><td class="al-right">200,002</td><td><strong>unknown</strong> (budget exhausted)</td></tr><tr><td class="al-right">17</td><td class="al-right">3,899</td><td class="al-right">20,795</td><td class="al-right">200,005</td><td><strong>unknown</strong> (budget exhausted)</td></tr></tbody></table></div>
+<p>These are real, recorded resource-limited experiments with pinned CNF hashes, <strong>not</strong> proof of impossibility at either size. The checker rejects substituted source hashes, fake promoted statuses, malformed witness data, and inconsistent resource records.</p>
+<h2 id="evidence-boundary-and-next-decision">Evidence boundary and next decision<a class="anchor" href="#evidence-boundary-and-next-decision" aria-label="Link to this section">#</a></h2>
+<p>A model labelled SATISFIABLE with literal lines (prefixed v) can be checked via:</p>
+<pre><code class="lang-sh">python3 scripts/frankl_triple_sat.py --size 18 --verify-model /tmp/solver-model.txt</code></pre>
+<p>The program checks the canonical auxiliary assignment against all generated clauses and then independently checks original set operations, closure, exact size, mandatory members, and strict triple frequencies. A valid model of size at most 18 <strong>refutes</strong> the proposed fixed-universe lower bound.</p>
+<p>An UNSAT return alone establishes <strong>nothing independently</strong>. Proving a global 19-set minimum for the stated seven-element problem requires independent, correct, proof-checker-accepted UNSAT certificates for <em>all 17 sizes from 2 through 18</em>, the statement scope and clauses audited, and a genuine prior-art/specialist review. A source hash is not a proof trace. No result here modifies the solved, theorem-review, or 36-agent-trial ledgers.</p>
+<p><strong>Next targeted research action:</strong> design and separately prove safe permutation-symmetry breaking for S3 acting on T and S4 on the other points; benchmark against equal conflict budgets and obtain proof-producing SAT traces with an independently pinned DRAT/LRAT checker if possible. Do not count unknown runs as negative mathematics.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>
