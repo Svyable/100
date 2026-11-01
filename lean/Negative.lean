@@ -19,3 +19,8 @@ example : ¬ Nontrivial (1 : Family2) := by decide
 example : ¬ UnionClosed (6 : Family2) := by decide
 -- The unused ground element in the tiny family is not abundant.
 example : ¬ (size small ≤ 2 * frequency small 1) := by decide
+
+-- Positivity is essential: the cleared polynomial alone accepts all zeros.
+example : ¬ Hundred.Statements.ErdosStraus.Solves 3 0 0 0 := by decide
+-- The residue-three recipe cannot be applied indiscriminately to n = 5.
+example : ¬ Hundred.Statements.ErdosStraus.Solves 5 2 20 20 := by decide

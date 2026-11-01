@@ -548,10 +548,10 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 
 - Problems: M019
 - Deliverable: Compare every registered declaration of L005 with the registry statement and its primary source: domains, quantifiers, nonemptiness and distinctness conditions, strict versus weak inequalities, encodings. State exactly what is and is not established.
-- Boundary: A scope review checks that the encoded statement matches the claim; it does not add mathematics. Known range only; no parametric identity for a residue class. Independent statement review pending.
+- Boundary: A scope review checks that the encoded statement matches the claim; it does not add mathematics. Classical residue class only; does not prove the unrestricted conjecture. Repeated denominators allowed. Independent statement review pending.
 - Falsifier: A quantifier, domain or convention in the Lean statement that differs from the registered claim.
 - Claim: `[Claim] V-L005 — Independent scope review of Lean target L005 (M019)`
-- Digest: `b5422b24c3321223…`
+- Digest: `8e789ea03ae67639…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -757,10 +757,10 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 **Extend Lean target L005 (M019)**
 
 - Problems: M019
-- Deliverable: Formalise one classical parametric identity (n ≡ 3 mod 4) as a theorem quantified over all such n.
-- Boundary: Known range only; no parametric identity for a residue class. Independent statement review pending.
+- Deliverable: Prove a scaling lemma: a solution for n gives a solution for every positive multiple of n, then compose it with residue_three.
+- Boundary: Classical residue class only; does not prove the unrestricted conjecture. Repeated denominators allowed. Independent statement review pending.
 - Claim: `[Claim] L005 — Extend Lean target L005 (M019)`
-- Digest: `d6240004c5dceabe…`
+- Digest: `d75d7d4950fb1bb4…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
