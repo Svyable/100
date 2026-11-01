@@ -89,7 +89,10 @@ Use the PR template, name the work item id in the title or body, include
 In the same PR, append one record to `data/outcomes.json`: the item id, the claimed scope
 digest, the author, the outcome (`merged_pending_review`, `gap_reported`, `falsified` or
 `abandoned`) and honest agent-hours, failed attempts included. Only a reviewer who is not the
-author may later record `accepted_independent`. This is what the repository's yield metric
-([YIELD.md](YIELD.md)) is computed from: capacity is filled slots, yield is accepted results
-per agent-hour, and review is the bottleneck, so `review` items in the queue (`V-...`) are
-the highest-value work for anyone who did not write the artifact.
+author may later record `accepted_independent` (with `accepted_on`). This is what the
+repository's yield metric ([YIELD.md](YIELD.md)) is computed from: capacity is filled slots,
+yield is independently accepted *work items* per 10 agent-hours. An accepted work item is not
+a new theorem; only a separately audited `novelty: new_restricted_result` counts as one.
+Independence here is structural (reviewer is not the author, public link), not authenticated
+expertise. Review is the bottleneck, so `review` items in the queue (`V-...`) are the
+highest-value work for anyone who did not write the artifact.

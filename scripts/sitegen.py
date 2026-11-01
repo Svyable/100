@@ -1161,9 +1161,10 @@ def render_work_index(site):
                      "Every bounded unit of work in the repository, derived from the ledgers that define it: proof obligations, Lean targets, cohort jobs, roadmap items, and one comparator and one status audit per problem that still needs them. An item disappears when its ledger records the result.") + f"""
 {stats([("Work items", doc['count']), ("Runnable now", doc['by_status']['runnable']),
         ("Lean comparators to write", doc['by_kind']['comparator']), ("Status audits to draft", doc['by_kind']['status_audit'])])}
-<section class="section-block tight" aria-labelledby="yield-h">{section_head("CAPACITY IS NOT YIELD", '<span id="yield-h">Measured by what is <em>accepted.</em></span>', "Yield counts claimed items that a named reviewer, who is not the author, accepted, per 10 recorded agent-hours. Review is the bottleneck, so reviews are claimable work too.")}
-{stats([("Independently accepted results", y['accepted_independent']), ("Yield per 10 agent-hours", '—' if y['accepted_per_10_agent_hours'] is None else y['accepted_per_10_agent_hours']),
-        ("Outcome records", y['records']), ("Review backlog", y['review_backlog_items'])])}
+<section class="section-block tight" aria-labelledby="yield-h">{section_head("CAPACITY IS NOT YIELD", '<span id="yield-h">Measured by what is <em>accepted.</em></span>', "Yield counts claimed work items that a named reviewer, who is not the author, accepted, per 10 recorded agent-hours. Review is the bottleneck, so reviews are claimable work too.")}
+{stats([("Independently accepted work items", y['accepted_work_items']), ("Accepted work items per 10 agent-hours", '—' if y['accepted_work_items_per_10_agent_hours'] is None else y['accepted_work_items_per_10_agent_hours']),
+        ("New restricted results, novelty audited", y['new_restricted_results_audited']), ("Review backlog", y['review_backlog_items'])])}
+<p class="status-note">An accepted work item is not a new theorem. {E(y['independence_note'])}</p>
 <p class="table-footnote">Ledger: {repo_link('data/outcomes.json')} · report: <a href="{library_href(s, page, 'YIELD.md') or BLOB + 'YIELD.md'}">YIELD.md</a> · start with the <a href="#review">independent reviews</a>.</p></section>
 <section class="section-block tight" aria-labelledby="proto-h">{section_head("THE PROTOCOL", '<span id="proto-h">Claim, do, <em>regenerate.</em></span>', "Built for many concurrent agents and humans. Every step is mechanical except the mathematics.")}
 <ol class="steps">

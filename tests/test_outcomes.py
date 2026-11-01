@@ -24,7 +24,7 @@ def ledger(*records):
 
 
 def accepted(**over):
-    rec = dict(REC, outcome="accepted_independent", reviewer="human-b",
+    rec = dict(REC, outcome="accepted_independent", reviewer="human-b", accepted_on="2026-11-04",
                review_url="https://github.com/Svyable/100/pull/3#review")
     rec.update(over)
     return rec
@@ -38,13 +38,37 @@ class TestValidation(unittest.TestCase):
     def test_accepted_requires_independent_named_reviewer_and_link(self):
         outcomes.validate(ledger(accepted()))
         for bad in (accepted(reviewer="agent-a"), accepted(reviewer="AGENT-A"), accepted(reviewer=""),
-                    accepted(review_url=None)):
+                    accepted(review_url=None), accepted(accepted_on=None), accepted(accepted_on="2026-10-01")):
             with self.assertRaises(outcomes.OutcomeError):
                 outcomes.validate(ledger(bad))
 
     def test_reviewer_only_on_accepted(self):
-        with self.assertRaises(outcomes.OutcomeError):
-            outcomes.validate(ledger(dict(REC, reviewer="human-b")))
+        for bad in (dict(REC, reviewer="human-b"), dict(REC, accepted_on="2026-11-02")):
+            with self.assertRaises(outcomes.OutcomeError):
+                outcomes.validate(ledger(bad))
+
+    def test_resources_reject_bool_and_non_finite(self):
+        # bool is an int subclass: True must not silently count as one agent-hour.
+        for res in ({"agent_hours": True}, {"agent_hours": False}, {"agent_hours": float("nan")},
+                    {"agent_hours": float("inf")}, {"agent_hours": "2"}, {"agent_hours": 1, "ci_minutes": True},
+                    {"agent_hours": 1, "ci_minutes": float("inf")}, None):
+            with self.subTest(res=res), self.assertRaises(outcomes.OutcomeError):
+                outcomes.validate(ledger(dict(REC, resources=res)))
+        outcomes.validate(ledger(dict(REC, resources={"agent_hours": 0, "ci_minutes": 2.5})))
+
+    def test_novelty_is_a_separate_audited_classification(self):
+        novel = accepted(novelty="new_restricted_result", novelty_reviewer="specialist-c",
+                         novelty_review_url="https://example.org/novelty-audit")
+        outcomes.validate(ledger(novel))
+        for bad in (dict(REC, novelty="new_restricted_result", novelty_reviewer="specialist-c",
+                         novelty_review_url="https://example.org/x"),           # not accepted first
+                    accepted(novelty="new_restricted_result", novelty_reviewer="agent-a",
+                             novelty_review_url="https://example.org/x"),       # author audits own novelty
+                    accepted(novelty="new_restricted_result", novelty_reviewer="specialist-c"),  # no link
+                    accepted(novelty="groundbreaking"),
+                    accepted(novelty_reviewer="specialist-c")):                 # reviewer without classification
+            with self.subTest(bad=bad), self.assertRaises(outcomes.OutcomeError):
+                outcomes.validate(ledger(bad))
 
     def test_rejects_malformed_records(self):
         for bad in (dict(REC, work_id="whatever"), dict(REC, scope_sha256="xyz"), dict(REC, outcome="solved"),
@@ -63,17 +87,21 @@ class TestMetrics(unittest.TestCase):
                      dict(REC, work_id="S-M012", scope_sha256="1111111111111111", outcome="gap_reported",
                           resources={"agent_hours": 5.0}))
         m = outcomes.metrics(doc, review_backlog=7)
-        self.assertEqual(m["accepted_independent"], 1)
+        self.assertEqual(m["accepted_work_items"], 1)
+        self.assertEqual(m["new_restricted_results_audited"], 0)  # acceptance is not novelty
         self.assertEqual(m["agent_hours"], 10.0)
-        self.assertEqual(m["accepted_per_10_agent_hours"], 1.0)
-        self.assertEqual(m["by_family"]["review"]["accepted"], 1)
-        self.assertEqual(m["by_family"]["comparator"]["accepted"], 0)
-        self.assertEqual(m["median_days_claim_to_acceptance"], 1)
+        self.assertEqual(m["accepted_work_items_per_10_agent_hours"], 1.0)
+        self.assertEqual(m["by_family"]["review"]["accepted_work_items"], 1)
+        self.assertEqual(m["by_family"]["comparator"]["accepted_work_items"], 0)
+        self.assertEqual(m["median_days_claim_to_acceptance"], 3)   # accepted_on, not closed_on
+        self.assertEqual(m["median_days_claim_to_close"], 1)
         self.assertEqual(m["review_backlog_items"], 7)
 
     def test_empty_ledger_reports_no_rate(self):
         m = outcomes.metrics(ledger(), review_backlog=0)
-        self.assertIsNone(m["accepted_per_10_agent_hours"])
+        self.assertIsNone(m["accepted_work_items_per_10_agent_hours"])
+        self.assertIn("not a new theorem", outcomes.render(m))
+        self.assertIn("structural", outcomes.render(m))
         self.assertIn("No outcomes recorded yet", outcomes.render(m))
 
 
