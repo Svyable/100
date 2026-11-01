@@ -92,9 +92,11 @@ ignores further triangle-free constraints among the high vertices:
 The enumerator independently generates 166 sorted `alpha` profiles
 with `sum alpha <= 29`, and 924 sorted `k` profiles with four zeroes
 and six values in `[1,7]`. Previously derived (2), B-subset arc
-capacities, and B-small-subset girth tests leave exactly **295** pairs.
-Applying (3)–(4) excludes **288** of these pairs, using only these two
-necessary lower/upper arc bounds. The other seven pairs have exactly
+capacities, and B-small-subset girth tests leave exactly **295** pairs before the subsequently added upstream
+`z4_sink_cut` class. That earlier cut now rejects **four** of these,
+leaving **291** for the C-to-A stage. Applying (3)–(4) excludes **284**
+of those 291 pairs, using only these two necessary lower/upper arc
+bounds. The other seven pairs have exactly
 three distinct `alpha` vectors, treated next. The enumeration counts
 **integer profiles only**, not graph isomorphism classes.
 
@@ -182,7 +184,8 @@ protected, these are at least four `alpha=3` vertices, leaving
 at most three other threes that can receive from `C`. Equation (4)
 then bounds `E<=4+3=7`, contradicting `E>=8`. QED.
 
-All 295 profiles have now been excluded, so **no digraph satisfying
+The 295 residual profiles are partitioned as **4 upstream z4-sink,
+284 C-to-A, and 1+3+3 terminal** exclusions; all have now been excluded, so **no digraph satisfying
 the exact proposition can have `z=4`**. This is a conditional
 root-local theorem using the established nine-vertex prerequisites;
 it is not a solution of the remaining `z=0,1,2,3` cases.
@@ -197,7 +200,7 @@ python3 scripts/regen.py --check --fast
 ```
 
 The new script evaluates *all* 153,384 coarse necessary integer pairs
-and preserves the 288/1/3/3 rejection partition. The tests use a
+and preserves the 4/284/1/3/3 rejection partition, including the upstream cut. The tests use a
 different histogram enumeration and recompute the upper/lower bounds
 independently. Weakening the root cut or allowing an `alpha=8` vertex
 to be targeted by other A vertices deliberately leaves nonzero
