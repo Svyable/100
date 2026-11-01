@@ -3,6 +3,7 @@
 **Purpose:** Preserve, refine, and stack-rank 100 concrete mathematical proof/counterexample targets, looking for results and methods that create new branches of discovery.
 
 - **[Lean proof pipeline](LEAN.md)** — pinned workspace, Ramsey benchmark, two-element Frankl case, axiom audits and commit-bound CI evidence; scope review remains separate.
+- **[Matched-budget research benchmark](benchmarks/PROTOCOL.md)** — preregistered M095/M075/M074 pilot, four solver architectures, three seeds, exact cost accounting and evidence-gated trial ledger (`python3 scripts/benchmark.py --check`); no experimental trials claimed yet.
 - **[Proof exchange / scaling protocol](docs/PROOF_EXCHANGE.md)** — 100 claimable, evidence-bound wave slots with scout/adversary/checker roles, dependency-gated proof obligations and coverage ablations (`python3 scripts/scale.py --budget 100`; [SCALE.md](SCALE.md)).
 - **[Agent work queue](AGENTS.md)** — derived claimable items across obligations, Lean, jobs, roadmap, comparators and status audits (`python3 scripts/work.py --next 5`).
 - **[Roadmap](ROADMAP.md)** ([on the dashboard](https://svyable.github.io/100/#roadmap)) — live scoreboard against targets, and every shipped, current, next and later item with evidence and exit criteria. Source: [data/roadmap.json](data/roadmap.json).
