@@ -76,7 +76,10 @@ To **independently replay the full proof**, install a C toolchain and use:
 ~~~sh
 git clone https://github.com/marijnheule/drat-trim.git /tmp/drat-trim
 git -C /tmp/drat-trim checkout 2e5e29cb0019d5cfd547d4208dca1b3ec290349f
-make -C /tmp/drat-trim drat-trim lrat-check
+# Ubuntu/GCC requires _GNU_SOURCE for getc_unlocked under strict C99.
+# Compile the unmodified sources at the pinned commit.
+gcc -std=c99 -D_GNU_SOURCE -O2 /tmp/drat-trim/drat-trim.c -o /tmp/drat-trim/drat-trim
+gcc -std=c99 -D_GNU_SOURCE -DLONGTYPE -O2 /tmp/drat-trim/lrat-check.c -o /tmp/drat-trim/lrat-check
 python3 scripts/verify_frankl_triple_cert.py --check --drat-trim /tmp/drat-trim/drat-trim --lrat-check /tmp/drat-trim/lrat-check
 ~~~
 
