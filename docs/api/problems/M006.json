@@ -141,6 +141,8 @@
     "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/Goldbach.lean"
   },
   "external_claims": [],
+  "discovery_trail": null,
+  "discovery_url": null,
   "mentioned_in": [
     {
       "title": "Approach — leverage dispatch",
