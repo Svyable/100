@@ -1,0 +1,175 @@
+{
+  "id": "M095",
+  "name": "Exact Ramsey number R(5,5)",
+  "field": "Mathematical physics / finite structures",
+  "question": "Which integer from 43 to 46 is the exact value of R(5,5)?",
+  "first_attack": "Verify published K42 witness; pursue independently checked K43 coloring or K45 UNSAT proof certificate",
+  "impact": 3,
+  "attackability": 5,
+  "verifiability": 5,
+  "spillover": 3,
+  "modality": "finite_parameter",
+  "evidence_state": "needs_review",
+  "checked_on": "2026-10-30",
+  "source_url": "https://doi.org/10.1002/jgt.70029",
+  "rank": 28,
+  "score": 82,
+  "execution_rank": 19,
+  "execution_score": 89,
+  "readiness": 7,
+  "url": "https://svyable.github.io/100/problems/M095/",
+  "field_url": "https://svyable.github.io/100/fields/mathematical-physics-finite-structures/",
+  "readiness_breakdown": [
+    {
+      "item": "Formal campaign brief",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Runnable independent verifier",
+      "points": 3,
+      "max": 3
+    },
+    {
+      "item": "Reproduced known benchmark",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Independently reviewed restricted theorem",
+      "points": 0,
+      "max": 3
+    }
+  ],
+  "has_exact_verifier": true,
+  "campaign": {
+    "problem_id": "M095",
+    "stage": "benchmark_reproduced",
+    "method": "Graph coloring and proof-carrying SAT",
+    "hypothesis": "The exact value of R(5,5) can be determined by an independently checked construction and exclusion.",
+    "first_proof_obligation": "Verify a candidate K43 two-coloring or independently certify the nonexistence of a K45 valid coloring.",
+    "next_experiment": "Import and check the published K42 witness; reproduce a small structural exclusion with a trusted proof checker.",
+    "falsification": "A verified K43 coloring would refute any claimed R(5,5)<=43; a valid K45 coloring would refute R(5,5)<=45.",
+    "blocker": "A SAT solver UNSAT output without a verified proof trace does not establish an upper bound.",
+    "dossier": "research/M095_RAMSEY.md",
+    "verifier": "python3 scripts/ramsey.py demo",
+    "additional_verifiers": [
+      "python3 scripts/lab.py --probe ramsey_witnesses"
+    ]
+  },
+  "probes": [
+    {
+      "id": "ramsey_witnesses",
+      "problem_id": "M095",
+      "name": "Exact Ramsey number R(5,5)",
+      "title": "Exact Ramsey lower-bound colourings (Paley and circulant graphs)",
+      "engines": [
+        "finite_fields",
+        "clique_search"
+      ],
+      "frontier": "Known: R(3,3)=6, R(3,4)=9, R(3,5)=14, R(4,4)=18; 43 <= R(5,5) <= 46 (lower bound Exoo 1989). Witnesses here reproduce classical lower bounds.",
+      "artifact": "scripts/probes/ramsey_witness.py",
+      "command": "python3 scripts/lab.py --probe ramsey_witnesses",
+      "runs": {
+        "smoke": {
+          "holds": true,
+          "scope": "Explicit colourings certify R(3,3) > 5, R(3,4) > 8, R(3,5) > 13, R(4,4) > 17.",
+          "certificate_sha256": "c601047d86b55741559f792d148dfc9855335e89ea1109c5cfbe509837f32492"
+        },
+        "deep": {
+          "holds": true,
+          "scope": "Explicit colourings certify R(3,3) > 5, R(3,4) > 8, R(3,5) > 13, R(4,4) > 17, R(5,5) > 37.",
+          "certificate_sha256": "b2008e6347fb2007ebcb77c8bed4c287b77b034e003d1f089cbd961d74fbcc8e"
+        }
+      }
+    }
+  ],
+  "milestones": [
+    {
+      "id": "B-R33-001",
+      "problem_id": "M095",
+      "classification": "reproduced_known",
+      "title": "Ramsey R(3,3)=6 reproduced",
+      "scope": "Finite toy theorem; not a new bound on R(5,5)",
+      "description": "C5 witnesses R(3,3)>5; all 32,768 labeled K6 two-colorings fail to avoid both triangles.",
+      "verifier": "python3 scripts/ramsey.py demo",
+      "artifact": "scripts/ramsey.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-RAMSEY-002",
+      "problem_id": "M095",
+      "classification": "reproduced_known",
+      "title": "Ramsey lower bounds R(3,4) > 8, R(3,5) > 13, R(4,4) > 17 certified",
+      "scope": "Classical lower bounds; not a new bound on R(5,5)",
+      "description": "Circulant and Paley colourings checked by exhaustive subset enumeration; the deep run adds Paley(37), certifying R(5,5) > 37 (the best known lower bound is 43).",
+      "verifier": "python3 scripts/lab.py --probe ramsey_witnesses",
+      "artifact": "scripts/probes/ramsey_witness.py",
+      "verified_on": "2026-10-31"
+    }
+  ],
+  "engine_roadmap": null,
+  "claim_review_2026": null,
+  "formal_statement": {
+    "problem_id": "M095",
+    "module": "lean/Hundred/Ramsey.lean",
+    "namespace": "Hundred.Ramsey",
+    "statement": "Conjecture",
+    "encodes": "Arrows n s t: every red/blue colouring of K_n has a red K_s or a blue K_t (cliques as vertex bitmasks). Conjecture: Arrows 43 5 5.",
+    "not_encoded": [
+      "The known bounds ¬Arrows 42 5 5 and Arrows 46 5 5 are cited, not re-proved"
+    ],
+    "kernel_checked": [
+      {
+        "decl": "not_arrows_5_3_3",
+        "claim": "R(3,3) > 5: the pentagon colouring has no monochromatic triangle.",
+        "mirrors_probe": "ramsey_witnesses"
+      }
+    ],
+    "fidelity": "author_checked",
+    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Ramsey.lean"
+  },
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Exact probe lab — computational reach of the 100",
+      "source": "LAB.md",
+      "url": "https://svyable.github.io/100/library/lab/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Four concrete proof campaigns — first research tranche",
+      "source": "research/CAMPAIGNS.md",
+      "url": "https://svyable.github.io/100/library/campaigns/"
+    },
+    {
+      "title": "Lab campaigns: twelve problems under exact computation",
+      "source": "research/LAB_CAMPAIGNS.md",
+      "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "M095 — Ramsey R(5,5): first verifiable campaign",
+      "source": "research/M095_RAMSEY.md",
+      "url": "https://svyable.github.io/100/library/m095-ramsey/"
+    },
+    {
+      "title": "Research-source audit — 2026-10-30",
+      "source": "docs/AUDIT_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/audit-queue/"
+    },
+    {
+      "title": "Proof-driven research engine",
+      "source": "docs/RESEARCH_ENGINE.md",
+      "url": "https://svyable.github.io/100/library/research-engine/"
+    }
+  ]
+}

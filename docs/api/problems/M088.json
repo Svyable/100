@@ -1,0 +1,85 @@
+{
+  "id": "M088",
+  "name": "Deterministic polynomial identity testing",
+  "field": "Complexity",
+  "question": "Is there a deterministic polynomial-time identity test for general arithmetic circuits?",
+  "first_attack": "Specify the field/circuit/degree model; prove a deterministic hitting set for one explicit restricted class",
+  "impact": 5,
+  "attackability": 4,
+  "verifiability": 5,
+  "spillover": 5,
+  "modality": "structural",
+  "evidence_state": "needs_review",
+  "checked_on": "2026-10-30",
+  "source_url": "https://www.cs.sfu.ca/~kabanets/Research/poly.html",
+  "rank": 2,
+  "score": 94,
+  "execution_rank": 9,
+  "execution_score": 96,
+  "readiness": 2,
+  "url": "https://svyable.github.io/100/problems/M088/",
+  "field_url": "https://svyable.github.io/100/fields/complexity/",
+  "readiness_breakdown": [
+    {
+      "item": "Formal campaign brief",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Runnable independent verifier",
+      "points": 0,
+      "max": 3
+    },
+    {
+      "item": "Reproduced known benchmark",
+      "points": 0,
+      "max": 2
+    },
+    {
+      "item": "Independently reviewed restricted theorem",
+      "points": 0,
+      "max": 3
+    }
+  ],
+  "has_exact_verifier": false,
+  "campaign": {
+    "problem_id": "M088",
+    "stage": "specified",
+    "method": "Algebraic circuit hitting sets",
+    "hypothesis": "A deterministic polynomial-size hitting set can be obtained for a named restricted arithmetic circuit class.",
+    "first_proof_obligation": "State field characteristic, circuit shape, degree and oracle model, then prove the exact hitting property.",
+    "next_experiment": "Implement small exact arithmetic circuits and a falsifier that searches for circuits escaping a proposed hitting set.",
+    "falsification": "A nonzero circuit in the declared class vanishing at every proposed hitting-set point.",
+    "blocker": "No restricted circuit class or field is locked down yet.",
+    "dossier": "research/CAMPAIGNS.md",
+    "verifier": null
+  },
+  "probes": [],
+  "milestones": [],
+  "engine_roadmap": null,
+  "claim_review_2026": null,
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Four concrete proof campaigns — first research tranche",
+      "source": "research/CAMPAIGNS.md",
+      "url": "https://svyable.github.io/100/library/campaigns/"
+    },
+    {
+      "title": "Research-source audit — 2026-10-30",
+      "source": "docs/AUDIT_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/audit-queue/"
+    }
+  ]
+}

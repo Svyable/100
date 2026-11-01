@@ -1,0 +1,41 @@
+name: Lean formal statements
+on:
+  push:
+    branches: [main]
+    paths: ["lean/**", "data/formalization.json", "scripts/formal.py", ".github/workflows/lean.yml"]
+  pull_request:
+    paths: ["lean/**", "data/formalization.json", "scripts/formal.py", ".github/workflows/lean.yml"]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Catalogue, escape-hatch scan and independent certificate replay
+        run: python3 scripts/formal.py --check
+      - name: Install elan (toolchain pinned by lean/lean-toolchain)
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Kernel-check every statement, fidelity example and finite certificate
+        working-directory: lean
+        run: lake build
+      - name: Print axioms of every kernel-checked theorem (must not include sorryAx)
+        working-directory: lean
+        run: |
+          cat > /tmp/Axioms.lean <<'LEAN'
+          import Hundred
+          #print axioms Hundred.Goldbach.holds_upTo_1000
+          #print axioms Hundred.ErdosStraus.holds_upTo_100
+          #print axioms Hundred.Frankl.ground_3
+          #print axioms Hundred.Hadamard.order_12
+          #print axioms Hundred.Ramsey.not_arrows_5_3_3
+          #print axioms Hundred.ProjectivePlane.exists_order_3
+          LEAN
+          lake env lean /tmp/Axioms.lean | tee /tmp/axioms.txt
+          ! grep -q sorryAx /tmp/axioms.txt

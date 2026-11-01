@@ -1,0 +1,53 @@
+{
+  "id": "M048",
+  "name": "Alperin weight conjecture",
+  "field": "Algebra",
+  "question": "Do modular representation counts equal the predicted p-weight counts?",
+  "first_attack": "Audit precise statement and prove a restricted case",
+  "impact": 4,
+  "attackability": 3,
+  "verifiability": 4,
+  "spillover": 4,
+  "modality": "finite_refutable",
+  "evidence_state": "needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 38,
+  "score": 74,
+  "execution_rank": 39,
+  "execution_score": 74,
+  "readiness": 0,
+  "url": "https://svyable.github.io/100/problems/M048/",
+  "field_url": "https://svyable.github.io/100/fields/algebra/",
+  "readiness_breakdown": [],
+  "has_exact_verifier": false,
+  "campaign": null,
+  "probes": [],
+  "milestones": [],
+  "engine_roadmap": {
+    "problem_id": "M048",
+    "engine": "group_characters",
+    "first_probe": "Exact Brauer-character and weight counts for small finite groups and primes, compared entrywise.",
+    "name": "Alperin weight conjecture"
+  },
+  "claim_review_2026": null,
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Exact probe lab — computational reach of the 100",
+      "source": "LAB.md",
+      "url": "https://svyable.github.io/100/library/lab/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    }
+  ]
+}

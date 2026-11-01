@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M095 — Ramsey R(5,5): first verifiable campaign · 100</title>
+<meta name="description" content="Status audit, 2026-10-30: Published bound 43 ≤ R(5,5) ≤ 46, exact value unknown in the cited primary 2026 paper. No improved bound is claimed by this repository.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m095-ramsey/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M095 — Ramsey R(5,5): first verifiable campaign · 100">
+<meta property="og:description" content="Status audit, 2026-10-30: Published bound 43 ≤ R(5,5) ≤ 46, exact value unknown in the cited primary 2026 paper. No improved bound is claimed by this repository.">
+<meta property="og:url" content="https://svyable.github.io/100/library/m095-ramsey/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../atlas/">Atlas</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M095 — Ramsey R(5,5): first verifiable campaign</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#exact-statement-and-two-certificate-types">Exact statement and two certificate types</a></li><li class="toc-l2"><a href="#executable-baseline-standard-library-only">Executable baseline (standard library only)</a></li><li class="toc-l2"><a href="#cnf-construction-and-proof-obligation">CNF construction and proof obligation</a></li><li class="toc-l2"><a href="#next-experiments">Next experiments</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M095/" title="Exact Ramsey number R(5,5)">M095</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M095_RAMSEY.md" rel="noopener noreferrer">research/M095_RAMSEY.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M095 — Ramsey R(5,5): first verifiable campaign</h1>
+<p><strong>Status audit, 2026-10-30:</strong> Published bound <strong>43 ≤ R(5,5) ≤ 46</strong>, exact value unknown in the cited primary 2026 paper. No improved bound is claimed by this repository.</p>
+<p>Primary: <a href="https://doi.org/10.1002/jgt.70029" rel="noopener noreferrer">Angeltveit–McKay, <em>R(5,5) ≤ 46</em>, Journal of Graph Theory (2026)</a>. Their computational proof independently implemented its principal checks. Background: <a href="https://doi.org/10.1002/jgt.3190190304" rel="noopener noreferrer">McKay–Radziszowski, <em>R(4,5)=25</em> (1995)</a>.</p>
+<h2 id="exact-statement-and-two-certificate-types">Exact statement and two certificate types<a class="anchor" href="#exact-statement-and-two-certificate-types" aria-label="Link to this section">#</a></h2>
+<p>R(5,5) is the least n for which <strong>every</strong> two-coloring of the edges of the complete graph K_n contains a monochromatic K_5.</p>
+<ul><li><strong>Lower-bound advancement:</strong> find an explicit two-coloring of K_43 having neither a red nor blue K_5. A small independent checker verifies the witness and would establish R(5,5) ≥ 44. Such a witness is <strong>not</strong> known here.</li><li><strong>Upper-bound advancement:</strong> prove that no valid coloring exists on K_45. A UNSAT claim needs a complete exhaustive argument or independently checked proof certificate (e.g. LRAT), not just a solver&#x27;s output.</li><li><strong>Exact determination:</strong> requires a matching lower and upper bound.</li></ul>
+<h2 id="executable-baseline-standard-library-only">Executable baseline (standard library only)<a class="anchor" href="#executable-baseline-standard-library-only" aria-label="Link to this section">#</a></h2>
+<pre><code class="lang-sh">python3 scripts/ramsey.py check examples/R33_C5.json --red 3 --blue 3
+python3 scripts/ramsey.py demo
+python3 scripts/ramsey.py cnf --n 6 --red 3 --blue 3 &gt; /tmp/ramsey33.cnf
+python3 -m unittest discover -s tests -v</code></pre>
+<p>The C5 coloring is a valid lower-bound witness for R(3,3) ≥ 6. The <code>demo</code> command exhaustively examines all 2^15 = 32,768 labeled K_6 two-colorings and finds none avoiding both kinds of triangles. <strong>This reproduces the already-known theorem R(3,3)=6; it is a reproducibility smoke test, not a new mathematical result.</strong></p>
+<p>Certificate schema <code>svyable.ramsey.red-edges.v1</code>: an integer <code>n</code> and a list of pairs <code>[u,v]</code> with <code>0 &lt;= u &lt; v &lt; n</code> enumerating <strong>red</strong> edges. <strong>Every omitted pair is blue</strong>. Duplicate edges and invalid vertices are rejected. Checker reports explicit monochromatic-clique witnesses on failure.</p>
+<h2 id="cnf-construction-and-proof-obligation">CNF construction and proof obligation<a class="anchor" href="#cnf-construction-and-proof-obligation" aria-label="Link to this section">#</a></h2>
+<p>For every edge e, Boolean variable x_e is true iff the edge is red. For each set of s vertices, include one clause <code>OR(not x_e)</code> over their pairs. For each set of t vertices, include one clause <code>OR(x_e)</code> over their pairs. Thus satisfying assignments are precisely red-K_s / blue-K_t-free colorings. The encoder writes <code>C(n,s)+C(n,t)</code> clauses when both sizes fit; very large outputs require explicit <code>--force</code>. It <strong>does not solve</strong> the CNF.</p>
+<p>Known structural filter (not a new lemma): using R(4,5)=25, any red/blue K5-free coloring of K_n has at each vertex red degree d satisfying <code>n-25 &lt;= d &lt;= 24</code>. Proof: among red neighbors, a red K4 makes a red K5 and a blue K5 is forbidden, so d≤24. The blue-neighbor analog yields n-1-d≤24. For n=45 this narrows degrees to 20–24.</p>
+<h2 id="next-experiments">Next experiments<a class="anchor" href="#next-experiments" aria-label="Link to this section">#</a></h2>
+<ol><li>Import a published K_42 lower-bound coloring with a source and verify it independently. Do not manufacture a certificate.</li><li>Test exactly which smaller restricted degree-sequence families are feasible on K_43; record SAT inputs, compiler, solver, runtime, hashes, and all proof outputs.</li><li>Reproduce a small portion of the published upper-bound approach before claiming any new exclusion.</li><li>A solver-reported UNSAT is <strong>not a theorem</strong> until the full encoding and an independent UNSAT proof are validated.</li></ol>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-10-31 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

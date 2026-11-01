@@ -1,0 +1,142 @@
+{
+  "id": "M074",
+  "name": "Caccetta–Häggkvist conjecture",
+  "field": "Combinatorics",
+  "question": "Does minimum digraph outdegree r force a directed cycle of length at most ceil(n/r)?",
+  "first_attack": "Prior-art-first independent verification of 2026 fixed-outdegree-6 proof claim and smaller independent exact-degree SAT encoding; no full-conjecture proof claimed",
+  "impact": 5,
+  "attackability": 4,
+  "verifiability": 5,
+  "spillover": 5,
+  "modality": "finite_refutable",
+  "evidence_state": "needs_review",
+  "checked_on": "2026-10-31",
+  "source_url": "https://lemon.cs.elte.hu/egres/open/Caccetta-H%C3%A4ggkvist_conjecture",
+  "rank": 1,
+  "score": 94,
+  "execution_rank": 1,
+  "execution_score": 101,
+  "readiness": 7,
+  "url": "https://svyable.github.io/100/problems/M074/",
+  "field_url": "https://svyable.github.io/100/fields/combinatorics/",
+  "readiness_breakdown": [
+    {
+      "item": "Formal campaign brief",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Runnable independent verifier",
+      "points": 3,
+      "max": 3
+    },
+    {
+      "item": "Reproduced known benchmark",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Independently reviewed restricted theorem",
+      "points": 0,
+      "max": 3
+    }
+  ],
+  "has_exact_verifier": true,
+  "campaign": {
+    "problem_id": "M074",
+    "stage": "benchmark_reproduced",
+    "method": "Directed graph extremal search",
+    "hypothesis": "For each explicit pair (n,r), any loopless n-vertex digraph of minimum outdegree at least r contains a directed cycle of length at most ceil(n/r).",
+    "first_proof_obligation": "Independently audit the public computer-assisted fixed-r=6 proof claim, including proof-to-CNF reductions, finite certificates and cited premises; distinguish restricted result from full CH.",
+    "next_experiment": "Replay the external fixed-r=6 proof corpus on an independent host, verify its published hash and proof traces, and audit the hand-reduction steps before launching duplicate SAT search.",
+    "falsification": "An explicitly checked digraph with min outdegree r and no directed cycle of length <=ceil(n/r).",
+    "blocker": "External fixed-r=6 proof corpus (438 MB) and independent specialist review have not been reproduced in this repo; neither encoding supplies a SAT/UNSAT certificate.",
+    "dossier": "research/M074_PRIOR_ART.md",
+    "verifier": "python3 scripts/digraph_orbits.py --n 5"
+  },
+  "probes": [],
+  "milestones": [
+    {
+      "id": "B-CH-001",
+      "problem_id": "M074",
+      "classification": "reproduced_known",
+      "title": "Caccetta–Häggkvist verified on all digraphs of size at most five",
+      "scope": "Every labeled loopless directed graph on 2–5 vertices (known finite cases only), checked modulo relabeling",
+      "description": "Exhaustive n=5 census: 2^20=1,048,576 labeled graphs partition into 9,608 isomorphism orbits (matching Burnside and OEIS A000273); two independent cycle detectors agree. Known result only.",
+      "verifier": "python3 scripts/digraph_orbits.py --n 5",
+      "artifact": "scripts/digraph_orbits.py",
+      "verified_on": "2026-10-31"
+    }
+  ],
+  "engine_roadmap": null,
+  "claim_review_2026": null,
+  "formal_statement": {
+    "problem_id": "M074",
+    "module": "lean/Hundred/CaccettaHaggkvist.lean",
+    "namespace": "Hundred.CaccettaHaggkvist",
+    "statement": "Statement",
+    "encodes": "Loopless digraph on n vertices, minimum out-degree ≥ r ≥ 1, has an injective directed cycle of length ≤ ⌈n/r⌉; StatementFor r fixes the out-degree slice.",
+    "not_encoded": [
+      "The triangle case r = n/3 separately",
+      "Any restricted family (vertex-transitive, etc.)"
+    ],
+    "kernel_checked": [],
+    "fidelity": "author_checked",
+    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/CaccettaHaggkvist.lean"
+  },
+  "external_claims": [
+    {
+      "id": "CH-R6-2026-CORPUS",
+      "problem_id": "M074",
+      "claim_scope": "All finite loopless digraphs with minimum outdegree >=6 satisfy the Caccetta–Häggkvist girth bound (restricted fixed-r case).",
+      "claim_state": "external_unreviewed",
+      "source_url": "https://github.com/joshp123/solve-a-maths-problem-dont-care-which-make-no-mistakes",
+      "source_commit": "ec9fc66e5f3b59ea961e5045bca3b8698613489d",
+      "source_version": "0.2.0",
+      "source_published_doi": "https://doi.org/10.5281/zenodo.21495432",
+      "artifact_filename": "proof-corpus-v0.1.0.tar.zst",
+      "expected_bytes": 438808162,
+      "expected_sha256": "3d00174851a213fdf81085bd38bbb7e573f36f8b1e691e5eded8ac43d8937285",
+      "integrity_checked_here": false,
+      "mathematical_proof_reviewed_here": false,
+      "note": "Checksums copied from source README, NOT independently downloaded or replayed in Svyable/100."
+    }
+  ],
+  "mentioned_in": [
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Exact probe lab — computational reach of the 100",
+      "source": "LAB.md",
+      "url": "https://svyable.github.io/100/library/lab/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Four concrete proof campaigns — first research tranche",
+      "source": "research/CAMPAIGNS.md",
+      "url": "https://svyable.github.io/100/library/campaigns/"
+    },
+    {
+      "title": "M074 — Caccetta–Häggkvist: a certified finite frontier",
+      "source": "research/M074_CH.md",
+      "url": "https://svyable.github.io/100/library/m074-ch/"
+    },
+    {
+      "title": "M074 — external fixed-outdegree-six proof claim: verification docket",
+      "source": "research/M074_PRIOR_ART.md",
+      "url": "https://svyable.github.io/100/library/m074-prior-art/"
+    },
+    {
+      "title": "Research-source audit — 2026-10-30",
+      "source": "docs/AUDIT_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/audit-queue/"
+    }
+  ]
+}

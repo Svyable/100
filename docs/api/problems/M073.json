@@ -1,0 +1,153 @@
+{
+  "id": "M073",
+  "name": "Sidorenko conjecture",
+  "field": "Combinatorics",
+  "question": "Are bipartite graph homomorphism densities bounded below by the edge-density power?",
+  "first_attack": "Audit precise statement and prove a restricted case",
+  "impact": 4,
+  "attackability": 4,
+  "verifiability": 5,
+  "spillover": 4,
+  "modality": "finite_refutable",
+  "evidence_state": "claim_needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 14,
+  "score": 85,
+  "execution_rank": 11,
+  "execution_score": 92,
+  "readiness": 7,
+  "url": "https://svyable.github.io/100/problems/M073/",
+  "field_url": "https://svyable.github.io/100/fields/combinatorics/",
+  "readiness_breakdown": [
+    {
+      "item": "Formal campaign brief",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Runnable independent verifier",
+      "points": 3,
+      "max": 3
+    },
+    {
+      "item": "Reproduced known benchmark",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Independently reviewed restricted theorem",
+      "points": 0,
+      "max": 3
+    }
+  ],
+  "has_exact_verifier": true,
+  "campaign": {
+    "problem_id": "M073",
+    "stage": "benchmark_reproduced",
+    "method": "Exact homomorphism-density search over certified host censuses",
+    "hypothesis": "For every bipartite graph H and every graph G, t(H,G) >= t(K2,G)^e(H).",
+    "first_proof_obligation": "Confirm in current literature that K_{5,5} minus a Hamiltonian cycle is still the smallest open pattern, then fix a restricted host class (vertex-transitive graphs or small rational step graphons) where the inequality can be proved or exhausted.",
+    "next_experiment": "Extend hosts from unweighted graphs to rational step graphons and run exact local search that minimises t(H,W)/t(K2,W)^15, replaying every candidate with the exact counter.",
+    "falsification": "A host graph or rational step graphon W with exactly computed t(H,W) < t(K2,W)^e(H).",
+    "blocker": "Any counterexample is expected to need large or finely weighted hosts; unweighted hosts on at most 7 vertices give a minimum ratio of about 1.025 for the open pattern.",
+    "dossier": "research/LAB_CAMPAIGNS.md",
+    "verifier": "python3 scripts/lab.py --probe sidorenko"
+  },
+  "probes": [
+    {
+      "id": "sidorenko",
+      "problem_id": "M073",
+      "name": "Sidorenko conjecture",
+      "title": "Sidorenko inequality for K_{5,5} minus C_10 and controls on every small host graph",
+      "engines": [
+        "graph_homomorphisms",
+        "graph_census"
+      ],
+      "frontier": "Known for trees, even cycles, complete bipartite graphs, hypercubes and many families; K_{5,5} minus a Hamiltonian cycle is commonly cited as the smallest open case (check current literature). Finite hosts this small are not expected to refute it.",
+      "artifact": "scripts/probes/sidorenko.py",
+      "command": "python3 scripts/lab.py --probe sidorenko",
+      "runs": {
+        "smoke": {
+          "holds": true,
+          "scope": "t(H,G) >= t(K2,G)^e(H) for every graph G on 1..5 vertices and H in {K_{5,5} minus C_10, C4, C6, K_{3,3}, P4}.",
+          "certificate_sha256": "d59b7e6cb2d91343eacb4b0f9501d21f21547fded406dd7249c1e8ab59f7d56f"
+        },
+        "deep": {
+          "holds": true,
+          "scope": "t(H,G) >= t(K2,G)^e(H) for every graph G on 1..7 vertices and H in {K_{5,5} minus C_10, C4, C6, K_{3,3}, P4}.",
+          "certificate_sha256": "0e921e72ed2cd1584dff39e96153f462405d8bacfd34e15d7131b763bbe4e199"
+        }
+      }
+    }
+  ],
+  "milestones": [
+    {
+      "id": "B-SIDORENKO-001",
+      "problem_id": "M073",
+      "classification": "reproduced_known",
+      "title": "Sidorenko inequality reproduced for proven patterns C4, C6, K_{3,3} and P4 on all hosts with at most 5 vertices",
+      "scope": "Known families on a finite host range; the open-pattern data in the same run is exploratory, unreviewed and not a result",
+      "description": "Exact homomorphism counts, recounted from the opposite bipartition side, compared by integer arithmetic on all 52 host graphs; P4 attains equality on regular hosts. The run also records K_{5,5} minus C_10 on the same hosts (and on all 1,252 hosts up to 7 vertices at deep level, minimum ratio about 1.0248) purely as falsifier data.",
+      "verifier": "python3 scripts/lab.py --probe sidorenko",
+      "artifact": "scripts/probes/sidorenko.py",
+      "verified_on": "2026-10-31"
+    }
+  ],
+  "engine_roadmap": null,
+  "claim_review_2026": {
+    "id": "M073",
+    "primary_title": "A counterexample to Sidorenko's conjecture",
+    "primary_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/A-counterexample-to-Sidorenkos-conjecture-September-23-2026/paper.pdf",
+    "preprint_date": "2026-09-23",
+    "claimed_theorem": "A connected bipartite H on 35 vertices with 66 edges and a finite host G satisfy t(H,G)<t(K_2,G)^66.",
+    "scope_relation": "matches",
+    "scope_note": "The strict homomorphism-density violation is a direct counterexample to the registered universal Sidorenko inequality.",
+    "independent_validation": "formal_statement_check_only",
+    "independent_evidence_urls": [
+      "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/161.md"
+    ],
+    "known_caveats": "OpenAI's Lean scope note covers the Sidorenko counterexample but not the forcing-conjecture consequence; kernel acceptance is not a published independently audited finite witness. The host G is proved to exist rather than explicitly listed.",
+    "next_review": "Check H and the host-existence construction against Lean and paper; independently compute exact graphon/homomorphism inequalities or generate an explicit finite G.",
+    "formalization_scope_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/161.md"
+  },
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Exact probe lab — computational reach of the 100",
+      "source": "LAB.md",
+      "url": "https://svyable.github.io/100/library/lab/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "2026 claimed-resolution triage — issue #3",
+      "source": "research/CLAIM_REVIEWS_2026.md",
+      "url": "https://svyable.github.io/100/library/claim-reviews-2026/"
+    },
+    {
+      "title": "Lab campaigns: twelve problems under exact computation",
+      "source": "research/LAB_CAMPAIGNS.md",
+      "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "Proof-driven research engine",
+      "source": "docs/RESEARCH_ENGINE.md",
+      "url": "https://svyable.github.io/100/library/research-engine/"
+    },
+    {
+      "title": "Foundational sources and 2026 claim watch",
+      "source": "docs/SOURCES.md",
+      "url": "https://svyable.github.io/100/library/sources/"
+    }
+  ]
+}

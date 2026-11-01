@@ -1,0 +1,43 @@
+{
+  "id": "M076",
+  "name": "Erdős–Rado sunflower conjecture",
+  "field": "Combinatorics",
+  "question": "Do sufficiently large k-uniform families of size C_r^k contain an r-sunflower for fixed r?",
+  "first_attack": "Improve exponential sunflower bounds on structured families",
+  "impact": 4,
+  "attackability": 5,
+  "verifiability": 5,
+  "spillover": 4,
+  "modality": "asymptotic",
+  "evidence_state": "needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 5,
+  "score": 91,
+  "execution_rank": 15,
+  "execution_score": 91,
+  "readiness": 0,
+  "url": "https://svyable.github.io/100/problems/M076/",
+  "field_url": "https://svyable.github.io/100/fields/combinatorics/",
+  "readiness_breakdown": [],
+  "has_exact_verifier": false,
+  "campaign": null,
+  "probes": [],
+  "milestones": [],
+  "engine_roadmap": null,
+  "claim_review_2026": null,
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    }
+  ]
+}

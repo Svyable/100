@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Four concrete proof campaigns — first research tranche · 100</title>
+<meta name="description" content="Date: 2026-10-30. These are research proposals, not assertions of new theorems. The first three are the current top-ranked candidates; the fourth is the independent-certificate benchmark.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/campaigns/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="Four concrete proof campaigns — first research tranche · 100">
+<meta property="og:description" content="Date: 2026-10-30. These are research proposals, not assertions of new theorems. The first three are the current top-ranked candidates; the fourth is the independent-certificate benchmark.">
+<meta property="og:url" content="https://svyable.github.io/100/library/campaigns/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../atlas/">Atlas</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">Four concrete proof campaigns — first research tranche</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#m074--caccettahäggkvist-directed-graphs">M074 — Caccetta–Häggkvist (directed graphs)</a></li><li class="toc-l2"><a href="#m088--deterministic-polynomial-identity-testing">M088 — Deterministic polynomial identity testing</a></li><li class="toc-l2"><a href="#m092--zauner--sic-existence">M092 — Zauner / SIC existence</a></li><li class="toc-l2"><a href="#m095--ramsey-r55">M095 — Ramsey R(5,5)</a></li><li class="toc-l2"><a href="#common-proof-standards">Common proof standards</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M074/" title="Caccetta–Häggkvist conjecture">M074</a><a class="chip chip-link" href="../../problems/M092/" title="Zauner SIC conjecture">M092</a><a class="chip chip-link" href="../../problems/M088/" title="Deterministic polynomial identity testing">M088</a><a class="chip chip-link" href="../../problems/M095/" title="Exact Ramsey number R(5,5)">M095</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/CAMPAIGNS.md" rel="noopener noreferrer">research/CAMPAIGNS.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>Four concrete proof campaigns — first research tranche</h1>
+<p><strong>Date:</strong> 2026-10-30. These are research proposals, not assertions of new theorems. The first three are the current top-ranked candidates; the fourth is the independent-certificate benchmark.</p>
+<h2 id="m074--caccettahäggkvist-directed-graphs">M074 — Caccetta–Häggkvist (directed graphs)<a class="anchor" href="#m074--caccettahäggkvist-directed-graphs" aria-label="Link to this section">#</a></h2>
+<p><strong>Current executable attack:</strong> <a href="../../library/m074-ch/">dedicated orbit census and (18,6) SAT dossier</a>.</p>
+<p><strong>Statement.</strong> Every finite loopless simple digraph on n vertices with minimum outdegree at least r≥1 has a directed cycle of length at most ceil(n/r).</p>
+<p><strong>Source:</strong> <a href="https://doi.org/10.1016/0012-365X(87)90122-1" rel="noopener noreferrer">Hoàng–Reed, <em>A note on short cycles in digraphs</em> (1987)</a> discusses exact low-outdegree cases. <a href="https://lemon.cs.elte.hu/egres/open/Caccetta-H%C3%A4ggkvist_conjecture" rel="noopener noreferrer">EGRES Open overview</a> distinguishes the directed-triangle form from the full statement.</p>
+<p><strong>First experiment.</strong> Build small directed graphs with degree constraints and no cycles up to k, encoded as SAT/SMT. Compare with known small-case theorems before reporting a result. Try structural restrictions (vertex transitivity, forbidden 2-cycles, high minimum indegree), then state a <em>new</em> conditional lemma only if it is absent from the literature. A finite failure-to-find-counterexample is not a universal proof.</p>
+<p><strong>Verifier.</strong> Check vertex count, looplessness, minimum outdegree, and independently compute shortest directed cycles for candidate counterexamples.</p>
+<h2 id="m088--deterministic-polynomial-identity-testing">M088 — Deterministic polynomial identity testing<a class="anchor" href="#m088--deterministic-polynomial-identity-testing" aria-label="Link to this section">#</a></h2>
+<p><strong>Statement.</strong> Is identity testing for explicitly represented arithmetic circuits possible in deterministic polynomial time in the input size (under a fixed, fully specified coefficient and circuit model)?</p>
+<p><strong>Source:</strong> <a href="https://www.cs.sfu.ca/~kabanets/Research/poly.html" rel="noopener noreferrer">Kabanets–Impagliazzo, <em>Derandomizing Polynomial Identity Tests Means Proving Circuit Lower Bounds</em> (2004)</a>.</p>
+<p><strong>First experiment.</strong> Pick an <em>explicit restricted circuit class</em> (bounded-depth or bounded-top-fanin, with named field/characteristic and degree restrictions), implement a deterministic hitting set and prove the stated size/hitting property. Distinguish black-box from white-box PIT; do not extrapolate a result on restricted circuits to arbitrary circuits.</p>
+<p><strong>Verifier.</strong> Exact symbolic expansion on small instances, independently checked hitting-set construction, then a conventional or formal proof for the whole restricted family.</p>
+<h2 id="m092--zauner--sic-existence">M092 — Zauner / SIC existence<a class="anchor" href="#m092--zauner--sic-existence" aria-label="Link to this section">#</a></h2>
+<p><strong>Statement.</strong> For each integer d≥2, do there exist d² unit vectors in C^d whose off-diagonal squared overlaps are 1/(d+1)? The stronger Weyl–Heisenberg covariant claim must not be confused with this general form.</p>
+<p><strong>Status:</strong> Extensive exact/numerical dimension results, but no universal construction established in this portfolio. Relevant 2026 algebraic preprints should undergo independent scope and correctness review before updates. <a href="https://papex.org/problems/zauners-conjecture" rel="noopener noreferrer">Open-problem starting reference</a>.</p>
+<p><strong>First experiment.</strong> For chosen small dimensions, encode normalized fiducial constraints as exact polynomial equations and verify candidate vector sets with rational/algebraic arithmetic (not float tolerances). Look for an arithmetic construction <em>uniform in a family of dimensions</em>. Explicitly document conditional Galois hypotheses in any 2026 approach.</p>
+<p><strong>Verifier.</strong> Exact norm and all pairwise squared-inner-product identities for every vector. A list of finite-dimensional solutions cannot prove existence in all dimensions.</p>
+<h2 id="m095--ramsey-r55">M095 — Ramsey R(5,5)<a class="anchor" href="#m095--ramsey-r55" aria-label="Link to this section">#</a></h2>
+<p><strong>Statement.</strong> Determine the minimum n for which every two-edge-coloring of K_n contains a monochromatic K5.</p>
+<p><strong>Source:</strong> <a href="https://doi.org/10.1002/jgt.70029" rel="noopener noreferrer">Angeltveit–McKay (2026)</a> establishes R(5,5)≤46; prior lower bound is 43.</p>
+<p><strong>First experiment and certificate:</strong> <a href="../../library/m095-ramsey/">M095 executable protocol</a>, with a deterministic verifier, SAT encoder, unit tests and an exact R(3,3) smoke test.</p>
+<h2 id="common-proof-standards">Common proof standards<a class="anchor" href="#common-proof-standards" aria-label="Link to this section">#</a></h2>
+<ol><li>Quote the exact source theorem, quantifiers, exceptions, and date checked.</li><li>Name the <em>smallest</em> novel claim, and search hard for counterexamples and prior proofs.</li><li>Require independently checkable evidence before assigning “proved”.</li><li>Preserve failed ideas and cost measurements without pretending they are evidence for the conjecture.</li><li>Rank mathematical significance separately from the chance of shipping a checkable intermediate theorem.</li></ol>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-10-31 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

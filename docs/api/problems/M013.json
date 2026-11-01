@@ -1,0 +1,43 @@
+{
+  "id": "M013",
+  "name": "Leopoldt's conjecture",
+  "field": "Arithmetic",
+  "question": "Do p-adic logarithms of global units have the expected rank for every number field?",
+  "first_attack": "Audit precise statement and prove a restricted case",
+  "impact": 5,
+  "attackability": 2,
+  "verifiability": 3,
+  "spillover": 5,
+  "modality": "structural",
+  "evidence_state": "needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 62,
+  "score": 72,
+  "execution_rank": 62,
+  "execution_score": 72,
+  "readiness": 0,
+  "url": "https://svyable.github.io/100/problems/M013/",
+  "field_url": "https://svyable.github.io/100/fields/arithmetic/",
+  "readiness_breakdown": [],
+  "has_exact_verifier": false,
+  "campaign": null,
+  "probes": [],
+  "milestones": [],
+  "engine_roadmap": null,
+  "claim_review_2026": null,
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "id": "M001",
+  "name": "Riemann Hypothesis",
+  "field": "Number theory",
+  "question": "Are all nontrivial zeros of the Riemann zeta function on the line Re(s)=1/2?",
+  "first_attack": "Audit precise statement and prove a restricted case",
+  "impact": 5,
+  "attackability": 1,
+  "verifiability": 3,
+  "spillover": 5,
+  "modality": "finite_refutable",
+  "evidence_state": "official_open",
+  "checked_on": "2026-10-30",
+  "source_url": "https://www.claymath.org/millennium-problems/",
+  "rank": 90,
+  "score": 66,
+  "execution_rank": 90,
+  "execution_score": 66,
+  "readiness": 0,
+  "url": "https://svyable.github.io/100/problems/M001/",
+  "field_url": "https://svyable.github.io/100/fields/number-theory/",
+  "readiness_breakdown": [],
+  "has_exact_verifier": false,
+  "campaign": null,
+  "probes": [],
+  "milestones": [],
+  "engine_roadmap": {
+    "problem_id": "M001",
+    "engine": "interval_arithmetic",
+    "first_probe": "Rigorous count of zeta zeros up to a small height T with interval arithmetic (sign changes on the critical line plus a Turing-method bound), replayable as a certificate.",
+    "name": "Riemann Hypothesis"
+  },
+  "claim_review_2026": null,
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Exact probe lab — computational reach of the 100",
+      "source": "LAB.md",
+      "url": "https://svyable.github.io/100/library/lab/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    }
+  ]
+}

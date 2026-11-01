@@ -1,0 +1,146 @@
+{
+  "id": "M006",
+  "name": "Strong Goldbach conjecture",
+  "field": "Number theory",
+  "question": "Is every even integer greater than 2 a sum of two primes?",
+  "first_attack": "Audit precise statement and prove a restricted case",
+  "impact": 5,
+  "attackability": 2,
+  "verifiability": 3,
+  "spillover": 5,
+  "modality": "finite_refutable",
+  "evidence_state": "needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 55,
+  "score": 72,
+  "execution_rank": 33,
+  "execution_score": 79,
+  "readiness": 7,
+  "url": "https://svyable.github.io/100/problems/M006/",
+  "field_url": "https://svyable.github.io/100/fields/number-theory/",
+  "readiness_breakdown": [
+    {
+      "item": "Formal campaign brief",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Runnable independent verifier",
+      "points": 3,
+      "max": 3
+    },
+    {
+      "item": "Reproduced known benchmark",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Independently reviewed restricted theorem",
+      "points": 0,
+      "max": 3
+    }
+  ],
+  "has_exact_verifier": true,
+  "campaign": {
+    "problem_id": "M006",
+    "stage": "benchmark_reproduced",
+    "method": "Verified-range certificates and least-partition statistics",
+    "hypothesis": "Every even integer n >= 4 is a sum of two primes.",
+    "first_proof_obligation": "State a restricted, checkable lemma (for example an explicit bound on the least Goldbach prime in a named residue class or range) that is not already implied by the 4*10^18 verification or by the ternary Goldbach theorem.",
+    "next_experiment": "Use the least-partition certificates to test conjectured growth bounds for the least prime p(n), then attempt a sieve-theoretic restricted statement with explicit constants.",
+    "falsification": "An even n >= 4 with no prime p <= n/2 such that n - p is prime, confirmed by an independent primality oracle.",
+    "blocker": "Range extension cannot compete with the published 4*10^18 verification; real progress needs a new restricted theorem.",
+    "dossier": "research/LAB_CAMPAIGNS.md",
+    "verifier": "python3 scripts/lab.py --probe goldbach"
+  },
+  "probes": [
+    {
+      "id": "goldbach",
+      "problem_id": "M006",
+      "name": "Strong Goldbach conjecture",
+      "title": "Goldbach partitions for every even integer up to N",
+      "engines": [
+        "primes"
+      ],
+      "frontier": "Known: verified for every even n <= 4*10^18 (Oliveira e Silva, Herzog & Pardi, Math. Comp. 83 (2014)). This range reproduces known mathematics only.",
+      "artifact": "scripts/probes/goldbach.py",
+      "command": "python3 scripts/lab.py --probe goldbach",
+      "runs": {
+        "smoke": {
+          "holds": true,
+          "scope": "Every even integer 4 <= n <= 200,000 is p + q with p, q prime.",
+          "certificate_sha256": "063ed3ae3efccc5b690cbfb1d8ae5dbd70fd117c1b61376a5f0116ff61c04ea8"
+        },
+        "deep": {
+          "holds": true,
+          "scope": "Every even integer 4 <= n <= 4,000,000 is p + q with p, q prime.",
+          "certificate_sha256": "8776164f5545168a55d2c4be4c3542a959c6066e008842f8d3a8895e581257b0"
+        }
+      }
+    }
+  ],
+  "milestones": [
+    {
+      "id": "B-GOLDBACH-001",
+      "problem_id": "M006",
+      "classification": "reproduced_known",
+      "title": "Goldbach partitions certified for every even n <= 200,000",
+      "scope": "Finite range only; far inside the published 4*10^18 verification",
+      "description": "Least Goldbach prime recorded for all 99,999 even n in [4, 200000], each re-checked by deterministic Miller-Rabin; the deep run extends to 4*10^6 (record least prime 751 at n = 3,807,404).",
+      "verifier": "python3 scripts/lab.py --probe goldbach",
+      "artifact": "scripts/probes/goldbach.py",
+      "verified_on": "2026-10-31"
+    }
+  ],
+  "engine_roadmap": null,
+  "claim_review_2026": null,
+  "formal_statement": {
+    "problem_id": "M006",
+    "module": "lean/Hundred/Goldbach.lean",
+    "namespace": "Hundred.Goldbach",
+    "statement": "Statement",
+    "encodes": "Every even n ≥ 4 is p + (n − p) with both prime; primes by trial division.",
+    "not_encoded": [
+      "Weak (ternary) Goldbach",
+      "Bounds on the least Goldbach prime"
+    ],
+    "kernel_checked": [
+      {
+        "decl": "holds_upTo_1000",
+        "claim": "The statement holds for every even 4 ≤ n ≤ 1000 (least-prime witness table re-checked by the kernel).",
+        "mirrors_probe": "goldbach"
+      }
+    ],
+    "fidelity": "author_checked",
+    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Goldbach.lean"
+  },
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Exact probe lab — computational reach of the 100",
+      "source": "LAB.md",
+      "url": "https://svyable.github.io/100/library/lab/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Lab campaigns: twelve problems under exact computation",
+      "source": "research/LAB_CAMPAIGNS.md",
+      "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "Proof-driven research engine",
+      "source": "docs/RESEARCH_ENGINE.md",
+      "url": "https://svyable.github.io/100/library/research-engine/"
+    }
+  ]
+}

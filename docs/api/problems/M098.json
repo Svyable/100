@@ -1,0 +1,68 @@
+{
+  "id": "M098",
+  "name": "Vaught conjecture",
+  "field": "Mathematical physics / finite structures",
+  "question": "Does a complete countable-language first-order theory have countably or continuum many countable models?",
+  "first_attack": "Audit precise statement and prove a restricted case",
+  "impact": 4,
+  "attackability": 4,
+  "verifiability": 4,
+  "spillover": 4,
+  "modality": "structural",
+  "evidence_state": "claim_needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 30,
+  "score": 80,
+  "execution_rank": 30,
+  "execution_score": 80,
+  "readiness": 0,
+  "url": "https://svyable.github.io/100/problems/M098/",
+  "field_url": "https://svyable.github.io/100/fields/mathematical-physics-finite-structures/",
+  "readiness_breakdown": [],
+  "has_exact_verifier": false,
+  "campaign": null,
+  "probes": [],
+  "milestones": [],
+  "engine_roadmap": null,
+  "claim_review_2026": {
+    "id": "M098",
+    "primary_title": "A counterexample to Vaught's Conjecture for L_{omega_1,omega}",
+    "primary_url": "https://arxiv.org/abs/2610.15217",
+    "preprint_date": "2026-10-10",
+    "claimed_theorem": "A sentence of infinitary L_{omega_1,omega} has exactly aleph_1 countable models (and no perfect set of non-isomorphic models).",
+    "scope_relation": "different_statement",
+    "scope_note": "M098 asks about complete first-order theories in a countable language, not infinitary L_{omega_1,omega} sentences. This manuscript does NOT refute or solve M098.",
+    "independent_validation": "formalized_different_statement",
+    "independent_evidence_urls": [
+      "https://github.com/cameronfreer/vaught-conjecture-counterexample",
+      "https://mathoverflow.net/questions/22142/has-vaughts-conjecture-been-solved/516156"
+    ],
+    "known_caveats": "The authors' repository explicitly says the formalization does not solve the first-order Vaught conjecture; a specialist MathOverflow discussion confirms the first-order version remains open.",
+    "next_review": "De-scope the 2026 infinitary result from M098's resolution watch; retain the first-order problem and cite a current specialist open-status source before changing evidence state."
+  },
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "2026 claimed-resolution triage — issue #3",
+      "source": "research/CLAIM_REVIEWS_2026.md",
+      "url": "https://svyable.github.io/100/library/claim-reviews-2026/"
+    },
+    {
+      "title": "Foundational sources and 2026 claim watch",
+      "source": "docs/SOURCES.md",
+      "url": "https://svyable.github.io/100/library/sources/"
+    }
+  ]
+}

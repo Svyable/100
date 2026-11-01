@@ -1,0 +1,128 @@
+{
+  "id": "M097",
+  "name": "Metric TSP four-thirds conjecture",
+  "field": "Mathematical physics / finite structures",
+  "question": "Is optimum metric TSP cost at most 4/3 times the Held–Karp subtour LP?",
+  "first_attack": "Test Held–Karp integrality-gap extremal metrics",
+  "impact": 4,
+  "attackability": 4,
+  "verifiability": 5,
+  "spillover": 4,
+  "modality": "finite_refutable",
+  "evidence_state": "needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 18,
+  "score": 85,
+  "execution_rank": 14,
+  "execution_score": 92,
+  "readiness": 7,
+  "url": "https://svyable.github.io/100/problems/M097/",
+  "field_url": "https://svyable.github.io/100/fields/mathematical-physics-finite-structures/",
+  "readiness_breakdown": [
+    {
+      "item": "Formal campaign brief",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Runnable independent verifier",
+      "points": 3,
+      "max": 3
+    },
+    {
+      "item": "Reproduced known benchmark",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Independently reviewed restricted theorem",
+      "points": 0,
+      "max": 3
+    }
+  ],
+  "has_exact_verifier": true,
+  "campaign": {
+    "problem_id": "M097",
+    "stage": "benchmark_reproduced",
+    "method": "Exact rational LP with duality certificates over graphic metrics",
+    "hypothesis": "For every metric TSP instance the optimal tour costs at most 4/3 of the Held-Karp (subtour LP) bound.",
+    "first_proof_obligation": "Reproduce published exact maximum integrality gaps for all small metrics (Benoit-Boyd) with LP-duality certificates, then target a structured class such as graphic metrics of subcubic graphs beyond published ranges.",
+    "next_experiment": "Extend from graphic metrics to 1-2 and vertex-weighted metrics, and enumerate extreme points of the subtour polytope at n = 8 to search for gap-maximising instances.",
+    "falsification": "A metric instance with an exactly certified Held-Karp value and a brute-force optimal tour longer than 4/3 of it.",
+    "blocker": "Exhaustive extreme-point enumeration grows very quickly beyond n = 10; graphic metrics up to 7 vertices reach only a 16/15 gap.",
+    "dossier": "research/LAB_CAMPAIGNS.md",
+    "verifier": "python3 scripts/lab.py --probe held_karp"
+  },
+  "probes": [
+    {
+      "id": "held_karp",
+      "problem_id": "M097",
+      "name": "Metric TSP four-thirds conjecture",
+      "title": "Held-Karp integrality gap on all graphic metrics up to N vertices",
+      "engines": [
+        "exact_lp",
+        "graph_census"
+      ],
+      "frontier": "Known: the integrality gap is at least 4/3 and at most 3/2 (Wolsey; Shmoys-Williamson); exact maximum gaps have been computed for all metrics on small n (Benoit-Boyd 2008).",
+      "artifact": "scripts/probes/held_karp.py",
+      "command": "python3 scripts/lab.py --probe held_karp",
+      "runs": {
+        "smoke": {
+          "holds": true,
+          "scope": "For the shortest-path metric of every connected graph on 3..6 vertices, OPT <= (4/3) * HK with both values certified exactly.",
+          "certificate_sha256": "705abe69797b7a55f2124926eb17eeae816ae0a8f4c536c0f3484358023ba60b"
+        },
+        "deep": {
+          "holds": true,
+          "scope": "For the shortest-path metric of every connected graph on 3..7 vertices, OPT <= (4/3) * HK with both values certified exactly.",
+          "certificate_sha256": "b2100a56d71d281128a48fc3cd2746d955ecd1d855a1f72e51627e10f337498b"
+        }
+      }
+    }
+  ],
+  "milestones": [
+    {
+      "id": "B-HK-001",
+      "problem_id": "M097",
+      "classification": "reproduced_known",
+      "title": "Held-Karp integrality gap certified on all 141 graphic metrics with 3-6 vertices",
+      "scope": "Known small range; not new",
+      "description": "Every instance carries an exact LP-duality certificate checked against all subtour constraints and a brute-force optimal tour; the maximum ratio is 1 for n <= 6. The deep run covers 994 instances up to n = 7, with maximum gap 16/15.",
+      "verifier": "python3 scripts/lab.py --probe held_karp",
+      "artifact": "scripts/probes/held_karp.py",
+      "verified_on": "2026-10-31"
+    }
+  ],
+  "engine_roadmap": null,
+  "claim_review_2026": null,
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Exact probe lab — computational reach of the 100",
+      "source": "LAB.md",
+      "url": "https://svyable.github.io/100/library/lab/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Lab campaigns: twelve problems under exact computation",
+      "source": "research/LAB_CAMPAIGNS.md",
+      "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "Proof-driven research engine",
+      "source": "docs/RESEARCH_ENGINE.md",
+      "url": "https://svyable.github.io/100/library/research-engine/"
+    }
+  ]
+}

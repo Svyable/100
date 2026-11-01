@@ -1,0 +1,137 @@
+{
+  "id": "M092",
+  "name": "Zauner SIC conjecture",
+  "field": "Mathematical physics / finite structures",
+  "question": "Do SIC equiangular complex lines exist in every finite dimension d at least two?",
+  "first_attack": "Verify small-dimension SICs using exact algebraic arithmetic; audit uniform constructions and their Galois assumptions",
+  "impact": 5,
+  "attackability": 4,
+  "verifiability": 5,
+  "spillover": 5,
+  "modality": "existence_family",
+  "evidence_state": "needs_review",
+  "checked_on": "2026-10-30",
+  "source_url": "https://papex.org/problems/zauners-conjecture",
+  "rank": 3,
+  "score": 94,
+  "execution_rank": 2,
+  "execution_score": 101,
+  "readiness": 7,
+  "url": "https://svyable.github.io/100/problems/M092/",
+  "field_url": "https://svyable.github.io/100/fields/mathematical-physics-finite-structures/",
+  "readiness_breakdown": [
+    {
+      "item": "Formal campaign brief",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Runnable independent verifier",
+      "points": 3,
+      "max": 3
+    },
+    {
+      "item": "Reproduced known benchmark",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Independently reviewed restricted theorem",
+      "points": 0,
+      "max": 3
+    }
+  ],
+  "has_exact_verifier": true,
+  "campaign": {
+    "problem_id": "M092",
+    "stage": "benchmark_reproduced",
+    "method": "Exact algebraic SIC verification",
+    "hypothesis": "Exact families of d^2 equiangular lines exist beyond individually constructed dimensions.",
+    "first_proof_obligation": "Replay a published exact fiducial beyond d = 3 with exact arithmetic, and state the precise Galois hypotheses of any proposed uniform family.",
+    "next_experiment": "Extend the cyclotomic engine to the number fields needed for d = 4..8 and replay published exact fiducials there.",
+    "falsification": "An exact failed Gram matrix relation or a missing required vector under the stated algebraic construction.",
+    "blocker": "Exact fiducials beyond d = 3 live in larger number fields than the current Z[zeta_m] engine supports; floating-point SICs are not proofs.",
+    "dossier": "research/CAMPAIGNS.md",
+    "verifier": "python3 scripts/lab.py --probe sic"
+  },
+  "probes": [
+    {
+      "id": "sic",
+      "problem_id": "M092",
+      "name": "Zauner SIC conjecture",
+      "title": "Exact SIC-POVMs in d = 2 (tetrahedron) and d = 3 (Weyl-Heisenberg in Z[w])",
+      "engines": [
+        "cyclotomic"
+      ],
+      "frontier": "Known: exact SICs are known in many dimensions and numerical ones far beyond; no construction for every d. d = 2, 3 are classical (Zauner 1999, Renes et al. 2004).",
+      "artifact": "scripts/probes/sic.py",
+      "command": "python3 scripts/lab.py --probe sic",
+      "runs": {
+        "smoke": {
+          "holds": true,
+          "scope": "d=2: 4 exact equiangular qubit states with overlap 1/3; d=3: every Weyl-Heisenberg fiducial with entries in {0, +-1, +-w, +-w^2} found and its 9 states certified with pairwise squared overlap 1/4.",
+          "certificate_sha256": "621c08975771a3b04e5771d0b174a99225c323d4d60c122d62fed71dd56d1ca5"
+        },
+        "deep": {
+          "holds": true,
+          "scope": "d=2: 4 exact equiangular qubit states with overlap 1/3; d=3: every Weyl-Heisenberg fiducial with entries in {a + b*w : a, b in [-1, 1]} found and its 9 states certified with pairwise squared overlap 1/4.",
+          "certificate_sha256": "b21c45a5c3e644f4bd0f9a1edaeb154072a5e10d361abcdeb2225fc9ea9fd0fe"
+        }
+      }
+    }
+  ],
+  "milestones": [
+    {
+      "id": "B-SIC-001",
+      "problem_id": "M092",
+      "classification": "reproduced_known",
+      "title": "Exact SIC-POVMs in dimensions 2 and 3",
+      "scope": "Classical small dimensions; says nothing about general d",
+      "description": "d = 2 tetrahedron overlaps 1/3 exactly; in d = 3 all 108 Weyl-Heisenberg fiducials with entries in {0, +-1, +-w, +-w^2} found in exact Z[w] arithmetic, each Gram matrix recomputed independently.",
+      "verifier": "python3 scripts/lab.py --probe sic",
+      "artifact": "scripts/probes/sic.py",
+      "verified_on": "2026-10-31"
+    }
+  ],
+  "engine_roadmap": null,
+  "claim_review_2026": null,
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Exact probe lab — computational reach of the 100",
+      "source": "LAB.md",
+      "url": "https://svyable.github.io/100/library/lab/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Four concrete proof campaigns — first research tranche",
+      "source": "research/CAMPAIGNS.md",
+      "url": "https://svyable.github.io/100/library/campaigns/"
+    },
+    {
+      "title": "Lab campaigns: twelve problems under exact computation",
+      "source": "research/LAB_CAMPAIGNS.md",
+      "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "Research-source audit — 2026-10-30",
+      "source": "docs/AUDIT_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/audit-queue/"
+    },
+    {
+      "title": "Proof-driven research engine",
+      "source": "docs/RESEARCH_ENGINE.md",
+      "url": "https://svyable.github.io/100/library/research-engine/"
+    }
+  ]
+}

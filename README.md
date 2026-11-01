@@ -2,7 +2,8 @@
 
 **Purpose:** Preserve, refine, and stack-rank 100 concrete mathematical proof/counterexample targets, looking for results and methods that create new branches of discovery.
 
-- **[Public research dashboard](https://svyable.github.io/100/)** (once GitHub Pages is enabled: [activation guide](docs/PAGES_SETUP.md)) — ranked search, evidence filters, active proof campaigns.
+- **[Public research site](https://svyable.github.io/100/)** (once GitHub Pages is enabled: [activation guide](docs/PAGES_SETUP.md)) — 136 generated pages: one permanent page per problem (`/problems/M071/`), field, campaign index, lab, formal statements, claim triage, ledger and every research dossier; an atlas of charts; a `/` command palette; JSON/CSV API and Atom feed. Works without JavaScript; CI byte-checks it against the ledgers and link-checks every page.
+- **[Formal statements in Lean 4](lean/README.md)** — comparator statements for 9 targets (Goldbach, Erdős–Straus, Caccetta–Häggkvist, Frankl, Hadwiger, reconstruction, Hadamard, R(5,5), projective plane of order 12), with kernel-checked fidelity tests and finite certificates, no `sorry`/`axiom`/`native_decide`, built in CI ([catalogue](data/formalization.json)).
 - **[Exact probe lab](LAB.md)**: 15 independently checked probes on 11 reusable engines give **17 of the 100 problems** an exact verifier (previously 3), including 16 of the 19 problems where finite computation can refute or settle the claim. All ranges are known mathematics; see [the lab dossier](research/LAB_CAMPAIGNS.md).
 - **[Execution-priority queue](ATTACK_QUEUE.md)** — evidence-aware ordering of the top 100 with precise proof obligations for active campaigns.
 - **[Solved archive](data/solved.json)** — strict full-resolution ledger, initially empty; known finite benchmarks are kept separate.
@@ -29,8 +30,10 @@ python3 scripts/rank.py
 python3 scripts/rank.py --check
 python3 scripts/research.py
 python3 scripts/research.py --check
+python3 scripts/formal.py --check
 python3 scripts/build_site.py
 python3 scripts/build_site.py --check
+(cd lean && lake build)
 python3 -m unittest discover -s tests -v
 ```
 

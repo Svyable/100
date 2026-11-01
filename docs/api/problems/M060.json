@@ -1,0 +1,65 @@
+{
+  "id": "M060",
+  "name": "Morrey 2x2 conjecture",
+  "field": "Analysis",
+  "question": "Does rank-one convexity imply quasiconvexity for finite-valued energies on 2x2 matrices?",
+  "first_attack": "Audit precise statement and prove a restricted case",
+  "impact": 5,
+  "attackability": 2,
+  "verifiability": 3,
+  "spillover": 4,
+  "modality": "structural",
+  "evidence_state": "claim_needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 89,
+  "score": 69,
+  "execution_rank": 89,
+  "execution_score": 69,
+  "readiness": 0,
+  "url": "https://svyable.github.io/100/problems/M060/",
+  "field_url": "https://svyable.github.io/100/fields/analysis/",
+  "readiness_breakdown": [],
+  "has_exact_verifier": false,
+  "campaign": null,
+  "probes": [],
+  "milestones": [],
+  "engine_roadmap": null,
+  "claim_review_2026": {
+    "id": "M060",
+    "primary_title": "Morrey's conjecture: rank-one convexity implies quasi-convexity for two-dimensional, two-component maps",
+    "primary_url": "https://arxiv.org/abs/1905.06571",
+    "preprint_date": "2026-06-18",
+    "claimed_theorem": "For two-dimensional, two-component maps, finite-valued rank-one convex energies are claimed to be quasiconvex via a fixed-point/lamination argument.",
+    "scope_relation": "matches_with_qualification",
+    "scope_note": "The 2x2 setting matches M060, subject to the source theorem's function-domain and regularity assumptions.",
+    "independent_validation": "not_established",
+    "independent_evidence_urls": [],
+    "known_caveats": "This is arXiv v5 revised in June 2026, not a new 2026 submission. v3 was withdrawn in 2024, and the revised fixed-point/lamination step needs specialist independent reconstruction.",
+    "next_review": "Compare v3 withdrawal notice with v5, audit the set-valued fixed-point and laminate-to-gradient argument, and request a calculus-of-variations review."
+  },
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "2026 claimed-resolution triage — issue #3",
+      "source": "research/CLAIM_REVIEWS_2026.md",
+      "url": "https://svyable.github.io/100/library/claim-reviews-2026/"
+    },
+    {
+      "title": "Foundational sources and 2026 claim watch",
+      "source": "docs/SOURCES.md",
+      "url": "https://svyable.github.io/100/library/sources/"
+    }
+  ]
+}

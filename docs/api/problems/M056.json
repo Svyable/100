@@ -1,0 +1,66 @@
+{
+  "id": "M056",
+  "name": "Fourier restriction conjecture",
+  "field": "Analysis",
+  "question": "Do sphere Fourier extension estimates hold in the predicted sharp range?",
+  "first_attack": "Audit precise statement and prove a restricted case",
+  "impact": 5,
+  "attackability": 2,
+  "verifiability": 3,
+  "spillover": 4,
+  "modality": "structural",
+  "evidence_state": "claim_needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 85,
+  "score": 69,
+  "execution_rank": 85,
+  "execution_score": 69,
+  "readiness": 0,
+  "url": "https://svyable.github.io/100/problems/M056/",
+  "field_url": "https://svyable.github.io/100/fields/analysis/",
+  "readiness_breakdown": [],
+  "has_exact_verifier": false,
+  "campaign": null,
+  "probes": [],
+  "milestones": [],
+  "engine_roadmap": null,
+  "claim_review_2026": {
+    "id": "M056",
+    "primary_title": "Local smoothing for the Euclidean wave equation",
+    "primary_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf",
+    "preprint_date": "2026-10-25",
+    "claimed_theorem": "The October 25 manuscript claims local smoothing in all spatial dimensions, implying Fourier restriction for spheres in the interior of the predicted exponent range; a September 24 paper separately claims diagonal extension for curved surfaces in R^3.",
+    "scope_relation": "narrower",
+    "scope_note": "This is substantially broader than the 3D diagonal paper, but it still states strict interior exponent bounds; the registry does not specify dimension, Lp-Lq mapping, or endpoint conventions. Treat it as a provisional scope-sensitive restricted/interior claim, not an accepted resolution.",
+    "independent_validation": "not_established",
+    "independent_evidence_urls": [],
+    "known_caveats": "An all-dimensional local-smoothing consequence and author-described Lean scope are not independent theorem verification. Without quantified exponent-region and endpoint conventions, an interior result cannot be labelled a full sharp-range settlement.",
+    "next_review": "State M056's exact dimension and p/q exponent range, audit the October 25 local-smoothing-to-restriction implication (including endpoint exclusions), compare the author Lean scope to its paper, and obtain independent harmonic-analysis review.",
+    "formalization_scope_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/079.md"
+  },
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "2026 claimed-resolution triage — issue #3",
+      "source": "research/CLAIM_REVIEWS_2026.md",
+      "url": "https://svyable.github.io/100/library/claim-reviews-2026/"
+    },
+    {
+      "title": "Foundational sources and 2026 claim watch",
+      "source": "docs/SOURCES.md",
+      "url": "https://svyable.github.io/100/library/sources/"
+    }
+  ]
+}

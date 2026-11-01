@@ -1,0 +1,146 @@
+{
+  "id": "M094",
+  "name": "Hadamard matrix conjecture",
+  "field": "Mathematical physics / finite structures",
+  "question": "Does a real Hadamard matrix exist for every positive order divisible by four?",
+  "first_attack": "Construct infinite Hadamard families",
+  "impact": 4,
+  "attackability": 5,
+  "verifiability": 5,
+  "spillover": 4,
+  "modality": "existence_family",
+  "evidence_state": "needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 9,
+  "score": 91,
+  "execution_rank": 7,
+  "execution_score": 98,
+  "readiness": 7,
+  "url": "https://svyable.github.io/100/problems/M094/",
+  "field_url": "https://svyable.github.io/100/fields/mathematical-physics-finite-structures/",
+  "readiness_breakdown": [
+    {
+      "item": "Formal campaign brief",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Runnable independent verifier",
+      "points": 3,
+      "max": 3
+    },
+    {
+      "item": "Reproduced known benchmark",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Independently reviewed restricted theorem",
+      "points": 0,
+      "max": 3
+    }
+  ],
+  "has_exact_verifier": true,
+  "campaign": {
+    "problem_id": "M094",
+    "stage": "benchmark_reproduced",
+    "method": "Algebraic constructions (Sylvester, Paley, Williamson) with exact orthogonality certificates",
+    "hypothesis": "A Hadamard matrix exists for every order divisible by 4.",
+    "first_proof_obligation": "Close the remaining engine gaps (116, 156, 172, ...) with symmetry-reduced Williamson and Goethals-Seidel constructions, then document the first order no implemented method reaches.",
+    "next_experiment": "Add multiplier-group symmetry reduction to the Williamson meet-in-the-middle search so that n = 29 (order 116) becomes feasible, then implement Goethals-Seidel arrays for orders 156 and 172.",
+    "falsification": "A proof that no Hadamard matrix of some order 4k exists; a finite search failure is not sufficient.",
+    "blocker": "Plain meet-in-the-middle over symmetric circulants is practical up to n = 23 in pure Python; n = 29 needs symmetry reduction, and order 668 remains the smallest open case.",
+    "dossier": "research/LAB_CAMPAIGNS.md",
+    "verifier": "python3 scripts/lab.py --probe hadamard"
+  },
+  "probes": [
+    {
+      "id": "hadamard",
+      "problem_id": "M094",
+      "name": "Hadamard matrix conjecture",
+      "title": "Exact Hadamard matrices from Sylvester, Paley I/II and Kronecker products",
+      "engines": [
+        "finite_fields"
+      ],
+      "frontier": "Known: constructions exist for every order 4k < 668; 668 is the smallest order with no known Hadamard matrix (after order 428, Kharaghani & Tayfeh-Rezaie 2005). Engine gaps below are NOT open cases.",
+      "artifact": "scripts/probes/hadamard.py",
+      "command": "python3 scripts/lab.py --probe hadamard",
+      "runs": {
+        "smoke": {
+          "holds": true,
+          "scope": "Explicit (+1/-1) matrices with H H^T = nI for 31 of the 32 orders 4k <= 128 (the rest are engine gaps, not open cases).",
+          "certificate_sha256": "8ba6592000a77ff3597a776eaa458e2cc4c53d9a7087aede2c64efb32c3433ca"
+        },
+        "deep": {
+          "holds": true,
+          "scope": "Explicit (+1/-1) matrices with H H^T = nI for 87 of the 100 orders 4k <= 400 (the rest are engine gaps, not open cases).",
+          "certificate_sha256": "98b688b8a711c2cb0a381cbab2357ccce9557978a9c4f096d81a3e685d88d327"
+        }
+      }
+    }
+  ],
+  "milestones": [
+    {
+      "id": "B-HADAMARD-001",
+      "problem_id": "M094",
+      "classification": "reproduced_known",
+      "title": "Exact Hadamard matrices for 31 of the 32 orders 4k <= 128, including order 92",
+      "scope": "Known orders; the remaining engine gap 116 is not an open case",
+      "description": "Sylvester, Paley I/II, a Williamson quadruple of symmetric circulants of order 23 (order 92, found by meet-in-the-middle on periodic autocorrelations) and Kronecker products; each matrix checked as H H^T = nI. The deep run certifies 87 of the 100 orders up to 400.",
+      "verifier": "python3 scripts/lab.py --probe hadamard",
+      "artifact": "scripts/probes/hadamard.py",
+      "verified_on": "2026-10-31"
+    }
+  ],
+  "engine_roadmap": null,
+  "claim_review_2026": null,
+  "formal_statement": {
+    "problem_id": "M094",
+    "module": "lean/Hundred/Hadamard.lean",
+    "namespace": "Hundred.Hadamard",
+    "statement": "Statement",
+    "encodes": "For every k ≥ 1 an Int matrix of order 4k with ±1 entries and pairwise orthogonal rows.",
+    "not_encoded": [
+      "Specific constructions (Williamson, Goethals–Seidel)",
+      "Circulant or skew variants"
+    ],
+    "kernel_checked": [
+      {
+        "decl": "order_12",
+        "claim": "Explicit Hadamard matrices of orders 4, 8, 16 (Sylvester) and 12 (Paley), re-checked by the kernel (order_4, order_8, order_12, order_16).",
+        "mirrors_probe": "hadamard"
+      }
+    ],
+    "fidelity": "author_checked",
+    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Hadamard.lean"
+  },
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Exact probe lab — computational reach of the 100",
+      "source": "LAB.md",
+      "url": "https://svyable.github.io/100/library/lab/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Lab campaigns: twelve problems under exact computation",
+      "source": "research/LAB_CAMPAIGNS.md",
+      "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "Proof-driven research engine",
+      "source": "docs/RESEARCH_ENGINE.md",
+      "url": "https://svyable.github.io/100/library/research-engine/"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "id": "M019",
+  "name": "Erdős–Straus conjecture",
+  "field": "Arithmetic",
+  "question": "Can 4/n always be written as three positive unit fractions for every integer n at least two?",
+  "first_attack": "Seek new modular covering identities and exact certificates",
+  "impact": 3,
+  "attackability": 5,
+  "verifiability": 5,
+  "spillover": 3,
+  "modality": "finite_refutable",
+  "evidence_state": "needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 27,
+  "score": 82,
+  "execution_rank": 17,
+  "execution_score": 89,
+  "readiness": 7,
+  "url": "https://svyable.github.io/100/problems/M019/",
+  "field_url": "https://svyable.github.io/100/fields/arithmetic/",
+  "readiness_breakdown": [
+    {
+      "item": "Formal campaign brief",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Runnable independent verifier",
+      "points": 3,
+      "max": 3
+    },
+    {
+      "item": "Reproduced known benchmark",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Independently reviewed restricted theorem",
+      "points": 0,
+      "max": 3
+    }
+  ],
+  "has_exact_verifier": true,
+  "campaign": {
+    "problem_id": "M019",
+    "stage": "benchmark_reproduced",
+    "method": "Modular covering identities with unit-fraction certificates",
+    "hypothesis": "For every integer n >= 2, 4/n = 1/x + 1/y + 1/z has a solution in positive integers.",
+    "first_proof_obligation": "Find a polynomial identity family covering a residue class of primes not covered by the classical Mordell identities, and prove it symbolically.",
+    "next_experiment": "Mine the certificate table for primes n = 1 mod 24, cluster solutions by (x mod n, divisor pattern) and propose parametric identities for symbolic verification.",
+    "falsification": "An n together with a proof that no positive-integer triple exists; a finite search failure is not a counterexample.",
+    "blocker": "Classical identities leave quadratic-residue classes uncovered, and known results show identities of the standard polynomial type cannot cover them all; a different idea is needed.",
+    "dossier": "research/LAB_CAMPAIGNS.md",
+    "verifier": "python3 scripts/lab.py --probe erdos_straus"
+  },
+  "probes": [
+    {
+      "id": "erdos_straus",
+      "problem_id": "M019",
+      "name": "Erdős–Straus conjecture",
+      "title": "Erdos-Straus unit-fraction certificates for every n up to N",
+      "engines": [
+        "primes"
+      ],
+      "frontier": "Known: computational verification is reported far beyond this range (at least 10^14 in the literature). Reproduction only.",
+      "artifact": "scripts/probes/erdos_straus.py",
+      "command": "python3 scripts/lab.py --probe erdos_straus",
+      "runs": {
+        "smoke": {
+          "holds": true,
+          "scope": "For every integer 2 <= n <= 20,000, explicit positive integers x <= y <= z with 4xyz = n(xy + yz + zx).",
+          "certificate_sha256": "0076b8bf095e84632fdb686cd77255a4e37b0c0f6e762d2538f0de2f38c6a855"
+        },
+        "deep": {
+          "holds": true,
+          "scope": "For every integer 2 <= n <= 1,000,000, explicit positive integers x <= y <= z with 4xyz = n(xy + yz + zx).",
+          "certificate_sha256": "60a148c35e2dedbf39a8233554ad50f67de47d69cf5b3bfa24b02f64fe315911"
+        }
+      }
+    }
+  ],
+  "milestones": [
+    {
+      "id": "B-ES-001",
+      "problem_id": "M019",
+      "classification": "reproduced_known",
+      "title": "Erdos-Straus triples certified for every 2 <= n <= 20,000",
+      "scope": "Finite range only; known computational verification is far larger",
+      "description": "Explicit (x, y, z) with 4xyz = n(xy + yz + zx) for all 19,999 integers, each re-checked by exact integer arithmetic; the deep run covers n <= 10^6.",
+      "verifier": "python3 scripts/lab.py --probe erdos_straus",
+      "artifact": "scripts/probes/erdos_straus.py",
+      "verified_on": "2026-10-31"
+    }
+  ],
+  "engine_roadmap": null,
+  "claim_review_2026": null,
+  "formal_statement": {
+    "problem_id": "M019",
+    "module": "lean/Hundred/ErdosStraus.lean",
+    "namespace": "Hundred.ErdosStraus",
+    "statement": "Statement",
+    "encodes": "4/n = 1/x + 1/y + 1/z cleared to 4xyz = n(xy + yz + zx) with x, y, z > 0.",
+    "not_encoded": [
+      "Distinct denominators",
+      "Parametric identities by residue class"
+    ],
+    "kernel_checked": [
+      {
+        "decl": "holds_upTo_100",
+        "claim": "Explicit positive solutions for every 2 ≤ n ≤ 100, re-checked by the kernel.",
+        "mirrors_probe": "erdos_straus"
+      }
+    ],
+    "fidelity": "author_checked",
+    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/ErdosStraus.lean"
+  },
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Exact probe lab — computational reach of the 100",
+      "source": "LAB.md",
+      "url": "https://svyable.github.io/100/library/lab/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Lab campaigns: twelve problems under exact computation",
+      "source": "research/LAB_CAMPAIGNS.md",
+      "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "Proof-driven research engine",
+      "source": "docs/RESEARCH_ENGINE.md",
+      "url": "https://svyable.github.io/100/library/research-engine/"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "M091",
+  "name": "Yang–Mills existence and mass gap",
+  "field": "Mathematical physics / finite structures",
+  "question": "Can four-dimensional quantum Yang–Mills be constructed rigorously with a positive mass gap?",
+  "first_attack": "Audit precise statement and prove a restricted case",
+  "impact": 4,
+  "attackability": 4,
+  "verifiability": 4,
+  "spillover": 4,
+  "modality": "structural",
+  "evidence_state": "official_open",
+  "checked_on": "2026-10-30",
+  "source_url": "https://www.claymath.org/millennium-problems/",
+  "rank": 29,
+  "score": 80,
+  "execution_rank": 29,
+  "execution_score": 80,
+  "readiness": 0,
+  "url": "https://svyable.github.io/100/problems/M091/",
+  "field_url": "https://svyable.github.io/100/fields/mathematical-physics-finite-structures/",
+  "readiness_breakdown": [],
+  "has_exact_verifier": false,
+  "campaign": null,
+  "probes": [],
+  "milestones": [],
+  "engine_roadmap": null,
+  "claim_review_2026": null,
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "M063",
+  "name": "Planar first-passage KPZ exponent",
+  "field": "Dynamics",
+  "question": "Do fluctuations of planar exponential first-passage percolation have exponent one-third?",
+  "first_attack": "Audit precise statement and prove a restricted case",
+  "impact": 4,
+  "attackability": 3,
+  "verifiability": 4,
+  "spillover": 4,
+  "modality": "asymptotic",
+  "evidence_state": "needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 43,
+  "score": 74,
+  "execution_rank": 44,
+  "execution_score": 74,
+  "readiness": 0,
+  "url": "https://svyable.github.io/100/problems/M063/",
+  "field_url": "https://svyable.github.io/100/fields/dynamics/",
+  "readiness_breakdown": [],
+  "has_exact_verifier": false,
+  "campaign": null,
+  "probes": [],
+  "milestones": [],
+  "engine_roadmap": null,
+  "claim_review_2026": null,
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    }
+  ]
+}

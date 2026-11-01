@@ -1,0 +1,128 @@
+{
+  "id": "M080",
+  "name": "Rota basis conjecture",
+  "field": "Combinatorics",
+  "question": "Can n bases of an n-dimensional vector space be arranged into a grid where each row and column is a basis?",
+  "first_attack": "Audit precise statement and prove a restricted case",
+  "impact": 4,
+  "attackability": 4,
+  "verifiability": 5,
+  "spillover": 4,
+  "modality": "finite_refutable",
+  "evidence_state": "needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 16,
+  "score": 85,
+  "execution_rank": 12,
+  "execution_score": 92,
+  "readiness": 7,
+  "url": "https://svyable.github.io/100/problems/M080/",
+  "field_url": "https://svyable.github.io/100/fields/combinatorics/",
+  "readiness_breakdown": [
+    {
+      "item": "Formal campaign brief",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Runnable independent verifier",
+      "points": 3,
+      "max": 3
+    },
+    {
+      "item": "Reproduced known benchmark",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Independently reviewed restricted theorem",
+      "points": 0,
+      "max": 3
+    }
+  ],
+  "has_exact_verifier": true,
+  "campaign": {
+    "problem_id": "M080",
+    "stage": "benchmark_reproduced",
+    "method": "Exhaustive grid search over GF(p)^n with GL-symmetry reduction",
+    "hypothesis": "Any n bases of an n-dimensional vector space can be arranged in an n x n grid whose rows are the given bases and whose columns are bases.",
+    "first_proof_obligation": "Specify the next finite case not yet covered here (GF(2)^4) with an orbit-reduced instance count and a per-orbit certificate format.",
+    "next_experiment": "Quotient instances by the stabiliser of the standard basis so that GF(2)^4 becomes exhaustive, storing one grid certificate per orbit.",
+    "falsification": "n bases of GF(p)^n with an exhaustive certificate that no valid grid exists.",
+    "blocker": "GF(2)^4 has about 10^8 raw instances; orbit reduction under the stabiliser is not implemented yet.",
+    "dossier": "research/LAB_CAMPAIGNS.md",
+    "verifier": "python3 scripts/lab.py --probe rota"
+  },
+  "probes": [
+    {
+      "id": "rota",
+      "problem_id": "M080",
+      "name": "Rota basis conjecture",
+      "title": "Rota's basis conjecture: exhaustive grids over GF(p)^n",
+      "engines": [
+        "finite_fields",
+        "symmetry_reduction"
+      ],
+      "frontier": "Known: true for every matroid of rank <= 3 (Chan 1995) and other special cases; open in general. These cases are reproductions only.",
+      "artifact": "scripts/probes/rota.py",
+      "command": "python3 scripts/lab.py --probe rota",
+      "runs": {
+        "smoke": {
+          "holds": true,
+          "scope": "Every choice of n bases of GF(2)^2, GF(3)^2, GF(5)^2, GF(7)^2, GF(2)^3 admits a Rota grid (B_1 fixed by GL-transitivity).",
+          "certificate_sha256": "b29d1181728dc6e357e6fb69d5447fbe013ad4491b3edf4c60bdd4332a348e96"
+        },
+        "deep": {
+          "holds": true,
+          "scope": "Every choice of n bases of GF(2)^2, GF(3)^2, GF(5)^2, GF(7)^2, GF(2)^3, GF(3)^3 admits a Rota grid (B_1 fixed by GL-transitivity).",
+          "certificate_sha256": "11850515563d8ffff2173e9ef65281e58782dfbbbc6052ae93ab2f600563c533"
+        }
+      }
+    }
+  ],
+  "milestones": [
+    {
+      "id": "B-ROTA-001",
+      "problem_id": "M080",
+      "classification": "reproduced_known",
+      "title": "Rota's basis conjecture verified exhaustively for GF(2)^2, GF(3)^2, GF(5)^2, GF(7)^2 and GF(2)^3",
+      "scope": "Known small cases (rank <= 3); not new",
+      "description": "Every choice of bases (first fixed by GL-transitivity) has a certified grid; basis counts match |GL(n,p)|/n!. The deep run adds all 1,753,128 instances over GF(3)^3.",
+      "verifier": "python3 scripts/lab.py --probe rota",
+      "artifact": "scripts/probes/rota.py",
+      "verified_on": "2026-10-31"
+    }
+  ],
+  "engine_roadmap": null,
+  "claim_review_2026": null,
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Exact probe lab — computational reach of the 100",
+      "source": "LAB.md",
+      "url": "https://svyable.github.io/100/library/lab/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Lab campaigns: twelve problems under exact computation",
+      "source": "research/LAB_CAMPAIGNS.md",
+      "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "Proof-driven research engine",
+      "source": "docs/RESEARCH_ENGINE.md",
+      "url": "https://svyable.github.io/100/library/research-engine/"
+    }
+  ]
+}

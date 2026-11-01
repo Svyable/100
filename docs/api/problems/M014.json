@@ -1,0 +1,65 @@
+{
+  "id": "M014",
+  "name": "Hilbert's tenth problem over Q",
+  "field": "Arithmetic",
+  "question": "Is rational solvability of integer-coefficient polynomial equations algorithmically undecidable?",
+  "first_attack": "Audit precise statement and prove a restricted case",
+  "impact": 5,
+  "attackability": 2,
+  "verifiability": 3,
+  "spillover": 5,
+  "modality": "structural",
+  "evidence_state": "claim_needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 63,
+  "score": 72,
+  "execution_rank": 63,
+  "execution_score": 72,
+  "readiness": 0,
+  "url": "https://svyable.github.io/100/problems/M014/",
+  "field_url": "https://svyable.github.io/100/fields/arithmetic/",
+  "readiness_breakdown": [],
+  "has_exact_verifier": false,
+  "campaign": null,
+  "probes": [],
+  "milestones": [],
+  "engine_roadmap": null,
+  "claim_review_2026": {
+    "id": "M014",
+    "primary_title": "Hilbert's tenth problem over the rational numbers",
+    "primary_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf",
+    "preprint_date": "2026-10-06",
+    "claimed_theorem": "No algorithm decides whether an arbitrary integer-coefficient polynomial, with the number of variables part of the input, has a rational zero.",
+    "scope_relation": "matches",
+    "scope_note": "This is the same rational-field decision problem, not the already-settled integer version or undecidability for proper subrings of Q.",
+    "independent_validation": "not_established",
+    "independent_evidence_urls": [],
+    "known_caveats": "Unrefereed manuscript; proof depends on companion pointwise elliptic 2-converse, valuation and height arguments. No independent line-by-line verification located.",
+    "next_review": "Verify the reduction from integer to rational decision tests and audit each cited arithmetic input, especially the October 7 pointwise 2-converse."
+  },
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "2026 claimed-resolution triage — issue #3",
+      "source": "research/CLAIM_REVIEWS_2026.md",
+      "url": "https://svyable.github.io/100/library/claim-reviews-2026/"
+    },
+    {
+      "title": "Foundational sources and 2026 claim watch",
+      "source": "docs/SOURCES.md",
+      "url": "https://svyable.github.io/100/library/sources/"
+    }
+  ]
+}

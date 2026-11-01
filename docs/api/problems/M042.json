@@ -1,0 +1,43 @@
+{
+  "id": "M042",
+  "name": "Dixmier conjecture A1",
+  "field": "Algebra",
+  "question": "Is every endomorphism of the first Weyl algebra an automorphism?",
+  "first_attack": "Classify bounded-filtration Weyl algebra endomorphisms",
+  "impact": 5,
+  "attackability": 4,
+  "verifiability": 4,
+  "spillover": 5,
+  "modality": "structural",
+  "evidence_state": "needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 11,
+  "score": 89,
+  "execution_rank": 18,
+  "execution_score": 89,
+  "readiness": 0,
+  "url": "https://svyable.github.io/100/problems/M042/",
+  "field_url": "https://svyable.github.io/100/fields/algebra/",
+  "readiness_breakdown": [],
+  "has_exact_verifier": false,
+  "campaign": null,
+  "probes": [],
+  "milestones": [],
+  "engine_roadmap": null,
+  "claim_review_2026": null,
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    }
+  ]
+}

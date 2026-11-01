@@ -1,380 +1,250 @@
 "use strict";
+// Progressive enhancement only: every page is fully rendered HTML without this file.
 (() => {
-  const $ = id => document.getElementById(id);
-  const evidenceNames = Object.freeze({
-    official_open: "Officially open",
-    verified_open: "Specialist verified",
-    needs_review: "Needs review",
-    claim_needs_review: "Claim under review"
-  });
-  const modalityNames = Object.freeze({
-    finite_refutable: "Finitely refutable",
-    finite_parameter: "Finite parameter",
-    existence_family: "Existence family",
-    asymptotic: "Asymptotic",
-    structural: "Structural"
-  });
-  let campaignIds = new Set();
-  let verifiedIds = new Set();
-  const state = {
-    all: [], filtered: [], limit: 20, sort: "execution",
-    search: "", field: "", status: "", modality: ""
-  };
-  const escapeHTML = s => String(s ?? "").replace(/[&<>"']/g,
-    ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
-  const safeExternal = value => {
-    if (typeof value !== "string") return null;
-    try {
-      const url = new URL(value);
-      return url.protocol === "https:" ? url.href : null;
-    } catch { return null; }
-  };
-  const repoFile = path => {
-    if (typeof path !== "string" || !/^[a-zA-Z0-9_.\/-]+$/.test(path) ||
-        path.split("/").includes("..") || path.startsWith("/")) return null;
-    return "https://github.com/Svyable/100/blob/main/" + path;
-  };
-  const evidenceName = p => evidenceNames[p.evidence_state] || "Status unknown";
-  const metric = (label, value) =>
-    '<div class="detail-metric"><span>' + escapeHTML(label) + '</span>' +
-    '<div class="meter"><i style="width:' + Number(value)*20 + '%"></i></div>' +
-    '<b>' + Number(value) + '/5</b></div>';
+  const doc = document.documentElement;
+  const root = doc.dataset.root || "./";
+  const $ = sel => document.querySelector(sel);
+  const $$ = sel => Array.from(document.querySelectorAll(sel));
+  const typing = el => el && (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName));
 
-  function problemRow(p) {
-    const knownStatus = Object.hasOwn(evidenceNames, p.evidence_state) ?
-      p.evidence_state : "needs_review";
-    const source = safeExternal(p.source_url);
-    const description = p.checked_on ? "Source intake: " + escapeHTML(p.checked_on) + ". " :
-      "Exact source status not yet audited. ";
-    const links = (source ?
-      '<a href="' + escapeHTML(source) + '" target="_blank" rel="noopener noreferrer">Source / starting reference ↗</a>' : "") +
-      '<a href="https://github.com/Svyable/100/issues/new" target="_blank" rel="noopener noreferrer">Submit evidence ↗</a>' +
-      '<a href="?focus=' + encodeURIComponent(p.id) + '#rankings">Direct link ↗</a>';
-    const entry = document.createElement("details");
-    entry.className = "entry";
-    entry.id = "problem-" + p.id;
-    entry.innerHTML =
-      '<summary aria-label="Expand ' + escapeHTML(p.name) + '">' +
-      '<span class="entry-index"><span class="ordinal">' + p.execution_rank +
-      '</span><span class="entry-id">' + escapeHTML(p.id) + '</span></span>' +
-      '<span class="entry-info"><span class="entry-name">' + escapeHTML(p.name) +
-      '</span><span class="entry-field">' + escapeHTML(p.field) + '</span></span>' +
-      '<span class="entry-score" aria-label="Execution index ' + p.execution_score +
-      ': editorial ' + p.score + ', readiness plus ' + p.readiness + '">' +
-      '<strong>' + p.execution_score + '</strong><span class="small-bar" aria-hidden="true">' +
-      '<i style="width:' + Math.min(100,p.execution_score) + '%"></i></span></span>' +
-      '<span><span class="status-pill status-' + knownStatus + '">' + evidenceName(p) +
-      '</span></span><span class="entry-chevron" aria-hidden="true">+</span></summary>' +
-      '<div class="entry-detail"><div><span class="detail-label">THE OPEN QUESTION</span>' +
-      '<p class="detail-question">' + escapeHTML(p.question) + '</p>' +
-      '<span class="detail-label">CURRENT FIRST ATTACK</span>' +
-      '<p class="detail-attack">' + escapeHTML(p.first_attack) + '</p>' +
-      '<div class="detail-links">' + links + '</div></div>' +
-      '<div><span class="detail-label">PRIORITY DECOMPOSITION</span>' +
-      '<p class="detail-note"><strong>Execution rank:</strong> #' + p.execution_rank +
-      ' · <strong>Editorial rank:</strong> #' + p.rank + '</p>' +
-      '<p class="detail-note"><strong>Editorial score:</strong> ' + p.score +
-      ' · <strong>Readiness:</strong> +' + p.readiness +
-      ' · <strong>Execution index:</strong> ' + p.execution_score + '</p>' +
-      '<div class="detail-metrics">' +
-      metric("Impact",p.impact) + metric("Attackability",p.attackability) +
-      metric("Verifiability",p.verifiability) + metric("Spillover",p.spillover) +
-      '</div><p class="detail-note"><strong>Computation:</strong> ' +
-      escapeHTML(modalityNames[p.modality] || "Unclassified") +
-      (verifiedIds.has(p.id) ? ' · exact verifier in the probe lab' : '') + '.</p>' +
-      '<p class="detail-note"><strong>Evidence:</strong> ' +
-      escapeHTML(evidenceName(p)) + '. ' + description +
-      'This classification is not a universal proof-status certification.</p>' +
-      (campaignIds.has(p.id) ?
-        '<p class="detail-note"><strong>Proof campaign:</strong> ' +
-        escapeHTML(p.campaign_stage || "specified") +
-        ' · ' + p.milestone_count + ' recorded evidence milestones.</p>' : '') +
-      '</div></div>';
-    return entry;
+  // Legacy deep links (?focus=M074) from the single-page dashboard.
+  const legacy = new URLSearchParams(location.search).get("focus");
+  if (legacy && /^M\d{3}$/.test(legacy)) {
+    location.replace(root + "problems/" + legacy + "/");
+    return;
   }
 
-  function compare(a,b) {
-    if (state.sort === "name") return a.name.localeCompare(b.name);
-    if (state.sort === "execution") return a.execution_rank - b.execution_rank;
-    if (state.sort === "rank") return a.rank - b.rank;
-    const difference = Number(b[state.sort]) - Number(a[state.sort]);
-    return difference || a.execution_rank - b.execution_rank;
+  // ---------------------------------------------------------------- theme
+  const prefersDark = () => matchMedia("(prefers-color-scheme: dark)").matches;
+  for (const button of $$("[data-theme-toggle]")) {
+    const sync = () => button.setAttribute("aria-pressed",
+      String((doc.dataset.theme || (prefersDark() ? "dark" : "light")) === "dark"));
+    sync();
+    button.addEventListener("click", () => {
+      const current = doc.dataset.theme || (prefersDark() ? "dark" : "light");
+      const next = current === "dark" ? "light" : "dark";
+      doc.dataset.theme = next;
+      try { localStorage.setItem("theme", next); } catch (e) { /* private mode */ }
+      sync();
+    });
   }
-  function renderProblems() {
-    const query = state.search.trim().toLocaleLowerCase();
-    state.filtered = state.all.filter(p =>
-      (!state.field || p.field === state.field) &&
-      (!state.status || p.evidence_state === state.status) &&
-      (!state.modality || p.modality === state.modality) &&
-      (!query || [p.id,p.name,p.field,p.question,p.first_attack].some(
-        value => String(value ?? "").toLocaleLowerCase().includes(query)))
-    ).sort(compare);
-    const fragment = document.createDocumentFragment();
-    for (const p of state.filtered.slice(0,state.limit)) fragment.appendChild(problemRow(p));
-    if (!state.filtered.length) {
-      const empty = document.createElement("p");
-      empty.className = "empty-state";
-      empty.textContent = "No matches. Change your search or clear the filters.";
-      fragment.appendChild(empty);
-    }
-    $("problem-list").replaceChildren(fragment);
-    $("results-count").textContent = "Showing " + Math.min(state.limit,state.filtered.length) +
-      " of " + state.filtered.length + " matching questions";
-    $("load-more").hidden = state.filtered.length <= state.limit;
+
+  // ---------------------------------------------------------------- copy buttons
+  for (const button of $$("[data-copy]")) {
+    button.addEventListener("click", async () => {
+      const target = $(button.dataset.copy);
+      if (!target) return;
+      try {
+        await navigator.clipboard.writeText(target.textContent);
+        button.textContent = "Copied";
+        setTimeout(() => { button.textContent = "Copy"; }, 1600);
+      } catch (e) { /* clipboard unavailable */ }
+    });
   }
-  function filterChanged() {
-    state.search = $("search-problems").value;
-    state.field = $("filter-field").value;
-    state.status = $("filter-status").value;
-    state.modality = $("filter-modality").value;
-    state.sort = $("sort-problems").value;
-    state.limit = 20;
-    renderProblems();
+
+  // ---------------------------------------------------------------- ranked list filters
+  const list = $("#problem-list");
+  const form = $("#filters");
+  if (list && form) {
+    const rows = Array.from(list.children);
+    const controls = {
+      q: $("#search-problems"), field: $("#filter-field"), status: $("#filter-status"),
+      modality: $("#filter-modality"), sort: $("#sort-problems"),
+      verifier: $("#only-verifier"), campaign: $("#only-campaign"), lean: $("#only-lean")
+    };
+    const numeric = ["impact", "attackability", "verifiability", "spillover"];
+    const read = () => ({
+      q: controls.q.value.trim().toLocaleLowerCase(),
+      field: controls.field.value, status: controls.status.value,
+      modality: controls.modality.value, sort: controls.sort.value || "execution",
+      verifier: controls.verifier.checked, campaign: controls.campaign.checked,
+      lean: controls.lean.checked
+    });
+    const compare = sort => (a, b) => {
+      const ex = (Number(a.dataset.execution) - Number(b.dataset.execution));
+      if (sort === "name") return a.dataset.name.localeCompare(b.dataset.name);
+      if (sort === "rank") return Number(a.dataset.rank) - Number(b.dataset.rank);
+      if (numeric.includes(sort)) return (Number(b.dataset[sort]) - Number(a.dataset[sort])) || ex;
+      return ex;
+    };
+    const apply = (push = true) => {
+      const s = read();
+      const terms = s.q.split(/\s+/).filter(Boolean);
+      let shown = 0;
+      const sorted = rows.slice().sort(compare(s.sort));
+      for (const row of sorted) {
+        const d = row.dataset;
+        const ok = (!s.field || d.field === s.field) && (!s.status || d.status === s.status) &&
+          (!s.modality || d.modality === s.modality) && (!s.verifier || d.verifier === "1") &&
+          (!s.campaign || d.campaign === "1") && (!s.lean || d.lean === "1") && terms.every(t => d.search.includes(t));
+        row.hidden = !ok;
+        if (ok) shown += 1;
+      }
+      list.replaceChildren(...sorted);
+      const sortLabel = controls.sort.options[controls.sort.selectedIndex].text.toLowerCase();
+      $("#results-count").textContent = shown === rows.length && !terms.length ?
+        "Showing all " + rows.length + " questions · " + sortLabel :
+        "Showing " + shown + " of " + rows.length + " questions · " + sortLabel;
+      $("#empty-state").hidden = shown !== 0;
+      if (push) {
+        const params = new URLSearchParams();
+        if (controls.q.value.trim()) params.set("q", controls.q.value.trim());
+        for (const key of ["field", "status", "modality"]) if (s[key]) params.set(key, s[key]);
+        if (s.sort !== "execution") params.set("sort", s.sort);
+        if (s.verifier) params.set("verifier", "1");
+        if (s.campaign) params.set("campaign", "1");
+        if (s.lean) params.set("lean", "1");
+        const query = params.toString();
+        history.replaceState(null, "", location.pathname + (query ? "?" + query : "") + location.hash);
+      }
+    };
+    const restore = () => {
+      const params = new URLSearchParams(location.search);
+      controls.q.value = params.get("q") || "";
+      for (const key of ["field", "status", "modality", "sort"]) {
+        const value = params.get(key);
+        if (value && Array.from(controls[key].options).some(o => o.value === value)) controls[key].value = value;
+      }
+      controls.verifier.checked = params.get("verifier") === "1";
+      controls.campaign.checked = params.get("campaign") === "1";
+      controls.lean.checked = params.get("lean") === "1";
+      return params.toString() !== "";
+    };
+    let debounce;
+    form.addEventListener("input", event => {
+      clearTimeout(debounce);
+      debounce = setTimeout(() => apply(), event.target === controls.q ? 90 : 0);
+    });
+    form.addEventListener("submit", event => event.preventDefault());
+    controls.verifier.addEventListener("change", () => apply());
+    controls.campaign.addEventListener("change", () => apply());
+    controls.lean.addEventListener("change", () => apply());
+    $("#reset-filters").addEventListener("click", () => {
+      form.reset();
+      controls.verifier.checked = controls.campaign.checked = controls.lean.checked = false;
+      apply();
+      controls.q.focus();
+    });
+    if (restore()) apply(false);
   }
-  function renderCampaigns(data) {
-    const root = $("campaign-grid");
-    const active = new Map(data.problems.map(p => [p.id,p]));
-    const campaigns = data.campaigns
-      .filter(c => active.has(c.problem_id))
-      .sort((a,b) => active.get(a.problem_id).execution_rank -
-                      active.get(b.problem_id).execution_rank);
-    const fragment = document.createDocumentFragment();
-    for (const [i,c] of campaigns.entries()) {
-      const p = active.get(c.problem_id);
-      const card = document.createElement("article");
-      card.className = "campaign-card" + (i === 0 ? " campaign-feature" : "") +
-        (campaigns.length > 2 && i === campaigns.length - 1 && campaigns.length % 2 ? " campaign-wide" : "");
-      const dossier = repoFile(c.dossier);
-      card.innerHTML =
-        '<div class="campaign-top"><span>CAMPAIGN ' +
-        String(i+1).padStart(2,"0") + ' / ' + escapeHTML(c.method) +
-        '</span><span class="campaign-mark">↗</span></div>' +
-        '<span class="campaign-code">' + escapeHTML(c.problem_id) +
-        ' · ATTACK #' + p.execution_rank + '</span>' +
-        '<h3>' + escapeHTML(p.name) + '</h3>' +
-        '<p>' + escapeHTML(c.first_proof_obligation) + '</p>' +
-        '<div class="campaign-tags"><span>' + escapeHTML(p.field) + '</span>' +
-        '<span>' + escapeHTML(c.stage.replaceAll("_"," ")) + '</span></div>' +
-        (dossier ? '<a href="' + escapeHTML(dossier) +
-          '" target="_blank" rel="noopener noreferrer">Read campaign ↗</a>' : '');
-      fragment.appendChild(card);
+
+  // ---------------------------------------------------------------- prev/next keyboard paging
+  document.addEventListener("keydown", event => {
+    if (event.altKey || event.ctrlKey || event.metaKey || typing(event.target)) return;
+    if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+      const link = $(event.key === "ArrowLeft" ? 'a[rel="prev"]' : 'a[rel="next"]');
+      if (link) location.href = link.href;
     }
-    if (!campaigns.length) {
-      const empty = document.createElement("p");
-      empty.className = "empty-state";
-      empty.textContent = "No active research campaigns currently defined.";
-      fragment.appendChild(empty);
-    }
-    root.replaceChildren(fragment);
+  });
+
+  // ---------------------------------------------------------------- command palette
+  const dialog = $("#palette");
+  if (!dialog || typeof dialog.showModal !== "function") return;
+  const input = $("#palette-input");
+  const results = $("#palette-results");
+  let index = null;
+  let matches = [];
+  let active = 0;
+  const kinds = { problem: "Problem", field: "Field", campaign: "Campaign", probe: "Probe",
+    engine: "Engine", claim: "Claim", formal: "Lean", document: "Document", page: "Page" };
+  const normalize = s => String(s || "").toLocaleLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+
+  async function loadIndex() {
+    if (index) return index;
+    const response = await fetch(root + "api/search.json");
+    if (!response.ok) throw new Error("HTTP " + response.status);
+    index = (await response.json()).map(item => ({
+      ...item, n: normalize(item.t), h: normalize([item.id, item.t, item.s, item.x].join(" "))
+    }));
+    return index;
   }
-  function renderQueue(data) {
-    const root = $("execution-queue");
-    const fragment = document.createDocumentFragment();
-    for (const c of data.execution_queue) {
-      const card = document.createElement("article");
-      card.className = "execution-card";
-      const dossierUrl = repoFile(c.dossier);
-      card.innerHTML =
-        '<div class="execution-card-top"><span>ATTACK #' + c.execution_rank +
-        ' · ' + escapeHTML(c.problem_id) + '</span>' +
-        '<span class="execution-score">INDEX ' + c.execution_score + '</span></div>' +
-        '<h3>' + escapeHTML(c.name) + '</h3>' +
-        '<span class="step-label">FIRST PROOF OBLIGATION</span>' +
-        '<p>' + escapeHTML(c.first_proof_obligation) + '</p>' +
-        '<span class="step-label">NEXT EXECUTABLE STEP</span>' +
-        '<p>' + escapeHTML(c.next_experiment) + '</p>' +
-        (dossierUrl ? '<a href="' + escapeHTML(dossierUrl) +
-         '" target="_blank" rel="noopener noreferrer">Research dossier ↗</a>' : '');
-      fragment.appendChild(card);
+  function rank(query) {
+    const q = normalize(query).trim();
+    if (!q) return index.filter(i => i.k === "page" || i.k === "problem").slice(0, 12);
+    const terms = q.split(/\s+/);
+    const scored = [];
+    for (const item of index) {
+      if (!terms.every(t => item.h.includes(t))) continue;
+      let score = 0;
+      if (item.id && normalize(item.id) === q) score += 100;
+      if (item.n.startsWith(q)) score += 40;
+      else if (item.n.includes(q)) score += 20;
+      if (item.k === "problem") score += 5;
+      score -= item.n.length / 100;
+      scored.push([score, item]);
     }
-    if (!data.execution_queue.length) {
-      const empty = document.createElement("p");
-      empty.className = "empty-state";
-      empty.textContent = "No proof campaigns have been defined yet.";
-      fragment.appendChild(empty);
-    }
-    root.replaceChildren(fragment);
+    return scored.sort((a, b) => b[0] - a[0]).slice(0, 20).map(x => x[1]);
   }
-  function renderLab(data) {
-    const lab = data.lab;
-    const names = new Map(data.problems.map(p => [p.id, p.name]));
-    $("lab-stat-covered").textContent = String(lab.covered_problems.length);
-    $("lab-stat-computable").textContent =
-      lab.computable_problems.filter(id => lab.covered_problems.includes(id)).length +
-      "/" + lab.computable_problems.length;
-    $("lab-stat-probes").textContent = String(lab.probes.length);
-    $("lab-stat-engines").textContent = String(lab.engines.length);
-    const probeRoot = document.createDocumentFragment();
-    for (const probe of lab.probes) {
-      const run = probe.runs.deep || probe.runs.smoke;
-      const card = document.createElement("article");
-      card.className = "milestone-card";
-      const artifact = repoFile(probe.artifact);
-      card.innerHTML = '<span class="milestone-type">' + escapeHTML(probe.problem_id) +
-        ' · ' + (run && run.holds ? "VERIFIED FINITE RANGE" : "NEEDS ATTENTION") + '</span>' +
-        '<h4>' + escapeHTML(probe.name) + '</h4>' +
-        '<p>' + escapeHTML(run ? run.scope : "Not yet run.") + '</p>' +
-        '<p class="probe-frontier">' + escapeHTML(probe.frontier) + '</p>' +
-        '<div class="probe-engines">' + probe.engines.map(e => '<span>' + escapeHTML(e) + '</span>').join("") + '</div>' +
-        '<code>' + escapeHTML(probe.command) + '</code>' +
-        (artifact ? '<a href="' + escapeHTML(artifact) +
-          '" target="_blank" rel="noopener noreferrer">Inspect search and checker ↗</a>' : '');
-      probeRoot.appendChild(card);
+  function draw() {
+    results.replaceChildren(...matches.map((item, i) => {
+      const li = document.createElement("li");
+      li.id = "palette-option-" + i;
+      li.setAttribute("role", "option");
+      li.setAttribute("aria-selected", String(i === active));
+      const a = document.createElement("a");
+      a.href = root + item.u;
+      const kind = document.createElement("span");
+      kind.className = "palette-kind";
+      kind.textContent = kinds[item.k] || item.k;
+      const title = document.createElement("span");
+      title.className = "palette-title";
+      title.textContent = (item.id && item.k === "problem" ? item.id + " · " : "") + item.t;
+      const sub = document.createElement("span");
+      sub.className = "palette-sub";
+      sub.textContent = item.s || "";
+      a.append(kind, title, sub);
+      li.append(a);
+      return li;
+    }));
+    if (!matches.length) {
+      const li = document.createElement("li");
+      li.className = "palette-empty";
+      li.textContent = "No matches";
+      results.append(li);
     }
-    $("lab-probe-list").replaceChildren(probeRoot);
-    const engineRoot = document.createDocumentFragment();
-    for (const engine of lab.engines) {
-      const row = document.createElement("div");
-      row.className = "lab-row";
-      row.innerHTML = '<div><h4>' + escapeHTML(engine.name) + '</h4><code>' + escapeHTML(engine.id) + '</code></div>' +
-        '<p>' + escapeHTML(engine.use) + '</p>' +
-        '<div class="chips">' + engine.problems.map(id =>
-          '<span title="' + escapeHTML(names.get(id) || id) + '">' + escapeHTML(id) + '</span>').join("") + '</div>';
-      engineRoot.appendChild(row);
-    }
-    $("lab-engine-list").replaceChildren(engineRoot);
-    const roadRoot = document.createDocumentFragment();
-    for (const entry of lab.roadmap) {
-      const row = document.createElement("div");
-      row.className = "lab-row";
-      row.innerHTML = '<div><h4>' + escapeHTML(entry.problem_id) + ' · ' + escapeHTML(entry.name) + '</h4>' +
-        '<code>' + escapeHTML(entry.engine) + '</code></div>' +
-        '<p>' + escapeHTML(entry.first_probe) + '</p><div class="chips"><span>ENGINE TO BUILD</span></div>';
-      roadRoot.appendChild(row);
-    }
-    if (!lab.roadmap.length) {
-      const empty = document.createElement("p");
-      empty.className = "empty-state";
-      empty.textContent = "Every computable problem has an exact probe.";
-      roadRoot.appendChild(empty);
-    }
-    $("lab-roadmap").replaceChildren(roadRoot);
+    input.setAttribute("aria-activedescendant", matches.length ? "palette-option-" + active : "");
+    const current = results.children[active];
+    if (current) current.scrollIntoView({ block: "nearest" });
   }
-  function renderSolved(data) {
-    const root = $("solved-list");
-    const fragment = document.createDocumentFragment();
-    if (data.solved.length === 0) {
-      const empty = document.createElement("div");
-      empty.className = "empty-archive";
-      empty.innerHTML = '<span class="empty-archive-number">0</span>' +
-        '<div><h3>No full conjecture resolved by this project yet.</h3>' +
-        '<p>That empty ledger is deliberate. Known small-case checks, proof announcements, ' +
-        'and unreviewed manuscripts cannot be presented as accepted solutions. ' +
-        'When a full proof or counterexample passes independent review, its sources ' +
-        'and exact scope will appear here.</p></div>';
-      fragment.appendChild(empty);
-    }
-    for (const s of data.solved) {
-      const entry = document.createElement("article");
-      entry.className = "solved-entry";
-      const proofUrl = safeExternal(s.proof_url);
-      const reviews = (s.independent_review_urls || []).map(safeExternal).filter(Boolean);
-      entry.innerHTML =
-        '<span class="detail-label">VERIFIED ' + escapeHTML(s.resolution.toUpperCase()) +
-        ' · ' + escapeHTML(s.accepted_on) + '</span>' +
-        '<h3>' + escapeHTML(s.name) + '</h3>' +
-        '<p>' + escapeHTML(s.full_statement) + '</p>' +
-        '<p>' + escapeHTML(s.verification_notes) + '</p>' +
-        (proofUrl ? '<a href="' + escapeHTML(proofUrl) +
-          '" target="_blank" rel="noopener noreferrer">Full proof ↗</a>' : '') +
-        reviews.map((url,i) => '<a href="' + escapeHTML(url) +
-          '" target="_blank" rel="noopener noreferrer">Independent review ' + (i+1) + ' ↗</a>').join("");
-      fragment.appendChild(entry);
-    }
-    root.replaceChildren(fragment);
-    $("stat-solved").textContent = String(data.solved.length);
-    $("nav-solved-count").textContent = String(data.solved.length);
-    $("solved-badge").textContent = String(data.solved.length) + " VERIFIED";
-  }
-  function renderMilestones(data) {
-    const root = $("milestone-list");
-    const fragment = document.createDocumentFragment();
-    for (const m of data.milestones) {
-      const card = document.createElement("article");
-      card.className = "milestone-card";
-      const artifact = repoFile(m.artifact);
-      const label = m.classification === "reproduced_known" ?
-        "REPRODUCED / ESTABLISHED MATHEMATICS" : "REVIEWED RESTRICTED THEOREM";
-      card.innerHTML = '<span class="milestone-type">' + escapeHTML(label) +
-        ' · ' + escapeHTML(m.problem_id) + '</span>' +
-        '<h4>' + escapeHTML(m.title) + '</h4>' +
-        '<p>' + escapeHTML(m.scope) + '</p>' +
-        '<code>' + escapeHTML(m.verifier) + '</code>' +
-        (artifact ? '<a href="' + escapeHTML(artifact) +
-          '" target="_blank" rel="noopener noreferrer">Inspect independent checker ↗</a>' : '');
-      fragment.appendChild(card);
-    }
-    if (data.milestones.length === 0) {
-      const empty = document.createElement("p");
-      empty.className = "empty-state";
-      empty.textContent = "No reproducible verification milestones committed yet.";
-      fragment.appendChild(empty);
-    }
-    root.replaceChildren(fragment);
-    $("stat-benchmarks").textContent = String(data.summary.reproduced_known);
-  }
-  async function start() {
+  async function open() {
+    if (dialog.open) return;
+    dialog.showModal();
+    input.value = "";
     try {
-      const response = await fetch("./data/portfolio.json", {cache:"no-store"});
-      if (!response.ok) throw new Error("HTTP " + response.status);
-      const data = await response.json();
-      if (!data || !Array.isArray(data.problems) || data.problems.length !== 100 ||
-          !Array.isArray(data.execution_queue) || !Array.isArray(data.solved) ||
-          !Array.isArray(data.milestones) || !data.lab ||
-          !Array.isArray(data.lab.probes)) throw new Error("Malformed portfolio snapshot");
-      state.all = data.problems;
-      campaignIds = new Set(data.campaigns.map(c => c.problem_id));
-      verifiedIds = new Set(data.lab.covered_problems);
-      for (const field of [...new Set(state.all.map(p => p.field))].sort()) {
-        const opt = document.createElement("option");
-        opt.value = field;
-        opt.textContent = field;
-        $("filter-field").appendChild(opt);
-      }
-      $("stat-total").textContent = String(data.problems.length);
-      $("stat-campaigns").textContent = String(data.summary.campaigns);
-      $("status-claim-count").textContent = String(data.status_counts.claim_needs_review || 0);
-      $("snapshot-date").textContent = "Latest recorded source intake: " +
-        (data.source_review_as_of || "varies") + ".";
-      for (const id of ["search-problems","filter-field","filter-status","filter-modality","sort-problems"]) {
-        $(id).addEventListener(id === "search-problems" ? "input" : "change", filterChanged);
-      }
-      $("reset-filters").addEventListener("click", () => {
-        $("search-problems").value = ""; $("filter-field").value = "";
-        $("filter-status").value = ""; $("filter-modality").value = "";
-        $("sort-problems").value = "execution";
-        filterChanged(); $("search-problems").focus();
-      });
-      $("load-more").addEventListener("click", () => {
-        state.limit += 20; renderProblems();
-      });
-      renderCampaigns(data);
-      renderLab(data);
-      renderQueue(data);
-      renderSolved(data);
-      renderMilestones(data);
-      const focus = new URLSearchParams(location.search).get("focus");
-      if (focus && state.all.some(p => p.id === focus)) {
-        state.limit = 100;
-        renderProblems();
-        const entry = $("problem-" + focus);
-        if (entry) {
-          entry.open = true;
-          requestAnimationFrame(() => entry.scrollIntoView({block:"center",behavior:"auto"}));
-        }
-      } else {
-        renderProblems();
-      }
-    } catch (error) {
-      $("problem-list").textContent = "Portfolio data could not be loaded; view the source registry on GitHub.";
-      $("results-count").textContent = "Registry unavailable";
-      $("campaign-grid").textContent = "Campaigns unavailable";
-      $("lab-probe-list").textContent = "Probe lab unavailable";
-      $("execution-queue").textContent = "Proof queue unavailable";
-      $("solved-list").textContent = "Solved archive unavailable";
-      $("milestone-list").textContent = "Verification milestones unavailable";
-      console.error("Portfolio failed to load",error);
+      await loadIndex();
+      matches = rank("");
+      active = 0;
+      draw();
+    } catch (e) {
+      results.innerHTML = '<li class="palette-empty">Search index unavailable.</li>';
     }
+    input.focus();
   }
-  start();
+  for (const button of $$("[data-palette-open]")) button.addEventListener("click", open);
+  document.addEventListener("keydown", event => {
+    if ((event.key === "k" && (event.metaKey || event.ctrlKey)) ||
+        (event.key === "/" && !typing(event.target) && !dialog.open)) {
+      event.preventDefault();
+      open();
+    }
+  });
+  input.addEventListener("input", () => {
+    if (!index) return;
+    matches = rank(input.value);
+    active = 0;
+    draw();
+  });
+  input.addEventListener("keydown", event => {
+    if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+      event.preventDefault();
+      if (!matches.length) return;
+      active = (active + (event.key === "ArrowDown" ? 1 : -1) + matches.length) % matches.length;
+      draw();
+    } else if (event.key === "Enter") {
+      event.preventDefault();
+      const item = matches[active];
+      if (item) location.href = root + item.u;
+    }
+  });
+  dialog.addEventListener("click", event => { if (event.target === dialog) dialog.close(); });
 })();

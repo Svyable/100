@@ -1,0 +1,43 @@
+{
+  "id": "M046",
+  "name": "Auslander–Reiten conjecture",
+  "field": "Algebra",
+  "question": "Does Ext vanishing against M plus A force projectivity over an Artin algebra?",
+  "first_attack": "Audit precise statement and prove a restricted case",
+  "impact": 4,
+  "attackability": 3,
+  "verifiability": 4,
+  "spillover": 4,
+  "modality": "structural",
+  "evidence_state": "needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 36,
+  "score": 74,
+  "execution_rank": 37,
+  "execution_score": 74,
+  "readiness": 0,
+  "url": "https://svyable.github.io/100/problems/M046/",
+  "field_url": "https://svyable.github.io/100/fields/algebra/",
+  "readiness_breakdown": [],
+  "has_exact_verifier": false,
+  "campaign": null,
+  "probes": [],
+  "milestones": [],
+  "engine_roadmap": null,
+  "claim_review_2026": null,
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    }
+  ]
+}

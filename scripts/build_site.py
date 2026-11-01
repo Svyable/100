@@ -1,14 +1,18 @@
 #!/usr/bin/env python3
-"""Build Pages data from canonical registry, proof campaigns, milestones and archive.
+"""Build the GitHub Pages site from the canonical registry, campaigns, lab and archives.
 
-The snapshot cannot be edited independently. Both portfolio prestige rank and
-execution-ready attack rank are deterministic and their meanings are distinct.
+Writes ``docs/data/portfolio.json`` (the full legacy snapshot) plus the whole
+static multi-page site rendered by ``sitegen`` (a page per problem, field,
+campaign index, lab, claims, ledger, library document, JSON/CSV API, Atom feed
+and sitemap). Nothing under the generated paths may be edited by hand:
+``--check`` byte-compares every file and fails on stale leftovers.
 """
 import argparse
 import json
 from rank import score, ROOT
 from research import load, execution_order
 import lab
+import sitegen
 
 OUTPUT = ROOT / "docs" / "data" / "portfolio.json"
 
@@ -94,20 +98,51 @@ def render():
     return json.dumps(build(), indent=2, ensure_ascii=False) + "\n"
 
 
+def site_files():
+    """Every generated file under docs/ as {relative path: text}."""
+    files = sitegen.build_files()
+    files["data/portfolio.json"] = render()
+    return files
+
+
+def check(files):
+    """Paths that differ from the committed tree, plus stale generated leftovers."""
+    drift = [path for path, text in sorted(files.items())
+             if not (sitegen.DOCS / path).is_file()
+             or (sitegen.DOCS / path).read_text(encoding="utf-8") != text]
+    return drift, sitegen.stale_files(files)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true",
-                        help="fail if the committed snapshot is stale")
+                        help="fail if any generated Pages file is stale or missing")
     opts = parser.parse_args()
-    expected = render()
+    files = site_files()
     if opts.check:
-        if not OUTPUT.exists() or OUTPUT.read_text(encoding="utf-8") != expected:
-            raise SystemExit("Stale GitHub Pages snapshot: run python3 scripts/build_site.py")
-        print("OK: Pages snapshot includes 100 problems, evidence, execution ranks, and solved archive")
+        drift, stale = check(files)
+        if drift or stale:
+            for path in drift[:20]:
+                print(f"stale or missing: docs/{path}")
+            for path in stale[:20]:
+                print(f"no longer generated: docs/{path}")
+            raise SystemExit("Stale GitHub Pages site: run python3 scripts/build_site.py")
+        pages = sum(p.endswith(".html") for p in files)
+        print(f"OK: {len(files)} generated Pages files ({pages} HTML pages) match the validated ledgers")
     else:
-        OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-        OUTPUT.write_text(expected, encoding="utf-8")
-        print("Updated docs/data/portfolio.json")
+        for path in sitegen.stale_files(files):
+            (sitegen.DOCS / path).unlink()
+        for d in sitegen.GENERATED_DIRS:
+            for folder in sorted((sitegen.DOCS / d).glob("**/"), key=lambda q: -len(q.parts)):
+                if folder.is_dir() and not any(folder.iterdir()):
+                    folder.rmdir()
+        for path, text in files.items():
+            target = sitegen.DOCS / path
+            target.parent.mkdir(parents=True, exist_ok=True)
+            if not target.is_file() or target.read_text(encoding="utf-8") != text:
+                target.write_text(text, encoding="utf-8")
+        pages = sum(p.endswith(".html") for p in files)
+        print(f"Updated docs/: {len(files)} generated files, {pages} HTML pages")
 
 
 if __name__ == "__main__":

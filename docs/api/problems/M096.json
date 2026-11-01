@@ -1,0 +1,150 @@
+{
+  "id": "M096",
+  "name": "Projective plane order 12",
+  "field": "Mathematical physics / finite structures",
+  "question": "Does a finite projective plane of order 12 exist?",
+  "first_attack": "Certify constructions or automate nonexistence for constrained automorphism classes",
+  "impact": 4,
+  "attackability": 4,
+  "verifiability": 5,
+  "spillover": 4,
+  "modality": "finite_parameter",
+  "evidence_state": "needs_review",
+  "checked_on": null,
+  "source_url": "https://mathworld.wolfram.com/ProjectivePlane.html",
+  "rank": 17,
+  "score": 85,
+  "execution_rank": 13,
+  "execution_score": 92,
+  "readiness": 7,
+  "url": "https://svyable.github.io/100/problems/M096/",
+  "field_url": "https://svyable.github.io/100/fields/mathematical-physics-finite-structures/",
+  "readiness_breakdown": [
+    {
+      "item": "Formal campaign brief",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Runnable independent verifier",
+      "points": 3,
+      "max": 3
+    },
+    {
+      "item": "Reproduced known benchmark",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Independently reviewed restricted theorem",
+      "points": 0,
+      "max": 3
+    }
+  ],
+  "has_exact_verifier": true,
+  "campaign": {
+    "problem_id": "M096",
+    "stage": "benchmark_reproduced",
+    "method": "Incidence-axiom certificates, Bruck-Ryser sieve and constrained exhaustive search",
+    "hypothesis": "Decide whether a finite projective plane of order 12 exists.",
+    "first_proof_obligation": "Reproduce a published partial nonexistence result for order 12 (for example a restriction on collineations) before any search.",
+    "next_experiment": "Encode order-12 planes with a prescribed collineation as SAT with DRAT proof output, starting from cases the literature already excludes.",
+    "falsification": "An explicit order-12 incidence structure passing the combinatorial axiom check would settle existence.",
+    "blocker": "Unconstrained search is far out of reach; the order-10 nonexistence proof needed a massive computation.",
+    "dossier": "research/LAB_CAMPAIGNS.md",
+    "verifier": "python3 scripts/lab.py --probe projective_planes"
+  },
+  "probes": [
+    {
+      "id": "projective_planes",
+      "problem_id": "M096",
+      "name": "Projective plane order 12",
+      "title": "Projective planes of prime-power order and the Bruck-Ryser order sieve",
+      "engines": [
+        "finite_fields"
+      ],
+      "frontier": "Known: order 10 excluded by computer search (Lam, Thiel & Swiercz 1989); 12 is the smallest order whose existence is open. Every known plane has prime-power order.",
+      "artifact": "scripts/probes/planes.py",
+      "command": "python3 scripts/lab.py --probe projective_planes",
+      "runs": {
+        "smoke": {
+          "holds": true,
+          "scope": "PG(2,q) satisfies the projective-plane axioms for every prime power q <= 9; Bruck-Ryser classification of every order n <= 50.",
+          "certificate_sha256": "a6567093aa70bc6b4458545085109922cb1b2dc03ddd5443f389c09c6c387888"
+        },
+        "deep": {
+          "holds": true,
+          "scope": "PG(2,q) satisfies the projective-plane axioms for every prime power q <= 27; Bruck-Ryser classification of every order n <= 200.",
+          "certificate_sha256": "adec7b7494938090b26f15707434c1fcd04876889b1cd6111386e3d2f94d0aac"
+        }
+      }
+    }
+  ],
+  "milestones": [
+    {
+      "id": "B-PLANES-001",
+      "problem_id": "M096",
+      "classification": "reproduced_known",
+      "title": "Projective planes of every prime-power order <= 9 and the Bruck-Ryser table to 50",
+      "scope": "Known constructions and exclusions; order 12 remains open",
+      "description": "PG(2,q) incidence axioms verified combinatorially; Bruck-Ryser exclusions recomputed by brute-force sums of two squares; deep run to q = 27 and orders <= 200.",
+      "verifier": "python3 scripts/lab.py --probe projective_planes",
+      "artifact": "scripts/probes/planes.py",
+      "verified_on": "2026-10-31"
+    }
+  ],
+  "engine_roadmap": null,
+  "claim_review_2026": null,
+  "formal_statement": {
+    "problem_id": "M096",
+    "module": "lean/Hundred/ProjectivePlane.lean",
+    "namespace": "Hundred.ProjectivePlane",
+    "statement": "Statement",
+    "encodes": "No incidence relation on 157 points and 157 lines with 13 points per line, unique joining lines and unique meeting points.",
+    "not_encoded": [
+      "The general prime-power conjecture"
+    ],
+    "kernel_checked": [
+      {
+        "decl": "exists_order_3",
+        "claim": "The axioms are satisfiable: planes of orders 2 (Fano) and 3 exist (exists_order_2, exists_order_3).",
+        "mirrors_probe": "projective_planes"
+      }
+    ],
+    "fidelity": "author_checked",
+    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/ProjectivePlane.lean"
+  },
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Exact probe lab — computational reach of the 100",
+      "source": "LAB.md",
+      "url": "https://svyable.github.io/100/library/lab/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Lab campaigns: twelve problems under exact computation",
+      "source": "research/LAB_CAMPAIGNS.md",
+      "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "Proof-driven research engine",
+      "source": "docs/RESEARCH_ENGINE.md",
+      "url": "https://svyable.github.io/100/library/research-engine/"
+    },
+    {
+      "title": "Foundational sources and 2026 claim watch",
+      "source": "docs/SOURCES.md",
+      "url": "https://svyable.github.io/100/library/sources/"
+    }
+  ]
+}

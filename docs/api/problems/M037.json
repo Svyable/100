@@ -1,0 +1,65 @@
+{
+  "id": "M037",
+  "name": "Hilbert–Smith conjecture",
+  "field": "Topology",
+  "question": "Must a locally compact group acting faithfully on a finite-dimensional manifold be a Lie group?",
+  "first_attack": "Audit precise statement and prove a restricted case",
+  "impact": 4,
+  "attackability": 2,
+  "verifiability": 3,
+  "spillover": 4,
+  "modality": "structural",
+  "evidence_state": "claim_needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 97,
+  "score": 63,
+  "execution_rank": 97,
+  "execution_score": 63,
+  "readiness": 0,
+  "url": "https://svyable.github.io/100/problems/M037/",
+  "field_url": "https://svyable.github.io/100/fields/topology/",
+  "readiness_breakdown": [],
+  "has_exact_verifier": false,
+  "campaign": null,
+  "probes": [],
+  "milestones": [],
+  "engine_roadmap": null,
+  "claim_review_2026": {
+    "id": "M037",
+    "primary_title": "The Hilbert–Smith conjecture in every finite dimension",
+    "primary_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/The-Hilbert-Smith-conjecture-in-every-finite-dimension-September-23-2026/paper.pdf",
+    "preprint_date": "2026-09-23",
+    "claimed_theorem": "Every locally compact second-countable Hausdorff group acting faithfully and jointly continuously on a connected, second-countable, Hausdorff finite-dimensional topological manifold without boundary is Lie.",
+    "scope_relation": "matches_with_qualification",
+    "scope_note": "Very close to the classical manifold formulation, but connectedness, boundary, second-countability and joint continuity are explicit. Check equivalence to the intended M037 scope.",
+    "independent_validation": "not_established",
+    "independent_evidence_urls": [],
+    "known_caveats": "No independently accepted proof found; must scrutinize reduction to p-adic group actions and high-dimensional hypotheses, not just announced theorem wording.",
+    "next_review": "Compare exact source hypotheses to a specialist formulation and obtain an expert check of the central p-adic action argument."
+  },
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "2026 claimed-resolution triage — issue #3",
+      "source": "research/CLAIM_REVIEWS_2026.md",
+      "url": "https://svyable.github.io/100/library/claim-reviews-2026/"
+    },
+    {
+      "title": "Foundational sources and 2026 claim watch",
+      "source": "docs/SOURCES.md",
+      "url": "https://svyable.github.io/100/library/sources/"
+    }
+  ]
+}
