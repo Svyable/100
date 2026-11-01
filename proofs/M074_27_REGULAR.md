@@ -23,11 +23,21 @@ and any edge b→a with b in B, a in A requires alpha(a)+beta(b)>=r+1. The last 
 
 All nine alpha-values and nine beta-values lie in the integer interval [2,8], each array has sum at most 29. An edge b→a is eligible only if alpha(a)+beta(b)>=10.
 
-There are exactly **166** sorted nine-tuples with entries in [2,8] and sum at most 29. For each of the **27,556** ordered pairs of such tuples, count the eligible pairs. The exact integer maximum is
+**Elementary crossing lemma (no enumeration).** Let \(x_1,\ldots,x_9\) and \(y_1,\ldots,y_9\) be integers in \([0,6]\) with \(\sum x_i,\sum y_j\le11\). Then at most **22** of the 81 ordered pairs satisfy \(x_i+y_j\ge6\).
+
+**Proof of the lemma.** Suppose first that at least one array contains no 6; by symmetry take \(y_j\le5\) for every j. For a fixed value \(x_i=0,1,2,3,4,5,6\), respectively, the number of eligible j is at most
+
+    0, 2, 2, 3, 5, 9, 9,
+
+because \(\sum_j y_j\le11\), an eligible j has \(y_j\ge6-x_i\), and there are only nine positions. Each displayed bound is at most \(2x_i\). Summing over the nine rows gives at most \(2\sum_i x_i\le22\) pairs.
+
+It remains to consider arrays each containing a 6. Since each array's sum is at most 11, each contains **exactly one** 6, and its other eight entries sum to at most 5. The distinguished row and column together account for \(9+9-1=17\) eligible pairs. In the remaining \(8\times8\) submatrix there cannot be two eligible pairs with distinct rows **and** distinct columns: their four endpoint weights would sum to at least 12, while the entire residual weight of both arrays is at most \(5+5=10\). Thus all remaining eligible pairs share one row or one column. The common endpoint has weight at most 5, so each opposite endpoint of an eligible pair has positive integer weight. There are at most five of them because the opposite array's residual sum is at most 5. Hence there are at most \(17+5=22\) eligible pairs. QED.
+
+For our degree arrays set \(x_i=\alpha_i-2\), \(y_j=\beta_j-2\). The sum bounds follow from \(m_A,m_B\le29\), since \(9\cdot2=18\); eligibility \(\alpha_i+\beta_j\ge10\) becomes \(x_i+y_j\ge6\). We conclude without computation that
 
     max #{(a,b): alpha(a)+beta(b)>=10} = 22.      (2)
 
-This small finite statement is verified by [scripts/ch27_crosscut.py](../scripts/ch27_crosscut.py) and independently generated and evaluated by the histogram-convolution implementation in [tests/test_ch27_crosscut.py](../tests/test_ch27_crosscut.py). The bound 22 is sharp **as a relaxed integer bound**; it is attained by
+The matching *relaxed* profiles below show equality. As a separate implementation check, [scripts/ch27_crosscut.py](../scripts/ch27_crosscut.py) enumerates exactly **166** sorted tuples per side and **27,556** ordered profile pairs, independently cross-checked using histogram convolution in [tests/test_ch27_crosscut.py](../tests/test_ch27_crosscut.py). The bound 22 is sharp **as a relaxed integer bound**; it is attained by
 
     alpha=(2,2,2,2,2,2,2,7,8),
     beta =(2,2,2,3,3,3,3,3,8).
