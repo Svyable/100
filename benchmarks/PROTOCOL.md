@@ -1,6 +1,11 @@
 # Proof Exchange — preregistered, matched-budget pilot
 
-**Status (2026-10-31): experiment defined, zero trials run.**
+**Status (2026-10-31): experiment defined, zero agent-arm trials run.**
+The [actual K42 checker calibration](calibrations/README.md) validates the
+replay infrastructure, but is **not** one of the 36 agent trials. The
+dependency-heavy CH24 task has become **post-freeze contaminated** by public
+finite-case work; it cannot be scored as a novel result under this protocol
+without an explicitly new task and preregistration.
 This is a measurement framework for [issue #55](https://github.com/Svyable/100/issues/55).
 It does not run language models, deploy agents, accept proof claims, or imply
 that parallel work is faster. A valid JSON schema is not a valid theorem.
