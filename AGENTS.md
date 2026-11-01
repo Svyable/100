@@ -15,6 +15,21 @@ python3 scripts/scale.py --budget 100             # 100-slot evidence-bound wave
 
 Site discovery for independent contributors: [start here](https://svyable.github.io/100/start/), [JSON agent contract](https://svyable.github.io/100/api/agent.json), [runnable shortlist](https://svyable.github.io/100/api/agent/tasks.json), and [plain-text guide](https://svyable.github.io/100/llms.txt). These are **generated static snapshots**, not a live reservation/claim service. Always re-check the latest scope digest and current GitHub open claims before taking a task.
 
+The 36 preregistered model/agent benchmark cells are also claimable individually
+with python3 scripts/work.py --kind benchmark. These are **unfinished trial
+assignments**, not a claim that an agent has run. Do not copy synthetic test
+fixtures into the ledger or infer a model trial from the K42 Python calibration.
+Each completed, failed or timed-out real run needs original model/tool logs,
+prompt and source snapshots, the frozen task/arm/seed and measured combined
+resource use. The post-freeze CH24 problem has an explicit novelty-contamination
+warning, which a reviewer must not override.
+
+The 20 currently runnable campaign verifiers have separately claimable
+V-P-<problem> review packets: independent researchers rerun the exact
+certificate, attack the checker with negative controls and audit the scope.
+An AI author, unverified self-review or automated replay is never independent
+acceptance. Outcome records require a real review by someone else.
+
 The queue is derived from the ledgers (proof obligations, Lean targets, the dispatcher,
 the roadmap, the formal catalogue and the status-audit drafts). It is browsable at
 `/work/` on the site and machine-readable at `docs/api/work.json`. An item disappears

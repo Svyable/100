@@ -19,7 +19,7 @@ Capacity is how many claimable slots exist ([SCALE.md](SCALE.md)). **Yield** is 
 | Median days, claim to close (`closed_on`) | — |
 | Share of records merged but pending review | — |
 | Distinct independent reviewers | 0 |
-| **Review backlog** (`review` items in the work queue) | 22 |
+| **Review backlog** (`review` items in the work queue) | 42 |
 
 ## Outcomes
 
