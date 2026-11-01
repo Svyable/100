@@ -92,7 +92,7 @@ class CH27BInternalTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 b.internal_B_floors(a,k)
         with self.assertRaises(ValueError):
-            b.forbidden_small_set((8,7)+(0,)*8)
+            b.forbidden_small_set((7,8)+(0,)*8)
 
 
 if __name__=="__main__":
