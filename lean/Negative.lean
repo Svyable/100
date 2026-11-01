@@ -20,6 +20,11 @@ example : ¬ UnionClosed (6 : Family2) := by decide
 -- The unused ground element in the tiny family is not abundant.
 example : ¬ (size small ≤ 2 * frequency small 1) := by decide
 
+-- Positivity is essential: the cleared polynomial alone accepts all zeros.
+example : ¬ Hundred.Statements.ErdosStraus.Solves 3 0 0 0 := by decide
+-- The residue-three recipe cannot be applied indiscriminately to n = 5.
+example : ¬ Hundred.Statements.ErdosStraus.Solves 5 2 20 20 := by decide
+
 -- L006: a false bit ordering and a missing union are rejected by both encodings.
 example : ¬ (Hundred.FranklBridge.pack (fun s => decide (s.val = 0))).val = 2 := by decide
 example : ¬ Hundred.Statements.Frankl.UnionClosed 2 6 := by decide +kernel
