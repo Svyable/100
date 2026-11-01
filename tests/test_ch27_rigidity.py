@@ -97,7 +97,10 @@ class TestRigidity(unittest.TestCase):
                 continue
             for positive in combinations_with_replacement(range(1, 8), 6):
                 k = (0,) * 4 + positive
-                if baseline.classify(a, k) != "unresolved":
+                if sum(k) < 92 - 2 * m:
+                    continue
+                floors = baseline.internal_B_floors(a, k)
+                if not baseline.subset_capacity_ok(floors) or baseline.forbidden_small_set(floors) is not None:
                     continue
                 counts["previously_unexcluded"] += 1
                 if m == 29 and max(a) == 8 and a != (2,) * 7 + (7, 8):
