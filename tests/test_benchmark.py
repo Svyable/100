@@ -1,4 +1,6 @@
 import copy
+import json
+import tempfile
 import sys
 import unittest
 from pathlib import Path
@@ -103,10 +105,11 @@ class BenchmarkTests(unittest.TestCase):
     def test_manifest_mutation_rejected(self):
         doc = copy.deepcopy(self.doc)
         doc["tasks"][0]["eligible_for_novelty"] = True
-        with self.assertRaisesRegex(ValueError, "Known replays"):
-            # Write-free check of the same substantive invariant as loader.
-            if any(t["eligible_for_novelty"] for t in doc["tasks"] if t["class"] == "replay"):
-                raise ValueError("Known replays cannot be novel")
+        with tempfile.TemporaryDirectory() as temp:
+            path = Path(temp) / "manifest.json"
+            path.write_text(json.dumps(doc), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "Known replays"):
+                benchmark.load_manifest(path)
 
 
 if __name__ == "__main__":
