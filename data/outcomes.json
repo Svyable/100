@@ -215,6 +215,22 @@
         "agent_hours": 0.9
       },
       "note": "Author-derived elementary proof of conditional |X|<=6 at a CH27 indegree-ten root, with a tight z=2 tournament sink argument, exact arithmetic checks, independent-style regression tests, and 18-arc weakened-premise control. Pending outside mathematical proof review and originality audit; not the full finite case, a verified new theorem, or a conjecture resolution."
+    },
+    {
+      "work_id": "X-MUTATION-ATTEST",
+      "scope_sha256": "768ff9c1b9408bf66e86650f7bd8ed94b390e01e0ed2c4ecaf3a2929db1bc2ba",
+      "author": "Claude (Claude Code session for Svyable)",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/141",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 1.2,
+        "ci_minutes": 0
+      },
+      "note": "Infrastructure only: mechanical replay, negative controls and seeded mutation attestations for all 21 lab probes. All 21 replay; 452/467 certificate mutants rejected; 75/243 published summary leaves bound; 11 probes accept a flipped holds verdict and ramsey_witnesses also accepts an empty certificate. Findings only; no probe fixed, no review recorded or accepted. Approximate agent time includes about 25 CPU-minutes of attestation runs.",
+      "pr_url": "https://github.com/Svyable/100/pull/160"
     }
   ]
 }

@@ -1,0 +1,1756 @@
+{
+  "format": "svyable.attest.v1",
+  "note": "Mechanical pre-review evidence only: replay, negative controls and seeded mutation of each lab certificate. Not an independent review or acceptance; surviving certificate mutants may be equivalent valid certificates.",
+  "probes": {
+    "alperin@smoke": {
+      "certificate_mutants_requested": 24,
+      "certificate_sha256": "5ec9940f814f3190ef28cebd65452d67ca2f9f36b958a17925aee7345a4bb119",
+      "code_sha256": "ef466815f2872440244aaeb4a0846e00eec65d95190ba356fcf9730e73e9ee12",
+      "command": "python3 scripts/lab.py --probe alperin",
+      "flags": [
+        "unbound_summary"
+      ],
+      "level": "smoke",
+      "probe": "alperin",
+      "problem_id": "M048",
+      "regions": {
+        "certificate": {
+          "rejected": 23,
+          "tried": 23
+        },
+        "control": {
+          "rejected": 2,
+          "tried": 2
+        },
+        "summary": {
+          "rejected": 3,
+          "tried": 13
+        }
+      },
+      "replay": "match",
+      "seed": 13488925322134194729,
+      "status": "triage",
+      "survivors": [
+        {
+          "op": "list_swap",
+          "path": "summary/groups",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/groups/0",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/groups/1",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/groups/2",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/groups/3",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/groups/4",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/groups/5",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/groups/6",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/groups/7",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/groups/8",
+          "region": "summary"
+        }
+      ],
+      "tally": {
+        "crashed": 1,
+        "killed": 27,
+        "survived": 10,
+        "timeout": 0
+      }
+    },
+    "alperin_weights@smoke": {
+      "certificate_mutants_requested": 24,
+      "certificate_sha256": "aa65ccfc6cba5e3996464430f202e32a7bac2ce2c8f4ddf7ddc1c0ead5c09b6a",
+      "code_sha256": "3f9780165f16fe21533b0e7f4482bdeea1cecaf35c3016e2db3e180cd9024e29",
+      "command": "python3 scripts/lab.py --probe alperin_weights",
+      "flags": [
+        "unbound_summary",
+        "checker_timeouts"
+      ],
+      "level": "smoke",
+      "probe": "alperin_weights",
+      "problem_id": "M048",
+      "regions": {
+        "certificate": {
+          "rejected": 20,
+          "tried": 24
+        },
+        "control": {
+          "rejected": 2,
+          "tried": 2
+        },
+        "summary": {
+          "rejected": 37,
+          "tried": 40
+        }
+      },
+      "replay": "match",
+      "seed": 7737304988465701525,
+      "status": "triage",
+      "survivors": [
+        {
+          "op": "int_inc",
+          "path": "summary/groups",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/cases",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/radical_classes",
+          "region": "summary"
+        }
+      ],
+      "tally": {
+        "crashed": 1,
+        "killed": 58,
+        "survived": 3,
+        "timeout": 4
+      }
+    },
+    "dirichlet_l@smoke": {
+      "certificate_mutants_requested": 4,
+      "certificate_sha256": "374ed325c0f297d2a9477c199959ab016c76f28fbb6660665aff7c1a93adcdfd",
+      "code_sha256": "2c8f9a0769604f35543b7881b7e5318c7aa77d486ff8c886ef7a695150245734",
+      "command": "python3 scripts/lab.py --probe dirichlet_l",
+      "flags": [
+        "unbound_summary"
+      ],
+      "level": "smoke",
+      "probe": "dirichlet_l",
+      "problem_id": "M002",
+      "regions": {
+        "certificate": {
+          "rejected": 4,
+          "tried": 4
+        },
+        "control": {
+          "rejected": 2,
+          "tried": 2
+        },
+        "summary": {
+          "rejected": 3,
+          "tried": 6
+        }
+      },
+      "replay": "match",
+      "seed": 3468774892145439306,
+      "status": "triage",
+      "survivors": [
+        {
+          "op": "list_drop",
+          "path": "summary/characters",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/characters/0",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/characters/1",
+          "region": "summary"
+        }
+      ],
+      "tally": {
+        "crashed": 0,
+        "killed": 9,
+        "survived": 3,
+        "timeout": 0
+      }
+    },
+    "dirichlet_zeros@smoke": {
+      "certificate_mutants_requested": 24,
+      "certificate_sha256": "f6bf5d1d8c4e6ae52da72b2d2bbc10d8638e6e62ba10ceb8164e86aba74e5e79",
+      "code_sha256": "0ecd924a32af2e870c2bbea977efc4d2be01ed69af1efc94791ebfd4d8611240",
+      "command": "python3 scripts/lab.py --probe dirichlet_zeros",
+      "flags": [
+        "unbound_summary"
+      ],
+      "level": "smoke",
+      "probe": "dirichlet_zeros",
+      "problem_id": "M002",
+      "regions": {
+        "certificate": {
+          "rejected": 24,
+          "tried": 24
+        },
+        "control": {
+          "rejected": 2,
+          "tried": 2
+        },
+        "summary": {
+          "rejected": 6,
+          "tried": 7
+        }
+      },
+      "replay": "match",
+      "seed": 15157149450846177585,
+      "status": "triage",
+      "survivors": [
+        {
+          "op": "int_text_inc",
+          "path": "summary/height",
+          "region": "summary"
+        }
+      ],
+      "tally": {
+        "crashed": 2,
+        "killed": 30,
+        "survived": 1,
+        "timeout": 0
+      }
+    },
+    "erdos_straus@smoke": {
+      "certificate_mutants_requested": 24,
+      "certificate_sha256": "0076b8bf095e84632fdb686cd77255a4e37b0c0f6e762d2538f0de2f38c6a855",
+      "code_sha256": "0e69af5d6a7582736b251cbbcd4a3c348952493b2263f44911ac3a0611862d76",
+      "command": "python3 scripts/lab.py --probe erdos_straus",
+      "flags": [
+        "unbound_summary"
+      ],
+      "level": "smoke",
+      "probe": "erdos_straus",
+      "problem_id": "M019",
+      "regions": {
+        "certificate": {
+          "rejected": 24,
+          "tried": 24
+        },
+        "control": {
+          "rejected": 2,
+          "tried": 2
+        },
+        "summary": {
+          "rejected": 1,
+          "tried": 4
+        }
+      },
+      "replay": "match",
+      "seed": 14830989495555942939,
+      "status": "triage",
+      "survivors": [
+        {
+          "op": "int_inc",
+          "path": "summary/integers_certified",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/limit",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/searched_n_equiv_1_mod_4",
+          "region": "summary"
+        }
+      ],
+      "tally": {
+        "crashed": 5,
+        "killed": 22,
+        "survived": 3,
+        "timeout": 0
+      }
+    },
+    "goldbach@smoke": {
+      "certificate_mutants_requested": 24,
+      "certificate_sha256": "063ed3ae3efccc5b690cbfb1d8ae5dbd70fd117c1b61376a5f0116ff61c04ea8",
+      "code_sha256": "5f38325e9a40933351301c96ea387453bc85424c31cb688c0216ce09f87e22fe",
+      "command": "python3 scripts/lab.py --probe goldbach",
+      "flags": [
+        "unbound_summary"
+      ],
+      "level": "smoke",
+      "probe": "goldbach",
+      "problem_id": "M006",
+      "regions": {
+        "certificate": {
+          "rejected": 24,
+          "tried": 24
+        },
+        "control": {
+          "rejected": 2,
+          "tried": 2
+        },
+        "summary": {
+          "rejected": 3,
+          "tried": 5
+        }
+      },
+      "replay": "match",
+      "seed": 1586693850882873481,
+      "status": "triage",
+      "survivors": [
+        {
+          "op": "int_dec",
+          "path": "summary/even_integers_checked",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/limit",
+          "region": "summary"
+        }
+      ],
+      "tally": {
+        "crashed": 2,
+        "killed": 27,
+        "survived": 2,
+        "timeout": 0
+      }
+    },
+    "hadamard@smoke": {
+      "certificate_mutants_requested": 24,
+      "certificate_sha256": "8ba6592000a77ff3597a776eaa458e2cc4c53d9a7087aede2c64efb32c3433ca",
+      "code_sha256": "5246284a93a106843fba7ff7b6a528167bd508a6545207fd873855b6f9d1dd56",
+      "command": "python3 scripts/lab.py --probe hadamard",
+      "flags": [
+        "control_survived:holds_flip",
+        "unbound_summary"
+      ],
+      "level": "smoke",
+      "probe": "hadamard",
+      "problem_id": "M094",
+      "regions": {
+        "certificate": {
+          "rejected": 24,
+          "tried": 24
+        },
+        "control": {
+          "rejected": 1,
+          "tried": 2
+        },
+        "summary": {
+          "rejected": 3,
+          "tried": 37
+        }
+      },
+      "replay": "match",
+      "seed": 13728329720261640153,
+      "status": "weak",
+      "survivors": [
+        {
+          "op": "holds_flip",
+          "path": "holds",
+          "region": "control"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/constructed_orders",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/limit",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/orders_divisible_by_4",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/100",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/104",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/108",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/112",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/12",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/120",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/124",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/128",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/16",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/20",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/24",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/28",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/32",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/36",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/4",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/40",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/44",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/48",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/52",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/56",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/60",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/64",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/68",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/72",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/76",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/8",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/80",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/84",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/88",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/92",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/recipes/96",
+          "region": "summary"
+        }
+      ],
+      "tally": {
+        "crashed": 1,
+        "killed": 27,
+        "survived": 35,
+        "timeout": 0
+      }
+    },
+    "hadwiger@smoke": {
+      "certificate_mutants_requested": 24,
+      "certificate_sha256": "108fe9f19d66a0fa7c259e2e4209d930f0c3047efa65e91a038be5f7bc6f1327",
+      "code_sha256": "442ee10502123d510cd3a22c3ff7783bbc304cc3071dd3c1673a2677569b76a9",
+      "command": "python3 scripts/lab.py --probe hadwiger",
+      "flags": [
+        "control_survived:holds_flip",
+        "unbound_summary"
+      ],
+      "level": "smoke",
+      "probe": "hadwiger",
+      "problem_id": "M071",
+      "regions": {
+        "certificate": {
+          "rejected": 24,
+          "tried": 24
+        },
+        "control": {
+          "rejected": 1,
+          "tried": 2
+        },
+        "summary": {
+          "rejected": 1,
+          "tried": 8
+        }
+      },
+      "replay": "match",
+      "seed": 14616206049814947007,
+      "status": "weak",
+      "survivors": [
+        {
+          "op": "holds_flip",
+          "path": "holds",
+          "region": "control"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/by_chromatic_number/1",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/by_chromatic_number/2",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/by_chromatic_number/3",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/by_chromatic_number/4",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/by_chromatic_number/5",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/by_chromatic_number/6",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/graphs_certified",
+          "region": "summary"
+        }
+      ],
+      "tally": {
+        "crashed": 1,
+        "killed": 25,
+        "survived": 8,
+        "timeout": 0
+      }
+    },
+    "held_karp@smoke": {
+      "certificate_mutants_requested": 24,
+      "certificate_sha256": "705abe69797b7a55f2124926eb17eeae816ae0a8f4c536c0f3484358023ba60b",
+      "code_sha256": "0d6bb6555b75e4f122ec2825f28149cfc7e40b7700f528293f03eea89d6a7bf0",
+      "command": "python3 scripts/lab.py --probe held_karp",
+      "flags": [
+        "control_survived:holds_flip",
+        "unbound_summary"
+      ],
+      "level": "smoke",
+      "probe": "held_karp",
+      "problem_id": "M097",
+      "regions": {
+        "certificate": {
+          "rejected": 24,
+          "tried": 24
+        },
+        "control": {
+          "rejected": 1,
+          "tried": 2
+        },
+        "summary": {
+          "rejected": 2,
+          "tried": 5
+        }
+      },
+      "replay": "match",
+      "seed": 13310410357260409708,
+      "status": "weak",
+      "survivors": [
+        {
+          "op": "holds_flip",
+          "path": "holds",
+          "region": "control"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/instances",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/max_ratio_instance/graph",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/max_ratio_instance/n",
+          "region": "summary"
+        }
+      ],
+      "tally": {
+        "crashed": 3,
+        "killed": 24,
+        "survived": 4,
+        "timeout": 0
+      }
+    },
+    "jacobian@smoke": {
+      "certificate_mutants_requested": 24,
+      "certificate_sha256": "f44c7cda2ef9e9849c9b185a750809eb2d476d530cbded36e692ccd5b9ea4632",
+      "code_sha256": "75b45b04c04ab057d534b4d022f3546e8122ab3627efec1b917df5e5e80e4751",
+      "command": "python3 scripts/lab.py --probe jacobian",
+      "flags": [
+        "unbound_summary"
+      ],
+      "level": "smoke",
+      "probe": "jacobian",
+      "problem_id": "M041",
+      "regions": {
+        "certificate": {
+          "rejected": 24,
+          "tried": 24
+        },
+        "control": {
+          "rejected": 2,
+          "tried": 2
+        },
+        "summary": {
+          "rejected": 1,
+          "tried": 5
+        }
+      },
+      "replay": "match",
+      "seed": 16404668661425602823,
+      "status": "triage",
+      "survivors": [
+        {
+          "op": "int_inc",
+          "path": "summary/class_size",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/constant_jacobian_maps",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/max_inverse_terms",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/monomials",
+          "region": "summary"
+        }
+      ],
+      "tally": {
+        "crashed": 9,
+        "killed": 18,
+        "survived": 4,
+        "timeout": 0
+      }
+    },
+    "mds_arcs@smoke": {
+      "certificate_mutants_requested": 24,
+      "certificate_sha256": "f815a3328c125253639c9e8db80c920872858986662deb1976f89c39e58108ab",
+      "code_sha256": "ce3c28fe9ca9ddf807f6aa0e468da170795263e09f7157c21ec14d99e45e2ab6",
+      "command": "python3 scripts/lab.py --probe mds_arcs",
+      "flags": [
+        "control_survived:holds_flip",
+        "unbound_summary",
+        "certificate_survivors_need_triage"
+      ],
+      "level": "smoke",
+      "probe": "mds_arcs",
+      "problem_id": "M093",
+      "regions": {
+        "certificate": {
+          "rejected": 21,
+          "tried": 23
+        },
+        "control": {
+          "rejected": 1,
+          "tried": 2
+        },
+        "summary": {
+          "rejected": 0,
+          "tried": 10
+        }
+      },
+      "replay": "match",
+      "seed": 6331252923665970388,
+      "status": "weak",
+      "survivors": [
+        {
+          "op": "holds_flip",
+          "path": "holds",
+          "region": "control"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/2/max_arc_size",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/2/maximum_arcs_through_frame",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/3/max_arc_size",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/3/maximum_arcs_through_frame",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/4/max_arc_size",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/4/maximum_arcs_through_frame",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/5/max_arc_size",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/5/maximum_arcs_through_frame",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/7/max_arc_size",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/7/maximum_arcs_through_frame",
+          "region": "summary"
+        },
+        {
+          "op": "int_one",
+          "path": "certificate/7/modulus/0",
+          "region": "certificate"
+        },
+        {
+          "op": "int_one",
+          "path": "certificate/3/modulus/0",
+          "region": "certificate"
+        }
+      ],
+      "tally": {
+        "crashed": 0,
+        "killed": 22,
+        "survived": 13,
+        "timeout": 0
+      }
+    },
+    "one_third@smoke": {
+      "certificate_mutants_requested": 24,
+      "certificate_sha256": "6fd6a1a31455f7b1a5a3785f8343ee28cf20fbfd6ade0f2daa83943c953299b4",
+      "code_sha256": "ab8e5394cfcd013edc63c983da5edd4365d3309722b0975569780b6f264d985c",
+      "command": "python3 scripts/lab.py --probe one_third",
+      "flags": [
+        "control_survived:holds_flip",
+        "unbound_summary"
+      ],
+      "level": "smoke",
+      "probe": "one_third",
+      "problem_id": "M079",
+      "regions": {
+        "certificate": {
+          "rejected": 24,
+          "tried": 24
+        },
+        "control": {
+          "rejected": 1,
+          "tried": 2
+        },
+        "summary": {
+          "rejected": 2,
+          "tried": 8
+        }
+      },
+      "replay": "match",
+      "seed": 9318524414321439143,
+      "status": "weak",
+      "survivors": [
+        {
+          "op": "holds_flip",
+          "path": "holds",
+          "region": "control"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/posets/1",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/posets/2",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/posets/3",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/posets/4",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/posets/5",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/posets/6",
+          "region": "summary"
+        }
+      ],
+      "tally": {
+        "crashed": 1,
+        "killed": 26,
+        "survived": 7,
+        "timeout": 0
+      }
+    },
+    "projective_planes@smoke": {
+      "certificate_mutants_requested": 24,
+      "certificate_sha256": "a6567093aa70bc6b4458545085109922cb1b2dc03ddd5443f389c09c6c387888",
+      "code_sha256": "e46a4d984211ca30faba26e7773e71123930f31960a5f2c09bbe9ddf99d083b0",
+      "command": "python3 scripts/lab.py --probe projective_planes",
+      "flags": [
+        "control_survived:holds_flip",
+        "unbound_summary"
+      ],
+      "level": "smoke",
+      "probe": "projective_planes",
+      "problem_id": "M096",
+      "regions": {
+        "certificate": {
+          "rejected": 24,
+          "tried": 24
+        },
+        "control": {
+          "rejected": 1,
+          "tried": 2
+        },
+        "summary": {
+          "rejected": 1,
+          "tried": 36
+        }
+      },
+      "replay": "match",
+      "seed": 3063713115876242826,
+      "status": "weak",
+      "survivors": [
+        {
+          "op": "holds_flip",
+          "path": "holds",
+          "region": "control"
+        },
+        {
+          "op": "list_swap",
+          "path": "summary/bruck_ryser_excluded",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/bruck_ryser_excluded/0",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/bruck_ryser_excluded/1",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/bruck_ryser_excluded/2",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/bruck_ryser_excluded/3",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/bruck_ryser_excluded/4",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/bruck_ryser_excluded/5",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/bruck_ryser_excluded/6",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/bruck_ryser_excluded/7",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/bruck_ryser_excluded/8",
+          "region": "summary"
+        },
+        {
+          "op": "list_dup",
+          "path": "summary/open_orders",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/open_orders/0",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/open_orders/1",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/open_orders/2",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/open_orders/3",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/open_orders/4",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/open_orders/5",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/open_orders/6",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/open_orders/7",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/open_orders/8",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/open_orders/9",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/open_orders/10",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/open_orders/11",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/open_orders/12",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/open_orders/13",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/open_orders/14",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/open_orders/15",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/orders_constructed/0",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/orders_constructed/1",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/orders_constructed/2",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/orders_constructed/3",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/orders_constructed/4",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/orders_constructed/5",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/orders_constructed/6",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/smallest_open_order",
+          "region": "summary"
+        }
+      ],
+      "tally": {
+        "crashed": 1,
+        "killed": 25,
+        "survived": 36,
+        "timeout": 0
+      }
+    },
+    "ramsey_witnesses@smoke": {
+      "certificate_mutants_requested": 24,
+      "certificate_sha256": "c601047d86b55741559f792d148dfc9855335e89ea1109c5cfbe509837f32492",
+      "code_sha256": "f491e9a54a7c85d31c9b4dd3fb363a05570afb8e4c1eadaa3236678ca9d93f2a",
+      "command": "python3 scripts/lab.py --probe ramsey_witnesses",
+      "flags": [
+        "control_survived:holds_flip",
+        "control_survived:certificate_empty",
+        "unbound_summary",
+        "certificate_survivors_need_triage"
+      ],
+      "level": "smoke",
+      "probe": "ramsey_witnesses",
+      "problem_id": "M095",
+      "regions": {
+        "certificate": {
+          "rejected": 23,
+          "tried": 24
+        },
+        "control": {
+          "rejected": 0,
+          "tried": 2
+        },
+        "summary": {
+          "rejected": 0,
+          "tried": 5
+        }
+      },
+      "replay": "match",
+      "seed": 10447418668319650168,
+      "status": "weak",
+      "survivors": [
+        {
+          "op": "holds_flip",
+          "path": "holds",
+          "region": "control"
+        },
+        {
+          "op": "certificate_empty",
+          "path": "certificate",
+          "region": "control"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/circ13_1_5",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/circ8_1_4",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/paley17",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/paley5",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/witnesses_sha256",
+          "region": "summary"
+        },
+        {
+          "op": "list_swap",
+          "path": "certificate/circ13_1_5/edges",
+          "region": "certificate"
+        }
+      ],
+      "tally": {
+        "crashed": 4,
+        "killed": 19,
+        "survived": 8,
+        "timeout": 0
+      }
+    },
+    "reconstruction@smoke": {
+      "certificate_mutants_requested": 24,
+      "certificate_sha256": "2b1be7e121a27d25d8005718fa562c2098ee2b5af018b41d2d03c75575475e47",
+      "code_sha256": "dafb79c9e008111a8ae0faf247e6db369860438dbe402062b7394519b758e3ff",
+      "command": "python3 scripts/lab.py --probe reconstruction",
+      "flags": [
+        "control_survived:holds_flip",
+        "unbound_summary"
+      ],
+      "level": "smoke",
+      "probe": "reconstruction",
+      "problem_id": "M078",
+      "regions": {
+        "certificate": {
+          "rejected": 24,
+          "tried": 24
+        },
+        "control": {
+          "rejected": 1,
+          "tried": 2
+        },
+        "summary": {
+          "rejected": 1,
+          "tried": 9
+        }
+      },
+      "replay": "match",
+      "seed": 10823599738737470842,
+      "status": "weak",
+      "survivors": [
+        {
+          "op": "holds_flip",
+          "path": "holds",
+          "region": "control"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/3/distinct_decks",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/3/graphs",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/4/distinct_decks",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/4/graphs",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/5/distinct_decks",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/5/graphs",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/6/distinct_decks",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/6/graphs",
+          "region": "summary"
+        }
+      ],
+      "tally": {
+        "crashed": 1,
+        "killed": 25,
+        "survived": 9,
+        "timeout": 0
+      }
+    },
+    "riemann@smoke": {
+      "certificate_mutants_requested": 24,
+      "certificate_sha256": "c33d7a31f28dc53b14a3f111127ace52dd6378a2f6a162287a01bd7f9018ba17",
+      "code_sha256": "60d94e4053c51eebca2cfecacb4cd383a27dd2aa0b9a8ed0b159ef66a3787725",
+      "command": "python3 scripts/lab.py --probe riemann",
+      "flags": [
+        "unbound_summary",
+        "certificate_survivors_need_triage"
+      ],
+      "level": "smoke",
+      "probe": "riemann",
+      "problem_id": "M001",
+      "regions": {
+        "certificate": {
+          "rejected": 9,
+          "tried": 11
+        },
+        "control": {
+          "rejected": 2,
+          "tried": 2
+        },
+        "summary": {
+          "rejected": 2,
+          "tried": 3
+        }
+      },
+      "replay": "match",
+      "seed": 16397811361176195711,
+      "status": "triage",
+      "survivors": [
+        {
+          "op": "int_dec",
+          "path": "summary/height",
+          "region": "summary"
+        },
+        {
+          "op": "fraction_text_nudge",
+          "path": "certificate/intervals/1/1",
+          "region": "certificate"
+        },
+        {
+          "op": "fraction_text_nudge",
+          "path": "certificate/intervals/0/1",
+          "region": "certificate"
+        }
+      ],
+      "tally": {
+        "crashed": 1,
+        "killed": 12,
+        "survived": 3,
+        "timeout": 0
+      }
+    },
+    "rota@smoke": {
+      "certificate_mutants_requested": 24,
+      "certificate_sha256": "b29d1181728dc6e357e6fb69d5447fbe013ad4491b3edf4c60bdd4332a348e96",
+      "code_sha256": "f31aa484bdecb890fba591617929d4242ea59ff5717e7722f0470ecb5f0633e0",
+      "command": "python3 scripts/lab.py --probe rota",
+      "flags": [
+        "unbound_summary"
+      ],
+      "level": "smoke",
+      "probe": "rota",
+      "problem_id": "M080",
+      "regions": {
+        "certificate": {
+          "rejected": 24,
+          "tried": 24
+        },
+        "control": {
+          "rejected": 2,
+          "tried": 2
+        },
+        "summary": {
+          "rejected": 1,
+          "tried": 11
+        }
+      },
+      "replay": "match",
+      "seed": 11779187464365741905,
+      "status": "triage",
+      "survivors": [
+        {
+          "op": "int_inc",
+          "path": "summary/2^2/bases",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/2^2/instances",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/2^3/bases",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/2^3/instances",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/3^2/bases",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/3^2/instances",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/5^2/bases",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/5^2/instances",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/7^2/bases",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/7^2/instances",
+          "region": "summary"
+        }
+      ],
+      "tally": {
+        "crashed": 9,
+        "killed": 18,
+        "survived": 10,
+        "timeout": 0
+      }
+    },
+    "sic@smoke": {
+      "certificate_mutants_requested": 24,
+      "certificate_sha256": "621c08975771a3b04e5771d0b174a99225c323d4d60c122d62fed71dd56d1ca5",
+      "code_sha256": "6f70e38b036444cf8379ee95daff6060e11ff73d4056731eff55c3939734d5dc",
+      "command": "python3 scripts/lab.py --probe sic",
+      "flags": [
+        "control_survived:holds_flip",
+        "unbound_summary",
+        "certificate_survivors_need_triage"
+      ],
+      "level": "smoke",
+      "probe": "sic",
+      "problem_id": "M092",
+      "regions": {
+        "certificate": {
+          "rejected": 17,
+          "tried": 23
+        },
+        "control": {
+          "rejected": 1,
+          "tried": 2
+        },
+        "summary": {
+          "rejected": 1,
+          "tried": 4
+        }
+      },
+      "replay": "match",
+      "seed": 10465558637342064442,
+      "status": "weak",
+      "survivors": [
+        {
+          "op": "holds_flip",
+          "path": "holds",
+          "region": "control"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/certificate_sha256",
+          "region": "summary"
+        },
+        {
+          "op": "fraction_text_nudge",
+          "path": "summary/d2_overlap",
+          "region": "summary"
+        },
+        {
+          "op": "fraction_text_nudge",
+          "path": "summary/d3_overlap",
+          "region": "summary"
+        },
+        {
+          "op": "list_dup",
+          "path": "certificate/d3_fiducials/44/1",
+          "region": "certificate"
+        },
+        {
+          "op": "int_one",
+          "path": "certificate/d3_fiducials/92/0/0",
+          "region": "certificate"
+        },
+        {
+          "op": "int_one",
+          "path": "certificate/d3_fiducials/98/2/0",
+          "region": "certificate"
+        },
+        {
+          "op": "int_one",
+          "path": "certificate/d3_fiducials/95/0/0",
+          "region": "certificate"
+        },
+        {
+          "op": "list_swap",
+          "path": "certificate/d3_fiducials/82/0",
+          "region": "certificate"
+        },
+        {
+          "op": "list_swap",
+          "path": "certificate/d3_fiducials/96/2",
+          "region": "certificate"
+        }
+      ],
+      "tally": {
+        "crashed": 3,
+        "killed": 16,
+        "survived": 10,
+        "timeout": 0
+      }
+    },
+    "sidorenko@smoke": {
+      "certificate_mutants_requested": 24,
+      "certificate_sha256": "d59b7e6cb2d91343eacb4b0f9501d21f21547fded406dd7249c1e8ab59f7d56f",
+      "code_sha256": "d2cb4b47538eec5889810e2aba34547a7ab4ab4589bb0b1989a89bc471d594a7",
+      "command": "python3 scripts/lab.py --probe sidorenko",
+      "flags": [
+        "control_survived:holds_flip",
+        "unbound_summary"
+      ],
+      "level": "smoke",
+      "probe": "sidorenko",
+      "problem_id": "M073",
+      "regions": {
+        "certificate": {
+          "rejected": 24,
+          "tried": 24
+        },
+        "control": {
+          "rejected": 1,
+          "tried": 2
+        },
+        "summary": {
+          "rejected": 1,
+          "tried": 11
+        }
+      },
+      "replay": "match",
+      "seed": 10779494794579239432,
+      "status": "weak",
+      "survivors": [
+        {
+          "op": "holds_flip",
+          "path": "holds",
+          "region": "control"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/C4/hosts",
+          "region": "summary"
+        },
+        {
+          "op": "fraction_text_nudge",
+          "path": "summary/C4/min_ratio",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/C6/hosts",
+          "region": "summary"
+        },
+        {
+          "op": "fraction_text_nudge",
+          "path": "summary/C6/min_ratio",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/K33/hosts",
+          "region": "summary"
+        },
+        {
+          "op": "fraction_text_nudge",
+          "path": "summary/K33/min_ratio",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/K55_minus_C10/hosts",
+          "region": "summary"
+        },
+        {
+          "op": "fraction_text_nudge",
+          "path": "summary/K55_minus_C10/min_ratio",
+          "region": "summary"
+        },
+        {
+          "op": "int_inc",
+          "path": "summary/P4/hosts",
+          "region": "summary"
+        },
+        {
+          "op": "fraction_text_nudge",
+          "path": "summary/P4/min_ratio",
+          "region": "summary"
+        }
+      ],
+      "tally": {
+        "crashed": 2,
+        "killed": 24,
+        "survived": 11,
+        "timeout": 0
+      }
+    },
+    "strassen@smoke": {
+      "certificate_mutants_requested": 24,
+      "certificate_sha256": "36b9015e19e73c7a824706876692d126f7f9ece229ac3c87ef6ddd1b4e139a8f",
+      "code_sha256": "65006d38e6dae696974a18765cb9d35826ea616deb4834be8198886aa8c670b4",
+      "command": "python3 scripts/lab.py --probe strassen",
+      "flags": [
+        "control_survived:holds_flip",
+        "unbound_summary"
+      ],
+      "level": "smoke",
+      "probe": "strassen",
+      "problem_id": "M084",
+      "regions": {
+        "certificate": {
+          "rejected": 24,
+          "tried": 24
+        },
+        "control": {
+          "rejected": 1,
+          "tried": 2
+        },
+        "summary": {
+          "rejected": 1,
+          "tried": 4
+        }
+      },
+      "replay": "match",
+      "seed": 15238368390558171980,
+      "status": "weak",
+      "survivors": [
+        {
+          "op": "holds_flip",
+          "path": "holds",
+          "region": "control"
+        },
+        {
+          "op": "float_nudge",
+          "path": "summary/omega_upper_bound",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/ranks/2",
+          "region": "summary"
+        },
+        {
+          "op": "int_dec",
+          "path": "summary/ranks/4",
+          "region": "summary"
+        }
+      ],
+      "tally": {
+        "crashed": 8,
+        "killed": 18,
+        "survived": 4,
+        "timeout": 0
+      }
+    },
+    "zeta_zeros@smoke": {
+      "certificate_mutants_requested": 24,
+      "certificate_sha256": "9b98ff32535b5cf31aaeb2edd77e7069bfd110e7402e9a2ce7f7358b90414c3e",
+      "code_sha256": "7ce880063452a6b0e9b7e1fa3f089e78ecddad5fe812122d16db31830b67df50",
+      "command": "python3 scripts/lab.py --probe zeta_zeros",
+      "flags": [
+        "unbound_summary"
+      ],
+      "level": "smoke",
+      "probe": "zeta_zeros",
+      "problem_id": "M001",
+      "regions": {
+        "certificate": {
+          "rejected": 23,
+          "tried": 23
+        },
+        "control": {
+          "rejected": 2,
+          "tried": 2
+        },
+        "summary": {
+          "rejected": 5,
+          "tried": 12
+        }
+      },
+      "replay": "match",
+      "seed": 12446882859704987321,
+      "status": "triage",
+      "survivors": [
+        {
+          "op": "list_swap",
+          "path": "summary/first_zero_bracket",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/first_zero_bracket/0",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/first_zero_bracket/1",
+          "region": "summary"
+        },
+        {
+          "op": "int_text_inc",
+          "path": "summary/height",
+          "region": "summary"
+        },
+        {
+          "op": "list_drop",
+          "path": "summary/last_zero_bracket",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/last_zero_bracket/0",
+          "region": "summary"
+        },
+        {
+          "op": "text_append",
+          "path": "summary/last_zero_bracket/1",
+          "region": "summary"
+        }
+      ],
+      "tally": {
+        "crashed": 11,
+        "killed": 19,
+        "survived": 7,
+        "timeout": 0
+      }
+    }
+  },
+  "seed_version": 1
+}

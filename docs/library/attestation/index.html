@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mechanical attestations — making independent review cheap · 100</title>
+<meta name="description" content="Status: mechanical pre-review evidence. Not an independent review, an acceptance, or a result about any untested range.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/attestation/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="Mechanical attestations — making independent review cheap · 100">
+<meta property="og:description" content="Status: mechanical pre-review evidence. Not an independent review, an acceptance, or a result about any untested range.">
+<meta property="og:url" content="https://svyable.github.io/100/library/attestation/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">Mechanical attestations — making independent review cheap</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#why-this-exists">Why this exists</a></li><li class="toc-l2"><a href="#what-is-checked">What is checked</a></li><li class="toc-l2"><a href="#commands">Commands</a></li><li class="toc-l2"><a href="#how-a-reviewer-uses-it">How a reviewer uses it</a></li><li class="toc-l2"><a href="#boundaries">Boundaries</a></li></ol></nav>
+
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/docs/ATTESTATION.md" rel="noopener noreferrer">docs/ATTESTATION.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">METHOD &amp; GOVERNANCE</p><h1>Mechanical attestations — making independent review cheap</h1>
+<p><strong>Status: mechanical pre-review evidence. Not an independent review, an acceptance, or a result about any untested range.</strong></p>
+<h2 id="why-this-exists">Why this exists<a class="anchor" href="#why-this-exists" aria-label="Link to this section">#</a></h2>
+<p>The repository&#x27;s yield is the number of work items accepted by an independent reviewer, per agent-hour (<a href="../../library/yield/">YIELD.md</a>). At the time of writing, 0 items had been accepted, 47 <code>review</code> items were open and nobody had acted as an independent reviewer. That makes review the bottleneck. More workers (<a href="../../library/router/">docs/ROUTER.md</a>, <a href="../../library/scale/">SCALE.md</a>) only add to the queue in front of it.</p>
+<p>This follows the principle behind DeepSeek&#x27;s superagent prototype: a person is needed only where a machine cannot decide. A campaign-verifier review (<code>V-P-&lt;problem&gt;</code>) asks for three things:</p>
+<div class="table-wrap"><table><thead><tr><th>Part of the review</th><th>Who can do it</th><th>Lane</th></tr></thead><tbody><tr><td>Rerun the verifier and pin the certificate</td><td>Machine</td><td><code>scripts/attest.py</code>: replay</td></tr><tr><td>Corrupt the input and certificate; confirm the checker rejects every corruption</td><td>Machine</td><td><code>scripts/attest.py</code>: controls and mutants</td></tr><tr><td>Decide whether a surviving corruption is an equivalent valid certificate or a checker gap</td><td>Person, using a short list</td><td>Survivor triage</td></tr><tr><td>Compare the finite scope with the cited published boundary</td><td>Person</td><td>Scope audit</td></tr></tbody></table></div>
+<p>The machine parts run before any reviewer is involved. The reviewer then starts from a short list of survivors and a scope question, not from a codebase. Mechanical evidence can never be recorded as <code>accepted_independent</code>. The rules in <a href="../../library/agents/">AGENTS.md</a> and <a href="../../library/research-protocol/">docs/RESEARCH_PROTOCOL.md</a> are unchanged.</p>
+<h2 id="what-is-checked">What is checked<a class="anchor" href="#what-is-checked" aria-label="Link to this section">#</a></h2>
+<p>For every allowlisted probe in <code>scripts/probes/</code> (the <code>search</code> / <code>check</code> / <code>scope</code> contract), at a given level:</p>
+<ol><li><strong>Replay.</strong> <code>search</code> must reproduce the <code>certificate_sha256</code> committed in <code>data/lab_results.json</code>, and <code>check</code> must accept it. A mismatch makes the probe <code>broken</code>.</li><li><strong>Mandatory negative controls.</strong> Flipping <code>holds</code> and emptying the certificate must both be rejected. A probe whose checker accepts either one is <code>weak</code>. The probe contract requires a confirmed counterexample whenever <code>holds</code> is false, so a checker that ignores <code>holds</code> does not bind the verdict it publishes.</li><li><strong>Summary binding.</strong> Every leaf of the published <code>summary</code> (up to 48 per probe) is mutated once. <code>summary</code> is copied into <code>data/lab_results.json</code> and the Pages portfolio. A surviving mutant means that published number is not checked.</li><li><strong>Certificate mutants.</strong> Seeded, structure-aware corruptions of the certificate: integer and fraction nudges, boolean flips, and dropping, duplicating or swapping list entries. A survivor may be an equivalent valid certificate (for example a reordered edge set) or a real gap. Only a person can decide which.</li></ol>
+<p>Each mutant runs with an alarm-based timeout that a broad <code>except Exception</code> in a checker cannot swallow. A rejection by a non-<code>ProbeFailure</code> exception counts as rejected and is tallied as <code>crashed</code>: the run is fail-closed, but the error is untyped. The seed comes from the probe id, the level and the seed version, so a rerun reproduces exactly.</p>
+<p>Status per probe: <code>clean</code>, <code>triage</code> (survivors to classify), <code>weak</code> (a mandatory control survived) or <code>broken</code> (no replay).</p>
+<h2 id="commands">Commands<a class="anchor" href="#commands" aria-label="Link to this section">#</a></h2>
+<pre><code class="lang-sh">python3 scripts/attest.py                            # all probes (~6 min plus dirichlet_l), writes data/attestations.json
+python3 scripts/attest.py --probe ramsey_witnesses   # one probe
+python3 scripts/attest.py --probe dirichlet_l --mutants 4   # slow checker, smaller budget
+python3 scripts/attest.py --check                    # rerun with each probe&#x27;s recorded budget; fail on drift
+python3 scripts/attest.py --render                   # Markdown table, marks probes whose code changed since</code></pre>
+<p>The weekly research workflow runs <code>--check</code>. When a probe&#x27;s code changes, its attestation goes stale. Rerun the tool and review the diff in the same PR as the probe change.</p>
+<h2 id="how-a-reviewer-uses-it">How a reviewer uses it<a class="anchor" href="#how-a-reviewer-uses-it" aria-label="Link to this section">#</a></h2>
+<ol><li>Read the probe&#x27;s record in <code>data/attestations.json</code>: replay, tally and survivors.</li><li>For each survivor, classify it as an equivalent certificate or a checker gap. File a checker gap as <code>gap_reported</code> against the review item, with the mutant path as the falsifier.</li><li>Do the scope-versus-source audit. This is the only open-ended part of the review.</li></ol>
+<p>A <code>weak</code> or <code>unbound_summary</code> flag is already a concrete answer to the <code>V-P</code> falsifier &quot;a tampered certificate passes&quot;. It should be fixed in the probe as its own claimed work item before any acceptance of that verifier.</p>
+<h2 id="boundaries">Boundaries<a class="anchor" href="#boundaries" aria-label="Link to this section">#</a></h2>
+<ul><li>No probe, ledger entry, fidelity flag, evidence state or Solved entry is changed by this tool.</li><li>A <code>clean</code> status means only that the sampled corruptions were rejected. It is not proof that the checker is complete, and it never extends the finite scope.</li><li>The tool is the author&#x27;s instrument, not an independent reviewer. Independence is still structural (someone else, a public link).</li></ul>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>
