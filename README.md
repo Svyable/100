@@ -2,6 +2,7 @@
 
 **Purpose:** Preserve, refine, and stack-rank 100 concrete mathematical proof/counterexample targets, looking for results and methods that create new branches of discovery.
 
+- **[M073 ordered two-block quantitative bound](research/M073_MONOTONE_TWO_BLOCK.md)** — an unequal-mass, unequal-diagonal continuous-parameter inequality on the ordered matrix cone, supported by a certified partition of 66 edges into 33 wedges and Harris association; independent novelty/review pending.
 - **[M073 quantitative regular-two-block theorem](research/M073_REGULAR2_CYCLE_MARGIN.md)** — a self-contained continuous-parameter inequality with an explicit \(33r^4+88r^6\) margin for the 35-vertex Sidorenko pattern, using a classical even-subgraph expansion and independently counted short cycles; novelty and independent review remain open.
 - **[Sidorenko exact two-block negative check](research/M073_TWOBLOCK_EXACT.md)** — a 27-cell rational graphon grid independently evaluated by face and pairwise-factor algorithms for the 35-vertex pattern; no finite host found or claim promoted.
 - **[OpenAI/math transfer intake](docs/OPENAI_MATH_TRANSFER.md)** — seven pinned, scope-bounded author-claim research leads and four SHA-256-pinned reusable instruments with transitive impact analysis (`python3 scripts/transfer.py --check`); K42 dual-checker calibration (`python3 scripts/k42_calibration.py --check`) is *not* a model benchmark trial.
