@@ -90,11 +90,18 @@ class WaveScaleTests(unittest.TestCase):
         ids = [p["id"] for p in self.wave["selected_packets"]]
         self.assertEqual(len(ids), len(set(ids)))
         for p in self.wave["selected_packets"]:
-            self.assertNotEqual(p["status"], "waiting_on_dependencies")
+            self.assertEqual(p["status"], "runnable")
             self.assertNotIn("stop_range", p["id"])
             self.assertIn("scout", p["roles"])
             self.assertEqual(p["scope_sha256"], scale.packet_digest(p))
             self.assertTrue(p["claim_title"].startswith("[Claim]"))
+
+    def test_external_blocker_not_claimable(self):
+        packet_ids = {p["id"] for p in self.wave["selected_packets"]}
+        self.assertNotIn("O-M074-01", packet_ids)
+        reasons = {item["id"]: item["reason"] for item in self.wave["refused"]}
+        self.assertIn("O-M074-01", reasons)
+        self.assertIn("externally_blocked", reasons["O-M074-01"])
 
     def test_wave_prefers_obligations_and_jobs_over_audits(self):
         kinds = self.wave["by_kind"]
