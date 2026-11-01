@@ -189,6 +189,11 @@
       "url": "https://svyable.github.io/100/library/lab-campaigns/"
     },
     {
+      "title": "M078 — induced P₄ separates the six-vertex degree–triangle collisions",
+      "source": "research/M078_P4_SEPARATOR.md",
+      "url": "https://svyable.github.io/100/library/m078-p4-separator/"
+    },
+    {
       "title": "Proof-driven research engine",
       "source": "docs/RESEARCH_ENGINE.md",
       "url": "https://svyable.github.io/100/library/research-engine/"
