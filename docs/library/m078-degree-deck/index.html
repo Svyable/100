@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M078 — card degree-sequence deck through 7 vertices · 100</title>
+<meta name="description" content="Dated: 2026-11-01. Scope: a deck-readable invariant on the complete census of graphs with 3 to 7 vertices. Not claimed: a reconstruction theorem, a result past McKay&#x27;s published verification through 11 vertices, or a discharge of obligation">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m078-degree-deck/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M078 — card degree-sequence deck through 7 vertices · 100">
+<meta property="og:description" content="Dated: 2026-11-01. Scope: a deck-readable invariant on the complete census of graphs with 3 to 7 vertices. Not claimed: a reconstruction theorem, a result past McKay&#x27;s published verification through 11 vertices, or a discharge of obligation">
+<meta property="og:url" content="https://svyable.github.io/100/library/m078-degree-deck/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M078 — card degree-sequence deck through 7 vertices</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#the-invariant">The invariant</a></li><li class="toc-l2"><a href="#certificate">Certificate</a></li><li class="toc-l2"><a href="#what-this-does-not-do">What this does not do</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M078/" title="Graph reconstruction conjecture">M078</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M078_DEGREE_DECK.md" rel="noopener noreferrer">research/M078_DEGREE_DECK.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M078 — card degree-sequence deck through 7 vertices</h1>
+<p><strong>Dated:</strong> 2026-11-01. <strong>Scope:</strong> a deck-readable invariant on the complete census of graphs with 3 to 7 vertices. <strong>Not claimed:</strong> a reconstruction theorem, a result past McKay&#x27;s published verification through 11 vertices, or a discharge of obligation <code>O-M078-01</code> (that still needs a reviewer who is not the author).</p>
+<h2 id="the-invariant">The invariant<a class="anchor" href="#the-invariant" aria-label="Link to this section">#</a></h2>
+<p>For a graph G, write D(G) for the multiset of degree sequences of its vertex-deleted subgraphs, and t(G) for the number of triangles. Both are functions of the deck: each card determines its own degree sequence, and the triangle count is the sum of the cards&#x27; triangle counts divided by n-3 (Kelly&#x27;s count for n &gt;= 4).</p>
+<h2 id="certificate">Certificate<a class="anchor" href="#certificate" aria-label="Link to this section">#</a></h2>
+<p>The mine <a href="https://github.com/Svyable/100/blob/main/scripts/mines/deck_invariants.py" rel="noopener noreferrer"><code>deck_invariants</code></a> enumerates every graph through 7 vertices (OEIS A000088: 4, 11, 34, 156, 1044). Two implementations of D(G) must agree on every graph: the packed cards, and deletion from the adjacency list.</p>
+<div class="table-wrap"><table><thead><tr><th class="al-right">n</th><th class="al-right">Graphs</th><th class="al-right">Excess of degree sequence + triangles</th><th class="al-right">Excess of D(G) + t(G)</th></tr></thead><tbody><tr><td class="al-right">6</td><td class="al-right">156</td><td class="al-right">20</td><td class="al-right">0</td></tr><tr><td class="al-right">7</td><td class="al-right">1044</td><td class="al-right">422</td><td class="al-right">0</td></tr></tbody></table></div>
+<p>D(G) alone does not finish n = 6. Four pairs share a degree-sequence deck; each pair is one triangle-free graph and one graph with two triangles. Adding t(G) separates them. So D(G) + t(G) is strictly stronger than degree sequence plus triangle count.</p>
+<p><code>degree sequence + triangles</code> separates the census only through 5 vertices. <code>D(G) + t(G)</code> separates it through 7.</p>
+<h2 id="what-this-does-not-do">What this does not do<a class="anchor" href="#what-this-does-not-do" aria-label="Link to this section">#</a></h2>
+<p>McKay (1997) already checked reconstruction for every graph on at most 11 vertices. Matching a coarse invariant through 7 vertices does not improve that verification and does not prove the reconstruction conjecture. The next useful lemma is structural, for a family outside that published range.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

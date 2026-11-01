@@ -171,11 +171,11 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 **Lemma obligation for M078**
 
 - Problems: M078
-- Deliverable: Name the invariant, recompute it on the twenty excess graphs at 6 vertices, and state the finite certificate format.
-- Boundary: Computer verification of reconstruction already reaches at least 11 vertices; degree-plus-triangles through 5 vertices with 20 collisions at 6 vertices is a certified reproduction, not a new theorem.
-- Falsifier: Two non-isomorphic 6-vertex graphs with identical proposed invariants and identical decks, or a proof that the invariant is equivalent to degree sequence plus triangles.
+- Deliverable: The invariant is certified by scripts/mines/deck_invariants.py through 7 vertices, with an independent deletion recomputation. Discharge still needs a named reviewer who is not the author. Do not push the census toward 11 vertices.
+- Boundary: Computer verification of reconstruction already reaches at least 11 vertices (McKay 1997). This certificate names a coarse deck invariant; it does not extend that verification and it is not a reconstruction theorem.
+- Falsifier: Two non-isomorphic graphs on at most 7 vertices with the same card degree-sequence deck and the same triangle count, or a proof that the deck is equivalent to degree sequence plus triangles.
 - Claim: `[Claim] O-M078-01 — Lemma obligation for M078`
-- Digest: `0b9fea8033229973…`
+- Digest: `bfd015762dcd3481…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1192,10 +1192,10 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 **Mine structure from certificates: Replay the object, or mine the census**
 
 - Problems: M075, M078, M079, M080
-- Deliverable: M075: The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5). M078: The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two. M079: The certified mine poset_balance finds 11 posets on at most 6 elements with best balance exactly 1/3, and every one of them has width 2, which Linial already settled. A new lemma has to treat width at least 3; this census has no tight example there. M080: Quotient instances by the stabiliser of the standard basis so that GF(2)^4 becomes exhaustive, storing one grid certificate per orbit.
+- Deliverable: M075: The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5). M078: The card degree-sequence deck plus triangle count now separates every graph through 7 vertices; degree sequence plus triangles still leaves 20 excess graphs at 6 vertices and 422 at 7. The next lemma has to be structural for a family outside McKay's 11-vertex verification, not a larger census. M079: The certified mine poset_balance finds 11 posets on at most 6 elements with best balance exactly 1/3, and every one of them has width 2, which Linial already settled. A new lemma has to treat width at least 3; this census has no tight example there. M080: Quotient instances by the stabiliser of the standard basis so that GF(2)^4 becomes exhaustive, storing one grid certificate per orbit.
 - Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
 - Claim: `[Claim] J-extremal_certificates-mine_structure — Mine structure from certificates: Replay the object, or mine the census`
-- Digest: `dd74bb5d9a117fcf…`
+- Digest: `73be7375eb244ec9…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.

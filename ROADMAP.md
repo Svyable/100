@@ -98,7 +98,7 @@ _Being worked on; top of the execution queue._
 - [ ] **R22 · Frankl minimal-counterexample lemma** (Proof campaigns) — Canonical families under ground-set permutations; prove or refute a restricted lemma. [Evidence](research/M075_FRANKL.md)
   - Done when: Written lemma with a finite certificate, submitted for independent review.
   - Problems: M075 Frankl union-closed sets conjecture
-- [ ] **R23 · Census mining for reconstruction and 1/3-2/3** (Exact probe lab) — Deck and balance tables are certified in MINES.md. The remaining work is a lemma for width at least 3, and a deck invariant stronger than degree plus triangles. [Evidence](LAB.md)
+- [ ] **R23 · Census mining for reconstruction and 1/3-2/3** (Exact probe lab) — The card degree-sequence deck plus triangles separates every graph through 7 vertices. The remaining work is a width-at-least-3 balance lemma; do not extend the reconstruction census toward the published 11-vertex verification. [Evidence](LAB.md)
   - Done when: Published tables and a named family with a conjectured lemma.
   - Problems: M078 Graph reconstruction conjecture, M079 One-third–two-thirds conjecture
 - [ ] **R24 · Arcs in PG(3,q) and Hadamard orders 116, 156, 172** (Exact probe lab) — 5-point frames for q <= 9; multiplier symmetry for Williamson n=29; Goethals-Seidel arrays. [Evidence](scripts/probes/hadamard.py)

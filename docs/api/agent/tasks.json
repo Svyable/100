@@ -213,15 +213,15 @@
       "problems": [
         "M078"
       ],
-      "deliverable": "Name the invariant, recompute it on the twenty excess graphs at 6 vertices, and state the finite certificate format.",
+      "deliverable": "The invariant is certified by scripts/mines/deck_invariants.py through 7 vertices, with an independent deletion recomputation. Discharge still needs a named reviewer who is not the author. Do not push the census toward 11 vertices.",
       "acceptance": [
         "Discharge evidence recorded on O-M078-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
         "Independent review recorded before the node is marked discharged",
         "python3 scripts/regen.py && python3 scripts/regen.py --check"
       ],
-      "boundary": "Computer verification of reconstruction already reaches at least 11 vertices; degree-plus-triangles through 5 vertices with 20 collisions at 6 vertices is a certified reproduction, not a new theorem.",
+      "boundary": "Computer verification of reconstruction already reaches at least 11 vertices (McKay 1997). This certificate names a coarse deck invariant; it does not extend that verification and it is not a reconstruction theorem.",
       "depends_on": [],
-      "scope_sha256": "c25d1f1ccd3a55bdd178da6dcb4747199d51a0190d9321ccb7e1b21af505fe62",
+      "scope_sha256": "d0d3996b70e420a5ae6d8b5201ecfe45236da74db94a83fabac447c6ab002d72",
       "task_url": "https://svyable.github.io/100/work/O-M078-01/",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M078-01%22",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M078-01%20%E2%80%94%20Lemma%20obligation%20for%20M078"

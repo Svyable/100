@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>O-M078-01: Lemma obligation for M078 · 100</title>
-<meta name="description" content="Name the invariant, recompute it on the twenty excess graphs at 6 vertices, and state the finite certificate format.">
+<meta name="description" content="The invariant is certified by scripts/mines/deck_invariants.py through 7 vertices, with an independent deletion recomputation. Discharge still needs a named reviewer who is not the author. Do not push the census toward 11 vertices.">
 <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
 <meta name="color-scheme" content="light dark">
@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="100 — Svyable research">
 <meta property="og:title" content="O-M078-01: Lemma obligation for M078 · 100">
-<meta property="og:description" content="Name the invariant, recompute it on the twenty excess graphs at 6 vertices, and state the finite certificate format.">
+<meta property="og:description" content="The invariant is certified by scripts/mines/deck_invariants.py through 7 vertices, with an independent deletion recomputation. Discharge still needs a named reviewer who is not the author. Do not push the census toward 11 vertices.">
 <meta property="og:url" content="https://svyable.github.io/100/work/O-M078-01/">
 <meta name="twitter:card" content="summary">
 <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
@@ -48,18 +48,18 @@
 <div class="chips"><span class="chip chip-good">Runnable</span><a class="chip chip-link" href="../../problems/M078/" title="Graph reconstruction conjecture">M078</a></div>
 </header>
 <div class="work-detail">
-<section class="dossier-block"><h2>Deliverable</h2><p class="serif">Name the invariant, recompute it on the twenty excess graphs at 6 vertices, and state the finite certificate format.</p>
-<p class="muted">Context: There is a deck invariant, strictly stronger than the pair (degree sequence, triangle count), that separates every pair of non-isomorphic graphs on at most 6 vertices that the current mine leaves colliding.</p></section>
+<section class="dossier-block"><h2>Deliverable</h2><p class="serif">The invariant is certified by scripts/mines/deck_invariants.py through 7 vertices, with an independent deletion recomputation. Discharge still needs a named reviewer who is not the author. Do not push the census toward 11 vertices.</p>
+<p class="muted">Context: The multiset of degree sequences of the vertex-deleted cards, together with the triangle count, separates every pair of non-isomorphic graphs on at most 7 vertices. It is strictly stronger than degree sequence plus triangle count, which leaves 20 excess graphs at 6 vertices.</p></section>
 <section class="dossier-block"><h2>Acceptance</h2><ul class="plain checklist"><li>Discharge evidence recorded on O-M078-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check</li><li>Independent review recorded before the node is marked discharged</li><li><code>python3 scripts/regen.py &amp;&amp; python3 scripts/regen.py --check</code></li></ul></section>
-<section class="dossier-block"><h2>Boundary</h2><p>Computer verification of reconstruction already reaches at least 11 vertices; degree-plus-triangles through 5 vertices with 20 collisions at 6 vertices is a certified reproduction, not a new theorem.</p>
-<p><strong>Falsifier.</strong> Two non-isomorphic 6-vertex graphs with identical proposed invariants and identical decks, or a proof that the invariant is equivalent to degree sequence plus triangles.</p></section>
+<section class="dossier-block"><h2>Boundary</h2><p>Computer verification of reconstruction already reaches at least 11 vertices (McKay 1997). This certificate names a coarse deck invariant; it does not extend that verification and it is not a reconstruction theorem.</p>
+<p><strong>Falsifier.</strong> Two non-isomorphic graphs on at most 7 vertices with the same card degree-sequence deck and the same triangle count, or a proof that the deck is equivalent to degree sequence plus triangles.</p></section>
 
 <section class="dossier-block"><h2>Claim it</h2>
 <p>Check for an open claim first; if there is none, open one. One claim per item keeps parallel work from colliding.</p>
 <p class="card-links"><a class="button button-outline" href="https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M078-01%22" rel="noopener noreferrer">Check existing claims ↗</a>
 <a class="button button-dark" href="https://github.com/Svyable/100/issues/new?template=claim.yml&amp;title=%5BClaim%5D%20O-M078-01%20%E2%80%94%20Lemma%20obligation%20for%20M078" rel="noopener noreferrer">Claim this item ↗</a></p>
 <dl class="kv compact"><dt>Claim title</dt><dd><code>[Claim] O-M078-01 — Lemma obligation for M078</code></dd>
-<dt>Scope digest</dt><dd><code class="hash">c25d1f1ccd3a55bdd178da6dcb4747199d51a0190d9321ccb7e1b21af505fe62</code></dd>
+<dt>Scope digest</dt><dd><code class="hash">d0d3996b70e420a5ae6d8b5201ecfe45236da74db94a83fabac447c6ab002d72</code></dd>
 <dt>Defined by</dt><dd><a href="https://github.com/Svyable/100/blob/main/data/proof_obligations.json" rel="noopener noreferrer">data/proof_obligations.json <span aria-hidden="true">↗</span></a></dd>
 <dt>CLI</dt><dd><code>python3 scripts/work.py --id O-M078-01</code></dd></dl></section>
 </div></article>

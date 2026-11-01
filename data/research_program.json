@@ -102,7 +102,7 @@
       "method": "Deck-collision search over certified graph censuses",
       "hypothesis": "Every finite simple graph on at least 3 vertices is determined up to isomorphism by its vertex-deleted deck.",
       "first_proof_obligation": "Pick a graph family not yet known to be reconstructible and isolate a lemma that reconstructs a new invariant for it.",
-      "next_experiment": "The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two.",
+      "next_experiment": "The card degree-sequence deck plus triangle count now separates every graph through 7 vertices; degree sequence plus triangles still leaves 20 excess graphs at 6 vertices and 422 at 7. The next lemma has to be structural for a family outside McKay's 11-vertex verification, not a larger census.",
       "additional_verifiers": [
         "python3 scripts/mine.py --mine deck_invariants"
       ],

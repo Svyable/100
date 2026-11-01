@@ -2,34 +2,44 @@
   "format": "svyable.mines.v1",
   "mines": {
     "deck_invariants": {
-      "certificate_sha256": "31a81e041e99425698ec71cbf58b6c04eb9baf8cbe814c22dfb0624011b59ec1",
+      "certificate_sha256": "9afae45ef066e7ca6f9d22a16cfe62b47a5372918dadf7f17080cc4232b73269",
       "engines": [
         "graph_census"
       ],
-      "frontier": "Reconstruction is already verified by computer through at least 11 vertices (McKay 1997). This table only says which coarse deck invariants separate the small census.",
+      "frontier": "Reconstruction is already verified by computer through at least 11 vertices (McKay 1997). The new column is the multiset of card degree sequences, read from the deck. With the triangle count it separates the census through 7 vertices. That is a finite certificate, not a reconstruction theorem.",
       "holds": true,
       "mine": "deck_invariants",
       "params": {
-        "max_n": 6
+        "max_n": 7
       },
       "problem_id": "M078",
-      "scope": "On the complete graph census for 3 <= n <= 6, the excess of graphs over classes of the deck-certified degree sequence, and over degree sequence plus triangle count.",
+      "scope": "On the complete graph census for 3 <= n <= 7, excess over the degree sequence, over degree sequence plus triangles, and over the deck of card degree sequences plus triangles.",
       "summary": {
         "degree_and_triangles_excess": {
           "3": 0,
           "4": 0,
           "5": 0,
-          "6": 20
+          "6": 20,
+          "7": 422
         },
         "degree_and_triangles_separate_through": 5,
+        "degree_deck_and_triangles_excess": {
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0
+        },
+        "degree_deck_and_triangles_separate_through": 7,
         "degree_excess": {
           "3": 0,
           "4": 0,
           "5": 3,
-          "6": 54
+          "6": 54,
+          "7": 702
         },
         "degree_separates_through": 4,
-        "max_n": 6
+        "max_n": 7
       },
       "title": "Deck invariants that separate the census"
     },

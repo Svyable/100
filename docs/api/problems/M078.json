@@ -24,8 +24,8 @@
   "action_bonus": 6,
   "method_id": "extremal_certificates",
   "method_title": "Replay the object, or mine the census",
-  "dispatch_next": "The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two.",
-  "dispatch_why": "The deck_invariants mine shows degree sequence plus triangle count still leaves collisions at 6 vertices. A larger census sits inside the published computational range.",
+  "dispatch_next": "The card degree-sequence deck plus triangle count now separates every graph through 7 vertices; degree sequence plus triangles still leaves 20 excess graphs at 6 vertices and 422 at 7. The next lemma has to be structural for a family outside McKay's 11-vertex verification, not a larger census.",
+  "dispatch_why": "The card degree-sequence deck plus triangles separates the census through 7 vertices. A larger census is already inside McKay's published range, so the next lemma has to be structural.",
   "campaign_stage": "benchmark_reproduced",
   "milestone_count": 2,
   "url": "https://svyable.github.io/100/problems/M078/",
@@ -59,7 +59,7 @@
     "method": "Deck-collision search over certified graph censuses",
     "hypothesis": "Every finite simple graph on at least 3 vertices is determined up to isomorphism by its vertex-deleted deck.",
     "first_proof_obligation": "Pick a graph family not yet known to be reconstructible and isolate a lemma that reconstructs a new invariant for it.",
-    "next_experiment": "The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two.",
+    "next_experiment": "The card degree-sequence deck plus triangle count now separates every graph through 7 vertices; degree sequence plus triangles still leaves 20 excess graphs at 6 vertices and 422 at 7. The next lemma has to be structural for a family outside McKay's 11-vertex verification, not a larger census.",
     "additional_verifiers": [
       "python3 scripts/mine.py --mine deck_invariants"
     ],
@@ -187,6 +187,11 @@
       "title": "Lab campaigns: problems under exact computation",
       "source": "research/LAB_CAMPAIGNS.md",
       "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "M078 — card degree-sequence deck through 7 vertices",
+      "source": "research/M078_DEGREE_DECK.md",
+      "url": "https://svyable.github.io/100/library/m078-degree-deck/"
     },
     {
       "title": "Proof-driven research engine",

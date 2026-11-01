@@ -155,14 +155,14 @@
     },
     {
       "category": "runnable",
-      "falsifier": "Two non-isomorphic 6-vertex graphs with identical proposed invariants and identical decks, or a proof that the invariant is equivalent to degree sequence plus triangles.",
+      "falsifier": "Two non-isomorphic graphs on at most 7 vertices with the same card degree-sequence deck and the same triangle count, or a proof that the deck is equivalent to degree sequence plus triangles.",
       "id": "O-M078-01",
       "immediate_dependents": 0,
       "kind": "lemma",
-      "next_action": "Name the invariant, recompute it on the twenty excess graphs at 6 vertices, and state the finite certificate format.",
-      "prior_art_boundary": "Computer verification of reconstruction already reaches at least 11 vertices; degree-plus-triangles through 5 vertices with 20 collisions at 6 vertices is a certified reproduction, not a new theorem.",
+      "next_action": "The invariant is certified by scripts/mines/deck_invariants.py through 7 vertices, with an independent deletion recomputation. Discharge still needs a named reviewer who is not the author. Do not push the census toward 11 vertices.",
+      "prior_art_boundary": "Computer verification of reconstruction already reaches at least 11 vertices (McKay 1997). This certificate names a coarse deck invariant; it does not extend that verification and it is not a reconstruction theorem.",
       "problem_id": "M078",
-      "statement": "There is a deck invariant, strictly stronger than the pair (degree sequence, triangle count), that separates every pair of non-isomorphic graphs on at most 6 vertices that the current mine leaves colliding.",
+      "statement": "The multiset of degree sequences of the vertex-deleted cards, together with the triangle count, separates every pair of non-isomorphic graphs on at most 7 vertices. It is strictly stronger than degree sequence plus triangle count, which leaves 20 excess graphs at 6 vertices.",
       "unmet": []
     },
     {
@@ -715,12 +715,12 @@
         "Independent review recorded before the node is marked discharged",
         "python3 scripts/regen.py && python3 scripts/regen.py --check"
       ],
-      "boundary": "Computer verification of reconstruction already reaches at least 11 vertices; degree-plus-triangles through 5 vertices with 20 collisions at 6 vertices is a certified reproduction, not a new theorem.",
+      "boundary": "Computer verification of reconstruction already reaches at least 11 vertices (McKay 1997). This certificate names a coarse deck invariant; it does not extend that verification and it is not a reconstruction theorem.",
       "claim_title": "[Claim] O-M078-01 — Lemma obligation for M078",
-      "deliverable": "Name the invariant, recompute it on the twenty excess graphs at 6 vertices, and state the finite certificate format.",
+      "deliverable": "The invariant is certified by scripts/mines/deck_invariants.py through 7 vertices, with an independent deletion recomputation. Discharge still needs a named reviewer who is not the author. Do not push the census toward 11 vertices.",
       "depends_on": [],
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M078-01%22",
-      "falsifier": "Two non-isomorphic 6-vertex graphs with identical proposed invariants and identical decks, or a proof that the invariant is equivalent to degree sequence plus triangles.",
+      "falsifier": "Two non-isomorphic graphs on at most 7 vertices with the same card degree-sequence deck and the same triangle count, or a proof that the deck is equivalent to degree sequence plus triangles.",
       "id": "O-M078-01",
       "interpretation": "One claimable slot. Roles are a recommended split under that claim, not three independent truth votes.",
       "kind": "obligation",
@@ -735,7 +735,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "0b9fea8033229973dded0fbaf45bc27e7739d2924d0ca0f248bb1729d29505da",
+      "scope_sha256": "bfd015762dcd3481764c1b03e09aae7565bca3701e85c58521e2dc90f77903b3",
       "status": "runnable",
       "title": "Lemma obligation for M078"
     },
@@ -2868,7 +2868,7 @@
       ],
       "boundary": "A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.",
       "claim_title": "[Claim] J-extremal_certificates-mine_structure — Mine structure from certificates: Replay the object, or mine the census",
-      "deliverable": "M075: The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5). M078: The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two. M079: The certified mine poset_balance finds 11 posets on at most 6 elements with best balance exactly 1/3, and every one of them has width 2, which Linial already settled. A new lemma has to treat width at least 3; this census has no tight example there. M080: Quotient instances by the stabiliser of the standard basis so that GF(2)^4 becomes exhaustive, storing one grid certificate per orbit.",
+      "deliverable": "M075: The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5). M078: The card degree-sequence deck plus triangle count now separates every graph through 7 vertices; degree sequence plus triangles still leaves 20 excess graphs at 6 vertices and 422 at 7. The next lemma has to be structural for a family outside McKay's 11-vertex verification, not a larger census. M079: The certified mine poset_balance finds 11 posets on at most 6 elements with best balance exactly 1/3, and every one of them has width 2, which Linial already settled. A new lemma has to treat width at least 3; this census has no tight example there. M080: Quotient instances by the stabiliser of the standard basis so that GF(2)^4 becomes exhaustive, storing one grid certificate per orbit.",
       "depends_on": [],
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20J-extremal_certificates-mine_structure%22",
       "falsifier": "",
@@ -2889,7 +2889,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "dd74bb5d9a117fcfa7769393897899261898f6f9d66970fd648df905ec7728bc",
+      "scope_sha256": "73be7375eb244ec944d26334baac3768725bd144137365dea6613abd2d795895",
       "status": "runnable",
       "title": "Mine structure from certificates: Replay the object, or mine the census"
     },
