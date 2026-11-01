@@ -77,6 +77,21 @@
         "agent_hours": 0.2
       },
       "note": "Approximate 0.2 agent-hours of active construction and checks; published Bengtsson 2017 d4 phase table reconstructed in exact radical arithmetic, 120 pairwise projector overlaps, character-sum cross-check and five tamper/field tests. No d5-8 fiducial replay, no independent mathematical review and no O-M092-01 discharge."
+    },
+    {
+      "work_id": "O-M093-01",
+      "scope_sha256": "e0d611142957b847b10e0b6d809c3bf8c175ca61a9a08b611c14610d1ebf6993",
+      "author": "ChatGPT (M093 exact PG3 arc replay)",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/114",
+      "pr_url": "https://github.com/Svyable/100/pull/115",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.5
+      },
+      "note": "Exact frame-normalized GF(q) 4-arc maxima for q=2,3,4,5,7,8,9, all next sizes exhaustively excluded; separate Leibniz determinant witness checker and eight adversarial tests. Known finite reproduction; no independent mathematical review or O-M093-01 discharge."
     }
   ]
 }

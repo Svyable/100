@@ -153,6 +153,11 @@
       "url": "https://svyable.github.io/100/library/lab-campaigns/"
     },
     {
+      "title": "M093 — exact 4-arcs in PG(3,q), q ≤ 9 (known finite reproduction)",
+      "source": "research/M093_PG3_ARCS.md",
+      "url": "https://svyable.github.io/100/library/m093-pg3-arcs/"
+    },
+    {
       "title": "Proof-driven research engine",
       "source": "docs/RESEARCH_ENGINE.md",
       "url": "https://svyable.github.io/100/library/research-engine/"
