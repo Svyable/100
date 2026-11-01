@@ -38,6 +38,8 @@ jobs:
       - run: python3 scripts/degree_defect.py --check
       - run: python3 scripts/lemma_adversary.py --check
       - run: python3 scripts/frankl_subfamily_minimal.py examples/FRANKL_VAN_DER_HOUT_ROOS_19.json --assert-minimal
+      - run: python3 scripts/frankl_triple_sat.py --check-witness examples/FRANKL_VAN_DER_HOUT_ROOS_19.json
+      - run: python3 scripts/frankl_triple_experiment.py --check-record data/experiments/frankl_triple7_pilot.json
       - run: python3 scripts/frankl_subfamily_minimal.py examples/FRANKL_SARVATE_RENAUD.json --assert-minimal
       - run: python3 scripts/ch27_local.py --check
       - run: node --check docs/assets/app.js
