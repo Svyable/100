@@ -66,14 +66,16 @@ A previous relaxed profile passed all B-subset-capacity inequalities:
     alpha=(2,2,2,2,2,2,2,7,8), m=29,
     k=(0,0,0,0,5,5,5,5,7,7), sum k=34, z=4.
 
-It is **not a graph**, and it is now **excluded by a stronger seven-vertex lemma** in [M074_SEVEN_VERTEX_CAP.md](M074_SEVEN_VERTEX_CAP.md). The seven alpha-two vertices all point to every vertex of C, so C has internal maximum indegree at most 10−7=3. The lemma gives e(C,C)<=17, while the 63 outgoing arcs of C, e(C,B)=34 and e(C,A)<=11 require e(C,C)>=18.
+It is **not a graph**, and it is **excluded by a seven-vertex lemma** in [M074_SEVEN_VERTEX_CAP.md](M074_SEVEN_VERTEX_CAP.md). The seven alpha-two vertices all point to every vertex of C, so C has internal maximum indegree at most 10−7=3. An elementary proof bounds e(C,C) by 17; a further complete three-isomorphism-class orientation enumeration sharpens the bound to **16**. But the 63 outgoing arcs of C, e(C,B)=34 and e(C,A)<=11 require e(C,C)>=18.
+
+The sharp bound **also falsifies** the earlier relaxed profile alpha=(2^7,6,8), m=28 and k=(0^4,4,5,6,7,7,7), which requires e(C,C)>=17. Both were only necessary integer profiles, never graphs.
 
 This still **does not close the irregular branch**. For example the relaxed (and not asserted realizable) profiles
 
     alpha=(2,2,2,2,2,2,2,6,8), m=28,
-    k=(0,0,0,0,4,5,6,7,7,7), sum k=36, z=4
+    k=(0,0,0,0,5,6,6,6,7,7), sum k=37, z=4
 
-pass the present B-subset-capacity tests, the strengthened seven-vertex arc ceiling and the aggregate C-cut bounds: e(C,C)>=63−36−10=17 is consistent with the proven ceiling 17. No incidence realization or global degree-defect feasibility is asserted. In particular, a vertex in A with internal outdegree two receives at most 1+4+z<=9 arcs, which need not place it in the low indegree<=8 class.
+pass the present B-subset-capacity tests (sorted B-internal outdegree floors are 8,8,6,6,6,5,0,0,0,0) and the aggregate C-cut bounds: e(C,C)>=63−37−10=16 is consistent with the **sharp** ceiling 16. No incidence realization or global degree-defect feasibility is asserted. In particular, a vertex in A with internal outdegree two receives at most 1+4+z<=9 arcs, which need not place it in the low indegree<=8 class.
 
 ## Exact reproduction and falsifiers
 
