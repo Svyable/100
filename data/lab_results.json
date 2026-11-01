@@ -53,24 +53,35 @@
         }
       },
       "dirichlet_l": {
-        "certificate_sha256": "97c916d3b3bdc62997216a76ae387cacfdaefc7a7ba10bc5348e31d3f0a2441b",
+        "certificate_sha256": "28b353677ffce2e9c495838d18583540c5cc101dcc7f68d64b4d7424f66fcb5c",
         "engines": [
           "interval_arithmetic"
         ],
         "holds": true,
         "level": "deep",
         "params": {
-          "height": 17,
-          "zeros": 4
+          "chi3_height": 15,
+          "chi3_zeros": 2,
+          "chi4_height": 17,
+          "chi4_zeros": 4,
+          "chi5_height": 12,
+          "chi5_zeros": 3
         },
         "probe": "dirichlet_l",
         "problem_id": "M002",
-        "scope": "Every non-trivial zero of L(s, χ₄) with imaginary part in (0, 17] is simple and lies on the critical line: the argument principle gives N(17) = 4, equal to the number of disjoint intervals where the associated real Z-function changes sign.",
+        "scope": "Critical-line certificates for χ₄ on (0, 17] with N(17) = 4; χ₃ on (0, 15] with N(15) = 2; χ₅ (Legendre symbol mod 5) on (0, 12] with N(12) = 3. Each argument count equals the number of disjoint intervals where that character's real Z-function changes sign, so every non-trivial zero in those ranges is simple and on the critical line.",
         "summary": {
-          "character": "chi_4",
-          "height": 17,
+          "characters": [
+            "chi4",
+            "chi3",
+            "chi5"
+          ],
           "truncation": "N=16, M=8, stirling=6",
-          "zeros": 4
+          "zeros": {
+            "chi3": 2,
+            "chi4": 4,
+            "chi5": 3
+          }
         }
       },
       "erdos_straus": {
@@ -855,24 +866,31 @@
         }
       },
       "dirichlet_l": {
-        "certificate_sha256": "c0331948605f0bba8ddd08f7c38fc3658c198cd9033b2ebf49b487b9c19ce754",
+        "certificate_sha256": "374ed325c0f297d2a9477c199959ab016c76f28fbb6660665aff7c1a93adcdfd",
         "engines": [
           "interval_arithmetic"
         ],
         "holds": true,
         "level": "smoke",
         "params": {
-          "height": 11,
-          "zeros": 2
+          "chi3_height": 9,
+          "chi3_zeros": 1,
+          "chi4_height": 11,
+          "chi4_zeros": 2
         },
         "probe": "dirichlet_l",
         "problem_id": "M002",
-        "scope": "Every non-trivial zero of L(s, χ₄) with imaginary part in (0, 11] is simple and lies on the critical line: the argument principle gives N(11) = 2, equal to the number of disjoint intervals where the associated real Z-function changes sign.",
+        "scope": "Critical-line certificates for χ₄ on (0, 11] with N(11) = 2; χ₃ on (0, 9] with N(9) = 1. Each argument count equals the number of disjoint intervals where that character's real Z-function changes sign, so every non-trivial zero in those ranges is simple and on the critical line.",
         "summary": {
-          "character": "chi_4",
-          "height": 11,
+          "characters": [
+            "chi4",
+            "chi3"
+          ],
           "truncation": "N=16, M=8, stirling=6",
-          "zeros": 2
+          "zeros": {
+            "chi3": 1,
+            "chi4": 2
+          }
         }
       },
       "erdos_straus": {

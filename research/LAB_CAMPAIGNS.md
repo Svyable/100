@@ -41,8 +41,10 @@ truncation. Smoke: N(23) = 2. Deep: N(36) = 5. **Frontier:** direct verification
 passes height 3·10^12. This is a certificate format for the low zeros, not a new region.
 
 ### M002 — Generalized Riemann hypothesis (`dirichlet_l`, engine `interval_arithmetic`)
-The same engine on L(s, χ₄). Smoke: N(11) = 2. Deep: N(17) = 4. One primitive character
-at a classical height. **Next:** the non-principal character modulo 3, including its Gauss sum.
+The same engine on the real primitive characters modulo 3, 4 and 5, each with root
+number +1 checked from its Gauss sum (τ(χ₃)² = −3, τ(χ₅)² = 5). Smoke: N(11) = 2 for
+χ₄ and N(9) = 1 for χ₃. Deep: those plus N(17) = 4, N(15) = 2, and N(12) = 3 for the
+Legendre symbol modulo 5. **Next:** a complex character, where Lambda is not real.
 
 ### M006 — Strong Goldbach (`goldbach`, engine `primes`)
 Certifies the least Goldbach prime for every even n up to the run limit. The search side uses a
