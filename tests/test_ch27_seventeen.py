@@ -40,11 +40,11 @@ class SeventeenEdgeExhaustivityTests(unittest.TestCase):
         # Enumerates all 5985 four-edge missing graphs without relying on
         # the production orientation generator or on external graph libraries.
         reps = [frozenset(m) for m in seven.MISSING_TYPES.values()]
-        permutations = tuple(permutations(range(7)))
+        perms = tuple(permutations(range(7)))
         generated = set()
         for rep in reps:
             self.assertEqual(cover_number(rep), 3)
-            for p in permutations:
+            for p in perms:
                 generated.add(frozenset(tuple(sorted((p[a], p[b])))
                                         for a, b in rep))
         for missing in combinations(seven.PAIRS, 4):
