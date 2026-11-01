@@ -10,12 +10,18 @@ duplicated work, no broken generated files and no unsupported mathematical claim
 python3 scripts/work.py --next 5                  # highest-priority runnable items
 python3 scripts/work.py --next 5 --kind comparator  # or: obligation, lean, job, roadmap, status_audit
 python3 scripts/work.py --id F-M079               # one item: deliverable, acceptance, boundary, digest
+python3 scripts/scale.py --budget 100             # 100-slot evidence-bound wave (see SCALE.md)
 ```
 
 The queue is derived from the ledgers (proof obligations, Lean targets, the dispatcher,
 the roadmap, the formal catalogue and the status-audit drafts). It is browsable at
 `/work/` on the site and machine-readable at `docs/api/work.json`. An item disappears
 when its ledger records the result; nobody edits the queue by hand.
+
+The scale wave packs up to 100 claimable slots with scout/adversary/checker role
+guidance, refuses dominated `stop_range` jobs, and is **not** a claim that 100
+agents produce 100 theorems. Prefer an open obligation or Lean target over a
+mass comparator when both are free.
 
 ## 2. Claim before you start
 

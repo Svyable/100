@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "preregistered_at": "2026-10-31",
+  "source_commit": "56f8f27a25f854bac71dad78db7bd0137998618e",
+  "arms": [
+    "sequential",
+    "independent",
+    "conversation",
+    "proof_exchange"
+  ],
+  "seeds": [
+    11,
+    23,
+    37
+  ],
+  "resource_caps": {
+    "model_tokens": 45000,
+    "tool_calls": 120,
+    "elapsed_seconds": 3600
+  },
+  "interpretation": "Preregistered pilot design only; no experiments yet. Resources include proposer, adversary, checker, and coordination work within each arm. Review authenticity and theorem novelty remain independent human tasks. Known reproduction never counts as new discovery.",
+  "tasks": [
+    {
+      "id": "K42-REPLAY",
+      "problem_id": "M095",
+      "class": "replay",
+      "scope": "Independently replay the published 42-vertex Ramsey two-colourings against exact absence of a monochromatic K5, report dataset hash and a second checker, and identify every scope mismatch.",
+      "prior_art": "Published 42-vertex colourings already establish R(5,5)>=43; this is a reproduction task, never a new bound.",
+      "acceptance": "One pinned existing witness accepted by two independent exact checker paths with recorded resource use; no novel theorem credit.",
+      "source_paths": [
+        "research/M095_RAMSEY.md",
+        "scripts/verify_mckay.py"
+      ],
+      "eligible_for_novelty": false
+    },
+    {
+      "id": "FRANKL-TRANSFER",
+      "problem_id": "M075",
+      "class": "structural",
+      "scope": "Propose or falsify one precisely quantified canonical-augmentation or extension lemma that reaches beyond the existing n=5 full-support orbit count, including soundness and completeness, not merely another n=5 recount.",
+      "prior_art": "Known five-element full-support count 2,747,402 labeled families and 28,960 orbits have independent enumeration and Burnside checks; cannot be claimed novel.",
+      "acceptance": "A checked restricted extension lemma with explicitly stated hypotheses, independent scope audit, and external mathematical review before novelty credit; an explicit counterexample is also a useful but separately labeled outcome.",
+      "source_paths": [
+        "research/M075_CANONICAL.md",
+        "research/M075_BURNSIDE.md"
+      ],
+      "eligible_for_novelty": true
+    },
+    {
+      "id": "CH24-IRREGULAR",
+      "problem_id": "M074",
+      "class": "dependency",
+      "scope": "Test a proof or an explicit counterexample for the indegree-nine irregular branch at (n=24,r=8), preserving minimum-outdegree quantifiers; avoid silently assuming indegree-eight regularity.",
+      "prior_art": "Regular 8-in/8-out branch exclusion does not prove the full (24,8) statement; existing external finite computations and the repository's partial inequalities precede this pilot.",
+      "acceptance": "An independently checked, exactly scoped new obstruction or explicit valid counterexample for the irregular branch; prior-art and external specialist review needed before novelty credit.",
+      "source_paths": [
+        "research/M074_ELEMENTARY_24_REGULAR.md",
+        "research/M074_ELEMENTARY_21.md"
+      ],
+      "eligible_for_novelty": true
+    }
+  ]
+}

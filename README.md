@@ -3,7 +3,9 @@
 **Purpose:** Preserve, refine, and stack-rank 100 concrete mathematical proof/counterexample targets, looking for results and methods that create new branches of discovery.
 
 - **[Lean proof pipeline](LEAN.md)** — pinned workspace, Ramsey benchmark, two-element Frankl case, axiom audits and commit-bound CI evidence; scope review remains separate.
-- **[Proof exchange / scaling protocol](docs/PROOF_EXCHANGE.md)** — source-bound packets for agent-to-agent research handoffs, dependency-gated proof obligations and evidence-bounded cross-problem coverage scheduling (`python3 scripts/scale.py --budget 5 --json`).
+- **[Matched-budget research benchmark](benchmarks/PROTOCOL.md)** — preregistered M095/M075/M074 pilot, four solver architectures, three seeds, exact cost accounting and evidence-gated trial ledger (`python3 scripts/benchmark.py --check`); no experimental trials claimed yet.
+- **[Proof exchange / scaling protocol](docs/PROOF_EXCHANGE.md)** — 100 claimable, evidence-bound wave slots with scout/adversary/checker roles, dependency-gated proof obligations and coverage ablations (`python3 scripts/scale.py --budget 100`; [SCALE.md](SCALE.md)).
+- **[Agent work queue](AGENTS.md)** — derived claimable items across obligations, Lean, jobs, roadmap, comparators and status audits (`python3 scripts/work.py --next 5`).
 - **[Roadmap](ROADMAP.md)** ([on the dashboard](https://svyable.github.io/100/#roadmap)) — live scoreboard against targets, and every shipped, current, next and later item with evidence and exit criteria. Source: [data/roadmap.json](data/roadmap.json).
 - **[Next 100 hypothesis reservoir](https://svyable.github.io/100/next/)** — 216 cross-domain, unvetted proposals across 27 research domains in a scalable pipeline; ranked discovery priorities, not claimed new open results ([protocol](NEXT_100.md)). The active 100 remains capped.
 - **[Public research site](https://svyable.github.io/100/)** (once GitHub Pages is enabled: [activation guide](docs/PAGES_SETUP.md)) — generated static site: one permanent page per problem (`/problems/M071/`) and per field, atlas charts, lab, formal statements, campaigns, claim triage, roadmap, ledger, every research dossier, a `/` command palette, JSON/CSV API and Atom feed. Works without JavaScript; CI byte-checks it against the ledgers and link-checks every page.
@@ -19,6 +21,8 @@
 - **[Execution-priority queue](ATTACK_QUEUE.md)** — ordered by dispatch score (editorial + readiness + an action bonus), not by readiness alone. Claimed finite witnesses, missing engines and published certificates move up. A range extension the campaign itself says is already known mathematics is refused. Cohort jobs and the shared attack shapes are in [APPROACH.md](APPROACH.md).
 - **[Solved archive](data/solved.json)** — strict full-resolution ledger, initially empty; known finite benchmarks are kept separate.
 - [Caccetta–Häggkvist finite census and 18-vertex SAT target](research/M074_CH.md) — exact symmetry coverage, independent cycle check and reproducible CNF encoding; no new proof claimed.
+- [General degree-defect transfer lemma](proofs/DEGREE_DEFECT_TRANSFER.md) — exact high/low indegree saturation for any finite outregular digraph, with independent exhaustive small graph tests and explicit CH (24,8) application.
+- [CH (24,8) full finite candidate proof](proofs/M074_IRREGULAR_24.md) — 19 × 5005 exact integer-profile reduction, local triangle elimination, high/low degree contradiction; independent specialist review pending and prior finite DRAT work acknowledged.
 - [CH (24,8) regular-case obstruction](research/M074_ELEMENTARY_24_REGULAR.md) — an optimal 8-neighborhood 21-arc ceiling and cross-cut demand of 22 versus capacity of 15 exclude exact 8-in/8-out-regular candidates. The minimum-outdegree-only case remains a separate, unproved branch here.
 - [CH (21,7) elementary finite exclusion](research/M074_ELEMENTARY_21.md) — seven-vertex degree rigidity plus a 145-vs-147 arc-budget contradiction excludes the 21-vertex triangle-free case; no general resolution or originality claim.
 - [CH (18,6) elementary finite exclusion](research/M074_ELEMENTARY_18.md) — a saturated-pivot/indegree contradiction removes the need for a SAT proof for this **finite case**, while retaining frozen CNFs as independent audit targets; no full-conjecture or novel-result claim.
@@ -52,8 +56,12 @@ python3 scripts/research.py --check
 python3 scripts/formal.py --check
 python3 scripts/approach.py
 python3 scripts/approach.py --check
+python3 scripts/work.py --check
+python3 scripts/scale.py --write
+python3 scripts/scale.py --check
 python3 scripts/roadmap.py
 python3 scripts/roadmap.py --check
+python3 scripts/regen.py --check --fast
 python3 scripts/build_site.py
 python3 scripts/build_site.py --check
 python3 scripts/lean_verify.py   # needs elan; builds Lean and audits axioms

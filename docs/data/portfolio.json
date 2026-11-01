@@ -4355,6 +4355,15 @@
         "problems": []
       },
       {
+        "id": "R37",
+        "track": "engine",
+        "horizon": "shipped",
+        "title": "100-slot proof-exchange wave across the portfolio",
+        "outcome": "Every campaign has a proof-obligation node; scale.py packs 100 claimable slots with scout/adversary/checker roles, refuses stop_range, and regenerates SCALE.md under CI drift checks. Operating capacity, not a theorem multiplier.",
+        "evidence": "SCALE.md",
+        "problems": []
+      },
+      {
         "id": "R18",
         "track": "claims",
         "horizon": "shipped",
@@ -4381,7 +4390,7 @@
         ]
       },
       {
-        "id": "R37",
+        "id": "R38",
         "track": "campaigns",
         "horizon": "shipped",
         "title": "Erdos-Straus parametric identities from the residue mine",
@@ -4581,7 +4590,7 @@
       }
     ],
     "counts": {
-      "shipped": 22,
+      "shipped": 23,
       "now": 5,
       "next": 4,
       "later": 4

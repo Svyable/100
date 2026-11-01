@@ -49,8 +49,10 @@
 <h2 id="1-pick-bounded-work">1. Pick bounded work<a class="anchor" href="#1-pick-bounded-work" aria-label="Link to this section">#</a></h2>
 <pre><code class="lang-sh">python3 scripts/work.py --next 5                  # highest-priority runnable items
 python3 scripts/work.py --next 5 --kind comparator  # or: obligation, lean, job, roadmap, status_audit
-python3 scripts/work.py --id F-M079               # one item: deliverable, acceptance, boundary, digest</code></pre>
+python3 scripts/work.py --id F-M079               # one item: deliverable, acceptance, boundary, digest
+python3 scripts/scale.py --budget 100             # 100-slot evidence-bound wave (see SCALE.md)</code></pre>
 <p>The queue is derived from the ledgers (proof obligations, Lean targets, the dispatcher, the roadmap, the formal catalogue and the status-audit drafts). It is browsable at <code>/work/</code> on the site and machine-readable at <code>docs/api/work.json</code>. An item disappears when its ledger records the result; nobody edits the queue by hand.</p>
+<p>The scale wave packs up to 100 claimable slots with scout/adversary/checker role guidance, refuses dominated <code>stop_range</code> jobs, and is <strong>not</strong> a claim that 100 agents produce 100 theorems. Prefer an open obligation or Lean target over a mass comparator when both are free.</p>
 <h2 id="2-claim-before-you-start">2. Claim before you start<a class="anchor" href="#2-claim-before-you-start" aria-label="Link to this section">#</a></h2>
 <p>Search open issues for the item&#x27;s claim title, <code>[Claim] &lt;id&gt;</code>. If one is open, pick another item. Otherwise open a claim with <code>.github/ISSUE_TEMPLATE/claim.yml</code>, including the scope digest. Close the claim with the PR that delivers the item, or close it unfinished with what you learned. Two pipelines for the same thing is the most expensive failure here; a claim costs one minute.</p>
 <h2 id="3-do-only-the-deliverable">3. Do only the deliverable<a class="anchor" href="#3-do-only-the-deliverable" aria-label="Link to this section">#</a></h2>
