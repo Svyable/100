@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-10-31",
+  "as_of": "2026-11-01",
   "count": 100,
   "order": "dispatch_rank",
   "problems": [
@@ -662,7 +662,7 @@
       "dispatch_next": "Reproduce a published primitive character modulo 3 or 5 with the correct root number, branch conventions and independently checked zero count; document why this is known mathematics, not GRH progress.",
       "dispatch_why": "The new engine verifies χ4 only; the generalized Riemann hypothesis concerns all Dirichlet characters. Replaying a separate primitive-character certificate tests the reusable contour and gamma-factor implementation.",
       "campaign_stage": "benchmark_reproduced",
-      "milestone_count": 1,
+      "milestone_count": 2,
       "url": "https://svyable.github.io/100/problems/M002/",
       "has_exact_verifier": true,
       "claim_review": false,
@@ -3462,7 +3462,7 @@
       "dispatch_next": "Do not enlarge the named catalog inside order 100: that range is already covered by the 2007 computational verification. State a restricted family (for example blocks with a named defect-group isomorphism type) and a lemma outside that census.",
       "dispatch_why": "Computational verification already covers every group of order at most 100. Extending the named catalog inside that bound cannot be a new theorem.",
       "campaign_stage": "benchmark_reproduced",
-      "milestone_count": 1,
+      "milestone_count": 2,
       "url": "https://svyable.github.io/100/problems/M048/",
       "has_exact_verifier": true,
       "claim_review": false,
@@ -3497,7 +3497,7 @@
       "dispatch_next": "Do not prioritize extending T = 36 inside the already-published critical-line verification range. First identify a mathematically new zero-free region, explicit bound, or verified statement not implied by existing computations.",
       "dispatch_why": "The new exact interval verifier reaches T = 36, but published computations cover zeta zeros vastly farther. Increasing a tiny certified height is not a new attack on the Riemann hypothesis.",
       "campaign_stage": "benchmark_reproduced",
-      "milestone_count": 1,
+      "milestone_count": 2,
       "url": "https://svyable.github.io/100/problems/M001/",
       "has_exact_verifier": true,
       "claim_review": false,

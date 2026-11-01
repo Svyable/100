@@ -14,7 +14,7 @@ Current values are computed from the repository on every build, not typed in.
 |---|---:|---:|---:|
 | Problems with an exact verifier (of 100) | 3 | **20** | 25 |
 | Computable problems covered (of 19) | 0 | **19** | 19 |
-| Reusable exact engines (engines) | 0 | **13** | 15 |
+| Reusable exact engines (engines) | 0 | **14** | 15 |
 | Active proof campaigns (campaigns) | 0 | **21** | 25 |
 | 2026 claims triaged for scope (of 15) | 0 | **15** | 15 |
 | Independently reviewed restricted results (results) | 0 | **0** | 1 |

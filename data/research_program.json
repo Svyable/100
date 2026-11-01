@@ -247,7 +247,10 @@
       "falsification": "A height T at which the certified argument count N(T) strictly exceeds the number of disjoint intervals where Z changes sign.",
       "blocker": "T = 36 is far below Platt–Trudgian (at least 3*10^12). Extending the height needs a faster contour, not a new idea about the hypothesis.",
       "dossier": "research/LAB_CAMPAIGNS.md",
-      "verifier": "python3 scripts/lab.py --probe riemann"
+      "verifier": "python3 scripts/lab.py --probe riemann",
+      "additional_verifiers": [
+        "python3 scripts/lab.py --probe zeta_zeros"
+      ]
     },
     {
       "problem_id": "M002",
@@ -259,7 +262,10 @@
       "falsification": "A primitive character and a height T at which the certified argument count exceeds the number of critical-line sign changes.",
       "blocker": "Three real characters at height at most 17 do not constrain complex characters or large conductors.",
       "dossier": "research/LAB_CAMPAIGNS.md",
-      "verifier": "python3 scripts/lab.py --probe dirichlet_l"
+      "verifier": "python3 scripts/lab.py --probe dirichlet_l",
+      "additional_verifiers": [
+        "python3 scripts/lab.py --probe dirichlet_zeros"
+      ]
     },
     {
       "problem_id": "M048",
@@ -271,7 +277,10 @@
       "falsification": "A finite group G and prime p for which the independently recomputed weight count differs from the number of p-regular conjugacy classes.",
       "blocker": "Every group of order at most 100 is already covered by published computational verification; a larger named catalog inside that bound is not a theorem.",
       "dossier": "research/LAB_CAMPAIGNS.md",
-      "verifier": "python3 scripts/lab.py --probe alperin"
+      "verifier": "python3 scripts/lab.py --probe alperin",
+      "additional_verifiers": [
+        "python3 scripts/lab.py --probe alperin_weights"
+      ]
     }
   ],
   "milestones": [
@@ -571,6 +580,39 @@
       "verifier": "python3 scripts/lab.py --probe alperin",
       "artifact": "scripts/probes/alperin.py",
       "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-RH-001",
+      "problem_id": "M001",
+      "classification": "reproduced_known",
+      "title": "All 29 Riemann zeros below height 100 certified simple and on the critical line",
+      "scope": "Known small range; not new",
+      "description": "The argument principle certifies N(100) = 29 exactly from interval boxes along 2 -> 2+100i -> 1/2+100i, and Hardy's Z(t) has 29 certified sign changes on (0, 100]. All arithmetic is rigorous interval arithmetic with explicit series remainders, repeated by the checker at another precision and truncation. The deep run certifies all 649 zeros below height 1000 the same way.",
+      "verifier": "python3 scripts/lab.py --probe zeta_zeros",
+      "artifact": "scripts/probes/zeta_zeros.py",
+      "verified_on": "2026-11-01"
+    },
+    {
+      "id": "B-GRH-001",
+      "problem_id": "M002",
+      "classification": "reproduced_known",
+      "title": "GRH to height 20 for the real primitive characters of conductor 3, 4 and 5",
+      "scope": "Known small range; not new",
+      "description": "For D = -4, -3, 5, L(s, chi_D) has no real zero in (0, 1) (Lipschitz-certified point values), the argument principle certifies 5, 4 and 6 zeros with 0 < Im s < 20, and Z(t, chi_D) has exactly as many certified sign changes. The checker rebuilds each character and certifies the root number +1 from the Gauss sum. The deep run covers all 17 real primitive characters of conductor at most 24 to height 30 (248 zeros in the upper half-plane).",
+      "verifier": "python3 scripts/lab.py --probe dirichlet_zeros",
+      "artifact": "scripts/probes/dirichlet_zeros.py",
+      "verified_on": "2026-11-01"
+    },
+    {
+      "id": "B-ALPERIN-EXT-001",
+      "problem_id": "M048",
+      "classification": "reproduced_known",
+      "title": "Alperin's weight conjecture l(G) = w(G) on 15 group-prime cases from S3 to PSL(2,7)",
+      "scope": "Known small range; not new",
+      "description": "For S3, A4, S4, A5, S5 and PSL(2,7) at every prime dividing the order, the number of p-regular classes equals the number of conjugacy classes of p-weights, counted over all p-radical subgroups with defect-zero degrees of N(Q)/Q from Dixon's modular method. The checker re-enumerates radical subgroups by a different criterion and recomputes degrees with a different prime. The deep run covers 46 cases, adding GL(2,3), A6, S6, PSL(2,8), PSL(2,11), PSL(2,13), A7, S7 and the Mathieu group M11.",
+      "verifier": "python3 scripts/lab.py --probe alperin_weights",
+      "artifact": "scripts/probes/alperin_cert.py",
+      "verified_on": "2026-11-01"
     }
   ]
 }

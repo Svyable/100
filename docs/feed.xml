@@ -4,14 +4,35 @@
 <link href="https://svyable.github.io/100/"/>
 <link rel="self" href="https://svyable.github.io/100/feed.xml"/>
 <id>https://svyable.github.io/100/</id>
-<updated>2026-10-31T00:00:00Z</updated>
+<updated>2026-11-01T00:00:00Z</updated>
 <author><name>Svyable</name></author>
+<entry>
+<title>Milestone: All 29 Riemann zeros below height 100 certified simple and on the critical line</title>
+<link href="https://svyable.github.io/100/ledger/#B-RH-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-RH-001</id>
+<updated>2026-11-01T00:00:00Z</updated>
+<summary>The argument principle certifies N(100) = 29 exactly from interval boxes along 2 -&gt; 2+100i -&gt; 1/2+100i, and Hardy&#x27;s Z(t) has 29 certified sign changes on (0, 100]. All arithmetic is rigorous interval arithmetic with explicit series remainders, repeated by the checker at another precision and truncation. The deep run certifies all 649 zeros below height 1000 the same way. Scope: Known small range; not new</summary>
+</entry>
+<entry>
+<title>Milestone: GRH to height 20 for the real primitive characters of conductor 3, 4 and 5</title>
+<link href="https://svyable.github.io/100/ledger/#B-GRH-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-GRH-001</id>
+<updated>2026-11-01T00:00:00Z</updated>
+<summary>For D = -4, -3, 5, L(s, chi_D) has no real zero in (0, 1) (Lipschitz-certified point values), the argument principle certifies 5, 4 and 6 zeros with 0 &lt; Im s &lt; 20, and Z(t, chi_D) has exactly as many certified sign changes. The checker rebuilds each character and certifies the root number +1 from the Gauss sum. The deep run covers all 17 real primitive characters of conductor at most 24 to height 30 (248 zeros in the upper half-plane). Scope: Known small range; not new</summary>
+</entry>
+<entry>
+<title>Milestone: Alperin&#x27;s weight conjecture l(G) = w(G) on 15 group-prime cases from S3 to PSL(2,7)</title>
+<link href="https://svyable.github.io/100/ledger/#B-ALPERIN-EXT-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-ALPERIN-EXT-001</id>
+<updated>2026-11-01T00:00:00Z</updated>
+<summary>For S3, A4, S4, A5, S5 and PSL(2,7) at every prime dividing the order, the number of p-regular classes equals the number of conjugacy classes of p-weights, counted over all p-radical subgroups with defect-zero degrees of N(Q)/Q from Dixon&#x27;s modular method. The checker re-enumerates radical subgroups by a different criterion and recomputes degrees with a different prime. The deep run covers 46 cases, adding GL(2,3), A6, S6, PSL(2,8), PSL(2,11), PSL(2,13), A7, S7 and the Mathieu group M11. Scope: Known small range; not new</summary>
+</entry>
 <entry>
 <title>Research program updated (21 campaigns)</title>
 <link href="https://svyable.github.io/100/campaigns/"/>
 <id>tag:svyable.github.io,2026:100/program-2026-10-31</id>
 <updated>2026-10-31T00:00:00Z</updated>
-<summary>21 active campaigns; 18 exact probes on 13 engines.</summary>
+<summary>21 active campaigns; 21 exact probes on 14 engines.</summary>
 </entry>
 <entry>
 <title>Milestone: The first two non-trivial zeta zeros are simple and on the critical line</title>
