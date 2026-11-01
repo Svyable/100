@@ -14,7 +14,7 @@ whose bytes are pinned at SHA-256
 **Finite certificate theorem.** For every one of these 328 graphs, the Boolean
 one-vertex-extension formula has a complete unit-propagation binary
 refutation tree containing **at most 51 nodes** (at most 25 branch nodes and
-26 conflict leaves). An independently implemented checker replays every
+26 conflict leaves), with **maximum decision depth nine**. An independently implemented checker replays every
 stored tree, directly recomputing the constraints from the source graph.
 Consequently **none of these 328 colorings, nor their 328 color-swaps, can be
 extended by a single vertex without creating a monochromatic K5**.
@@ -57,7 +57,8 @@ incomplete trees, forced/invalid branch variables and premature leaves.
 
 - `data/ramsey_extension_certificate.json`: all 328 indexed binary
   refutation trees, the original publisher digest, each red/blue K4
-  count and each tree's node count.
+  count and each tree's node count. Archive size: **86,527 bytes**;
+  SHA-256: `f8fa8f5ee2a9a7e8c63b9f53b5623fd927f222c61a49e606e7a9b816a1a2fc57`.
 - `scripts/ramsey_extension.py --check`: replay **every** stored tree
   against the original source, using the independent verifier.
 - `scripts/ramsey_extension.py --write`: rebuild the proof trees from
@@ -80,9 +81,11 @@ assignments. The 328 tree sizes were:
 | 51 | 1 |
 | **Total** | **328** |
 
-The **51-node maximum is an upper bound for this specific DPLL proof
-system on this specific catalog**, not a lower bound on SAT proof size,
-a result about arbitrary K42 graphs, or a proof of a new Ramsey bound.
+The decision-depth distribution is 5:217, 6:66, 7:37, 8:6, 9:2.
+The **51-node / depth-nine maxima are upper bounds for this specific
+unit-propagation DPLL proof system on this specific catalog**, not lower
+bounds on SAT proof size, results about arbitrary K42 graphs, or a proof
+of a new Ramsey bound.
 
 ## Failed avenues and prior art
 

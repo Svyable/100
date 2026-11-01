@@ -21,6 +21,25 @@ class RamseyExtensionTests(unittest.TestCase):
     def test_frozen_certificate_replays(self):
         self.assertEqual(generate_first(), self.cert["proofs"][0])
 
+    def test_all_328_independent_refutations(self):
+        self.assertEqual(verify_all(self.cert), {
+            "records": 328, "nonextendible": 328, "max_nodes": 51,
+            "node_distribution": {39: 215, 41: 66, 43: 39, 45: 6, 47: 1, 51: 1},
+            "max_depth": 9, "depth_distribution": {5: 217, 6: 66, 7: 37, 8: 6, 9: 2},
+        })
+
+    def test_reject_missing_record(self):
+        bad = dict(self.cert)
+        bad["proofs"] = self.cert["proofs"][:-1]
+        with self.assertRaises(ValueError):
+            verify_all(bad)
+
+    def test_reject_source_digest_mutation(self):
+        bad = dict(self.cert)
+        bad["source_sha256"] = "0" * 64
+        with self.assertRaises(ValueError):
+            verify_all(bad)
+
     def test_independent_k4_enumeration(self):
         generator, counts = constraints_bitset(self.adj)
         checker = independent_k4_clauses(self.adj)

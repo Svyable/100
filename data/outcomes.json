@@ -276,6 +276,22 @@
         "ci_minutes": 0
       },
       "note": "Bounded partial O-M080-01 step only: exact 4,141,145 S4 orbit count and 42,840 repeated-basis GF(2)^4 grid witnesses, independent Leibniz checker, 7 adversarial tests. 4,111,138 all-distinct orbits unverified. Cheung 2012 reported rank-four computational result; no new theorem or independent mathematical review. Outcome classification conditional on PR #171 merge; the original obligation remains open."
+    },
+    {
+      "work_id": "X-M095-K42-EXTENSION",
+      "scope_sha256": "d7ad170a225683e60d1fcaad99cf57638acffb2d293331aec72af84deda07660",
+      "author": "ChatGPT (M095 compact DPLL extension certificates)",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/173",
+      "pr_url": "https://github.com/Svyable/100/pull/174",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 1.1,
+        "ci_minutes": 0
+      },
+      "note": "Exact 328 pinned K42 one-vertex nonextension proofs using complete unit-propagation trees <=51 nodes; independently replayed by a distinct four-subset K4 checker with adversarial controls. Nonextendibility known since McKay-Radziszowski 1997 and independent SAT work in 2026; compact proof-tree bound has not been novelty-reviewed. No K43 exclusion or conjecture progress, no independent review. Outcome classification conditional on PR merge."
     }
   ]
 }

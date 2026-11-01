@@ -222,6 +222,14 @@ def generate_all():
     }
 
 
+def tree_depth(tree):
+    if tree is None:
+        return 0
+    if not isinstance(tree, list) or len(tree) != 3:
+        raise ValueError("malformed proof tree")
+    return 1 + max(tree_depth(tree[1]), tree_depth(tree[2]))
+
+
 def verify_all(report):
     """Independent replay of all 328 *stored* trees, without DPLL search."""
     from collections import Counter
@@ -232,6 +240,7 @@ def verify_all(report):
     if not isinstance(proofs, list) or len(proofs) != len(records):
         raise ValueError("missing or extra proofs")
     distribution = Counter()
+    depths = Counter()
     for i, (record, proof) in enumerate(zip(records, proofs), 1):
         if proof.get("record") != i:
             raise ValueError("missing, duplicated or out-of-order record")
@@ -245,9 +254,14 @@ def verify_all(report):
             raise ValueError(f"wrong proof node count at record {i}")
         if proof["dpll_nodes"] > 51:
             raise ValueError("claimed 51-node upper bound false")
+        depth = tree_depth(proof["tree"])
+        if depth > 9:
+            raise ValueError("claimed depth-nine bound false")
+        depths[depth] += 1
         distribution[proof["dpll_nodes"]] += 1
     return {"records": len(records), "nonextendible": len(records),
-            "max_nodes": max(distribution), "node_distribution": dict(sorted(distribution.items()))}
+            "max_nodes": max(distribution), "node_distribution": dict(sorted(distribution.items())),
+            "max_depth": max(depths), "depth_distribution": dict(sorted(depths.items()))}
 
 
 def main():
