@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "purpose": "Adversarial negative controls for proposed lemmas. Never use these results as proofs or counterexamples for full active conjectures.",
+  "cases": [
+    {
+      "id": "A-M075-TRIPLE",
+      "problem_id": "M075",
+      "classification": "refuted_auxiliary_only",
+      "statement": "Every finite union-closed family containing a three-element set has at least one element of that set in half the family.",
+      "evaluator": "frankl_triple_local",
+      "fixture": "examples/FRANKL_SARVATE_RENAUD.json",
+      "expected": {
+        "family_size": 27,
+        "triple": [
+          0,
+          1,
+          2
+        ],
+        "triple_frequencies": [
+          13,
+          13,
+          13
+        ],
+        "minimum_set_size": 3,
+        "some_other_element_abundant": true
+      },
+      "source": "https://mathoverflow.net/questions/138567/renaud-sarvate-limitation-on-frankls-conjecture",
+      "warning": "This published example refutes only the triple-local strengthening, not Frankl's conjecture."
+    },
+    {
+      "id": "A-M075-DOUBLET",
+      "problem_id": "M075",
+      "classification": "known_theorem_positive_control",
+      "statement": "If a finite union-closed family contains an exact two-element set {a,b}, one of a,b belongs to at least half of its members.",
+      "evaluator": "frankl_doubleton",
+      "fixture": "examples/FRANKL_DOUBLETON.json",
+      "expected": {
+        "family_size": 2,
+        "pair": [
+          0,
+          1
+        ],
+        "frequency_a": 1,
+        "frequency_b": 1,
+        "combined_frequency": 2,
+        "injection_size": 1
+      },
+      "source": "https://mathworld.wolfram.com/Union-ClosedSetsConjecture.html",
+      "warning": "The checker verifies this sharp concrete example; a separate general injection proof is necessary for the universal theorem."
+    },
+    {
+      "id": "A-M074-DEFECT",
+      "problem_id": "M074",
+      "classification": "refuted_auxiliary_only",
+      "statement": "Every finite loopless 2-outregular digraph with all indegrees at most 3 has no arc from one below-average-indegree vertex to another.",
+      "evaluator": "degree_defect_unsaturated",
+      "fixture": null,
+      "out": [
+        [
+          5,
+          4
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "expected": {
+        "n": 6,
+        "r": 2,
+        "indegrees": [
+          1,
+          1,
+          3,
+          3,
+          3,
+          1
+        ],
+        "low_to_low": 2,
+        "saturated": false
+      },
+      "source": "https://github.com/Svyable/100/blob/main/tests/test_degree_defect.py",
+      "warning": "The saturation condition is essential; this does not refute the degree-defect transfer theorem or Caccetta-Haggkvist."
+    },
+    {
+      "id": "A-M074-NINE-28",
+      "problem_id": "M074",
+      "classification": "refuted_auxiliary_only",
+      "statement": "Every oriented directed-triangle-free digraph on nine vertices with minimum outdegree at least two has at most 28 arcs.",
+      "evaluator": "ch_nine_sharp",
+      "fixture": null,
+      "expected": {
+        "n": 9,
+        "arcs": 29,
+        "minimum_outdegree": 2,
+        "maximum_indegree": 4
+      },
+      "source": "https://github.com/Svyable/100/blob/main/proofs/M074_NINE_VERTEX.md",
+      "warning": "The correct sharp upper bound is 29; this refutes only the proposed improvement to 28."
+    }
+  ]
+}
