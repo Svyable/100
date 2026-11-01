@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M006 — an explicit least-Goldbach-prime bound on the growth mine · 100</title>
+<meta name="description" content="Dated: 2026-11-01. Scope: every even integer $4 \le n \le 20000$. Not claimed: an asymptotic theorem, a bound through $4\cdot10^{18}$, or any progress toward the strong Goldbach conjecture beyond this finite window.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m006-bound/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M006 — an explicit least-Goldbach-prime bound on the growth mine · 100">
+<meta property="og:description" content="Dated: 2026-11-01. Scope: every even integer $4 \le n \le 20000$. Not claimed: an asymptotic theorem, a bound through $4\cdot10^{18}$, or any progress toward the strong Goldbach conjecture beyond this finite window.">
+<meta property="og:url" content="https://svyable.github.io/100/library/m006-bound/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M006 — an explicit least-Goldbach-prime bound on the growth mine</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#the-overlooked-step">The overlooked step</a></li><li class="toc-l2"><a href="#finite-theorem">Finite theorem</a></li><li class="toc-l2"><a href="#evidence-boundary">Evidence boundary</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M006/" title="Strong Goldbach conjecture">M006</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M006_BOUND.md" rel="noopener noreferrer">research/M006_BOUND.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M006 — an explicit least-Goldbach-prime bound on the growth mine</h1>
+<p><strong>Dated:</strong> 2026-11-01. <strong>Scope:</strong> every even integer $4 \le n \le 20000$. <strong>Not claimed:</strong> an asymptotic theorem, a bound through $4\cdot10^{18}$, or any progress toward the strong Goldbach conjecture beyond this finite window.</p>
+<h2 id="the-overlooked-step">The overlooked step<a class="anchor" href="#the-overlooked-step" aria-label="Link to this section">#</a></h2>
+<p>The certified mine <a href="https://github.com/Svyable/100/blob/main/scripts/mines/goldbach_growth.py" rel="noopener noreferrer"><code>goldbach_growth</code></a> lists the twelve record-setting least Goldbach primes through $20000$, the largest being $173$ at $n=7426$. The campaign asked to test an explicit upper bound against those records, not to push the verified range toward the published $4\cdot10^{18}$ check.</p>
+<h2 id="finite-theorem">Finite theorem<a class="anchor" href="#finite-theorem" aria-label="Link to this section">#</a></h2>
+<p>For every even integer $n$ with $4 \le n \le 20000$, if $p$ is the least prime such that $n-p$ is prime, then</p>
+<p>$$ p \le \lfloor 3(\ln n)^2\rfloor. $$</p>
+<p>The independent checker rebuilds each least prime with an odd-only sieve and recomputes the same inequality. Because the right-hand side is increasing for $n\ge3$, it is enough that the bound dominate the twelve running-maximum records; the mine nevertheless verifies every even $n$ in range.</p>
+<p>The sharpest ratio on the records is $173/(\ln 7426)^2 \approx 2.178$, so the constant $3$ has slack. Tightening the constant is cosmetic inside this window; exporting the inequality past $20000$ is refused by the dispatcher.</p>
+<h2 id="evidence-boundary">Evidence boundary<a class="anchor" href="#evidence-boundary" aria-label="Link to this section">#</a></h2>
+<ul><li>Oliveira e Silva, Herzog and Pardi (Math. Comp. 2014) already verify Goldbach through $4\cdot10^{18}$. This note only shapes the tiny initial segment into an explicit inequality.</li><li>Do not promote M006 toward Solved.</li><li>Run:</li></ul>
+<pre><code class="lang-sh">python3 scripts/mine.py --mine goldbach_bound
+python3 -m unittest discover -s tests -p &#x27;test_mines.py&#x27; -v</code></pre>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

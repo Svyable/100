@@ -25,8 +25,17 @@ class MineTests(unittest.TestCase):
         gold = tables["goldbach_growth"]["summary"]
         self.assertEqual(gold["record_count"], 12)
         self.assertEqual([gold["largest_least_prime"], gold["attained_at"]], [173, 7426])
-        self.assertIn("173", campaigns["M006"]["next_experiment"])
-        self.assertIn("goldbach_growth", campaigns["M006"]["additional_verifiers"][0])
+        self.assertIn("goldbach_bound", campaigns["M006"]["next_experiment"])
+        self.assertEqual(campaigns["M006"]["dossier"], "research/M006_BOUND.md")
+        bound = tables["goldbach_bound"]["summary"]
+        self.assertEqual(bound["bound_factor"], 3)
+        self.assertEqual(bound["record_count"], 12)
+        self.assertEqual(bound["worst_record_n"], 7426)
+        self.assertEqual(bound["worst_record_prime"], 173)
+        self.assertIn(
+            "python3 scripts/mine.py --mine goldbach_bound",
+            campaigns["M006"]["additional_verifiers"],
+        )
 
         straus = tables["straus_patterns"]["summary"]
         self.assertEqual(straus["primes"], 117)

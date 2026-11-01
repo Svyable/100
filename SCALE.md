@@ -1276,10 +1276,10 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 **Mine structure from certificates: Explicit Diophantine certificates**
 
 - Problems: M019, M006
-- Deliverable: M019: Nine polynomial identities from the straus_identities mine now cover 106 of the 117 primes n <= 8000 with n = 1 (mod 24), including the primary progressions n = 120t+73 and n = 120t+97. The 11 uncovered primes all lie in {1, 49} (mod 120). Attack those two remaining classes with a non-Mordell idea, or name an explicit family outside the recorded progressions; do not extend the verified search range. M006: The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification.
+- Deliverable: M019: Nine polynomial identities from the straus_identities mine now cover 106 of the 117 primes n <= 8000 with n = 1 (mod 24), including the primary progressions n = 120t+73 and n = 120t+97. The 11 uncovered primes all lie in {1, 49} (mod 120). Attack those two remaining classes with a non-Mordell idea, or name an explicit family outside the recorded progressions; do not extend the verified search range. M006: The goldbach_bound mine certifies p <= floor(3 (ln n)^2) for every even n <= 20000 (research/M006_BOUND.md). State a sharper restricted lemma (named residue class, or a constant below 3 with a proof idea that could leave this window), without extending the range toward 4*10^18.
 - Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
 - Claim: `[Claim] J-effective_diophantine-mine_structure — Mine structure from certificates: Explicit Diophantine certificates`
-- Digest: `ad6c3881e3806cb4…`
+- Digest: `a5ac7f33ffaad080…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.

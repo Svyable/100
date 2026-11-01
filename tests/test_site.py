@@ -109,7 +109,7 @@ class TestSnapshot(unittest.TestCase):
         self.assertTrue(all(item["modality"] for item in p))
         self.assertEqual(len(doc["roadmap"]["items"]), sum(doc["roadmap"]["counts"].values()))
         self.assertTrue(set(lab["covered_problems"]) <= {item["id"] for item in p})
-        self.assertEqual(len(doc["mines"]["mines"]), 6)
+        self.assertEqual(len(doc["mines"]["mines"]), 7)
         self.assertTrue(all(row["holds"] for row in doc["mines"]["mines"].values()))
 
     def test_build_is_deterministic(self):
