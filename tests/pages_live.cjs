@@ -34,11 +34,16 @@ async function axeAudit(page, title) {
     runOnly: {type: "tag", values: ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"]}
   }));
   const serious = result.violations.filter(v => ["serious", "critical"].includes(v.impact));
+  metrics["axe_" + title] = {passes: result.passes.length, violations: result.violations.map(v => ({
+    id: v.id, impact: v.impact, elements: v.nodes.length,
+    examples: v.nodes.slice(0, 35).map(n => ({
+      target: n.target, html: n.html.slice(0, 160),
+      details: n.any.map(x => ({message: x.message, data: x.data}))
+    }))
+  }))};
+  if (serious.length) console.error("Axe examples:", JSON.stringify(metrics["axe_" + title].violations, null, 2).slice(0, 12000));
   assert.equal(serious.length, 0,
     title + ": " + serious.map(v => v.id + " (" + v.nodes.length + " elements)").join("; "));
-  metrics["axe_" + title] = {passes: result.passes.length, violations: result.violations.map(v => ({
-    id: v.id, impact: v.impact, elements: v.nodes.length
-  }))};
 }
 
 async function main() {
@@ -142,7 +147,7 @@ async function main() {
       const links = portfolio.campaigns.slice(0, 5).map(x => BASE + "problems/" + x.problem_id + "/");
       for (const link of links) await responseOK(await context.request.get(link), link);
       assert.match(await page.locator(".status-note").innerText(),
-        /not independently confirmed unsolved/i);
+        /does not mean independently confirmed unsolved/i);
       metrics.campaigns = portfolio.campaigns.length;
       return "5/5 sample campaign-linked problem pages + unverified warning";
     });
