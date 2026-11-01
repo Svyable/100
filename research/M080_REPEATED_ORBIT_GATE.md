@@ -17,7 +17,7 @@ Let B1,B2,B3,B4 be bases of F_2^4, where each row is an **unordered set** of fou
 | All three distinct | **4,111,138** | **No** |
 | Total | **4,141,145** | 30,007 orbits |
 
-These counts concern equivalence classes of input instances, not inequivalent solutions or new mathematical theorems. No representative/certificate is supplied for the all-distinct class.
+These counts concern **rooted/first-row-distinguished** normalized input instances under the residual S4 action, not full GL(4,2)-and-all-row-permutation equivalence classes. Different choices of the first row can still identify two counted orbits; 4,141,145 is a sufficient rooted search count, not the optimal unrooted orbit count. No representative/certificate is supplied for the all-distinct class.
 
 ## Proof of the orbit count
 
@@ -68,6 +68,6 @@ The certificate is a finite exhaustive proof, conditional on the auditability of
 
 The broad rank-four Rota case has a **2012 unpublished computational proof by M. Cheung** ([primary manuscript](https://educ.jmu.edu/~duceyje/undergrad/2012/mike.pdf)), cited in Alexey Pokrovskiy's 2025 [AMS paper](https://doi.org/10.1090/proc/16581). The DOI belongs to **Pokrovskiy's paper**, not to Cheung's unpublished manuscript. Therefore even a full finite rank-four certificate would not automatically be a new rank-four theorem. The current contribution is a narrower, independently replayable reduction and certificate, not an originality claim. The general problem remains open; see [Montgomery–Sauermann (2025)](https://arxiv.org/abs/2508.05601) and [Chow's three-basis reduction](https://arxiv.org/abs/math/0504367).
 
-**Failed avenue:** Raw enumeration of the 99,137,080 normalized three-multisets repeats equivalent inputs roughly 24-fold. Burnside compression reduces the true search to 4,141,145 orbits, but **does not** by itself supply one canonical representative or a grid for each. The repeated-basis theorem removes only 30,007 of those orbits; **4,111,138 all-distinct orbits remain**. A 42,840-pair finite certificate cannot be extrapolated to those.
+**Failed avenue:** Raw enumeration of the 99,137,080 normalized three-multisets repeats equivalent inputs roughly 24-fold. Burnside compression reduces the rooted normalized search to 4,141,145 orbits, but **does not** by itself supply one canonical representative or a grid for each. The repeated-basis theorem removes only 30,007 of those orbits; **4,111,138 all-distinct orbits remain**. A 42,840-pair finite certificate cannot be extrapolated to those.
 
 **Next falsifier:** Build a canonical representative enumerator for the 4,111,138 all-distinct orbits, with a second orbit-count/uniqueness checker. Then produce a grid for each representative, or an exhaustive nonexistence certificate for a specific one. Verify every column by an independent determinant engine, and compare the full finite claim against Cheung's 2012 corpus before any novelty or O-M080-01 discharge.
