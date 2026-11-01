@@ -35,5 +35,7 @@ jobs:
       - run: python3 scripts/lemma_adversary.py --check
       - run: python3 scripts/ch27_local.py --check
       - run: node --check docs/assets/app.js
+      - run: node --check docs/assets/handoff.js
+      - run: node --test tests/test_handoff.cjs
       - run: node --check docs/next/app.js
       - run: python3 -m unittest discover -s tests -v
