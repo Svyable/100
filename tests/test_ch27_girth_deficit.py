@@ -82,6 +82,11 @@ def exhaustive_oriented(n):
             continue
         if directed_cycle(out,3):
             continue
+        if arcs == n*(n-1)//2-2:
+            rigid = tuple(range(n-1,3,-1))+(1,)*4
+            actual = tuple(sorted((len(row) for row in out),reverse=True))
+            if actual != rigid:
+                raise AssertionError("sharp graph violates equality rigidity")
         maxima[4] = max(maxima[4], arcs)
         if not directed_cycle(out,4):
             maxima[5] = max(maxima[5], arcs)
