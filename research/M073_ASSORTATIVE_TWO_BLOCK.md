@@ -122,11 +122,11 @@ fails when \(r<0\).
 
 Run from the repository root:
 
-\`\`\`sh
+```sh
 python3 scripts/m073_assortative2.py --check
 python3 -m unittest discover -s tests -p 'test_m073_assortative2.py' -v
 python3 scripts/regen.py --check
-\`\`\`
+```
 
 The exact checker pins the 22-triple table by a SHA-256 of its canonical
 integer array, independently enumerates all 35 graph vertices and 66
@@ -189,5 +189,5 @@ has negative sign. Seek a valid exact rational Sidorenko gap or a new
 non-termwise inequality; then vary block masses. A counterexample to the
 *enhanced bound* is not a counterexample to Sidorenko. Before any novelty
 or independent-acceptance promotion, obtain external literature and proof
-review by someone other than the author. No changes to \`data/solved.json\`,
+review by someone other than the author. No changes to `data/solved.json`,
 conjecture evidence states or benchmark trial records.
