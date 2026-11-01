@@ -156,6 +156,21 @@
       "note": "Exact 156-class n=6 separator, 20 collision-pair certificate, explicit nonisomorphic n=7 witnesses and isolate lift for every larger n. Independent mathematics and fidelity review not yet recorded; wider-literature novelty unassessed, O-M078-01 not discharged."
     },
     {
+      "work_id": "R22",
+      "scope_sha256": "46bd0f28175eb388d4aa743b6bf55ea03ef6eb3e04dee13af41490c8dc794248",
+      "author": "ChatGPT (M075 orbit-parent counterexample)",
+      "outcome": "gap_reported",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/124",
+      "pr_url": "https://github.com/Svyable/100/pull/143",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.6
+      },
+      "note": "Approximate active research time. All-n counterexamples to a specific canonical-parent pruning shortcut; sound parent-orbit augmentation proof, nine tests, independent n<=4 orbit checks. General algorithm is prior art. No minimal Frankl counterexample obstruction, novelty audit, independent mathematical review or R22 promotion."
+    },
+    {
       "work_id": "X-M073-MONOTONE2-33W",
       "scope_sha256": "4c2d770397a7a597a252cb7a5c44739a51bf68e3a0ab1a0d6738e0718962ac98",
       "author": "ChatGPT (bounded M073 monotone graphon inequality)",
