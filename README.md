@@ -2,20 +2,29 @@
 
 **Purpose:** Preserve, refine, and stack-rank 100 concrete mathematical proof/counterexample targets, looking for results and methods that create new branches of discovery.
 
-- **[Lean proof pipeline](LEAN.md)** — pinned workspace, Ramsey benchmark, reusable restriction lemma, axiom audits and commit-bound CI evidence; scope review remains separate.
+- **[Lean proof pipeline](LEAN.md)** — pinned workspace, Ramsey benchmark, two-element Frankl case, axiom audits and commit-bound CI evidence; scope review remains separate.
+- **[Proof exchange / scaling protocol](docs/PROOF_EXCHANGE.md)** — source-bound packets for agent-to-agent research handoffs, dependency-gated proof obligations and evidence-bounded cross-problem coverage scheduling (`python3 scripts/scale.py --budget 5 --json`).
 - **[Roadmap](ROADMAP.md)** ([on the dashboard](https://svyable.github.io/100/#roadmap)) — live scoreboard against targets, and every shipped, current, next and later item with evidence and exit criteria. Source: [data/roadmap.json](data/roadmap.json).
 - **[Next 100 hypothesis reservoir](https://svyable.github.io/100/next/)** — 216 cross-domain, unvetted proposals across 27 research domains in a scalable pipeline; ranked discovery priorities, not claimed new open results ([protocol](NEXT_100.md)). The active 100 remains capped.
 - **[Public research dashboard](https://svyable.github.io/100/)** (once GitHub Pages is enabled: [activation guide](docs/PAGES_SETUP.md)) — ranked search, evidence filters, active proof campaigns.
-- **[Exact probe lab](LAB.md)**: 15 independently checked probes on 11 reusable engines give **17 of the 100 problems** an exact verifier (previously 3), including 16 of the 19 problems where finite computation can refute or settle the claim. All ranges are known mathematics; see [the lab dossier](research/LAB_CAMPAIGNS.md).
+- **[Exact probe lab](LAB.md)**: 18 independently checked probes on 13 reusable engines give **20 of the 100 problems** an exact verifier (previously 3), including all 19 problems where finite computation can refute or settle the claim. All ranges are known mathematics; see [the lab dossier](research/LAB_CAMPAIGNS.md).
+- [Frankl's independent Burnside orbit certificate](research/M075_BURNSIDE.md) — n=5 full-support orbit count 28,960 from seven S5 cycle types, reproducible without canonicalizing millions of families.
+- [Frankl's closure-pruned canonical orbit generator](research/M075_CANONICAL.md) — proved orbit-minimum equivalence, n=5 known full-support count and n=4 orbit census reproduced, no new bound claimed.
+- **[Structure mines](MINES.md)**: five certified tables read off those certificates (Goldbach records, Erdős–Straus residues, deck invariants, poset balances, Frankl orbits). Each table is recomputed by a second code path. A table is not a theorem.
 - **[Statement-scope review drafts](data/statement_scope_reviews.json)** — five provisional problem formulations and exact unresolved assumptions; *not* independent open-status confirmations.
 - **[Evidence-gated portfolio curation](docs/PORTFOLIO_SELECTION.md)** — targeted review flags, replacement standards, and [unvetted admission alternatives](data/portfolio_triage.json).
-- **[Execution-priority queue](ATTACK_QUEUE.md)** — evidence-aware ordering of the top 100 with precise proof obligations for active campaigns.
+- **[Execution-priority queue](ATTACK_QUEUE.md)** — ordered by dispatch score (editorial + readiness + an action bonus), not by readiness alone. Claimed finite witnesses, missing engines and published certificates move up. A range extension the campaign itself says is already known mathematics is refused. Cohort jobs and the shared attack shapes are in [APPROACH.md](APPROACH.md).
 - **[Solved archive](data/solved.json)** — strict full-resolution ledger, initially empty; known finite benchmarks are kept separate.
 - [Caccetta–Häggkvist finite census and 18-vertex SAT target](research/M074_CH.md) — exact symmetry coverage, independent cycle check and reproducible CNF encoding; no new proof claimed.
+- [CH (24,8) regular-case obstruction](research/M074_ELEMENTARY_24_REGULAR.md) — an optimal 8-neighborhood 21-arc ceiling and cross-cut demand of 22 versus capacity of 15 exclude exact 8-in/8-out-regular candidates. The minimum-outdegree-only case remains a separate, unproved branch here.
+- [CH (21,7) elementary finite exclusion](research/M074_ELEMENTARY_21.md) — seven-vertex degree rigidity plus a 145-vs-147 arc-budget contradiction excludes the 21-vertex triangle-free case; no general resolution or originality claim.
+- [CH (18,6) elementary finite exclusion](research/M074_ELEMENTARY_18.md) — a saturated-pivot/indegree contradiction removes the need for a SAT proof for this **finite case**, while retaining frozen CNFs as independent audit targets; no full-conjecture or novel-result claim.
+- [CH 18-vertex regularity reduction](research/M074_REGULARITY.md) — self-contained six-vertex lemma, proof-derived in/out-regularity and symmetry-fixed CNF; SAT/UNSAT certificate still pending.
 - [Research engine and verification rules](docs/RESEARCH_ENGINE.md) — how results, readiness, rankings and CI interact.
 - [Current rank order](RANKED.md) — deterministic generated ranking of 100 candidates.
 - [Machine-readable registry](data/problems.json) — stable IDs, working questions, first attacks, weighted scores, evidence status and provenance.
 - [Active proof campaigns](research/CAMPAIGNS.md) — precise statements, verifiers and bounded first attacks.
+- [Published Ramsey K42 replay](research/M095_RAMSEY.md) — offline SHA-256-pinned McKay catalog, 328 known 42-vertex graph6 witnesses plus color-swapped complements, checked by two independent exact K5 algorithms; reproduces R(5,5) ≥ 43, not a novel bound.
 - [Ramsey R(5,5) certificate campaign](research/M095_RAMSEY.md) and [Frankl finite verification](research/M075_FRANKL.md) — reproducible small cases; neither resolves the full problem.
 - [Research and verification protocol](docs/RESEARCH_PROTOCOL.md) — rules for advancing, scoring and retiring candidates.
 - [Starting status sources](docs/SOURCES.md) — official Clay status and recent 2026 proof-claim precautions.
@@ -30,10 +39,14 @@ python3 scripts/lab.py --list
 python3 scripts/lab.py
 python3 scripts/lab.py --check
 python3 scripts/lab.py --level deep --check
+python3 scripts/mine.py
+python3 scripts/mine.py --check
 python3 scripts/rank.py
 python3 scripts/rank.py --check
 python3 scripts/research.py
 python3 scripts/research.py --check
+python3 scripts/approach.py
+python3 scripts/approach.py --check
 python3 scripts/roadmap.py
 python3 scripts/roadmap.py --check
 python3 scripts/build_site.py

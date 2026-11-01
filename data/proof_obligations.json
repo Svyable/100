@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "obligations": [
+    {
+      "id": "O-M074-01",
+      "problem_id": "M074",
+      "kind": "witness",
+      "statement": "Each published UNSAT trace used in the fixed-outdegree-six Caccetta-Häggkvist computation is accepted by an independent proof-trace checker on its exact published input.",
+      "prior_art_boundary": "The external fixed-r=6 proof corpus is already reported in the literature; this repository has not independently replayed the 438 MB corpus. Replay would reproduce a claim, not establish novelty.",
+      "falsifier": "One reported UNSAT certificate fails an independent checker, or a published input digest differs from the input actually replayed.",
+      "next_action": "Acquire the cited proof corpus with exact hashes; replay every proof trace with an independently pinned checker and preserve the input-to-trace manifest.",
+      "depends_on": [],
+      "status": "blocked",
+      "evidence": null
+    },
+    {
+      "id": "O-M074-02",
+      "problem_id": "M074",
+      "kind": "reduction",
+      "statement": "The published hand reductions and case split for minimum outdegree six cover every digraph admissible under the stated restricted theorem without dropping an exceptional case.",
+      "prior_art_boundary": "An accepted UNSAT trace does not prove that the originating CNFs exhaust the mathematical cases. The published fixed-r=6 argument is not a resolution of the unrestricted Caccetta-Häggkvist conjecture.",
+      "falsifier": "A digraph admissible under the restricted statement is not represented by any certified case, or a reduction changes an outdegree/cycle quantifier.",
+      "next_action": "Write a finite, numbered reduction ledger from the original quantified statement to each CNF family; check edge cases and the exact r=6, n and cycle-bound conventions.",
+      "depends_on": [],
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "O-M074-03",
+      "problem_id": "M074",
+      "kind": "lemma",
+      "statement": "The claimed fixed-outdegree-six Caccetta-Häggkvist result follows from the published exhaustive case split and the independently replayed UNSAT proof traces, for exactly the parameter range and graph conventions stated in the source.",
+      "prior_art_boundary": "This is a conditional audit target for an already claimed restricted result, not a new solution and not a promotion to the full Caccetta-Häggkvist conjecture.",
+      "falsifier": "Either a traced case is not certified or an admissible case is absent from the reduction; failure of either dependency blocks this conclusion.",
+      "next_action": "After the trace and reduction obligations are discharged, independently check the implication from both premises to the exact restricted theorem.",
+      "depends_on": [
+        "O-M074-01",
+        "O-M074-02"
+      ],
+      "status": "blocked",
+      "evidence": null
+    },
+    {
+      "id": "O-M075-01",
+      "problem_id": "M075",
+      "kind": "lemma",
+      "statement": "For union-closed families over a five-element ground set, a canonical encoding is constant on each relabeling orbit and separates distinct relabeling orbits.",
+      "prior_art_boundary": "The existing n=4 census and its 366 relabeling orbits are known finite benchmark data; an n=5 canonicalization lemma is a proposed structural step, not established.",
+      "falsifier": "Two relabeling-equivalent families receive different codes, or two inequivalent families receive the same code.",
+      "next_action": "A paper proof of the minimum S5 orbit invariant and implementation are in research/M075_CANONICAL.md and scripts/frankl_canonical.py. Obtain independent mathematical and statement-fidelity review before discharge; the existing n4 mine provides a second finite cross-check.",
+      "depends_on": [],
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "O-M075-02",
+      "problem_id": "M075",
+      "kind": "lemma",
+      "statement": "A canonical family generator over a five-element ground set emits exactly one union-closed family per relabeling orbit without enumerating all 2^(2^5) set systems.",
+      "prior_art_boundary": "No speedup claim follows from the n=4 orbit table; completeness and no-duplication are separate from empirical speed.",
+      "falsifier": "An omitted relabeling orbit, a duplicated orbit, an emitted non-union-closed family, or a fallback that enumerates every set system.",
+      "next_action": "The n5 labeled full-support count 2747402 and n5 orbit count 28960 now have independent closure-pruned and Burnside checkers (research/M075_CANONICAL.md and M075_BURNSIDE.md), with a written exact-once proof. Obtain independent scope and mathematical reviews before discharge. Next performance goal is canonical augmentation pruning noncanonical partial states, not repeating known finite enumerations.",
+      "depends_on": [
+        "O-M075-01"
+      ],
+      "status": "blocked",
+      "evidence": null
+    },
+    {
+      "id": "O-M095-01",
+      "problem_id": "M095",
+      "kind": "witness",
+      "statement": "The cited 42-vertex two-colouring of the complete graph has neither a red K5 nor a blue K5, as checked directly from its published adjacency data.",
+      "prior_art_boundary": "A known K42 witness would reproduce a published Ramsey lower bound. It does not yield an upper bound or determine R(5,5).",
+      "falsifier": "An explicit five-vertex monochromatic clique in the imported colouring, or a vertex/edge count inconsistent with K42.",
+      "next_action": "The cited 328-graph K42 catalog has a pinned offline, dual-checker reproduction (scripts/verify_mckay.py). Obtain genuinely independent mathematical and statement-scope review of that exact replay before discharging this known-witness node; a K43 counterexample or full upper-bound proof remains a separate open target.",
+      "depends_on": [],
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "O-M048-01",
+      "problem_id": "M048",
+      "kind": "lemma",
+      "statement": "There is an explicitly named family of p-blocks, with a fixed defect-group isomorphism type outside the published order-100 census, for which the number of Alperin weights equals the number of irreducible Brauer characters.",
+      "prior_art_boundary": "The named-group probe through A5, and the published verification for every group of order at most 100, are known finite benchmarks. A restricted block-family lemma is not established here.",
+      "falsifier": "A block in the named family whose independently recomputed weight count differs from its Brauer-character count, or a definition of the family that collapses into the order-100 census.",
+      "next_action": "Name the defect-group isomorphism type and the ambient groups, write the exact weight-count lemma, and state the finite certificate an independent checker would accept.",
+      "depends_on": [],
+      "status": "open",
+      "evidence": null
+    }
+  ]
+}
