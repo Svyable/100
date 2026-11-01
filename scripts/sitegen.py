@@ -1475,7 +1475,7 @@ def render_formal(site):
 
 # --------------------------------------------------------------------------- work queue
 
-WORK_LABEL = {"obligation": "Proof obligation", "review": "Independent review", "lean": "Lean target", "job": "Cohort job", "roadmap": "Roadmap item",
+WORK_LABEL = {"obligation": "Proof obligation", "review": "Independent review", "benchmark": "Benchmark trial", "lean": "Lean target", "job": "Cohort job", "roadmap": "Roadmap item",
               "comparator": "Lean comparator", "status_audit": "Status audit"}
 WORK_STATUS = {"runnable": "Runnable", "externally_blocked": "Externally blocked", "waiting_on_dependencies": "Waiting on dependencies"}
 
@@ -1501,7 +1501,7 @@ def render_work_index(site):
         items = [w for w in doc["items"] if w["kind"] == kind]
         if not items:
             continue
-        shown = items if kind not in ("comparator", "status_audit") else items[:12]
+        shown = items if kind not in ("comparator", "status_audit", "benchmark") else items[:12]
         more = "" if len(shown) == len(items) else (
             f'<details class="table-view"><summary>All {len(items)} {E(WORK_LABEL[kind].lower())} items</summary>'
             f'<ul class="work-list">{"".join(work_row(s, page, w) for w in items[len(shown):])}</ul></details>')
@@ -1510,7 +1510,7 @@ def render_work_index(site):
                    f'<ul class="work-list">{"".join(work_row(s, page, w) for w in shown)}</ul>{more}</section>')
     top = "".join(work_row(s, page, w) for w in [w for w in doc["items"] if w["status"] == "runnable"][:6])
     body = page_head("THE WORK QUEUE", "Many hands, <em>no collisions.</em>",
-                     "Every bounded unit of work in the repository, derived from the ledgers that define it: proof obligations, Lean targets, cohort jobs, roadmap items, and one comparator and one status audit per problem that still needs them. An item disappears when its ledger records the result.") + f"""
+                     "Every bounded unit of work in the repository, derived from the ledgers that define it: proof obligations, independent reviews, preregistered benchmark trials, Lean targets, cohort jobs, roadmap items, and one comparator and one status audit per problem that still needs them. An item disappears when its ledger records the result.") + f"""
 {stats([("Work items", doc['count']), ("Runnable now", doc['by_status']['runnable']),
         ("Lean comparators to write", doc['by_kind']['comparator']), ("Status audits to draft", doc['by_kind']['status_audit'])])}
 <section class="section-block tight" aria-labelledby="yield-h">{section_head("CAPACITY IS NOT YIELD", '<span id="yield-h">Measured by what is <em>accepted.</em></span>', "Yield counts claimed work items that a named reviewer, who is not the author, accepted, per 10 recorded agent-hours. Review is the bottleneck, so reviews are claimable work too.")}
