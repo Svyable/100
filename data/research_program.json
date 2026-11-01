@@ -8,13 +8,14 @@
       "method": "Verified-range certificates and least-partition statistics",
       "hypothesis": "Every even integer n >= 4 is a sum of two primes.",
       "first_proof_obligation": "State a restricted, checkable lemma (for example an explicit bound on the least Goldbach prime in a named residue class or range) that is not already implied by the 4*10^18 verification or by the ternary Goldbach theorem.",
-      "next_experiment": "The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification.",
+      "next_experiment": "The goldbach_bound mine certifies p <= floor(3 (ln n)^2) for every even n <= 20000 (research/M006_BOUND.md). State a sharper restricted lemma (named residue class, or a constant below 3 with a proof idea that could leave this window), without extending the range toward 4*10^18.",
       "additional_verifiers": [
-        "python3 scripts/mine.py --mine goldbach_growth"
+        "python3 scripts/mine.py --mine goldbach_growth",
+        "python3 scripts/mine.py --mine goldbach_bound"
       ],
       "falsification": "An even n >= 4 with no prime p <= n/2 such that n - p is prime, confirmed by an independent primality oracle.",
       "blocker": "Range extension cannot compete with the published 4*10^18 verification; real progress needs a new restricted theorem.",
-      "dossier": "research/LAB_CAMPAIGNS.md",
+      "dossier": "research/M006_BOUND.md",
       "verifier": "python3 scripts/lab.py --probe goldbach"
     },
     {
@@ -516,6 +517,17 @@
       "verifier": "python3 scripts/mine.py --mine goldbach_growth",
       "artifact": "scripts/mines/goldbach_growth.py",
       "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-MINE-006-BOUND",
+      "problem_id": "M006",
+      "classification": "reproduced_known",
+      "title": "Least Goldbach prime bounded by floor(3 (ln n)^2) through 20,000",
+      "scope": "Explicit inequality inside the published 4*10^18 verification; not an asymptotic theorem",
+      "description": "Every even n <= 20000 has least Goldbach prime p <= floor(3 (ln n)^2). The twelve growth-mine records dominate; an odd-only sieve recomputes each least prime and the bound.",
+      "verifier": "python3 scripts/mine.py --mine goldbach_bound",
+      "artifact": "scripts/mines/goldbach_bound.py",
+      "verified_on": "2026-11-01"
     },
     {
       "id": "B-MINE-019",

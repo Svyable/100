@@ -7,6 +7,7 @@ Each table below was recomputed by a second code path. The ranges are inside pub
 | Mine | Problem | Statement | Certificate |
 |---|---|---|---|
 | [`goldbach_growth`](scripts/mines/goldbach_growth.py) | M006 | For every even n with 4 <= n <= 20000, the least prime p such that n-p is prime, and the pairs (n, p) where that least prime sets a new record. | `aec113d543d3` |
+| [`goldbach_bound`](scripts/mines/goldbach_bound.py) | M006 | For every even n with 4 <= n <= 20000, the least prime p such that n-p is prime satisfies p <= floor(3 (ln n)^2). | `214ce0288086` |
 | [`straus_patterns`](scripts/mines/straus_patterns.py) | M019 | Every prime n <= 8000 with n = 1 (mod 24) has an explicit positive solution of 4/n = 1/x + 1/y + 1/z, grouped by the residue 4x - n. | `a58457c801a9` |
 | [`straus_identities`](scripts/mines/straus_identities.py) | M019 | Nine polynomial identities give explicit 4/n = 1/x+1/y+1/z solutions on named arithmetic progressions inside n = 1 (mod 24); prime coverage is reported through 8000. | `94d399f83ea2` |
 | [`deck_invariants`](scripts/mines/deck_invariants.py) | M078 | On the complete graph census for 3 <= n <= 6, the excess of graphs over classes of the deck-certified degree sequence, and over degree sequence plus triangle count. | `31a81e041e99` |
@@ -83,6 +84,79 @@ For every even n with 4 <= n <= 20000, the least prime p such that n-p is prime,
 ```
 
 Run `python3 scripts/mine.py --mine goldbach_growth`.
+
+### M006 · Explicit least-Goldbach-prime bound through 20,000
+
+For every even n with 4 <= n <= 20000, the least prime p such that n-p is prime satisfies p <= floor(3 (ln n)^2).
+
+**Frontier.** Known through 4*10^18 (Oliveira e Silva, Herzog and Pardi, 2014). The inequality p <= floor(3 (ln n)^2) is certified only for 4 <= n <= 20000; it is not an asymptotic theorem and cannot enter Solved.
+
+```json
+{
+  "bound_factor": 3,
+  "bound_formula": "floor(3*(ln n)^2)",
+  "even_integers": 9999,
+  "limit": 20000,
+  "record_count": 12,
+  "records": [
+    [
+      4,
+      2
+    ],
+    [
+      6,
+      3
+    ],
+    [
+      12,
+      5
+    ],
+    [
+      30,
+      7
+    ],
+    [
+      98,
+      19
+    ],
+    [
+      220,
+      23
+    ],
+    [
+      308,
+      31
+    ],
+    [
+      556,
+      47
+    ],
+    [
+      992,
+      73
+    ],
+    [
+      2642,
+      103
+    ],
+    [
+      5372,
+      139
+    ],
+    [
+      7426,
+      173
+    ]
+  ],
+  "records_sha256": "0382974f247c86f7d0a52cb4ab1b04ab68f58aa7e2761d9efd782221d77e00a0",
+  "worst_record_bound": 238,
+  "worst_record_n": 7426,
+  "worst_record_prime": 173,
+  "worst_record_ratio": 2.177827
+}
+```
+
+Run `python3 scripts/mine.py --mine goldbach_bound`.
 
 ### M019 · Erdos-Straus residue patterns for primes 1 mod 24
 

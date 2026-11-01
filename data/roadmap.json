@@ -608,6 +608,17 @@
         "M075",
         "M074"
       ]
+    },
+    {
+      "id": "R51",
+      "track": "campaigns",
+      "horizon": "shipped",
+      "title": "Explicit least-Goldbach-prime bound through 20,000",
+      "outcome": "For every even n <= 20000, the least Goldbach prime satisfies p <= floor(3 (ln n)^2); certified on records and on the full range.",
+      "evidence": "research/M006_BOUND.md",
+      "problems": [
+        "M006"
+      ]
     }
   ]
 }

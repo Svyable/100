@@ -54,7 +54,7 @@
   "campaign_actions": {
     "M006": {
       "action": "mine_structure",
-      "why": "The goldbach_growth mine already lists the record least primes through 20,000. A longer verified range cannot compete with the published 4*10^18 check."
+      "why": "The goldbach_bound mine already certifies p <= floor(3 (ln n)^2) through 20,000. A longer verified range cannot compete with the published 4*10^18 check."
     },
     "M019": {
       "action": "mine_structure",
