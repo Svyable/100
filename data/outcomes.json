@@ -123,6 +123,21 @@
         "ci_minutes": 0
       },
       "note": "Approximate active implementation and test time for a fail-closed router admission prototype; 0 live workers launched, no model or mathematical result accepted. Execution adapter, distributed lease and independent review remain open."
+    },
+    {
+      "work_id": "O-M019-01",
+      "scope_sha256": "aed22f7409b059e5deaf541ca1c7bd9873dc7a471be1e4879d23c4c96216720b",
+      "author": "ChatGPT (M019 fixed-shift scope falsifier)",
+      "outcome": "gap_reported",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/121",
+      "pr_url": "https://github.com/Svyable/100/pull/125",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.8
+      },
+      "note": "Prime 1129 forbids both fixed shifts c=3 and c=7 by exact divisor and subgroup checks, but shift c=11 works. Universal wording of O-M019-01 is infeasible; no full Erd\u0151s\u2013Straus counterexample, no novelty or independent review. Prior art Mordell 1963 and Dahan 2026."
     }
   ]
 }
