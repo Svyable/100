@@ -102,7 +102,8 @@ class WaveScaleTests(unittest.TestCase):
         self.assertGreaterEqual(kinds["job"], 20)
         # High-leverage families should dominate the first thirty slots.
         head = [p["kind"] for p in self.wave["selected_packets"][:30]]
-        self.assertGreaterEqual(sum(k in ("obligation", "lean", "job", "roadmap") for k in head), 25)
+        self.assertGreaterEqual(sum(k in ("obligation", "review", "lean", "job", "roadmap") for k in head), 25)
+        self.assertFalse({"comparator", "status_audit"} & set(head))
 
     def test_wave_never_selects_blocked_work(self):
         # Regression: O-M074-01 is externally_blocked and was selected as slot 3.

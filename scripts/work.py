@@ -14,6 +14,8 @@ result. Nothing here changes a ledger, a rank or an evidence state.
 Families (in priority order):
 
 * ``obligation``   — nodes of ``data/proof_obligations.json`` (dependency-aware frontier)
+* ``review``       — independent review of an artifact that exists but is not yet accepted
+                     (implemented Lean targets, author-checked comparators, status drafts)
 * ``lean``         — next deliverable of each ``data/lean_targets.json`` target
 * ``job``          — cohort jobs from the dispatcher (``scripts/approach.py``)
 * ``roadmap``      — roadmap items in the ``now`` and ``next`` horizons
@@ -32,13 +34,14 @@ from pathlib import Path
 from urllib.parse import quote
 
 import approach
+import outcomes
 import proof_obligations
 import scale
 from research import load
 
 ROOT = Path(__file__).resolve().parents[1]
 REPO = "https://github.com/Svyable/100"
-FAMILIES = ("obligation", "lean", "job", "roadmap", "comparator", "status_audit")
+FAMILIES = ("obligation", "review", "lean", "job", "roadmap", "comparator", "status_audit")
 STATUS_ORDER = {"runnable": 0, "externally_blocked": 1, "waiting_on_dependencies": 2}
 REGEN = "python3 scripts/regen.py && python3 scripts/regen.py --check"
 TESTS = "python3 -m unittest discover -s tests"
@@ -93,6 +96,54 @@ def build():
                         "Independent review recorded before the node is marked discharged", REGEN],
             boundary=node["prior_art_boundary"], falsifier=node["falsifier"],
             depends_on=list(node["depends_on"]), source="data/proof_obligations.json")
+
+    # 1b. Independent review: the acceptance bottleneck, made claimable. An item clears
+    # when data/outcomes.json records an accepted_independent outcome for it.
+    accepted = outcomes.accepted_ids()
+    independence = ("The reviewer is not an author of the artifact (check git log of its files) and records "
+                    "the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url")
+    problems_by_id = {p["id"]: p for p in items}
+    for t in _json("data/lean_targets.json"):
+        if t["stage"] != "implemented" or f"V-{t['id']}" in accepted:
+            continue
+        add(id=f"V-{t['id']}", kind="review", status="runnable", problems=[t["problem_id"]],
+            title=f"Independent scope review of Lean target {t['id']} ({t['problem_id']})",
+            deliverable=("Compare every registered declaration of " + t["id"] + " with the registry statement and its "
+                         "primary source: domains, quantifiers, nonemptiness and distinctness conditions, strict versus "
+                         "weak inequalities, encodings. State exactly what is and is not established."),
+            context=t["statement"],
+            acceptance=[independence, "Any mismatch is filed as a gap on the target's scope_gap, not silently fixed", REGEN],
+            boundary="A scope review checks that the encoded statement matches the claim; it does not add mathematics. "
+                     + t["scope_gap"],
+            falsifier="A quantifier, domain or convention in the Lean statement that differs from the registered claim.",
+            source="data/lean_targets.json")
+    for e in _json("data/formalization.json")["entries"]:
+        wid = f"V-F-{e['problem_id']}"
+        if e.get("fidelity") != "author_checked" or wid in accepted:
+            continue
+        add(id=wid, kind="review", status="runnable", problems=[e["problem_id"]],
+            title=f"Independent fidelity review of the {problems_by_id[e['problem_id']]['name']} comparator",
+            deliverable=(f"Check {e['namespace']}.{e['statement']} in {e['module']} against the registry statement and a "
+                         "primary source; confirm the 'not encoded' list is complete; try to break each fidelity example."),
+            context=e["encodes"],
+            acceptance=[independence, "On acceptance, set fidelity to independently_reviewed in data/formalization.json "
+                        "in the same PR", REGEN],
+            boundary="Fidelity review certifies the encoding, never the conjecture.",
+            falsifier="A hand-checked instance on which the comparator and the registry statement disagree.",
+            source="data/formalization.json")
+    for r in _json("data/statement_scope_reviews.json")["reviews"]:
+        wid = f"V-S-{r['id']}"
+        if wid in accepted or r["id"] not in problems_by_id:
+            continue
+        add(id=wid, kind="review", status="runnable", problems=[r["id"]],
+            title=f"Independent review of the status draft for {problems_by_id[r['id']]['name']}",
+            deliverable=("Check the draft scope and open questions in data/statement_scope_reviews.json against dated "
+                         "specialist sources; record agreement, corrections or the source that settles the status."),
+            context=r.get("draft_scope", ""),
+            acceptance=[independence, "Evidence state changes only through docs/PORTFOLIO_SELECTION.md", REGEN],
+            boundary="Reviewing a draft is not an open-status certification by itself.",
+            falsifier="A dated source showing the drafted statement is already resolved or misstated.",
+            source="data/statement_scope_reviews.json")
 
     # 2. Lean targets: the next formal deliverable of each target.
     for t in _json("data/lean_targets.json"):

@@ -1123,9 +1123,14 @@ def render_formal(site):
 
 # --------------------------------------------------------------------------- work queue
 
-WORK_LABEL = {"obligation": "Proof obligation", "lean": "Lean target", "job": "Cohort job", "roadmap": "Roadmap item",
+WORK_LABEL = {"obligation": "Proof obligation", "review": "Independent review", "lean": "Lean target", "job": "Cohort job", "roadmap": "Roadmap item",
               "comparator": "Lean comparator", "status_audit": "Status audit"}
 WORK_STATUS = {"runnable": "Runnable", "externally_blocked": "Externally blocked", "waiting_on_dependencies": "Waiting on dependencies"}
+
+
+def outcomes_metrics(doc):
+    import outcomes
+    return outcomes.metrics(review_backlog=doc["by_kind"].get("review", 0))
 
 
 def work_row(site, page, w):
@@ -1138,6 +1143,7 @@ def render_work_index(site):
     s = site
     page = "work/index.html"
     doc = s.work
+    y = outcomes_metrics(doc)
     groups = ""
     for kind in workqueue.FAMILIES:
         items = [w for w in doc["items"] if w["kind"] == kind]
@@ -1155,6 +1161,10 @@ def render_work_index(site):
                      "Every bounded unit of work in the repository, derived from the ledgers that define it: proof obligations, Lean targets, cohort jobs, roadmap items, and one comparator and one status audit per problem that still needs them. An item disappears when its ledger records the result.") + f"""
 {stats([("Work items", doc['count']), ("Runnable now", doc['by_status']['runnable']),
         ("Lean comparators to write", doc['by_kind']['comparator']), ("Status audits to draft", doc['by_kind']['status_audit'])])}
+<section class="section-block tight" aria-labelledby="yield-h">{section_head("CAPACITY IS NOT YIELD", '<span id="yield-h">Measured by what is <em>accepted.</em></span>', "Yield counts claimed items that a named reviewer, who is not the author, accepted, per 10 recorded agent-hours. Review is the bottleneck, so reviews are claimable work too.")}
+{stats([("Independently accepted results", y['accepted_independent']), ("Yield per 10 agent-hours", '—' if y['accepted_per_10_agent_hours'] is None else y['accepted_per_10_agent_hours']),
+        ("Outcome records", y['records']), ("Review backlog", y['review_backlog_items'])])}
+<p class="table-footnote">Ledger: {repo_link('data/outcomes.json')} · report: <a href="{library_href(s, page, 'YIELD.md') or BLOB + 'YIELD.md'}">YIELD.md</a> · start with the <a href="#review">independent reviews</a>.</p></section>
 <section class="section-block tight" aria-labelledby="proto-h">{section_head("THE PROTOCOL", '<span id="proto-h">Claim, do, <em>regenerate.</em></span>', "Built for many concurrent agents and humans. Every step is mechanical except the mathematics.")}
 <ol class="steps">
 <li><strong>Pick.</strong> <code>python3 scripts/work.py --next 5</code> (or filter with <code>--kind comparator</code>), or browse below. Higher items are runnable and earlier in dispatch order.</li>

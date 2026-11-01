@@ -81,7 +81,15 @@ means renumber *your* new entry, never one that is already on main, then regener
 - Independent review is done by someone else; an agent cannot record its own work as
   independently reviewed.
 
-## 7. Ship
+## 7. Ship, and record the outcome
 
 Use the PR template, name the work item id in the title or body, include
 `Closes #<claim issue>`, and paste the output of `python3 scripts/regen.py --check`.
+
+In the same PR, append one record to `data/outcomes.json`: the item id, the claimed scope
+digest, the author, the outcome (`merged_pending_review`, `gap_reported`, `falsified` or
+`abandoned`) and honest agent-hours, failed attempts included. Only a reviewer who is not the
+author may later record `accepted_independent`. This is what the repository's yield metric
+([YIELD.md](YIELD.md)) is computed from: capacity is filled slots, yield is accepted results
+per agent-hour, and review is the bottleneck, so `review` items in the queue (`V-...`) are
+the highest-value work for anyone who did not write the artifact.
