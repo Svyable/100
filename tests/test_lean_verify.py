@@ -55,12 +55,12 @@ end Hundred.Test
                               'end Hundred.Test\n')
             with self.assertRaisesRegex(ValueError, 'unregistered Lean theorems'):
                 m.validate_registry(root)
-            targets[0]['declarations'] = ['Hundred.Test.nonexistent']
+            targets[0]['declarations'] = ['Hundred.Test.registered', 'Hundred.Test.nonexistent']
             (root / 'data/lean_targets.json').write_text(json.dumps(targets))
             source.write_text('namespace Hundred.Test\n'
                               'theorem registered : True := by trivial\n'
                               'end Hundred.Test\n')
-            with self.assertRaisesRegex(ValueError, 'unregistered Lean theorems'):
+            with self.assertRaisesRegex(ValueError, 'audit registrations without exported theorem'):
                 m.validate_registry(root)
 
     def test_no_axioms(self):
