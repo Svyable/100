@@ -7,6 +7,7 @@ import hashlib
 import json
 import re
 import subprocess
+import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -72,9 +73,18 @@ def verify(root=ROOT):
     version = run(['lake', 'env', 'lean', '--version'], work)
     if not re.search(r"version " + re.escape(pinned.rsplit(':v', 1)[1]) + r"(?:,|\s)", version):
         raise ValueError('toolchain mismatch')
+    timings = {}
+    started = time.monotonic()
     run(['lake', 'build'], work)
+    timings['lake build'] = round(time.monotonic() - started, 2)
     for path in sorted(work.glob('Hundred/**/*.lean')) + [work / 'Negative.lean']:
+        started = time.monotonic()
         run(['lake', 'env', 'lean', '-DwarningAsError=true', str(path)], work)
+        timings[str(path.relative_to(root))] = round(time.monotonic() - started, 2)
+    # Wall time to a clean kernel check is a tracked metric (LEAN.md); the slowest
+    # modules are printed so a budget overrun is attributable before it becomes a timeout.
+    for name, secs in sorted(timings.items(), key=lambda kv: -kv[1])[:5]:
+        print(f'{secs:8.2f}s  {name}')
     audit = work / 'Audit.lean'
     audit.write_text('import Hundred\n' + '\n'.join('#print axioms ' + n for n in names) + '\n')
     output = run(['lake', 'env', 'lean', '-DwarningAsError=true', str(audit)], work)
@@ -86,7 +96,7 @@ def verify(root=ROOT):
     dirty = bool(run(['git', 'status', '--porcelain', '--untracked-files=normal'], root).strip())
     report.write_text(json.dumps({'schema_version': 1, 'commit': commit, 'dirty': dirty,
         'toolchain': pinned, 'source_sha256': hashes, 'axioms': axioms,
-        'result': 'kernel_checked', 'scope_review': 'pending',
+        'result': 'kernel_checked', 'scope_review': 'pending', 'timings_seconds': timings,
         'portfolio_promotion': False}, indent=2) + '\n')
     print(f'Checked {len(names)} declarations; evidence: {report}')
 

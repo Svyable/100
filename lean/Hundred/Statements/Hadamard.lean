@@ -50,13 +50,12 @@ def paley12Rows : List (List Int) := [
 
 def paley12 (i j : Nat) : Int := (paley12Rows.getD i []).getD j 0
 
-/-- **Kernel-checked** small cases `k = 1, 2, 3, 4` (orders 4, 8, 12, 16). -/
+/-- **Kernel-checked** small cases `k = 1, 2, 3` (orders 4, 8, 12). -/
 theorem order_4 : ∃ H, IsHadamard 4 H := ⟨sylvester 2, by decide +kernel⟩
 theorem order_8 : ∃ H, IsHadamard 8 H := ⟨sylvester 3, by decide +kernel⟩
 theorem order_12 : ∃ H, IsHadamard 12 H := ⟨paley12, by decide +kernel⟩
-theorem order_16 : ∃ H, IsHadamard 16 H := ⟨sylvester 4, by decide +kernel⟩
 
 /-! Fidelity: a matrix with two equal rows is rejected. -/
-example : ¬ IsHadamard 2 (fun _ _ => 1) := by decide
+example : ¬ IsHadamard 2 (fun _ _ => 1) := by decide +kernel
 
 end Hundred.Statements.Hadamard

@@ -43,6 +43,6 @@ theorem not_arrows_5_3_3 : ¬ Arrows 5 3 3 := by
   | inr x => exact hb x
 
 /-! Fidelity: a 3-clique exists in the all-red colouring of `K_3`. -/
-example : HasMonoClique (fun _ _ => true) 3 3 true := by decide
+example : HasMonoClique (fun _ _ => true) 3 3 true := by decide +kernel
 
 end Hundred.Statements.Ramsey

@@ -8,7 +8,8 @@
     "csv": "https://svyable.github.io/100/api/problems.csv",
     "search_index": "https://svyable.github.io/100/api/search.json",
     "full_snapshot": "https://svyable.github.io/100/data/portfolio.json",
-    "feed": "https://svyable.github.io/100/feed.xml"
+    "feed": "https://svyable.github.io/100/feed.xml",
+    "work_queue": "https://svyable.github.io/100/api/work.json"
   },
   "counts": {
     "problems": 100,
@@ -18,6 +19,6 @@
     "claim_reviews": 15,
     "lean_statements": 9,
     "solved": 0,
-    "documents": 34
+    "documents": 35
   }
 }

@@ -21,6 +21,7 @@ jobs:
       - run: python3 scripts/mine.py --check
       - run: python3 scripts/check_external_artifact.py --validate-only
       - run: python3 scripts/formal.py --check
+      - run: python3 scripts/work.py --check
       - run: python3 scripts/verify_mckay.py --check
       - run: python3 scripts/verify_claim_witnesses.py --check
       - run: python3 scripts/frankl_canonical.py --check

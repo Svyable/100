@@ -43,6 +43,6 @@ theorem exists_order_2 : ∃ I, IsPlane 2 I := ⟨fano, by decide +kernel⟩
 theorem exists_order_3 : ∃ I, IsPlane 3 I := ⟨order3, by decide +kernel⟩
 
 /-! Fidelity: the empty incidence relation is not a plane. -/
-example : ¬ IsPlane 2 (fun _ _ => false) := by decide
+example : ¬ IsPlane 2 (fun _ _ => false) := by decide +kernel
 
 end Hundred.Statements.ProjectivePlane

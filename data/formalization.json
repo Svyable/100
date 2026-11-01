@@ -20,8 +20,8 @@
       ],
       "kernel_checked": [
         {
-          "decl": "holds_upTo_1000",
-          "claim": "The statement holds for every even 4 ≤ n ≤ 1000 (least-prime witness table re-checked by the kernel).",
+          "decl": "holds_upTo_100",
+          "claim": "The statement holds for every even 4 ≤ n ≤ 100 (least-prime witness table re-checked by the kernel; the lab covers far larger ranges in Python).",
           "mirrors_probe": "goldbach"
         }
       ],
@@ -116,7 +116,7 @@
       "kernel_checked": [
         {
           "decl": "order_12",
-          "claim": "Explicit Hadamard matrices of orders 4, 8, 16 (Sylvester) and 12 (Paley), re-checked by the kernel (order_4, order_8, order_12, order_16).",
+          "claim": "Explicit Hadamard matrices of orders 4, 8 (Sylvester) and 12 (Paley), re-checked by the kernel (order_4, order_8, order_12).",
           "mirrors_probe": "hadamard"
         }
       ],

@@ -49,10 +49,10 @@ def circ7 (v w : Nat) : Bool := (w + 7 - v) % 7 == 1 || (w + 7 - v) % 7 == 2
 
 /-! Fidelity: `circ7` meets the hypotheses for `r = 2` and has a 4-cycle
 `0 → 2 → 4 → 6 → 0`, matching the bound `⌈7/2⌉ = 4`. -/
-example : (∀ v, v < 7 → circ7 v v = false) ∧ (∀ v, v < 7 → 2 ≤ outdeg 7 circ7 v) := by decide
+example : (∀ v, v < 7 → circ7 v v = false) ∧ (∀ v, v < 7 → 2 ≤ outdeg 7 circ7 v) := by decide +kernel
 
 def cyc4 (i : Nat) : Nat := 2 * i
 
-example : IsCycle 7 circ7 4 cyc4 := by decide
+example : IsCycle 7 circ7 4 cyc4 := by decide +kernel
 
 end Hundred.Statements.CaccettaHaggkvist
