@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M092 — exact dimension-four SIC projector replay (known construction) · 100</title>
+<meta name="description" content="Run date: 2026-11-01. Work packet: O-M092-01 (scope digest eaba3c39e8db2ecb); claim #112. Status: a bounded known-result reproduction, not a discharge of the dimension-4-through-8 witness obligation, an independently reviewed proof, a unifo">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m092-d4-projector/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M092 — exact dimension-four SIC projector replay (known construction) · 100">
+<meta property="og:description" content="Run date: 2026-11-01. Work packet: O-M092-01 (scope digest eaba3c39e8db2ecb); claim #112. Status: a bounded known-result reproduction, not a discharge of the dimension-4-through-8 witness obligation, an independently reviewed proof, a unifo">
+<meta property="og:url" content="https://svyable.github.io/100/library/m092-d4-projector/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M092 — exact dimension-four SIC projector replay (known construction)</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#primary-source-and-scope">Primary source and scope</a></li><li class="toc-l2"><a href="#exact-arithmetic-and-independent-control">Exact arithmetic and independent control</a></li><li class="toc-l2"><a href="#failure-modes-and-next-falsifier">Failure modes and next falsifier</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M092/" title="Zauner SIC conjecture">M092</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M092_D4_PROJECTOR.md" rel="noopener noreferrer">research/M092_D4_PROJECTOR.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M092 — exact dimension-four SIC projector replay (known construction)</h1>
+<p><strong>Run date:</strong> 2026-11-01. <strong>Work packet:</strong> <code>O-M092-01</code> (scope digest <code>eaba3c39e8db2ecb</code>); <a href="https://github.com/Svyable/100/issues/112" rel="noopener noreferrer">claim #112</a>. <strong>Status:</strong> a bounded <strong>known-result reproduction</strong>, not a discharge of the dimension-4-through-8 witness obligation, an independently reviewed proof, a uniform construction, or a new theorem.</p>
+<h2 id="primary-source-and-scope">Primary source and scope<a class="anchor" href="#primary-source-and-scope" aria-label="Link to this section">#</a></h2>
+<p>Ingemar Bengtsson, <a href="https://doi.org/10.1007/s10701-017-0078-3" rel="noopener noreferrer"><em>The Number Behind the Simplest SIC–POVM</em>, <em>Foundations of Physics</em> <strong>47</strong>, 1031–1041 (2017)</a>, published 8 March 2017, equations (3), (5), (7), (8). The paper gives a phase table for the <strong>d=4 Weyl–Heisenberg covariant</strong> SIC. We reproduce its 16 <strong>rank-one projectors</strong> exactly rather than a specific choice of the normalized fiducial vector. This tests the published phase/projector construction and the number-field representation. It does not import fiducials for d=5,6,7,8.</p>
+<p>Use <code>X|j&gt;=|j+1 mod 4&gt;</code>, <code>Z|j&gt;=i^j|j&gt;</code>, <code>tau=-(1+i)/sqrt(2)</code>, <code>D_ab=tau^(ab) X^a Z^b</code>. The paper&#x27;s phase unit is</p>
+<p><code>u=(sqrt(5)-1)/(2 sqrt(2)) + i sqrt(sqrt(5)+1)/2</code>.</p>
+<p>Its published 4-by-4 phase table (row a, column b, top-left identity excluded) is:</p>
+<pre><code class="lang-text">       u       -1       1/u
+u      1/u     -1/u     1/u
+-1     -u      -1       1/u
+1/u    u        u        u</code></pre>
+<p>We reconstruct the projector from the paper&#x27;s operator-basis identity</p>
+<p><code>P = (1/4) sum_{a,b} c_ab D_ab^dagger</code>, where <code>c_00=1</code> and <code>c_ab=phase_ab/sqrt(5)</code> otherwise.</p>
+<h2 id="exact-arithmetic-and-independent-control">Exact arithmetic and independent control<a class="anchor" href="#exact-arithmetic-and-independent-control" aria-label="Link to this section">#</a></h2>
+<p><code>python3 scripts/sic_d4_projector.py</code> uses only the Python standard library, <code>fractions.Fraction</code>, and 16-coordinate exact algebra with generators <code>a=sqrt(2)</code>, <code>b=sqrt(5)</code>, <code>t=i sqrt(1+sqrt(5))</code>, <code>i=sqrt(-1)</code>. The reduction relations are <code>a²=2</code>, <code>b²=5</code>, <code>t²=-(1+b)</code>, <code>i²=-1</code>; conjugation fixes a,b and negates t,i. No numerical tolerance, approximate roots, or CAS is involved. The embedding selects the positive real square roots in the source formula.</p>
+<p><strong>Verified on the frozen published input:</strong></p>
+<ul><li>The reconstructed 4-by-4 matrix is Hermitian, idempotent, and has trace 1.</li><li>All 16 Weyl–Heisenberg translates are Hermitian, idempotent, trace-1 matrices.</li><li>The 16-by-16 projector Gram matrix has diagonal trace overlap 1 and all <strong>120 unordered off-diagonal pairs equal exactly 1/5</strong>.</li><li>A separate displacement-character computation, using only the Weyl coefficient norms and fourth-root character sums (no orbit projector matrices), independently recovers overlaps 1 and 1/5. This second path is not independent <em>human</em> mathematical review and is weaker than idempotence.</li><li>Five adversarial tests include altered <strong>unit-modulus</strong> phase data, altered nonunit phase data, field identities, conjugation, and displacement unitarity. The unit-modulus mutation demonstrates why the character check alone is insufficient: it passes the phase-modulus premise but fails projector reconstruction.</li></ul>
+<p><strong>Reproduce:</strong></p>
+<pre><code class="lang-sh">python3 scripts/sic_d4_projector.py
+python3 -m unittest discover -s tests -p &#x27;test_sic_d4_projector.py&#x27; -v
+python3 scripts/regen.py --check
+python3 -m unittest discover -s tests</code></pre>
+<p>Deterministic certificate metadata SHA-256: <code>75f2a9bb55798cd0350eaff0e7fbed6e2e22edad1700a7a79d8546af104b4c2d</code>. This digest covers the script&#x27;s fixed output metadata, <strong>not</strong> a source manuscript PDF or independently audited proof certificate.</p>
+<h2 id="failure-modes-and-next-falsifier">Failure modes and next falsifier<a class="anchor" href="#failure-modes-and-next-falsifier" aria-label="Link to this section">#</a></h2>
+<p>The field arithmetic assumes the exact algebraic embedding selected by the published radicals; it does not prove an independently extracted fiducial vector matches a separately distributed source file. The two code paths share the source phase table, so a common transcription error remains a possible failure. An outside specialist must check that the phase table and operator conventions match the primary source. The exact replay does not establish a uniform SIC family, and does not discharge <code>O-M092-01</code>.</p>
+<p><strong>Next falsifier:</strong> import a <em>separately published, source-hashed</em> d=5 (or d=6–8) exact fiducial with its full field tower, verify all 25 (or d²) projectors and every off-diagonal overlap using an independent algorithm, and include a deliberate one-coordinate perturbation that the checker rejects. Do not mark the obligation discharged without external mathematical review.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>
