@@ -359,7 +359,7 @@
         "M073"
       ],
       "title": "Replay a claimed finite witness: Replay the object, or mine the census",
-      "deliverable": "M071: Audit the Lean quantifiers and graph encoding against the theorem; reproduce or extract an explicit graph plus an independently checkable minor-bound obstruction. M073: Check H and the host-existence construction against Lean and paper; independently compute exact graphon/homomorphism inequalities or generate an explicit finite G.",
+      "deliverable": "M071: Extract a concrete finite graph from the binary-frame construction, or obtain two independent specialist reviews of the existential proof; do not treat comparator or second-kernel replay as a finite witness. M073: Derive an explicit finite host G (order n and edges) from the counter-kernel parameters and replay t(H,G)<t(K2,G)^66 with two independent homomorphism counts, or obtain specialist acceptance of the existence proof without a listed witness.",
       "context": "",
       "acceptance": [
         "Every problem on the job moves by the same action, or a precise gap is recorded per problem",
@@ -372,7 +372,7 @@
       "source": "scripts/approach.py",
       "depends_on": [],
       "priority_rank": 1,
-      "scope_sha256": "adf42ba69cbda8170056639e1223088959af74b8a70abf25bfa7fe315fd3ab9b",
+      "scope_sha256": "cac94bda7f479affbeb1ffeafa6f23da14d28d6ef957e2eb852bcd9e01e92e68",
       "claim_title": "[Claim] J-extremal_certificates-replay_claim_witness — Replay a claimed finite witness: Replay the object, or mine the census",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-extremal_certificates-replay_claim_witness%20%E2%80%94%20Replay%20a%20claimed%20finite%20witness%3A%20Replay%20the%20object%2C%20or%20mine%20the%20census",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20J-extremal_certificates-replay_claim_witness%22"
@@ -1581,12 +1581,10 @@
       "status": "runnable",
       "problems": [
         "M044",
-        "M049",
-        "M071",
-        "M073"
+        "M049"
       ],
-      "title": "Computational checks of claimed witnesses",
-      "deliverable": "Independent group-ring checker for M044/M049; explicit graph for the M071 claim; explicit host for the M073 claim.",
+      "title": "Computational checks of claimed group-ring witnesses",
+      "deliverable": "Independent group-ring checker for the shared M044/M049 direct-finiteness construction; separate nonsoficity audit for M049.",
       "context": "",
       "acceptance": [
         "Exit criterion met: Each witness reproduced or a precise gap reported.",
@@ -1597,10 +1595,10 @@
       "falsifier": "",
       "source": "data/roadmap.json",
       "depends_on": [],
-      "priority_rank": 1,
-      "scope_sha256": "f4a90ecd972ee8448626ac58691641ebc5595f4664d6826acd52ea0ca35b2646",
-      "claim_title": "[Claim] R32 — Computational checks of claimed witnesses",
-      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20R32%20%E2%80%94%20Computational%20checks%20of%20claimed%20witnesses",
+      "priority_rank": 3,
+      "scope_sha256": "febdf80c932988876d1a0666d4cf5ff3def585c123320a0689cfe53fd36fc777",
+      "claim_title": "[Claim] R32 — Computational checks of claimed group-ring witnesses",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20R32%20%E2%80%94%20Computational%20checks%20of%20claimed%20group-ring%20witnesses",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20R32%22"
     },
     {

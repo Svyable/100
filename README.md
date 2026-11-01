@@ -31,6 +31,7 @@
 - [Research and verification protocol](docs/RESEARCH_PROTOCOL.md) — rules for advancing, scoring and retiring candidates.
 - [Starting status sources](docs/SOURCES.md) — official Clay status and recent 2026 proof-claim precautions.
 - [2026 claimed-resolution triage](research/CLAIM_REVIEWS_2026.md) — primary manuscripts, exact scope comparisons, independent review gaps and next checks for the 15 flagged IDs ([structured ledger](data/claim_reviews_2026.json)). M098 is `verified_open` on the first-order statement; the infinitary counterexample is a different problem ([note](research/M098_VAUGHT.md)).
+- [M071/M073 witness extractability audit](research/M071_M073_WITNESSES.md) — Sidorenko pattern H reconstructed (35 vertices, 66 edges); Hadwiger claim recorded as existential with no finite adjacency list; neither manuscript accepted ([frozen ledger](data/claim_witness_replay.json)).
 
 **Important:** This is a *provisional candidate pool*, **not** a claim that all 100 are currently independently verified as unsolved. Five official Millennium entries have official status citations; the remaining 95 need closer status and precise-statement review. Recent claims are explicitly flagged. The first task is the status audit and selection of tractable restricted lemmas.
 
