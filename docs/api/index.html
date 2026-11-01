@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data &amp; API · 100</title>
+<meta name="description" content="Static JSON and CSV endpoints for the 100-problem portfolio.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/api/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="Data &amp; API · 100">
+<meta property="og:description" content="Static JSON and CSV endpoints for the 100-problem portfolio.">
+<meta property="og:url" content="https://svyable.github.io/100/api/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../api/index.json">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../">The 100</a><a href="../next/">Next 100</a><a href="../atlas/">Atlas</a><a href="../campaigns/">Campaigns</a><a href="../lab/">Lab</a><a href="../formal/">Formal</a><a href="../claims/">Claims</a><a href="../roadmap/">Roadmap</a><a href="../ledger/">Ledger</a><a href="../library/">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../">The 100</a><span aria-hidden="true">/</span><span aria-current="page">Data &amp; API</span></nav>
+<main id="main">
+<section class="page-hero"><div><p class="eyebrow"><span class="eyebrow-line"></span> DATA &amp;amp; API</p><h1>Take the data <em>with you.</em></h1><p class="hero-lead">Everything on this site is static, versioned JSON and CSV regenerated from the validated ledgers on every change. No keys, no rate limits, no tracking.</p></div></section>
+<section class="section-block tight"><div class="table-wrap"><table><thead><tr><th>Resource</th><th>What it contains</th></tr></thead><tbody>
+<tr><td><a href="problems.json">api/problems.json</a></td><td>All 100 problems in execution order with ranks, scores, readiness, evidence and modality.</td></tr>
+<tr><td><a href="problems/M071.json">api/problems/{id}.json</a></td><td>One problem with campaign, probes, milestones, roadmap, claim review, external claims and backlinks.</td></tr>
+<tr><td><a href="problems.csv">api/problems.csv</a></td><td>Spreadsheet-friendly registry.</td></tr>
+<tr><td><a href="search.json">api/search.json</a></td><td>The compact index behind the <kbd>/</kbd> command palette.</td></tr>
+<tr><td><a href="../data/portfolio.json">data/portfolio.json</a></td><td>The complete legacy snapshot (lab, campaigns, milestones, solved archive).</td></tr>
+<tr><td><a href="../feed.xml">feed.xml</a></td><td>Atom feed of milestones, claim reviews and program updates.</td></tr>
+</tbody></table></div></section>
+<section class="section-block tight"><h2 class="h-small">Example</h2>
+<pre class="cmd"><code>curl -s https://svyable.github.io/100/api/problems/M071.json | python3 -m json.tool</code></pre>
+<p class="muted">The canonical sources are <code>data/*.json</code> in the repository; this API can never drift from them because CI rebuilds and byte-compares the whole site.</p></section>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../library/">Library</a><a href="../api/">Data &amp; API</a><a href="../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-10-31 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

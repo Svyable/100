@@ -1,0 +1,84 @@
+{
+  "id": "M100",
+  "name": "Falconer distance-set conjecture",
+  "field": "Mathematical physics / finite structures",
+  "question": "Does Hausdorff dimension greater than d/2 imply positive Lebesgue measure of its distance set?",
+  "first_attack": "Audit precise statement and prove a restricted case",
+  "impact": 4,
+  "attackability": 4,
+  "verifiability": 4,
+  "spillover": 4,
+  "modality": "structural",
+  "evidence_state": "claim_needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 32,
+  "score": 80,
+  "execution_rank": 33,
+  "execution_score": 80,
+  "readiness": 0,
+  "dispatch_rank": 23,
+  "dispatch_score": 88,
+  "action": "scope_audit",
+  "action_label": "Audit claim scope",
+  "action_bonus": 8,
+  "method_id": "distance_sets",
+  "method_title": "One set, dimension and measure enclosed",
+  "dispatch_next": "Audit FalconerAllDimensions.lean definition fidelity, measure conventions and proof dependencies; obtain independent harmonic-analysis review.",
+  "dispatch_why": "A manuscript may already settle this entry. The next step is the review's own check, not a new lemma.",
+  "campaign_stage": null,
+  "milestone_count": 0,
+  "url": "https://svyable.github.io/100/problems/M100/",
+  "field_url": "https://svyable.github.io/100/fields/mathematical-physics-finite-structures/",
+  "readiness_breakdown": [],
+  "has_exact_verifier": false,
+  "campaign": null,
+  "probes": [],
+  "milestones": [],
+  "engine_roadmap": null,
+  "claim_review_2026": {
+    "id": "M100",
+    "primary_title": "The Falconer distance conjecture in all dimensions",
+    "primary_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/The-Falconer-distance-conjecture-in-all-dimensions-September-23-2026/paper.pdf",
+    "preprint_date": "2026-09-23",
+    "claimed_theorem": "For every integer d>=2 and compact E subset R^d with Hausdorff dimension greater than d/2, the Euclidean distance set Delta(E) has positive one-dimensional Lebesgue measure.",
+    "scope_relation": "matches",
+    "scope_note": "The strict threshold and positive-measure conclusion match the registered Falconer formulation; no endpoint equality or pinned-distance result is claimed.",
+    "independent_validation": "formal_statement_check_only",
+    "independent_evidence_urls": [
+      "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/073.md"
+    ],
+    "known_caveats": "The repository describes Lean theorem scope, but a stated source/Lean match has not been established by two independent specialist proof audits.",
+    "next_review": "Audit FalconerAllDimensions.lean definition fidelity, measure conventions and proof dependencies; obtain independent harmonic-analysis review.",
+    "formalization_scope_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/073.md"
+  },
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "2026 claimed-resolution triage — issue #3",
+      "source": "research/CLAIM_REVIEWS_2026.md",
+      "url": "https://svyable.github.io/100/library/claim-reviews-2026/"
+    },
+    {
+      "title": "Foundational sources and 2026 claim watch",
+      "source": "docs/SOURCES.md",
+      "url": "https://svyable.github.io/100/library/sources/"
+    }
+  ]
+}

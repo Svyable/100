@@ -1,0 +1,158 @@
+{
+  "id": "M041",
+  "name": "Plane Jacobian conjecture",
+  "field": "Algebra",
+  "question": "Does a polynomial map C² to C² with constant nonzero Jacobian have a polynomial inverse?",
+  "first_attack": "Classify low-degree nontriangular polynomial maps",
+  "impact": 5,
+  "attackability": 4,
+  "verifiability": 4,
+  "spillover": 5,
+  "modality": "finite_refutable",
+  "evidence_state": "needs_review",
+  "checked_on": null,
+  "source_url": "https://arxiv.org/abs/2608.00222",
+  "rank": 10,
+  "score": 89,
+  "execution_rank": 8,
+  "execution_score": 96,
+  "readiness": 7,
+  "dispatch_rank": 98,
+  "dispatch_score": 60,
+  "action": "stop_range",
+  "action_label": "Stop: range is dominated",
+  "action_bonus": -36,
+  "method_id": "polynomial_maps",
+  "method_title": "Families outside proved degree bounds",
+  "dispatch_next": "Do not enumerate degree-4 maps with coefficients in {-1,0,1}: Moh (1983) already covers plane maps of degree at most 100. Name one Newton-polygon family outside that degree bound and state the coefficient ring before any search.",
+  "dispatch_why": "Moh (1983) covers plane maps of degree at most 100. Degree-4 search on coefficients in {-1,0,1} sits inside that theorem, so the recorded experiment is refused.",
+  "campaign_stage": "benchmark_reproduced",
+  "milestone_count": 1,
+  "url": "https://svyable.github.io/100/problems/M041/",
+  "field_url": "https://svyable.github.io/100/fields/algebra/",
+  "readiness_breakdown": [
+    {
+      "item": "Formal campaign brief",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Runnable independent verifier",
+      "points": 3,
+      "max": 3
+    },
+    {
+      "item": "Reproduced known benchmark",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Independently reviewed restricted theorem",
+      "points": 0,
+      "max": 3
+    }
+  ],
+  "has_exact_verifier": true,
+  "campaign": {
+    "problem_id": "M041",
+    "stage": "benchmark_reproduced",
+    "method": "Exhaustive integer plane maps with inverses certified under Gabber's degree bound",
+    "hypothesis": "Every polynomial map C^2 -> C^2 with constant nonzero Jacobian determinant has a polynomial inverse.",
+    "first_proof_obligation": "Reproduce the classical low-degree cases (Wang: degree <= 2; Moh: plane degree <= 100) on exhaustive integer classes, then isolate a structured family, such as maps with a prescribed Newton polygon, not covered by known degree bounds.",
+    "next_experiment": "Enlarge the class to degree 4 with coefficients in {-1,0,1} using kernel enumeration per monomial support, and record the distribution of inverse degrees and of tame decompositions.",
+    "falsification": "A plane map with exactly verified constant nonzero Jacobian and an exact proof (an infeasible linear system under Gabber's bound) that no inverse of degree <= deg F exists.",
+    "blocker": "Known results already cover plane maps of degree <= 100, so exhaustive small classes cannot reach new territory; novelty needs structural families.",
+    "dossier": "research/LAB_CAMPAIGNS.md",
+    "verifier": "python3 scripts/lab.py --probe jacobian"
+  },
+  "probes": [
+    {
+      "id": "jacobian",
+      "problem_id": "M041",
+      "name": "Plane Jacobian conjecture",
+      "title": "Plane Jacobian conjecture on exhaustive classes of small integer polynomial maps",
+      "engines": [
+        "polynomial_algebra"
+      ],
+      "frontier": "Known: true for plane maps of degree <= 100 (Moh 1983) and in degree <= 2 in every dimension (Wang 1980); open in general. Reproduction only.",
+      "artifact": "scripts/probes/jacobian.py",
+      "command": "python3 scripts/lab.py --probe jacobian",
+      "runs": {
+        "smoke": {
+          "holds": true,
+          "scope": "Every plane map (f, g) with deg <= 2, zero constant terms and coefficients in {-1, 0, 1} whose Jacobian is a nonzero constant has an explicit polynomial inverse of degree <= 2.",
+          "certificate_sha256": "f44c7cda2ef9e9849c9b185a750809eb2d476d530cbded36e692ccd5b9ea4632"
+        },
+        "deep": {
+          "holds": true,
+          "scope": "Every plane map (f, g) with deg <= 3, zero constant terms and coefficients in {-1, 0, 1} whose Jacobian is a nonzero constant has an explicit polynomial inverse of degree <= 3.",
+          "certificate_sha256": "4dbd31dd962e7ba1ac8ea39b0d3b252dd2bff68101c952d6638d537d9bf409bb"
+        }
+      }
+    }
+  ],
+  "milestones": [
+    {
+      "id": "B-JACOBIAN-001",
+      "problem_id": "M041",
+      "classification": "reproduced_known",
+      "title": "Plane Jacobian conjecture verified on all 59,049 integer maps of degree <= 2 with coefficients in {-1,0,1}",
+      "scope": "Known (Wang 1980; Moh 1983); not new",
+      "description": "240 maps have constant nonzero Jacobian (matching brute force); each has an explicit inverse of degree <= 2 checked by composition in both orders, and completeness is re-derived from a separate evaluation-based linear system. The deep run covers all 387,420,489 maps of degree <= 3 (816 with constant Jacobian), every one inverted.",
+      "verifier": "python3 scripts/lab.py --probe jacobian",
+      "artifact": "scripts/probes/jacobian.py",
+      "verified_on": "2026-10-31"
+    }
+  ],
+  "engine_roadmap": null,
+  "claim_review_2026": null,
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Exact probe lab — computational reach of the 100",
+      "source": "LAB.md",
+      "url": "https://svyable.github.io/100/library/lab/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
+    },
+    {
+      "title": "Lab campaigns: problems under exact computation",
+      "source": "research/LAB_CAMPAIGNS.md",
+      "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "Top 100 portfolio selection and admission",
+      "source": "docs/PORTFOLIO_SELECTION.md",
+      "url": "https://svyable.github.io/100/library/portfolio-selection/"
+    },
+    {
+      "title": "Proof-driven research engine",
+      "source": "docs/RESEARCH_ENGINE.md",
+      "url": "https://svyable.github.io/100/library/research-engine/"
+    },
+    {
+      "title": "Foundational sources and 2026 claim watch",
+      "source": "docs/SOURCES.md",
+      "url": "https://svyable.github.io/100/library/sources/"
+    }
+  ]
+}

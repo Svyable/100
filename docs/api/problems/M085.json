@@ -1,0 +1,82 @@
+{
+  "id": "M085",
+  "name": "Unique Games conjecture",
+  "field": "Complexity",
+  "question": "Is the specified near-satisfiable versus poorly satisfiable unique-labeling gap NP-hard?",
+  "first_attack": "Audit precise statement and prove a restricted case",
+  "impact": 5,
+  "attackability": 3,
+  "verifiability": 4,
+  "spillover": 5,
+  "modality": "structural",
+  "evidence_state": "claim_needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 22,
+  "score": 83,
+  "execution_rank": 24,
+  "execution_score": 83,
+  "readiness": 0,
+  "dispatch_rank": 21,
+  "dispatch_score": 91,
+  "action": "scope_audit",
+  "action_label": "Audit claim scope",
+  "action_bonus": 8,
+  "method_id": "complexity_barriers",
+  "method_title": "One model, one gap",
+  "dispatch_next": "Independently audit the reduction's completeness and soundness estimates and its quantitative dependence on gap parameters.",
+  "dispatch_why": "A manuscript may already settle this entry. The next step is the review's own check, not a new lemma.",
+  "campaign_stage": null,
+  "milestone_count": 0,
+  "url": "https://svyable.github.io/100/problems/M085/",
+  "field_url": "https://svyable.github.io/100/fields/complexity/",
+  "readiness_breakdown": [],
+  "has_exact_verifier": false,
+  "campaign": null,
+  "probes": [],
+  "milestones": [],
+  "engine_roadmap": null,
+  "claim_review_2026": {
+    "id": "M085",
+    "primary_title": "The Unique Games Theorem",
+    "primary_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/The-Unique-Games-Theorem-September-23-2026/paper.pdf",
+    "preprint_date": "2026-09-23",
+    "claimed_theorem": "For any fixed epsilon,delta in (0,1/2), a polynomial-time reduction from 3SAT to Unique Games over a fixed finite alphabet has completeness at least 1-epsilon and soundness at most delta.",
+    "scope_relation": "matches",
+    "scope_note": "A uniform, valid hardness reduction with those quantifiers would resolve the registered Unique Games conjecture as normally formulated.",
+    "independent_validation": "not_established",
+    "independent_evidence_urls": [],
+    "known_caveats": "Unrefereed preprint; inspect alphabet dependence on epsilon,delta, polynomial bounds, and soundness reductions. Consequent Max-Cut hardness claims do not independently validate UGC.",
+    "next_review": "Independently audit the reduction's completeness and soundness estimates and its quantitative dependence on gap parameters.",
+    "formalization_scope_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/102.md"
+  },
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "2026 claimed-resolution triage — issue #3",
+      "source": "research/CLAIM_REVIEWS_2026.md",
+      "url": "https://svyable.github.io/100/library/claim-reviews-2026/"
+    },
+    {
+      "title": "Foundational sources and 2026 claim watch",
+      "source": "docs/SOURCES.md",
+      "url": "https://svyable.github.io/100/library/sources/"
+    }
+  ]
+}

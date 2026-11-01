@@ -1,0 +1,86 @@
+{
+  "id": "M030",
+  "name": "Abundance conjecture",
+  "field": "Algebraic geometry",
+  "question": "Is nef K_X+Delta semiample for projective klt pairs under the usual hypotheses?",
+  "first_attack": "Audit precise statement and prove a restricted case",
+  "impact": 5,
+  "attackability": 2,
+  "verifiability": 3,
+  "spillover": 5,
+  "modality": "structural",
+  "evidence_state": "claim_needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 78,
+  "score": 72,
+  "execution_rank": 79,
+  "execution_score": 72,
+  "readiness": 0,
+  "dispatch_rank": 34,
+  "dispatch_score": 80,
+  "action": "scope_audit",
+  "action_label": "Audit claim scope",
+  "action_bonus": 8,
+  "method_id": "birational_pairs",
+  "method_title": "Abundance, hypothesis by hypothesis",
+  "dispatch_next": "Check the main theorem and dependencies against the canonical klt characteristic-zero formulation, particularly section production and actual basepoint-freeness.",
+  "dispatch_why": "A manuscript may already settle this entry. The next step is the review's own check, not a new lemma.",
+  "campaign_stage": null,
+  "milestone_count": 0,
+  "url": "https://svyable.github.io/100/problems/M030/",
+  "field_url": "https://svyable.github.io/100/fields/algebraic-geometry/",
+  "readiness_breakdown": [],
+  "has_exact_verifier": false,
+  "campaign": null,
+  "probes": [],
+  "milestones": [],
+  "engine_roadmap": null,
+  "claim_review_2026": {
+    "id": "M030",
+    "primary_title": "Log abundance in characteristic zero",
+    "primary_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/Log-abundance-in-characteristic-zero-September-24-2026/paper.pdf",
+    "preprint_date": "2026-09-24",
+    "claimed_theorem": "For projective log-canonical pairs with effective rational boundary over an algebraically closed field of characteristic zero, a nef Q-Cartier K_X+B is semiample, in every dimension.",
+    "scope_relation": "matches_with_qualification",
+    "scope_note": "Would imply the registered projective klt rational-boundary conjecture in characteristic zero. Do not substitute the October 3 numerical-semiampleness claim, which only yields numerical equivalence to a semiample divisor.",
+    "independent_validation": "not_established",
+    "independent_evidence_urls": [],
+    "known_caveats": "Unrefereed and depends on sophisticated Iitaka/vanishing inputs; exact coefficient, characteristic and linear-versus-numerical semiampleness hypotheses need verification.",
+    "next_review": "Check the main theorem and dependencies against the canonical klt characteristic-zero formulation, particularly section production and actual basepoint-freeness."
+  },
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
+    },
+    {
+      "title": "2026 claimed-resolution triage — issue #3",
+      "source": "research/CLAIM_REVIEWS_2026.md",
+      "url": "https://svyable.github.io/100/library/claim-reviews-2026/"
+    },
+    {
+      "title": "Foundational sources and 2026 claim watch",
+      "source": "docs/SOURCES.md",
+      "url": "https://svyable.github.io/100/library/sources/"
+    }
+  ]
+}

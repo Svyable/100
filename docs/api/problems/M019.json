@@ -1,0 +1,196 @@
+{
+  "id": "M019",
+  "name": "Erdős–Straus conjecture",
+  "field": "Arithmetic",
+  "question": "Can 4/n always be written as three positive unit fractions for every integer n at least two?",
+  "first_attack": "Seek new modular covering identities and exact certificates",
+  "impact": 3,
+  "attackability": 5,
+  "verifiability": 5,
+  "spillover": 3,
+  "modality": "finite_refutable",
+  "evidence_state": "needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 27,
+  "score": 82,
+  "execution_rank": 17,
+  "execution_score": 89,
+  "readiness": 7,
+  "dispatch_rank": 18,
+  "dispatch_score": 95,
+  "action": "mine_structure",
+  "action_label": "Mine structure from certificates",
+  "action_bonus": 6,
+  "method_id": "effective_diophantine",
+  "method_title": "Explicit Diophantine certificates",
+  "dispatch_next": "The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity.",
+  "dispatch_why": "The straus_patterns mine already clusters the primes that are 1 mod 24. Extending the verified range stays inside published computations; the missing piece is an identity for one residue.",
+  "campaign_stage": "benchmark_reproduced",
+  "milestone_count": 2,
+  "url": "https://svyable.github.io/100/problems/M019/",
+  "field_url": "https://svyable.github.io/100/fields/arithmetic/",
+  "readiness_breakdown": [
+    {
+      "item": "Formal campaign brief",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Runnable independent verifier",
+      "points": 3,
+      "max": 3
+    },
+    {
+      "item": "Reproduced known benchmark",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Independently reviewed restricted theorem",
+      "points": 0,
+      "max": 3
+    }
+  ],
+  "has_exact_verifier": true,
+  "campaign": {
+    "problem_id": "M019",
+    "stage": "benchmark_reproduced",
+    "method": "Modular covering identities with unit-fraction certificates",
+    "hypothesis": "For every integer n >= 2, 4/n = 1/x + 1/y + 1/z has a solution in positive integers.",
+    "first_proof_obligation": "Find a polynomial identity family covering a residue class of primes not covered by the classical Mordell identities, and prove it symbolically.",
+    "next_experiment": "The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity.",
+    "additional_verifiers": [
+      "python3 scripts/mine.py --mine straus_patterns"
+    ],
+    "falsification": "An n together with a proof that no positive-integer triple exists; a finite search failure is not a counterexample.",
+    "blocker": "Classical identities leave quadratic-residue classes uncovered, and known results show identities of the standard polynomial type cannot cover them all; a different idea is needed.",
+    "dossier": "research/LAB_CAMPAIGNS.md",
+    "verifier": "python3 scripts/lab.py --probe erdos_straus"
+  },
+  "probes": [
+    {
+      "id": "erdos_straus",
+      "problem_id": "M019",
+      "name": "Erdős–Straus conjecture",
+      "title": "Erdos-Straus unit-fraction certificates for every n up to N",
+      "engines": [
+        "primes"
+      ],
+      "frontier": "Known: computational verification is reported far beyond this range (at least 10^14 in the literature). Reproduction only.",
+      "artifact": "scripts/probes/erdos_straus.py",
+      "command": "python3 scripts/lab.py --probe erdos_straus",
+      "runs": {
+        "smoke": {
+          "holds": true,
+          "scope": "For every integer 2 <= n <= 20,000, explicit positive integers x <= y <= z with 4xyz = n(xy + yz + zx).",
+          "certificate_sha256": "0076b8bf095e84632fdb686cd77255a4e37b0c0f6e762d2538f0de2f38c6a855"
+        },
+        "deep": {
+          "holds": true,
+          "scope": "For every integer 2 <= n <= 1,000,000, explicit positive integers x <= y <= z with 4xyz = n(xy + yz + zx).",
+          "certificate_sha256": "60a148c35e2dedbf39a8233554ad50f67de47d69cf5b3bfa24b02f64fe315911"
+        }
+      }
+    }
+  ],
+  "milestones": [
+    {
+      "id": "B-ES-001",
+      "problem_id": "M019",
+      "classification": "reproduced_known",
+      "title": "Erdos-Straus triples certified for every 2 <= n <= 20,000",
+      "scope": "Finite range only; known computational verification is far larger",
+      "description": "Explicit (x, y, z) with 4xyz = n(xy + yz + zx) for all 19,999 integers, each re-checked by exact integer arithmetic; the deep run covers n <= 10^6.",
+      "verifier": "python3 scripts/lab.py --probe erdos_straus",
+      "artifact": "scripts/probes/erdos_straus.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-MINE-019",
+      "problem_id": "M019",
+      "classification": "reproduced_known",
+      "title": "Erdos-Straus residues for primes 1 mod 24 through 8,000",
+      "scope": "Explicit solutions in a finite range; not an identity and not a proof",
+      "description": "All 117 such primes have a checked solution whose residue 4x-n lies in {3, 7, 11, 15, 19, 23}. The equation is rechecked without calling the search.",
+      "verifier": "python3 scripts/mine.py --mine straus_patterns",
+      "artifact": "scripts/mines/straus_patterns.py",
+      "verified_on": "2026-10-31"
+    }
+  ],
+  "engine_roadmap": null,
+  "claim_review_2026": null,
+  "formal_statement": {
+    "problem_id": "M019",
+    "module": "lean/Hundred/Statements/ErdosStraus.lean",
+    "namespace": "Hundred.Statements.ErdosStraus",
+    "statement": "Statement",
+    "encodes": "4/n = 1/x + 1/y + 1/z cleared to 4xyz = n(xy + yz + zx) with x, y, z > 0.",
+    "not_encoded": [
+      "Distinct denominators",
+      "Parametric identities by residue class"
+    ],
+    "kernel_checked": [
+      {
+        "decl": "holds_upTo_100",
+        "claim": "Explicit positive solutions for every 2 ≤ n ≤ 100, re-checked by the kernel.",
+        "mirrors_probe": "erdos_straus"
+      }
+    ],
+    "fidelity": "author_checked",
+    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/ErdosStraus.lean"
+  },
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Exact probe lab — computational reach of the 100",
+      "source": "LAB.md",
+      "url": "https://svyable.github.io/100/library/lab/"
+    },
+    {
+      "title": "Lean proof pipeline",
+      "source": "LEAN.md",
+      "url": "https://svyable.github.io/100/library/lean/"
+    },
+    {
+      "title": "Structure mines",
+      "source": "MINES.md",
+      "url": "https://svyable.github.io/100/library/mines/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
+    },
+    {
+      "title": "Lab campaigns: problems under exact computation",
+      "source": "research/LAB_CAMPAIGNS.md",
+      "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "Top 100 portfolio selection and admission",
+      "source": "docs/PORTFOLIO_SELECTION.md",
+      "url": "https://svyable.github.io/100/library/portfolio-selection/"
+    },
+    {
+      "title": "Proof-driven research engine",
+      "source": "docs/RESEARCH_ENGINE.md",
+      "url": "https://svyable.github.io/100/library/research-engine/"
+    }
+  ]
+}

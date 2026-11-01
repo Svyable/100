@@ -5,6 +5,15 @@ The objective is more independently checked, reusable mathematics per unit of ef
 The implementation has thirteen audited declarations across Ramsey and the two-element
 Frankl case. Caccetta–Häggkvist remains queued, not formalized.
 
+## Comparator statements
+
+`lean/Hundred/Statements/` adds exact comparator statements for nine targets (M006, M019,
+M071, M074, M075, M078, M094, M095, M096) with fidelity examples and kernel-checked
+finite instances, catalogued in [data/formalization.json](data/formalization.json) and
+described in [lean/README.md](lean/README.md). Their exported theorems are registered here
+as L004–L009 and pass through the same gate. `python3 scripts/formal.py --check` refuses a
+catalogue entry whose kernel-checked theorem is not registered for the axiom audit.
+
 ## Run the gate
 
 Install [elan](https://github.com/leanprover/elan), then from the repository root:

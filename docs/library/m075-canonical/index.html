@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M075: an exact orbit map and closure-pruned generator · 100</title>
+<meta name="description" content="2026-10-31 — reusable finite machinery, not a new theorem. This addresses the construction and quantifier gaps in Lamport obligations O-M075-01 and O-M075-02. Frankl&#x27;s full 1/2 assertion remains open. Its validity for small ground sets is p">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m075-canonical/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M075: an exact orbit map and closure-pruned generator · 100">
+<meta property="og:description" content="2026-10-31 — reusable finite machinery, not a new theorem. This addresses the construction and quantifier gaps in Lamport obligations O-M075-01 and O-M075-02. Frankl&#x27;s full 1/2 assertion remains open. Its validity for small ground sets is p">
+<meta property="og:url" content="https://svyable.github.io/100/library/m075-canonical/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../next/">Next 100</a><a href="../../atlas/">Atlas</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M075: an exact orbit map and closure-pruned generator</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#domain-and-encoding">Domain and encoding</a></li><li class="toc-l2"><a href="#lemma-1-canonical-encoding-exactly-identifies-relabeling-orbits">Lemma 1: canonical encoding exactly identifies relabeling orbits</a></li><li class="toc-l2"><a href="#lemma-2-closure-pruned-descending-construction-is-complete">Lemma 2: closure-pruned descending construction is complete</a></li><li class="toc-l2"><a href="#independent-finite-count-audit">Independent finite count audit</a></li><li class="toc-l2"><a href="#reproduction-and-next-missing-step">Reproduction and next missing step</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M075/" title="Frankl union-closed sets conjecture">M075</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M075_CANONICAL.md" rel="noopener noreferrer">research/M075_CANONICAL.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M075: an exact orbit map and closure-pruned generator</h1>
+<p><strong>2026-10-31 — reusable finite machinery, not a new theorem.</strong> This addresses the construction and quantifier gaps in Lamport obligations O-M075-01 and O-M075-02. Frankl&#x27;s full 1/2 assertion remains open. Its validity for small ground sets is published earlier work; no novelty is claimed from our finite counts.</p>
+<h2 id="domain-and-encoding">Domain and encoding<a class="anchor" href="#domain-and-encoding" aria-label="Link to this section">#</a></h2>
+<p>Let ([n]=\{0,\ldots,n-1\}). A <em>family</em> (F) is a set of distinct subsets of ([n]). Represent a subset (S) by its binary characteristic integer (s), and a family by (e(F)=\sum_{S\in F} 2^s). In particular, the bit positions of the family encoding index <em>subsets</em>, not individual elements.</p>
+<p>For a permutation (\pi\in S_n), define (\pi(S)=\{\pi(i):i\in S\}) and (\pi(F)=\{\pi(S):S\in F\}). The permutation acts bijectively and satisfies (\pi(A\cup B)=\pi(A)\cup\pi(B)). Therefore it preserves being union-closed and having support ([n]).</p>
+<h2 id="lemma-1-canonical-encoding-exactly-identifies-relabeling-orbits">Lemma 1: canonical encoding exactly identifies relabeling orbits<a class="anchor" href="#lemma-1-canonical-encoding-exactly-identifies-relabeling-orbits" aria-label="Link to this section">#</a></h2>
+<p>Define</p>
+<p>[ C_n(F)=\min_{\pi\in S_n} e(\pi(F)). ]</p>
+<p><strong>Claim:</strong> For any families (F,G) over ([n]),</p>
+<p>[ C_n(F)=C_n(G)\quad\Longleftrightarrow\quad \exists\,\sigma\in S_n:\ G=\sigma(F). ]</p>
+<p><strong>Proof.</strong> If (G=\sigma(F)), as (\pi) ranges over (S_n), so does (\pi\sigma), hence the two sets of encoded images and their minima are the same. Conversely, choose permutations (\alpha,\beta) attaining the equal minima (they exist because (S_n) is finite). The integer encoding is injective, so (\alpha(F)=\beta(G)). Thus (G=\beta^{-1}\alpha(F)). QED.</p>
+<p>No computational enumeration is needed for the abstract lemma. The implementation <a href="https://github.com/Svyable/100/blob/main/scripts/frankl_canonical.py" rel="noopener noreferrer">frankl_canonical.py</a> tests the actual bit permutation and minimum definition, including at (n=5), against explicit relabelings. An independent n≤4 orbit counter is already in <a href="https://github.com/Svyable/100/blob/main/scripts/mines/frankl_orbits.py" rel="noopener noreferrer">frankl_orbits.py</a>.</p>
+<h2 id="lemma-2-closure-pruned-descending-construction-is-complete">Lemma 2: closure-pruned descending construction is complete<a class="anchor" href="#lemma-2-closure-pruned-descending-construction-is-complete" aria-label="Link to this section">#</a></h2>
+<p>Let (F) be nonempty, union-closed, and with support (\bigcup_{S\in F}S=[n]). Since the family is finite and union-closed, (U=[n]) belongs to (F).</p>
+<p>Start from (\{U\}). Decide every other subset (S\subsetneq U) exactly once in descending order of size (fixed numerical tie break). At each step either exclude (S), or include it <strong>only if</strong> (S\cup A) is already present or equals (S) for every existing member (A).</p>
+<p><strong>Soundness:</strong> the starting singleton is union-closed. An inclusion satisfying the stated criterion preserves closure under all pairs; exclusion leaves the current family unchanged. Thus every emitted family is union-closed with support (U).</p>
+<p><strong>Completeness:</strong> take any target (F) as above. Follow its include/exclude decisions. If (S\in F), any union (S\cup A), with previously selected (A\in F), also belongs to (F). If this union strictly contains (S), it was considered earlier because its size is larger; hence it is already included. If it equals (S), the criterion explicitly permits it. Therefore no target include step is pruned. Every such (F) is emitted. Each fixed decision sequence encodes a different family, so it is emitted exactly once. QED.</p>
+<p><strong>Corollary:</strong> filtering these families by the test (C_n(F)=e(F)) produces exactly one representative from each relabeling orbit of full-support union-closed families. Each orbit has a unique least integer encoding; that least member is itself generated by Lemma 2.</p>
+<p>This prunes failed include branches rather than trying all (2^{2^n}) set-system bitmasks. <strong>It is not an output-sensitive algorithm and has no guaranteed 10x complexity improvement.</strong> The naive orbit minimum still tests up to (n!) relabelings per family. We distinguish this explicit construction from a faster canonical <em>augmentation</em> algorithm, which remains an optimization target.</p>
+<h2 id="independent-finite-count-audit">Independent finite count audit<a class="anchor" href="#independent-finite-count-audit" aria-label="Link to this section">#</a></h2>
+<p><a href="https://oeis.org/A326906" rel="noopener noreferrer">OEIS A326906</a> lists the number of union-closed families covering the entire (n)-element support. The closure-pruned generator reproduces the <strong>known</strong> counts:</p>
+<div class="table-wrap"><table><thead><tr><th class="al-right">Support size</th><th class="al-right">Labeled full-support families</th><th class="al-right">Orbit representatives</th></tr></thead><tbody><tr><td class="al-right">1</td><td class="al-right">2</td><td class="al-right">2</td></tr><tr><td class="al-right">2</td><td class="al-right">8</td><td class="al-right">6</td></tr><tr><td class="al-right">3</td><td class="al-right">90</td><td class="al-right">28</td></tr><tr><td class="al-right">4</td><td class="al-right">4,542</td><td class="al-right">330</td></tr><tr><td class="al-right">5</td><td class="al-right">2,747,402</td><td class="al-right">28,960 (independently counted by <a href="../../library/m075-burnside/">Burnside&#x27;s lemma</a>)</td></tr></tbody></table></div>
+<p>There is no contradiction with the existing 4,958-family/366-orbit (n=4) mine: those totals allow families with <strong>unused elements</strong>. There are (\binom{4}{k}) choices of exact (k)-element support, so (4(2)+6(8)+4(90)+4542=4958). Under relabeling of all four ground elements, orbit counts across different support sizes add instead: (2+6+28+330=366).</p>
+<p>The (n=5) labeled count is a full offline reproduction of a published sequence, not a proof of the conjecture and not a novel improvement. A separate <a href="../../library/m075-burnside/">Burnside fixed-point certificate</a> now computes the <strong>complete orbit count</strong> for (n=5) without enumerating and retaining all canonical representatives. Producing the complete representative list remains a separate, potentially expensive task.</p>
+<h2 id="reproduction-and-next-missing-step">Reproduction and next missing step<a class="anchor" href="#reproduction-and-next-missing-step" aria-label="Link to this section">#</a></h2>
+<pre><code class="lang-sh">python3 scripts/frankl_canonical.py --check
+python3 scripts/frankl_canonical.py --n 5 --limit 30
+python3 -m unittest discover -s tests -p &#x27;test_frankl_canonical.py&#x27; -v</code></pre>
+<p>The first command counts all full-support (n=5) labeled families, then all orbit classes for (n\leq4). The second prints a deterministic <strong>prefix</strong>, not an exhaustive (n=5) orbit tally.</p>
+<p>Next: obtain an independent review of Lemmas 1–2 <em>and</em> the encoding&#x27;s quantifiers; implement canonical augmentation to prune noncanonical <strong>partial states</strong>, and replay the resulting (n=5) orbit count via a structurally distinct checker. Do not mark either proof obligation discharged on the basis of this document or CI alone.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-10-31 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

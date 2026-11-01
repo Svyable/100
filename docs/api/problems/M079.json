@@ -1,0 +1,167 @@
+{
+  "id": "M079",
+  "name": "One-third–two-thirds conjecture",
+  "field": "Combinatorics",
+  "question": "Does every finite non-total poset admit an incomparable pair balanced within [1/3,2/3] across linear extensions?",
+  "first_attack": "Find a robust invariant for linear-extension balance",
+  "impact": 4,
+  "attackability": 5,
+  "verifiability": 5,
+  "spillover": 4,
+  "modality": "finite_refutable",
+  "evidence_state": "needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 7,
+  "score": 91,
+  "execution_rank": 5,
+  "execution_score": 98,
+  "readiness": 7,
+  "dispatch_rank": 12,
+  "dispatch_score": 104,
+  "action": "mine_structure",
+  "action_label": "Mine structure from certificates",
+  "action_bonus": 6,
+  "method_id": "extremal_certificates",
+  "method_title": "Replay the object, or mine the census",
+  "dispatch_next": "The certified mine poset_balance finds 11 posets on at most 6 elements with best balance exactly 1/3, and every one of them has width 2, which Linial already settled. A new lemma has to treat width at least 3; this census has no tight example there.",
+  "dispatch_why": "The poset_balance mine shows every tight example on at most 6 elements has width 2, which is Linial's settled case. Published verification already reaches 11 elements.",
+  "campaign_stage": "benchmark_reproduced",
+  "milestone_count": 2,
+  "url": "https://svyable.github.io/100/problems/M079/",
+  "field_url": "https://svyable.github.io/100/fields/combinatorics/",
+  "readiness_breakdown": [
+    {
+      "item": "Formal campaign brief",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Runnable independent verifier",
+      "points": 3,
+      "max": 3
+    },
+    {
+      "item": "Reproduced known benchmark",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Independently reviewed restricted theorem",
+      "points": 0,
+      "max": 3
+    }
+  ],
+  "has_exact_verifier": true,
+  "campaign": {
+    "problem_id": "M079",
+    "stage": "benchmark_reproduced",
+    "method": "Exact linear-extension counting over certified poset censuses",
+    "hypothesis": "Every finite poset that is not a chain has an incomparable pair x, y with 1/3 <= Pr[x < y] <= 2/3.",
+    "first_proof_obligation": "State and prove a balance bound for a restricted poset class (bounded width or height) that improves on published results.",
+    "next_experiment": "The certified mine poset_balance finds 11 posets on at most 6 elements with best balance exactly 1/3, and every one of them has width 2, which Linial already settled. A new lemma has to treat width at least 3; this census has no tight example there.",
+    "additional_verifiers": [
+      "python3 scripts/mine.py --mine poset_balance"
+    ],
+    "falsification": "A non-chain poset whose every incomparable pair has balance below 1/3, with linear extensions counted exactly by two independent methods.",
+    "blocker": "Published verification already reaches 11 elements; a new structural invariant is needed.",
+    "dossier": "research/LAB_CAMPAIGNS.md",
+    "verifier": "python3 scripts/lab.py --probe one_third"
+  },
+  "probes": [
+    {
+      "id": "one_third",
+      "problem_id": "M079",
+      "name": "One-third–two-thirds conjecture",
+      "title": "Balanced pairs (1/3-2/3 conjecture) for every poset up to N elements",
+      "engines": [
+        "poset_census"
+      ],
+      "frontier": "Known: verified for all posets with at most 11 elements (Peczarski) and for width-2 posets (Linial 1984); best general bound ~0.276 (Brightwell-Felsner-Trotter).",
+      "artifact": "scripts/probes/posets.py",
+      "command": "python3 scripts/lab.py --probe one_third",
+      "runs": {
+        "smoke": {
+          "holds": true,
+          "scope": "Every non-chain poset with 2..6 elements has an incomparable pair x, y with 1/3 <= Pr[x < y] <= 2/3 over uniformly random linear extensions.",
+          "certificate_sha256": "6fd6a1a31455f7b1a5a3785f8343ee28cf20fbfd6ade0f2daa83943c953299b4"
+        },
+        "deep": {
+          "holds": true,
+          "scope": "Every non-chain poset with 2..7 elements has an incomparable pair x, y with 1/3 <= Pr[x < y] <= 2/3 over uniformly random linear extensions.",
+          "certificate_sha256": "f9ec908650914013ee375d32e21a1ddcee3fd6708967b2e247ed65c79a528b06"
+        }
+      }
+    }
+  ],
+  "milestones": [
+    {
+      "id": "B-POSET-001",
+      "problem_id": "M079",
+      "classification": "reproduced_known",
+      "title": "1/3-2/3 conjecture verified for every poset with at most 6 elements",
+      "scope": "Known computational range; not new",
+      "description": "All 1, 2, 5, 16, 63, 318 posets (orbit-counting certified against OEIS A001035); each non-chain poset has an exactly counted pair with balance >= 1/3, minimum exactly 1/3. Deep run: all 2,045 posets on 7 elements.",
+      "verifier": "python3 scripts/lab.py --probe one_third",
+      "artifact": "scripts/probes/posets.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-MINE-079",
+      "problem_id": "M079",
+      "classification": "reproduced_known",
+      "title": "Posets of balance exactly 1/3 on at most 6 elements are width 2",
+      "scope": "Inside the published verification through 11 elements, and inside Linial's width-2 theorem; not a new case",
+      "description": "Eleven posets attain best balance 1/3. Their width-height types are 2x2, 2x3, 2x4 and 2x5. Balances are recounted by removing minimal elements.",
+      "verifier": "python3 scripts/mine.py --mine poset_balance",
+      "artifact": "scripts/mines/poset_balance.py",
+      "verified_on": "2026-10-31"
+    }
+  ],
+  "engine_roadmap": null,
+  "claim_review_2026": null,
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Exact probe lab — computational reach of the 100",
+      "source": "LAB.md",
+      "url": "https://svyable.github.io/100/library/lab/"
+    },
+    {
+      "title": "Structure mines",
+      "source": "MINES.md",
+      "url": "https://svyable.github.io/100/library/mines/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
+    },
+    {
+      "title": "Lab campaigns: problems under exact computation",
+      "source": "research/LAB_CAMPAIGNS.md",
+      "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "Proof-driven research engine",
+      "source": "docs/RESEARCH_ENGINE.md",
+      "url": "https://svyable.github.io/100/library/research-engine/"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ranking and research protocol · 100</title>
+<meta name="description" content="Each integer metric ranges 1–5:">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/research-protocol/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="Ranking and research protocol · 100">
+<meta property="og:description" content="Each integer metric ranges 1–5:">
+<meta property="og:url" content="https://svyable.github.io/100/library/research-protocol/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../next/">Next 100</a><a href="../../atlas/">Atlas</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">Ranking and research protocol</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#score-not-prestige">Score, not prestige</a></li><li class="toc-l2"><a href="#evidence-states">Evidence states</a></li><li class="toc-l2"><a href="#computational-modality">Computational modality</a></li><li class="toc-l2"><a href="#research-campaign-for-every-promoted-problem">Research campaign for every promoted problem</a></li><li class="toc-l2"><a href="#first-sprint">First sprint</a></li><li class="toc-l2"><a href="#governance">Governance</a></li></ol></nav>
+
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/docs/RESEARCH_PROTOCOL.md" rel="noopener noreferrer">docs/RESEARCH_PROTOCOL.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">METHOD &amp; GOVERNANCE</p><h1>Ranking and research protocol</h1>
+<h2 id="score-not-prestige">Score, not prestige<a class="anchor" href="#score-not-prestige" aria-label="Link to this section">#</a></h2>
+<p>Each integer metric ranges 1–5:</p>
+<div class="table-wrap"><table><thead><tr><th>Metric</th><th class="al-right">Weight</th><th>Criteria</th></tr></thead><tbody><tr><td>impact</td><td class="al-right">30%</td><td>Mathematical consequence of an accepted full or meaningful partial proof</td></tr><tr><td>attackability</td><td class="al-right">30%</td><td>Restricted cases, reductions, exact computation, and plausible entry points</td></tr><tr><td>verifiability</td><td class="al-right">25%</td><td>Feasible independent proof, formal checker, reproducible certificate</td></tr><tr><td>spillover</td><td class="al-right">15%</td><td>Transferability of resulting tools to unrelated problems</td></tr></tbody></table></div>
+<p>Score = 6<em>impact + 6</em>attackability + 5<em>verifiability + 3</em>spillover. This is a <strong>curation heuristic</strong> rather than a forecast of probability.</p>
+<h2 id="evidence-states">Evidence states<a class="anchor" href="#evidence-states" aria-label="Link to this section">#</a></h2>
+<ul><li><code>official_open</code>: an official body lists this exact target open; must have dated primary source.</li><li><code>needs_review</code>: current open status and exact hypothesis scope not independently checked.</li><li><code>claim_needs_review</code>: a potentially relevant claimed proof/counterexample exists, but scope or independent acceptance has not been established.</li><li><code>verified_open</code>: contemporary primary specialist sources confirm that this exact claim remains open.</li><li><code>resolved</code>: independently accepted proof/counterexample of the full claim with cited source.</li><li><code>retired</code>: duplicate, superseded, ill-posed or deprioritized.</li></ul>
+<p>Resolved and retired targets should be replaced to keep 100 <em>active</em> candidates; do not recycle the old IDs. Never confuse a special-case proof with resolution of a universal claim.</p>
+<h2 id="computational-modality">Computational modality<a class="anchor" href="#computational-modality" aria-label="Link to this section">#</a></h2>
+<p>Every candidate has a <code>modality</code>: an editorial judgment of how finite exact computation can bear on the exact statement. It is not a difficulty score.</p>
+<ul><li><code>finite_refutable</code>: a single finite, checkable object would refute the claim (Goldbach, Hadwiger, Frankl, reconstruction, ...). Computation can certify ranges and search for counterexamples.</li><li><code>finite_parameter</code>: the question is one specific finite value or object (R(5,5), the order-12 plane). Exhaustive search or a certificate could settle it.</li><li><code>existence_family</code>: existence over infinitely many finite parameters (Hadamard, SIC). Constructions certify cases; one certified nonexistence would refute.</li><li><code>asymptotic</code>: limiting or infinitary statements (twin primes, ω = 2, sunflowers). Computation gives data and certified bounds, never a refutation.</li><li><code>structural</code>: statements about infinite or continuous objects, where computation helps only through restricted finite analogues.</li></ul>
+<p>The first three are &quot;computable&quot;. Each computable problem must have an exact verifier or an entry in <code>data/engine_roadmap.json</code> naming the engine still needed. Changing a modality needs a reason in the PR, just like a score change.</p>
+<h2 id="research-campaign-for-every-promoted-problem">Research campaign for every promoted problem<a class="anchor" href="#research-campaign-for-every-promoted-problem" aria-label="Link to this section">#</a></h2>
+<ol><li><strong>Status audit:</strong> original theorem statement, precise quantifiers, exceptions, current literature and citations.</li><li><strong>First lemma:</strong> a small new theorem or sharp barrier with explicit dependencies.</li><li><strong>Counterexample search:</strong> finite cases, SAT/SMT, exact symbolic computation, or numerical heuristics where relevant.</li><li><strong>Proof construction:</strong> write clear proof and formalize suitable subclaims where feasible.</li><li><strong>Independent verification:</strong> separate checking of both theorem <em>meaning</em> and proof details; machine certificates when possible.</li><li><strong>Publish reproducibility:</strong> archive inputs, code, seeds, exact outputs, failed paths, and compute costs.</li><li><strong>Rerank:</strong> adjust scores only with a reason and evidence; preserve stable ID and history.</li></ol>
+<h2 id="first-sprint">First sprint<a class="anchor" href="#first-sprint" aria-label="Link to this section">#</a></h2>
+<p>Audit the top ten before any full-scale proof campaign. Pick three with distinct methodologies: exact finite certificate, algebraic structural lemma, and analytic/number-theoretic restricted case. Record results even when negative.</p>
+<h2 id="governance">Governance<a class="anchor" href="#governance" aria-label="Link to this section">#</a></h2>
+<p>The ranking is automatically regenerated and checked on every pull request. CI validates structure, but it <strong>cannot</strong> determine mathematical correctness or automatically verify that a conjecture is still open. A source audit is a separate requirement.</p>
+<p>The attack queue is ordered by dispatch score, not by readiness alone. See <a href="../../library/research-engine/">the research engine</a>. A shared shape in <code>data/methods.json</code> is an attack template. It does not change an editorial score and it is not a theorem.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-10-31 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

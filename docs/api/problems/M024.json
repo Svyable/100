@@ -1,0 +1,59 @@
+{
+  "id": "M024",
+  "name": "Lefschetz standard conjecture",
+  "field": "Algebraic geometry",
+  "question": "Are inverses of hard-Lefschetz isomorphisms induced by algebraic correspondences?",
+  "first_attack": "Audit precise statement and prove a restricted case",
+  "impact": 5,
+  "attackability": 2,
+  "verifiability": 3,
+  "spillover": 5,
+  "modality": "structural",
+  "evidence_state": "needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 72,
+  "score": 72,
+  "execution_rank": 73,
+  "execution_score": 72,
+  "readiness": 0,
+  "dispatch_rank": 75,
+  "dispatch_score": 72,
+  "action": "specify_shape",
+  "action_label": "Fill the shared attack shape",
+  "action_bonus": 0,
+  "method_id": "motivic_cycles",
+  "method_title": "One variety, one cycle class",
+  "dispatch_next": "Shape motivic_cycles (5 problems, one write-up): Fix dimension, codimension and coefficients, then compute one cycle class on one explicit variety in a range a cited source still treats as open. Full shape, certificate and falsifier are in APPROACH.md.",
+  "dispatch_why": "No campaign yet. Fill one restricted statement inside the shared shape.",
+  "campaign_stage": null,
+  "milestone_count": 0,
+  "url": "https://svyable.github.io/100/problems/M024/",
+  "field_url": "https://svyable.github.io/100/fields/algebraic-geometry/",
+  "readiness_breakdown": [],
+  "has_exact_verifier": false,
+  "campaign": null,
+  "probes": [],
+  "milestones": [],
+  "engine_roadmap": null,
+  "claim_review_2026": null,
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    }
+  ]
+}

@@ -6,7 +6,8 @@
 - **[Proof exchange / scaling protocol](docs/PROOF_EXCHANGE.md)** — source-bound packets for agent-to-agent research handoffs, dependency-gated proof obligations and evidence-bounded cross-problem coverage scheduling (`python3 scripts/scale.py --budget 5 --json`).
 - **[Roadmap](ROADMAP.md)** ([on the dashboard](https://svyable.github.io/100/#roadmap)) — live scoreboard against targets, and every shipped, current, next and later item with evidence and exit criteria. Source: [data/roadmap.json](data/roadmap.json).
 - **[Next 100 hypothesis reservoir](https://svyable.github.io/100/next/)** — 216 cross-domain, unvetted proposals across 27 research domains in a scalable pipeline; ranked discovery priorities, not claimed new open results ([protocol](NEXT_100.md)). The active 100 remains capped.
-- **[Public research dashboard](https://svyable.github.io/100/)** (once GitHub Pages is enabled: [activation guide](docs/PAGES_SETUP.md)) — ranked search, evidence filters, active proof campaigns.
+- **[Public research site](https://svyable.github.io/100/)** (once GitHub Pages is enabled: [activation guide](docs/PAGES_SETUP.md)) — generated static site: one permanent page per problem (`/problems/M071/`) and per field, atlas charts, lab, formal statements, campaigns, claim triage, roadmap, ledger, every research dossier, a `/` command palette, JSON/CSV API and Atom feed. Works without JavaScript; CI byte-checks it against the ledgers and link-checks every page.
+- **[Formal comparator statements](lean/README.md)** — exact Lean 4 statements for 9 targets (Goldbach, Erdős–Straus, Caccetta–Häggkvist, Frankl, Hadwiger, reconstruction, Hadamard, R(5,5), projective plane of order 12) with kernel-checked fidelity tests and finite certificates, every exported theorem axiom-audited by the [Lean proof gate](LEAN.md) ([catalogue](data/formalization.json)).
 - **[Exact probe lab](LAB.md)**: 18 independently checked probes on 13 reusable engines give **20 of the 100 problems** an exact verifier (previously 3), including all 19 problems where finite computation can refute or settle the claim. All ranges are known mathematics; see [the lab dossier](research/LAB_CAMPAIGNS.md).
 - [Frankl's independent Burnside orbit certificate](research/M075_BURNSIDE.md) — n=5 full-support orbit count 28,960 from seven S5 cycle types, reproducible without canonicalizing millions of families.
 - [Frankl's closure-pruned canonical orbit generator](research/M075_CANONICAL.md) — proved orbit-minimum equivalence, n=5 known full-support count and n=4 orbit census reproduced, no new bound claimed.
@@ -45,12 +46,14 @@ python3 scripts/rank.py
 python3 scripts/rank.py --check
 python3 scripts/research.py
 python3 scripts/research.py --check
+python3 scripts/formal.py --check
 python3 scripts/approach.py
 python3 scripts/approach.py --check
 python3 scripts/roadmap.py
 python3 scripts/roadmap.py --check
 python3 scripts/build_site.py
 python3 scripts/build_site.py --check
+python3 scripts/lean_verify.py   # needs elan; builds Lean and audits axioms
 python3 -m unittest discover -s tests -v
 ```
 

@@ -1,0 +1,148 @@
+{
+  "id": "M002",
+  "name": "Generalized Riemann Hypothesis",
+  "field": "Number theory",
+  "question": "Does the critical-line assertion hold for every Dirichlet L-function?",
+  "first_attack": "Audit precise statement and prove a restricted case",
+  "impact": 5,
+  "attackability": 2,
+  "verifiability": 3,
+  "spillover": 5,
+  "modality": "finite_refutable",
+  "evidence_state": "needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 51,
+  "score": 72,
+  "execution_rank": 34,
+  "execution_score": 79,
+  "readiness": 7,
+  "dispatch_rank": 19,
+  "dispatch_score": 91,
+  "action": "replay_published",
+  "action_label": "Replay a published certificate",
+  "action_bonus": 12,
+  "method_id": "critical_zeros",
+  "method_title": "Certified zero counts",
+  "dispatch_next": "Reproduce a published primitive character modulo 3 or 5 with the correct root number, branch conventions and independently checked zero count; document why this is known mathematics, not GRH progress.",
+  "dispatch_why": "The new engine verifies χ4 only; the generalized Riemann hypothesis concerns all Dirichlet characters. Replaying a separate primitive-character certificate tests the reusable contour and gamma-factor implementation.",
+  "campaign_stage": "benchmark_reproduced",
+  "milestone_count": 1,
+  "url": "https://svyable.github.io/100/problems/M002/",
+  "field_url": "https://svyable.github.io/100/fields/number-theory/",
+  "readiness_breakdown": [
+    {
+      "item": "Formal campaign brief",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Runnable independent verifier",
+      "points": 3,
+      "max": 3
+    },
+    {
+      "item": "Reproduced known benchmark",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Independently reviewed restricted theorem",
+      "points": 0,
+      "max": 3
+    }
+  ],
+  "has_exact_verifier": true,
+  "campaign": {
+    "problem_id": "M002",
+    "stage": "benchmark_reproduced",
+    "method": "The zeta interval engine applied to L(s, chi_4)",
+    "hypothesis": "Every non-trivial zero of every Dirichlet L-function has real part 1/2.",
+    "first_proof_obligation": "Certify one further primitive character, of conductor 3 or 5, to a height where the root number and the gamma factor are checked by the same argument principle.",
+    "next_experiment": "Reuse the zero-count certificate for the non-principal character modulo 3, including an independent replay of its Gauss sum.",
+    "falsification": "A primitive character and a height T at which the certified argument count exceeds the number of critical-line sign changes.",
+    "blocker": "One character at height 17 does not constrain the other characters. Conductor 3 is the smallest untouched case.",
+    "dossier": "research/LAB_CAMPAIGNS.md",
+    "verifier": "python3 scripts/lab.py --probe dirichlet_l"
+  },
+  "probes": [
+    {
+      "id": "dirichlet_l",
+      "problem_id": "M002",
+      "name": "Generalized Riemann Hypothesis",
+      "title": "Critical-line zero count for L(s, chi_4) up to a small height",
+      "engines": [
+        "interval_arithmetic"
+      ],
+      "frontier": "Known: the first zeros of Dirichlet L-functions, including L(s, χ₄), have been tabulated far beyond this height. The certificate is for the single character χ₄. Reproduction only, and not a proof of GRH.",
+      "artifact": "scripts/probes/dirichlet_l.py",
+      "command": "python3 scripts/lab.py --probe dirichlet_l",
+      "runs": {
+        "smoke": {
+          "holds": true,
+          "scope": "Every non-trivial zero of L(s, χ₄) with imaginary part in (0, 11] is simple and lies on the critical line: the argument principle gives N(11) = 2, equal to the number of disjoint intervals where the associated real Z-function changes sign.",
+          "certificate_sha256": "c0331948605f0bba8ddd08f7c38fc3658c198cd9033b2ebf49b487b9c19ce754"
+        },
+        "deep": {
+          "holds": true,
+          "scope": "Every non-trivial zero of L(s, χ₄) with imaginary part in (0, 17] is simple and lies on the critical line: the argument principle gives N(17) = 4, equal to the number of disjoint intervals where the associated real Z-function changes sign.",
+          "certificate_sha256": "97c916d3b3bdc62997216a76ae387cacfdaefc7a7ba10bc5348e31d3f0a2441b"
+        }
+      }
+    }
+  ],
+  "milestones": [
+    {
+      "id": "B-LCHI4-001",
+      "problem_id": "M002",
+      "classification": "reproduced_known",
+      "title": "The first two non-trivial zeros of L(s, chi_4) are simple and on the critical line",
+      "scope": "One Dirichlet character, N(11) = 2; not the generalized Riemann hypothesis",
+      "description": "Argument count for L(s, chi_4) matched to sign changes of the real form on (6, 7) and (10, 11), replayed at a second truncation. The deep run reaches N(17) = 4.",
+      "verifier": "python3 scripts/lab.py --probe dirichlet_l",
+      "artifact": "scripts/probes/dirichlet_l.py",
+      "verified_on": "2026-10-31"
+    }
+  ],
+  "engine_roadmap": null,
+  "claim_review_2026": null,
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Exact probe lab — computational reach of the 100",
+      "source": "LAB.md",
+      "url": "https://svyable.github.io/100/library/lab/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
+    },
+    {
+      "title": "Lab campaigns: problems under exact computation",
+      "source": "research/LAB_CAMPAIGNS.md",
+      "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "Proof-driven research engine",
+      "source": "docs/RESEARCH_ENGINE.md",
+      "url": "https://svyable.github.io/100/library/research-engine/"
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "id": "M084",
+  "name": "Matrix multiplication exponent omega=2",
+  "field": "Complexity",
+  "question": "Is the matrix multiplication exponent exactly two?",
+  "first_attack": "Audit precise statement and prove a restricted case",
+  "impact": 5,
+  "attackability": 3,
+  "verifiability": 4,
+  "spillover": 5,
+  "modality": "asymptotic",
+  "evidence_state": "needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 21,
+  "score": 83,
+  "execution_rank": 16,
+  "execution_score": 90,
+  "readiness": 7,
+  "dispatch_rank": 14,
+  "dispatch_score": 102,
+  "action": "replay_published",
+  "action_label": "Replay a published certificate",
+  "action_bonus": 12,
+  "method_id": "algebraic_complexity",
+  "method_title": "One format, replayed exactly",
+  "dispatch_next": "Import one published exact decomposition, such as a cited rank-23 scheme for the <3,3,3> tensor, and replay it on the tensor checker. A flip-graph search is not the next step: small formats cannot beat the laser-method bounds the blocker cites.",
+  "dispatch_why": "Import a published decomposition onto the existing checker. The blocker says a small-format search cannot beat laser-method bounds below 2.372.",
+  "campaign_stage": "benchmark_reproduced",
+  "milestone_count": 1,
+  "url": "https://svyable.github.io/100/problems/M084/",
+  "field_url": "https://svyable.github.io/100/fields/complexity/",
+  "readiness_breakdown": [
+    {
+      "item": "Formal campaign brief",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Runnable independent verifier",
+      "points": 3,
+      "max": 3
+    },
+    {
+      "item": "Reproduced known benchmark",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Independently reviewed restricted theorem",
+      "points": 0,
+      "max": 3
+    }
+  ],
+  "has_exact_verifier": true,
+  "campaign": {
+    "problem_id": "M084",
+    "stage": "benchmark_reproduced",
+    "method": "Exact tensor-decomposition certificates",
+    "hypothesis": "The exponent of matrix multiplication equals 2.",
+    "first_proof_obligation": "Replay published small-format decompositions (rank-23 <3,3,3> and recent flip-graph or learned schemes) as exact certificates and record the implied exponent bounds.",
+    "next_experiment": "Add a JSON import path and a flip-graph rank-reduction search over small formats, with every candidate replayed by the exact checker.",
+    "falsification": "Not finitely falsifiable: omega is a limit, and certified decompositions only give upper bounds.",
+    "blocker": "Small-format ranks cannot beat laser-method bounds below 2.372; the probe is certificate infrastructure.",
+    "dossier": "research/LAB_CAMPAIGNS.md",
+    "verifier": "python3 scripts/lab.py --probe strassen"
+  },
+  "probes": [
+    {
+      "id": "strassen",
+      "problem_id": "M084",
+      "name": "Matrix multiplication exponent omega=2",
+      "title": "Exact matrix-multiplication tensor decompositions (Strassen and Kronecker powers)",
+      "engines": [
+        "tensor_certificates"
+      ],
+      "frontier": "Known: omega <= log2(7) ~ 2.807 (Strassen 1969); the best published bounds are below 2.372 via the laser method. rank<2,2,2> = 7 exactly (Winograd 1971).",
+      "artifact": "scripts/probes/tensor.py",
+      "command": "python3 scripts/lab.py --probe strassen",
+      "runs": {
+        "smoke": {
+          "holds": true,
+          "scope": "Exact integer rank-7^k decompositions of the <2^k,2^k,2^k> matmul tensor for k in {1, 2}, hence omega <= log2(7).",
+          "certificate_sha256": "36b9015e19e73c7a824706876692d126f7f9ece229ac3c87ef6ddd1b4e139a8f"
+        },
+        "deep": {
+          "holds": true,
+          "scope": "Exact integer rank-7^k decompositions of the <2^k,2^k,2^k> matmul tensor for k in {1, 2, 3}, hence omega <= log2(7).",
+          "certificate_sha256": "9b0f284202bb37815dfbc33930d30c8e061e0c360015e999f0b45c81bfa80ef2"
+        }
+      }
+    }
+  ],
+  "milestones": [
+    {
+      "id": "B-STRASSEN-001",
+      "problem_id": "M084",
+      "classification": "reproduced_known",
+      "title": "Strassen rank-7 <2,2,2> and rank-49 <4,4,4> decompositions checked exactly",
+      "scope": "Classical upper bound omega <= log2 7; not new",
+      "description": "Sparse exact expansion over Z matches the matrix multiplication tensor coefficient by coefficient; the deep run adds the rank-343 <8,8,8> Kronecker cube.",
+      "verifier": "python3 scripts/lab.py --probe strassen",
+      "artifact": "scripts/probes/tensor.py",
+      "verified_on": "2026-10-31"
+    }
+  ],
+  "engine_roadmap": null,
+  "claim_review_2026": null,
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Exact probe lab — computational reach of the 100",
+      "source": "LAB.md",
+      "url": "https://svyable.github.io/100/library/lab/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
+    },
+    {
+      "title": "Lab campaigns: problems under exact computation",
+      "source": "research/LAB_CAMPAIGNS.md",
+      "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "Proof-driven research engine",
+      "source": "docs/RESEARCH_ENGINE.md",
+      "url": "https://svyable.github.io/100/library/research-engine/"
+    }
+  ]
+}

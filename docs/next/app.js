@@ -32,8 +32,8 @@
       ' · Transfer ' + c.scores.transfer + '</p><a href="' + issue +
       '" target="_blank" rel="noopener noreferrer">Submit review ↗</a>' +
       '<a href="?focus=' + encodeURIComponent(c.id) + '#reservoir">Direct link ↗</a>' +
-      (promotion ? '<a href="../?focus=' + encodeURIComponent(promotion) +
-      '#rankings">Active entry ↗</a>' : '') + '</div></div></details>';
+      (promotion ? '<a href="../problems/' + encodeURIComponent(promotion) + '/"' +
+      '>Active entry ↗</a>' : '') + '</div></div></details>';
     return card;
   }
   function filtered() {

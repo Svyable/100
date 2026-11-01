@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proof exchange: scaling mathematical work without scaling unsupported claims · 100</title>
+<meta name="description" content="Prototype 2026-10-31. Run python3 scripts/scale.py --budget 5 for a short plan, python3 scripts/scale.py --budget 5 --json for machine-readable work packets, and python3 scripts/scale.py --check for source/schema validation. --unit-type sha">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/proof-exchange/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="Proof exchange: scaling mathematical work without scaling unsupported claims · 100">
+<meta property="og:description" content="Prototype 2026-10-31. Run python3 scripts/scale.py --budget 5 for a short plan, python3 scripts/scale.py --budget 5 --json for machine-readable work packets, and python3 scripts/scale.py --check for source/schema validation. --unit-type sha">
+<meta property="og:url" content="https://svyable.github.io/100/library/proof-exchange/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../next/">Next 100</a><a href="../../atlas/">Atlas</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">Proof exchange: scaling mathematical work without scaling unsupported claims</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#the-constraint">The constraint</a></li><li class="toc-l2"><a href="#formal-problem">Formal problem</a></li><li class="toc-l2"><a href="#current-reproducible-readout">Current reproducible readout</a></li><li class="toc-l2"><a href="#proof-carrying-handoff">Proof-carrying handoff</a></li><li class="toc-l2"><a href="#experiment-needed-before-calling-this-a-breakthrough">Experiment needed before calling this a breakthrough</a></li><li class="toc-l2"><a href="#relationship-to-existing-architecture">Relationship to existing architecture</a></li></ol></nav>
+
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/docs/PROOF_EXCHANGE.md" rel="noopener noreferrer">docs/PROOF_EXCHANGE.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">METHOD &amp; GOVERNANCE</p><h1>Proof exchange: scaling mathematical work without scaling unsupported claims</h1>
+<p><strong>Prototype 2026-10-31.</strong> Run <code>python3 scripts/scale.py --budget 5</code> for a short plan, <code>python3 scripts/scale.py --budget 5 --json</code> for machine-readable work packets, and <code>python3 scripts/scale.py --check</code> for source/schema validation. <code>--unit-type shape</code> and <code>--unit-type engine</code> are ablations. Nothing is written to the research ledgers by this tool.</p>
+<h2 id="the-constraint">The constraint<a class="anchor" href="#the-constraint" aria-label="Link to this section">#</a></h2>
+<p>Adding parallel reasoning is not the same as increasing accepted discoveries. Research on multi-agent systems reports large gains for decomposable tasks but important failure modes for sequential dependencies, correlated errors and expensive coordination:</p>
+<ul><li><a href="https://research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/" rel="noopener noreferrer">Google Research, January 2026</a> finds architecture selection depends strongly on task properties.</li><li><a href="https://www.nature.com/articles/s42256-026-01268-y" rel="noopener noreferrer">Nature Machine Intelligence, 2026</a> reports no universal gain from more agents under matched budgets.</li><li><a href="https://www.anthropic.com/research/multi-agent-research-system" rel="noopener noreferrer">Anthropic, 2025</a> reports parallel research gains, substantial token cost and the advantage of passing artifact references rather than repeatedly summarizing all work.</li><li><a href="https://ai.meta.com/research/publications/autoformbot-formalizing-mathematics-at-scale/" rel="noopener noreferrer">AutoformBot, 2026</a> demonstrates large-scale dependency-aware Lean formalization. That is evidence for engineering feasibility, <strong>not</strong> validation that new open conjectures are solved by scaling agent count.</li><li><a href="https://arxiv.org/abs/2609.21032" rel="noopener noreferrer">Scaling Discovery through Test-Time Communication, September 2026</a> finds communicating agents can outperform independent attempts when progress feedback is available, with important compute-dependent exceptions.</li></ul>
+<p>We therefore separate two scarce resources: <strong>creative attempts</strong>, which can be parallelized, and <strong>independent acceptance</strong>, which cannot be asserted by an agent. Agents exchange <em>bounded, source-linked contracts</em>, not truth claims.</p>
+<h2 id="formal-problem">Formal problem<a class="anchor" href="#formal-problem" aria-label="Link to this section">#</a></h2>
+<p>Let <code>P</code> be the 100 active registered mathematical targets, and let <code>U</code> contain the 30 method shapes and the engine names explicitly listed in <code>data/methods.json</code>. Each unit <code>u</code> has candidate target set <code>C(u)</code>. An engine-to-target link means only that the problem&#x27;s method names the engine, <strong>not</strong> that the engine already works on that target.</p>
+<p>With a budget <code>k</code> of equal <em>planning slots</em> the routing objective is</p>
+<pre><code>F(S) = | union(C(u) for u in S) |,   |S| &lt;= k.</code></pre>
+<p>The incremental gain is <code>|C(u) - covered|</code>; choose the largest, breaking ties by existing independently checked lab anchors, then stable ID. This is a deterministic greedy maximum-coverage algorithm. Because union coverage is monotone submodular, it achieves at least <code>1 - 1/e</code> of the optimum coverage for the <strong>equal-unit-cost coverage objective</strong>. This theorem says nothing about mathematical probability of success, proof quality, actual labor costs, tokens, or wall-clock time. The units do not have observed equal costs.</p>
+<p>The separate <code>data/proof_obligations.json</code> DAG is the acceptance frontier:</p>
+<ul><li><code>runnable</code>: open with all listed prerequisites discharged;</li><li><code>externally_blocked</code>: blocked despite satisfied graph prerequisites;</li><li><code>waiting_on_dependencies</code>: at least one listed prerequisite not discharged;</li><li><code>discharged</code>: structural ledger state, <strong>not</strong> a machine guarantee of truth.</li></ul>
+<p>A waiting or externally blocked node is never reported as runnable. For every selected routing unit, the output includes exact candidate IDs, existing finite-lab anchors, required certificate, falsifier and a SHA-256 of that contract. Changing its statement or falsifier changes its digest; receiving the digest alone verifies <strong>identity</strong>, never mathematical validity.</p>
+<h2 id="current-reproducible-readout">Current reproducible readout<a class="anchor" href="#current-reproducible-readout" aria-label="Link to this section">#</a></h2>
+<p>Using the repository&#x27;s 2026-10-31 registers:</p>
+<div class="table-wrap"><table><thead><tr><th>Observable</th><th class="al-right">Value</th><th>Boundary</th></tr></thead><tbody><tr><td>Active targets / method shapes</td><td class="al-right">100 / 30</td><td>Editorial classification only</td></tr><tr><td>Candidate units</td><td class="al-right">43</td><td>30 method shapes + 13 named method engines; not 43 independent proof solvers</td></tr><tr><td>Targets routed in five equal slots</td><td class="al-right">33</td><td>Potential target <em>coverage</em>, <strong>not</strong> verified results or measured speedup</td></tr><tr><td>Targets routed in ten equal slots</td><td class="al-right">58</td><td>Same limit</td></tr><tr><td><code>symmetry_reduction</code> routing reach</td><td class="al-right">11</td><td>Only 2 of these targets have existing deep-level lab anchors with that engine</td></tr><tr><td>Recorded proof obligations</td><td class="al-right">6</td><td>Three runnable, one externally blocked, two waiting on dependencies</td></tr><tr><td>New mathematical conjectures solved</td><td class="al-right">0</td><td>This tool does not alter <code>data/solved.json</code></td></tr></tbody></table></div>
+<p>The first equal-slot plan is <code>engine:symmetry_reduction</code>, <code>shape:complexity_barriers</code>, <code>shape:galois_representations</code>, <code>engine:exact_lp</code>, and <code>shape:harmonic_analysis</code>. Their candidate marginal coverages are 11, 6, 6, 5, and 5. These are scheduling hypotheses, <strong>not</strong> recommendations to claim engine support on every named target. The number 33 is not a speedup factor: the objective treats unequal research tasks as one planning slot each.</p>
+<h2 id="proof-carrying-handoff">Proof-carrying handoff<a class="anchor" href="#proof-carrying-handoff" aria-label="Link to this section">#</a></h2>
+<ol><li><strong>Scout:</strong> receives the named target, method family, cited prior-art boundary, explicit restricted statement and falsifier. Returns an immutable artifact or a negative result with exact inputs and resources.</li><li><strong>Adversary:</strong> actively searches for missing hypotheses, scope mismatches, counterexamples and contamination from already-known results. Their output is stored separately, never summarized away by the proposer.</li><li><strong>Checker:</strong> replays a witness or proof in an independent code path or proof kernel where possible; compares the exact theorem meaning with the source; reports what remains unproved. This must not be the same untrusted agent asserting that its own output is correct.</li><li><strong>Integrator:</strong> adds an independently accepted result to the right local ledger only after the project&#x27;s documented gates, and reevaluates the remaining proof-DAG frontier. A method link alone never discharges a node.</li></ol>
+<p>The source bound SHA-256 is an anti-drift guard, <strong>not</strong> a signature, an authentication protocol, or a proof certificate. For a real distributed network, add authenticated artifact storage, resource limits, trusted replay, independent attestations and revocation; those are not implemented here.</p>
+<h2 id="experiment-needed-before-calling-this-a-breakthrough">Experiment needed before calling this a breakthrough<a class="anchor" href="#experiment-needed-before-calling-this-a-breakthrough" aria-label="Link to this section">#</a></h2>
+<p>Run a preregistered, held-out comparison across naturally parallel, high-dependency and mixed-structure tasks, using identical models, total token budget, tool access, time caps and verification standards:</p>
+<ul><li>A: strong sequential solver;</li><li>B: independent <code>best-of-k</code> explorers with no artifact sharing;</li><li>C: unconstrained agent conversation;</li><li>D: proof-exchange routing with source-bound artifacts and sparse, verifier-triggered communication.</li></ul>
+<p>Measure <strong>independently accepted new restricted results per unit cost</strong>, not raw agent messages or target coverage. Record theorem-scope fidelity, checker replay failures, novel counterexamples, cost, elapsed time and the proportion of accepted work reused on a second target. Run ablations without the blocker DAG, without contract hashes and without independent checking. Publishing a null result is preferable to claiming a multiplier from an editorial model.</p>
+<h2 id="relationship-to-existing-architecture">Relationship to existing architecture<a class="anchor" href="#relationship-to-existing-architecture" aria-label="Link to this section">#</a></h2>
+<p>This prototype <strong>does not replace</strong> <code>scripts/approach.py</code>&#x27;s 44 active jobs, <code>scripts/lab.py</code>&#x27;s independent exact probes, the six-node proof DAG, the research protocol, or the human/specialist review gates. It adds a <em>cross-problem opportunity index</em> and machine-readable, source-bound dispatch packets on top. Routing, working, checking, and promoting remain separate.</p>
+<p>Run <code>python3 -m unittest discover -s tests -v</code> to include the new source and adversarial scheduling tests; run <code>python3 scripts/scale.py --check</code> in any workflow that consumes its output.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-10-31 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

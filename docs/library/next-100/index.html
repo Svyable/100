@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Next 100 — hypothesis reservoir · 100</title>
+<meta name="description" content="Explore on Pages: Next 100 · Active 100">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/next-100/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="Next 100 — hypothesis reservoir · 100">
+<meta property="og:description" content="Explore on Pages: Next 100 · Active 100">
+<meta property="og:url" content="https://svyable.github.io/100/library/next-100/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../next/">Next 100</a><a href="../../atlas/">Atlas</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">Next 100 — hypothesis reservoir</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#data-architecture">Data architecture</a></li><li class="toc-l2"><a href="#candidate-schema-and-editorial-scores">Candidate schema and editorial scores</a></li><li class="toc-l2"><a href="#cohort-02-intake-and-review-discipline">Cohort-02 intake and review discipline</a></li><li class="toc-l2"><a href="#intake--active-100">Intake → active 100</a></li><li class="toc-l2"><a href="#adding-a-batch">Adding a batch</a></li></ol></nav>
+
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/NEXT_100.md" rel="noopener noreferrer">NEXT_100.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">GENERATED REPORTS</p><h1>Next 100 — hypothesis reservoir</h1>
+<p><strong>Explore on Pages:</strong> <a href="https://svyable.github.io/100/next/" rel="noopener noreferrer">Next 100</a> · <a href="https://svyable.github.io/100/" rel="noopener noreferrer">Active 100</a></p>
+<p>Next 100 is the <strong>intake layer</strong> for <a href="https://github.com/Svyable/100/blob/main/data/problems.json" rel="noopener noreferrer">the active 100</a>, not another claim that 120 (or eventually thousands of) new mathematical theorems are open. It holds hypothetical statements with potentially consequential spillovers across multiple fields of mathematics, scientific practice or the real world. Some are research sketches awaiting exact formalization. Some may be already proved, false, equivalent to known results, or impossible under their stated assumptions. <strong>Do not present them as discoveries.</strong></p>
+<p>The first release seeded <strong>120 editorial hypotheses across 15 domains</strong>. The second controlled intake adds <strong>96 distinct hypotheses across 12 new domains</strong> (216 total; 27 domains). Changes are submitted as reviewable cohort files. The format and statically paginated browser can grow to thousands without changing the 100-slot active list. Favor quality over numerical inflation.</p>
+<h2 id="data-architecture">Data architecture<a class="anchor" href="#data-architecture" aria-label="Link to this section">#</a></h2>
+<ul><li><code>data/next_candidates.json</code>: seed cohort with immutable <code>N0001</code> IDs.</li><li><code>data/next_batches/*.json</code>: optional additional arrays of candidates. Use a fresh batch per intake round so review diffs remain manageable.</li><li><code>data/next_review_queue.json</code>: a deliberately small cross-domain prior-art queue with bounded first tests and <em>context-only</em>, not open-status, sources.</li><li><code>data/next_promotions.json</code>: immutable provenance records mapping an <code>N</code> candidate into the active <code>M</code> slot it eventually replaces.</li><li><code>scripts/next.py</code>: schema, duplicate, promotion and active-cap validator; deterministic discovery-priority ranking and static Pages builder.</li><li><code>docs/data/next.json</code>: generated client snapshot, not a source of truth.</li><li><code>docs/next/</code>: searchable Pages explorer with filters, linkable IDs and expandable motivations / first attacks.</li></ul>
+<p>Run <code>python3 scripts/next.py</code> after source edits. Run <code>python3 scripts/next.py --check</code> or <code>python3 scripts/next.py --top 20</code>. CI checks the generated artifact and browser JavaScript syntax. The <code>--similarity 20</code> option reports closest lexical pairs for human triage; CI rejects highly overlapping titles or statements. Lexical distance cannot establish mathematical novelty or independence.</p>
+<h2 id="candidate-schema-and-editorial-scores">Candidate schema and editorial scores<a class="anchor" href="#candidate-schema-and-editorial-scores" aria-label="Link to this section">#</a></h2>
+<p>Each record has an immutable <code>id</code> (N followed by at least four digits), a short <code>title</code>, a <strong>hypothetical</strong> <code>statement</code>, its mathematical <code>domain</code>, at least two concrete <code>spillovers</code>, a clear <code>consequence</code> conditional on success, a falsifiable <code>first_attack</code>, a <code>stage</code>, <code>evidence_state</code> and <code>scores</code>. The evidence state must remain <code>unvetted_hypothesis</code> at intake.</p>
+<ul><li><code>formalize</code>: substantial definitions, quantifiers or assumptions still needed.</li><li><code>prior_art_review</code>: more concrete statement but literature/status unverified.</li></ul>
+<p>Four 1–5 <strong>editorial</strong> scores mirror the active ranking weights: impact 30%, tractability 30%, independent verifiability 25%, cross-domain transfer 15%. The discovery index = 6×impact + 6×tractability + 5×verifiability + 3×transfer. It is <strong>not</strong> a probability of success, novelty, truth or scientific validity. Ties are broken by stable ID. Promotions do not rewrite historical hypotheses.</p>
+<h2 id="cohort-02-intake-and-review-discipline">Cohort-02 intake and review discipline<a class="anchor" href="#cohort-02-intake-and-review-discipline" aria-label="Link to this section">#</a></h2>
+<ul><li>96 proposals in <code>data/next_batches/2026-10-cohort-02.json</code> cover information theory, codes, space, ocean, water, agriculture, transportation, geophysics, computational chemistry, measurement, institutional choice, and education. They diversify mathematical mechanisms and downstream applications.</li><li>The 12-item queue is <strong>not</strong> a completed status audit. Its institutional links are background starting points, not endorsements of the conjectures. Each item names a research question, a minimum toy experiment, and a literature gap.</li><li><code>scripts/next.py --similarity 20</code> exposes lexical overlap for review. A matching word set may indicate unrelated problems; semantically equivalent hypotheses can still evade lexical screening. Human review remains necessary.</li><li>Intake batches should generally contain <strong>50–100 genuinely differentiated</strong> proposals. Hold back redundant ideas and items without two credible spillovers.</li></ul>
+<h2 id="intake--active-100">Intake → active 100<a class="anchor" href="#intake--active-100" aria-label="Link to this section">#</a></h2>
+<ol><li><strong>Specify.</strong> Define every term, quantifier, exception and objective. State a mathematical theorem/counterexample target, rather than an untestable statement about future technology. Describe at least two nontrivial ways resolving it would matter.</li><li><strong>Audit.</strong> Compare current specialist/primary sources and existing conjectures. Record dated URLs, exact equivalences and prior counterexamples. A missing source is <strong>not</strong> evidence that a problem is open.</li><li><strong>Attack.</strong> Identify a restricted lemma, explicit falsifier, finite instance generator or independent verifier. Add a reproducible campaign if useful.</li><li><strong>Select.</strong> Compare against the weakest/solved/duplicated active slot using both long-term significance and runnable proof-work readiness. <strong>No automatic displacement from a high discovery index alone.</strong></li><li><strong>Promote via a reviewable GitHub PR.</strong> Replace one active record, maintain exactly 100 distinct <code>M</code> IDs, record the departing candidate&#x27;s history in the PR, and add a promotion entry with <code>next_id</code>, <code>active_id</code>, <code>promoted_on</code>, <code>review_url</code>, and a substantive <code>reason</code>. The active problem must follow the full <a href="../../library/research-protocol/">research protocol</a> (including evidence-state rules). Promoting does not certify a proof.</li><li><strong>Check.</strong> Rebuild <code>RANKED.md</code>, <code>ATTACK_QUEUE.md</code>, lab/research and Pages snapshots with existing scripts. Run the full test suite and CI.</li></ol>
+<p>Never reuse an <code>N</code> ID for another statement. A changed or withdrawn idea should receive a documented decision, not vanish from the ledger. Retain the source even when it has been promoted. The Next 100 page preserves a direct link to the active <code>M</code> record once a promotion is logged.</p>
+<h2 id="adding-a-batch">Adding a batch<a class="anchor" href="#adding-a-batch" aria-label="Link to this section">#</a></h2>
+<p>Put an array of objects following the existing schema at, for example, <code>data/next_batches/2026-11-round-01.json</code>, with fresh N IDs. After literature triage and duplicate checks, run:</p>
+<pre><code class="lang-sh">python3 scripts/next.py
+python3 scripts/next.py --check
+node --check docs/next/app.js
+python3 -m unittest discover -s tests -v</code></pre>
+<p>This system is a <strong>reservoir of proposals</strong>, not autonomous paper monitoring or an automatic conjecture generator. Verification and promotion need documented research decisions.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-10-31 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>
