@@ -220,6 +220,11 @@
       "url": "https://svyable.github.io/100/library/m071-m073-witnesses/"
     },
     {
+      "title": "M073 — exact two-block graphon sanity check, not a Sidorenko witness",
+      "source": "research/M073_TWOBLOCK_EXACT.md",
+      "url": "https://svyable.github.io/100/library/m073-twoblock-exact/"
+    },
+    {
       "title": "OpenAI/math transfer intake: evidence before claims",
       "source": "docs/OPENAI_MATH_TRANSFER.md",
       "url": "https://svyable.github.io/100/library/openai-math-transfer/"

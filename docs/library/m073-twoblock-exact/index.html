@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M073 — exact two-block graphon sanity check, not a Sidorenko witness · 100</title>
+<meta name="description" content="Research checkpoint, 2026-10-31. Target: the 35-vertex, 66-edge bipartite incidence pattern from the September 2026 Sidorenko counterexample manuscript. The paper claims the existence of a finite simple host with (t(H,G)&lt;t(K_2,G)^{66}). The">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m073-twoblock-exact/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M073 — exact two-block graphon sanity check, not a Sidorenko witness · 100">
+<meta property="og:description" content="Research checkpoint, 2026-10-31. Target: the 35-vertex, 66-edge bipartite incidence pattern from the September 2026 Sidorenko counterexample manuscript. The paper claims the existence of a finite simple host with (t(H,G)&lt;t(K_2,G)^{66}). The">
+<meta property="og:url" content="https://svyable.github.io/100/library/m073-twoblock-exact/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M073 — exact two-block graphon sanity check, not a Sidorenko witness</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#exact-predeclared-experiment">Exact predeclared experiment</a></li><li class="toc-l2"><a href="#recorded-result-and-failure-boundary">Recorded result and failure boundary</a></li><li class="toc-l2"><a href="#reproduce">Reproduce</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M073/" title="Sidorenko conjecture">M073</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M073_TWOBLOCK_EXACT.md" rel="noopener noreferrer">research/M073_TWOBLOCK_EXACT.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M073 — exact two-block graphon sanity check, not a Sidorenko witness</h1>
+<p><strong>Research checkpoint, 2026-10-31.</strong> Target: the 35-vertex, 66-edge bipartite incidence pattern from the September 2026 <a href="https://github.com/openai/math/tree/main/preprints/A-counterexample-to-Sidorenkos-conjecture-September-23-2026" rel="noopener noreferrer">Sidorenko counterexample manuscript</a>. The paper claims the existence of a finite simple host with (t(H,G)&lt;t(K_2,G)^{66}). The repository <a href="../../library/m071-m073-witnesses/">previously reconstructed the 22 triples on 13 points</a> from <a href="https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/ComparatorChallenges/SidorenkoCounterexample.lean" rel="noopener noreferrer">pinned OpenAI math source commit <code>4eaee875</code></a>. No explicit host graph or numerical order is available in that frozen source. This note <strong>does not</strong> claim a finite counterexample, revalidate the upstream proof, resolve Sidorenko&#x27;s conjecture, or establish originality.</p>
+<h2 id="exact-predeclared-experiment">Exact predeclared experiment<a class="anchor" href="#exact-predeclared-experiment" aria-label="Link to this section">#</a></h2>
+<p>Fix two measurable vertex classes of <strong>equal mass</strong> (1/2) each. Let the symmetric two-step graphon have weights</p>
+<p>[ W=\frac{1}{2} \begin{pmatrix}a&amp;b\b&amp;c\end{pmatrix}, \qquad a,b,c\in\{0,1,2\}. ]</p>
+<p>These are <strong>27</strong> parameter cells, with within-block weights allowed. They are not 27 two-vertex simple host graphs: within-block diagonal weights are legal for a graphon and represent a <em>large</em> block of vertices.</p>
+<p>Writing (P=\{0,\ldots,12\}) for pattern points and (F) for its 22 listed triples, independently choose a block label for each of the 35 pattern vertices. With (M=\bigl(\begin{smallmatrix} a&amp;b\b&amp;c\end{smallmatrix}\bigr)), the integer homomorphism numerator is</p>
+<p>[ T=\sum_{x\in\{0,1\}^{13}} \prod_{f=\{i,j,k\}\in F} \left(\sum_{y\in\{0,1\}}M_{x_i y}M_{x_j y}M_{x_k y}\right). ]</p>
+<p>Thus (t(H,W)=T/(2^{35}2^{66})), while (t(K_2,W)=(a+2b+c)/8). The Sidorenko inequality is <strong>exactly</strong></p>
+<p>[ \boxed{\;2^{97}T\ \ge\ (a+2b+c)^{66}.\;} ]</p>
+<p>There is no floating-point rounding or finite-sampling error.</p>
+<p>Two independent algorithms evaluate the left numerator:</p>
+<ol><li><strong>Face elimination:</strong> enumerate all (2^{13}) assignments to the point classes and sum each face class analytically.</li><li><strong>Pairwise-factor elimination:</strong> construct all 66 separate incidence-edge factors, then eliminate the 35 binary variables by exact dynamic programming. This implementation does not use the face-product formula as a calculation step.</li></ol>
+<p>For tiny bipartite patterns, both agree with brute-force enumeration of <strong>every</strong> binary assignment to <strong>every</strong> vertex.</p>
+<h2 id="recorded-result-and-failure-boundary">Recorded result and failure boundary<a class="anchor" href="#recorded-result-and-failure-boundary" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>Exact coarse test</th><th class="al-right">Count</th></tr></thead><tbody><tr><td>Equal-mass two-block graphons with weights in (\{0,1/2,1\})</td><td class="al-right">27</td></tr><tr><td>Strict violations of the 66-edge inequality</td><td class="al-right"><strong>0</strong></td></tr><tr><td>Strictly positive gaps</td><td class="al-right"><strong>24</strong></td></tr><tr><td>Equality</td><td class="al-right"><strong>3</strong></td></tr></tbody></table></div>
+<p>The equality cells are exactly ((a,b,c)=(0,0,0),(1,1,1),(2,2,2)): constant graphons. All the other 24 tested cells have a positive exact gap. This <strong>only</strong> excludes those 27 proposed graphons as counterexamples to the paper&#x27;s <em>fixed pattern</em>, not a continuous two-block family, unequal block masses, three or more blocks, or the paper&#x27;s random-host construction. It is a measured <em>negative result</em>, not a new restricted universal theorem.</p>
+<p>A deliberately <strong>nonbipartite</strong> K3 control with cross-only weights (M=\bigl(\begin{smallmatrix}0&amp;2\2&amp;0\end{smallmatrix}\bigr)) has (t(K_3,W)=0&lt;(1/2)^3); the general pairwise-factor evaluator detects this strict violation. It tests the inequality comparator without pretending to refute Sidorenko for bipartite graphs. Further tests reject looped/duplicate edges, a malformed pinned face table, invalid weights, and an unregistered expansion of the 27-cell trial.</p>
+<h2 id="reproduce">Reproduce<a class="anchor" href="#reproduce" aria-label="Link to this section">#</a></h2>
+<p>Run from the repository root:</p>
+<pre><code class="lang-sh">python3 scripts/sidorenko_twoblock.py --check
+python3 scripts/sidorenko_twoblock.py --json
+python3 -m unittest discover -s tests -p &#x27;test_sidorenko_twoblock.py&#x27; -v</code></pre>
+<p>The input is committed <code>data/reference/sidorenko_faces.json</code>, which already records the source revision and its hash. The global verifier <code>python3 scripts/verify_claim_witnesses.py --check</code> independently checks this frozen table. These density computations do <strong>not</strong> upgrade <code>O-M073-01</code>, which still requires the full finite host (G) with a second independent density recount and independent review.</p>
+<p><strong>Next falsifier:</strong> extract an actual finite host from upstream <code>RandomHost.lean</code> (order, edges, input hash), or find a rational higher-block/unequal-mass step graphon with an exact strict inequality. Any such candidate must be independently recounted and compared to the <em>precisely same</em> 35-vertex, 66-edge incidence pattern. Expanding only the coarse two-class grid would not prove the unrestricted claim.</p>
+<p><strong>Claim scope:</strong> <a href="https://github.com/Svyable/100/issues/99" rel="noopener noreferrer">#99</a>; related witness obligation <a href="https://github.com/Svyable/100/issues/13" rel="noopener noreferrer">#13</a>. No change to <code>data/solved.json</code>, evidence status, or independent review.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-10-31 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>
