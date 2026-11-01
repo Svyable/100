@@ -141,6 +141,54 @@
     "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/Ramsey.lean"
   },
   "external_claims": [],
+  "discovery_trail": {
+    "problem_id": "M095",
+    "question": "What separates a certified Ramsey lower bound from a new exact value of R(5,5)?",
+    "nodes": [
+      {
+        "id": "known-range",
+        "kind": "observation",
+        "status": "documented",
+        "title": "Start from the published interval 43–46",
+        "detail": "The audited published bound is 43 ≤ R(5,5) ≤ 46; neither endpoint equality nor a 43-vertex avoiding coloring is established here.",
+        "sources": [
+          "research/M095_RAMSEY.md"
+        ],
+        "motivated_by": []
+      },
+      {
+        "id": "catalog-replay",
+        "kind": "reproduction",
+        "status": "reproduced_known",
+        "title": "Check 328 published 42-vertex colorings",
+        "detail": "A SHA-256-pinned McKay catalog is checked using two different K5 search methods, reproducing R(5,5) ≥ 43. Complements give color-swapped examples, not a completeness argument.",
+        "move_id": "independent_replay",
+        "motivated_by": [
+          "known-range"
+        ],
+        "sources": [
+          "research/M095_RAMSEY.md",
+          "data/ramsey_mckay_replay.json"
+        ]
+      },
+      {
+        "id": "new-bound-gate",
+        "obligation_id": "O-M095-01",
+        "kind": "next_step",
+        "status": "proposed",
+        "title": "Require a new witness or checked exclusion",
+        "detail": "Improving the lower bound needs a K43 coloring with no monochromatic K5; improving the upper bound needs an exhaustive argument with independently checked proof traces. A solver verdict alone is insufficient.",
+        "move_id": "certificate_frontier",
+        "motivated_by": [
+          "catalog-replay"
+        ],
+        "sources": [
+          "research/M095_RAMSEY.md"
+        ]
+      }
+    ]
+  },
+  "discovery_url": "https://svyable.github.io/100/discovery/M095/",
   "mentioned_in": [
     {
       "title": "Approach — leverage dispatch",

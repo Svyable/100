@@ -113,6 +113,8 @@
       "note": "Checksums copied from source README, NOT independently downloaded or replayed in Svyable/100."
     }
   ],
+  "discovery_trail": null,
+  "discovery_url": null,
   "mentioned_in": [
     {
       "title": "Approach — leverage dispatch",
@@ -203,6 +205,11 @@
       "title": "Lamport protocol — make every missing implication explicit",
       "source": "docs/LAMPORT_PROTOCOL.md",
       "url": "https://svyable.github.io/100/library/lamport-protocol/"
+    },
+    {
+      "title": "OpenAI/math transfer intake: evidence before claims",
+      "source": "docs/OPENAI_MATH_TRANSFER.md",
+      "url": "https://svyable.github.io/100/library/openai-math-transfer/"
     }
   ]
 }

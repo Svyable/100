@@ -108,6 +108,8 @@
   "claim_review_2026": null,
   "formal_statement": null,
   "external_claims": [],
+  "discovery_trail": null,
+  "discovery_url": null,
   "mentioned_in": [
     {
       "title": "Approach — leverage dispatch",
@@ -143,6 +145,11 @@
       "title": "Lab campaigns: problems under exact computation",
       "source": "research/LAB_CAMPAIGNS.md",
       "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "OpenAI/math transfer intake: evidence before claims",
+      "source": "docs/OPENAI_MATH_TRANSFER.md",
+      "url": "https://svyable.github.io/100/library/openai-math-transfer/"
     },
     {
       "title": "Proof-driven research engine",

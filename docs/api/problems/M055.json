@@ -52,6 +52,8 @@
   },
   "formal_statement": null,
   "external_claims": [],
+  "discovery_trail": null,
+  "discovery_url": null,
   "mentioned_in": [
     {
       "title": "Approach — leverage dispatch",
@@ -77,6 +79,11 @@
       "title": "2026 claimed-resolution triage — issue #3",
       "source": "research/CLAIM_REVIEWS_2026.md",
       "url": "https://svyable.github.io/100/library/claim-reviews-2026/"
+    },
+    {
+      "title": "OpenAI/math transfer intake: evidence before claims",
+      "source": "docs/OPENAI_MATH_TRANSFER.md",
+      "url": "https://svyable.github.io/100/library/openai-math-transfer/"
     },
     {
       "title": "Foundational sources and 2026 claim watch",

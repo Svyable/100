@@ -468,6 +468,47 @@ td a,th a{text-decoration:underline;text-underline-offset:3px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition-duration:0s!important;animation-duration:0s!important}}
 @media print{.site-header,.site-footer,.problem-side,.doc-side,.pager,.palette,.closing-banner{display:none}body{background:#fff;color:#000}.problem-grid,.doc-layout{display:block}}
 
+/* Motivated mathematical discovery: readable, source-bound trails. */
+.discovery-stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+.discovery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:26px}
+.discovery-card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:26px;display:flex;flex-direction:column;gap:10px}
+.discovery-card h2{font-size:25px;letter-spacing:-.035em;line-height:1.22;margin:0}
+.discovery-card h2 a{color:var(--ink)}
+.discovery-card h2 a:hover{color:var(--accent)}
+.discovery-card p{margin:0;line-height:1.65}
+.discovery-card .eyebrow{font-size:11px;color:var(--accent)}
+.discovery-card .muted{margin-top:auto;padding-top:12px}
+.discovery-middle{color:var(--faint)}
+.discovery-intro{padding:22px 25px;margin:30px 0 34px;background:var(--panel-2);border-left:3px solid var(--accent);line-height:1.7}
+.discovery-steps{list-style:none;margin:0;padding:0;display:grid;gap:22px}
+.discovery-step{display:grid;grid-template-columns:48px minmax(0,1fr);gap:18px;position:relative}
+.discovery-step:not(:last-child)::after{content:"";position:absolute;left:23px;top:50px;bottom:-28px;border-left:1px solid var(--line-2)}
+.discovery-step-number{font-family:var(--mono);font-size:14px;font-weight:700;color:var(--accent);width:48px;height:48px;display:grid;place-items:center;border:1px solid var(--line-2);border-radius:50%;background:var(--panel);z-index:1}
+.discovery-step-main{padding:24px 28px;border:1px solid var(--line);background:var(--panel);border-radius:8px;min-width:0}
+.discovery-step-main h2{font-size:26px;line-height:1.2;letter-spacing:-.035em;margin:8px 0 14px}
+.discovery-step-main>p{line-height:1.75;margin:0 0 16px}
+.discovery-step-state{font-family:var(--mono);font-size:11px;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.discovery-evidence{border-top:1px solid var(--line);margin-top:18px;padding-top:14px}
+.discovery-evidence summary{cursor:pointer;font-size:13px;font-weight:700;color:var(--forest)}
+.discovery-evidence summary:hover{text-decoration:underline}
+.discovery-evidence[open] summary{margin-bottom:18px}
+.discovery-evidence p{margin:10px 0}
+.discovery-evidence ul{margin:8px 0 16px;padding-left:22px;overflow-wrap:anywhere}
+.discovery-evidence li{margin:6px 0}
+.discovery-moves{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding:0}
+.discovery-moves li{border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:22px;scroll-margin-top:28px}
+.discovery-moves p{margin:10px 0 0;color:var(--muted);line-height:1.6}
+@media(max-width:760px){
+  .discovery-grid,.discovery-moves{grid-template-columns:1fr}
+  .discovery-stats{grid-template-columns:1fr}
+  .discovery-step{grid-template-columns:34px minmax(0,1fr);gap:10px}
+  .discovery-step-number{width:34px;height:34px;font-size:11px}
+  .discovery-step:not(:last-child)::after{left:16px;top:34px}
+  .discovery-step-main{padding:18px}
+  .discovery-step-main h2{font-size:22px}
+}
+.discovery-move-links{border-top:1px solid var(--line);padding-top:12px;font-size:13px;line-height:1.8}
+.discovery-move-links a{display:inline-block;margin-right:8px;color:var(--forest);font-weight:650}
 
 /* Erdős-inspired proof frontier: evidence first, reusable method links second. */
 .frontier-workbench{border-top:3px solid var(--accent);scroll-margin-top:20px}

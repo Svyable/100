@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Discovery trails: preserving the reasoning, not promoting claims · 100</title>
+<meta name="description" content="The /discovery/ section is a motivated proof-discovery notebook, inspired by the broad idea that a mathematical argument should preserve why each move was attempted, not just its final statement. It is not an endorsement or contribution by ">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/discovery-protocol/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="Discovery trails: preserving the reasoning, not promoting claims · 100">
+<meta property="og:description" content="The /discovery/ section is a motivated proof-discovery notebook, inspired by the broad idea that a mathematical argument should preserve why each move was attempted, not just its final statement. It is not an endorsement or contribution by ">
+<meta property="og:url" content="https://svyable.github.io/100/library/discovery-protocol/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">Discovery trails: preserving the reasoning, not promoting claims</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#what-belongs-in-a-trail">What belongs in a trail</a></li><li class="toc-l2"><a href="#what-this-deliberately-does-not-mean">What this deliberately does not mean</a></li><li class="toc-l2"><a href="#contribute-and-verify">Contribute and verify</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M075/" title="Frankl union-closed sets conjecture">M075</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/docs/DISCOVERY_PROTOCOL.md" rel="noopener noreferrer">docs/DISCOVERY_PROTOCOL.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">METHOD &amp; GOVERNANCE</p><h1>Discovery trails: preserving the reasoning, not promoting claims</h1>
+<p>The <code>/discovery/</code> section is a <strong>motivated proof-discovery notebook</strong>, inspired by the broad idea that a mathematical argument should preserve <em>why</em> each move was attempted, not just its final statement. It is not an endorsement or contribution by Timothy Gowers.</p>
+<p>The source is <a href="https://github.com/Svyable/100/blob/main/data/discovery_trails.json" rel="noopener noreferrer"><code>data/discovery_trails.json</code></a>. The deterministic renderer is <a href="https://github.com/Svyable/100/blob/main/scripts/sitegen.py" rel="noopener noreferrer"><code>scripts/sitegen.py</code></a>; <a href="https://github.com/Svyable/100/blob/main/scripts/discovery.py" rel="noopener noreferrer"><code>scripts/discovery.py</code></a> validates every trail and reference.</p>
+<h2 id="what-belongs-in-a-trail">What belongs in a trail<a class="anchor" href="#what-belongs-in-a-trail" aria-label="Link to this section">#</a></h2>
+<p>A trail belongs to one existing stable <code>M###</code> problem. Each step must contain:</p>
+<ul><li>A stable, lowercase node ID and an accurate <code>kind</code>: <code>observation</code>, <code>strategy</code>, <code>reproduction</code>, <code>blocker</code>, or <code>next_step</code>.</li><li>A narrowly scoped title and factual description (not generic motivational prose).</li><li>A <code>status</code>: <code>documented</code>, <code>reproduced_known</code>, <code>proposed</code>, or <code>blocked</code>. <code>reproduced_known</code> is valid only for reproduction nodes; it means known mathematical evidence or a known finite check was reproduced, <strong>not new discovery</strong>.</li><li>A nonempty <code>sources</code> list of checked-in repository paths. The validator checks that every path exists and refuses traversal or absolute paths; cited documents still require human scrutiny for scientific fidelity.</li><li><code>motivated_by</code> IDs of earlier nodes in the <em>same</em> trail, making a reproducible, acyclic dependency graph. The first observation may have no dependencies.</li><li>Optionally, a <code>move_id</code> from the shared method vocabulary and an <code>obligation_id</code> registered for the same problem in <a href="https://github.com/Svyable/100/blob/main/data/proof_obligations.json" rel="noopener noreferrer"><code>data/proof_obligations.json</code></a>.</li></ul>
+<p>A trail should state the falsification/acceptance boundary in prose and link the specific report or certificate that motivates each claim. New moves should improve the ability to reuse actual mathematics, not encourage duplicated brute-force runs.</p>
+<h2 id="what-this-deliberately-does-not-mean">What this deliberately does <em>not</em> mean<a class="anchor" href="#what-this-deliberately-does-not-mean" aria-label="Link to this section">#</a></h2>
+<p>A discovery node is <strong>not</strong> an independently accepted theorem, a Lean proof, a completed proof obligation, a probability of success, or a contributor vote. No discovery status writes to <code>data/solved.json</code>, changes registry <code>evidence_state</code>, advances readiness or discharges an obligation. Those gates are specified in <a href="../../library/research-protocol/"><code>docs/RESEARCH_PROTOCOL.md</code></a>, <a href="../../library/proof-exchange/"><code>docs/PROOF_EXCHANGE.md</code></a> and <a href="../../library/lean/"><code>LEAN.md</code></a>.</p>
+<p>For a new finite claim, identify the precise proposition, prior art, explicit witness/input, reproducible checker, independent review and remaining gap. When no finite object is available, say so and preserve the alternative specialist review path instead of inventing a witness.</p>
+<h2 id="contribute-and-verify">Contribute and verify<a class="anchor" href="#contribute-and-verify" aria-label="Link to this section">#</a></h2>
+<ol><li>Choose one existing work item or proof obligation; follow <a href="../../library/agents/"><code>AGENTS.md</code></a> to claim it before duplicating work.</li><li>Add or revise a <strong>small</strong> trail, with links to checked-in primary research notes and the exact conditions that would refute the proposed next step.</li><li>Run <code>python3 scripts/discovery.py --check</code> to validate sources, dependencies and referenced obligations.</li><li>Run <code>python3 scripts/regen.py</code> and <code>python3 scripts/regen.py --check --fast</code> to regenerate the <code>/discovery/</code> pages, per-problem cross-links, command palette entries and static JSON API, then <code>python3 -m unittest discover -s tests -v</code>.</li><li>Report whether anything was <strong>independently accepted</strong> under the separate research protocol. Do not mistake a rendered step for acceptance.</li></ol>
+<p>The JSON endpoints are <code>/api/discovery.json</code> and <code>/api/discovery/M075.json</code> (replace ID with a registered trail). Every problem dossier&#x27;s API embeds its trail when one exists. The pages work with JavaScript disabled, including links between motivations and source records.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

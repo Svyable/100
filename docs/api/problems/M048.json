@@ -146,6 +146,8 @@
   "claim_review_2026": null,
   "formal_statement": null,
   "external_claims": [],
+  "discovery_trail": null,
+  "discovery_url": null,
   "mentioned_in": [
     {
       "title": "Approach — leverage dispatch",

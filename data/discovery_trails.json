@@ -1,0 +1,232 @@
+{
+  "version": 1,
+  "as_of": "2026-10-31",
+  "purpose": "Motivated proof-discovery notes. These trails are navigation and research history, never theorem certifications.",
+  "moves": [
+    {
+      "id": "symmetry_quotient",
+      "name": "Reduce by symmetry",
+      "description": "Replace equivalent finite objects with canonical representatives, preserving exact hypotheses."
+    },
+    {
+      "id": "independent_replay",
+      "name": "Replay independently",
+      "description": "Check a sourced finite object with a distinct implementation and explicit scope."
+    },
+    {
+      "id": "scope_fidelity",
+      "name": "Audit scope",
+      "description": "Check that a witness or proof establishes exactly the registered mathematical statement."
+    },
+    {
+      "id": "certificate_frontier",
+      "name": "Find the missing certificate",
+      "description": "Identify the explicit finite object, witness, or proof trace required for an independent check."
+    }
+  ],
+  "trails": [
+    {
+      "problem_id": "M075",
+      "question": "How do symmetry reductions change what we can actually verify about union-closed families?",
+      "nodes": [
+        {
+          "id": "support-census",
+          "kind": "observation",
+          "status": "documented",
+          "title": "A raw census hides relabeling symmetry",
+          "detail": "At n = 4 the unfiltered finite mine records 4,958 families; this counts families that may leave ground elements unused. A full-support count is a different quantity.",
+          "sources": [
+            "MINES.md",
+            "research/M075_CANONICAL.md"
+          ],
+          "motivated_by": []
+        },
+        {
+          "id": "canonical-encoding",
+          "kind": "strategy",
+          "status": "documented",
+          "title": "Compare canonical encodings under permutations",
+          "detail": "Canonical encoding identifies ground-set relabeling orbits. A separate closure-pruned descending construction enumerates full-support families without trying every bitmask.",
+          "move_id": "symmetry_quotient",
+          "motivated_by": [
+            "support-census"
+          ],
+          "sources": [
+            "research/M075_CANONICAL.md"
+          ]
+        },
+        {
+          "id": "orbit-reproduction",
+          "kind": "reproduction",
+          "status": "reproduced_known",
+          "title": "Reproduce the n = 5 full-support orbit count",
+          "detail": "The recorded full-support count is 2,747,402 labeled families and 28,960 relabeling orbits; the latter is separately checked using Burnside's lemma. This is known finite mathematics, not a proof of Frankl.",
+          "move_id": "independent_replay",
+          "motivated_by": [
+            "canonical-encoding"
+          ],
+          "sources": [
+            "research/M075_CANONICAL.md",
+            "research/M075_BURNSIDE.md"
+          ]
+        },
+        {
+          "id": "augmentation-frontier",
+          "obligation_id": "O-M075-02",
+          "kind": "next_step",
+          "status": "proposed",
+          "title": "Test canonical augmentation and independent review",
+          "detail": "Obtain independent review of both lemmas and their quantified domain; try pruning noncanonical partial states and independently replaying the resulting orbit count. The conjecture remains open.",
+          "move_id": "symmetry_quotient",
+          "motivated_by": [
+            "orbit-reproduction"
+          ],
+          "sources": [
+            "research/M075_CANONICAL.md"
+          ]
+        }
+      ]
+    },
+    {
+      "problem_id": "M071",
+      "question": "What would turn the existential Hadwiger claim into an independently replayable finite test?",
+      "nodes": [
+        {
+          "id": "formal-claim",
+          "kind": "observation",
+          "status": "documented",
+          "title": "The upstream statement is an existential graph construction",
+          "detail": "The audited comparator gives existence claims involving chromatic and Hadwiger-number bounds, not a listed finite adjacency matrix.",
+          "sources": [
+            "research/M071_M073_WITNESSES.md"
+          ],
+          "motivated_by": []
+        },
+        {
+          "id": "no-graph",
+          "kind": "blocker",
+          "status": "blocked",
+          "title": "No explicit finite graph accompanies the construction",
+          "detail": "A second Lean kernel replay does not supply the graph that this repository's finite graph checker would need. The evidence state remains claim under review.",
+          "move_id": "scope_fidelity",
+          "motivated_by": [
+            "formal-claim"
+          ],
+          "sources": [
+            "research/M071_M073_WITNESSES.md"
+          ]
+        },
+        {
+          "id": "extract-or-review",
+          "obligation_id": "O-M071-01",
+          "kind": "next_step",
+          "status": "proposed",
+          "title": "Extract a graph or obtain independent specialist reviews",
+          "detail": "For the finite-witness path, supply a finite graph and independently check a coloring lower bound and clique-minor upper bound. Specialist review of the existential proof is a different acceptance path.",
+          "move_id": "certificate_frontier",
+          "motivated_by": [
+            "no-graph"
+          ],
+          "sources": [
+            "research/M071_M073_WITNESSES.md"
+          ]
+        }
+      ]
+    },
+    {
+      "problem_id": "M073",
+      "question": "Can the claimed Sidorenko counterexample be independently tested outside its author Lean tree?",
+      "nodes": [
+        {
+          "id": "pattern-extracted",
+          "kind": "reproduction",
+          "status": "reproduced_known",
+          "title": "Reconstruct the claimed bipartite pattern H",
+          "detail": "The pinned face table yields an incidence graph with 35 vertices and 66 edges, checked by separate edge-count methods. This only checks the encoded pattern.",
+          "move_id": "independent_replay",
+          "motivated_by": [],
+          "sources": [
+            "research/M071_M073_WITNESSES.md",
+            "data/claim_witness_replay.json"
+          ]
+        },
+        {
+          "id": "host-missing",
+          "kind": "blocker",
+          "status": "blocked",
+          "title": "The finite host G has not been published",
+          "detail": "The upstream proof gives an existence argument from a counter-kernel; no concrete host order, adjacency list, or graph6 witness is supplied.",
+          "move_id": "scope_fidelity",
+          "motivated_by": [
+            "pattern-extracted"
+          ],
+          "sources": [
+            "research/M071_M073_WITNESSES.md"
+          ]
+        },
+        {
+          "id": "verify-density",
+          "obligation_id": "O-M073-01",
+          "kind": "next_step",
+          "status": "proposed",
+          "title": "Produce and independently check host G",
+          "detail": "Extract an explicit host and compute both homomorphism density and edge density independently against the exact 66-edge inequality. Until then, the finite witness is not replayed.",
+          "move_id": "certificate_frontier",
+          "motivated_by": [
+            "host-missing"
+          ],
+          "sources": [
+            "research/M071_M073_WITNESSES.md"
+          ]
+        }
+      ]
+    },
+    {
+      "problem_id": "M095",
+      "question": "What separates a certified Ramsey lower bound from a new exact value of R(5,5)?",
+      "nodes": [
+        {
+          "id": "known-range",
+          "kind": "observation",
+          "status": "documented",
+          "title": "Start from the published interval 43–46",
+          "detail": "The audited published bound is 43 ≤ R(5,5) ≤ 46; neither endpoint equality nor a 43-vertex avoiding coloring is established here.",
+          "sources": [
+            "research/M095_RAMSEY.md"
+          ],
+          "motivated_by": []
+        },
+        {
+          "id": "catalog-replay",
+          "kind": "reproduction",
+          "status": "reproduced_known",
+          "title": "Check 328 published 42-vertex colorings",
+          "detail": "A SHA-256-pinned McKay catalog is checked using two different K5 search methods, reproducing R(5,5) ≥ 43. Complements give color-swapped examples, not a completeness argument.",
+          "move_id": "independent_replay",
+          "motivated_by": [
+            "known-range"
+          ],
+          "sources": [
+            "research/M095_RAMSEY.md",
+            "data/ramsey_mckay_replay.json"
+          ]
+        },
+        {
+          "id": "new-bound-gate",
+          "obligation_id": "O-M095-01",
+          "kind": "next_step",
+          "status": "proposed",
+          "title": "Require a new witness or checked exclusion",
+          "detail": "Improving the lower bound needs a K43 coloring with no monochromatic K5; improving the upper bound needs an exhaustive argument with independently checked proof traces. A solver verdict alone is insufficient.",
+          "move_id": "certificate_frontier",
+          "motivated_by": [
+            "catalog-replay"
+          ],
+          "sources": [
+            "research/M095_RAMSEY.md"
+          ]
+        }
+      ]
+    }
+  ]
+}
