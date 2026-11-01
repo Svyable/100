@@ -245,6 +245,21 @@
         "agent_hours": 1.0
       },
       "note": "Approximate active author/tool work. General bipartite relative Ising stability inequality, source-specific two-disjoint-bypass GKS-II sharpening, and two exact M073 off-diagonal rational certificates; 11 dedicated tests and negative triangle control. Classical Ising/GKS dependencies; originality and independent mathematical review unverified. Outcome status conditional on PR merge; not full Sidorenko or finite-host proof."
+    },
+    {
+      "work_id": "X-M073-RUNG-CORRELATION",
+      "scope_sha256": "64b1bb65c62e7a2b5cdd4de73b636e80359c3ef4bc6d09a4f23d6c43b91076e5",
+      "author": "ChatGPT (M073 seven-vertex rung correlation proof)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/167",
+      "pr_url": "https://github.com/Svyable/100/pull/168",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 1.2
+      },
+      "note": "Estimated active author/tool effort. Source-pinned seven-vertex nine-edge rung motif at all 66 M073 incidence edges, exact high-temperature and direct-spin correlation paths, GKS-II-dependent restricted two-block stability improvement, rational old-bound-failure/new-bound-success certificate and adversarial mutation tests. Classical correlation inequality; no independent proof or novelty audit, no finite host counterexample, no universal Sidorenko result. Outcome status conditional on PR merge."
     }
   ]
 }
