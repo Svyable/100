@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M071 / M073 — claimed finite-witness extractability audit · 100</title>
+<meta name="description" content="Audited: 2026-10-31. Issue: #13. Parent triage: CLAIM_REVIEWS_2026.md. Frozen ledger: data/claim_witness_replay.json.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m071-m073-witnesses/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M071 / M073 — claimed finite-witness extractability audit · 100">
+<meta property="og:description" content="Audited: 2026-10-31. Issue: #13. Parent triage: CLAIM_REVIEWS_2026.md. Frozen ledger: data/claim_witness_replay.json.">
+<meta property="og:url" content="https://svyable.github.io/100/library/m071-m073-witnesses/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../work/">Work</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M071 / M073 — claimed finite-witness extractability audit</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#commands">Commands</a></li><li class="toc-l2"><a href="#m073--sidorenko-pattern-reconstructed-host-missing">M073 — Sidorenko pattern reconstructed; host missing</a></li><li class="toc-l2"><a href="#m071--hadwiger-construction-is-existential-no-finite-graph">M071 — Hadwiger construction is existential; no finite graph</a></li><li class="toc-l2"><a href="#what-would-close-the-witness-replay-gate">What would close the witness-replay gate</a></li><li class="toc-l2"><a href="#regression">Regression</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M071/" title="Hadwiger conjecture">M071</a><a class="chip chip-link" href="../../problems/M073/" title="Sidorenko conjecture">M073</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M071_M073_WITNESSES.md" rel="noopener noreferrer">research/M071_M073_WITNESSES.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M071 / M073 — claimed finite-witness extractability audit</h1>
+<p><strong>Audited:</strong> 2026-10-31. <strong>Issue:</strong> <a href="https://github.com/Svyable/100/issues/13" rel="noopener noreferrer">#13</a>. <strong>Parent triage:</strong> <a href="../../library/claim-reviews-2026/">CLAIM_REVIEWS_2026.md</a>. <strong>Frozen ledger:</strong> <a href="https://github.com/Svyable/100/blob/main/data/claim_witness_replay.json" rel="noopener noreferrer"><code>data/claim_witness_replay.json</code></a>.</p>
+<p>This note records what can be independently reconstructed from the pinned OpenAI math release (<code>openai/math@4eaee87548250b2682affda7d05d947c05554bae</code>) and what cannot. It does <strong>not</strong> accept either manuscript, promote either ID to <code>resolved</code>, or touch <a href="https://github.com/Svyable/100/blob/main/data/solved.json" rel="noopener noreferrer"><code>data/solved.json</code></a>.</p>
+<h2 id="commands">Commands<a class="anchor" href="#commands" aria-label="Link to this section">#</a></h2>
+<pre><code class="lang-sh">python3 scripts/verify_claim_witnesses.py --check
+python3 -m unittest discover -s tests -p &#x27;test_verify_claim_witnesses.py&#x27; -v</code></pre>
+<h2 id="m073--sidorenko-pattern-reconstructed-host-missing">M073 — Sidorenko pattern reconstructed; host missing<a class="anchor" href="#m073--sidorenko-pattern-reconstructed-host-missing" aria-label="Link to this section">#</a></h2>
+<p><strong>Pinned source.</strong> Comparator statement <a href="https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/ComparatorChallenges/SidorenkoCounterexample.lean" rel="noopener noreferrer"><code>SidorenkoCounterexample.lean</code></a> (SHA-256 <code>489688f5…87de9</code>) and scope note <a href="https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/161.md" rel="noopener noreferrer"><code>lean/docs/161.md</code></a>.</p>
+<p><strong>What is explicit.</strong> Table <code>faces : Fin 22 → Finset (Fin 13)</code> lists twenty-two triples. The pattern <code>H</code> is the bipartite incidence graph of those triples: 13 point vertices, 22 face vertices, and three edges per face.</p>
+<p><strong>Independent reconstruction.</strong> <a href="https://github.com/Svyable/100/blob/main/data/reference/sidorenko_faces.json" rel="noopener noreferrer"><code>data/reference/sidorenko_faces.json</code></a> freezes that table. <code>scripts/verify_claim_witnesses.py</code> rebuilds the edge list and, separately, recounts edges from point/face degree sums. Both paths give <strong>35 vertices and 66 edges</strong>, every face degree 3, and a connected incidence graph. A tiny-host sanity check (<code>n ≤ 2</code>) confirms the homomorphism engine accepts the encoding and that Sidorenko still holds on those hosts; <code>n^13</code> map enumeration makes a lab-style census of this <code>H</code> infeasible, and that is recorded rather than faked.</p>
+<p><strong>What is not published.</strong> The comparator theorem is existential:</p>
+<blockquote><p><code>∃ n &gt; 0, ∃ host : SimpleGraph (Fin n), (host has an edge) ∧ t(H, host) &lt; (edgeDensity host)^66</code>.</p>
+</blockquote>
+<p>The upstream <code>RandomHost</code> development samples a finite simple graph from a symmetric counter-kernel and proves that for all sufficiently large <code>n</code> the expectation gap forces some concrete bitstring to work. <strong>No adjacency list, graph6 string, or numeric order <code>n</code> is shipped.</strong> Without that object, this repository cannot replay a finite Sidorenko counterexample outside Lean.</p>
+<p><strong>Status recorded:</strong> <code>pattern_reconstructed_host_missing</code>. Evidence state stays <code>claim_needs_review</code> / <code>formal_statement_check_only</code>.</p>
+<h2 id="m071--hadwiger-construction-is-existential-no-finite-graph">M071 — Hadwiger construction is existential; no finite graph<a class="anchor" href="#m071--hadwiger-construction-is-existential-no-finite-graph" aria-label="Link to this section">#</a></h2>
+<p><strong>Pinned source.</strong> Comparator <a href="https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/ComparatorChallenges/HadwigerCounterexample.lean" rel="noopener noreferrer"><code>HadwigerCounterexample.lean</code></a> (SHA-256 <code>83f9f9c4…06b898</code>) and scope note <a href="https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/157.md" rel="noopener noreferrer"><code>lean/docs/157.md</code></a>.</p>
+<p><strong>What the Lean statement asserts.</strong> For every <code>M</code> there exists <code>m ≥ max(M, 5)</code> and a graph on <code>Fin m</code> with independence number at most 2, touching-matching number <code>&lt; m/100</code>, and</p>
+<p><code>h(G) &lt; 26m/75 + 2/3 &lt; m/2 ≤ χ(G)</code>.</p>
+<p>The ordinary chromatic form of Hadwiger is therefore the formalized claim; the paper&#x27;s fractional strengthening is outside the selected comparator statement.</p>
+<p><strong>Why there is no finite witness here.</strong> The construction is a binary-frame / sampled-graph argument with analytic parameters. Upstream <code>ParameterExistence</code> seeds <code>birthG = 10^9+1</code>. That is an existence family, not a listed adjacency matrix. Xie’s survey of the release likewise notes that the argument supplies neither an explicit graph nor an explicit clique-minor number. <a href="https://github.com/EdouardBonnet/hadwiger-counterexample" rel="noopener noreferrer">EdouardBonnet/hadwiger-counterexample</a> reports a local kernel replay of the vendored construction (<code>lax-342547</code>); that remains Lean proof-object checking and does not yield a portable finite certificate for this repository’s graph engines.</p>
+<p><strong>Status recorded:</strong> <code>no_explicit_finite_graph</code>. Evidence state stays <code>claim_needs_review</code> / <code>formal_statement_check_only</code>.</p>
+<h2 id="what-would-close-the-witness-replay-gate">What would close the witness-replay gate<a class="anchor" href="#what-would-close-the-witness-replay-gate" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Missing object</th><th>Independent check required</th></tr></thead><tbody><tr><td>M073</td><td>Explicit host <code>G</code> (order <code>n</code>, edges)</td><td>Exact <code>hom(H,G)</code> and <code>e(G)</code> with <code>t(H,G) &lt; t(K₂,G)^66</code>, plus a second recount</td></tr><tr><td>M071</td><td>Explicit finite <code>G</code></td><td>Proper colouring lower bound (or fractional certificate) and a clique-minor / touching-matching upper bound, each checked outside the author Lean tree</td></tr></tbody></table></div>
+<p>Comparator acceptance, a second Lean kernel replay, or a survey description is not that gate. Specialist mathematical review of the existential proofs is a separate track from finite-witness replay.</p>
+<h2 id="regression">Regression<a class="anchor" href="#regression" aria-label="Link to this section">#</a></h2>
+<p>CI runs <code>python3 scripts/verify_claim_witnesses.py --check</code>. Tampering with the pinned faces table, dropping the host/graph gap flags, or drifting the frozen ledger fails closed.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

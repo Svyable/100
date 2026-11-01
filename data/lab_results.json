@@ -2,6 +2,56 @@
   "format": "svyable.lab.v1",
   "levels": {
     "deep": {
+      "alperin": {
+        "certificate_sha256": "196b894d4e076ba2e56a2628d4ee560deb3e2e8a8bb882bc2c197044ad17d384",
+        "engines": [
+          "group_characters"
+        ],
+        "holds": true,
+        "level": "deep",
+        "params": {
+          "groups": [
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "C2xC2",
+            "S3",
+            "D8",
+            "Q8",
+            "A4",
+            "D10",
+            "D12",
+            "S4",
+            "A5"
+          ]
+        },
+        "probe": "alperin",
+        "problem_id": "M048",
+        "scope": "For each named group G in {C2, C3, C4, C5, C6, C2xC2, S3, D8, Q8, A4, D10, D12, S4, A5} and every prime p dividing |G|, the number of conjugacy classes of Alperin p-weights equals the number of p-regular conjugacy classes.",
+        "summary": {
+          "cases": 22,
+          "certificate_sha256": "c4b1674b745c72ed19ebd196c38b5c3c0d29b515ad423a5d32848917d3e8e3ae",
+          "groups": [
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "C2xC2",
+            "S3",
+            "D8",
+            "Q8",
+            "A4",
+            "D10",
+            "D12",
+            "S4",
+            "A5"
+          ],
+          "matched": 22
+        }
+      },
       "alperin_weights": {
         "certificate_sha256": "19d95779539969894da47fdaad874502c19935e6d985ad754c31136aa752fbe6",
         "engines": [
@@ -223,6 +273,27 @@
               14
             ]
           }
+        }
+      },
+      "dirichlet_l": {
+        "certificate_sha256": "97c916d3b3bdc62997216a76ae387cacfdaefc7a7ba10bc5348e31d3f0a2441b",
+        "engines": [
+          "interval_arithmetic"
+        ],
+        "holds": true,
+        "level": "deep",
+        "params": {
+          "height": 17,
+          "zeros": 4
+        },
+        "probe": "dirichlet_l",
+        "problem_id": "M002",
+        "scope": "Every non-trivial zero of L(s, χ₄) with imaginary part in (0, 17] is simple and lies on the critical line: the argument principle gives N(17) = 4, equal to the number of disjoint intervals where the associated real Z-function changes sign.",
+        "summary": {
+          "character": "chi_4",
+          "height": 17,
+          "truncation": "N=16, M=8, stirling=6",
+          "zeros": 4
         }
       },
       "dirichlet_zeros": {
@@ -851,6 +922,26 @@
           "census_sha256": "3a4701b2aeb0061d4a18263b1214afef6970890c5f6eb773e985a3a4135b0dba"
         }
       },
+      "riemann": {
+        "certificate_sha256": "431426eb0717174480383187cbd4c1bd327c302ae461baafdbeaca361c26cf8f",
+        "engines": [
+          "interval_arithmetic"
+        ],
+        "holds": true,
+        "level": "deep",
+        "params": {
+          "height": 36,
+          "zeros": 5
+        },
+        "probe": "riemann",
+        "problem_id": "M001",
+        "scope": "Every non-trivial zero of zeta with imaginary part in (0, 36] is simple and lies on the critical line: the argument principle gives N(36) = 5, equal to the number of disjoint intervals where the Hardy Z-function changes sign.",
+        "summary": {
+          "height": 36,
+          "truncation": "N=16, M=8, stirling=6",
+          "zeros": 5
+        }
+      },
       "rota": {
         "certificate_sha256": "11850515563d8ffff2173e9ef65281e58782dfbbbc6052ae93ab2f600563c533",
         "engines": [
@@ -1036,6 +1127,46 @@
       }
     },
     "smoke": {
+      "alperin": {
+        "certificate_sha256": "5ec9940f814f3190ef28cebd65452d67ca2f9f36b958a17925aee7345a4bb119",
+        "engines": [
+          "group_characters"
+        ],
+        "holds": true,
+        "level": "smoke",
+        "params": {
+          "groups": [
+            "C2",
+            "C3",
+            "C4",
+            "C2xC2",
+            "S3",
+            "D8",
+            "Q8",
+            "A4",
+            "D10"
+          ]
+        },
+        "probe": "alperin",
+        "problem_id": "M048",
+        "scope": "For each named group G in {C2, C3, C4, C2xC2, S3, D8, Q8, A4, D10} and every prime p dividing |G|, the number of conjugacy classes of Alperin p-weights equals the number of p-regular conjugacy classes.",
+        "summary": {
+          "cases": 12,
+          "certificate_sha256": "0cafcc7ece977f89503203f64302caffdd7a25884c515885831f04eb18c44f6e",
+          "groups": [
+            "C2",
+            "C3",
+            "C4",
+            "C2xC2",
+            "S3",
+            "D8",
+            "Q8",
+            "A4",
+            "D10"
+          ],
+          "matched": 12
+        }
+      },
       "alperin_weights": {
         "certificate_sha256": "aa65ccfc6cba5e3996464430f202e32a7bac2ce2c8f4ddf7ddc1c0ead5c09b6a",
         "engines": [
@@ -1124,6 +1255,27 @@
               6
             ]
           }
+        }
+      },
+      "dirichlet_l": {
+        "certificate_sha256": "c0331948605f0bba8ddd08f7c38fc3658c198cd9033b2ebf49b487b9c19ce754",
+        "engines": [
+          "interval_arithmetic"
+        ],
+        "holds": true,
+        "level": "smoke",
+        "params": {
+          "height": 11,
+          "zeros": 2
+        },
+        "probe": "dirichlet_l",
+        "problem_id": "M002",
+        "scope": "Every non-trivial zero of L(s, χ₄) with imaginary part in (0, 11] is simple and lies on the critical line: the argument principle gives N(11) = 2, equal to the number of disjoint intervals where the associated real Z-function changes sign.",
+        "summary": {
+          "character": "chi_4",
+          "height": 11,
+          "truncation": "N=16, M=8, stirling=6",
+          "zeros": 2
         }
       },
       "dirichlet_zeros": {
@@ -1515,6 +1667,26 @@
             "graphs": 156
           },
           "census_sha256": "2b1be7e121a27d25d8005718fa562c2098ee2b5af018b41d2d03c75575475e47"
+        }
+      },
+      "riemann": {
+        "certificate_sha256": "c33d7a31f28dc53b14a3f111127ace52dd6378a2f6a162287a01bd7f9018ba17",
+        "engines": [
+          "interval_arithmetic"
+        ],
+        "holds": true,
+        "level": "smoke",
+        "params": {
+          "height": 23,
+          "zeros": 2
+        },
+        "probe": "riemann",
+        "problem_id": "M001",
+        "scope": "Every non-trivial zero of zeta with imaginary part in (0, 23] is simple and lies on the critical line: the argument principle gives N(23) = 2, equal to the number of disjoint intervals where the Hardy Z-function changes sign.",
+        "summary": {
+          "height": 23,
+          "truncation": "N=16, M=8, stirling=6",
+          "zeros": 2
         }
       },
       "rota": {

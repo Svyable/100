@@ -1,0 +1,154 @@
+{
+  "id": "M093",
+  "name": "Linear MDS code main conjecture",
+  "field": "Mathematical physics / finite structures",
+  "question": "Do nontrivial linear MDS codes satisfy the predicted length bound except known cases?",
+  "first_attack": "Prove new finite-field parameter cases",
+  "impact": 4,
+  "attackability": 5,
+  "verifiability": 5,
+  "spillover": 4,
+  "modality": "finite_refutable",
+  "evidence_state": "needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 8,
+  "score": 91,
+  "execution_rank": 6,
+  "execution_score": 98,
+  "readiness": 7,
+  "dispatch_rank": 7,
+  "dispatch_score": 110,
+  "action": "replay_published",
+  "action_label": "Replay a published certificate",
+  "action_bonus": 12,
+  "method_id": "finite_geometry",
+  "method_title": "Replay a published geometric object",
+  "dispatch_next": "Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9.",
+  "dispatch_why": "The next experiment reproduces known maximum arcs in PG(3,q). The plane k=3 case is already the proved Segre-Bose range.",
+  "campaign_stage": "benchmark_reproduced",
+  "milestone_count": 1,
+  "url": "https://svyable.github.io/100/problems/M093/",
+  "field_url": "https://svyable.github.io/100/fields/mathematical-physics-finite-structures/",
+  "readiness_breakdown": [
+    {
+      "item": "Formal campaign brief",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Runnable independent verifier",
+      "points": 3,
+      "max": 3
+    },
+    {
+      "item": "Reproduced known benchmark",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Independently reviewed restricted theorem",
+      "points": 0,
+      "max": 3
+    }
+  ],
+  "has_exact_verifier": true,
+  "campaign": {
+    "problem_id": "M093",
+    "stage": "benchmark_reproduced",
+    "method": "Exhaustive arc search in projective spaces with frame-fixing symmetry reduction",
+    "hypothesis": "A linear [n,k] MDS code over GF(q) with k <= q has n <= q+1, except n = q+2 when q is even and k is 3 or q-1.",
+    "first_proof_obligation": "Extend from k = 3 (Segre/Bose) to k = 4 arcs in PG(3,q) for small non-prime q (q = 8, 9), certifying maximum arc sizes.",
+    "next_experiment": "Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9.",
+    "falsification": "An explicit n-arc exceeding the bound, verified by exact determinant checks.",
+    "blocker": "The conjecture is proved for prime q (Ball 2012); open non-prime cases need far larger searches than k = 3.",
+    "dossier": "research/LAB_CAMPAIGNS.md",
+    "verifier": "python3 scripts/lab.py --probe mds_arcs"
+  },
+  "probes": [
+    {
+      "id": "mds_arcs",
+      "problem_id": "M093",
+      "name": "Linear MDS code main conjecture",
+      "title": "Maximum arcs in PG(2,q) = longest 3-dimensional linear MDS codes",
+      "engines": [
+        "finite_fields",
+        "symmetry_reduction"
+      ],
+      "frontier": "Known for k = 3 by Segre (q odd) and Bose (q even); the MDS conjecture is proved for prime q (Ball 2012) and open for general prime powers.",
+      "artifact": "scripts/probes/arcs.py",
+      "command": "python3 scripts/lab.py --probe mds_arcs",
+      "runs": {
+        "smoke": {
+          "holds": true,
+          "scope": "For q in {2, 3, 4, 5, 7}: an explicit maximum arc and exhaustive exclusion of larger arcs (MDS length bound for k = 3).",
+          "certificate_sha256": "f815a3328c125253639c9e8db80c920872858986662deb1976f89c39e58108ab"
+        },
+        "deep": {
+          "holds": true,
+          "scope": "For q in {2, 3, 4, 5, 7, 8, 9}: an explicit maximum arc and exhaustive exclusion of larger arcs (MDS length bound for k = 3).",
+          "certificate_sha256": "c91322d26a67ede8745369a9995743c9f53be49aeca2c75285d4566d82639a4e"
+        }
+      }
+    }
+  ],
+  "milestones": [
+    {
+      "id": "B-MDS-001",
+      "problem_id": "M093",
+      "classification": "reproduced_known",
+      "title": "Maximum arcs (3-dimensional MDS codes) in PG(2,q) for q = 2, 3, 4, 5, 7",
+      "scope": "Known (Segre/Bose); not new",
+      "description": "Maximum arc sizes 4, 4, 6, 6, 8 with explicit witnesses and exhaustive exclusion of larger arcs; arcs through a frame recount q-2 conics for odd q. Deep run adds q = 8, 9.",
+      "verifier": "python3 scripts/lab.py --probe mds_arcs",
+      "artifact": "scripts/probes/arcs.py",
+      "verified_on": "2026-10-31"
+    }
+  ],
+  "engine_roadmap": null,
+  "claim_review_2026": null,
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Exact probe lab — computational reach of the 100",
+      "source": "LAB.md",
+      "url": "https://svyable.github.io/100/library/lab/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
+    },
+    {
+      "title": "Scale — proof-exchange wave",
+      "source": "SCALE.md",
+      "url": "https://svyable.github.io/100/library/scale/"
+    },
+    {
+      "title": "Lab campaigns: problems under exact computation",
+      "source": "research/LAB_CAMPAIGNS.md",
+      "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "Proof-driven research engine",
+      "source": "docs/RESEARCH_ENGINE.md",
+      "url": "https://svyable.github.io/100/library/research-engine/"
+    }
+  ]
+}

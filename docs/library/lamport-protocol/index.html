@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lamport protocol — make every missing implication explicit · 100</title>
+<meta name="description" content="This is a proof-work discipline inspired by Leslie Lamport&#x27;s insistence on precise statements, hierarchical proof structure, explicit assumptions and independently checkable steps. It is not a claim that TLA+ model checking proves mathemati">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/lamport-protocol/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="Lamport protocol — make every missing implication explicit · 100">
+<meta property="og:description" content="This is a proof-work discipline inspired by Leslie Lamport&#x27;s insistence on precise statements, hierarchical proof structure, explicit assumptions and independently checkable steps. It is not a claim that TLA+ model checking proves mathemati">
+<meta property="og:url" content="https://svyable.github.io/100/library/lamport-protocol/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../work/">Work</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">Lamport protocol — make every missing implication explicit</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#1-start-from-the-missing-implication">1. Start from the missing implication</a></li><li class="toc-l2"><a href="#2-the-smallest-state-machine-that-is-useful">2. The smallest state machine that is useful</a></li><li class="toc-l3"><a href="#safety-properties">Safety properties</a></li><li class="toc-l3"><a href="#progress-property">Progress property</a></li><li class="toc-l2"><a href="#3-one-atomic-research-cycle">3. One atomic research cycle</a></li><li class="toc-l2"><a href="#4-three-live-pilots-not-three-solved-problems">4. Three live pilots, not three solved problems</a></li><li class="toc-l2"><a href="#5-proof-throughput-not-activity-throughput">5. Proof throughput, not activity throughput</a></li><li class="toc-l2"><a href="#6-enforced-checks-and-integration">6. Enforced checks and integration</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M074/" title="Caccetta–Häggkvist conjecture">M074</a><a class="chip chip-link" href="../../problems/M075/" title="Frankl union-closed sets conjecture">M075</a><a class="chip chip-link" href="../../problems/M095/" title="Exact Ramsey number R(5,5)">M095</a><a class="chip chip-link" href="../../problems/M048/" title="Alperin weight conjecture">M048</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/docs/LAMPORT_PROTOCOL.md" rel="noopener noreferrer">docs/LAMPORT_PROTOCOL.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">METHOD &amp; GOVERNANCE</p><h1>Lamport protocol — make every missing implication explicit</h1>
+<p>This is a proof-work discipline inspired by Leslie Lamport&#x27;s insistence on precise statements, hierarchical proof structure, explicit assumptions and independently checkable steps. It is <strong>not</strong> a claim that TLA+ model checking proves mathematical conjectures. The purpose is to multiply the number of worthwhile conjectures we can <strong>falsify, reduce or prove rigorously per unit of research effort</strong>, not to multiply agents or finite-search repetitions.</p>
+<p>The repository&#x27;s source of truth remains the 100-problem registry, the research program, and the strict Solved gate. This protocol adds a <strong>proof-obligation dependency graph</strong> that is deliberately smaller than the backlog. It does not replace the shared attack shapes or Lean proof gate being developed separately.</p>
+<h2 id="1-start-from-the-missing-implication">1. Start from the missing implication<a class="anchor" href="#1-start-from-the-missing-implication" aria-label="Link to this section">#</a></h2>
+<p>For each serious attack write an exact target:</p>
+<ul><li><strong>Statement:</strong> domain, quantifiers, parameters, assumptions and conclusion.</li><li><strong>Known boundary:</strong> the strongest <em>applicable</em> published result; which cases or conditions it already covers.</li><li><strong>Smallest missing implication:</strong> A implies B, with no implicit step between.</li><li><strong>Falsifier:</strong> a concrete object or failure mode which would refute that implication; distinguish a failed search from a mathematical counterexample.</li><li><strong>Certificate:</strong> what an independent checker could accept, and exactly what it would certify.</li><li><strong>Exit:</strong> the observable artifact that closes the obligation, and the next action if it does not close.</li></ul>
+<p>Write a hierarchical proof whose children are named obligations, rather than asking a language model to fill a whole conjecture-sized hole. Every assumption is scoped where used. A universal statement is never inferred from finite enumeration unless a separately proved reduction covers the remaining domain.</p>
+<h2 id="2-the-smallest-state-machine-that-is-useful">2. The smallest state machine that is useful<a class="anchor" href="#2-the-smallest-state-machine-that-is-useful" aria-label="Link to this section">#</a></h2>
+<p>Canonical source: <a href="https://github.com/Svyable/100/blob/main/data/proof_obligations.json" rel="noopener noreferrer">data/proof_obligations.json</a>. Structural validator: <a href="https://github.com/Svyable/100/blob/main/scripts/proof_obligations.py" rel="noopener noreferrer">scripts/proof_obligations.py</a>.</p>
+<p>An obligation has an immutable ID, a problem ID, one precise statement, its prior-art boundary, a falsifier, a next action, dependencies, a kind and a state.</p>
+<p>States:</p>
+<ol><li><strong>open</strong> — live, falsifiable step; no proof certificate claimed.</li><li><strong>blocked</strong> — dependent on an unresolved mathematical or computational gate; the next action names what unblocks it.</li><li><strong>discharged</strong> — scoped statement has an evidence bundle: a hash binding the exact statement, a replayable artifact, the checking implementation, a scope audit and two independent review links.</li></ol>
+<p>Discharge is permitted only if <strong>every dependency is discharged</strong>. The dependency graph must be finite, acyclic and refer to valid active campaigns. Changing a statement invalidates its bound evidence hash. Open and blocked nodes may not carry discharge evidence. Adding a claimed restricted-verified milestone requires a discharged <strong>lemma</strong> node in the same campaign.</p>
+<p>The validator checks file existence and structural coherence, not proof semantics, reviewer identity or the mathematical legitimacy of an implication. A human scope audit and independent mathematical review remain essential. A discharge can certify only the node&#x27;s statement; it cannot change the parent conjecture&#x27;s open status or enter Solved automatically.</p>
+<h3 id="safety-properties">Safety properties<a class="anchor" href="#safety-properties" aria-label="Link to this section">#</a></h3>
+<ul><li><strong>No scope inflation:</strong> computational finite-range evidence never becomes a universal theorem by renaming an output.</li><li><strong>No circular justification:</strong> the proof-obligation graph has no cycles.</li><li><strong>No dependency laundering:</strong> a discharged node cannot depend on open work.</li><li><strong>No stale evidence:</strong> certificate hashes bind exact statement text; revision requires re-review.</li><li><strong>No synthetic novelty:</strong> reproductions of published bounds are tagged as such in prior-art boundaries, not announced as new results.</li><li><strong>No self-grading:</strong> search and checker must be independent, and statement fidelity is separately audited.</li></ul>
+<h3 id="progress-property">Progress property<a class="anchor" href="#progress-property" aria-label="Link to this section">#</a></h3>
+<p>Every non-discharged node has a falsifier and a specific next action. This is an <em>operating obligation</em>, not a liveness theorem that guarantees discovery. If the next action cannot be executed or no longer separates possibilities, replace it with a documented blocker or retire the attack.</p>
+<h2 id="3-one-atomic-research-cycle">3. One atomic research cycle<a class="anchor" href="#3-one-atomic-research-cycle" aria-label="Link to this section">#</a></h2>
+<ol><li><strong>Specify.</strong> Fix the exact statement, its quantifier order and dependency premises. Compare with the actual source theorem, not a paraphrase.</li><li><strong>Split.</strong> Break the target into independent smallest missing implications. Flag any new lemma stronger than the original target: it is a gap, not a proof step.</li><li><strong>Attack in parallel.</strong> A constructor, a counterexample hunter and a proof/scope auditor work on the same <em>versioned</em> statement. Independence means different mechanisms or independently written checkers, not three agents repeating the same computation.</li><li><strong>Adjudicate.</strong> Record the shortest surviving proof or the smallest concrete counterexample. Negative searches get precise bounded scope, inputs, budgets and reproducibility; they do not close a universal claim.</li><li><strong>Replay.</strong> On a separate path, validate certificate, source assumptions, theorem encoding and full dependency closure. Reject on mismatch.</li><li><strong>Integrate.</strong> Discharge exactly one verified node; propagate the newly available premise to dependent nodes. Keep failed approaches in the research note, and route the reusable method to other campaign shapes.</li></ol>
+<p>Re-run (1) after <strong>any</strong> significant change of assumptions, graph model, field, parameter regime or target statement. A shorter proof with a hidden strengthened hypothesis is not a shorter proof.</p>
+<h2 id="4-three-live-pilots-not-three-solved-problems">4. Three live pilots, not three solved problems<a class="anchor" href="#4-three-live-pilots-not-three-solved-problems" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>Pilot</th><th>Proof gap</th><th>Concrete next output</th><th>Not a success claim</th></tr></thead><tbody><tr><td>M074 Caccetta-Häggkvist</td><td>Separate published fixed-r=6 UNSAT traces from the completeness of the hand reduction; their conjunction is required</td><td>Trace manifest, independent checker replay, numbered quantified reduction audit</td><td>Neither trace replay nor an unproved reduction solves unrestricted CH</td></tr><tr><td>M075 Frankl</td><td>Define an S5 orbit-canonical invariant, then prove an exact-once representative generator</td><td>Canonicalization lemma, collision falsifier, audited n=5 enumeration</td><td>The existing n=4 orbit census is known mathematics</td></tr><tr><td>M095 Ramsey</td><td>Independently review the now-pinned 328-record K42 source and the two exact checkers</td><td>Offline replay: 656 colorings including complements; source digest and scope audit</td><td>The known lower bound R(5,5) ≥ 43 does not prove the upper bound</td></tr><tr><td>M048 Alperin</td><td>Name a defect-group family outside the order-100 census and state its weight-count lemma</td><td>Restricted lemma text with an exact certificate format</td><td>The named-group probe through A5 is a known benchmark</td></tr></tbody></table></div>
+<p>The n=5 Frankl orbit-counting dependency now has a second exact route: <a href="../../library/m075-burnside/">Burnside fixed-point certification</a> reproduces the known 28,960 full-support relabeling orbits without individual canonicalization. Neither the new finite calculation nor a paper argument replaces independent mathematical scope review. The live nodes encode these dependencies. Do not dispatch a costly search when the missing operation is a scope audit, a proof-trace replay or a symbolic lemma.</p>
+<h2 id="5-proof-throughput-not-activity-throughput">5. Proof throughput, not activity throughput<a class="anchor" href="#5-proof-throughput-not-activity-throughput" aria-label="Link to this section">#</a></h2>
+<p>Measure over each completed campaign interval:</p>
+<ul><li><strong>Discharged new obligations</strong>, each with exact statement and independent review; separate reproduced-known from novel restricted results.</li><li><strong>Rejected candidate lemmas with certified counterexamples</strong> and saved investigator time due to early falsification.</li><li><strong>Reusable checked methods</strong>, counted by distinct target statements they genuinely support, not by number of times a script was run.</li><li><strong>Gap age and unblocked time:</strong> whether the critical unresolved step is shrinking, or whether the research team is accumulating unrelated activity.</li><li><strong>Verifier cost per useful distinction</strong>, with exact bounds and independently replayed artifacts.</li></ul>
+<p>The proposal is a 10x <em>operating objective</em> for proof-obligation throughput, and the companion <a href="../../library/proof-exchange/">proof-exchange wave</a> targets <strong>100 claimable parallel slots</strong> across the portfolio. Neither number is an achieved theorem speedup. Test both against the existing baseline. An extra ledger that does not accelerate verified progress is overhead and should be removed.</p>
+<h2 id="6-enforced-checks-and-integration">6. Enforced checks and integration<a class="anchor" href="#6-enforced-checks-and-integration" aria-label="Link to this section">#</a></h2>
+<p>Run:</p>
+<p>python3 scripts/proof_obligations.py --check python3 -m unittest discover -s tests -v</p>
+<p>Unit tests tamper with dependency edges, proof hashes and false discharge states. The ordinary repository validation already runs the entire test suite for every PR, so this gate runs without modifying or conflicting with a concurrent Lean workflow change.</p>
+<p>For a real discharge, insist on both independently checked proof content and independent <strong>statement-fidelity</strong> review. A Lean kernel can verify a precise encoded theorem while that theorem still misses the advertised conjecture. <a href="../../library/research-engine/">Research engine</a> and <a href="../../library/contributing/">Contributing</a> continue to govern the stronger result-promotion decision.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

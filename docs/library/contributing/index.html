@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contributing to 100 · 100</title>
+<meta name="description" content="The goal is not to collect plausible conjectures or dramatic claims. It is to maintain 100 exact, high-value proof/counterexample targets and produce independently checkable advances.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/contributing/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="Contributing to 100 · 100">
+<meta property="og:description" content="The goal is not to collect plausible conjectures or dramatic claims. It is to maintain 100 exact, high-value proof/counterexample targets and produce independently checkable advances.">
+<meta property="og:url" content="https://svyable.github.io/100/library/contributing/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../work/">Work</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">Contributing to 100</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#evidence-standard">Evidence standard</a></li><li class="toc-l2"><a href="#rebuild-after-any-registry-change">Rebuild after any registry change</a></li><li class="toc-l2"><a href="#research-contributions-checklist">Research contributions checklist</a></li><li class="toc-l2"><a href="#lean-contributions">Lean contributions</a></li></ol></nav>
+
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/CONTRIBUTING.md" rel="noopener noreferrer">CONTRIBUTING.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">METHOD &amp; GOVERNANCE</p><h1>Contributing to 100</h1>
+<p>The goal is not to collect plausible conjectures or dramatic claims. It is to maintain <strong>100 exact, high-value proof/counterexample targets</strong> and produce <strong>independently checkable advances</strong>.</p>
+<p>The <a href="../../library/next-100/">Next 100 hypothesis reservoir</a> accepts unvetted, cross-domain\nideas separately from the active 100. A discovery score alone cannot promote an idea.\n\n## Ways to contribute</p>
+<ol><li><strong>Status correction</strong> — supply the precise theorem statement, a dated primary source, and explain whether it proves or refutes <em>the exact full conjecture</em>.</li><li><strong>New lemma</strong> — state all hypotheses and dependencies, give a complete proof or a trusted finite certificate, and identify the remaining unrestricted gap.</li><li><strong>Executable evidence</strong> — supply exact inputs, the verifier, expected outputs, resource usage, and a reproducing command. No unverifiable solver verdicts.</li><li><strong>New candidate</strong> — first propose an immutable N-ID hypothesis in the <a href="../../library/next-100/">reservoir</a>, with cross-domain consequences and a first falsifiable attack; propose replacing a resolved, duplicated or weak candidate; preserve stable IDs and history. Do not silently exceed 100.</li><li><strong>Shared attack shape</strong> — extend <a href="https://github.com/Svyable/100/blob/main/data/methods.json" rel="noopener noreferrer">data/methods.json</a> when several problems should move together. A shape is a template, not a theorem. Run <code>python3 scripts/approach.py</code> and keep the generic &quot;specify a lemma&quot; sentence out of the queue. Do not schedule a range extension that the campaign blocker already places inside a cited theorem.</li><li><strong>Exact probe</strong> — add a module to <code>scripts/probes/</code> (search plus an <em>independent</em> checker, ideally on an existing engine), register it, add tamper tests, and wire it to a campaign and <code>reproduced_known</code> milestone. See &quot;Add a probe&quot; in <a href="../../library/lab/">LAB.md</a>. Building an engine from <a href="https://github.com/Svyable/100/blob/main/data/engine_roadmap.json" rel="noopener noreferrer">the roadmap</a> unlocks a whole class of problems.</li><li><strong>Pages improvements</strong> — submit accessible changes in <code>docs/</code>, keep all browser assets local, and use the generated snapshot rather than an independently maintained data copy.</li></ol>
+<h2 id="evidence-standard">Evidence standard<a class="anchor" href="#evidence-standard" aria-label="Link to this section">#</a></h2>
+<p>An arXiv upload, press release, model-generated manuscript, or a proof assistant transcript <strong>does not alone establish</strong> acceptance of the full claim. Always compare precise quantifiers, conditions, and the encoded theorem.</p>
+<ul><li><code>official_open</code>: exact target listed open by an official authority.</li><li><code>verified_open</code>: contemporary primary specialist sources verify open remainder.</li><li><code>needs_review</code>: still requires a proper source and scope audit.</li><li><code>claim_needs_review</code>: potentially relevant proof/counterexample claim pending assessment.</li></ul>
+<p>Any proposed promotion to verified status should link the primary evidence and explain why restricted results or recent claim releases do not already settle it.</p>
+<h2 id="rebuild-after-any-registry-change">Rebuild after any registry change<a class="anchor" href="#rebuild-after-any-registry-change" aria-label="Link to this section">#</a></h2>
+<pre><code class="lang-sh">python3 scripts/rank.py
+python3 scripts/research.py
+python3 scripts/approach.py
+python3 scripts/lab.py
+python3 scripts/mine.py
+python3 scripts/build_site.py
+python3 scripts/rank.py --check
+python3 scripts/research.py --check
+python3 scripts/approach.py --check
+python3 scripts/lab.py --check
+python3 scripts/mine.py --check
+python3 scripts/build_site.py --check
+node --check docs/assets/app.js\nnode --check docs/next/app.js
+python3 -m unittest discover -s tests -v</code></pre>
+<p>Only edit <code>data/problems.json</code>, <code>data/research_program.json</code>, <code>data/engine_roadmap.json</code> and source code. The Next 100 canonical records and promotion ledger live in\n<code>data/next_candidates.json</code>, <code>data/next_batches/*.json</code>, and <code>data/next_promotions.json</code>.\n<code>docs/data/next.json</code> is generated. <code>RANKED.md</code>, <code>ATTACK_QUEUE.md</code>, <code>LAB.md</code>, <code>data/lab_results.json</code> and <code>docs/data/portfolio.json</code> are generated artifacts. CI rejects drift.</p>
+<h2 id="research-contributions-checklist">Research contributions checklist<a class="anchor" href="#research-contributions-checklist" aria-label="Link to this section">#</a></h2>
+<ul><li>[ ] Exact claim and quantified domain documented</li><li>[ ] Strongest relevant existing theorem cited and dated</li><li>[ ] New assertion separated from known/reproduced cases</li><li>[ ] Proof checked independently or certificate replayed</li><li>[ ] Failed candidates and applicable resource limits reported</li><li>[ ] Implications for score justified, not inferred from publicity</li></ul>
+<p>Use the GitHub issue templates to propose evidence reviews or proof campaigns. See <a href="../../library/research-protocol/">research protocol</a>, <a href="../../library/audit-queue/">source intake</a>, and <a href="../../library/pages-setup/">Pages guide</a>.</p>
+<h2 id="lean-contributions">Lean contributions<a class="anchor" href="#lean-contributions" aria-label="Link to this section">#</a></h2>
+<p>Follow <a href="../../library/lean/">the Lean proof pipeline</a>. Register exact theorem exports and scope gaps in <code>data/lean_targets.json</code>; run <code>python3 scripts/lean_verify.py</code>. A kernel check is evidence for the encoded statement, not automatic novelty or full-problem resolution.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

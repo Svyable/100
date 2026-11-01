@@ -17,7 +17,7 @@ from math import gcd
 
 from . import lfunctions as LF
 from .core import digest, require
-from .intervals import CI, RI, pi, sincos
+from .intervals_cert import CI, RI, pi, sincos
 
 PROBE = {
     "id": "dirichlet_zeros",

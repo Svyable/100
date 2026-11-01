@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M075: Burnside-certified full-support orbit counts through n=5 · 100</title>
+<meta name="description" content="Exact finite result reproduced; no new Frankl theorem. This is an independent way to compute the previously published five-element orbit count, complementing the canonical-minimum construction in M075_CANONICAL.md.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m075-burnside/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M075: Burnside-certified full-support orbit counts through n=5 · 100">
+<meta property="og:description" content="Exact finite result reproduced; no new Frankl theorem. This is an independent way to compute the previously published five-element orbit count, complementing the canonical-minimum construction in M075_CANONICAL.md.">
+<meta property="og:url" content="https://svyable.github.io/100/library/m075-burnside/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../work/">Work</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M075: Burnside-certified full-support orbit counts through n=5</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#statement">Statement</a></li><li class="toc-l2"><a href="#lemma-a-a-fixed-family-is-a-union-of-subset-orbits">Lemma A: a fixed family is a union of subset-orbits</a></li><li class="toc-l2"><a href="#lemma-b-only-cycle-types-need-to-be-counted">Lemma B: only cycle types need to be counted</a></li><li class="toc-l2"><a href="#exact-n5-certificate">Exact n=5 certificate</a></li><li class="toc-l2"><a href="#reproduce">Reproduce</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M075/" title="Frankl union-closed sets conjecture">M075</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M075_BURNSIDE.md" rel="noopener noreferrer">research/M075_BURNSIDE.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M075: Burnside-certified full-support orbit counts through n=5</h1>
+<p><strong>Exact finite result reproduced; no new Frankl theorem.</strong> This is an independent way to compute the previously published five-element orbit count, complementing the canonical-minimum construction in <a href="../../library/m075-canonical/">M075_CANONICAL.md</a>.</p>
+<h2 id="statement">Statement<a class="anchor" href="#statement" aria-label="Link to this section">#</a></h2>
+<p>Let (\mathcal U_n) be the finite set of all nonempty union-closed families (F\subseteq 2^{[n]}) whose union is exactly ([n]). The symmetric group (S_n) acts on these families by relabeling ground elements. Compute the number of orbits (|\mathcal U_5/S_5|), without canonicalizing each of the millions of labeled families individually.</p>
+<p>The exact known answer is <strong>28,960</strong>, listed in <a href="https://oeis.org/A326907" rel="noopener noreferrer">OEIS A326907</a>. We obtain this by an independently implemented group fixed-point calculation.</p>
+<h2 id="lemma-a-a-fixed-family-is-a-union-of-subset-orbits">Lemma A: a fixed family is a union of subset-orbits<a class="anchor" href="#lemma-a-a-fixed-family-is-a-union-of-subset-orbits" aria-label="Link to this section">#</a></h2>
+<p>For (\pi\in S_n), let (\langle\pi\rangle) act on (2^{[n]}). A family satisfies (\pi(F)=F) if and only if its membership is constant on every cycle (orbit) of the induced action on subsets. Proof: the forward implication follows by repeatedly applying (\pi) and (\pi^{-1}); the converse follows by applying (\pi) to the union of whole cycles. Thus we can decide <strong>one orbit of subsets at a time</strong>, not one subset at a time.</p>
+<p>Each subset orbit has a single cardinality because permutations preserve the size of a set. Begin with the one-point subset orbit (\{[n]\}), mandatory for full-support union-closed families. Process all other subset orbits in decreasing cardinality, with a deterministic numeric tie-break.</p>
+<p>When an orbit (B) is added, require that every union (A\cup S) with (S\in B) and (A) in the augmented family belongs to that augmented family. Exclusion does not alter the current family.</p>
+<p><strong>Soundness:</strong> after each accepted inclusion the family remains union-closed; invariance and full support are automatic because complete orbits are added and ([n]) remains present.</p>
+<p><strong>Completeness:</strong> take any (\pi)-invariant full-support union-closed family (F) and follow the decisions for its subset orbits. If an orbit (B\subset F) is to be included, all required unions lie in (F). A required union outside (B) has strictly greater size than its contributing (S\in B), unless it equals (S); hence its orbit was processed earlier and included. The same applies to unions of two members of (B). No required inclusion is pruned, so every fixed family is reached. A unique orbit decision vector generates each family exactly once. QED.</p>
+<h2 id="lemma-b-only-cycle-types-need-to-be-counted">Lemma B: only cycle types need to be counted<a class="anchor" href="#lemma-b-only-cycle-types-need-to-be-counted" aria-label="Link to this section">#</a></h2>
+<p>Conjugate permutations (\pi&#x27;=\sigma\pi\sigma^{-1}) fix equally many families: relabeling (F\mapsto\sigma(F)) is a bijection from (\operatorname{Fix}(\pi)) onto (\operatorname{Fix}(\pi&#x27;)), preserving union closure and full support. Elements of (S_n) are conjugate precisely when they have the same cycle-type partition of (n). Hence only seven representative cycle types exist in (S_5).</p>
+<p>Burnside&#x27;s lemma now gives</p>
+<p>[ |\mathcal U_n/S_n| =\frac{1}{n!}\sum_{\pi\in S_n}|\operatorname{Fix}(\pi)|. ]</p>
+<p>The identity&#x27;s fixed count is the independent labeled full-support enumeration in <a href="https://github.com/Svyable/100/blob/main/scripts/frankl_canonical.py" rel="noopener noreferrer">frankl_canonical.py</a>. For each other cycle type we enumerate the complete-orbit choices using Lemma A.</p>
+<h2 id="exact-n5-certificate">Exact n=5 certificate<a class="anchor" href="#exact-n5-certificate" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>Cycle type</th><th class="al-right">Class size</th><th class="al-right">Fixed full-support families</th></tr></thead><tbody><tr><td>1+1+1+1+1</td><td class="al-right">1</td><td class="al-right">2,747,402</td></tr><tr><td>2+1+1+1</td><td class="al-right">10</td><td class="al-right">58,122</td></tr><tr><td>2+2+1</td><td class="al-right">15</td><td class="al-right">7,506</td></tr><tr><td>3+1+1</td><td class="al-right">20</td><td class="al-right">1,256</td></tr><tr><td>3+2</td><td class="al-right">20</td><td class="al-right">168</td></tr><tr><td>4+1</td><td class="al-right">30</td><td class="al-right">166</td></tr><tr><td>5</td><td class="al-right">24</td><td class="al-right">22</td></tr><tr><td><strong>Total</strong></td><td class="al-right"><strong>120</strong></td><td class="al-right"><strong>3,475,200 weighted</strong></td></tr></tbody></table></div>
+<p>Therefore</p>
+<p>[ |\mathcal U_5/S_5| =\frac{3{,}475{,}200}{120}=\boxed{28{,}960}. ]</p>
+<p>This equals <a href="https://oeis.org/A326907" rel="noopener noreferrer">OEIS A326907</a>. The labeled identity count agrees with <a href="https://oeis.org/A326906" rel="noopener noreferrer">OEIS A326906</a>. The (n=4) implementation independently reproduces orbit count 330, also computed by taking the minimum among all relabelings in our existing Frankl structure mine.</p>
+<h2 id="reproduce">Reproduce<a class="anchor" href="#reproduce" aria-label="Link to this section">#</a></h2>
+<pre><code class="lang-sh">python3 scripts/frankl_burnside.py --check
+python3 scripts/frankl_canonical.py --check
+python3 -m unittest discover -s tests -p &#x27;test_frankl_burnside.py&#x27; -v</code></pre>
+<ul><li><a href="https://github.com/Svyable/100/blob/main/scripts/frankl_burnside.py" rel="noopener noreferrer">Implementation</a> reconstructs the subset orbits and all seven (S_5) conjugacy classes.</li><li><a href="https://github.com/Svyable/100/blob/main/data/frankl_burnside_n5.json" rel="noopener noreferrer">Frozen integer certificate</a> pins every class weight and fixed-family count; CI rejects drift.</li><li><a href="https://github.com/Svyable/100/blob/main/tests/test_frankl_burnside.py" rel="noopener noreferrer">Adversarial tests</a> compare fixed-point enumeration with brute-force (n=3), compare (n=4) Burnside output with direct canonicalization, and reject non-permutations and missing within-orbit unions.</li></ul>
+<p>This is a more efficient counting method than testing a full canonical minimum for every labeled family. <strong>It does not establish a particular measured 10x speedup</strong>, and the known n=5 result is already far inside the published cases of Frankl&#x27;s conjecture. The unresolved next step remains a genuine structural lemma beyond known special cases, with independent mathematical review and exact quantifier scope before any claim is promoted.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

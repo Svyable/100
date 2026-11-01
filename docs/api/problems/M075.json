@@ -1,0 +1,191 @@
+{
+  "id": "M075",
+  "name": "Frankl union-closed sets conjecture",
+  "field": "Combinatorics",
+  "question": "Must a finite nontrivial union-closed family have some element in at least half of its sets?",
+  "first_attack": "Reproduce exact small-family enumeration; seek an isomorph-free minimal-counterexample lemma or certified entropy inequality",
+  "impact": 4,
+  "attackability": 5,
+  "verifiability": 5,
+  "spillover": 4,
+  "modality": "finite_refutable",
+  "evidence_state": "needs_review",
+  "checked_on": "2026-10-30",
+  "source_url": "https://arxiv.org/abs/2610.02295",
+  "rank": 4,
+  "score": 91,
+  "execution_rank": 3,
+  "execution_score": 98,
+  "readiness": 7,
+  "dispatch_rank": 10,
+  "dispatch_score": 104,
+  "action": "mine_structure",
+  "action_label": "Mine structure from certificates",
+  "action_bonus": 6,
+  "method_id": "extremal_certificates",
+  "method_title": "Replay the object, or mine the census",
+  "dispatch_next": "The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5).",
+  "dispatch_why": "The frankl_orbits mine has quotiented the n <= 4 census. Naive 2^(2^n) enumeration is still the blocker at n = 5, so the next step is a generator that does not list every family.",
+  "campaign_stage": "benchmark_reproduced",
+  "milestone_count": 2,
+  "url": "https://svyable.github.io/100/problems/M075/",
+  "field_url": "https://svyable.github.io/100/fields/combinatorics/",
+  "readiness_breakdown": [
+    {
+      "item": "Formal campaign brief",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Runnable independent verifier",
+      "points": 3,
+      "max": 3
+    },
+    {
+      "item": "Reproduced known benchmark",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Independently reviewed restricted theorem",
+      "points": 0,
+      "max": 3
+    }
+  ],
+  "has_exact_verifier": true,
+  "campaign": {
+    "problem_id": "M075",
+    "stage": "benchmark_reproduced",
+    "method": "Finite family enumeration and entropy inequalities",
+    "hypothesis": "Every nontrivial finite union-closed family contains an element in at least half its members.",
+    "first_proof_obligation": "Verify the exact conjecture for bounded universes before deriving any universal structural reduction.",
+    "next_experiment": "The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5).",
+    "additional_verifiers": [
+      "python3 scripts/mine.py --mine frankl_orbits"
+    ],
+    "falsification": "An exact union-closed family whose maximum element frequency is less than half the family size.",
+    "blocker": "Naive exhaustive enumeration scales as 2^(2^n); structural quotient required.",
+    "dossier": "research/M075_FRANKL.md",
+    "verifier": "python3 scripts/union_closed.py exhaustive --n 4"
+  },
+  "probes": [],
+  "milestones": [
+    {
+      "id": "B-FRANKL-001",
+      "problem_id": "M075",
+      "classification": "reproduced_known",
+      "title": "Frankl threshold verified for ground sets of size <=4",
+      "scope": "Finite exhaustive test only; not a proof for arbitrary finite ground sets",
+      "description": "Enumerates all 2^(2^4)=65,536 families, filters union closure, checks exact frequencies.",
+      "verifier": "python3 scripts/union_closed.py exhaustive --n 4",
+      "artifact": "scripts/union_closed.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-MINE-075",
+      "problem_id": "M075",
+      "classification": "reproduced_known",
+      "title": "Union-closed families on at most 4 elements, up to relabelling",
+      "scope": "Exhaustive range already checked without symmetry; the orbit count is not a general proof",
+      "description": "4,958 nontrivial union-closed families on 4 elements form 366 orbits. Minimum abundance 1/2. A second canonisation, by sorted subset tuples, reproduces the orbit counts.",
+      "verifier": "python3 scripts/mine.py --mine frankl_orbits",
+      "artifact": "scripts/mines/frankl_orbits.py",
+      "verified_on": "2026-10-31"
+    }
+  ],
+  "engine_roadmap": null,
+  "claim_review_2026": null,
+  "formal_statement": {
+    "problem_id": "M075",
+    "module": "lean/Hundred/Statements/Frankl.lean",
+    "namespace": "Hundred.Statements.Frankl",
+    "statement": "Statement",
+    "encodes": "Families as bitmasks over ground set {0,…,k−1}; union-closed with a nonempty member implies some x with 2·deg(x) ≥ |F|.",
+    "not_encoded": [
+      "The best known constant (≈0.38)",
+      "Height or size restricted variants"
+    ],
+    "kernel_checked": [
+      {
+        "decl": "ground_3",
+        "claim": "Exhaustive over all 2, 16 and 256 families on ground sets of size 1, 2, 3 (ground_1, ground_2, ground_3).",
+        "mirrors_probe": null
+      }
+    ],
+    "fidelity": "author_checked",
+    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/Frankl.lean"
+  },
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Exact probe lab — computational reach of the 100",
+      "source": "LAB.md",
+      "url": "https://svyable.github.io/100/library/lab/"
+    },
+    {
+      "title": "Lean proof pipeline",
+      "source": "LEAN.md",
+      "url": "https://svyable.github.io/100/library/lean/"
+    },
+    {
+      "title": "Structure mines",
+      "source": "MINES.md",
+      "url": "https://svyable.github.io/100/library/mines/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
+    },
+    {
+      "title": "Scale — proof-exchange wave",
+      "source": "SCALE.md",
+      "url": "https://svyable.github.io/100/library/scale/"
+    },
+    {
+      "title": "M075: Burnside-certified full-support orbit counts through n=5",
+      "source": "research/M075_BURNSIDE.md",
+      "url": "https://svyable.github.io/100/library/m075-burnside/"
+    },
+    {
+      "title": "M075: an exact orbit map and closure-pruned generator",
+      "source": "research/M075_CANONICAL.md",
+      "url": "https://svyable.github.io/100/library/m075-canonical/"
+    },
+    {
+      "title": "M075 — Frankl's union-closed sets conjecture",
+      "source": "research/M075_FRANKL.md",
+      "url": "https://svyable.github.io/100/library/m075-frankl/"
+    },
+    {
+      "title": "Research-source audit — 2026-10-30",
+      "source": "docs/AUDIT_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/audit-queue/"
+    },
+    {
+      "title": "Lamport protocol — make every missing implication explicit",
+      "source": "docs/LAMPORT_PROTOCOL.md",
+      "url": "https://svyable.github.io/100/library/lamport-protocol/"
+    },
+    {
+      "title": "Foundational sources and 2026 claim watch",
+      "source": "docs/SOURCES.md",
+      "url": "https://svyable.github.io/100/library/sources/"
+    }
+  ]
+}

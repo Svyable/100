@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proof-driven research engine · 100</title>
+<meta name="description" content="This is an operational research ledger, not an automated theorem-proving claim. It separates mathematical ambition, proof readiness, reproducible evidence, and confirmed full resolutions. Last program update: 2026-10-31.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/research-engine/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="Proof-driven research engine · 100">
+<meta property="og:description" content="This is an operational research ledger, not an automated theorem-proving claim. It separates mathematical ambition, proof readiness, reproducible evidence, and confirmed full resolutions. Last program update: 2026-10-31.">
+<meta property="og:url" content="https://svyable.github.io/100/library/research-engine/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../work/">Work</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">Proof-driven research engine</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#the-two-stack-ranks">The two stack ranks</a></li><li class="toc-l2"><a href="#dispatch-score">Dispatch score</a></li><li class="toc-l2"><a href="#proof-work-loop-10-operations-not-ten-speculative-agents">Proof work loop (10 operations, not ten speculative agents)</a></li><li class="toc-l2"><a href="#the-exact-probe-lab">The exact probe lab</a></li><li class="toc-l2"><a href="#exact-verification-baselines">Exact verification baselines</a></li><li class="toc-l2"><a href="#promote-a-result-to-solved">Promote a result to Solved</a></li><li class="toc-l2"><a href="#change-management">Change management</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M071/" title="Hadwiger conjecture">M071</a><a class="chip chip-link" href="../../problems/M073/" title="Sidorenko conjecture">M073</a><a class="chip chip-link" href="../../problems/M092/" title="Zauner SIC conjecture">M092</a><a class="chip chip-link" href="../../problems/M093/" title="Linear MDS code main conjecture">M093</a><a class="chip chip-link" href="../../problems/M094/" title="Hadamard matrix conjecture">M094</a><a class="chip chip-link" href="../../problems/M078/" title="Graph reconstruction conjecture">M078</a><a class="chip chip-link" href="../../problems/M079/" title="One-third–two-thirds conjecture">M079</a><a class="chip chip-link" href="../../problems/M096/" title="Projective plane order 12">M096</a><a class="chip chip-link" href="../../problems/M084/" title="Matrix multiplication exponent omega=2">M084</a><a class="chip chip-link" href="../../problems/M095/" title="Exact Ramsey number R(5,5)">M095</a><a class="chip chip-link" href="../../problems/M080/" title="Rota basis conjecture">M080</a><a class="chip chip-link" href="../../problems/M097/" title="Metric TSP four-thirds conjecture">M097</a><a class="chip chip-link" href="../../problems/M019/" title="Erdős–Straus conjecture">M019</a><a class="chip chip-link" href="../../problems/M002/" title="Generalized Riemann Hypothesis">M002</a><a class="chip chip-link" href="../../problems/M006/" title="Strong Goldbach conjecture">M006</a><a class="chip chip-link" href="../../problems/M041/" title="Plane Jacobian conjecture">M041</a><a class="chip chip-link" href="../../problems/M048/" title="Alperin weight conjecture">M048</a><a class="chip chip-link" href="../../problems/M001/" title="Riemann Hypothesis">M001</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/docs/RESEARCH_ENGINE.md" rel="noopener noreferrer">docs/RESEARCH_ENGINE.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">METHOD &amp; GOVERNANCE</p><h1>Proof-driven research engine</h1>
+<p>This is an <strong>operational research ledger</strong>, not an automated theorem-proving claim. It separates mathematical ambition, proof readiness, reproducible evidence, and confirmed full resolutions. Last program update: 2026-10-31.</p>
+<h2 id="the-two-stack-ranks">The two stack ranks<a class="anchor" href="#the-two-stack-ranks" aria-label="Link to this section">#</a></h2>
+<p>The existing <strong>editorial ranking</strong> (20–100 points) remains:</p>
+<ul><li>Mathematical impact: 30%</li><li>Attackability: 30%</li><li>Independent verifiability: 25%</li><li>Cross-problem method spillover: 15%</li></ul>
+<p>A separate <strong>execution index</strong> adds up to ten <em>documented readiness</em> points:</p>
+<div class="table-wrap"><table><thead><tr><th>Evidence of readiness</th><th class="al-right">Bonus</th><th>Meaning</th></tr></thead><tbody><tr><td>Exact research campaign brief</td><td class="al-right">+2</td><td>The first proof obligation and falsifier are written</td></tr><tr><td>Allowlisted independently runnable verifier</td><td class="al-right">+3</td><td>A checking program exists and is tested</td></tr><tr><td>Reproduced known mathematical benchmark</td><td class="al-right">+2</td><td>Established result independently reproduced; <strong>not novel</strong></td></tr><tr><td>Independently reviewed restricted new theorem</td><td class="al-right">+3</td><td>New, carefully scoped partial theorem with two independent reviews</td></tr></tbody></table></div>
+<p>The execution index is <strong>not</strong> a probability, and high readiness is not evidence for a general conjecture. Each factor is deliberately bounded to prevent repeated runs of the same toy case from inflating the rank. The original editorial rank stays available. It is no longer the default work order.</p>
+<h2 id="dispatch-score">Dispatch score<a class="anchor" href="#dispatch-score" aria-label="Link to this section">#</a></h2>
+<p>Readiness rewards having a verifier, including a verifier whose only remaining experiment sits inside a theorem the campaign blocker already cites. The <strong>dispatch score</strong> is the work order:</p>
+<p>editorial score + readiness + action bonus.</p>
+<p>Bonuses live in <a href="https://github.com/Svyable/100/blob/main/data/methods.json" rel="noopener noreferrer">data/methods.json</a>. They promote a claimed finite witness, a missing engine and a published certificate, and they penalise a dominated range extension. The bonus is a scheduling weight, not evidence and not a probability. Every problem also belongs to one <strong>shape</strong>: a shared attack template with a certificate and a falsifier. Filling a shape does not assert that the restriction is open or true. Jobs, shapes and the per-problem order are generated in <a href="../../library/approach/">APPROACH.md</a>. The site&#x27;s default sort is this dispatch order.</p>
+<ul><li>Source registry: <a href="https://github.com/Svyable/100/blob/main/data/problems.json" rel="noopener noreferrer">data/problems.json</a></li><li>Research campaigns / reproducibility milestones: <a href="https://github.com/Svyable/100/blob/main/data/research_program.json" rel="noopener noreferrer">data/research_program.json</a></li><li>Generated execution queue: <a href="../../library/attack-queue/">ATTACK_QUEUE.md</a></li><li>Canonical solved archive: <a href="https://github.com/Svyable/100/blob/main/data/solved.json" rel="noopener noreferrer">data/solved.json</a></li></ul>
+<h2 id="proof-work-loop-10-operations-not-ten-speculative-agents">Proof work loop (10 operations, not ten speculative agents)<a class="anchor" href="#proof-work-loop-10-operations-not-ten-speculative-agents" aria-label="Link to this section">#</a></h2>
+<ol><li>Precisely formulate the conjecture with quantified domain.</li><li>Identify the strongest existing theorems and unresolved residue.</li><li>Pick the smallest falsifiable restricted statement.</li><li>Specify exact counterexample and construction certificates.</li><li>Implement a separate verifier before launching costly search.</li><li>Reproduce known toy results and measure verifier coverage.</li><li>Search both for proof lemmas <em>and</em> adversarial counterexamples.</li><li>Preserve exact inputs, scripts, resource usage, and negative results.</li><li>Require independent mathematical and scope review of any novel claim.</li><li>Add verified methods to the library and rerank the work queue.</li></ol>
+<p>A failed search or an unreviewed manuscript is logged as a research lead, not a theorem. Mathematical scope review is different from code correctness.</p>
+<h2 id="the-exact-probe-lab">The exact probe lab<a class="anchor" href="#the-exact-probe-lab" aria-label="Link to this section">#</a></h2>
+<p><code>scripts/probes/</code> separates reusable <strong>engines</strong> from per-problem <strong>probes</strong>:</p>
+<div class="table-wrap"><table><thead><tr><th>Engine</th><th>Module</th><th>Problems served</th></tr></thead><tbody><tr><td><code>primes</code></td><td><code>primes.py</code></td><td>M006, M019</td></tr><tr><td><code>finite_fields</code></td><td><code>fields.py</code></td><td>M080, M093, M094, M095, M096</td></tr><tr><td><code>graph_census</code></td><td><code>graphs.py</code></td><td>M071, M073, M078, M097</td></tr><tr><td><code>poset_census</code></td><td><code>posets.py</code></td><td>M079</td></tr><tr><td><code>cyclotomic</code></td><td><code>cyclotomic.py</code></td><td>M092</td></tr><tr><td><code>tensor_certificates</code></td><td><code>tensor.py</code></td><td>M084</td></tr><tr><td><code>symmetry_reduction</code></td><td><code>arcs.py</code>, <code>rota.py</code></td><td>M080, M093</td></tr><tr><td><code>clique_search</code></td><td><code>ramsey_witness.py</code></td><td>M095</td></tr><tr><td><code>exact_lp</code></td><td><code>exact_lp.py</code></td><td>M097</td></tr><tr><td><code>graph_homomorphisms</code></td><td><code>homomorphisms.py</code></td><td>M073</td></tr><tr><td><code>polynomial_algebra</code></td><td><code>polynomials.py</code></td><td>M041</td></tr><tr><td><code>interval_arithmetic</code></td><td><code>intervals.py</code>, <code>zeta.py</code></td><td>M001, M002</td></tr><tr><td><code>group_characters</code></td><td><code>groups.py</code></td><td>M048</td></tr></tbody></table></div>
+<p>A probe is a short module containing <code>PROBE</code> metadata, <code>search(params)</code>, an <strong>independent</strong> <code>check(params, result)</code>, and <code>scope(params)</code>. The checker uses a different code path from the search: Miller–Rabin instead of a sieve, combinatorial incidence axioms instead of field arithmetic, Burnside or orbit-counting completeness certificates, and a field rebuilt from the certified modulus. <code>python3 scripts/lab.py</code> runs every probe, records a deterministic ledger in <code>data/lab_results.json</code> (summaries and certificate SHA-256 only), and regenerates <code>LAB.md</code>. <code>--check</code> reruns probes and fails on any drift. <code>--emit</code> writes full certificates and <code>--replay</code> re-verifies them, so an outside reviewer can check results without trusting the search.</p>
+<p>Probes are allowlisted in <code>scripts/probes/__init__.py</code>; data files cannot add executables. Each probe has to be a verifier of its problem&#x27;s campaign and have a <code>reproduced_known</code> milestone, and <code>research.py</code> enforces this. Every problem also carries a <code>modality</code>. Each computable problem (finitely refutable, finite parameter, existence family) must either have a verifier or appear in <code>data/engine_roadmap.json</code>, and the lab enforces this too.</p>
+<h2 id="exact-verification-baselines">Exact verification baselines<a class="anchor" href="#exact-verification-baselines" aria-label="Link to this section">#</a></h2>
+<pre><code class="lang-sh">python3 scripts/ramsey.py demo
+python3 scripts/union_closed.py exhaustive --n 4
+python3 scripts/digraph.py exhaustive --n 4
+python3 scripts/digraph_orbits.py --n 5
+python3 scripts/ch_sat.py cnf --n 18 --r 6 --output /tmp/ch18-6.cnf
+python3 scripts/lab.py --level deep</code></pre>
+<p>The first four reproduce <strong>known</strong> statements in finite domains. The fifth command generates a SAT problem encoding only, not a result. The sixth reruns all twelve lab probes at their larger size; these are also known statements. They do not resolve Ramsey R(5,5), Frankl, or Caccetta–Häggkvist in general. Each script is independently exercised in the test suite and in a weekly GitHub Actions reproducibility workflow (when Actions scheduling is enabled by GitHub). The periodic job reruns existing tests—it does <strong>not</strong> research new literature, discover a lemma, or verify newly published claims on its own.</p>
+<h2 id="promote-a-result-to-solved">Promote a result to Solved<a class="anchor" href="#promote-a-result-to-solved" aria-label="Link to this section">#</a></h2>
+<p>Only a <strong>full</strong> proof or counterexample of the exact archived statement qualifies. The archive is intentionally empty initially, and may grow only through reviewed full resolutions. Every entry must include:</p>
+<ol><li>A stable ID removed from the 100 active candidates (without recycling it).</li><li>The precise original statement and proved/refuted outcome.</li><li>A published full proof URL and dated acceptance record.</li><li><strong>Two distinct independent external review URLs</strong> with the result checked for the same exact theorem scope.</li><li>Verification notes and a unique new active candidate replacing the solved one.</li><li>If the prior target had a campaign, move it to the <code>resolved_archived</code> stage so its research history remains accessible without entering the active execution queue.</li></ol>
+<p>Schema and consistency checks reject entries lacking those references or whose old ID remains active. These checks cannot replace real specialist judgment; a maintainer must investigate the independence and correctness of the cited assessments.</p>
+<p>A <em>restricted new theorem</em> goes in the milestone ledger, with review evidence, but cannot enter Solved until the entire conjecture is accepted as resolved. A reproduced previously known theorem also stays out of Solved.</p>
+<h2 id="change-management">Change management<a class="anchor" href="#change-management" aria-label="Link to this section">#</a></h2>
+<pre><code class="lang-sh">python3 scripts/rank.py
+python3 scripts/research.py
+python3 scripts/lab.py
+python3 scripts/build_site.py
+python3 scripts/lab.py --check
+python3 scripts/rank.py --check
+python3 scripts/research.py --check
+python3 scripts/build_site.py --check
+python3 -m unittest discover -s tests -v</code></pre>
+<p>Do not hand-edit generated <code>RANKED.md</code>, <code>ATTACK_QUEUE.md</code>, <code>LAB.md</code>, <code>data/lab_results.json</code> or <code>docs/data/portfolio.json</code>. CI checks all of them for consistency. The site exposes evidence and ranked research priorities, never asserts a universal proof merely because a finite verifier passed.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

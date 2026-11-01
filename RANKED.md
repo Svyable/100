@@ -35,7 +35,7 @@ Score: impact 30% + attackability 30% + verifiability 25% + spillover 15%. Each 
 | 27 | M019 | Erdős–Straus conjecture | Arithmetic | 82 | needs_review |
 | 28 | M095 | Exact Ramsey number R(5,5) | Mathematical physics / finite structures | 82 | needs_review |
 | 29 | M091 | Yang–Mills existence and mass gap | Mathematical physics / finite structures | 80 | official_open |
-| 30 | M098 | Vaught conjecture | Mathematical physics / finite structures | 80 | claim_needs_review |
+| 30 | M098 | Vaught conjecture | Mathematical physics / finite structures | 80 | verified_open |
 | 31 | M099 | Decidability of real exponential field | Mathematical physics / finite structures | 80 | needs_review |
 | 32 | M100 | Falconer distance-set conjecture | Mathematical physics / finite structures | 80 | claim_needs_review |
 | 33 | M043 | Kaplansky idempotent conjecture | Algebra | 74 | needs_review |

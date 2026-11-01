@@ -1,38 +1,17 @@
 {
   "version": 2,
-  "as_of": "2026-11-01",
+  "as_of": "2026-10-31",
   "campaigns": [
-    {
-      "problem_id": "M001",
-      "stage": "benchmark_reproduced",
-      "method": "Certified zero counting: rigorous interval Euler-Maclaurin and Stirling enclosures, the argument principle for N(T), and certified sign changes of Hardy's Z function",
-      "hypothesis": "Every nontrivial zero of the Riemann zeta function has real part 1/2.",
-      "first_proof_obligation": "Reproduce classical verifications of RH at small heights with a floating-point-free certificate: an exact zero count N(T) from the argument principle, matched by N(T) certified sign changes of Z(t). Then reuse the same certificate format to replay externally produced zero lists at larger heights.",
-      "next_experiment": "Add Turing's method with an explicit bound on the integral of S(t), and a Riemann-Siegel evaluator with explicit error terms, so that heights near 10^5 become reachable; cross-check against Odlyzko's published zero tables.",
-      "falsification": "A certified count N(T) strictly larger than the number of zeros that can be located on the critical line below T, together with an exact enclosure of a zero off the line: a box avoiding Re s = 1/2 whose argument-principle winding number is 1.",
-      "blocker": "Pure-Python interval Euler-Maclaurin costs O(T) per evaluation, and RH is already verified to height 3*10^12. Finite heights cannot reach new territory; the value is the certificate format and its replayability.",
-      "dossier": "research/LAB_CAMPAIGNS.md",
-      "verifier": "python3 scripts/lab.py --probe zeta_zeros"
-    },
-    {
-      "problem_id": "M002",
-      "stage": "benchmark_reproduced",
-      "method": "Certified zero counting for real primitive Dirichlet L-functions: argument principle, Hardy Z sign changes, a Lipschitz-certified real segment and a Gauss-sum root-number check",
-      "hypothesis": "Every nontrivial zero of every Dirichlet L-function has real part 1/2.",
-      "first_proof_obligation": "Reproduce GRH verifications at small height for all real primitive characters of small conductor, including the absence of real zeros in (0, 1), with interval certificates. Then extend the engine to complex characters, whose zeros are not symmetric about the real axis and whose root numbers are not real.",
-      "next_experiment": "Support complex primitive characters (separate counts for positive and negative ordinates, exact Gauss sums in the cyclotomic engine) and certify every primitive character of conductor <= 50 to height 20.",
-      "falsification": "For some primitive character, a certified zero count exceeding the number of certified sign changes of Z on the critical line, plus an enclosure of an off-line zero; or a certified real zero of L(s, chi) in (0, 1).",
-      "blocker": "Euler-Maclaurin over residue classes needs about q|s|/2 terms per evaluation, so cost grows with conductor times height; GRH is verified far beyond these ranges (Platt).",
-      "dossier": "research/LAB_CAMPAIGNS.md",
-      "verifier": "python3 scripts/lab.py --probe dirichlet_zeros"
-    },
     {
       "problem_id": "M006",
       "stage": "benchmark_reproduced",
       "method": "Verified-range certificates and least-partition statistics",
       "hypothesis": "Every even integer n >= 4 is a sum of two primes.",
       "first_proof_obligation": "State a restricted, checkable lemma (for example an explicit bound on the least Goldbach prime in a named residue class or range) that is not already implied by the 4*10^18 verification or by the ternary Goldbach theorem.",
-      "next_experiment": "Use the least-partition certificates to test conjectured growth bounds for the least prime p(n), then attempt a sieve-theoretic restricted statement with explicit constants.",
+      "next_experiment": "The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification.",
+      "additional_verifiers": [
+        "python3 scripts/mine.py --mine goldbach_growth"
+      ],
       "falsification": "An even n >= 4 with no prime p <= n/2 such that n - p is prime, confirmed by an independent primality oracle.",
       "blocker": "Range extension cannot compete with the published 4*10^18 verification; real progress needs a new restricted theorem.",
       "dossier": "research/LAB_CAMPAIGNS.md",
@@ -44,7 +23,10 @@
       "method": "Modular covering identities with unit-fraction certificates",
       "hypothesis": "For every integer n >= 2, 4/n = 1/x + 1/y + 1/z has a solution in positive integers.",
       "first_proof_obligation": "Find a polynomial identity family covering a residue class of primes not covered by the classical Mordell identities, and prove it symbolically.",
-      "next_experiment": "Mine the certificate table for primes n = 1 mod 24, cluster solutions by (x mod n, divisor pattern) and propose parametric identities for symbolic verification.",
+      "next_experiment": "The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity.",
+      "additional_verifiers": [
+        "python3 scripts/mine.py --mine straus_patterns"
+      ],
       "falsification": "An n together with a proof that no positive-integer triple exists; a finite search failure is not a counterexample.",
       "blocker": "Classical identities leave quadratic-residue classes uncovered, and known results show identities of the standard polynomial type cannot cover them all; a different idea is needed.",
       "dossier": "research/LAB_CAMPAIGNS.md",
@@ -61,18 +43,6 @@
       "blocker": "Known results already cover plane maps of degree <= 100, so exhaustive small classes cannot reach new territory; novelty needs structural families.",
       "dossier": "research/LAB_CAMPAIGNS.md",
       "verifier": "python3 scripts/lab.py --probe jacobian"
-    },
-    {
-      "problem_id": "M048",
-      "stage": "benchmark_reproduced",
-      "method": "Exhaustive permutation-group computation: p-regular classes, radical p-subgroups up to conjugacy, and defect-zero characters of N(Q)/Q by Dixon's modular method",
-      "hypothesis": "For every finite group G and prime p, the number of irreducible p-Brauer characters equals the number of G-conjugacy classes of p-weights.",
-      "first_proof_obligation": "Reproduce the global weight conjecture l(G) = w(G) on small groups, including non-p-solvable and sporadic examples, with an independent re-enumeration of radical subgroups. Then add p-blocks (central characters mod p) to test the blockwise form.",
-      "next_experiment": "Add block decomposition from the mod-p reduction of central characters, test the blockwise conjecture on the same groups, and extend to groups of order up to about 10^5 (M12, PSL(3,4)) with subgroup-lattice pruning.",
-      "falsification": "A finite group and prime with exactly certified l(G) (p-regular class count) different from an exhaustively certified weight count w(G).",
-      "blocker": "Full element enumeration limits the engine to groups of order around 10^4; the conjecture is already known for all groups this small, so new evidence needs larger groups or blockwise refinements.",
-      "dossier": "research/LAB_CAMPAIGNS.md",
-      "verifier": "python3 scripts/lab.py --probe alperin_weights"
     },
     {
       "problem_id": "M071",
@@ -116,7 +86,10 @@
       "method": "Finite family enumeration and entropy inequalities",
       "hypothesis": "Every nontrivial finite union-closed family contains an element in at least half its members.",
       "first_proof_obligation": "Verify the exact conjecture for bounded universes before deriving any universal structural reduction.",
-      "next_experiment": "Canonicalize families under ground-set permutations; prove or disprove a restricted lemma on minimal counterexamples.",
+      "next_experiment": "The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5).",
+      "additional_verifiers": [
+        "python3 scripts/mine.py --mine frankl_orbits"
+      ],
       "falsification": "An exact union-closed family whose maximum element frequency is less than half the family size.",
       "blocker": "Naive exhaustive enumeration scales as 2^(2^n); structural quotient required.",
       "dossier": "research/M075_FRANKL.md",
@@ -128,7 +101,10 @@
       "method": "Deck-collision search over certified graph censuses",
       "hypothesis": "Every finite simple graph on at least 3 vertices is determined up to isomorphism by its vertex-deleted deck.",
       "first_proof_obligation": "Pick a graph family not yet known to be reconstructible and isolate a lemma that reconstructs a new invariant for it.",
-      "next_experiment": "Tabulate which deck invariants already separate every deck in the census, as a data-driven route to a reconstruction lemma for a named family.",
+      "next_experiment": "The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two.",
+      "additional_verifiers": [
+        "python3 scripts/mine.py --mine deck_invariants"
+      ],
       "falsification": "Two non-isomorphic graphs with identical decks, confirmed by independent canonical forms.",
       "blocker": "Computer verification already reaches at least 11 vertices; novelty has to come from a structural lemma, not from range.",
       "dossier": "research/LAB_CAMPAIGNS.md",
@@ -140,7 +116,10 @@
       "method": "Exact linear-extension counting over certified poset censuses",
       "hypothesis": "Every finite poset that is not a chain has an incomparable pair x, y with 1/3 <= Pr[x < y] <= 2/3.",
       "first_proof_obligation": "State and prove a balance bound for a restricted poset class (bounded width or height) that improves on published results.",
-      "next_experiment": "Tabulate the best balance of every poset in the census, identify extremal families near 1/3 and test structural invariants that predict a balanced pair.",
+      "next_experiment": "The certified mine poset_balance finds 11 posets on at most 6 elements with best balance exactly 1/3, and every one of them has width 2, which Linial already settled. A new lemma has to treat width at least 3; this census has no tight example there.",
+      "additional_verifiers": [
+        "python3 scripts/mine.py --mine poset_balance"
+      ],
       "falsification": "A non-chain poset whose every incomparable pair has balance below 1/3, with linear extensions counted exactly by two independent methods.",
       "blocker": "Published verification already reaches 11 elements; a new structural invariant is needed.",
       "dossier": "research/LAB_CAMPAIGNS.md",
@@ -256,6 +235,51 @@
       "blocker": "Exhaustive extreme-point enumeration grows very quickly beyond n = 10; graphic metrics up to 7 vertices reach only a 16/15 gap.",
       "dossier": "research/LAB_CAMPAIGNS.md",
       "verifier": "python3 scripts/lab.py --probe held_karp"
+    },
+    {
+      "problem_id": "M001",
+      "stage": "benchmark_reproduced",
+      "method": "Interval-arithmetic argument principle and Hardy Z sign changes",
+      "hypothesis": "Every non-trivial zero of the Riemann zeta function has real part 1/2.",
+      "first_proof_obligation": "A finite height is already classical. The next obligation is a zero-free statement with an explicit constant that does not follow from plugging this height into a known explicit formula, or a machine-checked count past the range a hand calculation can audit.",
+      "next_experiment": "Raise the certified height by tightening the contour enclosures, then compare the isolating intervals against a published zero table entry by entry.",
+      "falsification": "A height T at which the certified argument count N(T) strictly exceeds the number of disjoint intervals where Z changes sign.",
+      "blocker": "T = 36 is far below Platt–Trudgian (at least 3*10^12). Extending the height needs a faster contour, not a new idea about the hypothesis.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe riemann",
+      "additional_verifiers": [
+        "python3 scripts/lab.py --probe zeta_zeros"
+      ]
+    },
+    {
+      "problem_id": "M002",
+      "stage": "benchmark_reproduced",
+      "method": "The zeta interval engine applied to L(s, chi_4)",
+      "hypothesis": "Every non-trivial zero of every Dirichlet L-function has real part 1/2.",
+      "first_proof_obligation": "Certify one further primitive character, of conductor 3 or 5, to a height where the root number and the gamma factor are checked by the same argument principle.",
+      "next_experiment": "Reuse the zero-count certificate for the non-principal character modulo 3, including an independent replay of its Gauss sum.",
+      "falsification": "A primitive character and a height T at which the certified argument count exceeds the number of critical-line sign changes.",
+      "blocker": "One character at height 17 does not constrain the other characters. Conductor 3 is the smallest untouched case.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe dirichlet_l",
+      "additional_verifiers": [
+        "python3 scripts/lab.py --probe dirichlet_zeros"
+      ]
+    },
+    {
+      "problem_id": "M048",
+      "stage": "benchmark_reproduced",
+      "method": "Exact Alperin weight counts via radical p-subgroups and character degrees",
+      "hypothesis": "For every finite group G and every prime p, the number of conjugacy classes of Alperin p-weights equals the number of simple modules of FG over an algebraically closed field of characteristic p.",
+      "first_proof_obligation": "State a restricted family of blocks (for example a named defect-group isomorphism type outside the order-100 census) and prove or refute the weight count for that family.",
+      "next_experiment": "Do not enlarge the named catalog inside order 100: that range is already covered by the 2007 computational verification. State a restricted family (for example blocks with a named defect-group isomorphism type) and a lemma outside that census.",
+      "falsification": "A finite group G and prime p for which the independently recomputed weight count differs from the number of p-regular conjugacy classes.",
+      "blocker": "Every group of order at most 100 is already covered by published computational verification; a larger named catalog inside that bound is not a theorem.",
+      "dossier": "research/LAB_CAMPAIGNS.md",
+      "verifier": "python3 scripts/lab.py --probe alperin",
+      "additional_verifiers": [
+        "python3 scripts/lab.py --probe alperin_weights"
+      ]
     }
   ],
   "milestones": [
@@ -458,6 +482,94 @@
       "verified_on": "2026-10-31"
     },
     {
+      "id": "B-MINE-006",
+      "problem_id": "M006",
+      "classification": "reproduced_known",
+      "title": "Record least Goldbach primes through 20,000",
+      "scope": "Finite table inside the published 4*10^18 verification; not a new bound",
+      "description": "Twelve running-maximum least primes, the largest 173 at n = 7426. An independent odd-only sieve recomputes the same record list.",
+      "verifier": "python3 scripts/mine.py --mine goldbach_growth",
+      "artifact": "scripts/mines/goldbach_growth.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-MINE-019",
+      "problem_id": "M019",
+      "classification": "reproduced_known",
+      "title": "Erdos-Straus residues for primes 1 mod 24 through 8,000",
+      "scope": "Explicit solutions in a finite range; not an identity and not a proof",
+      "description": "All 117 such primes have a checked solution whose residue 4x-n lies in {3, 7, 11, 15, 19, 23}. The equation is rechecked without calling the search.",
+      "verifier": "python3 scripts/mine.py --mine straus_patterns",
+      "artifact": "scripts/mines/straus_patterns.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-MINE-075",
+      "problem_id": "M075",
+      "classification": "reproduced_known",
+      "title": "Union-closed families on at most 4 elements, up to relabelling",
+      "scope": "Exhaustive range already checked without symmetry; the orbit count is not a general proof",
+      "description": "4,958 nontrivial union-closed families on 4 elements form 366 orbits. Minimum abundance 1/2. A second canonisation, by sorted subset tuples, reproduces the orbit counts.",
+      "verifier": "python3 scripts/mine.py --mine frankl_orbits",
+      "artifact": "scripts/mines/frankl_orbits.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-MINE-078",
+      "problem_id": "M078",
+      "classification": "reproduced_known",
+      "title": "Deck-certified degree and triangle separation through 6 vertices",
+      "scope": "Census already known to be reconstructible far beyond 6 vertices; this only ranks coarse invariants",
+      "description": "Degree sequence separates through 4 vertices. Degree sequence plus triangle count separates through 5 and leaves 20 excess graphs at 6. Both invariants are recomputed from cards.",
+      "verifier": "python3 scripts/mine.py --mine deck_invariants",
+      "artifact": "scripts/mines/deck_invariants.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-MINE-079",
+      "problem_id": "M079",
+      "classification": "reproduced_known",
+      "title": "Posets of balance exactly 1/3 on at most 6 elements are width 2",
+      "scope": "Inside the published verification through 11 elements, and inside Linial's width-2 theorem; not a new case",
+      "description": "Eleven posets attain best balance 1/3. Their width-height types are 2x2, 2x3, 2x4 and 2x5. Balances are recounted by removing minimal elements.",
+      "verifier": "python3 scripts/mine.py --mine poset_balance",
+      "artifact": "scripts/mines/poset_balance.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-ZETA-001",
+      "problem_id": "M001",
+      "classification": "reproduced_known",
+      "title": "The first two non-trivial zeta zeros are simple and on the critical line",
+      "scope": "N(23) = 2, a classical height; not a proof of the Riemann hypothesis",
+      "description": "Argument-principle count N(T) matched to Hardy Z sign changes on (14, 15) and (21, 22). The checker repeats the count with a different Euler-Maclaurin and Stirling truncation. The deep run reaches N(36) = 5.",
+      "verifier": "python3 scripts/lab.py --probe riemann",
+      "artifact": "scripts/probes/riemann.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-LCHI4-001",
+      "problem_id": "M002",
+      "classification": "reproduced_known",
+      "title": "The first two non-trivial zeros of L(s, chi_4) are simple and on the critical line",
+      "scope": "One Dirichlet character, N(11) = 2; not the generalized Riemann hypothesis",
+      "description": "Argument count for L(s, chi_4) matched to sign changes of the real form on (6, 7) and (10, 11), replayed at a second truncation. The deep run reaches N(17) = 4.",
+      "verifier": "python3 scripts/lab.py --probe dirichlet_l",
+      "artifact": "scripts/probes/dirichlet_l.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-ALPERIN-001",
+      "problem_id": "M048",
+      "classification": "reproduced_known",
+      "title": "Alperin weight counts match p-regular class counts on named groups through A5",
+      "scope": "Finite named catalog only; every case sits inside the published order-100 verification",
+      "description": "For each listed group and each prime dividing its order, the number of radical-subgroup defect-zero weights equals the number of p-regular conjugacy classes. Smoke covers nine groups through D10; deep adds C5, C6, D12, S4 and A5. The checker rebuilds every count independently.",
+      "verifier": "python3 scripts/lab.py --probe alperin",
+      "artifact": "scripts/probes/alperin.py",
+      "verified_on": "2026-10-31"
+    },
+    {
       "id": "B-RH-001",
       "problem_id": "M001",
       "classification": "reproduced_known",
@@ -480,14 +592,14 @@
       "verified_on": "2026-11-01"
     },
     {
-      "id": "B-ALPERIN-001",
+      "id": "B-ALPERIN-EXT-001",
       "problem_id": "M048",
       "classification": "reproduced_known",
       "title": "Alperin's weight conjecture l(G) = w(G) on 15 group-prime cases from S3 to PSL(2,7)",
       "scope": "Known small range; not new",
       "description": "For S3, A4, S4, A5, S5 and PSL(2,7) at every prime dividing the order, the number of p-regular classes equals the number of conjugacy classes of p-weights, counted over all p-radical subgroups with defect-zero degrees of N(Q)/Q from Dixon's modular method. The checker re-enumerates radical subgroups by a different criterion and recomputes degrees with a different prime. The deep run covers 46 cases, adding GL(2,3), A6, S6, PSL(2,8), PSL(2,11), PSL(2,13), A7, S7 and the Mathieu group M11.",
       "verifier": "python3 scripts/lab.py --probe alperin_weights",
-      "artifact": "scripts/probes/alperin.py",
+      "artifact": "scripts/probes/alperin_cert.py",
       "verified_on": "2026-11-01"
     }
   ]

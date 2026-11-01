@@ -1,0 +1,24 @@
+{
+  "name": "100 — machine-readable portfolio API",
+  "as_of": "2026-11-01",
+  "note": "Static JSON regenerated from validated ledgers. Scores are editorial, never probabilities of proof.",
+  "endpoints": {
+    "problems": "https://svyable.github.io/100/api/problems.json",
+    "problem": "https://svyable.github.io/100/api/problems/{id}.json",
+    "csv": "https://svyable.github.io/100/api/problems.csv",
+    "search_index": "https://svyable.github.io/100/api/search.json",
+    "full_snapshot": "https://svyable.github.io/100/data/portfolio.json",
+    "feed": "https://svyable.github.io/100/feed.xml",
+    "work_queue": "https://svyable.github.io/100/api/work.json"
+  },
+  "counts": {
+    "problems": 100,
+    "campaigns": 21,
+    "probes": 21,
+    "engines": 14,
+    "claim_reviews": 15,
+    "lean_statements": 9,
+    "solved": 0,
+    "documents": 38
+  }
+}

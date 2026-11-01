@@ -1,0 +1,162 @@
+{
+  "as_of": "2026-11-01",
+  "toolchain": "leanprover/lean4:v4.19.0",
+  "library": "lean/Hundred.lean",
+  "interpretation": "Formal statements are comparators: they pin down exactly what a proof or counterexample must establish. Core Lean 4 only, no Mathlib, no sorry; every kernel-checked theorem is also registered in data/lean_targets.json and axiom-audited by the Lean proof gate. Kernel-checked results are finite fidelity tests inside known mathematics, never progress on the open statement.",
+  "fidelity_levels": {
+    "author_checked": "Encoding written and checked against the registry statement by its author; fidelity examples compile.",
+    "independently_reviewed": "A second reviewer has compared every definition with a primary source."
+  },
+  "entries": [
+    {
+      "problem_id": "M006",
+      "module": "lean/Hundred/Statements/Goldbach.lean",
+      "namespace": "Hundred.Statements.Goldbach",
+      "statement": "Statement",
+      "encodes": "Every even n ≥ 4 is p + (n − p) with both prime; primes by trial division.",
+      "not_encoded": [
+        "Weak (ternary) Goldbach",
+        "Bounds on the least Goldbach prime"
+      ],
+      "kernel_checked": [
+        {
+          "decl": "holds_upTo_100",
+          "claim": "The statement holds for every even 4 ≤ n ≤ 100 (least-prime witness table re-checked by the kernel; the lab covers far larger ranges in Python).",
+          "mirrors_probe": "goldbach"
+        }
+      ],
+      "fidelity": "author_checked"
+    },
+    {
+      "problem_id": "M019",
+      "module": "lean/Hundred/Statements/ErdosStraus.lean",
+      "namespace": "Hundred.Statements.ErdosStraus",
+      "statement": "Statement",
+      "encodes": "4/n = 1/x + 1/y + 1/z cleared to 4xyz = n(xy + yz + zx) with x, y, z > 0.",
+      "not_encoded": [
+        "Distinct denominators",
+        "Parametric identities by residue class"
+      ],
+      "kernel_checked": [
+        {
+          "decl": "holds_upTo_100",
+          "claim": "Explicit positive solutions for every 2 ≤ n ≤ 100, re-checked by the kernel.",
+          "mirrors_probe": "erdos_straus"
+        }
+      ],
+      "fidelity": "author_checked"
+    },
+    {
+      "problem_id": "M074",
+      "module": "lean/Hundred/Statements/CaccettaHaggkvist.lean",
+      "namespace": "Hundred.Statements.CaccettaHaggkvist",
+      "statement": "Statement",
+      "encodes": "Loopless digraph on n vertices, minimum out-degree ≥ r ≥ 1, has an injective directed cycle of length ≤ ⌈n/r⌉; StatementFor r fixes the out-degree slice.",
+      "not_encoded": [
+        "The triangle case r = n/3 separately",
+        "Any restricted family (vertex-transitive, etc.)"
+      ],
+      "kernel_checked": [],
+      "fidelity": "author_checked"
+    },
+    {
+      "problem_id": "M075",
+      "module": "lean/Hundred/Statements/Frankl.lean",
+      "namespace": "Hundred.Statements.Frankl",
+      "statement": "Statement",
+      "encodes": "Families as bitmasks over ground set {0,…,k−1}; union-closed with a nonempty member implies some x with 2·deg(x) ≥ |F|.",
+      "not_encoded": [
+        "The best known constant (≈0.38)",
+        "Height or size restricted variants"
+      ],
+      "kernel_checked": [
+        {
+          "decl": "ground_3",
+          "claim": "Exhaustive over all 2, 16 and 256 families on ground sets of size 1, 2, 3 (ground_1, ground_2, ground_3).",
+          "mirrors_probe": null
+        }
+      ],
+      "fidelity": "author_checked"
+    },
+    {
+      "problem_id": "M071",
+      "module": "lean/Hundred/Statements/Hadwiger.lean",
+      "namespace": "Hundred.Statements.Hadwiger",
+      "statement": "Statement",
+      "encodes": "Every simple graph has a K_t minor (branch-set model, connectivity by no-split cuts) or a proper (t−1)-colouring.",
+      "not_encoded": [
+        "Fractional, list and odd-minor variants"
+      ],
+      "kernel_checked": [],
+      "fidelity": "author_checked"
+    },
+    {
+      "problem_id": "M078",
+      "module": "lean/Hundred/Statements/Reconstruction.lean",
+      "namespace": "Hundred.Statements.Reconstruction",
+      "statement": "Statement",
+      "encodes": "Simple graphs on n ≥ 3 vertices with a deck-matching bijection σ (G − v ≅ H − σv) are isomorphic.",
+      "not_encoded": [
+        "Edge reconstruction",
+        "Digraph or hypergraph reconstruction"
+      ],
+      "kernel_checked": [],
+      "fidelity": "author_checked"
+    },
+    {
+      "problem_id": "M094",
+      "module": "lean/Hundred/Statements/Hadamard.lean",
+      "namespace": "Hundred.Statements.Hadamard",
+      "statement": "Statement",
+      "encodes": "For every k ≥ 1 an Int matrix of order 4k with ±1 entries and pairwise orthogonal rows.",
+      "not_encoded": [
+        "Specific constructions (Williamson, Goethals–Seidel)",
+        "Circulant or skew variants"
+      ],
+      "kernel_checked": [
+        {
+          "decl": "order_12",
+          "claim": "Explicit Hadamard matrices of orders 4, 8 (Sylvester) and 12 (Paley), re-checked by the kernel (order_4, order_8, order_12).",
+          "mirrors_probe": "hadamard"
+        }
+      ],
+      "fidelity": "author_checked"
+    },
+    {
+      "problem_id": "M095",
+      "module": "lean/Hundred/Statements/Ramsey.lean",
+      "namespace": "Hundred.Statements.Ramsey",
+      "statement": "Conjecture",
+      "encodes": "Arrows n s t: every red/blue colouring of K_n has a red K_s or a blue K_t (cliques as vertex bitmasks). Conjecture: Arrows 43 5 5.",
+      "not_encoded": [
+        "The known bounds ¬Arrows 42 5 5 and Arrows 46 5 5 are cited, not re-proved"
+      ],
+      "kernel_checked": [
+        {
+          "decl": "not_arrows_5_3_3",
+          "claim": "R(3,3) > 5: the pentagon colouring has no monochromatic triangle.",
+          "mirrors_probe": "ramsey_witnesses"
+        }
+      ],
+      "fidelity": "author_checked"
+    },
+    {
+      "problem_id": "M096",
+      "module": "lean/Hundred/Statements/ProjectivePlane.lean",
+      "namespace": "Hundred.Statements.ProjectivePlane",
+      "statement": "Statement",
+      "encodes": "No incidence relation on 157 points and 157 lines with 13 points per line, unique joining lines and unique meeting points.",
+      "not_encoded": [
+        "The general prime-power conjecture"
+      ],
+      "kernel_checked": [
+        {
+          "decl": "exists_order_3",
+          "claim": "The axioms are satisfiable: planes of orders 2 (Fano) and 3 exist (exists_order_2, exists_order_3).",
+          "mirrors_probe": "projective_planes"
+        }
+      ],
+      "fidelity": "author_checked"
+    }
+  ]
+}

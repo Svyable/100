@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>100 — research updates</title>
+<link href="https://svyable.github.io/100/"/>
+<link rel="self" href="https://svyable.github.io/100/feed.xml"/>
+<id>https://svyable.github.io/100/</id>
+<updated>2026-11-01T00:00:00Z</updated>
+<author><name>Svyable</name></author>
+<entry>
+<title>Milestone: All 29 Riemann zeros below height 100 certified simple and on the critical line</title>
+<link href="https://svyable.github.io/100/ledger/#B-RH-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-RH-001</id>
+<updated>2026-11-01T00:00:00Z</updated>
+<summary>The argument principle certifies N(100) = 29 exactly from interval boxes along 2 -&gt; 2+100i -&gt; 1/2+100i, and Hardy&#x27;s Z(t) has 29 certified sign changes on (0, 100]. All arithmetic is rigorous interval arithmetic with explicit series remainders, repeated by the checker at another precision and truncation. The deep run certifies all 649 zeros below height 1000 the same way. Scope: Known small range; not new</summary>
+</entry>
+<entry>
+<title>Milestone: GRH to height 20 for the real primitive characters of conductor 3, 4 and 5</title>
+<link href="https://svyable.github.io/100/ledger/#B-GRH-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-GRH-001</id>
+<updated>2026-11-01T00:00:00Z</updated>
+<summary>For D = -4, -3, 5, L(s, chi_D) has no real zero in (0, 1) (Lipschitz-certified point values), the argument principle certifies 5, 4 and 6 zeros with 0 &lt; Im s &lt; 20, and Z(t, chi_D) has exactly as many certified sign changes. The checker rebuilds each character and certifies the root number +1 from the Gauss sum. The deep run covers all 17 real primitive characters of conductor at most 24 to height 30 (248 zeros in the upper half-plane). Scope: Known small range; not new</summary>
+</entry>
+<entry>
+<title>Milestone: Alperin&#x27;s weight conjecture l(G) = w(G) on 15 group-prime cases from S3 to PSL(2,7)</title>
+<link href="https://svyable.github.io/100/ledger/#B-ALPERIN-EXT-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-ALPERIN-EXT-001</id>
+<updated>2026-11-01T00:00:00Z</updated>
+<summary>For S3, A4, S4, A5, S5 and PSL(2,7) at every prime dividing the order, the number of p-regular classes equals the number of conjugacy classes of p-weights, counted over all p-radical subgroups with defect-zero degrees of N(Q)/Q from Dixon&#x27;s modular method. The checker re-enumerates radical subgroups by a different criterion and recomputes degrees with a different prime. The deep run covers 46 cases, adding GL(2,3), A6, S6, PSL(2,8), PSL(2,11), PSL(2,13), A7, S7 and the Mathieu group M11. Scope: Known small range; not new</summary>
+</entry>
+<entry>
+<title>Research program updated (21 campaigns)</title>
+<link href="https://svyable.github.io/100/campaigns/"/>
+<id>tag:svyable.github.io,2026:100/program-2026-10-31</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>21 active campaigns; 21 exact probes on 14 engines.</summary>
+</entry>
+<entry>
+<title>Milestone: The first two non-trivial zeta zeros are simple and on the critical line</title>
+<link href="https://svyable.github.io/100/ledger/#B-ZETA-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-ZETA-001</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Argument-principle count N(T) matched to Hardy Z sign changes on (14, 15) and (21, 22). The checker repeats the count with a different Euler-Maclaurin and Stirling truncation. The deep run reaches N(36) = 5. Scope: N(23) = 2, a classical height; not a proof of the Riemann hypothesis</summary>
+</entry>
+<entry>
+<title>Milestone: Strassen rank-7 &lt;2,2,2&gt; and rank-49 &lt;4,4,4&gt; decompositions checked exactly</title>
+<link href="https://svyable.github.io/100/ledger/#B-STRASSEN-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-STRASSEN-001</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Sparse exact expansion over Z matches the matrix multiplication tensor coefficient by coefficient; the deep run adds the rank-343 &lt;8,8,8&gt; Kronecker cube. Scope: Classical upper bound omega &lt;= log2 7; not new</summary>
+</entry>
+<entry>
+<title>Milestone: Sidorenko inequality reproduced for proven patterns C4, C6, K_{3,3} and P4 on all hosts with at most 5 vertices</title>
+<link href="https://svyable.github.io/100/ledger/#B-SIDORENKO-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-SIDORENKO-001</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Exact homomorphism counts, recounted from the opposite bipartition side, compared by integer arithmetic on all 52 host graphs; P4 attains equality on regular hosts. The run also records K_{5,5} minus C_10 on the same hosts (and on all 1,252 hosts up to 7 vertices at deep level, minimum ratio about 1.0248) purely as falsifier data. Scope: Known families on a finite host range; the open-pattern data in the same run is exploratory, unreviewed and not a result</summary>
+</entry>
+<entry>
+<title>Milestone: Exact SIC-POVMs in dimensions 2 and 3</title>
+<link href="https://svyable.github.io/100/ledger/#B-SIC-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-SIC-001</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>d = 2 tetrahedron overlaps 1/3 exactly; in d = 3 all 108 Weyl-Heisenberg fiducials with entries in {0, +-1, +-w, +-w^2} found in exact Z[w] arithmetic, each Gram matrix recomputed independently. Scope: Classical small dimensions; says nothing about general d</summary>
+</entry>
+<entry>
+<title>Milestone: Rota&#x27;s basis conjecture verified exhaustively for GF(2)^2, GF(3)^2, GF(5)^2, GF(7)^2 and GF(2)^3</title>
+<link href="https://svyable.github.io/100/ledger/#B-ROTA-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-ROTA-001</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Every choice of bases (first fixed by GL-transitivity) has a certified grid; basis counts match |GL(n,p)|/n!. The deep run adds all 1,753,128 instances over GF(3)^3. Scope: Known small cases (rank &lt;= 3); not new</summary>
+</entry>
+<entry>
+<title>Milestone: Graph reconstruction verified for every graph on 3-6 vertices</title>
+<link href="https://svyable.github.io/100/ledger/#B-RECON-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-RECON-001</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Burnside-certified census of 4, 11, 34 and 156 graphs; all decks pairwise distinct under an independent canonical form. Deep run adds all 1,044 graphs on 7 vertices. Scope: Known computational range; not new</summary>
+</entry>
+<entry>
+<title>Milestone: Ramsey lower bounds R(3,4) &gt; 8, R(3,5) &gt; 13, R(4,4) &gt; 17 certified</title>
+<link href="https://svyable.github.io/100/ledger/#B-RAMSEY-002"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-RAMSEY-002</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Circulant and Paley colourings checked by exhaustive subset enumeration; the deep run adds Paley(37), certifying R(5,5) &gt; 37 (the best known lower bound is 43). Scope: Classical lower bounds; not a new bound on R(5,5)</summary>
+</entry>
+<entry>
+<title>Milestone: Ramsey R(3,3)=6 reproduced</title>
+<link href="https://svyable.github.io/100/ledger/#B-R33-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-R33-001</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>C5 witnesses R(3,3)&gt;5; all 32,768 labeled K6 two-colorings fail to avoid both triangles. Scope: Finite toy theorem; not a new bound on R(5,5)</summary>
+</entry>
+<entry>
+<title>Milestone: 1/3-2/3 conjecture verified for every poset with at most 6 elements</title>
+<link href="https://svyable.github.io/100/ledger/#B-POSET-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-POSET-001</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>All 1, 2, 5, 16, 63, 318 posets (orbit-counting certified against OEIS A001035); each non-chain poset has an exactly counted pair with balance &gt;= 1/3, minimum exactly 1/3. Deep run: all 2,045 posets on 7 elements. Scope: Known computational range; not new</summary>
+</entry>
+<entry>
+<title>Milestone: Projective planes of every prime-power order &lt;= 9 and the Bruck-Ryser table to 50</title>
+<link href="https://svyable.github.io/100/ledger/#B-PLANES-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-PLANES-001</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>PG(2,q) incidence axioms verified combinatorially; Bruck-Ryser exclusions recomputed by brute-force sums of two squares; deep run to q = 27 and orders &lt;= 200. Scope: Known constructions and exclusions; order 12 remains open</summary>
+</entry>
+<entry>
+<title>Milestone: Posets of balance exactly 1/3 on at most 6 elements are width 2</title>
+<link href="https://svyable.github.io/100/ledger/#B-MINE-079"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-MINE-079</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Eleven posets attain best balance 1/3. Their width-height types are 2x2, 2x3, 2x4 and 2x5. Balances are recounted by removing minimal elements. Scope: Inside the published verification through 11 elements, and inside Linial&#x27;s width-2 theorem; not a new case</summary>
+</entry>
+<entry>
+<title>Milestone: Deck-certified degree and triangle separation through 6 vertices</title>
+<link href="https://svyable.github.io/100/ledger/#B-MINE-078"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-MINE-078</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Degree sequence separates through 4 vertices. Degree sequence plus triangle count separates through 5 and leaves 20 excess graphs at 6. Both invariants are recomputed from cards. Scope: Census already known to be reconstructible far beyond 6 vertices; this only ranks coarse invariants</summary>
+</entry>
+<entry>
+<title>Milestone: Union-closed families on at most 4 elements, up to relabelling</title>
+<link href="https://svyable.github.io/100/ledger/#B-MINE-075"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-MINE-075</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>4,958 nontrivial union-closed families on 4 elements form 366 orbits. Minimum abundance 1/2. A second canonisation, by sorted subset tuples, reproduces the orbit counts. Scope: Exhaustive range already checked without symmetry; the orbit count is not a general proof</summary>
+</entry>
+<entry>
+<title>Milestone: Erdos-Straus residues for primes 1 mod 24 through 8,000</title>
+<link href="https://svyable.github.io/100/ledger/#B-MINE-019"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-MINE-019</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>All 117 such primes have a checked solution whose residue 4x-n lies in {3, 7, 11, 15, 19, 23}. The equation is rechecked without calling the search. Scope: Explicit solutions in a finite range; not an identity and not a proof</summary>
+</entry>
+<entry>
+<title>Milestone: Record least Goldbach primes through 20,000</title>
+<link href="https://svyable.github.io/100/ledger/#B-MINE-006"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-MINE-006</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Twelve running-maximum least primes, the largest 173 at n = 7426. An independent odd-only sieve recomputes the same record list. Scope: Finite table inside the published 4*10^18 verification; not a new bound</summary>
+</entry>
+<entry>
+<title>Milestone: Maximum arcs (3-dimensional MDS codes) in PG(2,q) for q = 2, 3, 4, 5, 7</title>
+<link href="https://svyable.github.io/100/ledger/#B-MDS-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-MDS-001</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Maximum arc sizes 4, 4, 6, 6, 8 with explicit witnesses and exhaustive exclusion of larger arcs; arcs through a frame recount q-2 conics for odd q. Deep run adds q = 8, 9. Scope: Known (Segre/Bose); not new</summary>
+</entry>
+<entry>
+<title>Milestone: The first two non-trivial zeros of L(s, chi_4) are simple and on the critical line</title>
+<link href="https://svyable.github.io/100/ledger/#B-LCHI4-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-LCHI4-001</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Argument count for L(s, chi_4) matched to sign changes of the real form on (6, 7) and (10, 11), replayed at a second truncation. The deep run reaches N(17) = 4. Scope: One Dirichlet character, N(11) = 2; not the generalized Riemann hypothesis</summary>
+</entry>
+<entry>
+<title>Milestone: Plane Jacobian conjecture verified on all 59,049 integer maps of degree &lt;= 2 with coefficients in {-1,0,1}</title>
+<link href="https://svyable.github.io/100/ledger/#B-JACOBIAN-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-JACOBIAN-001</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>240 maps have constant nonzero Jacobian (matching brute force); each has an explicit inverse of degree &lt;= 2 checked by composition in both orders, and completeness is re-derived from a separate evaluation-based linear system. The deep run covers all 387,420,489 maps of degree &lt;= 3 (816 with constant Jacobian), every one inverted. Scope: Known (Wang 1980; Moh 1983); not new</summary>
+</entry>
+<entry>
+<title>Milestone: Held-Karp integrality gap certified on all 141 graphic metrics with 3-6 vertices</title>
+<link href="https://svyable.github.io/100/ledger/#B-HK-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-HK-001</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Every instance carries an exact LP-duality certificate checked against all subtour constraints and a brute-force optimal tour; the maximum ratio is 1 for n &lt;= 6. The deep run covers 994 instances up to n = 7, with maximum gap 16/15. Scope: Known small range; not new</summary>
+</entry>
+<entry>
+<title>Milestone: Hadwiger&#x27;s conjecture certified on all 208 graphs with at most 6 vertices</title>
+<link href="https://svyable.github.io/100/ledger/#B-HADWIGER-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-HADWIGER-001</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Each graph carries a proper t-colouring and a K_t minor model (t = chromatic number); the census is complete by Burnside counting. Deep run: all 1,252 graphs on &lt;= 7 vertices. Scope: Known case (chromatic number &lt;= 6 theorem); not new</summary>
+</entry>
+<entry>
+<title>Milestone: Exact Hadamard matrices for 31 of the 32 orders 4k &lt;= 128, including order 92</title>
+<link href="https://svyable.github.io/100/ledger/#B-HADAMARD-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-HADAMARD-001</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Sylvester, Paley I/II, a Williamson quadruple of symmetric circulants of order 23 (order 92, found by meet-in-the-middle on periodic autocorrelations) and Kronecker products; each matrix checked as H H^T = nI. The deep run certifies 87 of the 100 orders up to 400. Scope: Known orders; the remaining engine gap 116 is not an open case</summary>
+</entry>
+<entry>
+<title>Milestone: Goldbach partitions certified for every even n &lt;= 200,000</title>
+<link href="https://svyable.github.io/100/ledger/#B-GOLDBACH-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-GOLDBACH-001</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Least Goldbach prime recorded for all 99,999 even n in [4, 200000], each re-checked by deterministic Miller-Rabin; the deep run extends to 4*10^6 (record least prime 751 at n = 3,807,404). Scope: Finite range only; far inside the published 4*10^18 verification</summary>
+</entry>
+<entry>
+<title>Milestone: Frankl threshold verified for ground sets of size &lt;=4</title>
+<link href="https://svyable.github.io/100/ledger/#B-FRANKL-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-FRANKL-001</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Enumerates all 2^(2^4)=65,536 families, filters union closure, checks exact frequencies. Scope: Finite exhaustive test only; not a proof for arbitrary finite ground sets</summary>
+</entry>
+<entry>
+<title>Milestone: Erdos-Straus triples certified for every 2 &lt;= n &lt;= 20,000</title>
+<link href="https://svyable.github.io/100/ledger/#B-ES-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-ES-001</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Explicit (x, y, z) with 4xyz = n(xy + yz + zx) for all 19,999 integers, each re-checked by exact integer arithmetic; the deep run covers n &lt;= 10^6. Scope: Finite range only; known computational verification is far larger</summary>
+</entry>
+<entry>
+<title>Milestone: Caccetta–Häggkvist verified on all digraphs of size at most five</title>
+<link href="https://svyable.github.io/100/ledger/#B-CH-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-CH-001</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Exhaustive n=5 census: 2^20=1,048,576 labeled graphs partition into 9,608 isomorphism orbits (matching Burnside and OEIS A000273); two independent cycle detectors agree. Known result only. Scope: Every labeled loopless directed graph on 2–5 vertices (known finite cases only), checked modulo relabeling</summary>
+</entry>
+<entry>
+<title>Milestone: Alperin weight counts match p-regular class counts on named groups through A5</title>
+<link href="https://svyable.github.io/100/ledger/#B-ALPERIN-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-ALPERIN-001</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>For each listed group and each prime dividing its order, the number of radical-subgroup defect-zero weights equals the number of p-regular conjugacy classes. Smoke covers nine groups through D10; deep adds C5, C6, D12, S4 and A5. The checker rebuilds every count independently. Scope: Finite named catalog only; every case sits inside the published order-100 verification</summary>
+</entry>
+<entry>
+<title>Claim triage: The Falconer distance conjecture in all dimensions (M100)</title>
+<link href="https://svyable.github.io/100/claims/#M100"/>
+<id>tag:svyable.github.io,2026:100/claim-M100</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Matches the registry statement. Formal statement checked only, not the proof.</summary>
+</entry>
+<entry>
+<title>Claim triage: A counterexample to Vaught&#x27;s Conjecture for L_{omega_1,omega} (M098)</title>
+<link href="https://svyable.github.io/100/claims/#M098"/>
+<id>tag:svyable.github.io,2026:100/claim-M098</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>A different statement. Formalised, but a different statement.</summary>
+</entry>
+<entry>
+<title>Claim triage: The Unique Games Theorem (M085)</title>
+<link href="https://svyable.github.io/100/claims/#M085"/>
+<id>tag:svyable.github.io,2026:100/claim-M085</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Matches the registry statement. No independent validation established.</summary>
+</entry>
+<entry>
+<title>Claim triage: A counterexample to Sidorenko&#x27;s conjecture (M073)</title>
+<link href="https://svyable.github.io/100/claims/#M073"/>
+<id>tag:svyable.github.io,2026:100/claim-M073</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Matches the registry statement. Formal statement checked only, not the proof.</summary>
+</entry>
+<entry>
+<title>Claim triage: A counterexample to Hadwiger&#x27;s conjecture (M071)</title>
+<link href="https://svyable.github.io/100/claims/#M071"/>
+<id>tag:svyable.github.io,2026:100/claim-M071</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Matches the registry statement. Formal statement checked only, not the proof.</summary>
+</entry>
+<entry>
+<title>Claim triage: Morrey&#x27;s conjecture: rank-one convexity implies quasi-convexity for two-dimensional, two-component maps (M060)</title>
+<link href="https://svyable.github.io/100/claims/#M060"/>
+<id>tag:svyable.github.io,2026:100/claim-M060</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Matches, with a qualification. No independent validation established.</summary>
+</entry>
+<entry>
+<title>Claim triage: Local smoothing for the Euclidean wave equation (M056)</title>
+<link href="https://svyable.github.io/100/claims/#M056"/>
+<id>tag:svyable.github.io,2026:100/claim-M056</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Narrower than the registry statement. No independent validation established.</summary>
+</entry>
+<entry>
+<title>Claim triage: Local smoothing for the Euclidean wave equation (M055)</title>
+<link href="https://svyable.github.io/100/claims/#M055"/>
+<id>tag:svyable.github.io,2026:100/claim-M055</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Matches only if a claimed consequence holds. No independent validation established.</summary>
+</entry>
+<entry>
+<title>Claim triage: Nonlinear stability of subextremal Kerr black holes (M054)</title>
+<link href="https://svyable.github.io/100/claims/#M054"/>
+<id>tag:svyable.github.io,2026:100/claim-M054</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Matches, with a qualification. A separate claim, not a verification.</summary>
+</entry>
+<entry>
+<title>Claim triage: A torsion-free group algebra that is not directly finite (M049)</title>
+<link href="https://svyable.github.io/100/claims/#M049"/>
+<id>tag:svyable.github.io,2026:100/claim-M049</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Matches the registry statement. No independent validation established.</summary>
+</entry>
+<entry>
+<title>Claim triage: A torsion-free group algebra that is not directly finite (M044)</title>
+<link href="https://svyable.github.io/100/claims/#M044"/>
+<id>tag:svyable.github.io,2026:100/claim-M044</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Matches the registry statement. No independent validation established.</summary>
+</entry>
+<entry>
+<title>Claim triage: The (3,4,∞) modular-family construction of a complex structure on S6 (M038)</title>
+<link href="https://svyable.github.io/100/claims/#M038"/>
+<id>tag:svyable.github.io,2026:100/claim-M038</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Matches the registry statement. Independent reconstruction preprint (unrefereed).</summary>
+</entry>
+<entry>
+<title>Claim triage: The Hilbert–Smith conjecture in every finite dimension (M037)</title>
+<link href="https://svyable.github.io/100/claims/#M037"/>
+<id>tag:svyable.github.io,2026:100/claim-M037</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Matches, with a qualification. No independent validation established.</summary>
+</entry>
+<entry>
+<title>Claim triage: Log abundance in characteristic zero (M030)</title>
+<link href="https://svyable.github.io/100/claims/#M030"/>
+<id>tag:svyable.github.io,2026:100/claim-M030</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Matches, with a qualification. No independent validation established.</summary>
+</entry>
+<entry>
+<title>Claim triage: Hilbert&#x27;s tenth problem over the rational numbers (M014)</title>
+<link href="https://svyable.github.io/100/claims/#M014"/>
+<id>tag:svyable.github.io,2026:100/claim-M014</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Matches the registry statement. No independent validation established.</summary>
+</entry>
+</feed>

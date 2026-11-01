@@ -1,0 +1,92 @@
+{
+  "id": "M044",
+  "name": "Kaplansky direct-finiteness conjecture",
+  "field": "Algebra",
+  "question": "Does ab=1 imply ba=1 in every group algebra?",
+  "first_attack": "Audit precise statement and prove a restricted case",
+  "impact": 4,
+  "attackability": 3,
+  "verifiability": 4,
+  "spillover": 4,
+  "modality": "structural",
+  "evidence_state": "claim_needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 34,
+  "score": 74,
+  "execution_rank": 37,
+  "execution_score": 74,
+  "readiness": 0,
+  "dispatch_rank": 3,
+  "dispatch_score": 114,
+  "action": "replay_claim_witness",
+  "action_label": "Replay a claimed finite witness",
+  "action_bonus": 40,
+  "method_id": "group_rings",
+  "method_title": "One presentation, one product",
+  "dispatch_next": "Reproduce a finite presentation and a,b products using a genuinely independent group-ring checker; check the claimed equalities and non-equality.",
+  "dispatch_why": "Listed for witness replay. The next step is the claim review's finite check.",
+  "campaign_stage": null,
+  "milestone_count": 0,
+  "url": "https://svyable.github.io/100/problems/M044/",
+  "field_url": "https://svyable.github.io/100/fields/algebra/",
+  "readiness_breakdown": [],
+  "has_exact_verifier": false,
+  "campaign": null,
+  "probes": [],
+  "milestones": [],
+  "engine_roadmap": null,
+  "claim_review_2026": {
+    "id": "M044",
+    "primary_title": "A torsion-free group algebra that is not directly finite",
+    "primary_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/direct-finiteness.pdf",
+    "preprint_date": "2026-10-04",
+    "claimed_theorem": "For a finitely presented torsion-free group G, there exist a,b in F_2[G] with ab=1 but ba != 1.",
+    "scope_relation": "matches",
+    "scope_note": "One valid characteristic-two example would refute the universal direct-finiteness claim; no result for every field is needed for a counterexample.",
+    "independent_validation": "not_established",
+    "independent_evidence_urls": [],
+    "known_caveats": "The construction is large and has not been independently reproduced in this audit; underlying group presentation and algebra calculations are central proof obligations.",
+    "next_review": "Reproduce a finite presentation and a,b products using a genuinely independent group-ring checker; check the claimed equalities and non-equality.",
+    "formalization_scope_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/197.md"
+  },
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
+    },
+    {
+      "title": "Scale — proof-exchange wave",
+      "source": "SCALE.md",
+      "url": "https://svyable.github.io/100/library/scale/"
+    },
+    {
+      "title": "2026 claimed-resolution triage — issue #3",
+      "source": "research/CLAIM_REVIEWS_2026.md",
+      "url": "https://svyable.github.io/100/library/claim-reviews-2026/"
+    },
+    {
+      "title": "Foundational sources and 2026 claim watch",
+      "source": "docs/SOURCES.md",
+      "url": "https://svyable.github.io/100/library/sources/"
+    }
+  ]
+}

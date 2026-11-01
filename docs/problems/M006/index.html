@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strong Goldbach conjecture (M006) · 100</title>
+<meta name="description" content="M006 · Number theory · Is every even integer greater than 2 a sum of two primes?">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/problems/M006/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="Strong Goldbach conjecture (M006) · 100">
+<meta property="og:description" content="M006 · Number theory · Is every even integer greater than 2 a sum of two primes?">
+<meta property="og:url" content="https://svyable.github.io/100/problems/M006/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Strong Goldbach conjecture", "description": "Is every even integer greater than 2 a sum of two primes?", "url": "https://svyable.github.io/100/problems/M006/", "dateModified": "2026-11-01", "about": {"@type": "Thing", "name": "Strong Goldbach conjecture", "description": "Is every even integer greater than 2 a sum of two primes?"}, "isPartOf": {"@type": "WebSite", "name": "100", "url": "https://svyable.github.io/100/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Number theory", "item": "https://svyable.github.io/100/fields/number-theory/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../" aria-current="page">The 100</a><a href="../../work/">Work</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../fields/number-theory/">Number theory</a><span aria-hidden="true">/</span><span aria-current="page">M006</span></nav>
+<main id="main">
+
+<article class="problem-page">
+<header class="problem-hero" id="question">
+  <p class="eyebrow"><span class="eyebrow-line"></span> M006 · DISPATCH #24 · EXECUTION #35 · EDITORIAL #55</p>
+  <h1>Strong Goldbach conjecture</h1>
+  <p class="problem-field"><a href="../../fields/number-theory/">Number theory</a></p>
+  <div class="chips"><span class="status-pill status-needs_review" title="Plausibly open; precise statement and status still need a literature audit.">Needs review</span><span class="chip chip-modality">Finitely refutable</span><span class="chip chip-good">Exact verifier in the lab</span><span class="chip chip-good">Lean statement</span><span class="chip chip-campaign">Campaign: Benchmark reproduced</span></div>
+  <blockquote class="the-question"><span class="detail-label">THE OPEN QUESTION</span>Is every even integer greater than 2 a sum of two primes?</blockquote>
+</header>
+<div class="problem-grid">
+<aside class="problem-side" aria-label="On this page">
+  <nav class="toc"><span class="detail-label">ON THIS PAGE</span><ol><li><a href="#question">The question</a></li><li><a href="#formal">Formal statement</a></li><li><a href="#priority">Priority</a></li><li><a href="#campaign">Campaign</a></li><li><a href="#probe-goldbach">Exact probe</a></li><li><a href="#milestones">Milestones</a></li><li><a href="#work">Open work</a></li><li><a href="#provenance">Provenance</a></li></ol></nav>
+  <div class="side-actions">
+    <a class="button button-outline" href="https://github.com/Svyable/100/issues/new?template=evidence_update.yml&amp;title=%5BEvidence%5D%20M006%20%2014%20" rel="noopener noreferrer">Submit evidence ↗</a>
+    <a class="text-link" href="../../problems/M006/" data-permalink>Permalink: /problems/M006/</a>
+    <a class="text-link" href="../../api/problems/M006.json">This record as JSON</a>
+  </div>
+</aside>
+<div class="problem-main">
+
+<section class="dossier-block formal-block" id="formal"><h2>Formal statement <span class="chip chip-good">Lean 4 · kernel-checked in CI</span></h2>
+<p class="block-lead">Every even n ≥ 4 is p + (n − p) with both prime; primes by trial division.</p>
+<pre class="lean"><code><span class="tk-c">/-- The registry statement. -/</span>
+<span class="tk-k">def</span> Statement : <span class="tk-k">Prop</span> <span class="tk-o">:=</span>
+  <span class="tk-o">∀</span> n : <span class="tk-k">Nat</span>, 4 <span class="tk-o">≤</span> n <span class="tk-o">→</span> n % 2 = 0 <span class="tk-o">→</span> <span class="tk-o">∃</span> p, p <span class="tk-o">≤</span> n <span class="tk-o">∧</span> IsPrime p <span class="tk-o">∧</span> IsPrime (n - p)</code></pre>
+<dl class="kv compact">
+  <dt>Declaration</dt><dd><code>Hundred.Statements.Goldbach.Statement</code> in <a href="https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/Goldbach.lean" rel="noopener noreferrer">lean/Hundred/Statements/Goldbach.lean <span aria-hidden="true">↗</span></a></dd>
+  <dt>Not encoded</dt><dd>Weak (ternary) Goldbach; Bounds on the least Goldbach prime</dd>
+  <dt>Fidelity</dt><dd><span class="chip">author checked</span> Encoding written and checked against the registry statement by its author; fidelity examples compile.</dd>
+  <dt>Kernel-checked</dt><dd><ul class="plain"><li><code>Hundred.Statements.Goldbach.holds_upTo_100</code> — The statement holds for every even 4 ≤ n ≤ 100 (least-prime witness table re-checked by the kernel; the lab covers far larger ranges in Python). Mirrors lab probe <a href="../../lab/#probe-goldbach"><code>goldbach</code></a>.</li></ul></dd>
+</dl>
+<details class="table-view"><summary>Full Lean module (56 lines)</summary><pre class="lean"><code><span class="tk-k">import</span> Hundred.Statements.Basic
+
+<span class="tk-c">/-!
+# M006 — Strong (binary) Goldbach conjecture
+
+**Registry statement.** Every even integer `n ≥ 4` is a sum of two primes.
+
+**What is encoded.** `Statement` quantifies over all natural numbers; primes are
+`Hundred.IsPrime` (trial division, checked against known values in `Basic`).
+Writing `n = p + (n - p)` with `p ≤ n` is equivalent to `n = p + q`, because
+`n - p` is truncated subtraction only when `p &gt; n`, which is excluded.
+
+**Not encoded.** Weak (ternary) Goldbach, Chen-type statements, any bound on the
+least partition. **Frontier:** verified for every even `n ≤ 4·10^18`
+(Oliveira e Silva, Herzog &amp; Pardi, 2014). The kernel-checked range below is a
+fidelity test of the encoding, not progress; it is kept small because trial division
+in the kernel is quadratic, and the lab covers far larger ranges in Python.
+-/</span>
+
+<span class="tk-k">namespace</span> Hundred.Statements.Goldbach
+<span class="tk-k">open</span> Hundred.Statements
+
+<span class="tk-c">/-- The registry statement. -/</span>
+<span class="tk-k">def</span> Statement : <span class="tk-k">Prop</span> <span class="tk-o">:=</span>
+  <span class="tk-o">∀</span> n : <span class="tk-k">Nat</span>, 4 <span class="tk-o">≤</span> n <span class="tk-o">→</span> n % 2 = 0 <span class="tk-o">→</span> <span class="tk-o">∃</span> p, p <span class="tk-o">≤</span> n <span class="tk-o">∧</span> IsPrime p <span class="tk-o">∧</span> IsPrime (n - p)
+
+<span class="tk-c">/-- Least Goldbach prime for every even `n ≤ 100` (0 elsewhere), produced by the
+lab probe `goldbach`; the kernel re-checks every entry below. -/</span>
+<span class="tk-k">def</span> leastPrime : List <span class="tk-k">Nat</span> <span class="tk-o">:=</span> [
+    0, 0, 0, 0, 2, 0, 3, 0, 3, 0, 3, 0, 5, 0, 3, 0, 3, 0, 5, 0,
+    3, 0, 3, 0, 5, 0, 3, 0, 5, 0, 7, 0, 3, 0, 3, 0, 5, 0, 7, 0,
+    3, 0, 5, 0, 3, 0, 3, 0, 5, 0, 3, 0, 5, 0, 7, 0, 3, 0, 5, 0,
+    7, 0, 3, 0, 3, 0, 5, 0, 7, 0, 3, 0, 5, 0, 3, 0, 3, 0, 5, 0,
+    7, 0, 3, 0, 5, 0, 3, 0, 5, 0, 7, 0, 3, 0, 5, 0, 7, 0, 19, 0,
+    3]
+
+<span class="tk-c">/-- The witness for `n`. -/</span>
+<span class="tk-k">def</span> witness (n : <span class="tk-k">Nat</span>) : <span class="tk-k">Nat</span> <span class="tk-o">:=</span> leastPrime.getD n 0
+
+<span class="tk-c">/-- Bounded, kernel-decidable certificate: every listed witness is valid. -/</span>
+<span class="tk-k">abbrev</span> Certified (N : <span class="tk-k">Nat</span>) : <span class="tk-k">Prop</span> <span class="tk-o">:=</span>
+  <span class="tk-o">∀</span> n, n &lt; N + 1 <span class="tk-o">→</span> 4 <span class="tk-o">≤</span> n <span class="tk-o">→</span> n % 2 = 0 <span class="tk-o">→</span>
+    witness n <span class="tk-o">≤</span> n <span class="tk-o">∧</span> IsPrime (witness n) <span class="tk-o">∧</span> IsPrime (n - witness n)
+
+<span class="tk-k">theorem</span> certified_100 : Certified 100 <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span> +kernel
+
+<span class="tk-c">/-- **Kernel-checked:** the statement holds for every even `4 ≤ n ≤ 100`. -/</span>
+<span class="tk-k">theorem</span> holds_upTo_100 :
+    <span class="tk-o">∀</span> n, n <span class="tk-o">≤</span> 100 <span class="tk-o">→</span> 4 <span class="tk-o">≤</span> n <span class="tk-o">→</span> n % 2 = 0 <span class="tk-o">→</span> <span class="tk-o">∃</span> p, p <span class="tk-o">≤</span> n <span class="tk-o">∧</span> IsPrime p <span class="tk-o">∧</span> IsPrime (n - p) <span class="tk-o">:=</span>
+  <span class="tk-k">fun</span> n hn h4 he =&gt; ⟨witness n, certified_100 n (Nat.lt_succ_of_le hn) h4 he⟩
+
+<span class="tk-c">/-! Fidelity: the encoding agrees with hand-checked cases. -/</span>
+<span class="tk-k">example</span> : IsPrime 3 <span class="tk-o">∧</span> IsPrime (10 - 3) <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span> +kernel
+<span class="tk-k">example</span> : witness 100 = 3 <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span> +kernel
+
+<span class="tk-k">end</span> Hundred.Statements.Goldbach
+</code></pre></details>
+<p class="muted">A proof or counterexample counts only if it establishes exactly this proposition (or a reviewed equivalent). Kernel-checked finite results are fidelity tests inside known mathematics. <a href="../../formal/">How formal statements work →</a></p>
+</section>
+<section class="dossier-block" id="priority"><h2>Priority, decomposed</h2>
+  <div class="score-hero">
+    <div><strong>#24</strong><span>Dispatch rank · score 85</span></div>
+    <div class="score-eq"><span>72</span><small>editorial</small><b>+</b><span>7</span><small>readiness</small><b>+</b><span>6</span><small>action</small></div>
+    <div><strong>#35</strong><span>Execution rank · index 79</span></div>
+    <div><strong>#55</strong><span>Editorial rank of 100</span></div>
+  </div>
+  <div class="next-action"><span class="detail-label">NEXT ACTION · MINE STRUCTURE FROM CERTIFICATES</span>
+    <p class="serif">The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification.</p>
+    <p class="muted">Why: The goldbach_growth mine already lists the record least primes through 20,000. A longer verified range cannot compete with the published 4*10^18 check.</p>
+    <p class="muted">Shared attack shape: <a href="../../campaigns/#shape-effective_diophantine">Explicit Diophantine certificates</a> — Certificates already exist. The next product is an invariant table or a parametric identity, not a longer range inside mathematics the campaign blocker already cites.</p></div>
+  <div class="two-col">
+    <div><h3>Editorial score 72/100</h3><div class="detail-metrics">
+      <div class="detail-metric"><span>Impact <small>×6</small></span><div class="meter" role="img" aria-label="Impact 5 of 5"><i style="width:100%"></i></div><b>5/5</b></div><div class="detail-metric"><span>Attackability <small>×6</small></span><div class="meter" role="img" aria-label="Attackability 2 of 5"><i style="width:40%"></i></div><b>2/5</b></div>
+      <div class="detail-metric"><span>Verifiability <small>×5</small></span><div class="meter" role="img" aria-label="Verifiability 3 of 5"><i style="width:60%"></i></div><b>3/5</b></div><div class="detail-metric"><span>Spillover <small>×3</small></span><div class="meter" role="img" aria-label="Spillover 5 of 5"><i style="width:100%"></i></div><b>5/5</b></div></div>
+      <p class="muted">6×5 + 6×2 + 5×3 + 3×5 = 72. An editorial judgement, never a probability of proof.</p></div>
+    <div><h3>Readiness +7/10</h3><ul class="readiness-list"><li class="on"><span>✓</span>Formal campaign brief <b>+2</b></li><li class="on"><span>✓</span>Runnable independent verifier <b>+3</b></li><li class="on"><span>✓</span>Reproduced known benchmark <b>+2</b></li><li class="off"><span>·</span>Independently reviewed restricted theorem <b>+0</b></li></ul>
+      <p class="muted">Current first attack: Audit precise statement and prove a restricted case</p></div>
+  </div>
+</section>
+
+<section class="dossier-block" id="campaign"><h2>Proof campaign <span class="chip chip-campaign">Benchmark reproduced</span></h2>
+<p class="block-lead">Verified-range certificates and least-partition statistics</p>
+<dl class="kv">
+  <dt>Hypothesis</dt><dd class="serif">Every even integer n &gt;= 4 is a sum of two primes.</dd>
+  <dt>First proof obligation</dt><dd>State a restricted, checkable lemma (for example an explicit bound on the least Goldbach prime in a named residue class or range) that is not already implied by the 4*10^18 verification or by the ternary Goldbach theorem.</dd>
+  <dt>Next executable step</dt><dd>The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification.</dd>
+  <dt>What would falsify it</dt><dd>An even n &gt;= 4 with no prime p &lt;= n/2 such that n - p is prime, confirmed by an independent primality oracle.</dd>
+  <dt>Current blocker</dt><dd>Range extension cannot compete with the published 4*10^18 verification; real progress needs a new restricted theorem.</dd>
+</dl>
+<h3>Reproduce it</h3><pre class="cmd"><code>python3 scripts/lab.py --probe goldbach</code></pre><pre class="cmd"><code>python3 scripts/mine.py --mine goldbach_growth</code></pre>
+<p><a class="text-link" href="../../library/lab-campaigns/">Read the dossier <span aria-hidden="true">→</span></a></p>
+</section>
+<section class="dossier-block" id="probe-goldbach"><h2>Exact probe: Goldbach partitions for every even integer up to N</h2>
+<div class="runs"><div class="run"><span class="run-level">smoke</span><span class="run-state ok">✓ holds, independently re-checked</span><p>Every even integer 4 &lt;= n &lt;= 200,000 is p + q with p, q prime.</p><code class="hash" title="Certificate SHA-256">sha256 063ed3ae3efccc5b…</code></div><div class="run"><span class="run-level">deep</span><span class="run-state ok">✓ holds, independently re-checked</span><p>Every even integer 4 &lt;= n &lt;= 4,000,000 is p + q with p, q prime.</p><code class="hash" title="Certificate SHA-256">sha256 8776164f5545168a…</code></div></div>
+<p class="frontier"><strong>Frontier.</strong> Known: verified for every even n &lt;= 4*10^18 (Oliveira e Silva, Herzog &amp; Pardi, Math. Comp. 83 (2014)). This range reproduces known mathematics only.</p>
+<div class="chips"><a class="chip chip-link" href="../../lab/#engine-primes">Prime sieve + deterministic Miller-Rabin</a></div>
+<pre class="cmd"><code>python3 scripts/lab.py --probe goldbach</code></pre>
+<p><a class="text-link" href="https://github.com/Svyable/100/blob/main/scripts/probes/goldbach.py" rel="noopener noreferrer">Inspect search and independent checker <span aria-hidden="true">↗</span></a></p>
+</section><section class="dossier-block" id="milestones"><h2>Verified milestones</h2><p class="muted">Reproductions of established mathematics test the machinery; they are not new theorems.</p><ul class="milestones"><li><span class="milestone-type">REPRODUCED KNOWN · 2026-10-31</span><strong>Goldbach partitions certified for every even n &lt;= 200,000</strong><p>Least Goldbach prime recorded for all 99,999 even n in [4, 200000], each re-checked by deterministic Miller-Rabin; the deep run extends to 4*10^6 (record least prime 751 at n = 3,807,404).</p><p class="muted">Scope: Finite range only; far inside the published 4*10^18 verification</p><pre class="cmd"><code>python3 scripts/lab.py --probe goldbach</code></pre></li><li><span class="milestone-type">REPRODUCED KNOWN · 2026-10-31</span><strong>Record least Goldbach primes through 20,000</strong><p>Twelve running-maximum least primes, the largest 173 at n = 7426. An independent odd-only sieve recomputes the same record list.</p><p class="muted">Scope: Finite table inside the published 4*10^18 verification; not a new bound</p><pre class="cmd"><code>python3 scripts/mine.py --mine goldbach_growth</code></pre></li></ul></section>
+<section class="dossier-block" id="work"><h2>Open work <span class="chip">6</span></h2><p class="muted">Bounded, claimable units derived from the ledgers. Claim one before starting so parallel agents never duplicate it.</p><ul class="work-list"><li class="work-item work-runnable"><a href="../../work/O-M006-01/"><span class="work-id">O-M006-01</span><span class="work-title">Lemma obligation for M006</span><span class="work-meta">Proof obligation · Runnable · dispatch #24</span></a></li><li class="work-item work-runnable"><a href="../../work/V-F-M006/"><span class="work-id">V-F-M006</span><span class="work-title">Independent fidelity review of the Strong Goldbach conjecture comparator</span><span class="work-meta">Independent review · Runnable · dispatch #24</span></a></li><li class="work-item work-runnable"><a href="../../work/V-L004/"><span class="work-id">V-L004</span><span class="work-title">Independent scope review of Lean target L004 (M006)</span><span class="work-meta">Independent review · Runnable · dispatch #24</span></a></li><li class="work-item work-runnable"><a href="../../work/L004/"><span class="work-id">L004</span><span class="work-title">Extend Lean target L004 (M006)</span><span class="work-meta">Lean target · Runnable · dispatch #24</span></a></li><li class="work-item work-runnable"><a href="../../work/J-effective_diophantine-mine_structure/"><span class="work-id">J-effective_diophantine-mine_structure</span><span class="work-title">Mine structure from certificates: Explicit Diophantine certificates</span><span class="work-meta">Cohort job · Runnable · dispatch #18</span></a></li><li class="work-item work-runnable"><a href="../../work/S-M006/"><span class="work-id">S-M006</span><span class="work-title">Exact-status audit draft for Strong Goldbach conjecture</span><span class="work-meta">Status audit · Runnable · dispatch #24</span></a></li></ul></section>
+<section class="dossier-block" id="provenance"><h2>Provenance &amp; status</h2>
+  <dl class="kv">
+    <dt>Evidence state</dt><dd><span class="status-pill status-needs_review" title="Plausibly open; precise statement and status still need a literature audit.">Needs review</span> Plausibly open; precise statement and status still need a literature audit. This classification is not a universal proof-status certification.</dd>
+    <dt>Starting source</dt><dd><span class="muted">Not yet recorded</span></dd>
+    <dt>Source intake</dt><dd>not yet recorded</dd>
+    <dt>Computation</dt><dd>Finitely refutable — One finite, checkable object would refute it; computation can search and certify ranges.</dd>
+  </dl>
+  <h3>Discussed in the library</h3><ul class="link-list"><li><a href="../../library/approach/">Approach — leverage dispatch</a></li><li><a href="../../library/attack-queue/">Execution queue — evidence-aware research priorities</a></li><li><a href="../../library/lab/">Exact probe lab — computational reach of the 100</a></li><li><a href="../../library/lean/">Lean proof pipeline</a></li><li><a href="../../library/mines/">Structure mines</a></li><li><a href="../../library/ranked/">Ranked candidate portfolio</a></li><li><a href="../../library/roadmap/">Roadmap — 100 mathematical grand challenges</a></li><li><a href="../../library/scale/">Scale — proof-exchange wave</a></li><li><a href="../../library/lab-campaigns/">Lab campaigns: problems under exact computation</a></li><li><a href="../../library/research-engine/">Proof-driven research engine</a></li></ul>
+  <h3>Cite this page</h3>
+  <div class="cite"><code id="cite-M006">Svyable. “Strong Goldbach conjecture (M006).” 100 — A living portfolio of mathematical grand challenges, data as of 2026-11-01. https://svyable.github.io/100/problems/M006/</code><button class="plain-button" type="button" data-copy="#cite-M006">Copy</button></div>
+</section>
+<section class="dossier-block" id="related"><h2>Nearby in the portfolio</h2>
+  <div class="two-col"><div><h3>Also in <a href="../../fields/number-theory/">Number theory</a></h3><ul class="link-list"><li><a href="../../problems/M002/"><span class="mono">M002</span> Generalized Riemann Hypothesis</a></li><li><a href="../../problems/M003/"><span class="mono">M003</span> Birch–Swinnerton-Dyer conjecture</a></li><li><a href="../../problems/M004/"><span class="mono">M004</span> abc conjecture</a></li><li><a href="../../problems/M005/"><span class="mono">M005</span> Twin prime conjecture</a></li><li><a href="../../problems/M007/"><span class="mono">M007</span> Bateman–Horn conjecture</a></li><li><a href="../../problems/M008/"><span class="mono">M008</span> Elliott–Halberstam conjecture</a></li></ul></div>
+  <div><h3>Shares an exact engine with</h3><div class="chips"><a class="chip chip-link" href="../../problems/M019/" title="Erdős–Straus conjecture">M019</a></div></div></div>
+</section>
+</div>
+</div>
+<nav class="pager" aria-label="Dispatch order"><a class="pager-prev" rel="prev" href="../../problems/M100/"><small>Previous · dispatch #23</small><span>Falconer distance-set conjecture</span></a><a class="pager-next" rel="next" href="../../problems/M072/"><small>Next · dispatch #25</small><span>Erdős–Hajnal conjecture</span></a></nav>
+</article>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

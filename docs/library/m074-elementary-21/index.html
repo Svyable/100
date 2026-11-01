@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M074 — elementary exclusion of the (21,7) directed-triangle case · 100</title>
+<meta name="description" content="Dated: 2026-10-31. Scope: a finite theorem, not the Caccetta–Häggkvist conjecture at arbitrary parameters or the entire fixed-outdegree-seven case. Novelty is not claimed: external work earlier reported DRAT-checked (21,7) UNSAT certificate">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m074-elementary-21/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M074 — elementary exclusion of the (21,7) directed-triangle case · 100">
+<meta property="og:description" content="Dated: 2026-10-31. Scope: a finite theorem, not the Caccetta–Häggkvist conjecture at arbitrary parameters or the entire fixed-outdegree-seven case. Novelty is not claimed: external work earlier reported DRAT-checked (21,7) UNSAT certificate">
+<meta property="og:url" content="https://svyable.github.io/100/library/m074-elementary-21/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../work/">Work</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M074 — elementary exclusion of the (21,7) directed-triangle case</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#finite-theorem-and-reduction">Finite theorem and reduction</a></li><li class="toc-l2"><a href="#lemma-a-seven-vertex-rigidity">Lemma A: seven-vertex rigidity</a></li><li class="toc-l2"><a href="#lemma-b-indegree-at-most-eight">Lemma B: indegree at most eight</a></li><li class="toc-l2"><a href="#lemma-c-indegree-eight-is-impossible">Lemma C: indegree eight is impossible</a></li><li class="toc-l2"><a href="#lemma-d-exact-inout-regularity-also-impossible">Lemma D: exact in/out regularity also impossible</a></li><li class="toc-l2"><a href="#provenance-verification-and-scope-boundary">Provenance, verification and scope boundary</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M074/" title="Caccetta–Häggkvist conjecture">M074</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M074_ELEMENTARY_21.md" rel="noopener noreferrer">research/M074_ELEMENTARY_21.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M074 — elementary exclusion of the (21,7) directed-triangle case</h1>
+<p><strong>Dated:</strong> 2026-10-31. <strong>Scope:</strong> a finite theorem, <strong>not</strong> the Caccetta–Häggkvist conjecture at arbitrary parameters or the entire fixed-outdegree-seven case. <strong>Novelty is not claimed</strong>: external work earlier reported DRAT-checked (21,7) UNSAT certificates; the proof here needs independent specialist review.</p>
+<h2 id="finite-theorem-and-reduction">Finite theorem and reduction<a class="anchor" href="#finite-theorem-and-reduction" aria-label="Link to this section">#</a></h2>
+<p><strong>Theorem.</strong> Every loopless simple digraph on 21 vertices with minimum outdegree at least seven contains a directed cycle of length at most three.</p>
+<p>A counterexample has no digons or directed triangles, hence is oriented. Delete surplus outgoing arcs until every vertex has outdegree exactly seven; this cannot create a short directed cycle. It is enough to exclude such a triangle-free oriented 7-outregular digraph.</p>
+<h2 id="lemma-a-seven-vertex-rigidity">Lemma A: seven-vertex rigidity<a class="anchor" href="#lemma-a-seven-vertex-rigidity" aria-label="Link to this section">#</a></h2>
+<p>Every triangle-free oriented graph on seven vertices with minimum outdegree at least two has <strong>all indegrees and outdegrees exactly two</strong>.</p>
+<p><strong>Proof.</strong> For any vertex, write a &gt;= 2 for its outdegree, b for its indegree, A and B for its out- and inneighbor sets, and C for the remaining 6-a-b vertices. No arc goes from A to B (directed triangle) or from A to the root (digon). Each vertex of A needs at least two outgoing arcs within A or C. Thus</p>
+<p>2a &lt;= e(A,A) + e(A,C) &lt;= a(a-1)/2 + a(6-a-b).</p>
+<p>Hence a+2b &lt;= 7. If b &gt;= 3, then a+2b &gt;= 8, impossible. Therefore every indegree is at most two; since all seven outdegrees are at least two, double-counting the arcs forces every in- and outdegree to equal two. QED.</p>
+<p>This is sharp: the oriented circulant on Z/7 with outgoing steps 1 and 2 has semidegrees two and no triangle, since three positive steps sum to at most 6, not 7.</p>
+<h2 id="lemma-b-indegree-at-most-eight">Lemma B: indegree at most eight<a class="anchor" href="#lemma-b-indegree-at-most-eight" aria-label="Link to this section">#</a></h2>
+<p>For any vertex of indegree b &gt;= 9, its seven outneighbors A can send arcs neither to that vertex nor to its b inneighbors. There are at most 13-b &lt;= 4 remaining vertices. Every a in A therefore needs at least 7-4 = 3 outgoing arcs within A, contradicting Lemma A. Thus <strong>every indegree is at most eight</strong>. QED.</p>
+<h2 id="lemma-c-indegree-eight-is-impossible">Lemma C: indegree eight is impossible<a class="anchor" href="#lemma-c-indegree-eight-is-impossible" aria-label="Link to this section">#</a></h2>
+<p>Suppose a vertex v has indegree eight. Partition the other vertices into A=N+(v) of size 7, B=N-(v) of size 8, and C of size 5.</p>
+<p>Each a in A sends seven outgoing arcs into A or C, so its internal outdegree is at least two. Lemma A forces the induced graph on A to be <strong>2-in/2-out-regular</strong>. Consequently every a in A sends arcs to <em>all five</em> vertices of C.</p>
+<p>By Lemma B, each c in C has indegree at most eight, already receiving seven arcs from A. So there is room for at most one extra arc into each c, giving</p>
+<p>e(B,C) + e(C,C) &lt;= 5.</p>
+<p>Each c has outdegree seven, cannot point to v (nonneighbor) or A (would be a digon), and therefore sends all its arcs into B or C. Thus</p>
+<p>e(C,B) + e(C,C) = 35, hence e(C,B) &gt;= 30.</p>
+<p>There are five vertices in C, so each b in B can receive at most five arcs from C. At least six of the eight B-vertices must receive one or more arcs from C. Such a b cannot send any arc to A: for every a in A and every c in C, a→c, so b→a and c→b would form a→c→b→a.</p>
+<p>Thus at most <strong>two</strong> B-vertices can point into A. Each b in B already points to v and has total outdegree seven, so each such b can point to at most six A-vertices. Therefore e(B,A) &lt;= 12.</p>
+<p>Count all indegrees in the digraph by destination:</p>
+<ul><li>Into v: exactly 8.</li><li>Into A: 7 from v, 14 from A (Lemma A), zero from C, at most 12 from B; total &lt;=33.</li><li>Into B: at most 8*8=64 (Lemma B).</li><li>Into C: at most 5*8=40 (Lemma B).</li></ul>
+<p>This totals at most 8+33+64+40 = <strong>145</strong>, although exact outdegree seven on 21 vertices requires <strong>147</strong> arcs. Contradiction. QED.</p>
+<h2 id="lemma-d-exact-inout-regularity-also-impossible">Lemma D: exact in/out regularity also impossible<a class="anchor" href="#lemma-d-exact-inout-regularity-also-impossible" aria-label="Link to this section">#</a></h2>
+<p>By Lemmas B and C, all indegrees are at most seven. Their average equals the fixed outdegree seven, so <strong>every indegree is exactly seven</strong>.</p>
+<p>Fix v, with outneighbors A of size seven, inneighbors B of size seven and nonneighbors C of size six. The <a href="../../library/m074-elementary-18/">saturated-pivot lemma</a> says that in any oriented, triangle-free r-in/out-regular digraph on 3r vertices, each outneighborhood has minimum internal outdegree at least two, and each inneighborhood has minimum internal indegree at least two. Applying Lemma A to the induced graph on A and to the reversal of the induced graph on B shows that <strong>both A and B are 2-in/2-out-regular</strong>.</p>
+<p>Each a in A must therefore send 7-2=5 arcs into the six-element C. Each b in B receives 7-2=5 arcs from C. Two five-element subsets of six elements necessarily intersect; hence for every a in A and b in B there is a c in C with a→c→b. An arc b→a would close a triangle, so <strong>no arc goes from B to A</strong>.</p>
+<p>But each a in A can now receive at most one arc from v, two from A, none from B, and one from C (it points to five of the six vertices in C, preventing their reverse arcs). Its indegree is at most 1+2+0+1=<strong>4</strong>, contradicting indegree seven. QED.</p>
+<p>The reduction and Lemmas A–D prove the stated finite theorem without an SAT solver.</p>
+<h2 id="provenance-verification-and-scope-boundary">Provenance, verification and scope boundary<a class="anchor" href="#provenance-verification-and-scope-boundary" aria-label="Link to this section">#</a></h2>
+<p>This extends the repository&#x27;s <a href="../../library/m074-elementary-18/">elementary (18,6) proof</a> using an exact seven-vertex degree lemma and a 145-versus-147 global arc budget. The <a href="https://github.com/wustep/maths/blob/main/problems/caccetta-haggkvist-k3/ATTACK.md" rel="noopener noreferrer">wustep/maths investigation</a> already reports DRAT-verified (21,7) indegree partitions. We <strong>do not assert novelty</strong> or claim to have replayed its proof files. The published <a href="https://doi.org/10.1007/s00493-015-2662-5" rel="noopener noreferrer">Hladký–Král’–Norine bound</a> does not cover the threshold 7/21=1/3.</p>
+<p>Run <code>python3 -m unittest discover -s tests -p &#x27;test_ch_seven.py&#x27; -v</code> for integer-bound checks and a sharp seven-vertex circulant control. These arithmetic tests are <strong>not an exhaustive 21-vertex graph search</strong> and do not replace independent expert review of the written proof. No Solved promotion, fixed-r=7 all-orders claim, or status change to the general conjecture is made.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

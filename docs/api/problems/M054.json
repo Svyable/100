@@ -1,0 +1,88 @@
+{
+  "id": "M054",
+  "name": "Nonlinear Kerr stability",
+  "field": "Analysis",
+  "question": "Do admissible small perturbations of subextremal Kerr metrics asymptotically settle to Kerr?",
+  "first_attack": "Audit precise statement and prove a restricted case",
+  "impact": 5,
+  "attackability": 2,
+  "verifiability": 3,
+  "spillover": 4,
+  "modality": "structural",
+  "evidence_state": "claim_needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 83,
+  "score": 69,
+  "execution_rank": 84,
+  "execution_score": 69,
+  "readiness": 0,
+  "dispatch_rank": 38,
+  "dispatch_score": 77,
+  "action": "scope_audit",
+  "action_label": "Audit claim scope",
+  "action_bonus": 8,
+  "method_id": "pde_regularity",
+  "method_title": "One ansatz, one enclosure",
+  "dispatch_next": "Compare Hintz v2 and Szeftel hypotheses and companion dependencies, and seek expert adjudication of scattering and asymptotic completeness.",
+  "dispatch_why": "A manuscript may already settle this entry. The next step is the review's own check, not a new lemma.",
+  "campaign_stage": null,
+  "milestone_count": 0,
+  "url": "https://svyable.github.io/100/problems/M054/",
+  "field_url": "https://svyable.github.io/100/fields/analysis/",
+  "readiness_breakdown": [],
+  "has_exact_verifier": false,
+  "campaign": null,
+  "probes": [],
+  "milestones": [],
+  "engine_roadmap": null,
+  "claim_review_2026": {
+    "id": "M054",
+    "primary_title": "Nonlinear stability of subextremal Kerr black holes",
+    "primary_url": "https://arxiv.org/abs/2606.28253",
+    "preprint_date": "2026-06-26",
+    "claimed_theorem": "Vacuum evolutions from sufficiently small asymptotically flat perturbations in a specified polyhomogeneous/weighted-decay class of any fixed subextremal Kerr solution settle to another Kerr solution.",
+    "scope_relation": "matches_with_qualification",
+    "scope_note": "Covers |a|<M for the stated initial-data classes, not literally every 'admissible' perturbation without quantified decay or gauge assumptions.",
+    "independent_validation": "separate_claim_not_verification",
+    "independent_evidence_urls": [
+      "https://arxiv.org/abs/2609.40068"
+    ],
+    "known_caveats": "Jérémie Szeftel also claims full subextremal stability in a separate September 30 manuscript, with its own companion estimates. Two claims are not the same as independent acceptance of either proof; compare data classes.",
+    "next_review": "Compare Hintz v2 and Szeftel hypotheses and companion dependencies, and seek expert adjudication of scattering and asymptotic completeness."
+  },
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Scale — proof-exchange wave",
+      "source": "SCALE.md",
+      "url": "https://svyable.github.io/100/library/scale/"
+    },
+    {
+      "title": "2026 claimed-resolution triage — issue #3",
+      "source": "research/CLAIM_REVIEWS_2026.md",
+      "url": "https://svyable.github.io/100/library/claim-reviews-2026/"
+    },
+    {
+      "title": "Foundational sources and 2026 claim watch",
+      "source": "docs/SOURCES.md",
+      "url": "https://svyable.github.io/100/library/sources/"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "M049",
+  "name": "Soficity conjecture",
+  "field": "Algebra",
+  "question": "Is every countable group approximable by finite permutation groups in the sofic sense?",
+  "first_attack": "Audit precise statement and prove a restricted case",
+  "impact": 4,
+  "attackability": 3,
+  "verifiability": 4,
+  "spillover": 4,
+  "modality": "structural",
+  "evidence_state": "claim_needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 39,
+  "score": 74,
+  "execution_rank": 41,
+  "execution_score": 74,
+  "readiness": 0,
+  "dispatch_rank": 4,
+  "dispatch_score": 114,
+  "action": "replay_claim_witness",
+  "action_label": "Replay a claimed finite witness",
+  "action_bonus": 40,
+  "method_id": "group_rings",
+  "method_title": "One presentation, one product",
+  "dispatch_next": "Independently verify M044's group algebra witness, then audit the Elek–Szabó implication from soficity to direct finiteness in the claimed coefficient field.",
+  "dispatch_why": "Listed for witness replay. The next step is the claim review's finite check.",
+  "campaign_stage": null,
+  "milestone_count": 0,
+  "url": "https://svyable.github.io/100/problems/M049/",
+  "field_url": "https://svyable.github.io/100/fields/algebra/",
+  "readiness_breakdown": [],
+  "has_exact_verifier": false,
+  "campaign": null,
+  "probes": [],
+  "milestones": [],
+  "engine_roadmap": null,
+  "claim_review_2026": {
+    "id": "M049",
+    "primary_title": "A torsion-free group algebra that is not directly finite",
+    "primary_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/direct-finiteness.pdf",
+    "preprint_date": "2026-10-04",
+    "claimed_theorem": "The constructed finitely presented torsion-free group is nonsofic; its group ring over F_2 is not directly finite.",
+    "scope_relation": "matches",
+    "scope_note": "A finitely presented nonsofic group is countable and refutes the universal soficity conjecture. The claimed nonsoficity may follow from the direct-finiteness obstruction, but is not an independently checked example.",
+    "independent_validation": "not_established",
+    "independent_evidence_urls": [],
+    "known_caveats": "Shares one manuscript and underlying construction with M044; do not count these as two independent proof sources. Soficity inference depends on correct direct-finiteness obstruction and the sofic-group finiteness theorem. The upstream author-described Lean comparator does not assert that the group is nonsofic; that conclusion needs a separate mathematical audit.",
+    "next_review": "Independently verify M044's group algebra witness, then audit the Elek–Szabó implication from soficity to direct finiteness in the claimed coefficient field.",
+    "formalization_scope_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/197.md"
+  },
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
+    },
+    {
+      "title": "Scale — proof-exchange wave",
+      "source": "SCALE.md",
+      "url": "https://svyable.github.io/100/library/scale/"
+    },
+    {
+      "title": "2026 claimed-resolution triage — issue #3",
+      "source": "research/CLAIM_REVIEWS_2026.md",
+      "url": "https://svyable.github.io/100/library/claim-reviews-2026/"
+    },
+    {
+      "title": "Foundational sources and 2026 claim watch",
+      "source": "docs/SOURCES.md",
+      "url": "https://svyable.github.io/100/library/sources/"
+    }
+  ]
+}

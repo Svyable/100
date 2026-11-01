@@ -15,7 +15,7 @@ from fractions import Fraction
 
 from . import lfunctions as LF
 from .core import digest, require
-from .intervals import RI
+from .intervals_cert import RI
 
 PROBE = {
     "id": "zeta_zeros",

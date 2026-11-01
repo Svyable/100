@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publish the 100 portfolio via GitHub Pages · 100</title>
+<meta name="description" content="The production-ready static site lives in docs/ on the main branch. No Node, Jekyll theme, external scripts, tokens, backend, or build step is needed at request time. The .nojekyll marker preserves the static files as written.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/pages-setup/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="Publish the 100 portfolio via GitHub Pages · 100">
+<meta property="og:description" content="The production-ready static site lives in docs/ on the main branch. No Node, Jekyll theme, external scripts, tokens, backend, or build step is needed at request time. The .nojekyll marker preserves the static files as written.">
+<meta property="og:url" content="https://svyable.github.io/100/library/pages-setup/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../work/">Work</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">Publish the 100 portfolio via GitHub Pages</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#one-time-pages-activation">One-time Pages activation</a></li><li class="toc-l2"><a href="#update-pipeline">Update pipeline</a></li><li class="toc-l2"><a href="#local-preview">Local preview</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M071/" title="Hadwiger conjecture">M071</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/docs/PAGES_SETUP.md" rel="noopener noreferrer">docs/PAGES_SETUP.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">METHOD &amp; GOVERNANCE</p><h1>Publish the 100 portfolio via GitHub Pages</h1>
+<p>The production-ready static site lives in <code>docs/</code> on the <code>main</code> branch. No Node, Jekyll theme, external scripts, tokens, backend, or build step is needed at request time. The <code>.nojekyll</code> marker preserves the static files as written.</p>
+<h2 id="one-time-pages-activation">One-time Pages activation<a class="anchor" href="#one-time-pages-activation" aria-label="Link to this section">#</a></h2>
+<p>With repository admin access:</p>
+<ol><li>Go to <a href="https://github.com/Svyable/100/settings/pages" rel="noopener noreferrer">repository Settings → Pages</a>.</li><li>Under <strong>Build and deployment</strong>, choose <strong>Deploy from a branch</strong>.</li><li>Choose branch <strong>main</strong> and folder <strong>/docs</strong>, then <strong>Save</strong>.</li><li>After the Pages deployment succeeds, visit <strong>https://svyable.github.io/100/</strong>.</li></ol>
+<p>If the site is not yet configured, the address may return 404. Merely committing <code>docs/index.html</code> does <strong>not</strong> activate Pages settings automatically. The linked account&#x27;s current GitHub connector cannot modify repository Pages settings. See <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site" rel="noopener noreferrer">GitHub&#x27;s official guide</a>.</p>
+<h2 id="update-pipeline">Update pipeline<a class="anchor" href="#update-pipeline" aria-label="Link to this section">#</a></h2>
+<p>The site is <strong>generated</strong>: <code>scripts/build_site.py</code> renders every page from the validated ledgers (<code>data/*.json</code>), the probe lab, the Lean catalogue and the Markdown dossiers. Never edit generated files by hand. After any data change, run:</p>
+<pre><code class="lang-sh">python3 scripts/rank.py
+python3 scripts/build_site.py
+python3 scripts/build_site.py --check
+python3 -m unittest discover -s tests -v</code></pre>
+<p>Commit the regenerated <code>docs/</code> tree with the source change. CI fails if any generated byte is stale, if a file is left over in a generated directory, or if any internal link or <code>#fragment</code> on any page does not resolve.</p>
+<div class="table-wrap"><table><thead><tr><th>Generated path</th><th>Source</th></tr></thead><tbody><tr><td><code>index.html</code></td><td>ranked list of all 100 in dispatch order (prerendered; JS adds filters, sorts, URL state)</td></tr><tr><td><code>problems/&lt;ID&gt;/</code></td><td>one page per problem: Lean statement, priority, campaign, probes, milestones, claim triage, provenance, citation</td></tr><tr><td><code>fields/&lt;slug&gt;/</code>, <code>atlas/</code></td><td>field pages; SVG charts with table views</td></tr><tr><td><code>lab/</code>, <code>formal/</code>, <code>campaigns/</code>, <code>claims/</code>, <code>roadmap/</code>, <code>ledger/</code></td><td>lab and structure mines, Lean comparators and the audited Lean registry, cohort jobs + campaigns + attack shapes, 2026 claim triage, roadmap scoreboard, solved ledger</td></tr><tr><td><code>library/&lt;doc&gt;/</code></td><td>every Markdown dossier, rendered with cross-links and backlinks</td></tr><tr><td><code>api/</code>, <code>data/portfolio.json</code>, <code>feed.xml</code>, <code>sitemap.xml</code></td><td>JSON/CSV API, legacy snapshot, Atom feed, sitemap</td></tr></tbody></table></div>
+<p>Hand-written: <code>assets/</code> (CSS, JS, favicon), <code>.nojekyll</code>, <code>next/</code> (the Next 100 explorer) and the Markdown files in <code>docs/</code>. <code>data/next.json</code> is generated by <code>scripts/next.py</code>.</p>
+<p>The standalone <a href="https://svyable.github.io/100/next/" rel="noopener noreferrer">Next 100</a> explorer uses\n<code>docs/next/</code> and the generated <code>docs/data/next.json</code> snapshot. Refresh it with\n<code>python3 scripts/next.py</code>; CI validates its snapshot and JavaScript.\n\n## Features and boundaries</p>
+<ul><li>Static HTML, no external scripts, fonts, trackers or build step at request time.</li><li>Every problem has a permanent URL; legacy <code>?focus=M071</code> links redirect to <code>/problems/M071/</code>.</li><li><code>/</code> or Ctrl/⌘-K opens a command palette over problems, campaigns, probes, Lean statements, claims and documents.</li><li>Dark mode follows the system and can be toggled; reduced motion and print styles respected.</li><li>A <strong>portfolio rank</strong> measures editorial priorities, never the probability a claim is true.</li><li>The site refreshes only when the generated tree is rebuilt and committed; it does not fetch live papers or news.</li></ul>
+<h2 id="local-preview">Local preview<a class="anchor" href="#local-preview" aria-label="Link to this section">#</a></h2>
+<pre><code class="lang-sh">python3 -m http.server --directory docs 8000
+# open http://localhost:8000</code></pre>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

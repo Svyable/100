@@ -1,0 +1,87 @@
+{
+  "id": "M055",
+  "name": "Higher-dimensional Kakeya conjecture",
+  "field": "Analysis",
+  "question": "Must Kakeya subsets of Rn for n at least four have full Hausdorff dimension?",
+  "first_attack": "Audit precise statement and prove a restricted case",
+  "impact": 5,
+  "attackability": 2,
+  "verifiability": 3,
+  "spillover": 4,
+  "modality": "structural",
+  "evidence_state": "claim_needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 84,
+  "score": 69,
+  "execution_rank": 85,
+  "execution_score": 69,
+  "readiness": 0,
+  "dispatch_rank": 39,
+  "dispatch_score": 77,
+  "action": "scope_audit",
+  "action_label": "Audit claim scope",
+  "action_bonus": 8,
+  "method_id": "harmonic_analysis",
+  "method_title": "One dimension, one endpoint",
+  "dispatch_next": "Check the all-dimensional local smoothing theorem, its Kakeya maximal corollary and exact hypotheses; distinguish 4D direct theorem from universal consequence.",
+  "dispatch_why": "A manuscript may already settle this entry. The next step is the review's own check, not a new lemma.",
+  "campaign_stage": null,
+  "milestone_count": 0,
+  "url": "https://svyable.github.io/100/problems/M055/",
+  "field_url": "https://svyable.github.io/100/fields/analysis/",
+  "readiness_breakdown": [],
+  "has_exact_verifier": false,
+  "campaign": null,
+  "probes": [],
+  "milestones": [],
+  "engine_roadmap": null,
+  "claim_review_2026": {
+    "id": "M055",
+    "primary_title": "Local smoothing for the Euclidean wave equation",
+    "primary_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf",
+    "preprint_date": "2026-10-25",
+    "claimed_theorem": "Sharp local smoothing for Euclidean waves in every spatial dimension n>=2 is claimed, with the Kakeya maximal conjectures and full Hausdorff dimension for all Euclidean Kakeya sets as consequences.",
+    "scope_relation": "matches_if_consequence_valid",
+    "scope_note": "The separate September 24 manuscript explicitly claims the 4D Hausdorff case only; M055 concerns all n>=4, so the October 25 local-smoothing-to-Kakeya corollary is essential.",
+    "independent_validation": "not_established",
+    "independent_evidence_urls": [],
+    "known_caveats": "A full-dimensional Kakeya consequence must be proved for each n>=4; the 4D paper alone does not settle the registered universal statement.",
+    "next_review": "Check the all-dimensional local smoothing theorem, its Kakeya maximal corollary and exact hypotheses; distinguish 4D direct theorem from universal consequence.",
+    "formalization_scope_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/079.md"
+  },
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Scale — proof-exchange wave",
+      "source": "SCALE.md",
+      "url": "https://svyable.github.io/100/library/scale/"
+    },
+    {
+      "title": "2026 claimed-resolution triage — issue #3",
+      "source": "research/CLAIM_REVIEWS_2026.md",
+      "url": "https://svyable.github.io/100/library/claim-reviews-2026/"
+    },
+    {
+      "title": "Foundational sources and 2026 claim watch",
+      "source": "docs/SOURCES.md",
+      "url": "https://svyable.github.io/100/library/sources/"
+    }
+  ]
+}

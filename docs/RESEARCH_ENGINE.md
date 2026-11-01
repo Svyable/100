@@ -24,8 +24,25 @@ A separate **execution index** adds up to ten *documented readiness* points:
 
 The execution index is **not** a probability, and high readiness is not
 evidence for a general conjecture. Each factor is deliberately bounded to
-prevent repeated runs of the same toy case from inflating the rank. The site's
-default sort is execution order; the original editorial rank is always available.
+prevent repeated runs of the same toy case from inflating the rank. The
+original editorial rank stays available. It is no longer the default work order.
+
+## Dispatch score
+
+Readiness rewards having a verifier, including a verifier whose only remaining
+experiment sits inside a theorem the campaign blocker already cites. The
+**dispatch score** is the work order:
+
+editorial score + readiness + action bonus.
+
+Bonuses live in [data/methods.json](../data/methods.json). They promote a
+claimed finite witness, a missing engine and a published certificate, and they
+penalise a dominated range extension. The bonus is a scheduling weight, not
+evidence and not a probability. Every problem also belongs to one **shape**:
+a shared attack template with a certificate and a falsifier. Filling a shape
+does not assert that the restriction is open or true. Jobs, shapes and the
+per-problem order are generated in [APPROACH.md](../APPROACH.md). The site's
+default sort is this dispatch order.
 
 - Source registry: [data/problems.json](../data/problems.json)
 - Research campaigns / reproducibility milestones:
@@ -66,16 +83,14 @@ a theorem. Mathematical scope review is different from code correctness.
 | `exact_lp` | `exact_lp.py` | M097 |
 | `graph_homomorphisms` | `homomorphisms.py` | M073 |
 | `polynomial_algebra` | `polynomials.py` | M041 |
-| `interval_arithmetic` | `intervals.py` | M001, M002 |
-| `l_functions` | `lfunctions.py` | M001, M002 |
+| `interval_arithmetic` | `intervals.py`, `zeta.py` | M001, M002 |
 | `group_characters` | `groups.py` | M048 |
 
 A probe is a short module containing `PROBE` metadata, `search(params)`, an **independent**
 `check(params, result)`, and `scope(params)`. The checker uses a different code path from the
 search: Miller–Rabin instead of a sieve, combinatorial incidence axioms instead of field
 arithmetic, Burnside or orbit-counting completeness certificates, and a field rebuilt from the
-certified modulus. Analytic probes never let a float decide anything: every value is a rigorous
-interval, and the checker recomputes at a different precision and series truncation. `python3 scripts/lab.py` runs every probe, records a deterministic ledger
+certified modulus. `python3 scripts/lab.py` runs every probe, records a deterministic ledger
 in `data/lab_results.json` (summaries and certificate SHA-256 only), and regenerates `LAB.md`.
 `--check` reruns probes and fails on any drift. `--emit` writes full certificates and `--replay`
 re-verifies them, so an outside reviewer can check results without trusting the search.

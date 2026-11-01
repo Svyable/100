@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M074 certificate acceptance gate · 100</title>
+<meta name="description" content="The local solver&#x27;s reported UNSAT result is not a certified theorem. No independently replayed proof trace is currently in this repository.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m074-certificate-gate/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M074 certificate acceptance gate · 100">
+<meta property="og:description" content="The local solver&#x27;s reported UNSAT result is not a certified theorem. No independently replayed proof trace is currently in this repository.">
+<meta property="og:url" content="https://svyable.github.io/100/library/m074-certificate-gate/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../work/">Work</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M074 certificate acceptance gate</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side">
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M074/" title="Caccetta–Häggkvist conjecture">M074</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M074_CERTIFICATE_GATE.md" rel="noopener noreferrer">research/M074_CERTIFICATE_GATE.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M074 certificate acceptance gate</h1>
+<p>The local solver&#x27;s reported UNSAT result is <strong>not</strong> a certified theorem. No independently replayed proof trace is currently in this repository.</p>
+<p>Run only with a real proof and an independently audited proof checker:</p>
+<pre><code class="lang-sh">python3 scripts/ch_certificate_gate.py --target pivot \
+  --proof /path/to/complete-proof.trace \
+  --checker /path/to/trusted-checker</code></pre>
+<p>The gate regenerates the frozen pivot (or regular) CNF, checks its exact SHA-256, invokes the checker as <code>checker CNF PROOF</code>, rejects any nonzero exit, and records the proof hash. The checker must accept the actual proof format (DRAT/LRAT/FRAT as appropriate), check the complete derivation, and return zero <strong>only</strong> for a verified contradiction. A solver exit code, an UNSAT string, a fabricated checker, or a hash match alone proves nothing.</p>
+<p><strong>Trust boundary:</strong> This is a <em>replay harness</em>, not a built-in trusted proof checker. Before accepting its report, independently review the checker binary/source and version, command-line contract, proof format, negative controls, CNF-to-graph equivalence, root and pivot relabeling, and every external cube-coverage assumption. Capture the executable checksum and machine-independent evidence. The harness intentionally cannot certify a theorem merely because a user-supplied executable exits successfully.</p>
+<p>External prior art and the unresolved mathematical scope are documented in <a href="../../library/m074-prior-art/">M074_PRIOR_ART.md</a> and <a href="../../library/m074-regularity/">M074_REGULARITY.md</a>. Do not promote the Solved ledger until all gates pass.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

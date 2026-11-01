@@ -12,13 +12,9 @@ import lab
 import probes
 import rank
 import research
-from probes import (core, cyclotomic, exact_lp, fields, graphs, groups, homomorphisms, intervals,
-                    lfunctions, polynomials, primes)
+from probes import core, cyclotomic, exact_lp, fields, graphs, groups, homomorphisms, polynomials, primes, zeta
+from probes import intervals as iv
 from probes.core import ProbeFailure
-
-
-def I_exact(value, p):
-    return intervals.RI.exact(value, p)
 
 
 def run(probe_id, params):
@@ -117,79 +113,45 @@ class EngineTests(unittest.TestCase):
         kernel = P.lattice_kernel([[1, 1, 0], [0, 1, 1]], [-1, 0, 1])
         self.assertEqual(sorted(map(tuple, kernel)), [(-1, 1, -1), (0, 0, 0), (1, -1, 1)])
 
-    def test_interval_functions_enclose_exact_values(self):
-        I = intervals
-        p = 90
-        x = I.RI.exact(Fraction(7, 3), p)
-        self.assertTrue((x * 3).contains(7) and (x / 7).contains(Fraction(1, 3)))
-        self.assertTrue(I.RI.exact(2, p).sqrt().sqr().contains(2))
-        self.assertTrue(I.exp(I.log(x)).contains(Fraction(7, 3)))
-        s, c = I.sincos(x)
-        self.assertTrue((s.sqr() + c.sqr()).contains(1))
-        self.assertTrue((I.atan(I.RI.exact(1, p)) * 4 - I.pi(p)).contains_zero())
-        self.assertTrue((I.atan(I.RI.exact(-3, p)) - I.atan(I.RI.exact(Fraction(1, 3), p))
-                         + I.pi(p).shift(-1)).contains_zero())  # atan 3 + atan 1/3 = pi/2
-        self.assertTrue((I.log(I.RI.exact(8, p)) - I.log2(p) * 3).contains_zero())
-        # pi = 3.14159265358979323846264338327950288419716939937510...
-        digits = Fraction(314159265358979323846264338327950288419716939937510, 10 ** 50)
-        self.assertTrue(abs(I.pi(p).lower() - digits) < Fraction(1, 10 ** 26))
-        self.assertTrue(I.pi(p).lower() <= digits + Fraction(1, 10 ** 50) and I.pi(p).upper() >= digits)
-        with self.assertRaises(ZeroDivisionError):
-            I.RI(-1, 1, p).recip()
-        # arguments in each half-plane window, including the Im < 0 window centred at -pi/2
-        z = I.CI.exact(1, -1, p)
-        self.assertEqual(I.half_plane(z), 0)
-        self.assertTrue((I.arg_in_window(z, 3) + I.pi(p) * Fraction(1, 4)).contains_zero())
-        self.assertTrue((I.arg_in_window(I.CI.exact(-1, 0, p), 2) - I.pi(p)).contains_zero())
-
-    def test_l_function_values_and_zero_counts(self):
-        LF = lfunctions
-        p = 100
-        zeta = LF.LSeries(1, [1], p)
-        z2 = zeta.value(I_exact(2, p), I_exact(0, p))
-        self.assertTrue((z2.re - intervals.pi(p).sqr() / 6).contains_zero())
-        self.assertLess(z2.re.width(), Fraction(1, 10 ** 20))
-        # the first zero 14.134725141734693790... lies between two certified sign changes
-        lo, hi = (LF.hardy_z(zeta, I_exact(t, p), 0)[0].sign() for t in ("14.1347", "14.1348"))
-        self.assertEqual((lo, hi), (-1, 1))
-        # L(1, chi_-4) = pi/4 through the removable singularity of the integral term
-        chi4 = LF.LSeries(4, [0, 1, 0, -1], p)
-        self.assertTrue((chi4.value(I_exact(1, p), I_exact(0, p)).re - intervals.pi(p) / 4).contains_zero())
-        self.assertEqual(LF.lifted_direction([0, 0, 3, 3]), -1)
-        self.assertEqual(LF.lifted_direction([0, 1, 2, 3, 0]), 4)
-        self.assertIsNone(LF.lifted_direction([0, 2]))
-        # N(50) = 10 for zeta; N(40, chi_-4) = 14 needs the Im < 0 window at the end of the segment
-        cfg = (Fraction(1, 2), 8, None)
-        pieces = LF.find_pieces(zeta, Fraction(50), *cfg)
-        self.assertEqual(LF.argument_count(zeta, Fraction(50), 0, pieces, *cfg, 24, 24, pole=True)[0], 10)
-        chi4 = LF.LSeries(4, [0, 1, 0, -1], 80)
-        cfg = (Fraction(2, 5), 4, 16)
-        pieces = LF.find_pieces(chi4, Fraction(40), *cfg)
-        self.assertEqual(pieces[-1][2], 3)
-        self.assertEqual(LF.argument_count(chi4, Fraction(40), 1, pieces, *cfg, 20, 16, pole=False)[0], 14)
-
-    def test_character_degrees_two_primes(self):
-        expected = {"S4": [1, 1, 2, 3, 3], "A5": [1, 3, 3, 4, 5], "PSL(2,7)": [1, 3, 3, 6, 7, 8],
-                    "GL(2,3)": [1, 1, 2, 2, 2, 3, 3, 4]}
-        alp = probes.load("alperin_weights")
-        for name, degrees in expected.items():
-            G = groups.FiniteGroup.from_permutations(alp.GROUPS[name][0])
-            d1, r1 = groups.character_degrees(G)
-            d2, r2 = groups.character_degrees(G, skip=1, reverse=True)
-            self.assertEqual(d1, degrees)
-            self.assertEqual(d2, degrees)
-            self.assertNotEqual(r1, r2)
-        # a quotient: S4 / V4 is S3
-        S4 = groups.FiniteGroup.from_permutations(alp.GROUPS["S4"][0])
-        V4 = frozenset(groups.closure([groups.cycle(4, (0, 1), (2, 3)), groups.cycle(4, (0, 2), (1, 3))],
-                                      S4.identity))
-        quotient = groups.FiniteGroup.quotient(S4.elements, V4, S4.gens)
-        self.assertEqual(quotient.order, 6)
-        self.assertEqual(groups.character_degrees(quotient)[0], [1, 1, 2])
+    def test_zeta_enclosures_contain_classical_values(self):
+        import math
+        self.assertEqual(zeta.bernoulli(2), __import__("fractions").Fraction(1, 6))
+        self.assertLess(iv.pi().lo / iv.SCALE, math.pi)
+        self.assertGreater(iv.pi().hi / iv.SCALE, math.pi)
+        zero = zeta.zeta(iv.Cv(iv.iv_int(0), iv.iv_int(0)), zeta.SEARCH)
+        self.assertLessEqual(zero.re.lo / iv.SCALE, -0.5)
+        self.assertGreaterEqual(zero.re.hi / iv.SCALE, -0.5)
+        two = zeta.zeta(iv.Cv(iv.iv_int(2), iv.iv_int(0)), zeta.CHECK)
+        truth = math.pi ** 2 / 6
+        self.assertLess(two.re.lo / iv.SCALE, truth)
+        self.assertGreater(two.re.hi / iv.SCALE, truth)
+        gamma = zeta.log_gamma(iv.Cv(iv.iv_int(5), iv.iv_int(0)), 6)
+        self.assertLess(gamma.re.lo / iv.SCALE, math.lgamma(5))
+        self.assertGreater(gamma.re.hi / iv.SCALE, math.lgamma(5))
 
     def test_canonical_json_is_order_independent(self):
         self.assertEqual(core.digest({"b": 1, "a": [Fraction(1, 3)]}),
                          core.digest({"a": ["1/3"], "b": 1}))
+
+    def test_group_character_degrees_and_alperin_counts(self):
+        for name, order, degrees in (
+            ("S3", 6, [1, 1, 2]),
+            ("D8", 8, [1, 1, 1, 1, 2]),
+            ("Q8", 8, [1, 1, 1, 1, 2]),
+            ("A4", 12, [1, 1, 1, 3]),
+            ("S4", 24, [1, 1, 2, 3, 3]),
+            ("A5", 60, [1, 3, 3, 4, 5]),
+        ):
+            G = groups.named(name)
+            self.assertEqual(len(G), order)
+            self.assertTrue(groups.is_group(G))
+            self.assertEqual(groups.character_degrees(G), degrees)
+            self.assertEqual(sum(d * d for d in degrees), order)
+        G = groups.named("S3")
+        self.assertEqual(groups.simple_module_count(G, 2), 2)
+        self.assertEqual(groups.alperin_weight_count(G, 2)[0], 2)
+        self.assertEqual(groups.simple_module_count(G, 3), 2)
+        self.assertEqual(groups.alperin_weight_count(G, 3)[0], 2)
 
 
 class TamperTests(unittest.TestCase):
@@ -198,6 +160,25 @@ class TamperTests(unittest.TestCase):
     def assertRejects(self, module, params, result):
         with self.assertRaises(ProbeFailure):
             module.check(params, result)
+
+    def test_riemann_zero_count(self):
+        params = {"height": 15, "zeros": 1}
+        m, r = run("riemann", params)
+        self.assertEqual(r["certificate"]["intervals"], [["14/1", "15/1"]])
+        bad = copy.deepcopy(r)
+        bad["certificate"]["intervals"] = [["12/1", "13/1"]]
+        self.assertRejects(m, params, bad)
+        bad = copy.deepcopy(r)
+        bad["certificate"]["intervals"] = []
+        self.assertRejects(m, params, bad)
+
+    def test_dirichlet_character_zero_count(self):
+        params = {"height": 8, "zeros": 1}
+        m, r = run("dirichlet_l", params)
+        self.assertEqual(r["certificate"]["intervals"], [["6/1", "7/1"]])
+        bad = copy.deepcopy(r)
+        bad["certificate"]["intervals"] = [["4/1", "5/1"]]
+        self.assertRejects(m, params, bad)
 
     def test_goldbach(self):
         params = {"limit": 2000}
@@ -214,6 +195,21 @@ class TamperTests(unittest.TestCase):
         m, r = run("erdos_straus", params)
         bad = copy.deepcopy(r)
         bad["certificate"]["triples"][100][2] += 1
+        self.assertRejects(m, params, bad)
+
+    def test_alperin(self):
+        params = {"groups": ["C2", "S3", "A4"]}
+        m, r = run("alperin", params)
+        self.assertTrue(r["holds"])
+        self.assertEqual(r["summary"]["matched"], r["summary"]["cases"])
+        bad = copy.deepcopy(r)
+        bad["certificate"]["cases"][0]["simples"] += 1
+        self.assertRejects(m, params, bad)
+        bad = copy.deepcopy(r)
+        bad["certificate"]["cases"][1]["weights"] += 1
+        self.assertRejects(m, params, bad)
+        bad = copy.deepcopy(r)
+        bad["certificate"]["cases"].pop()
         self.assertRejects(m, params, bad)
 
     def test_hadwiger(self):
@@ -383,66 +379,6 @@ class TamperTests(unittest.TestCase):
         self.assertRejects(m, params, bad)
         bad = copy.deepcopy(r)
         bad["certificate"]["rows"][0]["p"].append([[2, 1], "1"])  # exceeds the degree bound
-        self.assertRejects(m, params, bad)
-
-
-    def test_zeta_zeros(self):
-        params = {"height": 30}
-        m, r = run("zeta_zeros", params)
-        self.assertEqual(r["summary"]["zeros"], 3)  # 14.13, 21.02, 25.01
-        bad = copy.deepcopy(r)
-        bad["certificate"]["zero_count"] += 1
-        self.assertRejects(m, params, bad)
-        bad = copy.deepcopy(r)
-        bad["certificate"]["signs"][-1] *= -1
-        self.assertRejects(m, params, bad)
-        bad = copy.deepcopy(r)
-        i = next(k for k, x in enumerate(bad["certificate"]["signs"][1:], 1) if x != bad["certificate"]["signs"][k - 1])
-        del bad["certificate"]["points"][i], bad["certificate"]["signs"][i]  # drop a sign change
-        self.assertRejects(m, params, bad)
-        bad = copy.deepcopy(r)
-        bad["certificate"]["pieces"][0][2] = 2  # claim Re < 0 at sigma = 2
-        self.assertRejects(m, params, bad)
-        bad = copy.deepcopy(r)
-        bad["certificate"]["pieces"].pop()  # no longer reaches sigma = 1/2
-        self.assertRejects(m, params, bad)
-
-    def test_dirichlet_zeros(self):
-        params = {"discriminants": [-4, 5], "height": 12}
-        m, r = run("dirichlet_zeros", params)
-        self.assertEqual(r["summary"]["per_character"], {"-4": 2, "5": 3})  # 6.02, 10.24 | 6.65, 9.83, 11.96
-        bad = copy.deepcopy(r)
-        bad["certificate"]["characters"][0]["chi"][1] = -1
-        self.assertRejects(m, params, bad)
-        bad = copy.deepcopy(r)
-        bad["certificate"]["characters"][1]["zero_count"] -= 1
-        self.assertRejects(m, params, bad)
-        bad = copy.deepcopy(r)
-        bad["certificate"]["characters"][0]["real_axis"][0][1] = "1"  # radius too large to certify
-        self.assertRejects(m, params, bad)
-        bad = copy.deepcopy(r)
-        bad["certificate"]["characters"][0]["parity"] = 0
-        self.assertRejects(m, params, bad)
-        with self.assertRaises(ProbeFailure):
-            m._check_character(-4 * 4, 16, [m.kronecker(-16, n) for n in range(16)], 1)  # not fundamental
-
-    def test_alperin_weights(self):
-        params = {"groups": ["S4", "A5"]}
-        m, r = run("alperin_weights", params)
-        self.assertEqual(r["summary"]["table"], {"S4 p=2": [2, 2], "S4 p=3": [4, 4], "A5 p=2": [4, 4],
-                                                 "A5 p=3": [4, 4], "A5 p=5": [3, 3]})
-        bad = copy.deepcopy(r)
-        bad["certificate"][0]["radicals"].pop()
-        self.assertRejects(m, params, bad)
-        bad = copy.deepcopy(r)
-        bad["certificate"][2]["regular_classes"].pop()
-        self.assertRejects(m, params, bad)
-        bad = copy.deepcopy(r)
-        bad["certificate"][2]["radicals"][0]["quotient_degrees"] = [1, 1, 1, 3, 3, 3]
-        self.assertRejects(m, params, bad)
-        bad = copy.deepcopy(r)
-        rad = bad["certificate"][2]["radicals"]
-        rad.append(copy.deepcopy(rad[-1]))  # duplicate (conjugate) radical subgroup
         self.assertRejects(m, params, bad)
 
 

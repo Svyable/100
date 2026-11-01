@@ -1,0 +1,127 @@
+{
+  "n4": {
+    "n": 4,
+    "classes": [
+      {
+        "cycle_type": [
+          4
+        ],
+        "permutations": 6,
+        "fixed_full_support_families": 14
+      },
+      {
+        "cycle_type": [
+          3,
+          1
+        ],
+        "permutations": 8,
+        "fixed_full_support_families": 42
+      },
+      {
+        "cycle_type": [
+          2,
+          2
+        ],
+        "permutations": 3,
+        "fixed_full_support_families": 134
+      },
+      {
+        "cycle_type": [
+          2,
+          1,
+          1
+        ],
+        "permutations": 6,
+        "fixed_full_support_families": 426
+      },
+      {
+        "cycle_type": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "permutations": 1,
+        "fixed_full_support_families": 4542
+      }
+    ],
+    "fixed_points_weighted_sum": 7920,
+    "group_order": 24,
+    "orbit_count": 330
+  },
+  "n5": {
+    "n": 5,
+    "classes": [
+      {
+        "cycle_type": [
+          5
+        ],
+        "permutations": 24,
+        "fixed_full_support_families": 22
+      },
+      {
+        "cycle_type": [
+          4,
+          1
+        ],
+        "permutations": 30,
+        "fixed_full_support_families": 166
+      },
+      {
+        "cycle_type": [
+          3,
+          2
+        ],
+        "permutations": 20,
+        "fixed_full_support_families": 168
+      },
+      {
+        "cycle_type": [
+          3,
+          1,
+          1
+        ],
+        "permutations": 20,
+        "fixed_full_support_families": 1256
+      },
+      {
+        "cycle_type": [
+          2,
+          2,
+          1
+        ],
+        "permutations": 15,
+        "fixed_full_support_families": 7506
+      },
+      {
+        "cycle_type": [
+          2,
+          1,
+          1,
+          1
+        ],
+        "permutations": 10,
+        "fixed_full_support_families": 58122
+      },
+      {
+        "cycle_type": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "permutations": 1,
+        "fixed_full_support_families": 2747402
+      }
+    ],
+    "fixed_points_weighted_sum": 3475200,
+    "group_order": 120,
+    "orbit_count": 28960
+  },
+  "sources": {
+    "labeled_full_support": "https://oeis.org/A326906",
+    "unlabeled_full_support": "https://oeis.org/A326907"
+  },
+  "scope": "Known exact finite counts only: group-action orbit counting of full-support union-closed families through n=5. Not Frankl's conjecture."
+}

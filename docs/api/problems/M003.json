@@ -1,0 +1,64 @@
+{
+  "id": "M003",
+  "name": "Birch–Swinnerton-Dyer conjecture",
+  "field": "Number theory",
+  "question": "Does the rank of every elliptic curve over Q equal the vanishing order of its L-function at s=1?",
+  "first_attack": "Audit precise statement and prove a restricted case",
+  "impact": 5,
+  "attackability": 2,
+  "verifiability": 3,
+  "spillover": 5,
+  "modality": "structural",
+  "evidence_state": "official_open",
+  "checked_on": "2026-10-30",
+  "source_url": "https://www.claymath.org/millennium-problems/",
+  "rank": 52,
+  "score": 72,
+  "execution_rank": 54,
+  "execution_score": 72,
+  "readiness": 0,
+  "dispatch_rank": 57,
+  "dispatch_score": 72,
+  "action": "specify_shape",
+  "action_label": "Fill the shared attack shape",
+  "action_bonus": 0,
+  "method_id": "galois_representations",
+  "method_title": "One field, two computations",
+  "dispatch_next": "Shape galois_representations (6 problems, one write-up): Pick one explicit number field or elliptic curve and one finite invariant the conjecture predicts, and compute it two ways. Full shape, certificate and falsifier are in APPROACH.md.",
+  "dispatch_why": "No campaign yet. Fill one restricted statement inside the shared shape.",
+  "campaign_stage": null,
+  "milestone_count": 0,
+  "url": "https://svyable.github.io/100/problems/M003/",
+  "field_url": "https://svyable.github.io/100/fields/number-theory/",
+  "readiness_breakdown": [],
+  "has_exact_verifier": false,
+  "campaign": null,
+  "probes": [],
+  "milestones": [],
+  "engine_roadmap": null,
+  "claim_review_2026": null,
+  "formal_statement": null,
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Scale — proof-exchange wave",
+      "source": "SCALE.md",
+      "url": "https://svyable.github.io/100/library/scale/"
+    }
+  ]
+}

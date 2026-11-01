@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M074 — the 24-vertex, degree-eight regular case is impossible · 100</title>
+<meta name="description" content="Dated: 2026-10-31. Status: self-contained structural proof with independently repeatable finite integer check; independent specialist proof review pending. This is a restricted case of the directed-triangle Caccetta–Häggkvist question, not ">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m074-elementary-24-regular/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M074 — the 24-vertex, degree-eight regular case is impossible · 100">
+<meta property="og:description" content="Dated: 2026-10-31. Status: self-contained structural proof with independently repeatable finite integer check; independent specialist proof review pending. This is a restricted case of the directed-triangle Caccetta–Häggkvist question, not ">
+<meta property="og:url" content="https://svyable.github.io/100/library/m074-elementary-24-regular/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../work/">Work</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M074 — the 24-vertex, degree-eight regular case is impossible</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#the-exact-theorem">The exact theorem</a></li><li class="toc-l3"><a href="#lemma-1--the-eight-vertex-local-budget">Lemma 1 — the eight-vertex local budget</a></li><li class="toc-l3"><a href="#lemma-2--cross-cut-edge-demand-in-any-regular-3r-vertex-candidate">Lemma 2 — cross-cut edge demand in any regular 3r-vertex candidate</a></li><li class="toc-l3"><a href="#lemma-3--an-exact-88-integer-crossing-bound">Lemma 3 — an exact 8×8 integer crossing bound</a></li><li class="toc-l3"><a href="#proof-of-the-theorem">Proof of the theorem</a></li><li class="toc-l2"><a href="#what-remains-for-the-full-finite-248-statement">What remains for the full finite (24,8) statement</a></li><li class="toc-l2"><a href="#verifying-the-arithmetic-without-a-sat-solver">Verifying the arithmetic without a SAT solver</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M074/" title="Caccetta–Häggkvist conjecture">M074</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M074_ELEMENTARY_24_REGULAR.md" rel="noopener noreferrer">research/M074_ELEMENTARY_24_REGULAR.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M074 — the 24-vertex, degree-eight regular case is impossible</h1>
+<p><strong>Dated:</strong> 2026-10-31. <strong>Status:</strong> self-contained structural proof with independently repeatable finite integer check; independent specialist proof review pending. This is a <strong>restricted</strong> case of the directed-triangle Caccetta–Häggkvist question, <strong>not</strong> a proof at (24,8) under only a minimum <strong>outdegree</strong> condition, and not the unrestricted conjecture. External <a href="https://github.com/wustep/maths/blob/main/problems/caccetta-haggkvist-k3/ATTACK.md" rel="noopener noreferrer">wustep/maths</a> already reports computational exclusion of the <em>full</em> (24,8) finite case. We assert no novelty or external acceptance.</p>
+<h2 id="the-exact-theorem">The exact theorem<a class="anchor" href="#the-exact-theorem" aria-label="Link to this section">#</a></h2>
+<p><strong>Theorem.</strong> There is no directed-triangle-free oriented graph on 24 vertices in which <em>every</em> vertex has indegree <strong>and</strong> outdegree exactly eight.</p>
+<p>A directed graph with digons already has a directed 2-cycle, so the oriented hypothesis is the relevant counterexample class.</p>
+<h3 id="lemma-1--the-eight-vertex-local-budget">Lemma 1 — the eight-vertex local budget<a class="anchor" href="#lemma-1--the-eight-vertex-local-budget" aria-label="Link to this section">#</a></h3>
+<p>Let H be a directed-triangle-free oriented graph on eight vertices with minimum outdegree at least two.</p>
+<ol><li>Every vertex of H has indegree at most three.</li><li>The total number of arcs of H is at most <strong>21</strong>; this is sharp.</li><li>No such graph has minimum outdegree at least three.</li></ol>
+<p><strong>Proof.</strong> Fix a vertex, with outdegree a and indegree b; set A=N+(v) and C the vertices outside A, N-(v), and v. For k=2 or 3, if every vertex has outdegree at least k, then each vertex of A sends at least k arcs to A∪C. Because H has neither digons nor directed triangles,</p>
+<p>k a &lt;= e(A,A) + e(A,C) &lt;= a(a-1)/2 + a(7-a-b),</p>
+<p>which gives <strong>a + 2b &lt;= 13 - 2k</strong>.</p>
+<p>For k=3 this forces b&lt;=2 (as a&gt;=3), contrary to average indegree at least three; (3) follows. For k=2, a&gt;=2 gives b&lt;=3, proving (1).</p>
+<p>We sharpen the arc count. A vertex of indegree three must have outdegree exactly <strong>two</strong>: the k=2 inequality gives a&lt;=3; if a=3, the outneighbor set A has size three and C has size one. Every vertex of A must then send at least one arc inside A, forcing a directed 3-cycle on those three vertices. Similarly, a vertex of indegree two has outdegree at most <strong>four</strong>: a=5 would give C empty and force minimum outdegree two inside its five-vertex outneighborhood, impossible by the same counting inequality on five vertices. A vertex of indegree one has outdegree at most <strong>five</strong>: a=6 would give C empty and force minimum outdegree two inside six vertices, impossible by the <a href="../../library/m074-elementary-18/">six-vertex obstruction</a>.</p>
+<p>Suppose e(H)&gt;=22. Since all indegrees are at most three, at least six vertices have indegree three (otherwise total indegree is at most 5<em>3+3</em>2=21). No vertex has indegree zero: its presence would make the total indegree at most 7<em>3=21. If exactly six vertices have indegree three, the other two must each have indegree two, so total outdegree is at most 6</em>2+2<em>4=20. If seven vertices have indegree three, the final vertex has indegree one or two, and total outdegree is at most 7</em>2+5=19. With eight indegrees equal to three, the total outdegree is at most 8*2=16. All contradict e(H)&gt;=22. Therefore <strong>e(H)&lt;=21</strong>.</p>
+<p>Sharpness: take the seven-vertex oriented circulant with steps {1,2}, which is 2-in/2-out-regular and triangle-free, and add a new vertex sending an arc to all seven old vertices but receiving none. The resulting eight-vertex graph has minimum outdegree two and exactly 14+7=21 arcs. QED.</p>
+<h3 id="lemma-2--cross-cut-edge-demand-in-any-regular-3r-vertex-candidate">Lemma 2 — cross-cut edge demand in any regular 3r-vertex candidate<a class="anchor" href="#lemma-2--cross-cut-edge-demand-in-any-regular-3r-vertex-candidate" aria-label="Link to this section">#</a></h3>
+<p>Suppose D is an oriented, directed-triangle-free graph on 3r vertices with every indegree and outdegree equal to r. Fix a root v. Put A=N+(v), B=N-(v), C the remaining vertices, so |A|=|B|=r and |C|=r-1. Set</p>
+<ul><li>α(a)=outdegree of a <em>inside A</em>, for a∈A;</li><li>β(b)=indegree of b <em>inside B</em>, for b∈B;</li><li>m_A=e(A,A), m_B=e(B,B), and t=e(B,A).</li></ul>
+<p>By the prior <a href="../../library/m074-elementary-18/">saturated-pivot lemma</a>, α(a)&gt;=2 and β(b)&gt;=2. There are no A→B arcs: each would close v→A→B→v.</p>
+<p>Every a∈A has r−α(a) outgoing neighbors in C, so at most α(a)−1 incoming neighbors in C. Its r incoming arcs must therefore include at least r−α(a)−d^-_A(a) arcs from B. Summing over a gives</p>
+<p>t &gt;= r² - 2m_A.</p>
+<p>Dually each b∈B has r−β(b) incoming neighbors from C, so can send at most β(b)−1 arcs into C. Its r outgoing arcs, including its arc to v, force at least r−β(b)−d^+_B(b) arcs into A. Summing gives</p>
+<p>t &gt;= r² - 2m_B.</p>
+<p>Finally, if b→a for b∈B and a∈A, there cannot be c∈C with a→c→b, since that would form a directed triangle. Their two respective subsets of C have sizes r−α(a) and r−β(b), so disjointness forces</p>
+<p>(r−α(a)) + (r−β(b)) &lt;= r−1, or equivalently α(a)+β(b) &gt;= r+1.</p>
+<p><strong>This is a general theorem about any hypothetical regular counterexample</strong>, not an assertion that such a graph exists. QED.</p>
+<h3 id="lemma-3--an-exact-88-integer-crossing-bound">Lemma 3 — an exact 8×8 integer crossing bound<a class="anchor" href="#lemma-3--an-exact-88-integer-crossing-bound" aria-label="Link to this section">#</a></h3>
+<p>Let α_1,…,α_8 and β_1,…,β_8 be integers between two and seven with Σα_i&lt;=21 and Σβ_j&lt;=21. At most <strong>15</strong> of the 64 pairs (i,j) have α_i+β_j&gt;=9.</p>
+<p><strong>Proof.</strong> Put x_i=α_i−2 and y_j=β_j−2. All entries lie between zero and five, and Σx&lt;=5, Σy&lt;=5. Eligible pairs satisfy x_i+y_j&gt;=5.</p>
+<p>If both arrays have an entry five, every eligible pair lies in that one row or that one column, giving at most 8+8−1=15. If just one array has a five, all other entries on that side are zero, so its exceptional row/column accounts for at most eight eligible pairs. Otherwise each maximum is at most four. If both maxima equal four, each array has at most one further unit of positive surplus: all eligible pairs lie in the exceptional row/column, contributing at most 5+5−1=9. If just one side has a four, its exceptional row/column contributes at most five; the remaining surplus there is at most one and the other side has no four, so there are no further eligible pairs. If both maxima are at most three, an eligible pair requires both entries at least two. Each side has at most two such entries, so there are at most four eligible pairs. In all cases the total is at most <strong>15</strong>. QED.</p>
+<h3 id="proof-of-the-theorem">Proof of the theorem<a class="anchor" href="#proof-of-the-theorem" aria-label="Link to this section">#</a></h3>
+<p>Apply Lemma 2 with r=8. Both induced 8-vertex graphs D[A] and the arc-reversal of D[B] have minimum outdegree at least two. Lemma 1 gives m_A&lt;=21 and m_B&lt;=21. Thus Lemma 2 forces <strong>t=e(B,A)&gt;=64−42=22</strong>.</p>
+<p>On the other hand, Lemma 2 permits an arc b→a only when α(a)+β(b)&gt;=9. Lemma 3 says there are at most <strong>15</strong> such ordered pairs. Hence <strong>22&lt;=t&lt;=15</strong>, a contradiction. QED.</p>
+<h2 id="what-remains-for-the-full-finite-248-statement">What remains for the <em>full finite</em> (24,8) statement<a class="anchor" href="#what-remains-for-the-full-finite-248-statement" aria-label="Link to this section">#</a></h2>
+<p><strong>Proposition (necessary irregularity and an exact nine-indegree pivot).</strong> In a hypothetical 24-vertex directed-triangle-free oriented graph with minimum outdegree eight, delete excess outgoing arcs to make all outdegrees exactly eight. No vertex can have indegree &gt;=10: if a root has indegree b&gt;=10, its eight outneighbors have at least b−7&gt;=3 outgoing neighbors within their own eight-vertex induced graph, contrary to Lemma 1(3). Thus all indegrees are at most nine. If no vertex had indegree nine, their average eight would make the graph 8-in/8-out-regular, excluded above. Therefore a remaining hypothetical counterexample <strong>must</strong> have an indegree-nine vertex and some vertex of indegree at most seven.</p>
+<p>At an indegree-nine root v, the eight outneighbors A have m_A&lt;=21 internal arcs, so they send at least <strong>43</strong> arcs into the six-element nonneighbor set C. Because each α&gt;=2 and Σα&lt;=21, some a∈A has α(a)=2 and therefore points to <strong>all six vertices of C</strong>. Every b∈B receiving even one arc from C cannot point to a (it would form a→c→b→a).</p>
+<p>There are at most 48−e(A,C)&lt;=5 arcs C→A, because digons are forbidden. The six vertices in C have 48 outgoing arcs in total, so e(C,B)+e(C,C)&gt;=43. Since all indegrees are at most nine, and at least 43 incoming C-arcs arrive from A, we have e(B,C)+e(C,C)&lt;=6*9−43=11, hence e(C,C)&lt;=11. It follows that <strong>e(C,B)&gt;=32</strong>. Each of the nine B-vertices receives at most six arcs from C, so at least six B-vertices have a predecessor in C; at most three do not. The saturated pivot a therefore receives at most three arcs from B, none from C, at most three from A (Lemma 1), and one from v. Thus <strong>d⁻(a)&lt;=7</strong>.</p>
+<p>This gives a tighter necessary structure: <em>every indegree-nine root has an outneighbor of indegree at most seven</em>. This is an irregular-branch obligation, not a contradiction and not a resolution of the full finite case.</p>
+<p>This isolates the <strong>next mathematical task</strong>: exclude the indegree-nine branch without assuming exact in/out regularity; alternatively produce a genuinely independent and reviewable finite certificate. Do not import the 8-inregular assumption into the missing branch.</p>
+<h2 id="verifying-the-arithmetic-without-a-sat-solver">Verifying the arithmetic without a SAT solver<a class="anchor" href="#verifying-the-arithmetic-without-a-sat-solver" aria-label="Link to this section">#</a></h2>
+<p>From the repository root:</p>
+<p>python3 scripts/ch24_crosscut.py python3 -m unittest discover -s tests -p &#x27;test_ch24_crosscut.py&#x27; -v</p>
+<p>The stand-alone checker enumerates all <strong>19</strong> sorted eight-tuples with entries in [2,7] and sum at most 21, then checks all 19² profile pairs. It independently recomputes the case-bound and shows the maximum <em>eligible pairs</em> is 15 while the minimum required cross arcs is 22. This integer check is <strong>not</strong> an exhaustive enumeration of 24-vertex digraphs. The mathematical proof is the preceding lemmas.</p>
+<p><strong>Related source checks:</strong> <a href="https://lemon.cs.elte.hu/egres/open/Caccetta-H%C3%A4ggkvist_conjecture" rel="noopener noreferrer">EGRES open status</a>, <a href="https://doi.org/10.1007/s00493-015-2662-5" rel="noopener noreferrer">Hladký–Král&#x27;–Norin published triangle bound</a>, and <a href="https://github.com/wustep/maths/blob/main/problems/caccetta-haggkvist-k3/ATTACK.md" rel="noopener noreferrer">wustep&#x27;s prior finite computations</a>. The general conjecture remains open. Leave the M074 registry evidence state and <code>data/solved.json</code> unchanged.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

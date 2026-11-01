@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M074 — a certificate-free exclusion of the (18,6) directed-triangle case · 100</title>
+<meta name="description" content="Dated: 2026-10-31. Scope: exact finite theorem only, not the Caccetta–Häggkvist conjecture for all parameters or the fixed-r=6 assertion at all orders. Novelty is not claimed: a prior independent project reports a DRAT-certified (18,6) resu">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m074-elementary-18/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M074 — a certificate-free exclusion of the (18,6) directed-triangle case · 100">
+<meta property="og:description" content="Dated: 2026-10-31. Scope: exact finite theorem only, not the Caccetta–Häggkvist conjecture for all parameters or the fixed-r=6 assertion at all orders. Novelty is not claimed: a prior independent project reports a DRAT-certified (18,6) resu">
+<meta property="og:url" content="https://svyable.github.io/100/library/m074-elementary-18/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../work/">Work</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M074 — a certificate-free exclusion of the (18,6) directed-triangle case</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#theorem">Theorem</a></li><li class="toc-l2"><a href="#lemma-1-six-vertex-obstruction">Lemma 1 (six-vertex obstruction)</a></li><li class="toc-l2"><a href="#lemma-2-18-vertex-regularity">Lemma 2 (18-vertex regularity)</a></li><li class="toc-l2"><a href="#lemma-3-saturated-pivot-obstruction-general-form">Lemma 3 (saturated-pivot obstruction, general form)</a></li><li class="toc-l2"><a href="#proof-of-the-finite-theorem">Proof of the finite theorem</a></li><li class="toc-l2"><a href="#independent-check">Independent check</a></li><li class="toc-l2"><a href="#provenance-and-evidence-boundary">Provenance and evidence boundary</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M074/" title="Caccetta–Häggkvist conjecture">M074</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M074_ELEMENTARY_18.md" rel="noopener noreferrer">research/M074_ELEMENTARY_18.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M074 — a certificate-free exclusion of the (18,6) directed-triangle case</h1>
+<p><strong>Dated:</strong> 2026-10-31. <strong>Scope:</strong> exact finite theorem only, not the Caccetta–Häggkvist conjecture for all parameters or the fixed-r=6 assertion at all orders. <strong>Novelty is not claimed:</strong> a prior independent project reports a DRAT-certified (18,6) result.</p>
+<h2 id="theorem">Theorem<a class="anchor" href="#theorem" aria-label="Link to this section">#</a></h2>
+<p>Every loopless digraph on 18 vertices with minimum outdegree at least 6 contains a directed cycle of length at most 3.</p>
+<p><strong>Reduction.</strong> A counterexample contains neither digons nor directed triangles, so it is an oriented graph. Delete excess outgoing arcs independently at each vertex until every outdegree is exactly 6. Deletion creates no cycles, so it suffices to rule out triangle-free oriented graphs of outdegree exactly 6 on 18 vertices.</p>
+<h2 id="lemma-1-six-vertex-obstruction">Lemma 1 (six-vertex obstruction)<a class="anchor" href="#lemma-1-six-vertex-obstruction" aria-label="Link to this section">#</a></h2>
+<p>There is no triangle-free oriented graph on six vertices with minimum outdegree at least two.</p>
+<p><strong>Proof.</strong> Such a graph has at least 12 arcs, so some vertex $v$ has indegree $b\ge2$. Let $a=d^+(v)\ge2$, $A=N^+(v)$, $B=N^-(v)$ and $C$ be the remaining $5-a-b$ vertices. No arc can go from $A$ to $B$ (it would complete a directed triangle through $v$), or from $A$ to $v$ (it would be a digon). Each vertex of $A$ needs at least two outgoing arcs into $A\cup C$. Since the graph is oriented,</p>
+<p>$2a\le e(A,A)+e(A,C)\le a(a-1)/2+a(5-a-b)$,</p>
+<p>which rearranges to $a+2b\le5$. This contradicts $a\ge2$ and $b\ge2$. QED.</p>
+<h2 id="lemma-2-18-vertex-regularity">Lemma 2 (18-vertex regularity)<a class="anchor" href="#lemma-2-18-vertex-regularity" aria-label="Link to this section">#</a></h2>
+<p>Any triangle-free oriented graph on 18 vertices with all outdegrees six has all indegrees six.</p>
+<p><strong>Proof.</strong> For any vertex $v$, let $A=N^+(v)$ have size six, let $b=d^-(v)$, and let $C$ be the remaining $11-b$ vertices. If $b\ge7$, then $|C|\le4$. Every $a\in A$ sends six arcs only into $A\cup C$, so at least two must remain inside $A$. This contradicts Lemma 1. All indegrees are thus at most six. Since the average indegree equals the fixed outdegree six, every indegree equals six. QED.</p>
+<h2 id="lemma-3-saturated-pivot-obstruction-general-form">Lemma 3 (saturated-pivot obstruction, general form)<a class="anchor" href="#lemma-3-saturated-pivot-obstruction-general-form" aria-label="Link to this section">#</a></h2>
+<p>Let $D$ be triangle-free and oriented on $3r$ vertices, with every vertex having both indegree and outdegree exactly $r$. For any vertex $v$, the induced subgraph on its outneighbors $A=N^+(v)$ has minimum internal outdegree <strong>at least two</strong>. Dually, the subgraph on its inneighbors has minimum internal indegree at least two.</p>
+<p><strong>Proof.</strong> Set $B=N^-(v)$ and $C=V\setminus(A\cup B\cup\{v\})$. Then $|A|=|B|=r$ and $|C|=r-1$. Each $a\in A$ must send all its $r$ outgoing arcs into $A\cup C$; it therefore has at least one outneighbor within $A$.</p>
+<p>Suppose $a$ has exactly one such neighbor $a&#x27;$. Then $a$ sends arcs to <strong>every</strong> vertex of $C$. Each $b\in B$ has indegree $r$, with no incoming arc from $v$ or $A$ and at most $r-1$ possible incoming arcs from $B$. Hence some $c\in C$ satisfies $c\to b$. An arc $b\to a$ would create the forbidden triangle $a\to c\to b\to a$. Thus no $b\in B$ sends an arc to $a$. No $c\in C$ sends an arc to $a$ either, because $a\to C$ and digons are forbidden. Consequently $a$ can receive arcs only from $v$ and from $A\setminus\{a,a&#x27;\}$: at most $1+(r-2)=r-1$ arcs. This contradicts $d^-(a)=r$. So every $a\in A$ has at least two outneighbors within $A$. Reversing arcs gives the dual statement. QED.</p>
+<h2 id="proof-of-the-finite-theorem">Proof of the finite theorem<a class="anchor" href="#proof-of-the-finite-theorem" aria-label="Link to this section">#</a></h2>
+<p>Assume a counterexample exists. Reduce to exact outdegree six, and use Lemma 2 to obtain exact indegree six. For any vertex $v$, Lemma 3 with $r=6$ forces its six-vertex outneighborhood to have minimum internal outdegree at least two. Lemma 1 rules that out. Contradiction. QED.</p>
+<p>The same pivot argument supplies a <strong>necessary</strong> neighborhood condition at order $3r$ for regular candidates of any $r$; it is not an all-$r$ CH proof. In particular, at $r\ge7$, a triangle-free oriented neighborhood of order $r$ may have minimum outdegree two.</p>
+<h2 id="independent-check">Independent check<a class="anchor" href="#independent-check" aria-label="Link to this section">#</a></h2>
+<p>Run <code>python3 scripts/ch_six_check.py</code> and <code>python3 -m unittest discover -s tests -p &#x27;test_ch_elementary.py&#x27; -v</code>. The checker independently enumerates all partial orientations of the 15 pairs of $K_6$ with conservative triangle and degree pruning, visiting 42,002 nodes, rejecting 20,164 triangle branches and 63,841 degree-impossible branches, and finds no witness. A negative control tests the triangle-free directed circulant on seven vertices with step set {1,2} and minimum outdegree two. This computation certifies only Lemma 1; Lemmas 2–3 are the explicit mathematical arguments above, <strong>not</strong> a machine-check of all graphs on 18 vertices.</p>
+<h2 id="provenance-and-evidence-boundary">Provenance and evidence boundary<a class="anchor" href="#provenance-and-evidence-boundary" aria-label="Link to this section">#</a></h2>
+<ul><li>Earlier repository work: <a href="../../library/m074-regularity/">regularity and rooted-pivot derivations</a>. The new step is the universal <strong>B-to-pivot exclusion</strong> and ensuing indegree contradiction; it replaces the formerly open SAT branch with a direct finite proof.</li><li>Independent earlier computational result: <a href="https://github.com/wustep/maths/blob/main/problems/caccetta-haggkvist-k3/ATTACK.md" rel="noopener noreferrer">wustep/maths, directed triangle investigation</a> reports DRAT-verified indegree partitions at (18,6). We <strong>do not claim novelty</strong> or independent reproduction of those external proof files.</li><li>Separate wider unreviewed claim: <a href="https://github.com/joshp123/solve-a-maths-problem-dont-care-which-make-no-mistakes" rel="noopener noreferrer">joshp123&#x27;s fixed-r=6 manuscript</a>. Its full scope is not established here.</li><li>Published context: <a href="https://doi.org/10.1007/s00493-015-2662-5" rel="noopener noreferrer">Hladký–Král’–Norine, Combinatorica (2017)</a> gives a directed-triangle threshold of 0.3465n; that bound alone does not exclude n=18, r=6.</li></ul>
+<p><strong>Acceptance gate:</strong> Seek independent specialist review before describing the elementary argument as an externally accepted or new restricted theorem. Do not change M074&#x27;s full-conjecture evidence state, promote it to Solved, or treat this as proof for all orders with r=6. The existing exact CNF artifacts remain frozen as independent verification targets.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

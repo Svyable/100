@@ -1,0 +1,190 @@
+{
+  "id": "M078",
+  "name": "Graph reconstruction conjecture",
+  "field": "Combinatorics",
+  "question": "Is each finite simple graph on at least three vertices determined by its vertex-deleted deck?",
+  "first_attack": "Prove reconstruction for a new graph family",
+  "impact": 4,
+  "attackability": 5,
+  "verifiability": 5,
+  "spillover": 4,
+  "modality": "finite_refutable",
+  "evidence_state": "needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 6,
+  "score": 91,
+  "execution_rank": 4,
+  "execution_score": 98,
+  "readiness": 7,
+  "dispatch_rank": 11,
+  "dispatch_score": 104,
+  "action": "mine_structure",
+  "action_label": "Mine structure from certificates",
+  "action_bonus": 6,
+  "method_id": "extremal_certificates",
+  "method_title": "Replay the object, or mine the census",
+  "dispatch_next": "The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two.",
+  "dispatch_why": "The deck_invariants mine shows degree sequence plus triangle count still leaves collisions at 6 vertices. A larger census sits inside the published computational range.",
+  "campaign_stage": "benchmark_reproduced",
+  "milestone_count": 2,
+  "url": "https://svyable.github.io/100/problems/M078/",
+  "field_url": "https://svyable.github.io/100/fields/combinatorics/",
+  "readiness_breakdown": [
+    {
+      "item": "Formal campaign brief",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Runnable independent verifier",
+      "points": 3,
+      "max": 3
+    },
+    {
+      "item": "Reproduced known benchmark",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Independently reviewed restricted theorem",
+      "points": 0,
+      "max": 3
+    }
+  ],
+  "has_exact_verifier": true,
+  "campaign": {
+    "problem_id": "M078",
+    "stage": "benchmark_reproduced",
+    "method": "Deck-collision search over certified graph censuses",
+    "hypothesis": "Every finite simple graph on at least 3 vertices is determined up to isomorphism by its vertex-deleted deck.",
+    "first_proof_obligation": "Pick a graph family not yet known to be reconstructible and isolate a lemma that reconstructs a new invariant for it.",
+    "next_experiment": "The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two.",
+    "additional_verifiers": [
+      "python3 scripts/mine.py --mine deck_invariants"
+    ],
+    "falsification": "Two non-isomorphic graphs with identical decks, confirmed by independent canonical forms.",
+    "blocker": "Computer verification already reaches at least 11 vertices; novelty has to come from a structural lemma, not from range.",
+    "dossier": "research/LAB_CAMPAIGNS.md",
+    "verifier": "python3 scripts/lab.py --probe reconstruction"
+  },
+  "probes": [
+    {
+      "id": "reconstruction",
+      "problem_id": "M078",
+      "name": "Graph reconstruction conjecture",
+      "title": "Vertex-deck reconstruction for every graph up to N vertices",
+      "engines": [
+        "graph_census"
+      ],
+      "frontier": "Known: verified by computer for all graphs on at most 11 vertices (McKay 1997) and beyond; proved for trees, regular and disconnected graphs (Kelly 1957).",
+      "artifact": "scripts/probes/reconstruction.py",
+      "command": "python3 scripts/lab.py --probe reconstruction",
+      "runs": {
+        "smoke": {
+          "holds": true,
+          "scope": "For every n with 3 <= n <= 6, the 6-vertex census is complete (Burnside-certified) and no two non-isomorphic graphs share a vertex-deleted deck.",
+          "certificate_sha256": "2b1be7e121a27d25d8005718fa562c2098ee2b5af018b41d2d03c75575475e47"
+        },
+        "deep": {
+          "holds": true,
+          "scope": "For every n with 3 <= n <= 7, the 7-vertex census is complete (Burnside-certified) and no two non-isomorphic graphs share a vertex-deleted deck.",
+          "certificate_sha256": "3a4701b2aeb0061d4a18263b1214afef6970890c5f6eb773e985a3a4135b0dba"
+        }
+      }
+    }
+  ],
+  "milestones": [
+    {
+      "id": "B-RECON-001",
+      "problem_id": "M078",
+      "classification": "reproduced_known",
+      "title": "Graph reconstruction verified for every graph on 3-6 vertices",
+      "scope": "Known computational range; not new",
+      "description": "Burnside-certified census of 4, 11, 34 and 156 graphs; all decks pairwise distinct under an independent canonical form. Deep run adds all 1,044 graphs on 7 vertices.",
+      "verifier": "python3 scripts/lab.py --probe reconstruction",
+      "artifact": "scripts/probes/reconstruction.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-MINE-078",
+      "problem_id": "M078",
+      "classification": "reproduced_known",
+      "title": "Deck-certified degree and triangle separation through 6 vertices",
+      "scope": "Census already known to be reconstructible far beyond 6 vertices; this only ranks coarse invariants",
+      "description": "Degree sequence separates through 4 vertices. Degree sequence plus triangle count separates through 5 and leaves 20 excess graphs at 6. Both invariants are recomputed from cards.",
+      "verifier": "python3 scripts/mine.py --mine deck_invariants",
+      "artifact": "scripts/mines/deck_invariants.py",
+      "verified_on": "2026-10-31"
+    }
+  ],
+  "engine_roadmap": null,
+  "claim_review_2026": null,
+  "formal_statement": {
+    "problem_id": "M078",
+    "module": "lean/Hundred/Statements/Reconstruction.lean",
+    "namespace": "Hundred.Statements.Reconstruction",
+    "statement": "Statement",
+    "encodes": "Simple graphs on n ≥ 3 vertices with a deck-matching bijection σ (G − v ≅ H − σv) are isomorphic.",
+    "not_encoded": [
+      "Edge reconstruction",
+      "Digraph or hypergraph reconstruction"
+    ],
+    "kernel_checked": [],
+    "fidelity": "author_checked",
+    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/Reconstruction.lean"
+  },
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Exact probe lab — computational reach of the 100",
+      "source": "LAB.md",
+      "url": "https://svyable.github.io/100/library/lab/"
+    },
+    {
+      "title": "Lean proof pipeline",
+      "source": "LEAN.md",
+      "url": "https://svyable.github.io/100/library/lean/"
+    },
+    {
+      "title": "Structure mines",
+      "source": "MINES.md",
+      "url": "https://svyable.github.io/100/library/mines/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
+    },
+    {
+      "title": "Scale — proof-exchange wave",
+      "source": "SCALE.md",
+      "url": "https://svyable.github.io/100/library/scale/"
+    },
+    {
+      "title": "Lab campaigns: problems under exact computation",
+      "source": "research/LAB_CAMPAIGNS.md",
+      "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "Proof-driven research engine",
+      "source": "docs/RESEARCH_ENGINE.md",
+      "url": "https://svyable.github.io/100/library/research-engine/"
+    }
+  ]
+}

@@ -58,36 +58,37 @@ ENGINES = {
         "modules": ["scripts/probes/polynomials.py"],
         "use": "Jacobians, compositions and certified inverses of polynomial maps; exhaustive integer classes.",
     },
-    "interval_arithmetic": {
-        "name": "Rigorous fixed-point interval arithmetic with certified exp, log, sin, cos, atan and pi",
-        "modules": ["scripts/probes/intervals.py"],
-        "use": "Floating-point-free enclosures for analytic computations; every series carries a remainder bound.",
-    },
-    "l_functions": {
-        "name": "Certified zeta and Dirichlet L-function evaluation with argument-principle zero counts",
-        "modules": ["scripts/probes/lfunctions.py"],
-        "use": "Euler-Maclaurin and Stirling with explicit remainders, Hardy Z sign changes, exact N(T).",
-    },
-    "group_characters": {
-        "name": "Permutation groups, quotients and character degrees by Dixon's modular method",
-        "modules": ["scripts/probes/groups.py"],
-        "use": "Conjugacy classes, Sylow and radical subgroups, irreducible degrees for groups up to ~10^4.",
-    },
     "clique_search": {
         "name": "Branch-and-bound clique search with exhaustive subset re-check",
         "modules": ["scripts/probes/ramsey_witness.py"],
         "use": "Ramsey and coding lower-bound witnesses.",
     },
+    "interval_arithmetic": {
+        "name": "Directed fixed-point intervals for zeta and Dirichlet L-functions",
+        "modules": ["scripts/probes/intervals.py", "scripts/probes/zeta.py", "scripts/probes/intervals_cert.py"],
+        "use": "Rigorous zero counts on the critical line via the argument principle.",
+    },
+    "l_functions": {
+        "name": "Certified Euler-Maclaurin Dirichlet L-functions and argument-principle zero counts",
+        "modules": ["scripts/probes/lfunctions.py", "scripts/probes/intervals_cert.py"],
+        "use": "Independent interval enclosures of zeta and real primitive L-function zero counts.",
+    },
+    "group_characters": {
+        "name": "Exact conjugacy, radical p-subgroups and character-degree counts",
+        "modules": ["scripts/probes/groups.py", "scripts/probes/groups_cert.py"],
+        "use": "Alperin weight counts, Brauer-character enumerations and small modular checks.",
+    },
 }
 
 # probe id -> module name (ordered by problem id)
 PROBES = {
+    "riemann": "riemann",
     "zeta_zeros": "zeta_zeros",
+    "dirichlet_l": "dirichlet_l",
     "dirichlet_zeros": "dirichlet_zeros",
     "goldbach": "goldbach",
     "erdos_straus": "erdos_straus",
     "jacobian": "jacobian",
-    "alperin_weights": "alperin",
     "hadwiger": "hadwiger",
     "sidorenko": "sidorenko",
     "reconstruction": "reconstruction",
@@ -100,6 +101,8 @@ PROBES = {
     "ramsey_witnesses": "ramsey_witness",
     "projective_planes": "planes",
     "held_karp": "held_karp",
+    "alperin": "alperin",
+    "alperin_weights": "alperin_cert",
 }
 
 

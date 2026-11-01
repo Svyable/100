@@ -29,7 +29,7 @@ import math
 from fractions import Fraction
 from functools import lru_cache
 
-from .intervals import CENTER, CI, RI, arg_in_window, atan, exp, half_plane, in_half_plane, log, pi, sincos
+from .intervals_cert import CENTER, CI, RI, arg_in_window, atan, exp, half_plane, in_half_plane, log, pi, sincos
 
 
 @lru_cache(maxsize=None)

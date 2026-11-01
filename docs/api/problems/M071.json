@@ -1,0 +1,205 @@
+{
+  "id": "M071",
+  "name": "Hadwiger conjecture",
+  "field": "Combinatorics",
+  "question": "Does every graph of chromatic number k contain Kk as a minor?",
+  "first_attack": "Audit precise statement and prove a restricted case",
+  "impact": 4,
+  "attackability": 4,
+  "verifiability": 5,
+  "spillover": 4,
+  "modality": "finite_refutable",
+  "evidence_state": "claim_needs_review",
+  "checked_on": null,
+  "source_url": null,
+  "rank": 12,
+  "score": 85,
+  "execution_rank": 10,
+  "execution_score": 92,
+  "readiness": 7,
+  "dispatch_rank": 1,
+  "dispatch_score": 132,
+  "action": "replay_claim_witness",
+  "action_label": "Replay a claimed finite witness",
+  "action_bonus": 40,
+  "method_id": "extremal_certificates",
+  "method_title": "Replay the object, or mine the census",
+  "dispatch_next": "Extract a concrete finite graph from the binary-frame construction, or obtain two independent specialist reviews of the existential proof; do not treat comparator or second-kernel replay as a finite witness.",
+  "dispatch_why": "The extractability audit found no published finite Hadwiger graph. Extracting one, or obtaining specialist reviews of the existential proof, still outranks another small-n census. Robertson, Seymour and Thomas already cover chromatic number at most 6.",
+  "campaign_stage": "benchmark_reproduced",
+  "milestone_count": 1,
+  "url": "https://svyable.github.io/100/problems/M071/",
+  "field_url": "https://svyable.github.io/100/fields/combinatorics/",
+  "readiness_breakdown": [
+    {
+      "item": "Formal campaign brief",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Runnable independent verifier",
+      "points": 3,
+      "max": 3
+    },
+    {
+      "item": "Reproduced known benchmark",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Independently reviewed restricted theorem",
+      "points": 0,
+      "max": 3
+    }
+  ],
+  "has_exact_verifier": true,
+  "campaign": {
+    "problem_id": "M071",
+    "stage": "benchmark_reproduced",
+    "method": "Colouring and minor-model certificates over exhaustive graph censuses",
+    "hypothesis": "Every graph with chromatic number t has K_t as a minor.",
+    "first_proof_obligation": "Choose a restricted class beyond the proved t <= 6 range (for example 7-chromatic graphs with small independence number) and state a checkable lemma absent from the literature.",
+    "next_experiment": "Extend the census engine to 8-9 vertices with a faster canonical labeller, then target contraction-critical 7-chromatic graphs where a K7 minor model must be certified.",
+    "falsification": "A graph with a certified chromatic-number lower bound t and an exhaustive certificate that no K_t minor model exists.",
+    "blocker": "Every graph a naive census reaches is inside the proved t <= 6 range; t = 7 needs much larger graphs and exact chromatic lower-bound certificates.",
+    "dossier": "research/LAB_CAMPAIGNS.md",
+    "verifier": "python3 scripts/lab.py --probe hadwiger"
+  },
+  "probes": [
+    {
+      "id": "hadwiger",
+      "problem_id": "M071",
+      "name": "Hadwiger conjecture",
+      "title": "Hadwiger's conjecture on every graph up to N vertices",
+      "engines": [
+        "graph_census"
+      ],
+      "frontier": "Known: proved for chromatic number <= 6 (Robertson, Seymour & Thomas 1993), so every graph on <= 7 vertices is a known case. Reproduction only.",
+      "artifact": "scripts/probes/hadwiger.py",
+      "command": "python3 scripts/lab.py --probe hadwiger",
+      "runs": {
+        "smoke": {
+          "holds": true,
+          "scope": "Every graph on 1..6 vertices has a proper t-colouring and a K_t minor model for t = its chromatic number.",
+          "certificate_sha256": "108fe9f19d66a0fa7c259e2e4209d930f0c3047efa65e91a038be5f7bc6f1327"
+        },
+        "deep": {
+          "holds": true,
+          "scope": "Every graph on 1..7 vertices has a proper t-colouring and a K_t minor model for t = its chromatic number.",
+          "certificate_sha256": "90cdd7bbe904ef96948bd16235b804fb77aec22aaf9d5073d403320946e0bc15"
+        }
+      }
+    }
+  ],
+  "milestones": [
+    {
+      "id": "B-HADWIGER-001",
+      "problem_id": "M071",
+      "classification": "reproduced_known",
+      "title": "Hadwiger's conjecture certified on all 208 graphs with at most 6 vertices",
+      "scope": "Known case (chromatic number <= 6 theorem); not new",
+      "description": "Each graph carries a proper t-colouring and a K_t minor model (t = chromatic number); the census is complete by Burnside counting. Deep run: all 1,252 graphs on <= 7 vertices.",
+      "verifier": "python3 scripts/lab.py --probe hadwiger",
+      "artifact": "scripts/probes/hadwiger.py",
+      "verified_on": "2026-10-31"
+    }
+  ],
+  "engine_roadmap": null,
+  "claim_review_2026": {
+    "id": "M071",
+    "primary_title": "A counterexample to Hadwiger's conjecture",
+    "primary_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/A-counterexample-to-Hadwigers-conjecture-September-23-2026/paper.pdf",
+    "preprint_date": "2026-09-23",
+    "claimed_theorem": "Arbitrarily large finite simple graphs have fractional chromatic number chi_f(G) > h(G), where h is largest clique-minor order.",
+    "scope_relation": "matches",
+    "scope_note": "Since chi(G)>=chi_f(G), such a graph would refute chi(G)<=h(G), the registered Hadwiger statement.",
+    "independent_validation": "formal_statement_check_only",
+    "independent_evidence_urls": [
+      "https://mathcommunity.github.io/oai-math-revised/papers/A-counterexample-to-Hadwigers-conjecture-September-23-2026/"
+    ],
+    "known_caveats": "Comparator acceptance is proof-object checking only. The 2026-10-31 extractability audit (research/M071_M073_WITNESSES.md; data/claim_witness_replay.json) confirms the Lean statement is an existential family (arbitrarily large m, alpha<=2, h(G)<26m/75+2/3<m/2<=chi(G)) with no published adjacency list or explicit Hadwiger number. Bonnet's local kernel replay remains Lean-only evidence.",
+    "next_review": "Extract a concrete finite graph from the binary-frame construction, or obtain two independent specialist reviews of the existential proof; do not treat comparator or second-kernel replay as a finite witness.",
+    "formalization_scope_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/157.md"
+  },
+  "formal_statement": {
+    "problem_id": "M071",
+    "module": "lean/Hundred/Statements/Hadwiger.lean",
+    "namespace": "Hundred.Statements.Hadwiger",
+    "statement": "Statement",
+    "encodes": "Every simple graph has a K_t minor (branch-set model, connectivity by no-split cuts) or a proper (t−1)-colouring.",
+    "not_encoded": [
+      "Fractional, list and odd-minor variants"
+    ],
+    "kernel_checked": [],
+    "fidelity": "author_checked",
+    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/Hadwiger.lean"
+  },
+  "external_claims": [],
+  "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
+      "title": "Execution queue — evidence-aware research priorities",
+      "source": "ATTACK_QUEUE.md",
+      "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Exact probe lab — computational reach of the 100",
+      "source": "LAB.md",
+      "url": "https://svyable.github.io/100/library/lab/"
+    },
+    {
+      "title": "Lean proof pipeline",
+      "source": "LEAN.md",
+      "url": "https://svyable.github.io/100/library/lean/"
+    },
+    {
+      "title": "Ranked candidate portfolio",
+      "source": "RANKED.md",
+      "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
+    },
+    {
+      "title": "Scale — proof-exchange wave",
+      "source": "SCALE.md",
+      "url": "https://svyable.github.io/100/library/scale/"
+    },
+    {
+      "title": "2026 claimed-resolution triage — issue #3",
+      "source": "research/CLAIM_REVIEWS_2026.md",
+      "url": "https://svyable.github.io/100/library/claim-reviews-2026/"
+    },
+    {
+      "title": "Lab campaigns: problems under exact computation",
+      "source": "research/LAB_CAMPAIGNS.md",
+      "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "M071 / M073 — claimed finite-witness extractability audit",
+      "source": "research/M071_M073_WITNESSES.md",
+      "url": "https://svyable.github.io/100/library/m071-m073-witnesses/"
+    },
+    {
+      "title": "Publish the 100 portfolio via GitHub Pages",
+      "source": "docs/PAGES_SETUP.md",
+      "url": "https://svyable.github.io/100/library/pages-setup/"
+    },
+    {
+      "title": "Proof-driven research engine",
+      "source": "docs/RESEARCH_ENGINE.md",
+      "url": "https://svyable.github.io/100/library/research-engine/"
+    },
+    {
+      "title": "Foundational sources and 2026 claim watch",
+      "source": "docs/SOURCES.md",
+      "url": "https://svyable.github.io/100/library/sources/"
+    }
+  ]
+}
