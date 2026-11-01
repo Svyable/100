@@ -162,6 +162,39 @@ def lean_decl_block(src, name):
     return ""
 
 
+# --------------------------------------------------------------------------- editorial reading guides
+
+def load_reading_guides(problem_ids):
+    """Validate non-authoritative exposition before rendering it into pages."""
+    doc = json.loads((ROOT / "data" / "reading_guides.json").read_text(encoding="utf-8"))
+    if doc.get("version") != 1 or not isinstance(doc.get("editorial_notice"), str):
+        raise ValueError("Invalid reading-guide version or editorial notice")
+    guides = {}
+    for guide in doc["guides"]:
+        required = {"id", "summary", "intuition", "obstacle", "meaningful_check", "bridges"}
+        if set(guide) != required:
+            raise ValueError("Reading guide has missing or unexpected fields")
+        pid = guide["id"]
+        if pid not in problem_ids or pid in guides:
+            raise ValueError("Reading guide has unknown or duplicate problem ID")
+        for key in ("summary", "intuition", "obstacle", "meaningful_check"):
+            if not isinstance(guide[key], str) or not guide[key].strip():
+                raise ValueError(f"Reading guide {pid} has empty {key}")
+        targets = set()
+        if not isinstance(guide["bridges"], list) or not guide["bridges"]:
+            raise ValueError("Reading guide must identify conceptual connections")
+        for bridge in guide["bridges"]:
+            if set(bridge) != {"id", "reason"}:
+                raise ValueError("Reading guide bridge has wrong fields")
+            target = bridge["id"]
+            if (target == pid or target not in problem_ids or target in targets
+                    or not isinstance(bridge["reason"], str) or not bridge["reason"].strip()):
+                raise ValueError("Invalid, duplicate, or self-referential reading-guide bridge")
+            targets.add(target)
+        guides[pid] = guide
+    return guides, doc["editorial_notice"]
+
+
 # --------------------------------------------------------------------------- model
 
 class Site:
@@ -189,6 +222,7 @@ class Site:
         baseline = sorted(items, key=lambda p: (-score(p), p["id"]))
         self.rank = {p["id"]: i for i, p in enumerate(baseline, 1)}
         self.by_id = {p["id"]: p for p in items}
+        self.reading_guides, self.reading_notice = load_reading_guides(self.by_id)
         self.ordered = sorted(items, key=lambda p: self.dispatch[p["id"]]["dispatch_rank"])
         self.campaign = {c["problem_id"]: c for c in program["campaigns"] if c["problem_id"] in self.by_id}
         self.milestones = defaultdict(list)
@@ -476,6 +510,12 @@ def render_index(site):
     status_opts = "".join(f'<option value="{k}">{E(v)}</option>' for k, v in EVIDENCE.items())
     mod_opts = "".join(f'<option value="{k}">{E(v)}</option>' for k, v in MODALITY.items())
     top = s.ordered[:3]
+    reading_spotlight = "".join(
+        f'<a class="reading-card" href="{rel(page, s.problem_path(pid))}#reading-guide">'
+        f'<span class="spot-id">{E(pid)} · START READING</span>'
+        f'<h3>{E(s.by_id[pid]["name"])}</h3><p>{E(s.reading_guides[pid]["summary"])}</p>'
+        f'<span class="text-link">Read the guide →</span></a>'
+        for pid in ("M071", "M074", "M075"))
     spotlight = "".join(
         f'<a class="spot-card" href="{rel(page, s.problem_path(p["id"]))}"><span class="spot-rank">#{i}</span>'
         f'<span class="spot-id">{p["id"]} · {E(p["field"])}</span><strong>{E(p["name"])}</strong>'
@@ -526,6 +566,12 @@ def render_index(site):
 <section class="section-block" aria-labelledby="spot-heading">
   {section_head("00 / WHERE EFFORT GOES NEXT", '<span id="spot-heading">The top of the <em>queue.</em></span>', "The first three in dispatch order (editorial score + readiness + an action bonus), and the very next action for each.")}
   <div class="spot-grid">{spotlight}</div>
+</section>
+
+<section class="section-block reading-section" aria-labelledby="reading-heading">
+  {section_head("READ THE MATHEMATICS", '<span id="reading-heading">Beyond the <em>scoreboard.</em></span>',
+                "Three short, annotated introductions show the meaning, the known limits, and the next falsifiable step. Editorial guides are not proof claims.")}
+  <div class="reading-grid">{reading_spotlight}</div>
 </section>
 
 <section class="rankings section-block" id="rankings" aria-labelledby="rankings-heading">
@@ -613,6 +659,61 @@ def render_index(site):
 
 # --------------------------------------------------------------------------- problem pages
 
+def render_evidence_map(site, pid):
+    """A claims boundary on every page, derived solely from validated ledgers."""
+    p = site.by_id[pid]
+    probes = site.probes.get(pid, [])
+    if probes:
+        finite = (f"{len(probes)} exact lab probe(s) cover specified finite instances; "
+                  "their passing results are not an unrestricted proof.")
+    else:
+        finite = "No exact finite lab probe is recorded for this problem."
+    if pid in site.formal:
+        finite += " A Lean comparator checks an encoded statement, not a full conjecture proof."
+    else:
+        finite += " No Lean comparator statement is recorded."
+    state = EVIDENCE_HELP[p["evidence_state"]]
+    claim = (" A claimed resolution still needs independent evaluation."
+             if p["evidence_state"] == "claim_needs_review" else "")
+    action = site.dispatch[pid]["dispatch_next"]
+    return f"""<section class="dossier-block evidence-map" id="evidence-map">
+<h2>What the evidence actually says</h2>
+<p class="block-lead">Status review, checked finite cases, and a proposed next attack answer different questions. None should be mistaken for a verified full resolution.</p>
+<div class="evidence-columns">
+  <div><span class="detail-label">01 / FULL-STATEMENT STATUS</span><h3>{E(EVIDENCE[p["evidence_state"]])}</h3>
+    <p>{E(state + claim)} This project records no accepted full solution for this active candidate.</p></div>
+  <div><span class="detail-label">02 / VERIFIED SCOPE HERE</span><h3>Finite or formal checks</h3>
+    <p>{E(finite)}</p></div>
+  <div><span class="detail-label">03 / WHAT TO TEST NEXT</span><h3>Next bounded action</h3>
+    <p>{E(action)}</p></div>
+</div>
+<p class="muted small">These labels describe the evidence recorded in this repository, not an authoritative verdict on the entire mathematical literature. The <a href="{rel(f'problems/{pid}/index.html', 'ledger/')}">solved ledger</a> has a separate acceptance gate.</p>
+</section>"""
+
+
+def render_reading_guide(site, pid):
+    guide = site.reading_guides.get(pid)
+    if not guide:
+        return ""
+    page = f"problems/{pid}/index.html"
+    bridges = "".join(
+        f'<li><a href="{rel(page, site.problem_path(b["id"]))}">'
+        f'{E(b["id"])} · {E(site.by_id[b["id"]]["name"])}</a>'
+        f'<p>{E(b["reason"])}</p></li>'
+        for b in guide["bridges"])
+    return f"""<section class="dossier-block reading-guide" id="reading-guide">
+<span class="detail-label">EDITORIAL EXPLANATION · NOT A PROOF</span>
+<h2>Understand the problem</h2>
+<p class="reading-lead">{E(guide["summary"])}</p>
+<h3>The idea</h3><p>{E(guide["intuition"])}</p>
+<h3>Where the difficulty starts</h3><p>{E(guide["obstacle"])}</p>
+<h3>What a meaningful check would establish</h3><p>{E(guide["meaningful_check"])}</p>
+<h3>Connections across the portfolio</h3>
+<ul class="reading-bridges">{bridges}</ul>
+<p class="muted small">{E(site.reading_notice)}</p>
+</section>"""
+
+
 def render_problem(site, pid, prev_id, next_id):
     s = site
     page = f"problems/{pid}/index.html"
@@ -629,6 +730,8 @@ def render_problem(site, pid, prev_id, next_id):
     if c:
         chips.append(chip("Campaign: " + STAGE.get(c["stage"], c["stage"]), "chip-campaign"))
     field_href = rel(page, f"fields/{s.field_slug[p['field']]}/")
+    evidence_html = render_evidence_map(s, pid)
+    guide_html = render_reading_guide(s, pid)
 
     parts = s.readiness_parts(pid)
     readiness_html = ""
@@ -754,6 +857,11 @@ def render_problem(site, pid, prev_id, next_id):
     related = "".join(
         f'<li><a href="{rel(page, s.problem_path(q["id"]))}"><span class="mono">{q["id"]}</span> {E(q["name"])}</a></li>'
         for q in same_field[:6])
+    method_neighbours = [q for q in s.ordered if q["id"] != pid
+                         and s.dispatch[q["id"]]["method_id"] == d["method_id"]]
+    method_links = "".join(
+        f'<li><a href="{rel(page, s.problem_path(q["id"]))}"><span class="mono">{E(q["id"])}</span> '
+        f'{E(q["name"])}</a></li>' for q in method_neighbours[:6])
     citation = (f'Svyable. “{p["name"]} ({pid}).” 100 — A living portfolio of mathematical grand challenges, '
                 f'data as of {s.updated}. {SITE_URL}problems/{pid}/')
     issue = (f"{REPO}/issues/new?template=evidence_update.yml&title="
@@ -775,7 +883,7 @@ def render_problem(site, pid, prev_id, next_id):
     toc += [("milestones", "Milestones")] if s.milestones.get(pid) else []
     toc += [("claim-review", "Claim triage")] if pid in s.claims else []
     toc += [("work", "Open work")] if s.work_by_problem.get(pid) else []
-    toc += [("provenance", "Provenance")]
+    toc += [("provenance", "Provenance"), ("related", "Connections")]
     toc_html = "".join(f'<li><a href="#{E(a)}">{E(t)}</a></li>' for a, t in toc)
     trail = s.discovery.get(pid)
     discovery_html = (f'<section class="dossier-block" id="discovery"><h2>How this approach developed</h2>'
@@ -792,7 +900,7 @@ def render_problem(site, pid, prev_id, next_id):
   <h1>{E(p['name'])}</h1>
   <p class="problem-field"><a href="{field_href}">{E(p['field'])}</a></p>
   <div class="chips">{''.join(chips)}</div>
-  <blockquote class="the-question"><span class="detail-label">THE OPEN QUESTION</span>{E(p['question'])}</blockquote>
+  <blockquote class="the-question"><span class="detail-label">THE QUESTION UNDER STUDY</span>{E(p['question'])}</blockquote>
 </header>
 <div class="problem-grid">
 <aside class="problem-side" aria-label="On this page">
@@ -804,6 +912,8 @@ def render_problem(site, pid, prev_id, next_id):
   </div>
 </aside>
 <div class="problem-main">
+{evidence_html}
+{guide_html}
 {formal_html}
 {discovery_html}
 <section class="dossier-block" id="priority"><h2>Priority, decomposed</h2>
@@ -842,6 +952,7 @@ def render_problem(site, pid, prev_id, next_id):
 <section class="dossier-block" id="related"><h2>Nearby in the portfolio</h2>
   <div class="two-col"><div><h3>Also in <a href="{field_href}">{E(p['field'])}</a></h3><ul class="link-list">{related}</ul></div>
   <div>{('<h3>Shares an exact engine with</h3>' + problem_chips(s, page, shared)) if shared else '<h3>Shared engines</h3><p class="muted">No exact engine yet. See the <a href="' + rel(page, 'lab/') + '#roadmap">engine roadmap</a>.</p>'}</div></div>
+{('<div class="method-neighbours"><h3>Shares the attack method: ' + E(d["method_title"]) + '</h3><p class="muted">Methodological similarity only; it does not imply the conjectures are equivalent.</p><ul class="link-list">' + method_links + '</ul></div>') if method_links else ''}
 </section>
 </div>
 </div>
