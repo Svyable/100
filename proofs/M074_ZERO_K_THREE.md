@@ -4,7 +4,7 @@
 
 ## Theorem
 
-Let D be a loopless oriented directed-triangle-free graph on 27 vertices with outdegree **exactly nine** at every vertex. Suppose v has indegree ten. Set A=N⁺(v), B=N⁻(v), C=V\(A∪B∪{v}); then (|A|,|B|,|C|)=(9,10,7). Write k(b)=d⁻_C(b). Then
+Let D be a loopless oriented directed-triangle-free graph on 27 vertices with outdegree **exactly nine** at every vertex. Suppose v has indegree ten. Set A=N⁺(v), B=N⁻(v), C the seven remaining vertices; then (|A|,|B|,|C|)=(9,10,7). Write k(b)=d⁻_C(b). Then
 
 \[
 \boxed{z:=|\{b\in B:k(b)=0\}|\le3.}
