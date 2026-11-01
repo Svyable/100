@@ -24,11 +24,11 @@ class LemmaAdversaryTests(unittest.TestCase):
         self.assertEqual(result["results"][0]["facts"]["triple_frequencies"], [13]*3)
         self.assertEqual(result["results"][1]["facts"]["all_frequencies"], [9,9,9,14,14,14,17])
         self.assertEqual(result["results"][3]["facts"]["low_to_low"], 2)
-        self.assertEqual(result["results"][3]["facts"]["arcs"], 29)
+        self.assertEqual(result["results"][4]["facts"]["arcs"], 29)
 
     def test_rejects_semantic_misclassification(self):
         for idx, category in ((0, "known_theorem_positive_control"),
-                              (1, "refuted_auxiliary_only"),
+                              (2, "refuted_auxiliary_only"),
                               (3, "solved"),
                               (4, "new_unrestricted_theorem")):
             altered = copy.deepcopy(self.ledger)

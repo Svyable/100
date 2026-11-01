@@ -901,18 +901,18 @@
       ],
       "title": "Independent scope review of Lean target L005 (M019)",
       "deliverable": "Compare every registered declaration of L005 with the registry statement and its primary source: domains, quantifiers, nonemptiness and distinctness conditions, strict versus weak inequalities, encodings. State exactly what is and is not established.",
-      "context": "Explicit positive solutions of 4xyz = n(xy + yz + zx) for every 2 ≤ n ≤ 100, re-checked by the kernel against Hundred.Statements.ErdosStraus.Statement.",
+      "context": "Positive solutions for 2 ≤ n ≤ 100 and a classical infinite parametric family for every n ≡ 3 (mod 4), checked against ErdosStraus.Solves.",
       "acceptance": [
         "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
         "Any mismatch is filed as a gap on the target's scope_gap, not silently fixed",
         "python3 scripts/regen.py && python3 scripts/regen.py --check"
       ],
-      "boundary": "A scope review checks that the encoded statement matches the claim; it does not add mathematics. Known range only; no parametric identity for a residue class. Independent statement review pending.",
+      "boundary": "A scope review checks that the encoded statement matches the claim; it does not add mathematics. Classical residue class only; does not prove the unrestricted conjecture. Repeated denominators allowed. Independent statement review pending.",
       "falsifier": "A quantifier, domain or convention in the Lean statement that differs from the registered claim.",
       "source": "data/lean_targets.json",
       "depends_on": [],
       "priority_rank": 18,
-      "scope_sha256": "c85f8abd71f1b4eef393f49e97ff066d7677045da9b92613fea9f61cdd082c6a",
+      "scope_sha256": "620d8cbd723707a392363dffcd936a3405612e2b07210b2b46a18f6063e91a23",
       "claim_title": "[Claim] V-L005 — Independent scope review of Lean target L005 (M019)",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L005%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L005%20%28M019%29",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-L005%22"
@@ -1282,20 +1282,20 @@
         "M019"
       ],
       "title": "Extend Lean target L005 (M019)",
-      "deliverable": "Formalise one classical parametric identity (n ≡ 3 mod 4) as a theorem quantified over all such n.",
-      "context": "Explicit positive solutions of 4xyz = n(xy + yz + zx) for every 2 ≤ n ≤ 100, re-checked by the kernel against Hundred.Statements.ErdosStraus.Statement.",
+      "deliverable": "Prove a scaling lemma: a solution for n gives a solution for every positive multiple of n, then compose it with residue_three.",
+      "context": "Positive solutions for 2 ≤ n ≤ 100 and a classical infinite parametric family for every n ≡ 3 (mod 4), checked against ErdosStraus.Solves.",
       "acceptance": [
         "New theorems registered in data/lean_targets.json (stable names, no escape hatches)",
         "python3 scripts/lean_verify.py passes in CI: warnings as errors, only propext / Classical.choice / Quot.sound, per-module time well under the 300 s build budget",
         "A negative case in lean/Negative.lean that a weakened statement would fail",
         "python3 scripts/regen.py && python3 scripts/regen.py --check"
       ],
-      "boundary": "Known range only; no parametric identity for a residue class. Independent statement review pending.",
+      "boundary": "Classical residue class only; does not prove the unrestricted conjecture. Repeated denominators allowed. Independent statement review pending.",
       "falsifier": "",
       "source": "data/lean_targets.json",
       "depends_on": [],
       "priority_rank": 18,
-      "scope_sha256": "8b855811a31aba907658115a0e1344b2a0c22d46b522dbb194bcf2f8979e1f20",
+      "scope_sha256": "85b0ec576fbcfef97479567db88e5a81f9e7b0389295089d602cd8ca44680691",
       "claim_title": "[Claim] L005 — Extend Lean target L005 (M019)",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20L005%20%E2%80%94%20Extend%20Lean%20target%20L005%20%28M019%29",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20L005%22"
