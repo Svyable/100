@@ -29,6 +29,7 @@ jobs:
       - run: python3 scripts/frankl_canonical.py --check
       - run: python3 scripts/frankl_burnside.py --check
       - run: python3 scripts/ch24_irregular_profiles.py
+      - run: python3 scripts/degree_defect.py --check
       - run: node --check docs/assets/app.js
       - run: node --check docs/next/app.js
       - run: python3 -m unittest discover -s tests -v
