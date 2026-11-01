@@ -185,6 +185,11 @@
       "url": "https://svyable.github.io/100/library/attack-queue/"
     },
     {
+      "title": "Coverage — breadth-first research deployment plan",
+      "source": "COVERAGE.md",
+      "url": "https://svyable.github.io/100/library/coverage/"
+    },
+    {
       "title": "Exact probe lab — computational reach of the 100",
       "source": "LAB.md",
       "url": "https://svyable.github.io/100/library/lab/"

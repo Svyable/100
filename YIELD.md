@@ -10,14 +10,14 @@ Capacity is how many claimable slots exist ([SCALE.md](SCALE.md)). **Yield** is 
 
 | Metric | Value |
 |---|---:|
-| Outcome records | 0 |
+| Outcome records | 1 |
 | Independently accepted work items | 0 |
 | New restricted results with audited novelty | 0 |
-| Recorded agent-hours | 0 |
-| **Yield** (independently accepted work items per 10 recorded agent-hours) | — |
+| Recorded agent-hours | 0.8 |
+| **Yield** (independently accepted work items per 10 recorded agent-hours) | 0.0 |
 | Median days, claim to independent acceptance (`accepted_on`) | — |
-| Median days, claim to close (`closed_on`) | — |
-| Share of records merged but pending review | — |
+| Median days, claim to close (`closed_on`) | 0 |
+| Share of records merged but pending review | 1.0 |
 | Distinct independent reviewers | 0 |
 | **Review backlog** (`review` items in the work queue) | 42 |
 
@@ -26,7 +26,7 @@ Capacity is how many claimable slots exist ([SCALE.md](SCALE.md)). **Yield** is 
 | Outcome | Count | Meaning |
 |---|---:|---|
 | `accepted_independent` | 0 | Delivered and accepted by a named reviewer who is not the author. |
-| `merged_pending_review` | 0 | Artifact merged; independent review not yet recorded. |
+| `merged_pending_review` | 1 | Artifact merged; independent review not yet recorded. |
 | `gap_reported` | 0 | A precise gap, obstruction or negative result was recorded instead of the deliverable. |
 | `falsified` | 0 | The deliverable's claim was refuted, or its falsifier was found. |
 | `abandoned` | 0 | Claim closed without a usable artifact. |
@@ -41,7 +41,9 @@ Capacity is how many claimable slots exist ([SCALE.md](SCALE.md)). **Yield** is 
 
 ## By work family
 
-No outcomes recorded yet. The baseline is zero accepted results; the first records establish the denominator.
+| Family | Records | Accepted work items | Agent-hours | Accepted per 10 h |
+|---|---:|---:|---:|---:|
+| infrastructure | 1 | 0 | 0.8 | 0.0 |
 
 ## Recording an outcome
 

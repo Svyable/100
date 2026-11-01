@@ -2,5 +2,21 @@
   "version": 1,
   "resource_unit": "agent_hour",
   "note": "One record per closed claim on a work-queue item. Only accepted_independent (named reviewer who is not the author, public review_url) counts toward yield. See YIELD.md and scripts/outcomes.py.",
-  "outcomes": []
+  "outcomes": [
+    {
+      "work_id": "X-COVERAGE-DEPTH-200",
+      "scope_sha256": "a6548455a1c41c3b7f4368dd1f83af2809d9a13c6a694b0dd50bce9467893bd6",
+      "author": "ChatGPT",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/81",
+      "pr_url": "https://github.com/Svyable/100/pull/87",
+      "claimed_on": "2026-10-31",
+      "closed_on": "2026-10-31",
+      "resources": {
+        "agent_hours": 0.8,
+        "ci_minutes": 0
+      }
+    }
+  ]
 }
