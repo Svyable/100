@@ -383,10 +383,9 @@
     {
       "id": "R24",
       "track": "lab",
-      "horizon": "now",
-      "title": "Arcs in PG(3,q) and Hadamard orders 116, 156, 172",
-      "outcome": "5-point frames for q <= 9; multiplier symmetry for Williamson n=29; Goethals-Seidel arrays.",
-      "exit": "All Hadamard orders 4k <= 172 constructed except literature-open ones.",
+      "horizon": "shipped",
+      "title": "Explicit Hadamard matrices for every order 4k <= 172",
+      "outcome": "Published propus quadruples fill the last three engine gaps at 116, 156 and 172. Every order 4k <= 172 now has a matrix whose rows the checker proves orthogonal. These are known constructions, not new matrices, and 668 remains the smallest open order.",
       "evidence": "scripts/probes/hadamard.py",
       "problems": [
         "M093",

@@ -437,7 +437,7 @@
     }
   ],
   "refused_count": 7,
-  "runnable_in_queue": 341,
+  "runnable_in_queue": 340,
   "selected_packets": [
     {
       "acceptance": [
@@ -2834,7 +2834,7 @@
       ],
       "boundary": "A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.",
       "claim_title": "[Claim] J-finite_geometry-replay_published — Replay a published certificate: Replay a published geometric object",
-      "deliverable": "M092: Extend the cyclotomic engine to the number fields needed for d = 4..8 and replay published exact fiducials there. M093: Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9. M094: Add multiplier-group symmetry reduction to the Williamson meet-in-the-middle search so that n = 29 (order 116) becomes feasible, then implement Goethals-Seidel arrays for orders 156 and 172. M096: Encode order-12 planes with a prescribed collineation as SAT with DRAT proof output, starting from cases the literature already excludes.",
+      "deliverable": "M092: Extend the cyclotomic engine to the number fields needed for d = 4..8 and replay published exact fiducials there. M093: Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9. M094: Import one published quadruple for the smallest remaining engine gap above 172. Order 668 is still the smallest order with no known Hadamard matrix; do not search for it. M096: Encode order-12 planes with a prescribed collineation as SAT with DRAT proof output, starting from cases the literature already excludes.",
       "depends_on": [],
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20J-finite_geometry-replay_published%22",
       "falsifier": "",
@@ -2855,7 +2855,7 @@
         "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
-      "scope_sha256": "6319a37bb334dd1805e46e6f19e1996ae2fcc673760704ec4dfc6120a7efdcd7",
+      "scope_sha256": "aeeac4fedd50494ee827f2f971cabde040f2d909c512038ce6134e7db40673b4",
       "status": "runnable",
       "title": "Replay a published certificate: Replay a published geometric object"
     },
@@ -3481,5 +3481,5 @@
   ],
   "shape_count": 30,
   "slots_filled": 100,
-  "work_queue_size": 348
+  "work_queue_size": 347
 }
