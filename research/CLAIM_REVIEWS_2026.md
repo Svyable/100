@@ -1,6 +1,6 @@
 # 2026 claimed-resolution triage — issue #3
 
-**Screened:** 2026-10-31. **Inventory:** 15 flagged IDs. **Independently accepted full resolutions:** 0.
+**Screened:** 2026-10-31. **Inventory:** 15 flagged IDs. **Independently accepted full resolutions:** 0. **Registry:** M098 is `verified_open` ([first-order note](M098_VAUGHT.md)); the other 14 remain `claim_needs_review`.
 
 **Purpose.** Locate the actual source theorem, test whether its quantifiers match the 100-problem registry, and record verification gaps *before* assigning scarce proof-campaign resources. This is a **bibliographic/scope audit**, not a proof audit. A manuscript, an arXiv posting, a self-reported Lean result, an independent toolchain rebuild, a second proof claim, and accepted independent mathematical validation are different kinds of evidence.
 
@@ -23,7 +23,7 @@ The structured source of truth for this table is [`data/claim_reviews_2026.json`
 | M071 | [A counterexample to Hadwiger's conjecture](https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/A-counterexample-to-Hadwigers-conjecture-September-23-2026/paper.pdf) | Claim would resolve the registered statement if correct | Formal artifact/check only | Audit the Lean quantifiers and graph encoding against the theorem; reproduce or extract an explicit graph plus an independently checkable minor-bound obstruction. |
 | M073 | [A counterexample to Sidorenko's conjecture](https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/A-counterexample-to-Sidorenkos-conjecture-September-23-2026/paper.pdf) | Claim would resolve the registered statement if correct | Formal artifact/check only | Check H and the host-existence construction against Lean and paper; independently compute exact graphon/homomorphism inequalities or generate an explicit finite G. |
 | M085 | [The Unique Games Theorem](https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/The-Unique-Games-Theorem-September-23-2026/paper.pdf) | Claim would resolve the registered statement if correct | Not established | Independently audit the reduction's completeness and soundness estimates and its quantitative dependence on gap parameters. |
-| M098 | [A counterexample to Vaught's Conjecture for L_{omega_1,omega}](https://arxiv.org/abs/2610.15217) | Different problem; not a resolution of this ID | Lean proves other logic; not M098 | De-scope the 2026 infinitary result from M098's resolution watch; retain the first-order problem and cite a current specialist open-status source before changing evidence state. |
+| M098 | [A counterexample to Vaught's Conjecture for L_{omega_1,omega}](https://arxiv.org/abs/2610.15217) | Different problem; not a resolution of this ID | Lean proves other logic; not M098 | Registry is `verified_open` on the [Pillay–Tanović survey](https://arxiv.org/abs/2508.06854). Keep the infinitary manuscript off the closing citation; see [M098 note](M098_VAUGHT.md). |
 | M100 | [The Falconer distance conjecture in all dimensions](https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/The-Falconer-distance-conjecture-in-all-dimensions-September-23-2026/paper.pdf) | Claim would resolve the registered statement if correct | Formal artifact/check only | Audit FalconerAllDimensions.lean definition fidelity, measure conventions and proof dependencies; obtain independent harmonic-analysis review. |
 
 ## Per-claim primary statements, caveats and external evidence
@@ -142,9 +142,10 @@ The structured source of truth for this table is [`data/claim_reviews_2026.json`
 - **Primary source (dated 2026-10-10):** [original manuscript](https://arxiv.org/abs/2610.15217).
 - **Claim, not a certified theorem:** A sentence of infinitary L_{omega_1,omega} has exactly aleph_1 countable models (and no perfect set of non-isomorphic models).
 - **Scope:** M098 asks about complete first-order theories in a countable language, not infinitary L_{omega_1,omega} sentences. This manuscript does NOT refute or solve M098.
-- **Verification status:** `formalized_different_statement`. The authors' repository explicitly says the formalization does not solve the first-order Vaught conjecture; a specialist MathOverflow discussion confirms the first-order version remains open.
+- **Verification status:** `formalized_different_statement`. The [pinned author README](https://github.com/cameronfreer/vaught-conjecture-counterexample/blob/e9f465e1a6b328788d9bf4691f7887a5f535b41d/README.md) (commit `e9f465e1`, 2026-10-30) says the Lean theorem is about an infinitary sentence, `baseLanguage.densitySentence`, and is not the first-order conjecture. It does not cover every claim of the manuscript.
+- **First-order status:** `verified_open` as of 2026-10-31, from Pillay and Tanović, [arXiv:2508.06854](https://arxiv.org/abs/2508.06854) (submitted 2025-08-09). The text read on the check date still calls the first-order conjecture widely open and does not discuss this manuscript. Detail and the regression rule are in [M098_VAUGHT.md](M098_VAUGHT.md).
 - **Other evidence (not a qualifying acceptance):** [1](https://github.com/cameronfreer/vaught-conjecture-counterexample), [2](https://mathoverflow.net/questions/22142/has-vaughts-conjecture-been-solved/516156).
-- **Next audit:** De-scope the 2026 infinitary result from M098's resolution watch; retain the first-order problem and cite a current specialist open-status source before changing evidence state.
+- **Next audit:** Keep M098 `verified_open`. Further first-order progress is recorded separately. A later infinitary revision is not a resolution.
 
 ### M100 — The Falconer distance conjecture in all dimensions
 
@@ -173,7 +174,7 @@ The formalization scope URLs are also stored per claim in [the structured review
 ## Explicit unresolved gates
 
 1. **Primary text collected, proof not independently checked.** Links above point to original authors' manuscripts (including upstream OpenAI mathematical papers); their abstracts and theorem claims are not a substitute for source-proof review.
-2. **Do not promote M098.** Its October 2026 infinitary-logic counterexample is not about a complete first-order countable-language theory. An appropriate next registry correction is `verified_open`, *only after* a dated specialist first-order status citation is recorded.
+2. **M098 is `verified_open`, not resolved.** The October 2026 infinitary counterexample is a different statement. The registry citation is Pillay–Tanović, [arXiv:2508.06854](https://arxiv.org/abs/2508.06854), checked 2026-10-31. The infinitary manuscript, and the two author repositories, are blocked as closing citations by `tests/test_claim_reviews.py`. See [M098_VAUGHT.md](M098_VAUGHT.md).
 3. **Treat M038 differently from a one-author announcement.** Engel's [self-contained September 2026 reconstruction](https://arxiv.org/abs/2609.38442) is new independent mathematical evidence. Check the two constructions and the relevant complex-geometric restrictions before declaring a resolution.
 4. **Separate partial from universal:** M056's later all-dimensional *interior* restriction claim still needs an exact endpoint and exponent-region comparison; M055's four-dimensional Kakeya result alone does not settle all `n>=4`; M030's *numerical equivalence* theorem cannot be confused with *semiampleness* of the original divisor.
 5. **Avoid double counting:** M044 and M049 depend on the same group-ring construction. Hintz and Szeftel's independent Kerr **proof claims** do not constitute peer acceptance of one another.

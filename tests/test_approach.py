@@ -42,10 +42,12 @@ class ApproachTests(unittest.TestCase):
         self.assertEqual(self.by_id["M088"]["action"], "lock_restriction")
         self.assertTrue(self.by_id["M088"]["next_step"].startswith("Lock"))
         doc = json.loads(approach.SOURCE.read_text(encoding="utf-8"))
+        self.assertEqual(self.by_id["M098"]["action"], "specify_shape")
         self.assertEqual(
             self.by_id["M098"]["action_bonus"],
-            doc["actions"]["scope_audit"]["bonus"] + doc["actions"]["scope_audit"]["mismatch_extra"],
+            doc["actions"]["specify_shape"]["bonus"],
         )
+        self.assertNotIn("2610.15217", self.by_id["M098"]["next_step"])
         self.assertLess(sum(row["action"] == "stop_range" for row in self.rows), 5)
         self.assertGreater(sum(row["action"] == "specify_shape" for row in self.rows), 50)
 

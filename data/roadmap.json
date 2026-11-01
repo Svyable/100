@@ -286,6 +286,15 @@
       "problems": []
     },
     {
+      "id": "R18",
+      "track": "claims",
+      "horizon": "shipped",
+      "title": "Separate first-order Vaught from the 2026 infinitary counterexample",
+      "outcome": "M098 is verified_open on the Pillay-Tanovic survey plus the authors' own exclusion. The infinitary manuscript cannot promote it to resolved.",
+      "evidence": "research/M098_VAUGHT.md",
+      "problems": ["M098"]
+    },
+    {
       "id": "R17",
       "track": "lab",
       "horizon": "shipped",

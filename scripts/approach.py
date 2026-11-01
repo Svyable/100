@@ -163,7 +163,15 @@ def rows(items, program, doc=None):
         if pid not in reviews or indexed[pid]["evidence_state"] != "claim_needs_review":
             raise ApproachError(f"{pid} is listed for witness replay without a claim review")
     claim_ids = {pid for pid, p in indexed.items() if p["evidence_state"] == "claim_needs_review"}
-    if set(reviews) != claim_ids:
+    closed_watches = set()
+    for pid in set(reviews) - claim_ids:
+        review = reviews[pid]
+        state = indexed[pid]["evidence_state"]
+        if state == "verified_open" and review.get("scope_relation") == "different_statement":
+            closed_watches.add(pid)
+            continue
+        raise ApproachError("claim reviews must match claim_needs_review exactly")
+    if not claim_ids <= set(reviews):
         raise ApproachError("claim reviews must match claim_needs_review exactly")
 
     built = []

@@ -10,9 +10,10 @@
     "interpretation": "Editorial priority score, not an estimated proof probability"
   },
   "status_counts": {
-    "claim_needs_review": 15,
+    "claim_needs_review": 14,
     "needs_review": 80,
-    "official_open": 5
+    "official_open": 5,
+    "verified_open": 1
   },
   "program_as_of": "2026-10-31",
   "summary": {
@@ -175,7 +176,7 @@
       "execution_rank": 15,
       "execution_score": 91,
       "readiness": 0,
-      "dispatch_rank": 21,
+      "dispatch_rank": 20,
       "dispatch_score": 91,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -361,7 +362,7 @@
       "execution_rank": 18,
       "execution_score": 89,
       "readiness": 0,
-      "dispatch_rank": 23,
+      "dispatch_rank": 22,
       "dispatch_score": 89,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -423,7 +424,7 @@
       "execution_rank": 20,
       "execution_score": 85,
       "readiness": 0,
-      "dispatch_rank": 26,
+      "dispatch_rank": 25,
       "dispatch_score": 85,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -485,7 +486,7 @@
       "execution_rank": 21,
       "execution_score": 85,
       "readiness": 0,
-      "dispatch_rank": 27,
+      "dispatch_rank": 26,
       "dispatch_score": 85,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -609,7 +610,7 @@
       "execution_rank": 22,
       "execution_score": 83,
       "readiness": 0,
-      "dispatch_rank": 28,
+      "dispatch_rank": 27,
       "dispatch_score": 83,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -640,7 +641,7 @@
       "execution_rank": 23,
       "execution_score": 83,
       "readiness": 0,
-      "dispatch_rank": 29,
+      "dispatch_rank": 28,
       "dispatch_score": 83,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -702,7 +703,7 @@
       "execution_rank": 24,
       "execution_score": 83,
       "readiness": 0,
-      "dispatch_rank": 22,
+      "dispatch_rank": 21,
       "dispatch_score": 91,
       "action": "scope_audit",
       "action_label": "Audit claim scope",
@@ -733,7 +734,7 @@
       "execution_rank": 25,
       "execution_score": 83,
       "readiness": 0,
-      "dispatch_rank": 30,
+      "dispatch_rank": 29,
       "dispatch_score": 83,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -764,7 +765,7 @@
       "execution_rank": 26,
       "execution_score": 83,
       "readiness": 0,
-      "dispatch_rank": 31,
+      "dispatch_rank": 30,
       "dispatch_score": 83,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -795,7 +796,7 @@
       "execution_rank": 27,
       "execution_score": 83,
       "readiness": 0,
-      "dispatch_rank": 32,
+      "dispatch_rank": 31,
       "dispatch_score": 83,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -826,7 +827,7 @@
       "execution_rank": 28,
       "execution_score": 83,
       "readiness": 0,
-      "dispatch_rank": 33,
+      "dispatch_rank": 32,
       "dispatch_score": 83,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -857,7 +858,7 @@
       "execution_rank": 17,
       "execution_score": 89,
       "readiness": 7,
-      "dispatch_rank": 19,
+      "dispatch_rank": 18,
       "dispatch_score": 95,
       "action": "mine_structure",
       "action_label": "Mine structure from certificates",
@@ -919,7 +920,7 @@
       "execution_rank": 30,
       "execution_score": 80,
       "readiness": 0,
-      "dispatch_rank": 36,
+      "dispatch_rank": 35,
       "dispatch_score": 80,
       "action": "specify_shape",
       "action_label": "Fill the shared attack shape",
@@ -935,30 +936,30 @@
       "id": "M098",
       "name": "Vaught conjecture",
       "field": "Mathematical physics / finite structures",
-      "question": "Does a complete countable-language first-order theory have countably or continuum many countable models?",
-      "first_attack": "Audit precise statement and prove a restricted case",
+      "question": "For every complete first-order theory in a countable language, is the number of countable models up to isomorphism either countable or equal to the continuum?",
+      "first_attack": "Keep the first-order statement separate from infinitary counterexamples and cite a restricted case",
       "impact": 4,
       "attackability": 4,
       "verifiability": 4,
       "spillover": 4,
       "modality": "structural",
-      "evidence_state": "claim_needs_review",
-      "checked_on": null,
-      "source_url": null,
+      "evidence_state": "verified_open",
+      "checked_on": "2026-10-31",
+      "source_url": "https://arxiv.org/abs/2508.06854",
       "rank": 30,
       "score": 80,
       "execution_rank": 31,
       "execution_score": 80,
       "readiness": 0,
-      "dispatch_rank": 18,
-      "dispatch_score": 96,
-      "action": "scope_audit",
-      "action_label": "Audit claim scope",
-      "action_bonus": 16,
+      "dispatch_rank": 36,
+      "dispatch_score": 80,
+      "action": "specify_shape",
+      "action_label": "Fill the shared attack shape",
+      "action_bonus": 0,
       "method_id": "logic_decision",
       "method_title": "The logic named in the registry",
-      "dispatch_next": "De-scope the 2026 infinitary result from M098's resolution watch; retain the first-order problem and cite a current specialist open-status source before changing evidence state.",
-      "dispatch_why": "The claim review records a different statement. Close that watch before opening an attack.",
+      "dispatch_next": "Shape logic_decision (2 problems, one write-up): Write the logic in the registry entry, and do not let a manuscript about a different logic move the evidence state. Full shape, certificate and falsifier are in APPROACH.md.",
+      "dispatch_why": "No campaign yet. Fill one restricted statement inside the shared shape.",
       "campaign_stage": null,
       "milestone_count": 0
     },
@@ -1012,7 +1013,7 @@
       "execution_rank": 33,
       "execution_score": 80,
       "readiness": 0,
-      "dispatch_rank": 24,
+      "dispatch_rank": 23,
       "dispatch_score": 88,
       "action": "scope_audit",
       "action_label": "Audit claim scope",
@@ -1601,7 +1602,7 @@
       "execution_rank": 34,
       "execution_score": 79,
       "readiness": 7,
-      "dispatch_rank": 20,
+      "dispatch_rank": 19,
       "dispatch_score": 91,
       "action": "replay_published",
       "action_label": "Replay a published certificate",
@@ -1725,7 +1726,7 @@
       "execution_rank": 35,
       "execution_score": 79,
       "readiness": 7,
-      "dispatch_rank": 25,
+      "dispatch_rank": 24,
       "dispatch_score": 85,
       "action": "mine_structure",
       "action_label": "Mine structure from certificates",
@@ -1973,7 +1974,7 @@
       "execution_rank": 64,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 34,
+      "dispatch_rank": 33,
       "dispatch_score": 80,
       "action": "scope_audit",
       "action_label": "Audit claim scope",
@@ -2438,7 +2439,7 @@
       "execution_rank": 79,
       "execution_score": 72,
       "readiness": 0,
-      "dispatch_rank": 35,
+      "dispatch_rank": 34,
       "dispatch_score": 80,
       "action": "scope_audit",
       "action_label": "Audit claim scope",
@@ -4305,6 +4306,17 @@
         "problems": []
       },
       {
+        "id": "R18",
+        "track": "claims",
+        "horizon": "shipped",
+        "title": "Separate first-order Vaught from the 2026 infinitary counterexample",
+        "outcome": "M098 is verified_open on the Pillay-Tanovic survey plus the authors' own exclusion. The infinitary manuscript cannot promote it to resolved.",
+        "evidence": "research/M098_VAUGHT.md",
+        "problems": [
+          "M098"
+        ]
+      },
+      {
         "id": "R17",
         "track": "lab",
         "horizon": "shipped",
@@ -4499,7 +4511,7 @@
       }
     ],
     "counts": {
-      "shipped": 19,
+      "shipped": 20,
       "now": 5,
       "next": 4,
       "later": 4
@@ -5229,19 +5241,6 @@
         "why": "Graphic metrics through 7 vertices are a certified reproduction. The next experiment changes the metric class rather than adding vertices inside the published small-n range."
       },
       {
-        "action": "scope_audit",
-        "action_label": "Audit claim scope",
-        "method_id": "logic_decision",
-        "method_title": "The logic named in the registry",
-        "problem_ids": [
-          "M098",
-          "M014"
-        ],
-        "best_rank": 18,
-        "summary": "M098: De-scope the 2026 infinitary result from M098's resolution watch; retain the first-order problem and cite a current specialist open-status source before changing evidence state. M014: Verify the reduction from integer to rational decision tests and audit each cited arithmetic input, especially the October 7 pointwise 2-converse.",
-        "why": ""
-      },
-      {
         "action": "mine_structure",
         "action_label": "Mine structure from certificates",
         "method_id": "effective_diophantine",
@@ -5250,7 +5249,7 @@
           "M019",
           "M006"
         ],
-        "best_rank": 19,
+        "best_rank": 18,
         "summary": "M019: The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity. M006: The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification.",
         "why": ""
       },
@@ -5262,7 +5261,7 @@
         "problem_ids": [
           "M002"
         ],
-        "best_rank": 20,
+        "best_rank": 19,
         "summary": "Reproduce a published primitive character modulo 3 or 5 with the correct root number, branch conventions and independently checked zero count; document why this is known mathematics, not GRH progress.",
         "why": "The new engine verifies χ4 only; the generalized Riemann hypothesis concerns all Dirichlet characters. Replaying a separate primitive-character certificate tests the reusable contour and gamma-factor implementation."
       },
@@ -5276,7 +5275,7 @@
           "M072",
           "M077"
         ],
-        "best_rank": 21,
+        "best_rank": 20,
         "summary": "Shape extremal_asymptotics (3 problems, one write-up): Name a structured family and an explicit constant, and compare it with a cited general bound before calling it an improvement. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
       },
@@ -5288,7 +5287,7 @@
         "problem_ids": [
           "M085"
         ],
-        "best_rank": 22,
+        "best_rank": 21,
         "summary": "Independently audit the reduction's completeness and soundness estimates and its quantitative dependence on gap parameters.",
         "why": "A manuscript may already settle this entry. The next step is the review's own check, not a new lemma."
       },
@@ -5300,7 +5299,7 @@
         "problem_ids": [
           "M042"
         ],
-        "best_rank": 23,
+        "best_rank": 22,
         "summary": "Shape polynomial_maps (2 problems, one write-up): Name a polynomial or Weyl family that published degree bounds do not cover, and refuse exhaustive search inside those bounds. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
       },
@@ -5312,7 +5311,7 @@
         "problem_ids": [
           "M100"
         ],
-        "best_rank": 24,
+        "best_rank": 23,
         "summary": "Audit FalconerAllDimensions.lean definition fidelity, measure conventions and proof dependencies; obtain independent harmonic-analysis review.",
         "why": "A manuscript may already settle this entry. The next step is the review's own check, not a new lemma."
       },
@@ -5328,7 +5327,7 @@
           "M090",
           "M081"
         ],
-        "best_rank": 28,
+        "best_rank": 27,
         "summary": "Shape complexity_barriers (6 problems, one write-up): Name the model and audit any claimed reduction's alphabet, completeness and soundness before writing a new reduction. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
       },
@@ -5341,9 +5340,21 @@
           "M083",
           "M089"
         ],
-        "best_rank": 29,
+        "best_rank": 28,
         "summary": "Shape algebraic_complexity (4 problems, one write-up): Fix the field and the format, then replay a published certificate or state the class a new hitting set claims to cover. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
+      },
+      {
+        "action": "scope_audit",
+        "action_label": "Audit claim scope",
+        "method_id": "logic_decision",
+        "method_title": "The logic named in the registry",
+        "problem_ids": [
+          "M014"
+        ],
+        "best_rank": 33,
+        "summary": "Verify the reduction from integer to rational decision tests and audit each cited arithmetic input, especially the October 7 pointwise 2-converse.",
+        "why": "A manuscript may already settle this entry. The next step is the review's own check, not a new lemma."
       },
       {
         "action": "scope_audit",
@@ -5353,7 +5364,7 @@
         "problem_ids": [
           "M030"
         ],
-        "best_rank": 35,
+        "best_rank": 34,
         "summary": "Check the main theorem and dependencies against the canonical klt characteristic-zero formulation, particularly section production and actual basepoint-freeness.",
         "why": "A manuscript may already settle this entry. The next step is the review's own check, not a new lemma."
       },
@@ -5365,8 +5376,20 @@
         "problem_ids": [
           "M091"
         ],
-        "best_rank": 36,
+        "best_rank": 35,
         "summary": "Shape gauge_theory (1 problems, one write-up): The mass gap is not finitely falsifiable; name the lattice, the gauge group, and which Clay axiom the restriction drops. Full shape, certificate and falsifier are in APPROACH.md.",
+        "why": "No campaign yet. Fill one restricted statement inside the shared shape."
+      },
+      {
+        "action": "specify_shape",
+        "action_label": "Fill the shared attack shape",
+        "method_id": "logic_decision",
+        "method_title": "The logic named in the registry",
+        "problem_ids": [
+          "M098"
+        ],
+        "best_rank": 36,
+        "summary": "Shape logic_decision (2 problems, one write-up): Write the logic in the registry entry, and do not let a manuscript about a different logic move the evidence state. Full shape, certificate and falsifier are in APPROACH.md.",
         "why": "No campaign yet. Fill one restricted statement inside the shared shape."
       },
       {
@@ -6327,7 +6350,7 @@
       "name": "Erdős–Straus conjecture",
       "execution_rank": 17,
       "execution_score": 89,
-      "dispatch_rank": 19,
+      "dispatch_rank": 18,
       "dispatch_score": 95,
       "action": "mine_structure",
       "action_label": "Mine structure from certificates",
@@ -6344,7 +6367,7 @@
       "name": "Generalized Riemann Hypothesis",
       "execution_rank": 34,
       "execution_score": 79,
-      "dispatch_rank": 20,
+      "dispatch_rank": 19,
       "dispatch_score": 91,
       "action": "replay_published",
       "action_label": "Replay a published certificate",
@@ -6361,7 +6384,7 @@
       "name": "Strong Goldbach conjecture",
       "execution_rank": 35,
       "execution_score": 79,
-      "dispatch_rank": 25,
+      "dispatch_rank": 24,
       "dispatch_score": 85,
       "action": "mine_structure",
       "action_label": "Mine structure from certificates",
