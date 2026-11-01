@@ -18,7 +18,7 @@ PROTOCOL = "svyable.router.v1"
 REPOSITORY = "Svyable/100"
 HEX64 = re.compile(r"^[0-9a-f]{64}$")
 CLAIM = re.compile(r"^\[Claim\] ([A-Za-z0-9_-]+)(?:\s|$)")
-SCOPE = re.compile(r"(?im)^\s*(?:scope(?:_sha256)?(?:\s+digest)?|digest)\s*:\s*\x60?([0-9a-f]{64})\b")
+SCOPE = re.compile(r"(?im)^\s*(?:scope(?:_sha256|\s+sha-256|\s+digest)?|digest)\s*:\s*\x60?([0-9a-f]{64})\b")
 OCCUPY = {"reserved", "running", "quarantined"}
 STAGES = OCCUPY | {"needs_human", "ended"}
 TRANSITIONS = {
@@ -81,6 +81,11 @@ def checked_state(state):
             if t["work_id"] in seen_work:
                 raise ValueError("Two live tickets for the same work item")
             seen_work.add(t["work_id"])
+    seen = state.get("seen_comment_ids", [])
+    if (not isinstance(seen, list) or len(seen) > 10000
+            or any(type(n) is not int or n <= 0 for n in seen)
+            or len(set(seen)) != len(seen)):
+        raise ValueError("Invalid persisted comment replay protection")
     return [dict(t) for t in state["tickets"]]
 
 
@@ -122,6 +127,9 @@ def plan(work_items, claims_snapshot, state, reports=(), events=(), max_workers=
         t = by_ticket.get(report["ticket_id"])
         if t is None or report["status"] not in TRANSITIONS[t["status"]]:
             raise ValueError("Unknown ticket or forbidden status transition")
+        if (t["status"] == "needs_human" and report["status"] == "running"
+                and sum(x["status"] in OCCUPY for x in tickets) >= max_workers):
+            raise ValueError("Cannot resume: worker slots full")
         t["status"] = report["status"]
     claim_groups = {}
     issue_by_number = {i["number"]: i for i in issues}
@@ -142,6 +150,11 @@ def plan(work_items, claims_snapshot, state, reports=(), events=(), max_workers=
             t["status"] = "quarantined"
             actions.append({"action": "operator_stop_required", "ticket_id": t["ticket_id"],
                             "reason": "claim closed, duplicated, changed scope or work no longer runnable"})
+    for t in tickets:
+        if t["status"] == "quarantined" and not any(
+                a.get("ticket_id") == t["ticket_id"] for a in actions):
+            actions.append({"action": "operator_stop_required", "ticket_id": t["ticket_id"],
+                            "reason": "quarantined ticket still needs terminal acknowledgement"})
     used = sum(t["status"] in OCCUPY for t in tickets)
     by_work = {t["work_id"]: t for t in tickets if t["status"] != "ended"}
     for wid, item in work.items():
@@ -182,7 +195,9 @@ def plan(work_items, claims_snapshot, state, reports=(), events=(), max_workers=
                             "boundary": item["boundary"], "falsifier": item.get("falsifier", ""),
                             "instructions": "Work only within this contract. Follow AGENTS.md, regenerate, run checks; never self-accept mathematical claims."}})
     # Human comments stay with the Ticket owning the claim, not a new task.
-    seen_events = set()
+    seen_events = set(state.get("seen_comment_ids", []))
+    if len(seen_events) > 10000:
+        raise ValueError("Persisted follow-up replay ledger full")
     for event in events:
         if (not isinstance(event, dict) or set(event) != {"type", "issue_number", "comment_id"}
                 or event["type"] != "issue_comment" or type(event["issue_number"]) is not int
@@ -190,6 +205,8 @@ def plan(work_items, claims_snapshot, state, reports=(), events=(), max_workers=
             raise ValueError("Malformed follow-up event")
         if event["comment_id"] in seen_events:
             continue
+        if len(seen_events) >= 10000:
+            raise ValueError("Persisted follow-up replay ledger full")
         seen_events.add(event["comment_id"])
         owned = next((t for t in tickets if t["claim_number"] == event["issue_number"]
                       and t["status"] in ("reserved", "running", "needs_human")), None)
@@ -201,7 +218,8 @@ def plan(work_items, claims_snapshot, state, reports=(), events=(), max_workers=
                             "comment_id": event["comment_id"]})
     return {"protocol": PROTOCOL, "mode": "reservation_only", "slots_total": max_workers,
             "slots_occupied": used, "decisions": decisions, "actions": actions,
-            "state": {"protocol": PROTOCOL, "tickets": tickets}}
+            "state": {"protocol": PROTOCOL, "tickets": tickets,
+                      "seen_comment_ids": sorted(seen_events)}}
 
 
 def main():
