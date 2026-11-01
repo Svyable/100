@@ -17,6 +17,8 @@ jobs:
         run: python3 scripts/ramsey.py demo
       - name: Independently replay McKay's published 328 K42 Ramsey graphs
         run: python3 scripts/verify_mckay.py --check
+      - name: Audit M071/M073 claim-witness extractability ledger
+        run: python3 scripts/verify_claim_witnesses.py --check
       - name: Reproduce full-support Frankl n5 count and canonical n4 orbit partition
         run: python3 scripts/frankl_canonical.py --check
       - name: Independently count all n5 Frankl full-support orbits by Burnside

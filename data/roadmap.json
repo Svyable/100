@@ -395,18 +395,28 @@
       ]
     },
     {
+      "id": "R36",
+      "track": "claims",
+      "horizon": "shipped",
+      "title": "M071/M073 witness extractability audit",
+      "outcome": "Pinned Sidorenko faces table independently reconstructed (35 vertices, 66 edges); Hadwiger claim recorded as existential with no finite adjacency list; frozen CI ledger and precise gaps.",
+      "evidence": "research/M071_M073_WITNESSES.md",
+      "problems": [
+        "M071",
+        "M073"
+      ]
+    },
+    {
       "id": "R32",
       "track": "claims",
       "horizon": "next",
-      "title": "Computational checks of claimed witnesses",
-      "outcome": "Independent group-ring checker for M044/M049; explicit graph for the M071 claim; explicit host for the M073 claim.",
+      "title": "Computational checks of claimed group-ring witnesses",
+      "outcome": "Independent group-ring checker for the shared M044/M049 direct-finiteness construction; separate nonsoficity audit for M049.",
       "exit": "Each witness reproduced or a precise gap reported.",
       "evidence": "data/claim_reviews_2026.json",
       "problems": [
         "M044",
-        "M049",
-        "M071",
-        "M073"
+        "M049"
       ]
     },
     {
