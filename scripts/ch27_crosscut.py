@@ -2,7 +2,7 @@
 """Exact integer cross-cut audit for the (27,9) in/out-regular CH case.
 
 The mathematical nine-vertex 29-arc lemma and saturated-pivot cut
-are proved separately in research/M074_ELEMENTARY_27_REGULAR.md.
+are proved separately in proofs/M074_27_REGULAR.md.
 This program does not enumerate 27-vertex digraphs.
 """
 import json
