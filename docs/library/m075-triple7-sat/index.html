@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>M075 — seven-element triple-local optimization · 100</title>
-<meta name="description" content="Status: exact, audited SAT encoding; first resource-bounded search inconclusive. This is issue #95, not an assertion about Frankl&#x27;s original conjecture.">
+<meta name="description" content="Historical status of the first pilot: exact SAT encoding with resource-bounded attempts inconclusive. A subsequent single capped instance with sound singleton/pair lemmas has a DRAT/LRAT checked complete 2..18 finite refutation candidate; s">
 <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
 <meta name="color-scheme" content="light dark">
@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="100 — Svyable research">
 <meta property="og:title" content="M075 — seven-element triple-local optimization · 100">
-<meta property="og:description" content="Status: exact, audited SAT encoding; first resource-bounded search inconclusive. This is issue #95, not an assertion about Frankl&#x27;s original conjecture.">
+<meta property="og:description" content="Historical status of the first pilot: exact SAT encoding with resource-bounded attempts inconclusive. A subsequent single capped instance with sound singleton/pair lemmas has a DRAT/LRAT checked complete 2..18 finite refutation candidate; s">
 <meta property="og:url" content="https://svyable.github.io/100/library/m075-triple7-sat/">
 <meta name="twitter:card" content="summary">
 <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
@@ -47,7 +47,7 @@
 <div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M075/" title="Frankl union-closed sets conjecture">M075</a></div></div>
 <p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M075_TRIPLE7_SAT.md" rel="noopener noreferrer">research/M075_TRIPLE7_SAT.md <span aria-hidden="true">↗</span></a></p></aside>
 <article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M075 — seven-element triple-local optimization</h1>
-<p><strong>Status:</strong> exact, audited SAT <em>encoding</em>; first resource-bounded search <strong>inconclusive</strong>. This is issue <a href="https://github.com/Svyable/100/issues/95" rel="noopener noreferrer">#95</a>, not an assertion about Frankl&#x27;s original conjecture.</p>
+<p><strong>Historical status of the first pilot:</strong> exact SAT encoding with resource-bounded attempts <strong>inconclusive</strong>. A subsequent single capped instance with sound singleton/pair lemmas has a <strong>DRAT/LRAT checked complete 2..18 finite refutation candidate</strong>; see <a href="https://github.com/Svyable/100/blob/main/proofs/M075_TRIPLE7_CAP18.md" rel="noopener noreferrer">the updated proof dossier</a>. This is issue <a href="https://github.com/Svyable/100/issues/95" rel="noopener noreferrer">#95</a>, not an assertion about Frankl&#x27;s original conjecture.</p>
 <h2 id="perceive">Perceive<a class="anchor" href="#perceive" aria-label="Link to this section">#</a></h2>
 <p>The independently checked 19-set example of van der Hout–Roos (2026; <a href="https://doi.org/10.23952/jano.8.2026.1.02" rel="noopener noreferrer">source</a>) is union-closed on seven points, includes the empty set and the exact triple T={0,1,2}, and has triple frequencies (9,9,9) out of 19. This disproves a stronger <strong>triple-local</strong> assertion, <em>not</em> Frankl&#x27;s original existential one. Other points appear in more than half the sets.</p>
 <p>Our existing inclusion-minimality checker rules out a <strong>proper subfamily of this specific example</strong> with the same triple-local failure. It does not rule out a different family of size 18 or less.</p>
@@ -75,7 +75,7 @@ python3 -m unittest discover -s tests -p &#x27;test_frankl_triple_experiment.py&
 <p>A model labelled SATISFIABLE with literal lines (prefixed v) can be checked via:</p>
 <pre><code class="lang-sh">python3 scripts/frankl_triple_sat.py --size 18 --verify-model /tmp/solver-model.txt</code></pre>
 <p>The program checks the canonical auxiliary assignment against all generated clauses and then independently checks original set operations, closure, exact size, mandatory members, and strict triple frequencies. A valid model of size at most 18 <strong>refutes</strong> the proposed fixed-universe lower bound.</p>
-<p>An UNSAT return alone establishes <strong>nothing independently</strong>. Proving a global 19-set minimum for the stated seven-element problem requires independent, correct, proof-checker-accepted UNSAT certificates for <em>all 17 sizes from 2 through 18</em>, the statement scope and clauses audited, and a genuine prior-art/specialist review. A source hash is not a proof trace. No result here modifies the solved, theorem-review, or 36-agent-trial ledgers.</p>
+<p>An UNSAT return alone establishes <strong>nothing independently</strong>. The later capped construction supplies <strong>one</strong> proof-checker-accepted refutation with explicitly verified selectors covering <em>all 17 sizes</em>, as documented in <a href="https://github.com/Svyable/100/blob/main/proofs/M075_TRIPLE7_CAP18.md" rel="noopener noreferrer">M075_TRIPLE7_CAP18</a>. It still needs independent scope, proof and prior-art specialist review. A source hash is not a proof trace. No result here modifies the solved, theorem-review, or 36-agent-trial ledgers.</p>
 <p><strong>Next targeted research action:</strong> design and separately prove safe permutation-symmetry breaking for S3 acting on T and S4 on the other points; benchmark against equal conflict budgets and obtain proof-producing SAT traces with an independently pinned DRAT/LRAT checker if possible. Do not count unknown runs as negative mathematics.</p>
 </article></div>
 </main>

@@ -33,6 +33,7 @@ STEPS = (
     (None, ["portfolio_triage.py", "--check"], []),
     (None, ["proof_obligations.py", "--check"], []),
     (None, ["transfer.py", "--check"], []),
+    (None, ["verify_frankl_triple_cert.py", "--check"], []),
     (None, ["discovery.py", "--check"], []),
     (None, ["deck_signature_frontier.py", "--check", "--quick"], []),
     (None, ["formal.py", "--check"], []),
