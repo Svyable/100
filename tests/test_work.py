@@ -39,6 +39,11 @@ class TestWorkQueue(unittest.TestCase):
         open_obligations = {o["id"] for o in _json("data/proof_obligations.json")["obligations"] if o["status"] != "discharged"}
         self.assertEqual({w["id"] for w in self.items if w["kind"] == "obligation"}, open_obligations)
         self.assertEqual({w["id"] for w in self.items if w["kind"] == "lean"}, {t["id"] for t in _json("data/lean_targets.json")})
+        stop_jobs = [w for w in self.items if w["kind"] == "job" and w["id"].endswith("-stop_range")]
+        self.assertTrue(stop_jobs)
+        for w in stop_jobs:
+            self.assertEqual(w["status"], "externally_blocked", w["id"])
+            self.assertIn("Refused range extension", w["boundary"])
 
     def test_obligation_dependencies_are_respected(self):
         for w in self.items:
@@ -72,7 +77,8 @@ class TestRegen(unittest.TestCase):
         out = subprocess.run([sys.executable, str(ROOT / "scripts" / "regen.py"), "--list"],
                              capture_output=True, text=True, cwd=ROOT)
         self.assertEqual(out.returncode, 0)
-        for path in ("RANKED.md", "ATTACK_QUEUE.md", "LAB.md", "APPROACH.md", "ROADMAP.md", "docs/data/next.json"):
+        for path in ("RANKED.md", "ATTACK_QUEUE.md", "LAB.md", "APPROACH.md", "ROADMAP.md",
+                     "SCALE.md", "docs/data/next.json"):
             self.assertIn(path, out.stdout)
 
     def test_every_ci_check_is_covered(self):
@@ -80,7 +86,7 @@ class TestRegen(unittest.TestCase):
         workflow = (ROOT / ".github" / "workflows" / "validate.yml").read_text(encoding="utf-8")
         covered = {step[1][0] for step in regen.STEPS}
         for script in ("rank.py", "build_site.py", "next.py", "approach.py", "research.py", "lab.py",
-                       "mine.py", "formal.py", "portfolio_triage.py"):
+                       "mine.py", "formal.py", "portfolio_triage.py", "scale.py"):
             self.assertIn(f"scripts/{script}", workflow)
             self.assertIn(script, covered)
 

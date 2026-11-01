@@ -66,7 +66,7 @@ class ProofExchangeTests(unittest.TestCase):
         self.assertNotEqual(scale.packet_digest(a), digest)
 
     def test_production_sources_are_parseable_and_all_targets_accounted(self):
-        result = scale.report(budget=5)
+        result = scale.report(budget=5, mode="coverage")
         self.assertEqual(result["problem_count"], 100)
         self.assertEqual(result["method_count"], 30)
         self.assertTrue(0 < result["candidate_targets_touched"] <= 100)
@@ -75,6 +75,54 @@ class ProofExchangeTests(unittest.TestCase):
             self.assertTrue(set(p["verified_anchors"]) <= set(p["targets"]))
             self.assertEqual(p["scope_sha256"], scale.packet_digest(p))
         self.assertEqual(sum(result["frontier_counts"].values()), len(result["obligation_frontier"]))
+
+
+class WaveScaleTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.wave = scale.report(budget=100, mode="wave")
+
+    def test_wave_fills_budget_without_stop_range_or_waiting(self):
+        self.assertEqual(self.wave["protocol"], scale.PROTOCOL)
+        self.assertEqual(self.wave["budget_slots"], 100)
+        self.assertEqual(self.wave["slots_filled"], 100)
+        self.assertGreaterEqual(self.wave["problems_touched"], 40)
+        ids = [p["id"] for p in self.wave["selected_packets"]]
+        self.assertEqual(len(ids), len(set(ids)))
+        for p in self.wave["selected_packets"]:
+            self.assertNotEqual(p["status"], "waiting_on_dependencies")
+            self.assertNotIn("stop_range", p["id"])
+            self.assertIn("scout", p["roles"])
+            self.assertEqual(p["scope_sha256"], scale.packet_digest(p))
+            self.assertTrue(p["claim_title"].startswith("[Claim]"))
+
+    def test_wave_prefers_obligations_and_jobs_over_audits(self):
+        kinds = self.wave["by_kind"]
+        self.assertGreaterEqual(kinds["obligation"], 10)
+        self.assertGreaterEqual(kinds["job"], 20)
+        # High-leverage families should dominate the first thirty slots.
+        head = [p["kind"] for p in self.wave["selected_packets"][:30]]
+        self.assertGreaterEqual(sum(k in ("obligation", "lean", "job", "roadmap") for k in head), 25)
+
+    def test_refuses_dominated_range_jobs(self):
+        refused_ids = {r["id"] for r in self.wave["refused"]}
+        self.assertTrue(any("stop_range" in r["reason"] for r in self.wave["refused"]))
+        self.assertTrue(any(i.endswith("-stop_range") or "stop_range" in i for i in refused_ids))
+
+    def test_obligation_frontier_covers_all_campaigns_with_nodes(self):
+        self.assertGreaterEqual(self.wave["frontier_counts"]["runnable"], 15)
+        self.assertEqual(
+            sum(self.wave["frontier_counts"].values()),
+            len(self.wave["obligation_frontier"]),
+        )
+
+    def test_smaller_budget_is_prefix_by_leverage(self):
+        small = scale.report(budget=10, mode="wave")
+        self.assertEqual(len(small["selected_packets"]), 10)
+        self.assertEqual(
+            [p["id"] for p in small["selected_packets"]],
+            [p["id"] for p in self.wave["selected_packets"][:10]],
+        )
 
 
 if __name__ == "__main__":
