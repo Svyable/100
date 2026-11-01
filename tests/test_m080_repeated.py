@@ -59,6 +59,10 @@ class M080RepeatedTests(unittest.TestCase):
     def test_tamper_and_shape_rejection(self):
         with self.assertRaises(ValueError):
             m.replay_certificate(self.data[:-1], self.bases, self.reps)
+        altered = bytearray(self.data)
+        altered[0] = 0  # valid permutation index, but invalid first column
+        with self.assertRaises(AssertionError):
+            m.replay_certificate(bytes(altered), self.bases, self.reps)
         with self.assertRaises(ValueError):
             m.verify_grid(self.reps[0], self.bases[0], (24,0,0))
         # First row is E; corrupt the three repeated/other rows to all equal:

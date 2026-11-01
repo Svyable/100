@@ -148,6 +148,11 @@
       "url": "https://svyable.github.io/100/library/lab-campaigns/"
     },
     {
+      "title": "M080 — exact GF(2)^4 orbit gate and repeated-basis grid certificate",
+      "source": "research/M080_REPEATED_ORBIT_GATE.md",
+      "url": "https://svyable.github.io/100/library/m080-repeated-orbit-gate/"
+    },
+    {
       "title": "Proof-driven research engine",
       "source": "docs/RESEARCH_ENGINE.md",
       "url": "https://svyable.github.io/100/library/research-engine/"
