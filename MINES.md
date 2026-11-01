@@ -8,6 +8,7 @@ Each table below was recomputed by a second code path. The ranges are inside pub
 |---|---|---|---|
 | [`goldbach_growth`](scripts/mines/goldbach_growth.py) | M006 | For every even n with 4 <= n <= 20000, the least prime p such that n-p is prime, and the pairs (n, p) where that least prime sets a new record. | `aec113d543d3` |
 | [`straus_patterns`](scripts/mines/straus_patterns.py) | M019 | Every prime n <= 8000 with n = 1 (mod 24) has an explicit positive solution of 4/n = 1/x + 1/y + 1/z, grouped by the residue 4x - n. | `a58457c801a9` |
+| [`straus_identities`](scripts/mines/straus_identities.py) | M019 | Nine polynomial identities give explicit 4/n = 1/x+1/y+1/z solutions on named arithmetic progressions inside n = 1 (mod 24); prime coverage is reported through 8000. | `94d399f83ea2` |
 | [`deck_invariants`](scripts/mines/deck_invariants.py) | M078 | On the complete graph census for 3 <= n <= 6, the excess of graphs over classes of the deck-certified degree sequence, and over degree sequence plus triangle count. | `31a81e041e99` |
 | [`poset_balance`](scripts/mines/poset_balance.py) | M079 | Every non-chain poset on at most 6 elements has best balance at least 1/3, and the width-height profile of those whose best balance is exactly 1/3 is the recorded multiset. | `30a01221ce5f` |
 | [`frankl_orbits`](scripts/mines/frankl_orbits.py) | M075 | Every nontrivial union-closed family on a ground set of size at most 4 satisfies Frankl's abundance bound, and the number of families up to relabelling is the recorded orbit count. | `dbae6e1504f6` |
@@ -114,6 +115,51 @@ Every prime n <= 8000 with n = 1 (mod 24) has an explicit positive solution of 4
 ```
 
 Run `python3 scripts/mine.py --mine straus_patterns`.
+
+### M019 · Parametric identities for primes 1 mod 24
+
+Nine polynomial identities give explicit 4/n = 1/x+1/y+1/z solutions on named arithmetic progressions inside n = 1 (mod 24); prime coverage is reported through 8000.
+
+**Frontier.** Classical Mordell-type identities already cover many arithmetic progressions inside n = 1 (mod 24). The families here are extracted from the residue mine and proved as polynomial identities; they do not finish the uncovered progressions n = 1 or 49 (mod 120), and a finite list of polynomial identities cannot cover every such n.
+
+```json
+{
+  "by_family": {
+    "R11-d1-73": 3,
+    "R11-d3-241": 3,
+    "R3-97": 30,
+    "R3-d11-217": 2,
+    "R7-73": 35,
+    "R7-d1-73": 11,
+    "R7-d2-97": 12,
+    "R7-d4-145": 10,
+    "R7-d7-49": 0
+  },
+  "covered_primes": 106,
+  "families": 9,
+  "families_sha256": "c8bf86f041b7040bd0894ded3cb97123d5b9d972b8ed03550c1f0e7802634448",
+  "family_ids": [
+    "R3-97",
+    "R7-73",
+    "R7-d1-73",
+    "R7-d2-97",
+    "R7-d4-145",
+    "R7-d7-49",
+    "R3-d11-217",
+    "R11-d1-73",
+    "R11-d3-241"
+  ],
+  "limit": 8000,
+  "primes_1_mod_24": 117,
+  "uncovered_mod_120": [
+    1,
+    49
+  ],
+  "uncovered_primes": 11
+}
+```
+
+Run `python3 scripts/mine.py --mine straus_identities`.
 
 ### M078 · Deck invariants that separate the census
 
