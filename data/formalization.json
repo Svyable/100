@@ -2,7 +2,7 @@
   "as_of": "2026-11-01",
   "toolchain": "leanprover/lean4:v4.19.0",
   "library": "lean/Hundred.lean",
-  "interpretation": "Formal statements are comparators: they pin down exactly what a proof or counterexample must establish. Core Lean 4 only, no Mathlib, no sorry; every kernel-checked theorem is also registered in data/lean_targets.json and axiom-audited by the Lean proof gate. Kernel-checked results are finite fidelity tests inside known mathematics, never progress on the open statement.",
+  "interpretation": "Formal statements are comparators: they pin down exactly what a proof or counterexample must establish. Core Lean 4 only, no Mathlib, no sorry; every kernel-checked theorem is also registered in data/lean_targets.json and axiom-audited by the Lean proof gate. Kernel-checked results include finite fidelity tests and explicitly scoped classical parametric identities; these are reproductions of known mathematics, not resolutions of the open statement.",
   "fidelity_levels": {
     "author_checked": "Encoding written and checked against the registry statement by its author; fidelity examples compile.",
     "independently_reviewed": "A second reviewer has compared every definition with a primary source."
@@ -13,7 +13,7 @@
       "module": "lean/Hundred/Statements/Goldbach.lean",
       "namespace": "Hundred.Statements.Goldbach",
       "statement": "Statement",
-      "encodes": "Every even n ≥ 4 is p + (n − p) with both prime; primes by trial division.",
+      "encodes": "Every even n \u2265 4 is p + (n \u2212 p) with both prime; primes by trial division.",
       "not_encoded": [
         "Weak (ternary) Goldbach",
         "Bounds on the least Goldbach prime"
@@ -21,7 +21,7 @@
       "kernel_checked": [
         {
           "decl": "holds_upTo_100",
-          "claim": "The statement holds for every even 4 ≤ n ≤ 100 (least-prime witness table re-checked by the kernel; the lab covers far larger ranges in Python).",
+          "claim": "The statement holds for every even 4 \u2264 n \u2264 100 (least-prime witness table re-checked by the kernel; the lab covers far larger ranges in Python).",
           "mirrors_probe": "goldbach"
         }
       ],
@@ -35,13 +35,18 @@
       "encodes": "4/n = 1/x + 1/y + 1/z cleared to 4xyz = n(xy + yz + zx) with x, y, z > 0.",
       "not_encoded": [
         "Distinct denominators",
-        "Parametric identities by residue class"
+        "A parametric solution for every residue class"
       ],
       "kernel_checked": [
         {
           "decl": "holds_upTo_100",
-          "claim": "Explicit positive solutions for every 2 ≤ n ≤ 100, re-checked by the kernel.",
+          "claim": "Explicit positive solutions for every 2 \u2264 n \u2264 100, re-checked by the kernel.",
           "mirrors_probe": "erdos_straus"
+        },
+        {
+          "decl": "holds_mod_four_three",
+          "claim": "For every n with n % 4 = 3, positive denominators exist; n=4k+3 uses (k+1, 2n(k+1), 2n(k+1)), with no finite bound.",
+          "mirrors_probe": null
         }
       ],
       "fidelity": "author_checked"
@@ -51,7 +56,7 @@
       "module": "lean/Hundred/Statements/CaccettaHaggkvist.lean",
       "namespace": "Hundred.Statements.CaccettaHaggkvist",
       "statement": "Statement",
-      "encodes": "Loopless digraph on n vertices, minimum out-degree ≥ r ≥ 1, has an injective directed cycle of length ≤ ⌈n/r⌉; StatementFor r fixes the out-degree slice.",
+      "encodes": "Loopless digraph on n vertices, minimum out-degree \u2265 r \u2265 1, has an injective directed cycle of length \u2264 \u2308n/r\u2309; StatementFor r fixes the out-degree slice.",
       "not_encoded": [
         "The triangle case r = n/3 separately",
         "Any restricted family (vertex-transitive, etc.)"
@@ -64,9 +69,9 @@
       "module": "lean/Hundred/Statements/Frankl.lean",
       "namespace": "Hundred.Statements.Frankl",
       "statement": "Statement",
-      "encodes": "Families as bitmasks over ground set {0,…,k−1}; union-closed with a nonempty member implies some x with 2·deg(x) ≥ |F|.",
+      "encodes": "Families as bitmasks over ground set {0,\u2026,k\u22121}; union-closed with a nonempty member implies some x with 2\u00b7deg(x) \u2265 |F|.",
       "not_encoded": [
-        "The best known constant (≈0.38)",
+        "The best known constant (\u22480.38)",
         "Height or size restricted variants"
       ],
       "kernel_checked": [
@@ -83,7 +88,7 @@
       "module": "lean/Hundred/Statements/Hadwiger.lean",
       "namespace": "Hundred.Statements.Hadwiger",
       "statement": "Statement",
-      "encodes": "Every simple graph has a K_t minor (branch-set model, connectivity by no-split cuts) or a proper (t−1)-colouring.",
+      "encodes": "Every simple graph has a K_t minor (branch-set model, connectivity by no-split cuts) or a proper (t\u22121)-colouring.",
       "not_encoded": [
         "Fractional, list and odd-minor variants"
       ],
@@ -95,7 +100,7 @@
       "module": "lean/Hundred/Statements/Reconstruction.lean",
       "namespace": "Hundred.Statements.Reconstruction",
       "statement": "Statement",
-      "encodes": "Simple graphs on n ≥ 3 vertices with a deck-matching bijection σ (G − v ≅ H − σv) are isomorphic.",
+      "encodes": "Simple graphs on n \u2265 3 vertices with a deck-matching bijection \u03c3 (G \u2212 v \u2245 H \u2212 \u03c3v) are isomorphic.",
       "not_encoded": [
         "Edge reconstruction",
         "Digraph or hypergraph reconstruction"
@@ -108,9 +113,9 @@
       "module": "lean/Hundred/Statements/Hadamard.lean",
       "namespace": "Hundred.Statements.Hadamard",
       "statement": "Statement",
-      "encodes": "For every k ≥ 1 an Int matrix of order 4k with ±1 entries and pairwise orthogonal rows.",
+      "encodes": "For every k \u2265 1 an Int matrix of order 4k with \u00b11 entries and pairwise orthogonal rows.",
       "not_encoded": [
-        "Specific constructions (Williamson, Goethals–Seidel)",
+        "Specific constructions (Williamson, Goethals\u2013Seidel)",
         "Circulant or skew variants"
       ],
       "kernel_checked": [
@@ -129,7 +134,7 @@
       "statement": "Conjecture",
       "encodes": "Arrows n s t: every red/blue colouring of K_n has a red K_s or a blue K_t (cliques as vertex bitmasks). Conjecture: Arrows 43 5 5.",
       "not_encoded": [
-        "The known bounds ¬Arrows 42 5 5 and Arrows 46 5 5 are cited, not re-proved"
+        "The known bounds \u00acArrows 42 5 5 and Arrows 46 5 5 are cited, not re-proved"
       ],
       "kernel_checked": [
         {

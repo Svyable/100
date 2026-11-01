@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>L005: Extend Lean target L005 (M019) · 100</title>
-<meta name="description" content="Formalise one classical parametric identity (n ≡ 3 mod 4) as a theorem quantified over all such n.">
+<meta name="description" content="Prove a scaling lemma: a solution for n gives a solution for every positive multiple of n, then compose it with residue_three.">
 <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
 <meta name="color-scheme" content="light dark">
@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="100 — Svyable research">
 <meta property="og:title" content="L005: Extend Lean target L005 (M019) · 100">
-<meta property="og:description" content="Formalise one classical parametric identity (n ≡ 3 mod 4) as a theorem quantified over all such n.">
+<meta property="og:description" content="Prove a scaling lemma: a solution for n gives a solution for every positive multiple of n, then compose it with residue_three.">
 <meta property="og:url" content="https://svyable.github.io/100/work/L005/">
 <meta name="twitter:card" content="summary">
 <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
@@ -46,10 +46,10 @@
 <div class="chips"><span class="chip chip-good">Runnable</span><a class="chip chip-link" href="../../problems/M019/" title="Erdős–Straus conjecture">M019</a></div>
 </header>
 <div class="work-detail">
-<section class="dossier-block"><h2>Deliverable</h2><p class="serif">Formalise one classical parametric identity (n ≡ 3 mod 4) as a theorem quantified over all such n.</p>
-<p class="muted">Context: Explicit positive solutions of 4xyz = n(xy + yz + zx) for every 2 ≤ n ≤ 100, re-checked by the kernel against Hundred.Statements.ErdosStraus.Statement.</p></section>
+<section class="dossier-block"><h2>Deliverable</h2><p class="serif">Prove a scaling lemma: a solution for n gives a solution for every positive multiple of n, then compose it with residue_three.</p>
+<p class="muted">Context: Positive solutions for 2 ≤ n ≤ 100 and a classical infinite parametric family for every n ≡ 3 (mod 4), checked against ErdosStraus.Solves.</p></section>
 <section class="dossier-block"><h2>Acceptance</h2><ul class="plain checklist"><li>New theorems registered in data/lean_targets.json (stable names, no escape hatches)</li><li><code>python3 scripts/lean_verify.py passes in CI: warnings as errors, only propext / Classical.choice / Quot.sound, per-module time well under the 300 s build budget</code></li><li>A negative case in lean/Negative.lean that a weakened statement would fail</li><li><code>python3 scripts/regen.py &amp;&amp; python3 scripts/regen.py --check</code></li></ul></section>
-<section class="dossier-block"><h2>Boundary</h2><p>Known range only; no parametric identity for a residue class. Independent statement review pending.</p>
+<section class="dossier-block"><h2>Boundary</h2><p>Classical residue class only; does not prove the unrestricted conjecture. Repeated denominators allowed. Independent statement review pending.</p>
 </section>
 
 <section class="dossier-block"><h2>Claim it</h2>
@@ -57,7 +57,7 @@
 <p class="card-links"><a class="button button-outline" href="https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20L005%22" rel="noopener noreferrer">Check existing claims ↗</a>
 <a class="button button-dark" href="https://github.com/Svyable/100/issues/new?template=claim.yml&amp;title=%5BClaim%5D%20L005%20%E2%80%94%20Extend%20Lean%20target%20L005%20%28M019%29" rel="noopener noreferrer">Claim this item ↗</a></p>
 <dl class="kv compact"><dt>Claim title</dt><dd><code>[Claim] L005 — Extend Lean target L005 (M019)</code></dd>
-<dt>Scope digest</dt><dd><code class="hash">8b855811a31aba907658115a0e1344b2a0c22d46b522dbb194bcf2f8979e1f20</code></dd>
+<dt>Scope digest</dt><dd><code class="hash">85b0ec576fbcfef97479567db88e5a81f9e7b0389295089d602cd8ca44680691</code></dd>
 <dt>Defined by</dt><dd><a href="https://github.com/Svyable/100/blob/main/data/lean_targets.json" rel="noopener noreferrer">data/lean_targets.json <span aria-hidden="true">↗</span></a></dd>
 <dt>CLI</dt><dd><code>python3 scripts/work.py --id L005</code></dd></dl></section>
 </div></article>
