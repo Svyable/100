@@ -34,6 +34,7 @@ STEPS = (
     (None, ["proof_obligations.py", "--check"], []),
     (None, ["transfer.py", "--check"], []),
     (None, ["discovery.py", "--check"], []),
+    (None, ["deck_signature_frontier.py", "--check", "--quick"], []),
     (None, ["formal.py", "--check"], []),
     (None, ["lean_verify.py", "--validate-only"], []),
     (None, ["analogues.py", "--check"], []),

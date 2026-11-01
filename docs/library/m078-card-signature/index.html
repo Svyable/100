@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M078 — a sharp finite boundary for paired card-motif signatures · 100</title>
+<meta name="description" content="Status 2026-11-01: exact finite computational classification; independently replayed card statistics and Burnside class counts. Mathematical novelty has not been established; this is not a proof of the reconstruction conjecture. Bounded res">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m078-card-signature/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M078 — a sharp finite boundary for paired card-motif signatures · 100">
+<meta property="og:description" content="Status 2026-11-01: exact finite computational classification; independently replayed card statistics and Burnside class counts. Mathematical novelty has not been established; this is not a proof of the reconstruction conjecture. Bounded res">
+<meta property="og:url" content="https://svyable.github.io/100/library/m078-card-signature/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M078 — a sharp finite boundary for paired card-motif signatures</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#question">Question</a></li><li class="toc-l2"><a href="#three-exact-finite-assertions">Three exact finite assertions</a></li><li class="toc-l2"><a href="#certificate-table">Certificate table</a></li><li class="toc-l2"><a href="#eight-vertex-witness-s3-fails-s4-detects-the-difference">Eight-vertex witness: S3 fails, S4 detects the difference</a></li><li class="toc-l2"><a href="#independent-checks">Independent checks</a></li><li class="toc-l2"><a href="#prior-art-and-novelty-boundary">Prior art and novelty boundary</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M078/" title="Graph reconstruction conjecture">M078</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M078_CARD_SIGNATURE.md" rel="noopener noreferrer">research/M078_CARD_SIGNATURE.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M078 — a sharp finite boundary for paired card-motif signatures</h1>
+<p><strong>Status 2026-11-01:</strong> exact finite computational classification; independently replayed card statistics and Burnside class counts. <strong>Mathematical novelty has not been established; this is not a proof of the reconstruction conjecture.</strong> <a href="https://github.com/Svyable/100/issues/130" rel="noopener noreferrer">Bounded research claim #130</a>. The separate <a href="https://github.com/Svyable/100/issues/126" rel="noopener noreferrer">O-M078-01 / induced-P4 proposal</a> is not discharged by this work.</p>
+<h2 id="question">Question<a class="anchor" href="#question" aria-label="Link to this section">#</a></h2>
+<p>How much of a graph&#x27;s vertex-deleted deck do we need to distinguish small graphs without comparing the full graph isomorphism types of the cards?</p>
+<p>For a finite simple graph <code>G</code>, write <code>D(G) = {G-v : v in V(G)}</code> as a <strong>multiset</strong>, counting repeated cards. For a graph <code>H</code>, let:</p>
+<ul><li><code>d(H)</code>: sorted multiset of vertex degrees;</li><li><code>t(H)</code>: number of (not necessarily induced) triangles;</li><li><code>q(H)</code>: number of (not necessarily induced) four-cycles, each counted once.</li></ul>
+<p>Consider two deck-computable signatures, with each card&#x27;s statistics <strong>paired</strong> before sorting:</p>
+<pre><code>S3(G) = multiset_{v in V(G)} (d(G-v), t(G-v))
+S4(G) = multiset_{v in V(G)} (d(G-v), t(G-v), q(G-v))</code></pre>
+<p>These are much smaller summaries than the full isomorphism types of the cards. Do not replace the paired multiset with separate unpaired histograms: that is a different invariant and is not tested here.</p>
+<h2 id="three-exact-finite-assertions">Three exact finite assertions<a class="anchor" href="#three-exact-finite-assertions" aria-label="Link to this section">#</a></h2>
+<ol><li><strong>Completeness of S3 through seven vertices.</strong> Among all finite simple graphs on each fixed order <code>3 &lt;= n &lt;= 7</code>, <code>S3</code> separates every graph isomorphism class. It is not assumed complete at larger orders.</li><li><strong>Sharp obstruction at eight vertices.</strong> Two explicitly listed, triangle-free graphs of order eight share <code>S3</code>, but one has two four-cycles and the other has one. They are not isomorphic. This is a counterexample to <strong>S3 as a complete signature</strong>, <strong>not</strong> to the graph reconstruction conjecture.</li><li><strong>Completeness of S4 through eight vertices.</strong> At each fixed order <code>3 &lt;= n &lt;= 8</code>, <code>S4</code> separates every graph isomorphism class.</li></ol>
+<p>All three assertions follow from the finite enumeration certificates below. They are not universal structural theorems and have not received independent specialist mathematical review.</p>
+<h2 id="certificate-table">Certificate table<a class="anchor" href="#certificate-table" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th class="al-right">n</th><th class="al-right">Graph isomorphism classes</th><th class="al-right">distinct S3</th><th class="al-right">S3 excess</th><th class="al-right">distinct S4</th><th class="al-right">S4 excess</th></tr></thead><tbody><tr><td class="al-right">3</td><td class="al-right">4</td><td class="al-right">4</td><td class="al-right">0</td><td class="al-right">4</td><td class="al-right">0</td></tr><tr><td class="al-right">4</td><td class="al-right">11</td><td class="al-right">11</td><td class="al-right">0</td><td class="al-right">11</td><td class="al-right">0</td></tr><tr><td class="al-right">5</td><td class="al-right">34</td><td class="al-right">34</td><td class="al-right">0</td><td class="al-right">34</td><td class="al-right">0</td></tr><tr><td class="al-right">6</td><td class="al-right">156</td><td class="al-right">156</td><td class="al-right">0</td><td class="al-right">156</td><td class="al-right">0</td></tr><tr><td class="al-right">7</td><td class="al-right">1,044</td><td class="al-right">1,044</td><td class="al-right">0</td><td class="al-right">1,044</td><td class="al-right">0</td></tr><tr><td class="al-right">8</td><td class="al-right">12,346</td><td class="al-right">12,257</td><td class="al-right"><strong>89</strong></td><td class="al-right">12,346</td><td class="al-right"><strong>0</strong></td></tr></tbody></table></div>
+<p>&quot;Excess&quot; is the number of nonisomorphic classes minus the number of signature values. It is not necessarily the number of colliding <em>pairs</em>.</p>
+<p><strong>Constructive completeness:</strong> the project&#x27;s graph-census generator builds one representative for each isomorphism class at orders 3 through 7. Its separate Burnside count and a second canonical-labelling check already certify the smaller census. For order 8, delete any vertex from an arbitrary graph; its seven-vertex remainder is isomorphic to one of those 1,044 representatives. That graph is therefore isomorphic to one of the <strong>1,044 × 128 = 133,632</strong> extensions formed by connecting a new vertex to every subset of the old seven. Some extensions are isomorphic; that is harmless because only distinct signatures are counted.</p>
+<p>Independently, Burnside&#x27;s lemma counts unlabeled n-vertex graphs as</p>
+<pre><code>(1/n!) * sum over permutations p in S_n of 2^(orbits of p on unordered vertex pairs).</code></pre>
+<p>It gives 12,346 classes at n=8. A signature is invariant under relabeling, so its number of distinct values can never exceed the number of classes. The exact search finds <strong>12,346 distinct S4 values</strong> in the complete extension cover. Equality gives injectivity up to isomorphism at n=8. The same counting argument applies to S3 through n=7. The executable checker also stores SHA-256 fingerprints of sorted signature values; hashes detect drift but are not the mathematical justification.</p>
+<h2 id="eight-vertex-witness-s3-fails-s4-detects-the-difference">Eight-vertex witness: S3 fails, S4 detects the difference<a class="anchor" href="#eight-vertex-witness-s3-fails-s4-detects-the-difference" aria-label="Link to this section">#</a></h2>
+<p>Vertices are integers <code>0,...,7</code>. In the fixed edge-list format <code>[u,v]</code> with <code>u&lt;v</code>, graph <strong>A</strong> has edges:</p>
+<pre><code class="lang-text">(0,4) (0,7) (1,4) (1,5) (1,7)
+(2,5) (2,6) (3,5) (3,6) (4,6)</code></pre>
+<p>Graph <strong>B</strong> has edges:</p>
+<pre><code class="lang-text">(0,4) (0,7) (1,4) (1,5)
+(2,5) (2,6) (2,7) (3,5) (3,6) (4,6)</code></pre>
+<p>Both have degree sequence <code>(2,2,2,2,3,3,3,3)</code>, ten edges and zero triangles. Their full paired <strong>S3</strong> multisets agree exactly, including repeated cards (see the JSON certificate). But <strong>A has two four-cycles and B has one</strong>, which proves they are nonisomorphic without relying on a canonical-label algorithm. This discrepancy is itself reconstructible from the full deck: each four-cycle survives deletion of exactly <code>n-4</code> vertices, so <code>q(G) = sum_v q(G-v)/(n-4)</code> for <code>n&gt;4</code>. The pair is therefore <strong>not a same-deck counterexample</strong>. S4 distinguishes them.</p>
+<h2 id="independent-checks">Independent checks<a class="anchor" href="#independent-checks" aria-label="Link to this section">#</a></h2>
+<pre><code class="lang-sh">python3 scripts/deck_signature_frontier.py --write
+python3 scripts/deck_signature_frontier.py --check         # exhaustive two-path card recheck
+python3 scripts/deck_signature_frontier.py --check --quick # still exhaustive signature and Burnside counts
+python3 -m unittest discover -s tests -p test_deck_signature_frontier.py -v</code></pre>
+<p>The <strong>search path</strong> uses bitset adjacency, deletion identities for degree and triangle counts, and common-neighbor counts for C4 in each card. The <strong>independent card checker</strong> physically constructs each deleted edge set, recomputes degree sequences from incident edges, enumerates triples for triangles and three possible cyclic orders per quadruple for C4. Its full mode checks every generated input independently. The <strong>isomorphism-class count</strong> is a distinct Burnside orbit calculation and does not depend on interpreting the signature. The tests inject a mutated edge, invalid edge lists, and vertex relabelings as negative/positive controls.</p>
+<p>The frozen data live in <a href="https://github.com/Svyable/100/blob/main/data/card_motif_signatures.json" rel="noopener noreferrer"><code>data/card_motif_signatures.json</code></a>. An accepted proof of a stronger reconstruction theorem would still need an independent scope and novelty review.</p>
+<h2 id="prior-art-and-novelty-boundary">Prior art and novelty boundary<a class="anchor" href="#prior-art-and-novelty-boundary" aria-label="Link to this section">#</a></h2>
+<ul><li>Brendan McKay, <a href="https://ajc.maths.uq.edu.au/pdf/83/ajc_v83_p448.pdf" rel="noopener noreferrer"><em>Reconstruction of small graphs and digraphs</em> (Australasian Journal of Combinatorics 83, 2022)</a>, computationally verifies full graph reconstruction through 13 vertices. This result is about a <strong>weaker compression of the full deck</strong> and does not extend his reconstruction bound.</li><li>Kelly&#x27;s classical reconstruction observations apply to subgraph counts; degree sequences are also reconstructible from cards. See Wendy Myrvold, <a href="https://doi.org/10.1016/0012-365X(92)90053-I" rel="noopener noreferrer"><em>The degree sequence is reconstructible from n−1 cards</em> (Discrete Mathematics 102, 1992)</a>.</li><li>Separate work on <a href="https://github.com/Svyable/100/pull/120" rel="noopener noreferrer">induced P4 counts</a> addresses a different invariant and at most six vertices in its initial PR.</li></ul>
+<p>I did not find an exact published formulation of this <strong>paired S3/S4 signature threshold</strong> in a targeted search; absence from a search is not evidence of priority. Treat it as a reproducible mathematical candidate requiring external literature and specialist review.</p>
+<p><strong>Next research step:</strong> test S4 at nine vertices with a complete isomorph-free generator or find a small independent collision. Do not announce a universal bound or change <code>data/solved.json</code>, the evidence state of M078, or the O-M078-01 obligation on these data.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>
