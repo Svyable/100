@@ -35,6 +35,7 @@ STEPS = (
     (None, ["formal.py", "--check"], []),
     (None, ["lean_verify.py", "--validate-only"], []),
     (None, ["work.py", "--check"], []),
+    (["outcomes.py"], ["outcomes.py", "--check"], ["YIELD.md"]),
     (None, ["verify_claim_witnesses.py", "--check"], []),
     (["scale.py", "--write"], ["scale.py", "--check"], ["SCALE.md"]),
     (["build_site.py"], ["build_site.py", "--check"],
