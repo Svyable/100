@@ -91,6 +91,10 @@ def perceive(arm, seed, model=None):
         "source_commit": manifest["source_commit"],
         "corpus_sha256": vm.SOURCE_SHA256,
         "corpus_count": len(lines),
+        "source_file_sha256": {
+            path: source_digest(ROOT / path) for path in (
+                "scripts/pda_trial.py", "scripts/verify_mckay.py",
+                "scripts/ramsey.py", "scripts/benchmark.py")},
         "candidate_witnesses": candidates,
         "arm": arm, "seed": seed, "model": model,
         "prompt_version": PROMPT_VERSION,
@@ -203,7 +207,8 @@ def provider_call(model, prompt, key):
 def check_candidate(text, perception):
     """Two independent exact algorithms; never accept a self-report as proof."""
     result = {"accepted": False, "reason": "", "index": None,
-              "bitset_K5_free": False, "triangle_K5_free": False}
+              "bitset_K5_free": False, "triangle_K5_free": False,
+              "checker_calls": 0}
     try:
         item = json.loads(text.strip())
         if not isinstance(item, dict) or type(item.get("index")) is not int:
@@ -218,7 +223,9 @@ def check_candidate(text, perception):
         if len(graph) != 42:
             raise TrialError("Wrong graph order")
         bitset_ok = bitset_verify(42, vm.to_red_edges(graph), 5, 5)[0]
+        result["checker_calls"] += 1
         triangle_ok = vm.triangle_checker(graph) is None
+        result["checker_calls"] += 1
         result.update(index=index, bitset_K5_free=bitset_ok,
                       triangle_K5_free=triangle_ok)
         if not bitset_ok or not triangle_ok:
@@ -275,7 +282,7 @@ def act(perception, decision, api_key, runs_dir=RUNS_DIR):
             if perf_counter() - started > manifest["resource_caps"]["elapsed_seconds"]:
                 raise TrialError("Wall-clock cap exceeded")
             checked = check_candidate(answer, perception)
-            calls += 2  # independent bitset and triangle checks of the proposed witness
+            calls += checked["checker_calls"]  # count only checker calls really executed
             if calls > manifest["resource_caps"]["tool_calls"]:
                 raise TrialError("Tool-call cap exceeded")
             checks.append({"role": role, **checked})
@@ -301,6 +308,7 @@ def act(perception, decision, api_key, runs_dir=RUNS_DIR):
             "schema": VERSION, "prompt_version": PROMPT_VERSION,
             "model": model, "stages": stages, "resources": resources,
             "source_revision": perception["source_commit"],
+            "source_file_sha256": perception["source_file_sha256"],
             "runtime": {"python": platform.python_version(),
                         "platform": platform.system()},
         })
@@ -315,6 +323,7 @@ def act(perception, decision, api_key, runs_dir=RUNS_DIR):
             "source_commit": perception["source_commit"],
             "scope_sha256": decision["scope_sha256"],
             "corpus_sha256": perception["corpus_sha256"],
+            "source_file_sha256": perception["source_file_sha256"],
             "known_result": "R(5,5) >= 43",
             "not_established": ["R(5,5) = 43", "a new theorem",
                                 "independent specialist acceptance",
