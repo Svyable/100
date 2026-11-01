@@ -55,7 +55,7 @@ class CToATests(unittest.TestCase):
                 else:
                     endpoints[(a,sum(k))]+=1
                     self.assertNotEqual(new.classify(a,k),'unresolved')
-        self.assertEqual(counts['coarse'],288)
+        self.assertEqual(counts['coarse'],284)
         self.assertEqual(endpoints,{
             ((2,)*3+(3,)*5+(8,),37):1,
             ((2,)*2+(3,)*5+(4,6),34):3,
@@ -66,7 +66,9 @@ class CToATests(unittest.TestCase):
         r=new.report()
         self.assertEqual(r['total_profiles'],153384)
         self.assertEqual(r['survivors'],[])
-        self.assertEqual(r['stages']['c_to_a_bottleneck'],288)
+        self.assertEqual(r['stages']['c_to_a_bottleneck'],284)
+        self.assertEqual(r['stages']['z4_sink_cut'],4)
+        self.assertEqual(4 + r['stages']['c_to_a_bottleneck'] + 1 + 3 + 3,295)
         self.assertEqual(r['stages']['five_protected_threes_overfill_five_vertices'],1)
         self.assertEqual(r['stages']['protected_A_forces_C_tournament_sink'],3)
         self.assertEqual(r['stages']['eight_vertex_degree_defect'],3)
