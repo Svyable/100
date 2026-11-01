@@ -129,6 +129,13 @@ class TestPages(unittest.TestCase):
                      "sitemap.xml", "robots.txt", "api/problems.csv", "api/search.json"):
             self.assertIn(path, FILES)
         self.assertTrue(any(k.startswith("library/") and k != "library/index.html" for k in FILES))
+        import work
+        queue = work.snapshot()
+        self.assertIn("work/index.html", FILES)
+        self.assertEqual(json.loads(FILES["api/work.json"])["count"], queue["count"])
+        for w in queue["items"]:
+            self.assertIn(f"work/{w['id']}/index.html", FILES)
+        self.assertIn('id="work"', FILES["problems/M074/index.html"])
 
     def test_every_internal_link_and_fragment_resolves(self):
         broken = []

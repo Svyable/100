@@ -124,6 +124,11 @@
   "external_claims": [],
   "mentioned_in": [
     {
+      "title": "Agent protocol",
+      "source": "AGENTS.md",
+      "url": "https://svyable.github.io/100/library/agents/"
+    },
+    {
       "title": "Approach — leverage dispatch",
       "source": "APPROACH.md",
       "url": "https://svyable.github.io/100/library/approach/"
@@ -152,6 +157,11 @@
       "title": "Roadmap — 100 mathematical grand challenges",
       "source": "ROADMAP.md",
       "url": "https://svyable.github.io/100/library/roadmap/"
+    },
+    {
+      "title": "Scale — proof-exchange wave",
+      "source": "SCALE.md",
+      "url": "https://svyable.github.io/100/library/scale/"
     },
     {
       "title": "Lab campaigns: problems under exact computation",

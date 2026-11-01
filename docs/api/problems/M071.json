@@ -24,8 +24,8 @@
   "action_bonus": 40,
   "method_id": "extremal_certificates",
   "method_title": "Replay the object, or mine the census",
-  "dispatch_next": "Audit the Lean quantifiers and graph encoding against the theorem; reproduce or extract an explicit graph plus an independently checkable minor-bound obstruction.",
-  "dispatch_why": "A 2026 manuscript claims a Hadwiger counterexample. Reproducing that finite graph outranks another census step. Robertson, Seymour and Thomas already cover chromatic number at most 6.",
+  "dispatch_next": "Extract a concrete finite graph from the binary-frame construction, or obtain two independent specialist reviews of the existential proof; do not treat comparator or second-kernel replay as a finite witness.",
+  "dispatch_why": "The extractability audit found no published finite Hadwiger graph. Extracting one, or obtaining specialist reviews of the existential proof, still outranks another small-n census. Robertson, Seymour and Thomas already cover chromatic number at most 6.",
   "campaign_stage": "benchmark_reproduced",
   "milestone_count": 1,
   "url": "https://svyable.github.io/100/problems/M071/",
@@ -117,8 +117,8 @@
     "independent_evidence_urls": [
       "https://mathcommunity.github.io/oai-math-revised/papers/A-counterexample-to-Hadwigers-conjecture-September-23-2026/"
     ],
-    "known_caveats": "Comparator acceptance of some Lean artifact is proof-object checking, not independent verification of exactly the paper's graph construction and claimed theorem; explicit checkable witnesses were not supplied in the independent audit consulted.",
-    "next_review": "Audit the Lean quantifiers and graph encoding against the theorem; reproduce or extract an explicit graph plus an independently checkable minor-bound obstruction.",
+    "known_caveats": "Comparator acceptance is proof-object checking only. The 2026-10-31 extractability audit (research/M071_M073_WITNESSES.md; data/claim_witness_replay.json) confirms the Lean statement is an existential family (arbitrarily large m, alpha<=2, h(G)<26m/75+2/3<m/2<=chi(G)) with no published adjacency list or explicit Hadwiger number. Bonnet's local kernel replay remains Lean-only evidence.",
+    "next_review": "Extract a concrete finite graph from the binary-frame construction, or obtain two independent specialist reviews of the existential proof; do not treat comparator or second-kernel replay as a finite witness.",
     "formalization_scope_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/157.md"
   },
   "formal_statement": {
@@ -167,6 +167,11 @@
       "url": "https://svyable.github.io/100/library/roadmap/"
     },
     {
+      "title": "Scale — proof-exchange wave",
+      "source": "SCALE.md",
+      "url": "https://svyable.github.io/100/library/scale/"
+    },
+    {
       "title": "2026 claimed-resolution triage — issue #3",
       "source": "research/CLAIM_REVIEWS_2026.md",
       "url": "https://svyable.github.io/100/library/claim-reviews-2026/"
@@ -175,6 +180,11 @@
       "title": "Lab campaigns: problems under exact computation",
       "source": "research/LAB_CAMPAIGNS.md",
       "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "M071 / M073 — claimed finite-witness extractability audit",
+      "source": "research/M071_M073_WITNESSES.md",
+      "url": "https://svyable.github.io/100/library/m071-m073-witnesses/"
     },
     {
       "title": "Publish the 100 portfolio via GitHub Pages",

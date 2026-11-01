@@ -19,6 +19,7 @@ from pathlib import Path
 
 import lab
 import mdlite
+import work as workqueue
 from rank import ROOT, COMPUTABLE, score
 from research import load, execution_order, readiness
 
@@ -29,7 +30,7 @@ DOCS = ROOT / "docs"
 
 # Directories whose contents are fully owned by the generator (stale files fail --check).
 GENERATED_DIRS = ("problems", "fields", "atlas", "lab", "formal", "campaigns", "claims",
-                  "roadmap", "ledger", "library", "api")
+                  "roadmap", "ledger", "library", "api", "work")
 # docs/data/portfolio.json is generated here; docs/data/next.json belongs to scripts/next.py,
 # and docs/next/ is a hand-written page, so neither directory is swept for stale files.
 # Top-level generated files. Everything else in docs/ is hand-written.
@@ -79,8 +80,8 @@ SERIES_LABEL = {1: "Officially or specialist open", 2: "Claim under review", 3: 
 
 NAV = (
     ("index", "The 100", ""),
+    ("work", "Work", "work/"),
     ("next", "Next 100", "next/"),
-    ("atlas", "Atlas", "atlas/"),
     ("campaigns", "Campaigns", "campaigns/"),
     ("lab", "Lab", "lab/"),
     ("formal", "Formal", "formal/"),
@@ -171,6 +172,11 @@ class Site:
         self.approach = portfolio["approach"]
         self.mines = portfolio["mines"]["mines"]
         self.roadmap_doc = portfolio["roadmap"]
+        self.work = workqueue.snapshot()
+        self.work_by_problem = defaultdict(list)
+        for w in self.work["items"]:
+            for pid in w["problems"]:
+                self.work_by_problem[pid].append(w)
         self.items = items
         self.program = program
         self.solved = solved
@@ -242,14 +248,14 @@ def discover_library():
     docs = []
     for path in sources:
         rel = path.relative_to(ROOT).as_posix()
-        if rel == "README.md" or not path.is_file():
+        if rel in ("README.md", "CLAUDE.md") or not path.is_file():
             continue
         text = path.read_text(encoding="utf-8")
         heads = mdlite.headings(text)
         title = next((h[1] for h in heads if h[0] == 1), path.stem.replace("_", " ").title())
         title = re.sub(r"[`*]", "", title)
         group = "Research dossiers" if rel.startswith("research/") else \
-            "Method & governance" if rel.startswith(("docs/", "lean/")) or rel == "CONTRIBUTING.md" else "Generated reports"
+            "Method & governance" if rel.startswith(("docs/", "lean/")) or rel in ("CONTRIBUTING.md", "AGENTS.md", "LEAN.md") else "Generated reports"
         stem_slug = slug(path.stem) if path.stem.upper() != "README" else slug(rel.rsplit(".", 1)[0])
         docs.append({"rel": rel, "slug": stem_slug, "title": title, "source": text,
                      "group": group, "path": f"library/{stem_slug}/"})
@@ -338,7 +344,7 @@ def layout(site, page, title, description, body, active="", head_extra="", jsonl
 <footer class="site-footer">
   <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
   <div class="footer-links">
-    <a href="{root}library/">Library</a><a href="{root}api/">Data &amp; API</a><a href="{root}feed.xml">Atom feed</a>
+    <a href="{root}atlas/">Atlas</a><a href="{root}library/">Library</a><a href="{root}api/">Data &amp; API</a><a href="{root}feed.xml">Atom feed</a>
     <a href="{REPO}" rel="noopener noreferrer">Repository ↗</a><a href="{REPO}/issues" rel="noopener noreferrer">Research issues ↗</a>
   </div>
   <small>Generated from the validated ledgers · data as of {E(site.updated)} · no tracking, no external scripts</small>
@@ -725,6 +731,13 @@ def render_problem(site, pid, prev_id, next_id):
 <dt>Checked here</dt><dd>Integrity: {'yes' if x['integrity_checked_here'] else 'no'} · Mathematical review: {'yes' if x['mathematical_proof_reviewed_here'] else 'no'}</dd>
 <dt>Note</dt><dd>{E(x['note'])}</dd></dl></section>""")
 
+    open_items = s.work_by_problem.get(pid, [])
+    open_work = ""
+    if open_items:
+        rows = "".join(work_row(s, page, w) for w in open_items)
+        open_work = (f'<section class="dossier-block" id="work"><h2>Open work <span class="chip">{len(open_items)}</span></h2>'
+                     f'<p class="muted">Bounded, claimable units derived from the ledgers. Claim one before starting so parallel agents never duplicate it.</p>'
+                     f'<ul class="work-list">{rows}</ul></section>')
     back = s.backlinks.get(pid, [])
     back_html = "".join(f'<li><a href="{rel(page, d["path"])}">{E(d["title"])}</a></li>' for d in back)
     same_field = [q for q in s.ordered if q["field"] == p["field"] and q["id"] != pid]
@@ -753,6 +766,7 @@ def render_problem(site, pid, prev_id, next_id):
     toc += [("roadmap", "Engine needed")] if pid in s.roadmap else []
     toc += [("milestones", "Milestones")] if s.milestones.get(pid) else []
     toc += [("claim-review", "Claim triage")] if pid in s.claims else []
+    toc += [("work", "Open work")] if s.work_by_problem.get(pid) else []
     toc += [("provenance", "Provenance")]
     toc_html = "".join(f'<li><a href="#{E(a)}">{E(t)}</a></li>' for a, t in toc)
 
@@ -797,6 +811,7 @@ def render_problem(site, pid, prev_id, next_id):
   </div>
 </section>
 {''.join(blocks)}
+{open_work}
 <section class="dossier-block" id="provenance"><h2>Provenance &amp; status</h2>
   <dl class="kv">
     <dt>Evidence state</dt><dd>{pill(p['evidence_state'])} {E(EVIDENCE_HELP.get(p['evidence_state'], ''))} This classification is not a universal proof-status certification.</dd>
@@ -1104,6 +1119,86 @@ def render_formal(site):
     return layout(s, page, "Formal statements (Lean 4)",
                   "Lean 4 comparator statements for the 100: exactly what a proof or counterexample must establish, with kernel-checked fidelity tests and finite instances.",
                   body, active="formal", crumbs=[("Formal", None)])
+
+
+# --------------------------------------------------------------------------- work queue
+
+WORK_LABEL = {"obligation": "Proof obligation", "lean": "Lean target", "job": "Cohort job", "roadmap": "Roadmap item",
+              "comparator": "Lean comparator", "status_audit": "Status audit"}
+WORK_STATUS = {"runnable": "Runnable", "externally_blocked": "Externally blocked", "waiting_on_dependencies": "Waiting on dependencies"}
+
+
+def work_row(site, page, w):
+    return (f'<li class="work-item work-{E(w["status"])}"><a href="{rel(page, "work/" + w["id"] + "/")}">'
+            f'<span class="work-id">{E(w["id"])}</span><span class="work-title">{E(w["title"])}</span>'
+            f'<span class="work-meta">{E(WORK_LABEL[w["kind"]])} · {E(WORK_STATUS[w["status"]])} · dispatch #{w["priority_rank"]}</span></a></li>')
+
+
+def render_work_index(site):
+    s = site
+    page = "work/index.html"
+    doc = s.work
+    groups = ""
+    for kind in workqueue.FAMILIES:
+        items = [w for w in doc["items"] if w["kind"] == kind]
+        if not items:
+            continue
+        shown = items if kind not in ("comparator", "status_audit") else items[:12]
+        more = "" if len(shown) == len(items) else (
+            f'<details class="table-view"><summary>All {len(items)} {E(WORK_LABEL[kind].lower())} items</summary>'
+            f'<ul class="work-list">{"".join(work_row(s, page, w) for w in items[len(shown):])}</ul></details>')
+        groups += (f'<section class="section-block tight" id="{kind}" aria-labelledby="h-{kind}">'
+                   f'<h2 class="h-small" id="h-{kind}">{E(WORK_LABEL[kind])}s <span class="chip">{len(items)}</span></h2>'
+                   f'<ul class="work-list">{"".join(work_row(s, page, w) for w in shown)}</ul>{more}</section>')
+    top = "".join(work_row(s, page, w) for w in [w for w in doc["items"] if w["status"] == "runnable"][:6])
+    body = page_head("THE WORK QUEUE", "Many hands, <em>no collisions.</em>",
+                     "Every bounded unit of work in the repository, derived from the ledgers that define it: proof obligations, Lean targets, cohort jobs, roadmap items, and one comparator and one status audit per problem that still needs them. An item disappears when its ledger records the result.") + f"""
+{stats([("Work items", doc['count']), ("Runnable now", doc['by_status']['runnable']),
+        ("Lean comparators to write", doc['by_kind']['comparator']), ("Status audits to draft", doc['by_kind']['status_audit'])])}
+<section class="section-block tight" aria-labelledby="proto-h">{section_head("THE PROTOCOL", '<span id="proto-h">Claim, do, <em>regenerate.</em></span>', "Built for many concurrent agents and humans. Every step is mechanical except the mathematics.")}
+<ol class="steps">
+<li><strong>Pick.</strong> <code>python3 scripts/work.py --next 5</code> (or filter with <code>--kind comparator</code>), or browse below. Higher items are runnable and earlier in dispatch order.</li>
+<li><strong>Claim.</strong> Search open issues for the item's claim title. If none is open, open one with the claim template (each item page has both links). The scope digest pins what you claimed.</li>
+<li><strong>Do only the deliverable.</strong> Meet every acceptance line; respect the boundary. A different idea is a new item, not a wider PR.</li>
+<li><strong>Regenerate.</strong> <code>python3 scripts/regen.py</code> rewrites every derived file in about three seconds. Merge conflicts in generated files never need a manual merge: take either side and regenerate.</li>
+<li><strong>Verify and ship.</strong> <code>python3 scripts/regen.py --check</code> and the tests; reference the item id and close the claim with the PR.</li>
+</ol>
+<p class="table-footnote">Full agent protocol: <a href="{library_href(s, page, 'AGENTS.md') or BLOB + 'AGENTS.md'}">AGENTS.md</a> · 100-slot wave: <a href="{library_href(s, page, 'SCALE.md') or BLOB + 'SCALE.md'}">SCALE.md</a> · machine-readable queue: <a href="{rel(page, 'api/work.json')}">api/work.json</a>.</p></section>
+<section class="section-block tight" aria-labelledby="top-h"><h2 class="h-small" id="top-h">Start here</h2><ul class="work-list">{top}</ul></section>
+{groups}"""
+    return layout(s, page, "Work queue", f"{doc['count']} bounded, claimable work items across the 100: obligations, Lean targets, cohort jobs, comparators and status audits.",
+                  body, active="work", crumbs=[("Work", None)])
+
+
+def render_work_item(site, w):
+    s = site
+    page = f"work/{w['id']}/index.html"
+    deps = "".join(f'<li><a href="{rel(page, "work/" + d + "/")}">{E(d)}</a></li>' if any(x["id"] == d for x in s.work["items"])
+                   else f'<li>{E(d)} <span class="muted">(discharged or not in the queue)</span></li>' for d in w["depends_on"])
+    accept = "".join(f"<li><code>{E(a)}</code></li>" if a.startswith("python3 ") else f"<li>{E(a)}</li>" for a in w["acceptance"])
+    body = f"""<article class="problem-page"><header class="problem-hero">
+<p class="eyebrow"><span class="eyebrow-line"></span> {E(w['id'])} · {E(WORK_LABEL[w['kind']].upper())} · DISPATCH #{w['priority_rank']}</p>
+<h1>{E(w['title'])}</h1>
+<div class="chips"><span class="chip{' chip-good' if w['status'] == 'runnable' else ' chip-warn'}">{E(WORK_STATUS[w['status']])}</span>{problem_chips(s, page, w['problems'])[len('<div class="chips">'):-len('</div>')]}</div>
+</header>
+<div class="work-detail">
+<section class="dossier-block"><h2>Deliverable</h2><p class="serif">{E(w['deliverable'])}</p>
+{f'<p class="muted">Context: {E(w["context"])}</p>' if w.get('context') else ''}</section>
+<section class="dossier-block"><h2>Acceptance</h2><ul class="plain checklist">{accept}</ul></section>
+<section class="dossier-block"><h2>Boundary</h2><p>{E(w['boundary'])}</p>
+{f'<p><strong>Falsifier.</strong> {E(w["falsifier"])}</p>' if w.get('falsifier') else ''}</section>
+{f'<section class="dossier-block"><h2>Depends on</h2><ul class="link-list">{deps}</ul></section>' if deps else ''}
+<section class="dossier-block"><h2>Claim it</h2>
+<p>Check for an open claim first; if there is none, open one. One claim per item keeps parallel work from colliding.</p>
+<p class="card-links"><a class="button button-outline" href="{E(w['existing_claims_url'])}" rel="noopener noreferrer">Check existing claims ↗</a>
+<a class="button button-dark" href="{E(w['open_claim_url'])}" rel="noopener noreferrer">Claim this item ↗</a></p>
+<dl class="kv compact"><dt>Claim title</dt><dd><code>{E(w['claim_title'])}</code></dd>
+<dt>Scope digest</dt><dd><code class="hash">{E(w['scope_sha256'])}</code></dd>
+<dt>Defined by</dt><dd>{repo_link(w['source']) if not w['source'].startswith('scripts/') else repo_link(w['source'])}</dd>
+<dt>CLI</dt><dd><code>python3 scripts/work.py --id {E(w['id'])}</code></dd></dl></section>
+</div></article>"""
+    return layout(s, page, f"{w['id']}: {w['title']}", w["deliverable"][:240], body, active="work",
+                  crumbs=[("Work", "work/"), (w["id"], None)])
 
 
 # --------------------------------------------------------------------------- roadmap
@@ -1424,6 +1519,10 @@ def render_api(site):
     for key, label, href in NAV[1:]:
         search.append({"t": label, "k": "page", "s": "Section", "u": href, "x": ""})
     search.append({"t": "Data & API", "k": "page", "s": "Downloads", "u": "api/", "x": "json csv feed"})
+    files["api/work.json"] = dumps(s.work)
+    for w in s.work["items"]:
+        search.append({"t": w["title"], "k": "work", "id": w["id"], "s": WORK_LABEL[w["kind"]] + " · " + w["status"].replace("_", " "),
+                       "u": f"work/{w['id']}/", "x": w["deliverable"][:160]})
     files["api/search.json"] = json.dumps(search, ensure_ascii=False, separators=(",", ":")) + "\n"
     files["api/index.json"] = dumps({
         "name": "100 — machine-readable portfolio API",
@@ -1436,6 +1535,7 @@ def render_api(site):
             "search_index": SITE_URL + "api/search.json",
             "full_snapshot": SITE_URL + "data/portfolio.json",
             "feed": SITE_URL + "feed.xml",
+            "work_queue": SITE_URL + "api/work.json",
         },
         "counts": {"problems": len(s.items), "campaigns": len(s.campaign), "probes": len(s.lab["probes"]),
                    "engines": len(s.lab["engines"]), "claim_reviews": len(s.claims), "lean_statements": len(s.formal), "solved": len(s.solved),
@@ -1513,6 +1613,9 @@ def build_files(portfolio):
     files["campaigns/index.html"] = render_campaigns(site)
     files["claims/index.html"] = render_claims(site)
     files["roadmap/index.html"] = render_roadmap(site)
+    files["work/index.html"] = render_work_index(site)
+    for w in site.work["items"]:
+        files[f"work/{w['id']}/index.html"] = render_work_item(site, w)
     files["ledger/index.html"] = render_ledger(site)
     files["library/index.html"] = render_library_index(site)
     for d in site.library:

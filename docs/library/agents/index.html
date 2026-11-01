@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent protocol · 100</title>
+<meta name="description" content="Instructions for every automated or human contributor working in this repository, including parallel AI sessions. The goal is many concurrent contributions with no duplicated work, no broken generated files and no unsupported mathematical c">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/agents/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="Agent protocol · 100">
+<meta property="og:description" content="Instructions for every automated or human contributor working in this repository, including parallel AI sessions. The goal is many concurrent contributions with no duplicated work, no broken generated files and no unsupported mathematical c">
+<meta property="og:url" content="https://svyable.github.io/100/library/agents/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../work/">Work</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">Agent protocol</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#1-pick-bounded-work">1. Pick bounded work</a></li><li class="toc-l2"><a href="#2-claim-before-you-start">2. Claim before you start</a></li><li class="toc-l2"><a href="#3-do-only-the-deliverable">3. Do only the deliverable</a></li><li class="toc-l2"><a href="#4-regenerate-never-hand-merge-generated-files">4. Regenerate, never hand-merge generated files</a></li><li class="toc-l2"><a href="#5-lean">5. Lean</a></li><li class="toc-l2"><a href="#6-evidence-rules-non-negotiable">6. Evidence rules (non-negotiable)</a></li><li class="toc-l2"><a href="#7-ship">7. Ship</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M079/" title="One-third–two-thirds conjecture">M079</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/AGENTS.md" rel="noopener noreferrer">AGENTS.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">METHOD &amp; GOVERNANCE</p><h1>Agent protocol</h1>
+<p>Instructions for every automated or human contributor working in this repository, including parallel AI sessions. The goal is many concurrent contributions with no duplicated work, no broken generated files and no unsupported mathematical claims.</p>
+<h2 id="1-pick-bounded-work">1. Pick bounded work<a class="anchor" href="#1-pick-bounded-work" aria-label="Link to this section">#</a></h2>
+<pre><code class="lang-sh">python3 scripts/work.py --next 5                  # highest-priority runnable items
+python3 scripts/work.py --next 5 --kind comparator  # or: obligation, lean, job, roadmap, status_audit
+python3 scripts/work.py --id F-M079               # one item: deliverable, acceptance, boundary, digest
+python3 scripts/scale.py --budget 100             # 100-slot evidence-bound wave (see SCALE.md)</code></pre>
+<p>The queue is derived from the ledgers (proof obligations, Lean targets, the dispatcher, the roadmap, the formal catalogue and the status-audit drafts). It is browsable at <code>/work/</code> on the site and machine-readable at <code>docs/api/work.json</code>. An item disappears when its ledger records the result; nobody edits the queue by hand.</p>
+<p>The scale wave packs up to 100 claimable slots with scout/adversary/checker role guidance, refuses dominated <code>stop_range</code> jobs, and is <strong>not</strong> a claim that 100 agents produce 100 theorems. Prefer an open obligation or Lean target over a mass comparator when both are free.</p>
+<h2 id="2-claim-before-you-start">2. Claim before you start<a class="anchor" href="#2-claim-before-you-start" aria-label="Link to this section">#</a></h2>
+<p>Search open issues for the item&#x27;s claim title, <code>[Claim] &lt;id&gt;</code>. If one is open, pick another item. Otherwise open a claim with <code>.github/ISSUE_TEMPLATE/claim.yml</code>, including the scope digest. Close the claim with the PR that delivers the item, or close it unfinished with what you learned. Two pipelines for the same thing is the most expensive failure here; a claim costs one minute.</p>
+<h2 id="3-do-only-the-deliverable">3. Do only the deliverable<a class="anchor" href="#3-do-only-the-deliverable" aria-label="Link to this section">#</a></h2>
+<p>Meet every acceptance line and respect the item&#x27;s boundary. A different idea is a new item (add it to the ledger that should own it), not a wider PR. Keep PRs small: many small PRs land faster than one large one.</p>
+<h2 id="4-regenerate-never-hand-merge-generated-files">4. Regenerate, never hand-merge generated files<a class="anchor" href="#4-regenerate-never-hand-merge-generated-files" aria-label="Link to this section">#</a></h2>
+<pre><code class="lang-sh">python3 scripts/regen.py                  # rewrite every derived file (~3 s)
+python3 scripts/regen.py --check --fast   # quick gate while iterating
+python3 scripts/regen.py --check          # full gate (reruns lab probes, ~1 min)
+python3 -m unittest discover -s tests     # full test suite</code></pre>
+<p><code>python3 scripts/regen.py --list</code> prints the generated paths (RANKED.md, ATTACK_QUEUE.md, LAB.md, MINES.md, APPROACH.md, ROADMAP.md, docs/data/next.json and the generated part of <code>docs/</code>). On a merge conflict in any of them: take either side (<code>git checkout --theirs -- &lt;paths&gt;</code>), run <code>python3 scripts/regen.py</code>, then commit. Never hand-edit <code>docs/</code> outside <code>docs/assets/</code>, <code>docs/next/</code> and <code>docs/*.md</code>.</p>
+<h2 id="5-lean">5. Lean<a class="anchor" href="#5-lean" aria-label="Link to this section">#</a></h2>
+<ul><li>New comparator statements go in <code>lean/Hundred/Statements/</code>, are imported by <code>lean/Hundred.lean</code> and catalogued in <code>data/formalization.json</code> (see <a href="../../library/lean-readme/">lean/README.md</a>).</li><li>Every exported theorem is registered in <code>data/lean_targets.json</code> so the Lean proof gate audits its axioms (<a href="../../library/lean/">LEAN.md</a>). <code>python3 scripts/formal.py --check</code> enforces this and forbids <code>sorry</code>, <code>admit</code>, <code>axiom</code>, <code>native_decide</code>.</li><li>Keep kernel certificates small: the gate builds everything twice under a 300 s limit and prints per-module timings. A certificate that takes minutes belongs in the Python lab, with Lean checking a smaller fidelity instance.</li><li>If you cannot run Lean locally, say so in the PR and treat the gate as the first compile.</li></ul>
+<h2 id="6-evidence-rules-non-negotiable">6. Evidence rules (non-negotiable)<a class="anchor" href="#6-evidence-rules-non-negotiable" aria-label="Link to this section">#</a></h2>
+<ul><li>Never mark a problem solved, or change an evidence state, on an announcement, a preprint, a solver verdict or a finite computation alone. Follow <a href="../../library/research-protocol/">docs/RESEARCH_PROTOCOL.md</a> and <a href="../../library/portfolio-selection/">docs/PORTFOLIO_SELECTION.md</a>.</li><li>A Lean proof proves only what was encoded; state what was not encoded.</li><li>Finite ranges inside known theorems are reproductions, never progress.</li><li>Independent review is done by someone else; an agent cannot record its own work as independently reviewed.</li></ul>
+<h2 id="7-ship">7. Ship<a class="anchor" href="#7-ship" aria-label="Link to this section">#</a></h2>
+<p>Use the PR template, name the work item id in the title or body, include <code>Closes #&lt;claim issue&gt;</code>, and paste the output of <code>python3 scripts/regen.py --check</code>.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-10-31 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

@@ -24,8 +24,8 @@
   "action_bonus": 40,
   "method_id": "extremal_certificates",
   "method_title": "Replay the object, or mine the census",
-  "dispatch_next": "Check H and the host-existence construction against Lean and paper; independently compute exact graphon/homomorphism inequalities or generate an explicit finite G.",
-  "dispatch_why": "A 2026 manuscript claims a finite Sidorenko host. The review asks to compute that witness. A step-graphon search is not the current recommendation.",
+  "dispatch_next": "Derive an explicit finite host G (order n and edges) from the counter-kernel parameters and replay t(H,G)<t(K2,G)^66 with two independent homomorphism counts, or obtain specialist acceptance of the existence proof without a listed witness.",
+  "dispatch_why": "The Sidorenko pattern H is now reconstructed here, but the claimed host G is still unpublished. Deriving that host outranks a step-graphon search.",
   "campaign_stage": "benchmark_reproduced",
   "milestone_count": 1,
   "url": "https://svyable.github.io/100/problems/M073/",
@@ -118,8 +118,8 @@
     "independent_evidence_urls": [
       "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/161.md"
     ],
-    "known_caveats": "OpenAI's Lean scope note covers the Sidorenko counterexample but not the forcing-conjecture consequence; kernel acceptance is not a published independently audited finite witness. The host G is proved to exist rather than explicitly listed.",
-    "next_review": "Check H and the host-existence construction against Lean and paper; independently compute exact graphon/homomorphism inequalities or generate an explicit finite G.",
+    "known_caveats": "OpenAI's Lean scope note covers the Sidorenko counterexample but not the forcing-conjecture consequence. The 2026-10-31 extractability audit independently reconstructed the pinned 22-face incidence pattern H (35 vertices, 66 edges, connected) and confirmed the host G is existence-only via RandomHost sampling; no explicit adjacency list or order n is published.",
+    "next_review": "Derive an explicit finite host G (order n and edges) from the counter-kernel parameters and replay t(H,G)<t(K2,G)^66 with two independent homomorphism counts, or obtain specialist acceptance of the existence proof without a listed witness.",
     "formalization_scope_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/161.md"
   },
   "formal_statement": null,
@@ -151,6 +151,11 @@
       "url": "https://svyable.github.io/100/library/roadmap/"
     },
     {
+      "title": "Scale — proof-exchange wave",
+      "source": "SCALE.md",
+      "url": "https://svyable.github.io/100/library/scale/"
+    },
+    {
       "title": "2026 claimed-resolution triage — issue #3",
       "source": "research/CLAIM_REVIEWS_2026.md",
       "url": "https://svyable.github.io/100/library/claim-reviews-2026/"
@@ -159,6 +164,11 @@
       "title": "Lab campaigns: problems under exact computation",
       "source": "research/LAB_CAMPAIGNS.md",
       "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "M071 / M073 — claimed finite-witness extractability audit",
+      "source": "research/M071_M073_WITNESSES.md",
+      "url": "https://svyable.github.io/100/library/m071-m073-witnesses/"
     },
     {
       "title": "Proof-driven research engine",

@@ -36,17 +36,21 @@ instance (p : Nat) : Decidable (IsPrime p) :=
 def IsGraph (n : Nat) (adj : Nat → Nat → Bool) : Prop :=
   (∀ i, i < n → ∀ j, j < n → adj i j = adj j i) ∧ (∀ i, i < n → adj i i = false)
 
+instance (n : Nat) (adj : Nat → Nat → Bool) : Decidable (IsGraph n adj) :=
+  inferInstanceAs (Decidable ((∀ i, i < n → ∀ j, j < n → adj i j = adj j i) ∧
+    (∀ i, i < n → adj i i = false)))
+
 /-- The vertices of `S` (a bitmask) below `n`, counted. -/
 def popcountBelow (n S : Nat) : Nat :=
   countBelow n (fun i => S.testBit i)
 
 /-! ## Fidelity checks for the vocabulary itself -/
 
-example : IsPrime 2 := by decide
-example : IsPrime 97 := by decide
-example : ¬ IsPrime 1 := by decide
-example : ¬ IsPrime 91 := by decide
-example : countBelow 10 (fun i => i % 3 == 0) = 4 := by decide
-example : popcountBelow 5 0b10110 = 3 := by decide
+example : IsPrime 2 := by decide +kernel
+example : IsPrime 97 := by decide +kernel
+example : ¬ IsPrime 1 := by decide +kernel
+example : ¬ IsPrime 91 := by decide +kernel
+example : countBelow 10 (fun i => i % 3 == 0) = 4 := by decide +kernel
+example : popcountBelow 5 0b10110 = 3 := by decide +kernel
 
 end Hundred.Statements

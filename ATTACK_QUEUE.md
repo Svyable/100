@@ -13,8 +13,8 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 
 | Dispatch | ID | Problem | Action | Base | Ready | Bonus | Score | Next step |
 |---:|---|---|---|---:|---:|---:|---:|---|
-| 1 | M071 | Hadwiger conjecture | `replay_claim_witness` | 85 | +7 | +40 | 132 | Audit the Lean quantifiers and graph encoding against the theorem; reproduce or extract an explicit graph plus an independently checkable minor-bound obstruction. |
-| 2 | M073 | Sidorenko conjecture | `replay_claim_witness` | 85 | +7 | +40 | 132 | Check H and the host-existence construction against Lean and paper; independently compute exact graphon/homomorphism inequalities or generate an explicit finite G. |
+| 1 | M071 | Hadwiger conjecture | `replay_claim_witness` | 85 | +7 | +40 | 132 | Extract a concrete finite graph from the binary-frame construction, or obtain two independent specialist reviews of the existential proof; do not treat comparator or second-kernel replay as a finite witness. |
+| 2 | M073 | Sidorenko conjecture | `replay_claim_witness` | 85 | +7 | +40 | 132 | Derive an explicit finite host G (order n and edges) from the counter-kernel parameters and replay t(H,G)<t(K2,G)^66 with two independent homomorphism counts, or obtain specialist acceptance of the existence proof without a listed witness. |
 | 3 | M044 | Kaplansky direct-finiteness conjecture | `replay_claim_witness` | 74 | +0 | +40 | 114 | Reproduce a finite presentation and a,b products using a genuinely independent group-ring checker; check the claimed equalities and non-equality. |
 | 4 | M049 | Soficity conjecture | `replay_claim_witness` | 74 | +0 | +40 | 114 | Independently verify M044's group algebra witness, then audit the Elek–Szabó implication from soficity to direct finiteness in the claimed coefficient field. |
 | 5 | M074 | Caccetta–Häggkvist conjecture | `replay_published` | 94 | +7 | +12 | 113 | Replay the external fixed-r=6 proof corpus on an independent host, verify its published hash and proof traces, and audit the hand-reduction steps before launching duplicate SAT search. |
@@ -118,13 +118,13 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 
 ### M071 — Hadwiger conjecture
 
-**Dispatch:** `replay_claim_witness` · rank 1 · A 2026 manuscript claims a Hadwiger counterexample. Reproducing that finite graph outranks another census step. Robertson, Seymour and Thomas already cover chromatic number at most 6.
+**Dispatch:** `replay_claim_witness` · rank 1 · The extractability audit found no published finite Hadwiger graph. Extracting one, or obtaining specialist reviews of the existential proof, still outranks another small-n census. Robertson, Seymour and Thomas already cover chromatic number at most 6.
 
 **Proof obligation:** Choose a restricted class beyond the proved t <= 6 range (for example 7-chromatic graphs with small independence number) and state a checkable lemma absent from the literature.
 
 **Falsifier:** A graph with a certified chromatic-number lower bound t and an exhaustive certificate that no K_t minor model exists.
 
-**Recommended step:** Audit the Lean quantifiers and graph encoding against the theorem; reproduce or extract an explicit graph plus an independently checkable minor-bound obstruction.
+**Recommended step:** Extract a concrete finite graph from the binary-frame construction, or obtain two independent specialist reviews of the existential proof; do not treat comparator or second-kernel replay as a finite witness.
 
 **Not the current recommendation:** Extend the census engine to 8-9 vertices with a faster canonical labeller, then target contraction-critical 7-chromatic graphs where a K7 minor model must be certified.
 
@@ -134,13 +134,13 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 
 ### M073 — Sidorenko conjecture
 
-**Dispatch:** `replay_claim_witness` · rank 2 · A 2026 manuscript claims a finite Sidorenko host. The review asks to compute that witness. A step-graphon search is not the current recommendation.
+**Dispatch:** `replay_claim_witness` · rank 2 · The Sidorenko pattern H is now reconstructed here, but the claimed host G is still unpublished. Deriving that host outranks a step-graphon search.
 
 **Proof obligation:** Confirm in current literature that K_{5,5} minus a Hamiltonian cycle is still the smallest open pattern, then fix a restricted host class (vertex-transitive graphs or small rational step graphons) where the inequality can be proved or exhausted.
 
 **Falsifier:** A host graph or rational step graphon W with exactly computed t(H,W) < t(K2,W)^e(H).
 
-**Recommended step:** Check H and the host-existence construction against Lean and paper; independently compute exact graphon/homomorphism inequalities or generate an explicit finite G.
+**Recommended step:** Derive an explicit finite host G (order n and edges) from the counter-kernel parameters and replay t(H,G)<t(K2,G)^66 with two independent homomorphism counts, or obtain specialist acceptance of the existence proof without a listed witness.
 
 **Not the current recommendation:** Extend hosts from unweighted graphs to rational step graphons and run exact local search that minimises t(H,W)/t(K2,W)^15, replaying every candidate with the exact counter.
 

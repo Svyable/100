@@ -149,7 +149,7 @@
   let matches = [];
   let active = 0;
   const kinds = { problem: "Problem", field: "Field", campaign: "Campaign", probe: "Probe",
-    engine: "Engine", claim: "Claim", formal: "Lean", document: "Document", page: "Page" };
+    engine: "Engine", claim: "Claim", formal: "Lean", work: "Work", document: "Document", page: "Page" };
   const normalize = s => String(s || "").toLocaleLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
 
   async function loadIndex() {

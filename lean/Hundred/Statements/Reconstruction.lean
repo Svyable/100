@@ -45,7 +45,7 @@ def Statement : Prop :=
 /-! Fidelity: deleting vertex 1 from the path `0 - 1 - 2` leaves two isolated vertices. -/
 def path3 (i j : Nat) : Bool := (i + 1 == j) || (j + 1 == i)
 
-example : delete path3 1 0 1 = false := by decide
-example : delete path3 0 0 1 = true := by decide
+example : delete path3 1 0 1 = false := by decide +kernel
+example : delete path3 0 0 1 = true := by decide +kernel
 
 end Hundred.Statements.Reconstruction

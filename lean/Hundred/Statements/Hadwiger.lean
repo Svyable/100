@@ -53,7 +53,7 @@ def Statement : Prop :=
 def complete (i j : Nat) : Bool := i != j
 
 /-! Fidelity: `K_3` is a graph and is 3-colourable by the identity. -/
-example : IsGraph 3 complete := by decide
-example : ProperColouring 3 complete 3 (fun v => v) := by decide
+example : IsGraph 3 complete := by decide +kernel
+example : ProperColouring 3 complete 3 (fun v => v) := by decide +kernel
 
 end Hundred.Statements.Hadwiger

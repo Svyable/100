@@ -38,8 +38,12 @@ class ProofObligationTests(unittest.TestCase):
 
     def test_pilots_are_current_and_unproved(self):
         entries = obligations.load()
-        self.assertEqual(len(entries), 7)
-        self.assertEqual({x["problem_id"] for x in entries}, {"M048", "M074", "M075", "M095"})
+        # Every active campaign has at least one open/blocked node; none are discharged here.
+        campaigns = {c["problem_id"] for c in __import__("json").loads(
+            (ROOT / "data" / "research_program.json").read_text(encoding="utf-8"))["campaigns"]}
+        self.assertEqual(len(entries), 24)
+        self.assertEqual({x["problem_id"] for x in entries}, campaigns)
+        self.assertTrue({"M048", "M074", "M075", "M095"} <= {x["problem_id"] for x in entries})
         self.assertTrue(all(x["status"] in {"open", "blocked"} for x in entries))
         self.assertTrue(all(x["evidence"] is None for x in entries))
 

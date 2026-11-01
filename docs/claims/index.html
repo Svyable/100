@@ -31,7 +31,7 @@
     <span class="brand-mark">100<span class="brand-dot">.</span></span>
     <span class="brand-caption">SVYABLE<br>RESEARCH</span>
   </a>
-  <nav class="main-nav" aria-label="Primary navigation"><a href="../">The 100</a><a href="../next/">Next 100</a><a href="../atlas/">Atlas</a><a href="../campaigns/">Campaigns</a><a href="../lab/">Lab</a><a href="../formal/">Formal</a><a href="../claims/" aria-current="page">Claims</a><a href="../roadmap/">Roadmap</a><a href="../ledger/">Ledger</a><a href="../library/">Library</a></nav>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../">The 100</a><a href="../work/">Work</a><a href="../next/">Next 100</a><a href="../campaigns/">Campaigns</a><a href="../lab/">Lab</a><a href="../formal/">Formal</a><a href="../claims/" aria-current="page">Claims</a><a href="../roadmap/">Roadmap</a><a href="../ledger/">Ledger</a><a href="../library/">Library</a></nav>
   <div class="header-tools">
     <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
     <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
@@ -121,14 +121,14 @@
 <dl class="kv compact"><dt>Claimed</dt><dd class="serif">Arbitrarily large finite simple graphs have fractional chromatic number chi_f(G) &gt; h(G), where h is largest clique-minor order.</dd>
 <dt>Scope</dt><dd><span class="chip">Matches the registry statement</span> Since chi(G)&gt;=chi_f(G), such a graph would refute chi(G)&lt;=h(G), the registered Hadwiger statement.</dd>
 <dt>Validation</dt><dd><span class="chip chip-warn">Formal statement checked only, not the proof</span></dd>
-<dt>Caveats</dt><dd>Comparator acceptance of some Lean artifact is proof-object checking, not independent verification of exactly the paper&#x27;s graph construction and claimed theorem; explicit checkable witnesses were not supplied in the independent audit consulted.</dd><dt>Next check</dt><dd>Audit the Lean quantifiers and graph encoding against the theorem; reproduce or extract an explicit graph plus an independently checkable minor-bound obstruction.</dd></dl></article><article class="claim-card" id="M073">
+<dt>Caveats</dt><dd>Comparator acceptance is proof-object checking only. The 2026-10-31 extractability audit (research/M071_M073_WITNESSES.md; data/claim_witness_replay.json) confirms the Lean statement is an existential family (arbitrarily large m, alpha&lt;=2, h(G)&lt;26m/75+2/3&lt;m/2&lt;=chi(G)) with no published adjacency list or explicit Hadwiger number. Bonnet&#x27;s local kernel replay remains Lean-only evidence.</dd><dt>Next check</dt><dd>Extract a concrete finite graph from the binary-frame construction, or obtain two independent specialist reviews of the existential proof; do not treat comparator or second-kernel replay as a finite witness.</dd></dl></article><article class="claim-card" id="M073">
 <span class="milestone-type">M073 · PREPRINT 2026-09-23</span>
 <h3><a href="../problems/M073/" title="Sidorenko conjecture">Sidorenko conjecture</a></h3>
 <p class="muted"><a href="https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/A-counterexample-to-Sidorenkos-conjecture-September-23-2026/paper.pdf" rel="noopener noreferrer">A counterexample to Sidorenko&#x27;s conjecture <span aria-hidden="true">↗</span></a></p>
 <dl class="kv compact"><dt>Claimed</dt><dd class="serif">A connected bipartite H on 35 vertices with 66 edges and a finite host G satisfy t(H,G)&lt;t(K_2,G)^66.</dd>
 <dt>Scope</dt><dd><span class="chip">Matches the registry statement</span> The strict homomorphism-density violation is a direct counterexample to the registered universal Sidorenko inequality.</dd>
 <dt>Validation</dt><dd><span class="chip chip-warn">Formal statement checked only, not the proof</span></dd>
-<dt>Caveats</dt><dd>OpenAI&#x27;s Lean scope note covers the Sidorenko counterexample but not the forcing-conjecture consequence; kernel acceptance is not a published independently audited finite witness. The host G is proved to exist rather than explicitly listed.</dd><dt>Next check</dt><dd>Check H and the host-existence construction against Lean and paper; independently compute exact graphon/homomorphism inequalities or generate an explicit finite G.</dd></dl></article><article class="claim-card" id="M085">
+<dt>Caveats</dt><dd>OpenAI&#x27;s Lean scope note covers the Sidorenko counterexample but not the forcing-conjecture consequence. The 2026-10-31 extractability audit independently reconstructed the pinned 22-face incidence pattern H (35 vertices, 66 edges, connected) and confirmed the host G is existence-only via RandomHost sampling; no explicit adjacency list or order n is published.</dd><dt>Next check</dt><dd>Derive an explicit finite host G (order n and edges) from the counter-kernel parameters and replay t(H,G)&lt;t(K2,G)^66 with two independent homomorphism counts, or obtain specialist acceptance of the existence proof without a listed witness.</dd></dl></article><article class="claim-card" id="M085">
 <span class="milestone-type">M085 · PREPRINT 2026-09-23</span>
 <h3><a href="../problems/M085/" title="Unique Games conjecture">Unique Games conjecture</a></h3>
 <p class="muted"><a href="https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/The-Unique-Games-Theorem-September-23-2026/paper.pdf" rel="noopener noreferrer">The Unique Games Theorem <span aria-hidden="true">↗</span></a></p>
@@ -155,7 +155,7 @@
 <footer class="site-footer">
   <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
   <div class="footer-links">
-    <a href="../library/">Library</a><a href="../api/">Data &amp; API</a><a href="../feed.xml">Atom feed</a>
+    <a href="../atlas/">Atlas</a><a href="../library/">Library</a><a href="../api/">Data &amp; API</a><a href="../feed.xml">Atom feed</a>
     <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
   </div>
   <small>Generated from the validated ledgers · data as of 2026-10-31 · no tracking, no external scripts</small>
