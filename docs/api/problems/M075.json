@@ -153,6 +153,11 @@
       "url": "https://svyable.github.io/100/library/roadmap/"
     },
     {
+      "title": "Scale — proof-exchange wave",
+      "source": "SCALE.md",
+      "url": "https://svyable.github.io/100/library/scale/"
+    },
+    {
       "title": "M075: Burnside-certified full-support orbit counts through n=5",
       "source": "research/M075_BURNSIDE.md",
       "url": "https://svyable.github.io/100/library/m075-burnside/"

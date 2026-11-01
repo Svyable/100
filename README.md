@@ -3,7 +3,8 @@
 **Purpose:** Preserve, refine, and stack-rank 100 concrete mathematical proof/counterexample targets, looking for results and methods that create new branches of discovery.
 
 - **[Lean proof pipeline](LEAN.md)** — pinned workspace, Ramsey benchmark, two-element Frankl case, axiom audits and commit-bound CI evidence; scope review remains separate.
-- **[Proof exchange / scaling protocol](docs/PROOF_EXCHANGE.md)** — source-bound packets for agent-to-agent research handoffs, dependency-gated proof obligations and evidence-bounded cross-problem coverage scheduling (`python3 scripts/scale.py --budget 5 --json`).
+- **[Proof exchange / scaling protocol](docs/PROOF_EXCHANGE.md)** — 100 claimable, evidence-bound wave slots with scout/adversary/checker roles, dependency-gated proof obligations and coverage ablations (`python3 scripts/scale.py --budget 100`; [SCALE.md](SCALE.md)).
+- **[Agent work queue](AGENTS.md)** — derived claimable items across obligations, Lean, jobs, roadmap, comparators and status audits (`python3 scripts/work.py --next 5`).
 - **[Roadmap](ROADMAP.md)** ([on the dashboard](https://svyable.github.io/100/#roadmap)) — live scoreboard against targets, and every shipped, current, next and later item with evidence and exit criteria. Source: [data/roadmap.json](data/roadmap.json).
 - **[Next 100 hypothesis reservoir](https://svyable.github.io/100/next/)** — 216 cross-domain, unvetted proposals across 27 research domains in a scalable pipeline; ranked discovery priorities, not claimed new open results ([protocol](NEXT_100.md)). The active 100 remains capped.
 - **[Public research site](https://svyable.github.io/100/)** (once GitHub Pages is enabled: [activation guide](docs/PAGES_SETUP.md)) — generated static site: one permanent page per problem (`/problems/M071/`) and per field, atlas charts, lab, formal statements, campaigns, claim triage, roadmap, ledger, every research dossier, a `/` command palette, JSON/CSV API and Atom feed. Works without JavaScript; CI byte-checks it against the ledgers and link-checks every page.
@@ -51,8 +52,12 @@ python3 scripts/research.py --check
 python3 scripts/formal.py --check
 python3 scripts/approach.py
 python3 scripts/approach.py --check
+python3 scripts/work.py --check
+python3 scripts/scale.py --write
+python3 scripts/scale.py --check
 python3 scripts/roadmap.py
 python3 scripts/roadmap.py --check
+python3 scripts/regen.py --check --fast
 python3 scripts/build_site.py
 python3 scripts/build_site.py --check
 python3 scripts/lean_verify.py   # needs elan; builds Lean and audits axioms

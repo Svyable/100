@@ -35,6 +35,7 @@ STEPS = (
     (None, ["formal.py", "--check"], []),
     (None, ["lean_verify.py", "--validate-only"], []),
     (None, ["work.py", "--check"], []),
+    (["scale.py", "--write"], ["scale.py", "--check"], ["SCALE.md"]),
     (["build_site.py"], ["build_site.py", "--check"],
      ["docs/ (everything except docs/assets, docs/next, docs/*.md, docs/.nojekyll)"]),
 )

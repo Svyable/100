@@ -10,12 +10,18 @@ duplicated work, no broken generated files and no unsupported mathematical claim
 python3 scripts/work.py --next 5                  # highest-priority runnable items
 python3 scripts/work.py --next 5 --kind comparator  # or: obligation, lean, job, roadmap, status_audit
 python3 scripts/work.py --id F-M079               # one item: deliverable, acceptance, boundary, digest
+python3 scripts/scale.py --budget 100             # 100-slot evidence-bound wave (see SCALE.md)
 ```
 
 The queue is derived from the ledgers (proof obligations, Lean targets, the dispatcher,
 the roadmap, the formal catalogue and the status-audit drafts). It is browsable at
 `/work/` on the site and machine-readable at `docs/api/work.json`. An item disappears
 when its ledger records the result; nobody edits the queue by hand.
+
+The scale wave packs up to 100 claimable slots with scout/adversary/checker role
+guidance, refuses dominated `stop_range` jobs, and is **not** a claim that 100
+agents produce 100 theorems. Prefer an open obligation or Lean target over a
+mass comparator when both are free.
 
 ## 2. Claim before you start
 
@@ -45,6 +51,11 @@ LAB.md, MINES.md, APPROACH.md, ROADMAP.md, docs/data/next.json and the generated
 of `docs/`). On a merge conflict in any of them: take either side
 (`git checkout --theirs -- <paths>`), run `python3 scripts/regen.py`, then commit.
 Never hand-edit `docs/` outside `docs/assets/`, `docs/next/` and `docs/*.md`.
+
+**Sequential ids collide across concurrent PRs** (roadmap `R..`, obligations `O-..`, Lean
+targets `L..`): three open PRs once took `R36` at the same time. Before adding one, check
+open PRs for the next free id. After merging main, a `duplicate id` failure from a validator
+means renumber *your* new entry, never one that is already on main, then regenerate.
 
 ## 5. Lean
 

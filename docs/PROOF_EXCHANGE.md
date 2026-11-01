@@ -1,10 +1,17 @@
 # Proof exchange: scaling mathematical work without scaling unsupported claims
 
-**Prototype 2026-10-31.** Run `python3 scripts/scale.py --budget 5` for a short plan,
-`python3 scripts/scale.py --budget 5 --json` for machine-readable work packets,
-and `python3 scripts/scale.py --check` for source/schema validation.
-`--unit-type shape` and `--unit-type engine` are ablations. Nothing is written
-to the research ledgers by this tool.
+**Protocol `svyable.proof-exchange.v2` (2026-10-31).** Run:
+
+```sh
+python3 scripts/scale.py --budget 100            # 100-slot claimable wave
+python3 scripts/scale.py --budget 100 --json     # machine-readable fleet packets
+python3 scripts/scale.py --write                 # regenerate SCALE.md
+python3 scripts/scale.py --check                 # source + SCALE.md drift
+python3 scripts/scale.py --mode coverage --budget 5   # equal-slot shape/engine ablation
+```
+
+Nothing here writes to Solved. A filled slot is a **claimable work packet** with a
+scope digest, not a theorem.
 
 ## The constraint
 
@@ -23,61 +30,60 @@ We therefore separate two scarce resources: **creative attempts**, which can be
 parallelized, and **independent acceptance**, which cannot be asserted by an agent.
 Agents exchange *bounded, source-linked contracts*, not truth claims.
 
-## Formal problem
+## Operating model: 100 claimable slots
 
-Let `P` be the 100 active registered mathematical targets, and let `U`
-contain the 30 method shapes and the engine names explicitly listed in
-`data/methods.json`. Each unit `u` has candidate target set `C(u)`.
-An engine-to-target link means only that the problem's method names the engine,
-**not** that the engine already works on that target.
+The default wave packs up to **100 distinct items** from the derived
+[work queue](../AGENTS.md) (`scripts/work.py`), ranked by a leverage score that
+prefers:
 
-With a budget `k` of equal *planning slots* the routing objective is
+1. runnable proof obligations,
+2. Lean targets,
+3. cohort jobs (shared attack shapes),
+4. roadmap now/next items,
+5. comparator statements and status-audit drafts.
+
+Dominated `stop_range` jobs and nodes waiting on undischarged dependencies are
+**refused**. Each packet carries:
+
+- exact problems, deliverable, acceptance criteria and boundary,
+- a SHA-256 scope digest (identity, not validity),
+- a claim title and GitHub claim URLs,
+- a recommended **scout / adversary / checker** split under that single claim.
+
+Roles are a recommended independence pattern inside one claim, **not** three
+votes that a result is true. Two pipelines for the same digest remain the most
+expensive failure mode; open a `[Claim]` issue before starting.
+
+The number 100 is an **operating capacity** target aligned with the portfolio
+size. It is not a measured speedup, not a promise of 100 theorems, and not a
+change to readiness or Solved.
+
+## Coverage ablation (v1 objective, still available)
+
+Let `P` be the 100 active targets and `U` the method shapes plus named engines
+in `data/methods.json`. With equal planning slots the greedy maximum-coverage
+objective
 
 ```
-F(S) = | union(C(u) for u in S) |,   |S| <= k.
+F(S) = | union(C(u) for u in S) |,   |S| <= k
 ```
 
-The incremental gain is `|C(u) - covered|`; choose the largest, breaking ties
-by existing independently checked lab anchors, then stable ID. This is a
-deterministic greedy maximum-coverage algorithm. Because union coverage is
-monotone submodular, it achieves at least `1 - 1/e` of the optimum coverage
-for the **equal-unit-cost coverage objective**. This theorem says nothing about
-mathematical probability of success, proof quality, actual labor costs, tokens,
-or wall-clock time. The units do not have observed equal costs.
+is monotone submodular and achieves at least `1 - 1/e` of the optimum for that
+*equal-unit-cost coverage* objective. Run it with `--mode coverage`. It says
+nothing about theorem probability, tokens or wall-clock time.
 
-The separate `data/proof_obligations.json` DAG is the acceptance frontier:
+## Proof-obligation frontier
+
+`data/proof_obligations.json` is the acceptance DAG. Categories:
+
 - `runnable`: open with all listed prerequisites discharged;
 - `externally_blocked`: blocked despite satisfied graph prerequisites;
 - `waiting_on_dependencies`: at least one listed prerequisite not discharged;
 - `discharged`: structural ledger state, **not** a machine guarantee of truth.
 
-A waiting or externally blocked node is never reported as runnable. For every
-selected routing unit, the output includes exact candidate IDs, existing
-finite-lab anchors, required certificate, falsifier and a SHA-256 of that
-contract. Changing its statement or falsifier changes its digest; receiving
-the digest alone verifies **identity**, never mathematical validity.
-
-## Current reproducible readout
-
-Using the repository's 2026-10-31 registers:
-
-| Observable | Value | Boundary |
-|---|---:|---|
-| Active targets / method shapes | 100 / 30 | Editorial classification only |
-| Candidate units | 43 | 30 method shapes + 13 named method engines; not 43 independent proof solvers |
-| Targets routed in five equal slots | 33 | Potential target *coverage*, **not** verified results or measured speedup |
-| Targets routed in ten equal slots | 58 | Same limit |
-| `symmetry_reduction` routing reach | 11 | Only 2 of these targets have existing deep-level lab anchors with that engine |
-| Recorded proof obligations | 6 | Three runnable, one externally blocked, two waiting on dependencies |
-| New mathematical conjectures solved | 0 | This tool does not alter `data/solved.json` |
-
-The first equal-slot plan is `engine:symmetry_reduction`,
-`shape:complexity_barriers`, `shape:galois_representations`,
-`engine:exact_lp`, and `shape:harmonic_analysis`. Their candidate
-marginal coverages are 11, 6, 6, 5, and 5. These are scheduling hypotheses,
-**not** recommendations to claim engine support on every named target.
-The number 33 is not a speedup factor: the objective treats unequal research
-tasks as one planning slot each.
+Every active campaign now has at least one obligation node. A waiting or
+externally blocked node is never sold as constructive scout work. Changing a
+statement or falsifier changes its digest.
 
 ## Proof-carrying handoff
 
@@ -95,10 +101,8 @@ tasks as one planning slot each.
    ledger only after the project's documented gates, and reevaluates the
    remaining proof-DAG frontier. A method link alone never discharges a node.
 
-The source bound SHA-256 is an anti-drift guard, **not** a signature,
-an authentication protocol, or a proof certificate. For a real distributed
-network, add authenticated artifact storage, resource limits, trusted replay,
-independent attestations and revocation; those are not implemented here.
+The source-bound SHA-256 is an anti-drift guard, **not** a signature,
+authentication protocol, or proof certificate.
 
 ## Experiment needed before calling this a breakthrough
 
@@ -109,24 +113,22 @@ budget, tool access, time caps and verification standards:
 - A: strong sequential solver;
 - B: independent `best-of-k` explorers with no artifact sharing;
 - C: unconstrained agent conversation;
-- D: proof-exchange routing with source-bound artifacts and sparse,
+- D: proof-exchange wave with source-bound claims, role split and sparse,
   verifier-triggered communication.
 
 Measure **independently accepted new restricted results per unit cost**, not raw
 agent messages or target coverage. Record theorem-scope fidelity, checker
 replay failures, novel counterexamples, cost, elapsed time and the proportion
-of accepted work reused on a second target. Run ablations without the blocker
-DAG, without contract hashes and without independent checking. Publishing a
-null result is preferable to claiming a multiplier from an editorial model.
+of accepted work reused on a second target. Publishing a null result is
+preferable to claiming a multiplier from an editorial model.
 
 ## Relationship to existing architecture
 
-This prototype **does not replace** `scripts/approach.py`'s 44 active jobs,
-`scripts/lab.py`'s independent exact probes, the six-node proof DAG,
-the research protocol, or the human/specialist review gates. It adds a
-*cross-problem opportunity index* and machine-readable, source-bound dispatch
-packets on top. Routing, working, checking, and promoting remain separate.
+This layer does **not** replace `scripts/approach.py`, `scripts/work.py`,
+`scripts/lab.py`, the Lean gate, the research protocol, or human/specialist
+review. It schedules claimable work so many agents can move without duplicating
+effort or inventing theorems. See [SCALE.md](../SCALE.md) for the current wave.
 
-Run `python3 -m unittest discover -s tests -v` to include the new source
-and adversarial scheduling tests; run `python3 scripts/scale.py --check`
-in any workflow that consumes its output.
+Run `python3 scripts/scale.py --check` and
+`python3 -m unittest discover -s tests -v` in any workflow that consumes the
+packets.
