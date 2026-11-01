@@ -92,6 +92,22 @@ class RouterTests(unittest.TestCase):
             {"type": "issue_comment", "issue_number": 999, "comment_id": 901}])
         self.assertEqual([x["action"] for x in b["actions"]], ["relay_followup", "operator_review_followup"])
         self.assertEqual(len(b["state"]["tickets"]), 1)
+        # Replaying a previously delivered comment in another router pass is inert.
+        c = self.route([issue(1)], state=b["state"], events=[
+            {"type": "issue_comment", "issue_number": 1, "comment_id": 900}])
+        self.assertEqual(c["actions"], [])
+
+    def test_resume_cannot_overbook_and_quarantine_remains_visible(self):
+        a = self.route([issue(1)], max_workers=1)
+        tid = a["state"]["tickets"][0]["ticket_id"]
+        b = self.route([issue(1), issue(2)], state=a["state"], max_workers=1,
+                       reports=[{"ticket_id": tid, "status": "needs_human"}])
+        with self.assertRaisesRegex(ValueError, "slots full"):
+            self.route([issue(1), issue(2)], state=b["state"], max_workers=1,
+                       reports=[{"ticket_id": tid, "status": "running"}])
+        q = self.route([issue(2)], state=a["state"], max_workers=1)
+        again = self.route([issue(2)], state=q["state"], max_workers=1)
+        self.assertEqual(again["actions"][0]["action"], "operator_stop_required")
 
     def test_snapshot_gates_and_poisoned_issues(self):
         for change in [{"complete": False}, {"repository": "not-our-repo"}]:
