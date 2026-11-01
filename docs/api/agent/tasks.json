@@ -2,7 +2,7 @@
   "schema_version": 1,
   "snapshot_as_of": "2026-11-01",
   "selection": "First 20 runnable items in the derived work queue's priority order; use api/work.json for all tasks and other statuses.",
-  "runnable_in_snapshot": 283,
+  "runnable_in_snapshot": 339,
   "live_claim_status": "unknown; check existing_claims_url immediately before claiming",
   "task_count": 20,
   "tasks": [

@@ -1,9 +1,10 @@
 {
   "protocol": "svyable.work.v1",
-  "count": 289,
+  "count": 345,
   "by_kind": {
     "obligation": 24,
-    "review": 22,
+    "review": 42,
+    "benchmark": 36,
     "lean": 9,
     "job": 45,
     "roadmap": 9,
@@ -11,7 +12,7 @@
     "status_audit": 89
   },
   "by_status": {
-    "runnable": 283,
+    "runnable": 339,
     "externally_blocked": 4,
     "waiting_on_dependencies": 2
   },
@@ -568,6 +569,58 @@
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-F-M071%22"
     },
     {
+      "id": "V-P-M071",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M071"
+      ],
+      "title": "Independent certificate and scope audit for M071",
+      "deliverable": "Reproduce the campaign verifier (python3 scripts/lab.py --probe hadwiger); inspect the independent checker, deliberately corrupt its input/certificate, and compare every computational claim against the registered finite scope and its cited published boundary.",
+      "context": "Command: python3 scripts/lab.py --probe hadwiger; project: Does every graph of chromatic number k contain Kk as a minor?. Evidence: data/research_program.json, LAB.md and verifier source.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Publish exact command, pinned input SHA and output, negative control, numerical range and scope-vs-source assessment; record any discrepancy as a gap, never as a solved result",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check",
+        "python3 -m unittest discover -s tests"
+      ],
+      "boundary": "Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.",
+      "falsifier": "A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.",
+      "source": "data/research_program.json",
+      "depends_on": [],
+      "priority_rank": 1,
+      "scope_sha256": "8cecc1d9aa290f8ccbf78932ce3bf6b5503c35f652897299db6a05a78ddd6969",
+      "claim_title": "[Claim] V-P-M071 — Independent certificate and scope audit for M071",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M071%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M071",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-P-M071%22"
+    },
+    {
+      "id": "V-P-M073",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M073"
+      ],
+      "title": "Independent certificate and scope audit for M073",
+      "deliverable": "Reproduce the campaign verifier (python3 scripts/lab.py --probe sidorenko); inspect the independent checker, deliberately corrupt its input/certificate, and compare every computational claim against the registered finite scope and its cited published boundary.",
+      "context": "Command: python3 scripts/lab.py --probe sidorenko; project: Are bipartite graph homomorphism densities bounded below by the edge-density power?. Evidence: data/research_program.json, LAB.md and verifier source.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Publish exact command, pinned input SHA and output, negative control, numerical range and scope-vs-source assessment; record any discrepancy as a gap, never as a solved result",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check",
+        "python3 -m unittest discover -s tests"
+      ],
+      "boundary": "Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.",
+      "falsifier": "A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.",
+      "source": "data/research_program.json",
+      "depends_on": [],
+      "priority_rank": 2,
+      "scope_sha256": "e8d226fc468a8aac5f45e0a3bdd33b653783805ea6e27ad3e8e76ccfc53e3179",
+      "claim_title": "[Claim] V-P-M073 — Independent certificate and scope audit for M073",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M073%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M073",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-P-M073%22"
+    },
+    {
       "id": "V-F-M074",
       "kind": "review",
       "status": "runnable",
@@ -591,6 +644,84 @@
       "claim_title": "[Claim] V-F-M074 — Independent fidelity review of the Caccetta–Häggkvist conjecture comparator",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M074%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Caccetta%E2%80%93H%C3%A4ggkvist%20conjecture%20comparator",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-F-M074%22"
+    },
+    {
+      "id": "V-P-M074",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M074"
+      ],
+      "title": "Independent certificate and scope audit for M074",
+      "deliverable": "Reproduce the campaign verifier (python3 scripts/digraph_orbits.py --n 5); inspect the independent checker, deliberately corrupt its input/certificate, and compare every computational claim against the registered finite scope and its cited published boundary.",
+      "context": "Command: python3 scripts/digraph_orbits.py --n 5; project: Does minimum digraph outdegree r force a directed cycle of length at most ceil(n/r)?. Evidence: data/research_program.json, LAB.md and verifier source.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Publish exact command, pinned input SHA and output, negative control, numerical range and scope-vs-source assessment; record any discrepancy as a gap, never as a solved result",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check",
+        "python3 -m unittest discover -s tests"
+      ],
+      "boundary": "Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.",
+      "falsifier": "A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.",
+      "source": "data/research_program.json",
+      "depends_on": [],
+      "priority_rank": 5,
+      "scope_sha256": "07ae7c3f4b6052bf3d471106414f37cc4acd35b6006294d114db99a428a44692",
+      "claim_title": "[Claim] V-P-M074 — Independent certificate and scope audit for M074",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M074%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M074",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-P-M074%22"
+    },
+    {
+      "id": "V-P-M092",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M092"
+      ],
+      "title": "Independent certificate and scope audit for M092",
+      "deliverable": "Reproduce the campaign verifier (python3 scripts/lab.py --probe sic); inspect the independent checker, deliberately corrupt its input/certificate, and compare every computational claim against the registered finite scope and its cited published boundary.",
+      "context": "Command: python3 scripts/lab.py --probe sic; project: Do SIC equiangular complex lines exist in every finite dimension d at least two?. Evidence: data/research_program.json, LAB.md and verifier source.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Publish exact command, pinned input SHA and output, negative control, numerical range and scope-vs-source assessment; record any discrepancy as a gap, never as a solved result",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check",
+        "python3 -m unittest discover -s tests"
+      ],
+      "boundary": "Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.",
+      "falsifier": "A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.",
+      "source": "data/research_program.json",
+      "depends_on": [],
+      "priority_rank": 6,
+      "scope_sha256": "c60c75c457077a1373caf9259a417294ddd6c0475ee84bfcef561dace6d242dd",
+      "claim_title": "[Claim] V-P-M092 — Independent certificate and scope audit for M092",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M092%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M092",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-P-M092%22"
+    },
+    {
+      "id": "V-P-M093",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M093"
+      ],
+      "title": "Independent certificate and scope audit for M093",
+      "deliverable": "Reproduce the campaign verifier (python3 scripts/lab.py --probe mds_arcs); inspect the independent checker, deliberately corrupt its input/certificate, and compare every computational claim against the registered finite scope and its cited published boundary.",
+      "context": "Command: python3 scripts/lab.py --probe mds_arcs; project: Do nontrivial linear MDS codes satisfy the predicted length bound except known cases?. Evidence: data/research_program.json, LAB.md and verifier source.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Publish exact command, pinned input SHA and output, negative control, numerical range and scope-vs-source assessment; record any discrepancy as a gap, never as a solved result",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check",
+        "python3 -m unittest discover -s tests"
+      ],
+      "boundary": "Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.",
+      "falsifier": "A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.",
+      "source": "data/research_program.json",
+      "depends_on": [],
+      "priority_rank": 7,
+      "scope_sha256": "77a065d73c988fcd130b2a23821181c0342d08301532688c96cfec3ab38649e3",
+      "claim_title": "[Claim] V-P-M093 — Independent certificate and scope audit for M093",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M093%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M093",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-P-M093%22"
     },
     {
       "id": "V-F-M094",
@@ -641,6 +772,32 @@
       "claim_title": "[Claim] V-L007 — Independent scope review of Lean target L007 (M094)",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L007%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L007%20%28M094%29",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-L007%22"
+    },
+    {
+      "id": "V-P-M094",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M094"
+      ],
+      "title": "Independent certificate and scope audit for M094",
+      "deliverable": "Reproduce the campaign verifier (python3 scripts/lab.py --probe hadamard); inspect the independent checker, deliberately corrupt its input/certificate, and compare every computational claim against the registered finite scope and its cited published boundary.",
+      "context": "Command: python3 scripts/lab.py --probe hadamard; project: Does a real Hadamard matrix exist for every positive order divisible by four?. Evidence: data/research_program.json, LAB.md and verifier source.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Publish exact command, pinned input SHA and output, negative control, numerical range and scope-vs-source assessment; record any discrepancy as a gap, never as a solved result",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check",
+        "python3 -m unittest discover -s tests"
+      ],
+      "boundary": "Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.",
+      "falsifier": "A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.",
+      "source": "data/research_program.json",
+      "depends_on": [],
+      "priority_rank": 8,
+      "scope_sha256": "e81a7880b403bfbbd24eb1140ed2e8e80eba9eb51ad71e9bf73ce92eaaeefa6c",
+      "claim_title": "[Claim] V-P-M094 — Independent certificate and scope audit for M094",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M094%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M094",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-P-M094%22"
     },
     {
       "id": "V-F-M075",
@@ -718,6 +875,32 @@
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-L006%22"
     },
     {
+      "id": "V-P-M075",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M075"
+      ],
+      "title": "Independent certificate and scope audit for M075",
+      "deliverable": "Reproduce the campaign verifier (python3 scripts/union_closed.py exhaustive --n 4); inspect the independent checker, deliberately corrupt its input/certificate, and compare every computational claim against the registered finite scope and its cited published boundary.",
+      "context": "Command: python3 scripts/union_closed.py exhaustive --n 4; project: Must a finite nontrivial union-closed family have some element in at least half of its sets?. Evidence: data/research_program.json, LAB.md and verifier source.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Publish exact command, pinned input SHA and output, negative control, numerical range and scope-vs-source assessment; record any discrepancy as a gap, never as a solved result",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check",
+        "python3 -m unittest discover -s tests"
+      ],
+      "boundary": "Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.",
+      "falsifier": "A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.",
+      "source": "data/research_program.json",
+      "depends_on": [],
+      "priority_rank": 10,
+      "scope_sha256": "576409e402dc37c98b3f7c687991fac5fee29fe22f7eb23f27b86bf58fa32bec",
+      "claim_title": "[Claim] V-P-M075 — Independent certificate and scope audit for M075",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M075%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M075",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-P-M075%22"
+    },
+    {
       "id": "V-F-M078",
       "kind": "review",
       "status": "runnable",
@@ -741,6 +924,58 @@
       "claim_title": "[Claim] V-F-M078 — Independent fidelity review of the Graph reconstruction conjecture comparator",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M078%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Graph%20reconstruction%20conjecture%20comparator",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-F-M078%22"
+    },
+    {
+      "id": "V-P-M078",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M078"
+      ],
+      "title": "Independent certificate and scope audit for M078",
+      "deliverable": "Reproduce the campaign verifier (python3 scripts/lab.py --probe reconstruction); inspect the independent checker, deliberately corrupt its input/certificate, and compare every computational claim against the registered finite scope and its cited published boundary.",
+      "context": "Command: python3 scripts/lab.py --probe reconstruction; project: Is each finite simple graph on at least three vertices determined by its vertex-deleted deck?. Evidence: data/research_program.json, LAB.md and verifier source.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Publish exact command, pinned input SHA and output, negative control, numerical range and scope-vs-source assessment; record any discrepancy as a gap, never as a solved result",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check",
+        "python3 -m unittest discover -s tests"
+      ],
+      "boundary": "Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.",
+      "falsifier": "A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.",
+      "source": "data/research_program.json",
+      "depends_on": [],
+      "priority_rank": 11,
+      "scope_sha256": "3f515bc8cb22c0c78ba51aed431217eee332f6128b534a3a29278855f1ae06b1",
+      "claim_title": "[Claim] V-P-M078 — Independent certificate and scope audit for M078",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M078%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M078",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-P-M078%22"
+    },
+    {
+      "id": "V-P-M079",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M079"
+      ],
+      "title": "Independent certificate and scope audit for M079",
+      "deliverable": "Reproduce the campaign verifier (python3 scripts/lab.py --probe one_third); inspect the independent checker, deliberately corrupt its input/certificate, and compare every computational claim against the registered finite scope and its cited published boundary.",
+      "context": "Command: python3 scripts/lab.py --probe one_third; project: Does every finite non-total poset admit an incomparable pair balanced within [1/3,2/3] across linear extensions?. Evidence: data/research_program.json, LAB.md and verifier source.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Publish exact command, pinned input SHA and output, negative control, numerical range and scope-vs-source assessment; record any discrepancy as a gap, never as a solved result",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check",
+        "python3 -m unittest discover -s tests"
+      ],
+      "boundary": "Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.",
+      "falsifier": "A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.",
+      "source": "data/research_program.json",
+      "depends_on": [],
+      "priority_rank": 12,
+      "scope_sha256": "177625f6b1ddc7fedc1ec4eeb3660c27025196edaefac8425f412b14bb5d2255",
+      "claim_title": "[Claim] V-P-M079 — Independent certificate and scope audit for M079",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M079%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M079",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-P-M079%22"
     },
     {
       "id": "V-F-M096",
@@ -791,6 +1026,58 @@
       "claim_title": "[Claim] V-L009 — Independent scope review of Lean target L009 (M096)",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L009%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L009%20%28M096%29",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-L009%22"
+    },
+    {
+      "id": "V-P-M096",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M096"
+      ],
+      "title": "Independent certificate and scope audit for M096",
+      "deliverable": "Reproduce the campaign verifier (python3 scripts/lab.py --probe projective_planes); inspect the independent checker, deliberately corrupt its input/certificate, and compare every computational claim against the registered finite scope and its cited published boundary.",
+      "context": "Command: python3 scripts/lab.py --probe projective_planes; project: Does a finite projective plane of order 12 exist?. Evidence: data/research_program.json, LAB.md and verifier source.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Publish exact command, pinned input SHA and output, negative control, numerical range and scope-vs-source assessment; record any discrepancy as a gap, never as a solved result",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check",
+        "python3 -m unittest discover -s tests"
+      ],
+      "boundary": "Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.",
+      "falsifier": "A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.",
+      "source": "data/research_program.json",
+      "depends_on": [],
+      "priority_rank": 13,
+      "scope_sha256": "4097a54af7cf913da087e8b22f9c4a9c1a988beee31501342b3c0061574b8a16",
+      "claim_title": "[Claim] V-P-M096 — Independent certificate and scope audit for M096",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M096%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M096",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-P-M096%22"
+    },
+    {
+      "id": "V-P-M084",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M084"
+      ],
+      "title": "Independent certificate and scope audit for M084",
+      "deliverable": "Reproduce the campaign verifier (python3 scripts/lab.py --probe strassen); inspect the independent checker, deliberately corrupt its input/certificate, and compare every computational claim against the registered finite scope and its cited published boundary.",
+      "context": "Command: python3 scripts/lab.py --probe strassen; project: Is the matrix multiplication exponent exactly two?. Evidence: data/research_program.json, LAB.md and verifier source.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Publish exact command, pinned input SHA and output, negative control, numerical range and scope-vs-source assessment; record any discrepancy as a gap, never as a solved result",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check",
+        "python3 -m unittest discover -s tests"
+      ],
+      "boundary": "Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.",
+      "falsifier": "A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.",
+      "source": "data/research_program.json",
+      "depends_on": [],
+      "priority_rank": 14,
+      "scope_sha256": "9b202bd3997b330e1affa9f9966963feac5d4898345c0cb8a42eab796abe9511",
+      "claim_title": "[Claim] V-P-M084 — Independent certificate and scope audit for M084",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M084%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M084",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-P-M084%22"
     },
     {
       "id": "V-F-M095",
@@ -868,6 +1155,84 @@
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-L008%22"
     },
     {
+      "id": "V-P-M095",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M095"
+      ],
+      "title": "Independent certificate and scope audit for M095",
+      "deliverable": "Reproduce the campaign verifier (python3 scripts/ramsey.py demo); inspect the independent checker, deliberately corrupt its input/certificate, and compare every computational claim against the registered finite scope and its cited published boundary.",
+      "context": "Command: python3 scripts/ramsey.py demo; project: Which integer from 43 to 46 is the exact value of R(5,5)?. Evidence: data/research_program.json, LAB.md and verifier source.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Publish exact command, pinned input SHA and output, negative control, numerical range and scope-vs-source assessment; record any discrepancy as a gap, never as a solved result",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check",
+        "python3 -m unittest discover -s tests"
+      ],
+      "boundary": "Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.",
+      "falsifier": "A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.",
+      "source": "data/research_program.json",
+      "depends_on": [],
+      "priority_rank": 15,
+      "scope_sha256": "9f8271210d9470760c89309d52ed22a60f380e3915021a00d9875cf387a91e19",
+      "claim_title": "[Claim] V-P-M095 — Independent certificate and scope audit for M095",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M095%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M095",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-P-M095%22"
+    },
+    {
+      "id": "V-P-M080",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M080"
+      ],
+      "title": "Independent certificate and scope audit for M080",
+      "deliverable": "Reproduce the campaign verifier (python3 scripts/lab.py --probe rota); inspect the independent checker, deliberately corrupt its input/certificate, and compare every computational claim against the registered finite scope and its cited published boundary.",
+      "context": "Command: python3 scripts/lab.py --probe rota; project: Can n bases of an n-dimensional vector space be arranged into a grid where each row and column is a basis?. Evidence: data/research_program.json, LAB.md and verifier source.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Publish exact command, pinned input SHA and output, negative control, numerical range and scope-vs-source assessment; record any discrepancy as a gap, never as a solved result",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check",
+        "python3 -m unittest discover -s tests"
+      ],
+      "boundary": "Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.",
+      "falsifier": "A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.",
+      "source": "data/research_program.json",
+      "depends_on": [],
+      "priority_rank": 16,
+      "scope_sha256": "ede9619aebb723f814558c6cdbafb2e55ca4ceb5c3292fd90144bb1844f847da",
+      "claim_title": "[Claim] V-P-M080 — Independent certificate and scope audit for M080",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M080%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M080",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-P-M080%22"
+    },
+    {
+      "id": "V-P-M097",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M097"
+      ],
+      "title": "Independent certificate and scope audit for M097",
+      "deliverable": "Reproduce the campaign verifier (python3 scripts/lab.py --probe held_karp); inspect the independent checker, deliberately corrupt its input/certificate, and compare every computational claim against the registered finite scope and its cited published boundary.",
+      "context": "Command: python3 scripts/lab.py --probe held_karp; project: Is optimum metric TSP cost at most 4/3 times the Held–Karp subtour LP?. Evidence: data/research_program.json, LAB.md and verifier source.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Publish exact command, pinned input SHA and output, negative control, numerical range and scope-vs-source assessment; record any discrepancy as a gap, never as a solved result",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check",
+        "python3 -m unittest discover -s tests"
+      ],
+      "boundary": "Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.",
+      "falsifier": "A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.",
+      "source": "data/research_program.json",
+      "depends_on": [],
+      "priority_rank": 17,
+      "scope_sha256": "26b68744fbea48d3f516c611f355d7fcba9a92664a7b0abd29e42112111cdd20",
+      "claim_title": "[Claim] V-P-M097 — Independent certificate and scope audit for M097",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M097%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M097",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-P-M097%22"
+    },
+    {
       "id": "V-F-M019",
       "kind": "review",
       "status": "runnable",
@@ -918,6 +1283,58 @@
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-L005%22"
     },
     {
+      "id": "V-P-M019",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M019"
+      ],
+      "title": "Independent certificate and scope audit for M019",
+      "deliverable": "Reproduce the campaign verifier (python3 scripts/lab.py --probe erdos_straus); inspect the independent checker, deliberately corrupt its input/certificate, and compare every computational claim against the registered finite scope and its cited published boundary.",
+      "context": "Command: python3 scripts/lab.py --probe erdos_straus; project: Can 4/n always be written as three positive unit fractions for every integer n at least two?. Evidence: data/research_program.json, LAB.md and verifier source.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Publish exact command, pinned input SHA and output, negative control, numerical range and scope-vs-source assessment; record any discrepancy as a gap, never as a solved result",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check",
+        "python3 -m unittest discover -s tests"
+      ],
+      "boundary": "Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.",
+      "falsifier": "A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.",
+      "source": "data/research_program.json",
+      "depends_on": [],
+      "priority_rank": 18,
+      "scope_sha256": "4b78b0e38d05a0bf4428349be7e67adca8f31561487e6b1aa8174bc3066a3a4d",
+      "claim_title": "[Claim] V-P-M019 — Independent certificate and scope audit for M019",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M019%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M019",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-P-M019%22"
+    },
+    {
+      "id": "V-P-M002",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M002"
+      ],
+      "title": "Independent certificate and scope audit for M002",
+      "deliverable": "Reproduce the campaign verifier (python3 scripts/lab.py --probe dirichlet_l); inspect the independent checker, deliberately corrupt its input/certificate, and compare every computational claim against the registered finite scope and its cited published boundary.",
+      "context": "Command: python3 scripts/lab.py --probe dirichlet_l; project: Does the critical-line assertion hold for every Dirichlet L-function?. Evidence: data/research_program.json, LAB.md and verifier source.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Publish exact command, pinned input SHA and output, negative control, numerical range and scope-vs-source assessment; record any discrepancy as a gap, never as a solved result",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check",
+        "python3 -m unittest discover -s tests"
+      ],
+      "boundary": "Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.",
+      "falsifier": "A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.",
+      "source": "data/research_program.json",
+      "depends_on": [],
+      "priority_rank": 19,
+      "scope_sha256": "31c93752a89c0d3bc49a4e313aea8a1f9480508bb9b94a35073211e374718155",
+      "claim_title": "[Claim] V-P-M002 — Independent certificate and scope audit for M002",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M002%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M002",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-P-M002%22"
+    },
+    {
       "id": "V-F-M006",
       "kind": "review",
       "status": "runnable",
@@ -966,6 +1383,32 @@
       "claim_title": "[Claim] V-L004 — Independent scope review of Lean target L004 (M006)",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L004%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L004%20%28M006%29",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-L004%22"
+    },
+    {
+      "id": "V-P-M006",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M006"
+      ],
+      "title": "Independent certificate and scope audit for M006",
+      "deliverable": "Reproduce the campaign verifier (python3 scripts/lab.py --probe goldbach); inspect the independent checker, deliberately corrupt its input/certificate, and compare every computational claim against the registered finite scope and its cited published boundary.",
+      "context": "Command: python3 scripts/lab.py --probe goldbach; project: Is every even integer greater than 2 a sum of two primes?. Evidence: data/research_program.json, LAB.md and verifier source.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Publish exact command, pinned input SHA and output, negative control, numerical range and scope-vs-source assessment; record any discrepancy as a gap, never as a solved result",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check",
+        "python3 -m unittest discover -s tests"
+      ],
+      "boundary": "Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.",
+      "falsifier": "A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.",
+      "source": "data/research_program.json",
+      "depends_on": [],
+      "priority_rank": 24,
+      "scope_sha256": "eae1629c8b8d81de27f4545d43e758302f194463869a8b0d7d19e8814be6cc5f",
+      "claim_title": "[Claim] V-P-M006 — Independent certificate and scope audit for M006",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M006%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M006",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-P-M006%22"
     },
     {
       "id": "V-S-M056",
@@ -1091,6 +1534,1092 @@
       "claim_title": "[Claim] V-S-M053 — Independent review of the status draft for Weak cosmic censorship",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-S-M053%20%E2%80%94%20Independent%20review%20of%20the%20status%20draft%20for%20Weak%20cosmic%20censorship",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-S-M053%22"
+    },
+    {
+      "id": "V-P-M041",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M041"
+      ],
+      "title": "Independent certificate and scope audit for M041",
+      "deliverable": "Reproduce the campaign verifier (python3 scripts/lab.py --probe jacobian); inspect the independent checker, deliberately corrupt its input/certificate, and compare every computational claim against the registered finite scope and its cited published boundary.",
+      "context": "Command: python3 scripts/lab.py --probe jacobian; project: Does a polynomial map C² to C² with constant nonzero Jacobian have a polynomial inverse?. Evidence: data/research_program.json, LAB.md and verifier source.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Publish exact command, pinned input SHA and output, negative control, numerical range and scope-vs-source assessment; record any discrepancy as a gap, never as a solved result",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check",
+        "python3 -m unittest discover -s tests"
+      ],
+      "boundary": "Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.",
+      "falsifier": "A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.",
+      "source": "data/research_program.json",
+      "depends_on": [],
+      "priority_rank": 98,
+      "scope_sha256": "5b62fde57b937f039c06094c1f47cc50dd69ee1921a767015049980887ea22c4",
+      "claim_title": "[Claim] V-P-M041 — Independent certificate and scope audit for M041",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M041%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M041",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-P-M041%22"
+    },
+    {
+      "id": "V-P-M048",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M048"
+      ],
+      "title": "Independent certificate and scope audit for M048",
+      "deliverable": "Reproduce the campaign verifier (python3 scripts/lab.py --probe alperin); inspect the independent checker, deliberately corrupt its input/certificate, and compare every computational claim against the registered finite scope and its cited published boundary.",
+      "context": "Command: python3 scripts/lab.py --probe alperin; project: Do modular representation counts equal the predicted p-weight counts?. Evidence: data/research_program.json, LAB.md and verifier source.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Publish exact command, pinned input SHA and output, negative control, numerical range and scope-vs-source assessment; record any discrepancy as a gap, never as a solved result",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check",
+        "python3 -m unittest discover -s tests"
+      ],
+      "boundary": "Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.",
+      "falsifier": "A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.",
+      "source": "data/research_program.json",
+      "depends_on": [],
+      "priority_rank": 99,
+      "scope_sha256": "43dadb65c3606f72bd19302a2021dbc53e9bb4bf8b91ef6bf624561060697cce",
+      "claim_title": "[Claim] V-P-M048 — Independent certificate and scope audit for M048",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M048%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M048",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-P-M048%22"
+    },
+    {
+      "id": "V-P-M001",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M001"
+      ],
+      "title": "Independent certificate and scope audit for M001",
+      "deliverable": "Reproduce the campaign verifier (python3 scripts/lab.py --probe riemann); inspect the independent checker, deliberately corrupt its input/certificate, and compare every computational claim against the registered finite scope and its cited published boundary.",
+      "context": "Command: python3 scripts/lab.py --probe riemann; project: Are all nontrivial zeros of the Riemann zeta function on the line Re(s)=1/2?. Evidence: data/research_program.json, LAB.md and verifier source.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Publish exact command, pinned input SHA and output, negative control, numerical range and scope-vs-source assessment; record any discrepancy as a gap, never as a solved result",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check",
+        "python3 -m unittest discover -s tests"
+      ],
+      "boundary": "Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.",
+      "falsifier": "A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.",
+      "source": "data/research_program.json",
+      "depends_on": [],
+      "priority_rank": 100,
+      "scope_sha256": "9b2ca3af79affc16aa5667ecab7160bd558bbdb0b98ba2f216654feb6a91bd5a",
+      "claim_title": "[Claim] V-P-M001 — Independent certificate and scope audit for M001",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M001%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M001",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-P-M001%22"
+    },
+    {
+      "id": "B-CH24-IRREGULAR-conversation-11",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M074"
+      ],
+      "title": "Preregistered CH24-IRREGULAR / conversation / seed 11",
+      "deliverable": "Run the conversation agent architecture on CH24-IRREGULAR with seed 11, under the frozen scope: Test a proof or an explicit counterexample for the indegree-nine irregular branch at (n=24,r=8), preserving minimum-outdegree quantifiers; avoid silently assuming indegree-eight regularity.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: An independently checked, exactly scoped new obstruction or explicit valid counterexample for the irregular branch; prior-art and external specialist review needed before novelty credit.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. POST-FREEZE PRIOR ART: Public finite-case proofs in PRs #60/#70 postdate the frozen protocol. No novelty credit or clean holdout comparison for this task.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 5,
+      "scope_sha256": "d7910cedf071ce87f365ba4cb57d50a7e06abeb697e852316f49c4cf0fa70452",
+      "claim_title": "[Claim] B-CH24-IRREGULAR-conversation-11 — Preregistered CH24-IRREGULAR / conversation / seed 11",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-CH24-IRREGULAR-conversation-11%20%E2%80%94%20Preregistered%20CH24-IRREGULAR%20/%20conversation%20/%20seed%2011",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-CH24-IRREGULAR-conversation-11%22"
+    },
+    {
+      "id": "B-CH24-IRREGULAR-conversation-23",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M074"
+      ],
+      "title": "Preregistered CH24-IRREGULAR / conversation / seed 23",
+      "deliverable": "Run the conversation agent architecture on CH24-IRREGULAR with seed 23, under the frozen scope: Test a proof or an explicit counterexample for the indegree-nine irregular branch at (n=24,r=8), preserving minimum-outdegree quantifiers; avoid silently assuming indegree-eight regularity.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: An independently checked, exactly scoped new obstruction or explicit valid counterexample for the irregular branch; prior-art and external specialist review needed before novelty credit.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. POST-FREEZE PRIOR ART: Public finite-case proofs in PRs #60/#70 postdate the frozen protocol. No novelty credit or clean holdout comparison for this task.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 5,
+      "scope_sha256": "da0b101d80b79ccdc9e4e67df32954af30f8623e3e9bfe977ab0fc35e86913af",
+      "claim_title": "[Claim] B-CH24-IRREGULAR-conversation-23 — Preregistered CH24-IRREGULAR / conversation / seed 23",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-CH24-IRREGULAR-conversation-23%20%E2%80%94%20Preregistered%20CH24-IRREGULAR%20/%20conversation%20/%20seed%2023",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-CH24-IRREGULAR-conversation-23%22"
+    },
+    {
+      "id": "B-CH24-IRREGULAR-conversation-37",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M074"
+      ],
+      "title": "Preregistered CH24-IRREGULAR / conversation / seed 37",
+      "deliverable": "Run the conversation agent architecture on CH24-IRREGULAR with seed 37, under the frozen scope: Test a proof or an explicit counterexample for the indegree-nine irregular branch at (n=24,r=8), preserving minimum-outdegree quantifiers; avoid silently assuming indegree-eight regularity.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: An independently checked, exactly scoped new obstruction or explicit valid counterexample for the irregular branch; prior-art and external specialist review needed before novelty credit.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. POST-FREEZE PRIOR ART: Public finite-case proofs in PRs #60/#70 postdate the frozen protocol. No novelty credit or clean holdout comparison for this task.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 5,
+      "scope_sha256": "829afb739202ac564bcec14f9b1a48b2ed150e682f31ea0c9884369caddfbefd",
+      "claim_title": "[Claim] B-CH24-IRREGULAR-conversation-37 — Preregistered CH24-IRREGULAR / conversation / seed 37",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-CH24-IRREGULAR-conversation-37%20%E2%80%94%20Preregistered%20CH24-IRREGULAR%20/%20conversation%20/%20seed%2037",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-CH24-IRREGULAR-conversation-37%22"
+    },
+    {
+      "id": "B-CH24-IRREGULAR-independent-11",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M074"
+      ],
+      "title": "Preregistered CH24-IRREGULAR / independent / seed 11",
+      "deliverable": "Run the independent agent architecture on CH24-IRREGULAR with seed 11, under the frozen scope: Test a proof or an explicit counterexample for the indegree-nine irregular branch at (n=24,r=8), preserving minimum-outdegree quantifiers; avoid silently assuming indegree-eight regularity.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: An independently checked, exactly scoped new obstruction or explicit valid counterexample for the irregular branch; prior-art and external specialist review needed before novelty credit.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. POST-FREEZE PRIOR ART: Public finite-case proofs in PRs #60/#70 postdate the frozen protocol. No novelty credit or clean holdout comparison for this task.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 5,
+      "scope_sha256": "8913ed87f6637be2868a8f42b4376ba8b61baf2c4e4ef6bb2a45d5c7a4fb6c30",
+      "claim_title": "[Claim] B-CH24-IRREGULAR-independent-11 — Preregistered CH24-IRREGULAR / independent / seed 11",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-CH24-IRREGULAR-independent-11%20%E2%80%94%20Preregistered%20CH24-IRREGULAR%20/%20independent%20/%20seed%2011",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-CH24-IRREGULAR-independent-11%22"
+    },
+    {
+      "id": "B-CH24-IRREGULAR-independent-23",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M074"
+      ],
+      "title": "Preregistered CH24-IRREGULAR / independent / seed 23",
+      "deliverable": "Run the independent agent architecture on CH24-IRREGULAR with seed 23, under the frozen scope: Test a proof or an explicit counterexample for the indegree-nine irregular branch at (n=24,r=8), preserving minimum-outdegree quantifiers; avoid silently assuming indegree-eight regularity.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: An independently checked, exactly scoped new obstruction or explicit valid counterexample for the irregular branch; prior-art and external specialist review needed before novelty credit.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. POST-FREEZE PRIOR ART: Public finite-case proofs in PRs #60/#70 postdate the frozen protocol. No novelty credit or clean holdout comparison for this task.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 5,
+      "scope_sha256": "37cfa5f86f53e5f111a6392df300edf2c93fcd6d514166ceae692bad0469ad89",
+      "claim_title": "[Claim] B-CH24-IRREGULAR-independent-23 — Preregistered CH24-IRREGULAR / independent / seed 23",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-CH24-IRREGULAR-independent-23%20%E2%80%94%20Preregistered%20CH24-IRREGULAR%20/%20independent%20/%20seed%2023",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-CH24-IRREGULAR-independent-23%22"
+    },
+    {
+      "id": "B-CH24-IRREGULAR-independent-37",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M074"
+      ],
+      "title": "Preregistered CH24-IRREGULAR / independent / seed 37",
+      "deliverable": "Run the independent agent architecture on CH24-IRREGULAR with seed 37, under the frozen scope: Test a proof or an explicit counterexample for the indegree-nine irregular branch at (n=24,r=8), preserving minimum-outdegree quantifiers; avoid silently assuming indegree-eight regularity.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: An independently checked, exactly scoped new obstruction or explicit valid counterexample for the irregular branch; prior-art and external specialist review needed before novelty credit.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. POST-FREEZE PRIOR ART: Public finite-case proofs in PRs #60/#70 postdate the frozen protocol. No novelty credit or clean holdout comparison for this task.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 5,
+      "scope_sha256": "4c184e6924c20846daec3bc6a29a8dd8b6ec63900c2255ab6bd28078f578bb86",
+      "claim_title": "[Claim] B-CH24-IRREGULAR-independent-37 — Preregistered CH24-IRREGULAR / independent / seed 37",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-CH24-IRREGULAR-independent-37%20%E2%80%94%20Preregistered%20CH24-IRREGULAR%20/%20independent%20/%20seed%2037",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-CH24-IRREGULAR-independent-37%22"
+    },
+    {
+      "id": "B-CH24-IRREGULAR-proof_exchange-11",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M074"
+      ],
+      "title": "Preregistered CH24-IRREGULAR / proof_exchange / seed 11",
+      "deliverable": "Run the proof_exchange agent architecture on CH24-IRREGULAR with seed 11, under the frozen scope: Test a proof or an explicit counterexample for the indegree-nine irregular branch at (n=24,r=8), preserving minimum-outdegree quantifiers; avoid silently assuming indegree-eight regularity.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: An independently checked, exactly scoped new obstruction or explicit valid counterexample for the irregular branch; prior-art and external specialist review needed before novelty credit.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. POST-FREEZE PRIOR ART: Public finite-case proofs in PRs #60/#70 postdate the frozen protocol. No novelty credit or clean holdout comparison for this task.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 5,
+      "scope_sha256": "155453866a66a02ac16201ff8b877bab37af7273b7169eafa627925fbbea36e1",
+      "claim_title": "[Claim] B-CH24-IRREGULAR-proof_exchange-11 — Preregistered CH24-IRREGULAR / proof_exchange / seed 11",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-CH24-IRREGULAR-proof_exchange-11%20%E2%80%94%20Preregistered%20CH24-IRREGULAR%20/%20proof_exchange%20/%20seed%2011",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-CH24-IRREGULAR-proof_exchange-11%22"
+    },
+    {
+      "id": "B-CH24-IRREGULAR-proof_exchange-23",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M074"
+      ],
+      "title": "Preregistered CH24-IRREGULAR / proof_exchange / seed 23",
+      "deliverable": "Run the proof_exchange agent architecture on CH24-IRREGULAR with seed 23, under the frozen scope: Test a proof or an explicit counterexample for the indegree-nine irregular branch at (n=24,r=8), preserving minimum-outdegree quantifiers; avoid silently assuming indegree-eight regularity.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: An independently checked, exactly scoped new obstruction or explicit valid counterexample for the irregular branch; prior-art and external specialist review needed before novelty credit.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. POST-FREEZE PRIOR ART: Public finite-case proofs in PRs #60/#70 postdate the frozen protocol. No novelty credit or clean holdout comparison for this task.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 5,
+      "scope_sha256": "d559464cb97c406345761a9f2cca91384efa9eef927ca4eb0f6ae9418fe62aa0",
+      "claim_title": "[Claim] B-CH24-IRREGULAR-proof_exchange-23 — Preregistered CH24-IRREGULAR / proof_exchange / seed 23",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-CH24-IRREGULAR-proof_exchange-23%20%E2%80%94%20Preregistered%20CH24-IRREGULAR%20/%20proof_exchange%20/%20seed%2023",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-CH24-IRREGULAR-proof_exchange-23%22"
+    },
+    {
+      "id": "B-CH24-IRREGULAR-proof_exchange-37",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M074"
+      ],
+      "title": "Preregistered CH24-IRREGULAR / proof_exchange / seed 37",
+      "deliverable": "Run the proof_exchange agent architecture on CH24-IRREGULAR with seed 37, under the frozen scope: Test a proof or an explicit counterexample for the indegree-nine irregular branch at (n=24,r=8), preserving minimum-outdegree quantifiers; avoid silently assuming indegree-eight regularity.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: An independently checked, exactly scoped new obstruction or explicit valid counterexample for the irregular branch; prior-art and external specialist review needed before novelty credit.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. POST-FREEZE PRIOR ART: Public finite-case proofs in PRs #60/#70 postdate the frozen protocol. No novelty credit or clean holdout comparison for this task.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 5,
+      "scope_sha256": "f9d5f9bb2776cb1aec61343c76eae378e85b85fadbf95cea871888d702c47138",
+      "claim_title": "[Claim] B-CH24-IRREGULAR-proof_exchange-37 — Preregistered CH24-IRREGULAR / proof_exchange / seed 37",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-CH24-IRREGULAR-proof_exchange-37%20%E2%80%94%20Preregistered%20CH24-IRREGULAR%20/%20proof_exchange%20/%20seed%2037",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-CH24-IRREGULAR-proof_exchange-37%22"
+    },
+    {
+      "id": "B-CH24-IRREGULAR-sequential-11",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M074"
+      ],
+      "title": "Preregistered CH24-IRREGULAR / sequential / seed 11",
+      "deliverable": "Run the sequential agent architecture on CH24-IRREGULAR with seed 11, under the frozen scope: Test a proof or an explicit counterexample for the indegree-nine irregular branch at (n=24,r=8), preserving minimum-outdegree quantifiers; avoid silently assuming indegree-eight regularity.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: An independently checked, exactly scoped new obstruction or explicit valid counterexample for the irregular branch; prior-art and external specialist review needed before novelty credit.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. POST-FREEZE PRIOR ART: Public finite-case proofs in PRs #60/#70 postdate the frozen protocol. No novelty credit or clean holdout comparison for this task.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 5,
+      "scope_sha256": "f190cb29b4016add709ede6085c62aafee30da090359e8eb80017ebbb1f965ec",
+      "claim_title": "[Claim] B-CH24-IRREGULAR-sequential-11 — Preregistered CH24-IRREGULAR / sequential / seed 11",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-CH24-IRREGULAR-sequential-11%20%E2%80%94%20Preregistered%20CH24-IRREGULAR%20/%20sequential%20/%20seed%2011",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-CH24-IRREGULAR-sequential-11%22"
+    },
+    {
+      "id": "B-CH24-IRREGULAR-sequential-23",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M074"
+      ],
+      "title": "Preregistered CH24-IRREGULAR / sequential / seed 23",
+      "deliverable": "Run the sequential agent architecture on CH24-IRREGULAR with seed 23, under the frozen scope: Test a proof or an explicit counterexample for the indegree-nine irregular branch at (n=24,r=8), preserving minimum-outdegree quantifiers; avoid silently assuming indegree-eight regularity.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: An independently checked, exactly scoped new obstruction or explicit valid counterexample for the irregular branch; prior-art and external specialist review needed before novelty credit.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. POST-FREEZE PRIOR ART: Public finite-case proofs in PRs #60/#70 postdate the frozen protocol. No novelty credit or clean holdout comparison for this task.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 5,
+      "scope_sha256": "a1a504f3257a36c6a667f38d2034777be184c74fd33baef252e340c105dc66f9",
+      "claim_title": "[Claim] B-CH24-IRREGULAR-sequential-23 — Preregistered CH24-IRREGULAR / sequential / seed 23",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-CH24-IRREGULAR-sequential-23%20%E2%80%94%20Preregistered%20CH24-IRREGULAR%20/%20sequential%20/%20seed%2023",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-CH24-IRREGULAR-sequential-23%22"
+    },
+    {
+      "id": "B-CH24-IRREGULAR-sequential-37",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M074"
+      ],
+      "title": "Preregistered CH24-IRREGULAR / sequential / seed 37",
+      "deliverable": "Run the sequential agent architecture on CH24-IRREGULAR with seed 37, under the frozen scope: Test a proof or an explicit counterexample for the indegree-nine irregular branch at (n=24,r=8), preserving minimum-outdegree quantifiers; avoid silently assuming indegree-eight regularity.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: An independently checked, exactly scoped new obstruction or explicit valid counterexample for the irregular branch; prior-art and external specialist review needed before novelty credit.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. POST-FREEZE PRIOR ART: Public finite-case proofs in PRs #60/#70 postdate the frozen protocol. No novelty credit or clean holdout comparison for this task.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 5,
+      "scope_sha256": "d603ca2d587dfaa7a3e6fada1cb1223de4b80a9f38a14540715a5e1cd60488d0",
+      "claim_title": "[Claim] B-CH24-IRREGULAR-sequential-37 — Preregistered CH24-IRREGULAR / sequential / seed 37",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-CH24-IRREGULAR-sequential-37%20%E2%80%94%20Preregistered%20CH24-IRREGULAR%20/%20sequential%20/%20seed%2037",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-CH24-IRREGULAR-sequential-37%22"
+    },
+    {
+      "id": "B-FRANKL-TRANSFER-conversation-11",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M075"
+      ],
+      "title": "Preregistered FRANKL-TRANSFER / conversation / seed 11",
+      "deliverable": "Run the conversation agent architecture on FRANKL-TRANSFER with seed 11, under the frozen scope: Propose or falsify one precisely quantified canonical-augmentation or extension lemma that reaches beyond the existing n=5 full-support orbit count, including soundness and completeness, not merely another n=5 recount.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: A checked restricted extension lemma with explicitly stated hypotheses, independent scope audit, and external mathematical review before novelty credit; an explicit counterexample is also a useful but separately labeled outcome.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. Known prior art and the frozen source baseline must be disclosed.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 10,
+      "scope_sha256": "5746fa1ebebd6d4329079d0376573802a761b20f8651ea5abbe3a2c54c35cbb8",
+      "claim_title": "[Claim] B-FRANKL-TRANSFER-conversation-11 — Preregistered FRANKL-TRANSFER / conversation / seed 11",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-FRANKL-TRANSFER-conversation-11%20%E2%80%94%20Preregistered%20FRANKL-TRANSFER%20/%20conversation%20/%20seed%2011",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-FRANKL-TRANSFER-conversation-11%22"
+    },
+    {
+      "id": "B-FRANKL-TRANSFER-conversation-23",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M075"
+      ],
+      "title": "Preregistered FRANKL-TRANSFER / conversation / seed 23",
+      "deliverable": "Run the conversation agent architecture on FRANKL-TRANSFER with seed 23, under the frozen scope: Propose or falsify one precisely quantified canonical-augmentation or extension lemma that reaches beyond the existing n=5 full-support orbit count, including soundness and completeness, not merely another n=5 recount.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: A checked restricted extension lemma with explicitly stated hypotheses, independent scope audit, and external mathematical review before novelty credit; an explicit counterexample is also a useful but separately labeled outcome.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. Known prior art and the frozen source baseline must be disclosed.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 10,
+      "scope_sha256": "26bcb41ed1aa0beb910a01263619c31a47877078574093afacb2e7e407b63175",
+      "claim_title": "[Claim] B-FRANKL-TRANSFER-conversation-23 — Preregistered FRANKL-TRANSFER / conversation / seed 23",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-FRANKL-TRANSFER-conversation-23%20%E2%80%94%20Preregistered%20FRANKL-TRANSFER%20/%20conversation%20/%20seed%2023",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-FRANKL-TRANSFER-conversation-23%22"
+    },
+    {
+      "id": "B-FRANKL-TRANSFER-conversation-37",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M075"
+      ],
+      "title": "Preregistered FRANKL-TRANSFER / conversation / seed 37",
+      "deliverable": "Run the conversation agent architecture on FRANKL-TRANSFER with seed 37, under the frozen scope: Propose or falsify one precisely quantified canonical-augmentation or extension lemma that reaches beyond the existing n=5 full-support orbit count, including soundness and completeness, not merely another n=5 recount.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: A checked restricted extension lemma with explicitly stated hypotheses, independent scope audit, and external mathematical review before novelty credit; an explicit counterexample is also a useful but separately labeled outcome.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. Known prior art and the frozen source baseline must be disclosed.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 10,
+      "scope_sha256": "0e6b696a99cc4bd7916800dd10e8ddedd0de62b36a39f6aca3f678b1622b4d2b",
+      "claim_title": "[Claim] B-FRANKL-TRANSFER-conversation-37 — Preregistered FRANKL-TRANSFER / conversation / seed 37",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-FRANKL-TRANSFER-conversation-37%20%E2%80%94%20Preregistered%20FRANKL-TRANSFER%20/%20conversation%20/%20seed%2037",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-FRANKL-TRANSFER-conversation-37%22"
+    },
+    {
+      "id": "B-FRANKL-TRANSFER-independent-11",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M075"
+      ],
+      "title": "Preregistered FRANKL-TRANSFER / independent / seed 11",
+      "deliverable": "Run the independent agent architecture on FRANKL-TRANSFER with seed 11, under the frozen scope: Propose or falsify one precisely quantified canonical-augmentation or extension lemma that reaches beyond the existing n=5 full-support orbit count, including soundness and completeness, not merely another n=5 recount.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: A checked restricted extension lemma with explicitly stated hypotheses, independent scope audit, and external mathematical review before novelty credit; an explicit counterexample is also a useful but separately labeled outcome.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. Known prior art and the frozen source baseline must be disclosed.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 10,
+      "scope_sha256": "e832c401c691d5c5d9486883059a05c163aa3a3e02feffd61984db9fd08f1484",
+      "claim_title": "[Claim] B-FRANKL-TRANSFER-independent-11 — Preregistered FRANKL-TRANSFER / independent / seed 11",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-FRANKL-TRANSFER-independent-11%20%E2%80%94%20Preregistered%20FRANKL-TRANSFER%20/%20independent%20/%20seed%2011",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-FRANKL-TRANSFER-independent-11%22"
+    },
+    {
+      "id": "B-FRANKL-TRANSFER-independent-23",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M075"
+      ],
+      "title": "Preregistered FRANKL-TRANSFER / independent / seed 23",
+      "deliverable": "Run the independent agent architecture on FRANKL-TRANSFER with seed 23, under the frozen scope: Propose or falsify one precisely quantified canonical-augmentation or extension lemma that reaches beyond the existing n=5 full-support orbit count, including soundness and completeness, not merely another n=5 recount.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: A checked restricted extension lemma with explicitly stated hypotheses, independent scope audit, and external mathematical review before novelty credit; an explicit counterexample is also a useful but separately labeled outcome.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. Known prior art and the frozen source baseline must be disclosed.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 10,
+      "scope_sha256": "9701973133b6fa435d9532137d945b11329d49d4bb4a014d9474128c9d77a603",
+      "claim_title": "[Claim] B-FRANKL-TRANSFER-independent-23 — Preregistered FRANKL-TRANSFER / independent / seed 23",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-FRANKL-TRANSFER-independent-23%20%E2%80%94%20Preregistered%20FRANKL-TRANSFER%20/%20independent%20/%20seed%2023",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-FRANKL-TRANSFER-independent-23%22"
+    },
+    {
+      "id": "B-FRANKL-TRANSFER-independent-37",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M075"
+      ],
+      "title": "Preregistered FRANKL-TRANSFER / independent / seed 37",
+      "deliverable": "Run the independent agent architecture on FRANKL-TRANSFER with seed 37, under the frozen scope: Propose or falsify one precisely quantified canonical-augmentation or extension lemma that reaches beyond the existing n=5 full-support orbit count, including soundness and completeness, not merely another n=5 recount.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: A checked restricted extension lemma with explicitly stated hypotheses, independent scope audit, and external mathematical review before novelty credit; an explicit counterexample is also a useful but separately labeled outcome.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. Known prior art and the frozen source baseline must be disclosed.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 10,
+      "scope_sha256": "b8ebd2b65b27749c63be661c22b9c49f3fedfb2af206b596170624f42d8578f6",
+      "claim_title": "[Claim] B-FRANKL-TRANSFER-independent-37 — Preregistered FRANKL-TRANSFER / independent / seed 37",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-FRANKL-TRANSFER-independent-37%20%E2%80%94%20Preregistered%20FRANKL-TRANSFER%20/%20independent%20/%20seed%2037",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-FRANKL-TRANSFER-independent-37%22"
+    },
+    {
+      "id": "B-FRANKL-TRANSFER-proof_exchange-11",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M075"
+      ],
+      "title": "Preregistered FRANKL-TRANSFER / proof_exchange / seed 11",
+      "deliverable": "Run the proof_exchange agent architecture on FRANKL-TRANSFER with seed 11, under the frozen scope: Propose or falsify one precisely quantified canonical-augmentation or extension lemma that reaches beyond the existing n=5 full-support orbit count, including soundness and completeness, not merely another n=5 recount.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: A checked restricted extension lemma with explicitly stated hypotheses, independent scope audit, and external mathematical review before novelty credit; an explicit counterexample is also a useful but separately labeled outcome.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. Known prior art and the frozen source baseline must be disclosed.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 10,
+      "scope_sha256": "904bfcfcc8c21139115fba2040bdca5b67ce382710aca04f797cf8b9025b6018",
+      "claim_title": "[Claim] B-FRANKL-TRANSFER-proof_exchange-11 — Preregistered FRANKL-TRANSFER / proof_exchange / seed 11",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-FRANKL-TRANSFER-proof_exchange-11%20%E2%80%94%20Preregistered%20FRANKL-TRANSFER%20/%20proof_exchange%20/%20seed%2011",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-FRANKL-TRANSFER-proof_exchange-11%22"
+    },
+    {
+      "id": "B-FRANKL-TRANSFER-proof_exchange-23",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M075"
+      ],
+      "title": "Preregistered FRANKL-TRANSFER / proof_exchange / seed 23",
+      "deliverable": "Run the proof_exchange agent architecture on FRANKL-TRANSFER with seed 23, under the frozen scope: Propose or falsify one precisely quantified canonical-augmentation or extension lemma that reaches beyond the existing n=5 full-support orbit count, including soundness and completeness, not merely another n=5 recount.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: A checked restricted extension lemma with explicitly stated hypotheses, independent scope audit, and external mathematical review before novelty credit; an explicit counterexample is also a useful but separately labeled outcome.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. Known prior art and the frozen source baseline must be disclosed.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 10,
+      "scope_sha256": "c97a75d4a3b92a010f2ab263387a75aad46cf27e1468411addbe88662ef8a9fa",
+      "claim_title": "[Claim] B-FRANKL-TRANSFER-proof_exchange-23 — Preregistered FRANKL-TRANSFER / proof_exchange / seed 23",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-FRANKL-TRANSFER-proof_exchange-23%20%E2%80%94%20Preregistered%20FRANKL-TRANSFER%20/%20proof_exchange%20/%20seed%2023",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-FRANKL-TRANSFER-proof_exchange-23%22"
+    },
+    {
+      "id": "B-FRANKL-TRANSFER-proof_exchange-37",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M075"
+      ],
+      "title": "Preregistered FRANKL-TRANSFER / proof_exchange / seed 37",
+      "deliverable": "Run the proof_exchange agent architecture on FRANKL-TRANSFER with seed 37, under the frozen scope: Propose or falsify one precisely quantified canonical-augmentation or extension lemma that reaches beyond the existing n=5 full-support orbit count, including soundness and completeness, not merely another n=5 recount.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: A checked restricted extension lemma with explicitly stated hypotheses, independent scope audit, and external mathematical review before novelty credit; an explicit counterexample is also a useful but separately labeled outcome.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. Known prior art and the frozen source baseline must be disclosed.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 10,
+      "scope_sha256": "9bd8bd6a42699011f34585d4548aed60cd30ff01a4b710a5d58a093cbb32d90f",
+      "claim_title": "[Claim] B-FRANKL-TRANSFER-proof_exchange-37 — Preregistered FRANKL-TRANSFER / proof_exchange / seed 37",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-FRANKL-TRANSFER-proof_exchange-37%20%E2%80%94%20Preregistered%20FRANKL-TRANSFER%20/%20proof_exchange%20/%20seed%2037",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-FRANKL-TRANSFER-proof_exchange-37%22"
+    },
+    {
+      "id": "B-FRANKL-TRANSFER-sequential-11",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M075"
+      ],
+      "title": "Preregistered FRANKL-TRANSFER / sequential / seed 11",
+      "deliverable": "Run the sequential agent architecture on FRANKL-TRANSFER with seed 11, under the frozen scope: Propose or falsify one precisely quantified canonical-augmentation or extension lemma that reaches beyond the existing n=5 full-support orbit count, including soundness and completeness, not merely another n=5 recount.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: A checked restricted extension lemma with explicitly stated hypotheses, independent scope audit, and external mathematical review before novelty credit; an explicit counterexample is also a useful but separately labeled outcome.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. Known prior art and the frozen source baseline must be disclosed.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 10,
+      "scope_sha256": "194c21c38178414de4160bec24a04245ee905cbd4f264200c3bff66d89124532",
+      "claim_title": "[Claim] B-FRANKL-TRANSFER-sequential-11 — Preregistered FRANKL-TRANSFER / sequential / seed 11",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-FRANKL-TRANSFER-sequential-11%20%E2%80%94%20Preregistered%20FRANKL-TRANSFER%20/%20sequential%20/%20seed%2011",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-FRANKL-TRANSFER-sequential-11%22"
+    },
+    {
+      "id": "B-FRANKL-TRANSFER-sequential-23",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M075"
+      ],
+      "title": "Preregistered FRANKL-TRANSFER / sequential / seed 23",
+      "deliverable": "Run the sequential agent architecture on FRANKL-TRANSFER with seed 23, under the frozen scope: Propose or falsify one precisely quantified canonical-augmentation or extension lemma that reaches beyond the existing n=5 full-support orbit count, including soundness and completeness, not merely another n=5 recount.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: A checked restricted extension lemma with explicitly stated hypotheses, independent scope audit, and external mathematical review before novelty credit; an explicit counterexample is also a useful but separately labeled outcome.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. Known prior art and the frozen source baseline must be disclosed.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 10,
+      "scope_sha256": "7252d42d9832f9b9ab34fae1f6f5a1d933abbe281bacda2c5a7f20b89f33f642",
+      "claim_title": "[Claim] B-FRANKL-TRANSFER-sequential-23 — Preregistered FRANKL-TRANSFER / sequential / seed 23",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-FRANKL-TRANSFER-sequential-23%20%E2%80%94%20Preregistered%20FRANKL-TRANSFER%20/%20sequential%20/%20seed%2023",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-FRANKL-TRANSFER-sequential-23%22"
+    },
+    {
+      "id": "B-FRANKL-TRANSFER-sequential-37",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M075"
+      ],
+      "title": "Preregistered FRANKL-TRANSFER / sequential / seed 37",
+      "deliverable": "Run the sequential agent architecture on FRANKL-TRANSFER with seed 37, under the frozen scope: Propose or falsify one precisely quantified canonical-augmentation or extension lemma that reaches beyond the existing n=5 full-support orbit count, including soundness and completeness, not merely another n=5 recount.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: A checked restricted extension lemma with explicitly stated hypotheses, independent scope audit, and external mathematical review before novelty credit; an explicit counterexample is also a useful but separately labeled outcome.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. Known prior art and the frozen source baseline must be disclosed.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 10,
+      "scope_sha256": "dccbab03b03ab7426492f9616104fef75da8bf6d0405c4a8857049e7518c99d3",
+      "claim_title": "[Claim] B-FRANKL-TRANSFER-sequential-37 — Preregistered FRANKL-TRANSFER / sequential / seed 37",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-FRANKL-TRANSFER-sequential-37%20%E2%80%94%20Preregistered%20FRANKL-TRANSFER%20/%20sequential%20/%20seed%2037",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-FRANKL-TRANSFER-sequential-37%22"
+    },
+    {
+      "id": "B-K42-REPLAY-conversation-11",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M095"
+      ],
+      "title": "Preregistered K42-REPLAY / conversation / seed 11",
+      "deliverable": "Run the conversation agent architecture on K42-REPLAY with seed 11, under the frozen scope: Independently replay the published 42-vertex Ramsey two-colourings against exact absence of a monochromatic K5, report dataset hash and a second checker, and identify every scope mismatch.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: One pinned existing witness accepted by two independent exact checker paths with recorded resource use; no novel theorem credit.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. Known prior art and the frozen source baseline must be disclosed.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 15,
+      "scope_sha256": "572ae624c5a1639c616372fcc7b05f580d93d872a22345385f3c63b5fafbda92",
+      "claim_title": "[Claim] B-K42-REPLAY-conversation-11 — Preregistered K42-REPLAY / conversation / seed 11",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-K42-REPLAY-conversation-11%20%E2%80%94%20Preregistered%20K42-REPLAY%20/%20conversation%20/%20seed%2011",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-K42-REPLAY-conversation-11%22"
+    },
+    {
+      "id": "B-K42-REPLAY-conversation-23",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M095"
+      ],
+      "title": "Preregistered K42-REPLAY / conversation / seed 23",
+      "deliverable": "Run the conversation agent architecture on K42-REPLAY with seed 23, under the frozen scope: Independently replay the published 42-vertex Ramsey two-colourings against exact absence of a monochromatic K5, report dataset hash and a second checker, and identify every scope mismatch.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: One pinned existing witness accepted by two independent exact checker paths with recorded resource use; no novel theorem credit.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. Known prior art and the frozen source baseline must be disclosed.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 15,
+      "scope_sha256": "adcabefec8c1a6058db53dba68749a88a234ad6247ce24ad63b4502ea25ceb97",
+      "claim_title": "[Claim] B-K42-REPLAY-conversation-23 — Preregistered K42-REPLAY / conversation / seed 23",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-K42-REPLAY-conversation-23%20%E2%80%94%20Preregistered%20K42-REPLAY%20/%20conversation%20/%20seed%2023",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-K42-REPLAY-conversation-23%22"
+    },
+    {
+      "id": "B-K42-REPLAY-conversation-37",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M095"
+      ],
+      "title": "Preregistered K42-REPLAY / conversation / seed 37",
+      "deliverable": "Run the conversation agent architecture on K42-REPLAY with seed 37, under the frozen scope: Independently replay the published 42-vertex Ramsey two-colourings against exact absence of a monochromatic K5, report dataset hash and a second checker, and identify every scope mismatch.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: One pinned existing witness accepted by two independent exact checker paths with recorded resource use; no novel theorem credit.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. Known prior art and the frozen source baseline must be disclosed.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 15,
+      "scope_sha256": "e508eaef2f2f8484e05faab6d772cdb2f041fb0982a1e48fdb0037e967ec9d66",
+      "claim_title": "[Claim] B-K42-REPLAY-conversation-37 — Preregistered K42-REPLAY / conversation / seed 37",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-K42-REPLAY-conversation-37%20%E2%80%94%20Preregistered%20K42-REPLAY%20/%20conversation%20/%20seed%2037",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-K42-REPLAY-conversation-37%22"
+    },
+    {
+      "id": "B-K42-REPLAY-independent-11",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M095"
+      ],
+      "title": "Preregistered K42-REPLAY / independent / seed 11",
+      "deliverable": "Run the independent agent architecture on K42-REPLAY with seed 11, under the frozen scope: Independently replay the published 42-vertex Ramsey two-colourings against exact absence of a monochromatic K5, report dataset hash and a second checker, and identify every scope mismatch.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: One pinned existing witness accepted by two independent exact checker paths with recorded resource use; no novel theorem credit.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. Known prior art and the frozen source baseline must be disclosed.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 15,
+      "scope_sha256": "c3223be284dd4602e4384de1cc9011a4b385cd9f372c57d8c6135b68cc599adf",
+      "claim_title": "[Claim] B-K42-REPLAY-independent-11 — Preregistered K42-REPLAY / independent / seed 11",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-K42-REPLAY-independent-11%20%E2%80%94%20Preregistered%20K42-REPLAY%20/%20independent%20/%20seed%2011",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-K42-REPLAY-independent-11%22"
+    },
+    {
+      "id": "B-K42-REPLAY-independent-23",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M095"
+      ],
+      "title": "Preregistered K42-REPLAY / independent / seed 23",
+      "deliverable": "Run the independent agent architecture on K42-REPLAY with seed 23, under the frozen scope: Independently replay the published 42-vertex Ramsey two-colourings against exact absence of a monochromatic K5, report dataset hash and a second checker, and identify every scope mismatch.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: One pinned existing witness accepted by two independent exact checker paths with recorded resource use; no novel theorem credit.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. Known prior art and the frozen source baseline must be disclosed.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 15,
+      "scope_sha256": "f022e5e43325ee4476e44f50bf19e61eb6085b6f9180926769e2d56a02f4ee74",
+      "claim_title": "[Claim] B-K42-REPLAY-independent-23 — Preregistered K42-REPLAY / independent / seed 23",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-K42-REPLAY-independent-23%20%E2%80%94%20Preregistered%20K42-REPLAY%20/%20independent%20/%20seed%2023",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-K42-REPLAY-independent-23%22"
+    },
+    {
+      "id": "B-K42-REPLAY-independent-37",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M095"
+      ],
+      "title": "Preregistered K42-REPLAY / independent / seed 37",
+      "deliverable": "Run the independent agent architecture on K42-REPLAY with seed 37, under the frozen scope: Independently replay the published 42-vertex Ramsey two-colourings against exact absence of a monochromatic K5, report dataset hash and a second checker, and identify every scope mismatch.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: One pinned existing witness accepted by two independent exact checker paths with recorded resource use; no novel theorem credit.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. Known prior art and the frozen source baseline must be disclosed.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 15,
+      "scope_sha256": "e1d2c0d1a89ba4d1c588175072f332ae49db925531dbbb3fc5ba28e251c03dc0",
+      "claim_title": "[Claim] B-K42-REPLAY-independent-37 — Preregistered K42-REPLAY / independent / seed 37",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-K42-REPLAY-independent-37%20%E2%80%94%20Preregistered%20K42-REPLAY%20/%20independent%20/%20seed%2037",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-K42-REPLAY-independent-37%22"
+    },
+    {
+      "id": "B-K42-REPLAY-proof_exchange-11",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M095"
+      ],
+      "title": "Preregistered K42-REPLAY / proof_exchange / seed 11",
+      "deliverable": "Run the proof_exchange agent architecture on K42-REPLAY with seed 11, under the frozen scope: Independently replay the published 42-vertex Ramsey two-colourings against exact absence of a monochromatic K5, report dataset hash and a second checker, and identify every scope mismatch.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: One pinned existing witness accepted by two independent exact checker paths with recorded resource use; no novel theorem credit.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. Known prior art and the frozen source baseline must be disclosed.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 15,
+      "scope_sha256": "65b1f9f3f6a4c84ed9646bdf0e9cde008be0bc8412c33c6839c6bdf6baaaca86",
+      "claim_title": "[Claim] B-K42-REPLAY-proof_exchange-11 — Preregistered K42-REPLAY / proof_exchange / seed 11",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-K42-REPLAY-proof_exchange-11%20%E2%80%94%20Preregistered%20K42-REPLAY%20/%20proof_exchange%20/%20seed%2011",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-K42-REPLAY-proof_exchange-11%22"
+    },
+    {
+      "id": "B-K42-REPLAY-proof_exchange-23",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M095"
+      ],
+      "title": "Preregistered K42-REPLAY / proof_exchange / seed 23",
+      "deliverable": "Run the proof_exchange agent architecture on K42-REPLAY with seed 23, under the frozen scope: Independently replay the published 42-vertex Ramsey two-colourings against exact absence of a monochromatic K5, report dataset hash and a second checker, and identify every scope mismatch.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: One pinned existing witness accepted by two independent exact checker paths with recorded resource use; no novel theorem credit.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. Known prior art and the frozen source baseline must be disclosed.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 15,
+      "scope_sha256": "d8047981aaf9de9fda2478204129953dcef22125a4827f987a725e5aa9e6ce91",
+      "claim_title": "[Claim] B-K42-REPLAY-proof_exchange-23 — Preregistered K42-REPLAY / proof_exchange / seed 23",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-K42-REPLAY-proof_exchange-23%20%E2%80%94%20Preregistered%20K42-REPLAY%20/%20proof_exchange%20/%20seed%2023",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-K42-REPLAY-proof_exchange-23%22"
+    },
+    {
+      "id": "B-K42-REPLAY-proof_exchange-37",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M095"
+      ],
+      "title": "Preregistered K42-REPLAY / proof_exchange / seed 37",
+      "deliverable": "Run the proof_exchange agent architecture on K42-REPLAY with seed 37, under the frozen scope: Independently replay the published 42-vertex Ramsey two-colourings against exact absence of a monochromatic K5, report dataset hash and a second checker, and identify every scope mismatch.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: One pinned existing witness accepted by two independent exact checker paths with recorded resource use; no novel theorem credit.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. Known prior art and the frozen source baseline must be disclosed.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 15,
+      "scope_sha256": "a2a7957b7f4b6c00dae9823b4a5bf674827397b7f758e33efda48efb3d089745",
+      "claim_title": "[Claim] B-K42-REPLAY-proof_exchange-37 — Preregistered K42-REPLAY / proof_exchange / seed 37",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-K42-REPLAY-proof_exchange-37%20%E2%80%94%20Preregistered%20K42-REPLAY%20/%20proof_exchange%20/%20seed%2037",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-K42-REPLAY-proof_exchange-37%22"
+    },
+    {
+      "id": "B-K42-REPLAY-sequential-11",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M095"
+      ],
+      "title": "Preregistered K42-REPLAY / sequential / seed 11",
+      "deliverable": "Run the sequential agent architecture on K42-REPLAY with seed 11, under the frozen scope: Independently replay the published 42-vertex Ramsey two-colourings against exact absence of a monochromatic K5, report dataset hash and a second checker, and identify every scope mismatch.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: One pinned existing witness accepted by two independent exact checker paths with recorded resource use; no novel theorem credit.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. Known prior art and the frozen source baseline must be disclosed.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 15,
+      "scope_sha256": "c1db40aa00be8ffc120ea3cad2e51d596c3e8bad5332b2c087ad8cece3fb86f3",
+      "claim_title": "[Claim] B-K42-REPLAY-sequential-11 — Preregistered K42-REPLAY / sequential / seed 11",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-K42-REPLAY-sequential-11%20%E2%80%94%20Preregistered%20K42-REPLAY%20/%20sequential%20/%20seed%2011",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-K42-REPLAY-sequential-11%22"
+    },
+    {
+      "id": "B-K42-REPLAY-sequential-23",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M095"
+      ],
+      "title": "Preregistered K42-REPLAY / sequential / seed 23",
+      "deliverable": "Run the sequential agent architecture on K42-REPLAY with seed 23, under the frozen scope: Independently replay the published 42-vertex Ramsey two-colourings against exact absence of a monochromatic K5, report dataset hash and a second checker, and identify every scope mismatch.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: One pinned existing witness accepted by two independent exact checker paths with recorded resource use; no novel theorem credit.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. Known prior art and the frozen source baseline must be disclosed.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 15,
+      "scope_sha256": "b6ed45973ca0641ca2e1e96820a947be0d6d7c4a0728935561a6cf4ec3c8758f",
+      "claim_title": "[Claim] B-K42-REPLAY-sequential-23 — Preregistered K42-REPLAY / sequential / seed 23",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-K42-REPLAY-sequential-23%20%E2%80%94%20Preregistered%20K42-REPLAY%20/%20sequential%20/%20seed%2023",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-K42-REPLAY-sequential-23%22"
+    },
+    {
+      "id": "B-K42-REPLAY-sequential-37",
+      "kind": "benchmark",
+      "status": "runnable",
+      "problems": [
+        "M095"
+      ],
+      "title": "Preregistered K42-REPLAY / sequential / seed 37",
+      "deliverable": "Run the sequential agent architecture on K42-REPLAY with seed 37, under the frozen scope: Independently replay the published 42-vertex Ramsey two-colourings against exact absence of a monochromatic K5, report dataset hash and a second checker, and identify every scope mismatch.",
+      "context": "Protocol SHA-256 833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827; source commit 56f8f27a25f854bac71dad78db7bd0137998618e. Acceptance: One pinned existing witness accepted by two independent exact checker paths with recorded resource use; no novel theorem credit.",
+      "acceptance": [
+        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, raw agent/tool transcript and measured aggregate usage across all workers, checker and coordinator",
+        "Caps: 45000 model tokens, 120 tool calls, 3600 wall seconds",
+        "Append exactly one observed record to data/benchmark_runs.jsonl; include failures/timeouts, not fixtures or estimated costs",
+        "A result needs artifact, independent checker log, scope/prior-art audit; a no-result trial must have null evidence",
+        "python3 scripts/benchmark.py --check",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Experimental work, not a theorem or speedup. No reuse between arms or seeds; record source snapshot, prompts, tool/model versions, checker, token accounting, all failed attempts. Known prior art and the frozen source baseline must be disclosed.",
+      "falsifier": "Contaminated source, missing logs, failed independent replay or scope mismatch.",
+      "source": "data/benchmark_prereg.json",
+      "depends_on": [],
+      "priority_rank": 15,
+      "scope_sha256": "d804c6139eb68576b6312daf00069a7eba179eda35f59968a486bd10c25fe62d",
+      "claim_title": "[Claim] B-K42-REPLAY-sequential-37 — Preregistered K42-REPLAY / sequential / seed 37",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20B-K42-REPLAY-sequential-37%20%E2%80%94%20Preregistered%20K42-REPLAY%20/%20sequential%20/%20seed%2037",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20B-K42-REPLAY-sequential-37%22"
     },
     {
       "id": "L003",
