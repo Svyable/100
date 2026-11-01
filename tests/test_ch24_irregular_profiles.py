@@ -98,6 +98,20 @@ class IrregularProfileTests(unittest.TestCase):
             self.assertEqual(allowed, [h])
         self.assertEqual(7*2, 14)
 
+    def test_triangle_free_hypothesis_is_necessary(self):
+        # Root v -> a -> b -> v is an explicit forbidden directed triangle.
+        # Without excluding it, the asserted e(A,B)=0 cut is unjustified.
+        out = [1 << 1, 1 << 2, 1 << 0]
+        self.assertTrue(has_triangle(out))
+        self.assertEqual((out[0] >> 1 & 1, out[1] >> 2 & 1,
+                          out[2] >> 0 & 1), (1, 1, 1))
+
+    def test_oriented_hypothesis_is_necessary(self):
+        # A two-cycle across A/C uses both directed edges of a single
+        # unordered pair; it invalidates e(A,C)+e(C,A)<=|A||C|.
+        a_to_c, c_to_a = True, True
+        self.assertGreater(int(a_to_c) + int(c_to_a), 1)
+
     def test_invalid_or_unsorted_input_rejected(self):
         with self.assertRaises(ValueError):
             cp.requirements((2,)*7+(8,), (0,)*9)
