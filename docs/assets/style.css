@@ -556,3 +556,15 @@ td a,th a{text-decoration:underline;text-underline-offset:3px}
 .frontier-atlas-list li{border:1px solid var(--line);padding:15px;background:var(--panel);display:flex;flex-direction:column;gap:7px;min-width:0}
 @media(max-width:850px){.frontier-home-grid{grid-template-columns:1fr}.frontier-facts{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.frontier-workbench,.frontier-home,.frontier-atlas{scroll-behavior:auto}}
+
+
+/* Read-only, canonical work-packet handoff; complements the proof frontier. */
+.agent-handoff{border-left:3px solid var(--forest);padding-left:22px}
+.agent-packet{margin:12px 0}
+.agent-packet summary{cursor:pointer;font-weight:700;color:var(--ink)}
+.agent-packet-body{margin-top:16px}
+.agent-packet-status{color:var(--ink-2);font-weight:650;font-size:13px}
+.agent-packet-text{display:block;width:100%;min-height:240px;margin:10px 0 14px;padding:15px;background:var(--field);color:var(--ink);border:1px solid var(--line-2);border-radius:3px;font:12px/1.6 var(--mono);resize:vertical;white-space:pre;overflow:auto}
+.agent-packet-feedback{display:inline-block;padding:8px 12px;font-size:12px}
+@media(max-width:620px){.agent-handoff{padding-left:15px}}
+@media print{.agent-handoff{display:none}}

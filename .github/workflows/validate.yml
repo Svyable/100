@@ -39,5 +39,7 @@ jobs:
       - run: python3 scripts/frankl_subfamily_minimal.py examples/FRANKL_SARVATE_RENAUD.json --assert-minimal
       - run: python3 scripts/ch27_local.py --check
       - run: node --check docs/assets/app.js
+      - run: node --check docs/assets/handoff.js
+      - run: node --test tests/test_handoff.cjs
       - run: node --check docs/next/app.js
       - run: python3 -m unittest discover -s tests -v
