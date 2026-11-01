@@ -31,3 +31,13 @@ Black-box PIT is in randomized polynomial time. Deterministic poly-time PIT for
 *general* arithmetic circuits remains open and is not claimed by locking this
 toy class. A hitting set for the lock would be a restricted lemma, not a
 resolution of M088.
+
+## Subsequent falsifier scope note (2026-11-01)
+
+See [the exact two-path falsifier](M088_GF2_FALSIFIER.md). The lock's oracle
+wording leaves formal-polynomial nonzeroness versus nonzero Boolean function
+unresolved. The two-gate formal polynomial x0^2+x0 is nonzero in GF(2)[x]
+but vanishes on every GF(2) input. This is a known algebraic obstruction
+to the formal-polynomial reading, not a proof of the originally proposed
+hitting-set lemma. The class lock above is preserved verbatim pending
+independent scope review.

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M088 — exact GF(2) falsifier and a scope obstruction · 100</title>
+<meta name="description" content="Work packet: O-M088-01, scope SHA-256 5204bcc35834d93882867d02268da6bfe4c98a2398ff94770255bf1f624a3ae5. Claim: #108. Classification: a bounded, self-checked negative/scope result using elementary known finite-field algebra. No independent m">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m088-gf2-falsifier/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M088 — exact GF(2) falsifier and a scope obstruction · 100">
+<meta property="og:description" content="Work packet: O-M088-01, scope SHA-256 5204bcc35834d93882867d02268da6bfe4c98a2398ff94770255bf1f624a3ae5. Claim: #108. Classification: a bounded, self-checked negative/scope result using elementary known finite-field algebra. No independent m">
+<meta property="og:url" content="https://svyable.github.io/100/library/m088-gf2-falsifier/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M088 — exact GF(2) falsifier and a scope obstruction</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#formal-polynomial-versus-boolean-function">Formal polynomial versus Boolean function</a></li><li class="toc-l2"><a href="#unambiguous-candidate-set-falsifier">Unambiguous candidate-set falsifier</a></li><li class="toc-l2"><a href="#exact-replay-and-adversarial-controls">Exact replay and adversarial controls</a></li><li class="toc-l2"><a href="#prior-art-and-exact-boundary">Prior art and exact boundary</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M088/" title="Deterministic polynomial identity testing">M088</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M088_GF2_FALSIFIER.md" rel="noopener noreferrer">research/M088_GF2_FALSIFIER.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M088 — exact GF(2) falsifier and a scope obstruction</h1>
+<p><strong>Work packet:</strong> O-M088-01, scope SHA-256 5204bcc35834d93882867d02268da6bfe4c98a2398ff94770255bf1f624a3ae5. <strong>Claim:</strong> <a href="https://github.com/Svyable/100/issues/108" rel="noopener noreferrer">#108</a>. <strong>Classification:</strong> a bounded, self-checked negative/scope result using elementary known finite-field algebra. <strong>No independent mathematical review.</strong> <strong>Status:</strong> the obligation remains open; neither a hitting-set lemma nor general PIT is proved.</p>
+<h2 id="formal-polynomial-versus-boolean-function">Formal polynomial versus Boolean function<a class="anchor" href="#formal-polynomial-versus-boolean-function" aria-label="Link to this section">#</a></h2>
+<p>The <a href="../../library/m088-lock/">locked class</a> permits binary XOR and multiplication gates, at most 20 gates, syntactic degree at most 3, and queries only points of GF(2)^n, with 0 &lt;= n &lt;= 8. It says that the oracle &quot;judges&quot; a circuit nonzero by returning a nonzero value, but does not explicitly decide whether &quot;nonzero&quot; in the hitting-set theorem means a <strong>nonzero formal polynomial</strong> in GF(2)[x_0,...,x_(n-1)] or a <strong>nonzero Boolean function</strong> on the cube. These are different predicates.</p>
+<p>If <strong>formal polynomial identity testing</strong> is intended, no hitting set made of GF(2)-valued input assignments can hit all nonzero circuits in this lock, not even the full cube. A two-gate circuit computes</p>
+<p>g0 = x0*x0 g1 = g0 + x0 = x0^2 + x0</p>
+<p>Its formal monomials are distinct, so the polynomial is nonzero. Its syntactic degree is 2, and it has 2 gates. Yet a^2+a=0 for both a=0 and a=1. Thus it vanishes at <strong>every</strong> oracle point. The same circuit ignores additional variables for any 1 &lt;= n &lt;= 8. This is an exact, universal obstruction to formal-polynomial hitting sets over this evaluation domain, not a new theorem. The oracle cannot distinguish this polynomial from zero.</p>
+<p>If instead <strong>nonzero Boolean function</strong> is intended, the above circuit is zero as a function and is <strong>not</strong> a counterexample. The entire cube GF(2)^n is trivially a hitting set for nonzero functions, of size 2^n &lt;= 256 under the fixed n &lt;= 8 lock. This does not prove a nontrivial polynomial-size hitting set as n grows, nor a restricted PIT lemma. The lock must choose the predicate before a claimed hitting-set theorem can be evaluated.</p>
+<h2 id="unambiguous-candidate-set-falsifier">Unambiguous candidate-set falsifier<a class="anchor" href="#unambiguous-candidate-set-falsifier" aria-label="Link to this section">#</a></h2>
+<p>For n=2, the proposed set S={(0,0),(1,0),(0,1)} <strong>misses</strong> the nonzero function f(x0,x1)=x0*x1, represented by one multiplication gate. It vanishes on all three points of S, but f(1,1)=1. This falsifies <strong>that candidate set only</strong>, under both nonzero interpretations. It is not an obstruction to all hitting sets of Boolean functions.</p>
+<h2 id="exact-replay-and-adversarial-controls">Exact replay and adversarial controls<a class="anchor" href="#exact-replay-and-adversarial-controls" aria-label="Link to this section">#</a></h2>
+<p>Run:</p>
+<p>python3 scripts/pit_gf2_falsifier.py --check --json python3 -m unittest discover -s tests -p &#x27;test_pit_gf2_falsifier.py&#x27; -v</p>
+<p>The falsifier accepts a JSON file with exactly circuit and hitting_set using --input PATH. A circuit has n and gates; each gate has op (xor or mul), a and b references to an input x0, prior gate g0, or constant 0/1. Gates are topologically ordered, and the last gate is the output. The checker rejects invalid operands, forward references, non-binary points, duplicate points, out-of-range n, more than 20 gates, and syntactic degree over 3. Constants are permitted. No input is executed as code.</p>
+<p>One algorithm expands formal monomials with GF(2) coefficient cancellation. A separate direct gate interpreter computes all 2^n Boolean evaluations without consulting the expansion. Tests evaluate the resulting monomials through a third direct product/parity loop; this is a cross-check of implementation paths, <strong>not</strong> an external review. A positive control adds (1,1) to the three-point set and rejects the claimed functional falsifier. Invalid-input controls fail closed.</p>
+<p><strong>Observed fixed-fixture results (2026-11-01):</strong> the two-gate formal obstruction is nonzero as a formal polynomial and zero on both points of GF(2); the one-gate function is nonzero at (1,1) and zero at the three candidate points. No exhaustive enumeration of all 20-gate circuits, new hitting set, solver run, or independent reviewer is claimed.</p>
+<h2 id="prior-art-and-exact-boundary">Prior art and exact boundary<a class="anchor" href="#prior-art-and-exact-boundary" aria-label="Link to this section">#</a></h2>
+<p>The algebraic distinction is elementary over small finite fields. Kaufman and Ron, <em>Testing Polynomials over General Fields</em>, SIAM Journal on Computing (2006), DOI <a href="https://doi.org/10.1137/S0097539704445615" rel="noopener noreferrer">10.1137/S0097539704445615</a>, and Alon–Kaufman–Krivelevich–Litsyn–Ron, <em>Testing Low-Degree Polynomials over GF(2)</em> (2003), <a href="https://doi.org/10.1007/978-3-540-45198-3_17" rel="noopener noreferrer">DOI 10.1007/978-3-540-45198-3_17</a>, provide context on low-degree testing over finite fields. Their property-testing questions are <strong>not</strong> the same as this hitting-set obligation. A recent restricted PIT result by Shpilka and Tal (<a href="https://arxiv.org/abs/2602.20832" rel="noopener noreferrer">arXiv:2602.20832</a>, February 2026) uses characteristic zero or sufficiently large characteristic; it cannot be silently imported into this GF(2) lock.</p>
+<p><strong>Next falsifier/proof obligation:</strong> settle formal polynomial vs Boolean function semantics in the lock; if formal, expand the evaluation domain (e.g. extension fields) or restrict to multilinear formal polynomials and re-specify the work item. If functional, propose a nontrivial candidate set and challenge it with this checker, then seek external statement-fidelity review. Do not mark O-M088-01 discharged or modify data/solved.json on this evidence.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>
