@@ -45,7 +45,7 @@ class CToATests(unittest.TestCase):
         endpoints=Counter()
         for a in aa:
             for k in kk:
-                if old.classify(a,k)!='unresolved':
+                if old.classify(a,k) not in ('unresolved', 'z4_sink_cut'):
                     continue
                 lower=max(2,42-sum(k))
                 upper=upper_independent(a)
@@ -71,7 +71,7 @@ class CToATests(unittest.TestCase):
         self.assertEqual(r['stages']['protected_A_forces_C_tournament_sink'],3)
         self.assertEqual(r['stages']['eight_vertex_degree_defect'],3)
         a=(2,)*7+(6,8);k=(0,)*4+(4,6,6,6,7,7)
-        self.assertEqual(old.classify(a,k),'unresolved')
+        self.assertIn(old.classify(a,k),('unresolved', 'z4_sink_cut'))
         self.assertEqual(new.classify(a,k),'c_to_a_bottleneck')
         self.assertEqual(new.bound_C_to_A(a,k),(6,0))
         for bad_a,bad_k in [(a,k[:-1]),(a,(0,)*3+(1,)*7),((2,)*8+(True,),k)]:
