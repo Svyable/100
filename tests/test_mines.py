@@ -32,13 +32,19 @@ class MineTests(unittest.TestCase):
         self.assertEqual(straus["primes"], 117)
         self.assertEqual(straus["residues"], [3, 7, 11, 15, 19, 23])
         self.assertEqual(straus["by_residue"]["3"] + straus["by_residue"]["7"], 105)
-        self.assertIn("105", campaigns["M019"]["next_experiment"])
+        identities = tables["straus_identities"]["summary"]
+        self.assertEqual([row["residue"] for row in identities["families"]], [97, 73, 25])
+        self.assertEqual(identities["uncovered_mod_120"], [1, 49])
+        self.assertIn("mod 120", campaigns["M019"]["next_experiment"])
 
         deck = tables["deck_invariants"]["summary"]
         self.assertEqual(deck["degree_separates_through"], 4)
         self.assertEqual(deck["degree_and_triangles_separate_through"], 5)
         self.assertEqual(deck["degree_and_triangles_excess"]["6"], 20)
-        self.assertIn("20 excess", campaigns["M078"]["next_experiment"])
+        signature = tables["deck_signature"]["summary"]
+        self.assertEqual(signature["separates_through"], 7)
+        self.assertTrue(all(value == 0 for value in signature["excess"].values()))
+        self.assertIn("deck_signature", campaigns["M078"]["next_experiment"])
 
         poset = tables["poset_balance"]["summary"]
         self.assertEqual(poset["one_third_posets"], 11)

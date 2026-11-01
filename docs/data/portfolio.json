@@ -17,7 +17,7 @@
   "program_as_of": "2026-10-31",
   "summary": {
     "campaigns": 18,
-    "reproduced_known": 23,
+    "reproduced_known": 25,
     "restricted_verified": 0,
     "fully_solved": 0,
     "problems_with_exact_verifier": 17,
@@ -213,10 +213,10 @@
       "action_bonus": 6,
       "method_id": "extremal_certificates",
       "method_title": "Replay the object, or mine the census",
-      "dispatch_next": "The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two.",
-      "dispatch_why": "The deck_invariants mine shows degree sequence plus triangle count still leaves collisions at 6 vertices. A larger census sits inside the published computational range.",
+      "dispatch_next": "The certified mine deck_signature separates every graph on 3 to 7 vertices by the multiset of (degree sequence of G-v, triangle count of G-v). Global degree-plus-triangles left 20 excess graphs at 6 vertices; the per-card signature leaves none through 7. A reconstruction lemma still has to pass the computer-verified range beyond this census.",
+      "dispatch_why": "deck_signature separates every graph through 7 vertices by a per-card invariant. A larger census sits inside McKay's published range, so the next lemma has to leave that range.",
       "campaign_stage": "benchmark_reproduced",
-      "milestone_count": 2
+      "milestone_count": 3
     },
     {
       "id": "M079",
@@ -864,10 +864,10 @@
       "action_bonus": 6,
       "method_id": "effective_diophantine",
       "method_title": "Explicit Diophantine certificates",
-      "dispatch_next": "The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity.",
-      "dispatch_why": "The straus_patterns mine already clusters the primes that are 1 mod 24. Extending the verified range stays inside published computations; the missing piece is an identity for one residue.",
+      "dispatch_next": "The certified mine straus_identities proves 4/n = 1/x + 1/y + 1/z for every positive integer n ≡ 25, 73, or 97 (mod 120), by quadratic identities whose cleared numerator is the zero polynomial. The two classes n ≡ 1 and n ≡ 49 (mod 120) stay open; both are squares modulo 120. The classes Mordell's combinations still leave are n ≡ 1, 121, 169, 289, 361, or 529 (mod 840).",
+      "dispatch_why": "straus_identities proves three residue classes modulo 120 by polynomial identities. Extending the verified range stays inside published computations; the classes still open inside Mordell's analysis are six residues modulo 840.",
       "campaign_stage": "benchmark_reproduced",
-      "milestone_count": 2
+      "milestone_count": 3
     },
     {
       "id": "M095",
@@ -3762,6 +3762,39 @@
         },
         "title": "Deck invariants that separate the census"
       },
+      "deck_signature": {
+        "certificate_sha256": "90b570d298b9354f1719bf37913ead82df9f46fc781ce14fe4b75c7adc21cafe",
+        "engines": [
+          "graph_census"
+        ],
+        "frontier": "Graph reconstruction is verified by computer through at least 11 vertices (McKay 1997). The signature below separates only the census this repository enumerates, through 7 vertices.",
+        "holds": true,
+        "mine": "deck_signature",
+        "params": {
+          "max_n": 7
+        },
+        "problem_id": "M078",
+        "scope": "For every n with 3 <= n <= 7, the multiset of (degree sequence of G-v, number of triangles in G-v) is different for every graph G on n vertices.",
+        "summary": {
+          "excess": {
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0
+          },
+          "graphs": {
+            "3": 4,
+            "4": 11,
+            "5": 34,
+            "6": 156,
+            "7": 1044
+          },
+          "max_n": 7,
+          "separates_through": 7
+        },
+        "title": "Per-card degree and triangle signature separates the census"
+      },
       "frankl_orbits": {
         "certificate_sha256": "dbae6e1504f6614d18ee24f95b77286069fa34bc253f203bfb878f3c9a937735",
         "engines": [
@@ -3891,6 +3924,48 @@
           }
         },
         "title": "Posets attaining balance exactly 1/3"
+      },
+      "straus_identities": {
+        "certificate_sha256": "32d130d041c23e3d888243d0e005f0f1d109a1ba90601c193cb8d55f29733d34",
+        "engines": [
+          "primes"
+        ],
+        "frontier": "Polynomial identities of this shape are classical (Mordell, Diophantine Equations, 1967, pp. 287–290). A complete covering system is impossible. The expansions below are checked directly and leave n ≡ 1 and n ≡ 49 (mod 120) open.",
+        "holds": true,
+        "mine": "straus_identities",
+        "params": {},
+        "problem_id": "M019",
+        "scope": "Every positive integer n ≡ 25, 73, or 97 (mod 120) satisfies 4/n = 1/x + 1/y + 1/z for explicit quadratic denominators. n ≡ 1 and n ≡ 49 (mod 120) are not covered.",
+        "summary": {
+          "families": [
+            {
+              "modulus": 120,
+              "r": 3,
+              "residue": 97,
+              "s": 2,
+              "t": 10
+            },
+            {
+              "modulus": 120,
+              "r": 7,
+              "residue": 73,
+              "s": 8,
+              "t": 20
+            },
+            {
+              "modulus": 120,
+              "r": 15,
+              "residue": 25,
+              "s": 20,
+              "t": 40
+            }
+          ],
+          "uncovered_mod_120": [
+            1,
+            49
+          ]
+        },
+        "title": "Proved Erdős–Straus identities for three classes mod 120"
       },
       "straus_patterns": {
         "certificate_sha256": "a58457c801a98d2f56eb087719079eaad5e2e66842b09e7e66763083b11dd035",
@@ -4240,6 +4315,18 @@
         ]
       },
       {
+        "id": "R18",
+        "track": "campaigns",
+        "horizon": "shipped",
+        "title": "Proved Straus identities and a separating deck signature",
+        "outcome": "Every positive integer n ≡ 25, 73, or 97 (mod 120) has an explicit three-term form of 4/n, checked as a polynomial identity. The per-card degree-and-triangle signature separates every graph on at most 7 vertices.",
+        "evidence": "MINES.md",
+        "problems": [
+          "M019",
+          "M078"
+        ]
+      },
+      {
         "id": "R20",
         "track": "campaigns",
         "horizon": "now",
@@ -4421,7 +4508,7 @@
       }
     ],
     "counts": {
-      "shipped": 17,
+      "shipped": 18,
       "now": 5,
       "next": 6,
       "later": 4
@@ -4449,9 +4536,10 @@
       "method": "Modular covering identities with unit-fraction certificates",
       "hypothesis": "For every integer n >= 2, 4/n = 1/x + 1/y + 1/z has a solution in positive integers.",
       "first_proof_obligation": "Find a polynomial identity family covering a residue class of primes not covered by the classical Mordell identities, and prove it symbolically.",
-      "next_experiment": "The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity.",
+      "next_experiment": "The certified mine straus_identities proves 4/n = 1/x + 1/y + 1/z for every positive integer n ≡ 25, 73, or 97 (mod 120), by quadratic identities whose cleared numerator is the zero polynomial. The two classes n ≡ 1 and n ≡ 49 (mod 120) stay open; both are squares modulo 120. The classes Mordell's combinations still leave are n ≡ 1, 121, 169, 289, 361, or 529 (mod 840).",
       "additional_verifiers": [
-        "python3 scripts/mine.py --mine straus_patterns"
+        "python3 scripts/mine.py --mine straus_patterns",
+        "python3 scripts/mine.py --mine straus_identities"
       ],
       "falsification": "An n together with a proof that no positive-integer triple exists; a finite search failure is not a counterexample.",
       "blocker": "Classical identities leave quadratic-residue classes uncovered, and known results show identities of the standard polynomial type cannot cover them all; a different idea is needed.",
@@ -4527,9 +4615,10 @@
       "method": "Deck-collision search over certified graph censuses",
       "hypothesis": "Every finite simple graph on at least 3 vertices is determined up to isomorphism by its vertex-deleted deck.",
       "first_proof_obligation": "Pick a graph family not yet known to be reconstructible and isolate a lemma that reconstructs a new invariant for it.",
-      "next_experiment": "The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two.",
+      "next_experiment": "The certified mine deck_signature separates every graph on 3 to 7 vertices by the multiset of (degree sequence of G-v, triangle count of G-v). Global degree-plus-triangles left 20 excess graphs at 6 vertices; the per-card signature leaves none through 7. A reconstruction lemma still has to pass the computer-verified range beyond this census.",
       "additional_verifiers": [
-        "python3 scripts/mine.py --mine deck_invariants"
+        "python3 scripts/mine.py --mine deck_invariants",
+        "python3 scripts/mine.py --mine deck_signature"
       ],
       "falsification": "Two non-isomorphic graphs with identical decks, confirmed by independent canonical forms.",
       "blocker": "Computer verification already reaches at least 11 vertices; novelty has to come from a structural lemma, not from range.",
@@ -4916,6 +5005,28 @@
       "verifier": "python3 scripts/mine.py --mine poset_balance",
       "artifact": "scripts/mines/poset_balance.py",
       "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-MINE-019B",
+      "problem_id": "M019",
+      "classification": "reproduced_known",
+      "title": "Quadratic Erdős–Straus identities for three classes modulo 120",
+      "scope": "Proved for every positive integer n ≡ 25, 73, or 97 (mod 120). Not a proof of the conjecture, and not the six classes modulo 840 that Mordell's combinations leave open.",
+      "description": "For each class, x = (n+r)/4 and y, z = n(n+r)/s, n(n+r)/t with s+t = 4r. The cleared numerator is identically zero as a polynomial of degree at most 5, and the same identity is rechecked at six integer points. Classical in type (Mordell 1967); the explicit expansions are checked here.",
+      "verifier": "python3 scripts/mine.py --mine straus_identities",
+      "artifact": "scripts/mines/straus_identities.py",
+      "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-MINE-078B",
+      "problem_id": "M078",
+      "classification": "reproduced_known",
+      "title": "Per-card deck signature separates every graph on at most 7 vertices",
+      "scope": "Finite census only, inside McKay's published verification through at least 11 vertices. Not a reconstruction theorem.",
+      "description": "The sorted list of (degree sequence of G-v, triangles in G-v) takes a different value on every graph with 3 to 7 vertices (4, 11, 34, 156, and 1,044 graphs). Adjacency cards and edge-set cards agree.",
+      "verifier": "python3 scripts/mine.py --mine deck_signature",
+      "artifact": "scripts/mines/deck_signature.py",
+      "verified_on": "2026-10-31"
     }
   ],
   "solved": [],
@@ -5042,7 +5153,7 @@
           "M080"
         ],
         "best_rank": 10,
-        "summary": "M075: The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5). M078: The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two. M079: The certified mine poset_balance finds 11 posets on at most 6 elements with best balance exactly 1/3, and every one of them has width 2, which Linial already settled. A new lemma has to treat width at least 3; this census has no tight example there. M080: Quotient instances by the stabiliser of the standard basis so that GF(2)^4 becomes exhaustive, storing one grid certificate per orbit.",
+        "summary": "M075: The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5). M078: The certified mine deck_signature separates every graph on 3 to 7 vertices by the multiset of (degree sequence of G-v, triangle count of G-v). Global degree-plus-triangles left 20 excess graphs at 6 vertices; the per-card signature leaves none through 7. A reconstruction lemma still has to pass the computer-verified range beyond this census. M079: The certified mine poset_balance finds 11 posets on at most 6 elements with best balance exactly 1/3, and every one of them has width 2, which Linial already settled. A new lemma has to treat width at least 3; this census has no tight example there. M080: Quotient instances by the stabiliser of the standard basis so that GF(2)^4 becomes exhaustive, storing one grid certificate per orbit.",
         "why": ""
       },
       {
@@ -5104,7 +5215,7 @@
           "M006"
         ],
         "best_rank": 19,
-        "summary": "M019: The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity. M006: The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification.",
+        "summary": "M019: The certified mine straus_identities proves 4/n = 1/x + 1/y + 1/z for every positive integer n ≡ 25, 73, or 97 (mod 120), by quadratic identities whose cleared numerator is the zero polynomial. The two classes n ≡ 1 and n ≡ 49 (mod 120) stay open; both are squares modulo 120. The classes Mordell's combinations still leave are n ≡ 1, 121, 169, 289, 361, or 529 (mod 840). M006: The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification.",
         "why": ""
       },
       {
@@ -6057,8 +6168,8 @@
       "baseline_rank": 6,
       "stage": "benchmark_reproduced",
       "first_proof_obligation": "Pick a graph family not yet known to be reconstructible and isolate a lemma that reconstructs a new invariant for it.",
-      "next_experiment": "The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two.",
-      "recorded_experiment": "The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two.",
+      "next_experiment": "The certified mine deck_signature separates every graph on 3 to 7 vertices by the multiset of (degree sequence of G-v, triangle count of G-v). Global degree-plus-triangles left 20 excess graphs at 6 vertices; the per-card signature leaves none through 7. A reconstruction lemma still has to pass the computer-verified range beyond this census.",
+      "recorded_experiment": "The certified mine deck_signature separates every graph on 3 to 7 vertices by the multiset of (degree sequence of G-v, triangle count of G-v). Global degree-plus-triangles left 20 excess graphs at 6 vertices; the per-card signature leaves none through 7. A reconstruction lemma still has to pass the computer-verified range beyond this census.",
       "blocker": "Computer verification already reaches at least 11 vertices; novelty has to come from a structural lemma, not from range.",
       "dossier": "research/LAB_CAMPAIGNS.md"
     },
@@ -6176,8 +6287,8 @@
       "baseline_rank": 27,
       "stage": "benchmark_reproduced",
       "first_proof_obligation": "Find a polynomial identity family covering a residue class of primes not covered by the classical Mordell identities, and prove it symbolically.",
-      "next_experiment": "The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity.",
-      "recorded_experiment": "The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity.",
+      "next_experiment": "The certified mine straus_identities proves 4/n = 1/x + 1/y + 1/z for every positive integer n ≡ 25, 73, or 97 (mod 120), by quadratic identities whose cleared numerator is the zero polynomial. The two classes n ≡ 1 and n ≡ 49 (mod 120) stay open; both are squares modulo 120. The classes Mordell's combinations still leave are n ≡ 1, 121, 169, 289, 361, or 529 (mod 840).",
+      "recorded_experiment": "The certified mine straus_identities proves 4/n = 1/x + 1/y + 1/z for every positive integer n ≡ 25, 73, or 97 (mod 120), by quadratic identities whose cleared numerator is the zero polynomial. The two classes n ≡ 1 and n ≡ 49 (mod 120) stay open; both are squares modulo 120. The classes Mordell's combinations still leave are n ≡ 1, 121, 169, 289, 361, or 529 (mod 840).",
       "blocker": "Classical identities leave quadratic-residue classes uncovered, and known results show identities of the standard polynomial type cannot cover them all; a different idea is needed.",
       "dossier": "research/LAB_CAMPAIGNS.md"
     },

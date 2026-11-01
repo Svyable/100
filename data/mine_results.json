@@ -33,6 +33,39 @@
       },
       "title": "Deck invariants that separate the census"
     },
+    "deck_signature": {
+      "certificate_sha256": "90b570d298b9354f1719bf37913ead82df9f46fc781ce14fe4b75c7adc21cafe",
+      "engines": [
+        "graph_census"
+      ],
+      "frontier": "Graph reconstruction is verified by computer through at least 11 vertices (McKay 1997). The signature below separates only the census this repository enumerates, through 7 vertices.",
+      "holds": true,
+      "mine": "deck_signature",
+      "params": {
+        "max_n": 7
+      },
+      "problem_id": "M078",
+      "scope": "For every n with 3 <= n <= 7, the multiset of (degree sequence of G-v, number of triangles in G-v) is different for every graph G on n vertices.",
+      "summary": {
+        "excess": {
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0
+        },
+        "graphs": {
+          "3": 4,
+          "4": 11,
+          "5": 34,
+          "6": 156,
+          "7": 1044
+        },
+        "max_n": 7,
+        "separates_through": 7
+      },
+      "title": "Per-card degree and triangle signature separates the census"
+    },
     "frankl_orbits": {
       "certificate_sha256": "dbae6e1504f6614d18ee24f95b77286069fa34bc253f203bfb878f3c9a937735",
       "engines": [
@@ -162,6 +195,48 @@
         }
       },
       "title": "Posets attaining balance exactly 1/3"
+    },
+    "straus_identities": {
+      "certificate_sha256": "32d130d041c23e3d888243d0e005f0f1d109a1ba90601c193cb8d55f29733d34",
+      "engines": [
+        "primes"
+      ],
+      "frontier": "Polynomial identities of this shape are classical (Mordell, Diophantine Equations, 1967, pp. 287–290). A complete covering system is impossible. The expansions below are checked directly and leave n ≡ 1 and n ≡ 49 (mod 120) open.",
+      "holds": true,
+      "mine": "straus_identities",
+      "params": {},
+      "problem_id": "M019",
+      "scope": "Every positive integer n ≡ 25, 73, or 97 (mod 120) satisfies 4/n = 1/x + 1/y + 1/z for explicit quadratic denominators. n ≡ 1 and n ≡ 49 (mod 120) are not covered.",
+      "summary": {
+        "families": [
+          {
+            "modulus": 120,
+            "r": 3,
+            "residue": 97,
+            "s": 2,
+            "t": 10
+          },
+          {
+            "modulus": 120,
+            "r": 7,
+            "residue": 73,
+            "s": 8,
+            "t": 20
+          },
+          {
+            "modulus": 120,
+            "r": 15,
+            "residue": 25,
+            "s": 20,
+            "t": 40
+          }
+        ],
+        "uncovered_mod_120": [
+          1,
+          49
+        ]
+      },
+      "title": "Proved Erdős–Straus identities for three classes mod 120"
     },
     "straus_patterns": {
       "certificate_sha256": "a58457c801a98d2f56eb087719079eaad5e2e66842b09e7e66763083b11dd035",

@@ -53,7 +53,7 @@
     },
     "M019": {
       "action": "mine_structure",
-      "why": "The straus_patterns mine already clusters the primes that are 1 mod 24. Extending the verified range stays inside published computations; the missing piece is an identity for one residue."
+      "why": "straus_identities proves three residue classes modulo 120 by polynomial identities. Extending the verified range stays inside published computations; the classes still open inside Mordell's analysis are six residues modulo 840."
     },
     "M041": {
       "action": "stop_range",
@@ -78,7 +78,7 @@
     },
     "M078": {
       "action": "mine_structure",
-      "why": "The deck_invariants mine shows degree sequence plus triangle count still leaves collisions at 6 vertices. A larger census sits inside the published computational range."
+      "why": "deck_signature separates every graph through 7 vertices by a per-card invariant. A larger census sits inside McKay's published range, so the next lemma has to leave that range."
     },
     "M079": {
       "action": "mine_structure",

@@ -29,12 +29,12 @@ Solved has no target on purpose: it grows only through the promotion gate in [do
 | Registry & ranking | One canonical, scored, provenance-tracked list of exactly 100 targets. | 3 | 0 | 0 | 1 |
 | Research engine | Evidence-aware readiness, campaigns and a strict promotion gate to Solved. | 3 | 0 | 0 | 1 |
 | Exact probe lab | Every computable problem gets a search plus an independent checker on a reusable engine. | 3 | 3 | 3 | 0 |
-| Proof campaigns | Push the highest-ranked targets toward reviewed restricted results. | 3 | 2 | 1 | 0 |
+| Proof campaigns | Push the highest-ranked targets toward reviewed restricted results. | 4 | 2 | 1 | 0 |
 | Claim audit | Check announced resolutions for exact scope before spending effort on them. | 1 | 0 | 1 | 0 |
 | Trust & reproducibility | Pinned artifacts, proof certificates and CI that reruns everything. | 2 | 0 | 1 | 1 |
 | Site & community | A public dashboard and a contribution path that keeps the bar high. | 2 | 0 | 0 | 1 |
 
-## Shipped (17)
+## Shipped (18)
 
 _Merged on main with evidence in the repository._
 
@@ -62,6 +62,8 @@ _Merged on main with evidence in the repository._
 - [x] **R16 · Leverage dispatch across shared attack shapes** (Research engine) — Every problem has one action and one shared shape. Dispatch score, not readiness alone, orders the attack queue. A range extension inside a cited theorem is refused. [Evidence](data/methods.json)
 - [x] **R17 · Certified structure mines on five campaigns** (Exact probe lab) — Deck invariants, poset balances, Goldbach record primes, Erdos-Straus residue patterns and Frankl orbits, each recomputed by a second code path. [Evidence](MINES.md)
   - Problems: M006 Strong Goldbach conjecture, M019 Erdős–Straus conjecture, M075 Frankl union-closed sets conjecture, M078 Graph reconstruction conjecture +1 more
+- [x] **R18 · Proved Straus identities and a separating deck signature** (Proof campaigns) — Every positive integer n ≡ 25, 73, or 97 (mod 120) has an explicit three-term form of 4/n, checked as a polynomial identity. The per-card degree-and-triangle signature separates every graph on at most 7 vertices. [Evidence](MINES.md)
+  - Problems: M019 Erdős–Straus conjecture, M078 Graph reconstruction conjecture
 
 ## Now (5)
 

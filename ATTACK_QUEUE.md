@@ -23,7 +23,7 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 | 8 | M094 | Hadamard matrix conjecture | `replay_published` | 91 | +7 | +12 | 110 | Add multiplier-group symmetry reduction to the Williamson meet-in-the-middle search so that n = 29 (order 116) becomes feasible, then implement Goethals-Seidel arrays for orders 156 and 172. |
 | 9 | M088 | Deterministic polynomial identity testing | `lock_restriction` | 94 | +2 | +10 | 106 | Lock the field, the circuit shape, the degree and the oracle model in one paragraph inside the algebraic-complexity shape. Only then implement a falsifier. A checker with no declared class does not raise readiness. |
 | 10 | M075 | Frankl union-closed sets conjecture | `mine_structure` | 91 | +7 | +6 | 104 | The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5). |
-| 11 | M078 | Graph reconstruction conjecture | `mine_structure` | 91 | +7 | +6 | 104 | The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two. |
+| 11 | M078 | Graph reconstruction conjecture | `mine_structure` | 91 | +7 | +6 | 104 | The certified mine deck_signature separates every graph on 3 to 7 vertices by the multiset of (degree sequence of G-v, triangle count of G-v). Global degree-plus-triangles left 20 excess graphs at 6 vertices; the per-card signature leaves none through 7. A reconstruction lemma still has to pass the computer-verified range beyond this census. |
 | 12 | M079 | One-third–two-thirds conjecture | `mine_structure` | 91 | +7 | +6 | 104 | The certified mine poset_balance finds 11 posets on at most 6 elements with best balance exactly 1/3, and every one of them has width 2, which Linial already settled. A new lemma has to treat width at least 3; this census has no tight example there. |
 | 13 | M096 | Projective plane order 12 | `replay_published` | 85 | +7 | +12 | 104 | Encode order-12 planes with a prescribed collineation as SAT with DRAT proof output, starting from cases the literature already excludes. |
 | 14 | M084 | Matrix multiplication exponent omega=2 | `replay_published` | 83 | +7 | +12 | 102 | Import one published exact decomposition, such as a cited rank-23 scheme for the <3,3,3> tensor, and replay it on the tensor checker. A flip-graph search is not the next step: small formats cannot beat the laser-method bounds the blocker cites. |
@@ -31,7 +31,7 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 | 16 | M080 | Rota basis conjecture | `mine_structure` | 85 | +7 | +6 | 98 | Quotient instances by the stabiliser of the standard basis so that GF(2)^4 becomes exhaustive, storing one grid certificate per orbit. |
 | 17 | M097 | Metric TSP four-thirds conjecture | `mine_structure` | 85 | +7 | +6 | 98 | Extend from graphic metrics to 1-2 and vertex-weighted metrics, and enumerate extreme points of the subtour polytope at n = 8 to search for gap-maximising instances. |
 | 18 | M098 | Vaught conjecture | `scope_audit` | 80 | +0 | +16 | 96 | De-scope the 2026 infinitary result from M098's resolution watch; retain the first-order problem and cite a current specialist open-status source before changing evidence state. |
-| 19 | M019 | Erdős–Straus conjecture | `mine_structure` | 82 | +7 | +6 | 95 | The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity. |
+| 19 | M019 | Erdős–Straus conjecture | `mine_structure` | 82 | +7 | +6 | 95 | The certified mine straus_identities proves 4/n = 1/x + 1/y + 1/z for every positive integer n ≡ 25, 73, or 97 (mod 120), by quadratic identities whose cleared numerator is the zero polynomial. The two classes n ≡ 1 and n ≡ 49 (mod 120) stay open; both are squares modulo 120. The classes Mordell's combinations still leave are n ≡ 1, 121, 169, 289, 361, or 529 (mod 840). |
 | 20 | M048 | Alperin weight conjecture | `build_engine` | 74 | +0 | +18 | 92 | Build engine group_characters once. Exact Brauer-character and weight counts for small finite groups and primes, compared entrywise. One build serves this shape, including M047. |
 | 21 | M076 | Erdős–Rado sunflower conjecture | `specify_shape` | 91 | +0 | +0 | 91 | Shape extremal_asymptotics (3 problems, one write-up): Name a structured family and an explicit constant, and compare it with a cited general bound before calling it an improvement. Full shape, certificate and falsifier are in APPROACH.md. |
 | 22 | M085 | Unique Games conjecture | `scope_audit` | 83 | +0 | +8 | 91 | Independently audit the reduction's completeness and soundness estimates and its quantitative dependence on gap parameters. |
@@ -236,13 +236,13 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 
 ### M078 — Graph reconstruction conjecture
 
-**Dispatch:** `mine_structure` · rank 11 · The deck_invariants mine shows degree sequence plus triangle count still leaves collisions at 6 vertices. A larger census sits inside the published computational range.
+**Dispatch:** `mine_structure` · rank 11 · deck_signature separates every graph through 7 vertices by a per-card invariant. A larger census sits inside McKay's published range, so the next lemma has to leave that range.
 
 **Proof obligation:** Pick a graph family not yet known to be reconstructible and isolate a lemma that reconstructs a new invariant for it.
 
 **Falsifier:** Two non-isomorphic graphs with identical decks, confirmed by independent canonical forms.
 
-**Recommended step:** The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two.
+**Recommended step:** The certified mine deck_signature separates every graph on 3 to 7 vertices by the multiset of (degree sequence of G-v, triangle count of G-v). Global degree-plus-triangles left 20 excess graphs at 6 vertices; the per-card signature leaves none through 7. A reconstruction lemma still has to pass the computer-verified range beyond this census.
 
 **Current blocker:** Computer verification already reaches at least 11 vertices; novelty has to come from a structural lemma, not from range.
 
@@ -336,13 +336,13 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 
 ### M019 — Erdős–Straus conjecture
 
-**Dispatch:** `mine_structure` · rank 19 · The straus_patterns mine already clusters the primes that are 1 mod 24. Extending the verified range stays inside published computations; the missing piece is an identity for one residue.
+**Dispatch:** `mine_structure` · rank 19 · straus_identities proves three residue classes modulo 120 by polynomial identities. Extending the verified range stays inside published computations; the classes still open inside Mordell's analysis are six residues modulo 840.
 
 **Proof obligation:** Find a polynomial identity family covering a residue class of primes not covered by the classical Mordell identities, and prove it symbolically.
 
 **Falsifier:** An n together with a proof that no positive-integer triple exists; a finite search failure is not a counterexample.
 
-**Recommended step:** The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity.
+**Recommended step:** The certified mine straus_identities proves 4/n = 1/x + 1/y + 1/z for every positive integer n ≡ 25, 73, or 97 (mod 120), by quadratic identities whose cleared numerator is the zero polynomial. The two classes n ≡ 1 and n ≡ 49 (mod 120) stay open; both are squares modulo 120. The classes Mordell's combinations still leave are n ≡ 1, 121, 169, 289, 361, or 529 (mod 840).
 
 **Current blocker:** Classical identities leave quadratic-residue classes uncovered, and known results show identities of the standard polynomial type cannot cover them all; a different idea is needed.
 
