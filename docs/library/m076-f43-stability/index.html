@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M076 — sharp local deletion barrier around the 54-set sunflower construction · 100</title>
+<meta name="description" content="Date: 2026-11-01 UTC. Claim: #185. Work id: M076-F43-SEARCH, scope SHA-256 5237be0b42bf54171a3f31bd8bc90f7bad55dd7898469fe2912e2a348267c1b4. Status: author-derived exact restricted stability lemma, independently recomputed in code but not i">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m076-f43-stability/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M076 — sharp local deletion barrier around the 54-set sunflower construction · 100">
+<meta property="og:description" content="Date: 2026-11-01 UTC. Claim: #185. Work id: M076-F43-SEARCH, scope SHA-256 5237be0b42bf54171a3f31bd8bc90f7bad55dd7898469fe2912e2a348267c1b4. Status: author-derived exact restricted stability lemma, independently recomputed in code but not i">
+<meta property="og:url" content="https://svyable.github.io/100/library/m076-f43-stability/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M076 — sharp local deletion barrier around the 54-set sunflower construction</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#exact-statement-and-result">Exact statement and result</a></li><li class="toc-l2"><a href="#proof-and-exact-certificate">Proof and exact certificate</a></li><li class="toc-l2"><a href="#independent-computational-path-and-adversarial-controls">Independent computational path and adversarial controls</a></li><li class="toc-l2"><a href="#primary-literature-assumptions-negative-results-and-limits">Primary literature, assumptions, negative results and limits</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M076/" title="Erdős–Rado sunflower conjecture">M076</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M076_F43_STABILITY.md" rel="noopener noreferrer">research/M076_F43_STABILITY.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M076 — sharp local deletion barrier around the 54-set sunflower construction</h1>
+<p><strong>Date:</strong> 2026-11-01 UTC. <strong>Claim:</strong> <a href="https://github.com/Svyable/100/issues/185" rel="noopener noreferrer">#185</a>. <strong>Work id:</strong> <code>M076-F43-SEARCH</code>, scope SHA-256 <code>5237be0b42bf54171a3f31bd8bc90f7bad55dd7898469fe2912e2a348267c1b4</code>. <strong>Status:</strong> author-derived exact restricted stability lemma, independently <em>recomputed in code</em> but <strong>not independently mathematically reviewed</strong>; historical novelty unestablished. No new global lower bound and no solution of the Erdős–Rado sunflower conjecture.</p>
+<h2 id="exact-statement-and-result">Exact statement and result<a class="anchor" href="#exact-statement-and-result" aria-label="Link to this section">#</a></h2>
+<p>A <strong>three-petal sunflower</strong> is a triple of distinct sets <code>A,B,C</code> with <code>A∩B=A∩C=B∩C</code>, including empty core. Let <code>F</code> be the classical 54-member family on 18 points built from two disjoint nine-point components. In each component, partition the nine points into three blocks of three; take every four-set formed by choosing two points from each of two distinct blocks. Each component contributes <code>3 × 3 × 3 = 27</code> sets.</p>
+<p><strong>Restricted local stability lemma (finite, sharp).</strong> For any four-element set <code>C</code> not in <code>F</code>, on <em>any</em> ambient ground set, if <code>(F∖D)∪{C}</code> contains no three-petal sunflower, then <code>|D|≥5</code>. If <code>C</code> is contained in the original 18-point support, then <code>|D|≥6</code>. Both inequalities are attained. <strong>Stronger five-deletion rigidity:</strong> for every <code>D⊆F</code> with <code>|D|≤5</code>, at most <strong>one</strong> new four-set can be adjoined to <code>F∖D</code> while preserving sunflower-freeness. For <code>|D|≤4</code>, no new four-set can be adjoined.</p>
+<p>This is an obstruction to replacing a small number of sets in <strong>this particular construction</strong>, not an upper bound on all sunflower-free families. In particular, no improvement from 54 to 55 can be obtained by deleting at most <strong>five</strong> members of this <code>F</code> and inserting arbitrary new four-sets. With exactly five deletions, the resulting family has at most <strong>50</strong> sets (and this bound is attained). The search at deletion distance six and beyond is open.</p>
+<h2 id="proof-and-exact-certificate">Proof and exact certificate<a class="anchor" href="#proof-and-exact-certificate" aria-label="Link to this section">#</a></h2>
+<ol><li>The 54 old sets contain no three-petal sunflower. All <code>C(54,3)=24,804</code> triples pass the direct equality test. The source construction is <a href="https://oeis.org/A332077/a332077_3.txt" rel="noopener noreferrer">OEIS A332077, Abbott–Hanson–Sauer witness</a>; the ordered 1-based brace-list generated by the script, with a final LF, has SHA-256 <code>b84ccc5d91526d89d372e19de5025bc2ff63994c615390a715516831c391a646</code>.</li><li>For a candidate <code>C</code>, form a graph <code>H_C</code> whose vertices are the 54 members of <code>F</code>, with an edge <code>AB</code> precisely when <code>A,B,C</code> are a sunflower. Any deletion set <code>D</code> allowing <code>C</code> must be a vertex cover of <code>H_C</code>. Therefore a matching of <code>t</code> disjoint edges in <code>H_C</code> forces <code>|D|≥t</code>.</li><li>Permuting points within each three-point block, permuting the three blocks within each nine-point component, swapping the two components, and relabeling all outside points preserves <code>F</code>. Any four-set has at most four outside points. Its orbit is therefore determined by the number <code>r=0,1,2,3,4</code> of outsiders and the unordered pair of descending triples of counts in the blocks of each component. Excluding <code>C∈F</code> leaves exactly <strong>18 orbit types</strong>: 8, 5, 3, 1, 1 for <code>r=0,1,2,3,4</code>, respectively.</li><li><code>scripts/m076_f43_stability.py</code> contains a literal list of <strong>six</strong> pairwise vertex-disjoint edges of <code>H_C</code> for <strong>17</strong> of the 18 orbit types. The sole exception is <code>r=1</code> with old-support block counts <code>(2,1,0)</code> in one component and <code>(0,0,0)</code> in the other; it has a five-edge matching. The checker validates every edge by exact bitwise set intersection and checks that no old family member appears twice. Symmetry transfers these certificates to every four-set on an arbitrary ambient universe. This proves the lower bounds and isolates the only candidate type permitted by five deletions.</li><li>For the exceptional representative <code>C={0,1,3,18}</code>, a complete branch-on-uncovered-edge enumeration of the forbidden-pair graph finds <strong>exactly two</strong> vertex covers of size five: <code>{0,2,24,25,26}</code> and <code>{1,2,24,25,26}</code>. Under either deletion, checking all <code>C(18,3)=816</code> old-support triples shows that <strong>only</strong> <code>T={0,1,3}</code> can be extended with an outside point. Hence every admissible new four-set is <code>T∪{x}</code> for some outsider <code>x</code>. At least one old set containing <code>T</code> survives under either cover; it forms a sunflower with any two distinct such new sets. Thus at most one new set can be inserted. Symmetry proves the statement for every five-deletion set admitting a candidate.</li><li><strong>Sharpness for outside points:</strong> with zero-based labels, <code>C={0,1,3,18}</code> can be added after deleting old-set indices <code>{1,2,24,25,26}</code>, leaving 50 members and no sunflower. <strong>Sharpness within the support:</strong> <code>C={0,1,3,6}</code> can be added after deleting indices <code>{1,10,11,21,22,26}</code>, leaving 49 members and no sunflower. Both are checked by literal enumeration of all remaining triples.</li></ol>
+<p>The proof does not depend on a SAT/LP solver, randomized search, an unverified optimization status, or a claimed theorem outside the encoded 54-set family.</p>
+<h2 id="independent-computational-path-and-adversarial-controls">Independent computational path and adversarial controls<a class="anchor" href="#independent-computational-path-and-adversarial-controls" aria-label="Link to this section">#</a></h2>
+<pre><code class="lang-sh">python3 scripts/m076_f43_stability.py --check
+python3 -m unittest discover -s tests -p &#x27;test_m076_f43_stability.py&#x27; -v
+python3 scripts/regen.py --check
+python3 -m unittest discover -s tests</code></pre>
+<p>The first path checks the 18 explicit orbit certificates, a complete branch-on-edge five-cover enumeration, and the unique old-support triple forced by each cover. A second <strong>exhaustive</strong> method scans all <strong>3,162,510</strong> five-element deletion subsets directly and confirms exactly the same two covers, without branch-on-edge recursion. A <strong>separate</strong> implementation in the same file uses Python <code>frozenset</code> intersections, <em>does not use the orbit reduction or the matching table</em>, and directly sweeps all <strong>7,261 alternative four-sets</strong> on a 22-point universe. These cover all outsider-count patterns (0–4); the proof above explains why extra ambient points introduce no further orbit type. Sixteen adversarial tests reject a duplicated family member, an injected sunflower, a repeated matching vertex, a false sunflower edge, and an incorrect deletion witness, and confirm the two sharpness examples.</p>
+<p>This is independent algorithmic cross-checking by the author, <strong>not</strong> an independent specialist review or an external theorem acceptance.</p>
+<h2 id="primary-literature-assumptions-negative-results-and-limits">Primary literature, assumptions, negative results and limits<a class="anchor" href="#primary-literature-assumptions-negative-results-and-limits" aria-label="Link to this section">#</a></h2>
+<ul><li>Abbott, Hanson, Sauer, <em>Intersection Theorems for Systems of Sets</em>, JCTA <strong>12</strong> (1972), 381–389, <a href="https://doi.org/10.1016/0097-3165(72)90103-3" rel="noopener noreferrer">DOI</a>: historical construction and finite sunflower background.</li><li>Abbott and Hanson, <em>On finite Δ-systems</em>, Discrete Mathematics <strong>8</strong> (1974), 1–12, <a href="https://doi.org/10.1016/0012-365X(74)90103-4" rel="noopener noreferrer">DOI</a>: historical lower-bound context.</li><li>Axante, Budala, Chitic, Dumitru, Nacu, <a href="https://arxiv.org/abs/2609.06175" rel="noopener noreferrer">arXiv:2609.06175v1</a> (September 2026): <code>54 ≤ f(4,3) ≤ 83</code>, with an intersecting-family bound 27.</li><li>Babanskyy, <a href="https://aixiv.online/abs/2610.01292v1" rel="noopener noreferrer">aiXiv:2610.01292v1</a> (October 2026): author-claimed improvement <code>f(4,3) ≤ 68</code>, with finite computations; independent specialist acceptance is not established. Neither source was taken as proof of this new local lemma.</li><li>Rao, <a href="https://doi.org/10.1112/jlms.70380" rel="noopener noreferrer"><em>The story of sunflowers</em></a>, JLMS <strong>113</strong> (January 2026): contemporary survey of the still-open <strong>uniform</strong> Erdős–Rado conjecture. The different Erdős–Szemerédi ground-set variant must not be conflated with it.</li></ul>
+<p><strong>Failed avenue:</strong> A direct one-set extension of the 54-set construction is impossible; the stronger exact certificate shows that even allowing up to four deletions cannot permit any new four-set, and five deletions allow at most one new set. This is a <em>global result about the stated local neighborhood</em>, not an exhaustive search of all sunflower-free families or a new 55-set construction. The matching/cover argument gives no information about simultaneous insertions after deleting six or more old sets. The 54-set construction is highly symmetric, so no generalization to other 54-member families follows. A targeted prior-art search did not locate this exact deletion-distance statement, but absence of a search hit is not proof of historical novelty.</p>
+<p><strong>Next falsifier:</strong> Independently implement the 18-type symmetry reduction and verify the literal edge matchings from the OEIS witness; challenge the sharpness deletion sets. Then search for a <strong>55-member family</strong> using at least six deletions and at least seven insertions, or a completely different construction, with exact triple-checking. Audit older extremal-set-system literature for the precise deletion-distance lemma before making any novelty claim. The existing PR-landing task is separate and unchanged.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>
