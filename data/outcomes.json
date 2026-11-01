@@ -308,6 +308,21 @@
         "ci_minutes": 0
       },
       "note": "Approximate active author/tool work. All 11,117 connected unlabeled eight-vertex graph metrics checked by exact rational primal/dual LP certificates and 2,520 tours per graph; max ratio 10/9 at two diameter-three graphs. Ten adversarial tests and independent DP for maximizers. A discarded chunk-index bug was corrected before the final four-chunk census. Not externally reviewed, no historical novelty established; status conditional on PR merge."
+    },
+    {
+      "work_id": "O-M079-01",
+      "scope_sha256": "964d45559b467d0b87968be82c006cf2c916e04bc8ad39c0b149dfe012b55411",
+      "author": "ChatGPT (M079 chain-plus-two restricted proof candidate)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/178",
+      "pr_url": "https://github.com/Svyable/100/pull/179",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.9
+      },
+      "note": "Estimated active derivation, failed avenues, literature audit, exact proof-table verification and independent-code-path testing. Sharp 4/11 all-orders width-three chain-plus-two restricted proof candidate; no independent mathematical/novelty review, no full M079 result, obligation remains open pending external acceptance."
     }
   ]
 }
