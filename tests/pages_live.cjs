@@ -4,15 +4,18 @@
 // and exercises real DOM behavior with an isolated Chromium session.
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
+const crypto = require("node:crypto");
 const { chromium } = require("playwright");
 const axe = require("axe-core");
 
-const BASE = "https://svyable.github.io/100/";
+const PUBLIC = "https://svyable.github.io/100/";
+const PREVIEW = "http://127.0.0.1:8000/";
+const BASE = process.env.PAGES_BASE || PUBLIC;
+if (BASE !== PUBLIC && BASE !== PREVIEW) throw Error("Only the public site or the local PR preview is allowed");
 const checks = [];
 const metrics = {};
 const stamp = new Date().toISOString();
-const requestedBase = process.env.PAGES_BASE || BASE;
-if (requestedBase !== BASE) throw Error("Live audit only accepts the canonical public Pages URL");
+const requestedBase = BASE;
 
 async function run(label, work) {
   const started = Date.now();
@@ -46,17 +49,38 @@ async function axeAudit(page, title) {
     title + ": " + serious.map(v => v.id + " (" + v.nodes.length + " elements)").join("; "));
 }
 
+
+async function assertCurrentDeployment(context) {
+  // Verify that the remote CSS and homepage bytes match the checked-out commit.
+  // For push-to-main runs, allow time for GitHub Pages' deployment to catch up.
+  const dig = data => crypto.createHash("sha256").update(data).digest("hex");
+  const paths = ["index.html", "assets/style.css"];
+  const expected = paths.map(p => dig(fs.readFileSync("docs/" + p)));
+  for (let attempt = 0; attempt < (BASE === PUBLIC ? 13 : 1); attempt++) {
+    const actual = await Promise.all(paths.map(async p => {
+      const response = await context.request.get(BASE + p, {timeout: 12000});
+      return response.status() === 200 ? dig(await response.body()) : "http-" + response.status();
+    }));
+    if (actual.every((x, i) => x === expected[i])) return;
+    if (attempt === (BASE === PUBLIC ? 12 : 0)) {
+      throw Error("Pages deployment does not match checked-out index.html + style.css");
+    }
+    await new Promise(resolve => setTimeout(resolve, 15000));
+  }
+}
+
 async function main() {
   const browser = await chromium.launch({headless: true});
   try {
     const context = await browser.newContext({viewport: {width: 1440, height: 900}});
     const page = await context.newPage();
+    await run("exact deployed source matches checked-out site", () => assertCurrentDeployment(context));
     await run("public home and canonical document", async () => {
       const res = await page.goto(BASE, {waitUntil: "networkidle", timeout: 45000});
       await responseOK(res, "public home");
       assert.match(await page.title(), /100/);
       assert.equal(await page.locator("h1").count(), 1);
-      assert.equal(await page.locator('link[rel="canonical"]').getAttribute("href"), BASE);
+      assert.equal(await page.locator('link[rel="canonical"]').getAttribute("href"), PUBLIC);
       metrics.navigation_ms = Math.round(await page.evaluate(() =>
         performance.getEntriesByType("navigation")[0]?.domContentLoadedEventEnd || 0));
       assert(metrics.navigation_ms > 0 && metrics.navigation_ms < 15000,
