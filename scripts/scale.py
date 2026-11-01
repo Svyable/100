@@ -232,16 +232,11 @@ def eligible_wave_items(work_items, jobs):
                 "reason": "stop_range: campaign blocker places the range in known mathematics",
             })
             continue
-        if item["status"] == "waiting_on_dependencies":
-            refused.append({
-                "id": item["id"],
-                "reason": "waiting_on_dependencies: " + ",".join(item["depends_on"]),
-            })
-            continue
         if item["status"] != "runnable":
-            # Only runnable work is claimable constructive work. An externally blocked
-            # node (for example a corpus not yet acquired) is refused, not dispatched.
-            refused.append({"id": item["id"], "reason": item["status"] + ": external gate not cleared"})
+            reason = (("waiting_on_dependencies: " + ",".join(item["depends_on"]))
+                      if item["status"] == "waiting_on_dependencies"
+                      else "externally_blocked: the obligation is not executable")
+            refused.append({"id": item["id"], "reason": reason})
             continue
         kept.append(item)
     return kept, refused

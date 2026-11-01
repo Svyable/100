@@ -1454,7 +1454,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 
 ## Refused this wave
 
-- `O-M074-01` — externally_blocked: external gate not cleared
+- `O-M074-01` — externally_blocked: the obligation is not executable
 - `J-polynomial_maps-stop_range` — stop_range: campaign blocker places the range in known mathematics
 - `J-modular_representations-stop_range` — stop_range: campaign blocker places the range in known mathematics
 - `J-critical_zeros-stop_range` — stop_range: campaign blocker places the range in known mathematics

@@ -90,11 +90,18 @@ class WaveScaleTests(unittest.TestCase):
         ids = [p["id"] for p in self.wave["selected_packets"]]
         self.assertEqual(len(ids), len(set(ids)))
         for p in self.wave["selected_packets"]:
-            self.assertNotEqual(p["status"], "waiting_on_dependencies")
+            self.assertEqual(p["status"], "runnable")
             self.assertNotIn("stop_range", p["id"])
             self.assertIn("scout", p["roles"])
             self.assertEqual(p["scope_sha256"], scale.packet_digest(p))
             self.assertTrue(p["claim_title"].startswith("[Claim]"))
+
+    def test_external_blocker_not_claimable(self):
+        packet_ids = {p["id"] for p in self.wave["selected_packets"]}
+        self.assertNotIn("O-M074-01", packet_ids)
+        reasons = {item["id"]: item["reason"] for item in self.wave["refused"]}
+        self.assertIn("O-M074-01", reasons)
+        self.assertIn("externally_blocked", reasons["O-M074-01"])
 
     def test_wave_prefers_obligations_and_jobs_over_audits(self):
         kinds = self.wave["by_kind"]
@@ -104,19 +111,6 @@ class WaveScaleTests(unittest.TestCase):
         head = [p["kind"] for p in self.wave["selected_packets"][:30]]
         self.assertGreaterEqual(sum(k in ("obligation", "review", "lean", "job", "roadmap") for k in head), 25)
         self.assertFalse({"comparator", "status_audit"} & set(head))
-
-    def test_wave_never_selects_blocked_work(self):
-        # Regression: O-M074-01 is externally_blocked and was selected as slot 3.
-        self.assertTrue(all(p["status"] == "runnable" for p in self.wave["selected_packets"]))
-        selected = {p["id"] for p in self.wave["selected_packets"]}
-        refused = {r["id"]: r["reason"] for r in self.wave["refused"]}
-        import work
-        for item in work.snapshot()["items"]:
-            if item["status"] != "runnable":
-                self.assertNotIn(item["id"], selected)
-                self.assertIn(item["id"], refused)
-        self.assertIn("O-M074-01", refused)
-        self.assertTrue(refused["O-M074-01"].startswith("externally_blocked"))
 
     def test_eligibility_refuses_every_non_runnable_status(self):
         items = [{"id": "a", "status": "runnable", "depends_on": []},
