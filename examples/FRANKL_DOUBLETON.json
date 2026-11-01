@@ -1,0 +1,12 @@
+{
+  "format": "svyable.frankl.family.v1",
+  "n": 3,
+  "sets": [
+    [],
+    [
+      0,
+      1
+    ]
+  ],
+  "note": "Sharp known general theorem instance; both designated elements occur in exactly one of two sets."
+}
