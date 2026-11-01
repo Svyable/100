@@ -50,10 +50,12 @@
 <p><strong>Protocol <code>svyable.proof-exchange.v2</code> (2026-10-31).</strong> Run:</p>
 <pre><code class="lang-sh">python3 scripts/scale.py --budget 100            # 100-slot claimable wave
 python3 scripts/scale.py --budget 100 --json     # machine-readable fleet packets
-python3 scripts/scale.py --write                 # regenerate SCALE.md
-python3 scripts/scale.py --check                 # source + SCALE.md drift
-python3 scripts/scale.py --mode coverage --budget 5   # equal-slot shape/engine ablation</code></pre>
-<p>Nothing here writes to Solved. A filled slot is a <strong>claimable work packet</strong> with a scope digest, not a theorem.</p>
+python3 scripts/scale.py --write                 # regenerate SCALE.md + docs/api/packets.json
+python3 scripts/scale.py --check                 # source + SCALE.md + packets drift
+python3 scripts/scale.py --mode coverage --budget 5   # equal-slot shape/engine ablation
+python3 scripts/analogues.py --check             # structural finite analogues
+python3 scripts/benchmark.py --check             # A/B/C/D prereg (empty ledger OK)</code></pre>
+<p>Nothing here writes to Solved. A filled slot is a <strong>claimable work packet</strong> with a scope digest, not a theorem. Omni-directional fleet ops: <a href="../../library/fleet/">FLEET.md</a>.</p>
 <h2 id="the-constraint">The constraint<a class="anchor" href="#the-constraint" aria-label="Link to this section">#</a></h2>
 <p>Adding parallel reasoning is not the same as increasing accepted discoveries. Research on multi-agent systems reports large gains for decomposable tasks but important failure modes for sequential dependencies, correlated errors and expensive coordination:</p>
 <ul><li><a href="https://research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/" rel="noopener noreferrer">Google Research, January 2026</a> finds architecture selection depends strongly on task properties.</li><li><a href="https://www.nature.com/articles/s42256-026-01268-y" rel="noopener noreferrer">Nature Machine Intelligence, 2026</a> reports no universal gain from more agents under matched budgets.</li><li><a href="https://www.anthropic.com/research/multi-agent-research-system" rel="noopener noreferrer">Anthropic, 2025</a> reports parallel research gains, substantial token cost and the advantage of passing artifact references rather than repeatedly summarizing all work.</li><li><a href="https://ai.meta.com/research/publications/autoformbot-formalizing-mathematics-at-scale/" rel="noopener noreferrer">AutoformBot, 2026</a> demonstrates large-scale dependency-aware Lean formalization. That is evidence for engineering feasibility, <strong>not</strong> validation that new open conjectures are solved by scaling agent count.</li><li><a href="https://arxiv.org/abs/2609.21032" rel="noopener noreferrer">Scaling Discovery through Test-Time Communication, September 2026</a> finds communicating agents can outperform independent attempts when progress feedback is available, with important compute-dependent exceptions.</li></ul>

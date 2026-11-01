@@ -1,0 +1,62 @@
+{
+  "as_of": "2026-10-31",
+  "interpretation": "Finite computational analogues for structural-modality problems. An analogue is a restricted finite statement with a named certificate shape; it is not a proof of the open conjecture and does not change Solved. Engines listed here are aspirational until a lab probe exists.",
+  "entries": [
+    {
+      "problem_id": "M044",
+      "analogue": "Finite presentation plus explicit a,b in F_2[G] with ab=1 and ba≠1, checked by two independent group-ring multiplications.",
+      "certificate": "Presentation, support lists for a and b, two multiplication traces.",
+      "proposed_engine": "group_rings",
+      "status": "campaign_specified"
+    },
+    {
+      "problem_id": "M049",
+      "analogue": "After M044 witness replay, audit Elek–Szabó implication for the claimed coefficient field on that presentation.",
+      "certificate": "Implication checklist with exact field and soficity hypotheses.",
+      "proposed_engine": "group_rings",
+      "status": "depends_on_M044"
+    },
+    {
+      "problem_id": "M088",
+      "analogue": "Hitting set for the locked GF(2), degree≤3, ≤20-gate class in research/M088_LOCK.md.",
+      "certificate": "Gate-list circuits, hitting assignments, independent re-evaluation.",
+      "proposed_engine": "circuit_oracle",
+      "status": "class_locked"
+    },
+    {
+      "problem_id": "M037",
+      "analogue": "Finite-dimensional Lie-algebra actions on a named manifold chart with exact polynomial vector fields.",
+      "certificate": "Polynomial charts and a kernel-checked freeness obstruction or fixed-point certificate.",
+      "proposed_engine": "polynomial_algebra",
+      "status": "aspirational"
+    },
+    {
+      "problem_id": "M054",
+      "analogue": "Linearized Teukolsky/Regge–Wheeler mode bounds on a fixed Kerr parameter with interval arithmetic.",
+      "certificate": "Interval enclosures for a finite mode set; not nonlinear stability.",
+      "proposed_engine": "interval_arithmetic",
+      "status": "aspirational"
+    },
+    {
+      "problem_id": "M014",
+      "analogue": "Diophantine decidability for a named fragment (for example quadratic forms over Q with bounded signature) with exact certificate search.",
+      "certificate": "Decision procedure trace or explicit undecidability reduction artifact.",
+      "proposed_engine": "effective_diophantine",
+      "status": "aspirational"
+    },
+    {
+      "problem_id": "M098",
+      "analogue": "Finite-model theory check for a first-order sentence family with a named Ehrenfeucht–Fraïssé bound.",
+      "certificate": "Game-length bound and explicit spoiler/duplicator strategy encoding.",
+      "proposed_engine": "logic_games",
+      "status": "aspirational"
+    },
+    {
+      "problem_id": "M030",
+      "analogue": "Abundance inequalities on a named class of terminal threefolds with explicit discrepancy tables.",
+      "certificate": "Discrepancy table recomputed by a second path.",
+      "proposed_engine": "birational_tables",
+      "status": "aspirational"
+    }
+  ]
+}

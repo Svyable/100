@@ -20,6 +20,7 @@ from pathlib import Path
 import discovery
 import lab
 import mdlite
+import scale
 import proof_obligations
 import work as workqueue
 from rank import ROOT, COMPUTABLE, score
@@ -867,7 +868,7 @@ def render_problem(site, pid, prev_id, next_id):
   <dt>Declaration</dt><dd><code>{E(f['namespace'])}.{E(f['statement'])}</code> in {repo_link(f['module'])}</dd>
   <dt>Not encoded</dt><dd>{E('; '.join(f['not_encoded'])) or '—'}</dd>
   <dt>Fidelity</dt><dd><span class="chip">{E(f['fidelity'].replace('_', ' '))}</span> {E(s.formal_doc['fidelity_levels'][f['fidelity']])}</dd>
-  {('<dt>Kernel-checked</dt><dd><ul class="plain">' + kc + '</ul></dd>') if kc else ''}
+{('  <dt>Kernel-checked</dt><dd><ul class="plain">' + kc + '</ul></dd>') if kc else ''}
 </dl>
 <details class="table-view"><summary>Full Lean module ({src.count(chr(10))} lines)</summary><pre class="lean"><code>{highlight_lean(src)}</code></pre></details>
 <p class="muted">A proof or counterexample counts only if it establishes exactly this proposition (or a reviewed equivalent). Kernel-checked finite results are fidelity tests inside known mathematics. <a href="{rel(page, 'formal/')}">How formal statements work →</a></p>
@@ -2036,6 +2037,9 @@ def render_api(site):
     search.append({"t": "Agent contract", "k": "page", "s": "Machine-readable research", "u": "api/agent.json", "x": "scope digest claims validation evidence"})
     search.append({"t": "Agent task shortlist", "k": "page", "s": "Runnable tasks", "u": "api/agent/tasks.json", "x": "claim acceptance boundaries"})
     files["api/work.json"] = dumps(s.work)
+    # Fleet packets: same bytes as scripts/scale.py --write so build_site does not
+    # treat docs/api/packets.json as a stale leftover under GENERATED_DIRS.
+    files["api/packets.json"] = scale.packets_blob(scale.report(budget=100, mode="wave"))
     selected = [w for w in s.work["items"] if w["status"] == "runnable"][:20]
     tasks = [{
         "id": w["id"], "kind": w["kind"], "title": w["title"],
@@ -2120,6 +2124,7 @@ def render_api(site):
             "full_snapshot": SITE_URL + "data/portfolio.json",
             "feed": SITE_URL + "feed.xml",
             "work_queue": SITE_URL + "api/work.json",
+            "fleet_packets": SITE_URL + "api/packets.json",
             "discovery": SITE_URL + "api/discovery.json",
             "agent_manifest": SITE_URL + "api/agent.json",
             "agent_shortlist": SITE_URL + "api/agent/tasks.json",

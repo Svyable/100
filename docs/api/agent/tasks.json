@@ -2,7 +2,7 @@
   "schema_version": 1,
   "snapshot_as_of": "2026-11-01",
   "selection": "First 20 runnable items in the derived work queue's priority order; use api/work.json for all tasks and other statuses.",
-  "runnable_in_snapshot": 339,
+  "runnable_in_snapshot": 341,
   "live_claim_status": "unknown; check existing_claims_url immediately before claiming",
   "task_count": 20,
   "tasks": [
@@ -49,6 +49,28 @@
       "task_url": "https://svyable.github.io/100/work/O-M073-01/",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M073-01%22",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M073-01%20%E2%80%94%20Witness%20obligation%20for%20M073"
+    },
+    {
+      "id": "O-M044-01",
+      "kind": "obligation",
+      "title": "Witness obligation for M044",
+      "priority_rank": 3,
+      "status": "runnable",
+      "problems": [
+        "M044"
+      ],
+      "deliverable": "Import or rebuild an independent group-ring checker; replay the claimed presentation and products; preserve input digests.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M044-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "The OpenAI math manuscript claims a counterexample to direct finiteness; this node only asks for independent replay. Matching the registered statement is not novelty credit.",
+      "depends_on": [],
+      "scope_sha256": "4f9c55ca7a8b68eb1673e4d122d950255a0def42d2c07e63126f90c698ad17fd",
+      "task_url": "https://svyable.github.io/100/work/O-M044-01/",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M044-01%22",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M044-01%20%E2%80%94%20Witness%20obligation%20for%20M044"
     },
     {
       "id": "O-M074-02",
@@ -147,15 +169,15 @@
       "problems": [
         "M088"
       ],
-      "deliverable": "Lock the field, circuit shape, degree and oracle model in one paragraph inside the algebraic-complexity shape; only then implement a falsifier.",
+      "deliverable": "Class lock is in research/M088_LOCK.md. Implement the exact falsifier (nonzero circuit vanishing on a proposed hitting set) against that lock; independent mathematical and statement-fidelity review still required before discharge.",
       "acceptance": [
         "Discharge evidence recorded on O-M088-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
         "Independent review recorded before the node is marked discharged",
         "python3 scripts/regen.py && python3 scripts/regen.py --check"
       ],
-      "boundary": "No restricted circuit class is locked in this repository yet; a checker written before the class is fixed does not raise readiness.",
+      "boundary": "The restricted GF(2) degree-≤3 ≤20-gate black-box class is locked in-repo. A hitting set for that class would be a restricted lemma, not a resolution of unrestricted PIT.",
       "depends_on": [],
-      "scope_sha256": "2a485cde985f9a99d3b888d3a308d99dc06bc2978fab80b3e3360e204e1bef4b",
+      "scope_sha256": "5204bcc35834d93882867d02268da6bfe4c98a2398ff94770255bf1f624a3ae5",
       "task_url": "https://svyable.github.io/100/work/O-M088-01/",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M088-01%22",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M088-01%20%E2%80%94%20Lemma%20obligation%20for%20M088"
@@ -423,28 +445,6 @@
       "task_url": "https://svyable.github.io/100/work/O-M041-01/",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M041-01%22",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M041-01%20%E2%80%94%20Lemma%20obligation%20for%20M041"
-    },
-    {
-      "id": "O-M048-01",
-      "kind": "obligation",
-      "title": "Lemma obligation for M048",
-      "priority_rank": 99,
-      "status": "runnable",
-      "problems": [
-        "M048"
-      ],
-      "deliverable": "Name the defect-group isomorphism type and the ambient groups, write the exact weight-count lemma, and state the finite certificate an independent checker would accept.",
-      "acceptance": [
-        "Discharge evidence recorded on O-M048-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
-        "Independent review recorded before the node is marked discharged",
-        "python3 scripts/regen.py && python3 scripts/regen.py --check"
-      ],
-      "boundary": "The named-group probe through A5, and the published verification for every group of order at most 100, are known finite benchmarks. A restricted block-family lemma is not established here.",
-      "depends_on": [],
-      "scope_sha256": "f53f152e85e7b9589c256340c9efd9dfafaa2b35005e93c96159a9c33e793eae",
-      "task_url": "https://svyable.github.io/100/work/O-M048-01/",
-      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M048-01%22",
-      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M048-01%20%E2%80%94%20Lemma%20obligation%20for%20M048"
     }
   ]
 }

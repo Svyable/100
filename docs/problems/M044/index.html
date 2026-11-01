@@ -45,15 +45,15 @@
 
 <article class="problem-page">
 <header class="problem-hero" id="question">
-  <p class="eyebrow"><span class="eyebrow-line"></span> M044 · DISPATCH #3 · EXECUTION #37 · EDITORIAL #34</p>
+  <p class="eyebrow"><span class="eyebrow-line"></span> M044 · DISPATCH #3 · EXECUTION #36 · EDITORIAL #34</p>
   <h1>Kaplansky direct-finiteness conjecture</h1>
   <p class="problem-field"><a href="../../fields/algebra/">Algebra</a></p>
-  <div class="chips"><span class="status-pill status-claim_needs_review" title="A 2026 proof or counterexample claim exists and has not been independently validated.">Claim under review</span><span class="chip chip-modality">Structural</span></div>
+  <div class="chips"><span class="status-pill status-claim_needs_review" title="A 2026 proof or counterexample claim exists and has not been independently validated.">Claim under review</span><span class="chip chip-modality">Structural</span><span class="chip chip-campaign">Campaign: claim_under_review</span></div>
   <blockquote class="the-question"><span class="detail-label">THE QUESTION UNDER STUDY</span>Does ab=1 imply ba=1 in every group algebra?</blockquote>
 </header>
 <div class="problem-grid">
 <aside class="problem-side" aria-label="On this page">
-  <nav class="toc"><span class="detail-label">ON THIS PAGE</span><ol><li><a href="#question">The question</a></li><li><a href="#formal">Formal statement</a></li><li><a href="#priority">Priority</a></li><li><a href="#claim-review">Claim triage</a></li><li><a href="#work">Open work</a></li><li><a href="#provenance">Provenance</a></li><li><a href="#related">Connections</a></li></ol></nav>
+  <nav class="toc"><span class="detail-label">ON THIS PAGE</span><ol><li><a href="#question">The question</a></li><li><a href="#formal">Formal statement</a></li><li><a href="#priority">Priority</a></li><li><a href="#campaign">Campaign</a></li><li><a href="#claim-review">Claim triage</a></li><li><a href="#work">Open work</a></li><li><a href="#provenance">Provenance</a></li><li><a href="#related">Connections</a></li></ol></nav>
   <div class="side-actions">
     <a class="button button-outline" href="https://github.com/Svyable/100/issues/new?template=evidence_update.yml&amp;title=%5BEvidence%5D%20M044%20%2014%20" rel="noopener noreferrer">Submit evidence ↗</a>
     <a class="text-link" href="../../problems/M044/" data-permalink>Permalink: /problems/M044/</a>
@@ -80,25 +80,37 @@
 
 <section class="dossier-block" id="priority"><h2>Priority, decomposed</h2>
   <div class="score-hero">
-    <div><strong>#3</strong><span>Dispatch rank · score 114</span></div>
-    <div class="score-eq"><span>74</span><small>editorial</small><b>+</b><span>0</span><small>readiness</small><b>+</b><span>40</span><small>action</small></div>
-    <div><strong>#37</strong><span>Execution rank · index 74</span></div>
+    <div><strong>#3</strong><span>Dispatch rank · score 116</span></div>
+    <div class="score-eq"><span>74</span><small>editorial</small><b>+</b><span>2</span><small>readiness</small><b>+</b><span>40</span><small>action</small></div>
+    <div><strong>#36</strong><span>Execution rank · index 76</span></div>
     <div><strong>#34</strong><span>Editorial rank of 100</span></div>
   </div>
   <div class="next-action"><span class="detail-label">NEXT ACTION · REPLAY A CLAIMED FINITE WITNESS</span>
     <p class="serif">Reproduce a finite presentation and a,b products using a genuinely independent group-ring checker; check the claimed equalities and non-equality.</p>
-    <p class="muted">Why: Listed for witness replay. The next step is the claim review&#x27;s finite check.</p>
+    <p class="muted">Why: The 2026 direct-finiteness manuscript matches the registered statement but has no independent reproduction here.</p>
     <p class="muted">Shared attack shape: <a href="../../campaigns/#shape-group_rings">One presentation, one product</a> — The claim review asks for a finite object an independent checker can accept or reject. That check can retire the target. The bonus is a scheduling weight, not evidence.</p></div>
   <div class="two-col">
     <div><h3>Editorial score 74/100</h3><div class="detail-metrics">
       <div class="detail-metric"><span>Impact <small>×6</small></span><div class="meter" role="img" aria-label="Impact 4 of 5"><i style="width:80%"></i></div><b>4/5</b></div><div class="detail-metric"><span>Attackability <small>×6</small></span><div class="meter" role="img" aria-label="Attackability 3 of 5"><i style="width:60%"></i></div><b>3/5</b></div>
       <div class="detail-metric"><span>Verifiability <small>×5</small></span><div class="meter" role="img" aria-label="Verifiability 4 of 5"><i style="width:80%"></i></div><b>4/5</b></div><div class="detail-metric"><span>Spillover <small>×3</small></span><div class="meter" role="img" aria-label="Spillover 4 of 5"><i style="width:80%"></i></div><b>4/5</b></div></div>
       <p class="muted">6×4 + 6×3 + 5×4 + 3×4 = 74. An editorial judgement, never a probability of proof.</p></div>
-    <div><h3>Readiness +0/10</h3><p class="muted">No campaign brief yet, so readiness is +0. Specifying a falsifiable restricted lemma is the first step.</p>
+    <div><h3>Readiness +2/10</h3><ul class="readiness-list"><li class="on"><span>✓</span>Formal campaign brief <b>+2</b></li><li class="off"><span>·</span>Runnable independent verifier <b>+0</b></li><li class="off"><span>·</span>Reproduced known benchmark <b>+0</b></li><li class="off"><span>·</span>Independently reviewed restricted theorem <b>+0</b></li></ul>
       <p class="muted">Current first attack: Audit precise statement and prove a restricted case</p></div>
   </div>
 </section>
 
+<section class="dossier-block" id="campaign"><h2>Proof campaign <span class="chip chip-campaign">claim_under_review</span></h2>
+<p class="block-lead">Independent group-ring witness replay</p>
+<dl class="kv">
+  <dt>Hypothesis</dt><dd class="serif">Every group algebra over a field is directly finite (ab=1 ⇒ ba=1).</dd>
+  <dt>First proof obligation</dt><dd>Reproduce the 2026 claimed finite presentation and a,b in F_2[G] with ab=1≠ba on an independent multiplication checker.</dd>
+  <dt>Next executable step</dt><dd>Build or import a genuinely independent group-ring checker; replay the claimed presentation and products; record exact mismatches.</dd>
+  <dt>What would falsify it</dt><dd>A verified presentation with ab=1 and ba≠1 in F_2[G], or a precise gap showing the manuscript witness cannot be reconstructed.</dd>
+  <dt>Current blocker</dt><dd>The OpenAI math manuscript construction is large and has not been independently reproduced here; no allowlisted group-ring verifier yet.</dd>
+</dl>
+
+<p><a class="text-link" href="../../library/claim-reviews-2026/">Read the dossier <span aria-hidden="true">→</span></a></p>
+</section>
 <section class="dossier-block claim-block" id="claim-review"><h2>2026 claim triage</h2>
 <p class="block-lead">A proof or counterexample was announced. This page records the scope comparison only — <strong>not</strong> an independent validation.</p>
 <dl class="kv">
@@ -113,7 +125,7 @@
 </dl>
 <p><a class="text-link" href="../../claims/#M044">All claim reviews →</a></p>
 </section>
-<section class="dossier-block" id="work"><h2>Open work <span class="chip">4</span></h2><p class="muted">Bounded, claimable units derived from the ledgers. Claim one before starting so parallel agents never duplicate it.</p><ul class="work-list"><li class="work-item work-runnable"><a href="../../work/J-group_rings-replay_claim_witness/"><span class="work-id">J-group_rings-replay_claim_witness</span><span class="work-title">Replay a claimed finite witness: One presentation, one product</span><span class="work-meta">Cohort job · Runnable · dispatch #3</span></a></li><li class="work-item work-runnable"><a href="../../work/R32/"><span class="work-id">R32</span><span class="work-title">Computational checks of claimed group-ring witnesses</span><span class="work-meta">Roadmap item · Runnable · dispatch #3</span></a></li><li class="work-item work-runnable"><a href="../../work/F-M044/"><span class="work-id">F-M044</span><span class="work-title">Lean comparator statement for Kaplansky direct-finiteness conjecture</span><span class="work-meta">Lean comparator · Runnable · dispatch #3</span></a></li><li class="work-item work-runnable"><a href="../../work/S-M044/"><span class="work-id">S-M044</span><span class="work-title">Exact-status audit draft for Kaplansky direct-finiteness conjecture</span><span class="work-meta">Status audit · Runnable · dispatch #3</span></a></li></ul></section>
+<section class="dossier-block" id="work"><h2>Open work <span class="chip">5</span></h2><p class="muted">Bounded, claimable units derived from the ledgers. Claim one before starting so parallel agents never duplicate it.</p><p><a class="text-link" href="../../lamport/?problem=M044#M044">View exact Lamport dependency graph and audits →</a></p><ul class="work-list"><li class="work-item work-runnable"><a href="../../work/O-M044-01/"><span class="work-id">O-M044-01</span><span class="work-title">Witness obligation for M044</span><span class="work-meta">Proof obligation · Runnable · dispatch #3</span></a></li><li class="work-item work-runnable"><a href="../../work/J-group_rings-replay_claim_witness/"><span class="work-id">J-group_rings-replay_claim_witness</span><span class="work-title">Replay a claimed finite witness: One presentation, one product</span><span class="work-meta">Cohort job · Runnable · dispatch #3</span></a></li><li class="work-item work-runnable"><a href="../../work/R32/"><span class="work-id">R32</span><span class="work-title">Computational checks of claimed group-ring witnesses</span><span class="work-meta">Roadmap item · Runnable · dispatch #3</span></a></li><li class="work-item work-runnable"><a href="../../work/F-M044/"><span class="work-id">F-M044</span><span class="work-title">Lean comparator statement for Kaplansky direct-finiteness conjecture</span><span class="work-meta">Lean comparator · Runnable · dispatch #3</span></a></li><li class="work-item work-runnable"><a href="../../work/S-M044/"><span class="work-id">S-M044</span><span class="work-title">Exact-status audit draft for Kaplansky direct-finiteness conjecture</span><span class="work-meta">Status audit · Runnable · dispatch #3</span></a></li></ul></section>
 <section class="dossier-block" id="provenance"><h2>Provenance &amp; status</h2>
   <dl class="kv">
     <dt>Evidence state</dt><dd><span class="status-pill status-claim_needs_review" title="A 2026 proof or counterexample claim exists and has not been independently validated.">Claim under review</span> A 2026 proof or counterexample claim exists and has not been independently validated. This classification is not a universal proof-status certification.</dd>

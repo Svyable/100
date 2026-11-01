@@ -162,6 +162,71 @@
         }
       ],
       "fidelity": "author_checked"
+    },
+    {
+      "problem_id": "M048",
+      "module": "lean/Hundred/Statements/Alperin.lean",
+      "namespace": "Hundred.Statements.Alperin",
+      "statement": "Statement",
+      "encodes": "FiniteGroupData (order, alperinWeights, pRegularClasses) with pointwise equality at every prime dividing the order.",
+      "not_encoded": [
+        "Character tables, defect groups, Brauer characters",
+        "Any infinite family beyond the abstract equality"
+      ],
+      "kernel_checked": [],
+      "fidelity": "author_checked"
+    },
+    {
+      "problem_id": "M073",
+      "module": "lean/Hundred/Statements/Sidorenko.lean",
+      "namespace": "Hundred.Statements.Sidorenko",
+      "statement": "Statement",
+      "encodes": "Bipartite pattern homomorphism densities via exact hom counts; cleared inequality hom(H,G)·n^e ≥ hom(K2,G)^e · n^h.",
+      "not_encoded": [
+        "Graphon formulations",
+        "Specific open patterns such as K5,5 minus a Hamilton cycle"
+      ],
+      "kernel_checked": [],
+      "fidelity": "author_checked"
+    },
+    {
+      "problem_id": "M079",
+      "module": "lean/Hundred/Statements/OneThird.lean",
+      "namespace": "Hundred.Statements.OneThird",
+      "statement": "Statement",
+      "encodes": "Poset axioms, incomparable pairs, and [1/3,2/3] balance against a supplied extension count.",
+      "not_encoded": [
+        "Executable enumeration of linear extensions",
+        "Linial width-2 theorem as a formal corollary"
+      ],
+      "kernel_checked": [],
+      "fidelity": "author_checked"
+    },
+    {
+      "problem_id": "M097",
+      "module": "lean/Hundred/Statements/MetricTSP.lean",
+      "namespace": "Hundred.Statements.MetricTSP",
+      "statement": "Statement",
+      "encodes": "Metric axioms, tour length, and the cleared four-thirds inequality 3·OPT ≤ 4·HK against a supplied Held–Karp lower bound.",
+      "not_encoded": [
+        "The subtour LP itself",
+        "Graphic-metric specialization"
+      ],
+      "kernel_checked": [],
+      "fidelity": "author_checked"
+    },
+    {
+      "problem_id": "M088",
+      "module": "lean/Hundred/Statements/PIT.lean",
+      "namespace": "Hundred.Statements.PIT",
+      "statement": "Statement",
+      "encodes": "Existence of a finite hitting set for a finite circuit catalog; restricted lock documented in research/M088_LOCK.md.",
+      "not_encoded": [
+        "Unrestricted arithmetic-circuit PIT",
+        "A concrete hitting set for the locked class"
+      ],
+      "kernel_checked": [],
+      "fidelity": "author_checked"
     }
   ]
 }

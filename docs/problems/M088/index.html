@@ -48,7 +48,7 @@
   <p class="eyebrow"><span class="eyebrow-line"></span> M088 · DISPATCH #9 · EXECUTION #9 · EDITORIAL #2</p>
   <h1>Deterministic polynomial identity testing</h1>
   <p class="problem-field"><a href="../../fields/complexity/">Complexity</a></p>
-  <div class="chips"><span class="status-pill status-needs_review" title="Plausibly open; precise statement and status still need a literature audit.">Needs review</span><span class="chip chip-modality">Structural</span><span class="chip chip-campaign">Campaign: Specified</span></div>
+  <div class="chips"><span class="status-pill status-needs_review" title="Plausibly open; precise statement and status still need a literature audit.">Needs review</span><span class="chip chip-modality">Structural</span><span class="chip chip-good">Lean statement</span><span class="chip chip-campaign">Campaign: Specified</span></div>
   <blockquote class="the-question"><span class="detail-label">THE QUESTION UNDER STUDY</span>Is there a deterministic polynomial-time identity test for general arithmetic circuits?</blockquote>
 </header>
 <div class="problem-grid">
@@ -68,15 +68,80 @@
   <div><span class="detail-label">01 / FULL-STATEMENT STATUS</span><h3>Needs review</h3>
     <p>Plausibly open; precise statement and status still need a literature audit. This project records no accepted full solution for this active candidate.</p></div>
   <div><span class="detail-label">02 / VERIFIED SCOPE HERE</span><h3>Finite or formal checks</h3>
-    <p>No exact finite lab probe is recorded for this problem. No Lean comparator statement is recorded.</p></div>
+    <p>No exact finite lab probe is recorded for this problem. A Lean comparator checks an encoded statement, not a full conjecture proof.</p></div>
   <div><span class="detail-label">03 / WHAT TO TEST NEXT</span><h3>Next bounded action</h3>
-    <p>Lock the field, the circuit shape, the degree and the oracle model in one paragraph inside the algebraic-complexity shape. Only then implement a falsifier. A checker with no declared class does not raise readiness.</p></div>
+    <p>Lock paragraph is complete in research/M088_LOCK.md; implement the falsifier against that exact GF(2) degree-≤3 ≤20-gate black-box class before attaching a verifier or widening the class.</p></div>
 </div>
 <p class="muted small">These labels describe the evidence recorded in this repository, not an authoritative verdict on the entire mathematical literature. The <a href="../../ledger/">solved ledger</a> has a separate acceptance gate.</p>
 </section>
 
-<section class="dossier-block" id="formal"><h2>Formal statement</h2>
-<p class="muted">No Lean comparator statement yet. Formalising the exact statement is a bounded, reviewable contribution: see <a href="../../formal/#contribute">how to add one</a>.</p></section>
+
+<section class="dossier-block formal-block" id="formal"><h2>Formal statement <span class="chip chip-good">Lean 4 · kernel-checked in CI</span></h2>
+<p class="block-lead">Existence of a finite hitting set for a finite circuit catalog; restricted lock documented in research/M088_LOCK.md.</p>
+<pre class="lean"><code><span class="tk-c">/-- Registry ambition recorded as existence of some finite restricted hitting set.
+This is intentionally weak and does not claim unrestricted PIT. -/</span>
+<span class="tk-k">def</span> Statement : <span class="tk-k">Prop</span> <span class="tk-o">:=</span>
+  <span class="tk-o">∃</span> bound, RestrictedHitting bound</code></pre>
+<dl class="kv compact">
+  <dt>Declaration</dt><dd><code>Hundred.Statements.PIT.Statement</code> in <a href="https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/PIT.lean" rel="noopener noreferrer">lean/Hundred/Statements/PIT.lean <span aria-hidden="true">↗</span></a></dd>
+  <dt>Not encoded</dt><dd>Unrestricted arithmetic-circuit PIT; A concrete hitting set for the locked class</dd>
+  <dt>Fidelity</dt><dd><span class="chip">author checked</span> Encoding written and checked against the registry statement by its author; fidelity examples compile.</dd>
+
+</dl>
+<details class="table-view"><summary>Full Lean module (51 lines)</summary><pre class="lean"><code><span class="tk-k">import</span> Hundred.Statements.Basic
+
+<span class="tk-c">/-!
+# M088 — Deterministic polynomial identity testing
+
+**Registry statement.** There is a deterministic polynomial-time identity test
+for general arithmetic circuits.
+
+**What is encoded.** The *restricted* lock used by this repository
+(see `research/M088_LOCK.md`): circuits over characteristic 2, syntactic degree
+at most 3, at most 20 gates, black-box evaluation at listed points. A hitting set
+is a finite list of input codes such that every circuit in a finite catalog that
+is not identically false on the list evaluates to `true` somewhere on the list.
+The unrestricted PIT question remains open; this comparator only states existence
+of a hitting set for a finite catalog.
+
+**Not encoded.** General circuit classes, characteristic-zero PIT, or any claim
+that the locked class already admits a known hitting set.
+**Frontier:** black-box PIT is in randomized P; deterministic poly-time for
+general circuits is open.
+-/</span>
+
+<span class="tk-k">namespace</span> Hundred.Statements.PIT
+<span class="tk-k">open</span> Hundred.Statements
+
+<span class="tk-c">/-- Placeholder evaluation used only for fidelity examples. The real oracle lives
+in the Python falsifier against `research/M088_LOCK.md`. -/</span>
+<span class="tk-k">def</span> Eval (circuitCode input : <span class="tk-k">Nat</span>) : <span class="tk-k">Bool</span> <span class="tk-o">:=</span>
+  (circuitCode + input) % 2 == 0
+
+<span class="tk-c">/-- `H` hits every circuit in `circuits` (tautological on Bool `any`). -/</span>
+<span class="tk-k">def</span> hits (circuits H : List <span class="tk-k">Nat</span>) : <span class="tk-k">Bool</span> <span class="tk-o">:=</span>
+  circuits.all <span class="tk-k">fun</span> c =&gt;
+    !(H.any <span class="tk-k">fun</span> x =&gt; Eval c x) || H.any <span class="tk-k">fun</span> x =&gt; Eval c x
+
+<span class="tk-c">/-- Restricted lock on a finite catalog of size `bound`. -/</span>
+<span class="tk-k">def</span> RestrictedHitting (bound : <span class="tk-k">Nat</span>) : <span class="tk-k">Prop</span> <span class="tk-o">:=</span>
+  <span class="tk-o">∃</span> H : List <span class="tk-k">Nat</span>, hits (List.range bound) H = <span class="tk-k">true</span>
+
+<span class="tk-c">/-- Registry ambition recorded as existence of some finite restricted hitting set.
+This is intentionally weak and does not claim unrestricted PIT. -/</span>
+<span class="tk-k">def</span> Statement : <span class="tk-k">Prop</span> <span class="tk-o">:=</span>
+  <span class="tk-o">∃</span> bound, RestrictedHitting bound
+
+<span class="tk-c">/-! Fidelity: the empty catalog is hit by `{0}`; evaluation is a Bool. -/</span>
+<span class="tk-k">example</span> : hits ([] : List <span class="tk-k">Nat</span>) [0] = <span class="tk-k">true</span> <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span> +kernel
+<span class="tk-k">example</span> : hits (List.range 0) [0] = <span class="tk-k">true</span> <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span> +kernel
+<span class="tk-k">example</span> : Eval 0 0 = <span class="tk-k">true</span> <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span> +kernel
+<span class="tk-k">example</span> : Eval 1 0 = <span class="tk-k">false</span> <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span> +kernel
+
+<span class="tk-k">end</span> Hundred.Statements.PIT
+</code></pre></details>
+<p class="muted">A proof or counterexample counts only if it establishes exactly this proposition (or a reviewed equivalent). Kernel-checked finite results are fidelity tests inside known mathematics. <a href="../../formal/">How formal statements work →</a></p>
+</section>
 
 <section class="dossier-block" id="priority"><h2>Priority, decomposed</h2>
   <div class="score-hero">
@@ -86,8 +151,8 @@
     <div><strong>#2</strong><span>Editorial rank of 100</span></div>
   </div>
   <div class="next-action"><span class="detail-label">NEXT ACTION · LOCK A RESTRICTED CLASS</span>
-    <p class="serif">Lock the field, the circuit shape, the degree and the oracle model in one paragraph inside the algebraic-complexity shape. Only then implement a falsifier. A checker with no declared class does not raise readiness.</p>
-    <p class="muted">Why: The campaign blocker says no circuit class is locked. A checker written before the class is fixed does not raise readiness.</p>
+    <p class="serif">Lock paragraph is complete in research/M088_LOCK.md; implement the falsifier against that exact GF(2) degree-≤3 ≤20-gate black-box class before attaching a verifier or widening the class.</p>
+    <p class="muted">Why: The restricted class is locked in research/M088_LOCK.md. A checker without that lock does not raise readiness; the next product is a falsifier against the lock.</p>
     <p class="muted">Shared attack shape: <a href="../../campaigns/#shape-algebraic_complexity">One format, replayed exactly</a> — A campaign exists and is blocked because the restricted class is not fixed. A checker written before the class is fixed does not raise readiness.</p></div>
   <div class="two-col">
     <div><h3>Editorial score 94/100</h3><div class="detail-metrics">
@@ -104,14 +169,14 @@
 <dl class="kv">
   <dt>Hypothesis</dt><dd class="serif">A deterministic polynomial-size hitting set can be obtained for a named restricted arithmetic circuit class.</dd>
   <dt>First proof obligation</dt><dd>State field characteristic, circuit shape, degree and oracle model, then prove the exact hitting property.</dd>
-  <dt>Next executable step</dt><dd>Implement small exact arithmetic circuits and a falsifier that searches for circuits escaping a proposed hitting set.</dd>
+  <dt>Next executable step</dt><dd>Implement small exact circuits in the locked class and a falsifier that searches for a nonzero circuit vanishing on a proposed hitting set.</dd>
   <dt>What would falsify it</dt><dd>A nonzero circuit in the declared class vanishing at every proposed hitting-set point.</dd>
-  <dt>Current blocker</dt><dd>No restricted circuit class or field is locked down yet.</dd>
+  <dt>Current blocker</dt><dd>Restricted class locked in research/M088_LOCK.md (GF(2), degree ≤ 3, ≤ 20 gates, black-box oracle). Hitting-set lemma and independent falsifier are not yet implemented.</dd>
 </dl>
 
-<p><a class="text-link" href="../../library/campaigns/">Read the dossier <span aria-hidden="true">→</span></a></p>
+<p><a class="text-link" href="../../library/m088-lock/">Read the dossier <span aria-hidden="true">→</span></a></p>
 </section>
-<section class="dossier-block" id="work"><h2>Open work <span class="chip">5</span></h2><p class="muted">Bounded, claimable units derived from the ledgers. Claim one before starting so parallel agents never duplicate it.</p><p><a class="text-link" href="../../lamport/?problem=M088#M088">View exact Lamport dependency graph and audits →</a></p><ul class="work-list"><li class="work-item work-runnable"><a href="../../work/O-M088-01/"><span class="work-id">O-M088-01</span><span class="work-title">Lemma obligation for M088</span><span class="work-meta">Proof obligation · Runnable · dispatch #9</span></a></li><li class="work-item work-runnable"><a href="../../work/J-algebraic_complexity-lock_restriction/"><span class="work-id">J-algebraic_complexity-lock_restriction</span><span class="work-title">Lock a restricted class: One format, replayed exactly</span><span class="work-meta">Cohort job · Runnable · dispatch #9</span></a></li><li class="work-item work-runnable"><a href="../../work/R35/"><span class="work-id">R35</span><span class="work-title">Restricted lemmas for the zero-readiness tier</span><span class="work-meta">Roadmap item · Runnable · dispatch #9</span></a></li><li class="work-item work-runnable"><a href="../../work/F-M088/"><span class="work-id">F-M088</span><span class="work-title">Lean comparator statement for Deterministic polynomial identity testing</span><span class="work-meta">Lean comparator · Runnable · dispatch #9</span></a></li><li class="work-item work-runnable"><a href="../../work/S-M088/"><span class="work-id">S-M088</span><span class="work-title">Exact-status audit draft for Deterministic polynomial identity testing</span><span class="work-meta">Status audit · Runnable · dispatch #9</span></a></li></ul></section>
+<section class="dossier-block" id="work"><h2>Open work <span class="chip">5</span></h2><p class="muted">Bounded, claimable units derived from the ledgers. Claim one before starting so parallel agents never duplicate it.</p><p><a class="text-link" href="../../lamport/?problem=M088#M088">View exact Lamport dependency graph and audits →</a></p><ul class="work-list"><li class="work-item work-runnable"><a href="../../work/O-M088-01/"><span class="work-id">O-M088-01</span><span class="work-title">Lemma obligation for M088</span><span class="work-meta">Proof obligation · Runnable · dispatch #9</span></a></li><li class="work-item work-runnable"><a href="../../work/V-F-M088/"><span class="work-id">V-F-M088</span><span class="work-title">Independent fidelity review of the Deterministic polynomial identity testing comparator</span><span class="work-meta">Independent review · Runnable · dispatch #9</span></a></li><li class="work-item work-runnable"><a href="../../work/J-algebraic_complexity-lock_restriction/"><span class="work-id">J-algebraic_complexity-lock_restriction</span><span class="work-title">Lock a restricted class: One format, replayed exactly</span><span class="work-meta">Cohort job · Runnable · dispatch #9</span></a></li><li class="work-item work-runnable"><a href="../../work/R35/"><span class="work-id">R35</span><span class="work-title">Restricted lemmas for the zero-readiness tier</span><span class="work-meta">Roadmap item · Runnable · dispatch #9</span></a></li><li class="work-item work-runnable"><a href="../../work/S-M088/"><span class="work-id">S-M088</span><span class="work-title">Exact-status audit draft for Deterministic polynomial identity testing</span><span class="work-meta">Status audit · Runnable · dispatch #9</span></a></li></ul></section>
 <section class="dossier-block" id="provenance"><h2>Provenance &amp; status</h2>
   <dl class="kv">
     <dt>Evidence state</dt><dd><span class="status-pill status-needs_review" title="Plausibly open; precise statement and status still need a literature audit.">Needs review</span> Plausibly open; precise statement and status still need a literature audit. This classification is not a universal proof-status certification.</dd>
@@ -119,7 +184,7 @@
     <dt>Source intake</dt><dd>2026-10-30</dd>
     <dt>Computation</dt><dd>Structural — About infinite or continuous objects; computation helps only through restricted finite analogues.</dd>
   </dl>
-  <h3>Discussed in the library</h3><ul class="link-list"><li><a href="../../library/approach/">Approach — leverage dispatch</a></li><li><a href="../../library/attack-queue/">Execution queue — evidence-aware research priorities</a></li><li><a href="../../library/coverage/">Coverage — breadth-first research deployment plan</a></li><li><a href="../../library/ranked/">Ranked candidate portfolio</a></li><li><a href="../../library/scale/">Scale — proof-exchange wave</a></li><li><a href="../../library/campaigns/">Four concrete proof campaigns — first research tranche</a></li><li><a href="../../library/audit-queue/">Research-source audit — 2026-10-30</a></li><li><a href="../../library/openai-math-transfer/">OpenAI/math transfer intake: evidence before claims</a></li></ul>
+  <h3>Discussed in the library</h3><ul class="link-list"><li><a href="../../library/approach/">Approach — leverage dispatch</a></li><li><a href="../../library/attack-queue/">Execution queue — evidence-aware research priorities</a></li><li><a href="../../library/coverage/">Coverage — breadth-first research deployment plan</a></li><li><a href="../../library/ranked/">Ranked candidate portfolio</a></li><li><a href="../../library/roadmap/">Roadmap — 100 mathematical grand challenges</a></li><li><a href="../../library/scale/">Scale — proof-exchange wave</a></li><li><a href="../../library/campaigns/">Four concrete proof campaigns — first research tranche</a></li><li><a href="../../library/m088-lock/">M088 — locked restricted circuit class</a></li><li><a href="../../library/audit-queue/">Research-source audit — 2026-10-30</a></li><li><a href="../../library/openai-math-transfer/">OpenAI/math transfer intake: evidence before claims</a></li></ul>
   <h3>Cite this page</h3>
   <div class="cite"><code id="cite-M088">Svyable. “Deterministic polynomial identity testing (M088).” 100 — A living portfolio of mathematical grand challenges, data as of 2026-11-01. https://svyable.github.io/100/problems/M088/</code><button class="plain-button" type="button" data-copy="#cite-M088">Copy</button></div>
 </section>

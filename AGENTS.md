@@ -11,8 +11,12 @@ python3 scripts/work.py --next 5                  # highest-priority runnable it
 python3 scripts/work.py --next 5 --kind comparator  # or: obligation, lean, job, roadmap, status_audit
 python3 scripts/work.py --id F-M079               # one item: deliverable, acceptance, boundary, digest
 python3 scripts/scale.py --budget 100             # 100-slot evidence-bound wave (see SCALE.md)
+python3 scripts/scale.py --write                  # also refreshes docs/api/packets.json for fleets
+python3 scripts/analogues.py --check              # structural finite-analogue ledger
 ```
 
+Fleet operator guide: [docs/FLEET.md](docs/FLEET.md). Packets are claimable contracts with
+scope digests, not theorems.
 Site discovery for independent contributors: [start here](https://svyable.github.io/100/start/), [JSON agent contract](https://svyable.github.io/100/api/agent.json), [runnable shortlist](https://svyable.github.io/100/api/agent/tasks.json), and [plain-text guide](https://svyable.github.io/100/llms.txt). These are **generated static snapshots**, not a live reservation/claim service. Always re-check the latest scope digest and current GitHub open claims before taking a task.
 
 The 36 preregistered model/agent benchmark cells are also claimable individually

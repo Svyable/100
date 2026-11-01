@@ -120,7 +120,20 @@
   ],
   "engine_roadmap": null,
   "claim_review_2026": null,
-  "formal_statement": null,
+  "formal_statement": {
+    "problem_id": "M079",
+    "module": "lean/Hundred/Statements/OneThird.lean",
+    "namespace": "Hundred.Statements.OneThird",
+    "statement": "Statement",
+    "encodes": "Poset axioms, incomparable pairs, and [1/3,2/3] balance against a supplied extension count.",
+    "not_encoded": [
+      "Executable enumeration of linear extensions",
+      "Linial width-2 theorem as a formal corollary"
+    ],
+    "kernel_checked": [],
+    "fidelity": "author_checked",
+    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/OneThird.lean"
+  },
   "external_claims": [],
   "discovery_trail": null,
   "discovery_url": null,

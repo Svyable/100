@@ -1,21 +1,15 @@
-# Future Next 100 batches
+# Next-100 intake batches
 
-Add a versioned JSON array such as `2026-11-round-01.json` with records
-following [the seed schema](../next_candidates.json). Every candidate gets
-a new stable `N` ID, at least two substantive spillover areas, a conditional
-consequence and a first falsification or formalization step.
+Drop a new cohort as `YYYY-MM-label.json` containing an array of candidates.
+Each object must follow the Next-100 schema (`N` + ≥4 digits, scores 1–5,
+`evidence_state: unvetted_hypothesis`). Prefer **50–100 differentiated**
+hypotheses per batch. See [NEXT_100.md](../../NEXT_100.md).
 
-Do not copy active `M` problems or claim a proposed hypothesis is novel or
-independently confirmed open. Run `python3 scripts/next.py` and
-`python3 scripts/next.py --check` after every batch. The builder reads
-all `*.json` files here in deterministic filename order and rejects duplicate
-IDs or titles across the seed, all batches and the active 100.
+```sh
+python3 scripts/next.py
+python3 scripts/next.py --check
+python3 scripts/next.py --similarity 20
+```
 
-Large future intakes can be split into multiple small reviewable files.
-A new batch never changes the capped 100 without an explicit promotion PR.
-
-## Completed intakes
-
-- `2026-10-cohort-02.json`: N0121–N0216, 96 hypotheses across 12 additional
-  domains. Schema and lexical screening do **not** establish novelty.
-  See `../next_review_queue.json` for twelve bounded first-review briefs.
+Do not auto-promote into the active 100. Promotions require a PR and an entry
+in `data/next_promotions.json`.

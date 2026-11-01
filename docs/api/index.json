@@ -10,6 +10,7 @@
     "full_snapshot": "https://svyable.github.io/100/data/portfolio.json",
     "feed": "https://svyable.github.io/100/feed.xml",
     "work_queue": "https://svyable.github.io/100/api/work.json",
+    "fleet_packets": "https://svyable.github.io/100/api/packets.json",
     "discovery": "https://svyable.github.io/100/api/discovery.json",
     "agent_manifest": "https://svyable.github.io/100/api/agent.json",
     "agent_shortlist": "https://svyable.github.io/100/api/agent/tasks.json",
@@ -19,13 +20,13 @@
   },
   "counts": {
     "problems": 100,
-    "campaigns": 21,
+    "campaigns": 23,
     "probes": 21,
     "engines": 14,
     "claim_reviews": 15,
-    "lean_statements": 9,
+    "lean_statements": 14,
     "solved": 0,
-    "documents": 44,
+    "documents": 46,
     "discovery_trails": 4,
     "discovery_nodes": 13
   }

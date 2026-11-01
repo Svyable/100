@@ -11,13 +11,13 @@ A filled slot is a claimable work packet with a scope digest. It is not a solved
 | Observable | Value | Boundary |
 |---|---:|---|
 | Claimable slots filled / budget | **100** / 100 | One agent claim per slot; not theorems |
-| Active problems touched | **73** / 100 | Coverage of the registry, not resolutions |
-| Cohort shapes touched (via jobs) | 23 / 30 | Shared attack templates |
-| Derived work-queue size | 345 (339 runnable) | Source: `scripts/work.py` |
-| Refused this wave | 6 | stop_range, externally blocked or dependency-blocked |
-| Proof-obligation frontier | runnable=21, blocked=1, waiting=2, discharged=0 | Acceptance DAG only |
+| Active problems touched | **61** / 100 | Coverage of the registry, not resolutions |
+| Cohort shapes touched (via jobs) | 17 / 30 | Shared attack templates |
+| Derived work-queue size | 348 (341 runnable) | Source: `scripts/work.py` |
+| Refused this wave | 7 | stop_range, externally blocked or dependency-blocked |
+| Proof-obligation frontier | runnable=22, blocked=1, waiting=3, discharged=0 | Acceptance DAG only |
 
-Slot mix: obligation=21, review=42, lean=9, job=28
+Slot mix: obligation=22, review=47, lean=9, job=22
 
 ## How to take a slot
 
@@ -61,7 +61,22 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 3. `O-M074-02` · obligation · runnable · leverage 1195
+### 3. `O-M044-01` · obligation · runnable · leverage 1197
+
+**Witness obligation for M044**
+
+- Problems: M044
+- Deliverable: Import or rebuild an independent group-ring checker; replay the claimed presentation and products; preserve input digests.
+- Boundary: The OpenAI math manuscript claims a counterexample to direct finiteness; this node only asks for independent replay. Matching the registered statement is not novelty credit.
+- Falsifier: A multiplication trace where ab≠1, or ba=1, or the presentation/supports disagree with the cited source.
+- Claim: `[Claim] O-M044-01 — Witness obligation for M044`
+- Digest: `66b5994711bfd489…`
+- Roles:
+  - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
+  - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
+  - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
+
+### 4. `O-M074-02` · obligation · runnable · leverage 1195
 
 **Reduction obligation for M074**
 
@@ -76,7 +91,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 4. `O-M092-01` · obligation · runnable · leverage 1194
+### 5. `O-M092-01` · obligation · runnable · leverage 1194
 
 **Witness obligation for M092**
 
@@ -91,7 +106,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 5. `O-M093-01` · obligation · runnable · leverage 1193
+### 6. `O-M093-01` · obligation · runnable · leverage 1193
 
 **Witness obligation for M093**
 
@@ -106,7 +121,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 6. `O-M094-01` · obligation · runnable · leverage 1192
+### 7. `O-M094-01` · obligation · runnable · leverage 1192
 
 **Witness obligation for M094**
 
@@ -121,22 +136,22 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 7. `O-M088-01` · obligation · runnable · leverage 1191
+### 8. `O-M088-01` · obligation · runnable · leverage 1191
 
 **Lemma obligation for M088**
 
 - Problems: M088
-- Deliverable: Lock the field, circuit shape, degree and oracle model in one paragraph inside the algebraic-complexity shape; only then implement a falsifier.
-- Boundary: No restricted circuit class is locked in this repository yet; a checker written before the class is fixed does not raise readiness.
+- Deliverable: Class lock is in research/M088_LOCK.md. Implement the exact falsifier (nonzero circuit vanishing on a proposed hitting set) against that lock; independent mathematical and statement-fidelity review still required before discharge.
+- Boundary: The restricted GF(2) degree-≤3 ≤20-gate black-box class is locked in-repo. A hitting set for that class would be a restricted lemma, not a resolution of unrestricted PIT.
 - Falsifier: A nonzero circuit in the locked class that vanishes at every hitting-set point, or a lock paragraph that leaves characteristic, shape, degree or oracle unspecified.
 - Claim: `[Claim] O-M088-01 — Lemma obligation for M088`
-- Digest: `97290ef993430594…`
+- Digest: `4dddac3de80a8e37…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 8. `O-M075-01` · obligation · runnable · leverage 1190
+### 9. `O-M075-01` · obligation · runnable · leverage 1190
 
 **Lemma obligation for M075**
 
@@ -151,7 +166,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 9. `O-M078-01` · obligation · runnable · leverage 1189
+### 10. `O-M078-01` · obligation · runnable · leverage 1189
 
 **Lemma obligation for M078**
 
@@ -166,7 +181,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 10. `O-M079-01` · obligation · runnable · leverage 1188
+### 11. `O-M079-01` · obligation · runnable · leverage 1188
 
 **Lemma obligation for M079**
 
@@ -181,7 +196,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 11. `O-M096-01` · obligation · runnable · leverage 1187
+### 12. `O-M096-01` · obligation · runnable · leverage 1187
 
 **Witness obligation for M096**
 
@@ -196,7 +211,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 12. `O-M084-01` · obligation · runnable · leverage 1186
+### 13. `O-M084-01` · obligation · runnable · leverage 1186
 
 **Witness obligation for M084**
 
@@ -211,7 +226,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 13. `O-M095-01` · obligation · runnable · leverage 1185
+### 14. `O-M095-01` · obligation · runnable · leverage 1185
 
 **Witness obligation for M095**
 
@@ -226,7 +241,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 14. `O-M080-01` · obligation · runnable · leverage 1184
+### 15. `O-M080-01` · obligation · runnable · leverage 1184
 
 **Lemma obligation for M080**
 
@@ -241,7 +256,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 15. `O-M097-01` · obligation · runnable · leverage 1183
+### 16. `O-M097-01` · obligation · runnable · leverage 1183
 
 **Lemma obligation for M097**
 
@@ -256,7 +271,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 16. `O-M019-01` · obligation · runnable · leverage 1182
+### 17. `O-M019-01` · obligation · runnable · leverage 1182
 
 **Lemma obligation for M019**
 
@@ -271,7 +286,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 17. `O-M002-01` · obligation · runnable · leverage 1181
+### 18. `O-M002-01` · obligation · runnable · leverage 1181
 
 **Witness obligation for M002**
 
@@ -286,7 +301,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 18. `O-M006-01` · obligation · runnable · leverage 1176
+### 19. `O-M006-01` · obligation · runnable · leverage 1176
 
 **Lemma obligation for M006**
 
@@ -301,7 +316,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 19. `O-M041-01` · obligation · runnable · leverage 1102
+### 20. `O-M041-01` · obligation · runnable · leverage 1102
 
 **Lemma obligation for M041**
 
@@ -316,7 +331,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 20. `O-M048-01` · obligation · runnable · leverage 1101
+### 21. `O-M048-01` · obligation · runnable · leverage 1101
 
 **Lemma obligation for M048**
 
@@ -331,7 +346,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 21. `O-M001-01` · obligation · runnable · leverage 1100
+### 22. `O-M001-01` · obligation · runnable · leverage 1100
 
 **Lemma obligation for M001**
 
@@ -346,7 +361,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 22. `V-F-M071` · review · runnable · leverage 1099
+### 23. `V-F-M071` · review · runnable · leverage 1099
 
 **Independent fidelity review of the Hadwiger conjecture comparator**
 
@@ -360,7 +375,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 23. `V-P-M071` · review · runnable · leverage 1099
+### 24. `V-P-M071` · review · runnable · leverage 1099
 
 **Independent certificate and scope audit for M071**
 
@@ -374,7 +389,21 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 24. `V-P-M073` · review · runnable · leverage 1098
+### 25. `V-F-M073` · review · runnable · leverage 1098
+
+**Independent fidelity review of the Sidorenko conjecture comparator**
+
+- Problems: M073
+- Deliverable: Check Hundred.Statements.Sidorenko.Statement in lean/Hundred/Statements/Sidorenko.lean against the registry statement and a primary source; confirm the 'not encoded' list is complete; try to break each fidelity example.
+- Boundary: Fidelity review certifies the encoding, never the conjecture.
+- Falsifier: A hand-checked instance on which the comparator and the registry statement disagree.
+- Claim: `[Claim] V-F-M073 — Independent fidelity review of the Sidorenko conjecture comparator`
+- Digest: `862974f28afa0f63…`
+- Roles:
+  - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
+  - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
+
+### 26. `V-P-M073` · review · runnable · leverage 1098
 
 **Independent certificate and scope audit for M073**
 
@@ -388,7 +417,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 25. `V-F-M074` · review · runnable · leverage 1095
+### 27. `V-F-M074` · review · runnable · leverage 1095
 
 **Independent fidelity review of the Caccetta–Häggkvist conjecture comparator**
 
@@ -402,7 +431,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 26. `V-P-M074` · review · runnable · leverage 1095
+### 28. `V-P-M074` · review · runnable · leverage 1095
 
 **Independent certificate and scope audit for M074**
 
@@ -416,7 +445,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 27. `V-P-M092` · review · runnable · leverage 1094
+### 29. `V-P-M092` · review · runnable · leverage 1094
 
 **Independent certificate and scope audit for M092**
 
@@ -430,7 +459,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 28. `V-P-M093` · review · runnable · leverage 1093
+### 30. `V-P-M093` · review · runnable · leverage 1093
 
 **Independent certificate and scope audit for M093**
 
@@ -444,7 +473,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 29. `V-F-M094` · review · runnable · leverage 1092
+### 31. `V-F-M094` · review · runnable · leverage 1092
 
 **Independent fidelity review of the Hadamard matrix conjecture comparator**
 
@@ -458,7 +487,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 30. `V-L007` · review · runnable · leverage 1092
+### 32. `V-L007` · review · runnable · leverage 1092
 
 **Independent scope review of Lean target L007 (M094)**
 
@@ -472,7 +501,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 31. `V-P-M094` · review · runnable · leverage 1092
+### 33. `V-P-M094` · review · runnable · leverage 1092
 
 **Independent certificate and scope audit for M094**
 
@@ -486,7 +515,21 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 32. `V-F-M075` · review · runnable · leverage 1090
+### 34. `V-F-M088` · review · runnable · leverage 1091
+
+**Independent fidelity review of the Deterministic polynomial identity testing comparator**
+
+- Problems: M088
+- Deliverable: Check Hundred.Statements.PIT.Statement in lean/Hundred/Statements/PIT.lean against the registry statement and a primary source; confirm the 'not encoded' list is complete; try to break each fidelity example.
+- Boundary: Fidelity review certifies the encoding, never the conjecture.
+- Falsifier: A hand-checked instance on which the comparator and the registry statement disagree.
+- Claim: `[Claim] V-F-M088 — Independent fidelity review of the Deterministic polynomial identity testing comparator`
+- Digest: `d2b45ae158701212…`
+- Roles:
+  - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
+  - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
+
+### 35. `V-F-M075` · review · runnable · leverage 1090
 
 **Independent fidelity review of the Frankl union-closed sets conjecture comparator**
 
@@ -500,7 +543,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 33. `V-L002` · review · runnable · leverage 1090
+### 36. `V-L002` · review · runnable · leverage 1090
 
 **Independent scope review of Lean target L002 (M075)**
 
@@ -514,7 +557,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 34. `V-L006` · review · runnable · leverage 1090
+### 37. `V-L006` · review · runnable · leverage 1090
 
 **Independent scope review of Lean target L006 (M075)**
 
@@ -528,7 +571,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 35. `V-P-M075` · review · runnable · leverage 1090
+### 38. `V-P-M075` · review · runnable · leverage 1090
 
 **Independent certificate and scope audit for M075**
 
@@ -542,7 +585,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 36. `V-F-M078` · review · runnable · leverage 1089
+### 39. `V-F-M078` · review · runnable · leverage 1089
 
 **Independent fidelity review of the Graph reconstruction conjecture comparator**
 
@@ -556,7 +599,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 37. `V-P-M078` · review · runnable · leverage 1089
+### 40. `V-P-M078` · review · runnable · leverage 1089
 
 **Independent certificate and scope audit for M078**
 
@@ -570,7 +613,21 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 38. `V-P-M079` · review · runnable · leverage 1088
+### 41. `V-F-M079` · review · runnable · leverage 1088
+
+**Independent fidelity review of the One-third–two-thirds conjecture comparator**
+
+- Problems: M079
+- Deliverable: Check Hundred.Statements.OneThird.Statement in lean/Hundred/Statements/OneThird.lean against the registry statement and a primary source; confirm the 'not encoded' list is complete; try to break each fidelity example.
+- Boundary: Fidelity review certifies the encoding, never the conjecture.
+- Falsifier: A hand-checked instance on which the comparator and the registry statement disagree.
+- Claim: `[Claim] V-F-M079 — Independent fidelity review of the One-third–two-thirds conjecture comparator`
+- Digest: `78664d304845bcb8…`
+- Roles:
+  - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
+  - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
+
+### 42. `V-P-M079` · review · runnable · leverage 1088
 
 **Independent certificate and scope audit for M079**
 
@@ -584,7 +641,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 39. `V-F-M096` · review · runnable · leverage 1087
+### 43. `V-F-M096` · review · runnable · leverage 1087
 
 **Independent fidelity review of the Projective plane order 12 comparator**
 
@@ -598,7 +655,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 40. `V-L009` · review · runnable · leverage 1087
+### 44. `V-L009` · review · runnable · leverage 1087
 
 **Independent scope review of Lean target L009 (M096)**
 
@@ -612,7 +669,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 41. `V-P-M096` · review · runnable · leverage 1087
+### 45. `V-P-M096` · review · runnable · leverage 1087
 
 **Independent certificate and scope audit for M096**
 
@@ -626,7 +683,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 42. `V-P-M084` · review · runnable · leverage 1086
+### 46. `V-P-M084` · review · runnable · leverage 1086
 
 **Independent certificate and scope audit for M084**
 
@@ -640,7 +697,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 43. `V-F-M095` · review · runnable · leverage 1085
+### 47. `V-F-M095` · review · runnable · leverage 1085
 
 **Independent fidelity review of the Exact Ramsey number R(5,5) comparator**
 
@@ -654,7 +711,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 44. `V-L001` · review · runnable · leverage 1085
+### 48. `V-L001` · review · runnable · leverage 1085
 
 **Independent scope review of Lean target L001 (M095)**
 
@@ -668,7 +725,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 45. `V-L008` · review · runnable · leverage 1085
+### 49. `V-L008` · review · runnable · leverage 1085
 
 **Independent scope review of Lean target L008 (M095)**
 
@@ -682,7 +739,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 46. `V-P-M095` · review · runnable · leverage 1085
+### 50. `V-P-M095` · review · runnable · leverage 1085
 
 **Independent certificate and scope audit for M095**
 
@@ -696,7 +753,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 47. `V-P-M080` · review · runnable · leverage 1084
+### 51. `V-P-M080` · review · runnable · leverage 1084
 
 **Independent certificate and scope audit for M080**
 
@@ -710,7 +767,21 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 48. `V-P-M097` · review · runnable · leverage 1083
+### 52. `V-F-M097` · review · runnable · leverage 1083
+
+**Independent fidelity review of the Metric TSP four-thirds conjecture comparator**
+
+- Problems: M097
+- Deliverable: Check Hundred.Statements.MetricTSP.Statement in lean/Hundred/Statements/MetricTSP.lean against the registry statement and a primary source; confirm the 'not encoded' list is complete; try to break each fidelity example.
+- Boundary: Fidelity review certifies the encoding, never the conjecture.
+- Falsifier: A hand-checked instance on which the comparator and the registry statement disagree.
+- Claim: `[Claim] V-F-M097 — Independent fidelity review of the Metric TSP four-thirds conjecture comparator`
+- Digest: `1b71db39b0c06f3b…`
+- Roles:
+  - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
+  - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
+
+### 53. `V-P-M097` · review · runnable · leverage 1083
 
 **Independent certificate and scope audit for M097**
 
@@ -724,7 +795,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 49. `V-F-M019` · review · runnable · leverage 1082
+### 54. `V-F-M019` · review · runnable · leverage 1082
 
 **Independent fidelity review of the Erdős–Straus conjecture comparator**
 
@@ -738,7 +809,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 50. `V-L005` · review · runnable · leverage 1082
+### 55. `V-L005` · review · runnable · leverage 1082
 
 **Independent scope review of Lean target L005 (M019)**
 
@@ -752,7 +823,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 51. `V-P-M019` · review · runnable · leverage 1082
+### 56. `V-P-M019` · review · runnable · leverage 1082
 
 **Independent certificate and scope audit for M019**
 
@@ -766,7 +837,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 52. `V-P-M002` · review · runnable · leverage 1081
+### 57. `V-P-M002` · review · runnable · leverage 1081
 
 **Independent certificate and scope audit for M002**
 
@@ -780,7 +851,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 53. `V-F-M006` · review · runnable · leverage 1076
+### 58. `V-F-M006` · review · runnable · leverage 1076
 
 **Independent fidelity review of the Strong Goldbach conjecture comparator**
 
@@ -794,7 +865,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 54. `V-L004` · review · runnable · leverage 1076
+### 59. `V-L004` · review · runnable · leverage 1076
 
 **Independent scope review of Lean target L004 (M006)**
 
@@ -808,7 +879,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 55. `V-P-M006` · review · runnable · leverage 1076
+### 60. `V-P-M006` · review · runnable · leverage 1076
 
 **Independent certificate and scope audit for M006**
 
@@ -822,7 +893,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 56. `V-S-M056` · review · runnable · leverage 1060
+### 61. `V-S-M056` · review · runnable · leverage 1060
 
 **Independent review of the status draft for Fourier restriction conjecture**
 
@@ -836,7 +907,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 57. `V-S-M063` · review · runnable · leverage 1051
+### 62. `V-S-M063` · review · runnable · leverage 1051
 
 **Independent review of the status draft for Planar first-passage KPZ exponent**
 
@@ -850,7 +921,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 58. `V-S-M070` · review · runnable · leverage 1044
+### 63. `V-S-M070` · review · runnable · leverage 1044
 
 **Independent review of the status draft for 3D Ising conformal scaling conjecture**
 
@@ -864,7 +935,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 59. `V-S-M017` · review · runnable · leverage 1031
+### 64. `V-S-M017` · review · runnable · leverage 1031
 
 **Independent review of the status draft for Global Langlands functoriality**
 
@@ -878,7 +949,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 60. `V-S-M053` · review · runnable · leverage 1014
+### 65. `V-S-M053` · review · runnable · leverage 1014
 
 **Independent review of the status draft for Weak cosmic censorship**
 
@@ -892,7 +963,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 61. `V-P-M041` · review · runnable · leverage 1002
+### 66. `V-P-M041` · review · runnable · leverage 1002
 
 **Independent certificate and scope audit for M041**
 
@@ -906,7 +977,21 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 62. `V-P-M048` · review · runnable · leverage 1001
+### 67. `V-F-M048` · review · runnable · leverage 1001
+
+**Independent fidelity review of the Alperin weight conjecture comparator**
+
+- Problems: M048
+- Deliverable: Check Hundred.Statements.Alperin.Statement in lean/Hundred/Statements/Alperin.lean against the registry statement and a primary source; confirm the 'not encoded' list is complete; try to break each fidelity example.
+- Boundary: Fidelity review certifies the encoding, never the conjecture.
+- Falsifier: A hand-checked instance on which the comparator and the registry statement disagree.
+- Claim: `[Claim] V-F-M048 — Independent fidelity review of the Alperin weight conjecture comparator`
+- Digest: `552bb670ad7e53fd…`
+- Roles:
+  - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
+  - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
+
+### 68. `V-P-M048` · review · runnable · leverage 1001
 
 **Independent certificate and scope audit for M048**
 
@@ -920,7 +1005,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 63. `V-P-M001` · review · runnable · leverage 1000
+### 69. `V-P-M001` · review · runnable · leverage 1000
 
 **Independent certificate and scope audit for M001**
 
@@ -934,7 +1019,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
 
-### 64. `L003` · lean · runnable · leverage 995
+### 70. `L003` · lean · runnable · leverage 995
 
 **Implement Lean target L003 (M074)**
 
@@ -948,7 +1033,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 65. `L007` · lean · runnable · leverage 992
+### 71. `L007` · lean · runnable · leverage 992
 
 **Extend Lean target L007 (M094)**
 
@@ -962,7 +1047,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 66. `L002` · lean · runnable · leverage 990
+### 72. `L002` · lean · runnable · leverage 990
 
 **Extend Lean target L002 (M075)**
 
@@ -976,7 +1061,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 67. `L006` · lean · runnable · leverage 990
+### 73. `L006` · lean · runnable · leverage 990
 
 **Extend Lean target L006 (M075)**
 
@@ -990,7 +1075,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 68. `L009` · lean · runnable · leverage 987
+### 74. `L009` · lean · runnable · leverage 987
 
 **Extend Lean target L009 (M096)**
 
@@ -1004,7 +1089,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 69. `L001` · lean · runnable · leverage 985
+### 75. `L001` · lean · runnable · leverage 985
 
 **Extend Lean target L001 (M095)**
 
@@ -1018,7 +1103,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 70. `L008` · lean · runnable · leverage 985
+### 76. `L008` · lean · runnable · leverage 985
 
 **Extend Lean target L008 (M095)**
 
@@ -1032,7 +1117,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 71. `L005` · lean · runnable · leverage 982
+### 77. `L005` · lean · runnable · leverage 982
 
 **Extend Lean target L005 (M019)**
 
@@ -1046,7 +1131,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 72. `L004` · lean · runnable · leverage 976
+### 78. `L004` · lean · runnable · leverage 976
 
 **Extend Lean target L004 (M006)**
 
@@ -1060,7 +1145,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 73. `J-extremal_certificates-replay_claim_witness` · job · runnable · leverage 849
+### 79. `J-extremal_certificates-replay_claim_witness` · job · runnable · leverage 849
 
 **Replay a claimed finite witness: Replay the object, or mine the census**
 
@@ -1074,7 +1159,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 74. `J-group_rings-replay_claim_witness` · job · runnable · leverage 847
+### 80. `J-group_rings-replay_claim_witness` · job · runnable · leverage 847
 
 **Replay a claimed finite witness: One presentation, one product**
 
@@ -1088,7 +1173,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 75. `J-finite_geometry-replay_published` · job · runnable · leverage 836
+### 81. `J-finite_geometry-replay_published` · job · runnable · leverage 836
 
 **Replay a published certificate: Replay a published geometric object**
 
@@ -1102,7 +1187,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 76. `J-extremal_certificates-mine_structure` · job · runnable · leverage 826
+### 82. `J-extremal_certificates-mine_structure` · job · runnable · leverage 826
 
 **Mine structure from certificates: Replay the object, or mine the census**
 
@@ -1116,7 +1201,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 77. `J-complexity_barriers-specify_shape` · job · runnable · leverage 813
+### 83. `J-complexity_barriers-specify_shape` · job · runnable · leverage 813
 
 **Fill the shared attack shape: One model, one gap**
 
@@ -1130,7 +1215,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 78. `J-extremal_certificates-replay_published` · job · runnable · leverage 807
+### 84. `J-extremal_certificates-replay_published` · job · runnable · leverage 807
 
 **Replay a published certificate: Replay the object, or mine the census**
 
@@ -1144,21 +1229,21 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 79. `J-algebraic_complexity-lock_restriction` · job · runnable · leverage 801
+### 85. `J-algebraic_complexity-lock_restriction` · job · runnable · leverage 801
 
 **Lock a restricted class: One format, replayed exactly**
 
 - Problems: M088
-- Deliverable: Lock the field, the circuit shape, the degree and the oracle model in one paragraph inside the algebraic-complexity shape. Only then implement a falsifier. A checker with no declared class does not raise readiness.
+- Deliverable: Lock paragraph is complete in research/M088_LOCK.md; implement the falsifier against that exact GF(2) degree-≤3 ≤20-gate black-box class before attaching a verifier or widening the class.
 - Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
 - Claim: `[Claim] J-algebraic_complexity-lock_restriction — Lock a restricted class: One format, replayed exactly`
-- Digest: `e8124199ccccc6c0…`
+- Digest: `245bc80009bd19a0…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 80. `J-extremal_asymptotics-specify_shape` · job · runnable · leverage 800
+### 86. `J-extremal_asymptotics-specify_shape` · job · runnable · leverage 800
 
 **Fill the shared attack shape: One family, one explicit constant**
 
@@ -1172,7 +1257,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 81. `J-algebraic_complexity-replay_published` · job · runnable · leverage 798
+### 87. `J-algebraic_complexity-replay_published` · job · runnable · leverage 798
 
 **Replay a published certificate: One format, replayed exactly**
 
@@ -1186,7 +1271,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 82. `J-effective_diophantine-mine_structure` · job · runnable · leverage 798
+### 88. `J-effective_diophantine-mine_structure` · job · runnable · leverage 798
 
 **Mine structure from certificates: Explicit Diophantine certificates**
 
@@ -1200,7 +1285,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 83. `J-ramsey_parameter-replay_published` · job · runnable · leverage 797
+### 89. `J-ramsey_parameter-replay_published` · job · runnable · leverage 797
 
 **Replay a published certificate: A colouring with a proof trace**
 
@@ -1214,7 +1299,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 84. `J-critical_zeros-replay_published` · job · runnable · leverage 793
+### 90. `J-critical_zeros-replay_published` · job · runnable · leverage 793
 
 **Replay a published certificate: Certified zero counts**
 
@@ -1228,7 +1313,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 85. `J-lattice_models-specify_shape` · job · runnable · leverage 793
+### 91. `J-lattice_models-specify_shape` · job · runnable · leverage 793
 
 **Fill the shared attack shape: Exact counts on a finite torus**
 
@@ -1242,7 +1327,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 86. `J-galois_representations-specify_shape` · job · runnable · leverage 793
+### 92. `J-galois_representations-specify_shape` · job · runnable · leverage 793
 
 **Fill the shared attack shape: One field, two computations**
 
@@ -1256,7 +1341,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 87. `J-tsp_gap-mine_structure` · job · runnable · leverage 789
+### 93. `J-tsp_gap-mine_structure` · job · runnable · leverage 789
 
 **Mine structure from certificates: A new metric class, both optima certified**
 
@@ -1270,7 +1355,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 88. `J-rigidity_dynamics-specify_shape` · job · runnable · leverage 789
+### 94. `J-rigidity_dynamics-specify_shape` · job · runnable · leverage 789
 
 **Fill the shared attack shape: One map, one enclosure**
 
@@ -1284,7 +1369,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 89. `J-complexity_barriers-scope_audit` · job · runnable · leverage 787
+### 95. `J-complexity_barriers-scope_audit` · job · runnable · leverage 787
 
 **Audit claim scope: One model, one gap**
 
@@ -1298,7 +1383,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 90. `J-distance_sets-scope_audit` · job · runnable · leverage 785
+### 96. `J-distance_sets-scope_audit` · job · runnable · leverage 785
 
 **Audit claim scope: One set, dimension and measure enclosed**
 
@@ -1312,7 +1397,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 91. `J-algebraic_complexity-specify_shape` · job · runnable · leverage 782
+### 97. `J-algebraic_complexity-specify_shape` · job · runnable · leverage 782
 
 **Fill the shared attack shape: One format, replayed exactly**
 
@@ -1326,7 +1411,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 92. `J-sieve_infinitude-specify_shape` · job · runnable · leverage 781
+### 98. `J-sieve_infinitude-specify_shape` · job · runnable · leverage 781
 
 **Fill the shared attack shape: Explicit sieve gaps**
 
@@ -1340,7 +1425,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 93. `J-pde_regularity-scope_audit` · job · runnable · leverage 780
+### 99. `J-pde_regularity-scope_audit` · job · runnable · leverage 780
 
 **Audit claim scope: One ansatz, one enclosure**
 
@@ -1354,7 +1439,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 94. `J-harmonic_analysis-scope_audit` · job · runnable · leverage 779
+### 100. `J-harmonic_analysis-scope_audit` · job · runnable · leverage 779
 
 **Audit claim scope: One dimension, one endpoint**
 
@@ -1368,96 +1453,13 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 95. `J-polynomial_maps-specify_shape` · job · runnable · leverage 778
-
-**Fill the shared attack shape: Families outside proved degree bounds**
-
-- Problems: M042
-- Deliverable: Shape polynomial_maps (2 problems, one write-up): Name a polynomial or Weyl family that published degree bounds do not cover, and refuse exhaustive search inside those bounds. Full shape, certificate and falsifier are in APPROACH.md.
-- Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
-- Claim: `[Claim] J-polynomial_maps-specify_shape — Fill the shared attack shape: Families outside proved degree bounds`
-- Digest: `8a16ea5c452c6354…`
-- Roles:
-  - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
-  - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
-  - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
-
-### 96. `J-logic_decision-scope_audit` · job · runnable · leverage 775
-
-**Audit claim scope: The logic named in the registry**
-
-- Problems: M014
-- Deliverable: Verify the reduction from integer to rational decision tests and audit each cited arithmetic input, especially the October 7 pointwise 2-converse.
-- Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
-- Claim: `[Claim] J-logic_decision-scope_audit — Audit claim scope: The logic named in the registry`
-- Digest: `55c4070b237c4d01…`
-- Roles:
-  - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
-  - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
-  - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
-
-### 97. `J-birational_pairs-scope_audit` · job · runnable · leverage 774
-
-**Audit claim scope: Abundance, hypothesis by hypothesis**
-
-- Problems: M030
-- Deliverable: Check the main theorem and dependencies against the canonical klt characteristic-zero formulation, particularly section production and actual basepoint-freeness.
-- Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
-- Claim: `[Claim] J-birational_pairs-scope_audit — Audit claim scope: Abundance, hypothesis by hypothesis`
-- Digest: `58ef583483a12679…`
-- Roles:
-  - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
-  - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
-  - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
-
-### 98. `J-exponential_fields-specify_shape` · job · runnable · leverage 773
-
-**Fill the shared attack shape: Exponential-algebraic certificates**
-
-- Problems: M099, M011
-- Deliverable: Shape exponential_fields (2 problems, one write-up): Treat Schanuel and the real exponential field as one shape: one explicit tuple or one explicit exponential sentence, certified. Full shape, certificate and falsifier are in APPROACH.md.
-- Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
-- Claim: `[Claim] J-exponential_fields-specify_shape — Fill the shared attack shape: Exponential-algebraic certificates`
-- Digest: `106356f520c8827b…`
-- Roles:
-  - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
-  - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
-  - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
-
-### 99. `J-motivic_cycles-specify_shape` · job · runnable · leverage 768
-
-**Fill the shared attack shape: One variety, one cycle class**
-
-- Problems: M021, M022, M023, M024, M029
-- Deliverable: Shape motivic_cycles (5 problems, one write-up): Fix dimension, codimension and coefficients, then compute one cycle class on one explicit variety in a range a cited source still treats as open. Full shape, certificate and falsifier are in APPROACH.md.
-- Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
-- Claim: `[Claim] J-motivic_cycles-specify_shape — Fill the shared attack shape: One variety, one cycle class`
-- Digest: `c7112a5e7a0946d5…`
-- Roles:
-  - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
-  - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
-  - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
-
-### 100. `J-artin_algebras-specify_shape` · job · runnable · leverage 767
-
-**Fill the shared attack shape: One quiver, one resolution**
-
-- Problems: M045, M046
-- Deliverable: Shape artin_algebras (2 problems, one write-up): Fix one finite-dimensional algebra by a quiver and relations, and recompute its finitistic dimension or the Auslander-Reiten vanishing. Full shape, certificate and falsifier are in APPROACH.md.
-- Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
-- Claim: `[Claim] J-artin_algebras-specify_shape — Fill the shared attack shape: One quiver, one resolution`
-- Digest: `cd091afcd029d868…`
-- Roles:
-  - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
-  - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
-  - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
-
 ## Refused this wave
 
 - `O-M074-01` — externally_blocked: the obligation is not executable
 - `J-polynomial_maps-stop_range` — stop_range: campaign blocker places the range in known mathematics
 - `J-modular_representations-stop_range` — stop_range: campaign blocker places the range in known mathematics
 - `J-critical_zeros-stop_range` — stop_range: campaign blocker places the range in known mathematics
+- `O-M049-01` — waiting_on_dependencies: O-M044-01
 - `O-M074-03` — waiting_on_dependencies: O-M074-01,O-M074-02
 - `O-M075-02` — waiting_on_dependencies: O-M075-01
 

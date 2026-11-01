@@ -11,7 +11,7 @@ import formal
 class TestFormalCatalogue(unittest.TestCase):
     def test_catalogue_validates_and_certificates_replay(self):
         doc = formal.validate()
-        self.assertGreaterEqual(len(doc["entries"]), 9)
+        self.assertGreaterEqual(len(doc["entries"]), 14)
         self.assertEqual(len(formal.replay()), 6)
 
     def test_rejects_unknown_problem_and_missing_declaration(self):

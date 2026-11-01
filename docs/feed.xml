@@ -28,11 +28,11 @@
 <summary>For S3, A4, S4, A5, S5 and PSL(2,7) at every prime dividing the order, the number of p-regular classes equals the number of conjugacy classes of p-weights, counted over all p-radical subgroups with defect-zero degrees of N(Q)/Q from Dixon&#x27;s modular method. The checker re-enumerates radical subgroups by a different criterion and recomputes degrees with a different prime. The deep run covers 46 cases, adding GL(2,3), A6, S6, PSL(2,8), PSL(2,11), PSL(2,13), A7, S7 and the Mathieu group M11. Scope: Known small range; not new</summary>
 </entry>
 <entry>
-<title>Research program updated (21 campaigns)</title>
+<title>Research program updated (23 campaigns)</title>
 <link href="https://svyable.github.io/100/campaigns/"/>
 <id>tag:svyable.github.io,2026:100/program-2026-10-31</id>
 <updated>2026-10-31T00:00:00Z</updated>
-<summary>21 active campaigns; 21 exact probes on 14 engines.</summary>
+<summary>23 active campaigns; 21 exact probes on 14 engines.</summary>
 </entry>
 <entry>
 <title>Milestone: The first two non-trivial zeta zeros are simple and on the critical line</title>

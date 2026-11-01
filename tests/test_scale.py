@@ -1,3 +1,4 @@
+import json
 import sys
 import unittest
 from pathlib import Path
@@ -139,6 +140,14 @@ class WaveScaleTests(unittest.TestCase):
             [p["id"] for p in small["selected_packets"]],
             [p["id"] for p in self.wave["selected_packets"][:10]],
         )
+
+    def test_write_emits_packets_api(self):
+        wave = scale.write_outputs(self.wave)
+        self.assertTrue(scale.PACKETS.is_file())
+        on_disk = json.loads(scale.PACKETS.read_text(encoding="utf-8"))
+        self.assertEqual(on_disk["protocol"], scale.PROTOCOL)
+        self.assertEqual(on_disk["slots_filled"], wave["slots_filled"])
+        self.assertEqual(len(on_disk["selected_packets"]), 100)
 
 
 if __name__ == "__main__":

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>O-M088-01: Lemma obligation for M088 · 100</title>
-<meta name="description" content="Lock the field, circuit shape, degree and oracle model in one paragraph inside the algebraic-complexity shape; only then implement a falsifier.">
+<meta name="description" content="Class lock is in research/M088_LOCK.md. Implement the exact falsifier (nonzero circuit vanishing on a proposed hitting set) against that lock; independent mathematical and statement-fidelity review still required before discharge.">
 <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
 <meta name="color-scheme" content="light dark">
@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="100 — Svyable research">
 <meta property="og:title" content="O-M088-01: Lemma obligation for M088 · 100">
-<meta property="og:description" content="Lock the field, circuit shape, degree and oracle model in one paragraph inside the algebraic-complexity shape; only then implement a falsifier.">
+<meta property="og:description" content="Class lock is in research/M088_LOCK.md. Implement the exact falsifier (nonzero circuit vanishing on a proposed hitting set) against that lock; independent mathematical and statement-fidelity review still required before discharge.">
 <meta property="og:url" content="https://svyable.github.io/100/work/O-M088-01/">
 <meta name="twitter:card" content="summary">
 <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
@@ -48,10 +48,10 @@
 <div class="chips"><span class="chip chip-good">Runnable</span><a class="chip chip-link" href="../../problems/M088/" title="Deterministic polynomial identity testing">M088</a></div>
 </header>
 <div class="work-detail">
-<section class="dossier-block"><h2>Deliverable</h2><p class="serif">Lock the field, circuit shape, degree and oracle model in one paragraph inside the algebraic-complexity shape; only then implement a falsifier.</p>
+<section class="dossier-block"><h2>Deliverable</h2><p class="serif">Class lock is in research/M088_LOCK.md. Implement the exact falsifier (nonzero circuit vanishing on a proposed hitting set) against that lock; independent mathematical and statement-fidelity review still required before discharge.</p>
 <p class="muted">Context: For an explicitly locked field characteristic, circuit shape, degree bound and oracle model, a deterministic polynomial-size hitting set hits every nonzero circuit in that class.</p></section>
 <section class="dossier-block"><h2>Acceptance</h2><ul class="plain checklist"><li>Discharge evidence recorded on O-M088-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check</li><li>Independent review recorded before the node is marked discharged</li><li><code>python3 scripts/regen.py &amp;&amp; python3 scripts/regen.py --check</code></li></ul></section>
-<section class="dossier-block"><h2>Boundary</h2><p>No restricted circuit class is locked in this repository yet; a checker written before the class is fixed does not raise readiness.</p>
+<section class="dossier-block"><h2>Boundary</h2><p>The restricted GF(2) degree-≤3 ≤20-gate black-box class is locked in-repo. A hitting set for that class would be a restricted lemma, not a resolution of unrestricted PIT.</p>
 <p><strong>Falsifier.</strong> A nonzero circuit in the locked class that vanishes at every hitting-set point, or a lock paragraph that leaves characteristic, shape, degree or oracle unspecified.</p></section>
 
 <section class="dossier-block"><h2>Claim it</h2>
@@ -59,7 +59,7 @@
 <p class="card-links"><a class="button button-outline" href="https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M088-01%22" rel="noopener noreferrer">Check existing claims ↗</a>
 <a class="button button-dark" href="https://github.com/Svyable/100/issues/new?template=claim.yml&amp;title=%5BClaim%5D%20O-M088-01%20%E2%80%94%20Lemma%20obligation%20for%20M088" rel="noopener noreferrer">Claim this item ↗</a></p>
 <dl class="kv compact"><dt>Claim title</dt><dd><code>[Claim] O-M088-01 — Lemma obligation for M088</code></dd>
-<dt>Scope digest</dt><dd><code class="hash">2a485cde985f9a99d3b888d3a308d99dc06bc2978fab80b3e3360e204e1bef4b</code></dd>
+<dt>Scope digest</dt><dd><code class="hash">5204bcc35834d93882867d02268da6bfe4c98a2398ff94770255bf1f624a3ae5</code></dd>
 <dt>Defined by</dt><dd><a href="https://github.com/Svyable/100/blob/main/data/proof_obligations.json" rel="noopener noreferrer">data/proof_obligations.json <span aria-hidden="true">↗</span></a></dd>
 <dt>CLI</dt><dd><code>python3 scripts/work.py --id O-M088-01</code></dd></dl></section>
 </div></article>

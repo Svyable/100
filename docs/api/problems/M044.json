@@ -14,25 +14,57 @@
   "source_url": null,
   "rank": 34,
   "score": 74,
-  "execution_rank": 37,
-  "execution_score": 74,
-  "readiness": 0,
+  "execution_rank": 36,
+  "execution_score": 76,
+  "readiness": 2,
   "dispatch_rank": 3,
-  "dispatch_score": 114,
+  "dispatch_score": 116,
   "action": "replay_claim_witness",
   "action_label": "Replay a claimed finite witness",
   "action_bonus": 40,
   "method_id": "group_rings",
   "method_title": "One presentation, one product",
   "dispatch_next": "Reproduce a finite presentation and a,b products using a genuinely independent group-ring checker; check the claimed equalities and non-equality.",
-  "dispatch_why": "Listed for witness replay. The next step is the claim review's finite check.",
-  "campaign_stage": null,
+  "dispatch_why": "The 2026 direct-finiteness manuscript matches the registered statement but has no independent reproduction here.",
+  "campaign_stage": "claim_under_review",
   "milestone_count": 0,
   "url": "https://svyable.github.io/100/problems/M044/",
   "field_url": "https://svyable.github.io/100/fields/algebra/",
-  "readiness_breakdown": [],
+  "readiness_breakdown": [
+    {
+      "item": "Formal campaign brief",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Runnable independent verifier",
+      "points": 0,
+      "max": 3
+    },
+    {
+      "item": "Reproduced known benchmark",
+      "points": 0,
+      "max": 2
+    },
+    {
+      "item": "Independently reviewed restricted theorem",
+      "points": 0,
+      "max": 3
+    }
+  ],
   "has_exact_verifier": false,
-  "campaign": null,
+  "campaign": {
+    "problem_id": "M044",
+    "stage": "claim_under_review",
+    "method": "Independent group-ring witness replay",
+    "hypothesis": "Every group algebra over a field is directly finite (ab=1 ⇒ ba=1).",
+    "first_proof_obligation": "Reproduce the 2026 claimed finite presentation and a,b in F_2[G] with ab=1≠ba on an independent multiplication checker.",
+    "next_experiment": "Build or import a genuinely independent group-ring checker; replay the claimed presentation and products; record exact mismatches.",
+    "falsification": "A verified presentation with ab=1 and ba≠1 in F_2[G], or a precise gap showing the manuscript witness cannot be reconstructed.",
+    "blocker": "The OpenAI math manuscript construction is large and has not been independently reproduced here; no allowlisted group-ring verifier yet.",
+    "dossier": "research/CLAIM_REVIEWS_2026.md",
+    "verifier": null
+  },
   "probes": [],
   "milestones": [],
   "engine_roadmap": null,

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fleet packets — omni-directional agent dispatch · 100</title>
+<meta name="description" content="Machine-readable claimable slots for many parallel agents without multiplying unsupported theorems.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/fleet/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="Fleet packets — omni-directional agent dispatch · 100">
+<meta property="og:description" content="Machine-readable claimable slots for many parallel agents without multiplying unsupported theorems.">
+<meta property="og:url" content="https://svyable.github.io/100/library/fleet/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">Fleet packets — omni-directional agent dispatch</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#packet-contract">Packet contract</a></li><li class="toc-l2"><a href="#omni-directional-lanes">Omni-directional lanes</a></li><li class="toc-l2"><a href="#rules">Rules</a></li></ol></nav>
+
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/docs/FLEET.md" rel="noopener noreferrer">docs/FLEET.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">METHOD &amp; GOVERNANCE</p><h1>Fleet packets — omni-directional agent dispatch</h1>
+<p>Machine-readable claimable slots for many parallel agents without multiplying unsupported theorems.</p>
+<pre><code class="lang-sh">python3 scripts/scale.py --budget 100 --json        # stdout packets
+python3 scripts/scale.py --write                    # SCALE.md + docs/api/packets.json
+python3 scripts/work.py --next 5                    # human-readable top of queue
+python3 scripts/analogues.py --check                # structural finite analogues
+python3 scripts/benchmark.py --check                # empty A/B/C/D trial ledger OK</code></pre>
+<h2 id="packet-contract">Packet contract<a class="anchor" href="#packet-contract" aria-label="Link to this section">#</a></h2>
+<p>Each packet in <code>docs/api/packets.json</code> carries:</p>
+<ul><li><code>id</code>, <code>kind</code>, <code>problems</code>, <code>deliverable</code>, <code>acceptance</code>, <code>boundary</code>, <code>falsifier</code></li><li><code>roles</code>: recommended <code>scout</code> / <code>adversary</code> / <code>checker</code> split inside <strong>one</strong> claim</li><li><code>scope_sha256</code>: identity of the contract; changing the deliverable changes the digest</li><li>claim URLs for <code>.github/ISSUE_TEMPLATE/claim.yml</code></li></ul>
+<p>A packet is <strong>not</strong> a theorem, a readiness change, or permission to edit <code>data/solved.json</code>.</p>
+<h2 id="omni-directional-lanes">Omni-directional lanes<a class="anchor" href="#omni-directional-lanes" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>Lane</th><th>Ledger / tool</th><th>Scale move</th></tr></thead><tbody><tr><td>Acceptance frontier</td><td><code>data/proof_obligations.json</code></td><td>Discharge only with independent reviews</td></tr><tr><td>Formal comparators</td><td><code>data/formalization.json</code> + Lean</td><td>Add statements; kernel fidelity ≠ novelty</td></tr><tr><td>Exact lab</td><td><code>scripts/lab.py</code></td><td>Replay published certificates; no dominated ranges</td></tr><tr><td>Structural analogues</td><td><code>data/structural_analogues.json</code></td><td>Finite stand-ins for structural IDs</td></tr><tr><td>Intake</td><td><code>NEXT_100.md</code> / <code>scripts/next.py</code></td><td>Batches of 50–100 differentiated hypotheses</td></tr><tr><td>Measurement</td><td><code>benchmarks/PROTOCOL.md</code></td><td>36-cell prereg; zero trials until run for real</td></tr></tbody></table></div>
+<h2 id="rules">Rules<a class="anchor" href="#rules" aria-label="Link to this section">#</a></h2>
+<ol><li>Claim <code>[Claim] &lt;id&gt;</code> before starting (<code>AGENTS.md</code>).</li><li>Prefer obligation and Lean packets over mass comparators when both are free.</li><li>Adversary output is stored unsummarized; checker is not the scout.</li><li>Regenerate with <code>python3 scripts/regen.py</code> before shipping.</li></ol>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

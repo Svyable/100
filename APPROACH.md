@@ -6,7 +6,7 @@ Attack shapes and scheduling bonuses. A shape is not a theorem, not a claim that
 
 Dispatch score = editorial score + readiness + an action bonus. The bonus is a scheduling weight. It is not evidence, not a probability, and it does not change readiness. A known benchmark still earns no novelty.
 
-**30 shapes** cover all 100 problems. **45 jobs** (one action on one shape) replace a per-problem queue. **79 problems have no campaign**; each of them points at a shared shape instead of a private method. **3 recorded experiments are refused** because the campaign blocker already places that range inside known mathematics.
+**30 shapes** cover all 100 problems. **45 jobs** (one action on one shape) replace a per-problem queue. **77 problems have no campaign**; each of them points at a shared shape instead of a private method. **3 recorded experiments are refused** because the campaign blocker already places that range inside known mathematics.
 
 ## Action bonuses
 
@@ -37,8 +37,6 @@ M071: Extract a concrete finite graph from the binary-frame construction, or obt
 
 M044: Reproduce a finite presentation and a,b products using a genuinely independent group-ring checker; check the claimed equalities and non-equality. M049: Independently verify M044's group algebra witness, then audit the Elek–Szabó implication from soficity to direct finiteness in the claimed coefficient field.
 
-_Listed for witness replay. The next step is the claim review's finite check._
-
 ### 3. Replay a published certificate
 
 **Shape:** Replay the object, or mine the census (`extremal_certificates`). **Problems:** M074. **Best dispatch rank:** 5.
@@ -57,9 +55,9 @@ M092: Extend the cyclotomic engine to the number fields needed for d = 4..8 and 
 
 **Shape:** One format, replayed exactly (`algebraic_complexity`). **Problems:** M088. **Best dispatch rank:** 9.
 
-Lock the field, the circuit shape, the degree and the oracle model in one paragraph inside the algebraic-complexity shape. Only then implement a falsifier. A checker with no declared class does not raise readiness.
+Lock paragraph is complete in research/M088_LOCK.md; implement the falsifier against that exact GF(2) degree-≤3 ≤20-gate black-box class before attaching a verifier or widening the class.
 
-_The campaign blocker says no circuit class is locked. A checker written before the class is fixed does not raise readiness._
+_The restricted class is locked in research/M088_LOCK.md. A checker without that lock does not raise readiness; the next product is a falsifier against the lock._
 
 ### 6. Mine structure from certificates
 
@@ -687,13 +685,13 @@ Keep the all-dimensional claim in scope audit, and certify one explicit set only
 |---:|---|---|---:|---:|---|---|
 | 1 | M071 | `replay_claim_witness` | +40 | 132 | `extremal_certificates` | Extract a concrete finite graph from the binary-frame construction, or obtain two independent specialist reviews of the existential proof; do not treat comparator or second-kernel replay as a finite witness. |
 | 2 | M073 | `replay_claim_witness` | +40 | 132 | `extremal_certificates` | Derive an explicit finite host G (order n and edges) from the counter-kernel parameters and replay t(H,G)<t(K2,G)^66 with two independent homomorphism counts, or obtain specialist acceptance of the existence proof without a listed witness. |
-| 3 | M044 | `replay_claim_witness` | +40 | 114 | `group_rings` | Reproduce a finite presentation and a,b products using a genuinely independent group-ring checker; check the claimed equalities and non-equality. |
-| 4 | M049 | `replay_claim_witness` | +40 | 114 | `group_rings` | Independently verify M044's group algebra witness, then audit the Elek–Szabó implication from soficity to direct finiteness in the claimed coefficient field. |
+| 3 | M044 | `replay_claim_witness` | +40 | 116 | `group_rings` | Reproduce a finite presentation and a,b products using a genuinely independent group-ring checker; check the claimed equalities and non-equality. |
+| 4 | M049 | `replay_claim_witness` | +40 | 116 | `group_rings` | Independently verify M044's group algebra witness, then audit the Elek–Szabó implication from soficity to direct finiteness in the claimed coefficient field. |
 | 5 | M074 | `replay_published` | +12 | 113 | `extremal_certificates` | Replay the external fixed-r=6 proof corpus on an independent host, verify its published hash and proof traces, and audit the hand-reduction steps before launching duplicate SAT search. |
 | 6 | M092 | `replay_published` | +12 | 113 | `finite_geometry` | Extend the cyclotomic engine to the number fields needed for d = 4..8 and replay published exact fiducials there. |
 | 7 | M093 | `replay_published` | +12 | 110 | `finite_geometry` | Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9. |
 | 8 | M094 | `replay_published` | +12 | 110 | `finite_geometry` | Add multiplier-group symmetry reduction to the Williamson meet-in-the-middle search so that n = 29 (order 116) becomes feasible, then implement Goethals-Seidel arrays for orders 156 and 172. |
-| 9 | M088 | `lock_restriction` | +10 | 106 | `algebraic_complexity` | Lock the field, the circuit shape, the degree and the oracle model in one paragraph inside the algebraic-complexity shape. Only then implement a falsifier. A checker with no declared class does not raise readiness. |
+| 9 | M088 | `lock_restriction` | +10 | 106 | `algebraic_complexity` | Lock paragraph is complete in research/M088_LOCK.md; implement the falsifier against that exact GF(2) degree-≤3 ≤20-gate black-box class before attaching a verifier or widening the class. |
 | 10 | M075 | `mine_structure` | +6 | 104 | `extremal_certificates` | The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5). |
 | 11 | M078 | `mine_structure` | +6 | 104 | `extremal_certificates` | The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two. |
 | 12 | M079 | `mine_structure` | +6 | 104 | `extremal_certificates` | The certified mine poset_balance finds 11 posets on at most 6 elements with best balance exactly 1/3, and every one of them has width 2, which Linial already settled. A new lemma has to treat width at least 3; this census has no tight example there. |
