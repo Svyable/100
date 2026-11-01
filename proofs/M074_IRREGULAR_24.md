@@ -1,5 +1,7 @@
 # M074 — an exact profile certificate and a full finite (24,8) exclusion
 
+> **Alternate proof route (2026-10-31, unreviewed):** [Weighted indegree deficits and B-subset capacities](../research/drafts/M074_WEIGHTED_DEFICIT.md) give a hand case split that does not rely on the 19 × 5005 profile classification below. A separate histogram audit and weakened-cut negative control test the new inequalities. Neither route has independent specialist review or establishes a new unrestricted CH result.
+
 **Research record, 2026-10-31.** The argument below closes the previously open **indegree-nine branch** by combining an auditable 19 × 5005 integer-profile lemma with a global degree-counting contradiction. **Independent specialist proof review remains pending.** It does not settle the unrestricted Caccetta–Häggkvist conjecture. **No novelty is claimed:** [wustep/maths](https://github.com/wustep/maths/blob/main/problems/caccetta-haggkvist-k3/ATTACK.md) has already reported computational exclusion of the full finite (24,8) case.
 
 ## Exact finite theorem
