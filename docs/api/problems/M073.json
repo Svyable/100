@@ -258,6 +258,11 @@
       "url": "https://svyable.github.io/100/library/m073-regular2-cycle-margin/"
     },
     {
+      "title": "M073 — a seven-vertex rung improves the two-block stability certificate",
+      "source": "research/M073_RUNG_CORRELATION.md",
+      "url": "https://svyable.github.io/100/library/m073-rung-correlation/"
+    },
+    {
       "title": "M073 — exact two-block graphon sanity check, not a Sidorenko witness",
       "source": "research/M073_TWOBLOCK_EXACT.md",
       "url": "https://svyable.github.io/100/library/m073-twoblock-exact/"

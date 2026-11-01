@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M073 — a seven-vertex rung improves the two-block stability certificate · 100</title>
+<meta name="description" content="2026-11-01 · X-M073-RUNG-CORRELATION · claim #167.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m073-rung-correlation/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M073 — a seven-vertex rung improves the two-block stability certificate · 100">
+<meta property="og:description" content="2026-11-01 · X-M073-RUNG-CORRELATION · claim #167.">
+<meta property="og:url" content="https://svyable.github.io/100/library/m073-rung-correlation/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M073 — a seven-vertex rung improves the two-block stability certificate</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#the-new-local-motif">The new local motif</a></li><li class="toc-l2"><a href="#exact-ferromagnetic-endpoint-correlation">Exact ferromagnetic endpoint correlation</a></li><li class="toc-l2"><a href="#stronger-m073-inequality">Stronger M073 inequality</a></li><li class="toc-l2"><a href="#an-exact-rational-host-the-old-certificate-cannot-certify">An exact rational host the old certificate cannot certify</a></li><li class="toc-l2"><a href="#reproduction-and-adversarial-falsifiers">Reproduction and adversarial falsifiers</a></li><li class="toc-l2"><a href="#literature-novelty-boundary-and-next-falsifier">Literature, novelty boundary and next falsifier</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M073/" title="Sidorenko conjecture">M073</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M073_RUNG_CORRELATION.md" rel="noopener noreferrer">research/M073_RUNG_CORRELATION.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M073 — a seven-vertex rung improves the two-block stability certificate</h1>
+<p><strong>2026-11-01 · X-M073-RUNG-CORRELATION · <a href="https://github.com/Svyable/100/issues/167" rel="noopener noreferrer">claim #167</a>.</strong></p>
+<p><strong>Status:</strong> Author-derived restricted inequality, not independently reviewed or established novel. This is a stronger <em>sufficient condition</em> on an equal-mass, off-diagonal-dominant two-block graphon for the source-pinned 35-vertex, 66-edge incidence graph H. It neither resolves Sidorenko&#x27;s conjecture nor constructs the finite host alleged in the September 2026 preprint. The Ising correlation monotonicity input is classical, not our theorem.</p>
+<h2 id="the-new-local-motif">The new local motif<a class="anchor" href="#the-new-local-motif" aria-label="Link to this section">#</a></h2>
+<p>Let F be a simple 3-uniform hypergraph with the following <strong>local pair multiplicity property</strong>: whenever a pair {x,y} occurs in a triple, it occurs in exactly two distinct triples. Let H(F) be its point–triple incidence graph.</p>
+<p><strong>Rung lemma.</strong> Every incidence edge i–f, with f={i,j,k}, lies in a seven-vertex, nine-edge subgraph consisting of</p>
+<ul><li>the edge i–f;</li><li>the two internally disjoint three-edge paths i–g_ij–j–f and i–g_ik–k–f; and</li><li>a two-edge rung j–g_jk–k.</li></ul>
+<p>Here g_xy is the unique triple other than f containing {x,y}. The three auxiliary triples are pairwise distinct: if, for example, g_ij=g_ik, that triple contains i,j,k and therefore equals f, contradicting the definition of g_ij. The same argument applies to the other pairs. All seven vertices are distinct and all nine edges are present. This proves the lemma.</p>
+<p>The source-pinned M073 table has 22 triples on 13 points, 33 occurring point-pairs, and <strong>every occurring pair occurs exactly twice</strong>. Consequently the lemma applies to <strong>all 66</strong> incidence edges. The checker constructs and validates all 66 actual subgraphs; it does not infer their existence merely from the number of four-cycles.</p>
+<h2 id="exact-ferromagnetic-endpoint-correlation">Exact ferromagnetic endpoint correlation<a class="anchor" href="#exact-ferromagnetic-endpoint-correlation" aria-label="Link to this section">#</a></h2>
+<p>For a finite graph G, give independent spins tau_v in {-1,+1} the zero-field ferromagnetic weight</p>
+<p>product_{uv in E(G)} (1 + q<em>tau_u</em>tau_v),    0 &lt;= q &lt; 1.</p>
+<p>The usual high-temperature expansion says that the denominator of the two-point correlation at vertices i,f is the generating polynomial of even-degree edge subsets, while the numerator is the polynomial of edge subsets with odd-degree boundary {i,f}. For the rung motif, enumerating its 2^9 edge subsets (or a short parity argument) gives</p>
+<p>D(q) = 1 + 3<em>q^4 + 4</em>q^6, N(q) = q + 2<em>q^3 + 3</em>q^5 + 2*q^7.</p>
+<p>Therefore its <strong>exact</strong> endpoint correlation is</p>
+<p>K(q) = N(q)/D(q) = q<em>(1 + q^2 + 2</em>q^4)/(1 - q^2 + 4*q^4).       (1)</p>
+<p>The prior two-bypass subgraph (without the rung) has correlation</p>
+<p>K0(q) = (q + 2<em>q^3 + q^7)/(1 + 2</em>q^4 + q^6).</p>
+<p>Clearing denominators, the improvement is the polynomial identity</p>
+<p>N(q)<em>(1+2</em>q^4+q^6) - (q+2<em>q^3+q^7)</em>D(q) = 2<em>q^5</em>(1-q^2)^3*(1+q^2).                      (2)</p>
+<p>All denominators are positive for 0&lt;=q&lt;1. Thus K(q)&gt;K0(q) for every 0&lt;q&lt;1, with equality at q=0 and in the q→1 limit.</p>
+<p>For the <em>full</em> H(F), the classical Griffiths–Kelly–Sherman second correlation inequality (GKS-II) implies that adding the remaining nonnegative ferromagnetic couplings cannot decrease the correlation of the fixed endpoints. Hence every incidence edge of the pinned H has ferromagnetic correlation <strong>at least K(q)</strong>.</p>
+<p>This is a structural improvement over the previously merged <a href="../../library/m073-antiferro-stability/">two-bypass estimate</a>, not a new ferromagnetic correlation principle.</p>
+<h2 id="stronger-m073-inequality">Stronger M073 inequality<a class="anchor" href="#stronger-m073-inequality" aria-label="Link to this section">#</a></h2>
+<p>Consider an equal-mass symmetric two-block graphon with matrix</p>
+<p>W = [[u+delta, b], [b, u-delta]],</p>
+<p>where 0&lt;u&lt;=b&lt;=1, 0&lt;=delta&lt;=min(u,1-u). Put</p>
+<p>p=(u+b)/2, q=(b-u)/(b+u), h=delta/u.</p>
+<p>The previously established spin-flip pairing, AM–GM and Jensen argument gives for every bipartite F with m edges</p>
+<p>t(F,W)/t(F,W0) &gt;= (1-h^2)^[m*(1-C)/4],</p>
+<p>provided C is a common lower bound on the ferromagnetic edge correlations of F after flipping spins on one bipartition, and W0=[[u,b],[b,u]]. This follows because the expected number of monochromatic edges is at most m*(1-C)/2.</p>
+<p>For the pinned 66-edge H, use C=K(q) from (1). The earlier even-subgraph bound t(H,W0)&gt;=p^66<em>(1+33</em>q^4+88*q^6) then proves the <strong>continuous-parameter inequality</strong></p>
+<p>t(H,W) &gt;= p^66 * (1+33<em>q^4+88</em>q^6) * (1-h^2)^[66*(1-K(q))/4].        (3)</p>
+<p>For h=1 interpret the right side by continuity (it is zero). The inequality holds for all real weights in the stated domain. Its right side is a strict improvement over the previous two-bypass bound when 0&lt;q&lt;1 and 0&lt;h&lt;1; it is not always at least p^66. The domain is only a restricted two-block graphon family.</p>
+<h2 id="an-exact-rational-host-the-old-certificate-cannot-certify">An exact rational host the old certificate cannot certify<a class="anchor" href="#an-exact-rational-host-the-old-certificate-cannot-certify" aria-label="Link to this section">#</a></h2>
+<p>Choose</p>
+<p>(a,b,c) = (241/400, 1, 159/400). u=1/2, delta=41/400, p=3/4, q=1/3, h=41/200.</p>
+<p>At q=1/3 the two-bypass bound has K0=223/561 and exponent 66<em>(1-K0)/4=169/17. The rung has K=23/57 and exponent 66</em>(1-K)/4=187/19. The common cycle factor is</p>
+<p>1+33<em>(1/3)^4+88</em>(1/3)^6 = 1114/729.</p>
+<p>Write R=1-h^2=38319/40000. Exact rational comparisons give</p>
+<p>(1114/729)^17 * R^169 &lt; 1,                     (4) (1114/729)^19 * R^187 &gt; 1.                     (5)</p>
+<p>Thus the <strong>old</strong> source-specific sufficient condition does not certify Sidorenko for this host, but the <strong>new</strong> rung bound does. The new certified ratio exceeds 1.0014828. The exact density ratio is approximately 3.224523, independently computed by three algorithms (point-label sum, histogram compression, and pairwise factor elimination). The actual density is much larger than either bound; the gain is in the rigorously certified region, not a claimed near-counterexample.</p>
+<h2 id="reproduction-and-adversarial-falsifiers">Reproduction and adversarial falsifiers<a class="anchor" href="#reproduction-and-adversarial-falsifiers" aria-label="Link to this section">#</a></h2>
+<p>Run from the repository root:</p>
+<p>python3 scripts/m073_rung_correlation.py --check python3 -m unittest discover -s tests -p &#x27;test_m073_rung_correlation.py&#x27; -v python3 scripts/regen.py --check</p>
+<p>The source is loaded with the existing SHA-256 guard 653fd38252aa4034512303dd71d738a42cc3685666b982d41f21c76c336c4b02 on the canonical 22-triple array. The checker enumerates all 66 motifs, all 512 rung edge subsets, and 128 independent spin assignments for each of five rational couplings. It independently recomputes the two correlation polynomials and the exact threshold comparisons; it also compares three independent source-density algorithms on the rational example.</p>
+<p>Adversarial controls: mutating a source triple destroys the required pair multiplicity; deleting one of the two rung edges makes the extra vertex a leaf and recovers exactly the <strong>old</strong> two-bypass correlation; negative or out-of-range coupling values fail closed. The 66-edge source audit, not a sampled graphon grid, is the finite premise of the continuum proof. A code pass is not an independent mathematical review.</p>
+<p><strong>Failed avenue:</strong> A third internally vertex-disjoint bypass from i to f cannot exist in this motif: f has degree three, and its two neighbors other than i are already used by the two length-three bypasses. Adding the <em>rung</em> instead of a third bypass produces the strict improvement (2).</p>
+<h2 id="literature-novelty-boundary-and-next-falsifier">Literature, novelty boundary and next falsifier<a class="anchor" href="#literature-novelty-boundary-and-next-falsifier" aria-label="Link to this section">#</a></h2>
+<ul><li><a href="https://github.com/openai/math/tree/main/preprints/A-counterexample-to-Sidorenkos-conjecture-September-23-2026" rel="noopener noreferrer">OpenAI, <em>A counterexample to Sidorenko&#x27;s conjecture</em> (2026)</a>, with pinned <a href="https://github.com/Svyable/100/blob/main/data/reference/sidorenko_faces.json" rel="noopener noreferrer">incidence table</a>. The general finite-host claim is not verified here.</li><li><a href="https://doi.org/10.1063/1.1705219" rel="noopener noreferrer">Griffiths, <em>Correlations in Ising Ferromagnets. I</em> (1967), DOI 10.1063/1.1705219</a>, the classical positivity/monotonicity framework.</li><li><a href="https://doi.org/10.1063/1.1664600" rel="noopener noreferrer">Kelly and Sherman, <em>General Griffiths&#x27; Inequalities on Correlations in Ising Ferromagnets</em> (1968), DOI 10.1063/1.1664600</a>, the GKS-II input.</li><li><a href="../../library/m073-antiferro-stability/">Prior M073 antiferromagnetic stability note</a>, whose spin-flip/Jensen argument is reused unchanged.</li></ul>
+<p>The exact nine-edge motif polynomial and numerical application were derived for this repository; <strong>a comprehensive priority/novelty audit against all published correlation bounds has not been completed</strong>. No specialist independent proof review exists. Do not mark M073 solved or change its evidence state or the accepted-results ledger.</p>
+<p><strong>Next falsifier:</strong> Seek a stronger, still source-certified subgraph around each incidence edge that increases the uniform correlation bound beyond K(q), or find an exact rational two-block host outside (3)&#x27;s sufficient tube with a <em>negative</em> ordinary Sidorenko gap. Any proposed general result requires an independent proof and literature audit.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>
