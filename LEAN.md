@@ -3,9 +3,8 @@
 The objective is more independently checked, reusable mathematics per unit of effort.
 “100x” is an ambition for operating capacity (see [SCALE.md](SCALE.md) and the
 proof-exchange wave), not a measured speedup or a promise to solve the portfolio.
-The audit covers public named theorem and lemma exports across the Lean library;
-run `python3 scripts/lean_verify.py --validate-only` for the current count. The
-Caccetta–Häggkvist comparator is encoded, but a structural proof is still open.
+The implementation has thirteen audited declarations across Ramsey and the two-element
+Frankl case. Caccetta–Häggkvist remains queued, not formalized.
 
 ## Comparator statements
 
@@ -21,7 +20,7 @@ catalogue entry whose kernel-checked theorem is not registered for the axiom aud
 Install [elan](https://github.com/leanprover/elan), then from the repository root:
 
 ```sh
-python3 scripts/lean_verify.py --validate-only  # Registry + source coverage; NOT proof verification
+python3 scripts/lean_verify.py --validate-only  # Metadata only; not proof verification
 python3 scripts/lean_verify.py                # Build, negative cases, axiom audit, evidence
 ```
 
@@ -29,13 +28,6 @@ Lean is pinned in `lean/lean-toolchain`. The initial core uses Std and has no ex
 Lake packages; this keeps certificate checking small and reproducible. Add mathlib
 when a target needs it, pin a compatible commit and commit the resulting Lake manifest;
 remove the manifest ignore then. Do not run unpinned dependency upgrades in CI.
-
-Before launching Lean, the registry preflight checks that every public `theorem` or
-`lemma` in `lean/Hundred/` has a corresponding stable name in
-`data/lean_targets.json`, and rejects stale registrations. Private helpers are
-excluded from the *export* audit, though Lean still compiles them. This Python
-source-level check is a defense against ordinary omissions, **not** a complete
-Lean syntax parser or a replacement for kernel compilation and axiom inspection.
 
 The [Lean proof gate](.github/workflows/lean.yml) runs on every PR and main push.
 Its `lean-evidence-<SHA>` artifact records source hashes, compiler version, revision,
