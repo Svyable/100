@@ -22,6 +22,12 @@ RUN_FIELDS = {"manifest_sha256", "task_id", "arm", "seed", "status",
 EVIDENCE_FIELDS = {"artifact", "checker_log", "scope_audit",
                    "independent_review_urls"}
 RESOURCES = ("model_tokens", "tool_calls", "elapsed_seconds")
+# The finite CH (24,8) irregular case acquired author-derived full-case
+# proofs in public repo PRs #60 and #70 *after* this pilot was frozen.
+# Do not turn exposure to those proofs into a claimed new result.
+NOVELTY_CONTAMINATED = {
+    "CH24-IRREGULAR": "Public finite-case proofs in PRs #60/#70 postdate the frozen protocol",
+}
 
 
 def canonical(obj):
@@ -129,6 +135,8 @@ def validate_runs(doc, runs, root=ROOT):
         if not isinstance(reviews, list):
             raise ValueError("Review URLs must be a list")
         if r["classification"] == "externally_reviewed_restricted":
+            if r["task_id"] in NOVELTY_CONTAMINATED:
+                raise ValueError("Novelty task contaminated by post-freeze public results")
             if not task["eligible_for_novelty"] or len(reviews) < 2:
                 raise ValueError("Novelty promotion requires eligible scope and two reviews")
         hosts = []
@@ -146,6 +154,8 @@ def validate_runs(doc, runs, root=ROOT):
 
 def summarize(doc, runs):
     missing = validate_runs(doc, runs)
+    contaminated = {k: reason for k, reason in NOVELTY_CONTAMINATED.items()
+                    if k in {t["id"] for t in doc["tasks"]}}
     by_arm = {}
     for arm in doc["arms"]:
         subset = [r for r in runs if r["arm"] == arm]
@@ -164,7 +174,8 @@ def summarize(doc, runs):
         "expected_trials": len(doc["tasks"]) * len(doc["arms"]) * len(doc["seeds"]),
         "recorded_trials": len(runs),
         "missing_trials": len(missing),
-        "comparable": not missing and len(runs) > 0,
+        "comparable": not missing and len(runs) > 0 and not contaminated,
+        "novelty_contaminated_tasks": contaminated,
         "by_arm": by_arm,
         "warning": ("No experimental speedup can be claimed until all matched trials "
                     "are completed and independent mathematical review is authenticated. "
