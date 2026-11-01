@@ -73,8 +73,10 @@ class CToATests(unittest.TestCase):
         self.assertEqual(r['stages']['protected_A_forces_C_tournament_sink'],3)
         self.assertEqual(r['stages']['eight_vertex_degree_defect'],3)
         a=(2,)*7+(6,8);k=(0,)*4+(4,6,6,6,7,7)
-        self.assertEqual(old.classify(a,k),'unresolved')
-        self.assertEqual(new.classify(a,k),'c_to_a_bottleneck')
+        # This negative control migrated to the upstream z4-sink cut.
+        # Its independent C-to-A bound (6 > 0) must still be preserved.
+        self.assertEqual(old.classify(a,k),'z4_sink_cut')
+        self.assertEqual(new.classify(a,k),'z4_sink_cut')
         self.assertEqual(new.bound_C_to_A(a,k),(6,0))
         for bad_a,bad_k in [(a,k[:-1]),(a,(0,)*3+(1,)*7),((2,)*8+(True,),k)]:
             with self.assertRaises(ValueError):
