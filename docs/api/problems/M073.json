@@ -122,7 +122,20 @@
     "next_review": "Derive an explicit finite host G (order n and edges) from the counter-kernel parameters and replay t(H,G)<t(K2,G)^66 with two independent homomorphism counts, or obtain specialist acceptance of the existence proof without a listed witness.",
     "formalization_scope_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/161.md"
   },
-  "formal_statement": null,
+  "formal_statement": {
+    "problem_id": "M073",
+    "module": "lean/Hundred/Statements/Sidorenko.lean",
+    "namespace": "Hundred.Statements.Sidorenko",
+    "statement": "Statement",
+    "encodes": "Bipartite pattern homomorphism densities via exact hom counts; cleared inequality hom(H,G)·n^e ≥ hom(K2,G)^e · n^h.",
+    "not_encoded": [
+      "Graphon formulations",
+      "Specific open patterns such as K5,5 minus a Hamilton cycle"
+    ],
+    "kernel_checked": [],
+    "fidelity": "author_checked",
+    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/Sidorenko.lean"
+  },
   "external_claims": [],
   "mentioned_in": [
     {

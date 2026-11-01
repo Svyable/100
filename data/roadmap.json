@@ -301,7 +301,9 @@
       "title": "Separate first-order Vaught from the 2026 infinitary counterexample",
       "outcome": "M098 is verified_open on the Pillay-Tanovic survey plus the authors' own exclusion. The infinitary manuscript cannot promote it to resolved.",
       "evidence": "research/M098_VAUGHT.md",
-      "problems": ["M098"]
+      "problems": [
+        "M098"
+      ]
     },
     {
       "id": "R17",
@@ -505,6 +507,85 @@
       "outcome": "Certificate issue templates, a reproducibility bot and published compute budgets per probe.",
       "evidence": "CONTRIBUTING.md",
       "problems": []
+    },
+    {
+      "id": "R44",
+      "track": "engine",
+      "horizon": "shipped",
+      "title": "Fleet packet API for 100-slot proof exchange",
+      "outcome": "scale.py --write emits docs/api/packets.json with scope digests and scout/adversary/checker roles; docs/FLEET.md is the operator guide.",
+      "evidence": "docs/FLEET.md",
+      "problems": []
+    },
+    {
+      "id": "R45",
+      "track": "trust",
+      "horizon": "shipped",
+      "title": "Five new Lean comparator statements (Alperin, Sidorenko, 1/3-2/3, TSP, PIT)",
+      "outcome": "Author-checked encodings with fidelity examples; empty kernel_checked lists (no novelty). Catalogue grows 9 → 14.",
+      "evidence": "data/formalization.json",
+      "problems": [
+        "M048",
+        "M073",
+        "M079",
+        "M097",
+        "M088"
+      ]
+    },
+    {
+      "id": "R46",
+      "track": "campaigns",
+      "horizon": "shipped",
+      "title": "M088 restricted circuit class lock",
+      "outcome": "GF(2), degree ≤ 3, ≤ 20 gates, black-box oracle locked in research/M088_LOCK.md; falsifier still open.",
+      "evidence": "research/M088_LOCK.md",
+      "problems": [
+        "M088"
+      ]
+    },
+    {
+      "id": "R47",
+      "track": "campaigns",
+      "horizon": "shipped",
+      "title": "M044/M049 claim-replay campaigns and obligations",
+      "outcome": "Active campaigns under claim_under_review with witness/reduction obligations; no discharge.",
+      "evidence": "data/proof_obligations.json",
+      "problems": [
+        "M044",
+        "M049"
+      ]
+    },
+    {
+      "id": "R48",
+      "track": "lab",
+      "horizon": "shipped",
+      "title": "Structural finite-analogue ledger",
+      "outcome": "Eight structural problems named with finite certificate shapes and proposed engines; aspirational until probes exist.",
+      "evidence": "data/structural_analogues.json",
+      "problems": [
+        "M044",
+        "M049",
+        "M088",
+        "M037",
+        "M054",
+        "M014",
+        "M098",
+        "M030"
+      ]
+    },
+    {
+      "id": "R49",
+      "track": "trust",
+      "horizon": "now",
+      "title": "Run the 36-cell proof-exchange benchmark for real",
+      "outcome": "Populate benchmark_runs.jsonl under the preregistered protocol; no causal claim until the grid is complete.",
+      "exit": "All 36 cells recorded with resource totals; primary metric still requires external review for novelty credit.",
+      "evidence": "benchmarks/PROTOCOL.md",
+      "problems": [
+        "M095",
+        "M075",
+        "M074"
+      ]
     }
   ]
 }

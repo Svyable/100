@@ -27,6 +27,7 @@ import proof_obligations
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "SCALE.md"
+PACKETS = ROOT / "docs" / "api" / "packets.json"
 ROLES = ("scout", "adversary", "checker")
 FAMILY_BASE = {
     "obligation": 1000,
@@ -426,6 +427,19 @@ def render(doc=None):
     return "\n".join(lines)
 
 
+def packets_blob(wave_doc):
+    """Stable JSON for docs/api/packets.json (fleet ingress)."""
+    return json.dumps(wave_doc, sort_keys=True, indent=2, ensure_ascii=False) + "\n"
+
+
+def write_outputs(wave_doc=None):
+    wave_doc = wave_doc or report(budget=100, mode="wave")
+    OUTPUT.write_text(render(wave_doc), encoding="utf-8")
+    PACKETS.parent.mkdir(parents=True, exist_ok=True)
+    PACKETS.write_text(packets_blob(wave_doc), encoding="utf-8")
+    return wave_doc
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--budget", type=int, default=100,
@@ -433,8 +447,8 @@ def main():
     parser.add_argument("--unit-type", choices=("all", "shape", "engine"), default="all")
     parser.add_argument("--mode", choices=("wave", "coverage"), default="wave")
     parser.add_argument("--json", action="store_true", help="Machine-readable packets")
-    parser.add_argument("--write", action="store_true", help="Regenerate SCALE.md")
-    parser.add_argument("--check", action="store_true", help="Validate sources and SCALE.md drift")
+    parser.add_argument("--write", action="store_true", help="Regenerate SCALE.md and docs/api/packets.json")
+    parser.add_argument("--check", action="store_true", help="Validate sources and SCALE.md / packets drift")
     args = parser.parse_args()
     if args.mode == "coverage":
         result = report(budget=args.budget, unit_type=args.unit_type, mode="coverage")
@@ -447,20 +461,23 @@ def main():
         else:
             wave_doc = result
         content = render(wave_doc)
+        blob = packets_blob(wave_doc)
         if not OUTPUT.exists() or OUTPUT.read_text(encoding="utf-8") != content:
             raise SystemExit("Stale SCALE.md: run python3 scripts/scale.py --write")
+        if not PACKETS.exists() or PACKETS.read_text(encoding="utf-8") != blob:
+            raise SystemExit("Stale docs/api/packets.json: run python3 scripts/scale.py --write")
         print(
             "OK: scale wave fills {} / {} slots ({} problems, {} refused); "
-            "obligation frontier runnable={}".format(
+            "obligation frontier runnable={}; packets={}".format(
                 wave_doc["slots_filled"], wave_doc["budget_slots"],
                 wave_doc["problems_touched"], wave_doc["refused_count"],
                 wave_doc["frontier_counts"]["runnable"],
+                PACKETS.relative_to(ROOT),
             )
         )
     elif args.write:
-        content = render(report(budget=100, mode="wave"))
-        OUTPUT.write_text(content, encoding="utf-8")
-        print("Updated SCALE.md")
+        wave_doc = write_outputs()
+        print(f"Updated SCALE.md and {PACKETS.relative_to(ROOT)} ({wave_doc['slots_filled']} packets)")
     elif args.json:
         print(json.dumps(result, sort_keys=True, indent=2, ensure_ascii=False))
     elif args.mode == "coverage":

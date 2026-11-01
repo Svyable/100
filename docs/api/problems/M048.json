@@ -106,7 +106,20 @@
   ],
   "engine_roadmap": null,
   "claim_review_2026": null,
-  "formal_statement": null,
+  "formal_statement": {
+    "problem_id": "M048",
+    "module": "lean/Hundred/Statements/Alperin.lean",
+    "namespace": "Hundred.Statements.Alperin",
+    "statement": "Statement",
+    "encodes": "FiniteGroupData (order, alperinWeights, pRegularClasses) with pointwise equality at every prime dividing the order.",
+    "not_encoded": [
+      "Character tables, defect groups, Brauer characters",
+      "Any infinite family beyond the abstract equality"
+    ],
+    "kernel_checked": [],
+    "fidelity": "author_checked",
+    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/Alperin.lean"
+  },
   "external_claims": [],
   "mentioned_in": [
     {

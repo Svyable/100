@@ -19,6 +19,7 @@ from pathlib import Path
 
 import lab
 import mdlite
+import scale
 import work as workqueue
 from rank import ROOT, COMPUTABLE, score
 from research import load, execution_order, readiness
@@ -1520,6 +1521,9 @@ def render_api(site):
         search.append({"t": label, "k": "page", "s": "Section", "u": href, "x": ""})
     search.append({"t": "Data & API", "k": "page", "s": "Downloads", "u": "api/", "x": "json csv feed"})
     files["api/work.json"] = dumps(s.work)
+    # Fleet packets: same bytes as scripts/scale.py --write so build_site does not
+    # treat docs/api/packets.json as a stale leftover under GENERATED_DIRS.
+    files["api/packets.json"] = scale.packets_blob(scale.report(budget=100, mode="wave"))
     for w in s.work["items"]:
         search.append({"t": w["title"], "k": "work", "id": w["id"], "s": WORK_LABEL[w["kind"]] + " · " + w["status"].replace("_", " "),
                        "u": f"work/{w['id']}/", "x": w["deliverable"][:160]})
@@ -1536,6 +1540,7 @@ def render_api(site):
             "full_snapshot": SITE_URL + "data/portfolio.json",
             "feed": SITE_URL + "feed.xml",
             "work_queue": SITE_URL + "api/work.json",
+            "fleet_packets": SITE_URL + "api/packets.json",
         },
         "counts": {"problems": len(s.items), "campaigns": len(s.campaign), "probes": len(s.lab["probes"]),
                    "engines": len(s.lab["engines"]), "claim_reviews": len(s.claims), "lean_statements": len(s.formal), "solved": len(s.solved),

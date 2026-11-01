@@ -15,7 +15,7 @@ Current values are computed from the repository on every build, not typed in.
 | Problems with an exact verifier (of 100) | 3 | **20** | 25 |
 | Computable problems covered (of 19) | 0 | **19** | 19 |
 | Reusable exact engines (engines) | 0 | **13** | 15 |
-| Active proof campaigns (campaigns) | 0 | **21** | 25 |
+| Active proof campaigns (campaigns) | 0 | **23** | 25 |
 | 2026 claims triaged for scope (of 15) | 0 | **15** | 15 |
 | Independently reviewed restricted results (results) | 0 | **0** | 1 |
 | Solved archive entries (entries) | 0 | **0** | — |
@@ -27,14 +27,14 @@ Solved has no target on purpose: it grows only through the promotion gate in [do
 | Track | Goal | Shipped | Now | Next | Later |
 |---|---|---:|---:|---:|---:|
 | Registry & ranking | One canonical, scored, provenance-tracked list of exactly 100 targets. | 3 | 0 | 0 | 1 |
-| Research engine | Evidence-aware readiness, campaigns and a strict promotion gate to Solved. | 4 | 0 | 0 | 1 |
-| Exact probe lab | Every computable problem gets a search plus an independent checker on a reusable engine. | 5 | 3 | 1 | 0 |
-| Proof campaigns | Push the highest-ranked targets toward reviewed restricted results. | 3 | 2 | 1 | 0 |
+| Research engine | Evidence-aware readiness, campaigns and a strict promotion gate to Solved. | 5 | 0 | 0 | 1 |
+| Exact probe lab | Every computable problem gets a search plus an independent checker on a reusable engine. | 6 | 3 | 1 | 0 |
+| Proof campaigns | Push the highest-ranked targets toward reviewed restricted results. | 5 | 2 | 1 | 0 |
 | Claim audit | Check announced resolutions for exact scope before spending effort on them. | 3 | 0 | 1 | 0 |
-| Trust & reproducibility | Pinned artifacts, proof certificates and CI that reruns everything. | 2 | 0 | 1 | 1 |
+| Trust & reproducibility | Pinned artifacts, proof certificates and CI that reruns everything. | 3 | 1 | 1 | 1 |
 | Site & community | A public dashboard and a contribution path that keeps the bar high. | 2 | 0 | 0 | 1 |
 
-## Shipped (22)
+## Shipped (27)
 
 _Merged on main with evidence in the repository._
 
@@ -71,8 +71,17 @@ _Merged on main with evidence in the repository._
   - Problems: M048 Alperin weight conjecture
 - [x] **R36 · M071/M073 witness extractability audit** (Claim audit) — Pinned Sidorenko faces table independently reconstructed (35 vertices, 66 edges); Hadwiger claim recorded as existential with no finite adjacency list; frozen CI ledger and precise gaps. [Evidence](research/M071_M073_WITNESSES.md)
   - Problems: M071 Hadwiger conjecture, M073 Sidorenko conjecture
+- [x] **R44 · Fleet packet API for 100-slot proof exchange** (Research engine) — scale.py --write emits docs/api/packets.json with scope digests and scout/adversary/checker roles; docs/FLEET.md is the operator guide. [Evidence](docs/FLEET.md)
+- [x] **R45 · Five new Lean comparator statements (Alperin, Sidorenko, 1/3-2/3, TSP, PIT)** (Trust & reproducibility) — Author-checked encodings with fidelity examples; empty kernel_checked lists (no novelty). Catalogue grows 9 → 14. [Evidence](data/formalization.json)
+  - Problems: M048 Alperin weight conjecture, M073 Sidorenko conjecture, M079 One-third–two-thirds conjecture, M097 Metric TSP four-thirds conjecture +1 more
+- [x] **R46 · M088 restricted circuit class lock** (Proof campaigns) — GF(2), degree ≤ 3, ≤ 20 gates, black-box oracle locked in research/M088_LOCK.md; falsifier still open. [Evidence](research/M088_LOCK.md)
+  - Problems: M088 Deterministic polynomial identity testing
+- [x] **R47 · M044/M049 claim-replay campaigns and obligations** (Proof campaigns) — Active campaigns under claim_under_review with witness/reduction obligations; no discharge. [Evidence](data/proof_obligations.json)
+  - Problems: M044 Kaplansky direct-finiteness conjecture, M049 Soficity conjecture
+- [x] **R48 · Structural finite-analogue ledger** (Exact probe lab) — Eight structural problems named with finite certificate shapes and proposed engines; aspirational until probes exist. [Evidence](data/structural_analogues.json)
+  - Problems: M044 Kaplansky direct-finiteness conjecture, M049 Soficity conjecture, M088 Deterministic polynomial identity testing, M037 Hilbert–Smith conjecture +4 more
 
-## Now (5)
+## Now (6)
 
 _Being worked on; top of the execution queue._
 
@@ -91,6 +100,9 @@ _Being worked on; top of the execution queue._
 - [ ] **R24 · Arcs in PG(3,q) and Hadamard orders 116, 156, 172** (Exact probe lab) — 5-point frames for q <= 9; multiplier symmetry for Williamson n=29; Goethals-Seidel arrays. [Evidence](scripts/probes/hadamard.py)
   - Done when: All Hadamard orders 4k <= 172 constructed except literature-open ones.
   - Problems: M093 Linear MDS code main conjecture, M094 Hadamard matrix conjecture
+- [ ] **R49 · Run the 36-cell proof-exchange benchmark for real** (Trust & reproducibility) — Populate benchmark_runs.jsonl under the preregistered protocol; no causal claim until the grid is complete. [Evidence](benchmarks/PROTOCOL.md)
+  - Done when: All 36 cells recorded with resource totals; primary metric still requires external review for novelty credit.
+  - Problems: M095 Exact Ramsey number R(5,5), M075 Frankl union-closed sets conjecture, M074 Caccetta–Häggkvist conjecture
 
 ## Next (4)
 

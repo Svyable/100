@@ -34,9 +34,12 @@ STEPS = (
     (None, ["proof_obligations.py", "--check"], []),
     (None, ["formal.py", "--check"], []),
     (None, ["lean_verify.py", "--validate-only"], []),
+    (None, ["analogues.py", "--check"], []),
+    (None, ["benchmark.py", "--check"], []),
     (None, ["work.py", "--check"], []),
     (None, ["verify_claim_witnesses.py", "--check"], []),
-    (["scale.py", "--write"], ["scale.py", "--check"], ["SCALE.md"]),
+    (["scale.py", "--write"], ["scale.py", "--check"],
+     ["SCALE.md", "docs/api/packets.json"]),
     (["build_site.py"], ["build_site.py", "--check"],
      ["docs/ (everything except docs/assets, docs/next, docs/*.md, docs/.nojekyll)"]),
 )

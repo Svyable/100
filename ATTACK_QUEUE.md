@@ -15,13 +15,13 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 |---:|---|---|---|---:|---:|---:|---:|---|
 | 1 | M071 | Hadwiger conjecture | `replay_claim_witness` | 85 | +7 | +40 | 132 | Extract a concrete finite graph from the binary-frame construction, or obtain two independent specialist reviews of the existential proof; do not treat comparator or second-kernel replay as a finite witness. |
 | 2 | M073 | Sidorenko conjecture | `replay_claim_witness` | 85 | +7 | +40 | 132 | Derive an explicit finite host G (order n and edges) from the counter-kernel parameters and replay t(H,G)<t(K2,G)^66 with two independent homomorphism counts, or obtain specialist acceptance of the existence proof without a listed witness. |
-| 3 | M044 | Kaplansky direct-finiteness conjecture | `replay_claim_witness` | 74 | +0 | +40 | 114 | Reproduce a finite presentation and a,b products using a genuinely independent group-ring checker; check the claimed equalities and non-equality. |
-| 4 | M049 | Soficity conjecture | `replay_claim_witness` | 74 | +0 | +40 | 114 | Independently verify M044's group algebra witness, then audit the Elek–Szabó implication from soficity to direct finiteness in the claimed coefficient field. |
+| 3 | M044 | Kaplansky direct-finiteness conjecture | `replay_claim_witness` | 74 | +2 | +40 | 116 | Reproduce a finite presentation and a,b products using a genuinely independent group-ring checker; check the claimed equalities and non-equality. |
+| 4 | M049 | Soficity conjecture | `replay_claim_witness` | 74 | +2 | +40 | 116 | Independently verify M044's group algebra witness, then audit the Elek–Szabó implication from soficity to direct finiteness in the claimed coefficient field. |
 | 5 | M074 | Caccetta–Häggkvist conjecture | `replay_published` | 94 | +7 | +12 | 113 | Replay the external fixed-r=6 proof corpus on an independent host, verify its published hash and proof traces, and audit the hand-reduction steps before launching duplicate SAT search. |
 | 6 | M092 | Zauner SIC conjecture | `replay_published` | 94 | +7 | +12 | 113 | Extend the cyclotomic engine to the number fields needed for d = 4..8 and replay published exact fiducials there. |
 | 7 | M093 | Linear MDS code main conjecture | `replay_published` | 91 | +7 | +12 | 110 | Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9. |
 | 8 | M094 | Hadamard matrix conjecture | `replay_published` | 91 | +7 | +12 | 110 | Add multiplier-group symmetry reduction to the Williamson meet-in-the-middle search so that n = 29 (order 116) becomes feasible, then implement Goethals-Seidel arrays for orders 156 and 172. |
-| 9 | M088 | Deterministic polynomial identity testing | `lock_restriction` | 94 | +2 | +10 | 106 | Lock the field, the circuit shape, the degree and the oracle model in one paragraph inside the algebraic-complexity shape. Only then implement a falsifier. A checker with no declared class does not raise readiness. |
+| 9 | M088 | Deterministic polynomial identity testing | `lock_restriction` | 94 | +2 | +10 | 106 | Lock paragraph is complete in research/M088_LOCK.md; implement the falsifier against that exact GF(2) degree-≤3 ≤20-gate black-box class before attaching a verifier or widening the class. |
 | 10 | M075 | Frankl union-closed sets conjecture | `mine_structure` | 91 | +7 | +6 | 104 | The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5). |
 | 11 | M078 | Graph reconstruction conjecture | `mine_structure` | 91 | +7 | +6 | 104 | The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two. |
 | 12 | M079 | One-third–two-thirds conjecture | `mine_structure` | 91 | +7 | +6 | 104 | The certified mine poset_balance finds 11 posets on at most 6 elements with best balance exactly 1/3, and every one of them has width 2, which Linial already settled. A new lemma has to treat width at least 3; this census has no tight example there. |
@@ -148,6 +148,38 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 
 **Stage:** `benchmark_reproduced` · [Dossier](research/LAB_CAMPAIGNS.md)
 
+### M044 — Kaplansky direct-finiteness conjecture
+
+**Dispatch:** `replay_claim_witness` · rank 3 · The 2026 direct-finiteness manuscript matches the registered statement but has no independent reproduction here.
+
+**Proof obligation:** Reproduce the 2026 claimed finite presentation and a,b in F_2[G] with ab=1≠ba on an independent multiplication checker.
+
+**Falsifier:** A verified presentation with ab=1 and ba≠1 in F_2[G], or a precise gap showing the manuscript witness cannot be reconstructed.
+
+**Recommended step:** Reproduce a finite presentation and a,b products using a genuinely independent group-ring checker; check the claimed equalities and non-equality.
+
+**Not the current recommendation:** Build or import a genuinely independent group-ring checker; replay the claimed presentation and products; record exact mismatches.
+
+**Current blocker:** The OpenAI math manuscript construction is large and has not been independently reproduced here; no allowlisted group-ring verifier yet.
+
+**Stage:** `claim_under_review` · [Dossier](research/CLAIM_REVIEWS_2026.md)
+
+### M049 — Soficity conjecture
+
+**Dispatch:** `replay_claim_witness` · rank 4 · Soficity inference depends on the shared M044 witness and an Elek–Szabó audit; do not count a second manuscript.
+
+**Proof obligation:** After an independent M044 witness replay, audit the Elek–Szabó implication from soficity to direct finiteness for the claimed coefficient field.
+
+**Falsifier:** A verified nonsofic finitely presented group, or a gap showing the implication does not apply to the claimed field.
+
+**Recommended step:** Independently verify M044's group algebra witness, then audit the Elek–Szabó implication from soficity to direct finiteness in the claimed coefficient field.
+
+**Not the current recommendation:** Do not treat M044 and M049 as two independent sources; verify M044 first, then check the soficity inference hypotheses.
+
+**Current blocker:** Shares one manuscript with M044; upstream Lean comparator does not assert nonsoficity by itself.
+
+**Stage:** `claim_under_review` · [Dossier](research/CLAIM_REVIEWS_2026.md)
+
 ### M074 — Caccetta–Häggkvist conjecture
 
 **Dispatch:** `replay_published` · rank 5 · The fixed-r=6 corpus is published and hashed, and this repository has not replayed its proof traces.
@@ -206,19 +238,19 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 
 ### M088 — Deterministic polynomial identity testing
 
-**Dispatch:** `lock_restriction` · rank 9 · The campaign blocker says no circuit class is locked. A checker written before the class is fixed does not raise readiness.
+**Dispatch:** `lock_restriction` · rank 9 · The restricted class is locked in research/M088_LOCK.md. A checker without that lock does not raise readiness; the next product is a falsifier against the lock.
 
 **Proof obligation:** State field characteristic, circuit shape, degree and oracle model, then prove the exact hitting property.
 
 **Falsifier:** A nonzero circuit in the declared class vanishing at every proposed hitting-set point.
 
-**Recommended step:** Lock the field, the circuit shape, the degree and the oracle model in one paragraph inside the algebraic-complexity shape. Only then implement a falsifier. A checker with no declared class does not raise readiness.
+**Recommended step:** Lock paragraph is complete in research/M088_LOCK.md; implement the falsifier against that exact GF(2) degree-≤3 ≤20-gate black-box class before attaching a verifier or widening the class.
 
-**Not the current recommendation:** Implement small exact arithmetic circuits and a falsifier that searches for circuits escaping a proposed hitting set.
+**Not the current recommendation:** Implement small exact circuits in the locked class and a falsifier that searches for a nonzero circuit vanishing on a proposed hitting set.
 
-**Current blocker:** No restricted circuit class or field is locked down yet.
+**Current blocker:** Restricted class locked in research/M088_LOCK.md (GF(2), degree ≤ 3, ≤ 20 gates, black-box oracle). Hitting-set lemma and independent falsifier are not yet implemented.
 
-**Stage:** `specified` · [Dossier](research/CAMPAIGNS.md)
+**Stage:** `specified` · [Dossier](research/M088_LOCK.md)
 
 ### M075 — Frankl union-closed sets conjecture
 

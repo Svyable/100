@@ -100,8 +100,8 @@
     },
     "M088": {
       "action": "lock_restriction",
-      "why": "The campaign blocker says no circuit class is locked. A checker written before the class is fixed does not raise readiness.",
-      "next_step": "Lock the field, the circuit shape, the degree and the oracle model in one paragraph inside the algebraic-complexity shape. Only then implement a falsifier. A checker with no declared class does not raise readiness."
+      "why": "The restricted class is locked in research/M088_LOCK.md. A checker without that lock does not raise readiness; the next product is a falsifier against the lock.",
+      "next_step": "Lock paragraph is complete in research/M088_LOCK.md; implement the falsifier against that exact GF(2) degree-≤3 ≤20-gate black-box class before attaching a verifier or widening the class."
     },
     "M092": {
       "action": "replay_published",
@@ -141,6 +141,14 @@
       "action": "stop_range",
       "why": "Computational verification already covers every group of order at most 100. Extending the named catalog inside that bound cannot be a new theorem.",
       "next_step": "Do not enlarge the named catalog inside order 100: that range is already covered by the 2007 computational verification. State a restricted family (for example blocks with a named defect-group isomorphism type) and a lemma outside that census."
+    },
+    "M044": {
+      "action": "replay_claim_witness",
+      "why": "The 2026 direct-finiteness manuscript matches the registered statement but has no independent reproduction here."
+    },
+    "M049": {
+      "action": "replay_claim_witness",
+      "why": "Soficity inference depends on the shared M044 witness and an Elek–Szabó audit; do not count a second manuscript."
     }
   },
   "methods": [

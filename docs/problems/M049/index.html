@@ -43,15 +43,15 @@
 
 <article class="problem-page">
 <header class="problem-hero" id="question">
-  <p class="eyebrow"><span class="eyebrow-line"></span> M049 · DISPATCH #4 · EXECUTION #41 · EDITORIAL #39</p>
+  <p class="eyebrow"><span class="eyebrow-line"></span> M049 · DISPATCH #4 · EXECUTION #37 · EDITORIAL #39</p>
   <h1>Soficity conjecture</h1>
   <p class="problem-field"><a href="../../fields/algebra/">Algebra</a></p>
-  <div class="chips"><span class="status-pill status-claim_needs_review" title="A 2026 proof or counterexample claim exists and has not been independently validated.">Claim under review</span><span class="chip chip-modality">Structural</span></div>
+  <div class="chips"><span class="status-pill status-claim_needs_review" title="A 2026 proof or counterexample claim exists and has not been independently validated.">Claim under review</span><span class="chip chip-modality">Structural</span><span class="chip chip-campaign">Campaign: claim_under_review</span></div>
   <blockquote class="the-question"><span class="detail-label">THE OPEN QUESTION</span>Is every countable group approximable by finite permutation groups in the sofic sense?</blockquote>
 </header>
 <div class="problem-grid">
 <aside class="problem-side" aria-label="On this page">
-  <nav class="toc"><span class="detail-label">ON THIS PAGE</span><ol><li><a href="#question">The question</a></li><li><a href="#formal">Formal statement</a></li><li><a href="#priority">Priority</a></li><li><a href="#claim-review">Claim triage</a></li><li><a href="#work">Open work</a></li><li><a href="#provenance">Provenance</a></li></ol></nav>
+  <nav class="toc"><span class="detail-label">ON THIS PAGE</span><ol><li><a href="#question">The question</a></li><li><a href="#formal">Formal statement</a></li><li><a href="#priority">Priority</a></li><li><a href="#campaign">Campaign</a></li><li><a href="#claim-review">Claim triage</a></li><li><a href="#work">Open work</a></li><li><a href="#provenance">Provenance</a></li></ol></nav>
   <div class="side-actions">
     <a class="button button-outline" href="https://github.com/Svyable/100/issues/new?template=evidence_update.yml&amp;title=%5BEvidence%5D%20M049%20%2014%20" rel="noopener noreferrer">Submit evidence ↗</a>
     <a class="text-link" href="../../problems/M049/" data-permalink>Permalink: /problems/M049/</a>
@@ -63,25 +63,37 @@
 <p class="muted">No Lean comparator statement yet. Formalising the exact statement is a bounded, reviewable contribution: see <a href="../../formal/#contribute">how to add one</a>.</p></section>
 <section class="dossier-block" id="priority"><h2>Priority, decomposed</h2>
   <div class="score-hero">
-    <div><strong>#4</strong><span>Dispatch rank · score 114</span></div>
-    <div class="score-eq"><span>74</span><small>editorial</small><b>+</b><span>0</span><small>readiness</small><b>+</b><span>40</span><small>action</small></div>
-    <div><strong>#41</strong><span>Execution rank · index 74</span></div>
+    <div><strong>#4</strong><span>Dispatch rank · score 116</span></div>
+    <div class="score-eq"><span>74</span><small>editorial</small><b>+</b><span>2</span><small>readiness</small><b>+</b><span>40</span><small>action</small></div>
+    <div><strong>#37</strong><span>Execution rank · index 76</span></div>
     <div><strong>#39</strong><span>Editorial rank of 100</span></div>
   </div>
   <div class="next-action"><span class="detail-label">NEXT ACTION · REPLAY A CLAIMED FINITE WITNESS</span>
     <p class="serif">Independently verify M044&#x27;s group algebra witness, then audit the Elek–Szabó implication from soficity to direct finiteness in the claimed coefficient field.</p>
-    <p class="muted">Why: Listed for witness replay. The next step is the claim review&#x27;s finite check.</p>
+    <p class="muted">Why: Soficity inference depends on the shared M044 witness and an Elek–Szabó audit; do not count a second manuscript.</p>
     <p class="muted">Shared attack shape: <a href="../../campaigns/#shape-group_rings">One presentation, one product</a> — The claim review asks for a finite object an independent checker can accept or reject. That check can retire the target. The bonus is a scheduling weight, not evidence.</p></div>
   <div class="two-col">
     <div><h3>Editorial score 74/100</h3><div class="detail-metrics">
       <div class="detail-metric"><span>Impact <small>×6</small></span><div class="meter" role="img" aria-label="Impact 4 of 5"><i style="width:80%"></i></div><b>4/5</b></div><div class="detail-metric"><span>Attackability <small>×6</small></span><div class="meter" role="img" aria-label="Attackability 3 of 5"><i style="width:60%"></i></div><b>3/5</b></div>
       <div class="detail-metric"><span>Verifiability <small>×5</small></span><div class="meter" role="img" aria-label="Verifiability 4 of 5"><i style="width:80%"></i></div><b>4/5</b></div><div class="detail-metric"><span>Spillover <small>×3</small></span><div class="meter" role="img" aria-label="Spillover 4 of 5"><i style="width:80%"></i></div><b>4/5</b></div></div>
       <p class="muted">6×4 + 6×3 + 5×4 + 3×4 = 74. An editorial judgement, never a probability of proof.</p></div>
-    <div><h3>Readiness +0/10</h3><p class="muted">No campaign brief yet, so readiness is +0. Specifying a falsifiable restricted lemma is the first step.</p>
+    <div><h3>Readiness +2/10</h3><ul class="readiness-list"><li class="on"><span>✓</span>Formal campaign brief <b>+2</b></li><li class="off"><span>·</span>Runnable independent verifier <b>+0</b></li><li class="off"><span>·</span>Reproduced known benchmark <b>+0</b></li><li class="off"><span>·</span>Independently reviewed restricted theorem <b>+0</b></li></ul>
       <p class="muted">Current first attack: Audit precise statement and prove a restricted case</p></div>
   </div>
 </section>
 
+<section class="dossier-block" id="campaign"><h2>Proof campaign <span class="chip chip-campaign">claim_under_review</span></h2>
+<p class="block-lead">Soficity audit via direct-finiteness obstruction</p>
+<dl class="kv">
+  <dt>Hypothesis</dt><dd class="serif">Every countable group is sofic.</dd>
+  <dt>First proof obligation</dt><dd>After an independent M044 witness replay, audit the Elek–Szabó implication from soficity to direct finiteness for the claimed coefficient field.</dd>
+  <dt>Next executable step</dt><dd>Do not treat M044 and M049 as two independent sources; verify M044 first, then check the soficity inference hypotheses.</dd>
+  <dt>What would falsify it</dt><dd>A verified nonsofic finitely presented group, or a gap showing the implication does not apply to the claimed field.</dd>
+  <dt>Current blocker</dt><dd>Shares one manuscript with M044; upstream Lean comparator does not assert nonsoficity by itself.</dd>
+</dl>
+
+<p><a class="text-link" href="../../library/claim-reviews-2026/">Read the dossier <span aria-hidden="true">→</span></a></p>
+</section>
 <section class="dossier-block claim-block" id="claim-review"><h2>2026 claim triage</h2>
 <p class="block-lead">A proof or counterexample was announced. This page records the scope comparison only — <strong>not</strong> an independent validation.</p>
 <dl class="kv">
@@ -96,7 +108,7 @@
 </dl>
 <p><a class="text-link" href="../../claims/#M049">All claim reviews →</a></p>
 </section>
-<section class="dossier-block" id="work"><h2>Open work <span class="chip">4</span></h2><p class="muted">Bounded, claimable units derived from the ledgers. Claim one before starting so parallel agents never duplicate it.</p><ul class="work-list"><li class="work-item work-runnable"><a href="../../work/J-group_rings-replay_claim_witness/"><span class="work-id">J-group_rings-replay_claim_witness</span><span class="work-title">Replay a claimed finite witness: One presentation, one product</span><span class="work-meta">Cohort job · Runnable · dispatch #3</span></a></li><li class="work-item work-runnable"><a href="../../work/R32/"><span class="work-id">R32</span><span class="work-title">Computational checks of claimed group-ring witnesses</span><span class="work-meta">Roadmap item · Runnable · dispatch #3</span></a></li><li class="work-item work-runnable"><a href="../../work/F-M049/"><span class="work-id">F-M049</span><span class="work-title">Lean comparator statement for Soficity conjecture</span><span class="work-meta">Lean comparator · Runnable · dispatch #4</span></a></li><li class="work-item work-runnable"><a href="../../work/S-M049/"><span class="work-id">S-M049</span><span class="work-title">Exact-status audit draft for Soficity conjecture</span><span class="work-meta">Status audit · Runnable · dispatch #4</span></a></li></ul></section>
+<section class="dossier-block" id="work"><h2>Open work <span class="chip">5</span></h2><p class="muted">Bounded, claimable units derived from the ledgers. Claim one before starting so parallel agents never duplicate it.</p><ul class="work-list"><li class="work-item work-runnable"><a href="../../work/J-group_rings-replay_claim_witness/"><span class="work-id">J-group_rings-replay_claim_witness</span><span class="work-title">Replay a claimed finite witness: One presentation, one product</span><span class="work-meta">Cohort job · Runnable · dispatch #3</span></a></li><li class="work-item work-runnable"><a href="../../work/R32/"><span class="work-id">R32</span><span class="work-title">Computational checks of claimed group-ring witnesses</span><span class="work-meta">Roadmap item · Runnable · dispatch #3</span></a></li><li class="work-item work-runnable"><a href="../../work/F-M049/"><span class="work-id">F-M049</span><span class="work-title">Lean comparator statement for Soficity conjecture</span><span class="work-meta">Lean comparator · Runnable · dispatch #4</span></a></li><li class="work-item work-runnable"><a href="../../work/S-M049/"><span class="work-id">S-M049</span><span class="work-title">Exact-status audit draft for Soficity conjecture</span><span class="work-meta">Status audit · Runnable · dispatch #4</span></a></li><li class="work-item work-waiting_on_dependencies"><a href="../../work/O-M049-01/"><span class="work-id">O-M049-01</span><span class="work-title">Reduction obligation for M049</span><span class="work-meta">Proof obligation · Waiting on dependencies · dispatch #4</span></a></li></ul></section>
 <section class="dossier-block" id="provenance"><h2>Provenance &amp; status</h2>
   <dl class="kv">
     <dt>Evidence state</dt><dd><span class="status-pill status-claim_needs_review" title="A 2026 proof or counterexample claim exists and has not been independently validated.">Claim under review</span> A 2026 proof or counterexample claim exists and has not been independently validated. This classification is not a universal proof-status certification.</dd>

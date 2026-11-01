@@ -10,3 +10,8 @@ import Hundred.Statements.Reconstruction
 import Hundred.Statements.Hadamard
 import Hundred.Statements.Ramsey
 import Hundred.Statements.ProjectivePlane
+import Hundred.Statements.Alperin
+import Hundred.Statements.Sidorenko
+import Hundred.Statements.OneThird
+import Hundred.Statements.MetricTSP
+import Hundred.Statements.PIT

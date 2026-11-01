@@ -9,16 +9,17 @@
     "search_index": "https://svyable.github.io/100/api/search.json",
     "full_snapshot": "https://svyable.github.io/100/data/portfolio.json",
     "feed": "https://svyable.github.io/100/feed.xml",
-    "work_queue": "https://svyable.github.io/100/api/work.json"
+    "work_queue": "https://svyable.github.io/100/api/work.json",
+    "fleet_packets": "https://svyable.github.io/100/api/packets.json"
   },
   "counts": {
     "problems": 100,
-    "campaigns": 21,
+    "campaigns": 23,
     "probes": 18,
     "engines": 13,
     "claim_reviews": 15,
-    "lean_statements": 9,
+    "lean_statements": 14,
     "solved": 0,
-    "documents": 36
+    "documents": 38
   }
 }

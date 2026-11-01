@@ -1,18 +1,18 @@
 {
   "protocol": "svyable.work.v1",
-  "count": 267,
+  "count": 265,
   "by_kind": {
-    "obligation": 24,
+    "obligation": 26,
     "lean": 9,
     "job": 45,
-    "roadmap": 9,
-    "comparator": 91,
+    "roadmap": 10,
+    "comparator": 86,
     "status_audit": 89
   },
   "by_status": {
-    "runnable": 261,
+    "runnable": 258,
     "externally_blocked": 4,
-    "waiting_on_dependencies": 2
+    "waiting_on_dependencies": 3
   },
   "claim_protocol": "Search open issues for the claim title; if none is open, open one with .github/ISSUE_TEMPLATE/claim.yml before starting. Close it with the PR.",
   "items": [
@@ -65,6 +65,31 @@
       "claim_title": "[Claim] O-M073-01 — Witness obligation for M073",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M073-01%20%E2%80%94%20Witness%20obligation%20for%20M073",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M073-01%22"
+    },
+    {
+      "id": "O-M044-01",
+      "kind": "obligation",
+      "status": "runnable",
+      "problems": [
+        "M044"
+      ],
+      "title": "Witness obligation for M044",
+      "deliverable": "Import or rebuild an independent group-ring checker; replay the claimed presentation and products; preserve input digests.",
+      "context": "The 2026 claimed finite presentation of a torsion-free group G and elements a,b in F_2[G] satisfy ab=1 and ba≠1 under two independent group-ring multiplications on the exact published supports.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M044-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "The OpenAI math manuscript claims a counterexample to direct finiteness; this node only asks for independent replay. Matching the registered statement is not novelty credit.",
+      "falsifier": "A multiplication trace where ab≠1, or ba=1, or the presentation/supports disagree with the cited source.",
+      "depends_on": [],
+      "source": "data/proof_obligations.json",
+      "priority_rank": 3,
+      "scope_sha256": "4f9c55ca7a8b68eb1673e4d122d950255a0def42d2c07e63126f90c698ad17fd",
+      "claim_title": "[Claim] O-M044-01 — Witness obligation for M044",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M044-01%20%E2%80%94%20Witness%20obligation%20for%20M044",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M044-01%22"
     },
     {
       "id": "O-M074-02",
@@ -174,19 +199,19 @@
         "M088"
       ],
       "title": "Lemma obligation for M088",
-      "deliverable": "Lock the field, circuit shape, degree and oracle model in one paragraph inside the algebraic-complexity shape; only then implement a falsifier.",
+      "deliverable": "Class lock is in research/M088_LOCK.md. Implement the exact falsifier (nonzero circuit vanishing on a proposed hitting set) against that lock; independent mathematical and statement-fidelity review still required before discharge.",
       "context": "For an explicitly locked field characteristic, circuit shape, degree bound and oracle model, a deterministic polynomial-size hitting set hits every nonzero circuit in that class.",
       "acceptance": [
         "Discharge evidence recorded on O-M088-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
         "Independent review recorded before the node is marked discharged",
         "python3 scripts/regen.py && python3 scripts/regen.py --check"
       ],
-      "boundary": "No restricted circuit class is locked in this repository yet; a checker written before the class is fixed does not raise readiness.",
+      "boundary": "The restricted GF(2) degree-≤3 ≤20-gate black-box class is locked in-repo. A hitting set for that class would be a restricted lemma, not a resolution of unrestricted PIT.",
       "falsifier": "A nonzero circuit in the locked class that vanishes at every hitting-set point, or a lock paragraph that leaves characteristic, shape, degree or oracle unspecified.",
       "depends_on": [],
       "source": "data/proof_obligations.json",
       "priority_rank": 9,
-      "scope_sha256": "2a485cde985f9a99d3b888d3a308d99dc06bc2978fab80b3e3360e204e1bef4b",
+      "scope_sha256": "5204bcc35834d93882867d02268da6bfe4c98a2398ff94770255bf1f624a3ae5",
       "claim_title": "[Claim] O-M088-01 — Lemma obligation for M088",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M088-01%20%E2%80%94%20Lemma%20obligation%20for%20M088",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M088-01%22"
@@ -812,7 +837,7 @@
       ],
       "title": "Replay a claimed finite witness: One presentation, one product",
       "deliverable": "M044: Reproduce a finite presentation and a,b products using a genuinely independent group-ring checker; check the claimed equalities and non-equality. M049: Independently verify M044's group algebra witness, then audit the Elek–Szabó implication from soficity to direct finiteness in the claimed coefficient field.",
-      "context": "Listed for witness replay. The next step is the claim review's finite check.",
+      "context": "",
       "acceptance": [
         "Every problem on the job moves by the same action, or a precise gap is recorded per problem",
         "Evidence lands in the ledger the action names (lab, claim review, campaign or obligation)",
@@ -892,8 +917,8 @@
         "M088"
       ],
       "title": "Lock a restricted class: One format, replayed exactly",
-      "deliverable": "Lock the field, the circuit shape, the degree and the oracle model in one paragraph inside the algebraic-complexity shape. Only then implement a falsifier. A checker with no declared class does not raise readiness.",
-      "context": "The campaign blocker says no circuit class is locked. A checker written before the class is fixed does not raise readiness.",
+      "deliverable": "Lock paragraph is complete in research/M088_LOCK.md; implement the falsifier against that exact GF(2) degree-≤3 ≤20-gate black-box class before attaching a verifier or widening the class.",
+      "context": "The restricted class is locked in research/M088_LOCK.md. A checker without that lock does not raise readiness; the next product is a falsifier against the lock.",
       "acceptance": [
         "Every problem on the job moves by the same action, or a precise gap is recorded per problem",
         "Evidence lands in the ledger the action names (lab, claim review, campaign or obligation)",
@@ -905,7 +930,7 @@
       "source": "scripts/approach.py",
       "depends_on": [],
       "priority_rank": 9,
-      "scope_sha256": "33aaba58d309757926cb16bae4819661d4442d1f1b13f7d8855edd1028eb93ed",
+      "scope_sha256": "762a51e861ce8772187923e23c663066873ec56d17247d022782e08232262b6d",
       "claim_title": "[Claim] J-algebraic_complexity-lock_restriction — Lock a restricted class: One format, replayed exactly",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-algebraic_complexity-lock_restriction%20%E2%80%94%20Lock%20a%20restricted%20class%3A%20One%20format%2C%20replayed%20exactly",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20J-algebraic_complexity-lock_restriction%22"
@@ -2000,6 +2025,33 @@
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20R33%22"
     },
     {
+      "id": "R49",
+      "kind": "roadmap",
+      "status": "runnable",
+      "problems": [
+        "M095",
+        "M075",
+        "M074"
+      ],
+      "title": "Run the 36-cell proof-exchange benchmark for real",
+      "deliverable": "Populate benchmark_runs.jsonl under the preregistered protocol; no causal claim until the grid is complete.",
+      "context": "",
+      "acceptance": [
+        "Exit criterion met: All 36 cells recorded with resource totals; primary metric still requires external review for novelty credit.",
+        "data/roadmap.json horizon moved to shipped with the evidence path",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Shipped roadmap work is infrastructure, reproduction or audit unless independently reviewed.",
+      "falsifier": "",
+      "source": "data/roadmap.json",
+      "depends_on": [],
+      "priority_rank": 5,
+      "scope_sha256": "0f5a2929fa7eff9b4654d00cde9cb362c86eed37b62da25f1d2cd24c651e4946",
+      "claim_title": "[Claim] R49 — Run the 36-cell proof-exchange benchmark for real",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20R49%20%E2%80%94%20Run%20the%2036-cell%20proof-exchange%20benchmark%20for%20real",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20R49%22"
+    },
+    {
       "id": "R21",
       "kind": "roadmap",
       "status": "runnable",
@@ -2157,32 +2209,6 @@
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20R34%22"
     },
     {
-      "id": "F-M073",
-      "kind": "comparator",
-      "status": "runnable",
-      "problems": [
-        "M073"
-      ],
-      "title": "Lean comparator statement for Sidorenko conjecture",
-      "deliverable": "Encode the registry statement of M073 as a Prop in lean/Hundred/Statements/ (header: what is encoded, what is not, frontier), with kernel-checked fidelity examples.",
-      "context": "Are bipartite graph homomorphism densities bounded below by the edge-density power?",
-      "acceptance": [
-        "Entry for M073 in data/formalization.json; module imported by lean/Hundred.lean",
-        "python3 scripts/formal.py --check (no escape hatches; every kernel-checked theorem registered in data/lean_targets.json)",
-        "Lean proof gate green in CI; each kernel certificate small (a few seconds, not minutes)",
-        "python3 scripts/regen.py && python3 scripts/regen.py --check"
-      ],
-      "boundary": "A comparator is a precise target, never a proof. Statements needing analysis or topology may require Mathlib; record that as a blocker instead of encoding a weaker statement.",
-      "falsifier": "A hand-checked instance on which the encoding disagrees with the registry statement.",
-      "source": "data/formalization.json",
-      "depends_on": [],
-      "priority_rank": 2,
-      "scope_sha256": "0a67cfa59dc596d5d993c5803d24df9de89dc915c5af4084bac5194fecd82272",
-      "claim_title": "[Claim] F-M073 — Lean comparator statement for Sidorenko conjecture",
-      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20F-M073%20%E2%80%94%20Lean%20comparator%20statement%20for%20Sidorenko%20conjecture",
-      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20F-M073%22"
-    },
-    {
       "id": "F-M044",
       "kind": "comparator",
       "status": "runnable",
@@ -2287,58 +2313,6 @@
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20F-M093%22"
     },
     {
-      "id": "F-M088",
-      "kind": "comparator",
-      "status": "runnable",
-      "problems": [
-        "M088"
-      ],
-      "title": "Lean comparator statement for Deterministic polynomial identity testing",
-      "deliverable": "Encode the registry statement of M088 as a Prop in lean/Hundred/Statements/ (header: what is encoded, what is not, frontier), with kernel-checked fidelity examples.",
-      "context": "Is there a deterministic polynomial-time identity test for general arithmetic circuits?",
-      "acceptance": [
-        "Entry for M088 in data/formalization.json; module imported by lean/Hundred.lean",
-        "python3 scripts/formal.py --check (no escape hatches; every kernel-checked theorem registered in data/lean_targets.json)",
-        "Lean proof gate green in CI; each kernel certificate small (a few seconds, not minutes)",
-        "python3 scripts/regen.py && python3 scripts/regen.py --check"
-      ],
-      "boundary": "A comparator is a precise target, never a proof. Statements needing analysis or topology may require Mathlib; record that as a blocker instead of encoding a weaker statement.",
-      "falsifier": "A hand-checked instance on which the encoding disagrees with the registry statement.",
-      "source": "data/formalization.json",
-      "depends_on": [],
-      "priority_rank": 9,
-      "scope_sha256": "adf9fbc8a97e91127242672d262be35581830a523f79c637c8d2068911f6f02e",
-      "claim_title": "[Claim] F-M088 — Lean comparator statement for Deterministic polynomial identity testing",
-      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20F-M088%20%E2%80%94%20Lean%20comparator%20statement%20for%20Deterministic%20polynomial%20identity%20testing",
-      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20F-M088%22"
-    },
-    {
-      "id": "F-M079",
-      "kind": "comparator",
-      "status": "runnable",
-      "problems": [
-        "M079"
-      ],
-      "title": "Lean comparator statement for One-third–two-thirds conjecture",
-      "deliverable": "Encode the registry statement of M079 as a Prop in lean/Hundred/Statements/ (header: what is encoded, what is not, frontier), with kernel-checked fidelity examples.",
-      "context": "Does every finite non-total poset admit an incomparable pair balanced within [1/3,2/3] across linear extensions?",
-      "acceptance": [
-        "Entry for M079 in data/formalization.json; module imported by lean/Hundred.lean",
-        "python3 scripts/formal.py --check (no escape hatches; every kernel-checked theorem registered in data/lean_targets.json)",
-        "Lean proof gate green in CI; each kernel certificate small (a few seconds, not minutes)",
-        "python3 scripts/regen.py && python3 scripts/regen.py --check"
-      ],
-      "boundary": "A comparator is a precise target, never a proof. Statements needing analysis or topology may require Mathlib; record that as a blocker instead of encoding a weaker statement.",
-      "falsifier": "A hand-checked instance on which the encoding disagrees with the registry statement.",
-      "source": "data/formalization.json",
-      "depends_on": [],
-      "priority_rank": 12,
-      "scope_sha256": "f09a59e9db2af17825bc0afaa86dc7a3a57ba74c1f30fbf975612968bfd9ad87",
-      "claim_title": "[Claim] F-M079 — Lean comparator statement for One-third–two-thirds conjecture",
-      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20F-M079%20%E2%80%94%20Lean%20comparator%20statement%20for%20One-third%E2%80%93two-thirds%20conjecture",
-      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20F-M079%22"
-    },
-    {
       "id": "F-M084",
       "kind": "comparator",
       "status": "runnable",
@@ -2389,32 +2363,6 @@
       "claim_title": "[Claim] F-M080 — Lean comparator statement for Rota basis conjecture",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20F-M080%20%E2%80%94%20Lean%20comparator%20statement%20for%20Rota%20basis%20conjecture",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20F-M080%22"
-    },
-    {
-      "id": "F-M097",
-      "kind": "comparator",
-      "status": "runnable",
-      "problems": [
-        "M097"
-      ],
-      "title": "Lean comparator statement for Metric TSP four-thirds conjecture",
-      "deliverable": "Encode the registry statement of M097 as a Prop in lean/Hundred/Statements/ (header: what is encoded, what is not, frontier), with kernel-checked fidelity examples.",
-      "context": "Is optimum metric TSP cost at most 4/3 times the Held–Karp subtour LP?",
-      "acceptance": [
-        "Entry for M097 in data/formalization.json; module imported by lean/Hundred.lean",
-        "python3 scripts/formal.py --check (no escape hatches; every kernel-checked theorem registered in data/lean_targets.json)",
-        "Lean proof gate green in CI; each kernel certificate small (a few seconds, not minutes)",
-        "python3 scripts/regen.py && python3 scripts/regen.py --check"
-      ],
-      "boundary": "A comparator is a precise target, never a proof. Statements needing analysis or topology may require Mathlib; record that as a blocker instead of encoding a weaker statement.",
-      "falsifier": "A hand-checked instance on which the encoding disagrees with the registry statement.",
-      "source": "data/formalization.json",
-      "depends_on": [],
-      "priority_rank": 17,
-      "scope_sha256": "a980273d86c025f849956254cf14da1807e7b30ee280c6d9480faff95b26a9f2",
-      "claim_title": "[Claim] F-M097 — Lean comparator statement for Metric TSP four-thirds conjecture",
-      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20F-M097%20%E2%80%94%20Lean%20comparator%20statement%20for%20Metric%20TSP%20four-thirds%20conjecture",
-      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20F-M097%22"
     },
     {
       "id": "F-M002",
@@ -4469,32 +4417,6 @@
       "claim_title": "[Claim] F-M041 — Lean comparator statement for Plane Jacobian conjecture",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20F-M041%20%E2%80%94%20Lean%20comparator%20statement%20for%20Plane%20Jacobian%20conjecture",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20F-M041%22"
-    },
-    {
-      "id": "F-M048",
-      "kind": "comparator",
-      "status": "runnable",
-      "problems": [
-        "M048"
-      ],
-      "title": "Lean comparator statement for Alperin weight conjecture",
-      "deliverable": "Encode the registry statement of M048 as a Prop in lean/Hundred/Statements/ (header: what is encoded, what is not, frontier), with kernel-checked fidelity examples.",
-      "context": "Do modular representation counts equal the predicted p-weight counts?",
-      "acceptance": [
-        "Entry for M048 in data/formalization.json; module imported by lean/Hundred.lean",
-        "python3 scripts/formal.py --check (no escape hatches; every kernel-checked theorem registered in data/lean_targets.json)",
-        "Lean proof gate green in CI; each kernel certificate small (a few seconds, not minutes)",
-        "python3 scripts/regen.py && python3 scripts/regen.py --check"
-      ],
-      "boundary": "A comparator is a precise target, never a proof. Statements needing analysis or topology may require Mathlib; record that as a blocker instead of encoding a weaker statement.",
-      "falsifier": "A hand-checked instance on which the encoding disagrees with the registry statement.",
-      "source": "data/formalization.json",
-      "depends_on": [],
-      "priority_rank": 99,
-      "scope_sha256": "6d40e707618842bc77d1d1e89f792b50a02434564cb80e433717d55956016e19",
-      "claim_title": "[Claim] F-M048 — Lean comparator statement for Alperin weight conjecture",
-      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20F-M048%20%E2%80%94%20Lean%20comparator%20statement%20for%20Alperin%20weight%20conjecture",
-      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20F-M048%22"
     },
     {
       "id": "F-M001",
@@ -6938,6 +6860,33 @@
       "claim_title": "[Claim] J-critical_zeros-stop_range — Stop: range is dominated: Certified zero counts",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-critical_zeros-stop_range%20%E2%80%94%20Stop%3A%20range%20is%20dominated%3A%20Certified%20zero%20counts",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20J-critical_zeros-stop_range%22"
+    },
+    {
+      "id": "O-M049-01",
+      "kind": "obligation",
+      "status": "waiting_on_dependencies",
+      "problems": [
+        "M049"
+      ],
+      "title": "Reduction obligation for M049",
+      "deliverable": "After O-M044-01, write an implication checklist for Elek–Szabó over F_2 on that presentation; do not open a duplicate witness search.",
+      "context": "Given an independently replayed M044 witness over F_2, the Elek–Szabó theorem applies with exactly the stated hypotheses and implies that the same finitely presented group is nonsofic.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M049-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "M044 and M049 share one manuscript; a second PDF is not a second proof. The upstream Lean comparator does not by itself assert nonsoficity.",
+      "falsifier": "A missing hypothesis in the soficity implication for the claimed field, or a failure of the M044 dependency.",
+      "depends_on": [
+        "O-M044-01"
+      ],
+      "source": "data/proof_obligations.json",
+      "priority_rank": 4,
+      "scope_sha256": "ca3a9ebd659d4d0e0e51ab5f3e8aaa0760a4b59bba4a24bb0dbf52387c3136b2",
+      "claim_title": "[Claim] O-M049-01 — Reduction obligation for M049",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M049-01%20%E2%80%94%20Reduction%20obligation%20for%20M049",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M049-01%22"
     },
     {
       "id": "O-M074-03",

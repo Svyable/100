@@ -11,7 +11,12 @@ python3 scripts/work.py --next 5                  # highest-priority runnable it
 python3 scripts/work.py --next 5 --kind comparator  # or: obligation, lean, job, roadmap, status_audit
 python3 scripts/work.py --id F-M079               # one item: deliverable, acceptance, boundary, digest
 python3 scripts/scale.py --budget 100             # 100-slot evidence-bound wave (see SCALE.md)
+python3 scripts/scale.py --write                  # also refreshes docs/api/packets.json for fleets
+python3 scripts/analogues.py --check              # structural finite-analogue ledger
 ```
+
+Fleet operator guide: [docs/FLEET.md](docs/FLEET.md). Packets are claimable contracts with
+scope digests, not theorems.
 
 The queue is derived from the ledgers (proof obligations, Lean targets, the dispatcher,
 the roadmap, the formal catalogue and the status-audit drafts). It is browsable at

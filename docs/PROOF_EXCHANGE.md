@@ -5,13 +5,15 @@
 ```sh
 python3 scripts/scale.py --budget 100            # 100-slot claimable wave
 python3 scripts/scale.py --budget 100 --json     # machine-readable fleet packets
-python3 scripts/scale.py --write                 # regenerate SCALE.md
-python3 scripts/scale.py --check                 # source + SCALE.md drift
+python3 scripts/scale.py --write                 # regenerate SCALE.md + docs/api/packets.json
+python3 scripts/scale.py --check                 # source + SCALE.md + packets drift
 python3 scripts/scale.py --mode coverage --budget 5   # equal-slot shape/engine ablation
+python3 scripts/analogues.py --check             # structural finite analogues
+python3 scripts/benchmark.py --check             # A/B/C/D prereg (empty ledger OK)
 ```
 
 Nothing here writes to Solved. A filled slot is a **claimable work packet** with a
-scope digest, not a theorem.
+scope digest, not a theorem. Omni-directional fleet ops: [FLEET.md](FLEET.md).
 
 ## The constraint
 

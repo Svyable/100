@@ -107,7 +107,20 @@
   ],
   "engine_roadmap": null,
   "claim_review_2026": null,
-  "formal_statement": null,
+  "formal_statement": {
+    "problem_id": "M097",
+    "module": "lean/Hundred/Statements/MetricTSP.lean",
+    "namespace": "Hundred.Statements.MetricTSP",
+    "statement": "Statement",
+    "encodes": "Metric axioms, tour length, and the cleared four-thirds inequality 3·OPT ≤ 4·HK against a supplied Held–Karp lower bound.",
+    "not_encoded": [
+      "The subtour LP itself",
+      "Graphic-metric specialization"
+    ],
+    "kernel_checked": [],
+    "fidelity": "author_checked",
+    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/MetricTSP.lean"
+  },
   "external_claims": [],
   "mentioned_in": [
     {
@@ -129,6 +142,11 @@
       "title": "Ranked candidate portfolio",
       "source": "RANKED.md",
       "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
     },
     {
       "title": "Scale — proof-exchange wave",
