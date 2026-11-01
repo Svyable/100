@@ -69,13 +69,23 @@
     "id": "L006",
     "problem_id": "M075",
     "stage": "implemented",
-    "statement": "Exhaustive union-closed check over all families on ground sets of size 1, 2 and 3 in the general bitmask encoding of Hundred.Statements.Frankl.Statement.",
-    "scope_gap": "Elementary known cases; complements L002 (Fin 2 with union semantics). No representation theorem from arbitrary set families yet. Independent statement review pending.",
-    "next_step": "Prove that the bitmask encoding is equivalent to the L002 Fin-based families for k = 2, then reuse it for k = 3.",
+    "statement": "The generic Fin-based and Nat-bitmask family models agree on all two-element family memberships, counts, frequencies, union closure, nonempty-member conditions and abundance. Explicitly pack arbitrary Boolean predicates on the four subset masks; transport the two-element theorem into the generic comparator and combine the separately proved k=1 and k=3 cases.",
+    "scope_gap": "Elementary finite k=1..3 cases only. The model-equivalence and explicit family packing theorems are proved only for k=2; the k=3 case is supplied independently, not derived from k=2. No unrestricted Frankl theorem, and no independent scope review.",
+    "next_step": "Extend the family packing and semantic bridge to k=3 or to a uniform Fin (2^k) representation; connect genuine families of subsets of Fin k, not only the bitmask model.",
     "declarations": [
       "Hundred.Statements.Frankl.ground_1",
       "Hundred.Statements.Frankl.ground_2",
-      "Hundred.Statements.Frankl.ground_3"
+      "Hundred.Statements.Frankl.ground_3",
+      "Hundred.FranklBridge.member_iff",
+      "Hundred.FranklBridge.size_eq",
+      "Hundred.FranklBridge.frequency_eq",
+      "Hundred.FranklBridge.nontrivial_iff",
+      "Hundred.FranklBridge.unionClosed_iff",
+      "Hundred.FranklBridge.abundant_iff",
+      "Hundred.FranklBridge.from_fin2",
+      "Hundred.FranklBridge.pack_member",
+      "Hundred.FranklBridge.extensional_complete",
+      "Hundred.FranklBridge.bounded_ground_sets"
     ]
   },
   {
