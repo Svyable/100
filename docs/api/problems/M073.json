@@ -238,6 +238,11 @@
       "url": "https://svyable.github.io/100/library/m071-m073-witnesses/"
     },
     {
+      "title": "M073: a quantitative Sidorenko margin on an entire graphon subfamily",
+      "source": "research/M073_REGULAR2_CYCLE_MARGIN.md",
+      "url": "https://svyable.github.io/100/library/m073-regular2-cycle-margin/"
+    },
+    {
       "title": "M073 — exact two-block graphon sanity check, not a Sidorenko witness",
       "source": "research/M073_TWOBLOCK_EXACT.md",
       "url": "https://svyable.github.io/100/library/m073-twoblock-exact/"

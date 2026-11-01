@@ -59,6 +59,11 @@ Two independent algorithms evaluate the left numerator:
 For tiny bipartite patterns, both agree with brute-force enumeration
 of **every** binary assignment to **every** vertex.
 
+**Follow-up:** A separate [continuum inequality](M073_REGULAR2_CYCLE_MARGIN.md)
+proves a strictly positive quantitative gap for *all* balanced equal-diagonal
+two-block graphons, using 33 four-cycles and 88 six-cycles. It does not
+cover the general three-parameter two-block family tested below.
+
 ## Recorded result and failure boundary
 
 | Exact coarse test | Count |
