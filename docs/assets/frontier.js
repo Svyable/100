@@ -176,8 +176,7 @@
   }
 
   function atlasExplorer(problems) {
-    const anchor = document.querySelector(".page-head") || document.querySelector(".atlas-page") ||
-      document.querySelector("main h1");
+    const anchor = document.querySelector("main .page-hero") || document.querySelector("main .page-head");
     if (!anchor) return;
     const families = new Map();
     problems.problems.forEach(p => {
@@ -223,8 +222,7 @@
     };
     select.addEventListener("change", draw);
     draw();
-    const container = anchor.closest("section") || anchor;
-    container.after(section);
+    anchor.after(section);
   }
 
   if (problem) {
