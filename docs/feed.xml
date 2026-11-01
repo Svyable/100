@@ -105,6 +105,13 @@
 <summary>4,958 nontrivial union-closed families on 4 elements form 366 orbits. Minimum abundance 1/2. A second canonisation, by sorted subset tuples, reproduces the orbit counts. Scope: Exhaustive range already checked without symmetry; the orbit count is not a general proof</summary>
 </entry>
 <entry>
+<title>Milestone: Parametric Erdos-Straus identities on nine hard-class progressions</title>
+<link href="https://svyable.github.io/100/ledger/#B-MINE-019-ID"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-MINE-019-ID</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Nine closed forms, including n=120t+73 and n=120t+97, are proved as polynomial identities. Through 8,000 they cover 106 of 117 primes that are 1 mod 24; the 11 misses all lie in {1,49} mod 120. Scope: Polynomial identities on named arithmetic progressions; classical covering style, not a full proof</summary>
+</entry>
+<entry>
 <title>Milestone: Erdos-Straus residues for primes 1 mod 24 through 8,000</title>
 <link href="https://svyable.github.io/100/ledger/#B-MINE-019"/>
 <id>tag:svyable.github.io,2026:100/milestone-B-MINE-019</id>

@@ -53,8 +53,10 @@ useful output is the least-partition table, as data for restricted lemmas.
 
 ### M019 — Erdős–Straus (`erdos_straus`, engine `primes`)
 Gives an explicit triple for every n, found with a divisor solver for 1/y + 1/z = a/b. The checker
-tests only the identity 4xyz = n(xy + yz + zx). **Next:** mine solutions for primes n ≡ 1 (mod 24)
-to look for parametric identities.
+tests only the identity 4xyz = n(xy + yz + zx). The residue mine clusters primes n ≡ 1 (mod 24);
+[`research/M019_IDENTITIES.md`](M019_IDENTITIES.md) turns the residue-3/7 clusters into nine
+polynomial identities covering 106/117 such primes through 8,000. **Next:** attack the remaining
+classes n ≡ 1 or 49 (mod 120) with a non-Mordell idea, without extending the search range.
 
 ### M041 — Plane Jacobian conjecture (`jacobian`, engine `polynomial_algebra`)
 The class is every map (f, g) of degree ≤ d with zero constant terms and coefficients in a small

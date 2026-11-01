@@ -18,7 +18,7 @@
   "program_as_of": "2026-10-31",
   "summary": {
     "campaigns": 21,
-    "reproduced_known": 26,
+    "reproduced_known": 27,
     "restricted_verified": 0,
     "fully_solved": 0,
     "problems_with_exact_verifier": 20,
@@ -865,10 +865,10 @@
       "action_bonus": 6,
       "method_id": "effective_diophantine",
       "method_title": "Explicit Diophantine certificates",
-      "dispatch_next": "The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity.",
-      "dispatch_why": "The straus_patterns mine already clusters the primes that are 1 mod 24. Extending the verified range stays inside published computations; the missing piece is an identity for one residue.",
+      "dispatch_next": "Nine polynomial identities from the straus_identities mine now cover 106 of the 117 primes n <= 8000 with n = 1 (mod 24), including the primary progressions n = 120t+73 and n = 120t+97. The 11 uncovered primes all lie in {1, 49} (mod 120). Attack those two remaining classes with a non-Mordell idea, or name an explicit family outside the recorded progressions; do not extend the verified search range.",
+      "dispatch_why": "Nine polynomial identities already cover 106 of 117 hard-class primes through 8,000. Extending the verified range stays inside published computations; the missing piece is a non-Mordell idea for the classes 1 and 49 mod 120.",
       "campaign_stage": "benchmark_reproduced",
-      "milestone_count": 2
+      "milestone_count": 3
     },
     {
       "id": "M095",
@@ -3973,6 +3973,55 @@
         },
         "title": "Posets attaining balance exactly 1/3"
       },
+      "straus_identities": {
+        "certificate_sha256": "94d399f83ea2ac4252d4d476676147e9638d50a7006c90681cc1766e770c9ed8",
+        "engines": [
+          "primes"
+        ],
+        "frontier": "Classical Mordell-type identities already cover many arithmetic progressions inside n = 1 (mod 24). The families here are extracted from the residue mine and proved as polynomial identities; they do not finish the uncovered progressions n = 1 or 49 (mod 120), and a finite list of polynomial identities cannot cover every such n.",
+        "holds": true,
+        "mine": "straus_identities",
+        "params": {
+          "limit": 8000
+        },
+        "problem_id": "M019",
+        "scope": "Nine polynomial identities give explicit 4/n = 1/x+1/y+1/z solutions on named arithmetic progressions inside n = 1 (mod 24); prime coverage is reported through 8000.",
+        "summary": {
+          "by_family": {
+            "R11-d1-73": 3,
+            "R11-d3-241": 3,
+            "R3-97": 30,
+            "R3-d11-217": 2,
+            "R7-73": 35,
+            "R7-d1-73": 11,
+            "R7-d2-97": 12,
+            "R7-d4-145": 10,
+            "R7-d7-49": 0
+          },
+          "covered_primes": 106,
+          "families": 9,
+          "families_sha256": "c8bf86f041b7040bd0894ded3cb97123d5b9d972b8ed03550c1f0e7802634448",
+          "family_ids": [
+            "R3-97",
+            "R7-73",
+            "R7-d1-73",
+            "R7-d2-97",
+            "R7-d4-145",
+            "R7-d7-49",
+            "R3-d11-217",
+            "R11-d1-73",
+            "R11-d3-241"
+          ],
+          "limit": 8000,
+          "primes_1_mod_24": 117,
+          "uncovered_mod_120": [
+            1,
+            49
+          ],
+          "uncovered_primes": 11
+        },
+        "title": "Parametric identities for primes 1 mod 24"
+      },
       "straus_patterns": {
         "certificate_sha256": "a58457c801a98d2f56eb087719079eaad5e2e66842b09e7e66763083b11dd035",
         "engines": [
@@ -4341,6 +4390,17 @@
         ]
       },
       {
+        "id": "R38",
+        "track": "campaigns",
+        "horizon": "shipped",
+        "title": "Erdos-Straus parametric identities from the residue mine",
+        "outcome": "Nine polynomial identities, including n=120t+73 and n=120t+97, cover 106 of 117 hard-class primes through 8,000; remaining misses lie in {1,49} mod 120.",
+        "evidence": "research/M019_IDENTITIES.md",
+        "problems": [
+          "M019"
+        ]
+      },
+      {
         "id": "R20",
         "track": "campaigns",
         "horizon": "now",
@@ -4530,7 +4590,7 @@
       }
     ],
     "counts": {
-      "shipped": 22,
+      "shipped": 23,
       "now": 5,
       "next": 4,
       "later": 4
@@ -4558,13 +4618,14 @@
       "method": "Modular covering identities with unit-fraction certificates",
       "hypothesis": "For every integer n >= 2, 4/n = 1/x + 1/y + 1/z has a solution in positive integers.",
       "first_proof_obligation": "Find a polynomial identity family covering a residue class of primes not covered by the classical Mordell identities, and prove it symbolically.",
-      "next_experiment": "The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity.",
+      "next_experiment": "Nine polynomial identities from the straus_identities mine now cover 106 of the 117 primes n <= 8000 with n = 1 (mod 24), including the primary progressions n = 120t+73 and n = 120t+97. The 11 uncovered primes all lie in {1, 49} (mod 120). Attack those two remaining classes with a non-Mordell idea, or name an explicit family outside the recorded progressions; do not extend the verified search range.",
       "additional_verifiers": [
-        "python3 scripts/mine.py --mine straus_patterns"
+        "python3 scripts/mine.py --mine straus_patterns",
+        "python3 scripts/mine.py --mine straus_identities"
       ],
       "falsification": "An n together with a proof that no positive-integer triple exists; a finite search failure is not a counterexample.",
       "blocker": "Classical identities leave quadratic-residue classes uncovered, and known results show identities of the standard polynomial type cannot cover them all; a different idea is needed.",
-      "dossier": "research/LAB_CAMPAIGNS.md",
+      "dossier": "research/M019_IDENTITIES.md",
       "verifier": "python3 scripts/lab.py --probe erdos_straus"
     },
     {
@@ -5030,6 +5091,17 @@
       "verified_on": "2026-10-31"
     },
     {
+      "id": "B-MINE-019-ID",
+      "problem_id": "M019",
+      "classification": "reproduced_known",
+      "title": "Parametric Erdos-Straus identities on nine hard-class progressions",
+      "scope": "Polynomial identities on named arithmetic progressions; classical covering style, not a full proof",
+      "description": "Nine closed forms, including n=120t+73 and n=120t+97, are proved as polynomial identities. Through 8,000 they cover 106 of 117 primes that are 1 mod 24; the 11 misses all lie in {1,49} mod 120.",
+      "verifier": "python3 scripts/mine.py --mine straus_identities",
+      "artifact": "scripts/mines/straus_identities.py",
+      "verified_on": "2026-10-31"
+    },
+    {
       "id": "B-MINE-075",
       "problem_id": "M075",
       "classification": "reproduced_known",
@@ -5269,7 +5341,7 @@
           "M006"
         ],
         "best_rank": 18,
-        "summary": "M019: The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity. M006: The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification.",
+        "summary": "M019: Nine polynomial identities from the straus_identities mine now cover 106 of the 117 primes n <= 8000 with n = 1 (mod 24), including the primary progressions n = 120t+73 and n = 120t+97. The 11 uncovered primes all lie in {1, 49} (mod 120). Attack those two remaining classes with a non-Mordell idea, or name an explicit family outside the recorded progressions; do not extend the verified search range. M006: The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification.",
         "why": ""
       },
       {
@@ -6376,10 +6448,10 @@
       "baseline_rank": 27,
       "stage": "benchmark_reproduced",
       "first_proof_obligation": "Find a polynomial identity family covering a residue class of primes not covered by the classical Mordell identities, and prove it symbolically.",
-      "next_experiment": "The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity.",
-      "recorded_experiment": "The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity.",
+      "next_experiment": "Nine polynomial identities from the straus_identities mine now cover 106 of the 117 primes n <= 8000 with n = 1 (mod 24), including the primary progressions n = 120t+73 and n = 120t+97. The 11 uncovered primes all lie in {1, 49} (mod 120). Attack those two remaining classes with a non-Mordell idea, or name an explicit family outside the recorded progressions; do not extend the verified search range.",
+      "recorded_experiment": "Nine polynomial identities from the straus_identities mine now cover 106 of the 117 primes n <= 8000 with n = 1 (mod 24), including the primary progressions n = 120t+73 and n = 120t+97. The 11 uncovered primes all lie in {1, 49} (mod 120). Attack those two remaining classes with a non-Mordell idea, or name an explicit family outside the recorded progressions; do not extend the verified search range.",
       "blocker": "Classical identities leave quadratic-residue classes uncovered, and known results show identities of the standard polynomial type cannot cover them all; a different idea is needed.",
-      "dossier": "research/LAB_CAMPAIGNS.md"
+      "dossier": "research/M019_IDENTITIES.md"
     },
     {
       "problem_id": "M002",
