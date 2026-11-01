@@ -619,3 +619,46 @@ td a,th a{text-decoration:underline;text-underline-offset:3px}
 .start-command .detail-label{color:#e9b6a6}
 @media(max-width:900px){.start-overview{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.audience-paths,.start-overview{grid-template-columns:1fr}.start-command{grid-template-columns:1fr;gap:6px}.start-command code{margin-bottom:12px}}
+/* Lamport proof map: diagrams enhance static, independently navigable obligations. */
+.lamport-controls{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:34px 0 18px;padding:20px;border:1px solid var(--line);background:var(--panel)}
+.lamport-controls[hidden],.lamport-group[hidden]{display:none!important}
+.lamport-controls label{font-size:13px;font-weight:750}
+.lamport-controls select{flex:1 1 310px;min-width:0;padding:11px 14px;border:1px solid var(--line-2);background:var(--panel);color:var(--ink);font-size:13px}
+.lamport-controls [role=status]{font-size:12px;color:var(--muted)}
+.lamport-group{scroll-margin-top:25px;border-top:1px solid var(--line);padding-top:36px}
+.lamport-group-header{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:22px}
+.lamport-group-header h2{font-size:clamp(21px,2.9vw,34px);letter-spacing:-.04em;line-height:1.2;margin:6px 0}
+.lamport-group-header h2 a{text-decoration:none}
+.lamport-graph-scroll{overflow-x:auto;padding:0 0 8px;scrollbar-width:thin}
+.lamport-graph{position:relative;display:grid;grid-template-columns:repeat(var(--lamport-columns),minmax(260px,1fr));gap:26px 42px;min-width:var(--lamport-min-width);align-items:start;padding:4px 5px 8px}
+.lamport-graph-links{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible;z-index:0}
+.lamport-graph-links path{fill:none;stroke:var(--accent-dark);stroke-width:1.7;stroke-linecap:round;opacity:.7}
+.lamport-node{position:relative;z-index:1;display:flex;flex-direction:column;gap:9px;min-width:0;border:1px solid var(--line-2);border-left:4px solid var(--warn-ink);padding:17px 18px;background:var(--panel);box-shadow:0 4px 15px rgba(0,0,0,.035);scroll-margin-top:24px}
+.lamport-node.lamport-open{border-left-color:var(--accent)}
+.lamport-node.lamport-discharged{border-left-color:var(--good-ink)}
+.lamport-node-head{display:flex;align-items:center;justify-content:space-between;gap:9px;font-size:11px}
+.lamport-node-head code{font-weight:750;color:var(--accent-dark)}
+.lamport-node-head span{text-transform:uppercase;letter-spacing:.08em;font-size:10px;color:var(--muted);font-weight:750}
+.lamport-node h3{font-size:16px;margin:0;letter-spacing:-.01em}
+.lamport-node p{font:normal 14px/1.55 var(--serif);overflow-wrap:anywhere;margin:0}
+.lamport-node small{font-size:11px;color:var(--muted)}
+.lamport-node>a{font-size:12px;font-weight:700;margin-top:auto;color:var(--accent-dark);text-decoration:underline;text-underline-offset:3px}
+.lamport-key{color:var(--muted);font-size:11px;margin:11px 0 25px}
+.lamport-audits{margin-top:18px}
+.lamport-audits>h3{font-size:14px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:0 0 12px}
+.lamport-audit{border:1px solid var(--line);border-bottom:0;background:var(--panel);scroll-margin-top:20px}
+.lamport-audit:last-child{border-bottom:1px solid var(--line)}
+.lamport-audit summary{display:flex;align-items:center;gap:12px;flex-wrap:wrap;cursor:pointer;padding:15px 18px;font-size:13px;font-weight:650}
+.lamport-audit summary:hover{background:var(--hover)}
+.lamport-audit summary span{margin-left:auto;font-size:11px;color:var(--muted)}
+.lamport-audit[open]>summary{border-bottom:1px solid var(--line)}
+.lamport-audit-body{padding:20px 22px;max-width:920px}
+.lamport-audit-body h3{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:22px 0 8px}
+.lamport-audit-body h3:first-child{margin-top:0}
+.lamport-audit-body p{font-size:14px;line-height:1.7;overflow-wrap:anywhere}
+.lamport-audit-body p.serif{font-size:18px}
+.lamport-audit-body a{overflow-wrap:anywhere}
+.lamport-no-cert{border-left:3px solid var(--warn-ink);padding:10px 15px;background:var(--panel-2)}
+.lamport-worklinks{border-top:1px solid var(--line);padding-top:16px}
+@media(max-width:760px){.lamport-group-header{display:block}.lamport-group-header .chip{margin-top:9px}.lamport-controls{padding:14px}.lamport-graph{gap:22px 36px;min-width:var(--lamport-min-width)}}
+@media print{.lamport-graph-scroll{overflow:visible}.lamport-controls{display:none}.lamport-group[hidden]{display:block!important}.lamport-node{break-inside:avoid}.lamport-audit{break-inside:avoid}}
