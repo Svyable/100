@@ -109,7 +109,16 @@ class WaveScaleTests(unittest.TestCase):
         self.assertGreaterEqual(kinds["job"], 20)
         # High-leverage families should dominate the first thirty slots.
         head = [p["kind"] for p in self.wave["selected_packets"][:30]]
-        self.assertGreaterEqual(sum(k in ("obligation", "lean", "job", "roadmap") for k in head), 25)
+        self.assertGreaterEqual(sum(k in ("obligation", "review", "lean", "job", "roadmap") for k in head), 25)
+        self.assertFalse({"comparator", "status_audit"} & set(head))
+
+    def test_eligibility_refuses_every_non_runnable_status(self):
+        items = [{"id": "a", "status": "runnable", "depends_on": []},
+                 {"id": "b", "status": "externally_blocked", "depends_on": []},
+                 {"id": "c", "status": "waiting_on_dependencies", "depends_on": ["a"]}]
+        kept, refused = scale.eligible_wave_items(items, {})
+        self.assertEqual([k["id"] for k in kept], ["a"])
+        self.assertEqual({r["id"] for r in refused}, {"b", "c"})
 
     def test_refuses_dominated_range_jobs(self):
         refused_ids = {r["id"] for r in self.wave["refused"]}
