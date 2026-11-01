@@ -352,15 +352,15 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 
 **Dispatch:** `replay_published` · rank 19 · The new engine verifies χ4 only; the generalized Riemann hypothesis concerns all Dirichlet characters. Replaying a separate primitive-character certificate tests the reusable contour and gamma-factor implementation.
 
-**Proof obligation:** Certify one further primitive character, of conductor 3 or 5, to a height where the root number and the gamma factor are checked by the same argument principle.
+**Proof obligation:** Extend the phase to a complex character modulo 5, where the root number is not real and the completed Lambda is no longer real on the critical line.
 
 **Falsifier:** A primitive character and a height T at which the certified argument count exceeds the number of critical-line sign changes.
 
 **Recommended step:** Reproduce a published primitive character modulo 3 or 5 with the correct root number, branch conventions and independently checked zero count; document why this is known mathematics, not GRH progress.
 
-**Not the current recommendation:** Reuse the zero-count certificate for the non-principal character modulo 3, including an independent replay of its Gauss sum.
+**Not the current recommendation:** Extend the phase to a complex character modulo 5, where the root number is not real and the completed Lambda is no longer real on the critical line.
 
-**Current blocker:** One character at height 17 does not constrain the other characters. Conductor 3 is the smallest untouched case.
+**Current blocker:** Three real characters at height at most 17 do not constrain complex characters or large conductors.
 
 **Stage:** `benchmark_reproduced` · [Dossier](research/LAB_CAMPAIGNS.md)
 

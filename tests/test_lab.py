@@ -173,12 +173,32 @@ class TamperTests(unittest.TestCase):
         self.assertRejects(m, params, bad)
 
     def test_dirichlet_character_zero_count(self):
-        params = {"height": 8, "zeros": 1}
+        params = {"chi4_height": 8, "chi4_zeros": 1}
         m, r = run("dirichlet_l", params)
-        self.assertEqual(r["certificate"]["intervals"], [["6/1", "7/1"]])
+        self.assertEqual(r["certificate"]["chi4"]["intervals"], [["6/1", "7/1"]])
         bad = copy.deepcopy(r)
-        bad["certificate"]["intervals"] = [["4/1", "5/1"]]
+        bad["certificate"]["chi4"]["intervals"] = [["4/1", "5/1"]]
         self.assertRejects(m, params, bad)
+
+    def test_dirichlet_chi3_zero_count(self):
+        params = {"chi3_height": 9, "chi3_zeros": 1}
+        m, r = run("dirichlet_l", params)
+        self.assertEqual(r["certificate"]["chi3"]["intervals"], [["8/1", "9/1"]])
+        bad = copy.deepcopy(r)
+        bad["certificate"]["chi3"]["intervals"] = [["4/1", "5/1"]]
+        self.assertRejects(m, params, bad)
+
+    def test_gauss_sums_of_the_certified_characters(self):
+        from probes.cyclotomic import Cyclotomic
+        mod3 = Cyclotomic(3)
+        tau3 = mod3.add(mod3.zeta(1), mod3.neg(mod3.zeta(2)))
+        self.assertTrue(mod3.equal(mod3.mul(tau3, tau3), mod3.const(-3)))
+        mod5 = Cyclotomic(5)
+        tau5 = mod5.const(0)
+        for sign, power in ((1, 1), (-1, 2), (-1, 3), (1, 4)):
+            term = mod5.zeta(power)
+            tau5 = mod5.add(tau5, term if sign > 0 else mod5.neg(term))
+        self.assertTrue(mod5.equal(mod5.mul(tau5, tau5), mod5.const(5)))
 
     def test_goldbach(self):
         params = {"limit": 2000}

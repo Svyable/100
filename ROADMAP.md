@@ -28,13 +28,13 @@ Solved has no target on purpose: it grows only through the promotion gate in [do
 |---|---|---:|---:|---:|---:|
 | Registry & ranking | One canonical, scored, provenance-tracked list of exactly 100 targets. | 3 | 0 | 0 | 1 |
 | Research engine | Evidence-aware readiness, campaigns and a strict promotion gate to Solved. | 3 | 0 | 0 | 1 |
-| Exact probe lab | Every computable problem gets a search plus an independent checker on a reusable engine. | 5 | 3 | 1 | 0 |
+| Exact probe lab | Every computable problem gets a search plus an independent checker on a reusable engine. | 6 | 3 | 1 | 0 |
 | Proof campaigns | Push the highest-ranked targets toward reviewed restricted results. | 3 | 2 | 1 | 0 |
 | Claim audit | Check announced resolutions for exact scope before spending effort on them. | 2 | 0 | 1 | 0 |
 | Trust & reproducibility | Pinned artifacts, proof certificates and CI that reruns everything. | 2 | 0 | 1 | 1 |
 | Site & community | A public dashboard and a contribution path that keeps the bar high. | 2 | 0 | 0 | 1 |
 
-## Shipped (20)
+## Shipped (21)
 
 _Merged on main with evidence in the repository._
 
@@ -66,6 +66,8 @@ _Merged on main with evidence in the repository._
   - Problems: M006 Strong Goldbach conjecture, M019 Erdős–Straus conjecture, M075 Frankl union-closed sets conjecture, M078 Graph reconstruction conjecture +1 more
 - [x] **R30 · Interval-arithmetic zero counts for zeta and L(s, chi_4)** (Exact probe lab) — Rigorous N(T) for zeta up to height 36 and for L(s, chi_4) up to height 17, each matched to Hardy sign changes and replayed at a second truncation. [Evidence](research/LAB_CAMPAIGNS.md)
   - Problems: M001 Riemann Hypothesis, M002 Generalized Riemann Hypothesis
+- [x] **R36 · Zero counts for the real characters modulo 3 and 5** (Exact probe lab) — The chi_4 engine also certifies chi_3 through height 15 and the Legendre symbol mod 5 through height 12, with Gauss sums checked in the cyclotomic ring. [Evidence](scripts/probes/dirichlet_l.py)
+  - Problems: M002 Generalized Riemann Hypothesis
 - [x] **R31 · Group-character engine** (Exact probe lab) — Exact conjugacy, radical p-subgroups and character-degree counts; Alperin weight probe matches p-regular classes on named groups through A5. [Evidence](scripts/probes/alperin.py)
   - Problems: M048 Alperin weight conjecture
 

@@ -384,6 +384,17 @@
       ]
     },
     {
+      "id": "R36",
+      "track": "lab",
+      "horizon": "shipped",
+      "title": "Zero counts for the real characters modulo 3 and 5",
+      "outcome": "The chi_4 engine also certifies chi_3 through height 15 and the Legendre symbol mod 5 through height 12, with Gauss sums checked in the cyclotomic ring.",
+      "evidence": "scripts/probes/dirichlet_l.py",
+      "problems": [
+        "M002"
+      ]
+    },
+    {
       "id": "R31",
       "track": "lab",
       "horizon": "shipped",

@@ -126,11 +126,11 @@
 <summary>Maximum arc sizes 4, 4, 6, 6, 8 with explicit witnesses and exhaustive exclusion of larger arcs; arcs through a frame recount q-2 conics for odd q. Deep run adds q = 8, 9. Scope: Known (Segre/Bose); not new</summary>
 </entry>
 <entry>
-<title>Milestone: The first two non-trivial zeros of L(s, chi_4) are simple and on the critical line</title>
+<title>Milestone: Low zeros of L(s, chi_4) and L(s, chi_3) are simple and on the critical line</title>
 <link href="https://svyable.github.io/100/ledger/#B-LCHI4-001"/>
 <id>tag:svyable.github.io,2026:100/milestone-B-LCHI4-001</id>
 <updated>2026-10-31T00:00:00Z</updated>
-<summary>Argument count for L(s, chi_4) matched to sign changes of the real form on (6, 7) and (10, 11), replayed at a second truncation. The deep run reaches N(17) = 4. Scope: One Dirichlet character, N(11) = 2; not the generalized Riemann hypothesis</summary>
+<summary>Argument counts matched to sign changes: chi_4 on (6, 7) and (10, 11) gives N(11) = 2, and chi_3 on (8, 9) gives N(9) = 1. Gauss sums tau(chi_3)^2 = -3 and tau(chi_4) = 2i fix the root numbers. The deep run adds chi_4 to N(17) = 4, chi_3 to N(15) = 2, and the Legendre symbol mod 5 to N(12) = 3, with tau(chi_5)^2 = 5. Scope: Two real characters at classical heights; not the generalized Riemann hypothesis</summary>
 </entry>
 <entry>
 <title>Milestone: Plane Jacobian conjecture verified on all 59,049 integer maps of degree &lt;= 2 with coefficients in {-1,0,1}</title>
