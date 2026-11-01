@@ -254,6 +254,11 @@
       "url": "https://svyable.github.io/100/library/research-engine/"
     },
     {
+      "title": "Superagent router — Project 100 control plane",
+      "source": "docs/ROUTER.md",
+      "url": "https://svyable.github.io/100/library/router/"
+    },
+    {
       "title": "Foundational sources and 2026 claim watch",
       "source": "docs/SOURCES.md",
       "url": "https://svyable.github.io/100/library/sources/"
