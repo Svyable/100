@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M073 — an equal-mass assortative two-block inequality with explicit margin · 100</title>
+<meta name="description" content="2026-11-01 · Claim #162 · X-M073-ASSORTATIVE2.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m073-assortative-two-block/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M073 — an equal-mass assortative two-block inequality with explicit margin · 100">
+<meta property="og:description" content="2026-11-01 · Claim #162 · X-M073-ASSORTATIVE2.">
+<meta property="og:url" content="https://svyable.github.io/100/library/m073-assortative-two-block/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M073 — an equal-mass assortative two-block inequality with explicit margin</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#the-precise-result">The precise result</a></li><li class="toc-l2"><a href="#proof--coefficient-positivity-for-independent-fair-spins">Proof — coefficient positivity for independent fair spins</a></li><li class="toc-l2"><a href="#source-specific-coefficient-audit">Source-specific coefficient audit</a></li><li class="toc-l2"><a href="#exact-independent-path-checks-and-adversarial-control">Exact independent-path checks and adversarial control</a></li><li class="toc-l2"><a href="#literature-boundary-and-next-falsifier">Literature, boundary and next falsifier</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M073/" title="Sidorenko conjecture">M073</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M073_ASSORTATIVE_TWO_BLOCK.md" rel="noopener noreferrer">research/M073_ASSORTATIVE_TWO_BLOCK.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M073 — an equal-mass assortative two-block inequality with explicit margin</h1>
+<p><strong>2026-11-01 · Claim <a href="https://github.com/Svyable/100/issues/162" rel="noopener noreferrer">#162</a> · X-M073-ASSORTATIVE2.</strong></p>
+<p><strong>Status:</strong> A self-contained author-derived <em>restricted continuum inequality</em> for the specific 35-vertex/66-edge incidence graph H. The expansion is elementary and closely related to classical high-temperature/Griffiths positivity arguments; <strong>global novelty and independent specialist review have not been established</strong>. This neither proves Sidorenko&#x27;s conjecture nor challenges the claimed general counterexample. It does not produce a finite host violating Sidorenko.</p>
+<h2 id="the-precise-result">The precise result<a class="anchor" href="#the-precise-result" aria-label="Link to this section">#</a></h2>
+<p>Let H be the bipartite incidence graph of the <strong>22 pinned triples on 13 points</strong> in <a href="https://github.com/Svyable/100/blob/main/data/reference/sidorenko_faces.json" rel="noopener noreferrer">the source table</a>, with 35 vertices and 66 edges. Give two graphon blocks mass 1/2 each and symmetric weights</p>
+<p>[ W=\begin{pmatrix}a&amp;b\b&amp;c\end{pmatrix},\qquad 0\le a,b,c\le1, \qquad a+c\ge2b. ]</p>
+<p>Put [ p=\frac{a+2b+c}{4},\qquad s=\frac{a-c}{4},\qquad r=\frac{a-2b+c}{4}\ge0. ]</p>
+<p><strong>Proposition.</strong> On the entire real-parameter cone above,</p>
+<p>[ \boxed{\ t(H,W)\ge p^{66}+204s^2p^{64}+33r^4p^{62} +88r^6p^{60}\ge p^{66}.\ } ]</p>
+<p>Equality with (p^{66}) holds <strong>if and only if</strong> (a=b=c). This includes nonmonotone cases (b&lt;\min(a,c)) with (a\ne c), which the previously merged <a href="../../library/m073-monotone-two-block/">ordered-cone result</a> does not cover. It also allows (a\ne c), which the previously merged <a href="../../library/m073-regular2-cycle-margin/">balanced equal-diagonal result</a> does not cover. The cone is <em>not</em> the PSD cone (ac\ge b^2); for example ((a,b,c)=(1,1/2,0)) lies on its boundary but has negative determinant.</p>
+<h2 id="proof--coefficient-positivity-for-independent-fair-spins">Proof — coefficient positivity for independent fair spins<a class="anchor" href="#proof--coefficient-positivity-for-independent-fair-spins" aria-label="Link to this section">#</a></h2>
+<p>Write independent Rademacher labels (\sigma_v\in\{-1,+1\}) at every vertex of H. With the first block labeled +1, the edge weight is exactly</p>
+<p>[ W(\sigma_u,\sigma_v)=p+s\sigma_u+s\sigma_v+r\sigma_u\sigma_v. ]</p>
+<p>Expand the product over the 66 edges. On each edge choose exactly one of four summands: (p), (s\sigma_u), (s\sigma_v), or (r\sigma_u\sigma_v). Independence and symmetry of the spins imply that the expectation of a chosen monomial is zero unless <strong>every vertex has an even total spin exponent</strong>. Every surviving expectation is 1.</p>
+<p>Suppose a surviving term chose the single-spin (s)-summand on (k) edges and the two-spin (r)-summand on (\ell) edges. The total spin exponent is (k+2\ell), which must be even, hence (k) is even. Thus its coefficient (p^{66-k-\ell}s^kr^\ell) is <strong>nonnegative</strong>: (p\ge0), (r\ge0), and (s^k\ge0). All surviving terms may be retained or discarded independently to form rigorous lower bounds.</p>
+<p>We retain four disjoint families of expansion terms:</p>
+<ol><li>The all-(p) choice, contributing (p^{66}).</li><li>Exactly two single-spin choices on distinct edges sharing their selected spin at one center vertex. These are the unordered wedges of H, contributing (w(H)s^2p^{64}), where (w(H)=\sum_v\binom{d(v)}2=204).</li><li>Exactly four two-spin choices on a simple four-cycle, contributing (c_4(H)r^4p^{62}), where (c_4(H)=33).</li><li>Exactly six two-spin choices on a simple six-cycle, contributing (c_6(H)r^6p^{60}), where (c_6(H)=88).</li></ol>
+<p>Every omitted surviving term is nonnegative. This proves the first inequality, including zero weights by polynomial continuity. The second follows by nonnegativity. If (s\ne0) and (p&gt;0), the wedge term is strictly positive. If (s=0) but (r&gt;0), the four-cycle term is strictly positive. If (p=0), nonnegative entries force (a=b=c=0). Finally (s=r=0) is equivalent to (a=b=c), giving exact equality. (\square)</p>
+<p>The coefficient argument actually works for <strong>any finite simple graph</strong> with an equal-mass two-block host on this cone; only the explicit wedge and cycle coefficients above are specific to H. It is an application of classical spin-expansion positivity, not a claimed new general principle.</p>
+<h2 id="source-specific-coefficient-audit">Source-specific coefficient audit<a class="anchor" href="#source-specific-coefficient-audit" aria-label="Link to this section">#</a></h2>
+<p>The point degrees are three 4s, six 5s and four 6s; the 22 face vertices have degree 3. Thus [ w(H)=3\binom42+6\binom52+4\binom62+22\binom32 =18+60+60+66=\boxed{204}. ]</p>
+<p>Every point pair in the pinned skeleton occurs in exactly two faces; its 33 edges give exactly 33 four-cycles. The skeleton has exactly 22 triangles; for each, four assignments of three distinct incident faces give six-cycles, hence 88. These counts were established in the <a href="../../library/m073-regular2-cycle-margin/">earlier dossier</a>; the <strong>new checker independently recounts both cycle lengths by canonical graph DFS</strong>, rather than trusting those derived counts.</p>
+<p>The first potentially negative coefficient outside the cone is the (s^2rp^{63}) coefficient, equal to [ \sum_{uv\in E(H)}(d(u)-1)(d(v)-1) =2\sum_{i\in I}d(i)(d(i)-1)=\boxed{552}. ] It counts paths of length three with the middle edge assigned the (r)-summand and the two outer edges assigning the (s)-summand to the middle vertices. This explains why the condition (r\ge0) matters to the <strong>termwise proof</strong>. It does <em>not</em> imply that Sidorenko fails when (r&lt;0).</p>
+<h2 id="exact-independent-path-checks-and-adversarial-control">Exact independent-path checks and adversarial control<a class="anchor" href="#exact-independent-path-checks-and-adversarial-control" aria-label="Link to this section">#</a></h2>
+<p>Run from the repository root:</p>
+<pre><code class="lang-sh">python3 scripts/m073_assortative2.py --check
+python3 -m unittest discover -s tests -p &#x27;test_m073_assortative2.py&#x27; -v
+python3 scripts/regen.py --check</code></pre>
+<p>The exact checker pins the 22-triple table by a SHA-256 of its canonical integer array, independently enumerates all 35 graph vertices and 66 incidences, counts wedges and simple four/six-cycles by DFS, and reduces all (2^{13}=8192) point-label assignments to 372 integer profiles. It tests 36 nonnegative integer triples (A,B,C\in\{0,1,2,3\}) with (A+C\ge2B). These are regression tests, <strong>not the proof of the continuum</strong>. Seven tests include a second, uncompressed 8192-assignment exact-density calculation, source mutation rejection, input validation, constant equality, and strict nonconstant cases.</p>
+<p>For integer block weights (A,B,C) (with arbitrary common denominator (D&gt;0)), put (P=A+2B+C), (S=A-C), (R=A-2B+C). After integrating the 22 face labels, let (T) be the integer sum over the 8192 point labels of products of the 22 two-face-label sums. The exact, cleared- denominator certificate is [ 2^{97}T\ge P^{66}+204S^2P^{64}+33R^4P^{62}+88R^6P^{60}. ] No floating point enters this comparison.</p>
+<p><strong>Outside-cone falsifier for the <em>enhanced bound</em>, not Sidorenko:</strong> for ((A,B,C)=(10,10,9)), so (R=-1), the exact integer computation finds [ 2^{97}T&gt;P^{66},\qquad 2^{97}T&lt;P^{66}+204S^2P^{64}+33R^4P^{62}+88R^6P^{60}. ] The ordinary Sidorenko inequality remains <strong>strictly satisfied</strong> at this rational host, while our stronger displayed margin is false if its cone hypothesis is dropped. The checker and independent test path both reproduce this negative control. There is no claim of a counterexample to Sidorenko itself.</p>
+<h2 id="literature-boundary-and-next-falsifier">Literature, boundary and next falsifier<a class="anchor" href="#literature-boundary-and-next-falsifier" aria-label="Link to this section">#</a></h2>
+<ul><li>OpenAI, <em>A counterexample to Sidorenko&#x27;s conjecture</em>, September 23, 2026, <a href="https://github.com/openai/math/tree/main/preprints/A-counterexample-to-Sidorenkos-conjecture-September-23-2026" rel="noopener noreferrer">source repository</a>, and its <a href="https://github.com/Svyable/100/blob/main/data/reference/sidorenko_faces.json" rel="noopener noreferrer">pinned incidence table</a>. The external manuscript claims a finite host; this work does not verify it.</li><li>Sidorenko, <em>Inequalities for Doubly Nonnegative Functions</em>, <em>Electronic Journal of Combinatorics</em> <strong>28</strong> (2021), P1.32, <a href="https://doi.org/10.37236/8947" rel="noopener noreferrer">DOI 10.37236/8947</a>. Nonnegative-spectrum inequalities are an active separate research program; our cone is not identical to PSD.</li><li>Lovász, <em>Subgraph Densities in Signed Graphons and the Local Simonovits–Sidorenko Conjecture</em>, <em>EJC</em> <strong>18</strong> (2011), P127, <a href="https://doi.org/10.37236/614" rel="noopener noreferrer">DOI 10.37236/614</a>. Local inequalities around constant kernels are classical; our proof uses the exact equal-mass two-spin expansion instead.</li><li>The <a href="../../library/m073-regular2-cycle-margin/">earlier M073 balanced/equal-diagonal dossier</a> used the classical even-subgraph high-temperature expansion; the <a href="../../library/m073-monotone-two-block/">ordered-cone dossier</a> used classical Harris association. The present <em>assortative</em> cone is complementary, not a global two-block theorem.</li></ul>
+<p><strong>Next falsifier:</strong> Attack the remaining equal-mass disassortative region (a+c&lt;2b) with (a\ne c), where the cubic (552s^2r) contribution has negative sign. Seek a valid exact rational Sidorenko gap or a new non-termwise inequality; then vary block masses. A counterexample to the <em>enhanced bound</em> is not a counterexample to Sidorenko. Before any novelty or independent-acceptance promotion, obtain external literature and proof review by someone other than the author. No changes to <code>data/solved.json</code>, conjecture evidence states or benchmark trial records.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>
