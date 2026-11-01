@@ -1,6 +1,6 @@
 # M075 — seven-element triple-local optimization
 
-**Status:** exact, audited SAT *encoding*; first resource-bounded search **inconclusive**. This is issue [#95](https://github.com/Svyable/100/issues/95), not an assertion about Frankl's original conjecture.
+**Historical status of the first pilot:** exact SAT encoding with resource-bounded attempts **inconclusive**. A subsequent single capped instance with sound singleton/pair lemmas has a **DRAT/LRAT checked complete 2..18 finite refutation candidate**; see [the updated proof dossier](../proofs/M075_TRIPLE7_CAP18.md). This is issue [#95](https://github.com/Svyable/100/issues/95), not an assertion about Frankl's original conjecture.
 
 ## Perceive
 
@@ -61,6 +61,6 @@ python3 scripts/frankl_triple_sat.py --size 18 --verify-model /tmp/solver-model.
 
 The program checks the canonical auxiliary assignment against all generated clauses and then independently checks original set operations, closure, exact size, mandatory members, and strict triple frequencies. A valid model of size at most 18 **refutes** the proposed fixed-universe lower bound.
 
-An UNSAT return alone establishes **nothing independently**. Proving a global 19-set minimum for the stated seven-element problem requires independent, correct, proof-checker-accepted UNSAT certificates for *all 17 sizes from 2 through 18*, the statement scope and clauses audited, and a genuine prior-art/specialist review. A source hash is not a proof trace. No result here modifies the solved, theorem-review, or 36-agent-trial ledgers.
+An UNSAT return alone establishes **nothing independently**. The later capped construction supplies **one** proof-checker-accepted refutation with explicitly verified selectors covering *all 17 sizes*, as documented in [M075_TRIPLE7_CAP18](../proofs/M075_TRIPLE7_CAP18.md). It still needs independent scope, proof and prior-art specialist review. A source hash is not a proof trace. No result here modifies the solved, theorem-review, or 36-agent-trial ledgers.
 
 **Next targeted research action:** design and separately prove safe permutation-symmetry breaking for S3 acting on T and S4 on the other points; benchmark against equal conflict budgets and obtain proof-producing SAT traces with an independently pinned DRAT/LRAT checker if possible. Do not count unknown runs as negative mathematics.

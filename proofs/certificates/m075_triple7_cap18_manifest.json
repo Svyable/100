@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "status": "candidate_exact_finite_bound_computationally_checked_review_pending",
+  "as_of": "2026-11-01",
+  "problem_id": "M075",
+  "claim": "Every union-closed family F of distinct subsets of a seven-element universe containing empty set and the exact triple {0,1,2}, for which each of 0,1,2 belongs to STRICTLY fewer than half of F, has at least 19 members.",
+  "boundary": "Fixed seven-element, triple-local strengthening only; NOT Frankl's original conjecture, NOT general ground-set bound, NOT verified novel or independently specialist accepted.",
+  "proof_structure": [
+    "Singleton/pair injection lemma excludes six proper nonempty subsets of T in ANY hypothetical triple-local counterexample.",
+    "One CNF with 17 selectors covers all sizes k=2..18 exactly, not just k=18.",
+    "A DRAT proof refutes the CNF; drat-trim revalidates all reductions and produces an LRAT trace; lrat-check validates that trace.",
+    "Published van der Hout-Roos 19-set witness independently verifies the matching upper bound."
+  ],
+  "cnf": {
+    "path": "proofs/certificates/m075_triple7_cap18.cnf",
+    "sha256": "7a75fc466fd04e9116373aa5bfddf752dcd4966cd13c5c5da5f4292a4af50789",
+    "bytes": 319730,
+    "variables": 4026,
+    "clauses": 21321
+  },
+  "proof": {
+    "path": "proofs/certificates/m075_triple7_cap18.drat.gz",
+    "compression": "gzip mtime=0",
+    "sha256": "df36db4e24afc742624302ecf8c7c0ce98c7d8da172164e1b37cf16b8ee61360",
+    "bytes": 12396827,
+    "raw_sha256": "b50f0038847163f6aa49c2ea265accce961b606877c854d25a24100eaff4a2ab",
+    "raw_bytes": 57632305,
+    "lrat_sha256": "bc876afcd11fe4527c76d63bc19ee5fc1e78388ac9eb47c801d2fd7e4e76f61f"
+  },
+  "producer": {
+    "implementation": "CaDiCaL195 through python-sat 1.9.dev17",
+    "python": "3.14.2",
+    "unsat_solver_only": false,
+    "conflicts": 326703,
+    "decisions": 420197,
+    "propagations": 172651722
+  },
+  "checker": {
+    "repository": "https://github.com/marijnheule/drat-trim",
+    "commit": "2e5e29cb0019d5cfd547d4208dca1b3ec290349f",
+    "executables": [
+      "drat-trim",
+      "lrat-check"
+    ],
+    "observed_drat": "s VERIFIED",
+    "observed_lrat": "c VERIFIED",
+    "note": "External proof checker validation is not independent specialist acceptance; see docs."
+  },
+  "witness": {
+    "path": "examples/FRANKL_VAN_DER_HOUT_ROOS_19.json",
+    "sha256": "648f2c70c64329bef99d4f481cbaa36b106ef6757e2560f8da05a689177a26ce",
+    "size": 19,
+    "source_url": "https://doi.org/10.23952/jano.8.2026.1.02"
+  },
+  "prior_art": {
+    "community_claim_url": "https://mathdb.com/p/355601/the-union-closed-sets-conjecture",
+    "scope_gap": "Community submission claims 19 under a minimum-cardinality triple assumption. This candidate omits that assumption but fixes the universe at seven; novelty and generality comparisons remain unreviewed."
+  }
+}
