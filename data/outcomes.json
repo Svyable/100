@@ -260,6 +260,22 @@
         "agent_hours": 1.2
       },
       "note": "Estimated active author/tool effort. Source-pinned seven-vertex nine-edge rung motif at all 66 M073 incidence edges, exact high-temperature and direct-spin correlation paths, GKS-II-dependent restricted two-block stability improvement, rational old-bound-failure/new-bound-success certificate and adversarial mutation tests. Classical correlation inequality; no independent proof or novelty audit, no finite host counterexample, no universal Sidorenko result. Outcome status conditional on PR merge."
+    },
+    {
+      "work_id": "O-M080-01",
+      "scope_sha256": "5a29f0f5af803d2529e13d43b41d4f7b5ca3a11326dcd6a9f1334f43e91fa412",
+      "author": "ChatGPT (M080 GF2^4 repeated-basis certificate)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/170",
+      "pr_url": "https://github.com/Svyable/100/pull/171",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 1.0,
+        "ci_minutes": 0
+      },
+      "note": "Bounded partial O-M080-01 step only: exact 4,141,145 S4 orbit count and 42,840 repeated-basis GF(2)^4 grid witnesses, independent Leibniz checker, 7 adversarial tests. 4,111,138 all-distinct orbits unverified. Cheung 2012 reported rank-four computational result; no new theorem or independent mathematical review. Outcome classification conditional on PR #171 merge; the original obligation remains open."
     }
   ]
 }
