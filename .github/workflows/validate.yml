@@ -32,6 +32,7 @@ jobs:
       - run: python3 scripts/frankl_burnside.py --check
       - run: python3 scripts/ch24_irregular_profiles.py
       - run: python3 scripts/degree_defect.py --check
+      - run: python3 scripts/lemma_adversary.py --check
       - run: python3 scripts/ch27_local.py --check
       - run: node --check docs/assets/app.js
       - run: node --check docs/next/app.js

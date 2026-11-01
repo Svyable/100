@@ -1,5 +1,6 @@
 import Hundred.Ramsey
 import Hundred.Frankl
+import Hundred.FranklBridge
 import Hundred.Statements.Basic
 import Hundred.Statements.Goldbach
 import Hundred.Statements.ErdosStraus
