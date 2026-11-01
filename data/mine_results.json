@@ -163,6 +163,55 @@
       },
       "title": "Posets attaining balance exactly 1/3"
     },
+    "straus_identities": {
+      "certificate_sha256": "94d399f83ea2ac4252d4d476676147e9638d50a7006c90681cc1766e770c9ed8",
+      "engines": [
+        "primes"
+      ],
+      "frontier": "Classical Mordell-type identities already cover many arithmetic progressions inside n = 1 (mod 24). The families here are extracted from the residue mine and proved as polynomial identities; they do not finish the uncovered progressions n = 1 or 49 (mod 120), and a finite list of polynomial identities cannot cover every such n.",
+      "holds": true,
+      "mine": "straus_identities",
+      "params": {
+        "limit": 8000
+      },
+      "problem_id": "M019",
+      "scope": "Nine polynomial identities give explicit 4/n = 1/x+1/y+1/z solutions on named arithmetic progressions inside n = 1 (mod 24); prime coverage is reported through 8000.",
+      "summary": {
+        "by_family": {
+          "R11-d1-73": 3,
+          "R11-d3-241": 3,
+          "R3-97": 30,
+          "R3-d11-217": 2,
+          "R7-73": 35,
+          "R7-d1-73": 11,
+          "R7-d2-97": 12,
+          "R7-d4-145": 10,
+          "R7-d7-49": 0
+        },
+        "covered_primes": 106,
+        "families": 9,
+        "families_sha256": "c8bf86f041b7040bd0894ded3cb97123d5b9d972b8ed03550c1f0e7802634448",
+        "family_ids": [
+          "R3-97",
+          "R7-73",
+          "R7-d1-73",
+          "R7-d2-97",
+          "R7-d4-145",
+          "R7-d7-49",
+          "R3-d11-217",
+          "R11-d1-73",
+          "R11-d3-241"
+        ],
+        "limit": 8000,
+        "primes_1_mod_24": 117,
+        "uncovered_mod_120": [
+          1,
+          49
+        ],
+        "uncovered_primes": 11
+      },
+      "title": "Parametric identities for primes 1 mod 24"
+    },
     "straus_patterns": {
       "certificate_sha256": "a58457c801a98d2f56eb087719079eaad5e2e66842b09e7e66763083b11dd035",
       "engines": [

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>J-effective_diophantine-mine_structure: Mine structure from certificates: Explicit Diophantine certificates · 100</title>
-<meta name="description" content="M019: The certified mine straus_patterns gives an explicit solution for every prime n &lt;= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity">
+<meta name="description" content="M019: Nine polynomial identities from the straus_identities mine now cover 106 of the 117 primes n &lt;= 8000 with n = 1 (mod 24), including the primary progressions n = 120t+73 and n = 120t+97. The 11 uncovered primes all lie in {1, 49} (mod ">
 <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
 <meta name="color-scheme" content="light dark">
@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="100 — Svyable research">
 <meta property="og:title" content="J-effective_diophantine-mine_structure: Mine structure from certificates: Explicit Diophantine certificates · 100">
-<meta property="og:description" content="M019: The certified mine straus_patterns gives an explicit solution for every prime n &lt;= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity">
+<meta property="og:description" content="M019: Nine polynomial identities from the straus_identities mine now cover 106 of the 117 primes n &lt;= 8000 with n = 1 (mod 24), including the primary progressions n = 120t+73 and n = 120t+97. The 11 uncovered primes all lie in {1, 49} (mod ">
 <meta property="og:url" content="https://svyable.github.io/100/work/J-effective_diophantine-mine_structure/">
 <meta name="twitter:card" content="summary">
 <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
@@ -46,7 +46,7 @@
 <div class="chips"><span class="chip chip-good">Runnable</span><a class="chip chip-link" href="../../problems/M019/" title="Erdős–Straus conjecture">M019</a><a class="chip chip-link" href="../../problems/M006/" title="Strong Goldbach conjecture">M006</a></div>
 </header>
 <div class="work-detail">
-<section class="dossier-block"><h2>Deliverable</h2><p class="serif">M019: The certified mine straus_patterns gives an explicit solution for every prime n &lt;= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity. M006: The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification.</p>
+<section class="dossier-block"><h2>Deliverable</h2><p class="serif">M019: Nine polynomial identities from the straus_identities mine now cover 106 of the 117 primes n &lt;= 8000 with n = 1 (mod 24), including the primary progressions n = 120t+73 and n = 120t+97. The 11 uncovered primes all lie in {1, 49} (mod 120). Attack those two remaining classes with a non-Mordell idea, or name an explicit family outside the recorded progressions; do not extend the verified search range. M006: The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification.</p>
 </section>
 <section class="dossier-block"><h2>Acceptance</h2><ul class="plain checklist"><li>Every problem on the job moves by the same action, or a precise gap is recorded per problem</li><li>Evidence lands in the ledger the action names (lab, claim review, campaign or obligation)</li><li><code>python3 scripts/regen.py &amp;&amp; python3 scripts/regen.py --check</code></li><li><code>python3 -m unittest discover -s tests</code></li></ul></section>
 <section class="dossier-block"><h2>Boundary</h2><p>A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.</p>
@@ -57,7 +57,7 @@
 <p class="card-links"><a class="button button-outline" href="https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20J-effective_diophantine-mine_structure%22" rel="noopener noreferrer">Check existing claims ↗</a>
 <a class="button button-dark" href="https://github.com/Svyable/100/issues/new?template=claim.yml&amp;title=%5BClaim%5D%20J-effective_diophantine-mine_structure%20%E2%80%94%20Mine%20structure%20from%20certificates%3A%20Explicit%20Diophantine%20certificates" rel="noopener noreferrer">Claim this item ↗</a></p>
 <dl class="kv compact"><dt>Claim title</dt><dd><code>[Claim] J-effective_diophantine-mine_structure — Mine structure from certificates: Explicit Diophantine certificates</code></dd>
-<dt>Scope digest</dt><dd><code class="hash">0a9452d9d2bfeb27e4df86ba3ec87383a597deb88d052f08a7c6c9b155ba0a3d</code></dd>
+<dt>Scope digest</dt><dd><code class="hash">4271b9ffb1d63402c4854e33d66f7f293e1b449c21f43cdf1da2751789cb0123</code></dd>
 <dt>Defined by</dt><dd><a href="https://github.com/Svyable/100/blob/main/scripts/approach.py" rel="noopener noreferrer">scripts/approach.py <span aria-hidden="true">↗</span></a></dd>
 <dt>CLI</dt><dd><code>python3 scripts/work.py --id J-effective_diophantine-mine_structure</code></dd></dl></section>
 </div></article>
@@ -68,7 +68,7 @@
     <a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
     <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
   </div>
-  <small>Generated from the validated ledgers · data as of 2026-10-31 · no tracking, no external scripts</small>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
 </footer>
 </div>
 <dialog class="palette" id="palette" aria-label="Search the portfolio">
