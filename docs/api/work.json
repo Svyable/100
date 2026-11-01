@@ -1,8 +1,9 @@
 {
   "protocol": "svyable.work.v1",
-  "count": 267,
+  "count": 289,
   "by_kind": {
     "obligation": 24,
+    "review": 22,
     "lean": 9,
     "job": 45,
     "roadmap": 9,
@@ -10,7 +11,7 @@
     "status_audit": 89
   },
   "by_status": {
-    "runnable": 261,
+    "runnable": 283,
     "externally_blocked": 4,
     "waiting_on_dependencies": 2
   },
@@ -540,6 +541,556 @@
       "claim_title": "[Claim] O-M001-01 — Lemma obligation for M001",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M001-01%20%E2%80%94%20Lemma%20obligation%20for%20M001",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M001-01%22"
+    },
+    {
+      "id": "V-F-M071",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M071"
+      ],
+      "title": "Independent fidelity review of the Hadwiger conjecture comparator",
+      "deliverable": "Check Hundred.Statements.Hadwiger.Statement in lean/Hundred/Statements/Hadwiger.lean against the registry statement and a primary source; confirm the 'not encoded' list is complete; try to break each fidelity example.",
+      "context": "Every simple graph has a K_t minor (branch-set model, connectivity by no-split cuts) or a proper (t−1)-colouring.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "On acceptance, set fidelity to independently_reviewed in data/formalization.json in the same PR",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Fidelity review certifies the encoding, never the conjecture.",
+      "falsifier": "A hand-checked instance on which the comparator and the registry statement disagree.",
+      "source": "data/formalization.json",
+      "depends_on": [],
+      "priority_rank": 1,
+      "scope_sha256": "c31182d607a581c464c3ff8bd388070dc5b9936742bd7b0ed0c4e350740d9aba",
+      "claim_title": "[Claim] V-F-M071 — Independent fidelity review of the Hadwiger conjecture comparator",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M071%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Hadwiger%20conjecture%20comparator",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-F-M071%22"
+    },
+    {
+      "id": "V-F-M074",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M074"
+      ],
+      "title": "Independent fidelity review of the Caccetta–Häggkvist conjecture comparator",
+      "deliverable": "Check Hundred.Statements.CaccettaHaggkvist.Statement in lean/Hundred/Statements/CaccettaHaggkvist.lean against the registry statement and a primary source; confirm the 'not encoded' list is complete; try to break each fidelity example.",
+      "context": "Loopless digraph on n vertices, minimum out-degree ≥ r ≥ 1, has an injective directed cycle of length ≤ ⌈n/r⌉; StatementFor r fixes the out-degree slice.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "On acceptance, set fidelity to independently_reviewed in data/formalization.json in the same PR",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Fidelity review certifies the encoding, never the conjecture.",
+      "falsifier": "A hand-checked instance on which the comparator and the registry statement disagree.",
+      "source": "data/formalization.json",
+      "depends_on": [],
+      "priority_rank": 5,
+      "scope_sha256": "8b2c51127c78738bcf616ebd0756922dc2dca5e959955849adbc21c351e90633",
+      "claim_title": "[Claim] V-F-M074 — Independent fidelity review of the Caccetta–Häggkvist conjecture comparator",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M074%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Caccetta%E2%80%93H%C3%A4ggkvist%20conjecture%20comparator",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-F-M074%22"
+    },
+    {
+      "id": "V-F-M094",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M094"
+      ],
+      "title": "Independent fidelity review of the Hadamard matrix conjecture comparator",
+      "deliverable": "Check Hundred.Statements.Hadamard.Statement in lean/Hundred/Statements/Hadamard.lean against the registry statement and a primary source; confirm the 'not encoded' list is complete; try to break each fidelity example.",
+      "context": "For every k ≥ 1 an Int matrix of order 4k with ±1 entries and pairwise orthogonal rows.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "On acceptance, set fidelity to independently_reviewed in data/formalization.json in the same PR",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Fidelity review certifies the encoding, never the conjecture.",
+      "falsifier": "A hand-checked instance on which the comparator and the registry statement disagree.",
+      "source": "data/formalization.json",
+      "depends_on": [],
+      "priority_rank": 8,
+      "scope_sha256": "73e70e3fc8af8d013404fbeef94ca45ffd637f1c95689b1da40fa4339457c61b",
+      "claim_title": "[Claim] V-F-M094 — Independent fidelity review of the Hadamard matrix conjecture comparator",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M094%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Hadamard%20matrix%20conjecture%20comparator",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-F-M094%22"
+    },
+    {
+      "id": "V-L007",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M094"
+      ],
+      "title": "Independent scope review of Lean target L007 (M094)",
+      "deliverable": "Compare every registered declaration of L007 with the registry statement and its primary source: domains, quantifiers, nonemptiness and distinctness conditions, strict versus weak inequalities, encodings. State exactly what is and is not established.",
+      "context": "Explicit Hadamard matrices of orders 4, 8 (Sylvester) and 12 (Paley I, q = 11), re-checked by the kernel against Hundred.Statements.Hadamard.IsHadamard.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Any mismatch is filed as a gap on the target's scope_gap, not silently fixed",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "A scope review checks that the encoded statement matches the claim; it does not add mathematics. Small known orders only; the smallest open order is 668. Independent statement review pending.",
+      "falsifier": "A quantifier, domain or convention in the Lean statement that differs from the registered claim.",
+      "source": "data/lean_targets.json",
+      "depends_on": [],
+      "priority_rank": 8,
+      "scope_sha256": "30ab8960e7e1fd72572d5a808185d0a52b68430063306711d566ee39f5c2f8c5",
+      "claim_title": "[Claim] V-L007 — Independent scope review of Lean target L007 (M094)",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L007%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L007%20%28M094%29",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-L007%22"
+    },
+    {
+      "id": "V-F-M075",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M075"
+      ],
+      "title": "Independent fidelity review of the Frankl union-closed sets conjecture comparator",
+      "deliverable": "Check Hundred.Statements.Frankl.Statement in lean/Hundred/Statements/Frankl.lean against the registry statement and a primary source; confirm the 'not encoded' list is complete; try to break each fidelity example.",
+      "context": "Families as bitmasks over ground set {0,…,k−1}; union-closed with a nonempty member implies some x with 2·deg(x) ≥ |F|.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "On acceptance, set fidelity to independently_reviewed in data/formalization.json in the same PR",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Fidelity review certifies the encoding, never the conjecture.",
+      "falsifier": "A hand-checked instance on which the comparator and the registry statement disagree.",
+      "source": "data/formalization.json",
+      "depends_on": [],
+      "priority_rank": 10,
+      "scope_sha256": "8291753c22c66396979eae1b3808dba608a24f47be4abccdc5d8c47fb89aa9b2",
+      "claim_title": "[Claim] V-F-M075 — Independent fidelity review of the Frankl union-closed sets conjecture comparator",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M075%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Frankl%20union-closed%20sets%20conjecture%20comparator",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-F-M075%22"
+    },
+    {
+      "id": "V-L002",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M075"
+      ],
+      "title": "Independent scope review of Lean target L002 (M075)",
+      "deliverable": "Compare every registered declaration of L002 with the registry statement and its primary source: domains, quantifiers, nonemptiness and distinctness conditions, strict versus weak inequalities, encodings. State exactly what is and is not established.",
+      "context": "All 16 bitmask families on the ground set {0,1}: if union-closed and containing a nonempty set, some element belongs to at least half the family. Includes elementwise union semantics and the existing tiny benchmark.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Any mismatch is filed as a gap on the target's scope_gap, not silently fixed",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "A scope review checks that the encoded statement matches the claim; it does not add mathematics. Only the two-element ground universe, encoded as Fin 16. No proof for arbitrary ground-set sizes, no novelty claim; independent scope review pending.",
+      "falsifier": "A quantifier, domain or convention in the Lean statement that differs from the registered claim.",
+      "source": "data/lean_targets.json",
+      "depends_on": [],
+      "priority_rank": 10,
+      "scope_sha256": "615e91b8791e48f959e65de9695272c8bc0246471f2f3062adb6042e729fb3e3",
+      "claim_title": "[Claim] V-L002 — Independent scope review of Lean target L002 (M075)",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L002%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L002%20%28M075%29",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-L002%22"
+    },
+    {
+      "id": "V-L006",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M075"
+      ],
+      "title": "Independent scope review of Lean target L006 (M075)",
+      "deliverable": "Compare every registered declaration of L006 with the registry statement and its primary source: domains, quantifiers, nonemptiness and distinctness conditions, strict versus weak inequalities, encodings. State exactly what is and is not established.",
+      "context": "Exhaustive union-closed check over all families on ground sets of size 1, 2 and 3 in the general bitmask encoding of Hundred.Statements.Frankl.Statement.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Any mismatch is filed as a gap on the target's scope_gap, not silently fixed",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "A scope review checks that the encoded statement matches the claim; it does not add mathematics. Elementary known cases; complements L002 (Fin 2 with union semantics). No representation theorem from arbitrary set families yet. Independent statement review pending.",
+      "falsifier": "A quantifier, domain or convention in the Lean statement that differs from the registered claim.",
+      "source": "data/lean_targets.json",
+      "depends_on": [],
+      "priority_rank": 10,
+      "scope_sha256": "17f0b550b917ed832a05dcd08e449ee74c3c70f956f13c995f5d2e1b5b337b04",
+      "claim_title": "[Claim] V-L006 — Independent scope review of Lean target L006 (M075)",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L006%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L006%20%28M075%29",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-L006%22"
+    },
+    {
+      "id": "V-F-M078",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M078"
+      ],
+      "title": "Independent fidelity review of the Graph reconstruction conjecture comparator",
+      "deliverable": "Check Hundred.Statements.Reconstruction.Statement in lean/Hundred/Statements/Reconstruction.lean against the registry statement and a primary source; confirm the 'not encoded' list is complete; try to break each fidelity example.",
+      "context": "Simple graphs on n ≥ 3 vertices with a deck-matching bijection σ (G − v ≅ H − σv) are isomorphic.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "On acceptance, set fidelity to independently_reviewed in data/formalization.json in the same PR",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Fidelity review certifies the encoding, never the conjecture.",
+      "falsifier": "A hand-checked instance on which the comparator and the registry statement disagree.",
+      "source": "data/formalization.json",
+      "depends_on": [],
+      "priority_rank": 11,
+      "scope_sha256": "e0ceffd2a0049ef50eba83311c483654448c2622abbf4a65c4efb0667bfe2f35",
+      "claim_title": "[Claim] V-F-M078 — Independent fidelity review of the Graph reconstruction conjecture comparator",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M078%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Graph%20reconstruction%20conjecture%20comparator",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-F-M078%22"
+    },
+    {
+      "id": "V-F-M096",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M096"
+      ],
+      "title": "Independent fidelity review of the Projective plane order 12 comparator",
+      "deliverable": "Check Hundred.Statements.ProjectivePlane.Statement in lean/Hundred/Statements/ProjectivePlane.lean against the registry statement and a primary source; confirm the 'not encoded' list is complete; try to break each fidelity example.",
+      "context": "No incidence relation on 157 points and 157 lines with 13 points per line, unique joining lines and unique meeting points.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "On acceptance, set fidelity to independently_reviewed in data/formalization.json in the same PR",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Fidelity review certifies the encoding, never the conjecture.",
+      "falsifier": "A hand-checked instance on which the comparator and the registry statement disagree.",
+      "source": "data/formalization.json",
+      "depends_on": [],
+      "priority_rank": 13,
+      "scope_sha256": "67012b4b1124ef72c09a8dd261d24c9c0baeffc5c62bfe938ebfcf4fea1d6bbc",
+      "claim_title": "[Claim] V-F-M096 — Independent fidelity review of the Projective plane order 12 comparator",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M096%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Projective%20plane%20order%2012%20comparator",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-F-M096%22"
+    },
+    {
+      "id": "V-L009",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M096"
+      ],
+      "title": "Independent scope review of Lean target L009 (M096)",
+      "deliverable": "Compare every registered declaration of L009 with the registry statement and its primary source: domains, quantifiers, nonemptiness and distinctness conditions, strict versus weak inequalities, encodings. State exactly what is and is not established.",
+      "context": "Projective planes of orders 2 and 3 satisfy the axioms in Hundred.Statements.ProjectivePlane.IsPlane, so the order-12 comparator is not vacuous.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Any mismatch is filed as a gap on the target's scope_gap, not silently fixed",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "A scope review checks that the encoded statement matches the claim; it does not add mathematics. Satisfiability of the axioms only; says nothing about order 12. Independent statement review pending.",
+      "falsifier": "A quantifier, domain or convention in the Lean statement that differs from the registered claim.",
+      "source": "data/lean_targets.json",
+      "depends_on": [],
+      "priority_rank": 13,
+      "scope_sha256": "2dc00ee6410d58bd93184762016fd23140048f45016d2353ac11f81f6a894d53",
+      "claim_title": "[Claim] V-L009 — Independent scope review of Lean target L009 (M096)",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L009%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L009%20%28M096%29",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-L009%22"
+    },
+    {
+      "id": "V-F-M095",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M095"
+      ],
+      "title": "Independent fidelity review of the Exact Ramsey number R(5,5) comparator",
+      "deliverable": "Check Hundred.Statements.Ramsey.Conjecture in lean/Hundred/Statements/Ramsey.lean against the registry statement and a primary source; confirm the 'not encoded' list is complete; try to break each fidelity example.",
+      "context": "Arrows n s t: every red/blue colouring of K_n has a red K_s or a blue K_t (cliques as vertex bitmasks). Conjecture: Arrows 43 5 5.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "On acceptance, set fidelity to independently_reviewed in data/formalization.json in the same PR",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Fidelity review certifies the encoding, never the conjecture.",
+      "falsifier": "A hand-checked instance on which the comparator and the registry statement disagree.",
+      "source": "data/formalization.json",
+      "depends_on": [],
+      "priority_rank": 15,
+      "scope_sha256": "ec0c4802c97bc658ab7b8bf462035a9edc6e52e63ca43eedbe817c70d11b6374",
+      "claim_title": "[Claim] V-F-M095 — Independent fidelity review of the Exact Ramsey number R(5,5) comparator",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M095%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Exact%20Ramsey%20number%20R%285%2C5%29%20comparator",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-F-M095%22"
+    },
+    {
+      "id": "V-L001",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M095"
+      ],
+      "title": "Independent scope review of Lean target L001 (M095)",
+      "deliverable": "Compare every registered declaration of L001 with the registry statement and its primary source: domains, quantifiers, nonemptiness and distinctness conditions, strict versus weak inequalities, encodings. State exactly what is and is not established.",
+      "context": "The modular five-cycle is a symmetric, loop-free red/blue coloring with no monochromatic triangle; injective vertex restrictions preserve this property.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Any mismatch is filed as a gap on the target's scope_gap, not silently fixed",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "A scope review checks that the encoded statement matches the claim; it does not add mathematics. Known R(3,3) lower-bound witness only. No R(3,3) upper bound or R(5,5) determination. Independent statement review pending.",
+      "falsifier": "A quantifier, domain or convention in the Lean statement that differs from the registered claim.",
+      "source": "data/lean_targets.json",
+      "depends_on": [],
+      "priority_rank": 15,
+      "scope_sha256": "8c2a3bf150c40e18088b38bc326338d4fdc167443386c310b3d93416f7e6d853",
+      "claim_title": "[Claim] V-L001 — Independent scope review of Lean target L001 (M095)",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L001%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L001%20%28M095%29",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-L001%22"
+    },
+    {
+      "id": "V-L008",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M095"
+      ],
+      "title": "Independent scope review of Lean target L008 (M095)",
+      "deliverable": "Compare every registered declaration of L008 with the registry statement and its primary source: domains, quantifiers, nonemptiness and distinctness conditions, strict versus weak inequalities, encodings. State exactly what is and is not established.",
+      "context": "¬ Arrows 5 3 3 in the general clique encoding of Hundred.Statements.Ramsey (cliques as vertex bitmasks), so the R(5,5) comparator Conjecture := Arrows 43 5 5 is stated in a vocabulary with a checked witness.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Any mismatch is filed as a gap on the target's scope_gap, not silently fixed",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "A scope review checks that the encoded statement matches the claim; it does not add mathematics. Same known R(3,3) lower bound as L001 in a second, independent encoding. Exoo's K42 colouring and the 46 upper bound are cited, not re-proved. Independent statement review pending.",
+      "falsifier": "A quantifier, domain or convention in the Lean statement that differs from the registered claim.",
+      "source": "data/lean_targets.json",
+      "depends_on": [],
+      "priority_rank": 15,
+      "scope_sha256": "993f833ef14fc49b4f8e248fec435991fea424f7f8469ddbd2a58a2ab8f82b63",
+      "claim_title": "[Claim] V-L008 — Independent scope review of Lean target L008 (M095)",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L008%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L008%20%28M095%29",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-L008%22"
+    },
+    {
+      "id": "V-F-M019",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M019"
+      ],
+      "title": "Independent fidelity review of the Erdős–Straus conjecture comparator",
+      "deliverable": "Check Hundred.Statements.ErdosStraus.Statement in lean/Hundred/Statements/ErdosStraus.lean against the registry statement and a primary source; confirm the 'not encoded' list is complete; try to break each fidelity example.",
+      "context": "4/n = 1/x + 1/y + 1/z cleared to 4xyz = n(xy + yz + zx) with x, y, z > 0.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "On acceptance, set fidelity to independently_reviewed in data/formalization.json in the same PR",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Fidelity review certifies the encoding, never the conjecture.",
+      "falsifier": "A hand-checked instance on which the comparator and the registry statement disagree.",
+      "source": "data/formalization.json",
+      "depends_on": [],
+      "priority_rank": 18,
+      "scope_sha256": "17cfea95b1a84176e3584081ba6a1102c9cb332f4dc31141fd856e65732ff0b2",
+      "claim_title": "[Claim] V-F-M019 — Independent fidelity review of the Erdős–Straus conjecture comparator",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M019%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Erd%C5%91s%E2%80%93Straus%20conjecture%20comparator",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-F-M019%22"
+    },
+    {
+      "id": "V-L005",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M019"
+      ],
+      "title": "Independent scope review of Lean target L005 (M019)",
+      "deliverable": "Compare every registered declaration of L005 with the registry statement and its primary source: domains, quantifiers, nonemptiness and distinctness conditions, strict versus weak inequalities, encodings. State exactly what is and is not established.",
+      "context": "Positive solutions for 2 ≤ n ≤ 100 and a classical infinite parametric family for every n ≡ 3 (mod 4), checked against ErdosStraus.Solves.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Any mismatch is filed as a gap on the target's scope_gap, not silently fixed",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "A scope review checks that the encoded statement matches the claim; it does not add mathematics. Classical residue class only; does not prove the unrestricted conjecture. Repeated denominators allowed. Independent statement review pending.",
+      "falsifier": "A quantifier, domain or convention in the Lean statement that differs from the registered claim.",
+      "source": "data/lean_targets.json",
+      "depends_on": [],
+      "priority_rank": 18,
+      "scope_sha256": "4e39695a8d0a94df3a73756cd8e5ffbf946ffb70984c1e686cb5410f8bfbe382",
+      "claim_title": "[Claim] V-L005 — Independent scope review of Lean target L005 (M019)",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L005%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L005%20%28M019%29",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-L005%22"
+    },
+    {
+      "id": "V-F-M006",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M006"
+      ],
+      "title": "Independent fidelity review of the Strong Goldbach conjecture comparator",
+      "deliverable": "Check Hundred.Statements.Goldbach.Statement in lean/Hundred/Statements/Goldbach.lean against the registry statement and a primary source; confirm the 'not encoded' list is complete; try to break each fidelity example.",
+      "context": "Every even n ≥ 4 is p + (n − p) with both prime; primes by trial division.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "On acceptance, set fidelity to independently_reviewed in data/formalization.json in the same PR",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Fidelity review certifies the encoding, never the conjecture.",
+      "falsifier": "A hand-checked instance on which the comparator and the registry statement disagree.",
+      "source": "data/formalization.json",
+      "depends_on": [],
+      "priority_rank": 24,
+      "scope_sha256": "de9741af940218d59da010fd1b0d10bb1c33e77eb79781327b9b3a974834aa0e",
+      "claim_title": "[Claim] V-F-M006 — Independent fidelity review of the Strong Goldbach conjecture comparator",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M006%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Strong%20Goldbach%20conjecture%20comparator",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-F-M006%22"
+    },
+    {
+      "id": "V-L004",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M006"
+      ],
+      "title": "Independent scope review of Lean target L004 (M006)",
+      "deliverable": "Compare every registered declaration of L004 with the registry statement and its primary source: domains, quantifiers, nonemptiness and distinctness conditions, strict versus weak inequalities, encodings. State exactly what is and is not established.",
+      "context": "Every even 4 ≤ n ≤ 100 is a sum of two primes, via a least-prime witness table re-checked by the kernel against the comparator Hundred.Statements.Goldbach.Statement.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Any mismatch is filed as a gap on the target's scope_gap, not silently fixed",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "A scope review checks that the encoded statement matches the claim; it does not add mathematics. Known range only (verified to 4·10^18 in the literature); no bound on the least prime and no progress on the unrestricted conjecture. Independent statement review pending.",
+      "falsifier": "A quantifier, domain or convention in the Lean statement that differs from the registered claim.",
+      "source": "data/lean_targets.json",
+      "depends_on": [],
+      "priority_rank": 24,
+      "scope_sha256": "1a44c95c425afeb138a58bbc3dae60904bc149db5858e08cb192b13caf0ef86a",
+      "claim_title": "[Claim] V-L004 — Independent scope review of Lean target L004 (M006)",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L004%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L004%20%28M006%29",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-L004%22"
+    },
+    {
+      "id": "V-S-M056",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M056"
+      ],
+      "title": "Independent review of the status draft for Fourier restriction conjecture",
+      "deliverable": "Check the draft scope and open questions in data/statement_scope_reviews.json against dated specialist sources; record agreement, corrections or the source that settles the status.",
+      "context": "Distinguish (a) Fourier extension from smooth positively curved surfaces in R^3 in the diagonal p-to-p range, (b) bounded-data extension in R^3, and (c) the sharp sphere restriction/extension program in arbitrary dimensions with explicit p and q and endpoint conventions.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Evidence state changes only through docs/PORTFOLIO_SELECTION.md",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Reviewing a draft is not an open-status certification by itself.",
+      "falsifier": "A dated source showing the drafted statement is already resolved or misstated.",
+      "source": "data/statement_scope_reviews.json",
+      "depends_on": [],
+      "priority_rank": 40,
+      "scope_sha256": "b7bf8df40b02f8f2b1b5dca450c1c204ce2ee7001aef9ac7fafcf4e4ab026258",
+      "claim_title": "[Claim] V-S-M056 — Independent review of the status draft for Fourier restriction conjecture",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-S-M056%20%E2%80%94%20Independent%20review%20of%20the%20status%20draft%20for%20Fourier%20restriction%20conjecture",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-S-M056%22"
+    },
+    {
+      "id": "V-S-M063",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M063"
+      ],
+      "title": "Independent review of the status draft for Planar first-passage KPZ exponent",
+      "deliverable": "Check the draft scope and open questions in data/statement_scope_reviews.json against dated specialist sources; record agreement, corrections or the source that settles the status.",
+      "context": "As a candidate precise target: on nearest-neighbor Z^2 with independent rate-one exponential nonnegative edge passage times, let T_n be the minimal total edge weight from the origin to (n,0); ask whether Var(T_n) = n^(2/3+o(1)) as n tends to infinity.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Evidence state changes only through docs/PORTFOLIO_SELECTION.md",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Reviewing a draft is not an open-status certification by itself.",
+      "falsifier": "A dated source showing the drafted statement is already resolved or misstated.",
+      "source": "data/statement_scope_reviews.json",
+      "depends_on": [],
+      "priority_rank": 49,
+      "scope_sha256": "987489efb819ef254c76c2565924430e57e39b8683387bc034868372c5da7b46",
+      "claim_title": "[Claim] V-S-M063 — Independent review of the status draft for Planar first-passage KPZ exponent",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-S-M063%20%E2%80%94%20Independent%20review%20of%20the%20status%20draft%20for%20Planar%20first-passage%20KPZ%20exponent",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-S-M063%22"
+    },
+    {
+      "id": "V-S-M070",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M070"
+      ],
+      "title": "Independent review of the status draft for 3D Ising conformal scaling conjecture",
+      "deliverable": "Check the draft scope and open questions in data/statement_scope_reviews.json against dated specialist sources; record agreement, corrections or the source that settles the status.",
+      "context": "Choose critical nearest-neighbor Ising on the cubic lattice in dimension three and identify a correctly normalized magnetization distribution, a named scaling topology, and finite-dimensional correlation/covariance properties; only then formulate non-Gaussian conformal covariance as an exact theorem.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Evidence state changes only through docs/PORTFOLIO_SELECTION.md",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Reviewing a draft is not an open-status certification by itself.",
+      "falsifier": "A dated source showing the drafted statement is already resolved or misstated.",
+      "source": "data/statement_scope_reviews.json",
+      "depends_on": [],
+      "priority_rank": 56,
+      "scope_sha256": "525ca9451d9f7ee6e3450e4f972551db4d5aae22ba80a07c7e12d1857ff7dd40",
+      "claim_title": "[Claim] V-S-M070 — Independent review of the status draft for 3D Ising conformal scaling conjecture",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-S-M070%20%E2%80%94%20Independent%20review%20of%20the%20status%20draft%20for%203D%20Ising%20conformal%20scaling%20conjecture",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-S-M070%22"
+    },
+    {
+      "id": "V-S-M017",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M017"
+      ],
+      "title": "Independent review of the status draft for Global Langlands functoriality",
+      "deliverable": "Check the draft scope and open questions in data/statement_scope_reviews.json against dated specialist sources; record agreement, corrections or the source that settles the status.",
+      "context": "Choose a specific pair of reductive groups over a named number field class, a single L-group map, and the associated cuspidal automorphic transfer with local/global hypotheses; do not select a particular lift without comparing recent solved cases.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Evidence state changes only through docs/PORTFOLIO_SELECTION.md",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Reviewing a draft is not an open-status certification by itself.",
+      "falsifier": "A dated source showing the drafted statement is already resolved or misstated.",
+      "source": "data/statement_scope_reviews.json",
+      "depends_on": [],
+      "priority_rank": 69,
+      "scope_sha256": "a60638e0720096509dc3adcd65c0b5742d944e33222b20349fca06b4ab97c1f3",
+      "claim_title": "[Claim] V-S-M017 — Independent review of the status draft for Global Langlands functoriality",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-S-M017%20%E2%80%94%20Independent%20review%20of%20the%20status%20draft%20for%20Global%20Langlands%20functoriality",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-S-M017%22"
+    },
+    {
+      "id": "V-S-M053",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M053"
+      ],
+      "title": "Independent review of the status draft for Weak cosmic censorship",
+      "deliverable": "Check the draft scope and open questions in data/statement_scope_reviews.json against dated specialist sources; record agreement, corrections or the source that settles the status.",
+      "context": "For one fixed Einstein evolution model and a specified class of asymptotically flat Cauchy data, formulate the precise genericity topology, maximal-development assumptions, completeness of future null infinity, and visibility criterion; this is a scope template, not a new accepted conjecture.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Evidence state changes only through docs/PORTFOLIO_SELECTION.md",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Reviewing a draft is not an open-status certification by itself.",
+      "falsifier": "A dated source showing the drafted statement is already resolved or misstated.",
+      "source": "data/statement_scope_reviews.json",
+      "depends_on": [],
+      "priority_rank": 86,
+      "scope_sha256": "d85afb287b983d754bbf89e79b149000dcad28583b51fec7d183fafeb56c8121",
+      "claim_title": "[Claim] V-S-M053 — Independent review of the status draft for Weak cosmic censorship",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-S-M053%20%E2%80%94%20Independent%20review%20of%20the%20status%20draft%20for%20Weak%20cosmic%20censorship",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-S-M053%22"
     },
     {
       "id": "L003",

@@ -1,0 +1,6 @@
+{
+  "version": 1,
+  "resource_unit": "agent_hour",
+  "note": "One record per closed claim on a work-queue item. Only accepted_independent (named reviewer who is not the author, public review_url) counts toward yield. See YIELD.md and scripts/outcomes.py.",
+  "outcomes": []
+}
