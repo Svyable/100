@@ -18,16 +18,18 @@ ROOT = Path(__file__).resolve().parents[1]
 LEDGER = ROOT / "data" / "lemma_adversaries.json"
 CATEGORIES = {"refuted_auxiliary_only", "known_theorem_positive_control"}
 EVALUATORS = {
-    "frankl_triple_local": "A-M075-TRIPLE",
-    "frankl_doubleton": "A-M075-DOUBLET",
-    "degree_defect_unsaturated": "A-M074-DEFECT",
-    "ch_nine_sharp": "A-M074-NINE-28",
+    "A-M075-TRIPLE": "frankl_triple_local",
+    "A-M075-TRIPLE19": "frankl_triple_local",
+    "A-M075-DOUBLET": "frankl_doubleton",
+    "A-M074-DEFECT": "degree_defect_unsaturated",
+    "A-M074-NINE-28": "ch_nine_sharp",
 }
 ALLOWED_FIXTURES = {
-    "frankl_triple_local": "examples/FRANKL_SARVATE_RENAUD.json",
-    "frankl_doubleton": "examples/FRANKL_DOUBLETON.json",
-    "degree_defect_unsaturated": None,
-    "ch_nine_sharp": None,
+    "A-M075-TRIPLE": "examples/FRANKL_SARVATE_RENAUD.json",
+    "A-M075-TRIPLE19": "examples/FRANKL_VAN_DER_HOUT_ROOS_19.json",
+    "A-M075-DOUBLET": "examples/FRANKL_DOUBLETON.json",
+    "A-M074-DEFECT": None,
+    "A-M074-NINE-28": None,
 }
 
 
@@ -44,10 +46,9 @@ def validate(data):
                   "evaluator", "source", "warning"):
             if not isinstance(c.get(k), str) or not c[k].strip():
                 raise ValueError(f"Missing {k}")
-        key = c["evaluator"]
-        if (key not in EVALUATORS or c["id"] != EVALUATORS[key] or
-                c["id"] in seen):
+        if c["id"] not in EVALUATORS or c["evaluator"] != EVALUATORS[c["id"]] or c["id"] in seen:
             raise ValueError("Unknown, repeated or mismatched evaluator ID")
+        key = c["evaluator"]
         seen.add(c["id"])
         if c["classification"] not in CATEGORIES:
             raise ValueError("Unsupported result classification")
@@ -63,7 +64,7 @@ def validate(data):
         source = urlparse(c["source"])
         if source.scheme != "https" or not source.netloc:
             raise ValueError("Source must be an HTTPS URL")
-        if c.get("fixture") != ALLOWED_FIXTURES[key]:
+        if c.get("fixture") != ALLOWED_FIXTURES[c["id"]]:
             raise ValueError("Unexpected fixture path")
         if not isinstance(c.get("expected"), dict):
             raise ValueError("Exact expected certificate data required")
@@ -73,7 +74,7 @@ def validate(data):
                 raise ValueError("Expected six-vertex adjacency witness")
         elif "out" in c:
             raise ValueError("Unexpected embedded adjacency")
-    if seen != set(EVALUATORS.values()):
+    if seen != set(EVALUATORS):
         raise ValueError("A baseline adversarial control was dropped")
     return data
 
@@ -134,7 +135,9 @@ def run_case(c):
         freq = [sum(i in s for s in independent) for i in f["triple"]]
         if freq != got["triple_frequencies"] or len(independent) != got["family_size"]:
             raise AssertionError("Independent Frankl frequency disagreement")
-        report = {a: got[a] for a in c["expected"]}
+        report = {a: ([
+            sum(i in member for member in independent) for i in range(f["n"])
+        ] if a == "all_frequencies" else got[a]) for a in c["expected"]}
     elif k == "frankl_doubleton":
         f = _fixture(c)
         got = frankl_pair_boundary.doubleton_certificate(

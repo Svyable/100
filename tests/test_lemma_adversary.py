@@ -18,18 +18,19 @@ class LemmaAdversaryTests(unittest.TestCase):
         result = lemma_adversary.report(self.ledger)
         self.assertEqual((result["controls"], result["false_auxiliary"],
                           result["known_positive"], result["open_conjectures_resolved"]),
-                         (4, 3, 1, 0))
+                         (5, 4, 1, 0))
         for item in result["results"]:
             self.assertFalse(item["full_conjecture_resolved"])
         self.assertEqual(result["results"][0]["facts"]["triple_frequencies"], [13]*3)
-        self.assertEqual(result["results"][2]["facts"]["low_to_low"], 2)
+        self.assertEqual(result["results"][1]["facts"]["all_frequencies"], [9,9,9,14,14,14,17])
+        self.assertEqual(result["results"][3]["facts"]["low_to_low"], 2)
         self.assertEqual(result["results"][3]["facts"]["arcs"], 29)
 
     def test_rejects_semantic_misclassification(self):
         for idx, category in ((0, "known_theorem_positive_control"),
                               (1, "refuted_auxiliary_only"),
-                              (2, "solved"),
-                              (3, "new_unrestricted_theorem")):
+                              (3, "solved"),
+                              (4, "new_unrestricted_theorem")):
             altered = copy.deepcopy(self.ledger)
             altered["cases"][idx]["classification"] = category
             with self.subTest(idx=idx), self.assertRaises(ValueError):
@@ -53,7 +54,7 @@ class LemmaAdversaryTests(unittest.TestCase):
 
     def test_rejects_modified_graph_witness(self):
         tampered = copy.deepcopy(self.ledger)
-        tampered["cases"][2]["out"][0][0] = 0
+        tampered["cases"][3]["out"][0][0] = 0
         with self.assertRaises(ValueError):
             lemma_adversary.report(tampered)
 
@@ -66,6 +67,14 @@ class LemmaAdversaryTests(unittest.TestCase):
             tampered["cases"][0][key] = value
             with self.subTest(key=key), self.assertRaises(ValueError):
                 lemma_adversary.validate(tampered)
+
+    def test_2026_published_nineteen_set_incidence_matrix(self):
+        sample = next(c for c in self.ledger["cases"] if c["id"] == "A-M075-TRIPLE19")
+        report = lemma_adversary.run_case(sample)
+        self.assertEqual(report["facts"]["family_size"], 19)
+        self.assertEqual(report["facts"]["triple_frequencies"], [9,9,9])
+        self.assertEqual(report["facts"]["all_frequencies"], [9,9,9,14,14,14,17])
+        self.assertEqual(report["facts"]["minimum_set_size"], 0)
 
     def test_independent_oracle_rejects_nonclosed(self):
         with self.assertRaises(ValueError):
