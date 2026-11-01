@@ -99,3 +99,13 @@ The six focused unit tests independently generate the degree profiles with histo
 
 **Next obligation:** strengthen or eliminate the indegree-ten, z=4 local incidence branch, and obtain independent mathematical review of the full derivation. Do not change M074's global evidence state or data/solved.json. The unrestricted [Caccetta–Häggkvist conjecture](https://lemon.cs.elte.hu/egres/open/Caccetta-H%C3%A4ggkvist_conjecture) remains open.
 
+
+## Later local advance: z=4 ruled out (2026-11-01)
+
+The distinct [C-to-A incidence argument](M074_C_TO_A_BOTTLENECK.md)
+combines the B-internal girth inequalities with A/C degree constraints
+to eliminate all 295 formerly unresolved **relaxed z=4 integer** profiles.
+The four-zero rooted branch is therefore excluded *assuming the written
+local lemmas are correct*. The surviving z=0,1,2,3 indegree-ten cases
+are not resolved. This candidate has not undergone external mathematical
+or prior-art review; no full-case or unrestricted claim follows.
