@@ -55,6 +55,16 @@ class RouterTests(unittest.TestCase):
         blocked = [work(1, "waiting_on_dependencies")]
         self.assertEqual(router.plan(blocked, snapshot([issue(1)]), self.state, now=NOW)["actions"], [])
 
+    def test_legacy_issue_form_16_character_digest(self):
+        short = issue(1, digest="1" * 16)
+        form = issue(2)
+        form["body"] = "### Work item id\\n\\nF-M002\\n\\n### Scope digest (first 16 hex characters)\\n\\n" + "2" * 16
+        form["body"] = form["body"].replace("\\n", "\n")
+        a = self.route([short, form])
+        self.assertEqual([t["work_id"] for t in a["state"]["tickets"]], ["F-M001", "F-M002"])
+        bad = issue(3, digest="a" * 16)
+        self.assertEqual(self.route([bad])["actions"], [])
+
     def test_duplicate_claims_refused_and_active_quarantined(self):
         a = self.route([issue(1)])
         b = self.route([issue(1), issue(1, number=100)], state=a["state"])
