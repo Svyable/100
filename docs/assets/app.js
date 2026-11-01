@@ -3,6 +3,16 @@
 (() => {
   const doc = document.documentElement;
   const root = doc.dataset.root || "./";
+
+  // Evidence-scoped, data-driven proof frontier on problem pages, the atlas and home.
+  // The static HTML remains the complete no-JavaScript fallback.
+  if (document.querySelector(".problem-page .problem-main, #problem-list") ||
+      /\/atlas\/(?:index\.html)?$/.test(location.pathname)) {
+    const frontier = document.createElement("script");
+    frontier.src = root + "assets/frontier.js";
+    frontier.async = true;
+    document.head.append(frontier);
+  }
   const $ = sel => document.querySelector(sel);
   const $$ = sel => Array.from(document.querySelectorAll(sel));
   const typing = el => el && (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName));

@@ -28,6 +28,41 @@
       "warning": "This published example refutes only the triple-local strengthening, not Frankl's conjecture."
     },
     {
+      "id": "A-M075-TRIPLE19",
+      "problem_id": "M075",
+      "classification": "refuted_auxiliary_only",
+      "statement": "Every finite union-closed family containing a three-element set has at least one element of that set in half the family (even when the empty set is allowed).",
+      "evaluator": "frankl_triple_local",
+      "fixture": "examples/FRANKL_VAN_DER_HOUT_ROOS_19.json",
+      "expected": {
+        "family_size": 19,
+        "triple": [
+          0,
+          1,
+          2
+        ],
+        "triple_frequencies": [
+          9,
+          9,
+          9
+        ],
+        "minimum_set_size": 0,
+        "some_other_element_abundant": true,
+        "max_frequency": 17,
+        "all_frequencies": [
+          9,
+          9,
+          9,
+          14,
+          14,
+          14,
+          17
+        ]
+      },
+      "source": "https://doi.org/10.23952/jano.8.2026.1.02",
+      "warning": "Published 2026 19-set example is smaller than historical 27-set example; it refutes only the triple-local strengthening, never Frankl's conjecture."
+    },
+    {
       "id": "A-M075-DOUBLET",
       "problem_id": "M075",
       "classification": "known_theorem_positive_control",
