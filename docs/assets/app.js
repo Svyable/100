@@ -140,6 +140,15 @@
     }
   });
 
+  // Evidence-first handoff is an optional same-origin enhancement. All proof data
+  // and claim links remain in the server-rendered pages when scripts are disabled.
+  if ($(".problem-page .problem-grid") || $(".work-detail")) {
+    const frontierScript = document.createElement("script");
+    frontierScript.src = root + "assets/frontier.js";
+    frontierScript.defer = true;
+    document.head.append(frontierScript);
+  }
+
   // ---------------------------------------------------------------- command palette
   const dialog = $("#palette");
   if (!dialog || typeof dialog.showModal !== "function") return;
