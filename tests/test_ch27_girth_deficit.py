@@ -47,6 +47,12 @@ def independent_classifier(alpha, kk):
             return f"girth_subset_{s}"
     if alpha.count(2) >= 7 and 81-sum(alpha)-sum(kk) > 16:
         return "seven_vertex_c_cut"
+    for s in range(4,11):
+        if floors[s-1] >= 11-s and sum(floors[:s]) == s*(19-s)//2-2:
+            internal = tuple(v-(10-s) for v in floors[:s])
+            expected = tuple(range(s-1,3,-1))+(1,1,1,1)
+            if internal != expected:
+                return f"equality_rigidity_{s}"
     return "unresolved"
 
 
@@ -118,9 +124,10 @@ class GirthDeficitTests(unittest.TestCase):
         self.assertEqual(stages["girth_subset_5"],49)
         self.assertEqual(stages["girth_subset_6"],29)
         self.assertEqual(stages["seven_vertex_c_cut"],15)
-        self.assertEqual(stages["unresolved"],128)
+        self.assertEqual(stages["equality_rigidity_6"],25)
+        self.assertEqual(stages["unresolved"],103)
         self.assertEqual(stages["prior"], 153384-295)
-        self.assertEqual(target.audit()["remaining"],128)
+        self.assertEqual(target.audit()["remaining"],103)
 
     def test_two_missing_edge_mutation_and_positive_boundary(self):
         self.assertEqual(target.first_girth_subset_violation(
@@ -131,7 +138,12 @@ class GirthDeficitTests(unittest.TestCase):
             (8,7,7,7,0,0,0,0,0,0), missing=1))
         self.assertEqual(target.audit(missing=1)["remaining"],191)
         self.assertEqual(target.audit(missing=0)["remaining"],275)
-        self.assertEqual(target.audit(include_c=False)["remaining"],143)
+        self.assertEqual(target.audit(include_rigidity=False)["remaining"],128)
+        self.assertEqual(target.audit(include_c=False,include_rigidity=False)["remaining"],143)
+        self.assertEqual(target.first_rigidity_violation(
+            (8,6,6,6,6,5,0,0,0,0)),6)
+        self.assertIsNone(target.first_rigidity_violation(
+            (9,8,5,5,5,5,0,0,0,0)))
         self.assertTrue(target.c_cut_violation(
             (2,)*7+(6,8), (0,)*4+(4,6,6,6,7,7)))
         self.assertFalse(target.c_cut_violation(
