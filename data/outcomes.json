@@ -139,6 +139,21 @@
         "ci_minutes": 0
       },
       "note": "Estimated work time; no independent mathematical review, priority determination, or novelty verification; X records reusable even-subgraph research mechanism and source-specific M073 certificate. Status assumes this PR merges; pending external review."
+    },
+    {
+      "work_id": "O-M078-01",
+      "scope_sha256": "c25d1f1ccd3a55bdd178da6dcb4747199d51a0190d9321ccb7e1b21af505fe62",
+      "author": "ChatGPT (M078 induced P4 signature)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/126",
+      "pr_url": "https://github.com/Svyable/100/pull/139",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.8
+      },
+      "note": "Exact 156-class n=6 separator, 20 collision-pair certificate, explicit nonisomorphic n=7 witnesses and isolate lift for every larger n. Independent mathematics and fidelity review not yet recorded; wider-literature novelty unassessed, O-M078-01 not discharged."
     }
   ]
 }

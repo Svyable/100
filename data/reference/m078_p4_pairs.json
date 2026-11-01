@@ -1,0 +1,392 @@
+{
+  "schema_version": 1,
+  "problem_id": "M078",
+  "scope": "All 156 nonisomorphic simple undirected graphs with six vertices",
+  "invariant": "number of induced P4 subgraphs",
+  "definition": "Four vertices inducing precisely a connected three-edge path",
+  "base_key": "sorted degree sequence plus total triangle count",
+  "graph_code": "Edge-bit integer using (0,1),(0,2),...,(4,5) in lexicographic order",
+  "graph_count": 156,
+  "base_key_collision_pairs": 20,
+  "residual_collision_pairs": 0,
+  "records_sha256": "f00c172f4d827c71b6cfaf3c83f7a9b00cf6fce1c620be6a47f78b03d634120e",
+  "collision_pairs": [
+    {
+      "graph_a": 10376,
+      "graph_b": 25601,
+      "degree_sequence": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2
+      ],
+      "triangles": 0,
+      "induced_p4_a": 0,
+      "induced_p4_b": 1
+    },
+    {
+      "graph_a": 15624,
+      "graph_b": 26376,
+      "degree_sequence": [
+        1,
+        1,
+        2,
+        2,
+        3,
+        3
+      ],
+      "triangles": 0,
+      "induced_p4_a": 4,
+      "induced_p4_b": 5
+    },
+    {
+      "graph_a": 15625,
+      "graph_b": 26826,
+      "degree_sequence": [
+        2,
+        2,
+        2,
+        2,
+        3,
+        3
+      ],
+      "triangles": 0,
+      "induced_p4_a": 9,
+      "induced_p4_b": 6
+    },
+    {
+      "graph_a": 16281,
+      "graph_b": 32075,
+      "degree_sequence": [
+        3,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "triangles": 4,
+      "induced_p4_a": 0,
+      "induced_p4_b": 3
+    },
+    {
+      "graph_a": 22788,
+      "graph_b": 26756,
+      "degree_sequence": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        3
+      ],
+      "triangles": 0,
+      "induced_p4_a": 3,
+      "induced_p4_b": 4
+    },
+    {
+      "graph_a": 25666,
+      "graph_b": 26113,
+      "degree_sequence": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2
+      ],
+      "triangles": 0,
+      "induced_p4_a": 3,
+      "induced_p4_b": 0
+    },
+    {
+      "graph_a": 25712,
+      "graph_b": 26369,
+      "degree_sequence": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        3
+      ],
+      "triangles": 0,
+      "induced_p4_a": 7,
+      "induced_p4_b": 4
+    },
+    {
+      "graph_a": 26502,
+      "graph_b": 31811,
+      "degree_sequence": [
+        2,
+        2,
+        3,
+        3,
+        3,
+        3
+      ],
+      "triangles": 2,
+      "induced_p4_a": 6,
+      "induced_p4_b": 9
+    },
+    {
+      "graph_a": 27272,
+      "graph_b": 30850,
+      "degree_sequence": [
+        1,
+        1,
+        2,
+        2,
+        3,
+        3
+      ],
+      "triangles": 1,
+      "induced_p4_a": 4,
+      "induced_p4_b": 3
+    },
+    {
+      "graph_a": 27844,
+      "graph_b": 30884,
+      "degree_sequence": [
+        1,
+        2,
+        2,
+        3,
+        3,
+        3
+      ],
+      "triangles": 1,
+      "induced_p4_a": 5,
+      "induced_p4_b": 4
+    },
+    {
+      "graph_a": 27980,
+      "graph_b": 32005,
+      "degree_sequence": [
+        2,
+        2,
+        2,
+        3,
+        3,
+        4
+      ],
+      "triangles": 2,
+      "induced_p4_a": 4,
+      "induced_p4_b": 5
+    },
+    {
+      "graph_a": 30480,
+      "graph_b": 32004,
+      "degree_sequence": [
+        1,
+        1,
+        2,
+        3,
+        3,
+        4
+      ],
+      "triangles": 2,
+      "induced_p4_a": 4,
+      "induced_p4_b": 3
+    },
+    {
+      "graph_a": 30512,
+      "graph_b": 31856,
+      "degree_sequence": [
+        1,
+        2,
+        3,
+        3,
+        3,
+        4
+      ],
+      "triangles": 2,
+      "induced_p4_a": 3,
+      "induced_p4_b": 2
+    },
+    {
+      "graph_a": 30513,
+      "graph_b": 32067,
+      "degree_sequence": [
+        2,
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "triangles": 3,
+      "induced_p4_a": 4,
+      "induced_p4_b": 7
+    },
+    {
+      "graph_a": 31016,
+      "graph_b": 32001,
+      "degree_sequence": [
+        1,
+        2,
+        2,
+        2,
+        3,
+        4
+      ],
+      "triangles": 2,
+      "induced_p4_a": 2,
+      "induced_p4_b": 3
+    },
+    {
+      "graph_a": 31626,
+      "graph_b": 32134,
+      "degree_sequence": [
+        2,
+        2,
+        3,
+        3,
+        4,
+        4
+      ],
+      "triangles": 3,
+      "induced_p4_a": 3,
+      "induced_p4_b": 4
+    },
+    {
+      "graph_a": 32072,
+      "graph_b": 32132,
+      "degree_sequence": [
+        1,
+        2,
+        2,
+        3,
+        4,
+        4
+      ],
+      "triangles": 3,
+      "induced_p4_a": 3,
+      "induced_p4_b": 4
+    },
+    {
+      "graph_a": 32074,
+      "graph_b": 32521,
+      "degree_sequence": [
+        2,
+        2,
+        3,
+        3,
+        4,
+        4
+      ],
+      "triangles": 4,
+      "induced_p4_a": 5,
+      "induced_p4_b": 4
+    },
+    {
+      "graph_a": 32108,
+      "graph_b": 32645,
+      "degree_sequence": [
+        2,
+        3,
+        3,
+        4,
+        4,
+        4
+      ],
+      "triangles": 5,
+      "induced_p4_a": 4,
+      "induced_p4_b": 3
+    },
+    {
+      "graph_a": 32110,
+      "graph_b": 32647,
+      "degree_sequence": [
+        3,
+        3,
+        4,
+        4,
+        4,
+        4
+      ],
+      "triangles": 6,
+      "induced_p4_a": 1,
+      "induced_p4_b": 0
+    }
+  ],
+  "sharpness_witness_n7": {
+    "order": 7,
+    "first": {
+      "name": "K1,3 disjoint K3",
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "edge_code": 1835015
+    },
+    "second": {
+      "name": "P3 disjoint paw",
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "edge_code": 491585
+    },
+    "common_sorted_degrees": [
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      3
+    ],
+    "common_triangles": 1,
+    "common_induced_p4": 0,
+    "isolate_padding": 0
+  },
+  "extension": "Appending t isolated vertices to both witnesses yields nonisomorphic graphs with the same signature for every t>=0.",
+  "interpretation": "Finite six-vertex separator only; no claim of global reconstruction or literature novelty."
+}
