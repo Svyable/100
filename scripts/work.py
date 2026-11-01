@@ -53,6 +53,10 @@ def _json(path):
 
 def digest(item):
     scope = {k: item[k] for k in ("id", "kind", "problems", "deliverable", "acceptance", "boundary")}
+    # A review accepts the precise statement in context, not just a generic task title.
+    # Leave existing non-review claim hashes stable for in-flight contributor claims.
+    if item["kind"] == "review":
+        scope["context"] = item.get("context", "")
     return hashlib.sha256(json.dumps(scope, sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest()
 
 
@@ -99,12 +103,12 @@ def build():
 
     # 1b. Independent review: the acceptance bottleneck, made claimable. An item clears
     # when data/outcomes.json records an accepted_independent outcome for it.
-    accepted = outcomes.accepted_ids()
+    accepted = outcomes.accepted_review_scopes()
     independence = ("The reviewer is not an author of the artifact (check git log of its files) and records "
                     "the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url")
     problems_by_id = {p["id"]: p for p in items}
     for t in _json("data/lean_targets.json"):
-        if t["stage"] != "implemented" or f"V-{t['id']}" in accepted:
+        if t["stage"] != "implemented":
             continue
         add(id=f"V-{t['id']}", kind="review", status="runnable", problems=[t["problem_id"]],
             title=f"Independent scope review of Lean target {t['id']} ({t['problem_id']})",
@@ -119,7 +123,7 @@ def build():
             source="data/lean_targets.json")
     for e in _json("data/formalization.json")["entries"]:
         wid = f"V-F-{e['problem_id']}"
-        if e.get("fidelity") != "author_checked" or wid in accepted:
+        if e.get("fidelity") != "author_checked":
             continue
         add(id=wid, kind="review", status="runnable", problems=[e["problem_id"]],
             title=f"Independent fidelity review of the {problems_by_id[e['problem_id']]['name']} comparator",
@@ -133,7 +137,7 @@ def build():
             source="data/formalization.json")
     for r in _json("data/statement_scope_reviews.json")["reviews"]:
         wid = f"V-S-{r['id']}"
-        if wid in accepted or r["id"] not in problems_by_id:
+        if r["id"] not in problems_by_id:
             continue
         add(id=wid, kind="review", status="runnable", problems=[r["id"]],
             title=f"Independent review of the status draft for {problems_by_id[r['id']]['name']}",
@@ -228,6 +232,10 @@ def build():
         unknown = [p for p in item["problems"] if p not in by_id]
         if unknown:
             raise ValueError(f"{item['id']}: unknown problems {unknown}")
+    # Only a review accepted for the *current* scope can leave the queue.
+    # Changed statement contexts and acceptance requirements re-open the review.
+    work = [item for item in work if item["kind"] != "review"
+            or item["scope_sha256"][:16] not in accepted.get(item["id"], set())]
     order = {k: i for i, k in enumerate(FAMILIES)}
     work.sort(key=lambda x: (STATUS_ORDER[x["status"]], order[x["kind"]], x["priority_rank"], x["id"]))
     return work

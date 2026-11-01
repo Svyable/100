@@ -31,6 +31,8 @@ the scope digest. Close the claim with the PR that delivers the item, or close i
 unfinished with what you learned. Two pipelines for the same thing is the most expensive
 failure here; a claim costs one minute.
 
+For independent reviews, acceptance clears only the **same scope digest** from the work queue. A changed reviewed statement or acceptance contract needs a fresh review; an older accepted outcome must never suppress it.
+
 ## 3. Do only the deliverable
 
 Meet every acceptance line and respect the item's boundary. A different idea is a new

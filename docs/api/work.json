@@ -562,7 +562,7 @@
       "source": "data/formalization.json",
       "depends_on": [],
       "priority_rank": 1,
-      "scope_sha256": "c31182d607a581c464c3ff8bd388070dc5b9936742bd7b0ed0c4e350740d9aba",
+      "scope_sha256": "df84b307c1074d4a39731eeca2c2cad931d2a42525aa9c520142f95ef9daa742",
       "claim_title": "[Claim] V-F-M071 — Independent fidelity review of the Hadwiger conjecture comparator",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M071%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Hadwiger%20conjecture%20comparator",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-F-M071%22"
@@ -587,7 +587,7 @@
       "source": "data/formalization.json",
       "depends_on": [],
       "priority_rank": 5,
-      "scope_sha256": "8b2c51127c78738bcf616ebd0756922dc2dca5e959955849adbc21c351e90633",
+      "scope_sha256": "695bc9c004a27d7fd3f3ecb8fde9db58a6e9f83b3c25eebe2ef5f0694463989a",
       "claim_title": "[Claim] V-F-M074 — Independent fidelity review of the Caccetta–Häggkvist conjecture comparator",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M074%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Caccetta%E2%80%93H%C3%A4ggkvist%20conjecture%20comparator",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-F-M074%22"
@@ -612,7 +612,7 @@
       "source": "data/formalization.json",
       "depends_on": [],
       "priority_rank": 8,
-      "scope_sha256": "73e70e3fc8af8d013404fbeef94ca45ffd637f1c95689b1da40fa4339457c61b",
+      "scope_sha256": "a1e9bc7a9b45d5f04c11b42c5de258b7eb0b6cb906814eb3c5dbfdcf7af59bf8",
       "claim_title": "[Claim] V-F-M094 — Independent fidelity review of the Hadamard matrix conjecture comparator",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M094%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Hadamard%20matrix%20conjecture%20comparator",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-F-M094%22"
@@ -637,7 +637,7 @@
       "source": "data/lean_targets.json",
       "depends_on": [],
       "priority_rank": 8,
-      "scope_sha256": "30ab8960e7e1fd72572d5a808185d0a52b68430063306711d566ee39f5c2f8c5",
+      "scope_sha256": "f9d0af0255bae075e882fb3ab1391df05fa315583bb17982c2a73de2fef40c8d",
       "claim_title": "[Claim] V-L007 — Independent scope review of Lean target L007 (M094)",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L007%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L007%20%28M094%29",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-L007%22"
@@ -662,7 +662,7 @@
       "source": "data/formalization.json",
       "depends_on": [],
       "priority_rank": 10,
-      "scope_sha256": "8291753c22c66396979eae1b3808dba608a24f47be4abccdc5d8c47fb89aa9b2",
+      "scope_sha256": "1628b1da36451191d8b8f62871c55927083c6ec3f652a3d47122ffc5b0a1a9da",
       "claim_title": "[Claim] V-F-M075 — Independent fidelity review of the Frankl union-closed sets conjecture comparator",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M075%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Frankl%20union-closed%20sets%20conjecture%20comparator",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-F-M075%22"
@@ -687,7 +687,7 @@
       "source": "data/lean_targets.json",
       "depends_on": [],
       "priority_rank": 10,
-      "scope_sha256": "615e91b8791e48f959e65de9695272c8bc0246471f2f3062adb6042e729fb3e3",
+      "scope_sha256": "11be65017b30a387eb0dabf572a033c8f15fda8ded0f60b36999ae9881a49e7e",
       "claim_title": "[Claim] V-L002 — Independent scope review of Lean target L002 (M075)",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L002%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L002%20%28M075%29",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-L002%22"
@@ -712,7 +712,7 @@
       "source": "data/lean_targets.json",
       "depends_on": [],
       "priority_rank": 10,
-      "scope_sha256": "17f0b550b917ed832a05dcd08e449ee74c3c70f956f13c995f5d2e1b5b337b04",
+      "scope_sha256": "7e3b5618b76418ea1a6f5d7ef9c366ae51ebe1b6604ade073d01a572d9bd266a",
       "claim_title": "[Claim] V-L006 — Independent scope review of Lean target L006 (M075)",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L006%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L006%20%28M075%29",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-L006%22"
@@ -737,7 +737,7 @@
       "source": "data/formalization.json",
       "depends_on": [],
       "priority_rank": 11,
-      "scope_sha256": "e0ceffd2a0049ef50eba83311c483654448c2622abbf4a65c4efb0667bfe2f35",
+      "scope_sha256": "a431014c54b558bee982e5162925481ba92f2dbcfb49cbdfb0f93bd1ca1b3ca1",
       "claim_title": "[Claim] V-F-M078 — Independent fidelity review of the Graph reconstruction conjecture comparator",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M078%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Graph%20reconstruction%20conjecture%20comparator",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-F-M078%22"
@@ -762,7 +762,7 @@
       "source": "data/formalization.json",
       "depends_on": [],
       "priority_rank": 13,
-      "scope_sha256": "67012b4b1124ef72c09a8dd261d24c9c0baeffc5c62bfe938ebfcf4fea1d6bbc",
+      "scope_sha256": "f85c48b8684bdbfe0ea54d2ed3644323e460b56ec60b1591c91b09607eccc4ea",
       "claim_title": "[Claim] V-F-M096 — Independent fidelity review of the Projective plane order 12 comparator",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M096%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Projective%20plane%20order%2012%20comparator",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-F-M096%22"
@@ -787,7 +787,7 @@
       "source": "data/lean_targets.json",
       "depends_on": [],
       "priority_rank": 13,
-      "scope_sha256": "2dc00ee6410d58bd93184762016fd23140048f45016d2353ac11f81f6a894d53",
+      "scope_sha256": "3a97d5e187aefdd5c1340a88cabe70244e0f0c5af3e7d4daa84e58bc7ed4ce95",
       "claim_title": "[Claim] V-L009 — Independent scope review of Lean target L009 (M096)",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L009%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L009%20%28M096%29",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-L009%22"
@@ -812,7 +812,7 @@
       "source": "data/formalization.json",
       "depends_on": [],
       "priority_rank": 15,
-      "scope_sha256": "ec0c4802c97bc658ab7b8bf462035a9edc6e52e63ca43eedbe817c70d11b6374",
+      "scope_sha256": "acc7cc3cab63680fe6652d841a2ca9d3df3526d31b46834c97a515ce940e5265",
       "claim_title": "[Claim] V-F-M095 — Independent fidelity review of the Exact Ramsey number R(5,5) comparator",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M095%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Exact%20Ramsey%20number%20R%285%2C5%29%20comparator",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-F-M095%22"
@@ -837,7 +837,7 @@
       "source": "data/lean_targets.json",
       "depends_on": [],
       "priority_rank": 15,
-      "scope_sha256": "8c2a3bf150c40e18088b38bc326338d4fdc167443386c310b3d93416f7e6d853",
+      "scope_sha256": "0cec74a625dd0891516159827cfc1d80cd2c7bca412e6cf296bf14c705384e34",
       "claim_title": "[Claim] V-L001 — Independent scope review of Lean target L001 (M095)",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L001%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L001%20%28M095%29",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-L001%22"
@@ -862,7 +862,7 @@
       "source": "data/lean_targets.json",
       "depends_on": [],
       "priority_rank": 15,
-      "scope_sha256": "993f833ef14fc49b4f8e248fec435991fea424f7f8469ddbd2a58a2ab8f82b63",
+      "scope_sha256": "7d5eaf8f697b94ed23195afa52e7a5b162cc0b12c40b32c8adb6f951f3bbcf64",
       "claim_title": "[Claim] V-L008 — Independent scope review of Lean target L008 (M095)",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L008%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L008%20%28M095%29",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-L008%22"
@@ -887,7 +887,7 @@
       "source": "data/formalization.json",
       "depends_on": [],
       "priority_rank": 18,
-      "scope_sha256": "17cfea95b1a84176e3584081ba6a1102c9cb332f4dc31141fd856e65732ff0b2",
+      "scope_sha256": "aee753e3dd5df21ca9266b8b588ae40c0d12fb461ec892307e6a75b2fbce7e58",
       "claim_title": "[Claim] V-F-M019 — Independent fidelity review of the Erdős–Straus conjecture comparator",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M019%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Erd%C5%91s%E2%80%93Straus%20conjecture%20comparator",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-F-M019%22"
@@ -912,7 +912,7 @@
       "source": "data/lean_targets.json",
       "depends_on": [],
       "priority_rank": 18,
-      "scope_sha256": "7ed30eb1180d35716c9e102861a5525509552e19e49b1e8ee223fd5a05654030",
+      "scope_sha256": "c85f8abd71f1b4eef393f49e97ff066d7677045da9b92613fea9f61cdd082c6a",
       "claim_title": "[Claim] V-L005 — Independent scope review of Lean target L005 (M019)",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L005%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L005%20%28M019%29",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-L005%22"
@@ -937,7 +937,7 @@
       "source": "data/formalization.json",
       "depends_on": [],
       "priority_rank": 24,
-      "scope_sha256": "de9741af940218d59da010fd1b0d10bb1c33e77eb79781327b9b3a974834aa0e",
+      "scope_sha256": "394138ea68cb9ef208de07f67a4a1b819c9ac613d6416402151d758f65a11714",
       "claim_title": "[Claim] V-F-M006 — Independent fidelity review of the Strong Goldbach conjecture comparator",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-F-M006%20%E2%80%94%20Independent%20fidelity%20review%20of%20the%20Strong%20Goldbach%20conjecture%20comparator",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-F-M006%22"
@@ -962,7 +962,7 @@
       "source": "data/lean_targets.json",
       "depends_on": [],
       "priority_rank": 24,
-      "scope_sha256": "1a44c95c425afeb138a58bbc3dae60904bc149db5858e08cb192b13caf0ef86a",
+      "scope_sha256": "0c06bb9d670560bc5c8408ade29456ff101e598a4ffac2ee6a9bebad149a02f3",
       "claim_title": "[Claim] V-L004 — Independent scope review of Lean target L004 (M006)",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L004%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L004%20%28M006%29",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-L004%22"
@@ -987,7 +987,7 @@
       "source": "data/statement_scope_reviews.json",
       "depends_on": [],
       "priority_rank": 40,
-      "scope_sha256": "b7bf8df40b02f8f2b1b5dca450c1c204ce2ee7001aef9ac7fafcf4e4ab026258",
+      "scope_sha256": "e3ea2bfcfcb9d9edc8f088102db233112a861d0d24d6452ca7f21b7ef67b12c4",
       "claim_title": "[Claim] V-S-M056 — Independent review of the status draft for Fourier restriction conjecture",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-S-M056%20%E2%80%94%20Independent%20review%20of%20the%20status%20draft%20for%20Fourier%20restriction%20conjecture",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-S-M056%22"
@@ -1012,7 +1012,7 @@
       "source": "data/statement_scope_reviews.json",
       "depends_on": [],
       "priority_rank": 49,
-      "scope_sha256": "987489efb819ef254c76c2565924430e57e39b8683387bc034868372c5da7b46",
+      "scope_sha256": "99056ace0acd665743fbf8466afea2f81105d2a091f1a58b97278ba44a83f57e",
       "claim_title": "[Claim] V-S-M063 — Independent review of the status draft for Planar first-passage KPZ exponent",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-S-M063%20%E2%80%94%20Independent%20review%20of%20the%20status%20draft%20for%20Planar%20first-passage%20KPZ%20exponent",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-S-M063%22"
@@ -1037,7 +1037,7 @@
       "source": "data/statement_scope_reviews.json",
       "depends_on": [],
       "priority_rank": 56,
-      "scope_sha256": "525ca9451d9f7ee6e3450e4f972551db4d5aae22ba80a07c7e12d1857ff7dd40",
+      "scope_sha256": "b0b66f9a9dcdc982d47967abe32de2766d5b5d4abe826cf9c1a59f1ee5ee49a3",
       "claim_title": "[Claim] V-S-M070 — Independent review of the status draft for 3D Ising conformal scaling conjecture",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-S-M070%20%E2%80%94%20Independent%20review%20of%20the%20status%20draft%20for%203D%20Ising%20conformal%20scaling%20conjecture",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-S-M070%22"
@@ -1062,7 +1062,7 @@
       "source": "data/statement_scope_reviews.json",
       "depends_on": [],
       "priority_rank": 69,
-      "scope_sha256": "a60638e0720096509dc3adcd65c0b5742d944e33222b20349fca06b4ab97c1f3",
+      "scope_sha256": "aabd15a06c68480e6e58d30c762ed4bc79cf7bc4521196aabb1c808bdf18de57",
       "claim_title": "[Claim] V-S-M017 — Independent review of the status draft for Global Langlands functoriality",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-S-M017%20%E2%80%94%20Independent%20review%20of%20the%20status%20draft%20for%20Global%20Langlands%20functoriality",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-S-M017%22"
@@ -1087,7 +1087,7 @@
       "source": "data/statement_scope_reviews.json",
       "depends_on": [],
       "priority_rank": 86,
-      "scope_sha256": "d85afb287b983d754bbf89e79b149000dcad28583b51fec7d183fafeb56c8121",
+      "scope_sha256": "dad048849db378a750244f7a482438876e7c1c7360db67c705746652d119efb1",
       "claim_title": "[Claim] V-S-M053 — Independent review of the status draft for Weak cosmic censorship",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-S-M053%20%E2%80%94%20Independent%20review%20of%20the%20status%20draft%20for%20Weak%20cosmic%20censorship",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-S-M053%22"
