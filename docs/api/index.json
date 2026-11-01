@@ -14,7 +14,8 @@
     "agent_manifest": "https://svyable.github.io/100/api/agent.json",
     "agent_shortlist": "https://svyable.github.io/100/api/agent/tasks.json",
     "agent_text": "https://svyable.github.io/100/llms.txt",
-    "discovery_trail": "https://svyable.github.io/100/api/discovery/{id}.json"
+    "discovery_trail": "https://svyable.github.io/100/api/discovery/{id}.json",
+    "proof_obligations": "https://svyable.github.io/100/api/lamport.json"
   },
   "counts": {
     "problems": 100,

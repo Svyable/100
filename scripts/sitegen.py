@@ -20,6 +20,7 @@ from pathlib import Path
 import discovery
 import lab
 import mdlite
+import proof_obligations
 import work as workqueue
 from rank import ROOT, COMPUTABLE, score
 from research import load, execution_order, readiness
@@ -31,7 +32,7 @@ DOCS = ROOT / "docs"
 
 # Directories whose contents are fully owned by the generator (stale files fail --check).
 GENERATED_DIRS = ("problems", "fields", "atlas", "lab", "formal", "campaigns", "claims", "discovery", "start",
-                  "roadmap", "ledger", "library", "api", "work")
+                  "roadmap", "ledger", "library", "api", "work", "lamport")
 # docs/data/portfolio.json is generated here; docs/data/next.json belongs to scripts/next.py,
 # and docs/next/ is a hand-written page, so neither directory is swept for stale files.
 # Top-level generated files. Everything else in docs/ is hand-written.
@@ -212,6 +213,9 @@ class Site:
         self.discovery_doc = discovery.load()
         self.discovery = {t["problem_id"]: t for t in self.discovery_doc["trails"]}
         self.discovery_moves = {m["id"]: m for m in self.discovery_doc["moves"]}
+        # Load the canonical validated Lamport dependency ledger; do not copy its state.
+        self.obligations = proof_obligations.validate(json.loads(
+            (ROOT / "data" / "proof_obligations.json").read_text(encoding="utf-8")))
         self.work_by_problem = defaultdict(list)
         for w in self.work["items"]:
             for pid in w["problems"]:
@@ -621,6 +625,7 @@ def render_index(site):
         for i, p in enumerate(top, 1))
     explore = [
         ("atlas/", "Atlas", "See all 100 at once: impact × attackability, fields × computability, readiness ladder.", f"{len(s.fields)} fields"),
+        ("lamport/", "Proof map", "Exact proof obligations, prerequisite graphs, falsifiers and independent evidence audits.", f"{len(s.obligations)} obligations"),
         ("campaigns/", "Proof campaigns", "Hypotheses, first proof obligations, falsifiers and blockers for every active track.", f"{len(s.campaign)} active"),
         ("discovery/", "Discovery trails", "Why researchers tried each move, what could be checked, where the reasoning is blocked, and what comes next.", f"{len(s.discovery)} trails"),
         ("lab/", "Exact probe lab", "Reusable exact engines, independently re-checked probes, certificate hashes.", f"{len(s.lab['probes'])} probes"),
@@ -947,9 +952,12 @@ def render_problem(site, pid, prev_id, next_id):
     open_work = ""
     if open_items:
         rows = "".join(work_row(s, page, w) for w in open_items)
+        proof_map = (f'<p><a class="text-link" href="{rel(page, "lamport/")}?problem={pid}#{pid}">'
+                     'View exact Lamport dependency graph and audits →</a></p>'
+                     if any(n["problem_id"] == pid for n in s.obligations) else '')
         open_work = (f'<section class="dossier-block" id="work"><h2>Open work <span class="chip">{len(open_items)}</span></h2>'
                      f'<p class="muted">Bounded, claimable units derived from the ledgers. Claim one before starting so parallel agents never duplicate it.</p>'
-                     f'<ul class="work-list">{rows}</ul></section>')
+                     f'{proof_map}<ul class="work-list">{rows}</ul></section>')
     back = s.backlinks.get(pid, [])
     back_html = "".join(f'<li><a href="{rel(page, d["path"])}">{E(d["title"])}</a></li>' for d in back)
     same_field = [q for q in s.ordered if q["field"] == p["field"] and q["id"] != pid]
@@ -1518,6 +1526,7 @@ def render_work_index(site):
 <li><strong>Regenerate.</strong> <code>python3 scripts/regen.py</code> rewrites every derived file in about three seconds. Merge conflicts in generated files never need a manual merge: take either side and regenerate.</li>
 <li><strong>Verify and ship.</strong> <code>python3 scripts/regen.py --check</code> and the tests; reference the item id and close the claim with the PR.</li>
 </ol>
+<p class="table-footnote">Trace blocking premises and exact statement audits in the <a href="{rel(page, 'lamport/')}">Lamport proof map</a>.</p>
 <p class="table-footnote">Full agent protocol: <a href="{library_href(s, page, 'AGENTS.md') or BLOB + 'AGENTS.md'}">AGENTS.md</a> · 100-slot wave: <a href="{library_href(s, page, 'SCALE.md') or BLOB + 'SCALE.md'}">SCALE.md</a> · machine-readable queue: <a href="{rel(page, 'api/work.json')}">api/work.json</a>.</p></section>
 <section class="section-block tight" aria-labelledby="top-h"><h2 class="h-small" id="top-h">Start here</h2><ul class="work-list">{top}</ul></section>
 {groups}"""
@@ -1554,6 +1563,149 @@ def render_work_item(site, w):
 </div></article>"""
     return layout(s, page, f"{w['id']}: {w['title']}", w["deliverable"][:240], body, active="work",
                   crumbs=[("Work", "work/"), (w["id"], None)])
+
+
+
+# --------------------------------------------------------------------------- Lamport proof explorer
+
+def lamport_layers(nodes):
+    """Dependency depths for a validated, acyclic obligation subgraph."""
+    by_id = {n["id"]: n for n in nodes}
+    memo = {}
+
+    def depth(oid):
+        if oid not in memo:
+            # Global registry can be acyclic even if future dependencies cross campaigns.
+            local = [dep for dep in by_id[oid]["depends_on"] if dep in by_id]
+            memo[oid] = 1 + max(depth(dep) for dep in local) if local else 0
+        return memo[oid]
+
+    return {oid: depth(oid) for oid in by_id}
+
+
+def render_lamport(site):
+    """A readable static graph, with optional JS connectors and filtering."""
+    s = site
+    page = "lamport/index.html"
+    grouped = defaultdict(list)
+    for node in s.obligations:
+        grouped[node["problem_id"]].append(node)
+    work_by_id = {w["id"]: w for w in s.work["items"]}
+    counts = Counter(n["status"] for n in s.obligations)
+    pids = sorted(grouped, key=s.drank)
+
+    options = "".join(
+        f'<option value="{E(pid)}">{E(pid)} · {E(s.by_id[pid]["name"])}</option>'
+        for pid in pids)
+    sections = []
+    for pid in pids:
+        nodes = sorted(grouped[pid], key=lambda n: n["id"])
+        layers = lamport_layers(nodes)
+        columns = max(layers.values()) + 1
+        offsets = defaultdict(int)
+        cards = []
+        audits = []
+        for n in sorted(nodes, key=lambda n: (layers[n["id"]], n["id"])):
+            oid = n["id"]
+            col = layers[oid] + 1
+            offsets[col] += 1
+            row = offsets[col]
+            deps = " ".join(n["depends_on"])
+            cards.append(
+                f'<article class="lamport-node lamport-{E(n["status"])}" id="{E(oid)}" '
+                f'data-obligation="{E(oid)}" data-depends="{E(deps)}" '
+                f'style="grid-column:{col};grid-row:{row}">'
+                f'<div class="lamport-node-head"><code>{E(oid)}</code>'
+                f'<span>{E(n["status"])}</span></div>'
+                f'<h3>{E(n["kind"].capitalize())} obligation</h3>'
+                f'<p>{E(n["statement"])}</p>'
+                + (f'<small>Needs: {", ".join(E(dep) for dep in n["depends_on"])}</small>'
+                   if n["depends_on"] else '<small>No graph prerequisites</small>')
+                + f'<a href="#audit-{E(oid)}">Exact scope &amp; audit ↓</a></article>'
+            )
+            dep_links = (", ".join(
+                f'<a href="#audit-{E(d)}"><code>{E(d)}</code></a>'
+                for d in n["depends_on"]) if n["depends_on"] else "None")
+            w = work_by_id.get(oid)
+            work_links = (
+                f'<a href="{rel(page, "work/" + oid + "/")}">Open work contract</a> · '
+                f'<a href="{E(w["existing_claims_url"])}" rel="noopener noreferrer">Check existing claims ↗</a> · '
+                + (f'<a href="{E(w["open_claim_url"])}" rel="noopener noreferrer">Claim this obligation ↗</a>'
+                 if w["status"] == "runnable" else '<span>Blocked or awaiting prerequisites; do not claim yet.</span>')
+                if w else repo_link("data/proof_obligations.json", "Canonical ledger"))
+            certificate = n["evidence"]
+            if certificate is None:
+                evidence = ('<p class="lamport-no-cert">No discharge certificate is recorded. '
+                            'This is an unresolved obligation, not a proved lemma.</p>')
+            else:
+                reviews = "".join(
+                    f'<li>{ext(url, "Independent review " + str(i))}</li>'
+                    for i, url in enumerate(certificate["independent_review_urls"], 1))
+                evidence = (
+                    '<p>Structurally discharged in the ledger. This status is not itself '
+                    'a proof of mathematical validity or review independence.</p>'
+                    f'<dl class="kv compact"><dt>Statement SHA-256</dt><dd><code class="hash">{E(certificate["statement_sha256"])}</code></dd>'
+                    f'<dt>Replay artifact</dt><dd>{repo_link(certificate["artifact"])}</dd>'
+                    f'<dt>Independent checker</dt><dd>{repo_link(certificate["checker"])}</dd>'
+                    f'<dt>Scope audit</dt><dd>{repo_link(certificate["scope_audit"])}</dd></dl>'
+                    f'<ul class="link-list">{reviews}</ul>')
+            audits.append(
+                f'<details class="lamport-audit" id="audit-{E(oid)}">'
+                f'<summary><code>{E(oid)}</code> · {E(n["kind"])} · {E(n["status"])} <span>Full audit</span></summary>'
+                f'<div class="lamport-audit-body">'
+                f'<h3>Exact statement</h3><p class="serif">{E(n["statement"])}</p>'
+                f'<h3>Known prior-art boundary</h3><p>{E(n["prior_art_boundary"])}</p>'
+                f'<h3>Falsifier</h3><p>{E(n["falsifier"])}</p>'
+                f'<h3>Next action</h3><p>{E(n["next_action"])}</p>'
+                f'<h3>Depends on</h3><p>{dep_links}</p>'
+                f'<h3>Discharge evidence</h3>{evidence}'
+                f'<p class="lamport-worklinks">{work_links}</p>'
+                + (f'<p class="muted">Claim scope digest (identity, not evidence): '
+                   f'<code class="hash">{E(w["scope_sha256"])}</code></p>' if w else '')
+                + '</div></details>')
+        section = (
+            f'<section class="lamport-group section-block tight" id="{E(pid)}" data-lamport-problem="{E(pid)}">'
+            f'<div class="lamport-group-header"><div><p class="eyebrow">{E(pid)} / {len(nodes)} obligations</p>'
+            f'<h2><a href="{rel(page, s.problem_path(pid))}">{E(s.by_id[pid]["name"])}</a></h2></div>'
+            f'<span class="chip">{sum(n["status"] == "blocked" for n in nodes)} blocked</span></div>'
+            f'<div class="lamport-graph-scroll" tabindex="0" aria-label="{E(pid)} proof dependency graph">'
+            f'<div class="lamport-graph" style="--lamport-columns:{columns};--lamport-min-width:{columns * 260 + (columns - 1) * 42}px" data-graph="{E(pid)}">'
+            + "".join(cards)
+            + '</div></div>'
+            + (f'<p class="lamport-key">When JavaScript is enabled, arrows connect prerequisites to dependents within this campaign. '
+             f'Every dependency is also written as text and linked in the audits.</p>' if any(n["depends_on"] for n in nodes)
+             else '<p class="lamport-key">No prerequisite edges recorded for this campaign.</p>')
+            + f'<div class="lamport-audits"><h3>Statement-by-statement audit</h3>{"".join(audits)}</div>'
+            '</section>')
+        sections.append(section)
+
+    body = page_head(
+        "LAMPORT / PROOF DEPENDENCIES",
+        'Make every missing <em>implication visible.</em>',
+        "A versioned, finite, acyclic graph of exact research obligations. Browse prerequisites, falsifiers, next actions and independently checkable evidence. This is a proof-work ledger, not a claim that any conjecture is solved."
+    ) + f"""
+{stats([("Proof obligations", len(s.obligations)), ("Open", counts["open"]),
+        ("Blocked", counts["blocked"]), ("Structurally discharged", counts["discharged"])])}
+<p class="status-note"><strong>Important:</strong> These are ledger states, not independent proof judgments.
+A SHA-256 digest identifies a statement; it does not prove it. A passed structural validator or a Lean check
+of a narrower encoded statement never establishes a universal conjecture. No open or blocked node carries
+discharge evidence.</p>
+<div class="lamport-controls" id="lamport-controls" hidden>
+  <label for="lamport-problem">Focus on a problem</label>
+  <select id="lamport-problem"><option value="">All {len(pids)} campaigns with obligations</option>{options}</select>
+  <span id="lamport-count" role="status" aria-live="polite">Showing {len(pids)} campaigns</span>
+</div>
+<p class="table-footnote">Canonical source: {repo_link("data/proof_obligations.json")} ·
+validator: {repo_link("scripts/proof_obligations.py")} ·
+<a href="{rel(page, 'api/lamport.json')}">Machine-readable graph (JSON)</a> ·
+<a href="{library_href(s, page, 'docs/LAMPORT_PROTOCOL.md')}">Full Lamport protocol</a> ·
+<a href="{rel(page, 'work/')}">Claimable work queue</a>.</p>
+{"".join(sections)}
+"""
+    return layout(s, page, "Lamport proof map",
+                  "Exact proof-obligation dependency graphs, scope audits, falsifiers and independent evidence boundaries.",
+                  body, active="work", head_extra=f'<script src="{rel(page, "assets/lamport.js")}" defer></script>',
+                  crumbs=[("Proof map", None)])
 
 
 # --------------------------------------------------------------------------- roadmap
@@ -1873,6 +2025,11 @@ def render_api(site):
                        "s": e["namespace"] + "." + e["statement"], "u": f"problems/{e['problem_id']}/#formal", "x": e["encodes"] + " lean formal"})
     for d in s.library:
         search.append({"t": d["title"], "k": "document", "s": d["rel"], "u": d["path"], "x": ""})
+    for n in s.obligations:
+        search.append({"t": n["id"] + " — " + n["kind"] + " proof obligation",
+                       "k": "proof", "id": n["id"], "s": n["status"],
+                       "u": f'lamport/?problem={n["problem_id"]}#audit-{n["id"]}',
+                       "x": " ".join([n["statement"], n["falsifier"], n["next_action"]])})
     for key, label, href in NAV[1:]:
         search.append({"t": label, "k": "page", "s": "Section", "u": href, "x": ""})
     search.append({"t": "Data & API", "k": "page", "s": "Downloads", "u": "api/", "x": "json csv feed"})
@@ -1946,6 +2103,7 @@ def render_api(site):
                        "id": pid, "s": f"{len(trail['nodes'])} reasoning steps",
                        "u": f"discovery/{pid}/", "x": trail["question"] + " " +
                        " ".join(n["title"] for n in trail["nodes"])})
+    files["api/lamport.json"] = dumps({"protocol": "svyable.lamport.v1", "meaning": "Structural proof-obligation registry, not proof validity", "count": len(s.obligations), "obligations": s.obligations})
     for w in s.work["items"]:
         search.append({"t": w["title"], "k": "work", "id": w["id"], "s": WORK_LABEL[w["kind"]] + " · " + w["status"].replace("_", " "),
                        "u": f"work/{w['id']}/", "x": w["deliverable"][:160]})
@@ -1967,6 +2125,7 @@ def render_api(site):
             "agent_shortlist": SITE_URL + "api/agent/tasks.json",
             "agent_text": SITE_URL + "llms.txt",
             "discovery_trail": SITE_URL + "api/discovery/{id}.json",
+            "proof_obligations": SITE_URL + "api/lamport.json",
         },
         "counts": {"problems": len(s.items), "campaigns": len(s.campaign), "probes": len(s.lab["probes"]),
                    "engines": len(s.lab["engines"]), "claim_reviews": len(s.claims), "lean_statements": len(s.formal), "solved": len(s.solved),
@@ -1987,6 +2146,7 @@ def render_api_page(site):
 <tr><td><a href="problems/{ex_id}.json">api/problems/{{id}}.json</a></td><td>One problem with campaign, probes, milestones, roadmap, claim review, external claims and backlinks.</td></tr>
 <tr><td><a href="problems.csv">api/problems.csv</a></td><td>Spreadsheet-friendly registry.</td></tr>
 <tr><td><a href="discovery.json">api/discovery.json</a></td><td>Sourced motivated reasoning trails, cross-problem moves and their provenance.</td></tr>
+<tr><td><a href="lamport.json">api/lamport.json</a></td><td>Exact Lamport proof-obligation dependency graph, states and evidence records. Structural status is not proof validity.</td></tr>
 <tr><td><a href="search.json">api/search.json</a></td><td>The compact index behind the <kbd>/</kbd> command palette.</td></tr>
 <tr><td><a href="agent.json">api/agent.json</a></td><td>Agent research contract, evidence boundaries and stable API entry points.</td></tr>
 <tr><td><a href="agent/tasks.json">api/agent/tasks.json</a></td><td>First 20 runnable tasks with digests, acceptance tests and claim links. Not a live claim check.</td></tr>
@@ -2055,6 +2215,7 @@ def build_files(portfolio):
     files["claims/index.html"] = render_claims(site)
     files["roadmap/index.html"] = render_roadmap(site)
     files["work/index.html"] = render_work_index(site)
+    files["lamport/index.html"] = render_lamport(site)
     for w in site.work["items"]:
         files[f"work/{w['id']}/index.html"] = render_work_item(site, w)
     files["ledger/index.html"] = render_ledger(site)
