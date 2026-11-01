@@ -70,30 +70,79 @@ For **any** subset S of s B vertices, there are at most s(s-1)/2 arcs within S a
 
 The cases below use only (1)–(5) and (W); **the earlier proof's lower bound on e(B,A) and its 83-profile certificate are not used**.
 
-## Exhaustive hand case split: 16 <= m <= 21
+## Short capacity proof: four cases in z, no histogram enumeration
 
-Since each k(b)<=6, (1) implies 6(9-z)>=74-2m.
+The bound \(16\le m\le21\) follows from the eight internal A outdegrees
+being at least two, together with the established 21-arc ceiling.
+Equation (1) gives \(\sum_B k(b)\ge74-2m\ge32\).
+In particular, **z cannot exceed three**: four zero k values would leave
+at most five positive values, with sum at most \(5\cdot6=30\).
 
-**Case m<=18.** We have z<=2 and t>=24-m>=6. By (3), at least six outneighbors have deficit at least two. Therefore W(v)>=12>7.
+**Case z=3 (all six values m=16,...,21 at once).**
+Exactly six k values are positive, with total at least 32. Each must be
+at least two: if one equalled one, their sum would be at most
+\(1+5\cdot6=31\). For any one of these k values,
+an eligible a counted by q(b) has \(\alpha(a)-2\ge k\).
+Since \(\sum_{a\in A}(\alpha(a)-2)=m-16\le5\),
 
-**Case m=19.** Here z<=3, t>=5. If z<=2, (3) gives W(v)>=10>7. If z=3, exactly six B vertices have positive k; (1) requires their k-sum at least 36, so **all six have k=6**. The A-surplus is only three, so every alpha<=5 and q(b)=0 for those six. By (4) they each have at least seven outgoing arcs inside B, totaling at least 42. Formula (5) for s=6 permits only 33. Contradiction.
+    q(b) <= floor(5/k(b)) <= 6-k(b),   2 <= k(b) <= 6.     (6)
 
-**Case m=20.** Here z<=3, t>=4. If z<=2, (3) gives W(v)>=8. If z=3, the six positive k values sum to at least 34, so **each is at least four** and the sum of their deficits from six is at most two. The A-surplus is four: for k>=4, q(b) can be positive only at k=4, and then q(b)<=1 (only one A vertex can have alpha=6). There can be at most one k=4, so the six q values sum to at most one. By (4) their B-outdegrees sum to at least 6+34-1=39, again exceeding the s=6 capacity 33.
+The last inequality is the five elementary integer checks
+\(2\le4, 1\le3, 1\le2, 1\le1, 0\le0\).
+Using (4), the **six** positive-k vertices of B therefore send
+at least
 
-**Case m=21.** Here z<=3, t>=3.
+    sum (1 + k(b) - q(b))
+      >= sum (2*k(b) - 5)
+       = 2*sum k(b) - 30
+      >= 2*32 - 30 = 34
 
-- If z<=1, (3) gives W(v)>=3*3=9.
-- If z=2 and t>=4, (3) gives W(v)>=4*2=8.
-- If z=2 and t=3, the five non-two A degrees must each use one of the five surplus units: the A profile is necessarily (2^3,3^5). There are seven positive k values with sum at least 32. Let u be the number equal to one. Since the others are at most six, u<=2. For k=1, q=5, giving no positive lower bound in (4); for k>=2, q=0, so d_B^+>=1+k. If u<=1, the seven positive-k vertices together have at least 7+32-2u>=37 B-outgoing arcs, exceeding the s=7 capacity 35. If u=2, the five remaining k values must all equal six; those five vertices each have at least seven B-outgoing arcs, totaling 35, exceeding the s=5 capacity 30.
-- If z=3, the six positive k values sum to at least 32, so each k>=2. Write x(a)=alpha(a)-2, with sum_A x=5. Each of the six positive-k B vertices satisfies
+arcs **inside B**. But (5), applied to this six-vertex subset,
+allows at most \(6(17-6)/2=33\). Contradiction. This eliminates all
+previously separate \(m=19,20,21;z=3\) subcases with one strict
+inequality. It also exposes the exact one-unit sensitivity: replacing
+\(\sum k\ge32\) by 31 would only imply 32, not 34.
 
-      q(b) <= floor(5/k(b)) <= 6-k(b),   k=2,...,6.
+**Case z<=1.** By (2), \(t\ge24-m\ge3\). Equation (3) gives
+\(W(v)\ge t(4-z)\ge3\cdot3=9\).
 
-  The last inequality is checked directly for the five integers 2,3,4,5,6. Therefore their q-sum is at most 36-sum k<=4. By (4), their B-outdegrees total at least 6+32-4=34, exceeding the s=6 capacity 33.
+**Case z=2 and (m<=20 or t>=4).** Here (2) guarantees
+\(t\ge4\) when \(m\le20\). In either event,
+\(W(v)\ge2t\ge8\).
 
-Every high vertex is thus either locally impossible or has W(v)>=8. Since H is nonempty, this contradicts the global average bound (W). The finite theorem follows. **No integer-profile enumeration is part of this proof.**
+**Only exceptional case: z=2, m=21, t=3.**
+Exactly five A vertices have \(\alpha=3\), the other three
+have \(\alpha=2\), because the available surplus is five.
+Of the seven B vertices with positive k, write \(u\) for those
+with \(k=1\). Equation (1) gives \(\sum k\ge32\),
+so \(u\le2\) (three ones and four sixes sum only 27).
+
+For k=1, q=5; for k>=2, q=0. If u<=1, the seven
+positive-k vertices send at least
+
+    (7-u) + (sum k - u) >= 7 + 32 - 2u >=37
+
+arcs inside B, violating the s=7 bound \(7(17-7)/2=35\).
+If u=2, the remaining five k values must all equal six,
+so these five B vertices send at least \(5\cdot7=35\)
+arcs inside B, violating the s=5 bound \(5(17-5)/2=30\).
+
+Consequently, for every high vertex either its local cut is
+impossible or its outneighborhood has weight at least eight.
+The global average bound (W) says \(\sum_{v\in H}W(v)\le7h\)
+with \(h>0\), contradiction. **This completes the finite
+(24,8) proof given its two explicitly stated local prerequisites.**
+
+This rearrangement simplifies an existing author-derived restricted
+finite proof; it is **not** an independently reviewed theorem or a
+new advance beyond the finite case previously certified externally.
 
 ## Independent arithmetic audit and adversarial control
+
+The [compact z=3 boundary checker](../../scripts/ch24_z3_capacity.py) independently
+replays the 34-versus-33 inequality, its sharp relaxed profile, the
+exceptional z=2 subset contradiction, and the one-unit weakened-cut
+negative control. It checks necessary integer constraints, not graphs.
 
 The [histogram checker](../../scripts/ch24_weighted_deficit.py) enumerates **relaxed** integer histograms rather than 24-vertex graphs. It independently tests the *new* disjunction W>=8 OR B-subset-capacity violation against all integer profiles meeting (1), without using the old e(B,A) bound or its 83 survivors. It uses compositions of degree-count histograms rather than the original sorted-tuple implementation. Its unit tests include a deliberately weakened cut, replacing 74-2m by 73-2m.
 
@@ -111,6 +160,8 @@ The two one-unit-weakened survivors have A profile (2^7,7) and k multisets (0,0,
 
 Run from the repository root:
 
+    python3 scripts/ch24_z3_capacity.py
+    python3 -m unittest discover -s tests -p 'test_ch24_z3_capacity.py' -v
     python3 scripts/ch24_weighted_deficit.py
     python3 -m unittest discover -s tests -p 'test_ch24_weighted_deficit.py' -v
 
