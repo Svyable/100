@@ -31,6 +31,27 @@ e(G)\le {n\choose2}-2.}\tag{2}
 
 This \(2\)-arc deficit is **sharp at every \(n\ge4\)**, not a guessed or asymptotic bound. The graph must be oriented; allowing digons invalidates the unordered-pair counting.
 
+### Equality-case rigidity (new structural strengthening)
+
+**Rigidity theorem.** Suppose \(g=4\), \(n\ge4\), \(\delta^+(G)\ge1\), and equality holds in (2):
+
+\[
+e(G)={n\choose2}-2.
+\]
+
+Then, up to an isomorphism, \(G\) consists of a chordless **directed four-cycle**, together with \(n-4\) vertices ordered transitively, each pointing to all four cycle vertices. In particular, the **entire internal outdegree multiset** is exactly
+
+\[
+\boxed{(n-1,n-2,\ldots,4,1,1,1,1).}
+\tag{R}
+\]
+
+**Proof.** There are exactly two missing unordered pairs. A shortest directed cycle has length \(\ell\ge4\), and all its chords are missing; hence \(\ell(\ell-3)/2\le2\), forcing \(\ell=4\). Its two diagonals account for *all* missing pairs in the graph.
+
+Write that directed cycle as \(c_0\to c_1\to c_2\to c_3\to c_0\). Every other vertex \(x\) is adjacent in exactly one direction to all four cycle vertices. To avoid the triangle \(c_i\to c_{i+1}\to x\to c_i\), the implication \(x\to c_i\Longrightarrow x\to c_{i+1}\) must hold for every index modulo four. Thus \(x\) either points to **all four** cycle vertices or receives from **all four**.
+
+The vertices outside the cycle form a tournament without directed triangles; they therefore have a transitive order \(x_1\to x_2\to\cdots\to x_{n-4}\), with every earlier vertex pointing to every later one. The last vertex \(x_{n-4}\) has no outgoing arc to another outside vertex. Since \(\delta^+\ge1\), it must point to the four-cycle. If any earlier \(x_i\) instead received from the cycle, then for any \(c_j\) the arcs \(c_j\to x_i\to x_{n-4}\to c_j\) would form a directed triangle. All outside vertices must therefore point to the cycle. Their outdegrees, read in transitive order, are \(n-1,n-2,\ldots,4\); each cycle vertex retains outdegree one. The graph is the sharp construction already given. □
+
 ## 2. A new weighted high-floor subset inequality
 
 Let \(H\) be an oriented triangle-free digraph on \(N\) vertices and let \(f_v\) be nonnegative *lower bounds* on its internal outdegrees. Sort them \(f_{(1)}\ge\cdots\ge f_{(N)}\). For a size \(s\ge4\), if
@@ -65,7 +86,9 @@ For each \(b\in B\), put \(q(b)=|\{a\in A:\alpha(a)\ge k(b)+2\}|\) and \(f(b)=\m
 \tag{4}
 \]
 
-The previous [B-small-subset filters](M074_B_INTERNAL_GIRTH.md) left **295** relaxed sorted \(\alpha,k\) pairs. The new theorem excludes **152** of them (74 first fail at \(s=4\), 49 at \(s=5\), 29 at \(s=6\)), leaving **143**. These are exact *integer-profile counts*, not graphs and not evidence of a universal theorem.
+The previous [B-small-subset filters](M074_B_INTERNAL_GIRTH.md) left **295** relaxed sorted \(\alpha,k\) pairs. The new two-missing-edge bound excludes **152** of them (74 first fail at \(s=4\), 49 at \(s=5\), 29 at \(s=6\)), leaving **143**. These are exact *integer-profile counts*, not graphs.
+
+**Extra equality test.** If equality holds in (4), every vertex of the selected high-floor set must have *exactly* its lower-bound internal outdegree, because their sum already exhausts the maximum possible internal arc count. The sorted internal lower-bound vector must therefore equal the rigid vector (R), with \(n=s\). This is a separate structural condition, strictly stronger than the total-arc inequality. Its nontrivial exclusions below occur for \(s=6\), where the rigid vector is \((5,4,1,1,1,1)\); e.g. required vector \((4,2,2,2,2,1)\) also sums to 13 but cannot occur.
 
 ### Independent C-cut combination
 
@@ -88,14 +111,14 @@ Thus every \(t\ge7\) profile must also satisfy the **new combined necessary cond
 \boxed{\sum_B k(b)\ge65-m.}\tag{5}
 \]
 
-Applying (5) **after** the new B-subset cut removes **15 more** relaxed pairs, yielding **128** unexcluded necessary-profile pairs. A concrete survivor in this weakened arithmetic relaxation is
+Applying (5) **after** the new B-subset cut removes **15 more** relaxed pairs, leaving 128. Applying the equality-case rigidity test to these remaining pairs eliminates **25** more, all at \(s=6\), yielding **103** unexcluded necessary-profile pairs. A concrete survivor in this weakened arithmetic relaxation is
 
 \[
 \alpha=(2^7,7,8),\qquad
 k=(0^4,5,5,6,6,7,7).
 \]
 
-It meets all the stated scalar inequalities, with \(m=29\), \(\sum k=36\), and \(e(C,C)\ge16\); **it is not a graph witness**. Crucially, the remaining 128 profiles have not been shown to realize valid incidences, let alone a complete 27-vertex counterexample.
+It meets all the stated scalar inequalities, with \(m=29\), \(\sum k=36\), and \(e(C,C)\ge16\); **it is not a graph witness**. Crucially, the remaining 103 profiles have not been shown to realize valid incidences, let alone a complete 27-vertex counterexample.
 
 ## 4. Exact reproducibility and adversarial controls
 
@@ -106,6 +129,6 @@ python3 scripts/ch27_girth_deficit.py --check
 python3 -m unittest discover -s tests -p 'test_ch27_girth_deficit.py' -v
 ```
 
-The checker recomputes all \(166\times924=153{,}384\) starting relaxed profiles, delegates the *previous* gates to their existing exact implementation, and applies (4) followed by (5). A separate histogram/adjacency-matrix test independently regenerates the 295 baseline, checks all 152+15 new exclusions and verifies exact small-graph sharpness on four and five vertices. **Negative control:** improperly weakening the two-missing-edge deficit to one leaves **191** profiles after both cuts, instead of 128. Disabling the B girth cut entirely leaves **275** after the C cut alone.
+The checker recomputes all \(166\times924=153{,}384\) starting relaxed profiles, delegates the *previous* gates to their existing exact implementation, and applies (4) followed by (5). A separate histogram/adjacency-matrix test independently regenerates the 295 baseline, checks all 152+15+25 new exclusions and verifies exact small-graph sharpness on four and five vertices. **Negative control:** improperly weakening the two-missing-edge deficit to one **and disabling the equality test** leaves **191** profiles after the B and C cuts, instead of 103. Disabling both new B checks leaves **275** after the C cut alone. Disabling just equality-case rigidity leaves **128**.
 
-The general lemma is an elementary universal statement, but the reduction from 295 to 128 is only an exact computation over relaxed ten-vertex degree profiles. Neither is an unrestricted Caccetta–Häggkvist proof. No novelty or external acceptance claim is made; expert inspection of proof, enumeration, and prior literature remains essential.
+The general lemmas are elementary universal statements, but the reduction from 295 to 103 is only an exact computation over relaxed ten-vertex degree profiles. Neither is an unrestricted Caccetta–Häggkvist proof. No novelty or external acceptance claim is made; expert inspection of proof, enumeration, and prior literature remains essential.
