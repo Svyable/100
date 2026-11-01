@@ -226,11 +226,11 @@ def eligible_wave_items(work_items, jobs):
                 "reason": "stop_range: campaign blocker places the range in known mathematics",
             })
             continue
-        if item["status"] == "waiting_on_dependencies":
-            refused.append({
-                "id": item["id"],
-                "reason": "waiting_on_dependencies: " + ",".join(item["depends_on"]),
-            })
+        if item["status"] != "runnable":
+            reason = (("waiting_on_dependencies: " + ",".join(item["depends_on"]))
+                      if item["status"] == "waiting_on_dependencies"
+                      else "externally_blocked: the obligation is not executable")
+            refused.append({"id": item["id"], "reason": reason})
             continue
         kept.append(item)
     return kept, refused
@@ -366,7 +366,7 @@ def render(doc=None):
         f"| Active problems touched | **{doc['problems_touched']}** / 100 | Coverage of the registry, not resolutions |",
         f"| Cohort shapes touched (via jobs) | {doc['cohort_shapes_touched']} / {doc['shape_count']} | Shared attack templates |",
         f"| Derived work-queue size | {doc['work_queue_size']} ({doc['runnable_in_queue']} runnable) | Source: `scripts/work.py` |",
-        f"| Refused this wave | {doc['refused_count']} | stop_range and dependency-blocked |",
+        f"| Refused this wave | {doc['refused_count']} | stop_range, externally blocked or dependency-blocked |",
         f"| Proof-obligation frontier | runnable={doc['frontier_counts']['runnable']}, "
         f"blocked={doc['frontier_counts']['externally_blocked']}, "
         f"waiting={doc['frontier_counts']['waiting_on_dependencies']}, "
