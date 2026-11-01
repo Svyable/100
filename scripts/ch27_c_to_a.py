@@ -84,7 +84,7 @@ def report():
             "total_profiles": sum(counts.values()),
             "stages": dict(sorted(counts.items())),
             "survivors": survivors,
-            "claim": "All 295 formerly unresolved z=4 integer profiles excluded, conditional on the stated local prerequisites"}
+            "claim": "All 295 original z=4 residual integer profiles excluded: 4 upstream z4-sink, 284 C-to-A, 7 terminal; conditional on the stated local prerequisites"}
 
 
 def main(argv=None):
@@ -97,7 +97,8 @@ def main(argv=None):
         assert result["stages"] == {
             "cut": 149396, "subset_capacity": 3515, "triangle_three": 132,
             "minout_two_5": 22, "minout_two_6": 24,
-            "c_to_a_bottleneck": 288,
+            "z4_sink_cut": 4,
+            "c_to_a_bottleneck": 284,
             "five_protected_threes_overfill_five_vertices": 1,
             "protected_A_forces_C_tournament_sink": 3,
             "eight_vertex_degree_defect": 3,
