@@ -1,7 +1,8 @@
 # Lean proof pipeline
 
 The objective is more independently checked, reusable mathematics per unit of effort.
-“100x” is an ambition, not a measured speedup or a promise to solve the portfolio.
+“100x” is an ambition for operating capacity (see [SCALE.md](SCALE.md) and the
+proof-exchange wave), not a measured speedup or a promise to solve the portfolio.
 The implementation has thirteen audited declarations across Ramsey and the two-element
 Frankl case. Caccetta–Häggkvist remains queued, not formalized.
 

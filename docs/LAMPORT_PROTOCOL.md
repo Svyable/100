@@ -132,9 +132,11 @@ Measure over each completed campaign interval:
 - **Verifier cost per useful distinction**, with exact bounds and
   independently replayed artifacts.
 
-The proposal is a 10x *operating objective*, not an achieved speedup. Test it
-against the existing baseline. An extra ledger that does not accelerate
-verified progress is overhead and should be removed.
+The proposal is a 10x *operating objective* for proof-obligation throughput, and
+the companion [proof-exchange wave](PROOF_EXCHANGE.md) targets **100 claimable
+parallel slots** across the portfolio. Neither number is an achieved theorem
+speedup. Test both against the existing baseline. An extra ledger that does not
+accelerate verified progress is overhead and should be removed.
 
 ## 6. Enforced checks and integration
 
