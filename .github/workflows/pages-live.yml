@@ -29,7 +29,13 @@ jobs:
         run: |
           npm install --no-save --ignore-scripts playwright@1.56.1 axe-core@4.10.3
           npx playwright install --with-deps chromium
-      - name: Audit live public Pages in Chromium
+      - name: Serve checked-out Pages for PR browser checks
+        if: github.event_name == 'pull_request'
+        run: |
+          python3 -m http.server 8000 --bind 127.0.0.1 --directory docs >/tmp/pages-preview.log 2>&1 &
+      - name: Audit public site (main) or exact PR preview (pull request)
+        env:
+          PAGES_BASE: ${{ github.event_name == 'pull_request' && 'http://127.0.0.1:8000/' || 'https://svyable.github.io/100/' }}
         run: node tests/pages_live.cjs
       - uses: actions/upload-artifact@v4
         if: always()
