@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M044: exact type-parity replay and missing-witness boundary · 100</title>
+<meta name="description" content="Work packet: `O-M044-01` (claim #110; scope digest `4f9c55ca7a8b68eb1673e4d122d950255a0def42d2c07e63126f90c698ad17fd`). Outcome: `gap_reported`, not discharged. Checked 2026-11-01.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m044-type-parity-audit/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M044: exact type-parity replay and missing-witness boundary · 100">
+<meta property="og:description" content="Work packet: `O-M044-01` (claim #110; scope digest `4f9c55ca7a8b68eb1673e4d122d950255a0def42d2c07e63126f90c698ad17fd`). Outcome: `gap_reported`, not discharged. Checked 2026-11-01.">
+<meta property="og:url" content="https://svyable.github.io/100/library/m044-type-parity-audit/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M044: exact type-parity replay and missing-witness boundary</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#pinned-primary-source">Pinned primary source</a></li><li class="toc-l2"><a href="#what-was-checked-exactly">What was checked exactly</a></li><li class="toc-l2"><a href="#precise-unverified-dependencies">Precise unverified dependencies</a></li><li class="toc-l2"><a href="#next-decisive-falsifier--replay-contract">Next decisive falsifier / replay contract</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M044/" title="Kaplansky direct-finiteness conjecture">M044</a><a class="chip chip-link" href="../../problems/M049/" title="Soficity conjecture">M049</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M044_TYPE_PARITY_AUDIT.md" rel="noopener noreferrer">research/M044_TYPE_PARITY_AUDIT.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M044: exact type-parity replay and missing-witness boundary</h1>
+<p><strong>Work packet:</strong> `O-M044-01` (claim #110; scope digest `4f9c55ca7a8b68eb1673e4d122d950255a0def42d2c07e63126f90c698ad17fd`). <strong>Outcome:</strong> `gap_reported`, not discharged. Checked 2026-11-01.</p>
+<h2 id="pinned-primary-source">Pinned primary source<a class="anchor" href="#pinned-primary-source" aria-label="Link to this section">#</a></h2>
+<p>OpenAI, <em>A Torsion-Free Group Algebra That Is Not Directly Finite</em>, October 4, 2026, <a href="https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/direct-finiteness.pdf" rel="noopener noreferrer">pinned manuscript</a> and its <a href="https://github.com/openai/math/tree/4eaee87548250b2682affda7d05d947c05554bae/preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/build/sections" rel="noopener noreferrer">LaTeX source</a>. SHA-256 of the raw pinned source files:</p>
+<div class="table-wrap"><table><thead><tr><th>File in `build/sections/`</th><th>SHA-256</th></tr></thead><tbody><tr><td>`algebra.tex`</td><td>`71fe26eab4e6a01564a687c522bbceb8923182c0201af9685eac84d9f86a141f`</td></tr><tr><td>`random.tex`</td><td>`bb172b92ba622e262c2bf124e70c3cd55922200083c09db658615759b81323c4`</td></tr><tr><td>`assembly.tex`</td><td>`3987e23ea7c5c8d217ca539d5a307d59f8eac5b8381a0afe411125e57f0bee4a`</td></tr></tbody></table></div>
+<p>The <strong>assembly</strong> section expressly selects an outcome of a conditioned random matching model instead of enumerating the matching edges. The paper gives a construction by existence, not a particular edge-labeled pair of graphs. Consequently it supplies neither a concrete list of cone relators nor concrete root-to-vertex words for the proposed `a,b,c` in `F_2[G]`. The abstract definitions in Proposition &quot;Parity criterion&quot; are <strong>not</strong> a replayable input file. We cannot truthfully report either exact published-support group-ring multiplication or an independent witness. This is an <em>extractability gap</em>, not a counterexample to the manuscript&#x27;s theorem or a proof that no finite witness exists.</p>
+<h2 id="what-was-checked-exactly">What was checked exactly<a class="anchor" href="#what-was-checked-exactly" aria-label="Link to this section">#</a></h2>
+<p>`python3 scripts/m044_type_audit.py --check` implements finite field arithmetic in `F_2[x]/(x^7+x+1)` (checking all 127 nonzero elements have multiplicative inverses), enumerates all `q^2+q+1 = 16,513` normalized projective points and lines for `q=128`, and enumerates the `16,513 × 129 = 2,130,177` incidences. Each line has 129 distinct points and each point lies on 129 lines. For two distinct lines the unique projective intersection follows from rank two of independent linear forms; the checker also cross-product-checks deterministic pairs. These are finite computations and elementary projective geometry, not a review of the random matching estimates.</p>
+<p>The seven complements of the Fano-plane lines have size four, meet pairwise in two elements, and each of the seven extra letters belongs to four complements. The ordinary part of two prescribed label sets intersects in 129 points for the same line, and one for different lines. The extra part contributes an even intersection except for the distinguished root with itself, where it contributes seven. Thus the exact parity hypotheses of Proposition &quot;Parity criterion&quot; hold at the <strong>type</strong> level.</p>
+<p>As a small, explicit type-only allocation, take `m=5`, put 161 vertices of each of the seven extra types in distinct line classes in `A`, 129 of each in distinct line classes in `B`, and place the unique root in an unused `A` line class. There are enough line classes (`7×161+1=1,128 &lt; 16,513` and `7×129=903 &lt; 16,513`). The seven extra letters each occur `4×161+1=645` times in `A` and `4×129=516` times in `B`, exactly matching each ordinary letter&#x27;s `129m=645` and `129(m−1)=516` occurrences. The type allocation has 82,565 `A` vertices and 66,052 `B` vertices. <strong>No edges were matched</strong>: `m=5` is not asserted to meet the manuscript&#x27;s asymptotic girth, spherical-arrangement, root-protection, or torsion-freeness conditions.</p>
+<p>The tests reject a modified Fano complement, a duplicated complement, an invalid residue class for `m`, and a reducible polynomial `x^7+1`. The projective census is a different arithmetic path from the Fano combinatorics; neither is a second group-ring multiplication.</p>
+<h2 id="precise-unverified-dependencies">Precise unverified dependencies<a class="anchor" href="#precise-unverified-dependencies" aria-label="Link to this section">#</a></h2>
+<ol><li>An explicit pair of labeled matching graphs with exact roots and a verified no-arrangements / root-protection certificate is <strong>absent</strong>.</li><li>Without that graph, the finite group presentation and the exact supports of `a,b,c` cannot be extracted for independent word reduction.</li><li>The manuscript&#x27;s probabilistic and topological arguments, including torsion-freeness and nontriviality of the proposed `c`, were <strong>not</strong> independently checked here.</li><li>Therefore `ab=1`, `ac=0`, `c≠0`, `ba≠1`, and the M049 nonsoficity consequence remain <strong>unverified claims</strong> in this audit. Do not change `data/solved.json`, claim-review status, or obligation status.</li></ol>
+<h2 id="next-decisive-falsifier--replay-contract">Next decisive falsifier / replay contract<a class="anchor" href="#next-decisive-falsifier--replay-contract" aria-label="Link to this section">#</a></h2>
+<p>Obtain a pinned concrete pair `Γ_A, Γ_B` with every vertex&#x27;s signed outgoing labels, matched endpoint, two roots, and the finite presentation derived from the cones. Preserve input hashes. Independently check immersion, all type parities, girth, no forbidden arrangements and root protection; extract exact path words for the group-ring supports. Then use <strong>two genuinely distinct</strong> group-ring multiplication/reduction implementations to test `ab=1` and `ac=0`, and independently certify `c≠0`. A trace with `ab≠1`, `ba=1`, a support mismatch, or a failed root-protection check would be decisive against that particular candidate. A failed search or a type-only success is <strong>not</strong> a refutation or verification of the claimed existence theorem.</p>
+<p><strong>Status:</strong> `O-M044-01` remains open as a mathematical obligation; the claim issue for this <em>bounded attempt</em> can close with a gap report. No independent reviewer, theorem, accepted work item, or executed model benchmark is recorded.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

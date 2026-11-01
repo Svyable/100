@@ -123,6 +123,11 @@
       "url": "https://svyable.github.io/100/library/claim-reviews-2026/"
     },
     {
+      "title": "M044: exact type-parity replay and missing-witness boundary",
+      "source": "research/M044_TYPE_PARITY_AUDIT.md",
+      "url": "https://svyable.github.io/100/library/m044-type-parity-audit/"
+    },
+    {
       "title": "Foundational sources and 2026 claim watch",
       "source": "docs/SOURCES.md",
       "url": "https://svyable.github.io/100/library/sources/"

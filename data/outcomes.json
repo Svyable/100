@@ -47,6 +47,21 @@
         "agent_hours": 0.5
       },
       "note": "Two-path exact falsifier, tests, known GF(2) formal/function obstruction and source audit. Approximate author/tool work time; no independent reviewer, no new theorem, no obligation discharge."
+    },
+    {
+      "work_id": "O-M044-01",
+      "scope_sha256": "4f9c55ca7a8b68eb1673e4d122d950255a0def42d2c07e63126f90c698ad17fd",
+      "author": "ChatGPT (M044 type-parity source audit)",
+      "outcome": "gap_reported",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/110",
+      "pr_url": "https://github.com/Svyable/100/pull/111",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.8
+      },
+      "note": "Pinned October 4 source supplies a probabilistically selected matching outcome, not concrete graph edges, relators or group-ring supports. Independently enumerated type-level PG(2,128) and Fano parity, with mutation controls; no group-ring products, independent reviewer, or obligation discharge."
     }
   ]
 }
