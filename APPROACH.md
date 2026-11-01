@@ -6,7 +6,7 @@ Attack shapes and scheduling bonuses. A shape is not a theorem, not a claim that
 
 Dispatch score = editorial score + readiness + an action bonus. The bonus is a scheduling weight. It is not evidence, not a probability, and it does not change readiness. A known benchmark still earns no novelty.
 
-**30 shapes** cover all 100 problems. **44 jobs** (one action on one shape) replace a per-problem queue. **80 problems have no campaign**; each of them points at a shared shape instead of a private method. **2 recorded experiments are refused** because the campaign blocker already places that range inside known mathematics.
+**30 shapes** cover all 100 problems. **44 jobs** (one action on one shape) replace a per-problem queue. **79 problems have no campaign**; each of them points at a shared shape instead of a private method. **3 recorded experiments are refused** because the campaign blocker already places that range inside known mathematics.
 
 ## Action bonuses
 
@@ -103,261 +103,261 @@ M098: De-scope the 2026 infinitary result from M098's resolution watch; retain t
 
 M019: The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity. M006: The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification.
 
-### 12. Build the missing engine
+### 12. Replay a published certificate
 
-**Shape:** One block, weights against simples (`modular_representations`). **Problems:** M048. **Best dispatch rank:** 20.
-
-Build engine group_characters once. Exact Brauer-character and weight counts for small finite groups and primes, compared entrywise. One build serves this shape, including M047.
-
-_Computable modality, no verifier, and the engine roadmap names the missing engine._
-
-### 13. Replay a published certificate
-
-**Shape:** Certified zero counts (`critical_zeros`). **Problems:** M002. **Best dispatch rank:** 21.
+**Shape:** Certified zero counts (`critical_zeros`). **Problems:** M002. **Best dispatch rank:** 20.
 
 Reproduce a published primitive character modulo 3 or 5 with the correct root number, branch conventions and independently checked zero count; document why this is known mathematics, not GRH progress.
 
 _The new engine verifies χ4 only; the generalized Riemann hypothesis concerns all Dirichlet characters. Replaying a separate primitive-character certificate tests the reusable contour and gamma-factor implementation._
 
-### 14. Fill the shared attack shape
+### 13. Fill the shared attack shape
 
-**Shape:** One family, one explicit constant (`extremal_asymptotics`). **Problems:** M076, M072, M077. **Best dispatch rank:** 22.
+**Shape:** One family, one explicit constant (`extremal_asymptotics`). **Problems:** M076, M072, M077. **Best dispatch rank:** 21.
 
 Shape extremal_asymptotics (3 problems, one write-up): Name a structured family and an explicit constant, and compare it with a cited general bound before calling it an improvement. Full shape, certificate and falsifier are in APPROACH.md.
 
 _No campaign yet. Fill one restricted statement inside the shared shape._
 
-### 15. Audit claim scope
+### 14. Audit claim scope
 
-**Shape:** One model, one gap (`complexity_barriers`). **Problems:** M085. **Best dispatch rank:** 23.
+**Shape:** One model, one gap (`complexity_barriers`). **Problems:** M085. **Best dispatch rank:** 22.
 
 Independently audit the reduction's completeness and soundness estimates and its quantitative dependence on gap parameters.
 
 _A manuscript may already settle this entry. The next step is the review's own check, not a new lemma._
 
-### 16. Fill the shared attack shape
+### 15. Fill the shared attack shape
 
-**Shape:** Families outside proved degree bounds (`polynomial_maps`). **Problems:** M042. **Best dispatch rank:** 24.
+**Shape:** Families outside proved degree bounds (`polynomial_maps`). **Problems:** M042. **Best dispatch rank:** 23.
 
 Shape polynomial_maps (2 problems, one write-up): Name a polynomial or Weyl family that published degree bounds do not cover, and refuse exhaustive search inside those bounds. Full shape, certificate and falsifier are in APPROACH.md.
 
 _No campaign yet. Fill one restricted statement inside the shared shape._
 
-### 17. Audit claim scope
+### 16. Audit claim scope
 
-**Shape:** One set, dimension and measure enclosed (`distance_sets`). **Problems:** M100. **Best dispatch rank:** 25.
+**Shape:** One set, dimension and measure enclosed (`distance_sets`). **Problems:** M100. **Best dispatch rank:** 24.
 
 Audit FalconerAllDimensions.lean definition fidelity, measure conventions and proof dependencies; obtain independent harmonic-analysis review.
 
 _A manuscript may already settle this entry. The next step is the review's own check, not a new lemma._
 
-### 18. Fill the shared attack shape
+### 17. Fill the shared attack shape
 
-**Shape:** One model, one gap (`complexity_barriers`). **Problems:** M082, M086, M087, M090, M081. **Best dispatch rank:** 29.
+**Shape:** One model, one gap (`complexity_barriers`). **Problems:** M082, M086, M087, M090, M081. **Best dispatch rank:** 28.
 
 Shape complexity_barriers (6 problems, one write-up): Name the model and audit any claimed reduction's alphabet, completeness and soundness before writing a new reduction. Full shape, certificate and falsifier are in APPROACH.md.
 
 _No campaign yet. Fill one restricted statement inside the shared shape._
 
-### 19. Fill the shared attack shape
+### 18. Fill the shared attack shape
 
-**Shape:** One format, replayed exactly (`algebraic_complexity`). **Problems:** M083, M089. **Best dispatch rank:** 30.
+**Shape:** One format, replayed exactly (`algebraic_complexity`). **Problems:** M083, M089. **Best dispatch rank:** 29.
 
 Shape algebraic_complexity (4 problems, one write-up): Fix the field and the format, then replay a published certificate or state the class a new hitting set claims to cover. Full shape, certificate and falsifier are in APPROACH.md.
 
 _No campaign yet. Fill one restricted statement inside the shared shape._
 
-### 20. Audit claim scope
+### 19. Audit claim scope
 
-**Shape:** Abundance, hypothesis by hypothesis (`birational_pairs`). **Problems:** M030. **Best dispatch rank:** 36.
+**Shape:** Abundance, hypothesis by hypothesis (`birational_pairs`). **Problems:** M030. **Best dispatch rank:** 35.
 
 Check the main theorem and dependencies against the canonical klt characteristic-zero formulation, particularly section production and actual basepoint-freeness.
 
 _A manuscript may already settle this entry. The next step is the review's own check, not a new lemma._
 
-### 21. Fill the shared attack shape
+### 20. Fill the shared attack shape
 
-**Shape:** Which axiom the restriction drops (`gauge_theory`). **Problems:** M091. **Best dispatch rank:** 37.
+**Shape:** Which axiom the restriction drops (`gauge_theory`). **Problems:** M091. **Best dispatch rank:** 36.
 
 Shape gauge_theory (1 problems, one write-up): The mass gap is not finitely falsifiable; name the lattice, the gauge group, and which Clay axiom the restriction drops. Full shape, certificate and falsifier are in APPROACH.md.
 
 _No campaign yet. Fill one restricted statement inside the shared shape._
 
-### 22. Fill the shared attack shape
+### 21. Fill the shared attack shape
 
-**Shape:** Exponential-algebraic certificates (`exponential_fields`). **Problems:** M099, M011. **Best dispatch rank:** 38.
+**Shape:** Exponential-algebraic certificates (`exponential_fields`). **Problems:** M099, M011. **Best dispatch rank:** 37.
 
 Shape exponential_fields (2 problems, one write-up): Treat Schanuel and the real exponential field as one shape: one explicit tuple or one explicit exponential sentence, certified. Full shape, certificate and falsifier are in APPROACH.md.
 
 _No campaign yet. Fill one restricted statement inside the shared shape._
 
-### 23. Audit claim scope
+### 22. Audit claim scope
 
-**Shape:** One ansatz, one enclosure (`pde_regularity`). **Problems:** M054, M060. **Best dispatch rank:** 39.
+**Shape:** One ansatz, one enclosure (`pde_regularity`). **Problems:** M054, M060. **Best dispatch rank:** 38.
 
 M054: Compare Hintz v2 and Szeftel hypotheses and companion dependencies, and seek expert adjudication of scattering and asymptotic completeness. M060: Compare v3 withdrawal notice with v5, audit the set-valued fixed-point and laminate-to-gradient argument, and request a calculus-of-variations review.
 
 _A manuscript may already settle this entry. The next step is the review's own check, not a new lemma._
 
-### 24. Audit claim scope
+### 23. Audit claim scope
 
-**Shape:** One dimension, one endpoint (`harmonic_analysis`). **Problems:** M055, M056. **Best dispatch rank:** 40.
+**Shape:** One dimension, one endpoint (`harmonic_analysis`). **Problems:** M055, M056. **Best dispatch rank:** 39.
 
 M055: Check the all-dimensional local smoothing theorem, its Kakeya maximal corollary and exact hypotheses; distinguish 4D direct theorem from universal consequence. M056: State M056's exact dimension and p/q exponent range, audit the October 25 local-smoothing-to-restriction implication (including endpoint exclusions), compare the author Lean scope to its paper, and obtain independent harmonic-analysis review.
 
 _A manuscript may already settle this entry. The next step is the review's own check, not a new lemma._
 
-### 25. Fill the shared attack shape
+### 24. Fill the shared attack shape
 
-**Shape:** One presentation, one product (`group_rings`). **Problems:** M043. **Best dispatch rank:** 43.
+**Shape:** One presentation, one product (`group_rings`). **Problems:** M043. **Best dispatch rank:** 42.
 
 Shape group_rings (3 problems, one write-up): Take one finitely presented group and one coefficient field, and check a product or an idempotent by an independent multiplication. Full shape, certificate and falsifier are in APPROACH.md.
 
 _No campaign yet. Fill one restricted statement inside the shared shape._
 
-### 26. Fill the shared attack shape
+### 25. Fill the shared attack shape
 
-**Shape:** One quiver, one resolution (`artin_algebras`). **Problems:** M045, M046. **Best dispatch rank:** 44.
+**Shape:** One quiver, one resolution (`artin_algebras`). **Problems:** M045, M046. **Best dispatch rank:** 43.
 
 Shape artin_algebras (2 problems, one write-up): Fix one finite-dimensional algebra by a quiver and relations, and recompute its finitistic dimension or the Auslander-Reiten vanishing. Full shape, certificate and falsifier are in APPROACH.md.
 
 _No campaign yet. Fill one restricted statement inside the shared shape._
 
-### 27. Fill the shared attack shape
+### 26. Fill the shared attack shape
 
-**Shape:** One block, weights against simples (`modular_representations`). **Problems:** M047. **Best dispatch rank:** 46.
+**Shape:** One block, weights against simples (`modular_representations`). **Problems:** M047. **Best dispatch rank:** 45.
 
 Shape modular_representations (2 problems, one write-up): Take one finite group and one prime, and compare the number of weights with the number of simple modules in a block. Full shape, certificate and falsifier are in APPROACH.md.
 
 _No campaign yet. Fill one restricted statement inside the shared shape._
 
-### 28. Fill the shared attack shape
+### 27. Fill the shared attack shape
 
-**Shape:** One age, one amalgamation check (`homogeneous_structures`). **Problems:** M050. **Best dispatch rank:** 47.
+**Shape:** One age, one amalgamation check (`homogeneous_structures`). **Problems:** M050. **Best dispatch rank:** 46.
 
 Shape homogeneous_structures (1 problems, one write-up): State the language, then check amalgamation for one explicit finite relational structure. Full shape, certificate and falsifier are in APPROACH.md.
 
 _No campaign yet. Fill one restricted statement inside the shared shape._
 
-### 29. Fill the shared attack shape
+### 28. Fill the shared attack shape
 
-**Shape:** Exact counts on a finite torus (`lattice_models`). **Problems:** M061, M062, M063, M064, M070. **Best dispatch rank:** 48.
+**Shape:** Exact counts on a finite torus (`lattice_models`). **Problems:** M061, M062, M063, M064, M070. **Best dispatch rank:** 47.
 
 Shape lattice_models (5 problems, one write-up): Name the lattice and the exponent, then certify an exact count or inequality on one finite torus. Full shape, certificate and falsifier are in APPROACH.md.
 
 _No campaign yet. Fill one restricted statement inside the shared shape._
 
-### 30. Fill the shared attack shape
+### 29. Fill the shared attack shape
 
-**Shape:** One map, one enclosure (`rigidity_dynamics`). **Problems:** M065, M066, M067, M068, M069. **Best dispatch rank:** 52.
+**Shape:** One map, one enclosure (`rigidity_dynamics`). **Problems:** M065, M066, M067, M068, M069. **Best dispatch rank:** 51.
 
 Shape rigidity_dynamics (5 problems, one write-up): Name the map or the billiard, and certify one periodic orbit, one entropy enclosure, or one correlation check. Full shape, certificate and falsifier are in APPROACH.md.
 
 _No campaign yet. Fill one restricted statement inside the shared shape._
 
-### 31. Fill the shared attack shape
+### 30. Fill the shared attack shape
 
-**Shape:** One field, two computations (`galois_representations`). **Problems:** M003, M010, M013, M015, M016, M017. **Best dispatch rank:** 58.
+**Shape:** One field, two computations (`galois_representations`). **Problems:** M003, M010, M013, M015, M016, M017. **Best dispatch rank:** 57.
 
 Shape galois_representations (6 problems, one write-up): Pick one explicit number field or elliptic curve and one finite invariant the conjecture predicts, and compute it two ways. Full shape, certificate and falsifier are in APPROACH.md.
 
 _No campaign yet. Fill one restricted statement inside the shared shape._
 
-### 32. Fill the shared attack shape
+### 31. Fill the shared attack shape
 
-**Shape:** Explicit Diophantine certificates (`effective_diophantine`). **Problems:** M004, M020. **Best dispatch rank:** 59.
+**Shape:** Explicit Diophantine certificates (`effective_diophantine`). **Problems:** M004, M020. **Best dispatch rank:** 58.
 
 Shape effective_diophantine (4 problems, one write-up): State one explicit identity or inequality on a named class that a cited theorem or computation does not already settle. Full shape, certificate and falsifier are in APPROACH.md.
 
 _No campaign yet. Fill one restricted statement inside the shared shape._
 
-### 33. Fill the shared attack shape
+### 32. Fill the shared attack shape
 
-**Shape:** Explicit sieve gaps (`sieve_infinitude`). **Problems:** M005, M007, M008, M012, M018. **Best dispatch rank:** 60.
+**Shape:** Explicit sieve gaps (`sieve_infinitude`). **Problems:** M005, M007, M008, M012, M018. **Best dispatch rank:** 59.
 
 Shape sieve_infinitude (5 problems, one write-up): Name one modulus, admissible tuple or polynomial that a cited sieve theorem does not already settle, and write the missing estimate. Full shape, certificate and falsifier are in APPROACH.md.
 
 _No campaign yet. Fill one restricted statement inside the shared shape._
 
-### 34. Fill the shared attack shape
+### 33. Fill the shared attack shape
 
-**Shape:** Certified zero counts (`critical_zeros`). **Problems:** M009. **Best dispatch rank:** 63.
+**Shape:** Certified zero counts (`critical_zeros`). **Problems:** M009. **Best dispatch rank:** 62.
 
 Shape critical_zeros (3 problems, one write-up): Build one interval-arithmetic zero-count certificate and reuse it for every problem in this shape. Full shape, certificate and falsifier are in APPROACH.md.
 
 _No campaign yet. Fill one restricted statement inside the shared shape._
 
-### 35. Fill the shared attack shape
+### 34. Fill the shared attack shape
 
-**Shape:** One variety, one cycle class (`motivic_cycles`). **Problems:** M021, M022, M023, M024, M029. **Best dispatch rank:** 73.
+**Shape:** One variety, one cycle class (`motivic_cycles`). **Problems:** M021, M022, M023, M024, M029. **Best dispatch rank:** 72.
 
 Shape motivic_cycles (5 problems, one write-up): Fix dimension, codimension and coefficients, then compute one cycle class on one explicit variety in a range a cited source still treats as open. Full shape, certificate and falsifier are in APPROACH.md.
 
 _No campaign yet. Fill one restricted statement inside the shared shape._
 
-### 36. Fill the shared attack shape
+### 35. Fill the shared attack shape
 
-**Shape:** Height-bounded rational points (`diophantine_geometry`). **Problems:** M025, M026, M027, M028. **Best dispatch rank:** 77.
+**Shape:** Height-bounded rational points (`diophantine_geometry`). **Problems:** M025, M026, M027, M028. **Best dispatch rank:** 76.
 
 Shape diophantine_geometry (4 problems, one write-up): Fix dimension and the geometric hypothesis, then certify a rational-point or section search up to an explicit height on one variety. Full shape, certificate and falsifier are in APPROACH.md.
 
 _No campaign yet. Fill one restricted statement inside the shared shape._
 
-### 37. Audit claim scope
+### 36. Audit claim scope
 
-**Shape:** Hypotheses before constructions (`geometric_topology`). **Problems:** M037, M038. **Best dispatch rank:** 82.
+**Shape:** Hypotheses before constructions (`geometric_topology`). **Problems:** M037, M038. **Best dispatch rank:** 81.
 
 M037: Compare exact source hypotheses to a specialist formulation and obtain an expert check of the central p-adic action argument. M038: Read Engel's independent proof and its dependency on Alpöge's construction, verify smooth gluing and topological invariants, and solicit further specialist assessment.
 
 _A manuscript may already settle this entry. The next step is the review's own check, not a new lemma._
 
-### 38. Fill the shared attack shape
+### 37. Fill the shared attack shape
 
-**Shape:** One ansatz, one enclosure (`pde_regularity`). **Problems:** M051, M052, M053. **Best dispatch rank:** 85.
+**Shape:** One ansatz, one enclosure (`pde_regularity`). **Problems:** M051, M052, M053. **Best dispatch rank:** 84.
 
 Shape pde_regularity (5 problems, one write-up): Write the equation, the dimension and the function space, and certify one symmetric ansatz the literature has already isolated. Full shape, certificate and falsifier are in APPROACH.md.
 
 _No campaign yet. Fill one restricted statement inside the shared shape._
 
-### 39. Fill the shared attack shape
+### 38. Fill the shared attack shape
 
-**Shape:** One dimension, one endpoint (`harmonic_analysis`). **Problems:** M057, M058, M059. **Best dispatch rank:** 88.
+**Shape:** One dimension, one endpoint (`harmonic_analysis`). **Problems:** M057, M058, M059. **Best dispatch rank:** 87.
 
 Shape harmonic_analysis (5 problems, one write-up): Fix the dimension and the exponent endpoint before treating a corollary as a settlement of the registered conjecture. Full shape, certificate and falsifier are in APPROACH.md.
 
 _No campaign yet. Fill one restricted statement inside the shared shape._
 
-### 40. Fill the shared attack shape
+### 39. Fill the shared attack shape
 
-**Shape:** One form, one diagram (`four_manifolds`). **Problems:** M031, M032, M033. **Best dispatch rank:** 91.
+**Shape:** One form, one diagram (`four_manifolds`). **Problems:** M031, M032, M033. **Best dispatch rank:** 90.
 
 Shape four_manifolds (3 problems, one write-up): Restrict to one homeomorphism type or one unimodular form, and certify either a Kirby diagram or a named obstruction for that form. Full shape, certificate and falsifier are in APPROACH.md.
 
 _No campaign yet. Fill one restricted statement inside the shared shape._
 
-### 41. Fill the shared attack shape
+### 40. Fill the shared attack shape
 
-**Shape:** One complex, one index (`index_rigidity`). **Problems:** M034, M035, M036, M039. **Best dispatch rank:** 94.
+**Shape:** One complex, one index (`index_rigidity`). **Problems:** M034, M035, M036, M039. **Best dispatch rank:** 93.
 
 Shape index_rigidity (4 problems, one write-up): Name the group or the manifold and compute one index or signature identity on one explicit complex of small dimension. Full shape, certificate and falsifier are in APPROACH.md.
 
 _No campaign yet. Fill one restricted statement inside the shared shape._
 
-### 42. Fill the shared attack shape
+### 41. Fill the shared attack shape
 
-**Shape:** Hypotheses before constructions (`geometric_topology`). **Problems:** M040. **Best dispatch rank:** 98.
+**Shape:** Hypotheses before constructions (`geometric_topology`). **Problems:** M040. **Best dispatch rank:** 97.
 
 Shape geometric_topology (3 problems, one write-up): Name the dimension, boundary and smoothness, then compare a manuscript or certify one Reeb orbit on one explicit manifold. Full shape, certificate and falsifier are in APPROACH.md.
 
 _No campaign yet. Fill one restricted statement inside the shared shape._
 
-### 43. Stop: range is dominated
+### 42. Stop: range is dominated
 
-**Shape:** Families outside proved degree bounds (`polynomial_maps`). **Problems:** M041. **Best dispatch rank:** 99.
+**Shape:** Families outside proved degree bounds (`polynomial_maps`). **Problems:** M041. **Best dispatch rank:** 98.
 
 Do not enumerate degree-4 maps with coefficients in {-1,0,1}: Moh (1983) already covers plane maps of degree at most 100. Name one Newton-polygon family outside that degree bound and state the coefficient ring before any search.
 
 _Moh (1983) covers plane maps of degree at most 100. Degree-4 search on coefficients in {-1,0,1} sits inside that theorem, so the recorded experiment is refused._
+
+### 43. Stop: range is dominated
+
+**Shape:** One block, weights against simples (`modular_representations`). **Problems:** M048. **Best dispatch rank:** 99.
+
+Do not enlarge the named catalog inside order 100: that range is already covered by the 2007 computational verification. State a restricted family (for example blocks with a named defect-group isomorphism type) and a lemma outside that census.
+
+_Computational verification already covers every group of order at most 100. Extending the named catalog inside that bound cannot be a new theorem._
 
 ### 44. Stop: range is dominated
 
@@ -694,86 +694,86 @@ Keep the all-dimensional claim in scope audit, and certify one explicit set only
 | 17 | M097 | `mine_structure` | +6 | 98 | `tsp_gap` | Extend from graphic metrics to 1-2 and vertex-weighted metrics, and enumerate extreme points of the subtour polytope at n = 8 to search for gap-maximising instances. |
 | 18 | M098 | `scope_audit` | +16 | 96 | `logic_decision` | De-scope the 2026 infinitary result from M098's resolution watch; retain the first-order problem and cite a current specialist open-status source before changing evidence state. |
 | 19 | M019 | `mine_structure` | +6 | 95 | `effective_diophantine` | The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity. |
-| 20 | M048 | `build_engine` | +18 | 92 | `modular_representations` | Build engine group_characters once. Exact Brauer-character and weight counts for small finite groups and primes, compared entrywise. One build serves this shape, including M047. |
-| 21 | M002 | `replay_published` | +12 | 91 | `critical_zeros` | Reproduce a published primitive character modulo 3 or 5 with the correct root number, branch conventions and independently checked zero count; document why this is known mathematics, not GRH progress. |
-| 22 | M076 | `specify_shape` | +0 | 91 | `extremal_asymptotics` | Shape extremal_asymptotics (3 problems, one write-up): Name a structured family and an explicit constant, and compare it with a cited general bound before calling it an improvement. Full shape, certificate and falsifier are in APPROACH.md. |
-| 23 | M085 | `scope_audit` | +8 | 91 | `complexity_barriers` | Independently audit the reduction's completeness and soundness estimates and its quantitative dependence on gap parameters. |
-| 24 | M042 | `specify_shape` | +0 | 89 | `polynomial_maps` | Shape polynomial_maps (2 problems, one write-up): Name a polynomial or Weyl family that published degree bounds do not cover, and refuse exhaustive search inside those bounds. Full shape, certificate and falsifier are in APPROACH.md. |
-| 25 | M100 | `scope_audit` | +8 | 88 | `distance_sets` | Audit FalconerAllDimensions.lean definition fidelity, measure conventions and proof dependencies; obtain independent harmonic-analysis review. |
-| 26 | M006 | `mine_structure` | +6 | 85 | `effective_diophantine` | The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification. |
-| 27 | M072 | `specify_shape` | +0 | 85 | `extremal_asymptotics` | Shape extremal_asymptotics (3 problems, one write-up): Name a structured family and an explicit constant, and compare it with a cited general bound before calling it an improvement. Full shape, certificate and falsifier are in APPROACH.md. |
-| 28 | M077 | `specify_shape` | +0 | 85 | `extremal_asymptotics` | Shape extremal_asymptotics (3 problems, one write-up): Name a structured family and an explicit constant, and compare it with a cited general bound before calling it an improvement. Full shape, certificate and falsifier are in APPROACH.md. |
-| 29 | M082 | `specify_shape` | +0 | 83 | `complexity_barriers` | Shape complexity_barriers (6 problems, one write-up): Name the model and audit any claimed reduction's alphabet, completeness and soundness before writing a new reduction. Full shape, certificate and falsifier are in APPROACH.md. |
-| 30 | M083 | `specify_shape` | +0 | 83 | `algebraic_complexity` | Shape algebraic_complexity (4 problems, one write-up): Fix the field and the format, then replay a published certificate or state the class a new hitting set claims to cover. Full shape, certificate and falsifier are in APPROACH.md. |
-| 31 | M086 | `specify_shape` | +0 | 83 | `complexity_barriers` | Shape complexity_barriers (6 problems, one write-up): Name the model and audit any claimed reduction's alphabet, completeness and soundness before writing a new reduction. Full shape, certificate and falsifier are in APPROACH.md. |
-| 32 | M087 | `specify_shape` | +0 | 83 | `complexity_barriers` | Shape complexity_barriers (6 problems, one write-up): Name the model and audit any claimed reduction's alphabet, completeness and soundness before writing a new reduction. Full shape, certificate and falsifier are in APPROACH.md. |
-| 33 | M089 | `specify_shape` | +0 | 83 | `algebraic_complexity` | Shape algebraic_complexity (4 problems, one write-up): Fix the field and the format, then replay a published certificate or state the class a new hitting set claims to cover. Full shape, certificate and falsifier are in APPROACH.md. |
-| 34 | M090 | `specify_shape` | +0 | 83 | `complexity_barriers` | Shape complexity_barriers (6 problems, one write-up): Name the model and audit any claimed reduction's alphabet, completeness and soundness before writing a new reduction. Full shape, certificate and falsifier are in APPROACH.md. |
-| 35 | M014 | `scope_audit` | +8 | 80 | `logic_decision` | Verify the reduction from integer to rational decision tests and audit each cited arithmetic input, especially the October 7 pointwise 2-converse. |
-| 36 | M030 | `scope_audit` | +8 | 80 | `birational_pairs` | Check the main theorem and dependencies against the canonical klt characteristic-zero formulation, particularly section production and actual basepoint-freeness. |
-| 37 | M091 | `specify_shape` | +0 | 80 | `gauge_theory` | Shape gauge_theory (1 problems, one write-up): The mass gap is not finitely falsifiable; name the lattice, the gauge group, and which Clay axiom the restriction drops. Full shape, certificate and falsifier are in APPROACH.md. |
-| 38 | M099 | `specify_shape` | +0 | 80 | `exponential_fields` | Shape exponential_fields (2 problems, one write-up): Treat Schanuel and the real exponential field as one shape: one explicit tuple or one explicit exponential sentence, certified. Full shape, certificate and falsifier are in APPROACH.md. |
-| 39 | M054 | `scope_audit` | +8 | 77 | `pde_regularity` | Compare Hintz v2 and Szeftel hypotheses and companion dependencies, and seek expert adjudication of scattering and asymptotic completeness. |
-| 40 | M055 | `scope_audit` | +8 | 77 | `harmonic_analysis` | Check the all-dimensional local smoothing theorem, its Kakeya maximal corollary and exact hypotheses; distinguish 4D direct theorem from universal consequence. |
-| 41 | M056 | `scope_audit` | +8 | 77 | `harmonic_analysis` | State M056's exact dimension and p/q exponent range, audit the October 25 local-smoothing-to-restriction implication (including endpoint exclusions), compare the author Lean scope to its paper, and obtain independent harmonic-analysis review. |
-| 42 | M060 | `scope_audit` | +8 | 77 | `pde_regularity` | Compare v3 withdrawal notice with v5, audit the set-valued fixed-point and laminate-to-gradient argument, and request a calculus-of-variations review. |
-| 43 | M043 | `specify_shape` | +0 | 74 | `group_rings` | Shape group_rings (3 problems, one write-up): Take one finitely presented group and one coefficient field, and check a product or an idempotent by an independent multiplication. Full shape, certificate and falsifier are in APPROACH.md. |
-| 44 | M045 | `specify_shape` | +0 | 74 | `artin_algebras` | Shape artin_algebras (2 problems, one write-up): Fix one finite-dimensional algebra by a quiver and relations, and recompute its finitistic dimension or the Auslander-Reiten vanishing. Full shape, certificate and falsifier are in APPROACH.md. |
-| 45 | M046 | `specify_shape` | +0 | 74 | `artin_algebras` | Shape artin_algebras (2 problems, one write-up): Fix one finite-dimensional algebra by a quiver and relations, and recompute its finitistic dimension or the Auslander-Reiten vanishing. Full shape, certificate and falsifier are in APPROACH.md. |
-| 46 | M047 | `specify_shape` | +0 | 74 | `modular_representations` | Shape modular_representations (2 problems, one write-up): Take one finite group and one prime, and compare the number of weights with the number of simple modules in a block. Full shape, certificate and falsifier are in APPROACH.md. |
-| 47 | M050 | `specify_shape` | +0 | 74 | `homogeneous_structures` | Shape homogeneous_structures (1 problems, one write-up): State the language, then check amalgamation for one explicit finite relational structure. Full shape, certificate and falsifier are in APPROACH.md. |
-| 48 | M061 | `specify_shape` | +0 | 74 | `lattice_models` | Shape lattice_models (5 problems, one write-up): Name the lattice and the exponent, then certify an exact count or inequality on one finite torus. Full shape, certificate and falsifier are in APPROACH.md. |
-| 49 | M062 | `specify_shape` | +0 | 74 | `lattice_models` | Shape lattice_models (5 problems, one write-up): Name the lattice and the exponent, then certify an exact count or inequality on one finite torus. Full shape, certificate and falsifier are in APPROACH.md. |
-| 50 | M063 | `specify_shape` | +0 | 74 | `lattice_models` | Shape lattice_models (5 problems, one write-up): Name the lattice and the exponent, then certify an exact count or inequality on one finite torus. Full shape, certificate and falsifier are in APPROACH.md. |
-| 51 | M064 | `specify_shape` | +0 | 74 | `lattice_models` | Shape lattice_models (5 problems, one write-up): Name the lattice and the exponent, then certify an exact count or inequality on one finite torus. Full shape, certificate and falsifier are in APPROACH.md. |
-| 52 | M065 | `specify_shape` | +0 | 74 | `rigidity_dynamics` | Shape rigidity_dynamics (5 problems, one write-up): Name the map or the billiard, and certify one periodic orbit, one entropy enclosure, or one correlation check. Full shape, certificate and falsifier are in APPROACH.md. |
-| 53 | M066 | `specify_shape` | +0 | 74 | `rigidity_dynamics` | Shape rigidity_dynamics (5 problems, one write-up): Name the map or the billiard, and certify one periodic orbit, one entropy enclosure, or one correlation check. Full shape, certificate and falsifier are in APPROACH.md. |
-| 54 | M067 | `specify_shape` | +0 | 74 | `rigidity_dynamics` | Shape rigidity_dynamics (5 problems, one write-up): Name the map or the billiard, and certify one periodic orbit, one entropy enclosure, or one correlation check. Full shape, certificate and falsifier are in APPROACH.md. |
-| 55 | M068 | `specify_shape` | +0 | 74 | `rigidity_dynamics` | Shape rigidity_dynamics (5 problems, one write-up): Name the map or the billiard, and certify one periodic orbit, one entropy enclosure, or one correlation check. Full shape, certificate and falsifier are in APPROACH.md. |
-| 56 | M069 | `specify_shape` | +0 | 74 | `rigidity_dynamics` | Shape rigidity_dynamics (5 problems, one write-up): Name the map or the billiard, and certify one periodic orbit, one entropy enclosure, or one correlation check. Full shape, certificate and falsifier are in APPROACH.md. |
-| 57 | M070 | `specify_shape` | +0 | 74 | `lattice_models` | Shape lattice_models (5 problems, one write-up): Name the lattice and the exponent, then certify an exact count or inequality on one finite torus. Full shape, certificate and falsifier are in APPROACH.md. |
-| 58 | M003 | `specify_shape` | +0 | 72 | `galois_representations` | Shape galois_representations (6 problems, one write-up): Pick one explicit number field or elliptic curve and one finite invariant the conjecture predicts, and compute it two ways. Full shape, certificate and falsifier are in APPROACH.md. |
-| 59 | M004 | `specify_shape` | +0 | 72 | `effective_diophantine` | Shape effective_diophantine (4 problems, one write-up): State one explicit identity or inequality on a named class that a cited theorem or computation does not already settle. Full shape, certificate and falsifier are in APPROACH.md. |
-| 60 | M005 | `specify_shape` | +0 | 72 | `sieve_infinitude` | Shape sieve_infinitude (5 problems, one write-up): Name one modulus, admissible tuple or polynomial that a cited sieve theorem does not already settle, and write the missing estimate. Full shape, certificate and falsifier are in APPROACH.md. |
-| 61 | M007 | `specify_shape` | +0 | 72 | `sieve_infinitude` | Shape sieve_infinitude (5 problems, one write-up): Name one modulus, admissible tuple or polynomial that a cited sieve theorem does not already settle, and write the missing estimate. Full shape, certificate and falsifier are in APPROACH.md. |
-| 62 | M008 | `specify_shape` | +0 | 72 | `sieve_infinitude` | Shape sieve_infinitude (5 problems, one write-up): Name one modulus, admissible tuple or polynomial that a cited sieve theorem does not already settle, and write the missing estimate. Full shape, certificate and falsifier are in APPROACH.md. |
-| 63 | M009 | `specify_shape` | +0 | 72 | `critical_zeros` | Shape critical_zeros (3 problems, one write-up): Build one interval-arithmetic zero-count certificate and reuse it for every problem in this shape. Full shape, certificate and falsifier are in APPROACH.md. |
-| 64 | M010 | `specify_shape` | +0 | 72 | `galois_representations` | Shape galois_representations (6 problems, one write-up): Pick one explicit number field or elliptic curve and one finite invariant the conjecture predicts, and compute it two ways. Full shape, certificate and falsifier are in APPROACH.md. |
-| 65 | M011 | `specify_shape` | +0 | 72 | `exponential_fields` | Shape exponential_fields (2 problems, one write-up): Treat Schanuel and the real exponential field as one shape: one explicit tuple or one explicit exponential sentence, certified. Full shape, certificate and falsifier are in APPROACH.md. |
-| 66 | M012 | `specify_shape` | +0 | 72 | `sieve_infinitude` | Shape sieve_infinitude (5 problems, one write-up): Name one modulus, admissible tuple or polynomial that a cited sieve theorem does not already settle, and write the missing estimate. Full shape, certificate and falsifier are in APPROACH.md. |
-| 67 | M013 | `specify_shape` | +0 | 72 | `galois_representations` | Shape galois_representations (6 problems, one write-up): Pick one explicit number field or elliptic curve and one finite invariant the conjecture predicts, and compute it two ways. Full shape, certificate and falsifier are in APPROACH.md. |
-| 68 | M015 | `specify_shape` | +0 | 72 | `galois_representations` | Shape galois_representations (6 problems, one write-up): Pick one explicit number field or elliptic curve and one finite invariant the conjecture predicts, and compute it two ways. Full shape, certificate and falsifier are in APPROACH.md. |
-| 69 | M016 | `specify_shape` | +0 | 72 | `galois_representations` | Shape galois_representations (6 problems, one write-up): Pick one explicit number field or elliptic curve and one finite invariant the conjecture predicts, and compute it two ways. Full shape, certificate and falsifier are in APPROACH.md. |
-| 70 | M017 | `specify_shape` | +0 | 72 | `galois_representations` | Shape galois_representations (6 problems, one write-up): Pick one explicit number field or elliptic curve and one finite invariant the conjecture predicts, and compute it two ways. Full shape, certificate and falsifier are in APPROACH.md. |
-| 71 | M018 | `specify_shape` | +0 | 72 | `sieve_infinitude` | Shape sieve_infinitude (5 problems, one write-up): Name one modulus, admissible tuple or polynomial that a cited sieve theorem does not already settle, and write the missing estimate. Full shape, certificate and falsifier are in APPROACH.md. |
-| 72 | M020 | `specify_shape` | +0 | 72 | `effective_diophantine` | Shape effective_diophantine (4 problems, one write-up): State one explicit identity or inequality on a named class that a cited theorem or computation does not already settle. Full shape, certificate and falsifier are in APPROACH.md. |
-| 73 | M021 | `specify_shape` | +0 | 72 | `motivic_cycles` | Shape motivic_cycles (5 problems, one write-up): Fix dimension, codimension and coefficients, then compute one cycle class on one explicit variety in a range a cited source still treats as open. Full shape, certificate and falsifier are in APPROACH.md. |
-| 74 | M022 | `specify_shape` | +0 | 72 | `motivic_cycles` | Shape motivic_cycles (5 problems, one write-up): Fix dimension, codimension and coefficients, then compute one cycle class on one explicit variety in a range a cited source still treats as open. Full shape, certificate and falsifier are in APPROACH.md. |
-| 75 | M023 | `specify_shape` | +0 | 72 | `motivic_cycles` | Shape motivic_cycles (5 problems, one write-up): Fix dimension, codimension and coefficients, then compute one cycle class on one explicit variety in a range a cited source still treats as open. Full shape, certificate and falsifier are in APPROACH.md. |
-| 76 | M024 | `specify_shape` | +0 | 72 | `motivic_cycles` | Shape motivic_cycles (5 problems, one write-up): Fix dimension, codimension and coefficients, then compute one cycle class on one explicit variety in a range a cited source still treats as open. Full shape, certificate and falsifier are in APPROACH.md. |
-| 77 | M025 | `specify_shape` | +0 | 72 | `diophantine_geometry` | Shape diophantine_geometry (4 problems, one write-up): Fix dimension and the geometric hypothesis, then certify a rational-point or section search up to an explicit height on one variety. Full shape, certificate and falsifier are in APPROACH.md. |
-| 78 | M026 | `specify_shape` | +0 | 72 | `diophantine_geometry` | Shape diophantine_geometry (4 problems, one write-up): Fix dimension and the geometric hypothesis, then certify a rational-point or section search up to an explicit height on one variety. Full shape, certificate and falsifier are in APPROACH.md. |
-| 79 | M027 | `specify_shape` | +0 | 72 | `diophantine_geometry` | Shape diophantine_geometry (4 problems, one write-up): Fix dimension and the geometric hypothesis, then certify a rational-point or section search up to an explicit height on one variety. Full shape, certificate and falsifier are in APPROACH.md. |
-| 80 | M028 | `specify_shape` | +0 | 72 | `diophantine_geometry` | Shape diophantine_geometry (4 problems, one write-up): Fix dimension and the geometric hypothesis, then certify a rational-point or section search up to an explicit height on one variety. Full shape, certificate and falsifier are in APPROACH.md. |
-| 81 | M029 | `specify_shape` | +0 | 72 | `motivic_cycles` | Shape motivic_cycles (5 problems, one write-up): Fix dimension, codimension and coefficients, then compute one cycle class on one explicit variety in a range a cited source still treats as open. Full shape, certificate and falsifier are in APPROACH.md. |
-| 82 | M037 | `scope_audit` | +8 | 71 | `geometric_topology` | Compare exact source hypotheses to a specialist formulation and obtain an expert check of the central p-adic action argument. |
-| 83 | M038 | `scope_audit` | +8 | 71 | `geometric_topology` | Read Engel's independent proof and its dependency on Alpöge's construction, verify smooth gluing and topological invariants, and solicit further specialist assessment. |
-| 84 | M081 | `specify_shape` | +0 | 71 | `complexity_barriers` | Shape complexity_barriers (6 problems, one write-up): Name the model and audit any claimed reduction's alphabet, completeness and soundness before writing a new reduction. Full shape, certificate and falsifier are in APPROACH.md. |
-| 85 | M051 | `specify_shape` | +0 | 69 | `pde_regularity` | Shape pde_regularity (5 problems, one write-up): Write the equation, the dimension and the function space, and certify one symmetric ansatz the literature has already isolated. Full shape, certificate and falsifier are in APPROACH.md. |
-| 86 | M052 | `specify_shape` | +0 | 69 | `pde_regularity` | Shape pde_regularity (5 problems, one write-up): Write the equation, the dimension and the function space, and certify one symmetric ansatz the literature has already isolated. Full shape, certificate and falsifier are in APPROACH.md. |
-| 87 | M053 | `specify_shape` | +0 | 69 | `pde_regularity` | Shape pde_regularity (5 problems, one write-up): Write the equation, the dimension and the function space, and certify one symmetric ansatz the literature has already isolated. Full shape, certificate and falsifier are in APPROACH.md. |
-| 88 | M057 | `specify_shape` | +0 | 69 | `harmonic_analysis` | Shape harmonic_analysis (5 problems, one write-up): Fix the dimension and the exponent endpoint before treating a corollary as a settlement of the registered conjecture. Full shape, certificate and falsifier are in APPROACH.md. |
-| 89 | M058 | `specify_shape` | +0 | 69 | `harmonic_analysis` | Shape harmonic_analysis (5 problems, one write-up): Fix the dimension and the exponent endpoint before treating a corollary as a settlement of the registered conjecture. Full shape, certificate and falsifier are in APPROACH.md. |
-| 90 | M059 | `specify_shape` | +0 | 69 | `harmonic_analysis` | Shape harmonic_analysis (5 problems, one write-up): Fix the dimension and the exponent endpoint before treating a corollary as a settlement of the registered conjecture. Full shape, certificate and falsifier are in APPROACH.md. |
-| 91 | M031 | `specify_shape` | +0 | 63 | `four_manifolds` | Shape four_manifolds (3 problems, one write-up): Restrict to one homeomorphism type or one unimodular form, and certify either a Kirby diagram or a named obstruction for that form. Full shape, certificate and falsifier are in APPROACH.md. |
-| 92 | M032 | `specify_shape` | +0 | 63 | `four_manifolds` | Shape four_manifolds (3 problems, one write-up): Restrict to one homeomorphism type or one unimodular form, and certify either a Kirby diagram or a named obstruction for that form. Full shape, certificate and falsifier are in APPROACH.md. |
-| 93 | M033 | `specify_shape` | +0 | 63 | `four_manifolds` | Shape four_manifolds (3 problems, one write-up): Restrict to one homeomorphism type or one unimodular form, and certify either a Kirby diagram or a named obstruction for that form. Full shape, certificate and falsifier are in APPROACH.md. |
-| 94 | M034 | `specify_shape` | +0 | 63 | `index_rigidity` | Shape index_rigidity (4 problems, one write-up): Name the group or the manifold and compute one index or signature identity on one explicit complex of small dimension. Full shape, certificate and falsifier are in APPROACH.md. |
-| 95 | M035 | `specify_shape` | +0 | 63 | `index_rigidity` | Shape index_rigidity (4 problems, one write-up): Name the group or the manifold and compute one index or signature identity on one explicit complex of small dimension. Full shape, certificate and falsifier are in APPROACH.md. |
-| 96 | M036 | `specify_shape` | +0 | 63 | `index_rigidity` | Shape index_rigidity (4 problems, one write-up): Name the group or the manifold and compute one index or signature identity on one explicit complex of small dimension. Full shape, certificate and falsifier are in APPROACH.md. |
-| 97 | M039 | `specify_shape` | +0 | 63 | `index_rigidity` | Shape index_rigidity (4 problems, one write-up): Name the group or the manifold and compute one index or signature identity on one explicit complex of small dimension. Full shape, certificate and falsifier are in APPROACH.md. |
-| 98 | M040 | `specify_shape` | +0 | 63 | `geometric_topology` | Shape geometric_topology (3 problems, one write-up): Name the dimension, boundary and smoothness, then compare a manuscript or certify one Reeb orbit on one explicit manifold. Full shape, certificate and falsifier are in APPROACH.md. |
-| 99 | M041 | `stop_range` | -36 | 60 | `polynomial_maps` | Do not enumerate degree-4 maps with coefficients in {-1,0,1}: Moh (1983) already covers plane maps of degree at most 100. Name one Newton-polygon family outside that degree bound and state the coefficient ring before any search. |
+| 20 | M002 | `replay_published` | +12 | 91 | `critical_zeros` | Reproduce a published primitive character modulo 3 or 5 with the correct root number, branch conventions and independently checked zero count; document why this is known mathematics, not GRH progress. |
+| 21 | M076 | `specify_shape` | +0 | 91 | `extremal_asymptotics` | Shape extremal_asymptotics (3 problems, one write-up): Name a structured family and an explicit constant, and compare it with a cited general bound before calling it an improvement. Full shape, certificate and falsifier are in APPROACH.md. |
+| 22 | M085 | `scope_audit` | +8 | 91 | `complexity_barriers` | Independently audit the reduction's completeness and soundness estimates and its quantitative dependence on gap parameters. |
+| 23 | M042 | `specify_shape` | +0 | 89 | `polynomial_maps` | Shape polynomial_maps (2 problems, one write-up): Name a polynomial or Weyl family that published degree bounds do not cover, and refuse exhaustive search inside those bounds. Full shape, certificate and falsifier are in APPROACH.md. |
+| 24 | M100 | `scope_audit` | +8 | 88 | `distance_sets` | Audit FalconerAllDimensions.lean definition fidelity, measure conventions and proof dependencies; obtain independent harmonic-analysis review. |
+| 25 | M006 | `mine_structure` | +6 | 85 | `effective_diophantine` | The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification. |
+| 26 | M072 | `specify_shape` | +0 | 85 | `extremal_asymptotics` | Shape extremal_asymptotics (3 problems, one write-up): Name a structured family and an explicit constant, and compare it with a cited general bound before calling it an improvement. Full shape, certificate and falsifier are in APPROACH.md. |
+| 27 | M077 | `specify_shape` | +0 | 85 | `extremal_asymptotics` | Shape extremal_asymptotics (3 problems, one write-up): Name a structured family and an explicit constant, and compare it with a cited general bound before calling it an improvement. Full shape, certificate and falsifier are in APPROACH.md. |
+| 28 | M082 | `specify_shape` | +0 | 83 | `complexity_barriers` | Shape complexity_barriers (6 problems, one write-up): Name the model and audit any claimed reduction's alphabet, completeness and soundness before writing a new reduction. Full shape, certificate and falsifier are in APPROACH.md. |
+| 29 | M083 | `specify_shape` | +0 | 83 | `algebraic_complexity` | Shape algebraic_complexity (4 problems, one write-up): Fix the field and the format, then replay a published certificate or state the class a new hitting set claims to cover. Full shape, certificate and falsifier are in APPROACH.md. |
+| 30 | M086 | `specify_shape` | +0 | 83 | `complexity_barriers` | Shape complexity_barriers (6 problems, one write-up): Name the model and audit any claimed reduction's alphabet, completeness and soundness before writing a new reduction. Full shape, certificate and falsifier are in APPROACH.md. |
+| 31 | M087 | `specify_shape` | +0 | 83 | `complexity_barriers` | Shape complexity_barriers (6 problems, one write-up): Name the model and audit any claimed reduction's alphabet, completeness and soundness before writing a new reduction. Full shape, certificate and falsifier are in APPROACH.md. |
+| 32 | M089 | `specify_shape` | +0 | 83 | `algebraic_complexity` | Shape algebraic_complexity (4 problems, one write-up): Fix the field and the format, then replay a published certificate or state the class a new hitting set claims to cover. Full shape, certificate and falsifier are in APPROACH.md. |
+| 33 | M090 | `specify_shape` | +0 | 83 | `complexity_barriers` | Shape complexity_barriers (6 problems, one write-up): Name the model and audit any claimed reduction's alphabet, completeness and soundness before writing a new reduction. Full shape, certificate and falsifier are in APPROACH.md. |
+| 34 | M014 | `scope_audit` | +8 | 80 | `logic_decision` | Verify the reduction from integer to rational decision tests and audit each cited arithmetic input, especially the October 7 pointwise 2-converse. |
+| 35 | M030 | `scope_audit` | +8 | 80 | `birational_pairs` | Check the main theorem and dependencies against the canonical klt characteristic-zero formulation, particularly section production and actual basepoint-freeness. |
+| 36 | M091 | `specify_shape` | +0 | 80 | `gauge_theory` | Shape gauge_theory (1 problems, one write-up): The mass gap is not finitely falsifiable; name the lattice, the gauge group, and which Clay axiom the restriction drops. Full shape, certificate and falsifier are in APPROACH.md. |
+| 37 | M099 | `specify_shape` | +0 | 80 | `exponential_fields` | Shape exponential_fields (2 problems, one write-up): Treat Schanuel and the real exponential field as one shape: one explicit tuple or one explicit exponential sentence, certified. Full shape, certificate and falsifier are in APPROACH.md. |
+| 38 | M054 | `scope_audit` | +8 | 77 | `pde_regularity` | Compare Hintz v2 and Szeftel hypotheses and companion dependencies, and seek expert adjudication of scattering and asymptotic completeness. |
+| 39 | M055 | `scope_audit` | +8 | 77 | `harmonic_analysis` | Check the all-dimensional local smoothing theorem, its Kakeya maximal corollary and exact hypotheses; distinguish 4D direct theorem from universal consequence. |
+| 40 | M056 | `scope_audit` | +8 | 77 | `harmonic_analysis` | State M056's exact dimension and p/q exponent range, audit the October 25 local-smoothing-to-restriction implication (including endpoint exclusions), compare the author Lean scope to its paper, and obtain independent harmonic-analysis review. |
+| 41 | M060 | `scope_audit` | +8 | 77 | `pde_regularity` | Compare v3 withdrawal notice with v5, audit the set-valued fixed-point and laminate-to-gradient argument, and request a calculus-of-variations review. |
+| 42 | M043 | `specify_shape` | +0 | 74 | `group_rings` | Shape group_rings (3 problems, one write-up): Take one finitely presented group and one coefficient field, and check a product or an idempotent by an independent multiplication. Full shape, certificate and falsifier are in APPROACH.md. |
+| 43 | M045 | `specify_shape` | +0 | 74 | `artin_algebras` | Shape artin_algebras (2 problems, one write-up): Fix one finite-dimensional algebra by a quiver and relations, and recompute its finitistic dimension or the Auslander-Reiten vanishing. Full shape, certificate and falsifier are in APPROACH.md. |
+| 44 | M046 | `specify_shape` | +0 | 74 | `artin_algebras` | Shape artin_algebras (2 problems, one write-up): Fix one finite-dimensional algebra by a quiver and relations, and recompute its finitistic dimension or the Auslander-Reiten vanishing. Full shape, certificate and falsifier are in APPROACH.md. |
+| 45 | M047 | `specify_shape` | +0 | 74 | `modular_representations` | Shape modular_representations (2 problems, one write-up): Take one finite group and one prime, and compare the number of weights with the number of simple modules in a block. Full shape, certificate and falsifier are in APPROACH.md. |
+| 46 | M050 | `specify_shape` | +0 | 74 | `homogeneous_structures` | Shape homogeneous_structures (1 problems, one write-up): State the language, then check amalgamation for one explicit finite relational structure. Full shape, certificate and falsifier are in APPROACH.md. |
+| 47 | M061 | `specify_shape` | +0 | 74 | `lattice_models` | Shape lattice_models (5 problems, one write-up): Name the lattice and the exponent, then certify an exact count or inequality on one finite torus. Full shape, certificate and falsifier are in APPROACH.md. |
+| 48 | M062 | `specify_shape` | +0 | 74 | `lattice_models` | Shape lattice_models (5 problems, one write-up): Name the lattice and the exponent, then certify an exact count or inequality on one finite torus. Full shape, certificate and falsifier are in APPROACH.md. |
+| 49 | M063 | `specify_shape` | +0 | 74 | `lattice_models` | Shape lattice_models (5 problems, one write-up): Name the lattice and the exponent, then certify an exact count or inequality on one finite torus. Full shape, certificate and falsifier are in APPROACH.md. |
+| 50 | M064 | `specify_shape` | +0 | 74 | `lattice_models` | Shape lattice_models (5 problems, one write-up): Name the lattice and the exponent, then certify an exact count or inequality on one finite torus. Full shape, certificate and falsifier are in APPROACH.md. |
+| 51 | M065 | `specify_shape` | +0 | 74 | `rigidity_dynamics` | Shape rigidity_dynamics (5 problems, one write-up): Name the map or the billiard, and certify one periodic orbit, one entropy enclosure, or one correlation check. Full shape, certificate and falsifier are in APPROACH.md. |
+| 52 | M066 | `specify_shape` | +0 | 74 | `rigidity_dynamics` | Shape rigidity_dynamics (5 problems, one write-up): Name the map or the billiard, and certify one periodic orbit, one entropy enclosure, or one correlation check. Full shape, certificate and falsifier are in APPROACH.md. |
+| 53 | M067 | `specify_shape` | +0 | 74 | `rigidity_dynamics` | Shape rigidity_dynamics (5 problems, one write-up): Name the map or the billiard, and certify one periodic orbit, one entropy enclosure, or one correlation check. Full shape, certificate and falsifier are in APPROACH.md. |
+| 54 | M068 | `specify_shape` | +0 | 74 | `rigidity_dynamics` | Shape rigidity_dynamics (5 problems, one write-up): Name the map or the billiard, and certify one periodic orbit, one entropy enclosure, or one correlation check. Full shape, certificate and falsifier are in APPROACH.md. |
+| 55 | M069 | `specify_shape` | +0 | 74 | `rigidity_dynamics` | Shape rigidity_dynamics (5 problems, one write-up): Name the map or the billiard, and certify one periodic orbit, one entropy enclosure, or one correlation check. Full shape, certificate and falsifier are in APPROACH.md. |
+| 56 | M070 | `specify_shape` | +0 | 74 | `lattice_models` | Shape lattice_models (5 problems, one write-up): Name the lattice and the exponent, then certify an exact count or inequality on one finite torus. Full shape, certificate and falsifier are in APPROACH.md. |
+| 57 | M003 | `specify_shape` | +0 | 72 | `galois_representations` | Shape galois_representations (6 problems, one write-up): Pick one explicit number field or elliptic curve and one finite invariant the conjecture predicts, and compute it two ways. Full shape, certificate and falsifier are in APPROACH.md. |
+| 58 | M004 | `specify_shape` | +0 | 72 | `effective_diophantine` | Shape effective_diophantine (4 problems, one write-up): State one explicit identity or inequality on a named class that a cited theorem or computation does not already settle. Full shape, certificate and falsifier are in APPROACH.md. |
+| 59 | M005 | `specify_shape` | +0 | 72 | `sieve_infinitude` | Shape sieve_infinitude (5 problems, one write-up): Name one modulus, admissible tuple or polynomial that a cited sieve theorem does not already settle, and write the missing estimate. Full shape, certificate and falsifier are in APPROACH.md. |
+| 60 | M007 | `specify_shape` | +0 | 72 | `sieve_infinitude` | Shape sieve_infinitude (5 problems, one write-up): Name one modulus, admissible tuple or polynomial that a cited sieve theorem does not already settle, and write the missing estimate. Full shape, certificate and falsifier are in APPROACH.md. |
+| 61 | M008 | `specify_shape` | +0 | 72 | `sieve_infinitude` | Shape sieve_infinitude (5 problems, one write-up): Name one modulus, admissible tuple or polynomial that a cited sieve theorem does not already settle, and write the missing estimate. Full shape, certificate and falsifier are in APPROACH.md. |
+| 62 | M009 | `specify_shape` | +0 | 72 | `critical_zeros` | Shape critical_zeros (3 problems, one write-up): Build one interval-arithmetic zero-count certificate and reuse it for every problem in this shape. Full shape, certificate and falsifier are in APPROACH.md. |
+| 63 | M010 | `specify_shape` | +0 | 72 | `galois_representations` | Shape galois_representations (6 problems, one write-up): Pick one explicit number field or elliptic curve and one finite invariant the conjecture predicts, and compute it two ways. Full shape, certificate and falsifier are in APPROACH.md. |
+| 64 | M011 | `specify_shape` | +0 | 72 | `exponential_fields` | Shape exponential_fields (2 problems, one write-up): Treat Schanuel and the real exponential field as one shape: one explicit tuple or one explicit exponential sentence, certified. Full shape, certificate and falsifier are in APPROACH.md. |
+| 65 | M012 | `specify_shape` | +0 | 72 | `sieve_infinitude` | Shape sieve_infinitude (5 problems, one write-up): Name one modulus, admissible tuple or polynomial that a cited sieve theorem does not already settle, and write the missing estimate. Full shape, certificate and falsifier are in APPROACH.md. |
+| 66 | M013 | `specify_shape` | +0 | 72 | `galois_representations` | Shape galois_representations (6 problems, one write-up): Pick one explicit number field or elliptic curve and one finite invariant the conjecture predicts, and compute it two ways. Full shape, certificate and falsifier are in APPROACH.md. |
+| 67 | M015 | `specify_shape` | +0 | 72 | `galois_representations` | Shape galois_representations (6 problems, one write-up): Pick one explicit number field or elliptic curve and one finite invariant the conjecture predicts, and compute it two ways. Full shape, certificate and falsifier are in APPROACH.md. |
+| 68 | M016 | `specify_shape` | +0 | 72 | `galois_representations` | Shape galois_representations (6 problems, one write-up): Pick one explicit number field or elliptic curve and one finite invariant the conjecture predicts, and compute it two ways. Full shape, certificate and falsifier are in APPROACH.md. |
+| 69 | M017 | `specify_shape` | +0 | 72 | `galois_representations` | Shape galois_representations (6 problems, one write-up): Pick one explicit number field or elliptic curve and one finite invariant the conjecture predicts, and compute it two ways. Full shape, certificate and falsifier are in APPROACH.md. |
+| 70 | M018 | `specify_shape` | +0 | 72 | `sieve_infinitude` | Shape sieve_infinitude (5 problems, one write-up): Name one modulus, admissible tuple or polynomial that a cited sieve theorem does not already settle, and write the missing estimate. Full shape, certificate and falsifier are in APPROACH.md. |
+| 71 | M020 | `specify_shape` | +0 | 72 | `effective_diophantine` | Shape effective_diophantine (4 problems, one write-up): State one explicit identity or inequality on a named class that a cited theorem or computation does not already settle. Full shape, certificate and falsifier are in APPROACH.md. |
+| 72 | M021 | `specify_shape` | +0 | 72 | `motivic_cycles` | Shape motivic_cycles (5 problems, one write-up): Fix dimension, codimension and coefficients, then compute one cycle class on one explicit variety in a range a cited source still treats as open. Full shape, certificate and falsifier are in APPROACH.md. |
+| 73 | M022 | `specify_shape` | +0 | 72 | `motivic_cycles` | Shape motivic_cycles (5 problems, one write-up): Fix dimension, codimension and coefficients, then compute one cycle class on one explicit variety in a range a cited source still treats as open. Full shape, certificate and falsifier are in APPROACH.md. |
+| 74 | M023 | `specify_shape` | +0 | 72 | `motivic_cycles` | Shape motivic_cycles (5 problems, one write-up): Fix dimension, codimension and coefficients, then compute one cycle class on one explicit variety in a range a cited source still treats as open. Full shape, certificate and falsifier are in APPROACH.md. |
+| 75 | M024 | `specify_shape` | +0 | 72 | `motivic_cycles` | Shape motivic_cycles (5 problems, one write-up): Fix dimension, codimension and coefficients, then compute one cycle class on one explicit variety in a range a cited source still treats as open. Full shape, certificate and falsifier are in APPROACH.md. |
+| 76 | M025 | `specify_shape` | +0 | 72 | `diophantine_geometry` | Shape diophantine_geometry (4 problems, one write-up): Fix dimension and the geometric hypothesis, then certify a rational-point or section search up to an explicit height on one variety. Full shape, certificate and falsifier are in APPROACH.md. |
+| 77 | M026 | `specify_shape` | +0 | 72 | `diophantine_geometry` | Shape diophantine_geometry (4 problems, one write-up): Fix dimension and the geometric hypothesis, then certify a rational-point or section search up to an explicit height on one variety. Full shape, certificate and falsifier are in APPROACH.md. |
+| 78 | M027 | `specify_shape` | +0 | 72 | `diophantine_geometry` | Shape diophantine_geometry (4 problems, one write-up): Fix dimension and the geometric hypothesis, then certify a rational-point or section search up to an explicit height on one variety. Full shape, certificate and falsifier are in APPROACH.md. |
+| 79 | M028 | `specify_shape` | +0 | 72 | `diophantine_geometry` | Shape diophantine_geometry (4 problems, one write-up): Fix dimension and the geometric hypothesis, then certify a rational-point or section search up to an explicit height on one variety. Full shape, certificate and falsifier are in APPROACH.md. |
+| 80 | M029 | `specify_shape` | +0 | 72 | `motivic_cycles` | Shape motivic_cycles (5 problems, one write-up): Fix dimension, codimension and coefficients, then compute one cycle class on one explicit variety in a range a cited source still treats as open. Full shape, certificate and falsifier are in APPROACH.md. |
+| 81 | M037 | `scope_audit` | +8 | 71 | `geometric_topology` | Compare exact source hypotheses to a specialist formulation and obtain an expert check of the central p-adic action argument. |
+| 82 | M038 | `scope_audit` | +8 | 71 | `geometric_topology` | Read Engel's independent proof and its dependency on Alpöge's construction, verify smooth gluing and topological invariants, and solicit further specialist assessment. |
+| 83 | M081 | `specify_shape` | +0 | 71 | `complexity_barriers` | Shape complexity_barriers (6 problems, one write-up): Name the model and audit any claimed reduction's alphabet, completeness and soundness before writing a new reduction. Full shape, certificate and falsifier are in APPROACH.md. |
+| 84 | M051 | `specify_shape` | +0 | 69 | `pde_regularity` | Shape pde_regularity (5 problems, one write-up): Write the equation, the dimension and the function space, and certify one symmetric ansatz the literature has already isolated. Full shape, certificate and falsifier are in APPROACH.md. |
+| 85 | M052 | `specify_shape` | +0 | 69 | `pde_regularity` | Shape pde_regularity (5 problems, one write-up): Write the equation, the dimension and the function space, and certify one symmetric ansatz the literature has already isolated. Full shape, certificate and falsifier are in APPROACH.md. |
+| 86 | M053 | `specify_shape` | +0 | 69 | `pde_regularity` | Shape pde_regularity (5 problems, one write-up): Write the equation, the dimension and the function space, and certify one symmetric ansatz the literature has already isolated. Full shape, certificate and falsifier are in APPROACH.md. |
+| 87 | M057 | `specify_shape` | +0 | 69 | `harmonic_analysis` | Shape harmonic_analysis (5 problems, one write-up): Fix the dimension and the exponent endpoint before treating a corollary as a settlement of the registered conjecture. Full shape, certificate and falsifier are in APPROACH.md. |
+| 88 | M058 | `specify_shape` | +0 | 69 | `harmonic_analysis` | Shape harmonic_analysis (5 problems, one write-up): Fix the dimension and the exponent endpoint before treating a corollary as a settlement of the registered conjecture. Full shape, certificate and falsifier are in APPROACH.md. |
+| 89 | M059 | `specify_shape` | +0 | 69 | `harmonic_analysis` | Shape harmonic_analysis (5 problems, one write-up): Fix the dimension and the exponent endpoint before treating a corollary as a settlement of the registered conjecture. Full shape, certificate and falsifier are in APPROACH.md. |
+| 90 | M031 | `specify_shape` | +0 | 63 | `four_manifolds` | Shape four_manifolds (3 problems, one write-up): Restrict to one homeomorphism type or one unimodular form, and certify either a Kirby diagram or a named obstruction for that form. Full shape, certificate and falsifier are in APPROACH.md. |
+| 91 | M032 | `specify_shape` | +0 | 63 | `four_manifolds` | Shape four_manifolds (3 problems, one write-up): Restrict to one homeomorphism type or one unimodular form, and certify either a Kirby diagram or a named obstruction for that form. Full shape, certificate and falsifier are in APPROACH.md. |
+| 92 | M033 | `specify_shape` | +0 | 63 | `four_manifolds` | Shape four_manifolds (3 problems, one write-up): Restrict to one homeomorphism type or one unimodular form, and certify either a Kirby diagram or a named obstruction for that form. Full shape, certificate and falsifier are in APPROACH.md. |
+| 93 | M034 | `specify_shape` | +0 | 63 | `index_rigidity` | Shape index_rigidity (4 problems, one write-up): Name the group or the manifold and compute one index or signature identity on one explicit complex of small dimension. Full shape, certificate and falsifier are in APPROACH.md. |
+| 94 | M035 | `specify_shape` | +0 | 63 | `index_rigidity` | Shape index_rigidity (4 problems, one write-up): Name the group or the manifold and compute one index or signature identity on one explicit complex of small dimension. Full shape, certificate and falsifier are in APPROACH.md. |
+| 95 | M036 | `specify_shape` | +0 | 63 | `index_rigidity` | Shape index_rigidity (4 problems, one write-up): Name the group or the manifold and compute one index or signature identity on one explicit complex of small dimension. Full shape, certificate and falsifier are in APPROACH.md. |
+| 96 | M039 | `specify_shape` | +0 | 63 | `index_rigidity` | Shape index_rigidity (4 problems, one write-up): Name the group or the manifold and compute one index or signature identity on one explicit complex of small dimension. Full shape, certificate and falsifier are in APPROACH.md. |
+| 97 | M040 | `specify_shape` | +0 | 63 | `geometric_topology` | Shape geometric_topology (3 problems, one write-up): Name the dimension, boundary and smoothness, then compare a manuscript or certify one Reeb orbit on one explicit manifold. Full shape, certificate and falsifier are in APPROACH.md. |
+| 98 | M041 | `stop_range` | -36 | 60 | `polynomial_maps` | Do not enumerate degree-4 maps with coefficients in {-1,0,1}: Moh (1983) already covers plane maps of degree at most 100. Name one Newton-polygon family outside that degree bound and state the coefficient ring before any search. |
+| 99 | M048 | `stop_range` | -36 | 45 | `modular_representations` | Do not enlarge the named catalog inside order 100: that range is already covered by the 2007 computational verification. State a restricted family (for example blocks with a named defect-group isomorphism type) and a lemma outside that census. |
 | 100 | M001 | `stop_range` | -36 | 37 | `critical_zeros` | Do not prioritize extending T = 36 inside the already-published critical-line verification range. First identify a mathematically new zero-free region, explicit bound, or verified statement not implied by existing computations. |
 
 Readiness and the editorial score are defined in [docs/RESEARCH_ENGINE.md](docs/RESEARCH_ENGINE.md). The attack queue is the same order, rendered per problem.

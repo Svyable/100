@@ -2,6 +2,56 @@
   "format": "svyable.lab.v1",
   "levels": {
     "deep": {
+      "alperin": {
+        "certificate_sha256": "196b894d4e076ba2e56a2628d4ee560deb3e2e8a8bb882bc2c197044ad17d384",
+        "engines": [
+          "group_characters"
+        ],
+        "holds": true,
+        "level": "deep",
+        "params": {
+          "groups": [
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "C2xC2",
+            "S3",
+            "D8",
+            "Q8",
+            "A4",
+            "D10",
+            "D12",
+            "S4",
+            "A5"
+          ]
+        },
+        "probe": "alperin",
+        "problem_id": "M048",
+        "scope": "For each named group G in {C2, C3, C4, C5, C6, C2xC2, S3, D8, Q8, A4, D10, D12, S4, A5} and every prime p dividing |G|, the number of conjugacy classes of Alperin p-weights equals the number of p-regular conjugacy classes.",
+        "summary": {
+          "cases": 22,
+          "certificate_sha256": "c4b1674b745c72ed19ebd196c38b5c3c0d29b515ad423a5d32848917d3e8e3ae",
+          "groups": [
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "C2xC2",
+            "S3",
+            "D8",
+            "Q8",
+            "A4",
+            "D10",
+            "D12",
+            "S4",
+            "A5"
+          ],
+          "matched": 22
+        }
+      },
       "dirichlet_l": {
         "certificate_sha256": "97c916d3b3bdc62997216a76ae387cacfdaefc7a7ba10bc5348e31d3f0a2441b",
         "engines": [
@@ -764,6 +814,46 @@
       }
     },
     "smoke": {
+      "alperin": {
+        "certificate_sha256": "5ec9940f814f3190ef28cebd65452d67ca2f9f36b958a17925aee7345a4bb119",
+        "engines": [
+          "group_characters"
+        ],
+        "holds": true,
+        "level": "smoke",
+        "params": {
+          "groups": [
+            "C2",
+            "C3",
+            "C4",
+            "C2xC2",
+            "S3",
+            "D8",
+            "Q8",
+            "A4",
+            "D10"
+          ]
+        },
+        "probe": "alperin",
+        "problem_id": "M048",
+        "scope": "For each named group G in {C2, C3, C4, C2xC2, S3, D8, Q8, A4, D10} and every prime p dividing |G|, the number of conjugacy classes of Alperin p-weights equals the number of p-regular conjugacy classes.",
+        "summary": {
+          "cases": 12,
+          "certificate_sha256": "0cafcc7ece977f89503203f64302caffdd7a25884c515885831f04eb18c44f6e",
+          "groups": [
+            "C2",
+            "C3",
+            "C4",
+            "C2xC2",
+            "S3",
+            "D8",
+            "Q8",
+            "A4",
+            "D10"
+          ],
+          "matched": 12
+        }
+      },
       "dirichlet_l": {
         "certificate_sha256": "c0331948605f0bba8ddd08f7c38fc3658c198cd9033b2ebf49b487b9c19ce754",
         "engines": [
