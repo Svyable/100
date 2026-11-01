@@ -36,6 +36,10 @@ instance (p : Nat) : Decidable (IsPrime p) :=
 def IsGraph (n : Nat) (adj : Nat → Nat → Bool) : Prop :=
   (∀ i, i < n → ∀ j, j < n → adj i j = adj j i) ∧ (∀ i, i < n → adj i i = false)
 
+instance (n : Nat) (adj : Nat → Nat → Bool) : Decidable (IsGraph n adj) :=
+  inferInstanceAs (Decidable ((∀ i, i < n → ∀ j, j < n → adj i j = adj j i) ∧
+    (∀ i, i < n → adj i i = false)))
+
 /-- The vertices of `S` (a bitmask) below `n`, counted. -/
 def popcountBelow (n S : Nat) : Nat :=
   countBelow n (fun i => S.testBit i)

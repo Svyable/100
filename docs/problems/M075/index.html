@@ -71,7 +71,7 @@
   <dt>Fidelity</dt><dd><span class="chip">author checked</span> Encoding written and checked against the registry statement by its author; fidelity examples compile.</dd>
   <dt>Kernel-checked</dt><dd><ul class="plain"><li><code>Hundred.Statements.Frankl.ground_3</code> — Exhaustive over all 2, 16 and 256 families on ground sets of size 1, 2, 3 (ground_1, ground_2, ground_3).</li></ul></dd>
 </dl>
-<details class="table-view"><summary>Full Lean module (57 lines)</summary><pre class="lean"><code><span class="tk-k">import</span> Hundred.Statements.Basic
+<details class="table-view"><summary>Full Lean module (74 lines)</summary><pre class="lean"><code><span class="tk-k">import</span> Hundred.Statements.Basic
 
 <span class="tk-c">/-!
 # M075 — Frankl&#x27;s union-closed sets conjecture
@@ -101,22 +101,39 @@ of size ≤ 57 (literature).
 <span class="tk-c">/-- Number of members of `F` containing the element `x`. -/</span>
 <span class="tk-k">def</span> degree (k F x : <span class="tk-k">Nat</span>) : <span class="tk-k">Nat</span> <span class="tk-o">:=</span> countBelow (2 ^ k) (<span class="tk-k">fun</span> s =&gt; Mem F s &amp;&amp; s.testBit x)
 
-<span class="tk-k">abbrev</span> UnionClosed (k F : <span class="tk-k">Nat</span>) : <span class="tk-k">Prop</span> <span class="tk-o">:=</span>
+<span class="tk-k">def</span> UnionClosed (k F : <span class="tk-k">Nat</span>) : <span class="tk-k">Prop</span> <span class="tk-o">:=</span>
   <span class="tk-o">∀</span> s, s &lt; 2 ^ k <span class="tk-o">→</span> <span class="tk-o">∀</span> t, t &lt; 2 ^ k <span class="tk-o">→</span> Mem F s = <span class="tk-k">true</span> <span class="tk-o">→</span> Mem F t = <span class="tk-k">true</span> <span class="tk-o">→</span> Mem F (s ||| t) = <span class="tk-k">true</span>
 
-<span class="tk-k">abbrev</span> HasNonemptyMember (k F : <span class="tk-k">Nat</span>) : <span class="tk-k">Prop</span> <span class="tk-o">:=</span>
+<span class="tk-k">def</span> HasNonemptyMember (k F : <span class="tk-k">Nat</span>) : <span class="tk-k">Prop</span> <span class="tk-o">:=</span>
   <span class="tk-o">∃</span> s, s &lt; 2 ^ k <span class="tk-o">∧</span> Mem F s = <span class="tk-k">true</span> <span class="tk-o">∧</span> s <span class="tk-o">≠</span> 0
 
-<span class="tk-k">abbrev</span> Abundant (k F : <span class="tk-k">Nat</span>) : <span class="tk-k">Prop</span> <span class="tk-o">:=</span>
+<span class="tk-k">def</span> Abundant (k F : <span class="tk-k">Nat</span>) : <span class="tk-k">Prop</span> <span class="tk-o">:=</span>
   <span class="tk-o">∃</span> x, x &lt; k <span class="tk-o">∧</span> size k F <span class="tk-o">≤</span> 2 * degree k F x
+
+<span class="tk-c">/-! Each predicate gets its own decision procedure, so instance search for the
+composite statement stays small; kernel evaluation still unfolds everything. -/</span>
+
+<span class="tk-k">instance</span> (k F : <span class="tk-k">Nat</span>) : Decidable (UnionClosed k F) <span class="tk-o">:=</span>
+  inferInstanceAs (Decidable (<span class="tk-o">∀</span> s, s &lt; 2 ^ k <span class="tk-o">→</span> <span class="tk-o">∀</span> t, t &lt; 2 ^ k <span class="tk-o">→</span>
+    Mem F s = <span class="tk-k">true</span> <span class="tk-o">→</span> Mem F t = <span class="tk-k">true</span> <span class="tk-o">→</span> Mem F (s ||| t) = <span class="tk-k">true</span>))
+
+<span class="tk-k">instance</span> (k F : <span class="tk-k">Nat</span>) : Decidable (HasNonemptyMember k F) <span class="tk-o">:=</span>
+  inferInstanceAs (Decidable (<span class="tk-o">∃</span> s, s &lt; 2 ^ k <span class="tk-o">∧</span> Mem F s = <span class="tk-k">true</span> <span class="tk-o">∧</span> s <span class="tk-o">≠</span> 0))
+
+<span class="tk-k">instance</span> (k F : <span class="tk-k">Nat</span>) : Decidable (Abundant k F) <span class="tk-o">:=</span>
+  inferInstanceAs (Decidable (<span class="tk-o">∃</span> x, x &lt; k <span class="tk-o">∧</span> size k F <span class="tk-o">≤</span> 2 * degree k F x))
 
 <span class="tk-c">/-- The registry statement, for every ground-set size `k`. -/</span>
 <span class="tk-k">def</span> Statement : <span class="tk-k">Prop</span> <span class="tk-o">:=</span>
   <span class="tk-o">∀</span> k F, F &lt; 2 ^ (2 ^ k) <span class="tk-o">→</span> UnionClosed k F <span class="tk-o">→</span> HasNonemptyMember k F <span class="tk-o">→</span> Abundant k F
 
 <span class="tk-c">/-- The statement restricted to ground sets of size exactly `k`. -/</span>
-<span class="tk-k">abbrev</span> OnGroundSet (k : <span class="tk-k">Nat</span>) : <span class="tk-k">Prop</span> <span class="tk-o">:=</span>
+<span class="tk-k">def</span> OnGroundSet (k : <span class="tk-k">Nat</span>) : <span class="tk-k">Prop</span> <span class="tk-o">:=</span>
   <span class="tk-o">∀</span> F, F &lt; 2 ^ (2 ^ k) <span class="tk-o">→</span> UnionClosed k F <span class="tk-o">→</span> HasNonemptyMember k F <span class="tk-o">→</span> Abundant k F
+
+<span class="tk-k">instance</span> (k : <span class="tk-k">Nat</span>) : Decidable (OnGroundSet k) <span class="tk-o">:=</span>
+  inferInstanceAs (Decidable (<span class="tk-o">∀</span> F, F &lt; 2 ^ (2 ^ k) <span class="tk-o">→</span>
+    UnionClosed k F <span class="tk-o">→</span> HasNonemptyMember k F <span class="tk-o">→</span> Abundant k F))
 
 <span class="tk-c">/-- **Kernel-checked exhaustively:** all 2, 16 and 256 families on ground sets of size 1, 2, 3. -/</span>
 <span class="tk-k">theorem</span> ground_1 : OnGroundSet 1 <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span> +kernel
