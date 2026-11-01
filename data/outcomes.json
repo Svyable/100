@@ -184,6 +184,21 @@
         "agent_hours": 1
       },
       "note": "Elementary eight-vertex equality rigidity argument and CH27 relaxed integer-profile filter (295 to 155), independent-style test fixtures and exact reproducible arithmetic. Active author/tool work approximate; independent specialist proof and historical novelty reviews pending, no conjecture resolution or formally accepted theorem."
+    },
+    {
+      "work_id": "X-M074-SEVEN-SATURATION",
+      "scope_sha256": "ca0679238a91c58647cb9083b2a02e62efe73fafc753054d143593cc5daf7330",
+      "author": "ChatGPT (M074 seven-saturation proof)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/158",
+      "pr_url": "https://github.com/Svyable/100/pull/161",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.9
+      },
+      "note": "Author-derived elementary proof of conditional |X|<=6 at a CH27 indegree-ten root, with a tight z=2 tournament sink argument, exact arithmetic checks, independent-style regression tests, and 18-arc weakened-premise control. Pending outside mathematical proof review and originality audit; not the full finite case, a verified new theorem, or a conjecture resolution."
     }
   ]
 }
