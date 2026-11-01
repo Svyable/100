@@ -8,11 +8,13 @@ The portfolio already has the work queue (scripts/work.py), proof dependencies (
 ## Lifecycle
 
 1. **Sources / Triggers:** a complete, fresh GitHub *open-issues* snapshot; optional GitHub issue-comment event IDs. This is input from the operator, not polled by the script. Open PRs are not claims.
-2. **Gate / Eval:** use **only** the canonical derived work item. Require status=runnable, a single open issue titled [Claim] <work-id>, exactly one full 64-character scope digest in the issue body, and a matching current work.py digest. Duplicate claims, missing metadata, changed scopes, and blocked/dependency-waiting work are refused.
+2. **Gate / Eval:** use **only** the canonical derived work item. Require status=runnable, a single open issue titled [Claim] <work-id>, exactly one scope digest in the issue body (the existing 16-hex issue-form prefix or a full 64-hex digest), and a matching current work.py digest. Duplicate claims, missing metadata, changed scopes, and blocked/dependency-waiting work are refused.
 3. **Ticket / Mandate:** one persistent ticket for each valid claim. Its work contract comes from work.py, **not** the untrusted issue body's prose. The script emits prepare_worker with the exact deliverable, acceptance, boundary and falsifier; no worker is actually executed.
 4. **Slots:** default 3 concurrent reserved/running workers (configurable to 1–100); no automatic oversubscription. Separate agents should use isolated worktrees and the same ticket ID on artifacts. A needs_human report releases the slot without releasing ownership; a later explicit resume must fit capacity.
 5. **Stop / Retry:** a vanished claim, duplicate, scope change or newly blocked work quarantines the ticket and retains its slot. An operator must stop the actual executor and supply an explicit ended report; quarantine never silently frees capacity. Ended claims cannot auto-relaunch.
 6. **Replies:** issue-comment identifiers route to their existing ticket; unknown/unowned comments go to operator_review_followup rather than spawning a second worker. Delivered comment IDs persist in router state to prevent replay (10,000 ID safety cap).
+
+The 16-character digest accepted from the current GitHub claim form is compared against the current **full** work-queue digest; the ticket always stores all 64 characters. A different prefix fails closed. Change the template and router together if this prefix policy changes.
 
 The result is a **reservation and mandate document**, not a GitHub lease, lock service, accepted research result, or worker runtime. Worker starts/stops/replies and independent review are external responsibilities.
 
