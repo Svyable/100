@@ -27,14 +27,14 @@ Solved has no target on purpose: it grows only through the promotion gate in [do
 | Track | Goal | Shipped | Now | Next | Later |
 |---|---|---:|---:|---:|---:|
 | Registry & ranking | One canonical, scored, provenance-tracked list of exactly 100 targets. | 3 | 0 | 0 | 1 |
-| Research engine | Evidence-aware readiness, campaigns and a strict promotion gate to Solved. | 3 | 0 | 0 | 1 |
+| Research engine | Evidence-aware readiness, campaigns and a strict promotion gate to Solved. | 4 | 0 | 0 | 1 |
 | Exact probe lab | Every computable problem gets a search plus an independent checker on a reusable engine. | 5 | 3 | 1 | 0 |
 | Proof campaigns | Push the highest-ranked targets toward reviewed restricted results. | 3 | 2 | 1 | 0 |
 | Claim audit | Check announced resolutions for exact scope before spending effort on them. | 3 | 0 | 1 | 0 |
 | Trust & reproducibility | Pinned artifacts, proof certificates and CI that reruns everything. | 2 | 0 | 1 | 1 |
 | Site & community | A public dashboard and a contribution path that keeps the bar high. | 2 | 0 | 0 | 1 |
 
-## Shipped (21)
+## Shipped (22)
 
 _Merged on main with evidence in the repository._
 
@@ -60,6 +60,7 @@ _Merged on main with evidence in the repository._
 - [x] **R14 · Public research dashboard** (Site & community) — Ranked search, campaigns, lab, proof queue, Solved ledger and this roadmap, all from verified records. [Evidence](docs/index.html)
 - [x] **R15 · Contribution workflow and evidence templates** (Site & community) — Issue and PR templates that demand exact scope and reproducible evidence. [Evidence](CONTRIBUTING.md)
 - [x] **R16 · Leverage dispatch across shared attack shapes** (Research engine) — Every problem has one action and one shared shape. Dispatch score, not readiness alone, orders the attack queue. A range extension inside a cited theorem is refused. [Evidence](data/methods.json)
+- [x] **R37 · 100-slot proof-exchange wave across the portfolio** (Research engine) — Every campaign has a proof-obligation node; scale.py packs 100 claimable slots with scout/adversary/checker roles, refuses stop_range, and regenerates SCALE.md under CI drift checks. Operating capacity, not a theorem multiplier. [Evidence](SCALE.md)
 - [x] **R18 · Separate first-order Vaught from the 2026 infinitary counterexample** (Claim audit) — M098 is verified_open on the Pillay-Tanovic survey plus the authors' own exclusion. The infinitary manuscript cannot promote it to resolved. [Evidence](research/M098_VAUGHT.md)
   - Problems: M098 Vaught conjecture
 - [x] **R17 · Certified structure mines on five campaigns** (Exact probe lab) — Deck invariants, poset balances, Goldbach record primes, Erdos-Straus residue patterns and Frankl orbits, each recomputed by a second code path. [Evidence](MINES.md)

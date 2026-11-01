@@ -105,14 +105,22 @@ def build():
                         "A negative case in lean/Negative.lean that a weakened statement would fail", REGEN],
             boundary=t["scope_gap"], falsifier="", source="data/lean_targets.json")
 
-    # 3. Cohort jobs from the dispatcher.
+    # 3. Cohort jobs from the dispatcher. Dominated range extensions stay visible
+    # but are externally blocked so agents do not claim them as constructive work.
     for job in approach.snapshot(items, program)["jobs"]:
-        add(id=f"J-{job['method_id']}-{job['action']}", kind="job", status="runnable",
+        status = "externally_blocked" if job["action"] == "stop_range" else "runnable"
+        boundary = (
+            "Refused range extension: the campaign blocker already places this range inside known mathematics. "
+            "Do not claim this job; follow the replacement step that starts with 'Do not'."
+            if job["action"] == "stop_range"
+            else "A cohort job is a scheduling unit, not a claim that the shape works for every listed problem."
+        )
+        add(id=f"J-{job['method_id']}-{job['action']}", kind="job", status=status,
             problems=list(job["problem_ids"]), title=f"{job['action_label']}: {job['method_title']}",
             deliverable=job["summary"], context=job.get("why") or "",
             acceptance=["Every problem on the job moves by the same action, or a precise gap is recorded per problem",
                         "Evidence lands in the ledger the action names (lab, claim review, campaign or obligation)", REGEN, TESTS],
-            boundary="A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.",
+            boundary=boundary,
             falsifier="", source="scripts/approach.py")
 
     # 4. Roadmap items that are current or next.

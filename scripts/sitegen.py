@@ -1163,7 +1163,7 @@ def render_work_index(site):
 <li><strong>Regenerate.</strong> <code>python3 scripts/regen.py</code> rewrites every derived file in about three seconds. Merge conflicts in generated files never need a manual merge: take either side and regenerate.</li>
 <li><strong>Verify and ship.</strong> <code>python3 scripts/regen.py --check</code> and the tests; reference the item id and close the claim with the PR.</li>
 </ol>
-<p class="table-footnote">Full agent protocol: <a href="{library_href(s, page, 'AGENTS.md') or BLOB + 'AGENTS.md'}">AGENTS.md</a> · machine-readable queue: <a href="{rel(page, 'api/work.json')}">api/work.json</a>.</p></section>
+<p class="table-footnote">Full agent protocol: <a href="{library_href(s, page, 'AGENTS.md') or BLOB + 'AGENTS.md'}">AGENTS.md</a> · 100-slot wave: <a href="{library_href(s, page, 'SCALE.md') or BLOB + 'SCALE.md'}">SCALE.md</a> · machine-readable queue: <a href="{rel(page, 'api/work.json')}">api/work.json</a>.</p></section>
 <section class="section-block tight" aria-labelledby="top-h"><h2 class="h-small" id="top-h">Start here</h2><ul class="work-list">{top}</ul></section>
 {groups}"""
     return layout(s, page, "Work queue", f"{doc['count']} bounded, claimable work items across the 100: obligations, Lean targets, cohort jobs, comparators and status audits.",
