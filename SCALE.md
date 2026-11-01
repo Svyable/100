@@ -436,10 +436,10 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 
 - Problems: M075
 - Deliverable: Compare every registered declaration of L006 with the registry statement and its primary source: domains, quantifiers, nonemptiness and distinctness conditions, strict versus weak inequalities, encodings. State exactly what is and is not established.
-- Boundary: A scope review checks that the encoded statement matches the claim; it does not add mathematics. Elementary known cases; complements L002 (Fin 2 with union semantics). No representation theorem from arbitrary set families yet. Independent statement review pending.
+- Boundary: A scope review checks that the encoded statement matches the claim; it does not add mathematics. Elementary finite k=1..3 cases only. The model-equivalence and explicit family packing theorems are proved only for k=2; the k=3 case is supplied independently, not derived from k=2. No unrestricted Frankl theorem, and no independent scope review.
 - Falsifier: A quantifier, domain or convention in the Lean statement that differs from the registered claim.
 - Claim: `[Claim] V-L006 — Independent scope review of Lean target L006 (M075)`
-- Digest: `7aeecb8e8c0075b4…`
+- Digest: `bd0f9514f174804d…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -701,10 +701,10 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 **Extend Lean target L006 (M075)**
 
 - Problems: M075
-- Deliverable: Prove that the bitmask encoding is equivalent to the L002 Fin-based families for k = 2, then reuse it for k = 3.
-- Boundary: Elementary known cases; complements L002 (Fin 2 with union semantics). No representation theorem from arbitrary set families yet. Independent statement review pending.
+- Deliverable: Extend the family packing and semantic bridge to k=3 or to a uniform Fin (2^k) representation; connect genuine families of subsets of Fin k, not only the bitmask model.
+- Boundary: Elementary finite k=1..3 cases only. The model-equivalence and explicit family packing theorems are proved only for k=2; the k=3 case is supplied independently, not derived from k=2. No unrestricted Frankl theorem, and no independent scope review.
 - Claim: `[Claim] L006 — Extend Lean target L006 (M075)`
-- Digest: `4bf8d37efb0d058a…`
+- Digest: `2042b0bf8c0727a2…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
