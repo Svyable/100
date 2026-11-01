@@ -3,8 +3,10 @@
 
 The eight-vertex equality theorem is proved in
 proofs/M074_EIGHT_VERTEX_RIGIDITY.md. This program only checks the
-necessary *integer* implications for the previously defined z=4 profile
-universe; it is not a 27-vertex graph enumeration or a novelty review.
+necessary *integer* implications for the historical z=4 profile
+universe before later C-to-A and sink cuts. All z=4 cases were subsequently
+excluded by stronger other work. This is neither an independently current
+search frontier, nor a 27-vertex graph enumeration, nor a novelty review.
 """
 import argparse
 from collections import Counter
@@ -12,7 +14,8 @@ from itertools import combinations_with_replacement
 import json
 
 from ch27_b_internal import (
-    alpha_profiles, classify, k_profiles_with_four_zeros,
+    alpha_profiles, k_profiles_with_four_zeros, internal_B_floors,
+    subset_capacity_ok, forbidden_small_set,
 )
 
 RIGID_ALPHA = (2,) * 7 + (7, 8)
@@ -31,6 +34,18 @@ def c_cut_falsifier(alpha, k):
     if len(alpha) != 9 or len(k) != 10:
         raise ValueError("need nine alpha and ten k values")
     return alpha.count(2) >= 7 and 81 - sum(alpha) - sum(k) > 16
+
+
+def historical_z4_baseline(alpha, k):
+    """The frozen B-subset/small-girth necessary filter from before z4 sink cuts.
+
+    Later C-to-A and sink-cut results are intentionally NOT applied here:
+    this checks the original 295-pair comparison for independent reproducibility.
+    """
+    if sum(k) < 92 - 2 * sum(alpha):
+        return False
+    floors = internal_B_floors(alpha, k)
+    return subset_capacity_ok(floors) and forbidden_small_set(floors) is None
 
 
 def equality_degree_profiles():
@@ -54,7 +69,7 @@ def profile_audit():
     sample_remaining = None
     for alpha in alpha_profiles():
         for k in k_profiles_with_four_zeros():
-            if classify(alpha, k) != "unresolved":
+            if not historical_z4_baseline(alpha, k):
                 continue
             counts["previously_unexcluded"] += 1
             if rigidity_falsifier(alpha):
