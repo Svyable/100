@@ -144,8 +144,9 @@ theorem residue_three (k : Nat) :
       (2 * (4 * k + 3) * (k + 1)) (2 * (4 * k + 3) * (k + 1)) := by
   refine ⟨by omega, Nat.mul_pos (by omega) (by omega),
     Nat.mul_pos (by omega) (by omega), ?_⟩
-  simp only [Nat.mul_add, Nat.add_mul, Nat.mul_assoc, Nat.mul_comm, Nat.mul_left_comm]
-  omega
+  simp [Nat.mul_add, Nat.add_mul, Nat.mul_assoc, Nat.mul_comm, Nat.mul_left_comm]
+    <;> simp only [← Nat.mul_assoc]
+    <;> omega
 
 /-- The residue-class statement, quantified over every natural n, with no upper bound. -/
 theorem holds_mod_four_three (n : Nat) (hn : n % 4 = 3) :
