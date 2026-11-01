@@ -202,6 +202,21 @@
       "note": "Estimated author effort only; Harris association and adjacent edge pairing are classical. Quantitative M073 restricted proof, valid only on ordered 2-block kernels. External novelty and specialist independent acceptance unverified; outcome status conditional on merging PR."
     },
     {
+      "work_id": "X-M074-SEVEN-SATURATION",
+      "scope_sha256": "ca0679238a91c58647cb9083b2a02e62efe73fafc753054d143593cc5daf7330",
+      "author": "ChatGPT (M074 seven-saturation proof)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/158",
+      "pr_url": "https://github.com/Svyable/100/pull/161",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.9
+      },
+      "note": "Author-derived elementary proof of conditional |X|<=6 at a CH27 indegree-ten root, with a tight z=2 tournament sink argument, exact arithmetic checks, independent-style regression tests, and 18-arc weakened-premise control. Pending outside mathematical proof review and originality audit; not the full finite case, a verified new theorem, or a conjecture resolution."
+    },
+    {
       "work_id": "X-M073-ASSORTATIVE2",
       "scope_sha256": "78fb3aa3bf89d35999dbe7a3da8533b76063a514b98e361b0b060bedb7974ae7",
       "author": "ChatGPT (M073 two-spin cone proof)",
