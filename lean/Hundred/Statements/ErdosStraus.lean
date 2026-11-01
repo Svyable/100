@@ -10,7 +10,7 @@ solution in positive integers.
 `x, y, z > 0` is equivalent to `4xyz = n(xy + yz + zx)`; no rationals are needed.
 
 **Not encoded.** Distinctness of `x, y, z` (not required by the conjecture) and
-any parametric family. **Frontier:** verified computationally far beyond `10^14`.
+residue classes other than the classical `n ≡ 3 mod 4` family below. **Frontier:** verified computationally far beyond `10^14`.
 -/
 
 namespace Hundred.Statements.ErdosStraus
@@ -136,6 +136,24 @@ theorem certified_100 : Certified 100 := by decide +kernel
 /-- **Kernel-checked:** the statement holds for every `2 ≤ n ≤ 100`. -/
 theorem holds_upTo_100 : ∀ n, n ≤ 100 → 2 ≤ n → ∃ x y z, Solves n x y z :=
   fun n hn h2 => ⟨_, _, _, certified_100 n (Nat.lt_succ_of_le hn) h2⟩
+
+
+/-- Classical infinite family. Repeated denominators are permitted by Solves. -/
+theorem residue_three (k : Nat) :
+    Solves (4 * k + 3) (k + 1)
+      (2 * (4 * k + 3) * (k + 1)) (2 * (4 * k + 3) * (k + 1)) := by
+  refine ⟨by omega, Nat.mul_pos (by omega) (by omega),
+    Nat.mul_pos (by omega) (by omega), ?_⟩
+  simp [Nat.mul_add, Nat.add_mul, Nat.mul_assoc, Nat.mul_comm, Nat.mul_left_comm]
+    <;> simp only [← Nat.mul_assoc]
+    <;> omega
+
+/-- The residue-class statement, quantified over every natural n, with no upper bound. -/
+theorem holds_mod_four_three (n : Nat) (hn : n % 4 = 3) :
+    ∃ x y z, Solves n x y z := by
+  have heq : n = 4 * (n / 4) + 3 := by omega
+  rw [heq]
+  exact ⟨_, _, _, residue_three (n / 4)⟩
 
 /-! Fidelity: `4/5 = 1/2 + 1/4 + 1/20`. -/
 example : Solves 5 2 4 20 := by decide +kernel
