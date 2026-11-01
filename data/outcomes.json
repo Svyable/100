@@ -244,7 +244,7 @@
       "resources": {
         "agent_hours": 1.0
       },
-      "note": "Approximate active author/tool work. General bipartite relative Ising stability bound and M073 off-diagonal rational cone certificate; two exact source-pinned density paths, 10 dedicated tests and negative triangle control. Classical correlation tools; originality and independent mathematical review unverified. Outcome status conditional on PR merge; not full Sidorenko or finite-host proof."
+      "note": "Approximate active author/tool work. General bipartite relative Ising stability inequality, source-specific two-disjoint-bypass GKS-II sharpening, and two exact M073 off-diagonal rational certificates; 11 dedicated tests and negative triangle control. Classical Ising/GKS dependencies; originality and independent mathematical review unverified. Outcome status conditional on PR merge; not full Sidorenko or finite-host proof."
     }
   ]
 }

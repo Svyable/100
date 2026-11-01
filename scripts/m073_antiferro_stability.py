@@ -64,6 +64,61 @@ def exact_relative_bound(n, edges, u, b, delta):
     return (t / t0) ** exponent.denominator >= base ** exponent.numerator
 
 
+def two_bypass_count(faces):
+    """Check two internally disjoint length-three bypasses for each incidence edge."""
+    count = 0
+    for j, face in enumerate(faces):
+        for point in face:
+            other_points = [v for v in face if v != point]
+            if len(other_points) != 2:
+                raise AssertionError("malformed triple")
+            alternate_faces = []
+            for v in other_points:
+                choices = [i for i, f in enumerate(faces)
+                           if i != j and point in f and v in f]
+                if len(choices) != 1:
+                    raise AssertionError("missing or multiple three-edge bypasses")
+                alternate_faces.append(choices[0])
+            if alternate_faces[0] == alternate_faces[1]:
+                raise AssertionError("bypasses share an internal face vertex")
+            count += 1
+    if count != 66:
+        raise AssertionError("not all 66 incidence edges checked")
+    return count
+
+
+def sharpened_sample(faces, profiles):
+    """A stronger, source-specific q=1/3 certificate beyond the generic tube."""
+    A, B, C = 3, 5, 2
+    W = ((A, B), (B, C))
+    direct = numerator_by_faces(faces, W)
+    face = [A**k * B**(3-k) + B**k * C**(3-k) for k in range(4)]
+    compressed = sum(mult * face[0]**h[0] * face[1]**h[1]
+                     * face[2]**h[2] * face[3]**h[3]
+                     for h, mult in profiles.items())
+    if direct != compressed:
+        raise AssertionError("sharpened sample density paths disagree")
+    ratio = Q((1 << 97) * direct, (A+2*B+C)**66)
+    margin = Q(1114, 729)
+    # kappa=(q+2q^3+q^7)/(1+2q^4+q^6)=223/561 at q=1/3.
+    # Exponent 66*(1-kappa)/4=169/17. Raise to 17 to stay rational.
+    sharpened_power = Q(24, 25)**169 * margin**17
+    generic_factor = Q(24, 25)**11 * margin
+    if sharpened_power <= 1 or generic_factor >= 1:
+        raise AssertionError("two-bypass strengthening did not cross the boundary")
+    if ratio**17 < sharpened_power:
+        raise AssertionError("exact sample violates sharpened bound")
+    return {"weights": ["3/5", "5/5", "2/5"],
+            "two_bypass_edges": two_bypass_count(faces),
+            "q": "1/3", "delta_over_u": "1/5",
+            "kappa": "223/561", "exponent": "169/17",
+            "sharpened_condition": "(24/25)^169*(1114/729)^17>1",
+            "generic_tube_does_not_certify": True,
+            "two_exact_density_paths_agree": True,
+            "ratio_approx": round(float(ratio), 10),
+            "certified_lower_ratio_approx": round(float(sharpened_power)**(1/17), 10)}
+
+
 def sample_certificate():
     faces = load_faces()
     counts = graph_counts(faces)
@@ -93,6 +148,7 @@ def sample_certificate():
         raise AssertionError("relative theorem bound failed at sample")
     return {
         "source_graph": counts,
+        "two_bypass_refinement": sharpened_sample(faces, profiles),
         "source_assignments": sum(profiles.values()),
         "sample_weights": [f"{v}/32" for v in SAMPLE],
         "p": "3/4", "q": "1/3", "delta_over_u": "3/16",

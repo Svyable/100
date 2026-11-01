@@ -109,6 +109,46 @@ Then the multiplier in (3) is exactly
 
 with an exact integer cross-multiplication in the checker. Thus `t(H,W)>p^66` for this nonconstant, unequal-diagonal, strictly disassortative graphon. The certified lower ratio is approximately **1.0308240203**, while the independently computed exact homomorphism ratio is approximately **2.9438492414**. The latter is a regression, not the continuum proof.
 
+## Source-specific sharpening: two three-edge bypasses per incidence edge
+
+The pinned triple system has an additional exploitable property: **each of its 66 point–face incidence edges lies in two four-cycles whose three-edge bypasses are internally vertex-disjoint**. For an edge joining point \(i\) to face \(f=\{i,j,k\}\), the other face containing pair \(\{i,j\}\) supplies the path \(i-f_{ij}-j-f\), and the other face containing \(\{i,k\}\) supplies \(i-f_{ik}-k-f\). Each point pair occurs in exactly two pinned faces, and \(f_{ij}\ne f_{ik}\), since otherwise the second face would equal \(f\). The new checker verifies this condition separately for **all 66 edges**, not by assuming it from the 33-cycle count.
+
+**Sharpened corollary (using classical Griffiths second correlation inequality).** For \(0\le q<1\) define
+
+\[
+\kappa(q)=\frac{q+2q^3+q^7}{1+2q^4+q^6}\ge q.
+\]
+
+The graph formed by a fixed edge and its two internally disjoint length-three bypasses has ferromagnetic endpoint correlation exactly \(\kappa(q)\): integrating the four internal spins leaves the effective endpoint factor
+
+\[
+(1+q\tau_v\tau_w)(1+q^3\tau_v\tau_w)^2.
+\]
+
+**Classical GKS-II monotonicity** says that adding further nonnegative ferromagnetic edges cannot decrease any two-point correlation. Hence every edge of the full pinned graph satisfies \(\mathbb E[\tau_v\tau_w]\ge\kappa(q)\). Repeating the monochromatic-edge and Jensen argument proves the strictly stronger bound
+
+\[
+\boxed{\quad t(H,W)\ge p^{66}(1+33q^4+88q^6)
+  (1-(\delta/u)^2)^{66(1-\kappa(q))/4}.\quad} \tag{5}
+\]
+
+This step uses a **published correlation theorem** as a dependency; the source-specific bypass audit and numerical application are author-derived, with external mathematical and priority review still pending. It is not a proof that GKS-II is new or independently verified here.
+
+**An exact example certified only by the sharper bound:** take
+
+\[
+(a,b,c)=(3/5,1,2/5),\quad u=1/2,\quad\delta=1/10,
+\quad q=1/3,\quad\delta/u=1/5.
+\]
+
+Then \(\kappa=223/561\), the exponent in (5) is \(169/17\), and the sufficient inequality, raised to the positive seventeenth power, is the exact rational certificate
+
+\[
+\boxed{\quad (24/25)^{169}(1114/729)^{17}>1.\quad}
+\]
+
+The lower ratio is about **1.0183870346**, versus the independently evaluated exact ratio **3.1393540371**. In contrast, the weaker universal bound (1) yields \((24/25)^{11}(1114/729)<1\), so it **does not certify this same host**. This is a direct adversarial control of the mathematical gain from the two-bypass argument, not a Sidorenko counterexample.
+
 ## Reproducibility, falsifiers and limits
 
 From the repository root:
@@ -119,7 +159,7 @@ python3 -m unittest discover -s tests -p 'test_m073_antiferro_stability.py' -v
 python3 scripts/regen.py --check
 ```
 
-The checker verifies the pinned triple table and cycle counts, recomputes the rational sample through two **distinct** 8192-point-label paths (a compressed profile histogram and direct face elimination), checks the exact rational lower factor, and checks (1) on small bipartite graphs with two rational parameter sets. It also checks the edge-correlation premise directly.
+The checker verifies the pinned triple table, cycle counts and all 66 two-bypass incidences; recomputes **both** rational samples through two distinct 8192-point-label paths (a compressed profile histogram and direct face elimination); checks both exact rational lower factors and the failure of the weaker factor on the sharpened sample; and checks (1) on small bipartite graphs with two rational parameter sets. It also checks the edge-correlation premise directly.
 
 **Adversarial nonbipartite control:** on a triangle with `u=1/2, b=1`, the original edge-spin correlation is `-3/13 > -1/3=-q`. Thus the key edge-correlation step **fails** if one silently drops bipartiteness. This does not assert that the final density inequality fails for every triangle. The result is also not established for `b<u`, unequal block masses, three or more blocks, or arbitrary graphons. The proof's lower factor may fall below one, so it cannot certify the entire off-diagonal-dominant region.
 
@@ -128,7 +168,7 @@ The checker verifies the pinned triple table and cycle counts, recomputes the ra
 ## Prior art / provenance
 
 - [OpenAI, *A counterexample to Sidorenko's conjecture*, September 23, 2026](https://github.com/openai/math/tree/main/preprints/A-counterexample-to-Sidorenkos-conjecture-September-23-2026) — source of the 35-vertex/66-edge pattern and claimed finite host; this note neither reproduces nor independently validates the claimed host.
-- [Friedli and Velenik, *The Ising Model*, §3.5](https://www.unige.ch/math/folks/velenik/smbook/Ising_Model.pdf) — classical high-temperature expansion and positive ferromagnetic correlations.
+- [Friedli and Velenik, *The Ising Model*, §3.5](https://www.unige.ch/math/folks/velenik/smbook/Ising_Model.pdf) — classical high-temperature expansion and positive ferromagnetic correlations. The source-specific sharpening additionally invokes the classical Griffiths–Kelly–Sherman second correlation inequality (GKS-II), not proved from scratch here.
 - [Lovász, *Subgraph Densities in Signed Graphons and the Local Simonovits–Sidorenko Conjecture* (2011)](https://doi.org/10.37236/614) — local graphon inequalities.
 - [Sah, Sawhney, Stoner and Zhao, *A reverse Sidorenko inequality* (2020)](https://doi.org/10.1007/s00222-020-00956-9) — related extremal two-spin machinery, not claimed to imply this exact numerical bound.
 

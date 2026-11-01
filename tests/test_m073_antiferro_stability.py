@@ -23,6 +23,14 @@ class AntiferroStabilityTests(unittest.TestCase):
         self.assertEqual(result["sample_weights"], ["19/32", "32/32", "13/32"])
         self.assertGreater(Q(1114, 729) * Q(247, 256)**11, 1)
 
+    def test_two_bypass_strictly_improves_the_tube(self):
+        result = target.sharpened_sample(load_faces(), target.histogram(load_faces()))
+        self.assertEqual(result["two_bypass_edges"], 66)
+        self.assertEqual(result["kappa"], "223/561")
+        self.assertTrue(result["generic_tube_does_not_certify"])
+        self.assertGreater(Q(24, 25)**169 * Q(1114, 729)**17, 1)
+        self.assertLess(Q(24, 25)**11 * Q(1114, 729), 1)
+
     def test_direct_small_bipartite_density_checks(self):
         self.assertEqual(target.adversarial_audit()["relative_checks"], 8)
 
