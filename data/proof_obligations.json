@@ -319,6 +319,18 @@
       ],
       "status": "blocked",
       "evidence": null
+    },
+    {
+      "id": "O-M079-02",
+      "problem_id": "M079",
+      "kind": "lemma",
+      "statement": "Every finite width-three poset consisting of a chain and three pairwise incomparable outsiders, each incomparable with at least one chain element, has balance constant at least 11/28; the constant is sharp.",
+      "prior_art_boundary": "The unrestricted one-third–two-thirds conjecture is open. The previously proposed chain-plus-two 4/11 bound is a different class; finite verification and source searches do not establish historical novelty or independent mathematical acceptance.",
+      "falsifier": "A poset meeting the exact hypotheses with all incomparable-pair probabilities outside [11/28,17/28], a gap-coordinate counterexample, or an earlier source proving the same bound.",
+      "next_action": "Prove the all-orders insertion-gap reduction and exact finite residual bound, independently replay the sharp example and attack the 67392 normalized cases; then obtain specialist and novelty review.",
+      "depends_on": [],
+      "status": "open",
+      "evidence": null
     }
   ]
 }
