@@ -2,19 +2,19 @@
 :root{
   color-scheme:light;
   --paper:#f7f5f0;--paper-2:#eeece5;--panel:#fffcf7;--panel-2:#f6f6f1;--panel-3:#eeeee8;--field:#fff;
-  --ink:#1c242a;--ink-2:#505955;--muted:#656a69;--faint:#8a8f8a;--line:#deddd5;--line-2:#c9cbc3;
+  --ink:#1c242a;--ink-2:#505955;--muted:#656a69;--faint:#5f6762;--line:#deddd5;--line-2:#c9cbc3;
   --accent:#b85039;--accent-dark:#8e392a;--accent-soft:#ead0bf;--forest:#264c47;--forest-soft:#dceae5;
   --warn-bg:#f9ead8;--warn-ink:#845620;--good-bg:#dceae5;--good-ink:#275748;
   --banner:#1c242a;--banner-ink:#fff;--hover:#f0f0eb;
   --shadow:0 20px 65px rgba(31,36,33,.06);
-  --series-1:#2a78d6;--series-2:#eb6834;--series-3:#1baf7a;
+  --series-1:#2268b9;--series-2:#eb6834;--series-3:#1baf7a;
   --heat-0:transparent;--heat-1:#e7efe9;--heat-2:#c9ddd2;--heat-3:#9cc1ae;--heat-4:#5f9a82;--heat-5:#2f6b57;
   --serif:Georgia,"Times New Roman",serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
 }
 :root[data-theme="dark"]{
   color-scheme:dark;
   --paper:#14191c;--paper-2:#1b2226;--panel:#192024;--panel-2:#1e262a;--panel-3:#222b30;--field:#11161a;
-  --ink:#ecebe6;--ink-2:#c3c6c1;--muted:#a3a8a4;--faint:#868c88;--line:#2e383d;--line-2:#3b474d;
+  --ink:#ecebe6;--ink-2:#c3c6c1;--muted:#a3a8a4;--faint:#aab3ad;--line:#2e383d;--line-2:#3b474d;
   --accent:#e2836a;--accent-dark:#eb9c86;--accent-soft:#5b3328;--forest:#8cc6b4;--forest-soft:#1f3631;
   --warn-bg:#3d2e19;--warn-ink:#f0c88f;--good-bg:#1f3631;--good-ink:#9fd6c2;
   --banner:#0d1113;--banner-ink:#f2f0ea;--hover:#212a2f;
@@ -26,7 +26,7 @@
   :root:where(:not([data-theme="light"])){
     color-scheme:dark;
     --paper:#14191c;--paper-2:#1b2226;--panel:#192024;--panel-2:#1e262a;--panel-3:#222b30;--field:#11161a;
-    --ink:#ecebe6;--ink-2:#c3c6c1;--muted:#a3a8a4;--faint:#868c88;--line:#2e383d;--line-2:#3b474d;
+    --ink:#ecebe6;--ink-2:#c3c6c1;--muted:#a3a8a4;--faint:#aab3ad;--line:#2e383d;--line-2:#3b474d;
     --accent:#e2836a;--accent-dark:#eb9c86;--accent-soft:#5b3328;--forest:#8cc6b4;--forest-soft:#1f3631;
     --warn-bg:#3d2e19;--warn-ink:#f0c88f;--good-bg:#1f3631;--good-ink:#9fd6c2;
     --banner:#0d1113;--banner-ink:#f2f0ea;--hover:#212a2f;
