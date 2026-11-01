@@ -37,8 +37,10 @@ class CH24ProfileTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             ch24_profiles.local_witness_check(tuple(edges))
         edges = list(ch24_profiles.LOCAL_EDGES)
-        edges[1] = (0, 4)  # Reversal creates a directed triangle.
-        with self.assertRaises(ValueError):
+        # Degree-preserving two-edge switch adds a triangle (not merely a
+        # degree/profile failure): 2→0,3→1 becomes 2→1,3→0.
+        edges[0], edges[5] = (2, 1), (3, 0)
+        with self.assertRaisesRegex(ValueError, "directed triangle"):
             ch24_profiles.local_witness_check(tuple(edges))
         edges = list(ch24_profiles.LOCAL_EDGES)
         edges[1] = (2, 0)  # Duplicate arc.
