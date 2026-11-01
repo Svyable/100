@@ -144,10 +144,19 @@ def load(path=LEDGER):
     return validate(json.loads(Path(path).read_text(encoding="utf-8")))
 
 
-def accepted_ids(doc=None):
-    """Work ids with an independent acceptance on record (used by the work queue)."""
-    doc = load() if doc is None else doc
-    return {r["work_id"] for r in doc["outcomes"] if r["outcome"] == "accepted_independent"}
+def accepted_review_scopes(doc=None):
+    """Map independently accepted review IDs to their exact claimed scope prefixes.
+
+    An old review must not hide a newly changed statement or acceptance contract.
+    Every accepted record still needs its independent reviewer and evidence link;
+    validate() enforces those requirements.
+    """
+    doc = load() if doc is None else validate(doc)
+    scopes = {}
+    for rec in doc["outcomes"]:
+        if rec["outcome"] == "accepted_independent" and rec["work_id"].startswith("V-"):
+            scopes.setdefault(rec["work_id"], set()).add(rec["scope_sha256"][:16])
+    return scopes
 
 
 def metrics(doc=None, review_backlog=None):

@@ -150,6 +150,15 @@
     }
   });
 
+  // Optional, source-bound agent packets on individual work-item pages.
+  // Kept separate from the existing proof-frontier explorer.
+  if ($(".work-detail")) {
+    const handoffScript = document.createElement("script");
+    handoffScript.src = root + "assets/handoff.js";
+    handoffScript.defer = true;
+    document.head.append(handoffScript);
+  }
+
   // ---------------------------------------------------------------- command palette
   const dialog = $("#palette");
   if (!dialog || typeof dialog.showModal !== "function") return;
