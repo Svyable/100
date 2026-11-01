@@ -125,6 +125,19 @@ def check_certificates():
     return counts
 
 
+def is_special_without_orbits(points):
+    """Literal support-pattern check, independent of orbit_key()."""
+    if sum(x >= 18 for x in points) != 1:
+        return False
+    old = [x for x in points if x < 18]
+    for start in (0, 9):
+        if all(start <= x < start + 9 for x in old):
+            counts = sorted(sum(start + 3*g <= x < start + 3*g + 3
+                                for x in old) for g in range(3))
+            return counts == [0, 1, 2]
+    return False
+
+
 def independent_full_sweep():
     """Separate frozenset representation; no orbit reduction or certificate table.
 
@@ -138,12 +151,7 @@ def independent_full_sweep():
         candidate = frozenset(points)
         if candidate in old:
             continue
-        required = 5 if (sum(x >= 18 for x in points) == 1 and
-                         sorted(sum(3*g <= x < 3*g+3 for x in points) for g in range(3)) == [0, 1, 2] and
-                         all(x < 9 or x >= 18 for x in points) or
-                         sum(x >= 18 for x in points) == 1 and
-                         sorted(sum(9+3*g <= x < 12+3*g for x in points) for g in range(3)) == [0, 1, 2] and
-                         all(9 <= x or x >= 18 for x in points)) else 6
+        required = 5 if is_special_without_orbits(points) else 6
         used, found = set(), 0
         for i in range(54):
             if i in used:

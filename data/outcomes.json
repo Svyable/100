@@ -338,6 +338,21 @@
         "agent_hours": 0.8
       },
       "note": "Approximate active derivation, exact enumeration, independent algorithmic checks, failed 2/5 strengthening, and targeted literature audit. Sharp all-orders 11/28 bound for width-three chain plus three pairwise incomparable outsiders, each incomparable to some chain element; 67392 residual cases independently DP-checked and literal sharp-witness permutation replay. No external proof review, no established historical novelty, no full M079 solution; outcome conditional on PR merge and O-M079-02 remains open pending review."
+    },
+    {
+      "work_id": "X-M076-F43-SEARCH",
+      "scope_sha256": "5237be0b42bf54171a3f31bd8bc90f7bad55dd7898469fe2912e2a348267c1b4",
+      "author": "ChatGPT (M076 54-set local stability proof candidate)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/185",
+      "pr_url": "https://github.com/Svyable/100/pull/186",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.9
+      },
+      "note": "Approximate active work including literature/source audit, initial failed <=4-swap avenue, orbit matching derivation, two five-cover enumeration paths, independent 7261-candidate sweep, adversarial controls and regeneration. Author-derived sharp restricted local stability candidate only; no 55-set witness, no new global sunflower bound, no independent mathematical or historical novelty review. Status conditional on PR merge; The custom packet adds no proof-obligation or coverage slot; independent review remains open."
     }
   ]
 }

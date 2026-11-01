@@ -1,6 +1,6 @@
 # M076 — sharp local deletion barrier around the 54-set sunflower construction
 
-**Date:** 2026-11-01 UTC. **Claim:** [#185](https://github.com/Svyable/100/issues/185). **Work id:** `M076-F43-SEARCH`, scope SHA-256 `5237be0b42bf54171a3f31bd8bc90f7bad55dd7898469fe2912e2a348267c1b4`. **Status:** author-derived exact restricted stability lemma, independently *recomputed in code* but **not independently mathematically reviewed**; historical novelty unestablished. No new global lower bound and no solution of the Erdős–Rado sunflower conjecture.
+**Date:** 2026-11-01 UTC. **Claim:** [#185](https://github.com/Svyable/100/issues/185). **Work id:** `X-M076-F43-SEARCH` (custom bounded research packet; no new planning slot), scope SHA-256 `5237be0b42bf54171a3f31bd8bc90f7bad55dd7898469fe2912e2a348267c1b4`. **Status:** author-derived exact restricted stability lemma, independently *recomputed in code* but **not independently mathematically reviewed**; historical novelty unestablished. No new global lower bound and no solution of the Erdős–Rado sunflower conjecture.
 
 ## Exact statement and result
 
@@ -30,7 +30,7 @@ python3 scripts/regen.py --check
 python3 -m unittest discover -s tests
 ```
 
-The first path checks the 18 explicit orbit certificates, a complete branch-on-edge five-cover enumeration, and the unique old-support triple forced by each cover. A second **exhaustive** method scans all **3,162,510** five-element deletion subsets directly and confirms exactly the same two covers, without branch-on-edge recursion. A **separate** implementation in the same file uses Python `frozenset` intersections, *does not use the orbit reduction or the matching table*, and directly sweeps all **7,261 alternative four-sets** on a 22-point universe. These cover all outsider-count patterns (0–4); the proof above explains why extra ambient points introduce no further orbit type. Sixteen adversarial tests reject a duplicated family member, an injected sunflower, a repeated matching vertex, a false sunflower edge, and an incorrect deletion witness, and confirm the two sharpness examples.
+The first path checks the 18 explicit orbit certificates, a complete branch-on-edge five-cover enumeration, and the unique old-support triple forced by each cover. A second **exhaustive** method scans all **3,162,510** five-element deletion subsets directly and confirms exactly the same two covers, without branch-on-edge recursion. A **separate** implementation in the same file uses Python `frozenset` intersections, *does not use the 18-orbit representatives or the matching table*, and directly sweeps all **7,261 alternative four-sets** on a 22-point universe. These cover all outsider-count patterns (0–4); the proof above explains why extra ambient points introduce no further orbit type. Sixteen adversarial tests reject a duplicated family member, an injected sunflower, a repeated matching vertex, a false sunflower edge, and an incorrect deletion witness, and confirm the two sharpness examples.
 
 This is independent algorithmic cross-checking by the author, **not** an independent specialist review or an external theorem acceptance.
 
