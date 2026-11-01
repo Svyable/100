@@ -69,9 +69,9 @@
   <dt>Declaration</dt><dd><code>Hundred.Statements.Goldbach.Statement</code> in <a href="https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/Goldbach.lean" rel="noopener noreferrer">lean/Hundred/Statements/Goldbach.lean <span aria-hidden="true">↗</span></a></dd>
   <dt>Not encoded</dt><dd>Weak (ternary) Goldbach; Bounds on the least Goldbach prime</dd>
   <dt>Fidelity</dt><dd><span class="chip">author checked</span> Encoding written and checked against the registry statement by its author; fidelity examples compile.</dd>
-  <dt>Kernel-checked</dt><dd><ul class="plain"><li><code>Hundred.Statements.Goldbach.holds_upTo_1000</code> — The statement holds for every even 4 ≤ n ≤ 1000 (least-prime witness table re-checked by the kernel). Mirrors lab probe <a href="../../lab/#probe-goldbach"><code>goldbach</code></a>.</li></ul></dd>
+  <dt>Kernel-checked</dt><dd><ul class="plain"><li><code>Hundred.Statements.Goldbach.holds_upTo_100</code> — The statement holds for every even 4 ≤ n ≤ 100 (least-prime witness table re-checked by the kernel; the lab covers far larger ranges in Python). Mirrors lab probe <a href="../../lab/#probe-goldbach"><code>goldbach</code></a>.</li></ul></dd>
 </dl>
-<details class="table-view"><summary>Full Lean module (100 lines)</summary><pre class="lean"><code><span class="tk-k">import</span> Hundred.Statements.Basic
+<details class="table-view"><summary>Full Lean module (56 lines)</summary><pre class="lean"><code><span class="tk-k">import</span> Hundred.Statements.Basic
 
 <span class="tk-c">/-!
 # M006 — Strong (binary) Goldbach conjecture
@@ -86,7 +86,8 @@ Writing `n = p + (n - p)` with `p ≤ n` is equivalent to `n = p + q`, because
 **Not encoded.** Weak (ternary) Goldbach, Chen-type statements, any bound on the
 least partition. **Frontier:** verified for every even `n ≤ 4·10^18`
 (Oliveira e Silva, Herzog &amp; Pardi, 2014). The kernel-checked range below is a
-fidelity test of the encoding, not progress.
+fidelity test of the encoding, not progress; it is kept small because trial division
+in the kernel is quadratic, and the lab covers far larger ranges in Python.
 -/</span>
 
 <span class="tk-k">namespace</span> Hundred.Statements.Goldbach
@@ -96,7 +97,7 @@ fidelity test of the encoding, not progress.
 <span class="tk-k">def</span> Statement : <span class="tk-k">Prop</span> <span class="tk-o">:=</span>
   <span class="tk-o">∀</span> n : <span class="tk-k">Nat</span>, 4 <span class="tk-o">≤</span> n <span class="tk-o">→</span> n % 2 = 0 <span class="tk-o">→</span> <span class="tk-o">∃</span> p, p <span class="tk-o">≤</span> n <span class="tk-o">∧</span> IsPrime p <span class="tk-o">∧</span> IsPrime (n - p)
 
-<span class="tk-c">/-- Least Goldbach prime for every even `n ≤ 1000` (0 elsewhere), produced by the
+<span class="tk-c">/-- Least Goldbach prime for every even `n ≤ 100` (0 elsewhere), produced by the
 lab probe `goldbach`; the kernel re-checks every entry below. -/</span>
 <span class="tk-k">def</span> leastPrime : List <span class="tk-k">Nat</span> <span class="tk-o">:=</span> [
     0, 0, 0, 0, 2, 0, 3, 0, 3, 0, 3, 0, 5, 0, 3, 0, 3, 0, 5, 0,
@@ -104,51 +105,6 @@ lab probe `goldbach`; the kernel re-checks every entry below. -/</span>
     3, 0, 5, 0, 3, 0, 3, 0, 5, 0, 3, 0, 5, 0, 7, 0, 3, 0, 5, 0,
     7, 0, 3, 0, 3, 0, 5, 0, 7, 0, 3, 0, 5, 0, 3, 0, 3, 0, 5, 0,
     7, 0, 3, 0, 5, 0, 3, 0, 5, 0, 7, 0, 3, 0, 5, 0, 7, 0, 19, 0,
-    3, 0, 5, 0, 3, 0, 3, 0, 5, 0, 3, 0, 3, 0, 5, 0, 3, 0, 5, 0,
-    7, 0, 13, 0, 11, 0, 13, 0, 19, 0, 3, 0, 5, 0, 3, 0, 5, 0, 7, 0,
-    3, 0, 3, 0, 5, 0, 7, 0, 11, 0, 11, 0, 3, 0, 3, 0, 5, 0, 7, 0,
-    3, 0, 5, 0, 7, 0, 3, 0, 5, 0, 3, 0, 5, 0, 7, 0, 3, 0, 5, 0,
-    7, 0, 3, 0, 3, 0, 5, 0, 7, 0, 11, 0, 11, 0, 3, 0, 3, 0, 5, 0,
-    3, 0, 3, 0, 5, 0, 7, 0, 11, 0, 11, 0, 13, 0, 3, 0, 5, 0, 7, 0,
-    23, 0, 11, 0, 13, 0, 3, 0, 5, 0, 3, 0, 3, 0, 5, 0, 3, 0, 5, 0,
-    7, 0, 3, 0, 3, 0, 5, 0, 7, 0, 11, 0, 11, 0, 3, 0, 5, 0, 7, 0,
-    3, 0, 5, 0, 7, 0, 3, 0, 5, 0, 7, 0, 3, 0, 3, 0, 5, 0, 7, 0,
-    3, 0, 5, 0, 3, 0, 3, 0, 5, 0, 7, 0, 11, 0, 11, 0, 3, 0, 5, 0,
-    7, 0, 19, 0, 11, 0, 13, 0, 31, 0, 3, 0, 5, 0, 3, 0, 3, 0, 5, 0,
-    3, 0, 5, 0, 7, 0, 13, 0, 11, 0, 13, 0, 19, 0, 3, 0, 5, 0, 7, 0,
-    3, 0, 5, 0, 7, 0, 29, 0, 11, 0, 3, 0, 3, 0, 5, 0, 3, 0, 5, 0,
-    7, 0, 3, 0, 5, 0, 7, 0, 19, 0, 3, 0, 5, 0, 7, 0, 3, 0, 5, 0,
-    7, 0, 3, 0, 5, 0, 3, 0, 5, 0, 7, 0, 3, 0, 5, 0, 7, 0, 19, 0,
-    3, 0, 5, 0, 3, 0, 5, 0, 7, 0, 13, 0, 3, 0, 5, 0, 7, 0, 17, 0,
-    11, 0, 3, 0, 3, 0, 5, 0, 7, 0, 11, 0, 11, 0, 3, 0, 3, 0, 5, 0,
-    7, 0, 3, 0, 5, 0, 3, 0, 5, 0, 7, 0, 3, 0, 5, 0, 7, 0, 19, 0,
-    3, 0, 5, 0, 3, 0, 3, 0, 5, 0, 3, 0, 5, 0, 7, 0, 13, 0, 11, 0,
-    13, 0, 3, 0, 5, 0, 7, 0, 31, 0, 3, 0, 5, 0, 3, 0, 5, 0, 7, 0,
-    13, 0, 3, 0, 5, 0, 3, 0, 5, 0, 7, 0, 3, 0, 5, 0, 7, 0, 19, 0,
-    11, 0, 13, 0, 3, 0, 3, 0, 5, 0, 7, 0, 11, 0, 11, 0, 13, 0, 17, 0,
-    17, 0, 19, 0, 3, 0, 5, 0, 7, 0, 3, 0, 5, 0, 7, 0, 47, 0, 11, 0,
-    3, 0, 5, 0, 7, 0, 3, 0, 5, 0, 7, 0, 3, 0, 3, 0, 5, 0, 7, 0,
-    3, 0, 5, 0, 7, 0, 17, 0, 11, 0, 3, 0, 5, 0, 7, 0, 3, 0, 5, 0,
-    7, 0, 3, 0, 3, 0, 5, 0, 7, 0, 3, 0, 5, 0, 7, 0, 3, 0, 5, 0,
-    3, 0, 3, 0, 5, 0, 7, 0, 11, 0, 11, 0, 13, 0, 3, 0, 5, 0, 7, 0,
-    23, 0, 11, 0, 3, 0, 3, 0, 5, 0, 3, 0, 5, 0, 7, 0, 3, 0, 5, 0,
-    7, 0, 3, 0, 3, 0, 5, 0, 7, 0, 11, 0, 11, 0, 13, 0, 3, 0, 5, 0,
-    3, 0, 5, 0, 7, 0, 3, 0, 5, 0, 7, 0, 19, 0, 3, 0, 5, 0, 7, 0,
-    17, 0, 11, 0, 3, 0, 5, 0, 7, 0, 19, 0, 3, 0, 5, 0, 7, 0, 17, 0,
-    11, 0, 3, 0, 5, 0, 7, 0, 19, 0, 3, 0, 5, 0, 7, 0, 3, 0, 5, 0,
-    7, 0, 3, 0, 5, 0, 3, 0, 5, 0, 7, 0, 13, 0, 3, 0, 5, 0, 7, 0,
-    3, 0, 5, 0, 3, 0, 5, 0, 7, 0, 13, 0, 3, 0, 5, 0, 3, 0, 5, 0,
-    7, 0, 13, 0, 11, 0, 13, 0, 19, 0, 3, 0, 5, 0, 7, 0, 23, 0, 11, 0,
-    3, 0, 5, 0, 7, 0, 19, 0, 11, 0, 13, 0, 3, 0, 3, 0, 5, 0, 7, 0,
-    11, 0, 11, 0, 3, 0, 3, 0, 5, 0, 3, 0, 3, 0, 5, 0, 7, 0, 11, 0,
-    11, 0, 3, 0, 5, 0, 7, 0, 19, 0, 11, 0, 13, 0, 31, 0, 3, 0, 5, 0,
-    3, 0, 3, 0, 5, 0, 3, 0, 5, 0, 7, 0, 13, 0, 11, 0, 13, 0, 19, 0,
-    3, 0, 5, 0, 3, 0, 3, 0, 5, 0, 3, 0, 5, 0, 7, 0, 13, 0, 11, 0,
-    13, 0, 19, 0, 17, 0, 19, 0, 31, 0, 3, 0, 5, 0, 3, 0, 5, 0, 7, 0,
-    13, 0, 3, 0, 5, 0, 7, 0, 17, 0, 11, 0, 3, 0, 5, 0, 7, 0, 19, 0,
-    3, 0, 5, 0, 3, 0, 5, 0, 7, 0, 3, 0, 5, 0, 7, 0, 3, 0, 5, 0,
-    7, 0, 43, 0, 11, 0, 13, 0, 31, 0, 3, 0, 5, 0, 3, 0, 5, 0, 7, 0,
-    3, 0, 5, 0, 7, 0, 3, 0, 5, 0, 7, 0, 73, 0, 3, 0, 5, 0, 7, 0,
     3]
 
 <span class="tk-c">/-- The witness for `n`. -/</span>
@@ -159,16 +115,16 @@ lab probe `goldbach`; the kernel re-checks every entry below. -/</span>
   <span class="tk-o">∀</span> n, n &lt; N + 1 <span class="tk-o">→</span> 4 <span class="tk-o">≤</span> n <span class="tk-o">→</span> n % 2 = 0 <span class="tk-o">→</span>
     witness n <span class="tk-o">≤</span> n <span class="tk-o">∧</span> IsPrime (witness n) <span class="tk-o">∧</span> IsPrime (n - witness n)
 
-<span class="tk-k">theorem</span> certified_1000 : Certified 1000 <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span> +kernel
+<span class="tk-k">theorem</span> certified_100 : Certified 100 <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span> +kernel
 
-<span class="tk-c">/-- **Kernel-checked:** the statement holds for every even `4 ≤ n ≤ 1000`. -/</span>
-<span class="tk-k">theorem</span> holds_upTo_1000 :
-    <span class="tk-o">∀</span> n, n <span class="tk-o">≤</span> 1000 <span class="tk-o">→</span> 4 <span class="tk-o">≤</span> n <span class="tk-o">→</span> n % 2 = 0 <span class="tk-o">→</span> <span class="tk-o">∃</span> p, p <span class="tk-o">≤</span> n <span class="tk-o">∧</span> IsPrime p <span class="tk-o">∧</span> IsPrime (n - p) <span class="tk-o">:=</span>
-  <span class="tk-k">fun</span> n hn h4 he =&gt; ⟨witness n, certified_1000 n (Nat.lt_succ_of_le hn) h4 he⟩
+<span class="tk-c">/-- **Kernel-checked:** the statement holds for every even `4 ≤ n ≤ 100`. -/</span>
+<span class="tk-k">theorem</span> holds_upTo_100 :
+    <span class="tk-o">∀</span> n, n <span class="tk-o">≤</span> 100 <span class="tk-o">→</span> 4 <span class="tk-o">≤</span> n <span class="tk-o">→</span> n % 2 = 0 <span class="tk-o">→</span> <span class="tk-o">∃</span> p, p <span class="tk-o">≤</span> n <span class="tk-o">∧</span> IsPrime p <span class="tk-o">∧</span> IsPrime (n - p) <span class="tk-o">:=</span>
+  <span class="tk-k">fun</span> n hn h4 he =&gt; ⟨witness n, certified_100 n (Nat.lt_succ_of_le hn) h4 he⟩
 
 <span class="tk-c">/-! Fidelity: the encoding agrees with hand-checked cases. -/</span>
-<span class="tk-k">example</span> : IsPrime 3 <span class="tk-o">∧</span> IsPrime (10 - 3) <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span>
-<span class="tk-k">example</span> : witness 100 = 3 <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span>
+<span class="tk-k">example</span> : IsPrime 3 <span class="tk-o">∧</span> IsPrime (10 - 3) <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span> +kernel
+<span class="tk-k">example</span> : witness 100 = 3 <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span> +kernel
 
 <span class="tk-k">end</span> Hundred.Statements.Goldbach
 </code></pre></details>

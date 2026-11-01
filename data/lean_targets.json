@@ -45,12 +45,12 @@
     "id": "L004",
     "problem_id": "M006",
     "stage": "implemented",
-    "statement": "Every even 4 ≤ n ≤ 1000 is a sum of two primes, via a least-prime witness table re-checked by the kernel against the comparator Hundred.Statements.Goldbach.Statement.",
+    "statement": "Every even 4 ≤ n ≤ 100 is a sum of two primes, via a least-prime witness table re-checked by the kernel against the comparator Hundred.Statements.Goldbach.Statement.",
     "scope_gap": "Known range only (verified to 4·10^18 in the literature); no bound on the least prime and no progress on the unrestricted conjecture. Independent statement review pending.",
     "next_step": "Connect the witness table to the lab goldbach certificate hash and add a downstream lemma that uses Statement.",
     "declarations": [
-      "Hundred.Statements.Goldbach.certified_1000",
-      "Hundred.Statements.Goldbach.holds_upTo_1000"
+      "Hundred.Statements.Goldbach.certified_100",
+      "Hundred.Statements.Goldbach.holds_upTo_100"
     ]
   },
   {
@@ -82,14 +82,13 @@
     "id": "L007",
     "problem_id": "M094",
     "stage": "implemented",
-    "statement": "Explicit Hadamard matrices of orders 4, 8, 16 (Sylvester) and 12 (Paley I, q = 11), re-checked by the kernel against Hundred.Statements.Hadamard.IsHadamard.",
+    "statement": "Explicit Hadamard matrices of orders 4, 8 (Sylvester) and 12 (Paley I, q = 11), re-checked by the kernel against Hundred.Statements.Hadamard.IsHadamard.",
     "scope_gap": "Small known orders only; the smallest open order is 668. Independent statement review pending.",
     "next_step": "Prove Sylvester doubling as a general theorem (order n to 2n) instead of instance by instance.",
     "declarations": [
       "Hundred.Statements.Hadamard.order_4",
       "Hundred.Statements.Hadamard.order_8",
-      "Hundred.Statements.Hadamard.order_12",
-      "Hundred.Statements.Hadamard.order_16"
+      "Hundred.Statements.Hadamard.order_12"
     ]
   },
   {

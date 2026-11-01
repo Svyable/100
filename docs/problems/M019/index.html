@@ -211,7 +211,7 @@ any parametric family. **Frontier:** verified computationally far beyond `10^14`
   <span class="tk-k">fun</span> n hn h2 =&gt; ⟨_, _, _, certified_100 n (Nat.lt_succ_of_le hn) h2⟩
 
 <span class="tk-c">/-! Fidelity: `4/5 = 1/2 + 1/4 + 1/20`. -/</span>
-<span class="tk-k">example</span> : Solves 5 2 4 20 <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span>
+<span class="tk-k">example</span> : Solves 5 2 4 20 <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span> +kernel
 
 <span class="tk-k">end</span> Hundred.Statements.ErdosStraus
 </code></pre></details>

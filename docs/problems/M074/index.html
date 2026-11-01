@@ -125,11 +125,11 @@ external fixed-`r = 6` corpus are tracked in the campaign.
 
 <span class="tk-c">/-! Fidelity: `circ7` meets the hypotheses for `r = 2` and has a 4-cycle
 `0 → 2 → 4 → 6 → 0`, matching the bound `⌈7/2⌉ = 4`. -/</span>
-<span class="tk-k">example</span> : (<span class="tk-o">∀</span> v, v &lt; 7 <span class="tk-o">→</span> circ7 v v = <span class="tk-k">false</span>) <span class="tk-o">∧</span> (<span class="tk-o">∀</span> v, v &lt; 7 <span class="tk-o">→</span> 2 <span class="tk-o">≤</span> outdeg 7 circ7 v) <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span>
+<span class="tk-k">example</span> : (<span class="tk-o">∀</span> v, v &lt; 7 <span class="tk-o">→</span> circ7 v v = <span class="tk-k">false</span>) <span class="tk-o">∧</span> (<span class="tk-o">∀</span> v, v &lt; 7 <span class="tk-o">→</span> 2 <span class="tk-o">≤</span> outdeg 7 circ7 v) <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span> +kernel
 
 <span class="tk-k">def</span> cyc4 (i : <span class="tk-k">Nat</span>) : <span class="tk-k">Nat</span> <span class="tk-o">:=</span> 2 * i
 
-<span class="tk-k">example</span> : IsCycle 7 circ7 4 cyc4 <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span>
+<span class="tk-k">example</span> : IsCycle 7 circ7 4 cyc4 <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span> +kernel
 
 <span class="tk-k">end</span> Hundred.Statements.CaccettaHaggkvist
 </code></pre></details>

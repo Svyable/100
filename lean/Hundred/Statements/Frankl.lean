@@ -51,7 +51,7 @@ theorem ground_2 : OnGroundSet 2 := by decide +kernel
 theorem ground_3 : OnGroundSet 3 := by decide +kernel
 
 /-! Fidelity: `{∅, {0}, {1}, {0,1}}` is union-closed and abundant; `{{0}, {1}}` is not union-closed. -/
-example : UnionClosed 2 0b1111 ∧ Abundant 2 0b1111 := by decide
-example : ¬ UnionClosed 2 0b0110 := by decide
+example : UnionClosed 2 0b1111 ∧ Abundant 2 0b1111 := by decide +kernel
+example : ¬ UnionClosed 2 0b0110 := by decide +kernel
 
 end Hundred.Statements.Frankl

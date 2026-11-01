@@ -124,8 +124,8 @@ of size ≤ 57 (literature).
 <span class="tk-k">theorem</span> ground_3 : OnGroundSet 3 <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span> +kernel
 
 <span class="tk-c">/-! Fidelity: `{∅, {0}, {1}, {0,1}}` is union-closed and abundant; `{{0}, {1}}` is not union-closed. -/</span>
-<span class="tk-k">example</span> : UnionClosed 2 0b1111 <span class="tk-o">∧</span> Abundant 2 0b1111 <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span>
-<span class="tk-k">example</span> : <span class="tk-o">¬</span> UnionClosed 2 0b0110 <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span>
+<span class="tk-k">example</span> : UnionClosed 2 0b1111 <span class="tk-o">∧</span> Abundant 2 0b1111 <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span> +kernel
+<span class="tk-k">example</span> : <span class="tk-o">¬</span> UnionClosed 2 0b0110 <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span> +kernel
 
 <span class="tk-k">end</span> Hundred.Statements.Frankl
 </code></pre></details>

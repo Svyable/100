@@ -127,8 +127,8 @@ comparator for that claim encodes the chromatic form with `SimpleGraph`.
 <span class="tk-k">def</span> complete (i j : <span class="tk-k">Nat</span>) : <span class="tk-k">Bool</span> <span class="tk-o">:=</span> i != j
 
 <span class="tk-c">/-! Fidelity: `K_3` is a graph and is 3-colourable by the identity. -/</span>
-<span class="tk-k">example</span> : IsGraph 3 complete <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span>
-<span class="tk-k">example</span> : ProperColouring 3 complete 3 (<span class="tk-k">fun</span> v =&gt; v) <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span>
+<span class="tk-k">example</span> : IsGraph 3 complete <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span> +kernel
+<span class="tk-k">example</span> : ProperColouring 3 complete 3 (<span class="tk-k">fun</span> v =&gt; v) <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span> +kernel
 
 <span class="tk-k">end</span> Hundred.Statements.Hadwiger
 </code></pre></details>

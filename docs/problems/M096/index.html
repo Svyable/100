@@ -115,7 +115,7 @@ was excluded by Lam, Thiel &amp; Swiercz (1989); order 12 is the smallest open c
 <span class="tk-k">theorem</span> exists_order_3 : <span class="tk-o">∃</span> I, IsPlane 3 I <span class="tk-o">:=</span> ⟨order3, <span class="tk-k">by</span> <span class="tk-k">decide</span> +kernel⟩
 
 <span class="tk-c">/-! Fidelity: the empty incidence relation is not a plane. -/</span>
-<span class="tk-k">example</span> : <span class="tk-o">¬</span> IsPlane 2 (<span class="tk-k">fun</span> _ _ =&gt; <span class="tk-k">false</span>) <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span>
+<span class="tk-k">example</span> : <span class="tk-o">¬</span> IsPlane 2 (<span class="tk-k">fun</span> _ _ =&gt; <span class="tk-k">false</span>) <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span> +kernel
 
 <span class="tk-k">end</span> Hundred.Statements.ProjectivePlane
 </code></pre></details>

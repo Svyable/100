@@ -119,8 +119,8 @@ for trees, regular and disconnected graphs (Kelly 1957).
 <span class="tk-c">/-! Fidelity: deleting vertex 1 from the path `0 - 1 - 2` leaves two isolated vertices. -/</span>
 <span class="tk-k">def</span> path3 (i j : <span class="tk-k">Nat</span>) : <span class="tk-k">Bool</span> <span class="tk-o">:=</span> (i + 1 == j) || (j + 1 == i)
 
-<span class="tk-k">example</span> : delete path3 1 0 1 = <span class="tk-k">false</span> <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span>
-<span class="tk-k">example</span> : delete path3 0 0 1 = <span class="tk-k">true</span> <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span>
+<span class="tk-k">example</span> : delete path3 1 0 1 = <span class="tk-k">false</span> <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span> +kernel
+<span class="tk-k">example</span> : delete path3 0 0 1 = <span class="tk-k">true</span> <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span> +kernel
 
 <span class="tk-k">end</span> Hundred.Statements.Reconstruction
 </code></pre></details>
