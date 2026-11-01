@@ -601,7 +601,7 @@
         "M006"
       ],
       "title": "Mine structure from certificates: Explicit Diophantine certificates",
-      "deliverable": "M019: The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity. M006: The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification.",
+      "deliverable": "M019: Nine polynomial identities from the straus_identities mine now cover 106 of the 117 primes n <= 8000 with n = 1 (mod 24), including the primary progressions n = 120t+73 and n = 120t+97. The 11 uncovered primes all lie in {1, 49} (mod 120). Attack those two remaining classes with a non-Mordell idea, or name an explicit family outside the recorded progressions; do not extend the verified search range. M006: The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification.",
       "context": "",
       "acceptance": [
         "Every problem on the job moves by the same action, or a precise gap is recorded per problem",
@@ -614,7 +614,7 @@
       "source": "scripts/approach.py",
       "depends_on": [],
       "priority_rank": 18,
-      "scope_sha256": "0a9452d9d2bfeb27e4df86ba3ec87383a597deb88d052f08a7c6c9b155ba0a3d",
+      "scope_sha256": "4271b9ffb1d63402c4854e33d66f7f293e1b449c21f43cdf1da2751789cb0123",
       "claim_title": "[Claim] J-effective_diophantine-mine_structure — Mine structure from certificates: Explicit Diophantine certificates",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-effective_diophantine-mine_structure%20%E2%80%94%20Mine%20structure%20from%20certificates%3A%20Explicit%20Diophantine%20certificates",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20J-effective_diophantine-mine_structure%22"

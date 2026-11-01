@@ -310,6 +310,17 @@
       ]
     },
     {
+      "id": "R37",
+      "track": "campaigns",
+      "horizon": "shipped",
+      "title": "Erdos-Straus parametric identities from the residue mine",
+      "outcome": "Nine polynomial identities, including n=120t+73 and n=120t+97, cover 106 of 117 hard-class primes through 8,000; remaining misses lie in {1,49} mod 120.",
+      "evidence": "research/M019_IDENTITIES.md",
+      "problems": [
+        "M019"
+      ]
+    },
+    {
       "id": "R20",
       "track": "campaigns",
       "horizon": "now",
