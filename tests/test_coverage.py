@@ -16,7 +16,7 @@ def packet(name, kind, targets, leverage=100):
          "status": "runnable", "priority_rank": 1, "leverage": leverage,
          "deliverable": "bounded artifact", "acceptance": ["test"],
          "boundary": "no theorem claim", "roles": {"scout": "inspect"}}
-    p["scope_sha256"] = scale.packet_digest(p)
+    p["packet_sha256"] = scale.packet_digest(p)
     return p
 
 
@@ -46,7 +46,7 @@ class BreadthSelectionTests(unittest.TestCase):
                dict(p, status="externally_blocked"),
                dict(p, problems=[]),
                dict(p, problems=["M001", "M001"]),
-               dict(p, scope_sha256="0"*64)]
+               dict(p, packet_sha256="0"*64)]
         for item in bad:
             with self.subTest(item=item), self.assertRaises(ValueError):
                 cov.choose_breadth_first([item], 1)
@@ -78,7 +78,7 @@ class PortfolioCoverageTests(unittest.TestCase):
         self.assertEqual(len(d["problem_matrix"]), 100)
         self.assertEqual(len({p["id"] for p in d["selected_packets"]}), 200)
         self.assertTrue(all(p["status"] == "runnable" for p in d["selected_packets"]))
-        self.assertTrue(all(p["scope_sha256"] == scale.packet_digest(p)
+        self.assertTrue(all(p["packet_sha256"] == scale.packet_digest(p)
                             for p in d["selected_packets"]))
 
     def test_evidence_is_read_only_and_separate_from_routes(self):
