@@ -1,0 +1,45 @@
+name: Public Pages browser acceptance
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    paths:
+      - 'tests/pages_live.cjs'
+      - '.github/workflows/pages-live.yml'
+      - 'docs/assets/**'
+      - 'docs/index.html'
+      - 'docs/campaigns/**'
+      - 'docs/api/problems.json'
+      - 'docs/data/portfolio.json'
+
+permissions:
+  contents: read
+
+jobs:
+  live-site:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pinned, temporary browser test dependencies
+        run: |
+          npm install --no-save --ignore-scripts playwright@1.56.1 axe-core@4.10.3
+          npx playwright install --with-deps chromium
+      - name: Serve checked-out Pages for PR browser checks
+        if: github.event_name == 'pull_request'
+        run: |
+          python3 -m http.server 8000 --bind 127.0.0.1 --directory docs >/tmp/pages-preview.log 2>&1 &
+      - name: Audit public site (main) or exact PR preview (pull request)
+        env:
+          PAGES_BASE: ${{ github.event_name == 'pull_request' && 'http://127.0.0.1:8000/' || 'https://svyable.github.io/100/' }}
+        run: node tests/pages_live.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pages-browser-acceptance
+          path: artifacts/
+          if-no-files-found: warn
