@@ -123,6 +123,22 @@
         "ci_minutes": 0
       },
       "note": "Approximate active implementation and test time for a fail-closed router admission prototype; 0 live workers launched, no model or mathematical result accepted. Execution adapter, distributed lease and independent review remain open."
+    },
+    {
+      "work_id": "X-M073-REGULAR2-CYCLES",
+      "scope_sha256": "1b95fd242f3cee1ee5b1cba1d573cf0c0ef09c43ef5d39bc7f3db98eabc24375",
+      "author": "ChatGPT (M073 author-derived restricted proof)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/123",
+      "pr_url": "https://github.com/Svyable/100/pull/131",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.8,
+        "ci_minutes": 0
+      },
+      "note": "Estimated work time; no independent mathematical review, priority determination, or novelty verification; X records reusable even-subgraph research mechanism and source-specific M073 certificate. Status assumes this PR merges; pending external review."
     }
   ]
 }
