@@ -154,6 +154,22 @@
         "agent_hours": 0.8
       },
       "note": "Exact 156-class n=6 separator, 20 collision-pair certificate, explicit nonisomorphic n=7 witnesses and isolate lift for every larger n. Independent mathematics and fidelity review not yet recorded; wider-literature novelty unassessed, O-M078-01 not discharged."
+    },
+    {
+      "work_id": "X-M073-MONOTONE2-33W",
+      "scope_sha256": "4c2d770397a7a597a252cb7a5c44739a51bf68e3a0ab1a0d6738e0718962ac98",
+      "author": "ChatGPT (bounded M073 monotone graphon inequality)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/151",
+      "pr_url": "https://github.com/Svyable/100/pull/156",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.9,
+        "ci_minutes": 0
+      },
+      "note": "Estimated author effort only; Harris association and adjacent edge pairing are classical. Quantitative M073 restricted proof, valid only on ordered 2-block kernels. External novelty and specialist independent acceptance unverified; outcome status conditional on merging PR."
     }
   ]
 }
