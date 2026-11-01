@@ -71,7 +71,7 @@
   <dt>Fidelity</dt><dd><span class="chip">author checked</span> Encoding written and checked against the registry statement by its author; fidelity examples compile.</dd>
   <dt>Kernel-checked</dt><dd><ul class="plain"><li><code>Hundred.Statements.ErdosStraus.holds_upTo_100</code> — Explicit positive solutions for every 2 ≤ n ≤ 100, re-checked by the kernel. Mirrors lab probe <a href="../../lab/#probe-erdos_straus"><code>erdos_straus</code></a>.</li><li><code>Hundred.Statements.ErdosStraus.holds_mod_four_three</code> — For every n with n % 4 = 3, positive denominators exist; n=4k+3 uses (k+1, 2n(k+1), 2n(k+1)), with no finite bound.</li></ul></dd>
 </dl>
-<details class="table-view"><summary>Full Lean module (160 lines)</summary><pre class="lean"><code><span class="tk-k">import</span> Hundred.Statements.Basic
+<details class="table-view"><summary>Full Lean module (161 lines)</summary><pre class="lean"><code><span class="tk-k">import</span> Hundred.Statements.Basic
 
 <span class="tk-c">/-!
 # M019 — Erdős–Straus conjecture
@@ -217,8 +217,9 @@ residue classes other than the classical `n ≡ 3 mod 4` family below. **Frontie
       (2 * (4 * k + 3) * (k + 1)) (2 * (4 * k + 3) * (k + 1)) <span class="tk-o">:=</span> <span class="tk-k">by</span>
   refine ⟨<span class="tk-k">by</span> omega, Nat.mul_pos (<span class="tk-k">by</span> omega) (<span class="tk-k">by</span> omega),
     Nat.mul_pos (<span class="tk-k">by</span> omega) (<span class="tk-k">by</span> omega), ?_⟩
-  simp only [Nat.mul_add, Nat.add_mul, Nat.mul_assoc, Nat.mul_comm, Nat.mul_left_comm]
-  omega
+  simp [Nat.mul_add, Nat.add_mul, Nat.mul_assoc, Nat.mul_comm, Nat.mul_left_comm]
+    &lt;;&gt; simp only [← Nat.mul_assoc]
+    &lt;;&gt; omega
 
 <span class="tk-c">/-- The residue-class statement, quantified over every natural n, with no upper bound. -/</span>
 <span class="tk-k">theorem</span> holds_mod_four_three (n : <span class="tk-k">Nat</span>) (hn : n % 4 = 3) :
