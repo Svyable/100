@@ -22,7 +22,7 @@ class BenchmarkTests(unittest.TestCase):
             "resources": {"model_tokens": 200, "tool_calls": 2, "elapsed_seconds": 10},
             # Synthetic test fixtures only: these are not experiment results.
             "evidence": {
-                "artifact": "docs/BENCHMARK.md",
+                "artifact": "benchmarks/PROTOCOL.md",
                 "checker_log": "scripts/benchmark.py",
                 "scope_audit": "data/benchmark_prereg.json",
                 "independent_review_urls": [],
