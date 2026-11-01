@@ -1,0 +1,45 @@
+{
+  "evidence_boundary": "A SAT model is a candidate verified by independent direct set operations. An UNSAT return is ONLY a solver report and needs an independent checked proof trace. Unknown proves nothing. This is not Frankl's conjecture.",
+  "observed_at_utc": "2026-11-01T03:22:09.754494+00:00",
+  "protocol": "svyable.frankl.triple-seven-pilot.v1",
+  "python_sat_version": "1.9.dev17",
+  "python_version": "3.14.2",
+  "records": [
+    {
+      "clauses": 21234,
+      "cnf_sha256": "f0230a88437e986cea53e0c0bc5a496fdf40d61e26ca30a6528eb33b8405f607",
+      "elapsed_seconds": 10.199,
+      "observed_conflicts": 200002,
+      "resource_cap_conflicts": 200000,
+      "size": 18,
+      "solver_stats": {
+        "conflicts": 200002,
+        "decisions": 260533,
+        "propagations": 91499100,
+        "restarts": 5180
+      },
+      "status": "unknown_budget_exhausted",
+      "variables": 4009,
+      "witness": null
+    },
+    {
+      "clauses": 20795,
+      "cnf_sha256": "2b4bf0fb3353e7249b1fcce6b440a0651c4a55b4173851da1232cb5b0dc6aac1",
+      "elapsed_seconds": 9.845,
+      "observed_conflicts": 200005,
+      "resource_cap_conflicts": 200000,
+      "size": 17,
+      "solver_stats": {
+        "conflicts": 200005,
+        "decisions": 273309,
+        "propagations": 83950365,
+        "restarts": 6225
+      },
+      "status": "unknown_budget_exhausted",
+      "variables": 3899,
+      "witness": null
+    }
+  ],
+  "scope": "n=7, exact triple {0,1,2} and empty member required, union-closed, strict triple-local failure; sizes 2..18 independent",
+  "solver": "cadical195"
+}

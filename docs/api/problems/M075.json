@@ -236,6 +236,11 @@
       "url": "https://svyable.github.io/100/library/m075-frankl/"
     },
     {
+      "title": "M075 — seven-element triple-local optimization",
+      "source": "research/M075_TRIPLE7_SAT.md",
+      "url": "https://svyable.github.io/100/library/m075-triple7-sat/"
+    },
+    {
       "title": "Research-source audit — 2026-10-30",
       "source": "docs/AUDIT_QUEUE.md",
       "url": "https://svyable.github.io/100/library/audit-queue/"
