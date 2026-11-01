@@ -21,6 +21,29 @@ Let \(B=N^-(s)\) and \(A=N^+(s)\). Since \(s\) is adjacent to all six other vert
 
 Every possible value of \(b\) is contradictory. Hence the assumed 18 arcs are impossible and the bound is proved. □
 
+## Sharpening: the sharp cap is 16 (finite exhaustive certificate)
+
+The preceding hand argument excludes 18 or more arcs. An additional **fully bounded finite check** excludes 17 arcs, leaving the sharp bound **16**. This stronger step is an exhaustively checked finite theorem, not an additional enumeration-free hand proof.
+
+A hypothetical 17-arc example has exactly **four missing unordered pairs** among the 21 pairs of seven vertices. Let \(M\) be that four-edge *undirected* missing-pair graph. Since the oriented graph contains no triangle, it cannot contain an underlying \(K_5\): a triangle-free tournament on five vertices is transitive, with a sink of indegree four. Thus \(M\) has no two-vertex edge cover.
+
+There are **exactly three** relevant graph types for \(M\), up to relabeling:
+
+1. If \(M\) contains a triangle, its fourth edge must be disjoint from that triangle; otherwise two vertices cover all four edges. Hence \(M\cong K_3\sqcup K_2\) plus two isolated vertices.
+2. If \(M\) contains no triangle, it is bipartite (a graph with only four edges cannot contain another odd cycle). By the bipartite matching/vertex-cover theorem, absence of a two-vertex cover forces a matching of size at least three. The fourth edge either connects one matched endpoint to the seventh, previously unmatched vertex, yielding \(P_3\sqcup K_2\sqcup K_2\), or joins two disjoint matching pairs, yielding \(P_4\sqcup K_2\) plus one isolated vertex.
+
+For each type, fix the explicit missing pairs in [ch27_seventeen.py](../scripts/ch27_seventeen.py). Every other one of the 17 unordered pairs has **exactly two** orientations. Enumerate the \(2^{17}=131{,}072\) bit assignments, calculate all seven indegrees and scan all ordered triples for directed triangles, and keep exactly those with maximum indegree at most three and no triangle. This finite proof has the following exhaustive table (a second adjacency-matrix implementation repeats all checks):
+
+| Missing graph | Orientations | Indegree-cap survivors | Triangle-free survivors |
+|---|---:|---:|---:|
+| Triangle + disjoint edge | 131,072 | 17,192 | **0** |
+| Four-vertex path + disjoint edge | 131,072 | 18,460 | **0** |
+| Three-vertex path + two disjoint edges | 131,072 | 20,004 | **0** |
+
+Thus 17 arcs are impossible. If a graph had more than 17 arcs, deleting arcs down to exactly 17 preserves orientation, absence of directed triangles, and the maximum-indegree bound, so that is impossible too. The 16-arc positive example in [ch27_seven.py](../scripts/ch27_seven.py) has maximum indegree three and no directed triangle. Consequently **16 is the sharp maximum**.
+
+This bounded orientation enumeration is not a proof-assistant kernel certificate, and it needs independent expert inspection of both the graph classification and the code. It is not evidence of a 27-vertex global exclusion.
+
 ## Consequence for the (27,9) irregular root
 
 With the notation of [the (27,9) proof](M074_27_REGULAR.md), the seven-vertex set \(C\) has maximum **internal** indegree at most three whenever seven distinct members of \(A\) send an arc to every member of \(C\). The ambient indegree ceiling is ten, so those seven incoming arcs leave room for at most three internal predecessors.
@@ -30,11 +53,11 @@ For the previously noted *relaxed* \(z=4\) profile
     alpha=(2,2,2,2,2,2,2,7,8),  m=29
     k=(0,0,0,0,5,5,5,5,7,7),  e(C,B)=34,
 
-the seven alpha-two vertices cover all of \(C\). Thus \(e(C,C)\le17\). But seven C vertices send 63 outgoing arcs, while \(e(C,A)\le m-18=11\). Therefore
+the seven alpha-two vertices cover all of \(C\). Thus \(e(C,C)\le16\) by the sharp finite bound above (the hand-only bound 17 also suffices for this particular profile). But seven C vertices send 63 outgoing arcs, while \(e(C,A)\le m-18=11\). Therefore
 
     e(C,C) = 63-e(C,B)-e(C,A) >= 63-34-11 = 18,
 
-a contradiction. **This particular integer profile is excluded.** This does not exclude every \(z=4\) profile, nor does it prove the finite (27,9) theorem.
+a contradiction. **This particular integer profile is excluded.** Moreover, the profile \(\alpha=(2^7,6,8)\), \(k=(0^4,4,5,6,7,7,7)\) from the earlier note is likewise excluded: it requires at least 17 internal C arcs. The sharp bound 16 still leaves other relaxed \(z=4\) profiles, and does not prove the finite (27,9) theorem.
 
 ## Independent computational cross-check
 
@@ -42,6 +65,8 @@ a contradiction. **This particular integer profile is excluded.** This does not 
 
 Reproduce:
 
+    python3 scripts/ch27_seventeen.py --check
+    python3 -m unittest discover -s tests -p 'test_ch27_seventeen.py' -v
     python3 scripts/ch27_seven.py --check
     python3 -m unittest discover -s tests -p 'test_ch27_seven.py' -v
 
