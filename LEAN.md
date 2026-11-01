@@ -2,8 +2,8 @@
 
 The objective is more independently checked, reusable mathematics per unit of effort.
 “100x” is an ambition, not a measured speedup or a promise to solve the portfolio.
-The initial implementation has seven named declarations for one known Ramsey benchmark;
-Frankl and Caccetta–Häggkvist are explicitly queued, not formalized.
+The implementation has thirteen audited declarations across Ramsey and the two-element
+Frankl case. Caccetta–Häggkvist remains queued, not formalized.
 
 ## Run the gate
 
@@ -47,7 +47,7 @@ and [axiom reference](https://lean-lang.org/doc/reference/latest/Axioms/).
 | Priority | Target | Next rigorous deliverable | Remaining gap |
 |---|---|---|---|
 | 1 | M095 Ramsey | General `(s,t)` clique certificate with a soundness theorem and deterministic witness import | Large search and exact R(5,5) remain open in this project |
-| 2 | M075 Frankl | Finite family semantics, closure and frequency checker with equivalence proof | Finite families do not establish all union-closed families |
+| 2 | M075 Frankl | Two-element case implemented; next prove representation completeness and generalize to n elements | Arbitrary ground-set size remains unproved |
 | 3 | M074 directed girth | SAT decoding soundness, then encoding completeness and checked UNSAT replay | Solver verdicts and symmetry heuristics are not proofs |
 
 Canonical target contracts: [data/lean_targets.json](data/lean_targets.json).
@@ -85,3 +85,22 @@ reusable lemmas consumed by another campaign, rejected malformed certificates an
 percentage of exports with independent scope review. Establish a baseline before
 claiming any throughput multiplier. Do not optimize for generated proof lines, lemma
 counts, bounded cases tested, or attempted solver calls.
+
+## Frankl restricted theorem
+
+`Hundred.Frankl.frankl_two` quantifies over all `Fin 16` family masks. If a family
+contains a nonempty member and is union-closed, there exists an element of `Fin 2`
+whose frequency is at least half the family size. `union_membership` checks that
+bitwise union agrees with elementwise membership on all four set masks.
+
+This is an exhaustive restricted theorem, not just one accepted certificate. It is
+known elementary mathematics, not a new result. The existing Python enumeration
+independently covers the same 16 masks. `small` replays the meaning of
+`examples/FRANKL_SMALL.json` (mask 3); the input file is not dynamically imported
+into Lean. A change to that fixture requires a fresh encoding comparison.
+
+Remaining formal gap: prove the representation correspondence from arbitrary
+extensional families of subsets of `Fin 2` to the bitmask encoding. The current
+statement explicitly quantifies over masks. Neither this finite theorem nor its
+sample application proves the conjecture for arbitrary finite universes. The
+independent scope-review and novelty gates remain unchanged.

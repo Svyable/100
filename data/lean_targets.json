@@ -19,11 +19,18 @@
   {
     "id": "L002",
     "problem_id": "M075",
-    "stage": "planned",
-    "statement": "Finite union-closed family certificate: explicit nonempty family containing a nonempty set, closure under union, and a member occurring in at least half the sets.",
-    "scope_gap": "Finite witness validation is not the universal Frankl conjecture. Exclude the family containing only the empty set.",
-    "next_step": "Encode bitmask membership, prove counting equivalence, and replay FRANKL_SMALL.json.",
-    "declarations": []
+    "stage": "implemented",
+    "statement": "All 16 bitmask families on the ground set {0,1}: if union-closed and containing a nonempty set, some element belongs to at least half the family. Includes elementwise union semantics and the existing tiny benchmark.",
+    "scope_gap": "Only the two-element ground universe, encoded as Fin 16. No proof for arbitrary ground-set sizes, no novelty claim; independent scope review pending.",
+    "next_step": "Prove a representation theorem for arbitrary extensional set families on Fin 2, then generalize counting and union semantics to Fin n.",
+    "declarations": [
+      "Hundred.Frankl.union_membership",
+      "Hundred.Frankl.frankl_two",
+      "Hundred.Frankl.small_nontrivial",
+      "Hundred.Frankl.small_closed",
+      "Hundred.Frankl.small_half",
+      "Hundred.Frankl.small_abundant"
+    ]
   },
   {
     "id": "L003",
