@@ -33,6 +33,39 @@
       },
       "title": "Deck invariants that separate the census"
     },
+    "deck_signature": {
+      "certificate_sha256": "90b570d298b9354f1719bf37913ead82df9f46fc781ce14fe4b75c7adc21cafe",
+      "engines": [
+        "graph_census"
+      ],
+      "frontier": "Graph reconstruction is verified by computer through at least 11 vertices (McKay 1997). The signature below separates only the census this repository enumerates, through 7 vertices.",
+      "holds": true,
+      "mine": "deck_signature",
+      "params": {
+        "max_n": 7
+      },
+      "problem_id": "M078",
+      "scope": "For every n with 3 <= n <= 7, the multiset of (degree sequence of G-v, number of triangles in G-v) is different for every graph G on n vertices.",
+      "summary": {
+        "excess": {
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0
+        },
+        "graphs": {
+          "3": 4,
+          "4": 11,
+          "5": 34,
+          "6": 156,
+          "7": 1044
+        },
+        "max_n": 7,
+        "separates_through": 7
+      },
+      "title": "Per-card degree and triangle signature separates the census"
+    },
     "frankl_orbits": {
       "certificate_sha256": "dbae6e1504f6614d18ee24f95b77286069fa34bc253f203bfb878f3c9a937735",
       "engines": [

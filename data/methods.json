@@ -83,7 +83,7 @@
     },
     "M078": {
       "action": "mine_structure",
-      "why": "The deck_invariants mine shows degree sequence plus triangle count still leaves collisions at 6 vertices. A larger census sits inside the published computational range."
+      "why": "deck_signature separates every graph through 7 vertices by a per-card invariant. A larger census sits inside McKay's published range, so the next lemma has to leave that range."
     },
     "M079": {
       "action": "mine_structure",

@@ -102,9 +102,10 @@
       "method": "Deck-collision search over certified graph censuses",
       "hypothesis": "Every finite simple graph on at least 3 vertices is determined up to isomorphism by its vertex-deleted deck.",
       "first_proof_obligation": "Pick a graph family not yet known to be reconstructible and isolate a lemma that reconstructs a new invariant for it.",
-      "next_experiment": "The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two.",
+      "next_experiment": "The certified mine deck_signature separates every graph on 3 to 7 vertices by the multiset of (degree sequence of G-v, triangle count of G-v). Global degree-plus-triangles left 20 excess graphs at 6 vertices; the per-card signature leaves none through 7. A reconstruction lemma still has to pass the computer-verified range beyond this census.",
       "additional_verifiers": [
-        "python3 scripts/mine.py --mine deck_invariants"
+        "python3 scripts/mine.py --mine deck_invariants",
+        "python3 scripts/mine.py --mine deck_signature"
       ],
       "falsification": "Two non-isomorphic graphs with identical decks, confirmed by independent canonical forms.",
       "blocker": "Computer verification already reaches at least 11 vertices; novelty has to come from a structural lemma, not from range.",
@@ -636,6 +637,17 @@
       "description": "For S3, A4, S4, A5, S5 and PSL(2,7) at every prime dividing the order, the number of p-regular classes equals the number of conjugacy classes of p-weights, counted over all p-radical subgroups with defect-zero degrees of N(Q)/Q from Dixon's modular method. The checker re-enumerates radical subgroups by a different criterion and recomputes degrees with a different prime. The deep run covers 46 cases, adding GL(2,3), A6, S6, PSL(2,8), PSL(2,11), PSL(2,13), A7, S7 and the Mathieu group M11.",
       "verifier": "python3 scripts/lab.py --probe alperin_weights",
       "artifact": "scripts/probes/alperin_cert.py",
+      "verified_on": "2026-11-01"
+    },
+    {
+      "id": "B-MINE-078B",
+      "problem_id": "M078",
+      "classification": "reproduced_known",
+      "title": "Per-card deck signature separates every graph on at most 7 vertices",
+      "scope": "Finite census only, inside McKay's published verification through at least 11 vertices. Not a reconstruction theorem.",
+      "description": "The sorted list of (degree sequence of G-v, triangles in G-v) takes a different value on every graph with 3 to 7 vertices (4, 11, 34, 156, and 1,044 graphs). Adjacency cards and edge-set cards agree.",
+      "verifier": "python3 scripts/mine.py --mine deck_signature",
+      "artifact": "scripts/mines/deck_signature.py",
       "verified_on": "2026-11-01"
     }
   ]

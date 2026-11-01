@@ -28,13 +28,13 @@ Solved has no target on purpose: it grows only through the promotion gate in [do
 |---|---|---:|---:|---:|---:|
 | Registry & ranking | One canonical, scored, provenance-tracked list of exactly 100 targets. | 3 | 0 | 0 | 1 |
 | Research engine | Evidence-aware readiness, campaigns and a strict promotion gate to Solved. | 5 | 0 | 0 | 1 |
-| Exact probe lab | Every computable problem gets a search plus an independent checker on a reusable engine. | 7 | 3 | 1 | 0 |
+| Exact probe lab | Every computable problem gets a search plus an independent checker on a reusable engine. | 8 | 3 | 1 | 0 |
 | Proof campaigns | Push the highest-ranked targets toward reviewed restricted results. | 6 | 2 | 1 | 0 |
 | Claim audit | Check announced resolutions for exact scope before spending effort on them. | 3 | 0 | 1 | 0 |
 | Trust & reproducibility | Pinned artifacts, proof certificates and CI that reruns everything. | 3 | 1 | 1 | 1 |
 | Site & community | A public dashboard and a contribution path that keeps the bar high. | 2 | 0 | 0 | 1 |
 
-## Shipped (29)
+## Shipped (30)
 
 _Merged on main with evidence in the repository._
 
@@ -84,6 +84,8 @@ _Merged on main with evidence in the repository._
   - Problems: M044 Kaplansky direct-finiteness conjecture, M049 Soficity conjecture
 - [x] **R48 · Structural finite-analogue ledger** (Exact probe lab) — Eight structural problems named with finite certificate shapes and proposed engines; aspirational until probes exist. [Evidence](data/structural_analogues.json)
   - Problems: M044 Kaplansky direct-finiteness conjecture, M049 Soficity conjecture, M088 Deterministic polynomial identity testing, M037 Hilbert–Smith conjecture +4 more
+- [x] **R50 · Per-card deck signature separates the 7-vertex census** (Exact probe lab) — The multiset of (degree sequence of G-v, triangles in G-v) separates every graph on 3 to 7 vertices. Adjacency cards and edge-set cards agree. Not a reconstruction theorem. [Evidence](MINES.md)
+  - Problems: M078 Graph reconstruction conjecture
 
 ## Now (6)
 

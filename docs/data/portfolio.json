@@ -18,7 +18,7 @@
   "program_as_of": "2026-10-31",
   "summary": {
     "campaigns": 23,
-    "reproduced_known": 30,
+    "reproduced_known": 31,
     "restricted_verified": 0,
     "fully_solved": 0,
     "problems_with_exact_verifier": 20,
@@ -214,10 +214,10 @@
       "action_bonus": 6,
       "method_id": "extremal_certificates",
       "method_title": "Replay the object, or mine the census",
-      "dispatch_next": "The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two.",
-      "dispatch_why": "The deck_invariants mine shows degree sequence plus triangle count still leaves collisions at 6 vertices. A larger census sits inside the published computational range.",
+      "dispatch_next": "The certified mine deck_signature separates every graph on 3 to 7 vertices by the multiset of (degree sequence of G-v, triangle count of G-v). Global degree-plus-triangles left 20 excess graphs at 6 vertices; the per-card signature leaves none through 7. A reconstruction lemma still has to pass the computer-verified range beyond this census.",
+      "dispatch_why": "deck_signature separates every graph through 7 vertices by a per-card invariant. A larger census sits inside McKay's published range, so the next lemma has to leave that range.",
       "campaign_stage": "benchmark_reproduced",
-      "milestone_count": 2
+      "milestone_count": 3
     },
     {
       "id": "M079",
@@ -3932,6 +3932,39 @@
         },
         "title": "Deck invariants that separate the census"
       },
+      "deck_signature": {
+        "certificate_sha256": "90b570d298b9354f1719bf37913ead82df9f46fc781ce14fe4b75c7adc21cafe",
+        "engines": [
+          "graph_census"
+        ],
+        "frontier": "Graph reconstruction is verified by computer through at least 11 vertices (McKay 1997). The signature below separates only the census this repository enumerates, through 7 vertices.",
+        "holds": true,
+        "mine": "deck_signature",
+        "params": {
+          "max_n": 7
+        },
+        "problem_id": "M078",
+        "scope": "For every n with 3 <= n <= 7, the multiset of (degree sequence of G-v, number of triangles in G-v) is different for every graph G on n vertices.",
+        "summary": {
+          "excess": {
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0
+          },
+          "graphs": {
+            "3": 4,
+            "4": 11,
+            "5": 34,
+            "6": 156,
+            "7": 1044
+          },
+          "max_n": 7,
+          "separates_through": 7
+        },
+        "title": "Per-card degree and triangle signature separates the census"
+      },
       "frankl_orbits": {
         "certificate_sha256": "dbae6e1504f6614d18ee24f95b77286069fa34bc253f203bfb878f3c9a937735",
         "engines": [
@@ -4766,10 +4799,21 @@
           "M075",
           "M074"
         ]
+      },
+      {
+        "id": "R50",
+        "track": "lab",
+        "horizon": "shipped",
+        "title": "Per-card deck signature separates the 7-vertex census",
+        "outcome": "The multiset of (degree sequence of G-v, triangles in G-v) separates every graph on 3 to 7 vertices. Adjacency cards and edge-set cards agree. Not a reconstruction theorem.",
+        "evidence": "MINES.md",
+        "problems": [
+          "M078"
+        ]
       }
     ],
     "counts": {
-      "shipped": 29,
+      "shipped": 30,
       "now": 6,
       "next": 4,
       "later": 4
@@ -4876,9 +4920,10 @@
       "method": "Deck-collision search over certified graph censuses",
       "hypothesis": "Every finite simple graph on at least 3 vertices is determined up to isomorphism by its vertex-deleted deck.",
       "first_proof_obligation": "Pick a graph family not yet known to be reconstructible and isolate a lemma that reconstructs a new invariant for it.",
-      "next_experiment": "The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two.",
+      "next_experiment": "The certified mine deck_signature separates every graph on 3 to 7 vertices by the multiset of (degree sequence of G-v, triangle count of G-v). Global degree-plus-triangles left 20 excess graphs at 6 vertices; the per-card signature leaves none through 7. A reconstruction lemma still has to pass the computer-verified range beyond this census.",
       "additional_verifiers": [
-        "python3 scripts/mine.py --mine deck_invariants"
+        "python3 scripts/mine.py --mine deck_invariants",
+        "python3 scripts/mine.py --mine deck_signature"
       ],
       "falsification": "Two non-isomorphic graphs with identical decks, confirmed by independent canonical forms.",
       "blocker": "Computer verification already reaches at least 11 vertices; novelty has to come from a structural lemma, not from range.",
@@ -5411,6 +5456,17 @@
       "verifier": "python3 scripts/lab.py --probe alperin_weights",
       "artifact": "scripts/probes/alperin_cert.py",
       "verified_on": "2026-11-01"
+    },
+    {
+      "id": "B-MINE-078B",
+      "problem_id": "M078",
+      "classification": "reproduced_known",
+      "title": "Per-card deck signature separates every graph on at most 7 vertices",
+      "scope": "Finite census only, inside McKay's published verification through at least 11 vertices. Not a reconstruction theorem.",
+      "description": "The sorted list of (degree sequence of G-v, triangles in G-v) takes a different value on every graph with 3 to 7 vertices (4, 11, 34, 156, and 1,044 graphs). Adjacency cards and edge-set cards agree.",
+      "verifier": "python3 scripts/mine.py --mine deck_signature",
+      "artifact": "scripts/mines/deck_signature.py",
+      "verified_on": "2026-11-01"
     }
   ],
   "solved": [],
@@ -5537,7 +5593,7 @@
           "M080"
         ],
         "best_rank": 10,
-        "summary": "M075: The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5). M078: The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two. M079: The certified mine poset_balance finds 11 posets on at most 6 elements with best balance exactly 1/3, and every one of them has width 2, which Linial already settled. A new lemma has to treat width at least 3; this census has no tight example there. M080: Quotient instances by the stabiliser of the standard basis so that GF(2)^4 becomes exhaustive, storing one grid certificate per orbit.",
+        "summary": "M075: The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5). M078: The certified mine deck_signature separates every graph on 3 to 7 vertices by the multiset of (degree sequence of G-v, triangle count of G-v). Global degree-plus-triangles left 20 excess graphs at 6 vertices; the per-card signature leaves none through 7. A reconstruction lemma still has to pass the computer-verified range beyond this census. M079: The certified mine poset_balance finds 11 posets on at most 6 elements with best balance exactly 1/3, and every one of them has width 2, which Linial already settled. A new lemma has to treat width at least 3; this census has no tight example there. M080: Quotient instances by the stabiliser of the standard basis so that GF(2)^4 becomes exhaustive, storing one grid certificate per orbit.",
         "why": ""
       },
       {
@@ -6608,8 +6664,8 @@
       "baseline_rank": 6,
       "stage": "benchmark_reproduced",
       "first_proof_obligation": "Pick a graph family not yet known to be reconstructible and isolate a lemma that reconstructs a new invariant for it.",
-      "next_experiment": "The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two.",
-      "recorded_experiment": "The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two.",
+      "next_experiment": "The certified mine deck_signature separates every graph on 3 to 7 vertices by the multiset of (degree sequence of G-v, triangle count of G-v). Global degree-plus-triangles left 20 excess graphs at 6 vertices; the per-card signature leaves none through 7. A reconstruction lemma still has to pass the computer-verified range beyond this census.",
+      "recorded_experiment": "The certified mine deck_signature separates every graph on 3 to 7 vertices by the multiset of (degree sequence of G-v, triangle count of G-v). Global degree-plus-triangles left 20 excess graphs at 6 vertices; the per-card signature leaves none through 7. A reconstruction lemma still has to pass the computer-verified range beyond this census.",
       "blocker": "Computer verification already reaches at least 11 vertices; novelty has to come from a structural lemma, not from range.",
       "dossier": "research/LAB_CAMPAIGNS.md"
     },

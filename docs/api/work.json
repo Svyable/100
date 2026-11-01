@@ -3151,7 +3151,7 @@
         "M080"
       ],
       "title": "Mine structure from certificates: Replay the object, or mine the census",
-      "deliverable": "M075: The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5). M078: The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two. M079: The certified mine poset_balance finds 11 posets on at most 6 elements with best balance exactly 1/3, and every one of them has width 2, which Linial already settled. A new lemma has to treat width at least 3; this census has no tight example there. M080: Quotient instances by the stabiliser of the standard basis so that GF(2)^4 becomes exhaustive, storing one grid certificate per orbit.",
+      "deliverable": "M075: The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5). M078: The certified mine deck_signature separates every graph on 3 to 7 vertices by the multiset of (degree sequence of G-v, triangle count of G-v). Global degree-plus-triangles left 20 excess graphs at 6 vertices; the per-card signature leaves none through 7. A reconstruction lemma still has to pass the computer-verified range beyond this census. M079: The certified mine poset_balance finds 11 posets on at most 6 elements with best balance exactly 1/3, and every one of them has width 2, which Linial already settled. A new lemma has to treat width at least 3; this census has no tight example there. M080: Quotient instances by the stabiliser of the standard basis so that GF(2)^4 becomes exhaustive, storing one grid certificate per orbit.",
       "context": "",
       "acceptance": [
         "Every problem on the job moves by the same action, or a precise gap is recorded per problem",
@@ -3164,7 +3164,7 @@
       "source": "scripts/approach.py",
       "depends_on": [],
       "priority_rank": 10,
-      "scope_sha256": "7c5ad134da84615e026cc51cc28ef2aa15b7268cedf56c11ed801f33fcd05f69",
+      "scope_sha256": "e15ff4d437feba04655efd6bade83f95e39052d32ea071582b11dddb99f223ff",
       "claim_title": "[Claim] J-extremal_certificates-mine_structure — Mine structure from certificates: Replay the object, or mine the census",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-extremal_certificates-mine_structure%20%E2%80%94%20Mine%20structure%20from%20certificates%3A%20Replay%20the%20object%2C%20or%20mine%20the%20census",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20J-extremal_certificates-mine_structure%22"

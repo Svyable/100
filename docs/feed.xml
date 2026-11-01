@@ -14,6 +14,13 @@
 <summary>The argument principle certifies N(100) = 29 exactly from interval boxes along 2 -&gt; 2+100i -&gt; 1/2+100i, and Hardy&#x27;s Z(t) has 29 certified sign changes on (0, 100]. All arithmetic is rigorous interval arithmetic with explicit series remainders, repeated by the checker at another precision and truncation. The deep run certifies all 649 zeros below height 1000 the same way. Scope: Known small range; not new</summary>
 </entry>
 <entry>
+<title>Milestone: Per-card deck signature separates every graph on at most 7 vertices</title>
+<link href="https://svyable.github.io/100/ledger/#B-MINE-078B"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-MINE-078B</id>
+<updated>2026-11-01T00:00:00Z</updated>
+<summary>The sorted list of (degree sequence of G-v, triangles in G-v) takes a different value on every graph with 3 to 7 vertices (4, 11, 34, 156, and 1,044 graphs). Adjacency cards and edge-set cards agree. Scope: Finite census only, inside McKay&#x27;s published verification through at least 11 vertices. Not a reconstruction theorem.</summary>
+</entry>
+<entry>
 <title>Milestone: GRH to height 20 for the real primitive characters of conductor 3, 4 and 5</title>
 <link href="https://svyable.github.io/100/ledger/#B-GRH-001"/>
 <id>tag:svyable.github.io,2026:100/milestone-B-GRH-001</id>

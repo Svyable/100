@@ -42,7 +42,10 @@ class MineTests(unittest.TestCase):
         self.assertEqual(deck["degree_separates_through"], 4)
         self.assertEqual(deck["degree_and_triangles_separate_through"], 5)
         self.assertEqual(deck["degree_and_triangles_excess"]["6"], 20)
-        self.assertIn("20 excess", campaigns["M078"]["next_experiment"])
+        signature = tables["deck_signature"]["summary"]
+        self.assertEqual(signature["separates_through"], 7)
+        self.assertTrue(all(value == 0 for value in signature["excess"].values()))
+        self.assertIn("deck_signature", campaigns["M078"]["next_experiment"])
 
         poset = tables["poset_balance"]["summary"]
         self.assertEqual(poset["one_third_posets"], 11)

@@ -10,6 +10,7 @@ Each table below was recomputed by a second code path. The ranges are inside pub
 | [`straus_patterns`](scripts/mines/straus_patterns.py) | M019 | Every prime n <= 8000 with n = 1 (mod 24) has an explicit positive solution of 4/n = 1/x + 1/y + 1/z, grouped by the residue 4x - n. | `a58457c801a9` |
 | [`straus_identities`](scripts/mines/straus_identities.py) | M019 | Nine polynomial identities give explicit 4/n = 1/x+1/y+1/z solutions on named arithmetic progressions inside n = 1 (mod 24); prime coverage is reported through 8000. | `94d399f83ea2` |
 | [`deck_invariants`](scripts/mines/deck_invariants.py) | M078 | On the complete graph census for 3 <= n <= 6, the excess of graphs over classes of the deck-certified degree sequence, and over degree sequence plus triangle count. | `31a81e041e99` |
+| [`deck_signature`](scripts/mines/deck_signature.py) | M078 | For every n with 3 <= n <= 7, the multiset of (degree sequence of G-v, number of triangles in G-v) is different for every graph G on n vertices. | `90b570d298b9` |
 | [`poset_balance`](scripts/mines/poset_balance.py) | M079 | Every non-chain poset on at most 6 elements has best balance at least 1/3, and the width-height profile of those whose best balance is exactly 1/3 is the recorded multiset. | `30a01221ce5f` |
 | [`frankl_orbits`](scripts/mines/frankl_orbits.py) | M075 | Every nontrivial union-closed family on a ground set of size at most 4 satisfies Frankl's abundance bound, and the number of families up to relabelling is the recorded orbit count. | `dbae6e1504f6` |
 
@@ -188,6 +189,35 @@ On the complete graph census for 3 <= n <= 6, the excess of graphs over classes 
 ```
 
 Run `python3 scripts/mine.py --mine deck_invariants`.
+
+### M078 · Per-card degree and triangle signature separates the census
+
+For every n with 3 <= n <= 7, the multiset of (degree sequence of G-v, number of triangles in G-v) is different for every graph G on n vertices.
+
+**Frontier.** Graph reconstruction is verified by computer through at least 11 vertices (McKay 1997). The signature below separates only the census this repository enumerates, through 7 vertices.
+
+```json
+{
+  "excess": {
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "6": 0,
+    "7": 0
+  },
+  "graphs": {
+    "3": 4,
+    "4": 11,
+    "5": 34,
+    "6": 156,
+    "7": 1044
+  },
+  "max_n": 7,
+  "separates_through": 7
+}
+```
+
+Run `python3 scripts/mine.py --mine deck_signature`.
 
 ### M079 · Posets attaining balance exactly 1/3
 

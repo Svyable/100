@@ -23,7 +23,7 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 | 8 | M094 | Hadamard matrix conjecture | `replay_published` | 91 | +7 | +12 | 110 | Add multiplier-group symmetry reduction to the Williamson meet-in-the-middle search so that n = 29 (order 116) becomes feasible, then implement Goethals-Seidel arrays for orders 156 and 172. |
 | 9 | M088 | Deterministic polynomial identity testing | `lock_restriction` | 94 | +2 | +10 | 106 | Lock paragraph is complete in research/M088_LOCK.md; implement the falsifier against that exact GF(2) degree-≤3 ≤20-gate black-box class before attaching a verifier or widening the class. |
 | 10 | M075 | Frankl union-closed sets conjecture | `mine_structure` | 91 | +7 | +6 | 104 | The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5). |
-| 11 | M078 | Graph reconstruction conjecture | `mine_structure` | 91 | +7 | +6 | 104 | The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two. |
+| 11 | M078 | Graph reconstruction conjecture | `mine_structure` | 91 | +7 | +6 | 104 | The certified mine deck_signature separates every graph on 3 to 7 vertices by the multiset of (degree sequence of G-v, triangle count of G-v). Global degree-plus-triangles left 20 excess graphs at 6 vertices; the per-card signature leaves none through 7. A reconstruction lemma still has to pass the computer-verified range beyond this census. |
 | 12 | M079 | One-third–two-thirds conjecture | `mine_structure` | 91 | +7 | +6 | 104 | The certified mine poset_balance finds 11 posets on at most 6 elements with best balance exactly 1/3, and every one of them has width 2, which Linial already settled. A new lemma has to treat width at least 3; this census has no tight example there. |
 | 13 | M096 | Projective plane order 12 | `replay_published` | 85 | +7 | +12 | 104 | Encode order-12 planes with a prescribed collineation as SAT with DRAT proof output, starting from cases the literature already excludes. |
 | 14 | M084 | Matrix multiplication exponent omega=2 | `replay_published` | 83 | +7 | +12 | 102 | Import one published exact decomposition, such as a cited rank-23 scheme for the <3,3,3> tensor, and replay it on the tensor checker. A flip-graph search is not the next step: small formats cannot beat the laser-method bounds the blocker cites. |
@@ -268,13 +268,13 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 
 ### M078 — Graph reconstruction conjecture
 
-**Dispatch:** `mine_structure` · rank 11 · The deck_invariants mine shows degree sequence plus triangle count still leaves collisions at 6 vertices. A larger census sits inside the published computational range.
+**Dispatch:** `mine_structure` · rank 11 · deck_signature separates every graph through 7 vertices by a per-card invariant. A larger census sits inside McKay's published range, so the next lemma has to leave that range.
 
 **Proof obligation:** Pick a graph family not yet known to be reconstructible and isolate a lemma that reconstructs a new invariant for it.
 
 **Falsifier:** Two non-isomorphic graphs with identical decks, confirmed by independent canonical forms.
 
-**Recommended step:** The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two.
+**Recommended step:** The certified mine deck_signature separates every graph on 3 to 7 vertices by the multiset of (degree sequence of G-v, triangle count of G-v). Global degree-plus-triangles left 20 excess graphs at 6 vertices; the per-card signature leaves none through 7. A reconstruction lemma still has to pass the computer-verified range beyond this census.
 
 **Current blocker:** Computer verification already reaches at least 11 vertices; novelty has to come from a structural lemma, not from range.
 

@@ -608,6 +608,17 @@
         "M075",
         "M074"
       ]
+    },
+    {
+      "id": "R50",
+      "track": "lab",
+      "horizon": "shipped",
+      "title": "Per-card deck signature separates the 7-vertex census",
+      "outcome": "The multiset of (degree sequence of G-v, triangles in G-v) separates every graph on 3 to 7 vertices. Adjacency cards and edge-set cards agree. Not a reconstruction theorem.",
+      "evidence": "MINES.md",
+      "problems": [
+        "M078"
+      ]
     }
   ]
 }

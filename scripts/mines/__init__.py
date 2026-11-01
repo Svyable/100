@@ -11,6 +11,7 @@ MINES = {
     "straus_patterns": "straus_patterns",
     "straus_identities": "straus_identities",
     "deck_invariants": "deck_invariants",
+    "deck_signature": "deck_signature",
     "poset_balance": "poset_balance",
     "frankl_orbits": "frankl_orbits",
 }
