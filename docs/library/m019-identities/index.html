@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M019 — parametric identities from the residue mine · 100</title>
+<meta name="description" content="Dated: 2026-10-31. Scope: explicit infinite families of solutions of $4/n = 1/x + 1/y + 1/z$ on arithmetic progressions inside $n \equiv 1\pmod{24}$. Not claimed: a proof of the Erdős–Straus conjecture, novelty over classical Mordell-type c">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m019-identities/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M019 — parametric identities from the residue mine · 100">
+<meta property="og:description" content="Dated: 2026-10-31. Scope: explicit infinite families of solutions of $4/n = 1/x + 1/y + 1/z$ on arithmetic progressions inside $n \equiv 1\pmod{24}$. Not claimed: a proof of the Erdős–Straus conjecture, novelty over classical Mordell-type c">
+<meta property="og:url" content="https://svyable.github.io/100/library/m019-identities/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M019 — parametric identities from the residue mine</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#why-this-is-the-overlooked-step">Why this is the overlooked step</a></li><li class="toc-l2"><a href="#two-primary-identities">Two primary identities</a></li><li class="toc-l3"><a href="#residue-3-on-n--120t97">Residue 3 on $n = 120t+97$</a></li><li class="toc-l3"><a href="#residue-7-on-n--120t73">Residue 7 on $n = 120t+73$</a></li><li class="toc-l2"><a href="#fixed-divisor-companions">Fixed-divisor companions</a></li><li class="toc-l2"><a href="#coverage-certificate">Coverage certificate</a></li><li class="toc-l2"><a href="#evidence-boundary">Evidence boundary</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M019/" title="Erdős–Straus conjecture">M019</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M019_IDENTITIES.md" rel="noopener noreferrer">research/M019_IDENTITIES.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M019 — parametric identities from the residue mine</h1>
+<p><strong>Dated:</strong> 2026-10-31. <strong>Scope:</strong> explicit infinite families of solutions of $4/n = 1/x + 1/y + 1/z$ on arithmetic progressions inside $n \equiv 1\pmod{24}$. <strong>Not claimed:</strong> a proof of the Erdős–Straus conjecture, novelty over classical Mordell-type coverings, or coverage of every integer $n \equiv 1\pmod{24}$.</p>
+<p>The certified mine <a href="https://github.com/Svyable/100/blob/main/scripts/mines/straus_patterns.py" rel="noopener noreferrer"><code>straus_patterns</code></a> only <em>clusters</em> solutions for primes $n \le 8000$ with $n \equiv 1\pmod{24}$ by the residue $4x-n$. This note turns the two dominant clusters (residues 3 and 7) into polynomial identities, then adds a short list of fixed-divisor companions. The independent checker is <a href="https://github.com/Svyable/100/blob/main/scripts/straus_identities.py" rel="noopener noreferrer"><code>scripts/straus_identities.py</code></a>; the coverage table is the mine <a href="https://github.com/Svyable/100/blob/main/scripts/mines/straus_identities.py" rel="noopener noreferrer"><code>straus_identities</code></a>.</p>
+<h2 id="why-this-is-the-overlooked-step">Why this is the overlooked step<a class="anchor" href="#why-this-is-the-overlooked-step" aria-label="Link to this section">#</a></h2>
+<p>Classical unit-fraction identities already settle every $n\not\equiv 1\pmod{24}$. Inside the hard class, a computer search keeps rediscovering the same progressions. Writing the closed form, and proving it as a polynomial identity, is the part the table does not do. Extending the verified range is refused by the dispatcher: that range already sits inside published computations.</p>
+<h2 id="two-primary-identities">Two primary identities<a class="anchor" href="#two-primary-identities" aria-label="Link to this section">#</a></h2>
+<h3 id="residue-3-on-n--120t97">Residue 3 on $n = 120t+97$<a class="anchor" href="#residue-3-on-n--120t97" aria-label="Link to this section">#</a></h3>
+<p>For every integer $t \ge 0$ set</p>
+<p>$$ n = 120t+97,\qquad x = 30t+25,\qquad y = (12t+10)\,n,\qquad z = (60t+50)\,n = 5y. $$</p>
+<p>Then $4x-n = 3$ and</p>
+<p>$$ \frac{4}{n} - \frac{1}{x} = \frac{3}{nx} = \frac{1}{y} + \frac{1}{5y} = \frac{6}{5y}. $$</p>
+<p>The middle equality is $5y = 2nx$, which holds because $y = (2x/5)\,n$ and $x = 30t+25$ is divisible by 5. Clearing denominators gives the polynomial identity checked in code.</p>
+<h3 id="residue-7-on-n--120t73">Residue 7 on $n = 120t+73$<a class="anchor" href="#residue-7-on-n--120t73" aria-label="Link to this section">#</a></h3>
+<p>For every integer $t \ge 0$ set</p>
+<p>$$ n = 120t+73,\qquad x = 30t+20,\qquad y = (6t+4)\,n,\qquad z = (15t+10)\,n. $$</p>
+<p>Then $4x-n = 7$ and $1/y + 1/z = 7/(nx)$. Equivalently $y = (x/5)\,n$ and $z = (x/2)\,n$, which are integral because $x = 30t+20$.</p>
+<p>Together these two progressions already match <strong>65 of the 117</strong> primes $n \le 8000$ with $n \equiv 1\pmod{24}$ in the residue mine.</p>
+<h2 id="fixed-divisor-companions">Fixed-divisor companions<a class="anchor" href="#fixed-divisor-companions" aria-label="Link to this section">#</a></h2>
+<p>Write $x = (n+r)/4$ with residue $r \in \{3,7,11\}$ and choose a positive divisor $d$ of $x^2$. Set</p>
+<p>$$ a = \frac{x+d}{r},\qquad b = \frac{x^2/d + x}{r},\qquad y = an,\qquad z = bn. $$</p>
+<p>The relation $(ra-x)(rb-x) = x^2$ forces $rab = x(a+b)$, which is exactly $4/n = 1/x + 1/y + 1/z$. On any arithmetic progression where $a$ and $b$ are integer polynomials in the parameter, this is again a polynomial identity.</p>
+<p>The repository records seven such companions (moduli 168 and 264), including the composite-only progression $n = 168t+49 = 7(24t+7)$, which never contributes an odd prime but still covers an infinite hard-class progression.</p>
+<h2 id="coverage-certificate">Coverage certificate<a class="anchor" href="#coverage-certificate" aria-label="Link to this section">#</a></h2>
+<p>On the smoke range $N = 8000$:</p>
+<ul><li>117 primes are $\equiv 1\pmod{24}$;</li><li>the nine identities cover <strong>106</strong> of them by closed form;</li><li>the <strong>11</strong> uncovered primes all lie in $\{1,49\}\pmod{120}$.</li></ul>
+<p>Run:</p>
+<pre><code class="lang-sh">python3 scripts/straus_identities.py --check
+python3 scripts/mine.py --mine straus_identities
+python3 -m unittest discover -s tests -p &#x27;test_straus_identities.py&#x27; -v</code></pre>
+<h2 id="evidence-boundary">Evidence boundary<a class="anchor" href="#evidence-boundary" aria-label="Link to this section">#</a></h2>
+<ul><li>The identities are <strong>reproduced constructive coverings</strong>, in the same spirit as classical Mordell / Sierpiński parametric solutions. Do not describe them as a new resolution of Erdős–Straus, and do not promote M019 toward Solved.</li><li>A finite list of polynomial identities cannot cover every $n \equiv 1\pmod{24}$; that obstruction is already the campaign blocker.</li><li>The next attack is therefore <strong>not</strong> a longer search. It is either a genuinely new restricted family outside these Mordell-type progressions, or a different idea for the remaining classes $n \equiv 1,49\pmod{120}$.</li></ul>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

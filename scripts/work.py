@@ -34,6 +34,7 @@ from pathlib import Path
 from urllib.parse import quote
 
 import approach
+import benchmark
 import outcomes
 import proof_obligations
 import scale
@@ -41,7 +42,7 @@ from research import load
 
 ROOT = Path(__file__).resolve().parents[1]
 REPO = "https://github.com/Svyable/100"
-FAMILIES = ("obligation", "review", "lean", "job", "roadmap", "comparator", "status_audit")
+FAMILIES = ("obligation", "review", "benchmark", "lean", "job", "roadmap", "comparator", "status_audit")
 STATUS_ORDER = {"runnable": 0, "externally_blocked": 1, "waiting_on_dependencies": 2}
 REGEN = "python3 scripts/regen.py && python3 scripts/regen.py --check"
 TESTS = "python3 -m unittest discover -s tests"
@@ -53,6 +54,10 @@ def _json(path):
 
 def digest(item):
     scope = {k: item[k] for k in ("id", "kind", "problems", "deliverable", "acceptance", "boundary")}
+    # A review accepts the precise statement in context, not just a generic task title.
+    # Leave existing non-review claim hashes stable for in-flight contributor claims.
+    if item["kind"] == "review":
+        scope["context"] = item.get("context", "")
     return hashlib.sha256(json.dumps(scope, sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest()
 
 
@@ -99,12 +104,12 @@ def build():
 
     # 1b. Independent review: the acceptance bottleneck, made claimable. An item clears
     # when data/outcomes.json records an accepted_independent outcome for it.
-    accepted = outcomes.accepted_ids()
+    accepted = outcomes.accepted_review_scopes()
     independence = ("The reviewer is not an author of the artifact (check git log of its files) and records "
                     "the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url")
     problems_by_id = {p["id"]: p for p in items}
     for t in _json("data/lean_targets.json"):
-        if t["stage"] != "implemented" or f"V-{t['id']}" in accepted:
+        if t["stage"] != "implemented":
             continue
         add(id=f"V-{t['id']}", kind="review", status="runnable", problems=[t["problem_id"]],
             title=f"Independent scope review of Lean target {t['id']} ({t['problem_id']})",
@@ -119,7 +124,7 @@ def build():
             source="data/lean_targets.json")
     for e in _json("data/formalization.json")["entries"]:
         wid = f"V-F-{e['problem_id']}"
-        if e.get("fidelity") != "author_checked" or wid in accepted:
+        if e.get("fidelity") != "author_checked":
             continue
         add(id=wid, kind="review", status="runnable", problems=[e["problem_id"]],
             title=f"Independent fidelity review of the {problems_by_id[e['problem_id']]['name']} comparator",
@@ -133,7 +138,7 @@ def build():
             source="data/formalization.json")
     for r in _json("data/statement_scope_reviews.json")["reviews"]:
         wid = f"V-S-{r['id']}"
-        if wid in accepted or r["id"] not in problems_by_id:
+        if r["id"] not in problems_by_id:
             continue
         add(id=wid, kind="review", status="runnable", problems=[r["id"]],
             title=f"Independent review of the status draft for {problems_by_id[r['id']]['name']}",
@@ -144,6 +149,78 @@ def build():
             boundary="Reviewing a draft is not an open-status certification by itself.",
             falsifier="A dated source showing the drafted statement is already resolved or misstated.",
             source="data/statement_scope_reviews.json")
+
+    # 1b(ii). Independent audit of the existing runnable verifier for each
+    # campaign. Replaying its checker is not a new theorem, but a distinct
+    # reviewable artifact from Lean fidelity or status-source audits.
+    verified = set()
+    for campaign in program["campaigns"]:
+        cmd = campaign.get("verifier")
+        pid = campaign["problem_id"]
+        if not cmd or pid in verified:
+            continue
+        verified.add(pid)
+        add(id=f"V-P-{pid}", kind="review", status="runnable", problems=[pid],
+            title=f"Independent certificate and scope audit for {pid}",
+            deliverable=(f"Reproduce the campaign verifier ({cmd}); inspect the independent "
+                         "checker, deliberately corrupt its input/certificate, and compare "
+                         "every computational claim against the registered finite scope "
+                         "and its cited published boundary."),
+            context=(f"Command: {cmd}; project: {by_id[pid]['question']}. "
+                     f"Evidence: data/research_program.json, LAB.md and verifier source."),
+            acceptance=[independence,
+                        "Publish exact command, pinned input SHA and output, negative "
+                        "control, numerical range and scope-vs-source assessment; "
+                        "record any discrepancy as a gap, never as a solved result",
+                        REGEN, TESTS],
+            boundary=("Reproduction and fidelity only. Even an independently accepted "
+                      "finite checker is not a new restricted result, a universal proof, "
+                      "or a claim to have established untested ranges."),
+            falsifier="A tampered certificate passes, checker and search share an "
+                      "unjustified assumption, or a claimed scope exceeds the exact run.",
+            source="data/research_program.json")
+
+    # 1c. Frozen matched-budget experiment cells. A cell disappears only
+    # after its exact task/arm/seed has a validated real run record.
+    manifest = benchmark.load_manifest()
+    recorded = benchmark.load_runs()
+    benchmark.validate_runs(manifest, recorded)
+    done = {(r["task_id"], r["arm"], r["seed"]) for r in recorded}
+    stamp = benchmark.digest(manifest)
+    for task in manifest["tasks"]:
+        for arm in manifest["arms"]:
+            for seed in manifest["seeds"]:
+                if (task["id"], arm, seed) in done:
+                    continue
+                contaminated = benchmark.NOVELTY_CONTAMINATED.get(task["id"])
+                boundary = ("Experimental work, not a theorem or speedup. No reuse between "
+                            "arms or seeds; record source snapshot, prompts, tool/model versions, "
+                            "checker, token accounting, all failed attempts. "
+                            + (f"POST-FREEZE PRIOR ART: {contaminated}. No novelty credit or clean "
+                               "holdout comparison for this task." if contaminated else
+                               "Known prior art and the frozen source baseline must be disclosed."))
+                add(id=f"B-{task['id']}-{arm}-{seed}", kind="benchmark", status="runnable",
+                    problems=[task["problem_id"]],
+                    title=f"Preregistered {task['id']} / {arm} / seed {seed}",
+                    deliverable=(f"Run the {arm} agent architecture on {task['id']} with seed {seed}, "
+                                 f"under the frozen scope: {task['scope']}"),
+                    context=(f"Protocol SHA-256 {stamp}; source commit {manifest['source_commit']}. "
+                             f"Acceptance: {task['acceptance']}"),
+                    acceptance=[
+                        "Claim exact task/arm/seed. Capture model version, prompts, source snapshot, "
+                        "raw agent/tool transcript and measured aggregate usage across all workers, "
+                        "checker and coordinator",
+                        f"Caps: {manifest['resource_caps']['model_tokens']} model tokens, "
+                        f"{manifest['resource_caps']['tool_calls']} tool calls, "
+                        f"{manifest['resource_caps']['elapsed_seconds']} wall seconds",
+                        "Append exactly one observed record to data/benchmark_runs.jsonl; "
+                        "include failures/timeouts, not fixtures or estimated costs",
+                        "A result needs artifact, independent checker log, scope/prior-art audit; "
+                        "a no-result trial must have null evidence",
+                        "python3 scripts/benchmark.py --check", REGEN],
+                    boundary=boundary, falsifier="Contaminated source, missing logs, failed "
+                    "independent replay or scope mismatch.",
+                    source="data/benchmark_prereg.json")
 
     # 2. Lean targets: the next formal deliverable of each target.
     for t in _json("data/lean_targets.json"):
@@ -228,6 +305,10 @@ def build():
         unknown = [p for p in item["problems"] if p not in by_id]
         if unknown:
             raise ValueError(f"{item['id']}: unknown problems {unknown}")
+    # Only a review accepted for the *current* scope can leave the queue.
+    # Changed statement contexts and acceptance requirements re-open the review.
+    work = [item for item in work if item["kind"] != "review"
+            or item["scope_sha256"][:16] not in accepted.get(item["id"], set())]
     order = {k: i for i, k in enumerate(FAMILIES)}
     work.sort(key=lambda x: (STATUS_ORDER[x["status"]], order[x["kind"]], x["priority_rank"], x["id"]))
     return work

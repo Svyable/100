@@ -65,12 +65,17 @@ ENGINES = {
     },
     "interval_arithmetic": {
         "name": "Directed fixed-point intervals for zeta and Dirichlet L-functions",
-        "modules": ["scripts/probes/intervals.py", "scripts/probes/zeta.py"],
+        "modules": ["scripts/probes/intervals.py", "scripts/probes/zeta.py", "scripts/probes/intervals_cert.py"],
         "use": "Rigorous zero counts on the critical line via the argument principle.",
+    },
+    "l_functions": {
+        "name": "Certified Euler-Maclaurin Dirichlet L-functions and argument-principle zero counts",
+        "modules": ["scripts/probes/lfunctions.py", "scripts/probes/intervals_cert.py"],
+        "use": "Independent interval enclosures of zeta and real primitive L-function zero counts.",
     },
     "group_characters": {
         "name": "Exact conjugacy, radical p-subgroups and character-degree counts",
-        "modules": ["scripts/probes/groups.py"],
+        "modules": ["scripts/probes/groups.py", "scripts/probes/groups_cert.py"],
         "use": "Alperin weight counts, Brauer-character enumerations and small modular checks.",
     },
 }
@@ -78,7 +83,9 @@ ENGINES = {
 # probe id -> module name (ordered by problem id)
 PROBES = {
     "riemann": "riemann",
+    "zeta_zeros": "zeta_zeros",
     "dirichlet_l": "dirichlet_l",
+    "dirichlet_zeros": "dirichlet_zeros",
     "goldbach": "goldbach",
     "erdos_straus": "erdos_straus",
     "jacobian": "jacobian",
@@ -95,6 +102,7 @@ PROBES = {
     "projective_planes": "planes",
     "held_karp": "held_karp",
     "alperin": "alperin",
+    "alperin_weights": "alperin_cert",
 }
 
 

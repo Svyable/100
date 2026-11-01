@@ -71,6 +71,8 @@
   "claim_review_2026": null,
   "formal_statement": null,
   "external_claims": [],
+  "discovery_trail": null,
+  "discovery_url": null,
   "mentioned_in": [
     {
       "title": "Approach — leverage dispatch",
@@ -106,6 +108,11 @@
       "title": "Research-source audit — 2026-10-30",
       "source": "docs/AUDIT_QUEUE.md",
       "url": "https://svyable.github.io/100/library/audit-queue/"
+    },
+    {
+      "title": "OpenAI/math transfer intake: evidence before claims",
+      "source": "docs/OPENAI_MATH_TRANSFER.md",
+      "url": "https://svyable.github.io/100/library/openai-math-transfer/"
     }
   ]
 }

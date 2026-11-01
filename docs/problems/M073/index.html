@@ -19,9 +19,11 @@
 <link rel="stylesheet" href="../../assets/style.css">
 <link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
 <link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
 <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <script src="../../assets/app.js" defer></script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Sidorenko conjecture", "description": "Are bipartite graph homomorphism densities bounded below by the edge-density power?", "url": "https://svyable.github.io/100/problems/M073/", "dateModified": "2026-10-31", "about": {"@type": "Thing", "name": "Sidorenko conjecture", "description": "Are bipartite graph homomorphism densities bounded below by the edge-density power?"}, "isPartOf": {"@type": "WebSite", "name": "100", "url": "https://svyable.github.io/100/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Combinatorics", "item": "https://svyable.github.io/100/fields/combinatorics/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Sidorenko conjecture", "description": "Are bipartite graph homomorphism densities bounded below by the edge-density power?", "url": "https://svyable.github.io/100/problems/M073/", "dateModified": "2026-11-01", "about": {"@type": "Thing", "name": "Sidorenko conjecture", "description": "Are bipartite graph homomorphism densities bounded below by the edge-density power?"}, "isPartOf": {"@type": "WebSite", "name": "100", "url": "https://svyable.github.io/100/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Combinatorics", "item": "https://svyable.github.io/100/fields/combinatorics/"}]}</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -31,7 +33,7 @@
     <span class="brand-mark">100<span class="brand-dot">.</span></span>
     <span class="brand-caption">SVYABLE<br>RESEARCH</span>
   </a>
-  <nav class="main-nav" aria-label="Primary navigation"><a href="../../" aria-current="page">The 100</a><a href="../../work/">Work</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/">Library</a></nav>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../" aria-current="page">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/">Library</a></nav>
   <div class="header-tools">
     <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
     <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
@@ -47,11 +49,11 @@
   <h1>Sidorenko conjecture</h1>
   <p class="problem-field"><a href="../../fields/combinatorics/">Combinatorics</a></p>
   <div class="chips"><span class="status-pill status-claim_needs_review" title="A 2026 proof or counterexample claim exists and has not been independently validated.">Claim under review</span><span class="chip chip-modality">Finitely refutable</span><span class="chip chip-good">Exact verifier in the lab</span><span class="chip chip-campaign">Campaign: Benchmark reproduced</span></div>
-  <blockquote class="the-question"><span class="detail-label">THE OPEN QUESTION</span>Are bipartite graph homomorphism densities bounded below by the edge-density power?</blockquote>
+  <blockquote class="the-question"><span class="detail-label">THE QUESTION UNDER STUDY</span>Are bipartite graph homomorphism densities bounded below by the edge-density power?</blockquote>
 </header>
 <div class="problem-grid">
 <aside class="problem-side" aria-label="On this page">
-  <nav class="toc"><span class="detail-label">ON THIS PAGE</span><ol><li><a href="#question">The question</a></li><li><a href="#formal">Formal statement</a></li><li><a href="#priority">Priority</a></li><li><a href="#campaign">Campaign</a></li><li><a href="#probe-sidorenko">Exact probe</a></li><li><a href="#milestones">Milestones</a></li><li><a href="#claim-review">Claim triage</a></li><li><a href="#work">Open work</a></li><li><a href="#provenance">Provenance</a></li></ol></nav>
+  <nav class="toc"><span class="detail-label">ON THIS PAGE</span><ol><li><a href="#question">The question</a></li><li><a href="#formal">Formal statement</a></li><li><a href="#discovery">Discovery trail</a></li><li><a href="#priority">Priority</a></li><li><a href="#campaign">Campaign</a></li><li><a href="#probe-sidorenko">Exact probe</a></li><li><a href="#milestones">Milestones</a></li><li><a href="#claim-review">Claim triage</a></li><li><a href="#work">Open work</a></li><li><a href="#provenance">Provenance</a></li><li><a href="#related">Connections</a></li></ol></nav>
   <div class="side-actions">
     <a class="button button-outline" href="https://github.com/Svyable/100/issues/new?template=evidence_update.yml&amp;title=%5BEvidence%5D%20M073%20%2014%20" rel="noopener noreferrer">Submit evidence ↗</a>
     <a class="text-link" href="../../problems/M073/" data-permalink>Permalink: /problems/M073/</a>
@@ -59,8 +61,23 @@
   </div>
 </aside>
 <div class="problem-main">
+<section class="dossier-block evidence-map" id="evidence-map">
+<h2>What the evidence actually says</h2>
+<p class="block-lead">Status review, checked finite cases, and a proposed next attack answer different questions. None should be mistaken for a verified full resolution.</p>
+<div class="evidence-columns">
+  <div><span class="detail-label">01 / FULL-STATEMENT STATUS</span><h3>Claim under review</h3>
+    <p>A 2026 proof or counterexample claim exists and has not been independently validated. A claimed resolution still needs independent evaluation. This project records no accepted full solution for this active candidate.</p></div>
+  <div><span class="detail-label">02 / VERIFIED SCOPE HERE</span><h3>Finite or formal checks</h3>
+    <p>1 exact lab probe(s) cover specified finite instances; their passing results are not an unrestricted proof. No Lean comparator statement is recorded.</p></div>
+  <div><span class="detail-label">03 / WHAT TO TEST NEXT</span><h3>Next bounded action</h3>
+    <p>Derive an explicit finite host G (order n and edges) from the counter-kernel parameters and replay t(H,G)&lt;t(K2,G)^66 with two independent homomorphism counts, or obtain specialist acceptance of the existence proof without a listed witness.</p></div>
+</div>
+<p class="muted small">These labels describe the evidence recorded in this repository, not an authoritative verdict on the entire mathematical literature. The <a href="../../ledger/">solved ledger</a> has a separate acceptance gate.</p>
+</section>
+
 <section class="dossier-block" id="formal"><h2>Formal statement</h2>
 <p class="muted">No Lean comparator statement yet. Formalising the exact statement is a bounded, reviewable contribution: see <a href="../../formal/#contribute">how to add one</a>.</p></section>
+<section class="dossier-block" id="discovery"><h2>How this approach developed</h2><p class="block-lead">Can the claimed Sidorenko counterexample be independently tested outside its author Lean tree?</p><p>Trace the motivating observations, independent reproductions, blockers, and next experiments. These notes are not a theorem certificate.</p><p><a class="button button-outline" href="../../discovery/M073/">Open 3 sourced discovery steps →</a></p></section>
 <section class="dossier-block" id="priority"><h2>Priority, decomposed</h2>
   <div class="score-hero">
     <div><strong>#2</strong><span>Dispatch rank · score 132</span></div>
@@ -115,7 +132,7 @@
 </dl>
 <p><a class="text-link" href="../../claims/#M073">All claim reviews →</a></p>
 </section>
-<section class="dossier-block" id="work"><h2>Open work <span class="chip">4</span></h2><p class="muted">Bounded, claimable units derived from the ledgers. Claim one before starting so parallel agents never duplicate it.</p><ul class="work-list"><li class="work-item work-runnable"><a href="../../work/O-M073-01/"><span class="work-id">O-M073-01</span><span class="work-title">Witness obligation for M073</span><span class="work-meta">Proof obligation · Runnable · dispatch #2</span></a></li><li class="work-item work-runnable"><a href="../../work/J-extremal_certificates-replay_claim_witness/"><span class="work-id">J-extremal_certificates-replay_claim_witness</span><span class="work-title">Replay a claimed finite witness: Replay the object, or mine the census</span><span class="work-meta">Cohort job · Runnable · dispatch #1</span></a></li><li class="work-item work-runnable"><a href="../../work/F-M073/"><span class="work-id">F-M073</span><span class="work-title">Lean comparator statement for Sidorenko conjecture</span><span class="work-meta">Lean comparator · Runnable · dispatch #2</span></a></li><li class="work-item work-runnable"><a href="../../work/S-M073/"><span class="work-id">S-M073</span><span class="work-title">Exact-status audit draft for Sidorenko conjecture</span><span class="work-meta">Status audit · Runnable · dispatch #2</span></a></li></ul></section>
+<section class="dossier-block" id="work"><h2>Open work <span class="chip">5</span></h2><p class="muted">Bounded, claimable units derived from the ledgers. Claim one before starting so parallel agents never duplicate it.</p><p><a class="text-link" href="../../lamport/?problem=M073#M073">View exact Lamport dependency graph and audits →</a></p><ul class="work-list"><li class="work-item work-runnable"><a href="../../work/O-M073-01/"><span class="work-id">O-M073-01</span><span class="work-title">Witness obligation for M073</span><span class="work-meta">Proof obligation · Runnable · dispatch #2</span></a></li><li class="work-item work-runnable"><a href="../../work/V-P-M073/"><span class="work-id">V-P-M073</span><span class="work-title">Independent certificate and scope audit for M073</span><span class="work-meta">Independent review · Runnable · dispatch #2</span></a></li><li class="work-item work-runnable"><a href="../../work/J-extremal_certificates-replay_claim_witness/"><span class="work-id">J-extremal_certificates-replay_claim_witness</span><span class="work-title">Replay a claimed finite witness: Replay the object, or mine the census</span><span class="work-meta">Cohort job · Runnable · dispatch #1</span></a></li><li class="work-item work-runnable"><a href="../../work/F-M073/"><span class="work-id">F-M073</span><span class="work-title">Lean comparator statement for Sidorenko conjecture</span><span class="work-meta">Lean comparator · Runnable · dispatch #2</span></a></li><li class="work-item work-runnable"><a href="../../work/S-M073/"><span class="work-id">S-M073</span><span class="work-title">Exact-status audit draft for Sidorenko conjecture</span><span class="work-meta">Status audit · Runnable · dispatch #2</span></a></li></ul></section>
 <section class="dossier-block" id="provenance"><h2>Provenance &amp; status</h2>
   <dl class="kv">
     <dt>Evidence state</dt><dd><span class="status-pill status-claim_needs_review" title="A 2026 proof or counterexample claim exists and has not been independently validated.">Claim under review</span> A 2026 proof or counterexample claim exists and has not been independently validated. This classification is not a universal proof-status certification.</dd>
@@ -123,13 +140,14 @@
     <dt>Source intake</dt><dd>not yet recorded</dd>
     <dt>Computation</dt><dd>Finitely refutable — One finite, checkable object would refute it; computation can search and certify ranges.</dd>
   </dl>
-  <h3>Discussed in the library</h3><ul class="link-list"><li><a href="../../library/approach/">Approach — leverage dispatch</a></li><li><a href="../../library/attack-queue/">Execution queue — evidence-aware research priorities</a></li><li><a href="../../library/coverage/">Coverage — breadth-first research deployment plan</a></li><li><a href="../../library/lab/">Exact probe lab — computational reach of the 100</a></li><li><a href="../../library/ranked/">Ranked candidate portfolio</a></li><li><a href="../../library/roadmap/">Roadmap — 100 mathematical grand challenges</a></li><li><a href="../../library/scale/">Scale — proof-exchange wave</a></li><li><a href="../../library/claim-reviews-2026/">2026 claimed-resolution triage — issue #3</a></li><li><a href="../../library/lab-campaigns/">Lab campaigns: problems under exact computation</a></li><li><a href="../../library/m071-m073-witnesses/">M071 / M073 — claimed finite-witness extractability audit</a></li><li><a href="../../library/research-engine/">Proof-driven research engine</a></li><li><a href="../../library/sources/">Foundational sources and 2026 claim watch</a></li></ul>
+  <h3>Discussed in the library</h3><ul class="link-list"><li><a href="../../library/approach/">Approach — leverage dispatch</a></li><li><a href="../../library/attack-queue/">Execution queue — evidence-aware research priorities</a></li><li><a href="../../library/coverage/">Coverage — breadth-first research deployment plan</a></li><li><a href="../../library/lab/">Exact probe lab — computational reach of the 100</a></li><li><a href="../../library/ranked/">Ranked candidate portfolio</a></li><li><a href="../../library/roadmap/">Roadmap — 100 mathematical grand challenges</a></li><li><a href="../../library/scale/">Scale — proof-exchange wave</a></li><li><a href="../../library/claim-reviews-2026/">2026 claimed-resolution triage — issue #3</a></li><li><a href="../../library/lab-campaigns/">Lab campaigns: problems under exact computation</a></li><li><a href="../../library/m071-m073-witnesses/">M071 / M073 — claimed finite-witness extractability audit</a></li><li><a href="../../library/m073-twoblock-exact/">M073 — exact two-block graphon sanity check, not a Sidorenko witness</a></li><li><a href="../../library/openai-math-transfer/">OpenAI/math transfer intake: evidence before claims</a></li><li><a href="../../library/research-engine/">Proof-driven research engine</a></li><li><a href="../../library/sources/">Foundational sources and 2026 claim watch</a></li></ul>
   <h3>Cite this page</h3>
-  <div class="cite"><code id="cite-M073">Svyable. “Sidorenko conjecture (M073).” 100 — A living portfolio of mathematical grand challenges, data as of 2026-10-31. https://svyable.github.io/100/problems/M073/</code><button class="plain-button" type="button" data-copy="#cite-M073">Copy</button></div>
+  <div class="cite"><code id="cite-M073">Svyable. “Sidorenko conjecture (M073).” 100 — A living portfolio of mathematical grand challenges, data as of 2026-11-01. https://svyable.github.io/100/problems/M073/</code><button class="plain-button" type="button" data-copy="#cite-M073">Copy</button></div>
 </section>
 <section class="dossier-block" id="related"><h2>Nearby in the portfolio</h2>
   <div class="two-col"><div><h3>Also in <a href="../../fields/combinatorics/">Combinatorics</a></h3><ul class="link-list"><li><a href="../../problems/M071/"><span class="mono">M071</span> Hadwiger conjecture</a></li><li><a href="../../problems/M074/"><span class="mono">M074</span> Caccetta–Häggkvist conjecture</a></li><li><a href="../../problems/M075/"><span class="mono">M075</span> Frankl union-closed sets conjecture</a></li><li><a href="../../problems/M078/"><span class="mono">M078</span> Graph reconstruction conjecture</a></li><li><a href="../../problems/M079/"><span class="mono">M079</span> One-third–two-thirds conjecture</a></li><li><a href="../../problems/M080/"><span class="mono">M080</span> Rota basis conjecture</a></li></ul></div>
   <div><h3>Shares an exact engine with</h3><div class="chips"><a class="chip chip-link" href="../../problems/M071/" title="Hadwiger conjecture">M071</a><a class="chip chip-link" href="../../problems/M078/" title="Graph reconstruction conjecture">M078</a><a class="chip chip-link" href="../../problems/M097/" title="Metric TSP four-thirds conjecture">M097</a></div></div></div>
+<div class="method-neighbours"><h3>Shares the attack method: Replay the object, or mine the census</h3><p class="muted">Methodological similarity only; it does not imply the conjectures are equivalent.</p><ul class="link-list"><li><a href="../../problems/M071/"><span class="mono">M071</span> Hadwiger conjecture</a></li><li><a href="../../problems/M074/"><span class="mono">M074</span> Caccetta–Häggkvist conjecture</a></li><li><a href="../../problems/M075/"><span class="mono">M075</span> Frankl union-closed sets conjecture</a></li><li><a href="../../problems/M078/"><span class="mono">M078</span> Graph reconstruction conjecture</a></li><li><a href="../../problems/M079/"><span class="mono">M079</span> One-third–two-thirds conjecture</a></li><li><a href="../../problems/M080/"><span class="mono">M080</span> Rota basis conjecture</a></li></ul></div>
 </section>
 </div>
 </div>
@@ -139,10 +157,10 @@
 <footer class="site-footer">
   <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
   <div class="footer-links">
-    <a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
     <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
   </div>
-  <small>Generated from the validated ledgers · data as of 2026-10-31 · no tracking, no external scripts</small>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
 </footer>
 </div>
 <dialog class="palette" id="palette" aria-label="Search the portfolio">

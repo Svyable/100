@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-31",
+  "upstream": {
+    "repository": "openai/math",
+    "commit": "4eaee87548250b2682affda7d05d947c05554bae",
+    "overview_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/overview.tex"
+  },
+  "interpretation": "Author-claimed results are research intake only. Source pin, schema validation and a scope comparison do not validate a proof, assign novelty, or change the Solved ledger.",
+  "transfers": [
+    {
+      "id": "T-OAI-079",
+      "result_id": "079",
+      "title": "Local smoothing; Kakeya and interior Fourier restriction",
+      "problem_ids": [
+        "M055",
+        "M056"
+      ],
+      "source_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf",
+      "claim_review_ids": [
+        "M055",
+        "M056"
+      ],
+      "related_repo_paths": [
+        "data/claim_reviews_2026.json",
+        "data/statement_scope_reviews.json"
+      ],
+      "status": "author_claim_unreviewed",
+      "scope_boundary": "Claimed all-dimensional local smoothing implies Kakeya dimension and strict-interior restriction estimates. Endpoint cases and general restriction formulations are not automatically settled; M055 and M056 differ.",
+      "transfer_hypothesis": "Audit the wave estimate to Kakeya and restriction implication chains with exact n,p,q and endpoint conventions.",
+      "falsifier": "A missing dimensional hypothesis, unjustified endpoint passage, or unsupported maximal estimate breaks the purported implication.",
+      "next_action": "Independently check the paper's local-smoothing-to-Kakeya/restriction reductions against the M055/M056 scope ledger; request specialists."
+    },
+    {
+      "id": "T-OAI-107",
+      "result_id": "107",
+      "title": "Matrix multiplication exponent at most 9/4",
+      "problem_ids": [
+        "M084"
+      ],
+      "source_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026/paper.pdf",
+      "claim_review_ids": [],
+      "related_repo_paths": [
+        "data/problems.json",
+        "research/CAMPAIGNS.md"
+      ],
+      "status": "author_claim_unreviewed",
+      "scope_boundary": "A claimed omega <= 9/4 over C does not resolve the omega = 2 conjecture; characteristic and rectangular regimes require separate hypotheses.",
+      "transfer_hypothesis": "Extract one finite tensor identity or restriction lemma and build an independent exact symbolic checker.",
+      "falsifier": "The symbolic identity fails in an admissible small instance or the asymptotic extraction uses a missing hypothesis.",
+      "next_action": "Record the exact field and tensor construction, derive checkable low-rank instances, compare with established preprint bounds."
+    },
+    {
+      "id": "T-OAI-116",
+      "result_id": "116",
+      "title": "Identity testing for noncommutative formulas",
+      "problem_ids": [
+        "M088"
+      ],
+      "source_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/uniform-matrix-hitting-points-positive-characteristic.pdf",
+      "claim_review_ids": [],
+      "related_repo_paths": [
+        "research/CAMPAIGNS.md",
+        "data/problems.json"
+      ],
+      "status": "author_claim_unreviewed",
+      "scope_boundary": "Division-free noncommutative formulas and matrix evaluations are not arbitrary commutative arithmetic circuits; do not imply unrestricted deterministic polynomial identity testing.",
+      "transfer_hypothesis": "Isolate a constructive hitting-point lemma for an explicitly named restricted formula class and field.",
+      "falsifier": "Find a nonzero admissible formula that vanishes on the asserted hitting set or exceeds the claimed resource bound.",
+      "next_action": "Write statement with formula-size, field-characteristic, matrix-dimension and bit-complexity parameters; test against exact symbolic expansion."
+    },
+    {
+      "id": "T-OAI-157",
+      "result_id": "157",
+      "title": "Claimed counterexamples to Hadwiger",
+      "problem_ids": [
+        "M071"
+      ],
+      "source_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/A-counterexample-to-Hadwigers-conjecture-September-23-2026/paper.pdf",
+      "claim_review_ids": [
+        "M071"
+      ],
+      "related_repo_paths": [
+        "data/claim_reviews_2026.json",
+        "data/claim_witness_replay.json",
+        "research/M071_M073_WITNESSES.md"
+      ],
+      "status": "author_claim_unreviewed",
+      "scope_boundary": "Arbitrarily-large existential construction is not a published explicit finite adjacency list. A Lean comparator checks encoded propositions, not the correctness of the full proof.",
+      "transfer_hypothesis": "Reconstruct a finite graph witness or independently audit every step of the existential family construction.",
+      "falsifier": "A proposed finite instance fails the chromatic/minor inequality or the construction's quantified hypotheses.",
+      "next_action": "Extract exact finite adjacency data where feasible, check clique minor and chromatic lower bound independently, secure specialist assessment."
+    },
+    {
+      "id": "T-OAI-161",
+      "result_id": "161",
+      "title": "Claimed Sidorenko and forcing counterexamples",
+      "problem_ids": [
+        "M073"
+      ],
+      "source_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/A-counterexample-to-Sidorenkos-conjecture-September-23-2026/paper.pdf",
+      "claim_review_ids": [
+        "M073"
+      ],
+      "related_repo_paths": [
+        "data/claim_reviews_2026.json",
+        "data/claim_witness_replay.json",
+        "research/M071_M073_WITNESSES.md"
+      ],
+      "status": "author_claim_unreviewed",
+      "scope_boundary": "The 35-vertex, 66-edge pattern is locally reconstructed; the host graph/graphon violating the homomorphism-density inequality is not yet independently replayed.",
+      "transfer_hypothesis": "Find or reconstruct the host and exact rational density inequality in two separate checkers.",
+      "falsifier": "The host does not satisfy the strict density inequality when exact homomorphism counts are recomputed.",
+      "next_action": "Extract an explicit host with exact arithmetic, independently enumerate the homomorphisms, audit source hypotheses."
+    },
+    {
+      "id": "T-OAI-179",
+      "result_id": "179",
+      "title": "Claimed exclusion of nontrivial circulant Hadamard matrices",
+      "problem_ids": [
+        "M094"
+      ],
+      "source_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/The-circulant-Hadamard-conjecture-September-23-2026/paper.pdf",
+      "claim_review_ids": [],
+      "related_repo_paths": [
+        "data/problems.json",
+        "data/lean_targets.json"
+      ],
+      "status": "author_claim_unreviewed",
+      "scope_boundary": "The circulant subclass is not all real Hadamard matrices of orders 4n; excluding circulants beyond 4 does not disprove the general existence conjecture.",
+      "transfer_hypothesis": "Extract the proposed circulant obstruction and compare with known Sylvester/Paley constructions as separate classes.",
+      "falsifier": "A valid circulant Hadamard matrix of an excluded order, or an unsupported reduction from circulant to general matrices.",
+      "next_action": "Formalize the exact circulant condition and test small orders in a second independent encoding; audit the claimed general argument."
+    },
+    {
+      "id": "T-OAI-199",
+      "result_id": "199",
+      "title": "Claimed counterexamples to Auslander–Reiten",
+      "problem_ids": [
+        "M046"
+      ],
+      "source_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/An-explicit-counterexample-to-the-Auslander-Reiten-conjecture-September-23-2026/paper.pdf",
+      "claim_review_ids": [],
+      "related_repo_paths": [
+        "data/problems.json"
+      ],
+      "status": "author_claim_unreviewed",
+      "scope_boundary": "A finite-dimensional characteristic-two rational-function-field algebra is claimed, but the registered formulation over Artin algebras requires an exact ring-category and Ext-quantifier comparison.",
+      "transfer_hypothesis": "Reconstruct the algebra and a finite presentation, then independently check the relevant Ext-vanishing and nonprojectivity.",
+      "falsifier": "The example fails an Ext condition, becomes projective, or lies outside the registered algebra class.",
+      "next_action": "Open a dedicated M046 claim-review entry with statement quantifiers, original construction, exact field, and independent algebra verification."
+    }
+  ]
+}

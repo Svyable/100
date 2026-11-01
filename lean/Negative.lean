@@ -28,3 +28,8 @@ example : ¬ Hundred.Statements.ErdosStraus.Solves 5 2 20 20 := by decide
 -- L006: a false bit ordering and a missing union are rejected by both encodings.
 example : ¬ (Hundred.FranklBridge.pack (fun s => decide (s.val = 0))).val = 2 := by decide
 example : ¬ Hundred.Statements.Frankl.UnionClosed 2 6 := by decide +kernel
+
+-- L005 negative controls: polynomial cancellation without positive denominators is invalid.
+example : ¬ Hundred.Statements.ErdosStraus.Solves 3 0 0 0 := by decide
+-- The n ≡ 3 mod 4 recipe must not be used at n = 5.
+example : ¬ Hundred.Statements.ErdosStraus.Solves 5 2 20 20 := by decide

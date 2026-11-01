@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-31",
+  "interpretation": "Each entry is a reusable *candidate instrument* or a known-result checker. Candidate claims and proposed reuse are never mathematical acceptance; sha256 pins local source bytes for revalidation.",
+  "instruments": [
+    {
+      "id": "I-M074-CROSSCUT",
+      "title": "Triangle-free digraph cross-cut capacity bound",
+      "kind": "lemma",
+      "origin_problem_id": "M074",
+      "claim_state": "candidate_unreviewed",
+      "depends_on": [],
+      "proposed_reuse_problem_ids": [
+        "M074"
+      ],
+      "sources": [
+        {
+          "path": "research/M074_ELEMENTARY_24_REGULAR.md",
+          "sha256": "243cd37ba1f80ec56fb74bd59bcbcc75f1d922bcfe35b12e35dc843c08b865ac"
+        },
+        {
+          "path": "scripts/ch24_crosscut.py",
+          "sha256": "91b62d8c0c770b5b6ba109f16469bf482ce66862f90424eb2fa5d48c1da395fc"
+        }
+      ],
+      "exact_scope": "8-in/8-out-regular n=24 oriented digraph with no directed triangle; local arc budget and 22-versus-15 cross-cut contradiction.",
+      "scope_gap": "Not the unrestricted conjecture, nor the minimum-outdegree-only 24-vertex claim by itself; specialist review pending.",
+      "falsifier": "Find an eligible eight-vertex degree profile violating the 15-pair cap, or a regular digraph excluded without valid hypotheses.",
+      "next_action": "Independently formalize each finite integer inequality and audit the graph-theoretic reduction."
+    },
+    {
+      "id": "I-M074-IRREGULAR",
+      "title": "Irregular indegree-nine finite exclusion",
+      "kind": "lemma",
+      "origin_problem_id": "M074",
+      "claim_state": "candidate_unreviewed",
+      "depends_on": [
+        "I-M074-CROSSCUT"
+      ],
+      "proposed_reuse_problem_ids": [
+        "M074"
+      ],
+      "sources": [
+        {
+          "path": "proofs/M074_IRREGULAR_24.md",
+          "sha256": "f1dbe8ec44a790a21688476da22e4750e833f6bdfe95142b2b06ecbbfffe5221"
+        },
+        {
+          "path": "scripts/ch24_irregular_profiles.py",
+          "sha256": "48d4c3b0699612c4d9a9b24435c37af040c0c016aa32b3aa7861d9575f57e2c7"
+        }
+      ],
+      "exact_scope": "The proposed proof excludes all n=24 minimum-outdegree-eight oriented digraph counterexamples via profiles and a global contradiction.",
+      "scope_gap": "Claimed *finite* case; no novelty claim versus earlier computational work; independent specialist review pending.",
+      "falsifier": "A missing profile, a valid counterexample, a false directed-triangle restriction, or an error in the global count.",
+      "next_action": "Conduct a separately written formal/hand proof audit; retain source comparisons and reviewer comments."
+    },
+    {
+      "id": "I-M075-CANONICAL",
+      "title": "Union-closed family canonicalization and Burnside replay",
+      "kind": "method",
+      "origin_problem_id": "M075",
+      "claim_state": "known_reproduction",
+      "depends_on": [],
+      "proposed_reuse_problem_ids": [
+        "M075",
+        "M078"
+      ],
+      "sources": [
+        {
+          "path": "research/M075_CANONICAL.md",
+          "sha256": "e11a6036e7af13d810462ffaf260ffe533b4f7d11fc4551a99a0dcf67ab04a29"
+        },
+        {
+          "path": "scripts/frankl_canonical.py",
+          "sha256": "c916d672e6d3ab6179a4ce98ff6e11e1f6e924df86a39142ed4ac503b59b83a9"
+        },
+        {
+          "path": "scripts/frankl_burnside.py",
+          "sha256": "89ae7f10383e4b2b616d863746a6123fa283c3362b8902fc31c968070de376ad"
+        }
+      ],
+      "exact_scope": "Known five-element full-support union-closed family orbit count by independent canonical and Burnside calculations.",
+      "scope_gap": "No n>5 result, no universal Frankl proof, and the M078 graph-isomorphism application is only a prospective encoding adaptation.",
+      "falsifier": "Disagreement between labeled census, orbit enumeration and Burnside fixed-point count.",
+      "next_action": "Seek a proof-backed canonical augmentation rule; separately evaluate a graph-encoding transfer without changing any M078 evidence status."
+    },
+    {
+      "id": "I-M095-DUALK5",
+      "title": "Two independent exact 42-vertex Ramsey witness checkers",
+      "kind": "verifier",
+      "origin_problem_id": "M095",
+      "claim_state": "known_reproduction",
+      "depends_on": [],
+      "proposed_reuse_problem_ids": [
+        "M095"
+      ],
+      "sources": [
+        {
+          "path": "scripts/verify_mckay.py",
+          "sha256": "49a742650be772902493229f0ad53cdcd5b1dbe6d82ef47e644dd9b1075c15a4"
+        },
+        {
+          "path": "data/ramsey_mckay_replay.json",
+          "sha256": "326751aff05bc66e00f07d45a216c4836177837a54e743f47f270369ab76f1bb"
+        },
+        {
+          "path": "scripts/k42_calibration.py",
+          "sha256": "47d597b7dee23b9ff3288a86470871817d609fa61107179a926d89b0918d1763"
+        },
+        {
+          "path": "benchmarks/calibrations/k42_checker.json",
+          "sha256": "fe8776766957af7963705050c36f3132f001f3c27a21a138fc5a20f4075a11ed"
+        }
+      ],
+      "exact_scope": "Known 42-vertex graph6 witnesses certify no monochromatic K5 via two exact algorithms, pinned input hash, explicit edge-flip negative control and tampered-input guard.",
+      "scope_gap": "Does not establish R(5,5)=43 or improve the published lower bound.",
+      "falsifier": "Tampered graph6 source or a monochromatic K5 found by either checker.",
+      "next_action": "Reuse the accepted known-case checker calibration as baseline; execute real agent-arm trials separately under the preregistered matched budgets."
+    }
+  ]
+}

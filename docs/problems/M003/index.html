@@ -19,9 +19,11 @@
 <link rel="stylesheet" href="../../assets/style.css">
 <link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
 <link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
 <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <script src="../../assets/app.js" defer></script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Birch–Swinnerton-Dyer conjecture", "description": "Does the rank of every elliptic curve over Q equal the vanishing order of its L-function at s=1?", "url": "https://svyable.github.io/100/problems/M003/", "dateModified": "2026-10-31", "about": {"@type": "Thing", "name": "Birch–Swinnerton-Dyer conjecture", "description": "Does the rank of every elliptic curve over Q equal the vanishing order of its L-function at s=1?"}, "isPartOf": {"@type": "WebSite", "name": "100", "url": "https://svyable.github.io/100/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Number theory", "item": "https://svyable.github.io/100/fields/number-theory/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Birch–Swinnerton-Dyer conjecture", "description": "Does the rank of every elliptic curve over Q equal the vanishing order of its L-function at s=1?", "url": "https://svyable.github.io/100/problems/M003/", "dateModified": "2026-11-01", "about": {"@type": "Thing", "name": "Birch–Swinnerton-Dyer conjecture", "description": "Does the rank of every elliptic curve over Q equal the vanishing order of its L-function at s=1?"}, "isPartOf": {"@type": "WebSite", "name": "100", "url": "https://svyable.github.io/100/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Number theory", "item": "https://svyable.github.io/100/fields/number-theory/"}]}</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -31,7 +33,7 @@
     <span class="brand-mark">100<span class="brand-dot">.</span></span>
     <span class="brand-caption">SVYABLE<br>RESEARCH</span>
   </a>
-  <nav class="main-nav" aria-label="Primary navigation"><a href="../../" aria-current="page">The 100</a><a href="../../work/">Work</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/">Library</a></nav>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../" aria-current="page">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/">Library</a></nav>
   <div class="header-tools">
     <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
     <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
@@ -47,11 +49,11 @@
   <h1>Birch–Swinnerton-Dyer conjecture</h1>
   <p class="problem-field"><a href="../../fields/number-theory/">Number theory</a></p>
   <div class="chips"><span class="status-pill status-official_open" title="Listed as open by a named official authority (cited).">Officially open</span><span class="chip chip-modality">Structural</span></div>
-  <blockquote class="the-question"><span class="detail-label">THE OPEN QUESTION</span>Does the rank of every elliptic curve over Q equal the vanishing order of its L-function at s=1?</blockquote>
+  <blockquote class="the-question"><span class="detail-label">THE QUESTION UNDER STUDY</span>Does the rank of every elliptic curve over Q equal the vanishing order of its L-function at s=1?</blockquote>
 </header>
 <div class="problem-grid">
 <aside class="problem-side" aria-label="On this page">
-  <nav class="toc"><span class="detail-label">ON THIS PAGE</span><ol><li><a href="#question">The question</a></li><li><a href="#formal">Formal statement</a></li><li><a href="#priority">Priority</a></li><li><a href="#work">Open work</a></li><li><a href="#provenance">Provenance</a></li></ol></nav>
+  <nav class="toc"><span class="detail-label">ON THIS PAGE</span><ol><li><a href="#question">The question</a></li><li><a href="#formal">Formal statement</a></li><li><a href="#priority">Priority</a></li><li><a href="#work">Open work</a></li><li><a href="#provenance">Provenance</a></li><li><a href="#related">Connections</a></li></ol></nav>
   <div class="side-actions">
     <a class="button button-outline" href="https://github.com/Svyable/100/issues/new?template=evidence_update.yml&amp;title=%5BEvidence%5D%20M003%20%2014%20" rel="noopener noreferrer">Submit evidence ↗</a>
     <a class="text-link" href="../../problems/M003/" data-permalink>Permalink: /problems/M003/</a>
@@ -59,8 +61,23 @@
   </div>
 </aside>
 <div class="problem-main">
+<section class="dossier-block evidence-map" id="evidence-map">
+<h2>What the evidence actually says</h2>
+<p class="block-lead">Status review, checked finite cases, and a proposed next attack answer different questions. None should be mistaken for a verified full resolution.</p>
+<div class="evidence-columns">
+  <div><span class="detail-label">01 / FULL-STATEMENT STATUS</span><h3>Officially open</h3>
+    <p>Listed as open by a named official authority (cited). This project records no accepted full solution for this active candidate.</p></div>
+  <div><span class="detail-label">02 / VERIFIED SCOPE HERE</span><h3>Finite or formal checks</h3>
+    <p>No exact finite lab probe is recorded for this problem. No Lean comparator statement is recorded.</p></div>
+  <div><span class="detail-label">03 / WHAT TO TEST NEXT</span><h3>Next bounded action</h3>
+    <p>Shape galois_representations (6 problems, one write-up): Pick one explicit number field or elliptic curve and one finite invariant the conjecture predicts, and compute it two ways. Full shape, certificate and falsifier are in APPROACH.md.</p></div>
+</div>
+<p class="muted small">These labels describe the evidence recorded in this repository, not an authoritative verdict on the entire mathematical literature. The <a href="../../ledger/">solved ledger</a> has a separate acceptance gate.</p>
+</section>
+
 <section class="dossier-block" id="formal"><h2>Formal statement</h2>
 <p class="muted">No Lean comparator statement yet. Formalising the exact statement is a bounded, reviewable contribution: see <a href="../../formal/#contribute">how to add one</a>.</p></section>
+
 <section class="dossier-block" id="priority"><h2>Priority, decomposed</h2>
   <div class="score-hero">
     <div><strong>#57</strong><span>Dispatch rank · score 72</span></div>
@@ -92,11 +109,12 @@
   </dl>
   <h3>Discussed in the library</h3><ul class="link-list"><li><a href="../../library/approach/">Approach — leverage dispatch</a></li><li><a href="../../library/attack-queue/">Execution queue — evidence-aware research priorities</a></li><li><a href="../../library/coverage/">Coverage — breadth-first research deployment plan</a></li><li><a href="../../library/ranked/">Ranked candidate portfolio</a></li><li><a href="../../library/scale/">Scale — proof-exchange wave</a></li></ul>
   <h3>Cite this page</h3>
-  <div class="cite"><code id="cite-M003">Svyable. “Birch–Swinnerton-Dyer conjecture (M003).” 100 — A living portfolio of mathematical grand challenges, data as of 2026-10-31. https://svyable.github.io/100/problems/M003/</code><button class="plain-button" type="button" data-copy="#cite-M003">Copy</button></div>
+  <div class="cite"><code id="cite-M003">Svyable. “Birch–Swinnerton-Dyer conjecture (M003).” 100 — A living portfolio of mathematical grand challenges, data as of 2026-11-01. https://svyable.github.io/100/problems/M003/</code><button class="plain-button" type="button" data-copy="#cite-M003">Copy</button></div>
 </section>
 <section class="dossier-block" id="related"><h2>Nearby in the portfolio</h2>
   <div class="two-col"><div><h3>Also in <a href="../../fields/number-theory/">Number theory</a></h3><ul class="link-list"><li><a href="../../problems/M002/"><span class="mono">M002</span> Generalized Riemann Hypothesis</a></li><li><a href="../../problems/M006/"><span class="mono">M006</span> Strong Goldbach conjecture</a></li><li><a href="../../problems/M004/"><span class="mono">M004</span> abc conjecture</a></li><li><a href="../../problems/M005/"><span class="mono">M005</span> Twin prime conjecture</a></li><li><a href="../../problems/M007/"><span class="mono">M007</span> Bateman–Horn conjecture</a></li><li><a href="../../problems/M008/"><span class="mono">M008</span> Elliott–Halberstam conjecture</a></li></ul></div>
   <div><h3>Shared engines</h3><p class="muted">No exact engine yet. See the <a href="../../lab/#roadmap">engine roadmap</a>.</p></div></div>
+<div class="method-neighbours"><h3>Shares the attack method: One field, two computations</h3><p class="muted">Methodological similarity only; it does not imply the conjectures are equivalent.</p><ul class="link-list"><li><a href="../../problems/M010/"><span class="mono">M010</span> Generalized Ramanujan conjecture</a></li><li><a href="../../problems/M013/"><span class="mono">M013</span> Leopoldt&#x27;s conjecture</a></li><li><a href="../../problems/M015/"><span class="mono">M015</span> Inverse Galois problem</a></li><li><a href="../../problems/M016/"><span class="mono">M016</span> Fontaine–Mazur conjecture</a></li><li><a href="../../problems/M017/"><span class="mono">M017</span> Global Langlands functoriality</a></li></ul></div>
 </section>
 </div>
 </div>
@@ -106,10 +124,10 @@
 <footer class="site-footer">
   <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
   <div class="footer-links">
-    <a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
     <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
   </div>
-  <small>Generated from the validated ledgers · data as of 2026-10-31 · no tracking, no external scripts</small>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
 </footer>
 </div>
 <dialog class="palette" id="palette" aria-label="Search the portfolio">

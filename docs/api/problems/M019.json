@@ -24,10 +24,10 @@
   "action_bonus": 6,
   "method_id": "effective_diophantine",
   "method_title": "Explicit Diophantine certificates",
-  "dispatch_next": "The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity.",
-  "dispatch_why": "The straus_patterns mine already clusters the primes that are 1 mod 24. Extending the verified range stays inside published computations; the missing piece is an identity for one residue.",
+  "dispatch_next": "Nine polynomial identities from the straus_identities mine now cover 106 of the 117 primes n <= 8000 with n = 1 (mod 24), including the primary progressions n = 120t+73 and n = 120t+97. The 11 uncovered primes all lie in {1, 49} (mod 120). Attack those two remaining classes with a non-Mordell idea, or name an explicit family outside the recorded progressions; do not extend the verified search range.",
+  "dispatch_why": "Nine polynomial identities already cover 106 of 117 hard-class primes through 8,000. Extending the verified range stays inside published computations; the missing piece is a non-Mordell idea for the classes 1 and 49 mod 120.",
   "campaign_stage": "benchmark_reproduced",
-  "milestone_count": 2,
+  "milestone_count": 3,
   "url": "https://svyable.github.io/100/problems/M019/",
   "field_url": "https://svyable.github.io/100/fields/arithmetic/",
   "readiness_breakdown": [
@@ -59,13 +59,14 @@
     "method": "Modular covering identities with unit-fraction certificates",
     "hypothesis": "For every integer n >= 2, 4/n = 1/x + 1/y + 1/z has a solution in positive integers.",
     "first_proof_obligation": "Find a polynomial identity family covering a residue class of primes not covered by the classical Mordell identities, and prove it symbolically.",
-    "next_experiment": "The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity.",
+    "next_experiment": "Nine polynomial identities from the straus_identities mine now cover 106 of the 117 primes n <= 8000 with n = 1 (mod 24), including the primary progressions n = 120t+73 and n = 120t+97. The 11 uncovered primes all lie in {1, 49} (mod 120). Attack those two remaining classes with a non-Mordell idea, or name an explicit family outside the recorded progressions; do not extend the verified search range.",
     "additional_verifiers": [
-      "python3 scripts/mine.py --mine straus_patterns"
+      "python3 scripts/mine.py --mine straus_patterns",
+      "python3 scripts/mine.py --mine straus_identities"
     ],
     "falsification": "An n together with a proof that no positive-integer triple exists; a finite search failure is not a counterexample.",
     "blocker": "Classical identities leave quadratic-residue classes uncovered, and known results show identities of the standard polynomial type cannot cover them all; a different idea is needed.",
-    "dossier": "research/LAB_CAMPAIGNS.md",
+    "dossier": "research/M019_IDENTITIES.md",
     "verifier": "python3 scripts/lab.py --probe erdos_straus"
   },
   "probes": [
@@ -116,6 +117,17 @@
       "verifier": "python3 scripts/mine.py --mine straus_patterns",
       "artifact": "scripts/mines/straus_patterns.py",
       "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-MINE-019-ID",
+      "problem_id": "M019",
+      "classification": "reproduced_known",
+      "title": "Parametric Erdos-Straus identities on nine hard-class progressions",
+      "scope": "Polynomial identities on named arithmetic progressions; classical covering style, not a full proof",
+      "description": "Nine closed forms, including n=120t+73 and n=120t+97, are proved as polynomial identities. Through 8,000 they cover 106 of 117 primes that are 1 mod 24; the 11 misses all lie in {1,49} mod 120.",
+      "verifier": "python3 scripts/mine.py --mine straus_identities",
+      "artifact": "scripts/mines/straus_identities.py",
+      "verified_on": "2026-10-31"
     }
   ],
   "engine_roadmap": null,
@@ -146,6 +158,8 @@
     "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/ErdosStraus.lean"
   },
   "external_claims": [],
+  "discovery_trail": null,
+  "discovery_url": null,
   "mentioned_in": [
     {
       "title": "Approach — leverage dispatch",
@@ -196,6 +210,11 @@
       "title": "Lab campaigns: problems under exact computation",
       "source": "research/LAB_CAMPAIGNS.md",
       "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "M019 — parametric identities from the residue mine",
+      "source": "research/M019_IDENTITIES.md",
+      "url": "https://svyable.github.io/100/library/m019-identities/"
     },
     {
       "title": "Top 100 portfolio selection and admission",

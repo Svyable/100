@@ -51,6 +51,8 @@
   },
   "formal_statement": null,
   "external_claims": [],
+  "discovery_trail": null,
+  "discovery_url": null,
   "mentioned_in": [
     {
       "title": "Approach — leverage dispatch",
@@ -76,11 +78,6 @@
       "title": "Roadmap — 100 mathematical grand challenges",
       "source": "ROADMAP.md",
       "url": "https://svyable.github.io/100/library/roadmap/"
-    },
-    {
-      "title": "Scale — proof-exchange wave",
-      "source": "SCALE.md",
-      "url": "https://svyable.github.io/100/library/scale/"
     },
     {
       "title": "2026 claimed-resolution triage — issue #3",

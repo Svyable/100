@@ -17,8 +17,10 @@ import re
 from collections import Counter, defaultdict
 from pathlib import Path
 
+import discovery
 import lab
 import mdlite
+import proof_obligations
 import work as workqueue
 from rank import ROOT, COMPUTABLE, score
 from research import load, execution_order, readiness
@@ -29,12 +31,12 @@ BLOB = REPO + "/blob/main/"
 DOCS = ROOT / "docs"
 
 # Directories whose contents are fully owned by the generator (stale files fail --check).
-GENERATED_DIRS = ("problems", "fields", "atlas", "lab", "formal", "campaigns", "claims",
-                  "roadmap", "ledger", "library", "api", "work")
+GENERATED_DIRS = ("problems", "fields", "atlas", "lab", "formal", "campaigns", "claims", "discovery", "start",
+                  "roadmap", "ledger", "library", "api", "work", "lamport")
 # docs/data/portfolio.json is generated here; docs/data/next.json belongs to scripts/next.py,
 # and docs/next/ is a hand-written page, so neither directory is swept for stale files.
 # Top-level generated files. Everything else in docs/ is hand-written.
-GENERATED_FILES = ("index.html", "404.html", "sitemap.xml", "robots.txt", "feed.xml")
+GENERATED_FILES = ("index.html", "404.html", "sitemap.xml", "robots.txt", "feed.xml", "llms.txt")
 
 EVIDENCE = {
     "official_open": "Officially open",
@@ -80,7 +82,9 @@ SERIES_LABEL = {1: "Officially or specialist open", 2: "Claim under review", 3: 
 
 NAV = (
     ("index", "The 100", ""),
+    ("start", "Start here", "start/"),
     ("work", "Work", "work/"),
+    ("discovery", "Discovery", "discovery/"),
     ("next", "Next 100", "next/"),
     ("campaigns", "Campaigns", "campaigns/"),
     ("lab", "Lab", "lab/"),
@@ -160,6 +164,39 @@ def lean_decl_block(src, name):
     return ""
 
 
+# --------------------------------------------------------------------------- editorial reading guides
+
+def load_reading_guides(problem_ids):
+    """Validate non-authoritative exposition before rendering it into pages."""
+    doc = json.loads((ROOT / "data" / "reading_guides.json").read_text(encoding="utf-8"))
+    if doc.get("version") != 1 or not isinstance(doc.get("editorial_notice"), str):
+        raise ValueError("Invalid reading-guide version or editorial notice")
+    guides = {}
+    for guide in doc["guides"]:
+        required = {"id", "summary", "intuition", "obstacle", "meaningful_check", "bridges"}
+        if set(guide) != required:
+            raise ValueError("Reading guide has missing or unexpected fields")
+        pid = guide["id"]
+        if pid not in problem_ids or pid in guides:
+            raise ValueError("Reading guide has unknown or duplicate problem ID")
+        for key in ("summary", "intuition", "obstacle", "meaningful_check"):
+            if not isinstance(guide[key], str) or not guide[key].strip():
+                raise ValueError(f"Reading guide {pid} has empty {key}")
+        targets = set()
+        if not isinstance(guide["bridges"], list) or not guide["bridges"]:
+            raise ValueError("Reading guide must identify conceptual connections")
+        for bridge in guide["bridges"]:
+            if set(bridge) != {"id", "reason"}:
+                raise ValueError("Reading guide bridge has wrong fields")
+            target = bridge["id"]
+            if (target == pid or target not in problem_ids or target in targets
+                    or not isinstance(bridge["reason"], str) or not bridge["reason"].strip()):
+                raise ValueError("Invalid, duplicate, or self-referential reading-guide bridge")
+            targets.add(target)
+        guides[pid] = guide
+    return guides, doc["editorial_notice"]
+
+
 # --------------------------------------------------------------------------- model
 
 class Site:
@@ -173,6 +210,12 @@ class Site:
         self.mines = portfolio["mines"]["mines"]
         self.roadmap_doc = portfolio["roadmap"]
         self.work = workqueue.snapshot()
+        self.discovery_doc = discovery.load()
+        self.discovery = {t["problem_id"]: t for t in self.discovery_doc["trails"]}
+        self.discovery_moves = {m["id"]: m for m in self.discovery_doc["moves"]}
+        # Load the canonical validated Lamport dependency ledger; do not copy its state.
+        self.obligations = proof_obligations.validate(json.loads(
+            (ROOT / "data" / "proof_obligations.json").read_text(encoding="utf-8")))
         self.work_by_problem = defaultdict(list)
         for w in self.work["items"]:
             for pid in w["problems"]:
@@ -184,6 +227,7 @@ class Site:
         baseline = sorted(items, key=lambda p: (-score(p), p["id"]))
         self.rank = {p["id"]: i for i, p in enumerate(baseline, 1)}
         self.by_id = {p["id"]: p for p in items}
+        self.reading_guides, self.reading_notice = load_reading_guides(self.by_id)
         self.ordered = sorted(items, key=lambda p: self.dispatch[p["id"]]["dispatch_rank"])
         self.campaign = {c["problem_id"]: c for c in program["campaigns"] if c["problem_id"] in self.by_id}
         self.milestones = defaultdict(list)
@@ -214,7 +258,7 @@ class Site:
                 if pid in self.by_id:
                     self.backlinks[pid].append(doc)
         dates = [p["checked_on"] for p in items if p["checked_on"]]
-        dates += [program["as_of"], self.claims_doc["reviewed_on"]]
+        dates += [program["as_of"], self.claims_doc["reviewed_on"], self.discovery_doc["as_of"]]
         dates += [m["verified_on"] for m in program["milestones"] if m.get("verified_on")]
         self.updated = max(dates)
 
@@ -318,6 +362,8 @@ def layout(site, page, title, description, body, active="", head_extra="", jsonl
 <link rel="stylesheet" href="{root}assets/style.css">
 <link rel="alternate" type="application/atom+xml" title="100 — research updates" href="{root}feed.xml">
 <link rel="alternate" type="application/json" title="100 — machine-readable API" href="{root}api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="{root}api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="{root}llms.txt">
 <script>try{{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}}catch(e){{}}</script>
 <script src="{root}assets/app.js" defer></script>
 {head_extra}{ld_html}
@@ -344,7 +390,7 @@ def layout(site, page, title, description, body, active="", head_extra="", jsonl
 <footer class="site-footer">
   <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
   <div class="footer-links">
-    <a href="{root}atlas/">Atlas</a><a href="{root}library/">Library</a><a href="{root}api/">Data &amp; API</a><a href="{root}feed.xml">Atom feed</a>
+    <a href="{root}start/">Start here</a><a href="{root}atlas/">Atlas</a><a href="{root}library/">Library</a><a href="{root}api/">Data &amp; API</a><a href="{root}api/agent.json">For agents</a><a href="{root}feed.xml">Atom feed</a>
     <a href="{REPO}" rel="noopener noreferrer">Repository ↗</a><a href="{REPO}/issues" rel="noopener noreferrer">Research issues ↗</a>
   </div>
   <small>Generated from the validated ledgers · data as of {E(site.updated)} · no tracking, no external scripts</small>
@@ -460,6 +506,100 @@ def problem_row(site, page, p):
             f'<span class="entry-chevron" aria-hidden="true">→</span></a></li>')
 
 
+def render_start(site):
+    """No-JS landing page: separate reader and contributor workflows."""
+    s = site
+    page = "start/index.html"
+    ranked = s.ordered[0]
+    top_work = next((w for w in s.work["items"] if w["status"] == "runnable"), None)
+    first_work = f'<a href="{rel(page, "work/" + top_work["id"] + "/")}">{E(top_work["id"])} · {E(top_work["title"])}</a>' if top_work else "See the queue"
+    guides = "".join(
+        f'<li><a href="{rel(page, s.problem_path(pid))}#reading-guide">'
+        f'{E(s.by_id[pid]["name"])}</a> — {E(s.reading_guides[pid]["summary"])}</li>'
+        for pid in ("M071", "M074", "M075")
+    )
+    body = page_head("START HERE / PEOPLE &amp; AGENTS", "Find your <em>first foothold.</em>",
+                     "Read an exact question, test a bounded claim, or contribute a scoped task. This site distinguishes verified computations, reviewed mathematics, and unverified research claims.") + f"""
+<section class="start-overview" aria-label="Paths into the research">
+  <a href="#people"><span class="detail-label">01 / HUMAN READER</span><strong>Understand what is known</strong><span>Explanations, citations, evidence limits</span></a>
+  <a href="#review"><span class="detail-label">02 / MATHEMATICIAN OR REVIEWER</span><strong>Check a claim</strong><span>Statements, adversarial tests, formal fidelity</span></a>
+  <a href="#agents"><span class="detail-label">03 / AGENT OR CONTRIBUTOR</span><strong>Deliver one bounded unit</strong><span>Scope digest, acceptance tests, claim protocol</span></a>
+</section>
+<section class="dossier-block start-section" id="people">
+<h2>For readers: follow the question</h2>
+<p class="block-lead">The ranked order tells you where the project is directing effort; it does not say which conjectures are likely to be true or when they will be solved. Begin with one of these short explanations:</p>
+<ul class="start-links">{guides}</ul>
+<p><a class="text-link" href="{rel(page, 'atlas/')}">Compare fields in the atlas →</a> · <a class="text-link" href="{rel(page, 'discovery/')}">Follow sourced discovery trails →</a></p>
+<div class="start-boundary"><strong>Learn to read the evidence.</strong> A known finite reproduction is not a new theorem. A Lean-checked statement is not the same as a checked unrestricted conjecture. A claim under review is not an accepted result. The <a href="{rel(page, 'ledger/')}">solved ledger</a> is separate from the research queue.</div>
+</section>
+<section class="dossier-block start-section" id="review">
+<h2>For reviewers: check the scope</h2>
+<ol class="steps">
+<li>Start with the <a href="{rel(page, s.problem_path(ranked['id']))}">{E(ranked["name"])} dossier</a> or <a href="{rel(page, 'claims/')}">claims index</a>; verify that the exact proposition matches the cited source.</li>
+<li>Inspect <a href="{rel(page, 'formal/')}">formal statement fidelity</a>, <a href="{rel(page, 'lab/')}">finite probes</a> and the <a href="{rel(page, 'discovery/')}">reasoning trail</a> separately. None establishes a result outside its own scope.</li>
+<li>Reproduce the specific checker, record the certificate and counterexamples, and distinguish independent specialist review from author/agent self-checking.</li>
+<li>Submit corrections with primary sources through the <a href="{rel(page, 'work/')}#review">review queue</a>; no declaration of a solved problem without the published acceptance gate.</li>
+</ol>
+</section>
+<section class="dossier-block start-section" id="agents">
+<h2>For agents: claim one task with a stable contract</h2>
+<p class="block-lead">A machine-readable, static snapshot helps you select work. It cannot tell you whether another contributor claimed that item seconds ago.</p>
+<div class="start-command">
+<span class="detail-label">DISCOVER</span><code>curl -fsSL {SITE_URL}api/agent.json</code>
+<span class="detail-label">SELECT</span><code>curl -fsSL {SITE_URL}api/agent/tasks.json</code>
+<span class="detail-label">VERIFY LOCALLY</span><code>python3 scripts/regen.py --check --fast</code>
+</div>
+<ol class="steps">
+<li>Fetch the <a href="{rel(page, 'api/agent.json')}">agent contract</a> and <a href="{rel(page, 'api/agent/tasks.json')}">runnable task shortlist</a>. The full queue is <a href="{rel(page, 'api/work.json')}">api/work.json</a>; use <code>python3 scripts/work.py --id &lt;ID&gt;</code> in the repository to confirm scope.</li>
+<li>Example bounded work: {first_work}. Before acting, check the item’s linked GitHub open-claim search and claim its exact scope digest. Queue status does <strong>not</strong> mean unclaimed.</li>
+<li>Respect every acceptance condition, dependency, and falsifier. Do not hand-edit generated HTML or treat model output as independent mathematical review.</li>
+<li>Regenerate with <code>python3 scripts/regen.py</code>, run <code>python3 scripts/regen.py --check</code> plus relevant tests, and record the outcome honestly in the PR.</li>
+</ol>
+<p>Agent-readable overview: <a href="{rel(page, 'llms.txt')}">llms.txt</a> · full governance: <a href="{library_href(s, page, 'AGENTS.md') or BLOB + 'AGENTS.md'}">AGENTS.md</a> · <a href="{rel(page, 'api/')}">API documentation</a>.</p>
+</section>"""
+    return layout(s, page, "Start here — humans and agents", "How to understand, verify and contribute rigorous research in the 100 portfolio.", body, active="start", crumbs=[("Start here", None)])
+
+
+def render_llms(site):
+    """Advisory site map for text agents; not an instruction to trust claims."""
+    s=site
+    return f"""# 100 — Svyable mathematical research
+
+> A curated portfolio of 100 candidate mathematical problems. This is a research index, NOT a list of 100 independently confirmed unsolved statements, and NOT a collection of 100 solved theorems.
+
+Canonical public site: {SITE_URL}
+Snapshot as of: {s.updated} (source-ledger date, not a live literature or claim check)
+Repository: {REPO}
+
+## For humans
+- [Start here]({SITE_URL}start/): separate reader, reviewer and agent paths.
+- [Ranked portfolio]({SITE_URL}): dispatch priority, not probability of proof.
+- [Hadwiger explanation]({SITE_URL}problems/M071/#reading-guide)
+- [Caccetta–Häggkvist explanation]({SITE_URL}problems/M074/#reading-guide)
+- [Frankl explanation]({SITE_URL}problems/M075/#reading-guide)
+- [Discovery trails]({SITE_URL}discovery/): attempts, limitations, sources.
+- [Claims under review]({SITE_URL}claims/)
+- [Verified ledger]({SITE_URL}ledger/): full solutions only with an independent acceptance gate.
+
+## For research agents
+- [Agent JSON contract]({SITE_URL}api/agent.json): machine-readable URLs, task rules and evidence boundaries.
+- [Runnable task shortlist]({SITE_URL}api/agent/tasks.json): static, ranked, NOT a live claim-availability check.
+- [All work items]({SITE_URL}api/work.json): full scope digests, dependencies, acceptance conditions and claim links.
+- [Individual problem data]({SITE_URL}api/problems/M071.json) (replace M071 with the problem ID).
+- [Complete API index]({SITE_URL}api/index.json)
+- [Research contributor protocol]({SITE_URL}library/agents/)
+- [Site source]({REPO})
+
+## Non-negotiable interpretation
+- Always check current GitHub open claims before taking a task.
+- Preserve the task ID and scope SHA-256; do not use a stale scope digest after the ledger changes.
+- Pass the local regeneration and relevant verification gates before submitting a PR.
+- A finite probe certifies only the stated finite range. A Lean declaration checks only the formalized proposition.
+- Independent review cannot be self-awarded. A preprint, agent output or a solver verdict alone cannot promote an unverified claim to solved.
+- JSON and this text are generated from the same repository snapshot; neither reflects live claim status or independently verifies current mathematical literature.
+"""
+
+
 def render_index(site):
     page = "index.html"
     s = site
@@ -471,6 +611,12 @@ def render_index(site):
     status_opts = "".join(f'<option value="{k}">{E(v)}</option>' for k, v in EVIDENCE.items())
     mod_opts = "".join(f'<option value="{k}">{E(v)}</option>' for k, v in MODALITY.items())
     top = s.ordered[:3]
+    reading_spotlight = "".join(
+        f'<a class="reading-card" href="{rel(page, s.problem_path(pid))}#reading-guide">'
+        f'<span class="spot-id">{E(pid)} · START READING</span>'
+        f'<h3>{E(s.by_id[pid]["name"])}</h3><p>{E(s.reading_guides[pid]["summary"])}</p>'
+        f'<span class="text-link">Read the guide →</span></a>'
+        for pid in ("M071", "M074", "M075"))
     spotlight = "".join(
         f'<a class="spot-card" href="{rel(page, s.problem_path(p["id"]))}"><span class="spot-rank">#{i}</span>'
         f'<span class="spot-id">{p["id"]} · {E(p["field"])}</span><strong>{E(p["name"])}</strong>'
@@ -479,7 +625,9 @@ def render_index(site):
         for i, p in enumerate(top, 1))
     explore = [
         ("atlas/", "Atlas", "See all 100 at once: impact × attackability, fields × computability, readiness ladder.", f"{len(s.fields)} fields"),
+        ("lamport/", "Proof map", "Exact proof obligations, prerequisite graphs, falsifiers and independent evidence audits.", f"{len(s.obligations)} obligations"),
         ("campaigns/", "Proof campaigns", "Hypotheses, first proof obligations, falsifiers and blockers for every active track.", f"{len(s.campaign)} active"),
+        ("discovery/", "Discovery trails", "Why researchers tried each move, what could be checked, where the reasoning is blocked, and what comes next.", f"{len(s.discovery)} trails"),
         ("lab/", "Exact probe lab", "Reusable exact engines, independently re-checked probes, certificate hashes.", f"{len(s.lab['probes'])} probes"),
         ("formal/", "Formal statements", "Lean 4 comparator statements: exactly what a proof or counterexample must establish, kernel-checked in CI.", f"{len(s.formal)} in Lean"),
         ("claims/", "2026 claim triage", "Scope comparisons for every flagged proof claim. Announcement ≠ acceptance.", f"{len(s.claims)} reviewed"),
@@ -496,11 +644,11 @@ def render_index(site):
     <h1 id="hero-heading">A hundred questions.<br><em>One new theorem.</em></h1>
     <p class="hero-lead">An evolving portfolio of concrete open mathematical problems, ranked for significance, tractability, independent verification and the discoveries they might unlock. Every problem has its own dossier page; every number on this site is regenerated from validated ledgers.</p>
     <div class="hero-actions">
-      <a class="button button-dark" href="#rankings">Explore the 100 <span aria-hidden="true">↓</span></a>
+      <a class="button button-dark" href="start/">Choose where to start <span aria-hidden="true">→</span></a>
       <a class="button button-ghost" href="atlas/">Open the atlas <span aria-hidden="true">→</span></a>
       <button class="button button-ghost" type="button" data-palette-open>Search everything <kbd>/</kbd></button>
     </div>
-    <p class="hero-annotation"><span class="annotation-star">✳</span> Every claim needs a proof. Every proof needs a checker.</p>
+    <p class="hero-annotation"><span class="annotation-star">✳</span> Start with the mathematics, then check the scope of every claim.</p>
   </div>
   <div class="hero-art" aria-hidden="true">
     <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
@@ -515,11 +663,23 @@ def render_index(site):
         ("Computable problems covered", f"{len(set(computable) & s.covered)}/{len(computable)}"),
         ("Full resolutions verified", len(s.solved))], "stats-6")}
 <p class="status-note">* “Active candidate” does not mean independently confirmed unsolved. <strong>{audited_open} have an official or specialist open-status reference; {len(s.items) - audited_open} still require an independent exact-status audit, including {claim_count} with proof claims under review</strong> — see the <a href="claims/">claim triage</a> and the <a href="{library_href(s, page, 'docs/PORTFOLIO_SELECTION.md') or BLOB + 'docs/PORTFOLIO_SELECTION.md'}">selection and evidence rules</a>.</p>
+<section class="audience-paths" aria-label="Choose a reading or contribution path">
+  <a class="audience-path" href="start/#people"><span class="detail-label">FOR PEOPLE</span>
+    <strong>Understand the problem before the proof.</strong><span>Plain-language guides, known limits, evidence status, and source-linked research trails.</span><b>Find your entry point →</b></a>
+  <a class="audience-path" href="start/#agents"><span class="detail-label">FOR AGENTS &amp; CONTRIBUTORS</span>
+    <strong>Take one verifiable task, not an open-ended theorem.</strong><span>Structured scope, acceptance checks, work claims, and reproducible validation.</span><b>Read the research contract →</b></a>
+</section>
 <aside class="next-band"><div><p class="eyebrow">THE NEXT 100 / IDEA RESERVOIR</p><h2>A growing reservoir. Room for thousands.</h2><p>Cross-domain, unvetted ideas queued for rigorous scrutiny and potential promotion into the active 100.</p></div><a class="button button-dark" href="next/">Explore the Next 100 →</a></aside>
 
 <section class="section-block" aria-labelledby="spot-heading">
   {section_head("00 / WHERE EFFORT GOES NEXT", '<span id="spot-heading">The top of the <em>queue.</em></span>', "The first three in dispatch order (editorial score + readiness + an action bonus), and the very next action for each.")}
   <div class="spot-grid">{spotlight}</div>
+</section>
+
+<section class="section-block reading-section" aria-labelledby="reading-heading">
+  {section_head("READ THE MATHEMATICS", '<span id="reading-heading">Beyond the <em>scoreboard.</em></span>',
+                "Three short, annotated introductions show the meaning, the known limits, and the next falsifiable step. Editorial guides are not proof claims.")}
+  <div class="reading-grid">{reading_spotlight}</div>
 </section>
 
 <section class="rankings section-block" id="rankings" aria-labelledby="rankings-heading">
@@ -607,6 +767,61 @@ def render_index(site):
 
 # --------------------------------------------------------------------------- problem pages
 
+def render_evidence_map(site, pid):
+    """A claims boundary on every page, derived solely from validated ledgers."""
+    p = site.by_id[pid]
+    probes = site.probes.get(pid, [])
+    if probes:
+        finite = (f"{len(probes)} exact lab probe(s) cover specified finite instances; "
+                  "their passing results are not an unrestricted proof.")
+    else:
+        finite = "No exact finite lab probe is recorded for this problem."
+    if pid in site.formal:
+        finite += " A Lean comparator checks an encoded statement, not a full conjecture proof."
+    else:
+        finite += " No Lean comparator statement is recorded."
+    state = EVIDENCE_HELP[p["evidence_state"]]
+    claim = (" A claimed resolution still needs independent evaluation."
+             if p["evidence_state"] == "claim_needs_review" else "")
+    action = site.dispatch[pid]["dispatch_next"]
+    return f"""<section class="dossier-block evidence-map" id="evidence-map">
+<h2>What the evidence actually says</h2>
+<p class="block-lead">Status review, checked finite cases, and a proposed next attack answer different questions. None should be mistaken for a verified full resolution.</p>
+<div class="evidence-columns">
+  <div><span class="detail-label">01 / FULL-STATEMENT STATUS</span><h3>{E(EVIDENCE[p["evidence_state"]])}</h3>
+    <p>{E(state + claim)} This project records no accepted full solution for this active candidate.</p></div>
+  <div><span class="detail-label">02 / VERIFIED SCOPE HERE</span><h3>Finite or formal checks</h3>
+    <p>{E(finite)}</p></div>
+  <div><span class="detail-label">03 / WHAT TO TEST NEXT</span><h3>Next bounded action</h3>
+    <p>{E(action)}</p></div>
+</div>
+<p class="muted small">These labels describe the evidence recorded in this repository, not an authoritative verdict on the entire mathematical literature. The <a href="{rel(f'problems/{pid}/index.html', 'ledger/')}">solved ledger</a> has a separate acceptance gate.</p>
+</section>"""
+
+
+def render_reading_guide(site, pid):
+    guide = site.reading_guides.get(pid)
+    if not guide:
+        return ""
+    page = f"problems/{pid}/index.html"
+    bridges = "".join(
+        f'<li><a href="{rel(page, site.problem_path(b["id"]))}">'
+        f'{E(b["id"])} · {E(site.by_id[b["id"]]["name"])}</a>'
+        f'<p>{E(b["reason"])}</p></li>'
+        for b in guide["bridges"])
+    return f"""<section class="dossier-block reading-guide" id="reading-guide">
+<span class="detail-label">EDITORIAL EXPLANATION · NOT A PROOF</span>
+<h2>Understand the problem</h2>
+<p class="reading-lead">{E(guide["summary"])}</p>
+<h3>The idea</h3><p>{E(guide["intuition"])}</p>
+<h3>Where the difficulty starts</h3><p>{E(guide["obstacle"])}</p>
+<h3>What a meaningful check would establish</h3><p>{E(guide["meaningful_check"])}</p>
+<h3>Connections across the portfolio</h3>
+<ul class="reading-bridges">{bridges}</ul>
+<p class="muted small">{E(site.reading_notice)}</p>
+</section>"""
+
+
 def render_problem(site, pid, prev_id, next_id):
     s = site
     page = f"problems/{pid}/index.html"
@@ -623,6 +838,8 @@ def render_problem(site, pid, prev_id, next_id):
     if c:
         chips.append(chip("Campaign: " + STAGE.get(c["stage"], c["stage"]), "chip-campaign"))
     field_href = rel(page, f"fields/{s.field_slug[p['field']]}/")
+    evidence_html = render_evidence_map(s, pid)
+    guide_html = render_reading_guide(s, pid)
 
     parts = s.readiness_parts(pid)
     readiness_html = ""
@@ -735,9 +952,12 @@ def render_problem(site, pid, prev_id, next_id):
     open_work = ""
     if open_items:
         rows = "".join(work_row(s, page, w) for w in open_items)
+        proof_map = (f'<p><a class="text-link" href="{rel(page, "lamport/")}?problem={pid}#{pid}">'
+                     'View exact Lamport dependency graph and audits →</a></p>'
+                     if any(n["problem_id"] == pid for n in s.obligations) else '')
         open_work = (f'<section class="dossier-block" id="work"><h2>Open work <span class="chip">{len(open_items)}</span></h2>'
                      f'<p class="muted">Bounded, claimable units derived from the ledgers. Claim one before starting so parallel agents never duplicate it.</p>'
-                     f'<ul class="work-list">{rows}</ul></section>')
+                     f'{proof_map}<ul class="work-list">{rows}</ul></section>')
     back = s.backlinks.get(pid, [])
     back_html = "".join(f'<li><a href="{rel(page, d["path"])}">{E(d["title"])}</a></li>' for d in back)
     same_field = [q for q in s.ordered if q["field"] == p["field"] and q["id"] != pid]
@@ -748,6 +968,11 @@ def render_problem(site, pid, prev_id, next_id):
     related = "".join(
         f'<li><a href="{rel(page, s.problem_path(q["id"]))}"><span class="mono">{q["id"]}</span> {E(q["name"])}</a></li>'
         for q in same_field[:6])
+    method_neighbours = [q for q in s.ordered if q["id"] != pid
+                         and s.dispatch[q["id"]]["method_id"] == d["method_id"]]
+    method_links = "".join(
+        f'<li><a href="{rel(page, s.problem_path(q["id"]))}"><span class="mono">{E(q["id"])}</span> '
+        f'{E(q["name"])}</a></li>' for q in method_neighbours[:6])
     citation = (f'Svyable. “{p["name"]} ({pid}).” 100 — A living portfolio of mathematical grand challenges, '
                 f'data as of {s.updated}. {SITE_URL}problems/{pid}/')
     issue = (f"{REPO}/issues/new?template=evidence_update.yml&title="
@@ -760,15 +985,24 @@ def render_problem(site, pid, prev_id, next_id):
         return (f'<a class="pager-{relation}" rel="{relation}" href="{rel(page, s.problem_path(q))}"><small>{label} · dispatch #{s.drank(q)}</small>'
                 f'<span>{E(qp["name"])}</span></a>')
 
-    toc = [("question", "The question"), ("formal", "Formal statement"), ("priority", "Priority")]
+    toc = [("question", "The question"), ("formal", "Formal statement")]
+    toc += [("discovery", "Discovery trail")] if pid in s.discovery else []
+    toc += [("priority", "Priority")]
     toc += [("campaign", "Campaign")] if c else []
     toc += [(f"probe-{pr['id']}", "Exact probe") for pr in s.probes.get(pid, [])]
     toc += [("roadmap", "Engine needed")] if pid in s.roadmap else []
     toc += [("milestones", "Milestones")] if s.milestones.get(pid) else []
     toc += [("claim-review", "Claim triage")] if pid in s.claims else []
     toc += [("work", "Open work")] if s.work_by_problem.get(pid) else []
-    toc += [("provenance", "Provenance")]
+    toc += [("provenance", "Provenance"), ("related", "Connections")]
     toc_html = "".join(f'<li><a href="#{E(a)}">{E(t)}</a></li>' for a, t in toc)
+    trail = s.discovery.get(pid)
+    discovery_html = (f'<section class="dossier-block" id="discovery"><h2>How this approach developed</h2>'
+                      f'<p class="block-lead">{E(trail["question"])}</p>'
+                      f'<p>Trace the motivating observations, independent reproductions, blockers, and next experiments. '
+                      f'These notes are not a theorem certificate.</p>'
+                      f'<p><a class="button button-outline" href="{rel(page, f"discovery/{pid}/")}">'
+                      f'Open {len(trail["nodes"])} sourced discovery steps →</a></p></section>') if trail else ""
 
     body = f"""
 <article class="problem-page">
@@ -777,7 +1011,7 @@ def render_problem(site, pid, prev_id, next_id):
   <h1>{E(p['name'])}</h1>
   <p class="problem-field"><a href="{field_href}">{E(p['field'])}</a></p>
   <div class="chips">{''.join(chips)}</div>
-  <blockquote class="the-question"><span class="detail-label">THE OPEN QUESTION</span>{E(p['question'])}</blockquote>
+  <blockquote class="the-question"><span class="detail-label">THE QUESTION UNDER STUDY</span>{E(p['question'])}</blockquote>
 </header>
 <div class="problem-grid">
 <aside class="problem-side" aria-label="On this page">
@@ -789,7 +1023,10 @@ def render_problem(site, pid, prev_id, next_id):
   </div>
 </aside>
 <div class="problem-main">
+{evidence_html}
+{guide_html}
 {formal_html}
+{discovery_html}
 <section class="dossier-block" id="priority"><h2>Priority, decomposed</h2>
   <div class="score-hero">
     <div><strong>#{d['dispatch_rank']}</strong><span>Dispatch rank · score {d['dispatch_score']}</span></div>
@@ -826,6 +1063,7 @@ def render_problem(site, pid, prev_id, next_id):
 <section class="dossier-block" id="related"><h2>Nearby in the portfolio</h2>
   <div class="two-col"><div><h3>Also in <a href="{field_href}">{E(p['field'])}</a></h3><ul class="link-list">{related}</ul></div>
   <div>{('<h3>Shares an exact engine with</h3>' + problem_chips(s, page, shared)) if shared else '<h3>Shared engines</h3><p class="muted">No exact engine yet. See the <a href="' + rel(page, 'lab/') + '#roadmap">engine roadmap</a>.</p>'}</div></div>
+{('<div class="method-neighbours"><h3>Shares the attack method: ' + E(d["method_title"]) + '</h3><p class="muted">Methodological similarity only; it does not imply the conjectures are equivalent.</p><ul class="link-list">' + method_links + '</ul></div>') if method_links else ''}
 </section>
 </div>
 </div>
@@ -838,6 +1076,120 @@ def render_problem(site, pid, prev_id, next_id):
                "isPartOf": {"@type": "WebSite", "name": "100", "url": SITE_URL}}]
     return layout(s, page, f"{p['name']} ({pid})", desc[:300], body, active="index", jsonld=jsonld,
                   crumbs=[(p["field"], f"fields/{s.field_slug[p['field']]}/"), (pid, None)])
+
+
+
+# --------------------------------------------------------------------------- discovery trails
+
+DISCOVERY_LABELS = {
+    "documented": "Documented reasoning",
+    "reproduced_known": "Reproduced known mathematics",
+    "proposed": "Proposed next step",
+    "blocked": "Blocked / missing evidence",
+}
+
+
+def discovery_steps(site, page, trail):
+    pid = trail["problem_id"]
+    items = []
+    for index, n in enumerate(trail["nodes"], 1):
+        anchor = f"step-{pid}-{n['id']}"
+        motivations = "".join(
+            f'<li><a href="#step-{pid}-{E(dep)}">{E(dep.replace("-", " "))}</a></li>'
+            for dep in n["motivated_by"])
+        sources = "".join(f'<li>{repo_link(src)}</li>' for src in n["sources"])
+        move = site.discovery_moves.get(n.get("move_id"))
+        linked_move = (f'<a href="{rel(page, "discovery/")}#move-{E(move["id"])}">'
+                       f'{E(move["name"])}</a>') if move else "—"
+        items.append(f"""
+<li class="discovery-step" id="{E(anchor)}">
+  <span class="discovery-step-number">{index:02d}</span>
+  <div class="discovery-step-main">
+    <p class="discovery-step-state">{E(n["kind"].replace("_", " "))} / {E(DISCOVERY_LABELS[n["status"]])}</p>
+    <h2>{E(n["title"])}</h2>
+    <p>{E(n["detail"])}</p>
+    <details class="discovery-evidence"><summary>Motivation, method &amp; sources</summary>
+      <p><strong>Reusable move:</strong> {linked_move}</p>
+      {('<p><strong>Motivated by:</strong></p><ul>' + motivations + '</ul>') if motivations else '<p>Starting observation: no prior trail dependency.</p>'}
+      <p><strong>Source records:</strong></p><ul>{sources}</ul>
+      {('<p><strong>Related proof obligation:</strong> <code>' + E(n["obligation_id"]) + '</code></p>') if n.get("obligation_id") else ''}
+    </details>
+  </div>
+</li>""")
+    return '<ol class="discovery-steps">' + "".join(items) + "</ol>"
+
+
+def render_discovery_index(site):
+    page = "discovery/index.html"
+    trails = sorted(site.discovery.values(), key=lambda t: site.drank(t["problem_id"]))
+    n_nodes = sum(len(t["nodes"]) for t in trails)
+    lead = ("The record of why an approach was tried, what it reproduced, what blocks it, "
+            "and what exact object would make the next claim independently testable. "
+            "These are research histories, not accepted proofs.")
+    cards = []
+    for t in trails:
+        pid = t["problem_id"]
+        p = site.by_id[pid]
+        reproduced = sum(n["status"] == "reproduced_known" for n in t["nodes"])
+        blockers = sum(n["status"] == "blocked" for n in t["nodes"])
+        cards.append(f"""<article class="discovery-card">
+  <p class="eyebrow">{E(pid)} · {E(p["field"])} · DISPATCH #{site.drank(pid)}</p>
+  <h2><a href="{rel(page, f"discovery/{pid}/")}">{E(p["name"])}</a></h2>
+  <p>{E(t["question"])}</p>
+  <p class="muted">{len(t["nodes"])} sourced steps · {reproduced} known reproductions · {blockers} blockers</p>
+  <p><a class="text-link" href="{rel(page, f"discovery/{pid}/")}">Follow the reasoning →</a>
+  <span class="discovery-middle"> · </span><a class="text-link" href="{rel(page, site.problem_path(pid))}">Problem dossier</a></p>
+</article>""")
+    moves = []
+    for m in site.discovery_doc["moves"]:
+        used = [
+            (t["problem_id"], n["id"])
+            for t in trails for n in t["nodes"] if n.get("move_id") == m["id"]
+        ]
+        links = ", ".join(
+            f'<a href="{rel(page, f"discovery/{pid}/")}#step-{E(pid)}-{E(nid)}">{E(pid)} · {E(nid.replace("-", " "))}</a>'
+            for pid, nid in used
+        )
+        moves.append(f'<li id="move-{E(m["id"])}"><strong>{E(m["name"])}</strong>'
+                     f'<p>{E(m["description"])}</p>'
+                     f'<p class="discovery-move-links"><b>Used in:</b> {links or "No recorded steps yet"}</p></li>')
+    body = page_head("DISCOVERY / MOTIVATED MATHEMATICS", "Keep the reasoning. <em>Not just the result.</em>", lead)
+    body += (f'<div class="stats-strip discovery-stats"><div class="stat"><strong>{len(trails)}</strong><span>Research trails</span></div>'
+             f'<div class="stat"><strong>{n_nodes}</strong><span>Sourced reasoning steps</span></div>'
+             f'<div class="stat"><strong>{len(site.discovery_moves)}</strong><span>Reusable moves</span></div></div>')
+    body += '<section class="section-block"><h2>Follow a line of attack</h2><div class="discovery-grid">' + "".join(cards) + '</div></section>'
+    body += ('<section class="section-block"><h2>Reusable proof moves</h2>'
+             '<p class="muted">Methods are possible approaches, not universal solution strategies. '
+             'Each move links back to cited, concrete attempts.</p><ul class="discovery-moves">'
+             + "".join(moves) + '</ul></section>')
+    body += ('<section class="section-block"><h2>Contribute a step</h2>'
+             '<p>Record a motivating observation, dependencies, a falsifier or boundary, and source paths. '
+             'A new proposed step does not change the solved ledger, evidence state, or readiness. '
+             + repo_link("docs/DISCOVERY_PROTOCOL.md", "Read the contribution and validation protocol") + '.</p></section>')
+    return layout(site, page, "Discovery trails", lead, body, active="discovery",
+                  crumbs=[("Discovery", None)])
+
+
+def render_discovery_trail(site, pid):
+    page = f"discovery/{pid}/index.html"
+    trail = site.discovery[pid]
+    p = site.by_id[pid]
+    body = page_head(f"DISCOVERY / {pid}", f"{E(p['name'])}: <em>the reasoning trail.</em>",
+                     E(trail["question"]))
+    body += (f'<p class="discovery-intro">The steps below distinguish documented observations, '
+             f'known finite reproductions, blocked checks and proposed moves. '
+             f'None changes the evidence state of the underlying conjecture. '
+             f'<a href="{rel(page, site.problem_path(pid))}">View the problem dossier →</a></p>')
+    body += discovery_steps(site, page, trail)
+    body += ('<section class="section-block"><h2>What counts as progress?</h2>'
+             '<p>An independently checked new mathematical statement must pass the separate '
+             'scope, provenance and verification gates. An attractive reasoning trail never '
+             'promotes a conjecture to solved.</p>'
+             '<p>' + repo_link("docs/DISCOVERY_PROTOCOL.md", "Discovery protocol") + '</p></section>')
+    return layout(site, page, f"{p['name']} discovery trail ({pid})",
+                  f"Sourced proof-discovery trail for {p['name']}.",
+                  body, active="discovery",
+                  crumbs=[("Discovery", "discovery/"), (pid, None)])
 
 
 # --------------------------------------------------------------------------- fields
@@ -1123,7 +1475,7 @@ def render_formal(site):
 
 # --------------------------------------------------------------------------- work queue
 
-WORK_LABEL = {"obligation": "Proof obligation", "review": "Independent review", "lean": "Lean target", "job": "Cohort job", "roadmap": "Roadmap item",
+WORK_LABEL = {"obligation": "Proof obligation", "review": "Independent review", "benchmark": "Benchmark trial", "lean": "Lean target", "job": "Cohort job", "roadmap": "Roadmap item",
               "comparator": "Lean comparator", "status_audit": "Status audit"}
 WORK_STATUS = {"runnable": "Runnable", "externally_blocked": "Externally blocked", "waiting_on_dependencies": "Waiting on dependencies"}
 
@@ -1149,7 +1501,7 @@ def render_work_index(site):
         items = [w for w in doc["items"] if w["kind"] == kind]
         if not items:
             continue
-        shown = items if kind not in ("comparator", "status_audit") else items[:12]
+        shown = items if kind not in ("comparator", "status_audit", "benchmark") else items[:12]
         more = "" if len(shown) == len(items) else (
             f'<details class="table-view"><summary>All {len(items)} {E(WORK_LABEL[kind].lower())} items</summary>'
             f'<ul class="work-list">{"".join(work_row(s, page, w) for w in items[len(shown):])}</ul></details>')
@@ -1158,7 +1510,7 @@ def render_work_index(site):
                    f'<ul class="work-list">{"".join(work_row(s, page, w) for w in shown)}</ul>{more}</section>')
     top = "".join(work_row(s, page, w) for w in [w for w in doc["items"] if w["status"] == "runnable"][:6])
     body = page_head("THE WORK QUEUE", "Many hands, <em>no collisions.</em>",
-                     "Every bounded unit of work in the repository, derived from the ledgers that define it: proof obligations, Lean targets, cohort jobs, roadmap items, and one comparator and one status audit per problem that still needs them. An item disappears when its ledger records the result.") + f"""
+                     "Every bounded unit of work in the repository, derived from the ledgers that define it: proof obligations, independent reviews, preregistered benchmark trials, Lean targets, cohort jobs, roadmap items, and one comparator and one status audit per problem that still needs them. An item disappears when its ledger records the result.") + f"""
 {stats([("Work items", doc['count']), ("Runnable now", doc['by_status']['runnable']),
         ("Lean comparators to write", doc['by_kind']['comparator']), ("Status audits to draft", doc['by_kind']['status_audit'])])}
 <section class="section-block tight" aria-labelledby="yield-h">{section_head("CAPACITY IS NOT YIELD", '<span id="yield-h">Measured by what is <em>accepted.</em></span>', "Yield counts claimed work items that a named reviewer, who is not the author, accepted, per 10 recorded agent-hours. Review is the bottleneck, so reviews are claimable work too.")}
@@ -1174,6 +1526,7 @@ def render_work_index(site):
 <li><strong>Regenerate.</strong> <code>python3 scripts/regen.py</code> rewrites every derived file in about three seconds. Merge conflicts in generated files never need a manual merge: take either side and regenerate.</li>
 <li><strong>Verify and ship.</strong> <code>python3 scripts/regen.py --check</code> and the tests; reference the item id and close the claim with the PR.</li>
 </ol>
+<p class="table-footnote">Trace blocking premises and exact statement audits in the <a href="{rel(page, 'lamport/')}">Lamport proof map</a>.</p>
 <p class="table-footnote">Full agent protocol: <a href="{library_href(s, page, 'AGENTS.md') or BLOB + 'AGENTS.md'}">AGENTS.md</a> · 100-slot wave: <a href="{library_href(s, page, 'SCALE.md') or BLOB + 'SCALE.md'}">SCALE.md</a> · machine-readable queue: <a href="{rel(page, 'api/work.json')}">api/work.json</a>.</p></section>
 <section class="section-block tight" aria-labelledby="top-h"><h2 class="h-small" id="top-h">Start here</h2><ul class="work-list">{top}</ul></section>
 {groups}"""
@@ -1210,6 +1563,149 @@ def render_work_item(site, w):
 </div></article>"""
     return layout(s, page, f"{w['id']}: {w['title']}", w["deliverable"][:240], body, active="work",
                   crumbs=[("Work", "work/"), (w["id"], None)])
+
+
+
+# --------------------------------------------------------------------------- Lamport proof explorer
+
+def lamport_layers(nodes):
+    """Dependency depths for a validated, acyclic obligation subgraph."""
+    by_id = {n["id"]: n for n in nodes}
+    memo = {}
+
+    def depth(oid):
+        if oid not in memo:
+            # Global registry can be acyclic even if future dependencies cross campaigns.
+            local = [dep for dep in by_id[oid]["depends_on"] if dep in by_id]
+            memo[oid] = 1 + max(depth(dep) for dep in local) if local else 0
+        return memo[oid]
+
+    return {oid: depth(oid) for oid in by_id}
+
+
+def render_lamport(site):
+    """A readable static graph, with optional JS connectors and filtering."""
+    s = site
+    page = "lamport/index.html"
+    grouped = defaultdict(list)
+    for node in s.obligations:
+        grouped[node["problem_id"]].append(node)
+    work_by_id = {w["id"]: w for w in s.work["items"]}
+    counts = Counter(n["status"] for n in s.obligations)
+    pids = sorted(grouped, key=s.drank)
+
+    options = "".join(
+        f'<option value="{E(pid)}">{E(pid)} · {E(s.by_id[pid]["name"])}</option>'
+        for pid in pids)
+    sections = []
+    for pid in pids:
+        nodes = sorted(grouped[pid], key=lambda n: n["id"])
+        layers = lamport_layers(nodes)
+        columns = max(layers.values()) + 1
+        offsets = defaultdict(int)
+        cards = []
+        audits = []
+        for n in sorted(nodes, key=lambda n: (layers[n["id"]], n["id"])):
+            oid = n["id"]
+            col = layers[oid] + 1
+            offsets[col] += 1
+            row = offsets[col]
+            deps = " ".join(n["depends_on"])
+            cards.append(
+                f'<article class="lamport-node lamport-{E(n["status"])}" id="{E(oid)}" '
+                f'data-obligation="{E(oid)}" data-depends="{E(deps)}" '
+                f'style="grid-column:{col};grid-row:{row}">'
+                f'<div class="lamport-node-head"><code>{E(oid)}</code>'
+                f'<span>{E(n["status"])}</span></div>'
+                f'<h3>{E(n["kind"].capitalize())} obligation</h3>'
+                f'<p>{E(n["statement"])}</p>'
+                + (f'<small>Needs: {", ".join(E(dep) for dep in n["depends_on"])}</small>'
+                   if n["depends_on"] else '<small>No graph prerequisites</small>')
+                + f'<a href="#audit-{E(oid)}">Exact scope &amp; audit ↓</a></article>'
+            )
+            dep_links = (", ".join(
+                f'<a href="#audit-{E(d)}"><code>{E(d)}</code></a>'
+                for d in n["depends_on"]) if n["depends_on"] else "None")
+            w = work_by_id.get(oid)
+            work_links = (
+                f'<a href="{rel(page, "work/" + oid + "/")}">Open work contract</a> · '
+                f'<a href="{E(w["existing_claims_url"])}" rel="noopener noreferrer">Check existing claims ↗</a> · '
+                + (f'<a href="{E(w["open_claim_url"])}" rel="noopener noreferrer">Claim this obligation ↗</a>'
+                 if w["status"] == "runnable" else '<span>Blocked or awaiting prerequisites; do not claim yet.</span>')
+                if w else repo_link("data/proof_obligations.json", "Canonical ledger"))
+            certificate = n["evidence"]
+            if certificate is None:
+                evidence = ('<p class="lamport-no-cert">No discharge certificate is recorded. '
+                            'This is an unresolved obligation, not a proved lemma.</p>')
+            else:
+                reviews = "".join(
+                    f'<li>{ext(url, "Independent review " + str(i))}</li>'
+                    for i, url in enumerate(certificate["independent_review_urls"], 1))
+                evidence = (
+                    '<p>Structurally discharged in the ledger. This status is not itself '
+                    'a proof of mathematical validity or review independence.</p>'
+                    f'<dl class="kv compact"><dt>Statement SHA-256</dt><dd><code class="hash">{E(certificate["statement_sha256"])}</code></dd>'
+                    f'<dt>Replay artifact</dt><dd>{repo_link(certificate["artifact"])}</dd>'
+                    f'<dt>Independent checker</dt><dd>{repo_link(certificate["checker"])}</dd>'
+                    f'<dt>Scope audit</dt><dd>{repo_link(certificate["scope_audit"])}</dd></dl>'
+                    f'<ul class="link-list">{reviews}</ul>')
+            audits.append(
+                f'<details class="lamport-audit" id="audit-{E(oid)}">'
+                f'<summary><code>{E(oid)}</code> · {E(n["kind"])} · {E(n["status"])} <span>Full audit</span></summary>'
+                f'<div class="lamport-audit-body">'
+                f'<h3>Exact statement</h3><p class="serif">{E(n["statement"])}</p>'
+                f'<h3>Known prior-art boundary</h3><p>{E(n["prior_art_boundary"])}</p>'
+                f'<h3>Falsifier</h3><p>{E(n["falsifier"])}</p>'
+                f'<h3>Next action</h3><p>{E(n["next_action"])}</p>'
+                f'<h3>Depends on</h3><p>{dep_links}</p>'
+                f'<h3>Discharge evidence</h3>{evidence}'
+                f'<p class="lamport-worklinks">{work_links}</p>'
+                + (f'<p class="muted">Claim scope digest (identity, not evidence): '
+                   f'<code class="hash">{E(w["scope_sha256"])}</code></p>' if w else '')
+                + '</div></details>')
+        section = (
+            f'<section class="lamport-group section-block tight" id="{E(pid)}" data-lamport-problem="{E(pid)}">'
+            f'<div class="lamport-group-header"><div><p class="eyebrow">{E(pid)} / {len(nodes)} obligations</p>'
+            f'<h2><a href="{rel(page, s.problem_path(pid))}">{E(s.by_id[pid]["name"])}</a></h2></div>'
+            f'<span class="chip">{sum(n["status"] == "blocked" for n in nodes)} blocked</span></div>'
+            f'<div class="lamport-graph-scroll" tabindex="0" aria-label="{E(pid)} proof dependency graph">'
+            f'<div class="lamport-graph" style="--lamport-columns:{columns};--lamport-min-width:{columns * 260 + (columns - 1) * 42}px" data-graph="{E(pid)}">'
+            + "".join(cards)
+            + '</div></div>'
+            + (f'<p class="lamport-key">When JavaScript is enabled, arrows connect prerequisites to dependents within this campaign. '
+             f'Every dependency is also written as text and linked in the audits.</p>' if any(n["depends_on"] for n in nodes)
+             else '<p class="lamport-key">No prerequisite edges recorded for this campaign.</p>')
+            + f'<div class="lamport-audits"><h3>Statement-by-statement audit</h3>{"".join(audits)}</div>'
+            '</section>')
+        sections.append(section)
+
+    body = page_head(
+        "LAMPORT / PROOF DEPENDENCIES",
+        'Make every missing <em>implication visible.</em>',
+        "A versioned, finite, acyclic graph of exact research obligations. Browse prerequisites, falsifiers, next actions and independently checkable evidence. This is a proof-work ledger, not a claim that any conjecture is solved."
+    ) + f"""
+{stats([("Proof obligations", len(s.obligations)), ("Open", counts["open"]),
+        ("Blocked", counts["blocked"]), ("Structurally discharged", counts["discharged"])])}
+<p class="status-note"><strong>Important:</strong> These are ledger states, not independent proof judgments.
+A SHA-256 digest identifies a statement; it does not prove it. A passed structural validator or a Lean check
+of a narrower encoded statement never establishes a universal conjecture. No open or blocked node carries
+discharge evidence.</p>
+<div class="lamport-controls" id="lamport-controls" hidden>
+  <label for="lamport-problem">Focus on a problem</label>
+  <select id="lamport-problem"><option value="">All {len(pids)} campaigns with obligations</option>{options}</select>
+  <span id="lamport-count" role="status" aria-live="polite">Showing {len(pids)} campaigns</span>
+</div>
+<p class="table-footnote">Canonical source: {repo_link("data/proof_obligations.json")} ·
+validator: {repo_link("scripts/proof_obligations.py")} ·
+<a href="{rel(page, 'api/lamport.json')}">Machine-readable graph (JSON)</a> ·
+<a href="{library_href(s, page, 'docs/LAMPORT_PROTOCOL.md')}">Full Lamport protocol</a> ·
+<a href="{rel(page, 'work/')}">Claimable work queue</a>.</p>
+{"".join(sections)}
+"""
+    return layout(s, page, "Lamport proof map",
+                  "Exact proof-obligation dependency graphs, scope audits, falsifiers and independent evidence boundaries.",
+                  body, active="work", head_extra=f'<script src="{rel(page, "assets/lamport.js")}" defer></script>',
+                  crumbs=[("Proof map", None)])
 
 
 # --------------------------------------------------------------------------- roadmap
@@ -1478,6 +1974,8 @@ def problem_api(site, pid):
         "claim_review_2026": s.claims.get(pid),
         "formal_statement": ({**s.formal[pid], "source_url": BLOB + s.formal[pid]["module"]} if pid in s.formal else None),
         "external_claims": s.external.get(pid, []),
+        "discovery_trail": s.discovery.get(pid),
+        "discovery_url": (SITE_URL + f"discovery/{pid}/" if pid in s.discovery else None),
         "mentioned_in": [{"title": d["title"], "source": d["rel"], "url": SITE_URL + d["path"]} for d in s.backlinks.get(pid, [])],
     }
 
@@ -1527,10 +2025,85 @@ def render_api(site):
                        "s": e["namespace"] + "." + e["statement"], "u": f"problems/{e['problem_id']}/#formal", "x": e["encodes"] + " lean formal"})
     for d in s.library:
         search.append({"t": d["title"], "k": "document", "s": d["rel"], "u": d["path"], "x": ""})
+    for n in s.obligations:
+        search.append({"t": n["id"] + " — " + n["kind"] + " proof obligation",
+                       "k": "proof", "id": n["id"], "s": n["status"],
+                       "u": f'lamport/?problem={n["problem_id"]}#audit-{n["id"]}',
+                       "x": " ".join([n["statement"], n["falsifier"], n["next_action"]])})
     for key, label, href in NAV[1:]:
         search.append({"t": label, "k": "page", "s": "Section", "u": href, "x": ""})
     search.append({"t": "Data & API", "k": "page", "s": "Downloads", "u": "api/", "x": "json csv feed"})
+    search.append({"t": "Agent contract", "k": "page", "s": "Machine-readable research", "u": "api/agent.json", "x": "scope digest claims validation evidence"})
+    search.append({"t": "Agent task shortlist", "k": "page", "s": "Runnable tasks", "u": "api/agent/tasks.json", "x": "claim acceptance boundaries"})
     files["api/work.json"] = dumps(s.work)
+    selected = [w for w in s.work["items"] if w["status"] == "runnable"][:20]
+    tasks = [{
+        "id": w["id"], "kind": w["kind"], "title": w["title"],
+        "priority_rank": w["priority_rank"], "status": w["status"],
+        "problems": w["problems"], "deliverable": w["deliverable"],
+        "acceptance": w["acceptance"], "boundary": w["boundary"],
+        "depends_on": w["depends_on"], "scope_sha256": w["scope_sha256"],
+        "task_url": SITE_URL + "work/" + w["id"] + "/",
+        "existing_claims_url": w["existing_claims_url"],
+        "open_claim_url": w["open_claim_url"],
+    } for w in selected]
+    files["api/agent/tasks.json"] = dumps({
+        "schema_version": 1,
+        "snapshot_as_of": s.updated,
+        "selection": "First 20 runnable items in the derived work queue's priority order; use api/work.json for all tasks and other statuses.",
+        "runnable_in_snapshot": s.work["by_status"].get("runnable", 0),
+        "live_claim_status": "unknown; check existing_claims_url immediately before claiming",
+        "task_count": len(tasks),
+        "tasks": tasks,
+    })
+    files["api/agent.json"] = dumps({
+        "schema_version": 1,
+        "name": "100 — evidence-bound mathematical research",
+        "site": SITE_URL,
+        "repository": REPO,
+        "snapshot_as_of": s.updated,
+        "not_live": ["literature status", "GitHub claim availability", "review acceptance"],
+        "endpoints": {
+            "human_start": SITE_URL + "start/",
+            "agent_guide": SITE_URL + "llms.txt",
+            "runnable_shortlist": SITE_URL + "api/agent/tasks.json",
+            "work_queue": SITE_URL + "api/work.json",
+            "problem_registry": SITE_URL + "api/problems.json",
+            "individual_problem": SITE_URL + "api/problems/{id}.json",
+            "discovery_trails": SITE_URL + "api/discovery.json",
+            "index": SITE_URL + "api/index.json",
+        },
+        "workflow": [
+            "Choose a bounded runnable item, never an unrestricted proof promise.",
+            "Fetch the current item and compare scope_sha256 to the latest ledger.",
+            "Check existing_claims_url for a competing live GitHub claim before claiming.",
+            "Claim that exact ID and digest; obey dependencies, acceptance, boundaries and falsifiers.",
+            "Record evidence, regenerate all derived outputs and run validation/tests.",
+            "Open a small PR, close the claim, and record an honest outcome; do not self-approve independent review.",
+        ],
+        "commands": {
+            "inspect_item": "python3 scripts/work.py --id <ID>",
+            "regenerate": "python3 scripts/regen.py",
+            "fast_check": "python3 scripts/regen.py --check --fast",
+            "full_check": "python3 scripts/regen.py --check",
+            "tests": "python3 -m unittest discover -s tests",
+        },
+        "evidence_boundaries": {
+            "candidate": "Not necessarily independently confirmed unsolved.",
+            "finite_probe": "Only its recorded finite scope is checked; not a general theorem.",
+            "lean": "Kernel-checked theorem means the encoded proposition, not necessarily the intended unrestricted conjecture.",
+            "claim": "Preprints and solver announcements are not acceptance.",
+            "independent_review": "Reviewer must not be the author and must assess the exact current scope.",
+        },
+    })
+    files["api/discovery.json"] = dumps(s.discovery_doc)
+    for pid, trail in s.discovery.items():
+        files[f"api/discovery/{pid}.json"] = dumps(trail)
+        search.append({"t": s.by_id[pid]["name"] + " — discovery trail", "k": "discovery",
+                       "id": pid, "s": f"{len(trail['nodes'])} reasoning steps",
+                       "u": f"discovery/{pid}/", "x": trail["question"] + " " +
+                       " ".join(n["title"] for n in trail["nodes"])})
+    files["api/lamport.json"] = dumps({"protocol": "svyable.lamport.v1", "meaning": "Structural proof-obligation registry, not proof validity", "count": len(s.obligations), "obligations": s.obligations})
     for w in s.work["items"]:
         search.append({"t": w["title"], "k": "work", "id": w["id"], "s": WORK_LABEL[w["kind"]] + " · " + w["status"].replace("_", " "),
                        "u": f"work/{w['id']}/", "x": w["deliverable"][:160]})
@@ -1547,10 +2120,17 @@ def render_api(site):
             "full_snapshot": SITE_URL + "data/portfolio.json",
             "feed": SITE_URL + "feed.xml",
             "work_queue": SITE_URL + "api/work.json",
+            "discovery": SITE_URL + "api/discovery.json",
+            "agent_manifest": SITE_URL + "api/agent.json",
+            "agent_shortlist": SITE_URL + "api/agent/tasks.json",
+            "agent_text": SITE_URL + "llms.txt",
+            "discovery_trail": SITE_URL + "api/discovery/{id}.json",
+            "proof_obligations": SITE_URL + "api/lamport.json",
         },
         "counts": {"problems": len(s.items), "campaigns": len(s.campaign), "probes": len(s.lab["probes"]),
                    "engines": len(s.lab["engines"]), "claim_reviews": len(s.claims), "lean_statements": len(s.formal), "solved": len(s.solved),
-                   "documents": len(s.library)},
+                   "documents": len(s.library), "discovery_trails": len(s.discovery),
+                    "discovery_nodes": sum(len(t["nodes"]) for t in s.discovery.values())},
     })
     return files
 
@@ -1565,7 +2145,12 @@ def render_api_page(site):
 <tr><td><a href="problems.json">api/problems.json</a></td><td>All 100 problems in execution order with ranks, scores, readiness, evidence and modality.</td></tr>
 <tr><td><a href="problems/{ex_id}.json">api/problems/{{id}}.json</a></td><td>One problem with campaign, probes, milestones, roadmap, claim review, external claims and backlinks.</td></tr>
 <tr><td><a href="problems.csv">api/problems.csv</a></td><td>Spreadsheet-friendly registry.</td></tr>
+<tr><td><a href="discovery.json">api/discovery.json</a></td><td>Sourced motivated reasoning trails, cross-problem moves and their provenance.</td></tr>
+<tr><td><a href="lamport.json">api/lamport.json</a></td><td>Exact Lamport proof-obligation dependency graph, states and evidence records. Structural status is not proof validity.</td></tr>
 <tr><td><a href="search.json">api/search.json</a></td><td>The compact index behind the <kbd>/</kbd> command palette.</td></tr>
+<tr><td><a href="agent.json">api/agent.json</a></td><td>Agent research contract, evidence boundaries and stable API entry points.</td></tr>
+<tr><td><a href="agent/tasks.json">api/agent/tasks.json</a></td><td>First 20 runnable tasks with digests, acceptance tests and claim links. Not a live claim check.</td></tr>
+<tr><td><a href="../llms.txt">llms.txt</a></td><td>Plain-text site map for research agents and readers.</td></tr>
 <tr><td><a href="../data/portfolio.json">data/portfolio.json</a></td><td>The complete legacy snapshot (lab, campaigns, milestones, solved archive).</td></tr>
 <tr><td><a href="../feed.xml">feed.xml</a></td><td>Atom feed of milestones, claim reviews and program updates.</td></tr>
 </tbody></table></div></section>
@@ -1612,6 +2197,8 @@ def build_files(portfolio):
     site = Site(portfolio)
     files = {}
     files["index.html"] = render_index(site)
+    files["start/index.html"] = render_start(site)
+    files["llms.txt"] = render_llms(site)
     for k, p in enumerate(site.ordered):
         prev_id = site.ordered[k - 1]["id"] if k else None
         next_id = site.ordered[k + 1]["id"] if k + 1 < len(site.ordered) else None
@@ -1622,9 +2209,13 @@ def build_files(portfolio):
     files["lab/index.html"] = render_lab(site)
     files["formal/index.html"] = render_formal(site)
     files["campaigns/index.html"] = render_campaigns(site)
+    files["discovery/index.html"] = render_discovery_index(site)
+    for pid in site.discovery:
+        files[f"discovery/{pid}/index.html"] = render_discovery_trail(site, pid)
     files["claims/index.html"] = render_claims(site)
     files["roadmap/index.html"] = render_roadmap(site)
     files["work/index.html"] = render_work_index(site)
+    files["lamport/index.html"] = render_lamport(site)
     for w in site.work["items"]:
         files[f"work/{w['id']}/index.html"] = render_work_item(site, w)
     files["ledger/index.html"] = render_ledger(site)

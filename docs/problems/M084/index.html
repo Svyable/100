@@ -19,9 +19,11 @@
 <link rel="stylesheet" href="../../assets/style.css">
 <link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
 <link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
 <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <script src="../../assets/app.js" defer></script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Matrix multiplication exponent omega=2", "description": "Is the matrix multiplication exponent exactly two?", "url": "https://svyable.github.io/100/problems/M084/", "dateModified": "2026-10-31", "about": {"@type": "Thing", "name": "Matrix multiplication exponent omega=2", "description": "Is the matrix multiplication exponent exactly two?"}, "isPartOf": {"@type": "WebSite", "name": "100", "url": "https://svyable.github.io/100/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Complexity", "item": "https://svyable.github.io/100/fields/complexity/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Matrix multiplication exponent omega=2", "description": "Is the matrix multiplication exponent exactly two?", "url": "https://svyable.github.io/100/problems/M084/", "dateModified": "2026-11-01", "about": {"@type": "Thing", "name": "Matrix multiplication exponent omega=2", "description": "Is the matrix multiplication exponent exactly two?"}, "isPartOf": {"@type": "WebSite", "name": "100", "url": "https://svyable.github.io/100/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Complexity", "item": "https://svyable.github.io/100/fields/complexity/"}]}</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -31,7 +33,7 @@
     <span class="brand-mark">100<span class="brand-dot">.</span></span>
     <span class="brand-caption">SVYABLE<br>RESEARCH</span>
   </a>
-  <nav class="main-nav" aria-label="Primary navigation"><a href="../../" aria-current="page">The 100</a><a href="../../work/">Work</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/">Library</a></nav>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../" aria-current="page">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/">Library</a></nav>
   <div class="header-tools">
     <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
     <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
@@ -47,11 +49,11 @@
   <h1>Matrix multiplication exponent omega=2</h1>
   <p class="problem-field"><a href="../../fields/complexity/">Complexity</a></p>
   <div class="chips"><span class="status-pill status-needs_review" title="Plausibly open; precise statement and status still need a literature audit.">Needs review</span><span class="chip chip-modality">Asymptotic</span><span class="chip chip-good">Exact verifier in the lab</span><span class="chip chip-campaign">Campaign: Benchmark reproduced</span></div>
-  <blockquote class="the-question"><span class="detail-label">THE OPEN QUESTION</span>Is the matrix multiplication exponent exactly two?</blockquote>
+  <blockquote class="the-question"><span class="detail-label">THE QUESTION UNDER STUDY</span>Is the matrix multiplication exponent exactly two?</blockquote>
 </header>
 <div class="problem-grid">
 <aside class="problem-side" aria-label="On this page">
-  <nav class="toc"><span class="detail-label">ON THIS PAGE</span><ol><li><a href="#question">The question</a></li><li><a href="#formal">Formal statement</a></li><li><a href="#priority">Priority</a></li><li><a href="#campaign">Campaign</a></li><li><a href="#probe-strassen">Exact probe</a></li><li><a href="#milestones">Milestones</a></li><li><a href="#work">Open work</a></li><li><a href="#provenance">Provenance</a></li></ol></nav>
+  <nav class="toc"><span class="detail-label">ON THIS PAGE</span><ol><li><a href="#question">The question</a></li><li><a href="#formal">Formal statement</a></li><li><a href="#priority">Priority</a></li><li><a href="#campaign">Campaign</a></li><li><a href="#probe-strassen">Exact probe</a></li><li><a href="#milestones">Milestones</a></li><li><a href="#work">Open work</a></li><li><a href="#provenance">Provenance</a></li><li><a href="#related">Connections</a></li></ol></nav>
   <div class="side-actions">
     <a class="button button-outline" href="https://github.com/Svyable/100/issues/new?template=evidence_update.yml&amp;title=%5BEvidence%5D%20M084%20%2014%20" rel="noopener noreferrer">Submit evidence ↗</a>
     <a class="text-link" href="../../problems/M084/" data-permalink>Permalink: /problems/M084/</a>
@@ -59,8 +61,23 @@
   </div>
 </aside>
 <div class="problem-main">
+<section class="dossier-block evidence-map" id="evidence-map">
+<h2>What the evidence actually says</h2>
+<p class="block-lead">Status review, checked finite cases, and a proposed next attack answer different questions. None should be mistaken for a verified full resolution.</p>
+<div class="evidence-columns">
+  <div><span class="detail-label">01 / FULL-STATEMENT STATUS</span><h3>Needs review</h3>
+    <p>Plausibly open; precise statement and status still need a literature audit. This project records no accepted full solution for this active candidate.</p></div>
+  <div><span class="detail-label">02 / VERIFIED SCOPE HERE</span><h3>Finite or formal checks</h3>
+    <p>1 exact lab probe(s) cover specified finite instances; their passing results are not an unrestricted proof. No Lean comparator statement is recorded.</p></div>
+  <div><span class="detail-label">03 / WHAT TO TEST NEXT</span><h3>Next bounded action</h3>
+    <p>Import one published exact decomposition, such as a cited rank-23 scheme for the &lt;3,3,3&gt; tensor, and replay it on the tensor checker. A flip-graph search is not the next step: small formats cannot beat the laser-method bounds the blocker cites.</p></div>
+</div>
+<p class="muted small">These labels describe the evidence recorded in this repository, not an authoritative verdict on the entire mathematical literature. The <a href="../../ledger/">solved ledger</a> has a separate acceptance gate.</p>
+</section>
+
 <section class="dossier-block" id="formal"><h2>Formal statement</h2>
 <p class="muted">No Lean comparator statement yet. Formalising the exact statement is a bounded, reviewable contribution: see <a href="../../formal/#contribute">how to add one</a>.</p></section>
+
 <section class="dossier-block" id="priority"><h2>Priority, decomposed</h2>
   <div class="score-hero">
     <div><strong>#14</strong><span>Dispatch rank · score 102</span></div>
@@ -101,7 +118,7 @@
 <pre class="cmd"><code>python3 scripts/lab.py --probe strassen</code></pre>
 <p><a class="text-link" href="https://github.com/Svyable/100/blob/main/scripts/probes/tensor.py" rel="noopener noreferrer">Inspect search and independent checker <span aria-hidden="true">↗</span></a></p>
 </section><section class="dossier-block" id="milestones"><h2>Verified milestones</h2><p class="muted">Reproductions of established mathematics test the machinery; they are not new theorems.</p><ul class="milestones"><li><span class="milestone-type">REPRODUCED KNOWN · 2026-10-31</span><strong>Strassen rank-7 &lt;2,2,2&gt; and rank-49 &lt;4,4,4&gt; decompositions checked exactly</strong><p>Sparse exact expansion over Z matches the matrix multiplication tensor coefficient by coefficient; the deep run adds the rank-343 &lt;8,8,8&gt; Kronecker cube.</p><p class="muted">Scope: Classical upper bound omega &lt;= log2 7; not new</p><pre class="cmd"><code>python3 scripts/lab.py --probe strassen</code></pre></li></ul></section>
-<section class="dossier-block" id="work"><h2>Open work <span class="chip">5</span></h2><p class="muted">Bounded, claimable units derived from the ledgers. Claim one before starting so parallel agents never duplicate it.</p><ul class="work-list"><li class="work-item work-runnable"><a href="../../work/O-M084-01/"><span class="work-id">O-M084-01</span><span class="work-title">Witness obligation for M084</span><span class="work-meta">Proof obligation · Runnable · dispatch #14</span></a></li><li class="work-item work-runnable"><a href="../../work/J-algebraic_complexity-replay_published/"><span class="work-id">J-algebraic_complexity-replay_published</span><span class="work-title">Replay a published certificate: One format, replayed exactly</span><span class="work-meta">Cohort job · Runnable · dispatch #14</span></a></li><li class="work-item work-runnable"><a href="../../work/R34/"><span class="work-id">R34</span><span class="work-title">Replay published certificates the lab does not yet check</span><span class="work-meta">Roadmap item · Runnable · dispatch #14</span></a></li><li class="work-item work-runnable"><a href="../../work/F-M084/"><span class="work-id">F-M084</span><span class="work-title">Lean comparator statement for Matrix multiplication exponent omega=2</span><span class="work-meta">Lean comparator · Runnable · dispatch #14</span></a></li><li class="work-item work-runnable"><a href="../../work/S-M084/"><span class="work-id">S-M084</span><span class="work-title">Exact-status audit draft for Matrix multiplication exponent omega=2</span><span class="work-meta">Status audit · Runnable · dispatch #14</span></a></li></ul></section>
+<section class="dossier-block" id="work"><h2>Open work <span class="chip">6</span></h2><p class="muted">Bounded, claimable units derived from the ledgers. Claim one before starting so parallel agents never duplicate it.</p><p><a class="text-link" href="../../lamport/?problem=M084#M084">View exact Lamport dependency graph and audits →</a></p><ul class="work-list"><li class="work-item work-runnable"><a href="../../work/O-M084-01/"><span class="work-id">O-M084-01</span><span class="work-title">Witness obligation for M084</span><span class="work-meta">Proof obligation · Runnable · dispatch #14</span></a></li><li class="work-item work-runnable"><a href="../../work/V-P-M084/"><span class="work-id">V-P-M084</span><span class="work-title">Independent certificate and scope audit for M084</span><span class="work-meta">Independent review · Runnable · dispatch #14</span></a></li><li class="work-item work-runnable"><a href="../../work/J-algebraic_complexity-replay_published/"><span class="work-id">J-algebraic_complexity-replay_published</span><span class="work-title">Replay a published certificate: One format, replayed exactly</span><span class="work-meta">Cohort job · Runnable · dispatch #14</span></a></li><li class="work-item work-runnable"><a href="../../work/R34/"><span class="work-id">R34</span><span class="work-title">Replay published certificates the lab does not yet check</span><span class="work-meta">Roadmap item · Runnable · dispatch #14</span></a></li><li class="work-item work-runnable"><a href="../../work/F-M084/"><span class="work-id">F-M084</span><span class="work-title">Lean comparator statement for Matrix multiplication exponent omega=2</span><span class="work-meta">Lean comparator · Runnable · dispatch #14</span></a></li><li class="work-item work-runnable"><a href="../../work/S-M084/"><span class="work-id">S-M084</span><span class="work-title">Exact-status audit draft for Matrix multiplication exponent omega=2</span><span class="work-meta">Status audit · Runnable · dispatch #14</span></a></li></ul></section>
 <section class="dossier-block" id="provenance"><h2>Provenance &amp; status</h2>
   <dl class="kv">
     <dt>Evidence state</dt><dd><span class="status-pill status-needs_review" title="Plausibly open; precise statement and status still need a literature audit.">Needs review</span> Plausibly open; precise statement and status still need a literature audit. This classification is not a universal proof-status certification.</dd>
@@ -109,13 +126,14 @@
     <dt>Source intake</dt><dd>not yet recorded</dd>
     <dt>Computation</dt><dd>Asymptotic — Limiting or infinitary statement; computation gives data and certified bounds, never a refutation.</dd>
   </dl>
-  <h3>Discussed in the library</h3><ul class="link-list"><li><a href="../../library/approach/">Approach — leverage dispatch</a></li><li><a href="../../library/attack-queue/">Execution queue — evidence-aware research priorities</a></li><li><a href="../../library/coverage/">Coverage — breadth-first research deployment plan</a></li><li><a href="../../library/lab/">Exact probe lab — computational reach of the 100</a></li><li><a href="../../library/ranked/">Ranked candidate portfolio</a></li><li><a href="../../library/roadmap/">Roadmap — 100 mathematical grand challenges</a></li><li><a href="../../library/scale/">Scale — proof-exchange wave</a></li><li><a href="../../library/lab-campaigns/">Lab campaigns: problems under exact computation</a></li><li><a href="../../library/research-engine/">Proof-driven research engine</a></li></ul>
+  <h3>Discussed in the library</h3><ul class="link-list"><li><a href="../../library/approach/">Approach — leverage dispatch</a></li><li><a href="../../library/attack-queue/">Execution queue — evidence-aware research priorities</a></li><li><a href="../../library/coverage/">Coverage — breadth-first research deployment plan</a></li><li><a href="../../library/lab/">Exact probe lab — computational reach of the 100</a></li><li><a href="../../library/ranked/">Ranked candidate portfolio</a></li><li><a href="../../library/roadmap/">Roadmap — 100 mathematical grand challenges</a></li><li><a href="../../library/scale/">Scale — proof-exchange wave</a></li><li><a href="../../library/lab-campaigns/">Lab campaigns: problems under exact computation</a></li><li><a href="../../library/openai-math-transfer/">OpenAI/math transfer intake: evidence before claims</a></li><li><a href="../../library/research-engine/">Proof-driven research engine</a></li></ul>
   <h3>Cite this page</h3>
-  <div class="cite"><code id="cite-M084">Svyable. “Matrix multiplication exponent omega=2 (M084).” 100 — A living portfolio of mathematical grand challenges, data as of 2026-10-31. https://svyable.github.io/100/problems/M084/</code><button class="plain-button" type="button" data-copy="#cite-M084">Copy</button></div>
+  <div class="cite"><code id="cite-M084">Svyable. “Matrix multiplication exponent omega=2 (M084).” 100 — A living portfolio of mathematical grand challenges, data as of 2026-11-01. https://svyable.github.io/100/problems/M084/</code><button class="plain-button" type="button" data-copy="#cite-M084">Copy</button></div>
 </section>
 <section class="dossier-block" id="related"><h2>Nearby in the portfolio</h2>
   <div class="two-col"><div><h3>Also in <a href="../../fields/complexity/">Complexity</a></h3><ul class="link-list"><li><a href="../../problems/M088/"><span class="mono">M088</span> Deterministic polynomial identity testing</a></li><li><a href="../../problems/M085/"><span class="mono">M085</span> Unique Games conjecture</a></li><li><a href="../../problems/M082/"><span class="mono">M082</span> NP versus coNP</a></li><li><a href="../../problems/M083/"><span class="mono">M083</span> Valiant VP versus VNP</a></li><li><a href="../../problems/M086/"><span class="mono">M086</span> Quantum PCP conjecture</a></li><li><a href="../../problems/M087/"><span class="mono">M087</span> P versus BPP</a></li></ul></div>
   <div><h3>Shared engines</h3><p class="muted">No exact engine yet. See the <a href="../../lab/#roadmap">engine roadmap</a>.</p></div></div>
+<div class="method-neighbours"><h3>Shares the attack method: One format, replayed exactly</h3><p class="muted">Methodological similarity only; it does not imply the conjectures are equivalent.</p><ul class="link-list"><li><a href="../../problems/M088/"><span class="mono">M088</span> Deterministic polynomial identity testing</a></li><li><a href="../../problems/M083/"><span class="mono">M083</span> Valiant VP versus VNP</a></li><li><a href="../../problems/M089/"><span class="mono">M089</span> Strongly polynomial linear programming</a></li></ul></div>
 </section>
 </div>
 </div>
@@ -125,10 +143,10 @@
 <footer class="site-footer">
   <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
   <div class="footer-links">
-    <a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
     <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
   </div>
-  <small>Generated from the validated ledgers · data as of 2026-10-31 · no tracking, no external scripts</small>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
 </footer>
 </div>
 <dialog class="palette" id="palette" aria-label="Search the portfolio">

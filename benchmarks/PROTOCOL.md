@@ -86,6 +86,26 @@ is complete under the preregistered protocol.** Even then three seeds per arm
 have low statistical power: report raw denominators and uncertainty, and do
 not interpret one task's result as general performance.
 
+## Dispatch and evidence
+
+Use python3 scripts/work.py --kind benchmark --next 8 to inspect remaining
+task/architecture/seed cells and claim each exact cell before launching the
+experiment. The queue is derived from the original manifest and the actual
+trial ledger. These **36 assignments** are not **36 observations**; an item
+disappears only after its unique valid run is recorded.
+
+Actual agent calls, including failures, must have frozen prompts, source
+snapshot, pinned model/version, unedited chat and tool logs, independent checker
+output and directly measured aggregate usage for all workers and coordination.
+Do not estimate token use, call a synthetic fixture a trial, or reclassify a
+pre-existing K42 checker calibration as an agent-architecture experiment.
+The benchmark smoke tests now allow a nonempty authentic ledger; they never
+create a trial by themselves.
+
+The CH24 task is already post-freeze exposed and cannot yield clean novelty
+credit. The four arms may still be executed as a contaminated-condition
+comparison, with the caveat preserved in every report.
+
 ## Trial ledger contract
 
 One JSON object per line in `data/benchmark_runs.jsonl`; never overwrite or

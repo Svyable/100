@@ -32,7 +32,11 @@ class MineTests(unittest.TestCase):
         self.assertEqual(straus["primes"], 117)
         self.assertEqual(straus["residues"], [3, 7, 11, 15, 19, 23])
         self.assertEqual(straus["by_residue"]["3"] + straus["by_residue"]["7"], 105)
-        self.assertIn("105", campaigns["M019"]["next_experiment"])
+        self.assertIn("straus_identities", campaigns["M019"]["next_experiment"])
+        identities = tables["straus_identities"]["summary"]
+        self.assertEqual(identities["covered_primes"], 106)
+        self.assertEqual(identities["uncovered_primes"], 11)
+        self.assertEqual(identities["uncovered_mod_120"], [1, 49])
 
         deck = tables["deck_invariants"]["summary"]
         self.assertEqual(deck["degree_separates_through"], 4)

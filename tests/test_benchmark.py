@@ -29,13 +29,17 @@ class BenchmarkTests(unittest.TestCase):
             },
         }
 
-    def test_manifest_is_preregistered_and_no_results_exist(self):
-        self.assertEqual(benchmark.load_runs(), [])
+    def test_manifest_is_preregistered_and_actual_runs_validate(self):
+        observed = benchmark.load_runs()
+        benchmark.validate_runs(self.doc, observed)
         self.assertEqual([t["class"] for t in self.doc["tasks"]],
                          ["replay", "structural", "dependency"])
         report = benchmark.summarize(self.doc, [])
         self.assertEqual(report["expected_trials"], 36)
         self.assertEqual(report["missing_trials"], 36)
+        live = benchmark.summarize(self.doc, observed)
+        self.assertEqual(live["recorded_trials"], len(observed))
+        self.assertEqual(live["missing_trials"], 36 - len(observed))
         self.assertFalse(report["comparable"])
         self.assertEqual(report["by_arm"]["proof_exchange"]["reviewed_restricted"], 0)
 

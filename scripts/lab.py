@@ -197,9 +197,11 @@ def render_report(ledger):
     for c in standalone:
         art = research.RUNNABLE[c["verifier"]]
         lines.append(f"| {c['problem_id']} {_cell(by_id[c['problem_id']]['name'])} | `{c['verifier']}` | [{art}]({art}) |")
-    lines += ["", "## Engine roadmap — computable problems without a probe yet", "",
-              roadmap["note"], "",
-              "| Problem | Modality | Engine to build | First probe |", "|---|---|---|---|"]
+    lines += ["", "## Engine roadmap — computable problems without a probe yet", "", roadmap["note"], ""]
+    if roadmap["entries"]:
+        lines += ["| Problem | Modality | Engine to build | First probe |", "|---|---|---|---|"]
+    else:
+        lines.append("Every computable-modality problem now has an exact, independently checked verifier.")
     for e in roadmap["entries"]:
         p = by_id[e["problem_id"]]
         lines.append(f"| {p['id']} {_cell(p['name'])} | `{p['modality']}` | `{e['engine']}` | {_cell(e['first_probe'])} |")

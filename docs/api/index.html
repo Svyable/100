@@ -19,6 +19,8 @@
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../feed.xml">
 <link rel="alternate" type="application/json" title="100 — machine-readable API" href="../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../llms.txt">
 <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <script src="../assets/app.js" defer></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}]}</script>
@@ -31,7 +33,7 @@
     <span class="brand-mark">100<span class="brand-dot">.</span></span>
     <span class="brand-caption">SVYABLE<br>RESEARCH</span>
   </a>
-  <nav class="main-nav" aria-label="Primary navigation"><a href="../">The 100</a><a href="../work/">Work</a><a href="../next/">Next 100</a><a href="../campaigns/">Campaigns</a><a href="../lab/">Lab</a><a href="../formal/">Formal</a><a href="../claims/">Claims</a><a href="../roadmap/">Roadmap</a><a href="../ledger/">Ledger</a><a href="../library/">Library</a></nav>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../">The 100</a><a href="../start/">Start here</a><a href="../work/">Work</a><a href="../discovery/">Discovery</a><a href="../next/">Next 100</a><a href="../campaigns/">Campaigns</a><a href="../lab/">Lab</a><a href="../formal/">Formal</a><a href="../claims/">Claims</a><a href="../roadmap/">Roadmap</a><a href="../ledger/">Ledger</a><a href="../library/">Library</a></nav>
   <div class="header-tools">
     <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
     <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
@@ -45,7 +47,12 @@
 <tr><td><a href="problems.json">api/problems.json</a></td><td>All 100 problems in execution order with ranks, scores, readiness, evidence and modality.</td></tr>
 <tr><td><a href="problems/M071.json">api/problems/{id}.json</a></td><td>One problem with campaign, probes, milestones, roadmap, claim review, external claims and backlinks.</td></tr>
 <tr><td><a href="problems.csv">api/problems.csv</a></td><td>Spreadsheet-friendly registry.</td></tr>
+<tr><td><a href="discovery.json">api/discovery.json</a></td><td>Sourced motivated reasoning trails, cross-problem moves and their provenance.</td></tr>
+<tr><td><a href="lamport.json">api/lamport.json</a></td><td>Exact Lamport proof-obligation dependency graph, states and evidence records. Structural status is not proof validity.</td></tr>
 <tr><td><a href="search.json">api/search.json</a></td><td>The compact index behind the <kbd>/</kbd> command palette.</td></tr>
+<tr><td><a href="agent.json">api/agent.json</a></td><td>Agent research contract, evidence boundaries and stable API entry points.</td></tr>
+<tr><td><a href="agent/tasks.json">api/agent/tasks.json</a></td><td>First 20 runnable tasks with digests, acceptance tests and claim links. Not a live claim check.</td></tr>
+<tr><td><a href="../llms.txt">llms.txt</a></td><td>Plain-text site map for research agents and readers.</td></tr>
 <tr><td><a href="../data/portfolio.json">data/portfolio.json</a></td><td>The complete legacy snapshot (lab, campaigns, milestones, solved archive).</td></tr>
 <tr><td><a href="../feed.xml">feed.xml</a></td><td>Atom feed of milestones, claim reviews and program updates.</td></tr>
 </tbody></table></div></section>
@@ -56,10 +63,10 @@
 <footer class="site-footer">
   <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
   <div class="footer-links">
-    <a href="../atlas/">Atlas</a><a href="../library/">Library</a><a href="../api/">Data &amp; API</a><a href="../feed.xml">Atom feed</a>
+    <a href="../start/">Start here</a><a href="../atlas/">Atlas</a><a href="../library/">Library</a><a href="../api/">Data &amp; API</a><a href="../api/agent.json">For agents</a><a href="../feed.xml">Atom feed</a>
     <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
   </div>
-  <small>Generated from the validated ledgers · data as of 2026-10-31 · no tracking, no external scripts</small>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
 </footer>
 </div>
 <dialog class="palette" id="palette" aria-label="Search the portfolio">

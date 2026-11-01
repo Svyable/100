@@ -48,9 +48,10 @@ NOVELTY = {
 STRUCTURAL_NOTE = ("Independence is structural: the validator checks that the named reviewer is not the author "
                    "and that a public review link exists. It does not authenticate identity or expertise, and the "
                    "proof, novelty and Solved gates remain separate.")
-FAMILY_PREFIX = (("X-", "infrastructure"), ("V-", "review"), ("O-", "obligation"), ("F-", "comparator"), ("S-", "status_audit"),
+FAMILY_PREFIX = (("X-", "infrastructure"), ("V-", "review"), ("B-", "benchmark"),
+                 ("O-", "obligation"), ("F-", "comparator"), ("S-", "status_audit"),
                  ("J-", "job"), ("L", "lean"), ("R", "roadmap"))
-WORK_ID = re.compile(r"^(X-[A-Z0-9-]+|V-[A-Z0-9-]+|O-M\d{3}-\d{2}|F-M\d{3}|S-M\d{3}|J-[a-z0-9_]+-[a-z_]+|L\d{3}|R\d{2,3})$")
+WORK_ID = re.compile(r"^(X-[A-Z0-9-]+|B-(?:K42-REPLAY|FRANKL-TRANSFER|CH24-IRREGULAR)-(?:sequential|independent|conversation|proof_exchange)-(?:11|23|37)|V-[A-Z0-9-]+|O-M\d{3}-\d{2}|F-M\d{3}|S-M\d{3}|J-[a-z0-9_]+-[a-z_]+|L\d{3}|R\d{2,3})$")
 HEX = re.compile(r"^[0-9a-f]{16,64}$")
 
 
@@ -144,10 +145,19 @@ def load(path=LEDGER):
     return validate(json.loads(Path(path).read_text(encoding="utf-8")))
 
 
-def accepted_ids(doc=None):
-    """Work ids with an independent acceptance on record (used by the work queue)."""
-    doc = load() if doc is None else doc
-    return {r["work_id"] for r in doc["outcomes"] if r["outcome"] == "accepted_independent"}
+def accepted_review_scopes(doc=None):
+    """Map independently accepted review IDs to their exact claimed scope prefixes.
+
+    An old review must not hide a newly changed statement or acceptance contract.
+    Every accepted record still needs its independent reviewer and evidence link;
+    validate() enforces those requirements.
+    """
+    doc = load() if doc is None else validate(doc)
+    scopes = {}
+    for rec in doc["outcomes"]:
+        if rec["outcome"] == "accepted_independent" and rec["work_id"].startswith("V-"):
+            scopes.setdefault(rec["work_id"], set()).add(rec["scope_sha256"][:16])
+    return scopes
 
 
 def metrics(doc=None, review_backlog=None):

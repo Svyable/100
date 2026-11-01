@@ -27,7 +27,7 @@
   "dispatch_next": "Do not prioritize extending T = 36 inside the already-published critical-line verification range. First identify a mathematically new zero-free region, explicit bound, or verified statement not implied by existing computations.",
   "dispatch_why": "The new exact interval verifier reaches T = 36, but published computations cover zeta zeros vastly farther. Increasing a tiny certified height is not a new attack on the Riemann hypothesis.",
   "campaign_stage": "benchmark_reproduced",
-  "milestone_count": 1,
+  "milestone_count": 2,
   "url": "https://svyable.github.io/100/problems/M001/",
   "field_url": "https://svyable.github.io/100/fields/number-theory/",
   "readiness_breakdown": [
@@ -63,7 +63,10 @@
     "falsification": "A height T at which the certified argument count N(T) strictly exceeds the number of disjoint intervals where Z changes sign.",
     "blocker": "T = 36 is far below Platt–Trudgian (at least 3*10^12). Extending the height needs a faster contour, not a new idea about the hypothesis.",
     "dossier": "research/LAB_CAMPAIGNS.md",
-    "verifier": "python3 scripts/lab.py --probe riemann"
+    "verifier": "python3 scripts/lab.py --probe riemann",
+    "additional_verifiers": [
+      "python3 scripts/lab.py --probe zeta_zeros"
+    ]
   },
   "probes": [
     {
@@ -89,6 +92,31 @@
           "certificate_sha256": "431426eb0717174480383187cbd4c1bd327c302ae461baafdbeaca361c26cf8f"
         }
       }
+    },
+    {
+      "id": "zeta_zeros",
+      "problem_id": "M001",
+      "name": "Riemann Hypothesis",
+      "title": "Certified zero count and critical-line location of every Riemann zero up to height T",
+      "engines": [
+        "interval_arithmetic",
+        "l_functions"
+      ],
+      "frontier": "Known: every zero with 0 < Im s <= 3*10^12 is on the critical line and simple (Platt & Trudgian 2021); the first 10^13 zeros were located by Gourdon (2004). These heights reproduce classical computations (Gram, Backlund, Hutchinson).",
+      "artifact": "scripts/probes/zeta_zeros.py",
+      "command": "python3 scripts/lab.py --probe zeta_zeros",
+      "runs": {
+        "smoke": {
+          "holds": true,
+          "scope": "Exactly N(T) zeros of zeta(s) with 0 < Im s < T = 100 (counted with multiplicity, certified by the argument principle), and Z(t) has that many certified sign changes on (0, T]: all of them are simple zeros on Re s = 1/2.",
+          "certificate_sha256": "9b98ff32535b5cf31aaeb2edd77e7069bfd110e7402e9a2ce7f7358b90414c3e"
+        },
+        "deep": {
+          "holds": true,
+          "scope": "Exactly N(T) zeros of zeta(s) with 0 < Im s < T = 1000 (counted with multiplicity, certified by the argument principle), and Z(t) has that many certified sign changes on (0, T]: all of them are simple zeros on Re s = 1/2.",
+          "certificate_sha256": "d7dd452449f4acbea77283ee1069c7fd1bae8ee8508ec2bcc00f9ca084126f8b"
+        }
+      }
     }
   ],
   "milestones": [
@@ -102,12 +130,25 @@
       "verifier": "python3 scripts/lab.py --probe riemann",
       "artifact": "scripts/probes/riemann.py",
       "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-RH-001",
+      "problem_id": "M001",
+      "classification": "reproduced_known",
+      "title": "All 29 Riemann zeros below height 100 certified simple and on the critical line",
+      "scope": "Known small range; not new",
+      "description": "The argument principle certifies N(100) = 29 exactly from interval boxes along 2 -> 2+100i -> 1/2+100i, and Hardy's Z(t) has 29 certified sign changes on (0, 100]. All arithmetic is rigorous interval arithmetic with explicit series remainders, repeated by the checker at another precision and truncation. The deep run certifies all 649 zeros below height 1000 the same way.",
+      "verifier": "python3 scripts/lab.py --probe zeta_zeros",
+      "artifact": "scripts/probes/zeta_zeros.py",
+      "verified_on": "2026-11-01"
     }
   ],
   "engine_roadmap": null,
   "claim_review_2026": null,
   "formal_statement": null,
   "external_claims": [],
+  "discovery_trail": null,
+  "discovery_url": null,
   "mentioned_in": [
     {
       "title": "Approach — leverage dispatch",
