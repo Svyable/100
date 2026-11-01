@@ -18,7 +18,8 @@ PROTOCOL = "svyable.router.v1"
 REPOSITORY = "Svyable/100"
 HEX64 = re.compile(r"^[0-9a-f]{64}$")
 CLAIM = re.compile(r"^\[Claim\] ([A-Za-z0-9_-]+)(?:\s|$)")
-SCOPE = re.compile(r"(?im)^\s*(?:scope(?:_sha256|\s+sha-256|\s+digest)?|digest)\s*:\s*\x60?([0-9a-f]{64})\b")
+SCOPE = re.compile(r"(?im)^[ \\t]*(?:scope(?:_sha256|\\s+sha-256|\\s+digest)?|digest)[ \\t]*:[ \\t]*`?([0-9a-f]{16}|[0-9a-f]{64})\\b")
+SCOPE_FORM = re.compile(r"(?im)^#{1,6}[ \\t]*Scope digest \\(first 16 hex characters\\)[ \\t]*\\n(?:[ \\t]*\\n)*[ \\t]*`?([0-9a-f]{16}|[0-9a-f]{64})\\b")
 OCCUPY = {"reserved", "running", "quarantined"}
 STAGES = OCCUPY | {"needs_human", "ended"}
 TRANSITIONS = {
@@ -96,10 +97,17 @@ def claim_scope(issue):
     if not m:
         return None
     body = issue.get("body")
-    found = SCOPE.findall(body if isinstance(body, str) else "")
+    body = body if isinstance(body, str) else ""
+    found = SCOPE.findall(body) + SCOPE_FORM.findall(body)
     # Distinct multiple digests must not be silently resolved by choosing one.
     digest = found[0] if len(found) == 1 else None
     return m.group(1), digest
+
+
+def scope_matches(claimed, canonical):
+    """Existing issue-form claims pin 16 hex; new claims may use all 64."""
+    return claimed == canonical or (
+        isinstance(claimed, str) and len(claimed) == 16 and claimed == canonical[:16])
 
 
 def plan(work_items, claims_snapshot, state, reports=(), events=(), max_workers=3, now=None):
@@ -143,7 +151,7 @@ def plan(work_items, claims_snapshot, state, reports=(), events=(), max_workers=
         issue = issue_by_number.get(t["claim_number"])
         group = claim_groups.get(t["work_id"], [])
         valid = (issue is not None and len(group) == 1 and group[0][0]["number"] == t["claim_number"]
-                 and group[0][1] == t["scope_sha256"]
+                 and scope_matches(group[0][1], t["scope_sha256"])
                  and t["work_id"] in work and work[t["work_id"]]["status"] == "runnable"
                  and work[t["work_id"]]["scope_sha256"] == t["scope_sha256"])
         if not valid and t["status"] in ("reserved", "running", "needs_human"):
@@ -165,7 +173,7 @@ def plan(work_items, claims_snapshot, state, reports=(), events=(), max_workers=
             decisions.append({"work_id": wid, "decision": "refuse", "reason": "duplicate_open_claims"})
             continue
         issue, digest = group[0]
-        if digest != item["scope_sha256"]:
+        if not scope_matches(digest, item["scope_sha256"]):
             decisions.append({"work_id": wid, "decision": "refuse", "reason": "missing_or_stale_scope_digest"})
             continue
         if item.get("status") != "runnable":
