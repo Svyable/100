@@ -408,7 +408,7 @@
         }
       },
       "hadamard": {
-        "certificate_sha256": "98b688b8a711c2cb0a381cbab2357ccce9557978a9c4f096d81a3e685d88d327",
+        "certificate_sha256": "9ce518554e8fab15aa4a01d72bf53906473e1e6bd1fd98bbcf093d5a99f1dc64",
         "engines": [
           "finite_fields"
         ],
@@ -420,15 +420,11 @@
         },
         "probe": "hadamard",
         "problem_id": "M094",
-        "scope": "Explicit (+1/-1) matrices with H H^T = nI for 87 of the 100 orders 4k <= 400 (the rest are engine gaps, not open cases).",
+        "scope": "Explicit (+1/-1) matrices with H H^T = nI for 91 of the 100 orders 4k <= 400 (the rest are engine gaps, not open cases).",
         "summary": {
-          "constructed_orders": 87,
+          "constructed_orders": 91,
           "engine_gaps": [
-            116,
-            156,
-            172,
             188,
-            232,
             236,
             260,
             268,
@@ -439,13 +435,14 @@
             376
           ],
           "limit": 400,
-          "matrices_sha256": "b8f68f090b307053b501bac1d28be516ca1f5d5494763271190b1796e275e04f",
+          "matrices_sha256": "496e44619fca5c8ac99e1f0493b360c6bedfe6224a8ffb65b21c0448b3e61e5c",
           "orders_divisible_by_4": 100,
           "recipes": {
             "100": "paley2/49",
             "104": "paley1/103",
             "108": "paley2/53",
             "112": "kron/4/28",
+            "116": "propus/29",
             "12": "paley2/5",
             "120": "kron/2/60",
             "124": "paley2/61",
@@ -456,10 +453,12 @@
             "144": "kron/2/72",
             "148": "paley2/73",
             "152": "paley1/151",
+            "156": "propus/39",
             "16": "sylvester/4",
             "160": "kron/2/80",
             "164": "paley2/81",
             "168": "paley1/167",
+            "172": "propus/43",
             "176": "kron/4/44",
             "180": "paley2/89",
             "184": "kron/2/92",
@@ -474,6 +473,7 @@
             "220": "paley2/109",
             "224": "paley1/223",
             "228": "paley2/113",
+            "232": "kron/2/116",
             "24": "paley1/23",
             "240": "paley1/239",
             "244": "paley2/121",
@@ -1369,7 +1369,7 @@
         }
       },
       "hadamard": {
-        "certificate_sha256": "8ba6592000a77ff3597a776eaa458e2cc4c53d9a7087aede2c64efb32c3433ca",
+        "certificate_sha256": "00a4eca9a74a88965b6b0ccc1e96ff97c139e4b291fe3cbbff4e46c742d3ff37",
         "engines": [
           "finite_fields"
         ],
@@ -1381,20 +1381,19 @@
         },
         "probe": "hadamard",
         "problem_id": "M094",
-        "scope": "Explicit (+1/-1) matrices with H H^T = nI for 31 of the 32 orders 4k <= 128 (the rest are engine gaps, not open cases).",
+        "scope": "Explicit (+1/-1) matrices with H H^T = nI for 32 of the 32 orders 4k <= 128 (the rest are engine gaps, not open cases).",
         "summary": {
-          "constructed_orders": 31,
-          "engine_gaps": [
-            116
-          ],
+          "constructed_orders": 32,
+          "engine_gaps": [],
           "limit": 128,
-          "matrices_sha256": "a9c6923933f2f627a6ae7ed84a263c06cf5656beeae77cd8e5d9191a8e4e82f4",
+          "matrices_sha256": "987905983ddb354ca50320085b1bfc571d3a4bba6625ddce7fc409d558f45485",
           "orders_divisible_by_4": 32,
           "recipes": {
             "100": "paley2/49",
             "104": "paley1/103",
             "108": "paley2/53",
             "112": "kron/4/28",
+            "116": "propus/29",
             "12": "paley2/5",
             "120": "kron/2/60",
             "124": "paley2/61",

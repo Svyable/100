@@ -122,9 +122,12 @@ Builds matrices with Sylvester, Paley I/II over every prime-power field, and Kro
 Orders those miss get Williamson quadruples: four symmetric circulant ±1 matrices with
 A² + B² + C² + D² = 4nI, found by meet-in-the-middle on periodic autocorrelations and assembled
 with the Williamson array. Order 92 (n = 23, row sums 3, 3, −5, 7) is the historic 1962 case. Each
-matrix is checked as H Hᵀ = nI via popcounts, without trusting any construction. The remaining
-orders, such as 116 and 156, are **engine gaps**, not open cases.
-**Next:** symmetry-reduced Williamson search for n = 29, then Goethals–Seidel arrays.
+matrix is checked as H Hᵀ = nI via popcounts, without trusting any construction. The three
+orders Sylvester, Paley and Williamson left open up to 172 are filled by published propus
+quadruples: order 116 and 172 from Di Matteo–Đoković–Kotsireas (arXiv:1503.04226) and order
+156 from Đoković–Kotsireas (arXiv:1708.05098). The GP array is assembled here and every row
+pair is rechecked. These are known matrices. The smallest order with no known Hadamard
+matrix is still 668.
 
 ### M095 — Ramsey witnesses (`ramsey_witnesses`, engines `finite_fields`, `clique_search`)
 Certifies classical lower bounds with Paley and circulant colourings. The deep run checks

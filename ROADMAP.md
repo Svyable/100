@@ -28,13 +28,13 @@ Solved has no target on purpose: it grows only through the promotion gate in [do
 |---|---|---:|---:|---:|---:|
 | Registry & ranking | One canonical, scored, provenance-tracked list of exactly 100 targets. | 3 | 0 | 0 | 1 |
 | Research engine | Evidence-aware readiness, campaigns and a strict promotion gate to Solved. | 5 | 0 | 0 | 1 |
-| Exact probe lab | Every computable problem gets a search plus an independent checker on a reusable engine. | 7 | 3 | 1 | 0 |
+| Exact probe lab | Every computable problem gets a search plus an independent checker on a reusable engine. | 8 | 2 | 1 | 0 |
 | Proof campaigns | Push the highest-ranked targets toward reviewed restricted results. | 6 | 2 | 1 | 0 |
 | Claim audit | Check announced resolutions for exact scope before spending effort on them. | 3 | 0 | 1 | 0 |
 | Trust & reproducibility | Pinned artifacts, proof certificates and CI that reruns everything. | 3 | 1 | 1 | 1 |
 | Site & community | A public dashboard and a contribution path that keeps the bar high. | 2 | 0 | 0 | 1 |
 
-## Shipped (29)
+## Shipped (30)
 
 _Merged on main with evidence in the repository._
 
@@ -67,6 +67,8 @@ _Merged on main with evidence in the repository._
   - Problems: M006 Strong Goldbach conjecture, M019 Erdős–Straus conjecture, M075 Frankl union-closed sets conjecture, M078 Graph reconstruction conjecture +1 more
 - [x] **R38 · Erdos-Straus parametric identities from the residue mine** (Proof campaigns) — Nine polynomial identities, including n=120t+73 and n=120t+97, cover 106 of 117 hard-class primes through 8,000; remaining misses lie in {1,49} mod 120. [Evidence](research/M019_IDENTITIES.md)
   - Problems: M019 Erdős–Straus conjecture
+- [x] **R24 · Explicit Hadamard matrices for every order 4k <= 172** (Exact probe lab) — Published propus quadruples fill the last three engine gaps at 116, 156 and 172. Every order 4k <= 172 now has a matrix whose rows the checker proves orthogonal. These are known constructions, not new matrices, and 668 remains the smallest open order. [Evidence](scripts/probes/hadamard.py)
+  - Problems: M093 Linear MDS code main conjecture, M094 Hadamard matrix conjecture
 - [x] **R30 · Interval-arithmetic zero counts for zeta and L(s, chi_4)** (Exact probe lab) — Rigorous N(T) for zeta up to height 36 and for L(s, chi_4) up to height 17, each matched to Hardy sign changes and replayed at a second truncation. [Evidence](research/LAB_CAMPAIGNS.md)
   - Problems: M001 Riemann Hypothesis, M002 Generalized Riemann Hypothesis
 - [x] **R39 · Zero counts for the real characters modulo 3 and 5** (Exact probe lab) — The chi_4 engine also certifies chi_3 through height 15 and the Legendre symbol mod 5 through height 12, with Gauss sums checked in the cyclotomic ring. [Evidence](scripts/probes/dirichlet_l.py)
@@ -85,7 +87,7 @@ _Merged on main with evidence in the repository._
 - [x] **R48 · Structural finite-analogue ledger** (Exact probe lab) — Eight structural problems named with finite certificate shapes and proposed engines; aspirational until probes exist. [Evidence](data/structural_analogues.json)
   - Problems: M044 Kaplansky direct-finiteness conjecture, M049 Soficity conjecture, M088 Deterministic polynomial identity testing, M037 Hilbert–Smith conjecture +4 more
 
-## Now (6)
+## Now (5)
 
 _Being worked on; top of the execution queue._
 
@@ -101,9 +103,6 @@ _Being worked on; top of the execution queue._
 - [ ] **R23 · Census mining for reconstruction and 1/3-2/3** (Exact probe lab) — Deck and balance tables are certified in MINES.md. The remaining work is a lemma for width at least 3, and a deck invariant stronger than degree plus triangles. [Evidence](LAB.md)
   - Done when: Published tables and a named family with a conjectured lemma.
   - Problems: M078 Graph reconstruction conjecture, M079 One-third–two-thirds conjecture
-- [ ] **R24 · Arcs in PG(3,q) and Hadamard orders 116, 156, 172** (Exact probe lab) — 5-point frames for q <= 9; multiplier symmetry for Williamson n=29; Goethals-Seidel arrays. [Evidence](scripts/probes/hadamard.py)
-  - Done when: All Hadamard orders 4k <= 172 constructed except literature-open ones.
-  - Problems: M093 Linear MDS code main conjecture, M094 Hadamard matrix conjecture
 - [ ] **R49 · Run the 36-cell proof-exchange benchmark for real** (Trust & reproducibility) — Populate benchmark_runs.jsonl under the preregistered protocol; no causal claim until the grid is complete. [Evidence](benchmarks/PROTOCOL.md)
   - Done when: All 36 cells recorded with resource totals; primary metric still requires external review for novelty credit.
   - Problems: M095 Exact Ramsey number R(5,5), M075 Frankl union-closed sets conjecture, M074 Caccetta–Häggkvist conjecture

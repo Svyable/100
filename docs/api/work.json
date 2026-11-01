@@ -1,18 +1,18 @@
 {
   "protocol": "svyable.work.v1",
-  "count": 348,
+  "count": 347,
   "by_kind": {
     "obligation": 26,
     "review": 47,
     "benchmark": 36,
     "lean": 9,
     "job": 45,
-    "roadmap": 10,
+    "roadmap": 9,
     "comparator": 86,
     "status_audit": 89
   },
   "by_status": {
-    "runnable": 341,
+    "runnable": 340,
     "externally_blocked": 4,
     "waiting_on_dependencies": 3
   },
@@ -3096,7 +3096,7 @@
         "M096"
       ],
       "title": "Replay a published certificate: Replay a published geometric object",
-      "deliverable": "M092: Extend the cyclotomic engine to the number fields needed for d = 4..8 and replay published exact fiducials there. M093: Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9. M094: Add multiplier-group symmetry reduction to the Williamson meet-in-the-middle search so that n = 29 (order 116) becomes feasible, then implement Goethals-Seidel arrays for orders 156 and 172. M096: Encode order-12 planes with a prescribed collineation as SAT with DRAT proof output, starting from cases the literature already excludes.",
+      "deliverable": "M092: Extend the cyclotomic engine to the number fields needed for d = 4..8 and replay published exact fiducials there. M093: Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9. M094: Import one published quadruple for the smallest remaining engine gap above 172. Order 668 is still the smallest order with no known Hadamard matrix; do not search for it. M096: Encode order-12 planes with a prescribed collineation as SAT with DRAT proof output, starting from cases the literature already excludes.",
       "context": "",
       "acceptance": [
         "Every problem on the job moves by the same action, or a precise gap is recorded per problem",
@@ -3109,7 +3109,7 @@
       "source": "scripts/approach.py",
       "depends_on": [],
       "priority_rank": 6,
-      "scope_sha256": "7d970693c375ff21f11861444993ed9dec8e53975b0a032caa54b02d360b5e01",
+      "scope_sha256": "57734e33046d860292ef37a781a99161a4a48cf809097b1a9c9fa1864ceee431",
       "claim_title": "[Claim] J-finite_geometry-replay_published — Replay a published certificate: Replay a published geometric object",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-finite_geometry-replay_published%20%E2%80%94%20Replay%20a%20published%20certificate%3A%20Replay%20a%20published%20geometric%20object",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20J-finite_geometry-replay_published%22"
@@ -4280,32 +4280,6 @@
       "claim_title": "[Claim] R21 — SIC fiducials in d = 4..8",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20R21%20%E2%80%94%20SIC%20fiducials%20in%20d%20%3D%204..8",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20R21%22"
-    },
-    {
-      "id": "R24",
-      "kind": "roadmap",
-      "status": "runnable",
-      "problems": [
-        "M093",
-        "M094"
-      ],
-      "title": "Arcs in PG(3,q) and Hadamard orders 116, 156, 172",
-      "deliverable": "5-point frames for q <= 9; multiplier symmetry for Williamson n=29; Goethals-Seidel arrays.",
-      "context": "",
-      "acceptance": [
-        "Exit criterion met: All Hadamard orders 4k <= 172 constructed except literature-open ones.",
-        "data/roadmap.json horizon moved to shipped with the evidence path",
-        "python3 scripts/regen.py && python3 scripts/regen.py --check"
-      ],
-      "boundary": "Shipped roadmap work is infrastructure, reproduction or audit unless independently reviewed.",
-      "falsifier": "",
-      "source": "data/roadmap.json",
-      "depends_on": [],
-      "priority_rank": 7,
-      "scope_sha256": "3c4342247ccc2aeb5854d4fc36acbc9df1eef89ba42707cf5055c25873faed38",
-      "claim_title": "[Claim] R24 — Arcs in PG(3,q) and Hadamard orders 116, 156, 172",
-      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20R24%20%E2%80%94%20Arcs%20in%20PG%283%2Cq%29%20and%20Hadamard%20orders%20116%2C%20156%2C%20172",
-      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20R24%22"
     },
     {
       "id": "R35",
