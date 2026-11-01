@@ -17,7 +17,8 @@ Each packet in `docs/api/packets.json` carries:
 
 - `id`, `kind`, `problems`, `deliverable`, `acceptance`, `boundary`, `falsifier`
 - `roles`: recommended `scout` / `adversary` / `checker` split inside **one** claim
-- `scope_sha256`: identity of the contract; changing the deliverable changes the digest
+- `scope_sha256`: the work-queue claim digest (`python3 scripts/work.py --id <id>`); put it in the claim. scripts/router.py admits only this value
+- `packet_sha256`: the packet identity including the role plan; changing roles or the deliverable changes it
 - claim URLs for `.github/ISSUE_TEMPLATE/claim.yml`
 
 A packet is **not** a theorem, a readiness change, or permission to edit
