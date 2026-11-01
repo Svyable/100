@@ -19,3 +19,7 @@ example : ¬ Nontrivial (1 : Family2) := by decide
 example : ¬ UnionClosed (6 : Family2) := by decide
 -- The unused ground element in the tiny family is not abundant.
 example : ¬ (size small ≤ 2 * frequency small 1) := by decide
+
+-- L006: a false bit ordering and a missing union are rejected by both encodings.
+example : ¬ (Hundred.FranklBridge.pack (fun s => decide (s.val = 0))).val = 2 := by decide
+example : ¬ Hundred.Statements.Frankl.UnionClosed 2 6 := by decide +kernel

@@ -701,18 +701,18 @@
       ],
       "title": "Independent scope review of Lean target L006 (M075)",
       "deliverable": "Compare every registered declaration of L006 with the registry statement and its primary source: domains, quantifiers, nonemptiness and distinctness conditions, strict versus weak inequalities, encodings. State exactly what is and is not established.",
-      "context": "Exhaustive union-closed check over all families on ground sets of size 1, 2 and 3 in the general bitmask encoding of Hundred.Statements.Frankl.Statement.",
+      "context": "The generic Fin-based and Nat-bitmask family models agree on all two-element family memberships, counts, frequencies, union closure, nonempty-member conditions and abundance. Explicitly pack arbitrary Boolean predicates on the four subset masks; transport the two-element theorem into the generic comparator and combine the separately proved k=1 and k=3 cases.",
       "acceptance": [
         "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
         "Any mismatch is filed as a gap on the target's scope_gap, not silently fixed",
         "python3 scripts/regen.py && python3 scripts/regen.py --check"
       ],
-      "boundary": "A scope review checks that the encoded statement matches the claim; it does not add mathematics. Elementary known cases; complements L002 (Fin 2 with union semantics). No representation theorem from arbitrary set families yet. Independent statement review pending.",
+      "boundary": "A scope review checks that the encoded statement matches the claim; it does not add mathematics. Elementary finite k=1..3 cases only. The model-equivalence and explicit family packing theorems are proved only for k=2; the k=3 case is supplied independently, not derived from k=2. No unrestricted Frankl theorem, and no independent scope review.",
       "falsifier": "A quantifier, domain or convention in the Lean statement that differs from the registered claim.",
       "source": "data/lean_targets.json",
       "depends_on": [],
       "priority_rank": 10,
-      "scope_sha256": "17f0b550b917ed832a05dcd08e449ee74c3c70f956f13c995f5d2e1b5b337b04",
+      "scope_sha256": "64ba6eb53b92d2cb0e787eee7a5f6799f972a0a9b8c4478b050e847bb2b3ce97",
       "claim_title": "[Claim] V-L006 — Independent scope review of Lean target L006 (M075)",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L006%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L006%20%28M075%29",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-L006%22"
@@ -1178,20 +1178,20 @@
         "M075"
       ],
       "title": "Extend Lean target L006 (M075)",
-      "deliverable": "Prove that the bitmask encoding is equivalent to the L002 Fin-based families for k = 2, then reuse it for k = 3.",
-      "context": "Exhaustive union-closed check over all families on ground sets of size 1, 2 and 3 in the general bitmask encoding of Hundred.Statements.Frankl.Statement.",
+      "deliverable": "Extend the family packing and semantic bridge to k=3 or to a uniform Fin (2^k) representation; connect genuine families of subsets of Fin k, not only the bitmask model.",
+      "context": "The generic Fin-based and Nat-bitmask family models agree on all two-element family memberships, counts, frequencies, union closure, nonempty-member conditions and abundance. Explicitly pack arbitrary Boolean predicates on the four subset masks; transport the two-element theorem into the generic comparator and combine the separately proved k=1 and k=3 cases.",
       "acceptance": [
         "New theorems registered in data/lean_targets.json (stable names, no escape hatches)",
         "python3 scripts/lean_verify.py passes in CI: warnings as errors, only propext / Classical.choice / Quot.sound, per-module time well under the 300 s build budget",
         "A negative case in lean/Negative.lean that a weakened statement would fail",
         "python3 scripts/regen.py && python3 scripts/regen.py --check"
       ],
-      "boundary": "Elementary known cases; complements L002 (Fin 2 with union semantics). No representation theorem from arbitrary set families yet. Independent statement review pending.",
+      "boundary": "Elementary finite k=1..3 cases only. The model-equivalence and explicit family packing theorems are proved only for k=2; the k=3 case is supplied independently, not derived from k=2. No unrestricted Frankl theorem, and no independent scope review.",
       "falsifier": "",
       "source": "data/lean_targets.json",
       "depends_on": [],
       "priority_rank": 10,
-      "scope_sha256": "16994f8aed7edd1adedb7015a05b92ca33d2f27e141b77dac21d9e4ffd8a28c9",
+      "scope_sha256": "d382570be457c9110dead9d24c77e5315b42d0f5942fdd92402c935c0d4551c9",
       "claim_title": "[Claim] L006 — Extend Lean target L006 (M075)",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20L006%20%E2%80%94%20Extend%20Lean%20target%20L006%20%28M075%29",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20L006%22"
