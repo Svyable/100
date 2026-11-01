@@ -24,6 +24,8 @@ jobs:
       - run: python3 scripts/work.py --check
       - run: python3 scripts/outcomes.py --check
       - run: python3 scripts/benchmark.py --check
+      - run: python3 scripts/pda_trial.py --plan --arm sequential --seed 11 > /dev/null
+      - run: python3 -m unittest discover -s tests -p 'test_pda_trial.py' -v
       - run: python3 scripts/k42_calibration.py --check
       - run: python3 scripts/transfer.py --check
       - run: python3 scripts/scale.py --check
