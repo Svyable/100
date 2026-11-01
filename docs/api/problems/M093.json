@@ -17,6 +17,17 @@
   "execution_rank": 6,
   "execution_score": 98,
   "readiness": 7,
+  "dispatch_rank": 7,
+  "dispatch_score": 110,
+  "action": "replay_published",
+  "action_label": "Replay a published certificate",
+  "action_bonus": 12,
+  "method_id": "finite_geometry",
+  "method_title": "Replay a published geometric object",
+  "dispatch_next": "Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9.",
+  "dispatch_why": "The next experiment reproduces known maximum arcs in PG(3,q). The plane k=3 case is already the proved Segre-Bose range.",
+  "campaign_stage": "benchmark_reproduced",
+  "milestone_count": 1,
   "url": "https://svyable.github.io/100/problems/M093/",
   "field_url": "https://svyable.github.io/100/fields/mathematical-physics-finite-structures/",
   "readiness_breakdown": [
@@ -100,6 +111,11 @@
   "external_claims": [],
   "mentioned_in": [
     {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",
       "url": "https://svyable.github.io/100/library/attack-queue/"
@@ -115,7 +131,12 @@
       "url": "https://svyable.github.io/100/library/ranked/"
     },
     {
-      "title": "Lab campaigns: twelve problems under exact computation",
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
+    },
+    {
+      "title": "Lab campaigns: problems under exact computation",
       "source": "research/LAB_CAMPAIGNS.md",
       "url": "https://svyable.github.io/100/library/lab-campaigns/"
     },

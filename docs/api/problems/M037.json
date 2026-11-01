@@ -17,6 +17,17 @@
   "execution_rank": 97,
   "execution_score": 63,
   "readiness": 0,
+  "dispatch_rank": 81,
+  "dispatch_score": 71,
+  "action": "scope_audit",
+  "action_label": "Audit claim scope",
+  "action_bonus": 8,
+  "method_id": "geometric_topology",
+  "method_title": "Hypotheses before constructions",
+  "dispatch_next": "Compare exact source hypotheses to a specialist formulation and obtain an expert check of the central p-adic action argument.",
+  "dispatch_why": "A manuscript may already settle this entry. The next step is the review's own check, not a new lemma.",
+  "campaign_stage": null,
+  "milestone_count": 0,
   "url": "https://svyable.github.io/100/problems/M037/",
   "field_url": "https://svyable.github.io/100/fields/topology/",
   "readiness_breakdown": [],
@@ -42,6 +53,11 @@
   "external_claims": [],
   "mentioned_in": [
     {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",
       "url": "https://svyable.github.io/100/library/attack-queue/"
@@ -50,6 +66,11 @@
       "title": "Ranked candidate portfolio",
       "source": "RANKED.md",
       "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
     },
     {
       "title": "2026 claimed-resolution triage — issue #3",

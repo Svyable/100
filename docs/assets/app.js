@@ -56,7 +56,7 @@
     const read = () => ({
       q: controls.q.value.trim().toLocaleLowerCase(),
       field: controls.field.value, status: controls.status.value,
-      modality: controls.modality.value, sort: controls.sort.value || "execution",
+      modality: controls.modality.value, sort: controls.sort.value || "dispatch",
       verifier: controls.verifier.checked, campaign: controls.campaign.checked,
       lean: controls.lean.checked
     });
@@ -64,8 +64,11 @@
       const ex = (Number(a.dataset.execution) - Number(b.dataset.execution));
       if (sort === "name") return a.dataset.name.localeCompare(b.dataset.name);
       if (sort === "rank") return Number(a.dataset.rank) - Number(b.dataset.rank);
-      if (numeric.includes(sort)) return (Number(b.dataset[sort]) - Number(a.dataset[sort])) || ex;
-      return ex;
+      if (sort === "execution") return ex;
+      const dispatch = Number(a.dataset.dispatch) - Number(b.dataset.dispatch);
+      if (sort === "dispatch") return dispatch;
+      if (numeric.includes(sort)) return (Number(b.dataset[sort]) - Number(a.dataset[sort])) || dispatch;
+      return dispatch;
     };
     const apply = (push = true) => {
       const s = read();
@@ -90,7 +93,7 @@
         const params = new URLSearchParams();
         if (controls.q.value.trim()) params.set("q", controls.q.value.trim());
         for (const key of ["field", "status", "modality"]) if (s[key]) params.set(key, s[key]);
-        if (s.sort !== "execution") params.set("sort", s.sort);
+        if (s.sort !== "dispatch") params.set("sort", s.sort);
         if (s.verifier) params.set("verifier", "1");
         if (s.campaign) params.set("campaign", "1");
         if (s.lean) params.set("lean", "1");

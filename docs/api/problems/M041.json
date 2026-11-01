@@ -17,6 +17,17 @@
   "execution_rank": 8,
   "execution_score": 96,
   "readiness": 7,
+  "dispatch_rank": 98,
+  "dispatch_score": 60,
+  "action": "stop_range",
+  "action_label": "Stop: range is dominated",
+  "action_bonus": -36,
+  "method_id": "polynomial_maps",
+  "method_title": "Families outside proved degree bounds",
+  "dispatch_next": "Do not enumerate degree-4 maps with coefficients in {-1,0,1}: Moh (1983) already covers plane maps of degree at most 100. Name one Newton-polygon family outside that degree bound and state the coefficient ring before any search.",
+  "dispatch_why": "Moh (1983) covers plane maps of degree at most 100. Degree-4 search on coefficients in {-1,0,1} sits inside that theorem, so the recorded experiment is refused.",
+  "campaign_stage": "benchmark_reproduced",
+  "milestone_count": 1,
   "url": "https://svyable.github.io/100/problems/M041/",
   "field_url": "https://svyable.github.io/100/fields/algebra/",
   "readiness_breakdown": [
@@ -99,6 +110,11 @@
   "external_claims": [],
   "mentioned_in": [
     {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",
       "url": "https://svyable.github.io/100/library/attack-queue/"
@@ -114,9 +130,19 @@
       "url": "https://svyable.github.io/100/library/ranked/"
     },
     {
-      "title": "Lab campaigns: twelve problems under exact computation",
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
+    },
+    {
+      "title": "Lab campaigns: problems under exact computation",
       "source": "research/LAB_CAMPAIGNS.md",
       "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "Top 100 portfolio selection and admission",
+      "source": "docs/PORTFOLIO_SELECTION.md",
+      "url": "https://svyable.github.io/100/library/portfolio-selection/"
     },
     {
       "title": "Proof-driven research engine",

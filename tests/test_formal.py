@@ -28,6 +28,10 @@ class TestFormalCatalogue(unittest.TestCase):
         bad["entries"][0]["kernel_checked"] = [{"decl": "missing_theorem", "claim": "x"}]
         with self.assertRaises(formal.FormalError):
             formal.validate(bad)
+        bad = copy.deepcopy(doc)
+        bad["entries"][0]["kernel_checked"] = [{"decl": "witness", "claim": "declared but not audited"}]
+        with self.assertRaises(formal.FormalError):
+            formal.validate(bad)
 
     def test_forbidden_escape_hatches_are_detected(self):
         for word in ("sorry", "admit", "axiom", "native_decide"):
@@ -36,8 +40,9 @@ class TestFormalCatalogue(unittest.TestCase):
 
     def test_every_entry_is_imported_and_lean_has_no_escape_hatch(self):
         root = (ROOT / "lean" / "Hundred.lean").read_text(encoding="utf-8")
-        for path in (ROOT / "lean" / "Hundred").glob("*.lean"):
-            self.assertIn(f"import Hundred.{path.stem}", root)
+        for path in (ROOT / "lean" / "Hundred").rglob("*.lean"):
+            module = path.relative_to(ROOT / "lean").with_suffix("").as_posix().replace("/", ".")
+            self.assertIn(f"import {module}", root)
             self.assertIsNone(formal.FORBIDDEN.search(formal.strip_comments(path.read_text(encoding="utf-8"))), path)
 
 

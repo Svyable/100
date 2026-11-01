@@ -17,6 +17,17 @@
   "execution_rank": 24,
   "execution_score": 83,
   "readiness": 0,
+  "dispatch_rank": 21,
+  "dispatch_score": 91,
+  "action": "scope_audit",
+  "action_label": "Audit claim scope",
+  "action_bonus": 8,
+  "method_id": "complexity_barriers",
+  "method_title": "One model, one gap",
+  "dispatch_next": "Independently audit the reduction's completeness and soundness estimates and its quantitative dependence on gap parameters.",
+  "dispatch_why": "A manuscript may already settle this entry. The next step is the review's own check, not a new lemma.",
+  "campaign_stage": null,
+  "milestone_count": 0,
   "url": "https://svyable.github.io/100/problems/M085/",
   "field_url": "https://svyable.github.io/100/fields/complexity/",
   "readiness_breakdown": [],
@@ -42,6 +53,11 @@
   "formal_statement": null,
   "external_claims": [],
   "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
     {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",

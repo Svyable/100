@@ -1,8 +1,8 @@
 {
   "as_of": "2026-11-01",
-  "toolchain": "leanprover/lean4:v4.35.0",
+  "toolchain": "leanprover/lean4:v4.19.0",
   "library": "lean/Hundred.lean",
-  "interpretation": "Formal statements are comparators: they pin down exactly what a proof or counterexample must establish. Core Lean 4 only, no Mathlib, no sorry. Kernel-checked results are finite fidelity tests inside known mathematics, never progress on the open statement.",
+  "interpretation": "Formal statements are comparators: they pin down exactly what a proof or counterexample must establish. Core Lean 4 only, no Mathlib, no sorry; every kernel-checked theorem is also registered in data/lean_targets.json and axiom-audited by the Lean proof gate. Kernel-checked results are finite fidelity tests inside known mathematics, never progress on the open statement.",
   "fidelity_levels": {
     "author_checked": "Encoding written and checked against the registry statement by its author; fidelity examples compile.",
     "independently_reviewed": "A second reviewer has compared every definition with a primary source."
@@ -10,8 +10,8 @@
   "entries": [
     {
       "problem_id": "M006",
-      "module": "lean/Hundred/Goldbach.lean",
-      "namespace": "Hundred.Goldbach",
+      "module": "lean/Hundred/Statements/Goldbach.lean",
+      "namespace": "Hundred.Statements.Goldbach",
       "statement": "Statement",
       "encodes": "Every even n ≥ 4 is p + (n − p) with both prime; primes by trial division.",
       "not_encoded": [
@@ -29,8 +29,8 @@
     },
     {
       "problem_id": "M019",
-      "module": "lean/Hundred/ErdosStraus.lean",
-      "namespace": "Hundred.ErdosStraus",
+      "module": "lean/Hundred/Statements/ErdosStraus.lean",
+      "namespace": "Hundred.Statements.ErdosStraus",
       "statement": "Statement",
       "encodes": "4/n = 1/x + 1/y + 1/z cleared to 4xyz = n(xy + yz + zx) with x, y, z > 0.",
       "not_encoded": [
@@ -48,8 +48,8 @@
     },
     {
       "problem_id": "M074",
-      "module": "lean/Hundred/CaccettaHaggkvist.lean",
-      "namespace": "Hundred.CaccettaHaggkvist",
+      "module": "lean/Hundred/Statements/CaccettaHaggkvist.lean",
+      "namespace": "Hundred.Statements.CaccettaHaggkvist",
       "statement": "Statement",
       "encodes": "Loopless digraph on n vertices, minimum out-degree ≥ r ≥ 1, has an injective directed cycle of length ≤ ⌈n/r⌉; StatementFor r fixes the out-degree slice.",
       "not_encoded": [
@@ -61,8 +61,8 @@
     },
     {
       "problem_id": "M075",
-      "module": "lean/Hundred/Frankl.lean",
-      "namespace": "Hundred.Frankl",
+      "module": "lean/Hundred/Statements/Frankl.lean",
+      "namespace": "Hundred.Statements.Frankl",
       "statement": "Statement",
       "encodes": "Families as bitmasks over ground set {0,…,k−1}; union-closed with a nonempty member implies some x with 2·deg(x) ≥ |F|.",
       "not_encoded": [
@@ -80,8 +80,8 @@
     },
     {
       "problem_id": "M071",
-      "module": "lean/Hundred/Hadwiger.lean",
-      "namespace": "Hundred.Hadwiger",
+      "module": "lean/Hundred/Statements/Hadwiger.lean",
+      "namespace": "Hundred.Statements.Hadwiger",
       "statement": "Statement",
       "encodes": "Every simple graph has a K_t minor (branch-set model, connectivity by no-split cuts) or a proper (t−1)-colouring.",
       "not_encoded": [
@@ -92,8 +92,8 @@
     },
     {
       "problem_id": "M078",
-      "module": "lean/Hundred/Reconstruction.lean",
-      "namespace": "Hundred.Reconstruction",
+      "module": "lean/Hundred/Statements/Reconstruction.lean",
+      "namespace": "Hundred.Statements.Reconstruction",
       "statement": "Statement",
       "encodes": "Simple graphs on n ≥ 3 vertices with a deck-matching bijection σ (G − v ≅ H − σv) are isomorphic.",
       "not_encoded": [
@@ -105,8 +105,8 @@
     },
     {
       "problem_id": "M094",
-      "module": "lean/Hundred/Hadamard.lean",
-      "namespace": "Hundred.Hadamard",
+      "module": "lean/Hundred/Statements/Hadamard.lean",
+      "namespace": "Hundred.Statements.Hadamard",
       "statement": "Statement",
       "encodes": "For every k ≥ 1 an Int matrix of order 4k with ±1 entries and pairwise orthogonal rows.",
       "not_encoded": [
@@ -124,8 +124,8 @@
     },
     {
       "problem_id": "M095",
-      "module": "lean/Hundred/Ramsey.lean",
-      "namespace": "Hundred.Ramsey",
+      "module": "lean/Hundred/Statements/Ramsey.lean",
+      "namespace": "Hundred.Statements.Ramsey",
       "statement": "Conjecture",
       "encodes": "Arrows n s t: every red/blue colouring of K_n has a red K_s or a blue K_t (cliques as vertex bitmasks). Conjecture: Arrows 43 5 5.",
       "not_encoded": [
@@ -142,8 +142,8 @@
     },
     {
       "problem_id": "M096",
-      "module": "lean/Hundred/ProjectivePlane.lean",
-      "namespace": "Hundred.ProjectivePlane",
+      "module": "lean/Hundred/Statements/ProjectivePlane.lean",
+      "namespace": "Hundred.Statements.ProjectivePlane",
       "statement": "Statement",
       "encodes": "No incidence relation on 157 points and 157 lines with 13 points per line, unique joining lines and unique meeting points.",
       "not_encoded": [

@@ -1,1 +1,5 @@
 .lake/
+lake-manifest.json
+Audit.lean
+*.log
+verification.json

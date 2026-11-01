@@ -31,7 +31,7 @@
     <span class="brand-mark">100<span class="brand-dot">.</span></span>
     <span class="brand-caption">SVYABLE<br>RESEARCH</span>
   </a>
-  <nav class="main-nav" aria-label="Primary navigation"><a href="../../" aria-current="page">The 100</a><a href="../../atlas/">Atlas</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../ledger/">Ledger</a><a href="../../library/">Library</a></nav>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../" aria-current="page">The 100</a><a href="../../next/">Next 100</a><a href="../../atlas/">Atlas</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/">Library</a></nav>
   <div class="header-tools">
     <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
     <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
@@ -43,7 +43,7 @@
 
 <article class="problem-page">
 <header class="problem-hero" id="question">
-  <p class="eyebrow"><span class="eyebrow-line"></span> M074 · ATTACK #1 · EDITORIAL #1</p>
+  <p class="eyebrow"><span class="eyebrow-line"></span> M074 · DISPATCH #5 · EXECUTION #1 · EDITORIAL #1</p>
   <h1>Caccetta–Häggkvist conjecture</h1>
   <p class="problem-field"><a href="../../fields/combinatorics/">Combinatorics</a></p>
   <div class="chips"><span class="status-pill status-needs_review" title="Plausibly open; precise statement and status still need a literature audit.">Needs review</span><span class="chip chip-modality">Finitely refutable</span><span class="chip chip-good">Exact verifier in the lab</span><span class="chip chip-good">Lean statement</span><span class="chip chip-campaign">Campaign: Benchmark reproduced</span></div>
@@ -69,12 +69,12 @@
     (<span class="tk-o">∀</span> v, v &lt; n <span class="tk-o">→</span> r <span class="tk-o">≤</span> outdeg n adj v) <span class="tk-o">→</span>
     <span class="tk-o">∃</span> ℓ c, ℓ <span class="tk-o">≤</span> (n + r - 1) / r <span class="tk-o">∧</span> IsCycle n adj ℓ c</code></pre>
 <dl class="kv compact">
-  <dt>Declaration</dt><dd><code>Hundred.CaccettaHaggkvist.Statement</code> in <a href="https://github.com/Svyable/100/blob/main/lean/Hundred/CaccettaHaggkvist.lean" rel="noopener noreferrer">lean/Hundred/CaccettaHaggkvist.lean <span aria-hidden="true">↗</span></a></dd>
+  <dt>Declaration</dt><dd><code>Hundred.Statements.CaccettaHaggkvist.Statement</code> in <a href="https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/CaccettaHaggkvist.lean" rel="noopener noreferrer">lean/Hundred/Statements/CaccettaHaggkvist.lean <span aria-hidden="true">↗</span></a></dd>
   <dt>Not encoded</dt><dd>The triangle case r = n/3 separately; Any restricted family (vertex-transitive, etc.)</dd>
   <dt>Fidelity</dt><dd><span class="chip">author checked</span> Encoding written and checked against the registry statement by its author; fidelity examples compile.</dd>
   
 </dl>
-<details class="table-view"><summary>Full Lean module (58 lines)</summary><pre class="lean"><code><span class="tk-k">import</span> Hundred.Basic
+<details class="table-view"><summary>Full Lean module (58 lines)</summary><pre class="lean"><code><span class="tk-k">import</span> Hundred.Statements.Basic
 
 <span class="tk-c">/-!
 # M074 — Caccetta–Häggkvist conjecture
@@ -93,8 +93,8 @@ for `r ≤ 5` (Hoáng–Reed 1987) and for many restricted families; the lab and
 external fixed-`r = 6` corpus are tracked in the campaign.
 -/</span>
 
-<span class="tk-k">namespace</span> Hundred.CaccettaHaggkvist
-<span class="tk-k">open</span> Hundred
+<span class="tk-k">namespace</span> Hundred.Statements.CaccettaHaggkvist
+<span class="tk-k">open</span> Hundred.Statements
 
 <span class="tk-c">/-- Out-degree of `v` among vertices below `n` (loops are excluded separately). -/</span>
 <span class="tk-k">def</span> outdeg (n : <span class="tk-k">Nat</span>) (adj : <span class="tk-k">Nat</span> <span class="tk-o">→</span> <span class="tk-k">Nat</span> <span class="tk-o">→</span> <span class="tk-k">Bool</span>) (v : <span class="tk-k">Nat</span>) : <span class="tk-k">Nat</span> <span class="tk-o">:=</span>
@@ -131,17 +131,21 @@ external fixed-`r = 6` corpus are tracked in the campaign.
 
 <span class="tk-k">example</span> : IsCycle 7 circ7 4 cyc4 <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span>
 
-<span class="tk-k">end</span> Hundred.CaccettaHaggkvist
+<span class="tk-k">end</span> Hundred.Statements.CaccettaHaggkvist
 </code></pre></details>
 <p class="muted">A proof or counterexample counts only if it establishes exactly this proposition (or a reviewed equivalent). Kernel-checked finite results are fidelity tests inside known mathematics. <a href="../../formal/">How formal statements work →</a></p>
 </section>
 <section class="dossier-block" id="priority"><h2>Priority, decomposed</h2>
   <div class="score-hero">
-    <div><strong>101</strong><span>Execution index</span></div>
-    <div class="score-eq"><span>94</span><small>editorial</small><b>+</b><span>7</span><small>readiness</small></div>
-    <div><strong>#1</strong><span>Attack rank of 100</span></div>
+    <div><strong>#5</strong><span>Dispatch rank · score 113</span></div>
+    <div class="score-eq"><span>94</span><small>editorial</small><b>+</b><span>7</span><small>readiness</small><b>+</b><span>12</span><small>action</small></div>
+    <div><strong>#1</strong><span>Execution rank · index 101</span></div>
     <div><strong>#1</strong><span>Editorial rank of 100</span></div>
   </div>
+  <div class="next-action"><span class="detail-label">NEXT ACTION · REPLAY A PUBLISHED CERTIFICATE</span>
+    <p class="serif">Replay the external fixed-r=6 proof corpus on an independent host, verify its published hash and proof traces, and audit the hand-reduction steps before launching duplicate SAT search.</p>
+    <p class="muted">Why: The fixed-r=6 corpus is published and hashed, and this repository has not replayed its proof traces.</p>
+    <p class="muted">Shared attack shape: <a href="../../campaigns/#shape-extremal_certificates">Replay the object, or mine the census</a> — A published finite object sits past what this repository checks. Import that object onto an independent checker. A longer search inside a settled range is not this action.</p></div>
   <div class="two-col">
     <div><h3>Editorial score 94/100</h3><div class="detail-metrics">
       <div class="detail-metric"><span>Impact <small>×6</small></span><div class="meter" role="img" aria-label="Impact 5 of 5"><i style="width:100%"></i></div><b>5/5</b></div><div class="detail-metric"><span>Attackability <small>×6</small></span><div class="meter" role="img" aria-label="Attackability 4 of 5"><i style="width:80%"></i></div><b>4/5</b></div>
@@ -176,17 +180,17 @@ external fixed-`r = 6` corpus are tracked in the campaign.
     <dt>Source intake</dt><dd>2026-10-31</dd>
     <dt>Computation</dt><dd>Finitely refutable — One finite, checkable object would refute it; computation can search and certify ranges.</dd>
   </dl>
-  <h3>Discussed in the library</h3><ul class="link-list"><li><a href="../../library/attack-queue/">Execution queue — evidence-aware research priorities</a></li><li><a href="../../library/lab/">Exact probe lab — computational reach of the 100</a></li><li><a href="../../library/ranked/">Ranked candidate portfolio</a></li><li><a href="../../library/campaigns/">Four concrete proof campaigns — first research tranche</a></li><li><a href="../../library/m074-ch/">M074 — Caccetta–Häggkvist: a certified finite frontier</a></li><li><a href="../../library/m074-prior-art/">M074 — external fixed-outdegree-six proof claim: verification docket</a></li><li><a href="../../library/audit-queue/">Research-source audit — 2026-10-30</a></li></ul>
+  <h3>Discussed in the library</h3><ul class="link-list"><li><a href="../../library/approach/">Approach — leverage dispatch</a></li><li><a href="../../library/attack-queue/">Execution queue — evidence-aware research priorities</a></li><li><a href="../../library/lab/">Exact probe lab — computational reach of the 100</a></li><li><a href="../../library/lean/">Lean proof pipeline</a></li><li><a href="../../library/ranked/">Ranked candidate portfolio</a></li><li><a href="../../library/roadmap/">Roadmap — 100 mathematical grand challenges</a></li><li><a href="../../library/campaigns/">Four concrete proof campaigns — first research tranche</a></li><li><a href="../../library/m074-certificate-gate/">M074 certificate acceptance gate</a></li><li><a href="../../library/m074-ch/">M074 — Caccetta–Häggkvist: a certified finite frontier</a></li><li><a href="../../library/m074-elementary-18/">M074 — a certificate-free exclusion of the (18,6) directed-triangle case</a></li><li><a href="../../library/m074-elementary-21/">M074 — elementary exclusion of the (21,7) directed-triangle case</a></li><li><a href="../../library/m074-elementary-24-regular/">M074 — the 24-vertex, degree-eight regular case is impossible</a></li><li><a href="../../library/m074-prior-art/">M074 — external fixed-outdegree-six proof claim: verification docket</a></li><li><a href="../../library/m074-regularity/">M074 — a self-contained regularity reduction at (n=18, r=6)</a></li><li><a href="../../library/audit-queue/">Research-source audit — 2026-10-30</a></li><li><a href="../../library/lamport-protocol/">Lamport protocol — make every missing implication explicit</a></li></ul>
   <h3>Cite this page</h3>
   <div class="cite"><code id="cite-M074">Svyable. “Caccetta–Häggkvist conjecture (M074).” 100 — A living portfolio of mathematical grand challenges, data as of 2026-10-31. https://svyable.github.io/100/problems/M074/</code><button class="plain-button" type="button" data-copy="#cite-M074">Copy</button></div>
 </section>
 <section class="dossier-block" id="related"><h2>Nearby in the portfolio</h2>
-  <div class="two-col"><div><h3>Also in <a href="../../fields/combinatorics/">Combinatorics</a></h3><ul class="link-list"><li><a href="../../problems/M075/"><span class="mono">M075</span> Frankl union-closed sets conjecture</a></li><li><a href="../../problems/M078/"><span class="mono">M078</span> Graph reconstruction conjecture</a></li><li><a href="../../problems/M079/"><span class="mono">M079</span> One-third–two-thirds conjecture</a></li><li><a href="../../problems/M071/"><span class="mono">M071</span> Hadwiger conjecture</a></li><li><a href="../../problems/M073/"><span class="mono">M073</span> Sidorenko conjecture</a></li><li><a href="../../problems/M080/"><span class="mono">M080</span> Rota basis conjecture</a></li></ul></div>
+  <div class="two-col"><div><h3>Also in <a href="../../fields/combinatorics/">Combinatorics</a></h3><ul class="link-list"><li><a href="../../problems/M071/"><span class="mono">M071</span> Hadwiger conjecture</a></li><li><a href="../../problems/M073/"><span class="mono">M073</span> Sidorenko conjecture</a></li><li><a href="../../problems/M075/"><span class="mono">M075</span> Frankl union-closed sets conjecture</a></li><li><a href="../../problems/M078/"><span class="mono">M078</span> Graph reconstruction conjecture</a></li><li><a href="../../problems/M079/"><span class="mono">M079</span> One-third–two-thirds conjecture</a></li><li><a href="../../problems/M080/"><span class="mono">M080</span> Rota basis conjecture</a></li></ul></div>
   <div><h3>Shared engines</h3><p class="muted">No exact engine yet. See the <a href="../../lab/#roadmap">engine roadmap</a>.</p></div></div>
 </section>
 </div>
 </div>
-<nav class="pager" aria-label="Execution order"><span></span><a class="pager-next" rel="next" href="../../problems/M092/"><small>Next · #2</small><span>Zauner SIC conjecture</span></a></nav>
+<nav class="pager" aria-label="Dispatch order"><a class="pager-prev" rel="prev" href="../../problems/M049/"><small>Previous · dispatch #4</small><span>Soficity conjecture</span></a><a class="pager-next" rel="next" href="../../problems/M092/"><small>Next · dispatch #6</small><span>Zauner SIC conjecture</span></a></nav>
 </article>
 </main>
 <footer class="site-footer">

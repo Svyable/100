@@ -1,0 +1,118 @@
+[
+  {
+    "id": "L001",
+    "problem_id": "M095",
+    "stage": "implemented",
+    "statement": "The modular five-cycle is a symmetric, loop-free red/blue coloring with no monochromatic triangle; injective vertex restrictions preserve this property.",
+    "scope_gap": "Known R(3,3) lower-bound witness only. No R(3,3) upper bound or R(5,5) determination. Independent statement review pending.",
+    "next_step": "Match every edge to examples/R33_C5.json; then generalize certificate replay to clique sizes s and t.",
+    "declarations": [
+      "Hundred.Ramsey.cycle5_valid",
+      "Hundred.Ramsey.cycle5_triangleFree",
+      "Hundred.Ramsey.cycle5_independentTripleFree",
+      "Hundred.Ramsey.cycle5_certificate",
+      "Hundred.Ramsey.five_vertex_witness",
+      "Hundred.Ramsey.restrict",
+      "Hundred.Ramsey.check_sound"
+    ]
+  },
+  {
+    "id": "L002",
+    "problem_id": "M075",
+    "stage": "implemented",
+    "statement": "All 16 bitmask families on the ground set {0,1}: if union-closed and containing a nonempty set, some element belongs to at least half the family. Includes elementwise union semantics and the existing tiny benchmark.",
+    "scope_gap": "Only the two-element ground universe, encoded as Fin 16. No proof for arbitrary ground-set sizes, no novelty claim; independent scope review pending.",
+    "next_step": "Prove a representation theorem for arbitrary extensional set families on Fin 2, then generalize counting and union semantics to Fin n.",
+    "declarations": [
+      "Hundred.Frankl.union_membership",
+      "Hundred.Frankl.frankl_two",
+      "Hundred.Frankl.small_nontrivial",
+      "Hundred.Frankl.small_closed",
+      "Hundred.Frankl.small_half",
+      "Hundred.Frankl.small_abundant"
+    ]
+  },
+  {
+    "id": "L003",
+    "problem_id": "M074",
+    "stage": "planned",
+    "statement": "Soundness of decoding a directed-graph SAT assignment into a loop-free graph with minimum outdegree and absence of short directed cycles.",
+    "scope_gap": "SAT search output alone is not a theorem. UNSAT requires a checked proof and a separately proved encoding completeness theorem.",
+    "next_step": "Formalize graph semantics and assignment decoder before attempting the 18-vertex target.",
+    "declarations": []
+  },
+  {
+    "id": "L004",
+    "problem_id": "M006",
+    "stage": "implemented",
+    "statement": "Every even 4 ≤ n ≤ 1000 is a sum of two primes, via a least-prime witness table re-checked by the kernel against the comparator Hundred.Statements.Goldbach.Statement.",
+    "scope_gap": "Known range only (verified to 4·10^18 in the literature); no bound on the least prime and no progress on the unrestricted conjecture. Independent statement review pending.",
+    "next_step": "Connect the witness table to the lab goldbach certificate hash and add a downstream lemma that uses Statement.",
+    "declarations": [
+      "Hundred.Statements.Goldbach.certified_1000",
+      "Hundred.Statements.Goldbach.holds_upTo_1000"
+    ]
+  },
+  {
+    "id": "L005",
+    "problem_id": "M019",
+    "stage": "implemented",
+    "statement": "Explicit positive solutions of 4xyz = n(xy + yz + zx) for every 2 ≤ n ≤ 100, re-checked by the kernel against Hundred.Statements.ErdosStraus.Statement.",
+    "scope_gap": "Known range only; no parametric identity for a residue class. Independent statement review pending.",
+    "next_step": "Formalise one classical parametric identity (n ≡ 3 mod 4) as a theorem quantified over all such n.",
+    "declarations": [
+      "Hundred.Statements.ErdosStraus.certified_100",
+      "Hundred.Statements.ErdosStraus.holds_upTo_100"
+    ]
+  },
+  {
+    "id": "L006",
+    "problem_id": "M075",
+    "stage": "implemented",
+    "statement": "Exhaustive union-closed check over all families on ground sets of size 1, 2 and 3 in the general bitmask encoding of Hundred.Statements.Frankl.Statement.",
+    "scope_gap": "Elementary known cases; complements L002 (Fin 2 with union semantics). No representation theorem from arbitrary set families yet. Independent statement review pending.",
+    "next_step": "Prove that the bitmask encoding is equivalent to the L002 Fin-based families for k = 2, then reuse it for k = 3.",
+    "declarations": [
+      "Hundred.Statements.Frankl.ground_1",
+      "Hundred.Statements.Frankl.ground_2",
+      "Hundred.Statements.Frankl.ground_3"
+    ]
+  },
+  {
+    "id": "L007",
+    "problem_id": "M094",
+    "stage": "implemented",
+    "statement": "Explicit Hadamard matrices of orders 4, 8, 16 (Sylvester) and 12 (Paley I, q = 11), re-checked by the kernel against Hundred.Statements.Hadamard.IsHadamard.",
+    "scope_gap": "Small known orders only; the smallest open order is 668. Independent statement review pending.",
+    "next_step": "Prove Sylvester doubling as a general theorem (order n to 2n) instead of instance by instance.",
+    "declarations": [
+      "Hundred.Statements.Hadamard.order_4",
+      "Hundred.Statements.Hadamard.order_8",
+      "Hundred.Statements.Hadamard.order_12",
+      "Hundred.Statements.Hadamard.order_16"
+    ]
+  },
+  {
+    "id": "L008",
+    "problem_id": "M095",
+    "stage": "implemented",
+    "statement": "¬ Arrows 5 3 3 in the general clique encoding of Hundred.Statements.Ramsey (cliques as vertex bitmasks), so the R(5,5) comparator Conjecture := Arrows 43 5 5 is stated in a vocabulary with a checked witness.",
+    "scope_gap": "Same known R(3,3) lower bound as L001 in a second, independent encoding. Exoo's K42 colouring and the 46 upper bound are cited, not re-proved. Independent statement review pending.",
+    "next_step": "Prove the two Ramsey encodings agree on triangles (L001 TriangleFree vs HasMonoClique with s = 3).",
+    "declarations": [
+      "Hundred.Statements.Ramsey.not_arrows_5_3_3"
+    ]
+  },
+  {
+    "id": "L009",
+    "problem_id": "M096",
+    "stage": "implemented",
+    "statement": "Projective planes of orders 2 and 3 satisfy the axioms in Hundred.Statements.ProjectivePlane.IsPlane, so the order-12 comparator is not vacuous.",
+    "scope_gap": "Satisfiability of the axioms only; says nothing about order 12. Independent statement review pending.",
+    "next_step": "Formalise the Bruck–Ryser condition as a checkable criterion and verify it for small orders.",
+    "declarations": [
+      "Hundred.Statements.ProjectivePlane.exists_order_2",
+      "Hundred.Statements.ProjectivePlane.exists_order_3"
+    ]
+  }
+]

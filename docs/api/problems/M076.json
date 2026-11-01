@@ -17,6 +17,17 @@
   "execution_rank": 15,
   "execution_score": 91,
   "readiness": 0,
+  "dispatch_rank": 20,
+  "dispatch_score": 91,
+  "action": "specify_shape",
+  "action_label": "Fill the shared attack shape",
+  "action_bonus": 0,
+  "method_id": "extremal_asymptotics",
+  "method_title": "One family, one explicit constant",
+  "dispatch_next": "Shape extremal_asymptotics (3 problems, one write-up): Name a structured family and an explicit constant, and compare it with a cited general bound before calling it an improvement. Full shape, certificate and falsifier are in APPROACH.md.",
+  "dispatch_why": "No campaign yet. Fill one restricted statement inside the shared shape.",
+  "campaign_stage": null,
+  "milestone_count": 0,
   "url": "https://svyable.github.io/100/problems/M076/",
   "field_url": "https://svyable.github.io/100/fields/combinatorics/",
   "readiness_breakdown": [],
@@ -30,6 +41,11 @@
   "external_claims": [],
   "mentioned_in": [
     {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",
       "url": "https://svyable.github.io/100/library/attack-queue/"
@@ -38,6 +54,11 @@
       "title": "Ranked candidate portfolio",
       "source": "RANKED.md",
       "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
     }
   ]
 }

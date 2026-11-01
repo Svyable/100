@@ -14,9 +14,20 @@
   "source_url": null,
   "rank": 68,
   "score": 72,
-  "execution_rank": 68,
+  "execution_rank": 69,
   "execution_score": 72,
   "readiness": 0,
+  "dispatch_rank": 71,
+  "dispatch_score": 72,
+  "action": "specify_shape",
+  "action_label": "Fill the shared attack shape",
+  "action_bonus": 0,
+  "method_id": "effective_diophantine",
+  "method_title": "Explicit Diophantine certificates",
+  "dispatch_next": "Shape effective_diophantine (4 problems, one write-up): State one explicit identity or inequality on a named class that a cited theorem or computation does not already settle. Full shape, certificate and falsifier are in APPROACH.md.",
+  "dispatch_why": "No campaign yet. Fill one restricted statement inside the shared shape.",
+  "campaign_stage": null,
+  "milestone_count": 0,
   "url": "https://svyable.github.io/100/problems/M020/",
   "field_url": "https://svyable.github.io/100/fields/arithmetic/",
   "readiness_breakdown": [],
@@ -29,6 +40,11 @@
   "formal_statement": null,
   "external_claims": [],
   "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
     {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",

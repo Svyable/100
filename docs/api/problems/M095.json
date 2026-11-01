@@ -17,6 +17,17 @@
   "execution_rank": 19,
   "execution_score": 89,
   "readiness": 7,
+  "dispatch_rank": 15,
+  "dispatch_score": 101,
+  "action": "replay_published",
+  "action_label": "Replay a published certificate",
+  "action_bonus": 12,
+  "method_id": "ramsey_parameter",
+  "method_title": "A colouring with a proof trace",
+  "dispatch_next": "Import and check the published K42 witness; reproduce a small structural exclusion with a trusted proof checker.",
+  "dispatch_why": "The lab certifies R(5,5) greater than 37. The published K42 colouring is the next certificate, and an upper bound needs a proof trace rather than a solver verdict.",
+  "campaign_stage": "benchmark_reproduced",
+  "milestone_count": 2,
   "url": "https://svyable.github.io/100/problems/M095/",
   "field_url": "https://svyable.github.io/100/fields/mathematical-physics-finite-structures/",
   "readiness_breakdown": [
@@ -112,8 +123,8 @@
   "claim_review_2026": null,
   "formal_statement": {
     "problem_id": "M095",
-    "module": "lean/Hundred/Ramsey.lean",
-    "namespace": "Hundred.Ramsey",
+    "module": "lean/Hundred/Statements/Ramsey.lean",
+    "namespace": "Hundred.Statements.Ramsey",
     "statement": "Conjecture",
     "encodes": "Arrows n s t: every red/blue colouring of K_n has a red K_s or a blue K_t (cliques as vertex bitmasks). Conjecture: Arrows 43 5 5.",
     "not_encoded": [
@@ -127,10 +138,15 @@
       }
     ],
     "fidelity": "author_checked",
-    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Ramsey.lean"
+    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/Ramsey.lean"
   },
   "external_claims": [],
   "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
     {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",
@@ -142,9 +158,19 @@
       "url": "https://svyable.github.io/100/library/lab/"
     },
     {
+      "title": "Lean proof pipeline",
+      "source": "LEAN.md",
+      "url": "https://svyable.github.io/100/library/lean/"
+    },
+    {
       "title": "Ranked candidate portfolio",
       "source": "RANKED.md",
       "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
     },
     {
       "title": "Four concrete proof campaigns — first research tranche",
@@ -152,7 +178,7 @@
       "url": "https://svyable.github.io/100/library/campaigns/"
     },
     {
-      "title": "Lab campaigns: twelve problems under exact computation",
+      "title": "Lab campaigns: problems under exact computation",
       "source": "research/LAB_CAMPAIGNS.md",
       "url": "https://svyable.github.io/100/library/lab-campaigns/"
     },
@@ -165,6 +191,11 @@
       "title": "Research-source audit — 2026-10-30",
       "source": "docs/AUDIT_QUEUE.md",
       "url": "https://svyable.github.io/100/library/audit-queue/"
+    },
+    {
+      "title": "Lamport protocol — make every missing implication explicit",
+      "source": "docs/LAMPORT_PROTOCOL.md",
+      "url": "https://svyable.github.io/100/library/lamport-protocol/"
     },
     {
       "title": "Proof-driven research engine",

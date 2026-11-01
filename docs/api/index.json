@@ -12,12 +12,12 @@
   },
   "counts": {
     "problems": 100,
-    "campaigns": 18,
-    "probes": 15,
-    "engines": 11,
+    "campaigns": 21,
+    "probes": 18,
+    "engines": 13,
     "claim_reviews": 15,
     "lean_statements": 9,
     "solved": 0,
-    "documents": 17
+    "documents": 33
   }
 }

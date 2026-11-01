@@ -14,9 +14,20 @@
   "source_url": null,
   "rank": 89,
   "score": 69,
-  "execution_rank": 89,
+  "execution_rank": 90,
   "execution_score": 69,
   "readiness": 0,
+  "dispatch_rank": 41,
+  "dispatch_score": 77,
+  "action": "scope_audit",
+  "action_label": "Audit claim scope",
+  "action_bonus": 8,
+  "method_id": "pde_regularity",
+  "method_title": "One ansatz, one enclosure",
+  "dispatch_next": "Compare v3 withdrawal notice with v5, audit the set-valued fixed-point and laminate-to-gradient argument, and request a calculus-of-variations review.",
+  "dispatch_why": "A manuscript may already settle this entry. The next step is the review's own check, not a new lemma.",
+  "campaign_stage": null,
+  "milestone_count": 0,
   "url": "https://svyable.github.io/100/problems/M060/",
   "field_url": "https://svyable.github.io/100/fields/analysis/",
   "readiness_breakdown": [],
@@ -41,6 +52,11 @@
   "formal_statement": null,
   "external_claims": [],
   "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
     {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",

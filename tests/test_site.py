@@ -98,6 +98,19 @@ class TestSnapshot(unittest.TestCase):
         lab = doc["lab"]
         self.assertEqual(doc["summary"]["problems_with_exact_verifier"], len(lab["covered_problems"]))
         self.assertTrue(all(run["holds"] for probe in lab["probes"] for run in probe["runs"].values()))
+        self.assertEqual(sorted(x["dispatch_rank"] for x in p), list(range(1, 101)))
+        self.assertTrue(all(
+            x["dispatch_score"] == x["score"] + x["readiness"] + x["action_bonus"] for x in p))
+        self.assertEqual(p[0]["id"], "M074")  # editorial order is unchanged
+        by_dispatch = sorted(p, key=lambda x: x["dispatch_rank"])
+        self.assertEqual(by_dispatch[0]["action"], "replay_claim_witness")
+        self.assertGreaterEqual(len(doc["approach"]["jobs"]), 1)
+        self.assertEqual(doc["summary"]["exact_probes"], len(lab["probes"]))
+        self.assertTrue(all(item["modality"] for item in p))
+        self.assertEqual(len(doc["roadmap"]["items"]), sum(doc["roadmap"]["counts"].values()))
+        self.assertTrue(set(lab["covered_problems"]) <= {item["id"] for item in p})
+        self.assertEqual(len(doc["mines"]["mines"]), 5)
+        self.assertTrue(all(row["holds"] for row in doc["mines"]["mines"].values()))
 
     def test_build_is_deterministic(self):
         self.assertEqual(FILES, build_site.site_files())
@@ -124,7 +137,7 @@ class TestPages(unittest.TestCase):
                 target, frag = resolve(path, href)
                 if target is None:
                     continue
-                if target.startswith("assets/"):
+                if target.startswith(("assets/", "next/")):  # hand-written, outside the generator
                     if not (DOCS / target).is_file():
                         broken.append((path, href))
                     continue
@@ -159,8 +172,10 @@ class TestPages(unittest.TestCase):
     def test_problem_page_content(self):
         page = FILES["problems/M071/index.html"]
         for needle in ("Hadwiger conjecture", 'id="formal"', 'id="campaign"', 'id="claim-review"',
-                       "Hundred.Hadwiger.Statement", "rel=\"prev\"", "rel=\"next\"", "Permalink"):
+                       "Hundred.Statements.Hadwiger.Statement", "rel=\"next\"", "Permalink",
+                       "NEXT ACTION", "DISPATCH #1"):
             self.assertIn(needle, page)
+        self.assertIn('rel="prev"', FILES["problems/M073/index.html"])
         self.assertIn('id="formal"', FILES["problems/M001/index.html"])
         self.assertIn("No Lean comparator statement yet", FILES["problems/M001/index.html"])
 
@@ -178,13 +193,14 @@ class TestPages(unittest.TestCase):
     def test_api_matches_registry(self):
         api = json.loads(FILES["api/problems.json"])
         self.assertEqual(api["count"], 100)
-        self.assertEqual([p["execution_rank"] for p in api["problems"]], list(range(1, 101)))
+        self.assertEqual([p["dispatch_rank"] for p in api["problems"]], list(range(1, 101)))
         one = json.loads(FILES["api/problems/M094.json"])
         self.assertEqual(one["id"], "M094")
         self.assertTrue(one["formal_statement"]["module"].endswith("Hadamard.lean"))
         self.assertEqual(len(FILES["api/problems.csv"].strip().splitlines()), 101)
         search = json.loads(FILES["api/search.json"])
-        self.assertTrue(all(resolve("index.html", item["u"])[0] in FILES for item in search))
+        targets = [resolve("index.html", item["u"])[0] for item in search]
+        self.assertEqual([t for t in targets if t not in FILES and not (DOCS / t).is_file()], [])
 
     def test_untrusted_text_is_escaped(self):
         self.assertNotIn("<script>alert", "".join(FILES[k] for k in PAGES))

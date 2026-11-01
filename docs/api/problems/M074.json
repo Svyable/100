@@ -17,6 +17,17 @@
   "execution_rank": 1,
   "execution_score": 101,
   "readiness": 7,
+  "dispatch_rank": 5,
+  "dispatch_score": 113,
+  "action": "replay_published",
+  "action_label": "Replay a published certificate",
+  "action_bonus": 12,
+  "method_id": "extremal_certificates",
+  "method_title": "Replay the object, or mine the census",
+  "dispatch_next": "Replay the external fixed-r=6 proof corpus on an independent host, verify its published hash and proof traces, and audit the hand-reduction steps before launching duplicate SAT search.",
+  "dispatch_why": "The fixed-r=6 corpus is published and hashed, and this repository has not replayed its proof traces.",
+  "campaign_stage": "benchmark_reproduced",
+  "milestone_count": 1,
   "url": "https://svyable.github.io/100/problems/M074/",
   "field_url": "https://svyable.github.io/100/fields/combinatorics/",
   "readiness_breakdown": [
@@ -72,8 +83,8 @@
   "claim_review_2026": null,
   "formal_statement": {
     "problem_id": "M074",
-    "module": "lean/Hundred/CaccettaHaggkvist.lean",
-    "namespace": "Hundred.CaccettaHaggkvist",
+    "module": "lean/Hundred/Statements/CaccettaHaggkvist.lean",
+    "namespace": "Hundred.Statements.CaccettaHaggkvist",
     "statement": "Statement",
     "encodes": "Loopless digraph on n vertices, minimum out-degree ≥ r ≥ 1, has an injective directed cycle of length ≤ ⌈n/r⌉; StatementFor r fixes the out-degree slice.",
     "not_encoded": [
@@ -82,7 +93,7 @@
     ],
     "kernel_checked": [],
     "fidelity": "author_checked",
-    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/CaccettaHaggkvist.lean"
+    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/CaccettaHaggkvist.lean"
   },
   "external_claims": [
     {
@@ -104,6 +115,11 @@
   ],
   "mentioned_in": [
     {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",
       "url": "https://svyable.github.io/100/library/attack-queue/"
@@ -114,9 +130,19 @@
       "url": "https://svyable.github.io/100/library/lab/"
     },
     {
+      "title": "Lean proof pipeline",
+      "source": "LEAN.md",
+      "url": "https://svyable.github.io/100/library/lean/"
+    },
+    {
       "title": "Ranked candidate portfolio",
       "source": "RANKED.md",
       "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
     },
     {
       "title": "Four concrete proof campaigns — first research tranche",
@@ -124,9 +150,29 @@
       "url": "https://svyable.github.io/100/library/campaigns/"
     },
     {
+      "title": "M074 certificate acceptance gate",
+      "source": "research/M074_CERTIFICATE_GATE.md",
+      "url": "https://svyable.github.io/100/library/m074-certificate-gate/"
+    },
+    {
       "title": "M074 — Caccetta–Häggkvist: a certified finite frontier",
       "source": "research/M074_CH.md",
       "url": "https://svyable.github.io/100/library/m074-ch/"
+    },
+    {
+      "title": "M074 — a certificate-free exclusion of the (18,6) directed-triangle case",
+      "source": "research/M074_ELEMENTARY_18.md",
+      "url": "https://svyable.github.io/100/library/m074-elementary-18/"
+    },
+    {
+      "title": "M074 — elementary exclusion of the (21,7) directed-triangle case",
+      "source": "research/M074_ELEMENTARY_21.md",
+      "url": "https://svyable.github.io/100/library/m074-elementary-21/"
+    },
+    {
+      "title": "M074 — the 24-vertex, degree-eight regular case is impossible",
+      "source": "research/M074_ELEMENTARY_24_REGULAR.md",
+      "url": "https://svyable.github.io/100/library/m074-elementary-24-regular/"
     },
     {
       "title": "M074 — external fixed-outdegree-six proof claim: verification docket",
@@ -134,9 +180,19 @@
       "url": "https://svyable.github.io/100/library/m074-prior-art/"
     },
     {
+      "title": "M074 — a self-contained regularity reduction at (n=18, r=6)",
+      "source": "research/M074_REGULARITY.md",
+      "url": "https://svyable.github.io/100/library/m074-regularity/"
+    },
+    {
       "title": "Research-source audit — 2026-10-30",
       "source": "docs/AUDIT_QUEUE.md",
       "url": "https://svyable.github.io/100/library/audit-queue/"
+    },
+    {
+      "title": "Lamport protocol — make every missing implication explicit",
+      "source": "docs/LAMPORT_PROTOCOL.md",
+      "url": "https://svyable.github.io/100/library/lamport-protocol/"
     }
   ]
 }

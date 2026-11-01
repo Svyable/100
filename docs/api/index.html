@@ -31,7 +31,7 @@
     <span class="brand-mark">100<span class="brand-dot">.</span></span>
     <span class="brand-caption">SVYABLE<br>RESEARCH</span>
   </a>
-  <nav class="main-nav" aria-label="Primary navigation"><a href="../">The 100</a><a href="../atlas/">Atlas</a><a href="../campaigns/">Campaigns</a><a href="../lab/">Lab</a><a href="../formal/">Formal</a><a href="../claims/">Claims</a><a href="../ledger/">Ledger</a><a href="../library/">Library</a></nav>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../">The 100</a><a href="../next/">Next 100</a><a href="../atlas/">Atlas</a><a href="../campaigns/">Campaigns</a><a href="../lab/">Lab</a><a href="../formal/">Formal</a><a href="../claims/">Claims</a><a href="../roadmap/">Roadmap</a><a href="../ledger/">Ledger</a><a href="../library/">Library</a></nav>
   <div class="header-tools">
     <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
     <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
@@ -43,14 +43,14 @@
 <section class="page-hero"><div><p class="eyebrow"><span class="eyebrow-line"></span> DATA &amp;amp; API</p><h1>Take the data <em>with you.</em></h1><p class="hero-lead">Everything on this site is static, versioned JSON and CSV regenerated from the validated ledgers on every change. No keys, no rate limits, no tracking.</p></div></section>
 <section class="section-block tight"><div class="table-wrap"><table><thead><tr><th>Resource</th><th>What it contains</th></tr></thead><tbody>
 <tr><td><a href="problems.json">api/problems.json</a></td><td>All 100 problems in execution order with ranks, scores, readiness, evidence and modality.</td></tr>
-<tr><td><a href="problems/M074.json">api/problems/{id}.json</a></td><td>One problem with campaign, probes, milestones, roadmap, claim review, external claims and backlinks.</td></tr>
+<tr><td><a href="problems/M071.json">api/problems/{id}.json</a></td><td>One problem with campaign, probes, milestones, roadmap, claim review, external claims and backlinks.</td></tr>
 <tr><td><a href="problems.csv">api/problems.csv</a></td><td>Spreadsheet-friendly registry.</td></tr>
 <tr><td><a href="search.json">api/search.json</a></td><td>The compact index behind the <kbd>/</kbd> command palette.</td></tr>
 <tr><td><a href="../data/portfolio.json">data/portfolio.json</a></td><td>The complete legacy snapshot (lab, campaigns, milestones, solved archive).</td></tr>
 <tr><td><a href="../feed.xml">feed.xml</a></td><td>Atom feed of milestones, claim reviews and program updates.</td></tr>
 </tbody></table></div></section>
 <section class="section-block tight"><h2 class="h-small">Example</h2>
-<pre class="cmd"><code>curl -s https://svyable.github.io/100/api/problems/M074.json | python3 -m json.tool</code></pre>
+<pre class="cmd"><code>curl -s https://svyable.github.io/100/api/problems/M071.json | python3 -m json.tool</code></pre>
 <p class="muted">The canonical sources are <code>data/*.json</code> in the repository; this API can never drift from them because CI rebuilds and byte-compares the whole site.</p></section>
 </main>
 <footer class="site-footer">

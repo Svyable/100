@@ -17,6 +17,17 @@
   "execution_rank": 18,
   "execution_score": 89,
   "readiness": 0,
+  "dispatch_rank": 22,
+  "dispatch_score": 89,
+  "action": "specify_shape",
+  "action_label": "Fill the shared attack shape",
+  "action_bonus": 0,
+  "method_id": "polynomial_maps",
+  "method_title": "Families outside proved degree bounds",
+  "dispatch_next": "Shape polynomial_maps (2 problems, one write-up): Name a polynomial or Weyl family that published degree bounds do not cover, and refuse exhaustive search inside those bounds. Full shape, certificate and falsifier are in APPROACH.md.",
+  "dispatch_why": "No campaign yet. Fill one restricted statement inside the shared shape.",
+  "campaign_stage": null,
+  "milestone_count": 0,
   "url": "https://svyable.github.io/100/problems/M042/",
   "field_url": "https://svyable.github.io/100/fields/algebra/",
   "readiness_breakdown": [],
@@ -30,6 +41,11 @@
   "external_claims": [],
   "mentioned_in": [
     {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",
       "url": "https://svyable.github.io/100/library/attack-queue/"
@@ -38,6 +54,16 @@
       "title": "Ranked candidate portfolio",
       "source": "RANKED.md",
       "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
+    },
+    {
+      "title": "Top 100 portfolio selection and admission",
+      "source": "docs/PORTFOLIO_SELECTION.md",
+      "url": "https://svyable.github.io/100/library/portfolio-selection/"
     }
   ]
 }

@@ -14,26 +14,106 @@
   "source_url": "https://www.claymath.org/millennium-problems/",
   "rank": 90,
   "score": 66,
-  "execution_rank": 90,
-  "execution_score": 66,
-  "readiness": 0,
+  "execution_rank": 53,
+  "execution_score": 73,
+  "readiness": 7,
+  "dispatch_rank": 100,
+  "dispatch_score": 37,
+  "action": "stop_range",
+  "action_label": "Stop: range is dominated",
+  "action_bonus": -36,
+  "method_id": "critical_zeros",
+  "method_title": "Certified zero counts",
+  "dispatch_next": "Do not prioritize extending T = 36 inside the already-published critical-line verification range. First identify a mathematically new zero-free region, explicit bound, or verified statement not implied by existing computations.",
+  "dispatch_why": "The new exact interval verifier reaches T = 36, but published computations cover zeta zeros vastly farther. Increasing a tiny certified height is not a new attack on the Riemann hypothesis.",
+  "campaign_stage": "benchmark_reproduced",
+  "milestone_count": 1,
   "url": "https://svyable.github.io/100/problems/M001/",
   "field_url": "https://svyable.github.io/100/fields/number-theory/",
-  "readiness_breakdown": [],
-  "has_exact_verifier": false,
-  "campaign": null,
-  "probes": [],
-  "milestones": [],
-  "engine_roadmap": {
+  "readiness_breakdown": [
+    {
+      "item": "Formal campaign brief",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Runnable independent verifier",
+      "points": 3,
+      "max": 3
+    },
+    {
+      "item": "Reproduced known benchmark",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Independently reviewed restricted theorem",
+      "points": 0,
+      "max": 3
+    }
+  ],
+  "has_exact_verifier": true,
+  "campaign": {
     "problem_id": "M001",
-    "engine": "interval_arithmetic",
-    "first_probe": "Rigorous count of zeta zeros up to a small height T with interval arithmetic (sign changes on the critical line plus a Turing-method bound), replayable as a certificate.",
-    "name": "Riemann Hypothesis"
+    "stage": "benchmark_reproduced",
+    "method": "Interval-arithmetic argument principle and Hardy Z sign changes",
+    "hypothesis": "Every non-trivial zero of the Riemann zeta function has real part 1/2.",
+    "first_proof_obligation": "A finite height is already classical. The next obligation is a zero-free statement with an explicit constant that does not follow from plugging this height into a known explicit formula, or a machine-checked count past the range a hand calculation can audit.",
+    "next_experiment": "Raise the certified height by tightening the contour enclosures, then compare the isolating intervals against a published zero table entry by entry.",
+    "falsification": "A height T at which the certified argument count N(T) strictly exceeds the number of disjoint intervals where Z changes sign.",
+    "blocker": "T = 36 is far below Platt–Trudgian (at least 3*10^12). Extending the height needs a faster contour, not a new idea about the hypothesis.",
+    "dossier": "research/LAB_CAMPAIGNS.md",
+    "verifier": "python3 scripts/lab.py --probe riemann"
   },
+  "probes": [
+    {
+      "id": "riemann",
+      "problem_id": "M001",
+      "name": "Riemann Hypothesis",
+      "title": "Critical-line zero count for zeta up to a small height",
+      "engines": [
+        "interval_arithmetic"
+      ],
+      "frontier": "Known: every non-trivial zero with imaginary part up to at least 3*10^12 lies on the critical line (Platt and Trudgian, and later computations go further). T <= 36 is classical. Reproduction only.",
+      "artifact": "scripts/probes/riemann.py",
+      "command": "python3 scripts/lab.py --probe riemann",
+      "runs": {
+        "smoke": {
+          "holds": true,
+          "scope": "Every non-trivial zero of zeta with imaginary part in (0, 23] is simple and lies on the critical line: the argument principle gives N(23) = 2, equal to the number of disjoint intervals where the Hardy Z-function changes sign.",
+          "certificate_sha256": "c33d7a31f28dc53b14a3f111127ace52dd6378a2f6a162287a01bd7f9018ba17"
+        },
+        "deep": {
+          "holds": true,
+          "scope": "Every non-trivial zero of zeta with imaginary part in (0, 36] is simple and lies on the critical line: the argument principle gives N(36) = 5, equal to the number of disjoint intervals where the Hardy Z-function changes sign.",
+          "certificate_sha256": "431426eb0717174480383187cbd4c1bd327c302ae461baafdbeaca361c26cf8f"
+        }
+      }
+    }
+  ],
+  "milestones": [
+    {
+      "id": "B-ZETA-001",
+      "problem_id": "M001",
+      "classification": "reproduced_known",
+      "title": "The first two non-trivial zeta zeros are simple and on the critical line",
+      "scope": "N(23) = 2, a classical height; not a proof of the Riemann hypothesis",
+      "description": "Argument-principle count N(T) matched to Hardy Z sign changes on (14, 15) and (21, 22). The checker repeats the count with a different Euler-Maclaurin and Stirling truncation. The deep run reaches N(36) = 5.",
+      "verifier": "python3 scripts/lab.py --probe riemann",
+      "artifact": "scripts/probes/riemann.py",
+      "verified_on": "2026-10-31"
+    }
+  ],
+  "engine_roadmap": null,
   "claim_review_2026": null,
   "formal_statement": null,
   "external_claims": [],
   "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
     {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",
@@ -48,6 +128,21 @@
       "title": "Ranked candidate portfolio",
       "source": "RANKED.md",
       "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
+    },
+    {
+      "title": "Lab campaigns: problems under exact computation",
+      "source": "research/LAB_CAMPAIGNS.md",
+      "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "Proof-driven research engine",
+      "source": "docs/RESEARCH_ENGINE.md",
+      "url": "https://svyable.github.io/100/library/research-engine/"
     }
   ]
 }

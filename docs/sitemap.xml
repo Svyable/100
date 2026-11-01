@@ -18,6 +18,7 @@
   <url><loc>https://svyable.github.io/100/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/lab/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/ledger/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/approach/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/attack-queue/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/audit-queue/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/campaigns/</loc><lastmod>2026-10-31</lastmod></url>
@@ -26,15 +27,30 @@
   <url><loc>https://svyable.github.io/100/library/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/lab-campaigns/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/lab/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/lamport-protocol/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/lean-readme/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/lean/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/m074-certificate-gate/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m074-ch/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/m074-elementary-18/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/m074-elementary-21/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/m074-elementary-24-regular/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m074-prior-art/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/m074-regularity/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/m075-burnside/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/m075-canonical/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m075-frankl/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m095-ramsey/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/m098-vaught/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/mines/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/next-100/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/pages-setup/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/portfolio-selection/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/proof-exchange/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/ranked/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/research-engine/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/research-protocol/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/roadmap/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/sources/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/problems/M001/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/problems/M002/</loc><lastmod>2026-10-31</lastmod></url>
@@ -136,4 +152,5 @@
   <url><loc>https://svyable.github.io/100/problems/M098/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/problems/M099/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://svyable.github.io/100/problems/M100/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://svyable.github.io/100/roadmap/</loc><lastmod>2026-10-31</lastmod></url>
 </urlset>

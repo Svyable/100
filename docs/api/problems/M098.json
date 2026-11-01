@@ -2,21 +2,32 @@
   "id": "M098",
   "name": "Vaught conjecture",
   "field": "Mathematical physics / finite structures",
-  "question": "Does a complete countable-language first-order theory have countably or continuum many countable models?",
-  "first_attack": "Audit precise statement and prove a restricted case",
+  "question": "For every complete first-order theory in a countable language, is the number of countable models up to isomorphism either countable or equal to the continuum?",
+  "first_attack": "Keep the first-order statement separate from infinitary counterexamples and cite a restricted case",
   "impact": 4,
   "attackability": 4,
   "verifiability": 4,
   "spillover": 4,
   "modality": "structural",
-  "evidence_state": "claim_needs_review",
-  "checked_on": null,
-  "source_url": null,
+  "evidence_state": "verified_open",
+  "checked_on": "2026-10-31",
+  "source_url": "https://arxiv.org/abs/2508.06854",
   "rank": 30,
   "score": 80,
-  "execution_rank": 30,
+  "execution_rank": 31,
   "execution_score": 80,
   "readiness": 0,
+  "dispatch_rank": 36,
+  "dispatch_score": 80,
+  "action": "specify_shape",
+  "action_label": "Fill the shared attack shape",
+  "action_bonus": 0,
+  "method_id": "logic_decision",
+  "method_title": "The logic named in the registry",
+  "dispatch_next": "Shape logic_decision (2 problems, one write-up): Write the logic in the registry entry, and do not let a manuscript about a different logic move the evidence state. Full shape, certificate and falsifier are in APPROACH.md.",
+  "dispatch_why": "No campaign yet. Fill one restricted statement inside the shared shape.",
+  "campaign_stage": null,
+  "milestone_count": 0,
   "url": "https://svyable.github.io/100/problems/M098/",
   "field_url": "https://svyable.github.io/100/fields/mathematical-physics-finite-structures/",
   "readiness_breakdown": [],
@@ -38,12 +49,32 @@
       "https://github.com/cameronfreer/vaught-conjecture-counterexample",
       "https://mathoverflow.net/questions/22142/has-vaughts-conjecture-been-solved/516156"
     ],
-    "known_caveats": "The authors' repository explicitly says the formalization does not solve the first-order Vaught conjecture; a specialist MathOverflow discussion confirms the first-order version remains open.",
-    "next_review": "De-scope the 2026 infinitary result from M098's resolution watch; retain the first-order problem and cite a current specialist open-status source before changing evidence state."
+    "known_caveats": "The pinned Lean development proves a thin aleph-1 spectrum for its own infinitary sentence, baseLanguage.densitySentence. The authors say this is not the first-order Vaught conjecture, that the formalization does not cover every claim of the manuscript, and that it does not identify those models with the manuscript's strongly coded templates. Knight's 2002 first-order announcement was not accepted.",
+    "next_review": "Keep M098 verified_open. Record further first-order progress in research/M098_VAUGHT.md. A later revision of the infinitary formalization is not a resolution of this ID.",
+    "formalization_scope_url": "https://github.com/cameronfreer/vaught-conjecture-counterexample/blob/e9f465e1a6b328788d9bf4691f7887a5f535b41d/README.md",
+    "formalization_commit": "e9f465e1a6b328788d9bf4691f7887a5f535b41d",
+    "non_resolving_urls": [
+      "https://arxiv.org/abs/2610.15217",
+      "https://github.com/cameronfreer/vaught-conjecture-counterexample",
+      "https://github.com/cameronfreer/vaught-conjecture-palomar"
+    ],
+    "first_order_status": {
+      "source_url": "https://arxiv.org/abs/2508.06854",
+      "source_title": "The number of countable models of first-order theories",
+      "authors": "Anand Pillay and Predrag Tanović",
+      "submitted": "2025-08-09",
+      "checked_on": "2026-10-31",
+      "note": "The text read on this date still calls the first-order conjecture widely open and does not discuss arXiv:2610.15217."
+    }
   },
   "formal_statement": null,
   "external_claims": [],
   "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
     {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",
@@ -55,9 +86,19 @@
       "url": "https://svyable.github.io/100/library/ranked/"
     },
     {
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
+    },
+    {
       "title": "2026 claimed-resolution triage — issue #3",
       "source": "research/CLAIM_REVIEWS_2026.md",
       "url": "https://svyable.github.io/100/library/claim-reviews-2026/"
+    },
+    {
+      "title": "M098 — first-order Vaught conjecture",
+      "source": "research/M098_VAUGHT.md",
+      "url": "https://svyable.github.io/100/library/m098-vaught/"
     },
     {
       "title": "Foundational sources and 2026 claim watch",

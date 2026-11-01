@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M074 — a self-contained regularity reduction at (n=18, r=6) · 100</title>
+<meta name="description" content="Date: 2026-10-31. Status: proved structural reduction plus a reproducible CNF; not an UNSAT result and not a new resolution of Caccetta–Häggkvist. Mathematical novelty is not claimed. This dossier supplements M074_CH.md, M074_PRIOR_ART.md a">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m074-regularity/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M074 — a self-contained regularity reduction at (n=18, r=6) · 100">
+<meta property="og:description" content="Date: 2026-10-31. Status: proved structural reduction plus a reproducible CNF; not an UNSAT result and not a new resolution of Caccetta–Häggkvist. Mathematical novelty is not claimed. This dossier supplements M074_CH.md, M074_PRIOR_ART.md a">
+<meta property="og:url" content="https://svyable.github.io/100/library/m074-regularity/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../next/">Next 100</a><a href="../../atlas/">Atlas</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M074 — a self-contained regularity reduction at (n=18, r=6)</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#hypotheses-and-exact-scope">Hypotheses and exact scope</a></li><li class="toc-l2"><a href="#reproducible-successor-to-the-compact-cnf">Reproducible successor to the compact CNF</a></li><li class="toc-l2"><a href="#prior-art-and-acceptance-gate">Prior-art and acceptance gate</a></li><li class="toc-l2"><a href="#second-structural-corollary-two-rooted-pivots-2026-10-31">Second structural corollary: two rooted pivots (2026-10-31)</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M074/" title="Caccetta–Häggkvist conjecture">M074</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M074_REGULARITY.md" rel="noopener noreferrer">research/M074_REGULARITY.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M074 — a self-contained regularity reduction at (n=18, r=6)</h1>
+<p><strong>Date:</strong> 2026-10-31. <strong>Status:</strong> proved structural reduction plus a reproducible CNF; <strong>not</strong> an UNSAT result and <strong>not</strong> a new resolution of Caccetta–Häggkvist. Mathematical novelty is <strong>not</strong> claimed. This dossier supplements <a href="../../library/m074-ch/">M074_CH.md</a>, <a href="../../library/m074-prior-art/">M074_PRIOR_ART.md</a> and the independent compact encoding.</p>
+<blockquote><p><strong>Subsequent result (2026-10-31):</strong> <a href="../../library/m074-elementary-18/">M074_ELEMENTARY_18.md</a> closes the finite (18,6) directed-triangle case by an elementary saturated-pivot contradiction. The CNFs and SAT gates in this earlier dossier remain reproducible independent audits, not the only route to a finite proof. Neither the full conjecture nor the fixed-r=6 case at arbitrary orders has been proved here; no novelty is asserted.</p>
+</blockquote>
+<h2 id="hypotheses-and-exact-scope">Hypotheses and exact scope<a class="anchor" href="#hypotheses-and-exact-scope" aria-label="Link to this section">#</a></h2>
+<p>All digraphs are loopless. In a counterexample to CH at <code>(18,6)</code> there is no directed cycle of length 2 or 3. Therefore it is an <strong>oriented</strong> digraph with no directed triangles. We may delete excess outgoing arcs independently for each vertex, leaving exact outdegree 6; this cannot create a directed cycle.</p>
+<p><strong>Lemma (six-vertex obstruction).</strong> Every oriented digraph on six vertices with minimum outdegree at least two contains a directed triangle.</p>
+<p><strong>Proof.</strong> Suppose there is no triangle. Fix any vertex <code>v</code>. Put <code>a=d⁺(v)≥2</code>, <code>b=d⁻(v)</code> and partition the other five vertices into its <code>a</code> outneighbors <code>A</code>, its <code>b</code> inneighbors <code>B</code>, and <code>C</code>, with <code>|C|=5−a−b</code>. No vertex of <code>A</code> can send an arc to <code>v</code> (no digons) or to <code>B</code> (else <code>v→A→B→v</code> is a directed triangle). Every vertex in <code>A</code> has at least two outgoing arcs, so</p>
+<pre><code>2a ≤ e(A,A) + e(A,C)
+   ≤ a(a−1)/2 + a(5−a−b).</code></pre>
+<p>The first upper bound uses absence of digons, the second counts all possible arcs from <code>A</code> to <code>C</code>. Dividing by <code>a</code> and rearranging gives <code>a+2b≤5</code>; since <code>a≥2</code>, we obtain <code>b≤1</code>. This holds for every vertex, so the total indegree is at most 6, whereas the total outdegree is at least 12. Both sums must equal the total number of arcs. Contradiction. ∎</p>
+<p><strong>Theorem (regularity at 18).</strong> Every oriented, directed-triangle-free digraph on 18 vertices with outdegree exactly six at every vertex has indegree exactly six at every vertex.</p>
+<p><strong>Proof.</strong> Take any vertex <code>v</code>, let <code>A=N⁺(v)</code> have size six, let <code>B=N⁻(v)</code> have size <code>b</code>, and let <code>C</code> be the remaining <code>11−b</code> vertices. There are no arcs from <code>A</code> to <code>B</code>, nor from <code>A</code> to <code>v</code>, by the same two-cycle/triangle exclusions. If <code>b≥7</code> then <code>|C|≤4</code>. Every vertex in <code>A</code> has six outgoing arcs, of which at most four can reach <code>C</code>, so the oriented subgraph induced by <code>A</code> has minimum outdegree at least two. This contradicts the six-vertex lemma. Therefore every indegree is at most six. The total number of arcs is <code>18×6=108</code>, so the average indegree is six. Every indegree must equal six. ∎</p>
+<p><strong>Corollary (safe root fixing).</strong> In a hypothetical counterexample reduced to the above regular graph, relabel any root as vertex 0, its six outneighbors as 1–6, its six inneighbors as 7–12, and its five nonneighbors as 13–17. All three sets are disjoint because the graph is oriented. This loses no unlabeled candidate. The root label-fixing removes <code>C(17,6)×C(11,6)=5,717,712</code> equivalent choices of the two neighborhood sets for vertex 0 (not a claim about the number of graph isomorphism classes). Other vertices remain unrestricted except for their regularity and triangle-free constraints.</p>
+<h2 id="reproducible-successor-to-the-compact-cnf">Reproducible successor to the compact CNF<a class="anchor" href="#reproducible-successor-to-the-compact-cnf" aria-label="Link to this section">#</a></h2>
+<p>Run from the repository root:</p>
+<pre><code class="lang-sh">python3 scripts/ch_regularity.py --output /tmp/ch18-regular.cnf
+python3 -m unittest discover -s tests -p &#x27;test_ch_regularity.py&#x27; -v
+sha256sum /tmp/ch18-regular.cnf</code></pre>
+<p>The new encoding <strong>reuses</strong> the original <code>CompactCNF(18,6)</code> without changing its existing frozen checksum. It adds the same four-clause prefix-threshold equivalence gates for each <strong>incoming</strong> row, requiring exactly six incoming arcs, plus the 34 root-unit constraints. In each direction, every arc assignment uniquely determines all threshold variables. Thus, after projecting the auxiliary variables, the new CNF represents exactly the fixed-root, oriented, triangle-free, 6-in/6-out-regular graphs. By the theorem and relabeling corollary, the new CNF is <strong>equisatisfiable</strong> with the original <code>(18,6)</code> counterexample search, but it is not assignment-by-assignment identical.</p>
+<div class="table-wrap"><table><thead><tr><th>Certificate property</th><th class="al-right">Value</th></tr></thead><tbody><tr><td>Arc variables</td><td class="al-right">306</td></tr><tr><td>Auxiliary prefix variables</td><td class="al-right">3,528</td></tr><tr><td>Total variables</td><td class="al-right">3,834</td></tr><tr><td>No-digon clauses</td><td class="al-right">153</td></tr><tr><td>No-triangle clauses</td><td class="al-right">1,632</td></tr><tr><td>Exact-outdegree clauses</td><td class="al-right">6,660</td></tr><tr><td>Exact-indegree clauses</td><td class="al-right">6,660</td></tr><tr><td>Root symmetry unit clauses</td><td class="al-right">34</td></tr><tr><td><strong>Total clauses</strong></td><td class="al-right"><strong>15,139</strong></td></tr><tr><td>File size</td><td class="al-right">233,697 bytes</td></tr><tr><td>SHA-256</td><td class="al-right"><code>16448ff34866b74e7b98ea38e599841363503de88590eca564ae29e2b9891d35</code></td></tr></tbody></table></div>
+<p>This has <strong>more</strong> clauses than the 8,445-clause exact-outdegree CNF; the practical solver advantage, if any, is <strong>unmeasured</strong>. The root symmetry and regularity constraints could substantially improve propagation, but that is a testable conjecture, not a performance claim. Negative tests separately check incoming-cardinality semantics and canonical relabeling of a 6-regular circulant graph (which does <em>not</em> itself qualify as a triangle-free counterexample).</p>
+<h2 id="prior-art-and-acceptance-gate">Prior-art and acceptance gate<a class="anchor" href="#prior-art-and-acceptance-gate" aria-label="Link to this section">#</a></h2>
+<ul><li><a href="https://github.com/wustep/maths/blob/main/problems/caccetta-haggkvist-k3/ATTACK.md" rel="noopener noreferrer">wustep/maths, directed-triangle attack</a> reports six in-degree branch DRAT refutations for <code>n=18, d=6</code>, but its <a href="https://github.com/wustep/maths/blob/main/problems/caccetta-haggkvist-k3/compute/README.md" rel="noopener noreferrer">compute README</a> says the cube DRAT files are <strong>not in the Git tree</strong>. We have <strong>not</strong> obtained and independently replayed those traces. Its claimed <code>(18,6)</code> result, if independently accepted, supersedes a fresh finite novelty claim.</li><li>The separate <a href="https://github.com/joshp123/solve-a-maths-problem-dont-care-which-make-no-mistakes" rel="noopener noreferrer">joshp123 fixed-outdegree-six manuscript</a> claims the <em>entire</em> <code>r=6</code> case, with a published 438 MB proof corpus. Its status remains an unpeer-reviewed external claim, not an independently accepted theorem here.</li></ul>
+<p><strong>Next proof gate:</strong> obtain a proof-logged UNSAT trace for the <em>exact hash</em> of the new CNF and replay it with an independent checker; alternatively retrieve the external trace and independently reconstruct/check its CNF, symmetry assumptions, and partition coverage. No solver has been run on the new CNF here. A positive assignment needs independent graph-level verification. Even a verified <code>(18,6)</code> UNSAT theorem does not prove CH for all <code>n,r</code>, and the <code>Solved</code> ledger must remain unchanged.</p>
+<h2 id="second-structural-corollary-two-rooted-pivots-2026-10-31">Second structural corollary: two rooted pivots (2026-10-31)<a class="anchor" href="#second-structural-corollary-two-rooted-pivots-2026-10-31" aria-label="Link to this section">#</a></h2>
+<p>Assume a hypothetical (18,6) counterexample has already been thinned to a triangle-free oriented graph with all in- and outdegrees equal to six. Pin a root 0, its outneighbors A={1,...,6}, its inneighbors B={7,...,12} and its five nonneighbors C={13,...,17} as above.</p>
+<p><strong>Outgoing pivot.</strong> Each vertex in A has six outgoing arcs, none to the root or B, because of digon and triangle exclusion. At most five arcs can target C, so the induced oriented graph on the six vertices of A has minimum outdegree at least one. It cannot have minimum outdegree at least two, by the six-vertex lemma. Consequently some a in A has exactly one A-outneighbor and sends arcs to all five of C. Relabel within A: a=1 and its unique A-outneighbor is 2. The ten resulting units assert 1-&gt;2, forbid 1-&gt;3,4,5,6, and require 1-&gt;c for all c in C.</p>
+<p><strong>Incoming pivot.</strong> Each vertex in B has six incoming arcs, none from the root or A. Hence the six-vertex graph induced on B has minimum indegree at least one. Applying the six-vertex lemma after reversing all arcs shows that some b in B has exactly one B-predecessor and all five vertices of C as predecessors. Relabel within B: b=7 with its unique B-predecessor 8. The ten units assert 8-&gt;7, forbid 9,10,11,12-&gt;7, and require c-&gt;7 for all c in C.</p>
+<p>Since 1-&gt;c-&gt;7 for every c in C, triangle-freeness further forces the single unit forbidding 7-&gt;1. The root labeling and the two permutations within its disjoint neighbor blocks are independent; these 21 additional units lose no unlabeled candidate. They are not assumptions about an unverified solver outcome.</p>
+<p>The deterministic pivot encoder is scripts/ch_pivot.py. Run:</p>
+<p>python3 scripts/ch_pivot.py --output /tmp/ch18-pivot.cnf python3 -m unittest discover -s tests -p &#x27;test_ch_pivot.py&#x27; -v</p>
+<p>The full pivot CNF contains 3,834 variables (306 arcs, 3,528 auxiliary), 15,160 clauses (15,139 regularity clauses plus 21 pivot units), and 233,876 bytes. Its frozen SHA-256 is:</p>
+<p>18f4a672b3294b59202f4656641d361e8e2ca6b9fc63af7a823ee85108825fff</p>
+<p><strong>Evidence boundary:</strong> This is a mathematical reduction and tested CNF identity, <strong>not</strong> an independently checked SAT/UNSAT certificate or a resolution of the finite (18,6) case. Independent proof-trace verification and prior-art scope review remain necessary before promotion.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-10-31 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

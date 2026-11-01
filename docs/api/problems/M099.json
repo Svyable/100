@@ -14,9 +14,20 @@
   "source_url": null,
   "rank": 31,
   "score": 80,
-  "execution_rank": 31,
+  "execution_rank": 32,
   "execution_score": 80,
   "readiness": 0,
+  "dispatch_rank": 37,
+  "dispatch_score": 80,
+  "action": "specify_shape",
+  "action_label": "Fill the shared attack shape",
+  "action_bonus": 0,
+  "method_id": "exponential_fields",
+  "method_title": "Exponential-algebraic certificates",
+  "dispatch_next": "Shape exponential_fields (2 problems, one write-up): Treat Schanuel and the real exponential field as one shape: one explicit tuple or one explicit exponential sentence, certified. Full shape, certificate and falsifier are in APPROACH.md.",
+  "dispatch_why": "No campaign yet. Fill one restricted statement inside the shared shape.",
+  "campaign_stage": null,
+  "milestone_count": 0,
   "url": "https://svyable.github.io/100/problems/M099/",
   "field_url": "https://svyable.github.io/100/fields/mathematical-physics-finite-structures/",
   "readiness_breakdown": [],
@@ -29,6 +40,11 @@
   "formal_statement": null,
   "external_claims": [],
   "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
     {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",

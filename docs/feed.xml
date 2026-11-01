@@ -7,11 +7,18 @@
 <updated>2026-10-31T00:00:00Z</updated>
 <author><name>Svyable</name></author>
 <entry>
-<title>Research program updated (18 campaigns)</title>
+<title>Research program updated (21 campaigns)</title>
 <link href="https://svyable.github.io/100/campaigns/"/>
 <id>tag:svyable.github.io,2026:100/program-2026-10-31</id>
 <updated>2026-10-31T00:00:00Z</updated>
-<summary>18 active campaigns; 15 exact probes on 11 engines.</summary>
+<summary>21 active campaigns; 18 exact probes on 13 engines.</summary>
+</entry>
+<entry>
+<title>Milestone: The first two non-trivial zeta zeros are simple and on the critical line</title>
+<link href="https://svyable.github.io/100/ledger/#B-ZETA-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-ZETA-001</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Argument-principle count N(T) matched to Hardy Z sign changes on (14, 15) and (21, 22). The checker repeats the count with a different Euler-Maclaurin and Stirling truncation. The deep run reaches N(36) = 5. Scope: N(23) = 2, a classical height; not a proof of the Riemann hypothesis</summary>
 </entry>
 <entry>
 <title>Milestone: Strassen rank-7 &lt;2,2,2&gt; and rank-49 &lt;4,4,4&gt; decompositions checked exactly</title>
@@ -77,11 +84,53 @@
 <summary>PG(2,q) incidence axioms verified combinatorially; Bruck-Ryser exclusions recomputed by brute-force sums of two squares; deep run to q = 27 and orders &lt;= 200. Scope: Known constructions and exclusions; order 12 remains open</summary>
 </entry>
 <entry>
+<title>Milestone: Posets of balance exactly 1/3 on at most 6 elements are width 2</title>
+<link href="https://svyable.github.io/100/ledger/#B-MINE-079"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-MINE-079</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Eleven posets attain best balance 1/3. Their width-height types are 2x2, 2x3, 2x4 and 2x5. Balances are recounted by removing minimal elements. Scope: Inside the published verification through 11 elements, and inside Linial&#x27;s width-2 theorem; not a new case</summary>
+</entry>
+<entry>
+<title>Milestone: Deck-certified degree and triangle separation through 6 vertices</title>
+<link href="https://svyable.github.io/100/ledger/#B-MINE-078"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-MINE-078</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Degree sequence separates through 4 vertices. Degree sequence plus triangle count separates through 5 and leaves 20 excess graphs at 6. Both invariants are recomputed from cards. Scope: Census already known to be reconstructible far beyond 6 vertices; this only ranks coarse invariants</summary>
+</entry>
+<entry>
+<title>Milestone: Union-closed families on at most 4 elements, up to relabelling</title>
+<link href="https://svyable.github.io/100/ledger/#B-MINE-075"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-MINE-075</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>4,958 nontrivial union-closed families on 4 elements form 366 orbits. Minimum abundance 1/2. A second canonisation, by sorted subset tuples, reproduces the orbit counts. Scope: Exhaustive range already checked without symmetry; the orbit count is not a general proof</summary>
+</entry>
+<entry>
+<title>Milestone: Erdos-Straus residues for primes 1 mod 24 through 8,000</title>
+<link href="https://svyable.github.io/100/ledger/#B-MINE-019"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-MINE-019</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>All 117 such primes have a checked solution whose residue 4x-n lies in {3, 7, 11, 15, 19, 23}. The equation is rechecked without calling the search. Scope: Explicit solutions in a finite range; not an identity and not a proof</summary>
+</entry>
+<entry>
+<title>Milestone: Record least Goldbach primes through 20,000</title>
+<link href="https://svyable.github.io/100/ledger/#B-MINE-006"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-MINE-006</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Twelve running-maximum least primes, the largest 173 at n = 7426. An independent odd-only sieve recomputes the same record list. Scope: Finite table inside the published 4*10^18 verification; not a new bound</summary>
+</entry>
+<entry>
 <title>Milestone: Maximum arcs (3-dimensional MDS codes) in PG(2,q) for q = 2, 3, 4, 5, 7</title>
 <link href="https://svyable.github.io/100/ledger/#B-MDS-001"/>
 <id>tag:svyable.github.io,2026:100/milestone-B-MDS-001</id>
 <updated>2026-10-31T00:00:00Z</updated>
 <summary>Maximum arc sizes 4, 4, 6, 6, 8 with explicit witnesses and exhaustive exclusion of larger arcs; arcs through a frame recount q-2 conics for odd q. Deep run adds q = 8, 9. Scope: Known (Segre/Bose); not new</summary>
+</entry>
+<entry>
+<title>Milestone: The first two non-trivial zeros of L(s, chi_4) are simple and on the critical line</title>
+<link href="https://svyable.github.io/100/ledger/#B-LCHI4-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-LCHI4-001</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>Argument count for L(s, chi_4) matched to sign changes of the real form on (6, 7) and (10, 11), replayed at a second truncation. The deep run reaches N(17) = 4. Scope: One Dirichlet character, N(11) = 2; not the generalized Riemann hypothesis</summary>
 </entry>
 <entry>
 <title>Milestone: Plane Jacobian conjecture verified on all 59,049 integer maps of degree &lt;= 2 with coefficients in {-1,0,1}</title>
@@ -138,6 +187,13 @@
 <id>tag:svyable.github.io,2026:100/milestone-B-CH-001</id>
 <updated>2026-10-31T00:00:00Z</updated>
 <summary>Exhaustive n=5 census: 2^20=1,048,576 labeled graphs partition into 9,608 isomorphism orbits (matching Burnside and OEIS A000273); two independent cycle detectors agree. Known result only. Scope: Every labeled loopless directed graph on 2–5 vertices (known finite cases only), checked modulo relabeling</summary>
+</entry>
+<entry>
+<title>Milestone: Alperin weight counts match p-regular class counts on named groups through A5</title>
+<link href="https://svyable.github.io/100/ledger/#B-ALPERIN-001"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-ALPERIN-001</id>
+<updated>2026-10-31T00:00:00Z</updated>
+<summary>For each listed group and each prime dividing its order, the number of radical-subgroup defect-zero weights equals the number of p-regular conjugacy classes. Smoke covers nine groups through D10; deep adds C5, C6, D12, S4 and A5. The checker rebuilds every count independently. Scope: Finite named catalog only; every case sits inside the published order-100 verification</summary>
 </entry>
 <entry>
 <title>Claim triage: The Falconer distance conjecture in all dimensions (M100)</title>

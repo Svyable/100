@@ -14,9 +14,20 @@
   "source_url": null,
   "rank": 67,
   "score": 72,
-  "execution_rank": 67,
+  "execution_rank": 68,
   "execution_score": 72,
   "readiness": 0,
+  "dispatch_rank": 70,
+  "dispatch_score": 72,
+  "action": "specify_shape",
+  "action_label": "Fill the shared attack shape",
+  "action_bonus": 0,
+  "method_id": "sieve_infinitude",
+  "method_title": "Explicit sieve gaps",
+  "dispatch_next": "Shape sieve_infinitude (5 problems, one write-up): Name one modulus, admissible tuple or polynomial that a cited sieve theorem does not already settle, and write the missing estimate. Full shape, certificate and falsifier are in APPROACH.md.",
+  "dispatch_why": "No campaign yet. Fill one restricted statement inside the shared shape.",
+  "campaign_stage": null,
+  "milestone_count": 0,
   "url": "https://svyable.github.io/100/problems/M018/",
   "field_url": "https://svyable.github.io/100/fields/arithmetic/",
   "readiness_breakdown": [],
@@ -30,6 +41,11 @@
   "external_claims": [],
   "mentioned_in": [
     {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",
       "url": "https://svyable.github.io/100/library/attack-queue/"
@@ -38,6 +54,11 @@
       "title": "Ranked candidate portfolio",
       "source": "RANKED.md",
       "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Top 100 portfolio selection and admission",
+      "source": "docs/PORTFOLIO_SELECTION.md",
+      "url": "https://svyable.github.io/100/library/portfolio-selection/"
     }
   ]
 }

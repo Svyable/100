@@ -14,9 +14,20 @@
   "source_url": null,
   "rank": 74,
   "score": 72,
-  "execution_rank": 74,
+  "execution_rank": 75,
   "execution_score": 72,
   "readiness": 0,
+  "dispatch_rank": 77,
+  "dispatch_score": 72,
+  "action": "specify_shape",
+  "action_label": "Fill the shared attack shape",
+  "action_bonus": 0,
+  "method_id": "diophantine_geometry",
+  "method_title": "Height-bounded rational points",
+  "dispatch_next": "Shape diophantine_geometry (4 problems, one write-up): Fix dimension and the geometric hypothesis, then certify a rational-point or section search up to an explicit height on one variety. Full shape, certificate and falsifier are in APPROACH.md.",
+  "dispatch_why": "No campaign yet. Fill one restricted statement inside the shared shape.",
+  "campaign_stage": null,
+  "milestone_count": 0,
   "url": "https://svyable.github.io/100/problems/M026/",
   "field_url": "https://svyable.github.io/100/fields/algebraic-geometry/",
   "readiness_breakdown": [],
@@ -29,6 +40,11 @@
   "formal_statement": null,
   "external_claims": [],
   "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
     {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",

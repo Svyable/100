@@ -31,7 +31,7 @@
     <span class="brand-mark">100<span class="brand-dot">.</span></span>
     <span class="brand-caption">SVYABLE<br>RESEARCH</span>
   </a>
-  <nav class="main-nav" aria-label="Primary navigation"><a href="../../" aria-current="page">The 100</a><a href="../../atlas/">Atlas</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../ledger/">Ledger</a><a href="../../library/">Library</a></nav>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../" aria-current="page">The 100</a><a href="../../next/">Next 100</a><a href="../../atlas/">Atlas</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/">Library</a></nav>
   <div class="header-tools">
     <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
     <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
@@ -43,7 +43,7 @@
 
 <article class="problem-page">
 <header class="problem-hero" id="question">
-  <p class="eyebrow"><span class="eyebrow-line"></span> M096 · ATTACK #13 · EDITORIAL #17</p>
+  <p class="eyebrow"><span class="eyebrow-line"></span> M096 · DISPATCH #13 · EXECUTION #13 · EDITORIAL #17</p>
   <h1>Projective plane order 12</h1>
   <p class="problem-field"><a href="../../fields/mathematical-physics-finite-structures/">Mathematical physics / finite structures</a></p>
   <div class="chips"><span class="status-pill status-needs_review" title="Plausibly open; precise statement and status still need a literature audit.">Needs review</span><span class="chip chip-modality">Finite parameter</span><span class="chip chip-good">Exact verifier in the lab</span><span class="chip chip-good">Lean statement</span><span class="chip chip-campaign">Campaign: Benchmark reproduced</span></div>
@@ -65,12 +65,12 @@
 <pre class="lean"><code><span class="tk-c">/-- The registry statement. -/</span>
 <span class="tk-k">def</span> Statement : <span class="tk-k">Prop</span> <span class="tk-o">:=</span> <span class="tk-o">¬</span> <span class="tk-o">∃</span> I : <span class="tk-k">Nat</span> <span class="tk-o">→</span> <span class="tk-k">Nat</span> <span class="tk-o">→</span> <span class="tk-k">Bool</span>, IsPlane 12 I</code></pre>
 <dl class="kv compact">
-  <dt>Declaration</dt><dd><code>Hundred.ProjectivePlane.Statement</code> in <a href="https://github.com/Svyable/100/blob/main/lean/Hundred/ProjectivePlane.lean" rel="noopener noreferrer">lean/Hundred/ProjectivePlane.lean <span aria-hidden="true">↗</span></a></dd>
+  <dt>Declaration</dt><dd><code>Hundred.Statements.ProjectivePlane.Statement</code> in <a href="https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/ProjectivePlane.lean" rel="noopener noreferrer">lean/Hundred/Statements/ProjectivePlane.lean <span aria-hidden="true">↗</span></a></dd>
   <dt>Not encoded</dt><dd>The general prime-power conjecture</dd>
   <dt>Fidelity</dt><dd><span class="chip">author checked</span> Encoding written and checked against the registry statement by its author; fidelity examples compile.</dd>
-  <dt>Kernel-checked</dt><dd><ul class="plain"><li><code>Hundred.ProjectivePlane.exists_order_3</code> — The axioms are satisfiable: planes of orders 2 (Fano) and 3 exist (exists_order_2, exists_order_3). Mirrors lab probe <a href="../../lab/#probe-projective_planes"><code>projective_planes</code></a>.</li></ul></dd>
+  <dt>Kernel-checked</dt><dd><ul class="plain"><li><code>Hundred.Statements.ProjectivePlane.exists_order_3</code> — The axioms are satisfiable: planes of orders 2 (Fano) and 3 exist (exists_order_2, exists_order_3). Mirrors lab probe <a href="../../lab/#probe-projective_planes"><code>projective_planes</code></a>.</li></ul></dd>
 </dl>
-<details class="table-view"><summary>Full Lean module (48 lines)</summary><pre class="lean"><code><span class="tk-k">import</span> Hundred.Basic
+<details class="table-view"><summary>Full Lean module (48 lines)</summary><pre class="lean"><code><span class="tk-k">import</span> Hundred.Statements.Basic
 
 <span class="tk-c">/-!
 # M096 — Is there a projective plane of order 12?
@@ -88,8 +88,8 @@ equivalent to the usual definition (they force the non-degeneracy axiom).
 was excluded by Lam, Thiel &amp; Swiercz (1989); order 12 is the smallest open case.
 -/</span>
 
-<span class="tk-k">namespace</span> Hundred.ProjectivePlane
-<span class="tk-k">open</span> Hundred
+<span class="tk-k">namespace</span> Hundred.Statements.ProjectivePlane
+<span class="tk-k">open</span> Hundred.Statements
 
 <span class="tk-k">abbrev</span> IsPlane (q : <span class="tk-k">Nat</span>) (I : <span class="tk-k">Nat</span> <span class="tk-o">→</span> <span class="tk-k">Nat</span> <span class="tk-o">→</span> <span class="tk-k">Bool</span>) : <span class="tk-k">Prop</span> <span class="tk-o">:=</span>
   (<span class="tk-o">∀</span> l, l &lt; q * q + q + 1 <span class="tk-o">→</span> countBelow (q * q + q + 1) (<span class="tk-k">fun</span> p =&gt; I p l) = q + 1) <span class="tk-o">∧</span>
@@ -117,17 +117,21 @@ was excluded by Lam, Thiel &amp; Swiercz (1989); order 12 is the smallest open c
 <span class="tk-c">/-! Fidelity: the empty incidence relation is not a plane. -/</span>
 <span class="tk-k">example</span> : <span class="tk-o">¬</span> IsPlane 2 (<span class="tk-k">fun</span> _ _ =&gt; <span class="tk-k">false</span>) <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span>
 
-<span class="tk-k">end</span> Hundred.ProjectivePlane
+<span class="tk-k">end</span> Hundred.Statements.ProjectivePlane
 </code></pre></details>
 <p class="muted">A proof or counterexample counts only if it establishes exactly this proposition (or a reviewed equivalent). Kernel-checked finite results are fidelity tests inside known mathematics. <a href="../../formal/">How formal statements work →</a></p>
 </section>
 <section class="dossier-block" id="priority"><h2>Priority, decomposed</h2>
   <div class="score-hero">
-    <div><strong>92</strong><span>Execution index</span></div>
-    <div class="score-eq"><span>85</span><small>editorial</small><b>+</b><span>7</span><small>readiness</small></div>
-    <div><strong>#13</strong><span>Attack rank of 100</span></div>
+    <div><strong>#13</strong><span>Dispatch rank · score 104</span></div>
+    <div class="score-eq"><span>85</span><small>editorial</small><b>+</b><span>7</span><small>readiness</small><b>+</b><span>12</span><small>action</small></div>
+    <div><strong>#13</strong><span>Execution rank · index 92</span></div>
     <div><strong>#17</strong><span>Editorial rank of 100</span></div>
   </div>
+  <div class="next-action"><span class="detail-label">NEXT ACTION · REPLAY A PUBLISHED CERTIFICATE</span>
+    <p class="serif">Encode order-12 planes with a prescribed collineation as SAT with DRAT proof output, starting from cases the literature already excludes.</p>
+    <p class="muted">Why: The next experiment encodes literature-excluded collineation cases with a proof trace. Unconstrained search of order 12 is the blocker, not the plan.</p>
+    <p class="muted">Shared attack shape: <a href="../../campaigns/#shape-finite_geometry">Replay a published geometric object</a> — A published finite object sits past what this repository checks. Import that object onto an independent checker. A longer search inside a settled range is not this action.</p></div>
   <div class="two-col">
     <div><h3>Editorial score 85/100</h3><div class="detail-metrics">
       <div class="detail-metric"><span>Impact <small>×6</small></span><div class="meter" role="img" aria-label="Impact 4 of 5"><i style="width:80%"></i></div><b>4/5</b></div><div class="detail-metric"><span>Attackability <small>×6</small></span><div class="meter" role="img" aria-label="Attackability 4 of 5"><i style="width:80%"></i></div><b>4/5</b></div>
@@ -164,17 +168,17 @@ was excluded by Lam, Thiel &amp; Swiercz (1989); order 12 is the smallest open c
     <dt>Source intake</dt><dd>not yet recorded</dd>
     <dt>Computation</dt><dd>Finite parameter — Asks for one specific finite value or object; exhaustive search or a certificate can settle it.</dd>
   </dl>
-  <h3>Discussed in the library</h3><ul class="link-list"><li><a href="../../library/attack-queue/">Execution queue — evidence-aware research priorities</a></li><li><a href="../../library/lab/">Exact probe lab — computational reach of the 100</a></li><li><a href="../../library/ranked/">Ranked candidate portfolio</a></li><li><a href="../../library/lab-campaigns/">Lab campaigns: twelve problems under exact computation</a></li><li><a href="../../library/research-engine/">Proof-driven research engine</a></li><li><a href="../../library/sources/">Foundational sources and 2026 claim watch</a></li></ul>
+  <h3>Discussed in the library</h3><ul class="link-list"><li><a href="../../library/approach/">Approach — leverage dispatch</a></li><li><a href="../../library/attack-queue/">Execution queue — evidence-aware research priorities</a></li><li><a href="../../library/lab/">Exact probe lab — computational reach of the 100</a></li><li><a href="../../library/lean/">Lean proof pipeline</a></li><li><a href="../../library/ranked/">Ranked candidate portfolio</a></li><li><a href="../../library/roadmap/">Roadmap — 100 mathematical grand challenges</a></li><li><a href="../../library/lab-campaigns/">Lab campaigns: problems under exact computation</a></li><li><a href="../../library/portfolio-selection/">Top 100 portfolio selection and admission</a></li><li><a href="../../library/research-engine/">Proof-driven research engine</a></li><li><a href="../../library/sources/">Foundational sources and 2026 claim watch</a></li></ul>
   <h3>Cite this page</h3>
   <div class="cite"><code id="cite-M096">Svyable. “Projective plane order 12 (M096).” 100 — A living portfolio of mathematical grand challenges, data as of 2026-10-31. https://svyable.github.io/100/problems/M096/</code><button class="plain-button" type="button" data-copy="#cite-M096">Copy</button></div>
 </section>
 <section class="dossier-block" id="related"><h2>Nearby in the portfolio</h2>
-  <div class="two-col"><div><h3>Also in <a href="../../fields/mathematical-physics-finite-structures/">Mathematical physics / finite structures</a></h3><ul class="link-list"><li><a href="../../problems/M092/"><span class="mono">M092</span> Zauner SIC conjecture</a></li><li><a href="../../problems/M093/"><span class="mono">M093</span> Linear MDS code main conjecture</a></li><li><a href="../../problems/M094/"><span class="mono">M094</span> Hadamard matrix conjecture</a></li><li><a href="../../problems/M097/"><span class="mono">M097</span> Metric TSP four-thirds conjecture</a></li><li><a href="../../problems/M095/"><span class="mono">M095</span> Exact Ramsey number R(5,5)</a></li><li><a href="../../problems/M091/"><span class="mono">M091</span> Yang–Mills existence and mass gap</a></li></ul></div>
+  <div class="two-col"><div><h3>Also in <a href="../../fields/mathematical-physics-finite-structures/">Mathematical physics / finite structures</a></h3><ul class="link-list"><li><a href="../../problems/M092/"><span class="mono">M092</span> Zauner SIC conjecture</a></li><li><a href="../../problems/M093/"><span class="mono">M093</span> Linear MDS code main conjecture</a></li><li><a href="../../problems/M094/"><span class="mono">M094</span> Hadamard matrix conjecture</a></li><li><a href="../../problems/M095/"><span class="mono">M095</span> Exact Ramsey number R(5,5)</a></li><li><a href="../../problems/M097/"><span class="mono">M097</span> Metric TSP four-thirds conjecture</a></li><li><a href="../../problems/M100/"><span class="mono">M100</span> Falconer distance-set conjecture</a></li></ul></div>
   <div><h3>Shares an exact engine with</h3><div class="chips"><a class="chip chip-link" href="../../problems/M080/" title="Rota basis conjecture">M080</a><a class="chip chip-link" href="../../problems/M093/" title="Linear MDS code main conjecture">M093</a><a class="chip chip-link" href="../../problems/M094/" title="Hadamard matrix conjecture">M094</a><a class="chip chip-link" href="../../problems/M095/" title="Exact Ramsey number R(5,5)">M095</a></div></div></div>
 </section>
 </div>
 </div>
-<nav class="pager" aria-label="Execution order"><a class="pager-prev" rel="prev" href="../../problems/M080/"><small>Previous · #12</small><span>Rota basis conjecture</span></a><a class="pager-next" rel="next" href="../../problems/M097/"><small>Next · #14</small><span>Metric TSP four-thirds conjecture</span></a></nav>
+<nav class="pager" aria-label="Dispatch order"><a class="pager-prev" rel="prev" href="../../problems/M079/"><small>Previous · dispatch #12</small><span>One-third–two-thirds conjecture</span></a><a class="pager-next" rel="next" href="../../problems/M084/"><small>Next · dispatch #14</small><span>Matrix multiplication exponent omega=2</span></a></nav>
 </article>
 </main>
 <footer class="site-footer">

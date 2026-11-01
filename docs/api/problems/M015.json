@@ -14,9 +14,20 @@
   "source_url": null,
   "rank": 64,
   "score": 72,
-  "execution_rank": 64,
+  "execution_rank": 65,
   "execution_score": 72,
   "readiness": 0,
+  "dispatch_rank": 67,
+  "dispatch_score": 72,
+  "action": "specify_shape",
+  "action_label": "Fill the shared attack shape",
+  "action_bonus": 0,
+  "method_id": "galois_representations",
+  "method_title": "One field, two computations",
+  "dispatch_next": "Shape galois_representations (6 problems, one write-up): Pick one explicit number field or elliptic curve and one finite invariant the conjecture predicts, and compute it two ways. Full shape, certificate and falsifier are in APPROACH.md.",
+  "dispatch_why": "No campaign yet. Fill one restricted statement inside the shared shape.",
+  "campaign_stage": null,
+  "milestone_count": 0,
   "url": "https://svyable.github.io/100/problems/M015/",
   "field_url": "https://svyable.github.io/100/fields/arithmetic/",
   "readiness_breakdown": [],
@@ -29,6 +40,11 @@
   "formal_statement": null,
   "external_claims": [],
   "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
     {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",

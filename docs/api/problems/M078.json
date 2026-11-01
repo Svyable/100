@@ -17,6 +17,17 @@
   "execution_rank": 4,
   "execution_score": 98,
   "readiness": 7,
+  "dispatch_rank": 11,
+  "dispatch_score": 104,
+  "action": "mine_structure",
+  "action_label": "Mine structure from certificates",
+  "action_bonus": 6,
+  "method_id": "extremal_certificates",
+  "method_title": "Replay the object, or mine the census",
+  "dispatch_next": "The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two.",
+  "dispatch_why": "The deck_invariants mine shows degree sequence plus triangle count still leaves collisions at 6 vertices. A larger census sits inside the published computational range.",
+  "campaign_stage": "benchmark_reproduced",
+  "milestone_count": 2,
   "url": "https://svyable.github.io/100/problems/M078/",
   "field_url": "https://svyable.github.io/100/fields/combinatorics/",
   "readiness_breakdown": [
@@ -48,7 +59,10 @@
     "method": "Deck-collision search over certified graph censuses",
     "hypothesis": "Every finite simple graph on at least 3 vertices is determined up to isomorphism by its vertex-deleted deck.",
     "first_proof_obligation": "Pick a graph family not yet known to be reconstructible and isolate a lemma that reconstructs a new invariant for it.",
-    "next_experiment": "Tabulate which deck invariants already separate every deck in the census, as a data-driven route to a reconstruction lemma for a named family.",
+    "next_experiment": "The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two.",
+    "additional_verifiers": [
+      "python3 scripts/mine.py --mine deck_invariants"
+    ],
     "falsification": "Two non-isomorphic graphs with identical decks, confirmed by independent canonical forms.",
     "blocker": "Computer verification already reaches at least 11 vertices; novelty has to come from a structural lemma, not from range.",
     "dossier": "research/LAB_CAMPAIGNS.md",
@@ -91,14 +105,25 @@
       "verifier": "python3 scripts/lab.py --probe reconstruction",
       "artifact": "scripts/probes/reconstruction.py",
       "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-MINE-078",
+      "problem_id": "M078",
+      "classification": "reproduced_known",
+      "title": "Deck-certified degree and triangle separation through 6 vertices",
+      "scope": "Census already known to be reconstructible far beyond 6 vertices; this only ranks coarse invariants",
+      "description": "Degree sequence separates through 4 vertices. Degree sequence plus triangle count separates through 5 and leaves 20 excess graphs at 6. Both invariants are recomputed from cards.",
+      "verifier": "python3 scripts/mine.py --mine deck_invariants",
+      "artifact": "scripts/mines/deck_invariants.py",
+      "verified_on": "2026-10-31"
     }
   ],
   "engine_roadmap": null,
   "claim_review_2026": null,
   "formal_statement": {
     "problem_id": "M078",
-    "module": "lean/Hundred/Reconstruction.lean",
-    "namespace": "Hundred.Reconstruction",
+    "module": "lean/Hundred/Statements/Reconstruction.lean",
+    "namespace": "Hundred.Statements.Reconstruction",
     "statement": "Statement",
     "encodes": "Simple graphs on n ≥ 3 vertices with a deck-matching bijection σ (G − v ≅ H − σv) are isomorphic.",
     "not_encoded": [
@@ -107,10 +132,15 @@
     ],
     "kernel_checked": [],
     "fidelity": "author_checked",
-    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Reconstruction.lean"
+    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/Reconstruction.lean"
   },
   "external_claims": [],
   "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
     {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",
@@ -122,12 +152,27 @@
       "url": "https://svyable.github.io/100/library/lab/"
     },
     {
+      "title": "Lean proof pipeline",
+      "source": "LEAN.md",
+      "url": "https://svyable.github.io/100/library/lean/"
+    },
+    {
+      "title": "Structure mines",
+      "source": "MINES.md",
+      "url": "https://svyable.github.io/100/library/mines/"
+    },
+    {
       "title": "Ranked candidate portfolio",
       "source": "RANKED.md",
       "url": "https://svyable.github.io/100/library/ranked/"
     },
     {
-      "title": "Lab campaigns: twelve problems under exact computation",
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
+    },
+    {
+      "title": "Lab campaigns: problems under exact computation",
       "source": "research/LAB_CAMPAIGNS.md",
       "url": "https://svyable.github.io/100/library/lab-campaigns/"
     },

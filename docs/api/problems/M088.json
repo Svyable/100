@@ -17,6 +17,17 @@
   "execution_rank": 9,
   "execution_score": 96,
   "readiness": 2,
+  "dispatch_rank": 9,
+  "dispatch_score": 106,
+  "action": "lock_restriction",
+  "action_label": "Lock a restricted class",
+  "action_bonus": 10,
+  "method_id": "algebraic_complexity",
+  "method_title": "One format, replayed exactly",
+  "dispatch_next": "Lock the field, the circuit shape, the degree and the oracle model in one paragraph inside the algebraic-complexity shape. Only then implement a falsifier. A checker with no declared class does not raise readiness.",
+  "dispatch_why": "The campaign blocker says no circuit class is locked. A checker written before the class is fixed does not raise readiness.",
+  "campaign_stage": "specified",
+  "milestone_count": 0,
   "url": "https://svyable.github.io/100/problems/M088/",
   "field_url": "https://svyable.github.io/100/fields/complexity/",
   "readiness_breakdown": [
@@ -61,6 +72,11 @@
   "formal_statement": null,
   "external_claims": [],
   "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
     {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",

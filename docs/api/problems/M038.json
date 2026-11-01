@@ -17,6 +17,17 @@
   "execution_rank": 98,
   "execution_score": 63,
   "readiness": 0,
+  "dispatch_rank": 82,
+  "dispatch_score": 71,
+  "action": "scope_audit",
+  "action_label": "Audit claim scope",
+  "action_bonus": 8,
+  "method_id": "geometric_topology",
+  "method_title": "Hypotheses before constructions",
+  "dispatch_next": "Read Engel's independent proof and its dependency on Alpöge's construction, verify smooth gluing and topological invariants, and solicit further specialist assessment.",
+  "dispatch_why": "A manuscript may already settle this entry. The next step is the review's own check, not a new lemma.",
+  "campaign_stage": null,
+  "milestone_count": 0,
   "url": "https://svyable.github.io/100/problems/M038/",
   "field_url": "https://svyable.github.io/100/fields/topology/",
   "readiness_breakdown": [],
@@ -44,6 +55,11 @@
   "external_claims": [],
   "mentioned_in": [
     {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",
       "url": "https://svyable.github.io/100/library/attack-queue/"
@@ -54,9 +70,19 @@
       "url": "https://svyable.github.io/100/library/ranked/"
     },
     {
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
+    },
+    {
       "title": "2026 claimed-resolution triage — issue #3",
       "source": "research/CLAIM_REVIEWS_2026.md",
       "url": "https://svyable.github.io/100/library/claim-reviews-2026/"
+    },
+    {
+      "title": "Top 100 portfolio selection and admission",
+      "source": "docs/PORTFOLIO_SELECTION.md",
+      "url": "https://svyable.github.io/100/library/portfolio-selection/"
     },
     {
       "title": "Foundational sources and 2026 claim watch",

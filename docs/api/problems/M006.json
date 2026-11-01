@@ -14,9 +14,20 @@
   "source_url": null,
   "rank": 55,
   "score": 72,
-  "execution_rank": 33,
+  "execution_rank": 35,
   "execution_score": 79,
   "readiness": 7,
+  "dispatch_rank": 24,
+  "dispatch_score": 85,
+  "action": "mine_structure",
+  "action_label": "Mine structure from certificates",
+  "action_bonus": 6,
+  "method_id": "effective_diophantine",
+  "method_title": "Explicit Diophantine certificates",
+  "dispatch_next": "The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification.",
+  "dispatch_why": "The goldbach_growth mine already lists the record least primes through 20,000. A longer verified range cannot compete with the published 4*10^18 check.",
+  "campaign_stage": "benchmark_reproduced",
+  "milestone_count": 2,
   "url": "https://svyable.github.io/100/problems/M006/",
   "field_url": "https://svyable.github.io/100/fields/number-theory/",
   "readiness_breakdown": [
@@ -48,7 +59,10 @@
     "method": "Verified-range certificates and least-partition statistics",
     "hypothesis": "Every even integer n >= 4 is a sum of two primes.",
     "first_proof_obligation": "State a restricted, checkable lemma (for example an explicit bound on the least Goldbach prime in a named residue class or range) that is not already implied by the 4*10^18 verification or by the ternary Goldbach theorem.",
-    "next_experiment": "Use the least-partition certificates to test conjectured growth bounds for the least prime p(n), then attempt a sieve-theoretic restricted statement with explicit constants.",
+    "next_experiment": "The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification.",
+    "additional_verifiers": [
+      "python3 scripts/mine.py --mine goldbach_growth"
+    ],
     "falsification": "An even n >= 4 with no prime p <= n/2 such that n - p is prime, confirmed by an independent primality oracle.",
     "blocker": "Range extension cannot compete with the published 4*10^18 verification; real progress needs a new restricted theorem.",
     "dossier": "research/LAB_CAMPAIGNS.md",
@@ -91,14 +105,25 @@
       "verifier": "python3 scripts/lab.py --probe goldbach",
       "artifact": "scripts/probes/goldbach.py",
       "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-MINE-006",
+      "problem_id": "M006",
+      "classification": "reproduced_known",
+      "title": "Record least Goldbach primes through 20,000",
+      "scope": "Finite table inside the published 4*10^18 verification; not a new bound",
+      "description": "Twelve running-maximum least primes, the largest 173 at n = 7426. An independent odd-only sieve recomputes the same record list.",
+      "verifier": "python3 scripts/mine.py --mine goldbach_growth",
+      "artifact": "scripts/mines/goldbach_growth.py",
+      "verified_on": "2026-10-31"
     }
   ],
   "engine_roadmap": null,
   "claim_review_2026": null,
   "formal_statement": {
     "problem_id": "M006",
-    "module": "lean/Hundred/Goldbach.lean",
-    "namespace": "Hundred.Goldbach",
+    "module": "lean/Hundred/Statements/Goldbach.lean",
+    "namespace": "Hundred.Statements.Goldbach",
     "statement": "Statement",
     "encodes": "Every even n ≥ 4 is p + (n − p) with both prime; primes by trial division.",
     "not_encoded": [
@@ -113,10 +138,15 @@
       }
     ],
     "fidelity": "author_checked",
-    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Goldbach.lean"
+    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/Goldbach.lean"
   },
   "external_claims": [],
   "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
     {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",
@@ -128,12 +158,27 @@
       "url": "https://svyable.github.io/100/library/lab/"
     },
     {
+      "title": "Lean proof pipeline",
+      "source": "LEAN.md",
+      "url": "https://svyable.github.io/100/library/lean/"
+    },
+    {
+      "title": "Structure mines",
+      "source": "MINES.md",
+      "url": "https://svyable.github.io/100/library/mines/"
+    },
+    {
       "title": "Ranked candidate portfolio",
       "source": "RANKED.md",
       "url": "https://svyable.github.io/100/library/ranked/"
     },
     {
-      "title": "Lab campaigns: twelve problems under exact computation",
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
+    },
+    {
+      "title": "Lab campaigns: problems under exact computation",
       "source": "research/LAB_CAMPAIGNS.md",
       "url": "https://svyable.github.io/100/library/lab-campaigns/"
     },

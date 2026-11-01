@@ -14,9 +14,20 @@
   "source_url": null,
   "rank": 84,
   "score": 69,
-  "execution_rank": 84,
+  "execution_rank": 85,
   "execution_score": 69,
   "readiness": 0,
+  "dispatch_rank": 39,
+  "dispatch_score": 77,
+  "action": "scope_audit",
+  "action_label": "Audit claim scope",
+  "action_bonus": 8,
+  "method_id": "harmonic_analysis",
+  "method_title": "One dimension, one endpoint",
+  "dispatch_next": "Check the all-dimensional local smoothing theorem, its Kakeya maximal corollary and exact hypotheses; distinguish 4D direct theorem from universal consequence.",
+  "dispatch_why": "A manuscript may already settle this entry. The next step is the review's own check, not a new lemma.",
+  "campaign_stage": null,
+  "milestone_count": 0,
   "url": "https://svyable.github.io/100/problems/M055/",
   "field_url": "https://svyable.github.io/100/fields/analysis/",
   "readiness_breakdown": [],
@@ -42,6 +53,11 @@
   "formal_statement": null,
   "external_claims": [],
   "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
     {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",

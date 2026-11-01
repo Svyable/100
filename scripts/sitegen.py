@@ -29,7 +29,9 @@ DOCS = ROOT / "docs"
 
 # Directories whose contents are fully owned by the generator (stale files fail --check).
 GENERATED_DIRS = ("problems", "fields", "atlas", "lab", "formal", "campaigns", "claims",
-                  "ledger", "library", "api", "data")
+                  "roadmap", "ledger", "library", "api")
+# docs/data/portfolio.json is generated here; docs/data/next.json belongs to scripts/next.py,
+# and docs/next/ is a hand-written page, so neither directory is swept for stale files.
 # Top-level generated files. Everything else in docs/ is hand-written.
 GENERATED_FILES = ("index.html", "404.html", "sitemap.xml", "robots.txt", "feed.xml")
 
@@ -77,11 +79,13 @@ SERIES_LABEL = {1: "Officially or specialist open", 2: "Claim under review", 3: 
 
 NAV = (
     ("index", "The 100", ""),
+    ("next", "Next 100", "next/"),
     ("atlas", "Atlas", "atlas/"),
     ("campaigns", "Campaigns", "campaigns/"),
     ("lab", "Lab", "lab/"),
     ("formal", "Formal", "formal/"),
     ("claims", "Claims", "claims/"),
+    ("roadmap", "Roadmap", "roadmap/"),
     ("ledger", "Ledger", "ledger/"),
     ("library", "Library", "library/"),
 )
@@ -160,8 +164,13 @@ def lean_decl_block(src, name):
 class Site:
     """All validated data plus cross-indexes, computed once."""
 
-    def __init__(self):
+    def __init__(self, portfolio):
         items, program, solved = load()
+        self.portfolio = portfolio
+        self.dispatch = {p["id"]: p for p in portfolio["problems"]}
+        self.approach = portfolio["approach"]
+        self.mines = portfolio["mines"]["mines"]
+        self.roadmap_doc = portfolio["roadmap"]
         self.items = items
         self.program = program
         self.solved = solved
@@ -169,7 +178,7 @@ class Site:
         baseline = sorted(items, key=lambda p: (-score(p), p["id"]))
         self.rank = {p["id"]: i for i, p in enumerate(baseline, 1)}
         self.by_id = {p["id"]: p for p in items}
-        self.ordered = sorted(items, key=lambda p: self.execution[p["id"]]["execution_rank"])
+        self.ordered = sorted(items, key=lambda p: self.dispatch[p["id"]]["dispatch_rank"])
         self.campaign = {c["problem_id"]: c for c in program["campaigns"] if c["problem_id"] in self.by_id}
         self.milestones = defaultdict(list)
         for m in program["milestones"]:
@@ -186,6 +195,7 @@ class Site:
         self.external = defaultdict(list)
         for x in json.loads((ROOT / "data" / "external_claims.json").read_text(encoding="utf-8")):
             self.external[x["problem_id"]].append(x)
+        self.lean_targets = json.loads((ROOT / "data" / "lean_targets.json").read_text(encoding="utf-8"))
         self.formal_doc = json.loads((ROOT / "data" / "formalization.json").read_text(encoding="utf-8"))
         self.formal = {e["problem_id"]: e for e in self.formal_doc["entries"] if e["problem_id"] in self.by_id}
         self.lean_src = {e["module"]: (ROOT / e["module"]).read_text(encoding="utf-8") for e in self.formal.values()}
@@ -203,8 +213,11 @@ class Site:
         self.updated = max(dates)
 
     def rec(self, pid):
-        p = self.by_id[pid]
-        return {**p, "rank": self.rank[pid], "score": score(p), **self.execution[pid]}
+        return dict(self.dispatch[pid])
+
+    def drank(self, pid):
+        """Dispatch rank: the default order everywhere (what to do next)."""
+        return self.dispatch[pid]["dispatch_rank"]
 
     def problem_path(self, pid):
         return f"problems/{pid}/"
@@ -405,6 +418,7 @@ def dossier_link(site, page, path, label="Read the dossier"):
 def problem_row(site, page, p):
     pid = p["id"]
     ex = site.execution[pid]
+    d = site.dispatch[pid]
     flags = []
     if pid in site.covered:
         flags.append('<span class="flag flag-verifier" title="Has an exact, independently checked verifier">verifier</span>')
@@ -418,7 +432,7 @@ def problem_row(site, page, p):
                        MODALITY.get(p["modality"], ""), EVIDENCE.get(p["evidence_state"], "")]).lower()
     attrs = {
         "data-id": pid, "data-field": p["field"], "data-status": p["evidence_state"],
-        "data-modality": p["modality"], "data-execution": ex["execution_rank"],
+        "data-modality": p["modality"], "data-dispatch": d["dispatch_rank"], "data-execution": ex["execution_rank"],
         "data-rank": site.rank[pid], "data-impact": p["impact"], "data-attackability": p["attackability"],
         "data-verifiability": p["verifiability"], "data-spillover": p["spillover"],
         "data-name": p["name"], "data-search": search,
@@ -428,13 +442,14 @@ def problem_row(site, page, p):
     }
     attr_html = " ".join(f'{k}="{E(str(v))}"' for k, v in attrs.items())
     return (f'<li class="row" {attr_html}><a class="row-link" href="{rel(page, site.problem_path(pid))}">'
-            f'<span class="entry-index"><span class="ordinal">{ex["execution_rank"]}</span><span class="entry-id">{pid}</span></span>'
+            f'<span class="entry-index"><span class="ordinal">{d["dispatch_rank"]}</span><span class="entry-id">{pid}</span></span>'
             f'<span class="entry-info"><span class="entry-name">{E(p["name"])}</span>'
             f'<span class="entry-field">{E(p["field"])} · {E(MODALITY.get(p["modality"], ""))}</span>'
-            f'<span class="entry-question">{E(p["question"])}</span></span>'
-            f'<span class="entry-score" aria-label="Execution index {ex["execution_score"]}: editorial {score(p)} plus readiness {ex["readiness"]}">'
-            f'<strong>{ex["execution_score"]}</strong><span class="small-bar" aria-hidden="true"><i style="width:{min(100, score(p))}%"></i>'
-            f'<b style="width:{ex["readiness"]}%"></b></span><small>#{site.rank[pid]} editorial</small></span>'
+            f'<span class="entry-action">{E(d["action_label"])}</span></span>'
+            f'<span class="entry-score" aria-label="Dispatch score {d["dispatch_score"]}: editorial {score(p)}, readiness {ex["readiness"]}, action bonus {d["action_bonus"]}">'
+            f'<strong>{d["dispatch_score"]}</strong><span class="small-bar" aria-hidden="true"><i style="width:{min(100, score(p))}%"></i>'
+            f'<b style="width:{ex["readiness"]}%"></b><u style="width:{max(0, d["action_bonus"]) / 2:.0f}%"></u></span>'
+            f'<small>exec #{ex["execution_rank"]} · editorial #{site.rank[pid]}</small></span>'
             f'<span class="entry-status">{pill(p["evidence_state"])}<span class="flags">{"".join(flags)}</span></span>'
             f'<span class="entry-chevron" aria-hidden="true">→</span></a></li>')
 
@@ -443,6 +458,7 @@ def render_index(site):
     page = "index.html"
     s = site
     claim_count = sum(p["evidence_state"] == "claim_needs_review" for p in s.items)
+    audited_open = sum(p["evidence_state"] in ("official_open", "verified_open") for p in s.items)
     computable = s.lab["computable_problems"]
     rows = "".join(problem_row(s, page, p) for p in s.ordered)
     field_opts = "".join(f'<option value="{E(f)}">{E(f)}</option>' for f in s.fields)
@@ -452,7 +468,8 @@ def render_index(site):
     spotlight = "".join(
         f'<a class="spot-card" href="{rel(page, s.problem_path(p["id"]))}"><span class="spot-rank">#{i}</span>'
         f'<span class="spot-id">{p["id"]} · {E(p["field"])}</span><strong>{E(p["name"])}</strong>'
-        f'<span class="spot-next">{E((s.campaign.get(p["id"]) or {}).get("next_experiment", p["first_attack"]))}</span></a>'
+        f'<span class="spot-action">{E(s.dispatch[p["id"]]["action_label"])}</span>'
+        f'<span class="spot-next">{E(s.dispatch[p["id"]]["dispatch_next"])}</span></a>'
         for i, p in enumerate(top, 1))
     explore = [
         ("atlas/", "Atlas", "See all 100 at once: impact × attackability, fields × computability, readiness ladder.", f"{len(s.fields)} fields"),
@@ -491,15 +508,16 @@ def render_index(site):
         ("Formal statements in Lean", len(s.formal)),
         ("Computable problems covered", f"{len(set(computable) & s.covered)}/{len(computable)}"),
         ("Full resolutions verified", len(s.solved))], "stats-6")}
-<p class="status-note">* “Active candidate” does not mean independently confirmed unsolved. Status flags distinguish official listings from conjectures still needing literature review; <strong>{claim_count} currently have proof claims requiring review</strong> — see the <a href="claims/">claim triage</a>.</p>
+<p class="status-note">* “Active candidate” does not mean independently confirmed unsolved. <strong>{audited_open} have an official or specialist open-status reference; {len(s.items) - audited_open} still require an independent exact-status audit, including {claim_count} with proof claims under review</strong> — see the <a href="claims/">claim triage</a> and the <a href="{library_href(s, page, 'docs/PORTFOLIO_SELECTION.md') or BLOB + 'docs/PORTFOLIO_SELECTION.md'}">selection and evidence rules</a>.</p>
+<aside class="next-band"><div><p class="eyebrow">THE NEXT 100 / IDEA RESERVOIR</p><h2>A growing reservoir. Room for thousands.</h2><p>Cross-domain, unvetted ideas queued for rigorous scrutiny and potential promotion into the active 100.</p></div><a class="button button-dark" href="next/">Explore the Next 100 →</a></aside>
 
 <section class="section-block" aria-labelledby="spot-heading">
-  {section_head("00 / WHERE EFFORT GOES NEXT", '<span id="spot-heading">The top of the <em>queue.</em></span>', "The three problems with the highest execution index, and the very next executable step for each.")}
+  {section_head("00 / WHERE EFFORT GOES NEXT", '<span id="spot-heading">The top of the <em>queue.</em></span>', "The first three in dispatch order (editorial score + readiness + an action bonus), and the very next action for each.")}
   <div class="spot-grid">{spotlight}</div>
 </section>
 
 <section class="rankings section-block" id="rankings" aria-labelledby="rankings-heading">
-  {section_head("01 / THE PORTFOLIO", '<span id="rankings-heading">The ranked <em>100.</em></span>', "Execution order reflects verifiable research readiness; editorial rank preserves long-term mathematical significance. Filters are shareable: the URL updates as you search.")}
+  {section_head("01 / THE PORTFOLIO", '<span id="rankings-heading">The ranked <em>100.</em></span>', "Dispatch order is what to do next. Execution order adds documented readiness to the editorial score; editorial rank rewards impact and tractability. None is a probability of proof. Filters are shareable: the URL updates as you search.")}
   <div class="ranking-panel">
     <form class="filters" role="search" aria-label="Search and filter problems" id="filters">
       <label class="search-wrap" for="search-problems"><span aria-hidden="true">⌕</span>
@@ -508,7 +526,7 @@ def render_index(site):
       <div class="filter-select"><label for="filter-status">Evidence</label><select id="filter-status" name="status"><option value="">All statuses</option>{status_opts}</select></div>
       <div class="filter-select"><label for="filter-modality">Computation</label><select id="filter-modality" name="modality"><option value="">All modalities</option>{mod_opts}</select></div>
       <div class="filter-select"><label for="sort-problems">Order</label><select id="sort-problems" name="sort">
-        <option value="execution">Execution priority</option><option value="rank">Editorial significance</option>
+        <option value="dispatch">Dispatch (do this next)</option><option value="execution">Execution priority</option><option value="rank">Editorial priority (includes attackability)</option>
         <option value="impact">Impact first</option><option value="attackability">Attackability first</option>
         <option value="verifiability">Verifiability first</option><option value="spillover">Spillover first</option>
         <option value="name">Alphabetical</option></select></div>
@@ -519,14 +537,14 @@ def render_index(site):
         <label class="toggle"><input type="checkbox" id="only-campaign" name="campaign"> Active campaign</label>
         <label class="toggle"><input type="checkbox" id="only-lean" name="lean"> Lean statement</label>
       </div>
-      <span id="results-count" role="status" aria-live="polite">Showing all {len(s.items)} questions in execution order</span>
+      <span id="results-count" role="status" aria-live="polite">Showing all {len(s.items)} questions in dispatch order</span>
       <button class="plain-button" id="reset-filters" type="button">Clear <span aria-hidden="true">↺</span></button>
     </div>
-    <div class="list-head" aria-hidden="true"><span>ATTACK RANK / ID</span><span>PROBLEM, DOMAIN &amp; QUESTION</span><span>EXECUTION INDEX</span><span>EVIDENCE</span><span></span></div>
+    <div class="list-head" aria-hidden="true"><span>DISPATCH / ID</span><span>PROBLEM, DOMAIN &amp; NEXT ACTION</span><span>DISPATCH SCORE</span><span>EVIDENCE</span><span></span></div>
     <ol id="problem-list" class="problem-list">{rows}</ol>
     <p class="empty-state" id="empty-state" hidden>No matches. Change your search or clear the filters.</p>
   </div>
-  <p class="table-footnote">Execution index = editorial score (20–100) + documented readiness (0–10); the bar shows both. <strong>Neither score is a probability of proof.</strong> Download the registry as <a href="api/problems.json">JSON</a> or <a href="api/problems.csv">CSV</a>.</p>
+  <p class="table-footnote">Dispatch score = editorial score (20–100) + documented readiness (0–10) + an action bonus that schedules a claimed witness, a missing engine or a published certificate, and sinks a range extension already inside a cited theorem. The bar shows all three. <strong>None of them is evidence or a probability of proof.</strong> Readiness-only order stays in the sort menu. Download the registry as <a href="api/problems.json">JSON</a> or <a href="api/problems.csv">CSV</a>.</p>
 </section>
 
 <section class="section-block" aria-labelledby="explore-heading">
@@ -588,6 +606,7 @@ def render_problem(site, pid, prev_id, next_id):
     page = f"problems/{pid}/index.html"
     p = s.by_id[pid]
     ex = s.execution[pid]
+    d = s.dispatch[pid]
     sc = score(p)
     c = s.campaign.get(pid)
     chips = [pill(p["evidence_state"]), chip(MODALITY.get(p["modality"], "Unclassified"), "chip-modality")]
@@ -725,7 +744,7 @@ def render_problem(site, pid, prev_id, next_id):
         if not q:
             return "<span></span>"
         qp = s.by_id[q]
-        return (f'<a class="pager-{relation}" rel="{relation}" href="{rel(page, s.problem_path(q))}"><small>{label} · #{s.execution[q]["execution_rank"]}</small>'
+        return (f'<a class="pager-{relation}" rel="{relation}" href="{rel(page, s.problem_path(q))}"><small>{label} · dispatch #{s.drank(q)}</small>'
                 f'<span>{E(qp["name"])}</span></a>')
 
     toc = [("question", "The question"), ("formal", "Formal statement"), ("priority", "Priority")]
@@ -740,7 +759,7 @@ def render_problem(site, pid, prev_id, next_id):
     body = f"""
 <article class="problem-page">
 <header class="problem-hero" id="question">
-  <p class="eyebrow"><span class="eyebrow-line"></span> {pid} · ATTACK #{ex['execution_rank']} · EDITORIAL #{s.rank[pid]}</p>
+  <p class="eyebrow"><span class="eyebrow-line"></span> {pid} · DISPATCH #{d['dispatch_rank']} · EXECUTION #{ex['execution_rank']} · EDITORIAL #{s.rank[pid]}</p>
   <h1>{E(p['name'])}</h1>
   <p class="problem-field"><a href="{field_href}">{E(p['field'])}</a></p>
   <div class="chips">{''.join(chips)}</div>
@@ -759,11 +778,15 @@ def render_problem(site, pid, prev_id, next_id):
 {formal_html}
 <section class="dossier-block" id="priority"><h2>Priority, decomposed</h2>
   <div class="score-hero">
-    <div><strong>{ex['execution_score']}</strong><span>Execution index</span></div>
-    <div class="score-eq"><span>{sc}</span><small>editorial</small><b>+</b><span>{ex['readiness']}</span><small>readiness</small></div>
-    <div><strong>#{ex['execution_rank']}</strong><span>Attack rank of 100</span></div>
+    <div><strong>#{d['dispatch_rank']}</strong><span>Dispatch rank · score {d['dispatch_score']}</span></div>
+    <div class="score-eq"><span>{sc}</span><small>editorial</small><b>+</b><span>{ex['readiness']}</span><small>readiness</small><b>{'+' if d['action_bonus'] >= 0 else '−'}</b><span>{abs(d['action_bonus'])}</span><small>action</small></div>
+    <div><strong>#{ex['execution_rank']}</strong><span>Execution rank · index {ex['execution_score']}</span></div>
     <div><strong>#{s.rank[pid]}</strong><span>Editorial rank of 100</span></div>
   </div>
+  <div class="next-action"><span class="detail-label">NEXT ACTION · {E(d['action_label'].upper())}</span>
+    <p class="serif">{E(d['dispatch_next'])}</p>
+    {f'<p class="muted">Why: {E(d["dispatch_why"])}</p>' if d.get('dispatch_why') else ''}
+    <p class="muted">Shared attack shape: <a href="{rel(page, 'campaigns/')}#shape-{E(d['method_id'])}">{E(d['method_title'])}</a> — {E(s.approach['actions'][d['action']]['meaning'])}</p></div>
   <div class="two-col">
     <div><h3>Editorial score {sc}/100</h3><div class="detail-metrics">
       {meter('Impact', p['impact'], 6)}{meter('Attackability', p['attackability'], 6)}
@@ -791,7 +814,7 @@ def render_problem(site, pid, prev_id, next_id):
 </section>
 </div>
 </div>
-<nav class="pager" aria-label="Execution order">{pager(prev_id, 'Previous', 'prev')}{pager(next_id, 'Next', 'next')}</nav>
+<nav class="pager" aria-label="Dispatch order">{pager(prev_id, 'Previous', 'prev')}{pager(next_id, 'Next', 'next')}</nav>
 </article>"""
     desc = f"{pid} · {p['field']} · {p['question']}"
     jsonld = [{"@context": "https://schema.org", "@type": "WebPage", "name": p["name"],
@@ -874,7 +897,8 @@ def ladder_svg(site, page, n=30):
         x = pad_l + t * scale
         out.append(f'<line class="grid" x1="{x:.1f}" y1="0" x2="{x:.1f}" y2="{row * n}"/>'
                    f'<text class="tick" x="{x:.1f}" y="{row * n + 16}" text-anchor="middle">{t}</text>')
-    for k, p in enumerate(site.ordered[:n]):
+    by_execution = sorted(site.items, key=lambda q: site.execution[q["id"]]["execution_rank"])
+    for k, p in enumerate(by_execution[:n]):
         y = k * row
         ex = site.execution[p["id"]]
         sc = score(p)
@@ -989,6 +1013,11 @@ def render_lab(site):
                    f'<div class="runs">{runs}</div><p class="frontier">{E(probe["frontier"])}</p>'
                    f'<div class="chips">{"".join(chip(e) for e in probe["engines"])}</div>'
                    f'<pre class="cmd"><code>{E(probe["command"])}</code></pre><p>{repo_link(probe["artifact"], "Search + checker source", "text-link")}</p></article>')
+    mines = "".join(
+        f'<article class="probe-card" id="mine-{E(key)}"><span class="milestone-type">{problem_link(s, page, m["problem_id"])} · '
+        f'{"✓ RECOMPUTED BY A SECOND PATH" if m["holds"] else "✗ NEEDS ATTENTION"}</span><h3>{E(m["title"])}</h3><p>{E(m["scope"])}</p>'
+        f'<p class="frontier">{E(m["frontier"])}</p><code class="hash">sha256 {E(m["certificate_sha256"][:16])}…</code></article>'
+        for key, m in sorted(s.mines.items()))
     engines = "".join(
         f'<div class="lab-row" id="engine-{E(e["id"])}"><div><h3>{E(e["name"])}</h3><code>{E(e["id"])}</code></div>'
         f'<p>{E(e["use"])}<br><span class="muted">{" · ".join(repo_link(m) for m in e["modules"])}</span></p>{problem_chips(s, page, e["problems"])}</div>'
@@ -1005,11 +1034,13 @@ def render_lab(site):
 <div class="table-wrap"><table><thead><tr><th>Modality</th><th>Meaning</th><th class="al-right">Problems</th><th class="al-right">With verifier</th></tr></thead><tbody>{mod_rows}</tbody></table></div></section>
 <section class="section-block tight" aria-labelledby="probes-h">{section_head("PROBES", '<span id="probes-h">Every probe, <em>both levels.</em></span>', "Smoke runs in CI on every change; deep runs weekly. Certificate hashes pin the exact output.")}
 <div class="probe-grid">{probes}</div></section>
+<section class="section-block tight" id="mines" aria-labelledby="mines-h">{section_head("WHAT THE CERTIFICATES SAY", '<span id="mines-h">Structure <em>mines.</em></span>', "Tables read off certificates the lab already computes. A second code path recomputes each table. None of them is a theorem.")}
+<div class="probe-grid">{mines}</div></section>
 <section class="section-block tight" id="engines" aria-labelledby="eng-h">{section_head("SHARED MACHINERY", '<span id="eng-h">Engines and the problems they <em>serve.</em></span>', "Finite fields alone power Hadamard matrices, projective planes, MDS codes, Ramsey colourings and Rota grids.")}
 <div class="lab-rows">{engines}</div></section>
 <section class="section-block tight" id="roadmap" aria-labelledby="road-h">{section_head("WHAT TO BUILD NEXT", '<span id="road-h">Computable, still <em>waiting.</em></span>', "Every finitely checkable problem either has a probe or appears here with the engine it needs.")}
 <div class="lab-rows">{roadmap}</div></section>
-<p class="table-footnote">Run everything with <code>python3 scripts/lab.py</code>. Full report: <a href="{rel(page, 'library/lab/')}">LAB.md</a>. <strong>A passing probe certifies a finite range, never an unrestricted conjecture.</strong></p>"""
+<p class="table-footnote">Run everything with <code>python3 scripts/lab.py</code>. Mines: <code>python3 scripts/mine.py</code>. Reports: <a href="{rel(page, 'library/lab/')}">LAB.md</a> and <a href="{rel(page, 'library/mines/')}">MINES.md</a>. <strong>A passing probe certifies a finite range, never an unrestricted conjecture.</strong></p>"""
     return layout(s, page, "Exact probe lab", "Reusable exact engines and independently re-checked probes across the 100 problems, with certificate hashes and an engine roadmap.",
                   body, active="lab", crumbs=[("Lab", None)])
 
@@ -1020,9 +1051,14 @@ def render_formal(site):
     s = site
     page = "formal/index.html"
     doc = s.formal_doc
-    entries = sorted(s.formal.values(), key=lambda e: s.execution[e["problem_id"]]["execution_rank"])
+    entries = sorted(s.formal.values(), key=lambda e: s.drank(e["problem_id"]))
     kernel = sum(len(e["kernel_checked"]) for e in entries)
     external = [r for r in s.claims_doc["reviews"] if r.get("formalization_scope_url")]
+    audit_rows = "".join(
+        f'<tr id="{E(t["id"])}"><td><code>{E(t["id"])}</code></td><td>{problem_link(s, page, t["problem_id"]) if t["problem_id"] in s.by_id else E(t["problem_id"])}</td>'
+        f'<td><span class="chip{" chip-good" if t["stage"] == "implemented" else ""}">{E(t["stage"])}</span></td><td>{E(t["statement"])}</td>'
+        f'<td class="muted">{E(t["scope_gap"])}</td><td class="al-right">{len(t["declarations"])}</td></tr>' for t in s.lean_targets)
+    audited = sum(len(t["declarations"]) for t in s.lean_targets)
     rows = "".join(
         f'<tr><td>{problem_link(s, page, e["problem_id"])}</td><td><a href="{rel(page, s.problem_path(e["problem_id"]))}#formal">{E(s.by_id[e["problem_id"]]["name"])}</a></td>'
         f'<td><code>{E(e["namespace"])}.{E(e["statement"])}</code></td><td class="al-right">{len(e["kernel_checked"])}</td>'
@@ -1043,7 +1079,7 @@ def render_formal(site):
     body = page_head("FORMAL STATEMENTS", "Say exactly what <em>counts.</em>",
                      E(doc["interpretation"])) + f"""
 {stats([("Lean comparator statements", len(entries)), ("Kernel-checked finite results", kernel),
-        ("Escape hatches (sorry, axiom, native_decide)", 0), ("External Lean scopes under audit", len(external))])}
+        ("Axiom-audited exported theorems", audited), ("External Lean scopes under audit", len(external))])}
 <section class="section-block tight" aria-labelledby="why-h">{section_head("WHY STATEMENTS FIRST", '<span id="why-h">Comparators, then <em>proofs.</em></span>', "A Lean-checked proof proves only what was encoded. So every target starts with an auditable statement, fidelity tests and an explicit list of what it does not cover.")}
 <div class="method-grid">
   <div class="method-step"><b>01</b><div><h3>Encode the registry statement</h3><p>Core Lean 4, no Mathlib: every definition used is on the page, a few dozen lines, readable end to end.</p></div></div>
@@ -1054,6 +1090,9 @@ def render_formal(site):
 <section class="section-block tight" aria-labelledby="cat-h">{section_head("THE CATALOGUE", '<span id="cat-h">Every formal <em>statement.</em></span>', "Ordered by execution priority. Toolchain " + doc['toolchain'] + "; the CI workflow runs lake build and prints the axioms of every kernel-checked theorem.")}
 <div class="table-wrap"><table><thead><tr><th>ID</th><th>Problem</th><th>Lean declaration</th><th class="al-right">Kernel-checked</th><th>Fidelity</th><th>Lab verifier</th></tr></thead><tbody>{rows}</tbody></table></div>
 <div class="formal-grid">{cards}</div></section>
+<section class="section-block tight" id="audit" aria-labelledby="audit-h">{section_head("THE LEAN PROOF GATE", '<span id="audit-h">Every export, <em>axiom-audited.</em></span>', "data/lean_targets.json registers every exported theorem. CI builds with warnings as errors, runs negative cases and records the transitive axioms of each declaration; only propext, Classical.choice and Quot.sound are allowed.")}
+<div class="table-wrap"><table><thead><tr><th>Target</th><th>Problem</th><th>Stage</th><th>Statement</th><th>Remaining gap</th><th class="al-right">Declarations</th></tr></thead><tbody>{audit_rows}</tbody></table></div>
+<p class="table-footnote">Gate: {repo_link('scripts/lean_verify.py')} · pipeline notes: <a href="{library_href(s, page, 'LEAN.md') or BLOB + 'LEAN.md'}">LEAN.md</a>.</p></section>
 <section class="section-block tight" aria-labelledby="ext-h">{section_head("EXTERNAL FORMALIZATIONS", '<span id="ext-h">Lean elsewhere, <em>audited here.</em></span>', "Author-described Lean scopes attached to 2026 claims (openai/math, pinned commit). Kernel acceptance of someone else's statement is not acceptance of the paper's theorem.")}
 <div class="table-wrap"><table><thead><tr><th>ID</th><th>Claim</th><th>Scope</th><th>Independent validation</th></tr></thead><tbody>{ext_rows}</tbody></table></div></section>
 <section class="section-block tight" id="contribute" aria-labelledby="con-h">{section_head("CONTRIBUTE", '<span id="con-h">Add a <em>statement.</em></span>', "The smallest useful contribution to an open problem is often an exact, reviewable statement.")}
@@ -1067,36 +1106,98 @@ def render_formal(site):
                   body, active="formal", crumbs=[("Formal", None)])
 
 
+# --------------------------------------------------------------------------- roadmap
+
+def render_roadmap(site):
+    s = site
+    page = "roadmap/index.html"
+    r = s.roadmap_doc
+    tracks = {t["id"]: t for t in r["tracks"]}
+    metrics = "".join(
+        f'<div class="metric-card"><span>{E(m["label"])}</span><strong>{E(str(m["value"]))}</strong>'
+        f'<div class="meter" role="img" aria-label="{E(str(m["value"]))} toward target {E(str(m["target"]))}">'
+        f'<i style="width:{min(100, 100 * m["value"] / m["target"]) if m["target"] else 0:.0f}%"></i></div>'
+        f'<small>baseline {E(str(m["baseline"]))} → target {E(str(m["target"]))} {E(m.get("unit", ""))}</small></div>'
+        for m in r["metrics"])
+    cols = ""
+    for h, meaning in r["horizons"].items():
+        cards = ""
+        for it in (x for x in r["items"] if x["horizon"] == h):
+            ev = it.get("evidence", "")
+            evidence = ""
+            if ev:
+                href = library_href(s, page, ev)
+                evidence = (f'<a class="text-link" href="{href}">{E(ev)}</a>' if href else repo_link(ev, ev, "text-link")) \
+                    if re.fullmatch(r"[A-Za-z0-9_./-]+", ev) else E(ev)
+            cards += (f'<article class="road-card" id="{E(it["id"])}"><span class="milestone-type">{E(it["id"])} · {E(tracks.get(it["track"], {}).get("name", it["track"]))}</span>'
+                      f'<h3>{E(it["title"])}</h3><p>{E(it["outcome"])}</p>'
+                      + (f'<p class="muted">Exit: {E(it["exit"])}</p>' if it.get("exit") else "")
+                      + (problem_chips(s, page, it["problems"]) if it.get("problems") else "")
+                      + (f'<p>{evidence}</p>' if evidence else "") + '</article>')
+        cols += (f'<section class="road-col" aria-labelledby="h-{h}"><h2 id="h-{h}">{E(h.title())} <span class="chip">{r["counts"].get(h, 0)}</span></h2>'
+                 f'<p class="muted">{E(meaning)}</p>{cards}</section>')
+    track_rows = "".join(f'<tr><td>{E(t["name"])}</td><td>{E(t["goal"])}</td><td class="al-right">{sum(i["track"] == t["id"] for i in r["items"])}</td></tr>' for t in r["tracks"])
+    body = page_head("ROADMAP / WHERE THIS IS GOING", "Shipped, now, <em>next.</em>", E(r["mission"])) + f"""
+<section class="section-block tight" aria-label="Scoreboard"><div class="metric-grid">{metrics}</div>
+<p class="status-note">{E(r['interpretation'])} <strong>The Solved ledger has no target: it grows only through independent review.</strong></p></section>
+<section class="section-block tight"><div class="road-board">{cols}</div></section>
+<section class="section-block tight"><h2 class="h-small">Tracks</h2><div class="table-wrap"><table><thead><tr><th>Track</th><th>Goal</th><th class="al-right">Items</th></tr></thead><tbody>{track_rows}</tbody></table></div>
+<p class="table-footnote">Source: {repo_link('data/roadmap.json')} · full text: <a href="{library_href(s, page, 'ROADMAP.md') or BLOB + 'ROADMAP.md'}">ROADMAP.md</a> · as of {E(r['as_of'])}.</p></section>"""
+    return layout(s, page, "Roadmap", "Live scoreboard and every shipped, current, next and later item with evidence and exit criteria.",
+                  body, active="roadmap", crumbs=[("Roadmap", None)])
+
+
 # --------------------------------------------------------------------------- campaigns
 
 def render_campaigns(site):
     s = site
     page = "campaigns/index.html"
-    cs = sorted(s.campaign.values(), key=lambda c: s.execution[c["problem_id"]]["execution_rank"])
+    cs = sorted(s.campaign.values(), key=lambda c: s.drank(c["problem_id"]))
     stages = Counter(c["stage"] for c in cs)
+    jobs = "".join(
+        f'<article class="job-card"><span class="milestone-type">JOB {i:02d} · {E(j["action_label"].upper())}</span>'
+        f'<h3><a href="#shape-{E(j["method_id"])}">{E(j["method_title"])}</a></h3>'
+        f'{problem_chips(s, page, j["problem_ids"])}<p>{E(j["summary"])}</p>'
+        + (f'<p class="muted">{E(j["why"])}</p>' if j.get("why") else "") + '</article>'
+        for i, j in enumerate(s.approach["jobs"][:12], 1))
+    shapes = "".join(
+        f'<div class="lab-row" id="shape-{E(m["id"])}"><div><h3>{E(m["title"])}</h3><code>{E(m["id"])}</code></div>'
+        f'<p>{E(m["lead"])}' + (f'<br><span class="muted">Engines: {E(", ".join(m["engines"]))}</span>' if m.get("engines") else "") +
+        f'</p>{problem_chips(s, page, m["problems"])}</div>' for m in s.approach["methods"])
+    actions = "".join(
+        f'<tr><td>{E(a["label"])}</td><td class="al-right">{a["bonus"]:+d}</td><td>{E(a["meaning"])}</td></tr>'
+        for a in sorted(s.approach["actions"].values(), key=lambda a: -a["bonus"]))
     pipeline = "".join(f'<div class="stage"><strong>{stages.get(k, 0)}</strong><span>{E(v)}</span></div>' for k, v in STAGE.items())
     cards = ""
     for i, c in enumerate(cs, 1):
         pid = c["problem_id"]
         p = s.by_id[pid]
         ex = s.execution[pid]
+        d = s.dispatch[pid]
+        recorded = '' if d['dispatch_next'] == c['next_experiment'] else f'<dt>Recorded experiment</dt><dd class="muted">{E(c["next_experiment"])} <em>(superseded by the dispatcher)</em></dd>'
         cards += f"""<article class="campaign-full" id="{pid}">
-<div class="campaign-top"><span>CAMPAIGN {i:02d} · ATTACK #{ex['execution_rank']} · INDEX {ex['execution_score']}</span><span class="chip chip-campaign">{E(STAGE.get(c['stage'], c['stage']))}</span></div>
+<div class="campaign-top"><span>CAMPAIGN {i:02d} · DISPATCH #{d['dispatch_rank']} · {E(d['action_label'].upper())}</span><span class="chip chip-campaign">{E(STAGE.get(c['stage'], c['stage']))}</span></div>
 <h3><a href="{rel(page, s.problem_path(pid))}"><span class="mono">{pid}</span> {E(p['name'])}</a></h3>
 <p class="block-lead">{E(c['method'])}</p>
 <dl class="kv compact"><dt>Hypothesis</dt><dd class="serif">{E(c['hypothesis'])}</dd>
 <dt>First proof obligation</dt><dd>{E(c['first_proof_obligation'])}</dd>
-<dt>Next step</dt><dd>{E(c['next_experiment'])}</dd>
+<dt>Next action</dt><dd>{E(d['dispatch_next'])}</dd>{recorded}
 <dt>Falsifier</dt><dd>{E(c['falsification'])}</dd>
 <dt>Blocker</dt><dd>{E(c['blocker'])}</dd></dl>
 {f'<pre class="cmd"><code>{E(c["verifier"])}</code></pre>' if c.get('verifier') else ''}
 <p class="card-links">{dossier_link(s, page, c.get('dossier'))} <a class="text-link" href="{rel(page, s.problem_path(pid))}">Problem page →</a></p>
 </article>"""
     body = page_head("FROM QUESTIONS TO EVIDENCE", "Proof <em>campaigns.</em>",
-                     "Active research tracks with bounded proof obligations, falsifiers, blockers and honest limits on what can be claimed. Ordered by execution priority.") + f"""
+                     "Cohort jobs, active research tracks with bounded proof obligations and falsifiers, and the shared attack shapes behind them. Ordered by dispatch: what to do next.") + f"""
 <div class="pipeline" aria-label="Campaign stages">{pipeline}</div>
 <p class="status-note">Passing a small-case test is a verified computation, not a proof of an unrestricted conjecture. Stages advance only on reproduced or independently reviewed evidence.</p>
-<section class="section-block tight"><div class="campaign-list">{cards}</div></section>
+<section class="section-block tight" aria-labelledby="jobs-h">{section_head("ONE JOB, MANY PROBLEMS", '<span id="jobs-h">Do the cohort, not the next <em>vertex.</em></span>', "Each card is one action on one shared attack shape; the problems on it move together. " + s.approach['note'])}
+<div class="job-grid">{jobs}</div></section>
+<section class="section-block tight" aria-labelledby="camp-h">{section_head("CAMPAIGNS, SAME ORDER", '<span id="camp-h">Where a campaign <em>exists.</em></span>', "Instrumented problems in dispatch order. When the dispatcher refuses a recorded experiment, the replacement is shown first.")}
+<div class="campaign-list">{cards}</div></section>
+<section class="section-block tight" id="shapes" aria-labelledby="shapes-h">{section_head("SHARED ATTACK SHAPES", '<span id="shapes-h">Thirty shapes, one hundred <em>problems.</em></span>', "Every problem belongs to one shape; build the shape's tool once and reuse it.")}
+<div class="lab-rows">{shapes}</div>
+<h3 class="h-small">What each action means</h3><div class="table-wrap"><table><thead><tr><th>Action</th><th class="al-right">Bonus</th><th>Meaning</th></tr></thead><tbody>{actions}</tbody></table></div></section>
 <p class="table-footnote">Full execution queue for all 100: <a href="{rel(page, 'library/attack-queue/')}">ATTACK_QUEUE.md</a>. Propose a campaign via <a href="{REPO}/issues/new?template=proof_campaign.yml" rel="noopener noreferrer">a proof-campaign issue ↗</a>.</p>"""
     return layout(s, page, "Proof campaigns", f"{len(cs)} active proof campaigns with hypotheses, first proof obligations, falsifiers and blockers.",
                   body, active="campaigns", crumbs=[("Campaigns", None)])
@@ -1151,7 +1252,7 @@ def render_ledger(site):
         solved = ('<div class="empty-archive"><span class="empty-archive-number">0</span><div><h3>No full conjecture resolved by this project yet.</h3>'
                   '<p>That empty ledger is deliberate. Known small-case checks, proof announcements and unreviewed manuscripts cannot be presented as accepted solutions. '
                   'When a full proof or counterexample passes independent review, its sources and exact scope will appear here.</p></div></div>')
-    ms = sorted(s.program["milestones"], key=lambda m: (s.execution[m["problem_id"]]["execution_rank"], m["id"]))
+    ms = sorted(s.program["milestones"], key=lambda m: (s.drank(m["problem_id"]), m["id"]))
     milestones = "".join(
         f'<article class="milestone-card" id="{E(m["id"])}"><span class="milestone-type">{E(m["classification"].replace("_", " ").upper())} · '
         f'{problem_link(s, page, m["problem_id"])} · {E(m.get("verified_on", ""))}</span><h3>{E(m["title"])}</h3><p>{E(m["description"])}</p>'
@@ -1216,7 +1317,7 @@ def render_library_doc(site, doc):
     toc = "".join(
         f'<li class="toc-l{lvl}"><a href="#{E(hid)}">{E(re.sub(r"[`*]", "", text))}</a></li>'
         for (lvl, hid), (_, text) in zip(ids, heads))
-    mentioned = sorted(set(re.findall(r"\bM\d{3}\b", doc["source"])) & set(s.by_id), key=lambda q: s.execution[q]["execution_rank"])
+    mentioned = sorted(set(re.findall(r"\bM\d{3}\b", doc["source"])) & set(s.by_id), key=lambda q: s.drank(q))
     body = f"""<div class="doc-layout">
 <aside class="doc-side">{('<nav class="toc"><span class="detail-label">CONTENTS</span><ol>' + toc + '</ol></nav>') if toc else ''}
 {('<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span>' + problem_chips(s, page, mentioned) + '</div>') if mentioned else ''}
@@ -1286,11 +1387,11 @@ def render_api(site):
                 "campaign_stage": (s.campaign.get(p["id"]) or {}).get("stage"),
                 "claim_review": p["id"] in s.claims, "lean_statement": p["id"] in s.formal} for p in s.ordered]
     files["api/problems.json"] = dumps({"as_of": s.updated, "count": len(summary),
-                                        "order": "execution_rank", "problems": summary})
+                                        "order": "dispatch_rank", "problems": summary})
     for p in s.items:
         files[f"api/problems/{p['id']}.json"] = dumps(problem_api(s, p["id"]))
-    cols = ["execution_rank", "rank", "id", "name", "field", "question", "first_attack", "impact", "attackability",
-            "verifiability", "spillover", "score", "readiness", "execution_score", "modality", "evidence_state",
+    cols = ["dispatch_rank", "execution_rank", "rank", "id", "name", "field", "question", "first_attack", "impact", "attackability",
+            "verifiability", "spillover", "score", "readiness", "execution_score", "action_bonus", "dispatch_score", "action_label", "modality", "evidence_state",
             "checked_on", "source_url", "has_exact_verifier", "lean_statement", "campaign_stage", "claim_review", "url"]
     buf = io.StringIO()
     w = csv.writer(buf, lineterminator="\n")
@@ -1304,7 +1405,7 @@ def render_api(site):
                        "x": " ".join([p["question"], MODALITY.get(p["modality"], ""), EVIDENCE.get(p["evidence_state"], "")])})
     for f in s.fields:
         search.append({"t": f, "k": "field", "s": "10 problems", "u": f"fields/{s.field_slug[f]}/", "x": ""})
-    for c in sorted(s.campaign.values(), key=lambda c: s.execution[c["problem_id"]]["execution_rank"]):
+    for c in sorted(s.campaign.values(), key=lambda c: s.drank(c["problem_id"])):
         search.append({"t": s.by_id[c["problem_id"]]["name"] + " campaign", "k": "campaign", "id": c["problem_id"],
                        "s": c["method"], "u": f"campaigns/#{c['problem_id']}", "x": c["hypothesis"]})
     for pr in s.lab["probes"]:
@@ -1395,9 +1496,9 @@ def render_404(site):
     return layout(site, "404.html", "Page not found", "Page not found.", body, absolute=True)
 
 
-def build_files():
+def build_files(portfolio):
     """Every generated file under docs/, as {relative path: text}."""
-    site = Site()
+    site = Site(portfolio)
     files = {}
     files["index.html"] = render_index(site)
     for k, p in enumerate(site.ordered):
@@ -1411,6 +1512,7 @@ def build_files():
     files["formal/index.html"] = render_formal(site)
     files["campaigns/index.html"] = render_campaigns(site)
     files["claims/index.html"] = render_claims(site)
+    files["roadmap/index.html"] = render_roadmap(site)
     files["ledger/index.html"] = render_ledger(site)
     files["library/index.html"] = render_library_index(site)
     for d in site.library:

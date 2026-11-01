@@ -14,9 +14,20 @@
   "source_url": null,
   "rank": 88,
   "score": 69,
-  "execution_rank": 88,
+  "execution_rank": 89,
   "execution_score": 69,
   "readiness": 0,
+  "dispatch_rank": 89,
+  "dispatch_score": 69,
+  "action": "specify_shape",
+  "action_label": "Fill the shared attack shape",
+  "action_bonus": 0,
+  "method_id": "harmonic_analysis",
+  "method_title": "One dimension, one endpoint",
+  "dispatch_next": "Shape harmonic_analysis (5 problems, one write-up): Fix the dimension and the exponent endpoint before treating a corollary as a settlement of the registered conjecture. Full shape, certificate and falsifier are in APPROACH.md.",
+  "dispatch_why": "No campaign yet. Fill one restricted statement inside the shared shape.",
+  "campaign_stage": null,
+  "milestone_count": 0,
   "url": "https://svyable.github.io/100/problems/M059/",
   "field_url": "https://svyable.github.io/100/fields/analysis/",
   "readiness_breakdown": [],
@@ -29,6 +40,11 @@
   "formal_statement": null,
   "external_claims": [],
   "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
     {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",

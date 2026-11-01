@@ -14,26 +14,106 @@
   "source_url": null,
   "rank": 38,
   "score": 74,
-  "execution_rank": 39,
-  "execution_score": 74,
-  "readiness": 0,
+  "execution_rank": 29,
+  "execution_score": 81,
+  "readiness": 7,
+  "dispatch_rank": 99,
+  "dispatch_score": 45,
+  "action": "stop_range",
+  "action_label": "Stop: range is dominated",
+  "action_bonus": -36,
+  "method_id": "modular_representations",
+  "method_title": "One block, weights against simples",
+  "dispatch_next": "Do not enlarge the named catalog inside order 100: that range is already covered by the 2007 computational verification. State a restricted family (for example blocks with a named defect-group isomorphism type) and a lemma outside that census.",
+  "dispatch_why": "Computational verification already covers every group of order at most 100. Extending the named catalog inside that bound cannot be a new theorem.",
+  "campaign_stage": "benchmark_reproduced",
+  "milestone_count": 1,
   "url": "https://svyable.github.io/100/problems/M048/",
   "field_url": "https://svyable.github.io/100/fields/algebra/",
-  "readiness_breakdown": [],
-  "has_exact_verifier": false,
-  "campaign": null,
-  "probes": [],
-  "milestones": [],
-  "engine_roadmap": {
+  "readiness_breakdown": [
+    {
+      "item": "Formal campaign brief",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Runnable independent verifier",
+      "points": 3,
+      "max": 3
+    },
+    {
+      "item": "Reproduced known benchmark",
+      "points": 2,
+      "max": 2
+    },
+    {
+      "item": "Independently reviewed restricted theorem",
+      "points": 0,
+      "max": 3
+    }
+  ],
+  "has_exact_verifier": true,
+  "campaign": {
     "problem_id": "M048",
-    "engine": "group_characters",
-    "first_probe": "Exact Brauer-character and weight counts for small finite groups and primes, compared entrywise.",
-    "name": "Alperin weight conjecture"
+    "stage": "benchmark_reproduced",
+    "method": "Exact Alperin weight counts via radical p-subgroups and character degrees",
+    "hypothesis": "For every finite group G and every prime p, the number of conjugacy classes of Alperin p-weights equals the number of simple modules of FG over an algebraically closed field of characteristic p.",
+    "first_proof_obligation": "State a restricted family of blocks (for example a named defect-group isomorphism type outside the order-100 census) and prove or refute the weight count for that family.",
+    "next_experiment": "Do not enlarge the named catalog inside order 100: that range is already covered by the 2007 computational verification. State a restricted family (for example blocks with a named defect-group isomorphism type) and a lemma outside that census.",
+    "falsification": "A finite group G and prime p for which the independently recomputed weight count differs from the number of p-regular conjugacy classes.",
+    "blocker": "Every group of order at most 100 is already covered by published computational verification; a larger named catalog inside that bound is not a theorem.",
+    "dossier": "research/LAB_CAMPAIGNS.md",
+    "verifier": "python3 scripts/lab.py --probe alperin"
   },
+  "probes": [
+    {
+      "id": "alperin",
+      "problem_id": "M048",
+      "name": "Alperin weight conjecture",
+      "title": "Alperin weight counts on named groups of small order",
+      "engines": [
+        "group_characters"
+      ],
+      "frontier": "Known: Alperin's weight conjecture has been verified computationally for all groups of order at most 100 over prime fields (Revista Colombiana de Matemáticas 41 (2007)), and for many larger simple groups. The cases here are classical reproductions only.",
+      "artifact": "scripts/probes/alperin.py",
+      "command": "python3 scripts/lab.py --probe alperin",
+      "runs": {
+        "smoke": {
+          "holds": true,
+          "scope": "For each named group G in {C2, C3, C4, C2xC2, S3, D8, Q8, A4, D10} and every prime p dividing |G|, the number of conjugacy classes of Alperin p-weights equals the number of p-regular conjugacy classes.",
+          "certificate_sha256": "5ec9940f814f3190ef28cebd65452d67ca2f9f36b958a17925aee7345a4bb119"
+        },
+        "deep": {
+          "holds": true,
+          "scope": "For each named group G in {C2, C3, C4, C5, C6, C2xC2, S3, D8, Q8, A4, D10, D12, S4, A5} and every prime p dividing |G|, the number of conjugacy classes of Alperin p-weights equals the number of p-regular conjugacy classes.",
+          "certificate_sha256": "196b894d4e076ba2e56a2628d4ee560deb3e2e8a8bb882bc2c197044ad17d384"
+        }
+      }
+    }
+  ],
+  "milestones": [
+    {
+      "id": "B-ALPERIN-001",
+      "problem_id": "M048",
+      "classification": "reproduced_known",
+      "title": "Alperin weight counts match p-regular class counts on named groups through A5",
+      "scope": "Finite named catalog only; every case sits inside the published order-100 verification",
+      "description": "For each listed group and each prime dividing its order, the number of radical-subgroup defect-zero weights equals the number of p-regular conjugacy classes. Smoke covers nine groups through D10; deep adds C5, C6, D12, S4 and A5. The checker rebuilds every count independently.",
+      "verifier": "python3 scripts/lab.py --probe alperin",
+      "artifact": "scripts/probes/alperin.py",
+      "verified_on": "2026-10-31"
+    }
+  ],
+  "engine_roadmap": null,
   "claim_review_2026": null,
   "formal_statement": null,
   "external_claims": [],
   "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
     {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",
@@ -48,6 +128,26 @@
       "title": "Ranked candidate portfolio",
       "source": "RANKED.md",
       "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
+    },
+    {
+      "title": "Lab campaigns: problems under exact computation",
+      "source": "research/LAB_CAMPAIGNS.md",
+      "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "Lamport protocol — make every missing implication explicit",
+      "source": "docs/LAMPORT_PROTOCOL.md",
+      "url": "https://svyable.github.io/100/library/lamport-protocol/"
+    },
+    {
+      "title": "Proof-driven research engine",
+      "source": "docs/RESEARCH_ENGINE.md",
+      "url": "https://svyable.github.io/100/library/research-engine/"
     }
   ]
 }

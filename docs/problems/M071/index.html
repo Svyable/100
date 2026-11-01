@@ -31,7 +31,7 @@
     <span class="brand-mark">100<span class="brand-dot">.</span></span>
     <span class="brand-caption">SVYABLE<br>RESEARCH</span>
   </a>
-  <nav class="main-nav" aria-label="Primary navigation"><a href="../../" aria-current="page">The 100</a><a href="../../atlas/">Atlas</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../ledger/">Ledger</a><a href="../../library/">Library</a></nav>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../" aria-current="page">The 100</a><a href="../../next/">Next 100</a><a href="../../atlas/">Atlas</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/">Library</a></nav>
   <div class="header-tools">
     <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
     <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
@@ -43,7 +43,7 @@
 
 <article class="problem-page">
 <header class="problem-hero" id="question">
-  <p class="eyebrow"><span class="eyebrow-line"></span> M071 · ATTACK #10 · EDITORIAL #12</p>
+  <p class="eyebrow"><span class="eyebrow-line"></span> M071 · DISPATCH #1 · EXECUTION #10 · EDITORIAL #12</p>
   <h1>Hadwiger conjecture</h1>
   <p class="problem-field"><a href="../../fields/combinatorics/">Combinatorics</a></p>
   <div class="chips"><span class="status-pill status-claim_needs_review" title="A 2026 proof or counterexample claim exists and has not been independently validated.">Claim under review</span><span class="chip chip-modality">Finitely refutable</span><span class="chip chip-good">Exact verifier in the lab</span><span class="chip chip-good">Lean statement</span><span class="chip chip-campaign">Campaign: Benchmark reproduced</span></div>
@@ -67,12 +67,12 @@
   <span class="tk-o">∀</span> (t n : <span class="tk-k">Nat</span>) (adj : <span class="tk-k">Nat</span> <span class="tk-o">→</span> <span class="tk-k">Nat</span> <span class="tk-o">→</span> <span class="tk-k">Bool</span>), IsGraph n adj <span class="tk-o">→</span>
     HasCliqueMinor n adj t <span class="tk-o">∨</span> Colourable n adj (t - 1)</code></pre>
 <dl class="kv compact">
-  <dt>Declaration</dt><dd><code>Hundred.Hadwiger.Statement</code> in <a href="https://github.com/Svyable/100/blob/main/lean/Hundred/Hadwiger.lean" rel="noopener noreferrer">lean/Hundred/Hadwiger.lean <span aria-hidden="true">↗</span></a></dd>
+  <dt>Declaration</dt><dd><code>Hundred.Statements.Hadwiger.Statement</code> in <a href="https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/Hadwiger.lean" rel="noopener noreferrer">lean/Hundred/Statements/Hadwiger.lean <span aria-hidden="true">↗</span></a></dd>
   <dt>Not encoded</dt><dd>Fractional, list and odd-minor variants</dd>
   <dt>Fidelity</dt><dd><span class="chip">author checked</span> Encoding written and checked against the registry statement by its author; fidelity examples compile.</dd>
   
 </dl>
-<details class="table-view"><summary>Full Lean module (59 lines)</summary><pre class="lean"><code><span class="tk-k">import</span> Hundred.Basic
+<details class="table-view"><summary>Full Lean module (59 lines)</summary><pre class="lean"><code><span class="tk-k">import</span> Hundred.Statements.Basic
 
 <span class="tk-c">/-!
 # M071 — Hadwiger&#x27;s conjecture
@@ -91,8 +91,8 @@ counterexample claim is triaged on the site (`claims/#M071`); OpenAI&#x27;s Lean
 comparator for that claim encodes the chromatic form with `SimpleGraph`.
 -/</span>
 
-<span class="tk-k">namespace</span> Hundred.Hadwiger
-<span class="tk-k">open</span> Hundred
+<span class="tk-k">namespace</span> Hundred.Statements.Hadwiger
+<span class="tk-k">open</span> Hundred.Statements
 
 <span class="tk-c">/-- `col` properly colours the graph with colours `&lt; k`. -/</span>
 <span class="tk-k">abbrev</span> ProperColouring (n : <span class="tk-k">Nat</span>) (adj : <span class="tk-k">Nat</span> <span class="tk-o">→</span> <span class="tk-k">Nat</span> <span class="tk-o">→</span> <span class="tk-k">Bool</span>) (k : <span class="tk-k">Nat</span>) (col : <span class="tk-k">Nat</span> <span class="tk-o">→</span> <span class="tk-k">Nat</span>) : <span class="tk-k">Prop</span> <span class="tk-o">:=</span>
@@ -130,17 +130,21 @@ comparator for that claim encodes the chromatic form with `SimpleGraph`.
 <span class="tk-k">example</span> : IsGraph 3 complete <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span>
 <span class="tk-k">example</span> : ProperColouring 3 complete 3 (<span class="tk-k">fun</span> v =&gt; v) <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span>
 
-<span class="tk-k">end</span> Hundred.Hadwiger
+<span class="tk-k">end</span> Hundred.Statements.Hadwiger
 </code></pre></details>
 <p class="muted">A proof or counterexample counts only if it establishes exactly this proposition (or a reviewed equivalent). Kernel-checked finite results are fidelity tests inside known mathematics. <a href="../../formal/">How formal statements work →</a></p>
 </section>
 <section class="dossier-block" id="priority"><h2>Priority, decomposed</h2>
   <div class="score-hero">
-    <div><strong>92</strong><span>Execution index</span></div>
-    <div class="score-eq"><span>85</span><small>editorial</small><b>+</b><span>7</span><small>readiness</small></div>
-    <div><strong>#10</strong><span>Attack rank of 100</span></div>
+    <div><strong>#1</strong><span>Dispatch rank · score 132</span></div>
+    <div class="score-eq"><span>85</span><small>editorial</small><b>+</b><span>7</span><small>readiness</small><b>+</b><span>40</span><small>action</small></div>
+    <div><strong>#10</strong><span>Execution rank · index 92</span></div>
     <div><strong>#12</strong><span>Editorial rank of 100</span></div>
   </div>
+  <div class="next-action"><span class="detail-label">NEXT ACTION · REPLAY A CLAIMED FINITE WITNESS</span>
+    <p class="serif">Audit the Lean quantifiers and graph encoding against the theorem; reproduce or extract an explicit graph plus an independently checkable minor-bound obstruction.</p>
+    <p class="muted">Why: A 2026 manuscript claims a Hadwiger counterexample. Reproducing that finite graph outranks another census step. Robertson, Seymour and Thomas already cover chromatic number at most 6.</p>
+    <p class="muted">Shared attack shape: <a href="../../campaigns/#shape-extremal_certificates">Replay the object, or mine the census</a> — The claim review asks for a finite object an independent checker can accept or reject. That check can retire the target. The bonus is a scheduling weight, not evidence.</p></div>
   <div class="two-col">
     <div><h3>Editorial score 85/100</h3><div class="detail-metrics">
       <div class="detail-metric"><span>Impact <small>×6</small></span><div class="meter" role="img" aria-label="Impact 4 of 5"><i style="width:80%"></i></div><b>4/5</b></div><div class="detail-metric"><span>Attackability <small>×6</small></span><div class="meter" role="img" aria-label="Attackability 4 of 5"><i style="width:80%"></i></div><b>4/5</b></div>
@@ -191,17 +195,17 @@ comparator for that claim encodes the chromatic form with `SimpleGraph`.
     <dt>Source intake</dt><dd>not yet recorded</dd>
     <dt>Computation</dt><dd>Finitely refutable — One finite, checkable object would refute it; computation can search and certify ranges.</dd>
   </dl>
-  <h3>Discussed in the library</h3><ul class="link-list"><li><a href="../../library/attack-queue/">Execution queue — evidence-aware research priorities</a></li><li><a href="../../library/lab/">Exact probe lab — computational reach of the 100</a></li><li><a href="../../library/ranked/">Ranked candidate portfolio</a></li><li><a href="../../library/claim-reviews-2026/">2026 claimed-resolution triage — issue #3</a></li><li><a href="../../library/lab-campaigns/">Lab campaigns: twelve problems under exact computation</a></li><li><a href="../../library/pages-setup/">Publish the 100 portfolio via GitHub Pages</a></li><li><a href="../../library/research-engine/">Proof-driven research engine</a></li><li><a href="../../library/sources/">Foundational sources and 2026 claim watch</a></li></ul>
+  <h3>Discussed in the library</h3><ul class="link-list"><li><a href="../../library/approach/">Approach — leverage dispatch</a></li><li><a href="../../library/attack-queue/">Execution queue — evidence-aware research priorities</a></li><li><a href="../../library/lab/">Exact probe lab — computational reach of the 100</a></li><li><a href="../../library/lean/">Lean proof pipeline</a></li><li><a href="../../library/ranked/">Ranked candidate portfolio</a></li><li><a href="../../library/roadmap/">Roadmap — 100 mathematical grand challenges</a></li><li><a href="../../library/claim-reviews-2026/">2026 claimed-resolution triage — issue #3</a></li><li><a href="../../library/lab-campaigns/">Lab campaigns: problems under exact computation</a></li><li><a href="../../library/pages-setup/">Publish the 100 portfolio via GitHub Pages</a></li><li><a href="../../library/research-engine/">Proof-driven research engine</a></li><li><a href="../../library/sources/">Foundational sources and 2026 claim watch</a></li></ul>
   <h3>Cite this page</h3>
   <div class="cite"><code id="cite-M071">Svyable. “Hadwiger conjecture (M071).” 100 — A living portfolio of mathematical grand challenges, data as of 2026-10-31. https://svyable.github.io/100/problems/M071/</code><button class="plain-button" type="button" data-copy="#cite-M071">Copy</button></div>
 </section>
 <section class="dossier-block" id="related"><h2>Nearby in the portfolio</h2>
-  <div class="two-col"><div><h3>Also in <a href="../../fields/combinatorics/">Combinatorics</a></h3><ul class="link-list"><li><a href="../../problems/M074/"><span class="mono">M074</span> Caccetta–Häggkvist conjecture</a></li><li><a href="../../problems/M075/"><span class="mono">M075</span> Frankl union-closed sets conjecture</a></li><li><a href="../../problems/M078/"><span class="mono">M078</span> Graph reconstruction conjecture</a></li><li><a href="../../problems/M079/"><span class="mono">M079</span> One-third–two-thirds conjecture</a></li><li><a href="../../problems/M073/"><span class="mono">M073</span> Sidorenko conjecture</a></li><li><a href="../../problems/M080/"><span class="mono">M080</span> Rota basis conjecture</a></li></ul></div>
+  <div class="two-col"><div><h3>Also in <a href="../../fields/combinatorics/">Combinatorics</a></h3><ul class="link-list"><li><a href="../../problems/M073/"><span class="mono">M073</span> Sidorenko conjecture</a></li><li><a href="../../problems/M074/"><span class="mono">M074</span> Caccetta–Häggkvist conjecture</a></li><li><a href="../../problems/M075/"><span class="mono">M075</span> Frankl union-closed sets conjecture</a></li><li><a href="../../problems/M078/"><span class="mono">M078</span> Graph reconstruction conjecture</a></li><li><a href="../../problems/M079/"><span class="mono">M079</span> One-third–two-thirds conjecture</a></li><li><a href="../../problems/M080/"><span class="mono">M080</span> Rota basis conjecture</a></li></ul></div>
   <div><h3>Shares an exact engine with</h3><div class="chips"><a class="chip chip-link" href="../../problems/M073/" title="Sidorenko conjecture">M073</a><a class="chip chip-link" href="../../problems/M078/" title="Graph reconstruction conjecture">M078</a><a class="chip chip-link" href="../../problems/M097/" title="Metric TSP four-thirds conjecture">M097</a></div></div></div>
 </section>
 </div>
 </div>
-<nav class="pager" aria-label="Execution order"><a class="pager-prev" rel="prev" href="../../problems/M088/"><small>Previous · #9</small><span>Deterministic polynomial identity testing</span></a><a class="pager-next" rel="next" href="../../problems/M073/"><small>Next · #11</small><span>Sidorenko conjecture</span></a></nav>
+<nav class="pager" aria-label="Dispatch order"><span></span><a class="pager-next" rel="next" href="../../problems/M073/"><small>Next · dispatch #2</small><span>Sidorenko conjecture</span></a></nav>
 </article>
 </main>
 <footer class="site-footer">

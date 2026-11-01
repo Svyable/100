@@ -14,9 +14,20 @@
   "source_url": null,
   "rank": 58,
   "score": 72,
-  "execution_rank": 58,
+  "execution_rank": 59,
   "execution_score": 72,
   "readiness": 0,
+  "dispatch_rank": 62,
+  "dispatch_score": 72,
+  "action": "specify_shape",
+  "action_label": "Fill the shared attack shape",
+  "action_bonus": 0,
+  "method_id": "critical_zeros",
+  "method_title": "Certified zero counts",
+  "dispatch_next": "Shape critical_zeros (3 problems, one write-up): Build one interval-arithmetic zero-count certificate and reuse it for every problem in this shape. Full shape, certificate and falsifier are in APPROACH.md.",
+  "dispatch_why": "No campaign yet. Fill one restricted statement inside the shared shape.",
+  "campaign_stage": null,
+  "milestone_count": 0,
   "url": "https://svyable.github.io/100/problems/M009/",
   "field_url": "https://svyable.github.io/100/fields/number-theory/",
   "readiness_breakdown": [],
@@ -29,6 +40,11 @@
   "formal_statement": null,
   "external_claims": [],
   "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
     {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",

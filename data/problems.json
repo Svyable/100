@@ -1458,16 +1458,16 @@
     "id": "M098",
     "name": "Vaught conjecture",
     "field": "Mathematical physics / finite structures",
-    "question": "Does a complete countable-language first-order theory have countably or continuum many countable models?",
-    "first_attack": "Audit precise statement and prove a restricted case",
+    "question": "For every complete first-order theory in a countable language, is the number of countable models up to isomorphism either countable or equal to the continuum?",
+    "first_attack": "Keep the first-order statement separate from infinitary counterexamples and cite a restricted case",
     "impact": 4,
     "attackability": 4,
     "verifiability": 4,
     "spillover": 4,
     "modality": "structural",
-    "evidence_state": "claim_needs_review",
-    "checked_on": null,
-    "source_url": null
+    "evidence_state": "verified_open",
+    "checked_on": "2026-10-31",
+    "source_url": "https://arxiv.org/abs/2508.06854"
   },
   {
     "id": "M099",

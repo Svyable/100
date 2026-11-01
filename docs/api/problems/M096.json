@@ -17,6 +17,17 @@
   "execution_rank": 13,
   "execution_score": 92,
   "readiness": 7,
+  "dispatch_rank": 13,
+  "dispatch_score": 104,
+  "action": "replay_published",
+  "action_label": "Replay a published certificate",
+  "action_bonus": 12,
+  "method_id": "finite_geometry",
+  "method_title": "Replay a published geometric object",
+  "dispatch_next": "Encode order-12 planes with a prescribed collineation as SAT with DRAT proof output, starting from cases the literature already excludes.",
+  "dispatch_why": "The next experiment encodes literature-excluded collineation cases with a proof trace. Unconstrained search of order 12 is the blocker, not the plan.",
+  "campaign_stage": "benchmark_reproduced",
+  "milestone_count": 1,
   "url": "https://svyable.github.io/100/problems/M096/",
   "field_url": "https://svyable.github.io/100/fields/mathematical-physics-finite-structures/",
   "readiness_breakdown": [
@@ -97,8 +108,8 @@
   "claim_review_2026": null,
   "formal_statement": {
     "problem_id": "M096",
-    "module": "lean/Hundred/ProjectivePlane.lean",
-    "namespace": "Hundred.ProjectivePlane",
+    "module": "lean/Hundred/Statements/ProjectivePlane.lean",
+    "namespace": "Hundred.Statements.ProjectivePlane",
     "statement": "Statement",
     "encodes": "No incidence relation on 157 points and 157 lines with 13 points per line, unique joining lines and unique meeting points.",
     "not_encoded": [
@@ -112,10 +123,15 @@
       }
     ],
     "fidelity": "author_checked",
-    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/ProjectivePlane.lean"
+    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/ProjectivePlane.lean"
   },
   "external_claims": [],
   "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
     {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",
@@ -127,14 +143,29 @@
       "url": "https://svyable.github.io/100/library/lab/"
     },
     {
+      "title": "Lean proof pipeline",
+      "source": "LEAN.md",
+      "url": "https://svyable.github.io/100/library/lean/"
+    },
+    {
       "title": "Ranked candidate portfolio",
       "source": "RANKED.md",
       "url": "https://svyable.github.io/100/library/ranked/"
     },
     {
-      "title": "Lab campaigns: twelve problems under exact computation",
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
+    },
+    {
+      "title": "Lab campaigns: problems under exact computation",
       "source": "research/LAB_CAMPAIGNS.md",
       "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "Top 100 portfolio selection and admission",
+      "source": "docs/PORTFOLIO_SELECTION.md",
+      "url": "https://svyable.github.io/100/library/portfolio-selection/"
     },
     {
       "title": "Proof-driven research engine",

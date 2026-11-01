@@ -17,6 +17,17 @@
   "execution_rank": 12,
   "execution_score": 92,
   "readiness": 7,
+  "dispatch_rank": 16,
+  "dispatch_score": 98,
+  "action": "mine_structure",
+  "action_label": "Mine structure from certificates",
+  "action_bonus": 6,
+  "method_id": "extremal_certificates",
+  "method_title": "Replay the object, or mine the census",
+  "dispatch_next": "Quotient instances by the stabiliser of the standard basis so that GF(2)^4 becomes exhaustive, storing one grid certificate per orbit.",
+  "dispatch_why": "Chan (1995) covers rank at most 3. The next experiment is the orbit quotient that makes the rank-4 case GF(2)^4 exhaustive.",
+  "campaign_stage": "benchmark_reproduced",
+  "milestone_count": 1,
   "url": "https://svyable.github.io/100/problems/M080/",
   "field_url": "https://svyable.github.io/100/fields/combinatorics/",
   "readiness_breakdown": [
@@ -100,6 +111,11 @@
   "external_claims": [],
   "mentioned_in": [
     {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",
       "url": "https://svyable.github.io/100/library/attack-queue/"
@@ -115,7 +131,7 @@
       "url": "https://svyable.github.io/100/library/ranked/"
     },
     {
-      "title": "Lab campaigns: twelve problems under exact computation",
+      "title": "Lab campaigns: problems under exact computation",
       "source": "research/LAB_CAMPAIGNS.md",
       "url": "https://svyable.github.io/100/library/lab-campaigns/"
     },

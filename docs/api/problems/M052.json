@@ -14,9 +14,20 @@
   "source_url": null,
   "rank": 81,
   "score": 69,
-  "execution_rank": 81,
+  "execution_rank": 82,
   "execution_score": 69,
   "readiness": 0,
+  "dispatch_rank": 85,
+  "dispatch_score": 69,
+  "action": "specify_shape",
+  "action_label": "Fill the shared attack shape",
+  "action_bonus": 0,
+  "method_id": "pde_regularity",
+  "method_title": "One ansatz, one enclosure",
+  "dispatch_next": "Shape pde_regularity (5 problems, one write-up): Write the equation, the dimension and the function space, and certify one symmetric ansatz the literature has already isolated. Full shape, certificate and falsifier are in APPROACH.md.",
+  "dispatch_why": "No campaign yet. Fill one restricted statement inside the shared shape.",
+  "campaign_stage": null,
+  "milestone_count": 0,
   "url": "https://svyable.github.io/100/problems/M052/",
   "field_url": "https://svyable.github.io/100/fields/analysis/",
   "readiness_breakdown": [],
@@ -29,6 +40,11 @@
   "formal_statement": null,
   "external_claims": [],
   "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
     {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",

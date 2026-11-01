@@ -17,6 +17,17 @@
   "execution_rank": 11,
   "execution_score": 92,
   "readiness": 7,
+  "dispatch_rank": 2,
+  "dispatch_score": 132,
+  "action": "replay_claim_witness",
+  "action_label": "Replay a claimed finite witness",
+  "action_bonus": 40,
+  "method_id": "extremal_certificates",
+  "method_title": "Replay the object, or mine the census",
+  "dispatch_next": "Check H and the host-existence construction against Lean and paper; independently compute exact graphon/homomorphism inequalities or generate an explicit finite G.",
+  "dispatch_why": "A 2026 manuscript claims a finite Sidorenko host. The review asks to compute that witness. A step-graphon search is not the current recommendation.",
+  "campaign_stage": "benchmark_reproduced",
+  "milestone_count": 1,
   "url": "https://svyable.github.io/100/problems/M073/",
   "field_url": "https://svyable.github.io/100/fields/combinatorics/",
   "readiness_breakdown": [
@@ -115,6 +126,11 @@
   "external_claims": [],
   "mentioned_in": [
     {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",
       "url": "https://svyable.github.io/100/library/attack-queue/"
@@ -130,12 +146,17 @@
       "url": "https://svyable.github.io/100/library/ranked/"
     },
     {
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
+    },
+    {
       "title": "2026 claimed-resolution triage — issue #3",
       "source": "research/CLAIM_REVIEWS_2026.md",
       "url": "https://svyable.github.io/100/library/claim-reviews-2026/"
     },
     {
-      "title": "Lab campaigns: twelve problems under exact computation",
+      "title": "Lab campaigns: problems under exact computation",
       "source": "research/LAB_CAMPAIGNS.md",
       "url": "https://svyable.github.io/100/library/lab-campaigns/"
     },

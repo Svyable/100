@@ -17,6 +17,17 @@
   "execution_rank": 95,
   "execution_score": 63,
   "readiness": 0,
+  "dispatch_rank": 94,
+  "dispatch_score": 63,
+  "action": "specify_shape",
+  "action_label": "Fill the shared attack shape",
+  "action_bonus": 0,
+  "method_id": "index_rigidity",
+  "method_title": "One complex, one index",
+  "dispatch_next": "Shape index_rigidity (4 problems, one write-up): Name the group or the manifold and compute one index or signature identity on one explicit complex of small dimension. Full shape, certificate and falsifier are in APPROACH.md.",
+  "dispatch_why": "No campaign yet. Fill one restricted statement inside the shared shape.",
+  "campaign_stage": null,
+  "milestone_count": 0,
   "url": "https://svyable.github.io/100/problems/M035/",
   "field_url": "https://svyable.github.io/100/fields/topology/",
   "readiness_breakdown": [],
@@ -29,6 +40,11 @@
   "formal_statement": null,
   "external_claims": [],
   "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
     {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Lean library: how formal statements are built · 100</title>
-<meta name="description" content="lean/ is a dependency-free Lake project (core Lean 4, no Mathlib) holding a comparator statement for each formalised target in the 100: the exact proposition a proof or counterexample must establish.">
+<meta name="description" content="lean/Hundred/Statements/ holds a comparator statement for each formalised target in the 100: the exact proposition a proof or counterexample must establish. It lives in the same dependency-free Lake project as the proof pipeline described i">
 <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
 <meta name="color-scheme" content="light dark">
@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="100 — Svyable research">
 <meta property="og:title" content="The Lean library: how formal statements are built · 100">
-<meta property="og:description" content="lean/ is a dependency-free Lake project (core Lean 4, no Mathlib) holding a comparator statement for each formalised target in the 100: the exact proposition a proof or counterexample must establish.">
+<meta property="og:description" content="lean/Hundred/Statements/ holds a comparator statement for each formalised target in the 100: the exact proposition a proof or counterexample must establish. It lives in the same dependency-free Lake project as the proof pipeline described i">
 <meta property="og:url" content="https://svyable.github.io/100/library/lean-readme/">
 <meta name="twitter:card" content="summary">
 <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
@@ -31,7 +31,7 @@
     <span class="brand-mark">100<span class="brand-dot">.</span></span>
     <span class="brand-caption">SVYABLE<br>RESEARCH</span>
   </a>
-  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../atlas/">Atlas</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../next/">Next 100</a><a href="../../atlas/">Atlas</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
   <div class="header-tools">
     <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
     <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
@@ -45,13 +45,13 @@
 
 <p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/lean/README.md" rel="noopener noreferrer">lean/README.md <span aria-hidden="true">↗</span></a></p></aside>
 <article class="prose"><p class="eyebrow">METHOD &amp; GOVERNANCE</p><h1>The Lean library: how formal statements are built</h1>
-<p><code>lean/</code> is a dependency-free Lake project (core Lean 4, no Mathlib) holding a <strong>comparator statement</strong> for each formalised target in the 100: the exact proposition a proof or counterexample must establish.</p>
-<pre><code class="lang-sh">cd lean &amp;&amp; lake build             # kernel-checks every statement, example and certificate
-python3 ../scripts/formal.py      # catalogue, escape-hatch scan, independent replay</code></pre>
-<p>Each module (<code>Hundred/&lt;Name&gt;.lean</code>) contains:</p>
+<p><code>lean/Hundred/Statements/</code> holds a <strong>comparator statement</strong> for each formalised target in the 100: the exact proposition a proof or counterexample must establish. It lives in the same dependency-free Lake project as the proof pipeline described in <a href="../../library/lean/">LEAN.md</a> (core Lean 4, no Mathlib) and passes through the same gate.</p>
+<pre><code class="lang-sh">python3 scripts/formal.py --check   # catalogue, escape-hatch scan, independent replay
+python3 scripts/lean_verify.py      # needs elan: build, warnings as errors, axiom audit</code></pre>
+<p>Each module (<code>Hundred/Statements/&lt;Name&gt;.lean</code>, namespace <code>Hundred.Statements.&lt;Name&gt;</code>) contains:</p>
 <ol><li>a header naming the registry id, what is encoded, what is <strong>not</strong> encoded, and the frontier;</li><li><code>Statement</code> (or <code>Conjecture</code>), a <code>Prop</code>, never proved here;</li><li>fidelity examples (hand-checked cases must agree, degenerate objects must be rejected, axioms must be satisfiable), all proved by <code>decide</code>;</li><li>where possible, kernel-checked finite instances whose witness tables come from the exact probe lab. <code>scripts/formal.py</code> replays the same tables in Python.</li></ol>
-<p>Rules, enforced in CI (<code>.github/workflows/lean.yml</code>):</p>
-<ul><li>no <code>sorry</code>, <code>admit</code>, <code>axiom</code>, <code>native_decide</code>, <code>implemented_by</code>, <code>extern</code> or <code>unsafe</code>;</li><li>every module is imported by <code>Hundred.lean</code> and listed in <code>data/formalization.json</code>;</li><li><code>#print axioms</code> for every kernel-checked theorem must not mention <code>sorryAx</code>.</li></ul>
+<p>Rules, enforced in CI (the Lean proof gate in <code>.github/workflows/lean.yml</code> plus <code>validate.yml</code>):</p>
+<ul><li>no <code>sorry</code>, <code>admit</code>, <code>axiom</code>, <code>native_decide</code>, <code>implemented_by</code>, <code>extern</code> or <code>unsafe</code>;</li><li>every module is imported by <code>Hundred.lean</code> and listed in <code>data/formalization.json</code>;</li><li>every kernel-checked theorem is registered in <code>data/lean_targets.json</code>, so the gate compiles it with warnings as errors and audits its transitive axioms (only <code>propext</code>, <code>Classical.choice</code> and <code>Quot.sound</code> are allowed).</li></ul>
 <p>Lean checks only what was encoded. A statement is labelled <code>author_checked</code> until a second reviewer compares every definition with a primary source (<code>independently_reviewed</code>). A kernel-checked finite range lies inside known mathematics and is never progress on the open statement.</p>
 <p>This mirrors the comparator-statement idea used by <a href="https://github.com/openai/math/tree/main/lean" rel="noopener noreferrer">openai/math</a>: statement first, scope explicit. Here every statement also carries kernel-checked fidelity tests, finite certificates tied to an independent checker, and a public page per problem.</p>
 </article></div>

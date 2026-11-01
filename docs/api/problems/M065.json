@@ -14,9 +14,20 @@
   "source_url": null,
   "rank": 45,
   "score": 74,
-  "execution_rank": 46,
+  "execution_rank": 47,
   "execution_score": 74,
   "readiness": 0,
+  "dispatch_rank": 51,
+  "dispatch_score": 74,
+  "action": "specify_shape",
+  "action_label": "Fill the shared attack shape",
+  "action_bonus": 0,
+  "method_id": "rigidity_dynamics",
+  "method_title": "One map, one enclosure",
+  "dispatch_next": "Shape rigidity_dynamics (5 problems, one write-up): Name the map or the billiard, and certify one periodic orbit, one entropy enclosure, or one correlation check. Full shape, certificate and falsifier are in APPROACH.md.",
+  "dispatch_why": "No campaign yet. Fill one restricted statement inside the shared shape.",
+  "campaign_stage": null,
+  "milestone_count": 0,
   "url": "https://svyable.github.io/100/problems/M065/",
   "field_url": "https://svyable.github.io/100/fields/dynamics/",
   "readiness_breakdown": [],
@@ -29,6 +40,11 @@
   "formal_statement": null,
   "external_claims": [],
   "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
     {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",

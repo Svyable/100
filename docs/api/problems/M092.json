@@ -17,6 +17,17 @@
   "execution_rank": 2,
   "execution_score": 101,
   "readiness": 7,
+  "dispatch_rank": 6,
+  "dispatch_score": 113,
+  "action": "replay_published",
+  "action_label": "Replay a published certificate",
+  "action_bonus": 12,
+  "method_id": "finite_geometry",
+  "method_title": "Replay a published geometric object",
+  "dispatch_next": "Extend the cyclotomic engine to the number fields needed for d = 4..8 and replay published exact fiducials there.",
+  "dispatch_why": "Exact fiducials for dimensions above 3 are published, and the cyclotomic engine does not yet replay them.",
+  "campaign_stage": "benchmark_reproduced",
+  "milestone_count": 1,
   "url": "https://svyable.github.io/100/problems/M092/",
   "field_url": "https://svyable.github.io/100/fields/mathematical-physics-finite-structures/",
   "readiness_breakdown": [
@@ -99,6 +110,11 @@
   "external_claims": [],
   "mentioned_in": [
     {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
+    {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",
       "url": "https://svyable.github.io/100/library/attack-queue/"
@@ -114,12 +130,17 @@
       "url": "https://svyable.github.io/100/library/ranked/"
     },
     {
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
+    },
+    {
       "title": "Four concrete proof campaigns — first research tranche",
       "source": "research/CAMPAIGNS.md",
       "url": "https://svyable.github.io/100/library/campaigns/"
     },
     {
-      "title": "Lab campaigns: twelve problems under exact computation",
+      "title": "Lab campaigns: problems under exact computation",
       "source": "research/LAB_CAMPAIGNS.md",
       "url": "https://svyable.github.io/100/library/lab-campaigns/"
     },

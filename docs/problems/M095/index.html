@@ -31,7 +31,7 @@
     <span class="brand-mark">100<span class="brand-dot">.</span></span>
     <span class="brand-caption">SVYABLE<br>RESEARCH</span>
   </a>
-  <nav class="main-nav" aria-label="Primary navigation"><a href="../../" aria-current="page">The 100</a><a href="../../atlas/">Atlas</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../ledger/">Ledger</a><a href="../../library/">Library</a></nav>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../" aria-current="page">The 100</a><a href="../../next/">Next 100</a><a href="../../atlas/">Atlas</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/">Library</a></nav>
   <div class="header-tools">
     <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
     <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
@@ -43,7 +43,7 @@
 
 <article class="problem-page">
 <header class="problem-hero" id="question">
-  <p class="eyebrow"><span class="eyebrow-line"></span> M095 · ATTACK #19 · EDITORIAL #28</p>
+  <p class="eyebrow"><span class="eyebrow-line"></span> M095 · DISPATCH #15 · EXECUTION #19 · EDITORIAL #28</p>
   <h1>Exact Ramsey number R(5,5)</h1>
   <p class="problem-field"><a href="../../fields/mathematical-physics-finite-structures/">Mathematical physics / finite structures</a></p>
   <div class="chips"><span class="status-pill status-needs_review" title="Plausibly open; precise statement and status still need a literature audit.">Needs review</span><span class="chip chip-modality">Finite parameter</span><span class="chip chip-good">Exact verifier in the lab</span><span class="chip chip-good">Lean statement</span><span class="chip chip-campaign">Campaign: Benchmark reproduced</span></div>
@@ -65,12 +65,12 @@
 <pre class="lean"><code><span class="tk-c">/-- The registry conjecture `R(5,5) = 43`, given the known lower bound. -/</span>
 <span class="tk-k">def</span> Conjecture : <span class="tk-k">Prop</span> <span class="tk-o">:=</span> Arrows 43 5 5</code></pre>
 <dl class="kv compact">
-  <dt>Declaration</dt><dd><code>Hundred.Ramsey.Conjecture</code> in <a href="https://github.com/Svyable/100/blob/main/lean/Hundred/Ramsey.lean" rel="noopener noreferrer">lean/Hundred/Ramsey.lean <span aria-hidden="true">↗</span></a></dd>
+  <dt>Declaration</dt><dd><code>Hundred.Statements.Ramsey.Conjecture</code> in <a href="https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/Ramsey.lean" rel="noopener noreferrer">lean/Hundred/Statements/Ramsey.lean <span aria-hidden="true">↗</span></a></dd>
   <dt>Not encoded</dt><dd>The known bounds ¬Arrows 42 5 5 and Arrows 46 5 5 are cited, not re-proved</dd>
   <dt>Fidelity</dt><dd><span class="chip">author checked</span> Encoding written and checked against the registry statement by its author; fidelity examples compile.</dd>
-  <dt>Kernel-checked</dt><dd><ul class="plain"><li><code>Hundred.Ramsey.not_arrows_5_3_3</code> — R(3,3) &gt; 5: the pentagon colouring has no monochromatic triangle. Mirrors lab probe <a href="../../lab/#probe-ramsey_witnesses"><code>ramsey_witnesses</code></a>.</li></ul></dd>
+  <dt>Kernel-checked</dt><dd><ul class="plain"><li><code>Hundred.Statements.Ramsey.not_arrows_5_3_3</code> — R(3,3) &gt; 5: the pentagon colouring has no monochromatic triangle. Mirrors lab probe <a href="../../lab/#probe-ramsey_witnesses"><code>ramsey_witnesses</code></a>.</li></ul></dd>
 </dl>
-<details class="table-view"><summary>Full Lean module (48 lines)</summary><pre class="lean"><code><span class="tk-k">import</span> Hundred.Basic
+<details class="table-view"><summary>Full Lean module (48 lines)</summary><pre class="lean"><code><span class="tk-k">import</span> Hundred.Statements.Basic
 
 <span class="tk-c">/-!
 # M095 — The Ramsey number R(5,5)
@@ -87,8 +87,8 @@ any `c : Nat → Nat → Bool` read on pairs `i &lt; j` (`true` = red). A monoch
 therefore exactly `Arrows 43 5 5`. Neither known bound is re-proved here.
 -/</span>
 
-<span class="tk-k">namespace</span> Hundred.Ramsey
-<span class="tk-k">open</span> Hundred
+<span class="tk-k">namespace</span> Hundred.Statements.Ramsey
+<span class="tk-k">open</span> Hundred.Statements
 
 <span class="tk-c">/-- `c` has a clique of size `s` on vertices below `n` in colour `col`. -/</span>
 <span class="tk-k">abbrev</span> HasMonoClique (c : <span class="tk-k">Nat</span> <span class="tk-o">→</span> <span class="tk-k">Nat</span> <span class="tk-o">→</span> <span class="tk-k">Bool</span>) (n s : <span class="tk-k">Nat</span>) (col : <span class="tk-k">Bool</span>) : <span class="tk-k">Prop</span> <span class="tk-o">:=</span>
@@ -117,17 +117,21 @@ therefore exactly `Arrows 43 5 5`. Neither known bound is re-proved here.
 <span class="tk-c">/-! Fidelity: a 3-clique exists in the all-red colouring of `K_3`. -/</span>
 <span class="tk-k">example</span> : HasMonoClique (<span class="tk-k">fun</span> _ _ =&gt; <span class="tk-k">true</span>) 3 3 <span class="tk-k">true</span> <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span>
 
-<span class="tk-k">end</span> Hundred.Ramsey
+<span class="tk-k">end</span> Hundred.Statements.Ramsey
 </code></pre></details>
 <p class="muted">A proof or counterexample counts only if it establishes exactly this proposition (or a reviewed equivalent). Kernel-checked finite results are fidelity tests inside known mathematics. <a href="../../formal/">How formal statements work →</a></p>
 </section>
 <section class="dossier-block" id="priority"><h2>Priority, decomposed</h2>
   <div class="score-hero">
-    <div><strong>89</strong><span>Execution index</span></div>
-    <div class="score-eq"><span>82</span><small>editorial</small><b>+</b><span>7</span><small>readiness</small></div>
-    <div><strong>#19</strong><span>Attack rank of 100</span></div>
+    <div><strong>#15</strong><span>Dispatch rank · score 101</span></div>
+    <div class="score-eq"><span>82</span><small>editorial</small><b>+</b><span>7</span><small>readiness</small><b>+</b><span>12</span><small>action</small></div>
+    <div><strong>#19</strong><span>Execution rank · index 89</span></div>
     <div><strong>#28</strong><span>Editorial rank of 100</span></div>
   </div>
+  <div class="next-action"><span class="detail-label">NEXT ACTION · REPLAY A PUBLISHED CERTIFICATE</span>
+    <p class="serif">Import and check the published K42 witness; reproduce a small structural exclusion with a trusted proof checker.</p>
+    <p class="muted">Why: The lab certifies R(5,5) greater than 37. The published K42 colouring is the next certificate, and an upper bound needs a proof trace rather than a solver verdict.</p>
+    <p class="muted">Shared attack shape: <a href="../../campaigns/#shape-ramsey_parameter">A colouring with a proof trace</a> — A published finite object sits past what this repository checks. Import that object onto an independent checker. A longer search inside a settled range is not this action.</p></div>
   <div class="two-col">
     <div><h3>Editorial score 82/100</h3><div class="detail-metrics">
       <div class="detail-metric"><span>Impact <small>×6</small></span><div class="meter" role="img" aria-label="Impact 3 of 5"><i style="width:60%"></i></div><b>3/5</b></div><div class="detail-metric"><span>Attackability <small>×6</small></span><div class="meter" role="img" aria-label="Attackability 5 of 5"><i style="width:100%"></i></div><b>5/5</b></div>
@@ -164,17 +168,17 @@ therefore exactly `Arrows 43 5 5`. Neither known bound is re-proved here.
     <dt>Source intake</dt><dd>2026-10-30</dd>
     <dt>Computation</dt><dd>Finite parameter — Asks for one specific finite value or object; exhaustive search or a certificate can settle it.</dd>
   </dl>
-  <h3>Discussed in the library</h3><ul class="link-list"><li><a href="../../library/attack-queue/">Execution queue — evidence-aware research priorities</a></li><li><a href="../../library/lab/">Exact probe lab — computational reach of the 100</a></li><li><a href="../../library/ranked/">Ranked candidate portfolio</a></li><li><a href="../../library/campaigns/">Four concrete proof campaigns — first research tranche</a></li><li><a href="../../library/lab-campaigns/">Lab campaigns: twelve problems under exact computation</a></li><li><a href="../../library/m095-ramsey/">M095 — Ramsey R(5,5): first verifiable campaign</a></li><li><a href="../../library/audit-queue/">Research-source audit — 2026-10-30</a></li><li><a href="../../library/research-engine/">Proof-driven research engine</a></li></ul>
+  <h3>Discussed in the library</h3><ul class="link-list"><li><a href="../../library/approach/">Approach — leverage dispatch</a></li><li><a href="../../library/attack-queue/">Execution queue — evidence-aware research priorities</a></li><li><a href="../../library/lab/">Exact probe lab — computational reach of the 100</a></li><li><a href="../../library/lean/">Lean proof pipeline</a></li><li><a href="../../library/ranked/">Ranked candidate portfolio</a></li><li><a href="../../library/roadmap/">Roadmap — 100 mathematical grand challenges</a></li><li><a href="../../library/campaigns/">Four concrete proof campaigns — first research tranche</a></li><li><a href="../../library/lab-campaigns/">Lab campaigns: problems under exact computation</a></li><li><a href="../../library/m095-ramsey/">M095 — Ramsey R(5,5): first verifiable campaign</a></li><li><a href="../../library/audit-queue/">Research-source audit — 2026-10-30</a></li><li><a href="../../library/lamport-protocol/">Lamport protocol — make every missing implication explicit</a></li><li><a href="../../library/research-engine/">Proof-driven research engine</a></li></ul>
   <h3>Cite this page</h3>
   <div class="cite"><code id="cite-M095">Svyable. “Exact Ramsey number R(5,5) (M095).” 100 — A living portfolio of mathematical grand challenges, data as of 2026-10-31. https://svyable.github.io/100/problems/M095/</code><button class="plain-button" type="button" data-copy="#cite-M095">Copy</button></div>
 </section>
 <section class="dossier-block" id="related"><h2>Nearby in the portfolio</h2>
-  <div class="two-col"><div><h3>Also in <a href="../../fields/mathematical-physics-finite-structures/">Mathematical physics / finite structures</a></h3><ul class="link-list"><li><a href="../../problems/M092/"><span class="mono">M092</span> Zauner SIC conjecture</a></li><li><a href="../../problems/M093/"><span class="mono">M093</span> Linear MDS code main conjecture</a></li><li><a href="../../problems/M094/"><span class="mono">M094</span> Hadamard matrix conjecture</a></li><li><a href="../../problems/M096/"><span class="mono">M096</span> Projective plane order 12</a></li><li><a href="../../problems/M097/"><span class="mono">M097</span> Metric TSP four-thirds conjecture</a></li><li><a href="../../problems/M091/"><span class="mono">M091</span> Yang–Mills existence and mass gap</a></li></ul></div>
+  <div class="two-col"><div><h3>Also in <a href="../../fields/mathematical-physics-finite-structures/">Mathematical physics / finite structures</a></h3><ul class="link-list"><li><a href="../../problems/M092/"><span class="mono">M092</span> Zauner SIC conjecture</a></li><li><a href="../../problems/M093/"><span class="mono">M093</span> Linear MDS code main conjecture</a></li><li><a href="../../problems/M094/"><span class="mono">M094</span> Hadamard matrix conjecture</a></li><li><a href="../../problems/M096/"><span class="mono">M096</span> Projective plane order 12</a></li><li><a href="../../problems/M097/"><span class="mono">M097</span> Metric TSP four-thirds conjecture</a></li><li><a href="../../problems/M100/"><span class="mono">M100</span> Falconer distance-set conjecture</a></li></ul></div>
   <div><h3>Shares an exact engine with</h3><div class="chips"><a class="chip chip-link" href="../../problems/M080/" title="Rota basis conjecture">M080</a><a class="chip chip-link" href="../../problems/M093/" title="Linear MDS code main conjecture">M093</a><a class="chip chip-link" href="../../problems/M094/" title="Hadamard matrix conjecture">M094</a><a class="chip chip-link" href="../../problems/M096/" title="Projective plane order 12">M096</a></div></div></div>
 </section>
 </div>
 </div>
-<nav class="pager" aria-label="Execution order"><a class="pager-prev" rel="prev" href="../../problems/M042/"><small>Previous · #18</small><span>Dixmier conjecture A1</span></a><a class="pager-next" rel="next" href="../../problems/M072/"><small>Next · #20</small><span>Erdős–Hajnal conjecture</span></a></nav>
+<nav class="pager" aria-label="Dispatch order"><a class="pager-prev" rel="prev" href="../../problems/M084/"><small>Previous · dispatch #14</small><span>Matrix multiplication exponent omega=2</span></a><a class="pager-next" rel="next" href="../../problems/M080/"><small>Next · dispatch #16</small><span>Rota basis conjecture</span></a></nav>
 </article>
 </main>
 <footer class="site-footer">

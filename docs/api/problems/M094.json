@@ -17,6 +17,17 @@
   "execution_rank": 7,
   "execution_score": 98,
   "readiness": 7,
+  "dispatch_rank": 8,
+  "dispatch_score": 110,
+  "action": "replay_published",
+  "action_label": "Replay a published certificate",
+  "action_bonus": 12,
+  "method_id": "finite_geometry",
+  "method_title": "Replay a published geometric object",
+  "dispatch_next": "Add multiplier-group symmetry reduction to the Williamson meet-in-the-middle search so that n = 29 (order 116) becomes feasible, then implement Goethals-Seidel arrays for orders 156 and 172.",
+  "dispatch_why": "Orders 116, 156 and 172 are engine gaps. The literature already constructs them. They are not the open case, which the probe frontier places at order 668.",
+  "campaign_stage": "benchmark_reproduced",
+  "milestone_count": 1,
   "url": "https://svyable.github.io/100/problems/M094/",
   "field_url": "https://svyable.github.io/100/fields/mathematical-physics-finite-structures/",
   "readiness_breakdown": [
@@ -97,8 +108,8 @@
   "claim_review_2026": null,
   "formal_statement": {
     "problem_id": "M094",
-    "module": "lean/Hundred/Hadamard.lean",
-    "namespace": "Hundred.Hadamard",
+    "module": "lean/Hundred/Statements/Hadamard.lean",
+    "namespace": "Hundred.Statements.Hadamard",
     "statement": "Statement",
     "encodes": "For every k ≥ 1 an Int matrix of order 4k with ±1 entries and pairwise orthogonal rows.",
     "not_encoded": [
@@ -113,10 +124,15 @@
       }
     ],
     "fidelity": "author_checked",
-    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Hadamard.lean"
+    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/Hadamard.lean"
   },
   "external_claims": [],
   "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
     {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",
@@ -128,12 +144,22 @@
       "url": "https://svyable.github.io/100/library/lab/"
     },
     {
+      "title": "Lean proof pipeline",
+      "source": "LEAN.md",
+      "url": "https://svyable.github.io/100/library/lean/"
+    },
+    {
       "title": "Ranked candidate portfolio",
       "source": "RANKED.md",
       "url": "https://svyable.github.io/100/library/ranked/"
     },
     {
-      "title": "Lab campaigns: twelve problems under exact computation",
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
+    },
+    {
+      "title": "Lab campaigns: problems under exact computation",
       "source": "research/LAB_CAMPAIGNS.md",
       "url": "https://svyable.github.io/100/library/lab-campaigns/"
     },

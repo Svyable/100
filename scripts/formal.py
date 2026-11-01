@@ -4,8 +4,10 @@
     python3 scripts/formal.py            # summary
     python3 scripts/formal.py --check    # fail on any catalogue / source problem
 
-Lean itself runs in CI (``.github/workflows/lean.yml``: ``lake build``). This
-script is the dependency-free half of the contract:
+Lean itself runs in CI through the Lean proof gate (``scripts/lean_verify.py``:
+``lake build``, warnings as errors, axiom audit of every declaration registered in
+``data/lean_targets.json``). This script is the dependency-free half of the
+comparator-statement contract:
 
 * every catalogue entry names an existing module, imported by ``Hundred.lean``,
   that defines the named statement and kernel-checked theorems;
@@ -53,11 +55,13 @@ def validate(doc=None, problem_ids=None):
         raise FormalError(f"catalogue toolchain {doc['toolchain']} != lean/lean-toolchain {toolchain}")
     root_src = (ROOT / doc["library"]).read_text(encoding="utf-8")
     for path in sorted(LEAN.rglob("*.lean")):
-        if ".lake" in path.parts:
+        if ".lake" in path.parts or path.name == "Audit.lean":
             continue
         hit = FORBIDDEN.search(strip_comments(path.read_text(encoding="utf-8")))
         if hit:
             raise FormalError(f"{path.relative_to(ROOT)}: forbidden escape hatch '{hit.group(1)}'")
+    audited = {name for row in json.loads((ROOT / "data" / "lean_targets.json").read_text(encoding="utf-8"))
+               for name in row.get("declarations", [])}
     seen = set()
     for e in doc["entries"]:
         pid = e["problem_id"]
@@ -85,6 +89,10 @@ def validate(doc=None, problem_ids=None):
         for k in e["kernel_checked"]:
             if not declared(src, k["decl"]):
                 raise FormalError(f"{pid}: kernel-checked theorem {k['decl']} not declared")
+            full = f"{e['namespace']}.{k['decl']}"
+            if full not in audited:
+                raise FormalError(f"{pid}: {full} is not registered in data/lean_targets.json, "
+                                  "so the Lean proof gate would not audit its axioms")
     return doc
 
 
@@ -104,21 +112,21 @@ def _is_prime(n):
 def replay():
     """Re-check the finite certificates embedded in the Lean sources. Returns claims checked."""
     checked = []
-    src = (LEAN / "Hundred" / "Goldbach.lean").read_text(encoding="utf-8")
+    src = (LEAN / "Hundred" / "Statements" / "Goldbach.lean").read_text(encoding="utf-8")
     least = [int(x) for x in re.findall(r"\d+", _list_literal(src, "leastPrime"))]
     for n in range(4, 1001, 2):
         p = least[n]
         if not (p <= n and _is_prime(p) and _is_prime(n - p)):
             raise FormalError(f"Goldbach witness for {n} is invalid")
     checked.append("M006 Goldbach witnesses 4..1000")
-    src = (LEAN / "Hundred" / "ErdosStraus.lean").read_text(encoding="utf-8")
+    src = (LEAN / "Hundred" / "Statements" / "ErdosStraus.lean").read_text(encoding="utf-8")
     triples = [tuple(map(int, t)) for t in re.findall(r"\((\d+),\s*(\d+),\s*(\d+)\)", _list_literal(src, "table"))]
     for n in range(2, 101):
         x, y, z = triples[n - 2]
         if not (x > 0 and y > 0 and z > 0 and 4 * x * y * z == n * (x * y + y * z + z * x)):
             raise FormalError(f"Erdős–Straus triple for {n} is invalid")
     checked.append("M019 Erdős–Straus triples 2..100")
-    src = (LEAN / "Hundred" / "Hadamard.lean").read_text(encoding="utf-8")
+    src = (LEAN / "Hundred" / "Statements" / "Hadamard.lean").read_text(encoding="utf-8")
     rows = [[int(v) for v in re.findall(r"-?\d+", r)] for r in re.findall(r"\[([-\d,\s]+)\]", _list_literal(src, "paley12Rows"))]
     syl = lambda k: [[-1 if bin(i & j).count("1") % 2 else 1 for j in range(2 ** k)] for i in range(2 ** k)]
     for H in (syl(2), syl(3), rows, syl(4)):

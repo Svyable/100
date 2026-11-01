@@ -17,6 +17,17 @@
   "execution_rank": 10,
   "execution_score": 92,
   "readiness": 7,
+  "dispatch_rank": 1,
+  "dispatch_score": 132,
+  "action": "replay_claim_witness",
+  "action_label": "Replay a claimed finite witness",
+  "action_bonus": 40,
+  "method_id": "extremal_certificates",
+  "method_title": "Replay the object, or mine the census",
+  "dispatch_next": "Audit the Lean quantifiers and graph encoding against the theorem; reproduce or extract an explicit graph plus an independently checkable minor-bound obstruction.",
+  "dispatch_why": "A 2026 manuscript claims a Hadwiger counterexample. Reproducing that finite graph outranks another census step. Robertson, Seymour and Thomas already cover chromatic number at most 6.",
+  "campaign_stage": "benchmark_reproduced",
+  "milestone_count": 1,
   "url": "https://svyable.github.io/100/problems/M071/",
   "field_url": "https://svyable.github.io/100/fields/combinatorics/",
   "readiness_breakdown": [
@@ -112,8 +123,8 @@
   },
   "formal_statement": {
     "problem_id": "M071",
-    "module": "lean/Hundred/Hadwiger.lean",
-    "namespace": "Hundred.Hadwiger",
+    "module": "lean/Hundred/Statements/Hadwiger.lean",
+    "namespace": "Hundred.Statements.Hadwiger",
     "statement": "Statement",
     "encodes": "Every simple graph has a K_t minor (branch-set model, connectivity by no-split cuts) or a proper (t−1)-colouring.",
     "not_encoded": [
@@ -121,10 +132,15 @@
     ],
     "kernel_checked": [],
     "fidelity": "author_checked",
-    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Hadwiger.lean"
+    "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/Hadwiger.lean"
   },
   "external_claims": [],
   "mentioned_in": [
+    {
+      "title": "Approach — leverage dispatch",
+      "source": "APPROACH.md",
+      "url": "https://svyable.github.io/100/library/approach/"
+    },
     {
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",
@@ -136,9 +152,19 @@
       "url": "https://svyable.github.io/100/library/lab/"
     },
     {
+      "title": "Lean proof pipeline",
+      "source": "LEAN.md",
+      "url": "https://svyable.github.io/100/library/lean/"
+    },
+    {
       "title": "Ranked candidate portfolio",
       "source": "RANKED.md",
       "url": "https://svyable.github.io/100/library/ranked/"
+    },
+    {
+      "title": "Roadmap — 100 mathematical grand challenges",
+      "source": "ROADMAP.md",
+      "url": "https://svyable.github.io/100/library/roadmap/"
     },
     {
       "title": "2026 claimed-resolution triage — issue #3",
@@ -146,7 +172,7 @@
       "url": "https://svyable.github.io/100/library/claim-reviews-2026/"
     },
     {
-      "title": "Lab campaigns: twelve problems under exact computation",
+      "title": "Lab campaigns: problems under exact computation",
       "source": "research/LAB_CAMPAIGNS.md",
       "url": "https://svyable.github.io/100/library/lab-campaigns/"
     },
