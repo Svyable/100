@@ -70,6 +70,16 @@ class TestValidation(unittest.TestCase):
             with self.subTest(bad=bad), self.assertRaises(outcomes.OutcomeError):
                 outcomes.validate(ledger(bad))
 
+    def test_infrastructure_claims_record_cost_without_novelty(self):
+        infrastructure = dict(REC, work_id="X-COVERAGE-DEPTH-200",
+                              novelty="known_or_reproduction")
+        outcomes.validate(ledger(infrastructure))
+        self.assertEqual(outcomes.family(infrastructure["work_id"]), "infrastructure")
+        m = outcomes.metrics(ledger(infrastructure), review_backlog=0)
+        self.assertEqual(m["accepted_work_items"], 0)
+        self.assertEqual(m["new_restricted_results_audited"], 0)
+        self.assertEqual(m["by_family"]["infrastructure"]["records"], 1)
+
     def test_rejects_malformed_records(self):
         for bad in (dict(REC, work_id="whatever"), dict(REC, scope_sha256="xyz"), dict(REC, outcome="solved"),
                     dict(REC, closed_on="2026-10-01"), dict(REC, resources={"agent_hours": -1}),

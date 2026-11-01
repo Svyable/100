@@ -86,6 +86,10 @@ means renumber *your* new entry, never one that is already on main, then regener
 Use the PR template, name the work item id in the title or body, include
 `Closes #<claim issue>`, and paste the output of `python3 scripts/regen.py --check`.
 
+Infrastructure-wide cross-problem claims may use a stable `X-...` work id when no derived
+work-queue item has that scope; record these separately as infrastructure, not a
+new theorem, formal result or independently accepted review.
+
 In the same PR, append one record to `data/outcomes.json`: the item id, the claimed scope
 digest, the author, the outcome (`merged_pending_review`, `gap_reported`, `falsified` or
 `abandoned`) and honest agent-hours, failed attempts included. Only a reviewer who is not the

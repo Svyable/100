@@ -51,6 +51,11 @@
       "url": "https://svyable.github.io/100/library/attack-queue/"
     },
     {
+      "title": "Coverage — breadth-first research deployment plan",
+      "source": "COVERAGE.md",
+      "url": "https://svyable.github.io/100/library/coverage/"
+    },
+    {
       "title": "Ranked candidate portfolio",
       "source": "RANKED.md",
       "url": "https://svyable.github.io/100/library/ranked/"

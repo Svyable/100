@@ -38,6 +38,7 @@ STEPS = (
     (["outcomes.py"], ["outcomes.py", "--check"], ["YIELD.md"]),
     (None, ["verify_claim_witnesses.py", "--check"], []),
     (["scale.py", "--write"], ["scale.py", "--check"], ["SCALE.md"]),
+    (["coverage.py", "--write"], ["coverage.py", "--check"], ["COVERAGE.md"]),
     (["build_site.py"], ["build_site.py", "--check"],
      ["docs/ (everything except docs/assets, docs/next, docs/*.md, docs/.nojekyll)"]),
 )
