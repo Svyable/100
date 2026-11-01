@@ -25,6 +25,7 @@ jobs:
       - run: python3 scripts/outcomes.py --check
       - run: python3 scripts/benchmark.py --check
       - run: python3 scripts/k42_calibration.py --check
+      - run: python3 scripts/transfer.py --check
       - run: python3 scripts/scale.py --check
       - run: python3 scripts/fleet.py --count 100 --check
       - run: python3 scripts/verify_mckay.py --check
