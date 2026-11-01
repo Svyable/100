@@ -166,6 +166,11 @@
       "url": "https://svyable.github.io/100/library/lab-campaigns/"
     },
     {
+      "title": "M097 — eight-vertex graph-metric subtour gap census",
+      "source": "research/M097_GRAPH8.md",
+      "url": "https://svyable.github.io/100/library/m097-graph8/"
+    },
+    {
       "title": "Proof-driven research engine",
       "source": "docs/RESEARCH_ENGINE.md",
       "url": "https://svyable.github.io/100/library/research-engine/"

@@ -292,6 +292,22 @@
         "ci_minutes": 0
       },
       "note": "Exact 328 pinned K42 one-vertex nonextension proofs using complete unit-propagation trees <=51 nodes; independently replayed by a distinct four-subset K4 checker with adversarial controls. Nonextendibility known since McKay-Radziszowski 1997 and independent SAT work in 2026; compact proof-tree bound has not been novelty-reviewed. No K43 exclusion or conjecture progress, no independent review. Outcome classification conditional on PR merge."
+    },
+    {
+      "work_id": "X-M097-GRAPH8",
+      "scope_sha256": "3215f17dc9d6dbb8b8db777ceb1c802d5b07e14866f1744d1ca112689d7ccb26",
+      "author": "ChatGPT (M097 eight-vertex graph-metric census)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/175",
+      "pr_url": "https://github.com/Svyable/100/pull/176",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.8,
+        "ci_minutes": 0
+      },
+      "note": "Approximate active author/tool work. All 11,117 connected unlabeled eight-vertex graph metrics checked by exact rational primal/dual LP certificates and 2,520 tours per graph; max ratio 10/9 at two diameter-three graphs. Ten adversarial tests and independent DP for maximizers. A discarded chunk-index bug was corrected before the final four-chunk census. Not externally reviewed, no historical novelty established; status conditional on PR merge."
     }
   ]
 }
