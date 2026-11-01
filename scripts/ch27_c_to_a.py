@@ -61,7 +61,10 @@ def endpoint_obstruction(alpha, k):
 
 def classify(alpha, k):
     old = b_internal.classify(alpha, k)
-    if old != "unresolved":
+    # Replay the original 295-profile baseline even after the independent
+    # z4 sink filter was added to the shared B-stage classifier. Both proofs
+    # must be testable on their own and neither should mask the other.
+    if old not in ("unresolved", "z4_sink_cut"):
         return old
     lower, upper = bound_C_to_A(alpha, k)
     if upper < lower:
