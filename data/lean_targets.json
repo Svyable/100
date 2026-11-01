@@ -1,0 +1,44 @@
+[
+  {
+    "id": "L001",
+    "problem_id": "M095",
+    "stage": "implemented",
+    "statement": "The modular five-cycle is a symmetric, loop-free red/blue coloring with no monochromatic triangle; injective vertex restrictions preserve this property.",
+    "scope_gap": "Known R(3,3) lower-bound witness only. No R(3,3) upper bound or R(5,5) determination. Independent statement review pending.",
+    "next_step": "Match every edge to examples/R33_C5.json; then generalize certificate replay to clique sizes s and t.",
+    "declarations": [
+      "Hundred.Ramsey.cycle5_valid",
+      "Hundred.Ramsey.cycle5_triangleFree",
+      "Hundred.Ramsey.cycle5_independentTripleFree",
+      "Hundred.Ramsey.cycle5_certificate",
+      "Hundred.Ramsey.five_vertex_witness",
+      "Hundred.Ramsey.restrict",
+      "Hundred.Ramsey.check_sound"
+    ]
+  },
+  {
+    "id": "L002",
+    "problem_id": "M075",
+    "stage": "implemented",
+    "statement": "All 16 bitmask families on the ground set {0,1}: if union-closed and containing a nonempty set, some element belongs to at least half the family. Includes elementwise union semantics and the existing tiny benchmark.",
+    "scope_gap": "Only the two-element ground universe, encoded as Fin 16. No proof for arbitrary ground-set sizes, no novelty claim; independent scope review pending.",
+    "next_step": "Prove a representation theorem for arbitrary extensional set families on Fin 2, then generalize counting and union semantics to Fin n.",
+    "declarations": [
+      "Hundred.Frankl.union_membership",
+      "Hundred.Frankl.frankl_two",
+      "Hundred.Frankl.small_nontrivial",
+      "Hundred.Frankl.small_closed",
+      "Hundred.Frankl.small_half",
+      "Hundred.Frankl.small_abundant"
+    ]
+  },
+  {
+    "id": "L003",
+    "problem_id": "M074",
+    "stage": "planned",
+    "statement": "Soundness of decoding a directed-graph SAT assignment into a loop-free graph with minimum outdegree and absence of short directed cycles.",
+    "scope_gap": "SAT search output alone is not a theorem. UNSAT requires a checked proof and a separately proved encoding completeness theorem.",
+    "next_step": "Formalize graph semantics and assignment decoder before attempting the 18-vertex target.",
+    "declarations": []
+  }
+]
