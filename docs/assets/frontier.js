@@ -140,9 +140,10 @@
         href: hasLean ? "#formal" : "#provenance", link: hasLean ? "Inspect statement" : "Inspect scope"
       },
       {
-        title: "Reproduced evidence", state: reproduced + " local milestones",
-        detail: "Published benchmarks and independently checked finite cases are not new unrestricted theorems.",
-        href: reproduced ? "#milestones" : "#campaign", link: reproduced ? "Inspect milestones" : "Inspect campaign"
+        title: "Recorded milestones", state: reproduced + " local milestones",
+        detail: "Inspect each milestone’s exact scope. Finite and previously known results do not prove the unrestricted theorem.",
+        href: reproduced ? "#milestones" : (select("#campaign") ? "#campaign" : "#provenance"),
+        link: reproduced ? "Inspect milestones" : (select("#campaign") ? "Inspect campaign" : "Inspect evidence")
       },
       {
         title: "Open proof work", state: obligations.length + " runnable obligations",
