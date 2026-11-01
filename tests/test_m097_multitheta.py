@@ -52,6 +52,10 @@ class MultithetaTests(unittest.TestCase):
     def test_wrong_parity(self):
         self.assertNotEqual(m.check_instance((3, 3, 3))["tsp"], 9)
 
+    def test_more_than_five_paths(self):
+        self.assertEqual(m.check_instance((2,) * 7)["ratio"], "1")
+        self.assertEqual(m.check_instance((3,) * 6)["ratio"], "1")
+
     def test_simple_graph(self):
         for ls in ((2, 2), (2, 2, 2, 2), (3, 3, 3), (2, 4, 5)):
             n, edges, _, _ = m.build_graph(ls)
