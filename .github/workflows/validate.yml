@@ -19,6 +19,7 @@ jobs:
       - run: python3 scripts/research.py --check
       - run: python3 scripts/lab.py --check
       - run: python3 scripts/mine.py --check
+      - run: python3 scripts/deck_signature_frontier.py --check --quick
       - run: python3 scripts/check_external_artifact.py --validate-only
       - run: python3 scripts/formal.py --check
       - run: python3 scripts/work.py --check

@@ -135,8 +135,98 @@
     "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/Reconstruction.lean"
   },
   "external_claims": [],
-  "discovery_trail": null,
-  "discovery_url": null,
+  "discovery_trail": {
+    "problem_id": "M078",
+    "question": "How little of each vertex-deleted card suffices to distinguish small graphs, and where does that compression first fail?",
+    "nodes": [
+      {
+        "id": "coarse-collision",
+        "kind": "observation",
+        "status": "documented",
+        "title": "Degree sequence plus a global triangle count leaves collisions",
+        "detail": "The earlier exact mine found 20 excess isomorphism classes among six-vertex graphs after grouping by degree sequence and global triangle count. The full graph deck holds more information than this unpaired summary.",
+        "motivated_by": [],
+        "sources": [
+          "MINES.md",
+          "scripts/mines/deck_invariants.py"
+        ]
+      },
+      {
+        "id": "paired-card-signature",
+        "kind": "strategy",
+        "status": "documented",
+        "title": "Keep each deleted card's degree sequence paired with its motif count",
+        "detail": "Define S3(G) as the multiset of pairs (degree sequence of G-v, number of triangles in G-v). The pairing preserves which statistics came from the same card.",
+        "move_id": "motif_refinement",
+        "motivated_by": [
+          "coarse-collision"
+        ],
+        "sources": [
+          "research/M078_CARD_SIGNATURE.md"
+        ]
+      },
+      {
+        "id": "complete-through-seven",
+        "kind": "reproduction",
+        "status": "reproduced_known",
+        "title": "Independent complete finite census through seven vertices",
+        "detail": "The exact signature distinguishes all 156 six-vertex classes and all 1,044 seven-vertex classes. Completeness follows from a verified class census and an independent Burnside count; it is finite mathematics within established graph-reconstruction ranges.",
+        "move_id": "independent_replay",
+        "motivated_by": [
+          "paired-card-signature"
+        ],
+        "sources": [
+          "research/M078_CARD_SIGNATURE.md",
+          "data/card_motif_signatures.json"
+        ]
+      },
+      {
+        "id": "eight-vertex-break",
+        "kind": "blocker",
+        "status": "blocked",
+        "title": "Two explicit triangle-free graphs share S3 at order eight",
+        "detail": "The stored eight-vertex edge lists have identical S3 multisets but different four-cycle counts (2 versus 1). Thus they are nonisomorphic; they are not a counterexample to reconstruction from the full deck.",
+        "move_id": "scope_fidelity",
+        "motivated_by": [
+          "complete-through-seven"
+        ],
+        "sources": [
+          "research/M078_CARD_SIGNATURE.md",
+          "data/card_motif_signatures.json"
+        ]
+      },
+      {
+        "id": "four-cycle-repair",
+        "kind": "reproduction",
+        "status": "reproduced_known",
+        "title": "Adding the per-card four-cycle count separates all 12,346 eight-vertex classes",
+        "detail": "S4(G) pairs each card's degree sequence, triangle count and four-cycle count. In a complete 133,632-extension cover it takes 12,346 distinct values, matching Burnside's independently computed class count. Mathematical novelty remains unconfirmed.",
+        "move_id": "motif_refinement",
+        "motivated_by": [
+          "eight-vertex-break"
+        ],
+        "sources": [
+          "research/M078_CARD_SIGNATURE.md",
+          "data/card_motif_signatures.json"
+        ]
+      },
+      {
+        "id": "ninth-order-frontier",
+        "kind": "next_step",
+        "status": "proposed",
+        "title": "Find a nine-vertex collision or certify the next finite class",
+        "detail": "Obtain a complete nine-vertex generator or an explicit pair that defeats S4. Before any novelty claim, seek independent mathematical and prior-art review.",
+        "move_id": "certificate_frontier",
+        "motivated_by": [
+          "four-cycle-repair"
+        ],
+        "sources": [
+          "research/M078_CARD_SIGNATURE.md"
+        ]
+      }
+    ]
+  },
+  "discovery_url": "https://svyable.github.io/100/discovery/M078/",
   "mentioned_in": [
     {
       "title": "Approach — leverage dispatch",
@@ -187,6 +277,11 @@
       "title": "Lab campaigns: problems under exact computation",
       "source": "research/LAB_CAMPAIGNS.md",
       "url": "https://svyable.github.io/100/library/lab-campaigns/"
+    },
+    {
+      "title": "M078 — a sharp finite boundary for paired card-motif signatures",
+      "source": "research/M078_CARD_SIGNATURE.md",
+      "url": "https://svyable.github.io/100/library/m078-card-signature/"
     },
     {
       "title": "Proof-driven research engine",

@@ -15,8 +15,8 @@ class DiscoveryValidation(unittest.TestCase):
         self.data = discovery.load()
 
     def test_sample_trails_are_sourced_and_safe(self):
-        self.assertEqual(len(self.data["trails"]), 4)
-        self.assertEqual(sum(len(t["nodes"]) for t in self.data["trails"]), 13)
+        self.assertEqual(len(self.data["trails"]), 5)
+        self.assertEqual(sum(len(t["nodes"]) for t in self.data["trails"]), 19)
         for trail in self.data["trails"]:
             self.assertTrue(all(node["sources"] for node in trail["nodes"]))
             self.assertFalse(any(node["status"] in ("verified", "solved", "accepted")
