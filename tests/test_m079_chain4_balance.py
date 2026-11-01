@@ -21,6 +21,16 @@ class ChainFourTests(unittest.TestCase):
         self.assertEqual(result["minimum"], "25/61")
         self.assertEqual(result["sharp_interval_multisets"], 2)
 
+    def test_full_residual_exhaustive_two_path(self):
+        # Replay every finite residual instance, not only the 8-gap smoke.
+        # The two C++ counters must agree on all pair numerators, and the
+        # ordered 3,456,151-case transcript must match its pinned SHA-256.
+        result = target.census(18)
+        self.assertEqual(result["cases"], 3456151)
+        self.assertEqual(result["minimum"], "25/61")
+        self.assertEqual(result["sharp_interval_multisets"], 2)
+        self.assertEqual(result["sha256"], target.FULL_SHA256)
+
     def test_sharp_literal_permutation_witness(self):
         r = target.check_witness()
         self.assertEqual((r["extensions"], r["best_numerator"]), (183, 75))
