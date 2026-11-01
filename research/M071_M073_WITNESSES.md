@@ -25,6 +25,10 @@ python3 -m unittest discover -s tests -p 'test_verify_claim_witnesses.py' -v
 
 The upstream `RandomHost` development samples a finite simple graph from a symmetric counter-kernel and proves that for all sufficiently large `n` the expectation gap forces some concrete bitstring to work. **No adjacency list, graph6 string, or numeric order `n` is shipped.** Without that object, this repository cannot replay a finite Sidorenko counterexample outside Lean.
 
+A complementary [exact two-block graphon grid](M073_TWOBLOCK_EXACT.md)
+checks 27 rational equal-mass kernels by two different integer algorithms;
+it finds no strict violation but does not supply the missing host.
+
 **Status recorded:** `pattern_reconstructed_host_missing`. Evidence state stays `claim_needs_review` / `formal_statement_check_only`.
 
 ## M071 — Hadwiger construction is existential; no finite graph
