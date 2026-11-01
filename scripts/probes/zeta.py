@@ -377,36 +377,57 @@ def replay_riemann(height, zeros, intervals, params):
     return count
 
 
-# --- Dirichlet L(s, χ₄), the Dirichlet beta function ----------------------
+# --- Real primitive Dirichlet characters with root number +1 ---------------
 
-def L_chi4(s, params):
-    """L(s, χ₄) = 4^{-s} (ζ(s, 1/4) − ζ(s, 3/4))."""
-    scale = _cpow(4, _cneg(s))
-    return iv.cmul(scale, iv.csub(hurwitz(s, Fraction(1, 4), params),
-                                   hurwitz(s, Fraction(3, 4), params)))
+@dataclass(frozen=True)
+class RealCharacter:
+    """A real primitive character whose completed Lambda is real on the critical line.
 
-
-def theta_chi4(height, n_terms):
-    """Phase that makes Λ(1/2+it, χ₄) real when the root number is +1.
-
-    χ₄ is the primitive odd character modulo 4. Its Gauss sum is 2i, so
-    ε = τ(χ) / (i^a √q) = 1 with a = 1 and q = 4. Thus
-    θ(t) = Im log Γ(3/4 + it/2) − (t/2) log(π/4).
+    ``terms`` are the pairs (χ(r), r) for r = 1..q-1 with χ(r) ≠ 0, so
+    L(s, χ) = q^{-s} Σ χ(r) ζ(s, r/q). ``parity`` is 0 or 1 according as
+    χ(-1) = ±1. The root number is assumed to be +1, which fixes the phase
+    θ(t) = Im log Γ((s+parity)/2) − (t/2) log(π/q) at s = 1/2+it.
     """
+
+    name: str
+    modulus: int
+    parity: int
+    terms: tuple
+
+
+# χ₄(n) = 0, 1, 0, -1 for n mod 4. Odd, Gauss sum 2i, root number +1.
+CHI4 = RealCharacter("chi_4", 4, 1, ((1, 1), (-1, 3)))
+# χ₃(n) = 0, 1, -1 for n mod 3. Odd, Gauss sum i√3, root number +1.
+CHI3 = RealCharacter("chi_3", 3, 1, ((1, 1), (-1, 2)))
+# The Legendre symbol mod 5. Even, Gauss sum √5, root number +1.
+CHI5 = RealCharacter("chi_5", 5, 0, ((1, 1), (-1, 2), (-1, 3), (1, 4)))
+
+
+def L_character(s, params, chi):
+    scale = _cpow(chi.modulus, _cneg(s))
+    total = iv.Cv(iv.iv_int(0), iv.iv_int(0))
+    for sign, residue in chi.terms:
+        term = hurwitz(s, Fraction(residue, chi.modulus), params)
+        total = iv.cadd(total, term if sign > 0 else _cneg(term))
+    return iv.cmul(scale, total)
+
+
+def theta_character(height, n_terms, chi):
     t = _point(height)
-    z = iv.Cv(iv.iv_fraction(Fraction(3, 4)), iv.div_small(t, 2))
-    log_factor = iv.sub(iv.log_iv(iv.pi()), iv.log_iv(iv.iv_int(4)))
+    real = Fraction(1 + 2 * chi.parity, 4)
+    z = iv.Cv(iv.iv_fraction(real), iv.div_small(t, 2))
+    log_factor = iv.sub(iv.log_iv(iv.pi()), iv.log_iv(iv.iv_int(chi.modulus)))
     return iv.sub(log_gamma(z, n_terms).im, iv.mul(iv.div_small(t, 2), log_factor))
 
 
-def hardy_chi4(height, params):
-    phase = iv.cexp(iv.Cv(iv.iv_int(0), theta_chi4(height, params.stirling)))
+def hardy_character(height, params, chi):
+    phase = iv.cexp(iv.Cv(iv.iv_int(0), theta_character(height, params.stirling, chi)))
     s = iv.Cv(iv.iv_fraction(Fraction(1, 2)), _point(height))
-    return iv.cmul(phase, L_chi4(s, params))
+    return iv.cmul(phase, L_character(s, params, chi))
 
 
-def sign_chi4(height, params):
-    value = hardy_chi4(height, params)
+def sign_character(height, params, chi):
+    value = hardy_character(height, params, chi)
     if value.re.lo > 0:
         return 1
     if value.re.hi < 0:
@@ -414,28 +435,25 @@ def sign_chi4(height, params):
     return 0
 
 
-def _image_L(s0, s1, params):
+def _image_character(s0, s1, params, chi):
     box = iv.Cv(iv.Iv(min(s0[0], s1[0]), max(s0[0], s1[0])),
                 iv.Iv(min(s0[1], s1[1]), max(s0[1], s1[1])))
-    return L_chi4(box, params)
+    return L_character(box, params, chi)
 
 
-def _cover_L(s0, s1, params, depth):
-    arc = iv.arg_arc(_image_L(s0, s1, params))
+def _cover_character(s0, s1, params, chi, depth):
+    arc = iv.arg_arc(_image_character(s0, s1, params, chi))
     if arc is not None and arc.width() <= _MAX_ARC:
         return [arc]
     if depth >= 14:
-        raise CertificationError("L-function argument enclosure failed on a contour segment")
+        raise CertificationError(f"{chi.name}: argument enclosure failed on a contour segment")
     mid = ((s0[0] + s1[0]) // 2, (s0[1] + s1[1]) // 2)
-    return _cover_L(s0, mid, params, depth + 1) + _cover_L(mid, s1, params, depth + 1)
+    return (_cover_character(s0, mid, params, chi, depth + 1)
+            + _cover_character(mid, s1, params, chi, depth + 1))
 
 
-def argument_chi4(height, params):
-    """Continuous arg L(1/2+iT, χ₄), started from arg L(2, χ₄) = 0.
-
-    The path is the segment from 2 up to 2+iT and then left to 1/2+iT, the
-    same path used for ζ. There is no pole on it.
-    """
+def argument_character(height, params, chi):
+    """Continuous arg L(1/2+iT, χ), started from arg L(2, χ) = 0."""
     t = _units(height)
     right = _units(2)
     half = _units(Fraction(1, 2))
@@ -443,36 +461,35 @@ def argument_chi4(height, params):
     y, step = 0, _units(2)
     while y < t:
         y2 = min(t, y + step)
-        arcs += _cover_L((right, y), (right, y2), params, 0)
+        arcs += _cover_character((right, y), (right, y2), params, chi, 0)
         y = y2
     x, step_x = right, _units(Fraction(1, 4))
     while x > half:
         x2 = max(half, x - step_x)
-        arcs += _cover_L((x, t), (x2, t), params, 0)
+        arcs += _cover_character((x, t), (x2, t), params, chi, 0)
         x = x2
     acc = _lift(arcs[0], iv.Iv(0, 0), contain=True)
     if acc is None:
-        raise CertificationError("L(2, χ₄) is not enclosed as a positive real")
+        raise CertificationError(f"L(2, {chi.name}) is not enclosed as a positive real")
     for arc in arcs[1:]:
         acc = _lift(arc, acc, contain=False)
         if acc is None:
-            raise CertificationError("L-function argument chain broke")
+            raise CertificationError(f"{chi.name}: argument chain broke")
     return acc
 
 
-def N_chi4(height, params):
-    """Non-trivial zeros of L(s, χ₄) with 0 < Im s ≤ T.
+def N_character(height, params, chi):
+    """Non-trivial zeros of L(s, χ) with 0 < Im s ≤ T.
 
-    χ₄ is primitive and non-principal, so Λ(s, χ₄) is entire and the counting
-    formula has no pole term: N(T) = θ(T)/π + (1/π) arg L(1/2+iT). The root
-    number +1 is already built into ``theta_chi4``.
+    A non-principal primitive character has no pole, so
+    N(T) = θ(T)/π + (1/π) arg L(1/2+iT). The root number +1 is built into θ.
     """
-    main = iv.div(theta_chi4(height, params.stirling), iv.pi())
-    correction = iv.div(argument_chi4(height, params), iv.pi())
+    main = iv.div(theta_character(height, params.stirling, chi), iv.pi())
+    correction = iv.div(argument_character(height, params, chi), iv.pi())
     return iv.unique_integer(iv.add(main, correction))
 
 
-def isolate_chi4(height, params, start=4, step=1):
+def isolate_character(height, params, chi, start=4, step=1):
     height = Fraction(height)
     samples = []
     t = Fraction(start)
@@ -483,17 +500,17 @@ def isolate_chi4(height, params, start=4, step=1):
             tt = t + delta
             if not 0 < tt < height:
                 continue
-            sign = sign_chi4(tt, params)
+            sign = sign_character(tt, params, chi)
             if sign:
                 samples.append((tt, sign))
                 placed = True
                 break
         if not placed:
-            raise CertificationError(f"no certified χ₄ sign near t = {t}")
+            raise CertificationError(f"no certified {chi.name} sign near t = {t}")
         t += Fraction(step)
-    sign_T = sign_chi4(height, params)
+    sign_T = sign_character(height, params, chi)
     if not sign_T:
-        raise CertificationError(f"Z_χ({height}) enclosure is not signed")
+        raise CertificationError(f"Z({height}, {chi.name}) enclosure is not signed")
     samples.append((height, sign_T))
     samples.sort()
     intervals = []
@@ -503,16 +520,16 @@ def isolate_chi4(height, params, start=4, step=1):
     return intervals
 
 
-def certify_chi4(height, zeros, params):
-    found = isolate_chi4(height, params)
-    count = N_chi4(height, params)
+def certify_character(height, zeros, params, chi, start=4):
+    found = isolate_character(height, params, chi, start=start)
+    count = N_character(height, params, chi)
     if count is None or count != len(found) or count != zeros:
         raise CertificationError(
-            f"χ₄ N({height}) = {count}, sign changes = {len(found)}, claimed = {zeros}")
+            f"{chi.name} N({height}) = {count}, sign changes = {len(found)}, claimed = {zeros}")
     return found
 
 
-def replay_chi4(height, zeros, intervals, params):
+def replay_character(height, zeros, intervals, params, chi):
     if len(intervals) != zeros:
         raise CertificationError("interval count does not match the claimed zero count")
     previous = Fraction(0)
@@ -520,11 +537,27 @@ def replay_chi4(height, zeros, intervals, params):
         left, right = Fraction(left), Fraction(right)
         if not 0 < left < right <= Fraction(height) or left < previous:
             raise CertificationError("isolating intervals are not ordered inside (0, T]")
-        s0, s1 = sign_chi4(left, params), sign_chi4(right, params)
+        s0, s1 = sign_character(left, params, chi), sign_character(right, params, chi)
         if s0 == 0 or s1 == 0 or s0 == s1:
             raise CertificationError(f"Z_χ does not change sign on ({left}, {right})")
         previous = right
-    count = N_chi4(height, params)
+    count = N_character(height, params, chi)
     if count != zeros:
-        raise CertificationError(f"replay χ₄ N({height}) = {count}, claimed {zeros}")
+        raise CertificationError(f"replay {chi.name} N({height}) = {count}, claimed {zeros}")
     return count
+
+
+def L_chi4(s, params):
+    return L_character(s, params, CHI4)
+
+
+def theta_chi4(height, n_terms):
+    return theta_character(height, n_terms, CHI4)
+
+
+def certify_chi4(height, zeros, params):
+    return certify_character(height, zeros, params, CHI4)
+
+
+def replay_chi4(height, zeros, intervals, params):
+    return replay_character(height, zeros, intervals, params, CHI4)

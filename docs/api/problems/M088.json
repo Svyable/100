@@ -84,6 +84,8 @@
     "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/PIT.lean"
   },
   "external_claims": [],
+  "discovery_trail": null,
+  "discovery_url": null,
   "mentioned_in": [
     {
       "title": "Approach — leverage dispatch",
@@ -94,6 +96,11 @@
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",
       "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Coverage — breadth-first research deployment plan",
+      "source": "COVERAGE.md",
+      "url": "https://svyable.github.io/100/library/coverage/"
     },
     {
       "title": "Ranked candidate portfolio",
@@ -124,6 +131,11 @@
       "title": "Research-source audit — 2026-10-30",
       "source": "docs/AUDIT_QUEUE.md",
       "url": "https://svyable.github.io/100/library/audit-queue/"
+    },
+    {
+      "title": "OpenAI/math transfer intake: evidence before claims",
+      "source": "docs/OPENAI_MATH_TRANSFER.md",
+      "url": "https://svyable.github.io/100/library/openai-math-transfer/"
     }
   ]
 }

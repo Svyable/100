@@ -29,13 +29,17 @@ class BenchmarkTests(unittest.TestCase):
             },
         }
 
-    def test_manifest_is_preregistered_and_no_results_exist(self):
-        self.assertEqual(benchmark.load_runs(), [])
+    def test_manifest_is_preregistered_and_actual_runs_validate(self):
+        observed = benchmark.load_runs()
+        benchmark.validate_runs(self.doc, observed)
         self.assertEqual([t["class"] for t in self.doc["tasks"]],
                          ["replay", "structural", "dependency"])
         report = benchmark.summarize(self.doc, [])
         self.assertEqual(report["expected_trials"], 36)
         self.assertEqual(report["missing_trials"], 36)
+        live = benchmark.summarize(self.doc, observed)
+        self.assertEqual(live["recorded_trials"], len(observed))
+        self.assertEqual(live["missing_trials"], 36 - len(observed))
         self.assertFalse(report["comparable"])
         self.assertEqual(report["by_arm"]["proof_exchange"]["reviewed_restricted"], 0)
 
@@ -63,6 +67,18 @@ class BenchmarkTests(unittest.TestCase):
         row["evidence"]["independent_review_urls"][1] = "https://two.example.net/b"
         benchmark.validate_runs(self.doc, [row])
         # This is deliberately only a shape test, NOT real independent review.
+
+    def test_postfreeze_ch24_exposure_blocks_novelty(self):
+        row = self.run_row("CH24-IRREGULAR", "externally_reviewed_restricted")
+        row["evidence"]["independent_review_urls"] = [
+            "https://independent.example.org/review-one",
+            "https://other.example.net/review-two",
+        ]
+        with self.assertRaisesRegex(ValueError, "contaminated"):
+            benchmark.validate_runs(self.doc, [row])
+        report = benchmark.summarize(self.doc, [])
+        self.assertIn("CH24-IRREGULAR", report["novelty_contaminated_tasks"])
+        self.assertFalse(report["comparable"])
 
     def test_scope_drift_refused(self):
         row = self.run_row()

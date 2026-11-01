@@ -1,0 +1,46 @@
+{
+  "problem_id": "M071",
+  "question": "What would turn the existential Hadwiger claim into an independently replayable finite test?",
+  "nodes": [
+    {
+      "id": "formal-claim",
+      "kind": "observation",
+      "status": "documented",
+      "title": "The upstream statement is an existential graph construction",
+      "detail": "The audited comparator gives existence claims involving chromatic and Hadwiger-number bounds, not a listed finite adjacency matrix.",
+      "sources": [
+        "research/M071_M073_WITNESSES.md"
+      ],
+      "motivated_by": []
+    },
+    {
+      "id": "no-graph",
+      "kind": "blocker",
+      "status": "blocked",
+      "title": "No explicit finite graph accompanies the construction",
+      "detail": "A second Lean kernel replay does not supply the graph that this repository's finite graph checker would need. The evidence state remains claim under review.",
+      "move_id": "scope_fidelity",
+      "motivated_by": [
+        "formal-claim"
+      ],
+      "sources": [
+        "research/M071_M073_WITNESSES.md"
+      ]
+    },
+    {
+      "id": "extract-or-review",
+      "obligation_id": "O-M071-01",
+      "kind": "next_step",
+      "status": "proposed",
+      "title": "Extract a graph or obtain independent specialist reviews",
+      "detail": "For the finite-witness path, supply a finite graph and independently check a coloring lower bound and clique-minor upper bound. Specialist review of the existential proof is a different acceptance path.",
+      "move_id": "certificate_frontier",
+      "motivated_by": [
+        "no-graph"
+      ],
+      "sources": [
+        "research/M071_M073_WITNESSES.md"
+      ]
+    }
+  ]
+}

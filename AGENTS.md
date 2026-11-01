@@ -17,6 +17,22 @@ python3 scripts/analogues.py --check              # structural finite-analogue l
 
 Fleet operator guide: [docs/FLEET.md](docs/FLEET.md). Packets are claimable contracts with
 scope digests, not theorems.
+Site discovery for independent contributors: [start here](https://svyable.github.io/100/start/), [JSON agent contract](https://svyable.github.io/100/api/agent.json), [runnable shortlist](https://svyable.github.io/100/api/agent/tasks.json), and [plain-text guide](https://svyable.github.io/100/llms.txt). These are **generated static snapshots**, not a live reservation/claim service. Always re-check the latest scope digest and current GitHub open claims before taking a task.
+
+The 36 preregistered model/agent benchmark cells are also claimable individually
+with python3 scripts/work.py --kind benchmark. These are **unfinished trial
+assignments**, not a claim that an agent has run. Do not copy synthetic test
+fixtures into the ledger or infer a model trial from the K42 Python calibration.
+Each completed, failed or timed-out real run needs original model/tool logs,
+prompt and source snapshots, the frozen task/arm/seed and measured combined
+resource use. The post-freeze CH24 problem has an explicit novelty-contamination
+warning, which a reviewer must not override.
+
+The 20 currently runnable campaign verifiers have separately claimable
+V-P-<problem> review packets: independent researchers rerun the exact
+certificate, attack the checker with negative controls and audit the scope.
+An AI author, unverified self-review or automated replay is never independent
+acceptance. Outcome records require a real review by someone else.
 
 The queue is derived from the ledgers (proof obligations, Lean targets, the dispatcher,
 the roadmap, the formal catalogue and the status-audit drafts). It is browsable at
@@ -35,6 +51,8 @@ another item. Otherwise open a claim with `.github/ISSUE_TEMPLATE/claim.yml`, in
 the scope digest. Close the claim with the PR that delivers the item, or close it
 unfinished with what you learned. Two pipelines for the same thing is the most expensive
 failure here; a claim costs one minute.
+
+For independent reviews, acceptance clears only the **same scope digest** from the work queue. A changed reviewed statement or acceptance contract needs a fresh review; an older accepted outcome must never suppress it.
 
 ## 3. Do only the deliverable
 
@@ -56,6 +74,11 @@ LAB.md, MINES.md, APPROACH.md, ROADMAP.md, docs/data/next.json and the generated
 of `docs/`). On a merge conflict in any of them: take either side
 (`git checkout --theirs -- <paths>`), run `python3 scripts/regen.py`, then commit.
 Never hand-edit `docs/` outside `docs/assets/`, `docs/next/` and `docs/*.md`.
+
+**Sequential ids collide across concurrent PRs** (roadmap `R..`, obligations `O-..`, Lean
+targets `L..`): three open PRs once took `R36` at the same time. Before adding one, check
+open PRs for the next free id. After merging main, a `duplicate id` failure from a validator
+means renumber *your* new entry, never one that is already on main, then regenerate.
 
 ## 5. Lean
 
@@ -81,7 +104,22 @@ Never hand-edit `docs/` outside `docs/assets/`, `docs/next/` and `docs/*.md`.
 - Independent review is done by someone else; an agent cannot record its own work as
   independently reviewed.
 
-## 7. Ship
+## 7. Ship, and record the outcome
 
 Use the PR template, name the work item id in the title or body, include
 `Closes #<claim issue>`, and paste the output of `python3 scripts/regen.py --check`.
+
+Infrastructure-wide cross-problem claims may use a stable `X-...` work id when no derived
+work-queue item has that scope; record these separately as infrastructure, not a
+new theorem, formal result or independently accepted review.
+
+In the same PR, append one record to `data/outcomes.json`: the item id, the claimed scope
+digest, the author, the outcome (`merged_pending_review`, `gap_reported`, `falsified` or
+`abandoned`) and honest agent-hours, failed attempts included. Only a reviewer who is not the
+author may later record `accepted_independent` (with `accepted_on`). This is what the
+repository's yield metric ([YIELD.md](YIELD.md)) is computed from: capacity is filled slots,
+yield is independently accepted *work items* per 10 agent-hours. An accepted work item is not
+a new theorem; only a separately audited `novelty: new_restricted_result` counts as one.
+Independence here is structural (reviewer is not the author, public link), not authenticated
+expertise. Review is the bottleneck, so `review` items in the queue (`V-...`) are the
+highest-value work for anyone who did not write the artifact.

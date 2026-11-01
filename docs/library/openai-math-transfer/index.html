@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenAI/math transfer intake: evidence before claims · 100</title>
+<meta name="description" content="2026-10-31 | Research intake, not a theorem announcement. Source: openai/math, pinned to commit 4eaee875, whose overview.tex lists author-claimed results. No row below is independently validated by this transfer layer.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/openai-math-transfer/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="OpenAI/math transfer intake: evidence before claims · 100">
+<meta property="og:description" content="2026-10-31 | Research intake, not a theorem announcement. Source: openai/math, pinned to commit 4eaee875, whose overview.tex lists author-claimed results. No row below is independently validated by this transfer layer.">
+<meta property="og:url" content="https://svyable.github.io/100/library/openai-math-transfer/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">OpenAI/math transfer intake: evidence before claims</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#why-this-layer-exists">Why this layer exists</a></li><li class="toc-l2"><a href="#reproduce-and-inspect">Reproduce and inspect</a></li><li class="toc-l2"><a href="#k42-deterministic-checker-calibration-not-an-agent-trial">K42 deterministic checker calibration (not an agent trial)</a></li><li class="toc-l2"><a href="#review-and-promotion-procedure">Review and promotion procedure</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M071/" title="Hadwiger conjecture">M071</a><a class="chip chip-link" href="../../problems/M073/" title="Sidorenko conjecture">M073</a><a class="chip chip-link" href="../../problems/M074/" title="Caccetta–Häggkvist conjecture">M074</a><a class="chip chip-link" href="../../problems/M094/" title="Hadamard matrix conjecture">M094</a><a class="chip chip-link" href="../../problems/M088/" title="Deterministic polynomial identity testing">M088</a><a class="chip chip-link" href="../../problems/M084/" title="Matrix multiplication exponent omega=2">M084</a><a class="chip chip-link" href="../../problems/M055/" title="Higher-dimensional Kakeya conjecture">M055</a><a class="chip chip-link" href="../../problems/M056/" title="Fourier restriction conjecture">M056</a><a class="chip chip-link" href="../../problems/M046/" title="Auslander–Reiten conjecture">M046</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/docs/OPENAI_MATH_TRANSFER.md" rel="noopener noreferrer">docs/OPENAI_MATH_TRANSFER.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">METHOD &amp; GOVERNANCE</p><h1>OpenAI/math transfer intake: evidence before claims</h1>
+<p><strong>2026-10-31 | Research intake, not a theorem announcement.</strong> Source: <a href="https://github.com/openai/math" rel="noopener noreferrer">openai/math</a>, pinned to commit <a href="https://github.com/openai/math/commit/4eaee87548250b2682affda7d05d947c05554bae" rel="noopener noreferrer">4eaee875</a>, whose <code>overview.tex</code> lists <em>author-claimed</em> results. No row below is independently validated by this transfer layer.</p>
+<h2 id="why-this-layer-exists">Why this layer exists<a class="anchor" href="#why-this-layer-exists" aria-label="Link to this section">#</a></h2>
+<p>The repository already maintains 100 ranked targets, formal comparator statements, a proof-obligation DAG, distinct agent roles, and a 36-cell preregistered benchmark. The missing link was <em>provenance-aware transfer</em>: map relevant external techniques to exact local obligations, preserve reusable local instruments, and determine what must be re-reviewed after source changes. It is deliberately read-only toward <code>data/problems.json</code>, <code>data/solved.json</code>, proof-obligation statuses and benchmark trial results.</p>
+<div class="table-wrap"><table><thead><tr><th>Intake</th><th>Our IDs</th><th>Exact boundary / immediate action</th></tr></thead><tbody><tr><td><a href="https://github.com/Svyable/100/blob/main/data/openai_math_transfer.json" rel="noopener noreferrer">079</a></td><td>M055, M056</td><td>Different consequences of local smoothing; check dimensions, strict interior vs endpoint inequalities, and the Kakeya implication separately</td></tr><tr><td>107</td><td>M084</td><td>Claimed <code>omega &lt;= 9/4</code> over the complex numbers is <strong>not</strong> <code>omega = 2</code>; extract and verify a finite tensor identity</td></tr><tr><td>116</td><td>M088</td><td>Noncommutative formula hitting points are not general commutative arithmetic-circuit PIT; lock field and circuit model</td></tr><tr><td>157</td><td>M071</td><td>Existential graph families are not an explicit independently replayed finite counterexample</td></tr><tr><td>161</td><td>M073</td><td>Pattern reconstructed locally; the host violating the density inequality still needs exact independent replay</td></tr><tr><td>179</td><td>M094</td><td>Circulant Hadamard obstruction is a restricted subclass, not all Hadamard matrices</td></tr><tr><td>199</td><td>M046</td><td>Unreviewed claimed algebraic counterexample requires an Artin-algebra/Ext quantifier audit before changing status</td></tr></tbody></table></div>
+<p>The source references and exact next action for each intake are in <a href="https://github.com/Svyable/100/blob/main/data/openai_math_transfer.json" rel="noopener noreferrer">data/openai_math_transfer.json</a>. They are pinned to one upstream SHA; validator checks immutable-looking URL <em>shape</em> but cannot authenticate the PDF&#x27;s math, peer review, or the upstream server.</p>
+<p>The first four reusable local instruments in <a href="https://github.com/Svyable/100/blob/main/data/instruments.json" rel="noopener noreferrer">data/instruments.json</a> link actual source files, a SHA-256 for their bytes, proof gaps, falsifiers and proposed future reuse. <code>candidate_unreviewed</code> and <code>known_reproduction</code> are intentionally the <strong>only</strong> statuses the validator permits. Proposed cross-problem reuse is a research idea, not an accepted implication.</p>
+<h2 id="reproduce-and-inspect">Reproduce and inspect<a class="anchor" href="#reproduce-and-inspect" aria-label="Link to this section">#</a></h2>
+<p>From repo root:</p>
+<pre><code class="lang-sh">python3 scripts/transfer.py --check
+python3 scripts/transfer.py --json
+python3 scripts/transfer.py --changed scripts/ch24_crosscut.py
+python3 scripts/transfer.py --changed data/claim_reviews_2026.json
+python3 scripts/transfer.py --upstream-sha 0000000000000000000000000000000000000000
+python3 -m unittest discover -s tests -p &#x27;test_transfer.py&#x27; -v</code></pre>
+<p><code>--check</code> rejects unpinned/changed local instrument files, missing related evidence, unknown problem/review IDs, unsafe paths, dependency cycles, and any attempted status promotion. A changed local source requires an <strong>explicit review and repin</strong>, not automated trust. <code>--changed</code> and <code>--upstream-sha</code> report affected transfers/instruments transitively; they do not change the ledger. The upstream SHA must be observed separately: this offline checker does not poll GitHub.</p>
+<p>Independent mathematical review, exact source scope comparison, novelty audit and formal proof checking remain the governing protocol. A hash is an identity check, not a theorem certificate. In particular, no result above changes the current <a href="https://github.com/Svyable/100/blob/main/data/claim_reviews_2026.json" rel="noopener noreferrer">claim review ledger</a> or <a href="https://github.com/Svyable/100/blob/main/data/solved.json" rel="noopener noreferrer">Solved</a>.</p>
+<h2 id="k42-deterministic-checker-calibration-not-an-agent-trial">K42 deterministic checker calibration (not an agent trial)<a class="anchor" href="#k42-deterministic-checker-calibration-not-an-agent-trial" aria-label="Link to this section">#</a></h2>
+<pre><code class="lang-sh">python3 scripts/k42_calibration.py --check
+python3 -m unittest discover -s tests -p &#x27;test_k42_calibration.py&#x27; -v</code></pre>
+<p>This uses the already-merged dedicated K42 calibration, which replays the 328 pinned McKay records with two exact checkers, a one-edge adversarial mutant, and a deliberately tampered catalog. The historical evidence is pinned in <a href="https://github.com/Svyable/100/blob/main/benchmarks/calibrations/k42_checker.json" rel="noopener noreferrer">benchmarks/calibrations/k42_checker.json</a>; <code>--check</code> replays without writing files. It makes <strong>zero model calls</strong>, is <strong>not a trial in any of the four agent arms</strong>, and never counts as new mathematics. Its purpose is to validate the checker environment and immutable reference data before a later matched-budget evaluation.</p>
+<p>This calibration was independently added to main before this transfer PR; we reuse it rather than maintaining a second competing wrapper.</p>
+<p>The preregistered <a href="https://github.com/Svyable/100/blob/main/benchmarks/PROTOCOL.md" rel="noopener noreferrer">36-cell protocol</a> is still unexecuted until real sequential, independent, conversation and proof-exchange agent sessions produce full token/tool/time logs. Our new M074 (24,8) finite candidate argument appeared after the frozen benchmark source commit; task leakage and changed difficulty must be addressed transparently before using CH24 as a blind novelty test. Do not invent completed trial rows.</p>
+<h2 id="review-and-promotion-procedure">Review and promotion procedure<a class="anchor" href="#review-and-promotion-procedure" aria-label="Link to this section">#</a></h2>
+<ol><li>Pin an upstream source snapshot and map its <em>exact</em> hypotheses, theorem, exceptions, and claimed consequence to our problem.</li><li>Find a smallest reusable lemma or witness, with a falsifier and honest prior-art boundary.</li><li>Send the independent checker and adversarial reviewer the immutable source and scope, not the author&#x27;s conclusion.</li><li>Replay exact finite claims, audit Lean statement fidelity and dependencies, and obtain specialist reviews where required.</li><li>Promote only through the existing formal/research protocols, record negative findings, and re-dispatch verified instruments to other eligible targets.</li></ol>
+<p>This is a dependency-aware research workspace, not an automatic proof-admission engine.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

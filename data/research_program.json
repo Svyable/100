@@ -23,13 +23,14 @@
       "method": "Modular covering identities with unit-fraction certificates",
       "hypothesis": "For every integer n >= 2, 4/n = 1/x + 1/y + 1/z has a solution in positive integers.",
       "first_proof_obligation": "Find a polynomial identity family covering a residue class of primes not covered by the classical Mordell identities, and prove it symbolically.",
-      "next_experiment": "The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity.",
+      "next_experiment": "Nine polynomial identities from the straus_identities mine now cover 106 of the 117 primes n <= 8000 with n = 1 (mod 24), including the primary progressions n = 120t+73 and n = 120t+97. The 11 uncovered primes all lie in {1, 49} (mod 120). Attack those two remaining classes with a non-Mordell idea, or name an explicit family outside the recorded progressions; do not extend the verified search range.",
       "additional_verifiers": [
-        "python3 scripts/mine.py --mine straus_patterns"
+        "python3 scripts/mine.py --mine straus_patterns",
+        "python3 scripts/mine.py --mine straus_identities"
       ],
       "falsification": "An n together with a proof that no positive-integer triple exists; a finite search failure is not a counterexample.",
       "blocker": "Classical identities leave quadratic-residue classes uncovered, and known results show identities of the standard polynomial type cannot cover them all; a different idea is needed.",
-      "dossier": "research/LAB_CAMPAIGNS.md",
+      "dossier": "research/M019_IDENTITIES.md",
       "verifier": "python3 scripts/lab.py --probe erdos_straus"
     },
     {
@@ -246,19 +247,25 @@
       "falsification": "A height T at which the certified argument count N(T) strictly exceeds the number of disjoint intervals where Z changes sign.",
       "blocker": "T = 36 is far below Platt–Trudgian (at least 3*10^12). Extending the height needs a faster contour, not a new idea about the hypothesis.",
       "dossier": "research/LAB_CAMPAIGNS.md",
-      "verifier": "python3 scripts/lab.py --probe riemann"
+      "verifier": "python3 scripts/lab.py --probe riemann",
+      "additional_verifiers": [
+        "python3 scripts/lab.py --probe zeta_zeros"
+      ]
     },
     {
       "problem_id": "M002",
       "stage": "benchmark_reproduced",
-      "method": "The zeta interval engine applied to L(s, chi_4)",
+      "method": "Interval-arithmetic argument counts for the real characters modulo 3, 4 and 5",
       "hypothesis": "Every non-trivial zero of every Dirichlet L-function has real part 1/2.",
-      "first_proof_obligation": "Certify one further primitive character, of conductor 3 or 5, to a height where the root number and the gamma factor are checked by the same argument principle.",
-      "next_experiment": "Reuse the zero-count certificate for the non-principal character modulo 3, including an independent replay of its Gauss sum.",
+      "first_proof_obligation": "Extend the phase to a complex character modulo 5, where the root number is not real and the completed Lambda is no longer real on the critical line.",
+      "next_experiment": "Extend the phase to a complex character modulo 5, where the root number is not real and the completed Lambda is no longer real on the critical line.",
       "falsification": "A primitive character and a height T at which the certified argument count exceeds the number of critical-line sign changes.",
-      "blocker": "One character at height 17 does not constrain the other characters. Conductor 3 is the smallest untouched case.",
+      "blocker": "Three real characters at height at most 17 do not constrain complex characters or large conductors.",
       "dossier": "research/LAB_CAMPAIGNS.md",
-      "verifier": "python3 scripts/lab.py --probe dirichlet_l"
+      "verifier": "python3 scripts/lab.py --probe dirichlet_l",
+      "additional_verifiers": [
+        "python3 scripts/lab.py --probe dirichlet_zeros"
+      ]
     },
     {
       "problem_id": "M048",
@@ -270,7 +277,10 @@
       "falsification": "A finite group G and prime p for which the independently recomputed weight count differs from the number of p-regular conjugacy classes.",
       "blocker": "Every group of order at most 100 is already covered by published computational verification; a larger named catalog inside that bound is not a theorem.",
       "dossier": "research/LAB_CAMPAIGNS.md",
-      "verifier": "python3 scripts/lab.py --probe alperin"
+      "verifier": "python3 scripts/lab.py --probe alperin",
+      "additional_verifiers": [
+        "python3 scripts/lab.py --probe alperin_weights"
+      ]
     },
     {
       "problem_id": "M044",
@@ -519,6 +529,17 @@
       "verified_on": "2026-10-31"
     },
     {
+      "id": "B-MINE-019-ID",
+      "problem_id": "M019",
+      "classification": "reproduced_known",
+      "title": "Parametric Erdos-Straus identities on nine hard-class progressions",
+      "scope": "Polynomial identities on named arithmetic progressions; classical covering style, not a full proof",
+      "description": "Nine closed forms, including n=120t+73 and n=120t+97, are proved as polynomial identities. Through 8,000 they cover 106 of 117 primes that are 1 mod 24; the 11 misses all lie in {1,49} mod 120.",
+      "verifier": "python3 scripts/mine.py --mine straus_identities",
+      "artifact": "scripts/mines/straus_identities.py",
+      "verified_on": "2026-10-31"
+    },
+    {
       "id": "B-MINE-075",
       "problem_id": "M075",
       "classification": "reproduced_known",
@@ -566,9 +587,9 @@
       "id": "B-LCHI4-001",
       "problem_id": "M002",
       "classification": "reproduced_known",
-      "title": "The first two non-trivial zeros of L(s, chi_4) are simple and on the critical line",
-      "scope": "One Dirichlet character, N(11) = 2; not the generalized Riemann hypothesis",
-      "description": "Argument count for L(s, chi_4) matched to sign changes of the real form on (6, 7) and (10, 11), replayed at a second truncation. The deep run reaches N(17) = 4.",
+      "title": "Low zeros of L(s, chi_4) and L(s, chi_3) are simple and on the critical line",
+      "scope": "Two real characters at classical heights; not the generalized Riemann hypothesis",
+      "description": "Argument counts matched to sign changes: chi_4 on (6, 7) and (10, 11) gives N(11) = 2, and chi_3 on (8, 9) gives N(9) = 1. Gauss sums tau(chi_3)^2 = -3 and tau(chi_4) = 2i fix the root numbers. The deep run adds chi_4 to N(17) = 4, chi_3 to N(15) = 2, and the Legendre symbol mod 5 to N(12) = 3, with tau(chi_5)^2 = 5.",
       "verifier": "python3 scripts/lab.py --probe dirichlet_l",
       "artifact": "scripts/probes/dirichlet_l.py",
       "verified_on": "2026-10-31"
@@ -583,6 +604,39 @@
       "verifier": "python3 scripts/lab.py --probe alperin",
       "artifact": "scripts/probes/alperin.py",
       "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-RH-001",
+      "problem_id": "M001",
+      "classification": "reproduced_known",
+      "title": "All 29 Riemann zeros below height 100 certified simple and on the critical line",
+      "scope": "Known small range; not new",
+      "description": "The argument principle certifies N(100) = 29 exactly from interval boxes along 2 -> 2+100i -> 1/2+100i, and Hardy's Z(t) has 29 certified sign changes on (0, 100]. All arithmetic is rigorous interval arithmetic with explicit series remainders, repeated by the checker at another precision and truncation. The deep run certifies all 649 zeros below height 1000 the same way.",
+      "verifier": "python3 scripts/lab.py --probe zeta_zeros",
+      "artifact": "scripts/probes/zeta_zeros.py",
+      "verified_on": "2026-11-01"
+    },
+    {
+      "id": "B-GRH-001",
+      "problem_id": "M002",
+      "classification": "reproduced_known",
+      "title": "GRH to height 20 for the real primitive characters of conductor 3, 4 and 5",
+      "scope": "Known small range; not new",
+      "description": "For D = -4, -3, 5, L(s, chi_D) has no real zero in (0, 1) (Lipschitz-certified point values), the argument principle certifies 5, 4 and 6 zeros with 0 < Im s < 20, and Z(t, chi_D) has exactly as many certified sign changes. The checker rebuilds each character and certifies the root number +1 from the Gauss sum. The deep run covers all 17 real primitive characters of conductor at most 24 to height 30 (248 zeros in the upper half-plane).",
+      "verifier": "python3 scripts/lab.py --probe dirichlet_zeros",
+      "artifact": "scripts/probes/dirichlet_zeros.py",
+      "verified_on": "2026-11-01"
+    },
+    {
+      "id": "B-ALPERIN-EXT-001",
+      "problem_id": "M048",
+      "classification": "reproduced_known",
+      "title": "Alperin's weight conjecture l(G) = w(G) on 15 group-prime cases from S3 to PSL(2,7)",
+      "scope": "Known small range; not new",
+      "description": "For S3, A4, S4, A5, S5 and PSL(2,7) at every prime dividing the order, the number of p-regular classes equals the number of conjugacy classes of p-weights, counted over all p-radical subgroups with defect-zero degrees of N(Q)/Q from Dixon's modular method. The checker re-enumerates radical subgroups by a different criterion and recomputes degrees with a different prime. The deep run covers 46 cases, adding GL(2,3), A6, S6, PSL(2,8), PSL(2,11), PSL(2,13), A7, S7 and the Mathieu group M11.",
+      "verifier": "python3 scripts/lab.py --probe alperin_weights",
+      "artifact": "scripts/probes/alperin_cert.py",
+      "verified_on": "2026-11-01"
     }
   ]
 }

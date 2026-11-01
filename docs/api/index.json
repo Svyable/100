@@ -1,6 +1,6 @@
 {
   "name": "100 — machine-readable portfolio API",
-  "as_of": "2026-10-31",
+  "as_of": "2026-11-01",
   "note": "Static JSON regenerated from validated ledgers. Scores are editorial, never probabilities of proof.",
   "endpoints": {
     "problems": "https://svyable.github.io/100/api/problems.json",
@@ -10,16 +10,24 @@
     "full_snapshot": "https://svyable.github.io/100/data/portfolio.json",
     "feed": "https://svyable.github.io/100/feed.xml",
     "work_queue": "https://svyable.github.io/100/api/work.json",
-    "fleet_packets": "https://svyable.github.io/100/api/packets.json"
+    "fleet_packets": "https://svyable.github.io/100/api/packets.json",
+    "discovery": "https://svyable.github.io/100/api/discovery.json",
+    "agent_manifest": "https://svyable.github.io/100/api/agent.json",
+    "agent_shortlist": "https://svyable.github.io/100/api/agent/tasks.json",
+    "agent_text": "https://svyable.github.io/100/llms.txt",
+    "discovery_trail": "https://svyable.github.io/100/api/discovery/{id}.json",
+    "proof_obligations": "https://svyable.github.io/100/api/lamport.json"
   },
   "counts": {
     "problems": 100,
     "campaigns": 23,
-    "probes": 18,
-    "engines": 13,
+    "probes": 21,
+    "engines": 14,
     "claim_reviews": 15,
     "lean_statements": 14,
     "solved": 0,
-    "documents": 38
+    "documents": 46,
+    "discovery_trails": 4,
+    "discovery_nodes": 13
   }
 }

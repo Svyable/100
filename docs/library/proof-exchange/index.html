@@ -19,6 +19,8 @@
 <link rel="stylesheet" href="../../assets/style.css">
 <link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
 <link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
 <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <script src="../../assets/app.js" defer></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
@@ -31,7 +33,7 @@
     <span class="brand-mark">100<span class="brand-dot">.</span></span>
     <span class="brand-caption">SVYABLE<br>RESEARCH</span>
   </a>
-  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../work/">Work</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
   <div class="header-tools">
     <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
     <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
@@ -41,7 +43,7 @@
 <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">Proof exchange: scaling mathematical work without scaling unsupported claims</span></nav>
 <main id="main">
 <div class="doc-layout">
-<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#the-constraint">The constraint</a></li><li class="toc-l2"><a href="#operating-model-100-claimable-slots">Operating model: 100 claimable slots</a></li><li class="toc-l2"><a href="#coverage-ablation-v1-objective-still-available">Coverage ablation (v1 objective, still available)</a></li><li class="toc-l2"><a href="#proof-obligation-frontier">Proof-obligation frontier</a></li><li class="toc-l2"><a href="#proof-carrying-handoff">Proof-carrying handoff</a></li><li class="toc-l2"><a href="#experiment-needed-before-calling-this-a-breakthrough">Experiment needed before calling this a breakthrough</a></li><li class="toc-l2"><a href="#relationship-to-existing-architecture">Relationship to existing architecture</a></li></ol></nav>
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#the-constraint">The constraint</a></li><li class="toc-l2"><a href="#operating-model-100-claimable-slots">Operating model: 100 claimable slots</a></li><li class="toc-l2"><a href="#coverage-depth-beyond-one-touch-per-target">Coverage depth beyond one touch per target</a></li><li class="toc-l2"><a href="#coverage-ablation-v1-objective-still-available">Coverage ablation (v1 objective, still available)</a></li><li class="toc-l2"><a href="#proof-obligation-frontier">Proof-obligation frontier</a></li><li class="toc-l2"><a href="#proof-carrying-handoff">Proof-carrying handoff</a></li><li class="toc-l2"><a href="#experiment-needed-before-calling-this-a-breakthrough">Experiment needed before calling this a breakthrough</a></li><li class="toc-l2"><a href="#relationship-to-existing-architecture">Relationship to existing architecture</a></li></ol></nav>
 
 <p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/docs/PROOF_EXCHANGE.md" rel="noopener noreferrer">docs/PROOF_EXCHANGE.md <span aria-hidden="true">↗</span></a></p></aside>
 <article class="prose"><p class="eyebrow">METHOD &amp; GOVERNANCE</p><h1>Proof exchange: scaling mathematical work without scaling unsupported claims</h1>
@@ -65,6 +67,12 @@ python3 scripts/benchmark.py --check             # A/B/C/D prereg (empty ledger 
 <ul><li>exact problems, deliverable, acceptance criteria and boundary,</li><li>a SHA-256 scope digest (identity, not validity),</li><li>a claim title and GitHub claim URLs,</li><li>a recommended <strong>scout / adversary / checker</strong> split under that single claim.</li></ul>
 <p>Roles are a recommended independence pattern inside one claim, <strong>not</strong> three votes that a result is true. Two pipelines for the same digest remain the most expensive failure mode; open a <code>[Claim]</code> issue before starting.</p>
 <p>The number 100 is an <strong>operating capacity</strong> target aligned with the portfolio size. It is not a measured speedup, not a promise of 100 theorems, and not a change to readiness or Solved.</p>
+<h2 id="coverage-depth-beyond-one-touch-per-target">Coverage depth beyond one touch per target<a class="anchor" href="#coverage-depth-beyond-one-touch-per-target" aria-label="Link to this section">#</a></h2>
+<p>The original 100-slot wave touches all 100 registry IDs but work is concentrated in a subset. <a href="../../library/coverage/">COVERAGE.md</a> is a <strong>separate</strong>, reproducible 200-slot breadth-first deployment <em>plan</em>. It first covers unseen problems, then prefers a second <strong>different work kind</strong> for each before allocating depth to already multiply-covered problems. Each selected item retains its original claim title, digest, prior-art boundary and dependency/refusal gates.</p>
+<pre><code class="lang-sh">python3 scripts/coverage.py
+python3 scripts/coverage.py --json
+python3 scripts/coverage.py --check</code></pre>
+<p>The generated 100-row matrix displays recorded registry source anchors, research campaign documentation, independently replayable <em>known-range</em> lab probes, registered formal statements, and <strong>planned</strong> work types as distinct columns. A second planned work kind is not a second proof, an independent review or proof of a new theorem. No agents are started by this scheduling command, and no result is admitted to Solved. For actual resource-adjusted outcomes use <a href="../../library/yield/">YIELD.md</a>, not the scheduled slot counts.</p>
 <h2 id="coverage-ablation-v1-objective-still-available">Coverage ablation (v1 objective, still available)<a class="anchor" href="#coverage-ablation-v1-objective-still-available" aria-label="Link to this section">#</a></h2>
 <p>Let <code>P</code> be the 100 active targets and <code>U</code> the method shapes plus named engines in <code>data/methods.json</code>. With equal planning slots the greedy maximum-coverage objective</p>
 <pre><code>F(S) = | union(C(u) for u in S) |,   |S| &lt;= k</code></pre>
@@ -88,10 +96,10 @@ python3 scripts/benchmark.py --check             # A/B/C/D prereg (empty ledger 
 <footer class="site-footer">
   <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
   <div class="footer-links">
-    <a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
     <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
   </div>
-  <small>Generated from the validated ledgers · data as of 2026-10-31 · no tracking, no external scripts</small>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
 </footer>
 </div>
 <dialog class="palette" id="palette" aria-label="Search the portfolio">

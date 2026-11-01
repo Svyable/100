@@ -39,6 +39,8 @@
   "claim_review_2026": null,
   "formal_statement": null,
   "external_claims": [],
+  "discovery_trail": null,
+  "discovery_url": null,
   "mentioned_in": [
     {
       "title": "Approach — leverage dispatch",
@@ -51,6 +53,11 @@
       "url": "https://svyable.github.io/100/library/attack-queue/"
     },
     {
+      "title": "Coverage — breadth-first research deployment plan",
+      "source": "COVERAGE.md",
+      "url": "https://svyable.github.io/100/library/coverage/"
+    },
+    {
       "title": "Ranked candidate portfolio",
       "source": "RANKED.md",
       "url": "https://svyable.github.io/100/library/ranked/"
@@ -59,11 +66,6 @@
       "title": "Roadmap — 100 mathematical grand challenges",
       "source": "ROADMAP.md",
       "url": "https://svyable.github.io/100/library/roadmap/"
-    },
-    {
-      "title": "Scale — proof-exchange wave",
-      "source": "SCALE.md",
-      "url": "https://svyable.github.io/100/library/scale/"
     },
     {
       "title": "Top 100 portfolio selection and admission",

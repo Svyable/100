@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "resource_unit": "agent_hour",
+  "note": "One record per closed claim on a work-queue item. Only accepted_independent (named reviewer who is not the author, public review_url) counts toward yield. See YIELD.md and scripts/outcomes.py.",
+  "outcomes": [
+    {
+      "work_id": "X-COVERAGE-DEPTH-200",
+      "scope_sha256": "a6548455a1c41c3b7f4368dd1f83af2809d9a13c6a694b0dd50bce9467893bd6",
+      "author": "ChatGPT",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/81",
+      "pr_url": "https://github.com/Svyable/100/pull/87",
+      "claimed_on": "2026-10-31",
+      "closed_on": "2026-10-31",
+      "resources": {
+        "agent_hours": 0.8,
+        "ci_minutes": 0
+      }
+    },
+    {
+      "work_id": "X-PR85-INTEGRATION",
+      "scope_sha256": "d64efb3f767dcb2f851bb95758e8e1c6267b07ec02192537d57e351874a15622",
+      "author": "ChatGPT (PR #85 integration repair)",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/107",
+      "pr_url": "https://github.com/Svyable/100/pull/85",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.8
+      },
+      "note": "Estimated work time for this integration repair only; original PR author effort is unknown and excluded. No independent mathematical review."
+    }
+  ]
+}

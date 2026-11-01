@@ -3,6 +3,16 @@
 (() => {
   const doc = document.documentElement;
   const root = doc.dataset.root || "./";
+
+  // Evidence-scoped, data-driven proof frontier on problem pages, the atlas and home.
+  // The static HTML remains the complete no-JavaScript fallback.
+  if (document.querySelector(".problem-page .problem-main, #problem-list") ||
+      /\/atlas\/(?:index\.html)?$/.test(location.pathname)) {
+    const frontier = document.createElement("script");
+    frontier.src = root + "assets/frontier.js";
+    frontier.async = true;
+    document.head.append(frontier);
+  }
   const $ = sel => document.querySelector(sel);
   const $$ = sel => Array.from(document.querySelectorAll(sel));
   const typing = el => el && (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName));
@@ -140,6 +150,15 @@
     }
   });
 
+  // Optional, source-bound agent packets on individual work-item pages.
+  // Kept separate from the existing proof-frontier explorer.
+  if ($(".work-detail")) {
+    const handoffScript = document.createElement("script");
+    handoffScript.src = root + "assets/handoff.js";
+    handoffScript.defer = true;
+    document.head.append(handoffScript);
+  }
+
   // ---------------------------------------------------------------- command palette
   const dialog = $("#palette");
   if (!dialog || typeof dialog.showModal !== "function") return;
@@ -149,7 +168,7 @@
   let matches = [];
   let active = 0;
   const kinds = { problem: "Problem", field: "Field", campaign: "Campaign", probe: "Probe",
-    engine: "Engine", claim: "Claim", formal: "Lean", work: "Work", document: "Document", page: "Page" };
+    engine: "Engine", claim: "Claim", formal: "Lean", proof: "Proof", work: "Work", document: "Document", page: "Page" };
   const normalize = s => String(s || "").toLocaleLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
 
   async function loadIndex() {

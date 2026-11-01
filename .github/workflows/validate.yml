@@ -22,14 +22,29 @@ jobs:
       - run: python3 scripts/check_external_artifact.py --validate-only
       - run: python3 scripts/formal.py --check
       - run: python3 scripts/work.py --check
+      - run: python3 scripts/outcomes.py --check
       - run: python3 scripts/benchmark.py --check
+      - run: python3 scripts/pda_trial.py --plan --arm sequential --seed 11 > /dev/null
+      - run: python3 -m unittest discover -s tests -p 'test_pda_trial.py' -v
+      - run: python3 scripts/k42_calibration.py --check
+      - run: python3 scripts/transfer.py --check
       - run: python3 scripts/scale.py --check
+      - run: python3 scripts/fleet.py --count 100 --check
       - run: python3 scripts/verify_mckay.py --check
       - run: python3 scripts/verify_claim_witnesses.py --check
+      - run: python3 scripts/sidorenko_twoblock.py --check
       - run: python3 scripts/frankl_canonical.py --check
       - run: python3 scripts/frankl_burnside.py --check
       - run: python3 scripts/ch24_irregular_profiles.py
       - run: python3 scripts/degree_defect.py --check
+      - run: python3 scripts/lemma_adversary.py --check
+      - run: python3 scripts/frankl_subfamily_minimal.py examples/FRANKL_VAN_DER_HOUT_ROOS_19.json --assert-minimal
+      - run: python3 scripts/frankl_triple_sat.py --check-witness examples/FRANKL_VAN_DER_HOUT_ROOS_19.json
+      - run: python3 scripts/frankl_triple_experiment.py --check-record data/experiments/frankl_triple7_pilot.json
+      - run: python3 scripts/frankl_subfamily_minimal.py examples/FRANKL_SARVATE_RENAUD.json --assert-minimal
+      - run: python3 scripts/ch27_local.py --check
       - run: node --check docs/assets/app.js
+      - run: node --check docs/assets/handoff.js
+      - run: node --test tests/test_handoff.cjs
       - run: node --check docs/next/app.js
       - run: python3 -m unittest discover -s tests -v

@@ -60,6 +60,29 @@ The number 100 is an **operating capacity** target aligned with the portfolio
 size. It is not a measured speedup, not a promise of 100 theorems, and not a
 change to readiness or Solved.
 
+## Coverage depth beyond one touch per target
+
+The original 100-slot wave touches all 100 registry IDs but work is concentrated
+in a subset. [COVERAGE.md](../COVERAGE.md) is a **separate**, reproducible
+200-slot breadth-first deployment *plan*. It first covers unseen problems, then
+prefers a second **different work kind** for each before allocating depth to
+already multiply-covered problems. Each selected item retains its original
+claim title, digest, prior-art boundary and dependency/refusal gates.
+
+```sh
+python3 scripts/coverage.py
+python3 scripts/coverage.py --json
+python3 scripts/coverage.py --check
+```
+
+The generated 100-row matrix displays recorded registry source anchors,
+research campaign documentation, independently replayable *known-range* lab
+probes, registered formal statements, and **planned** work types as distinct
+columns. A second planned work kind is not a second proof, an independent
+review or proof of a new theorem. No agents are started by this scheduling
+command, and no result is admitted to Solved. For actual resource-adjusted
+outcomes use [YIELD.md](../YIELD.md), not the scheduled slot counts.
+
 ## Coverage ablation (v1 objective, still available)
 
 Let `P` be the 100 active targets and `U` the method shapes plus named engines

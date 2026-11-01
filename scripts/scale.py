@@ -31,6 +31,8 @@ PACKETS = ROOT / "docs" / "api" / "packets.json"
 ROLES = ("scout", "adversary", "checker")
 FAMILY_BASE = {
     "obligation": 1000,
+    "review": 900,  # independent acceptance is the bottleneck yield is measured on
+    "benchmark": 500,  # frozen experimental slots, not completed trials
     "lean": 800,
     "job": 600,
     "roadmap": 400,
@@ -198,6 +200,11 @@ def role_plan(item, jobs):
     }
     job = jobs.get(item["id"])
     action = job["action"] if job else None
+    if item["kind"] == "review":
+        return {
+            "scout": "Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.",
+            "adversary": "Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.",
+        }
     if item["kind"] == "status_audit":
         return {
             "scout": roles["scout"],
@@ -253,6 +260,9 @@ def wave(budget=100, root=ROOT):
         key=lambda w: (-leverage(w, dispatch_bonus, jobs), w["priority_rank"], w["id"]),
     )
     selected = ranked[:budget]
+    blocked = [w["id"] for w in selected if w["status"] != "runnable"]
+    if blocked:
+        raise ValueError(f"wave selected non-runnable items: {blocked}")
     packets = []
     problems = set()
     method_ids = set()

@@ -1,0 +1,49 @@
+{
+  "bitset_checker_ns": 227963831,
+  "catalog_hash_tamper_detected": true,
+  "catalog_sha256": "067902e853d87b49bcef0d1d4c0e3bbadd238ee18bc65341b079a3ca4780eccb",
+  "frozen_source_commit": "56f8f27a25f854bac71dad78db7bd0137998618e",
+  "independent_checker_passes": {
+    "bitset_K5": 328,
+    "triangle_common_neighbor_K5": 328
+  },
+  "interpretation": "Reproduction of the known R(5,5)>=43 lower bound and checker negative control; NO agent-arm trial and NO measured research speedup.",
+  "kind": "known_certificate_checker_calibration",
+  "manifest_sha256": "833521f368f290804db4d6a5e07444ce66c8c1a3e2c7e7479f3d191f22755827",
+  "observed_at_utc": "2026-11-01T02:50:51+00:00",
+  "records_checked": 328,
+  "runtime": {
+    "architecture": "arm64",
+    "python": "3.14.2",
+    "system": "Darwin"
+  },
+  "schema": "svyable.k42-checker-calibration.v1",
+  "single_edge_negative_control": {
+    "detected_by": [
+      "bitset_K5",
+      "triangle_common_neighbor_K5"
+    ],
+    "edge_flipped": [
+      0,
+      2
+    ],
+    "monochromatic_color": "red",
+    "record_index": 0,
+    "witness_vertices": [
+      0,
+      2,
+      5,
+      6,
+      9
+    ]
+  },
+  "source_file_sha256": {
+    "scripts/k42_calibration.py": "47d597b7dee23b9ff3288a86470871817d609fa61107179a926d89b0918d1763",
+    "scripts/ramsey.py": "fb7b6626f18afbb775dedcf8644c8d37c924c77b3a04bbdb0f6f6854100ee033",
+    "scripts/verify_mckay.py": "49a742650be772902493229f0ad53cdcd5b1dbe6d82ef47e644dd9b1075c15a4"
+  },
+  "trial_credit": false,
+  "triangle_checker_ns": 460320924,
+  "vertices_per_record": 42,
+  "wall_ns": 726853292
+}

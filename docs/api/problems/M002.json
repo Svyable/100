@@ -27,7 +27,7 @@
   "dispatch_next": "Reproduce a published primitive character modulo 3 or 5 with the correct root number, branch conventions and independently checked zero count; document why this is known mathematics, not GRH progress.",
   "dispatch_why": "The new engine verifies χ4 only; the generalized Riemann hypothesis concerns all Dirichlet characters. Replaying a separate primitive-character certificate tests the reusable contour and gamma-factor implementation.",
   "campaign_stage": "benchmark_reproduced",
-  "milestone_count": 1,
+  "milestone_count": 2,
   "url": "https://svyable.github.io/100/problems/M002/",
   "field_url": "https://svyable.github.io/100/fields/number-theory/",
   "readiness_breakdown": [
@@ -56,37 +56,65 @@
   "campaign": {
     "problem_id": "M002",
     "stage": "benchmark_reproduced",
-    "method": "The zeta interval engine applied to L(s, chi_4)",
+    "method": "Interval-arithmetic argument counts for the real characters modulo 3, 4 and 5",
     "hypothesis": "Every non-trivial zero of every Dirichlet L-function has real part 1/2.",
-    "first_proof_obligation": "Certify one further primitive character, of conductor 3 or 5, to a height where the root number and the gamma factor are checked by the same argument principle.",
-    "next_experiment": "Reuse the zero-count certificate for the non-principal character modulo 3, including an independent replay of its Gauss sum.",
+    "first_proof_obligation": "Extend the phase to a complex character modulo 5, where the root number is not real and the completed Lambda is no longer real on the critical line.",
+    "next_experiment": "Extend the phase to a complex character modulo 5, where the root number is not real and the completed Lambda is no longer real on the critical line.",
     "falsification": "A primitive character and a height T at which the certified argument count exceeds the number of critical-line sign changes.",
-    "blocker": "One character at height 17 does not constrain the other characters. Conductor 3 is the smallest untouched case.",
+    "blocker": "Three real characters at height at most 17 do not constrain complex characters or large conductors.",
     "dossier": "research/LAB_CAMPAIGNS.md",
-    "verifier": "python3 scripts/lab.py --probe dirichlet_l"
+    "verifier": "python3 scripts/lab.py --probe dirichlet_l",
+    "additional_verifiers": [
+      "python3 scripts/lab.py --probe dirichlet_zeros"
+    ]
   },
   "probes": [
     {
       "id": "dirichlet_l",
       "problem_id": "M002",
       "name": "Generalized Riemann Hypothesis",
-      "title": "Critical-line zero count for L(s, chi_4) up to a small height",
+      "title": "Critical-line zero counts for the real characters modulo 3, 4 and 5",
       "engines": [
         "interval_arithmetic"
       ],
-      "frontier": "Known: the first zeros of Dirichlet L-functions, including L(s, χ₄), have been tabulated far beyond this height. The certificate is for the single character χ₄. Reproduction only, and not a proof of GRH.",
+      "frontier": "Known: zeros of Dirichlet L-functions have been tabulated far beyond these heights. The certificate covers three real primitive characters only. Reproduction only, and not a proof of GRH.",
       "artifact": "scripts/probes/dirichlet_l.py",
       "command": "python3 scripts/lab.py --probe dirichlet_l",
       "runs": {
         "smoke": {
           "holds": true,
-          "scope": "Every non-trivial zero of L(s, χ₄) with imaginary part in (0, 11] is simple and lies on the critical line: the argument principle gives N(11) = 2, equal to the number of disjoint intervals where the associated real Z-function changes sign.",
-          "certificate_sha256": "c0331948605f0bba8ddd08f7c38fc3658c198cd9033b2ebf49b487b9c19ce754"
+          "scope": "Critical-line certificates for χ₄ on (0, 11] with N(11) = 2; χ₃ on (0, 9] with N(9) = 1. Each argument count equals the number of disjoint intervals where that character's real Z-function changes sign, so every non-trivial zero in those ranges is simple and on the critical line.",
+          "certificate_sha256": "374ed325c0f297d2a9477c199959ab016c76f28fbb6660665aff7c1a93adcdfd"
         },
         "deep": {
           "holds": true,
-          "scope": "Every non-trivial zero of L(s, χ₄) with imaginary part in (0, 17] is simple and lies on the critical line: the argument principle gives N(17) = 4, equal to the number of disjoint intervals where the associated real Z-function changes sign.",
-          "certificate_sha256": "97c916d3b3bdc62997216a76ae387cacfdaefc7a7ba10bc5348e31d3f0a2441b"
+          "scope": "Critical-line certificates for χ₄ on (0, 17] with N(17) = 4; χ₃ on (0, 15] with N(15) = 2; χ₅ (Legendre symbol mod 5) on (0, 12] with N(12) = 3. Each argument count equals the number of disjoint intervals where that character's real Z-function changes sign, so every non-trivial zero in those ranges is simple and on the critical line.",
+          "certificate_sha256": "28b353677ffce2e9c495838d18583540c5cc101dcc7f68d64b4d7424f66fcb5c"
+        }
+      }
+    },
+    {
+      "id": "dirichlet_zeros",
+      "problem_id": "M002",
+      "name": "Generalized Riemann Hypothesis",
+      "title": "GRH up to height T for the real primitive characters of small conductor",
+      "engines": [
+        "interval_arithmetic",
+        "l_functions"
+      ],
+      "frontier": "Known: GRH verified for every primitive character of modulus q <= 400,000 up to height at least 10^8/q (Platt, Math. Comp. 2016), and for q <= 13 to height 10,000 (Rumely 1993). Reproduction only.",
+      "artifact": "scripts/probes/dirichlet_zeros.py",
+      "command": "python3 scripts/lab.py --probe dirichlet_zeros",
+      "runs": {
+        "smoke": {
+          "holds": true,
+          "scope": "For chi_D with D in {-4, -3, 5}: L(s, chi_D) has no real zero in (0, 1), and every zero with |Im s| < 20 is simple and on Re s = 1/2 (certified count = certified sign changes).",
+          "certificate_sha256": "f6bf5d1d8c4e6ae52da72b2d2bbc10d8638e6e62ba10ceb8164e86aba74e5e79"
+        },
+        "deep": {
+          "holds": true,
+          "scope": "For chi_D with D in {-3, -4, 5, -7, 8, -8, -11, 12, 13, -15, 17, -19, -20, 21, -23, -24, 24}: L(s, chi_D) has no real zero in (0, 1), and every zero with |Im s| < 30 is simple and on Re s = 1/2 (certified count = certified sign changes).",
+          "certificate_sha256": "69bff3789e5eb262d46ecd2dc511934f46491a3ab2dfd51a0e3eebfd62785fff"
         }
       }
     }
@@ -96,18 +124,31 @@
       "id": "B-LCHI4-001",
       "problem_id": "M002",
       "classification": "reproduced_known",
-      "title": "The first two non-trivial zeros of L(s, chi_4) are simple and on the critical line",
-      "scope": "One Dirichlet character, N(11) = 2; not the generalized Riemann hypothesis",
-      "description": "Argument count for L(s, chi_4) matched to sign changes of the real form on (6, 7) and (10, 11), replayed at a second truncation. The deep run reaches N(17) = 4.",
+      "title": "Low zeros of L(s, chi_4) and L(s, chi_3) are simple and on the critical line",
+      "scope": "Two real characters at classical heights; not the generalized Riemann hypothesis",
+      "description": "Argument counts matched to sign changes: chi_4 on (6, 7) and (10, 11) gives N(11) = 2, and chi_3 on (8, 9) gives N(9) = 1. Gauss sums tau(chi_3)^2 = -3 and tau(chi_4) = 2i fix the root numbers. The deep run adds chi_4 to N(17) = 4, chi_3 to N(15) = 2, and the Legendre symbol mod 5 to N(12) = 3, with tau(chi_5)^2 = 5.",
       "verifier": "python3 scripts/lab.py --probe dirichlet_l",
       "artifact": "scripts/probes/dirichlet_l.py",
       "verified_on": "2026-10-31"
+    },
+    {
+      "id": "B-GRH-001",
+      "problem_id": "M002",
+      "classification": "reproduced_known",
+      "title": "GRH to height 20 for the real primitive characters of conductor 3, 4 and 5",
+      "scope": "Known small range; not new",
+      "description": "For D = -4, -3, 5, L(s, chi_D) has no real zero in (0, 1) (Lipschitz-certified point values), the argument principle certifies 5, 4 and 6 zeros with 0 < Im s < 20, and Z(t, chi_D) has exactly as many certified sign changes. The checker rebuilds each character and certifies the root number +1 from the Gauss sum. The deep run covers all 17 real primitive characters of conductor at most 24 to height 30 (248 zeros in the upper half-plane).",
+      "verifier": "python3 scripts/lab.py --probe dirichlet_zeros",
+      "artifact": "scripts/probes/dirichlet_zeros.py",
+      "verified_on": "2026-11-01"
     }
   ],
   "engine_roadmap": null,
   "claim_review_2026": null,
   "formal_statement": null,
   "external_claims": [],
+  "discovery_trail": null,
+  "discovery_url": null,
   "mentioned_in": [
     {
       "title": "Approach — leverage dispatch",
@@ -118,6 +159,11 @@
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",
       "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Coverage — breadth-first research deployment plan",
+      "source": "COVERAGE.md",
+      "url": "https://svyable.github.io/100/library/coverage/"
     },
     {
       "title": "Exact probe lab — computational reach of the 100",

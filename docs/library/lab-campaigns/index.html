@@ -19,6 +19,8 @@
 <link rel="stylesheet" href="../../assets/style.css">
 <link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
 <link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
 <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <script src="../../assets/app.js" defer></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
@@ -31,7 +33,7 @@
     <span class="brand-mark">100<span class="brand-dot">.</span></span>
     <span class="brand-caption">SVYABLE<br>RESEARCH</span>
   </a>
-  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../work/">Work</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
   <div class="header-tools">
     <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
     <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
@@ -56,11 +58,11 @@
 <h3 id="m001--riemann-hypothesis-riemann-engine-intervalarithmetic">M001 — Riemann hypothesis (<code>riemann</code>, engine <code>interval_arithmetic</code>)<a class="anchor" href="#m001--riemann-hypothesis-riemann-engine-intervalarithmetic" aria-label="Link to this section">#</a></h3>
 <p>Certifies N(T) by the argument principle and matches it to sign changes of the Hardy Z-function. The checker repeats both counts with a different Euler–Maclaurin and Stirling truncation. Smoke: N(23) = 2. Deep: N(36) = 5. <strong>Frontier:</strong> direct verification already passes height 3·10^12. This is a certificate format for the low zeros, not a new region.</p>
 <h3 id="m002--generalized-riemann-hypothesis-dirichletl-engine-intervalarithmetic">M002 — Generalized Riemann hypothesis (<code>dirichlet_l</code>, engine <code>interval_arithmetic</code>)<a class="anchor" href="#m002--generalized-riemann-hypothesis-dirichletl-engine-intervalarithmetic" aria-label="Link to this section">#</a></h3>
-<p>The same engine on L(s, χ₄). Smoke: N(11) = 2. Deep: N(17) = 4. One primitive character at a classical height. <strong>Next:</strong> the non-principal character modulo 3, including its Gauss sum.</p>
+<p>The same engine on the real primitive characters modulo 3, 4 and 5, each with root number +1 checked from its Gauss sum (τ(χ₃)² = −3, τ(χ₅)² = 5). Smoke: N(11) = 2 for χ₄ and N(9) = 1 for χ₃. Deep: those plus N(17) = 4, N(15) = 2, and N(12) = 3 for the Legendre symbol modulo 5. <strong>Next:</strong> a complex character, where Lambda is not real.</p>
 <h3 id="m006--strong-goldbach-goldbach-engine-primes">M006 — Strong Goldbach (<code>goldbach</code>, engine <code>primes</code>)<a class="anchor" href="#m006--strong-goldbach-goldbach-engine-primes" aria-label="Link to this section">#</a></h3>
 <p>Certifies the least Goldbach prime for every even n up to the run limit. The search side uses a sieve; the check side uses deterministic Miller–Rabin, or an independent odd-only sieve for large runs. The deep run reproduces the known record least prime 751 at n = 3,807,404. <strong>Frontier:</strong> 4·10^18 (Oliveira e Silva, Herzog &amp; Pardi 2014). A larger range has no research value; the useful output is the least-partition table, as data for restricted lemmas.</p>
 <h3 id="m019--erdősstraus-erdosstraus-engine-primes">M019 — Erdős–Straus (<code>erdos_straus</code>, engine <code>primes</code>)<a class="anchor" href="#m019--erdősstraus-erdosstraus-engine-primes" aria-label="Link to this section">#</a></h3>
-<p>Gives an explicit triple for every n, found with a divisor solver for 1/y + 1/z = a/b. The checker tests only the identity 4xyz = n(xy + yz + zx). <strong>Next:</strong> mine solutions for primes n ≡ 1 (mod 24) to look for parametric identities.</p>
+<p>Gives an explicit triple for every n, found with a divisor solver for 1/y + 1/z = a/b. The checker tests only the identity 4xyz = n(xy + yz + zx). The residue mine clusters primes n ≡ 1 (mod 24); <a href="../../library/m019-identities/"><code>research/M019_IDENTITIES.md</code></a> turns the residue-3/7 clusters into nine polynomial identities covering 106/117 such primes through 8,000. <strong>Next:</strong> attack the remaining classes n ≡ 1 or 49 (mod 120) with a non-Mordell idea, without extending the search range.</p>
 <h3 id="m041--plane-jacobian-conjecture-jacobian-engine-polynomialalgebra">M041 — Plane Jacobian conjecture (<code>jacobian</code>, engine <code>polynomial_algebra</code>)<a class="anchor" href="#m041--plane-jacobian-conjecture-jacobian-engine-polynomialalgebra" aria-label="Link to this section">#</a></h3>
 <p>The class is every map (f, g) of degree ≤ d with zero constant terms and coefficients in a small set. J(f,g) is linear in g&#x27;s coefficients, so the maps with constant Jacobian are the lattice points of an exact kernel. Each one gets an inverse G of degree ≤ d from an exact linear system; by Gabber&#x27;s bound, an F with no such inverse would be a counterexample. The checker re-derives the set of constant-Jacobian maps from a different linear system (evaluations on a grid, with fraction-free integer elimination), and verifies G∘F = F∘G = id by independent dense composition. Smoke: all 59,049 maps of degree ≤ 2 (240 with constant Jacobian, matching brute force). Deep: all 387,420,489 maps of degree ≤ 3 (816). <strong>Frontier:</strong> degree ≤ 100 in the plane (Moh).</p>
 <h3 id="m071--hadwiger-hadwiger-engine-graphcensus">M071 — Hadwiger (<code>hadwiger</code>, engine <code>graph_census</code>)<a class="anchor" href="#m071--hadwiger-hadwiger-engine-graphcensus" aria-label="Link to this section">#</a></h3>
@@ -98,10 +100,10 @@ python3 scripts/lab.py --replay /tmp/certs/hadamard.smoke.json</code></pre>
 <footer class="site-footer">
   <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
   <div class="footer-links">
-    <a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
     <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
   </div>
-  <small>Generated from the validated ledgers · data as of 2026-10-31 · no tracking, no external scripts</small>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
 </footer>
 </div>
 <dialog class="palette" id="palette" aria-label="Search the portfolio">

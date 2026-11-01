@@ -1,6 +1,11 @@
 # Proof Exchange — preregistered, matched-budget pilot
 
-**Status (2026-10-31): experiment defined, zero trials run.**
+**Status (2026-10-31): experiment defined, zero agent-arm trials run.**
+The [actual K42 checker calibration](calibrations/README.md) validates the
+replay infrastructure, but is **not** one of the 36 agent trials. The
+dependency-heavy CH24 task has become **post-freeze contaminated** by public
+finite-case work; it cannot be scored as a novel result under this protocol
+without an explicitly new task and preregistration.
 This is a measurement framework for [issue #55](https://github.com/Svyable/100/issues/55).
 It does not run language models, deploy agents, accept proof claims, or imply
 that parallel work is faster. A valid JSON schema is not a valid theorem.
@@ -80,6 +85,26 @@ timed-out attempts.
 is complete under the preregistered protocol.** Even then three seeds per arm
 have low statistical power: report raw denominators and uncertainty, and do
 not interpret one task's result as general performance.
+
+## Dispatch and evidence
+
+Use python3 scripts/work.py --kind benchmark --next 8 to inspect remaining
+task/architecture/seed cells and claim each exact cell before launching the
+experiment. The queue is derived from the original manifest and the actual
+trial ledger. These **36 assignments** are not **36 observations**; an item
+disappears only after its unique valid run is recorded.
+
+Actual agent calls, including failures, must have frozen prompts, source
+snapshot, pinned model/version, unedited chat and tool logs, independent checker
+output and directly measured aggregate usage for all workers and coordination.
+Do not estimate token use, call a synthetic fixture a trial, or reclassify a
+pre-existing K42 checker calibration as an agent-architecture experiment.
+The benchmark smoke tests now allow a nonempty authentic ledger; they never
+create a trial by themselves.
+
+The CH24 task is already post-freeze exposed and cannot yield clean novelty
+credit. The four arms may still be executed as a contaminated-condition
+comparison, with the caveat preserved in every report.
 
 ## Trial ledger contract
 

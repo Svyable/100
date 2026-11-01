@@ -45,8 +45,8 @@
     "id": "L004",
     "problem_id": "M006",
     "stage": "implemented",
-    "statement": "Every even 4 ≤ n ≤ 100 is a sum of two primes, via a least-prime witness table re-checked by the kernel against the comparator Hundred.Statements.Goldbach.Statement.",
-    "scope_gap": "Known range only (verified to 4·10^18 in the literature); no bound on the least prime and no progress on the unrestricted conjecture. Independent statement review pending.",
+    "statement": "Every even 4 \u2264 n \u2264 100 is a sum of two primes, via a least-prime witness table re-checked by the kernel against the comparator Hundred.Statements.Goldbach.Statement.",
+    "scope_gap": "Known range only (verified to 4\u00b710^18 in the literature); no bound on the least prime and no progress on the unrestricted conjecture. Independent statement review pending.",
     "next_step": "Connect the witness table to the lab goldbach certificate hash and add a downstream lemma that uses Statement.",
     "declarations": [
       "Hundred.Statements.Goldbach.certified_100",
@@ -57,25 +57,37 @@
     "id": "L005",
     "problem_id": "M019",
     "stage": "implemented",
-    "statement": "Explicit positive solutions of 4xyz = n(xy + yz + zx) for every 2 ≤ n ≤ 100, re-checked by the kernel against Hundred.Statements.ErdosStraus.Statement.",
-    "scope_gap": "Known range only; no parametric identity for a residue class. Independent statement review pending.",
-    "next_step": "Formalise one classical parametric identity (n ≡ 3 mod 4) as a theorem quantified over all such n.",
+    "statement": "Positive solutions for 2 \u2264 n \u2264 100 and a classical infinite parametric family for every n \u2261 3 (mod 4), checked against ErdosStraus.Solves.",
+    "scope_gap": "Classical residue class only; does not prove the unrestricted conjecture. Repeated denominators allowed. Independent statement review pending.",
+    "next_step": "Prove a scaling lemma: a solution for n gives a solution for every positive multiple of n, then compose it with residue_three.",
     "declarations": [
       "Hundred.Statements.ErdosStraus.certified_100",
-      "Hundred.Statements.ErdosStraus.holds_upTo_100"
+      "Hundred.Statements.ErdosStraus.holds_upTo_100",
+      "Hundred.Statements.ErdosStraus.residue_three",
+      "Hundred.Statements.ErdosStraus.holds_mod_four_three"
     ]
   },
   {
     "id": "L006",
     "problem_id": "M075",
     "stage": "implemented",
-    "statement": "Exhaustive union-closed check over all families on ground sets of size 1, 2 and 3 in the general bitmask encoding of Hundred.Statements.Frankl.Statement.",
-    "scope_gap": "Elementary known cases; complements L002 (Fin 2 with union semantics). No representation theorem from arbitrary set families yet. Independent statement review pending.",
-    "next_step": "Prove that the bitmask encoding is equivalent to the L002 Fin-based families for k = 2, then reuse it for k = 3.",
+    "statement": "The generic Fin-based and Nat-bitmask family models agree on all two-element family memberships, counts, frequencies, union closure, nonempty-member conditions and abundance. Explicitly pack arbitrary Boolean predicates on the four subset masks; transport the two-element theorem into the generic comparator and combine the separately proved k=1 and k=3 cases.",
+    "scope_gap": "Elementary finite k=1..3 cases only. The model-equivalence and explicit family packing theorems are proved only for k=2; the k=3 case is supplied independently, not derived from k=2. No unrestricted Frankl theorem, and no independent scope review.",
+    "next_step": "Extend the family packing and semantic bridge to k=3 or to a uniform Fin (2^k) representation; connect genuine families of subsets of Fin k, not only the bitmask model.",
     "declarations": [
       "Hundred.Statements.Frankl.ground_1",
       "Hundred.Statements.Frankl.ground_2",
-      "Hundred.Statements.Frankl.ground_3"
+      "Hundred.Statements.Frankl.ground_3",
+      "Hundred.FranklBridge.member_iff",
+      "Hundred.FranklBridge.size_eq",
+      "Hundred.FranklBridge.frequency_eq",
+      "Hundred.FranklBridge.nontrivial_iff",
+      "Hundred.FranklBridge.unionClosed_iff",
+      "Hundred.FranklBridge.abundant_iff",
+      "Hundred.FranklBridge.from_fin2",
+      "Hundred.FranklBridge.pack_member",
+      "Hundred.FranklBridge.extensional_complete",
+      "Hundred.FranklBridge.bounded_ground_sets"
     ]
   },
   {
@@ -95,7 +107,7 @@
     "id": "L008",
     "problem_id": "M095",
     "stage": "implemented",
-    "statement": "¬ Arrows 5 3 3 in the general clique encoding of Hundred.Statements.Ramsey (cliques as vertex bitmasks), so the R(5,5) comparator Conjecture := Arrows 43 5 5 is stated in a vocabulary with a checked witness.",
+    "statement": "\u00ac Arrows 5 3 3 in the general clique encoding of Hundred.Statements.Ramsey (cliques as vertex bitmasks), so the R(5,5) comparator Conjecture := Arrows 43 5 5 is stated in a vocabulary with a checked witness.",
     "scope_gap": "Same known R(3,3) lower bound as L001 in a second, independent encoding. Exoo's K42 colouring and the 46 upper bound are cited, not re-proved. Independent statement review pending.",
     "next_step": "Prove the two Ramsey encodings agree on triangles (L001 TriangleFree vs HasMonoClique with s = 3).",
     "declarations": [
@@ -108,7 +120,7 @@
     "stage": "implemented",
     "statement": "Projective planes of orders 2 and 3 satisfy the axioms in Hundred.Statements.ProjectivePlane.IsPlane, so the order-12 comparator is not vacuous.",
     "scope_gap": "Satisfiability of the axioms only; says nothing about order 12. Independent statement review pending.",
-    "next_step": "Formalise the Bruck–Ryser condition as a checkable criterion and verify it for small orders.",
+    "next_step": "Formalise the Bruck\u2013Ryser condition as a checkable criterion and verify it for small orders.",
     "declarations": [
       "Hundred.Statements.ProjectivePlane.exists_order_2",
       "Hundred.Statements.ProjectivePlane.exists_order_3"

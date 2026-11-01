@@ -30,7 +30,7 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 | 15 | M095 | Exact Ramsey number R(5,5) | `replay_published` | 82 | +7 | +12 | 101 | Import and check the published K42 witness; reproduce a small structural exclusion with a trusted proof checker. |
 | 16 | M080 | Rota basis conjecture | `mine_structure` | 85 | +7 | +6 | 98 | Quotient instances by the stabiliser of the standard basis so that GF(2)^4 becomes exhaustive, storing one grid certificate per orbit. |
 | 17 | M097 | Metric TSP four-thirds conjecture | `mine_structure` | 85 | +7 | +6 | 98 | Extend from graphic metrics to 1-2 and vertex-weighted metrics, and enumerate extreme points of the subtour polytope at n = 8 to search for gap-maximising instances. |
-| 18 | M019 | Erdős–Straus conjecture | `mine_structure` | 82 | +7 | +6 | 95 | The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity. |
+| 18 | M019 | Erdős–Straus conjecture | `mine_structure` | 82 | +7 | +6 | 95 | Nine polynomial identities from the straus_identities mine now cover 106 of the 117 primes n <= 8000 with n = 1 (mod 24), including the primary progressions n = 120t+73 and n = 120t+97. The 11 uncovered primes all lie in {1, 49} (mod 120). Attack those two remaining classes with a non-Mordell idea, or name an explicit family outside the recorded progressions; do not extend the verified search range. |
 | 19 | M002 | Generalized Riemann Hypothesis | `replay_published` | 72 | +7 | +12 | 91 | Reproduce a published primitive character modulo 3 or 5 with the correct root number, branch conventions and independently checked zero count; document why this is known mathematics, not GRH progress. |
 | 20 | M076 | Erdős–Rado sunflower conjecture | `specify_shape` | 91 | +0 | +0 | 91 | Shape extremal_asymptotics (3 problems, one write-up): Name a structured family and an explicit constant, and compare it with a cited general bound before calling it an improvement. Full shape, certificate and falsifier are in APPROACH.md. |
 | 21 | M085 | Unique Games conjecture | `scope_audit` | 83 | +0 | +8 | 91 | Independently audit the reduction's completeness and soundness estimates and its quantitative dependence on gap parameters. |
@@ -368,31 +368,31 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 
 ### M019 — Erdős–Straus conjecture
 
-**Dispatch:** `mine_structure` · rank 18 · The straus_patterns mine already clusters the primes that are 1 mod 24. Extending the verified range stays inside published computations; the missing piece is an identity for one residue.
+**Dispatch:** `mine_structure` · rank 18 · Nine polynomial identities already cover 106 of 117 hard-class primes through 8,000. Extending the verified range stays inside published computations; the missing piece is a non-Mordell idea for the classes 1 and 49 mod 120.
 
 **Proof obligation:** Find a polynomial identity family covering a residue class of primes not covered by the classical Mordell identities, and prove it symbolically.
 
 **Falsifier:** An n together with a proof that no positive-integer triple exists; a finite search failure is not a counterexample.
 
-**Recommended step:** The certified mine straus_patterns gives an explicit solution for every prime n <= 8000 with n = 1 (mod 24). In that range 4x - n is always one of 3, 7, 11, 15, 19 or 23, and 105 of the 117 primes use 3 or 7. Prove a symbolic identity for one of those two residues; the table is not that identity.
+**Recommended step:** Nine polynomial identities from the straus_identities mine now cover 106 of the 117 primes n <= 8000 with n = 1 (mod 24), including the primary progressions n = 120t+73 and n = 120t+97. The 11 uncovered primes all lie in {1, 49} (mod 120). Attack those two remaining classes with a non-Mordell idea, or name an explicit family outside the recorded progressions; do not extend the verified search range.
 
 **Current blocker:** Classical identities leave quadratic-residue classes uncovered, and known results show identities of the standard polynomial type cannot cover them all; a different idea is needed.
 
-**Stage:** `benchmark_reproduced` · [Dossier](research/LAB_CAMPAIGNS.md)
+**Stage:** `benchmark_reproduced` · [Dossier](research/M019_IDENTITIES.md)
 
 ### M002 — Generalized Riemann Hypothesis
 
 **Dispatch:** `replay_published` · rank 19 · The new engine verifies χ4 only; the generalized Riemann hypothesis concerns all Dirichlet characters. Replaying a separate primitive-character certificate tests the reusable contour and gamma-factor implementation.
 
-**Proof obligation:** Certify one further primitive character, of conductor 3 or 5, to a height where the root number and the gamma factor are checked by the same argument principle.
+**Proof obligation:** Extend the phase to a complex character modulo 5, where the root number is not real and the completed Lambda is no longer real on the critical line.
 
 **Falsifier:** A primitive character and a height T at which the certified argument count exceeds the number of critical-line sign changes.
 
 **Recommended step:** Reproduce a published primitive character modulo 3 or 5 with the correct root number, branch conventions and independently checked zero count; document why this is known mathematics, not GRH progress.
 
-**Not the current recommendation:** Reuse the zero-count certificate for the non-principal character modulo 3, including an independent replay of its Gauss sum.
+**Not the current recommendation:** Extend the phase to a complex character modulo 5, where the root number is not real and the completed Lambda is no longer real on the critical line.
 
-**Current blocker:** One character at height 17 does not constrain the other characters. Conductor 3 is the smallest untouched case.
+**Current blocker:** Three real characters at height at most 17 do not constrain complex characters or large conductors.
 
 **Stage:** `benchmark_reproduced` · [Dossier](research/LAB_CAMPAIGNS.md)
 

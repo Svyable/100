@@ -116,6 +116,69 @@
     "source_url": "https://github.com/Svyable/100/blob/main/lean/Hundred/Statements/Frankl.lean"
   },
   "external_claims": [],
+  "discovery_trail": {
+    "problem_id": "M075",
+    "question": "How do symmetry reductions change what we can actually verify about union-closed families?",
+    "nodes": [
+      {
+        "id": "support-census",
+        "kind": "observation",
+        "status": "documented",
+        "title": "A raw census hides relabeling symmetry",
+        "detail": "At n = 4 the unfiltered finite mine records 4,958 families; this counts families that may leave ground elements unused. A full-support count is a different quantity.",
+        "sources": [
+          "MINES.md",
+          "research/M075_CANONICAL.md"
+        ],
+        "motivated_by": []
+      },
+      {
+        "id": "canonical-encoding",
+        "kind": "strategy",
+        "status": "documented",
+        "title": "Compare canonical encodings under permutations",
+        "detail": "Canonical encoding identifies ground-set relabeling orbits. A separate closure-pruned descending construction enumerates full-support families without trying every bitmask.",
+        "move_id": "symmetry_quotient",
+        "motivated_by": [
+          "support-census"
+        ],
+        "sources": [
+          "research/M075_CANONICAL.md"
+        ]
+      },
+      {
+        "id": "orbit-reproduction",
+        "kind": "reproduction",
+        "status": "reproduced_known",
+        "title": "Reproduce the n = 5 full-support orbit count",
+        "detail": "The recorded full-support count is 2,747,402 labeled families and 28,960 relabeling orbits; the latter is separately checked using Burnside's lemma. This is known finite mathematics, not a proof of Frankl.",
+        "move_id": "independent_replay",
+        "motivated_by": [
+          "canonical-encoding"
+        ],
+        "sources": [
+          "research/M075_CANONICAL.md",
+          "research/M075_BURNSIDE.md"
+        ]
+      },
+      {
+        "id": "augmentation-frontier",
+        "obligation_id": "O-M075-02",
+        "kind": "next_step",
+        "status": "proposed",
+        "title": "Test canonical augmentation and independent review",
+        "detail": "Obtain independent review of both lemmas and their quantified domain; try pruning noncanonical partial states and independently replaying the resulting orbit count. The conjecture remains open.",
+        "move_id": "symmetry_quotient",
+        "motivated_by": [
+          "orbit-reproduction"
+        ],
+        "sources": [
+          "research/M075_CANONICAL.md"
+        ]
+      }
+    ]
+  },
+  "discovery_url": "https://svyable.github.io/100/discovery/M075/",
   "mentioned_in": [
     {
       "title": "Approach — leverage dispatch",
@@ -126,6 +189,11 @@
       "title": "Execution queue — evidence-aware research priorities",
       "source": "ATTACK_QUEUE.md",
       "url": "https://svyable.github.io/100/library/attack-queue/"
+    },
+    {
+      "title": "Coverage — breadth-first research deployment plan",
+      "source": "COVERAGE.md",
+      "url": "https://svyable.github.io/100/library/coverage/"
     },
     {
       "title": "Exact probe lab — computational reach of the 100",
@@ -173,9 +241,19 @@
       "url": "https://svyable.github.io/100/library/m075-frankl/"
     },
     {
+      "title": "M075 — seven-element triple-local optimization",
+      "source": "research/M075_TRIPLE7_SAT.md",
+      "url": "https://svyable.github.io/100/library/m075-triple7-sat/"
+    },
+    {
       "title": "Research-source audit — 2026-10-30",
       "source": "docs/AUDIT_QUEUE.md",
       "url": "https://svyable.github.io/100/library/audit-queue/"
+    },
+    {
+      "title": "Discovery trails: preserving the reasoning, not promoting claims",
+      "source": "docs/DISCOVERY_PROTOCOL.md",
+      "url": "https://svyable.github.io/100/library/discovery-protocol/"
     },
     {
       "title": "Lamport protocol — make every missing implication explicit",

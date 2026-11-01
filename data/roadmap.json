@@ -321,6 +321,17 @@
       ]
     },
     {
+      "id": "R38",
+      "track": "campaigns",
+      "horizon": "shipped",
+      "title": "Erdos-Straus parametric identities from the residue mine",
+      "outcome": "Nine polynomial identities, including n=120t+73 and n=120t+97, cover 106 of 117 hard-class primes through 8,000; remaining misses lie in {1,49} mod 120.",
+      "evidence": "research/M019_IDENTITIES.md",
+      "problems": [
+        "M019"
+      ]
+    },
+    {
       "id": "R20",
       "track": "campaigns",
       "horizon": "now",
@@ -391,6 +402,17 @@
       "evidence": "research/LAB_CAMPAIGNS.md",
       "problems": [
         "M001",
+        "M002"
+      ]
+    },
+    {
+      "id": "R39",
+      "track": "lab",
+      "horizon": "shipped",
+      "title": "Zero counts for the real characters modulo 3 and 5",
+      "outcome": "The chi_4 engine also certifies chi_3 through height 15 and the Legendre symbol mod 5 through height 12, with Gauss sums checked in the cyclotomic ring.",
+      "evidence": "scripts/probes/dirichlet_l.py",
+      "problems": [
         "M002"
       ]
     },

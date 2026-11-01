@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "editorial_notice": "These are explanations and methodological connections, not new mathematical results or independent verification. Research status is governed by the canonical ledgers.",
+  "guides": [
+    {
+      "id": "M071",
+      "summary": "How colouring, graph minors and exact certificates meet.",
+      "intuition": "Colouring asks how many colours are needed so that adjacent vertices differ. A graph minor is obtained by deleting vertices or edges and contracting edges. Hadwiger asks whether needing k colours always forces the complete graph K_k to appear as a minor. Finding a large clique directly is not required: contraction can reveal structure that was not visible as a subgraph.",
+      "obstacle": "Finite searches over small graphs reproduce known cases, not the unsettled frontier. The campaign records that the conjecture is proved through k = 6, while a meaningful k = 7 test needs much larger graphs and certified chromatic lower bounds. A 2026 claimed resolution remains under review.",
+      "meaningful_check": "A genuine counterexample would need two independent parts: a certified lower bound on chromatic number, and an exhaustive certificate excluding the corresponding complete-graph minor. A restricted positive theorem instead needs a precisely specified new graph class and an independent prior-art check.",
+      "bridges": [
+        {
+          "id": "M074",
+          "reason": "Both problems use graph search and independently checkable certificates, but one studies undirected minors and the other directed cycles."
+        },
+        {
+          "id": "M075",
+          "reason": "Symmetry reduction can save exhaustive work in both projects; a computational shortcut is not a logical implication between conjectures."
+        }
+      ]
+    },
+    {
+      "id": "M074",
+      "summary": "Why many outgoing edges should force a short directed cycle.",
+      "intuition": "Imagine a directed network with n vertices where every vertex sends edges to at least r others. The conjecture predicts a directed cycle of length at most ceil(n/r). The direction of every edge matters: an undirected loop is not enough. The challenge is to turn a local outdegree condition into a universal guarantee about a short directed circuit.",
+      "obstacle": "The project has independently testable finite cases and mathematical reductions, but its campaign records an external fixed-r = 6 proof corpus that has not been independently replayed here. Even accepting one fixed-r result would not by itself prove the unrestricted conjecture.",
+      "meaningful_check": "For a bounded case, check the precise reduction, enumerate or certify the remaining candidates, and independently verify the cycle condition or unsatisfiability certificate. Record the exact n and r covered; do not promote a finite exclusion into a general proof.",
+      "bridges": [
+        {
+          "id": "M071",
+          "reason": "Both ask global structural questions about graphs and rely on exact graph certificates; the invariants and proof obligations differ."
+        },
+        {
+          "id": "M075",
+          "reason": "Canonicalization and symmetry-aware enumeration are shared computational techniques, not evidence that either conjecture implies the other."
+        }
+      ]
+    },
+    {
+      "id": "M075",
+      "summary": "A deceptively simple half-frequency claim about families of sets.",
+      "intuition": "A family of sets is union-closed if the union of any two of its members is also a member. Frankl asks whether some element occurs in at least half the sets of every finite nontrivial such family. For example, the family { {1}, {2}, {1,2} } is union-closed, and each element appears in two of its three members.",
+      "obstacle": "A direct search grows doubly exponentially with the ground-set size. The project's n = 4 checks and symmetry-class counts are reproducible finite evidence; they cannot establish the statement for arbitrary families. Structural reductions and entropy arguments are separate mathematical avenues requiring their own proof.",
+      "meaningful_check": "A counterexample must list an exact finite union-closed family and verify that every element appears in strictly fewer than half its sets. For positive progress, prove a genuinely new restricted lemma or a rigorously checked reduction beyond the known finite census.",
+      "bridges": [
+        {
+          "id": "M071",
+          "reason": "Canonical representatives help avoid repeated cases in finite search, though the objects are set families rather than graphs."
+        },
+        {
+          "id": "M074",
+          "reason": "Both need careful separation of verified finite instances from unrestricted universal statements."
+        }
+      ]
+    }
+  ]
+}

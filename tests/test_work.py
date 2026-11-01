@@ -7,6 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import work
+import benchmark
 
 
 def _json(path):
@@ -44,6 +45,32 @@ class TestWorkQueue(unittest.TestCase):
         for w in stop_jobs:
             self.assertEqual(w["status"], "externally_blocked", w["id"])
             self.assertIn("Refused range extension", w["boundary"])
+
+    def test_verifier_review_packets_are_distinct_and_scoped(self):
+        program = _json("data/research_program.json")
+        targets = {c["problem_id"] for c in program["campaigns"] if c.get("verifier")}
+        packets = {w["problems"][0]: w for w in self.items
+                   if w["kind"] == "review" and w["id"].startswith("V-P-")}
+        self.assertTrue(set(packets) <= targets)
+        for pid, w in packets.items():
+            self.assertEqual(w["id"], f"V-P-{pid}")
+            self.assertIn("corrupt", w["deliverable"])
+            self.assertIn("Reproduction", w["boundary"])
+
+    def test_benchmark_cells_follow_actual_ledger(self):
+        doc = benchmark.load_manifest()
+        seen = {(r["task_id"], r["arm"], r["seed"]) for r in benchmark.load_runs()}
+        expected = {(t["id"], a, seed) for t in doc["tasks"]
+                    for a in doc["arms"] for seed in doc["seeds"]} - seen
+        queue = {w["id"] for w in self.items if w["kind"] == "benchmark"}
+        self.assertEqual(queue, {f"B-{t}-{a}-{seed}" for t, a, seed in expected})
+        for w in self.items:
+            if w["kind"] == "benchmark":
+                self.assertEqual(w["status"], "runnable")
+                self.assertIn(benchmark.digest(doc), w["context"])
+                self.assertIn("data/benchmark_runs.jsonl", " ".join(w["acceptance"]))
+                if w["id"].startswith("B-CH24-IRREGULAR"):
+                    self.assertIn("POST-FREEZE PRIOR ART", w["boundary"])
 
     def test_obligation_dependencies_are_respected(self):
         for w in self.items:
@@ -86,7 +113,8 @@ class TestRegen(unittest.TestCase):
         workflow = (ROOT / ".github" / "workflows" / "validate.yml").read_text(encoding="utf-8")
         covered = {step[1][0] for step in regen.STEPS}
         for script in ("rank.py", "build_site.py", "next.py", "approach.py", "research.py", "lab.py",
-                       "mine.py", "formal.py", "portfolio_triage.py", "scale.py", "verify_claim_witnesses.py"):
+                       "mine.py", "formal.py", "portfolio_triage.py", "scale.py", "verify_claim_witnesses.py",
+                       "outcomes.py"):
             self.assertIn(f"scripts/{script}", workflow)
             self.assertIn(script, covered)
 
