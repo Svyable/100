@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "audited_on": "2026-10-31",
+  "issue_url": "https://github.com/Svyable/100/issues/13",
+  "interpretation": "Finite-witness extractability audit for the top dispatch-queue claim replays. Reconstructing H or recording a missing explicit G/graph is not independent acceptance of either 2026 manuscript.",
+  "source_revision": {
+    "repository": "openai/math",
+    "commit": "4eaee87548250b2682affda7d05d947c05554bae"
+  },
+  "reviews": [
+    {
+      "problem_id": "M071",
+      "status": "no_explicit_finite_graph",
+      "source_commit": "4eaee87548250b2682affda7d05d947c05554bae",
+      "comparator_path": "lean/ComparatorChallenges/HadwigerCounterexample.lean",
+      "comparator_sha256": "83f9f9c49f49d4abc35c8d1b7247ccab5de9c9ef909c45acabc16875e306b898",
+      "scope_note_sha256": "67c9ebeee4d8afcc735c40f2b9b3e018cd713270dad245777d061db491228fe1",
+      "claimed_quantifiers": "For every M there exists m >= max(M,5) and a SimpleGraph on Fin m with independence number at most 2, connectedMatchingNumber < m/100, hadwigerNumber < 26m/75 + 2/3 < m/2 <= chromaticNumber.",
+      "construction_notes": "The upstream ParameterExistence seed uses birthG = 10^9+1. The formal development yields an existential/asymptotic family, not a listed finite adjacency matrix. EdouardBonnet/hadwiger-counterexample reports a local kernel replay of the vendored construction; that is still Lean proof-object checking, not an independent finite-graph certificate.",
+      "explicit_graph_published": false,
+      "explicit_hadwiger_number_published": false,
+      "gap": "No finite graph G with an independently checkable adjacency list, chromatic lower bound certificate, and clique-minor upper bound certificate is available outside the Lean development. Comparator acceptance alone cannot discharge the repository's witness-replay gate."
+    },
+    {
+      "problem_id": "M073",
+      "status": "pattern_reconstructed_host_missing",
+      "source_commit": "4eaee87548250b2682affda7d05d947c05554bae",
+      "comparator_path": "lean/ComparatorChallenges/SidorenkoCounterexample.lean",
+      "comparator_sha256": "489688f5c4eb60c6dd8cfe0ef69663aaf11e795d6252e9626972764a50187de9",
+      "scope_note_sha256": "a1da28a997a9a27cad57f0862cd18e7502aa3129730d3bc7fd7a45fde14d3b1d",
+      "vertices": 35,
+      "edges": 66,
+      "bipartite_parts": [
+        13,
+        22
+      ],
+      "connected": true,
+      "point_degrees": [
+        4,
+        6,
+        4,
+        6,
+        5,
+        4,
+        5,
+        5,
+        5,
+        6,
+        5,
+        6,
+        5
+      ],
+      "face_degrees": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "faces_digest": "653fd38252aa4034512303dd71d738a42cc3685666b982d41f21c76c336c4b02",
+      "edges_digest": "db99606f04e4a5951ca3a99ef4665c92c89853c930483165400fd75f17bc2551",
+      "small_host_sanity": {
+        "max_host": 2,
+        "host_count": 3,
+        "holds_on_all_hosts": true,
+        "hosts_digest": "32c593c9c1d42b878673a5c338aed714fbb5bf56164bd8ce6968050dc8158238",
+        "note": "Brute-force host search stops at n=2 because n^13 map enumeration for the claimed pattern is infeasible; this is an encoding sanity check, not a search for the missing finite counterexample host."
+      },
+      "explicit_host_published": false,
+      "gap": "The comparator and RandomHost development prove existence of some finite simple host G with t(H,G) < t(K2,G)^66 via a random-edge sampling argument. No explicit adjacency list, graph6 string, or concrete order n is published for independent non-Lean replay."
+    }
+  ],
+  "report_sha256": "eca3e91b3bcbe5b89c069f24a9d977bcd7ae17d07d567432240993fff4cf9e6b"
+}

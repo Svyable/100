@@ -67,11 +67,11 @@
     },
     "M071": {
       "action": "replay_claim_witness",
-      "why": "A 2026 manuscript claims a Hadwiger counterexample. Reproducing that finite graph outranks another census step. Robertson, Seymour and Thomas already cover chromatic number at most 6."
+      "why": "The extractability audit found no published finite Hadwiger graph. Extracting one, or obtaining specialist reviews of the existential proof, still outranks another small-n census. Robertson, Seymour and Thomas already cover chromatic number at most 6."
     },
     "M073": {
       "action": "replay_claim_witness",
-      "why": "A 2026 manuscript claims a finite Sidorenko host. The review asks to compute that witness. A step-graphon search is not the current recommendation."
+      "why": "The Sidorenko pattern H is now reconstructed here, but the claimed host G is still unpublished. Deriving that host outranks a step-graphon search."
     },
     "M074": {
       "action": "replay_published",

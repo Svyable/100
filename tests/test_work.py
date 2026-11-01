@@ -86,7 +86,7 @@ class TestRegen(unittest.TestCase):
         workflow = (ROOT / ".github" / "workflows" / "validate.yml").read_text(encoding="utf-8")
         covered = {step[1][0] for step in regen.STEPS}
         for script in ("rank.py", "build_site.py", "next.py", "approach.py", "research.py", "lab.py",
-                       "mine.py", "formal.py", "portfolio_triage.py", "scale.py"):
+                       "mine.py", "formal.py", "portfolio_triage.py", "scale.py", "verify_claim_witnesses.py"):
             self.assertIn(f"scripts/{script}", workflow)
             self.assertIn(script, covered)
 

@@ -30,11 +30,11 @@ Solved has no target on purpose: it grows only through the promotion gate in [do
 | Research engine | Evidence-aware readiness, campaigns and a strict promotion gate to Solved. | 4 | 0 | 0 | 1 |
 | Exact probe lab | Every computable problem gets a search plus an independent checker on a reusable engine. | 5 | 3 | 1 | 0 |
 | Proof campaigns | Push the highest-ranked targets toward reviewed restricted results. | 3 | 2 | 1 | 0 |
-| Claim audit | Check announced resolutions for exact scope before spending effort on them. | 2 | 0 | 1 | 0 |
+| Claim audit | Check announced resolutions for exact scope before spending effort on them. | 3 | 0 | 1 | 0 |
 | Trust & reproducibility | Pinned artifacts, proof certificates and CI that reruns everything. | 2 | 0 | 1 | 1 |
 | Site & community | A public dashboard and a contribution path that keeps the bar high. | 2 | 0 | 0 | 1 |
 
-## Shipped (21)
+## Shipped (22)
 
 _Merged on main with evidence in the repository._
 
@@ -60,7 +60,7 @@ _Merged on main with evidence in the repository._
 - [x] **R14 · Public research dashboard** (Site & community) — Ranked search, campaigns, lab, proof queue, Solved ledger and this roadmap, all from verified records. [Evidence](docs/index.html)
 - [x] **R15 · Contribution workflow and evidence templates** (Site & community) — Issue and PR templates that demand exact scope and reproducible evidence. [Evidence](CONTRIBUTING.md)
 - [x] **R16 · Leverage dispatch across shared attack shapes** (Research engine) — Every problem has one action and one shared shape. Dispatch score, not readiness alone, orders the attack queue. A range extension inside a cited theorem is refused. [Evidence](data/methods.json)
-- [x] **R36 · 100-slot proof-exchange wave across the portfolio** (Research engine) — Every campaign has a proof-obligation node; scale.py packs 100 claimable slots with scout/adversary/checker roles, refuses stop_range, and regenerates SCALE.md under CI drift checks. Operating capacity, not a theorem multiplier. [Evidence](SCALE.md)
+- [x] **R37 · 100-slot proof-exchange wave across the portfolio** (Research engine) — Every campaign has a proof-obligation node; scale.py packs 100 claimable slots with scout/adversary/checker roles, refuses stop_range, and regenerates SCALE.md under CI drift checks. Operating capacity, not a theorem multiplier. [Evidence](SCALE.md)
 - [x] **R18 · Separate first-order Vaught from the 2026 infinitary counterexample** (Claim audit) — M098 is verified_open on the Pillay-Tanovic survey plus the authors' own exclusion. The infinitary manuscript cannot promote it to resolved. [Evidence](research/M098_VAUGHT.md)
   - Problems: M098 Vaught conjecture
 - [x] **R17 · Certified structure mines on five campaigns** (Exact probe lab) — Deck invariants, poset balances, Goldbach record primes, Erdos-Straus residue patterns and Frankl orbits, each recomputed by a second code path. [Evidence](MINES.md)
@@ -69,6 +69,8 @@ _Merged on main with evidence in the repository._
   - Problems: M001 Riemann Hypothesis, M002 Generalized Riemann Hypothesis
 - [x] **R31 · Group-character engine** (Exact probe lab) — Exact conjugacy, radical p-subgroups and character-degree counts; Alperin weight probe matches p-regular classes on named groups through A5. [Evidence](scripts/probes/alperin.py)
   - Problems: M048 Alperin weight conjecture
+- [x] **R36 · M071/M073 witness extractability audit** (Claim audit) — Pinned Sidorenko faces table independently reconstructed (35 vertices, 66 edges); Hadwiger claim recorded as existential with no finite adjacency list; frozen CI ledger and precise gaps. [Evidence](research/M071_M073_WITNESSES.md)
+  - Problems: M071 Hadwiger conjecture, M073 Sidorenko conjecture
 
 ## Now (5)
 
@@ -94,9 +96,9 @@ _Being worked on; top of the execution queue._
 
 _Scoped and ready to start once a current item finishes._
 
-- [ ] **R32 · Computational checks of claimed witnesses** (Claim audit) — Independent group-ring checker for M044/M049; explicit graph for the M071 claim; explicit host for the M073 claim. [Evidence](data/claim_reviews_2026.json)
+- [ ] **R32 · Computational checks of claimed group-ring witnesses** (Claim audit) — Independent group-ring checker for the shared M044/M049 direct-finiteness construction; separate nonsoficity audit for M049. [Evidence](data/claim_reviews_2026.json)
   - Done when: Each witness reproduced or a precise gap reported.
-  - Problems: M044 Kaplansky direct-finiteness conjecture, M049 Soficity conjecture, M071 Hadwiger conjecture, M073 Sidorenko conjecture
+  - Problems: M044 Kaplansky direct-finiteness conjecture, M049 Soficity conjecture
 - [ ] **R33 · DRAT/LRAT proofs from SAT pipelines** (Trust & reproducibility) — Every UNSAT verdict ships a proof checked by an independent checker. [Evidence](scripts/ch_sat.py)
   - Done when: CI checks proofs for the M074 and M096 encodings.
   - Problems: M074 Caccetta–Häggkvist conjecture, M096 Projective plane order 12

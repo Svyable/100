@@ -29,7 +29,7 @@ A job is the unit of work. Problems in the same row share a shape and an action.
 
 **Shape:** Replay the object, or mine the census (`extremal_certificates`). **Problems:** M071, M073. **Best dispatch rank:** 1.
 
-M071: Audit the Lean quantifiers and graph encoding against the theorem; reproduce or extract an explicit graph plus an independently checkable minor-bound obstruction. M073: Check H and the host-existence construction against Lean and paper; independently compute exact graphon/homomorphism inequalities or generate an explicit finite G.
+M071: Extract a concrete finite graph from the binary-frame construction, or obtain two independent specialist reviews of the existential proof; do not treat comparator or second-kernel replay as a finite witness. M073: Derive an explicit finite host G (order n and edges) from the counter-kernel parameters and replay t(H,G)<t(K2,G)^66 with two independent homomorphism counts, or obtain specialist acceptance of the existence proof without a listed witness.
 
 ### 2. Replay a claimed finite witness
 
@@ -685,8 +685,8 @@ Keep the all-dimensional claim in scope audit, and certify one explicit set only
 
 | Dispatch | ID | Action | Bonus | Score | Shape | Next step |
 |---:|---|---|---:|---:|---|---|
-| 1 | M071 | `replay_claim_witness` | +40 | 132 | `extremal_certificates` | Audit the Lean quantifiers and graph encoding against the theorem; reproduce or extract an explicit graph plus an independently checkable minor-bound obstruction. |
-| 2 | M073 | `replay_claim_witness` | +40 | 132 | `extremal_certificates` | Check H and the host-existence construction against Lean and paper; independently compute exact graphon/homomorphism inequalities or generate an explicit finite G. |
+| 1 | M071 | `replay_claim_witness` | +40 | 132 | `extremal_certificates` | Extract a concrete finite graph from the binary-frame construction, or obtain two independent specialist reviews of the existential proof; do not treat comparator or second-kernel replay as a finite witness. |
+| 2 | M073 | `replay_claim_witness` | +40 | 132 | `extremal_certificates` | Derive an explicit finite host G (order n and edges) from the counter-kernel parameters and replay t(H,G)<t(K2,G)^66 with two independent homomorphism counts, or obtain specialist acceptance of the existence proof without a listed witness. |
 | 3 | M044 | `replay_claim_witness` | +40 | 114 | `group_rings` | Reproduce a finite presentation and a,b products using a genuinely independent group-ring checker; check the claimed equalities and non-equality. |
 | 4 | M049 | `replay_claim_witness` | +40 | 114 | `group_rings` | Independently verify M044's group algebra witness, then audit the Elek–Szabó implication from soficity to direct finiteness in the claimed coefficient field. |
 | 5 | M074 | `replay_published` | +12 | 113 | `extremal_certificates` | Replay the external fixed-r=6 proof corpus on an independent host, verify its published hash and proof traces, and audit the hand-reduction steps before launching duplicate SAT search. |

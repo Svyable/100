@@ -36,11 +36,11 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 **Witness obligation for M071**
 
 - Problems: M071
-- Deliverable: Audit Lean quantifiers against the theorem; extract an explicit graph and an independently checkable minor-bound obstruction, or record a precise gap.
-- Boundary: Chromatic number at most 6 is already settled by Robertson–Seymour–Thomas; a claimed counterexample must be reproduced, not assumed. This is a claim-audit target, not a new attack on the open t >= 7 regime.
+- Deliverable: Obtain an explicit finite graph with independent chromatic and minor certificates, or specialist reviews of the existential proof. Do not treat the frozen no_explicit_finite_graph ledger entry as a discharged witness.
+- Boundary: Chromatic number at most 6 is already settled by Robertson–Seymour–Thomas. The extractability audit (research/M071_M073_WITNESSES.md) found an existential/asymptotic Lean family with no published finite adjacency list; comparator acceptance alone cannot discharge this node.
 - Falsifier: The graph admits a K_t minor, its chromatic lower bound fails an independent check, or the encoding does not match the claimed manuscript object.
 - Claim: `[Claim] O-M071-01 — Witness obligation for M071`
-- Digest: `2d86b49f8d1bf016…`
+- Digest: `ea132cbc69c33d37…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -51,11 +51,11 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 **Witness obligation for M073**
 
 - Problems: M073
-- Deliverable: Independently reconstruct H and the host; compute exact densities; record a precise gap if the witness cannot be reproduced.
-- Boundary: A claimed finite host is an audit target. Small unweighted hosts already checked in this repository are not that object and do not settle the conjecture.
+- Deliverable: Derive or obtain the claimed host G and compute exact densities with two independent methods, or keep the pattern_reconstructed_host_missing gap. Pattern H alone does not discharge this node.
+- Boundary: The extractability audit reconstructed pattern H (35 vertices, 66 edges) in data/reference/sidorenko_faces.json; the claimed host G remains unpublished. Small unweighted hosts already checked here are not that object.
 - Falsifier: Exact densities that obey the Sidorenko inequality, a mismatch with the manuscript construction, or a host that cannot be reconstructed from the cited data.
 - Claim: `[Claim] O-M073-01 — Witness obligation for M073`
-- Digest: `a5991c5469db7a51…`
+- Digest: `b44b983f1a94a78a…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -490,10 +490,10 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 **Replay a claimed finite witness: Replay the object, or mine the census**
 
 - Problems: M071, M073
-- Deliverable: M071: Audit the Lean quantifiers and graph encoding against the theorem; reproduce or extract an explicit graph plus an independently checkable minor-bound obstruction. M073: Check H and the host-existence construction against Lean and paper; independently compute exact graphon/homomorphism inequalities or generate an explicit finite G.
+- Deliverable: M071: Extract a concrete finite graph from the binary-frame construction, or obtain two independent specialist reviews of the existential proof; do not treat comparator or second-kernel replay as a finite witness. M073: Derive an explicit finite host G (order n and edges) from the counter-kernel parameters and replay t(H,G)<t(K2,G)^66 with two independent homomorphism counts, or obtain specialist acceptance of the existence proof without a listed witness.
 - Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
 - Claim: `[Claim] J-extremal_certificates-replay_claim_witness — Replay a claimed finite witness: Replay the object, or mine the census`
-- Digest: `373eb6262fad07b5…`
+- Digest: `80f0447f9e75a809…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1087,15 +1087,15 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
   - `checker`: Replay on an independent path or proof kernel; report exactly what remains unproved.
 
-### 75. `R32` · roadmap · runnable · leverage 629
+### 75. `R32` · roadmap · runnable · leverage 607
 
-**Computational checks of claimed witnesses**
+**Computational checks of claimed group-ring witnesses**
 
-- Problems: M044, M049, M071, M073
-- Deliverable: Independent group-ring checker for M044/M049; explicit graph for the M071 claim; explicit host for the M073 claim.
+- Problems: M044, M049
+- Deliverable: Independent group-ring checker for the shared M044/M049 direct-finiteness construction; separate nonsoficity audit for M049.
 - Boundary: Shipped roadmap work is infrastructure, reproduction or audit unless independently reviewed.
-- Claim: `[Claim] R32 — Computational checks of claimed witnesses`
-- Digest: `f54f062d532d70dc…`
+- Claim: `[Claim] R32 — Computational checks of claimed group-ring witnesses`
+- Digest: `b9e95ff8990c9a99…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
