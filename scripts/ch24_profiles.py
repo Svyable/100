@@ -6,8 +6,6 @@ triangle-free, 8-outregular oriented graph. It is NOT a digraph existence
 solver, an exhaustive 24-vertex search, or a new resolution of CH.
 """
 import argparse
-from collections import Counter
-from functools import lru_cache
 
 N, R, MAX_IN = 24, 8, 9
 
