@@ -2,6 +2,8 @@
 
 **Research record: 2026-11-01.** This is a self-contained elementary structural lemma, a corollary for nine-vertex neighborhoods, and a bounded new filter on *relaxed* (27,9) integer profiles. The mathematical derivation is presented for independent specialist inspection; a machine check of integer profiles does **not** confer independent review. In particular, the (27,9) minimum-outdegree case and the unrestricted Caccetta–Häggkvist conjecture remain unresolved here. Originality over the historical literature has **not** been established. Claim: [#132](https://github.com/Svyable/100/issues/132).
 
+> **Follow-on result / current frontier (2026-11-01):** A separate argument, [M074 C-to-A bottleneck](M074_C_TO_A_BOTTLENECK.md), subsequently excludes **all 295** of these \(z=4\) relaxed profiles through stronger directed-incidence inequalities (independent mathematical review still pending). The **295 → 175 → 155** calculation below is a valid *historical intermediate comparison*, **not** 155 currently unexcluded cases. The new eight-vertex rigidity theorem remains a standalone proof candidate, and its next prospective application is to the still-open \(z\le3\) branch.
+
 ## Theorem 1: equality in the eight-vertex bound is rigid
 
 Let \(H\) be a finite **oriented** graph (simple, loopless, with no digons) on eight vertices, with **no directed 3-cycle** and \(\delta^+(H)\ge2\).
@@ -112,7 +114,7 @@ Applying this *existing* bound to the profiles surviving the new rigidity cut el
 | **New** 8-vertex equality rigidity | 175 |
 | **Existing** sharp 7-vertex \(C\)-cap applied to all survivors | **155** |
 
-Thus the new theorem and a systematic application of an existing theorem remove **140 of 295** necessary integer profiles (47.5% of those profiles, not 47.5% of hypothetical graphs or of the conjecture). **155 profiles remain, and even those have not been shown realizable.**
+Thus the new theorem and a systematic application of an existing theorem remove **140 of 295** necessary integer profiles (47.5% of those profiles, not 47.5% of hypothetical graphs or of the conjecture). **155 profiles survive only this weaker sequence of necessary filters; a separately derived C-to-A incidence theorem now excludes all 295 z=4 profiles.**
 
 ## Checks and falsifiers
 
@@ -127,4 +129,4 @@ The programs do **not** enumerate all eight-vertex graphs, provide a Lean proof,
 
 **Prior-art boundaries:** [the published CH literature](https://lemon.cs.elte.hu/egres/open/Caccetta-H%C3%A4ggkvist_conjecture); [Brown–Erdős–Simonovits, *Extremal problems for directed graphs* (1973)](https://doi.org/10.1016/0095-8956(73)90034-8); [some approaches to short cycles in digraphs (2002)](https://doi.org/10.1016/S0166-218X(01)00279-7); and [previous finite CH computations](https://github.com/wustep/maths/blob/main/problems/caccetta-haggkvist-k3/ATTACK.md). None of these links establishes that this exact rigidity lemma is unpublished. Outside specialist prior-art review is still required.
 
-**Next nontrivial obligation:** use the actual incidence pattern of the remaining 155 profile pairs—not only their ordered degree multisets—to derive a contradiction or construct a falsifier at the indegree-ten root. Preserve the original M074 evidence state and empty Solved ledger.
+**Next nontrivial obligation:** exploit the eight-vertex rigidity theorem in the **unresolved indegree-ten roots with z=0,1,2,3** or in another campaign, rather than reattacking the already-excluded z=4 branch. Preserve the original M074 evidence state and empty Solved ledger.
