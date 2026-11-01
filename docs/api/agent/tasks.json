@@ -2,7 +2,7 @@
   "schema_version": 1,
   "snapshot_as_of": "2026-11-01",
   "selection": "First 20 runnable items in the derived work queue's priority order; use api/work.json for all tasks and other statuses.",
-  "runnable_in_snapshot": 342,
+  "runnable_in_snapshot": 343,
   "live_claim_status": "unknown; check existing_claims_url immediately before claiming",
   "task_count": 20,
   "tasks": [
@@ -271,6 +271,28 @@
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M079-02%20%E2%80%94%20Lemma%20obligation%20for%20M079"
     },
     {
+      "id": "O-M079-03",
+      "kind": "obligation",
+      "title": "Lemma obligation for M079",
+      "priority_rank": 12,
+      "status": "runnable",
+      "problems": [
+        "M079"
+      ],
+      "deliverable": "Independently audit the common-gap/width-four reduction, 19-gap atom lemma, 3,456,151-case exhaustive transcript and 183-extension witness; search historical interval-order literature and obtain independent mathematical and novelty reviews.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M079-03 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "The unrestricted one-third–two-thirds conjecture remains open. This restricted all-orders proof candidate is not independently reviewed or historically established as novel; its 3,456,151-case finite core and 25/61 witness require independent specialist and prior-art review.",
+      "depends_on": [],
+      "scope_sha256": "36362184e179a52f5dfa06a25f1b26725de83f0120ba68c3aaeecb7005e6541c",
+      "task_url": "https://svyable.github.io/100/work/O-M079-03/",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M079-03%22",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M079-03%20%E2%80%94%20Lemma%20obligation%20for%20M079"
+    },
+    {
       "id": "O-M096-01",
       "kind": "obligation",
       "title": "Witness obligation for M096",
@@ -423,28 +445,6 @@
       "task_url": "https://svyable.github.io/100/work/O-M002-01/",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M002-01%22",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M002-01%20%E2%80%94%20Witness%20obligation%20for%20M002"
-    },
-    {
-      "id": "O-M006-01",
-      "kind": "obligation",
-      "title": "Lemma obligation for M006",
-      "priority_rank": 24,
-      "status": "runnable",
-      "problems": [
-        "M006"
-      ],
-      "deliverable": "Name the residue class and the candidate bound B; test it against the twelve record pairs in the goldbach_growth mine; do not extend the verified range toward 4*10^18.",
-      "acceptance": [
-        "Discharge evidence recorded on O-M006-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
-        "Independent review recorded before the node is marked discharged",
-        "python3 scripts/regen.py && python3 scripts/regen.py --check"
-      ],
-      "boundary": "Even Goldbach through 4*10^18 and the ternary Goldbach theorem are known; the certified mine of record least primes through 20,000 is a reproduction, not a new bound.",
-      "depends_on": [],
-      "scope_sha256": "d8f798d252c5dd7325f1be862e7edd1365ca3399d95f9a662ae193d832e1c3ff",
-      "task_url": "https://svyable.github.io/100/work/O-M006-01/",
-      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M006-01%22",
-      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M006-01%20%E2%80%94%20Lemma%20obligation%20for%20M006"
     }
   ]
 }

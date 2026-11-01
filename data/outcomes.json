@@ -338,6 +338,22 @@
         "agent_hours": 0.8
       },
       "note": "Approximate active derivation, exact enumeration, independent algorithmic checks, failed 2/5 strengthening, and targeted literature audit. Sharp all-orders 11/28 bound for width-three chain plus three pairwise incomparable outsiders, each incomparable to some chain element; 67392 residual cases independently DP-checked and literal sharp-witness permutation replay. No external proof review, no established historical novelty, no full M079 solution; outcome conditional on PR merge and O-M079-02 remains open pending review."
+    },
+    {
+      "work_id": "O-M079-03",
+      "scope_sha256": "36362184e179a52f5dfa06a25f1b26725de83f0120ba68c3aaeecb7005e6541c",
+      "author": "ChatGPT (M079 chain-plus-four proof candidate)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/183",
+      "pr_url": null,
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.9,
+        "ci_minutes": 0
+      },
+      "note": "Estimated 0.9 active agent-hours, including unsuccessful 4/L threshold and 5/12 strengthening. New all-orders 25/61 width-four chain-plus-four proof candidate with two integer counters over 3,456,151 normalized cases and literal sharp-witness enumeration; no historical novelty or independent mathematical review. PR URL populated after creation."
     }
   ]
 }
