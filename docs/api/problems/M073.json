@@ -124,6 +124,55 @@
   },
   "formal_statement": null,
   "external_claims": [],
+  "discovery_trail": {
+    "problem_id": "M073",
+    "question": "Can the claimed Sidorenko counterexample be independently tested outside its author Lean tree?",
+    "nodes": [
+      {
+        "id": "pattern-extracted",
+        "kind": "reproduction",
+        "status": "reproduced_known",
+        "title": "Reconstruct the claimed bipartite pattern H",
+        "detail": "The pinned face table yields an incidence graph with 35 vertices and 66 edges, checked by separate edge-count methods. This only checks the encoded pattern.",
+        "move_id": "independent_replay",
+        "motivated_by": [],
+        "sources": [
+          "research/M071_M073_WITNESSES.md",
+          "data/claim_witness_replay.json"
+        ]
+      },
+      {
+        "id": "host-missing",
+        "kind": "blocker",
+        "status": "blocked",
+        "title": "The finite host G has not been published",
+        "detail": "The upstream proof gives an existence argument from a counter-kernel; no concrete host order, adjacency list, or graph6 witness is supplied.",
+        "move_id": "scope_fidelity",
+        "motivated_by": [
+          "pattern-extracted"
+        ],
+        "sources": [
+          "research/M071_M073_WITNESSES.md"
+        ]
+      },
+      {
+        "id": "verify-density",
+        "obligation_id": "O-M073-01",
+        "kind": "next_step",
+        "status": "proposed",
+        "title": "Produce and independently check host G",
+        "detail": "Extract an explicit host and compute both homomorphism density and edge density independently against the exact 66-edge inequality. Until then, the finite witness is not replayed.",
+        "move_id": "certificate_frontier",
+        "motivated_by": [
+          "host-missing"
+        ],
+        "sources": [
+          "research/M071_M073_WITNESSES.md"
+        ]
+      }
+    ]
+  },
+  "discovery_url": "https://svyable.github.io/100/discovery/M073/",
   "mentioned_in": [
     {
       "title": "Approach — leverage dispatch",

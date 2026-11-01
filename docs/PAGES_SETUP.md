@@ -40,6 +40,7 @@ any internal link or `#fragment` on any page does not resolve.
 | `index.html` | ranked list of all 100 in dispatch order (prerendered; JS adds filters, sorts, URL state) |
 | `problems/<ID>/` | one page per problem: Lean statement, priority, campaign, probes, milestones, claim triage, provenance, citation |
 | `fields/<slug>/`, `atlas/` | field pages; SVG charts with table views |
+| `discovery/`, `discovery/<ID>/` | sourced motivated-reasoning trails with dependency links, reusable methods, and explicit evidence boundaries |
 | `lab/`, `formal/`, `campaigns/`, `claims/`, `roadmap/`, `ledger/` | lab and structure mines, Lean comparators and the audited Lean registry, cohort jobs + campaigns + attack shapes, 2026 claim triage, roadmap scoreboard, solved ledger |
 | `library/<doc>/` | every Markdown dossier, rendered with cross-links and backlinks |
 | `api/`, `data/portfolio.json`, `feed.xml`, `sitemap.xml` | JSON/CSV API, legacy snapshot, Atom feed, sitemap |

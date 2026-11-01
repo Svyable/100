@@ -113,6 +113,8 @@
       "note": "Checksums copied from source README, NOT independently downloaded or replayed in Svyable/100."
     }
   ],
+  "discovery_trail": null,
+  "discovery_url": null,
   "mentioned_in": [
     {
       "title": "Approach — leverage dispatch",

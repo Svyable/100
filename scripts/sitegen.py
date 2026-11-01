@@ -17,6 +17,7 @@ import re
 from collections import Counter, defaultdict
 from pathlib import Path
 
+import discovery
 import lab
 import mdlite
 import work as workqueue
@@ -29,7 +30,7 @@ BLOB = REPO + "/blob/main/"
 DOCS = ROOT / "docs"
 
 # Directories whose contents are fully owned by the generator (stale files fail --check).
-GENERATED_DIRS = ("problems", "fields", "atlas", "lab", "formal", "campaigns", "claims",
+GENERATED_DIRS = ("problems", "fields", "atlas", "lab", "formal", "campaigns", "claims", "discovery",
                   "roadmap", "ledger", "library", "api", "work")
 # docs/data/portfolio.json is generated here; docs/data/next.json belongs to scripts/next.py,
 # and docs/next/ is a hand-written page, so neither directory is swept for stale files.
@@ -81,6 +82,7 @@ SERIES_LABEL = {1: "Officially or specialist open", 2: "Claim under review", 3: 
 NAV = (
     ("index", "The 100", ""),
     ("work", "Work", "work/"),
+    ("discovery", "Discovery", "discovery/"),
     ("next", "Next 100", "next/"),
     ("campaigns", "Campaigns", "campaigns/"),
     ("lab", "Lab", "lab/"),
@@ -173,6 +175,9 @@ class Site:
         self.mines = portfolio["mines"]["mines"]
         self.roadmap_doc = portfolio["roadmap"]
         self.work = workqueue.snapshot()
+        self.discovery_doc = discovery.load()
+        self.discovery = {t["problem_id"]: t for t in self.discovery_doc["trails"]}
+        self.discovery_moves = {m["id"]: m for m in self.discovery_doc["moves"]}
         self.work_by_problem = defaultdict(list)
         for w in self.work["items"]:
             for pid in w["problems"]:
@@ -214,7 +219,7 @@ class Site:
                 if pid in self.by_id:
                     self.backlinks[pid].append(doc)
         dates = [p["checked_on"] for p in items if p["checked_on"]]
-        dates += [program["as_of"], self.claims_doc["reviewed_on"]]
+        dates += [program["as_of"], self.claims_doc["reviewed_on"], self.discovery_doc["as_of"]]
         dates += [m["verified_on"] for m in program["milestones"] if m.get("verified_on")]
         self.updated = max(dates)
 
@@ -480,6 +485,7 @@ def render_index(site):
     explore = [
         ("atlas/", "Atlas", "See all 100 at once: impact × attackability, fields × computability, readiness ladder.", f"{len(s.fields)} fields"),
         ("campaigns/", "Proof campaigns", "Hypotheses, first proof obligations, falsifiers and blockers for every active track.", f"{len(s.campaign)} active"),
+        ("discovery/", "Discovery trails", "Why researchers tried each move, what could be checked, where the reasoning is blocked, and what comes next.", f"{len(s.discovery)} trails"),
         ("lab/", "Exact probe lab", "Reusable exact engines, independently re-checked probes, certificate hashes.", f"{len(s.lab['probes'])} probes"),
         ("formal/", "Formal statements", "Lean 4 comparator statements: exactly what a proof or counterexample must establish, kernel-checked in CI.", f"{len(s.formal)} in Lean"),
         ("claims/", "2026 claim triage", "Scope comparisons for every flagged proof claim. Announcement ≠ acceptance.", f"{len(s.claims)} reviewed"),
@@ -760,7 +766,9 @@ def render_problem(site, pid, prev_id, next_id):
         return (f'<a class="pager-{relation}" rel="{relation}" href="{rel(page, s.problem_path(q))}"><small>{label} · dispatch #{s.drank(q)}</small>'
                 f'<span>{E(qp["name"])}</span></a>')
 
-    toc = [("question", "The question"), ("formal", "Formal statement"), ("priority", "Priority")]
+    toc = [("question", "The question"), ("formal", "Formal statement")]
+    toc += [("discovery", "Discovery trail")] if pid in s.discovery else []
+    toc += [("priority", "Priority")]
     toc += [("campaign", "Campaign")] if c else []
     toc += [(f"probe-{pr['id']}", "Exact probe") for pr in s.probes.get(pid, [])]
     toc += [("roadmap", "Engine needed")] if pid in s.roadmap else []
@@ -769,6 +777,13 @@ def render_problem(site, pid, prev_id, next_id):
     toc += [("work", "Open work")] if s.work_by_problem.get(pid) else []
     toc += [("provenance", "Provenance")]
     toc_html = "".join(f'<li><a href="#{E(a)}">{E(t)}</a></li>' for a, t in toc)
+    trail = s.discovery.get(pid)
+    discovery_html = (f'<section class="dossier-block" id="discovery"><h2>How this approach developed</h2>'
+                      f'<p class="block-lead">{E(trail["question"])}</p>'
+                      f'<p>Trace the motivating observations, independent reproductions, blockers, and next experiments. '
+                      f'These notes are not a theorem certificate.</p>'
+                      f'<p><a class="button button-outline" href="{rel(page, f"discovery/{pid}/")}">'
+                      f'Open {len(trail["nodes"])} sourced discovery steps →</a></p></section>') if trail else ""
 
     body = f"""
 <article class="problem-page">
@@ -790,6 +805,7 @@ def render_problem(site, pid, prev_id, next_id):
 </aside>
 <div class="problem-main">
 {formal_html}
+{discovery_html}
 <section class="dossier-block" id="priority"><h2>Priority, decomposed</h2>
   <div class="score-hero">
     <div><strong>#{d['dispatch_rank']}</strong><span>Dispatch rank · score {d['dispatch_score']}</span></div>
@@ -838,6 +854,120 @@ def render_problem(site, pid, prev_id, next_id):
                "isPartOf": {"@type": "WebSite", "name": "100", "url": SITE_URL}}]
     return layout(s, page, f"{p['name']} ({pid})", desc[:300], body, active="index", jsonld=jsonld,
                   crumbs=[(p["field"], f"fields/{s.field_slug[p['field']]}/"), (pid, None)])
+
+
+
+# --------------------------------------------------------------------------- discovery trails
+
+DISCOVERY_LABELS = {
+    "documented": "Documented reasoning",
+    "reproduced_known": "Reproduced known mathematics",
+    "proposed": "Proposed next step",
+    "blocked": "Blocked / missing evidence",
+}
+
+
+def discovery_steps(site, page, trail):
+    pid = trail["problem_id"]
+    items = []
+    for index, n in enumerate(trail["nodes"], 1):
+        anchor = f"step-{pid}-{n['id']}"
+        motivations = "".join(
+            f'<li><a href="#step-{pid}-{E(dep)}">{E(dep.replace("-", " "))}</a></li>'
+            for dep in n["motivated_by"])
+        sources = "".join(f'<li>{repo_link(src)}</li>' for src in n["sources"])
+        move = site.discovery_moves.get(n.get("move_id"))
+        linked_move = (f'<a href="{rel(page, "discovery/")}#move-{E(move["id"])}">'
+                       f'{E(move["name"])}</a>') if move else "—"
+        items.append(f"""
+<li class="discovery-step" id="{E(anchor)}">
+  <span class="discovery-step-number">{index:02d}</span>
+  <div class="discovery-step-main">
+    <p class="discovery-step-state">{E(n["kind"].replace("_", " "))} / {E(DISCOVERY_LABELS[n["status"]])}</p>
+    <h2>{E(n["title"])}</h2>
+    <p>{E(n["detail"])}</p>
+    <details class="discovery-evidence"><summary>Motivation, method &amp; sources</summary>
+      <p><strong>Reusable move:</strong> {linked_move}</p>
+      {('<p><strong>Motivated by:</strong></p><ul>' + motivations + '</ul>') if motivations else '<p>Starting observation: no prior trail dependency.</p>'}
+      <p><strong>Source records:</strong></p><ul>{sources}</ul>
+      {('<p><strong>Related proof obligation:</strong> <code>' + E(n["obligation_id"]) + '</code></p>') if n.get("obligation_id") else ''}
+    </details>
+  </div>
+</li>""")
+    return '<ol class="discovery-steps">' + "".join(items) + "</ol>"
+
+
+def render_discovery_index(site):
+    page = "discovery/index.html"
+    trails = sorted(site.discovery.values(), key=lambda t: site.drank(t["problem_id"]))
+    n_nodes = sum(len(t["nodes"]) for t in trails)
+    lead = ("The record of why an approach was tried, what it reproduced, what blocks it, "
+            "and what exact object would make the next claim independently testable. "
+            "These are research histories, not accepted proofs.")
+    cards = []
+    for t in trails:
+        pid = t["problem_id"]
+        p = site.by_id[pid]
+        reproduced = sum(n["status"] == "reproduced_known" for n in t["nodes"])
+        blockers = sum(n["status"] == "blocked" for n in t["nodes"])
+        cards.append(f"""<article class="discovery-card">
+  <p class="eyebrow">{E(pid)} · {E(p["field"])} · DISPATCH #{site.drank(pid)}</p>
+  <h2><a href="{rel(page, f"discovery/{pid}/")}">{E(p["name"])}</a></h2>
+  <p>{E(t["question"])}</p>
+  <p class="muted">{len(t["nodes"])} sourced steps · {reproduced} known reproductions · {blockers} blockers</p>
+  <p><a class="text-link" href="{rel(page, f"discovery/{pid}/")}">Follow the reasoning →</a>
+  <span class="discovery-middle"> · </span><a class="text-link" href="{rel(page, site.problem_path(pid))}">Problem dossier</a></p>
+</article>""")
+    moves = []
+    for m in site.discovery_doc["moves"]:
+        used = [
+            (t["problem_id"], n["id"])
+            for t in trails for n in t["nodes"] if n.get("move_id") == m["id"]
+        ]
+        links = ", ".join(
+            f'<a href="{rel(page, f"discovery/{pid}/")}#step-{E(pid)}-{E(nid)}">{E(pid)} · {E(nid.replace("-", " "))}</a>'
+            for pid, nid in used
+        )
+        moves.append(f'<li id="move-{E(m["id"])}"><strong>{E(m["name"])}</strong>'
+                     f'<p>{E(m["description"])}</p>'
+                     f'<p class="discovery-move-links"><b>Used in:</b> {links or "No recorded steps yet"}</p></li>')
+    body = page_head("DISCOVERY / MOTIVATED MATHEMATICS", "Keep the reasoning. <em>Not just the result.</em>", lead)
+    body += (f'<div class="stats-strip discovery-stats"><div class="stat"><strong>{len(trails)}</strong><span>Research trails</span></div>'
+             f'<div class="stat"><strong>{n_nodes}</strong><span>Sourced reasoning steps</span></div>'
+             f'<div class="stat"><strong>{len(site.discovery_moves)}</strong><span>Reusable moves</span></div></div>')
+    body += '<section class="section-block"><h2>Follow a line of attack</h2><div class="discovery-grid">' + "".join(cards) + '</div></section>'
+    body += ('<section class="section-block"><h2>Reusable proof moves</h2>'
+             '<p class="muted">Methods are possible approaches, not universal solution strategies. '
+             'Each move links back to cited, concrete attempts.</p><ul class="discovery-moves">'
+             + "".join(moves) + '</ul></section>')
+    body += ('<section class="section-block"><h2>Contribute a step</h2>'
+             '<p>Record a motivating observation, dependencies, a falsifier or boundary, and source paths. '
+             'A new proposed step does not change the solved ledger, evidence state, or readiness. '
+             + repo_link("docs/DISCOVERY_PROTOCOL.md", "Read the contribution and validation protocol") + '.</p></section>')
+    return layout(site, page, "Discovery trails", lead, body, active="discovery",
+                  crumbs=[("Discovery", None)])
+
+
+def render_discovery_trail(site, pid):
+    page = f"discovery/{pid}/index.html"
+    trail = site.discovery[pid]
+    p = site.by_id[pid]
+    body = page_head(f"DISCOVERY / {pid}", f"{E(p['name'])}: <em>the reasoning trail.</em>",
+                     E(trail["question"]))
+    body += (f'<p class="discovery-intro">The steps below distinguish documented observations, '
+             f'known finite reproductions, blocked checks and proposed moves. '
+             f'None changes the evidence state of the underlying conjecture. '
+             f'<a href="{rel(page, site.problem_path(pid))}">View the problem dossier →</a></p>')
+    body += discovery_steps(site, page, trail)
+    body += ('<section class="section-block"><h2>What counts as progress?</h2>'
+             '<p>An independently checked new mathematical statement must pass the separate '
+             'scope, provenance and verification gates. An attractive reasoning trail never '
+             'promotes a conjecture to solved.</p>'
+             '<p>' + repo_link("docs/DISCOVERY_PROTOCOL.md", "Discovery protocol") + '</p></section>')
+    return layout(site, page, f"{p['name']} discovery trail ({pid})",
+                  f"Sourced proof-discovery trail for {p['name']}.",
+                  body, active="discovery",
+                  crumbs=[("Discovery", "discovery/"), (pid, None)])
 
 
 # --------------------------------------------------------------------------- fields
@@ -1478,6 +1608,8 @@ def problem_api(site, pid):
         "claim_review_2026": s.claims.get(pid),
         "formal_statement": ({**s.formal[pid], "source_url": BLOB + s.formal[pid]["module"]} if pid in s.formal else None),
         "external_claims": s.external.get(pid, []),
+        "discovery_trail": s.discovery.get(pid),
+        "discovery_url": (SITE_URL + f"discovery/{pid}/" if pid in s.discovery else None),
         "mentioned_in": [{"title": d["title"], "source": d["rel"], "url": SITE_URL + d["path"]} for d in s.backlinks.get(pid, [])],
     }
 
@@ -1531,6 +1663,13 @@ def render_api(site):
         search.append({"t": label, "k": "page", "s": "Section", "u": href, "x": ""})
     search.append({"t": "Data & API", "k": "page", "s": "Downloads", "u": "api/", "x": "json csv feed"})
     files["api/work.json"] = dumps(s.work)
+    files["api/discovery.json"] = dumps(s.discovery_doc)
+    for pid, trail in s.discovery.items():
+        files[f"api/discovery/{pid}.json"] = dumps(trail)
+        search.append({"t": s.by_id[pid]["name"] + " — discovery trail", "k": "discovery",
+                       "id": pid, "s": f"{len(trail['nodes'])} reasoning steps",
+                       "u": f"discovery/{pid}/", "x": trail["question"] + " " +
+                       " ".join(n["title"] for n in trail["nodes"])})
     for w in s.work["items"]:
         search.append({"t": w["title"], "k": "work", "id": w["id"], "s": WORK_LABEL[w["kind"]] + " · " + w["status"].replace("_", " "),
                        "u": f"work/{w['id']}/", "x": w["deliverable"][:160]})
@@ -1547,10 +1686,13 @@ def render_api(site):
             "full_snapshot": SITE_URL + "data/portfolio.json",
             "feed": SITE_URL + "feed.xml",
             "work_queue": SITE_URL + "api/work.json",
+            "discovery": SITE_URL + "api/discovery.json",
+            "discovery_trail": SITE_URL + "api/discovery/{id}.json",
         },
         "counts": {"problems": len(s.items), "campaigns": len(s.campaign), "probes": len(s.lab["probes"]),
                    "engines": len(s.lab["engines"]), "claim_reviews": len(s.claims), "lean_statements": len(s.formal), "solved": len(s.solved),
-                   "documents": len(s.library)},
+                   "documents": len(s.library), "discovery_trails": len(s.discovery),
+                    "discovery_nodes": sum(len(t["nodes"]) for t in s.discovery.values())},
     })
     return files
 
@@ -1565,6 +1707,7 @@ def render_api_page(site):
 <tr><td><a href="problems.json">api/problems.json</a></td><td>All 100 problems in execution order with ranks, scores, readiness, evidence and modality.</td></tr>
 <tr><td><a href="problems/{ex_id}.json">api/problems/{{id}}.json</a></td><td>One problem with campaign, probes, milestones, roadmap, claim review, external claims and backlinks.</td></tr>
 <tr><td><a href="problems.csv">api/problems.csv</a></td><td>Spreadsheet-friendly registry.</td></tr>
+<tr><td><a href="discovery.json">api/discovery.json</a></td><td>Sourced motivated reasoning trails, cross-problem moves and their provenance.</td></tr>
 <tr><td><a href="search.json">api/search.json</a></td><td>The compact index behind the <kbd>/</kbd> command palette.</td></tr>
 <tr><td><a href="../data/portfolio.json">data/portfolio.json</a></td><td>The complete legacy snapshot (lab, campaigns, milestones, solved archive).</td></tr>
 <tr><td><a href="../feed.xml">feed.xml</a></td><td>Atom feed of milestones, claim reviews and program updates.</td></tr>
@@ -1622,6 +1765,9 @@ def build_files(portfolio):
     files["lab/index.html"] = render_lab(site)
     files["formal/index.html"] = render_formal(site)
     files["campaigns/index.html"] = render_campaigns(site)
+    files["discovery/index.html"] = render_discovery_index(site)
+    for pid in site.discovery:
+        files[f"discovery/{pid}/index.html"] = render_discovery_trail(site, pid)
     files["claims/index.html"] = render_claims(site)
     files["roadmap/index.html"] = render_roadmap(site)
     files["work/index.html"] = render_work_index(site)
