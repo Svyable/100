@@ -139,6 +139,21 @@
         "ci_minutes": 0
       },
       "note": "Estimated work time; no independent mathematical review, priority determination, or novelty verification; X records reusable even-subgraph research mechanism and source-specific M073 certificate. Status assumes this PR merges; pending external review."
+    },
+    {
+      "work_id": "X-M074-EIGHT-RIGIDITY",
+      "scope_sha256": "60f1f5a7b58fc63f0ef0755458a799f2653561f70404a09734c4176459531fca",
+      "author": "ChatGPT (M074 eight-vertex rigidity)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/132",
+      "pr_url": "https://github.com/Svyable/100/pull/140",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 1
+      },
+      "note": "Elementary eight-vertex equality rigidity argument and CH27 relaxed integer-profile filter (295 to 155), independent-style test fixtures and exact reproducible arithmetic. Active author/tool work approximate; independent specialist proof and historical novelty reviews pending, no conjecture resolution or formally accepted theorem."
     }
   ]
 }
