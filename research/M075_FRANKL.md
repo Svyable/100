@@ -45,6 +45,24 @@ python3 scripts/frankl_canonical.py --n 5 --limit 30
 
 The next frontier is a **canonical augmentation** that prunes relabeling-equivalent *partial states* before exploring them. Obtain independent mathematical scope review of the two lemmas; an explicit canonical-augmentation algorithm for n=5 and an n≥10 structural target would be separate work.
 
+## Canonical-parent obstruction and safe orbit augmentation (2026-11-01)
+
+The new [orbit-parent study](M075_AUGMENTATION.md) proves a specific
+strict-parent canonicality shortcut is invalid for every ground-set
+size n ≥ 3 and gives a stronger family for every n ≥ 4 in which
+*no* minimum-cardinality deletion has a canonical labeled parent.
+It proves an orbit-by-orbit augmentation construction that remains
+complete without the unsound pruning and independently reproduces
+the existing 28/330 orbit counts for n=3/4. The counts and the
+general construction paradigm are not new Frankl results; neither
+the universal one-half statement nor a new minimal-counterexample
+lemma has been established or independently reviewed.
+
+~~~sh
+python3 scripts/frankl_augmentation.py --check
+python3 -m unittest discover -s tests -p 'test_frankl_augmentation.py' -v
+~~~
+
 ## Possible next proof steps
 
 1. Analyze minimal counterexamples under reductions in the contemporary literature; precisely distinguish 'ground-set size' from 'family height'.
