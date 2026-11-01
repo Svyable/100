@@ -260,6 +260,54 @@
         "agent_hours": 1.2
       },
       "note": "Estimated active author/tool effort. Source-pinned seven-vertex nine-edge rung motif at all 66 M073 incidence edges, exact high-temperature and direct-spin correlation paths, GKS-II-dependent restricted two-block stability improvement, rational old-bound-failure/new-bound-success certificate and adversarial mutation tests. Classical correlation inequality; no independent proof or novelty audit, no finite host counterexample, no universal Sidorenko result. Outcome status conditional on PR merge."
+    },
+    {
+      "work_id": "O-M080-01",
+      "scope_sha256": "5a29f0f5af803d2529e13d43b41d4f7b5ca3a11326dcd6a9f1334f43e91fa412",
+      "author": "ChatGPT (M080 GF2^4 repeated-basis certificate)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/170",
+      "pr_url": "https://github.com/Svyable/100/pull/171",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 1.0,
+        "ci_minutes": 0
+      },
+      "note": "Bounded partial O-M080-01 step only: exact 4,141,145 S4 orbit count and 42,840 repeated-basis GF(2)^4 grid witnesses, independent Leibniz checker, 7 adversarial tests. 4,111,138 all-distinct orbits unverified. Cheung 2012 reported rank-four computational result; no new theorem or independent mathematical review. Outcome classification conditional on PR #171 merge; the original obligation remains open."
+    },
+    {
+      "work_id": "X-M095-K42-EXTENSION",
+      "scope_sha256": "d7ad170a225683e60d1fcaad99cf57638acffb2d293331aec72af84deda07660",
+      "author": "ChatGPT (M095 compact DPLL extension certificates)",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/173",
+      "pr_url": "https://github.com/Svyable/100/pull/174",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 1.1,
+        "ci_minutes": 0
+      },
+      "note": "Exact 328 pinned K42 one-vertex nonextension proofs using complete unit-propagation trees <=51 nodes; independently replayed by a distinct four-subset K4 checker with adversarial controls. Nonextendibility known since McKay-Radziszowski 1997 and independent SAT work in 2026; compact proof-tree bound has not been novelty-reviewed. No K43 exclusion or conjecture progress, no independent review. Outcome classification conditional on PR merge."
+    },
+    {
+      "work_id": "X-M097-GRAPH8",
+      "scope_sha256": "3215f17dc9d6dbb8b8db777ceb1c802d5b07e14866f1744d1ca112689d7ccb26",
+      "author": "ChatGPT (M097 eight-vertex graph-metric census)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/175",
+      "pr_url": "https://github.com/Svyable/100/pull/176",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.8,
+        "ci_minutes": 0
+      },
+      "note": "Approximate active author/tool work. All 11,117 connected unlabeled eight-vertex graph metrics checked by exact rational primal/dual LP certificates and 2,520 tours per graph; max ratio 10/9 at two diameter-three graphs. Ten adversarial tests and independent DP for maximizers. A discarded chunk-index bug was corrected before the final four-chunk census. Not externally reviewed, no historical novelty established; status conditional on PR merge."
     }
   ]
 }
