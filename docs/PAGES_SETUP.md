@@ -37,6 +37,9 @@ any internal link or `#fragment` on any page does not resolve.
 
 | Generated path | Source |
 |---|---|
+| `start/` | reader/reviewer/agent routes with evidence boundaries and direct links to canonical work records |
+| `llms.txt` | plain-text advisory discovery for text agents, generated from the same site snapshot |
+| `api/agent.json`, `api/agent/tasks.json` | agent contract and a small static runnable work shortlist; claim availability requires a fresh GitHub check |
 | `index.html` | ranked list of all 100 in dispatch order (prerendered; JS adds filters, sorts, URL state) |
 | `problems/<ID>/` | one page per problem: Lean statement, priority, campaign, probes, milestones, claim triage, provenance, citation |
 | `fields/<slug>/`, `atlas/` | field pages; SVG charts with table views |
