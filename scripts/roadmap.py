@@ -70,6 +70,11 @@ def load():
         bad = [p for p in it["problems"] if p not in ids]
         if bad:
             raise RoadmapError(f"{where}: unknown problems {bad}")
+    import approach
+    try:
+        approach.assert_roadmap(doc)
+    except approach.ApproachError as exc:
+        raise RoadmapError(str(exc)) from exc
     return doc
 
 

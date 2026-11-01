@@ -8,7 +8,9 @@ import argparse
 import json
 from rank import score, ROOT
 from research import load, execution_order
+import approach
 import lab
+import mine
 import roadmap
 
 OUTPUT = ROOT / "docs" / "data" / "portfolio.json"
@@ -18,6 +20,7 @@ def build():
     items, program, solved = load()
     baseline = sorted(items, key=lambda p: (-score(p), p["id"]))
     execution = execution_order(items, program)
+    dispatched = {row["problem_id"]: row for row in approach.rows(items, program)}
     campaign_by_id = {c["problem_id"]: c for c in program["campaigns"]}
     active_ids = {p["id"] for p in items}
     milestones_by_id = {
@@ -63,31 +66,47 @@ def build():
             {
                 **item, "rank": number, "score": score(item),
                 **execution[item["id"]],
+                "dispatch_rank": dispatched[item["id"]]["dispatch_rank"],
+                "dispatch_score": dispatched[item["id"]]["dispatch_score"],
+                "action": dispatched[item["id"]]["action"],
+                "action_label": dispatched[item["id"]]["action_label"],
+                "action_bonus": dispatched[item["id"]]["action_bonus"],
+                "method_id": dispatched[item["id"]]["method_id"],
+                "method_title": dispatched[item["id"]]["method_title"],
+                "dispatch_next": dispatched[item["id"]]["next_step"],
+                "dispatch_why": dispatched[item["id"]]["why"],
                 "campaign_stage": campaign_by_id.get(item["id"], {}).get("stage"),
                 "milestone_count": len(milestones_by_id[item["id"]]),
             }
             for number, item in enumerate(baseline, start=1)
         ],
         "lab": lab.snapshot(),
+        "mines": mine.snapshot(),
         "roadmap": roadmap.snapshot(),
         "campaigns": program["campaigns"],
         "milestones": program["milestones"],
         "solved": solved,
+        "approach": approach.snapshot(items, program),
         "execution_queue": [
             {
                 "problem_id": c["problem_id"],
                 "name": next(p["name"] for p in items if p["id"] == c["problem_id"]),
                 "execution_rank": execution[c["problem_id"]]["execution_rank"],
                 "execution_score": execution[c["problem_id"]]["execution_score"],
+                "dispatch_rank": dispatched[c["problem_id"]]["dispatch_rank"],
+                "dispatch_score": dispatched[c["problem_id"]]["dispatch_score"],
+                "action": dispatched[c["problem_id"]]["action"],
+                "action_label": dispatched[c["problem_id"]]["action_label"],
                 "baseline_rank": active_rank[c["problem_id"]],
                 "stage": c["stage"],
                 "first_proof_obligation": c["first_proof_obligation"],
-                "next_experiment": c["next_experiment"],
+                "next_experiment": dispatched[c["problem_id"]]["next_step"],
+                "recorded_experiment": c["next_experiment"],
                 "blocker": c["blocker"],
                 "dossier": c["dossier"],
             }
             for c in sorted((c for c in program["campaigns"] if c["problem_id"] in active_ids),
-                            key=lambda c: execution[c["problem_id"]]["execution_rank"])
+                            key=lambda c: dispatched[c["problem_id"]]["dispatch_rank"])
         ],
     }
 

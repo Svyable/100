@@ -31,6 +31,22 @@ For every edge e, Boolean variable x_e is true iff the edge is red. For each set
 
 Known structural filter (not a new lemma): using R(4,5)=25, any red/blue K5-free coloring of K_n has at each vertex red degree d satisfying `n-25 <= d <= 24`. Proof: among red neighbors, a red K4 makes a red K5 and a blue K5 is forbidden, so d≤24. The blue-neighbor analog yields n-1-d≤24. For n=45 this narrows degrees to 20–24.
 
+## Published K42 witnesses — independently replayable baseline (2026-10-31)
+
+The [McKay / Radziszowski graph catalog](https://users.cecs.anu.edu.au/~bdm/data/ramsey.html) contains **328 graph6 records** of order 42; complementing each supplies the corresponding swapped-color coloring (656 known colorings, without any assertion of catalog completeness). The published **43 ≤ R(5,5) ≤ 46** remains unchanged.
+
+- Canonical publisher file: [r55_42some.g6](https://users.cecs.anu.edu.au/~bdm/data/r55_42some.g6). Source bytes are preserved in [data/reference/r55_42some.g6](../data/reference/r55_42some.g6), a 47,888-byte, 328-line ASCII file.
+- SHA-256 source lock: `067902e853d87b49bcef0d1d4c0e3bbadd238ee18bc65341b079a3ca4780eccb`. [A separate public research repository](https://github.com/wustep/maths/blob/main/problems/ramsey-r55/RESEARCH.md) records the same hash and length. Changes fail closed.
+- [scripts/verify_mckay.py](../scripts/verify_mckay.py) parses standard *column-major* graph6 edges, checks padding and vertex count, runs the existing recursive bitset K5 search, then **independently** checks every red and blue monochromatic triangle for two adjacent same-color common neighbors.
+- [Frozen result ledger](../data/ramsey_mckay_replay.json) and [adversarial tests](../tests/test_verify_mckay.py) are rerun on PRs and in the weekly research workflow.
+
+```sh
+python3 scripts/verify_mckay.py --check
+python3 -m unittest discover -s tests -p 'test_verify_mckay.py' -v
+```
+
+**Meaning:** each stored graph is a finite, independently checkable witness of the already-known **R(5,5) ≥ 43**. Checking both colors also checks every complement under color swap. The 328 records are not claimed exhaustive among all 42-vertex colorings; the replay cannot rule out a 43-vertex coloring, establish R(5,5)=43, or supply a new result. The Lamport obligation O-M095-01 remains open until a genuine independent mathematical/scope review closes it; passing CI alone is not the two-review discharge gate.
+
 ## Next experiments
 
 1. Import a published K_42 lower-bound coloring with a source and verify it independently. Do not manufacture a certificate.

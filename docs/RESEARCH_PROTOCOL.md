@@ -56,3 +56,5 @@ Audit the top ten before any full-scale proof campaign. Pick three with distinct
 ## Governance
 
 The ranking is automatically regenerated and checked on every pull request. CI validates structure, but it **cannot** determine mathematical correctness or automatically verify that a conjecture is still open. A source audit is a separate requirement.
+
+The attack queue is ordered by dispatch score, not by readiness alone. See [the research engine](RESEARCH_ENGINE.md). A shared shape in `data/methods.json` is an attack template. It does not change an editorial score and it is not a theorem.

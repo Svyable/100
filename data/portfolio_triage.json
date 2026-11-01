@@ -1,0 +1,195 @@
+{
+  "as_of": "2026-10-31",
+  "purpose": "screening_only_not_status_verification",
+  "entries": [
+    {
+      "id": "M017",
+      "concern": "scope",
+      "proposed_action": "respecify",
+      "rationale": "A global Langlands functoriality program is too broad to settle as one unqualified theorem.",
+      "evidence_needed": "Specify groups, functorial transfer and all local and global hypotheses.",
+      "lead_urls": []
+    },
+    {
+      "id": "M018",
+      "concern": "overlap",
+      "proposed_action": "consolidation_review",
+      "rationale": "Primes of the form n^2+1 are a special case of Bateman-Horn M007 but might justify a focused attack.",
+      "evidence_needed": "Document distinct methods or decide whether to move to an M007 campaign.",
+      "lead_urls": []
+    },
+    {
+      "id": "M019",
+      "concern": "portfolio_tradeoff",
+      "proposed_action": "compare_candidates",
+      "rationale": "Erdos-Straus is finite-refutable but structural spillover may be weaker than omitted challenges.",
+      "evidence_needed": "Compare against independently audited alternatives and concrete first lemmas.",
+      "lead_urls": []
+    },
+    {
+      "id": "M041",
+      "concern": "overlap",
+      "proposed_action": "consolidation_review",
+      "rationale": "The plane Jacobian and A1 Dixmier problems are connected but not simply interchangeable.",
+      "evidence_needed": "Map the exact implications, dimension restrictions and independent methods.",
+      "lead_urls": []
+    },
+    {
+      "id": "M042",
+      "concern": "overlap",
+      "proposed_action": "consolidation_review",
+      "rationale": "A1 Dixmier may overlap M041 while offering distinct algebraic methods.",
+      "evidence_needed": "Document proven relationships and separate publishable proof obligations.",
+      "lead_urls": []
+    },
+    {
+      "id": "M053",
+      "concern": "scope",
+      "proposed_action": "respecify",
+      "rationale": "Weak cosmic censorship is ambiguous without a precise genericity and spacetime class.",
+      "evidence_needed": "Specify initial data, topology, regularity and causal conclusion.",
+      "lead_urls": []
+    },
+    {
+      "id": "M056",
+      "concern": "scope",
+      "proposed_action": "respecify",
+      "rationale": "Fourier restriction needs exact dimension, surface, exponents and endpoints.",
+      "evidence_needed": "State the sharp inequality and distinguish interior from endpoint bounds.",
+      "lead_urls": []
+    },
+    {
+      "id": "M063",
+      "concern": "scope",
+      "proposed_action": "respecify",
+      "rationale": "The first-passage KPZ exponent needs an explicit model and convergence notion.",
+      "evidence_needed": "Fix weights, observable, scaling and mode of convergence.",
+      "lead_urls": []
+    },
+    {
+      "id": "M070",
+      "concern": "scope",
+      "proposed_action": "respecify",
+      "rationale": "3D Ising conformal scaling describes multiple possible limiting field claims.",
+      "evidence_needed": "Fix observables, normalization, topology and lattice/universality scope.",
+      "lead_urls": []
+    },
+    {
+      "id": "M096",
+      "concern": "portfolio_tradeoff",
+      "proposed_action": "compare_candidates",
+      "rationale": "Order-12 planes are a concrete finite question; prime-power planes are broader but harder.",
+      "evidence_needed": "Compare specific certificates with the broader conjecture and resource costs.",
+      "lead_urls": [
+        "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/723.lean"
+      ]
+    },
+    {
+      "id": "M038",
+      "concern": "resolution_claim",
+      "proposed_action": "audit_claim",
+      "rationale": "The S6 complex-structure proposal and independent reconstruction require specialist evaluation.",
+      "evidence_needed": "Audit complex gluing, topology and construction independently.",
+      "lead_urls": [
+        "https://alpo.ge/s6.pdf"
+      ]
+    },
+    {
+      "id": "M058",
+      "concern": "resolution_claim",
+      "proposed_action": "audit_claim",
+      "rationale": "An October 2026 manuscript claims a KLS proof, but a preprint is not mathematical acceptance.",
+      "evidence_needed": "Check exact Poincare inequality and independent specialist validation.",
+      "lead_urls": [
+        "https://arxiv.org/abs/2610.05474"
+      ]
+    },
+    {
+      "id": "M062",
+      "concern": "resolution_claim",
+      "proposed_action": "audit_claim",
+      "rationale": "Recent critical-percolation manuscripts make claims with nontrivial hypotheses.",
+      "evidence_needed": "Check lattice consequence, theorem fidelity and independent proof validation.",
+      "lead_urls": [
+        "https://github.com/openai/math/tree/main/preprints/No-percolation-at-criticality-on-quasi-transitive-graphs-September-24-2026"
+      ]
+    },
+    {
+      "id": "M066",
+      "concern": "resolution_claim",
+      "proposed_action": "audit_claim",
+      "rationale": "A proposed near-boundary Birkhoff resolution may depend on stronger integrability hypotheses.",
+      "evidence_needed": "Match the registry theorem to source assumptions and independent reviews.",
+      "lead_urls": [
+        "https://math20.org/f/147/"
+      ]
+    },
+    {
+      "id": "M069",
+      "concern": "resolution_claim",
+      "proposed_action": "audit_claim",
+      "rationale": "A 2026 standard-map preprint claims positive metric entropy for large parameters.",
+      "evidence_needed": "Check invariant measure, parameter scope and independent proof evaluation.",
+      "lead_urls": [
+        "https://github.com/openai/math/blob/main/preprints/Positive-Metric-Entropy-for-the-Standard-Map-at-Large-Parameters-September-23-2026/build/paper.tex"
+      ]
+    }
+  ],
+  "admission_candidates": [
+    {
+      "key": "A001",
+      "name": "Ryser hypergraph covering conjecture",
+      "proposed_statement": "Every r-partite r-uniform finite hypergraph H has transversal number at most (r-1) times its matching number, for every r >= 2.",
+      "rationale": "Finite exact certificates and important combinatorial generality.",
+      "source_urls": [
+        "https://www.theoremdb.org/statements/P3136/"
+      ],
+      "admission_state": "unvetted_candidate",
+      "next_gate": "Find fresh primary open-status source and bounded verifier."
+    },
+    {
+      "key": "A002",
+      "name": "Lonely runner conjecture",
+      "proposed_statement": "For n runners with pairwise distinct constant speeds, every runner is at circular distance at least 1/n from all others at some time.",
+      "rationale": "Recent computational finite-case progress and precise finite witnesses.",
+      "source_urls": [
+        "https://doi.org/10.1090/mcom/4243"
+      ],
+      "admission_state": "unvetted_candidate",
+      "next_gate": "Audit latest finite frontier and exact certificate."
+    },
+    {
+      "key": "A003",
+      "name": "Littlewood conjecture",
+      "proposed_statement": "For all real alpha and beta, liminf as n tends to infinity of n times distance(n alpha,Z) times distance(n beta,Z) equals zero.",
+      "rationale": "Distinct number-theoretic and dynamical connections.",
+      "source_urls": [
+        "https://doi.org/10.1016/j.jnt.2025.05.001"
+      ],
+      "admission_state": "unvetted_candidate",
+      "next_gate": "Check original statement and contemporary open remainder."
+    },
+    {
+      "key": "A004",
+      "name": "Graceful tree conjecture",
+      "proposed_statement": "Every finite tree with m edges has an injective vertex labeling in {0,...,m} whose edge differences are {1,...,m}.",
+      "rationale": "Testable finite tree instances and exact constructive certificates.",
+      "source_urls": [
+        "https://mathworld.wolfram.com/GracefulTreeConjecture.html"
+      ],
+      "admission_state": "unvetted_candidate",
+      "next_gate": "Locate primary specialist sources and latest verified finite bounds."
+    },
+    {
+      "key": "A005",
+      "name": "Prime-power-order conjecture for finite projective planes",
+      "proposed_statement": "A finite projective plane can exist only when its order is a prime power.",
+      "rationale": "Structural generalization of active M096, potentially stronger scope.",
+      "source_urls": [
+        "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/723.lean"
+      ],
+      "admission_state": "unvetted_candidate",
+      "next_gate": "Verify unresolved status and compare against M096 executable campaign."
+    }
+  ]
+}

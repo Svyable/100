@@ -1,4 +1,5 @@
 import json
+import copy
 import sys
 import unittest
 from html.parser import HTMLParser
@@ -48,6 +49,22 @@ class Next100Tests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"Promotion"):
             reservoir.validate(entries,[{"next_id":entries[0]["id"],"active_id":"M001"}],active)
 
+    def test_near_duplicate_and_review_queue_guards(self):
+        entries = reservoir.candidates()
+        near = copy.deepcopy(entries[0])
+        near["id"] = "N9001"
+        near["title"] += " variation"
+        with self.assertRaisesRegex(ValueError, "Near-duplicate"):
+            reservoir.validate(entries + [near], [], reservoir.read(reservoir.ACTIVE))
+        queue = reservoir.read(reservoir.REVIEW_QUEUE)
+        self.assertEqual(len(queue), 12)
+        self.assertTrue(reservoir.validate_review_queue(queue, entries))
+        invalid = copy.deepcopy(queue)
+        invalid[0]["candidate_id"] = "N9999"
+        with self.assertRaisesRegex(ValueError, "Unknown or repeated"):
+            reservoir.validate_review_queue(invalid, entries)
+        self.assertEqual(len(reservoir.similarity_pairs(entries, minimum=0.84)), 0)
+
     def test_pages_assets_and_links(self):
         docs=ROOT/"docs"
         for p in ("next/index.html","next/app.js","next/next.css","data/next.json"):
@@ -57,7 +74,7 @@ class Next100Tests(unittest.TestCase):
         self.assertTrue({"next-search","next-domain","next-stage","next-status",
                          "next-sort","next-list","next-more","next-results",
                          "next-reset","stat-available","stat-domains",
-                         "stat-promoted","reservoir"}.issubset(page.ids))
+                         "stat-promoted","reservoir","review-queue","next-review-list"}.issubset(page.ids))
         self.assertTrue({"./app.js","./next.css","../assets/style.css"}.issubset(page.refs))
         script=(docs/"next/app.js").read_text(encoding="utf-8")
         self.assertIn("../data/next.json",script)
