@@ -6,7 +6,7 @@
 
 ## Precise theorem candidate
 
-Let `P` be a finite poset of width **exactly three**, and suppose there are two elements `x,y` such that `P \\ {x,y}` is a chain. For the uniform distribution on linear extensions, write
+Let `P` be a finite poset of width **exactly three**, and suppose there are two elements `x,y` such that removing `x,y` from `P` leaves a chain. For the uniform distribution on linear extensions, write
 
 `delta(P) = max_{u != v} min(Pr(u precedes v), Pr(v precedes u))`.
 

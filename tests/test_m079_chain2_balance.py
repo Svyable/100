@@ -89,15 +89,21 @@ class ChainPlusTwoTests(unittest.TestCase):
         self.assertNotEqual(n, 3 * 3)
 
     def test_extremizer_has_an_induced_n_and_width_three(self):
-        # Five-element extremizer: c1<c2<c3, c1<x, y<c3,
-        # x||c2,c3 and y||c1,c2, with x||y.
+        # Five-element extremizer: c1<c2<c3, c1<x, y<c3.
         ix, iy = (1, 3), (0, 2)
         self.assertEqual(target.overlap(ix, iy), 2)
-        # On {y,c1,c3,x}, the ONLY strict relations are
-        # y<c3, c1<c3, c1<x: an induced N.
-        relations = {("y", "c3"), ("c1", "c3"), ("c1", "x")}
-        self.assertEqual(len(relations), 3)
-        self.assertEqual(target.order_ideal_count(ix, iy), 11)
+        m = 3
+        vertices = {"y": m + 1, "c1": 0, "c3": 2, "x": m}
+        forced = set()
+        for a, b in itertools.permutations(vertices, 2):
+            u, v = vertices[a], vertices[b]
+            if target.order_ideal_count(ix, iy, (v, u)) == 0:
+                forced.add((a, b))
+        self.assertEqual(forced, {("y", "c3"), ("c1", "c3"), ("c1", "x")})
+        # x, y and c2 are pairwise incomparable: a genuine width-three case.
+        for u, v in ((m, m + 1), (m, 1), (m + 1, 1)):
+            self.assertGreater(target.order_ideal_count(ix, iy, (u, v)), 0)
+            self.assertGreater(target.order_ideal_count(ix, iy, (v, u)), 0)
 
 
 
