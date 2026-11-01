@@ -467,3 +467,33 @@ td a,th a{text-decoration:underline;text-underline-offset:3px}
 @media(max-width:430px){.page-shell{padding:0 16px}.brand-caption{display:none}.filters{grid-template-columns:1fr}.hero-actions .button{width:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition-duration:0s!important;animation-duration:0s!important}}
 @media print{.site-header,.site-footer,.problem-side,.doc-side,.pager,.palette,.closing-banner{display:none}body{background:#fff;color:#000}.problem-grid,.doc-layout{display:block}}
+
+
+/* Proof frontier and Gödel-ready handoff: all text is read from committed evidence. */
+.proof-frontier{scroll-margin-top:24px}
+.proof-frontier>h2{margin-bottom:9px}
+.frontier-stages{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:22px 0}
+.frontier-stage{border:1px solid var(--line);background:var(--panel-2);padding:20px 18px;min-width:0;position:relative}
+.frontier-stage:before{content:"";height:3px;background:var(--forest);position:absolute;top:0;left:0;right:0}
+.frontier-stage h3{font-size:13px;letter-spacing:.02em;margin:0 0 11px}
+.frontier-state{display:block;color:var(--forest);font:700 11px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.04em;overflow-wrap:anywhere}
+.frontier-stage p{font-size:12px;line-height:1.65;color:var(--muted);margin:12px 0 14px}
+.frontier-stage a{font-size:12px;text-decoration:underline;text-underline-offset:3px;color:var(--accent-dark)}
+.frontier-dependencies{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0}
+.frontier-dependencies summary,.agent-packet summary{cursor:pointer;font-weight:700;color:var(--ink)}
+.frontier-dependency-results{padding:14px 0 0}
+.frontier-dependency-list{padding:0;margin:12px 0;list-style:none;display:grid;gap:9px}
+.frontier-dependency-item{border:1px solid var(--line);padding:13px 16px;background:var(--panel)}
+.frontier-dependency-item>a{font-weight:650;font-size:13px}
+.frontier-dependency-item .frontier-state{margin-top:7px}
+.frontier-dependency-item p{font-size:12px;margin:8px 0 0}
+.frontier-dependency-item p a{text-decoration:underline;text-underline-offset:2px}
+.agent-handoff{border-left:3px solid var(--forest);padding-left:22px}
+.agent-packet{margin:12px 0}
+.agent-packet-body{margin-top:16px}
+.agent-packet-status{color:var(--ink-2);font-weight:650;font-size:13px}
+.agent-packet-text{display:block;width:100%;min-height:240px;margin:10px 0 14px;padding:15px;background:var(--field);color:var(--ink);border:1px solid var(--line-2);border-radius:3px;font:12px/1.6 var(--mono);resize:vertical;white-space:pre;overflow:auto}
+.agent-packet-feedback{display:inline-block;padding:8px 12px;font-size:12px}
+@media(max-width:1050px){.frontier-stages{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.frontier-stages{grid-template-columns:1fr}.frontier-stage{padding:18px}.agent-handoff{padding-left:15px}}
+@media print{.frontier-dependencies:not([open]),.agent-handoff{display:none}}
