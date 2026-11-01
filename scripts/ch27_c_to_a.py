@@ -45,7 +45,7 @@ def bound_C_to_A(alpha, k):
 
 
 def endpoint_obstruction(alpha, k):
-    """Finite three-case closure of the only seven coarse survivors.
+    """Finite three-case closure of the seven profiles left after four sink cuts and 284 bottleneck cuts.
 
     Each label refers to an elementary proof in proofs/M074_C_TO_A_BOTTLENECK.md,
     not a SAT/UNSAT claim. The checker additionally validates the counts.
@@ -84,7 +84,7 @@ def report():
             "total_profiles": sum(counts.values()),
             "stages": dict(sorted(counts.items())),
             "survivors": survivors,
-            "claim": "All 295 formerly unresolved z=4 integer profiles excluded, conditional on the stated local prerequisites"}
+            "claim": ("Of 295 formerly unresolved z=4 integer profiles, 4 were already eliminated by the z4-sink prerequisite, 284 by the C-to-A bound, and 7 by three terminal cases; conditional on the stated local prerequisites")}
 
 
 def main(argv=None):
@@ -97,7 +97,7 @@ def main(argv=None):
         assert result["stages"] == {
             "cut": 149396, "subset_capacity": 3515, "triangle_three": 132,
             "minout_two_5": 22, "minout_two_6": 24,
-            "c_to_a_bottleneck": 288,
+            "z4_sink_cut": 4, "c_to_a_bottleneck": 284,
             "five_protected_threes_overfill_five_vertices": 1,
             "protected_A_forces_C_tournament_sink": 3,
             "eight_vertex_degree_defect": 3,
