@@ -61,12 +61,21 @@ For each b in B, an edge b→a with a in A is permitted only when alpha(a)>=k(b)
 
 For k=7, q=0 because alpha<=8, so d⁺_B(b)>=8. For k=6, q<=1: two alpha=8 vertices would consume at least 12 surplus units beyond the baseline alpha=2, whereas m<=29 allows only 11. Therefore the five positive-k vertices in B would send at least 4·8+6=38 arcs into B. But any five vertices in a ten-vertex oriented graph can send at most binom(5,2)+5(10−5)=35 arcs into B. Contradiction; **z<=4**.
 
-However, this does not close the irregular branch. A relaxed necessary profile is
+A previous relaxed profile passed all B-subset-capacity inequalities:
 
     alpha=(2,2,2,2,2,2,2,7,8), m=29,
     k=(0,0,0,0,5,5,5,5,7,7), sum k=34, z=4.
 
-It passes (3) and every subset-capacity inequality for the B-internal outdegrees. It is **not** a 27-vertex graph. It only demonstrates that this layer of degree constraints does not yet imply the global low-indegree requirements needed for a transfer contradiction. In particular, a vertex in A with internal outdegree two receives at most 1+4+z<=9 arcs, which need not place it in the low indegree<=8 class.
+It is **not a graph**, and it is **excluded by a seven-vertex lemma** in [M074_SEVEN_VERTEX_CAP.md](M074_SEVEN_VERTEX_CAP.md). The seven alpha-two vertices all point to every vertex of C, so C has internal maximum indegree at most 10−7=3. An elementary proof bounds e(C,C) by 17; a further complete three-isomorphism-class orientation enumeration sharpens the bound to **16**. But the 63 outgoing arcs of C, e(C,B)=34 and e(C,A)<=11 require e(C,C)>=18.
+
+The sharp bound **also falsifies** the earlier relaxed profile alpha=(2^7,6,8), m=28 and k=(0^4,4,5,6,7,7,7), which requires e(C,C)>=17. Both were only necessary integer profiles, never graphs.
+
+This still **does not close the irregular branch**. For example the relaxed (and not asserted realizable) profiles
+
+    alpha=(2,2,2,2,2,2,2,6,8), m=28,
+    k=(0,0,0,0,5,6,6,6,7,7), sum k=37, z=4
+
+pass the present B-subset-capacity tests (sorted B-internal outdegree floors are 8,8,6,6,6,5,0,0,0,0) and the aggregate C-cut bounds: e(C,C)>=63−37−10=16 is consistent with the **sharp** ceiling 16. No incidence realization or global degree-defect feasibility is asserted. In particular, a vertex in A with internal outdegree two receives at most 1+4+z<=9 arcs, which need not place it in the low indegree<=8 class.
 
 ## Exact reproduction and falsifiers
 
@@ -84,7 +93,7 @@ From the repository root:
 | Maximum eligible crossing pairs | 22 |
 | Unexcluded regular pairs | **0** |
 | Unexcluded when local cap is weakened from 29 to 30 | **60** |
-| Irregular z=4 relaxed profile passes B subset capacities | Yes, not a graph |
+| Original irregular z=4 relaxed profile | **Refuted** by seven-vertex arc cap; weaker B-only constraints pass |
 
 The six focused unit tests independently generate the degree profiles with histogram compositions instead of sorted tuples; compute the eligible bound by histogram convolution; validate the sharp graph example with loop/digon/triangle negative controls; and retain the one-arc weakening and irregular-survivor controls. The program is an exact **integer** checker, not a 27-vertex graph census, a SAT/UNSAT proof, or a proof-assistant formalization.
 
