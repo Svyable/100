@@ -2,6 +2,7 @@
 
 **Purpose:** Preserve, refine, and stack-rank 100 concrete mathematical proof/counterexample targets, looking for results and methods that create new branches of discovery.
 
+- **[CH eight-vertex equality rigidity](proofs/M074_EIGHT_VERTEX_RIGIDITY.md)** — elementary proof that every 21-arc, triangle-free oriented 8-vertex graph with minimum outdegree two has a dominating source and 2-in/2-out-regular seven-vertex remainder; 120 of 295 formerly unexcluded relaxed (27,9) profiles now fail this new necessary condition, and 20 more fail an existing sharp seven-vertex cut (155 remain). Independent proof/novelty review pending; no full case resolved. (`python3 scripts/ch27_rigidity.py --check`)
 - **[Sidorenko exact two-block negative check](research/M073_TWOBLOCK_EXACT.md)** — a 27-cell rational graphon grid independently evaluated by face and pairwise-factor algorithms for the 35-vertex pattern; no finite host found or claim promoted.
 - **[OpenAI/math transfer intake](docs/OPENAI_MATH_TRANSFER.md)** — seven pinned, scope-bounded author-claim research leads and four SHA-256-pinned reusable instruments with transitive impact analysis (`python3 scripts/transfer.py --check`); K42 dual-checker calibration (`python3 scripts/k42_calibration.py --check`) is *not* a model benchmark trial.
 - **[Lean proof pipeline](LEAN.md)** — pinned workspace, Ramsey benchmark, two-element Frankl case, axiom audits and commit-bound CI evidence; scope review remains separate.
