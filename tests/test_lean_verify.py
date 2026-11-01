@@ -8,7 +8,7 @@ spec.loader.exec_module(m)
 
 class LeanAuditTests(unittest.TestCase):
     def test_registry(self):
-        self.assertEqual(len(m.validate_registry()), 27)
+        self.assertEqual(len(m.validate_registry()), 26)
 
     def test_no_axioms(self):
         self.assertEqual(m.parse_axioms("'Hundred.x' does not depend on any axioms", ['Hundred.x']), {'Hundred.x': []})

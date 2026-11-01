@@ -31,7 +31,7 @@
     <span class="brand-mark">100<span class="brand-dot">.</span></span>
     <span class="brand-caption">SVYABLE<br>RESEARCH</span>
   </a>
-  <nav class="main-nav" aria-label="Primary navigation"><a href="../../" aria-current="page">The 100</a><a href="../../next/">Next 100</a><a href="../../atlas/">Atlas</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/">Library</a></nav>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../" aria-current="page">The 100</a><a href="../../work/">Work</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/">Library</a></nav>
   <div class="header-tools">
     <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
     <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
@@ -51,7 +51,7 @@
 </header>
 <div class="problem-grid">
 <aside class="problem-side" aria-label="On this page">
-  <nav class="toc"><span class="detail-label">ON THIS PAGE</span><ol><li><a href="#question">The question</a></li><li><a href="#formal">Formal statement</a></li><li><a href="#priority">Priority</a></li><li><a href="#campaign">Campaign</a></li><li><a href="#probe-hadwiger">Exact probe</a></li><li><a href="#milestones">Milestones</a></li><li><a href="#claim-review">Claim triage</a></li><li><a href="#provenance">Provenance</a></li></ol></nav>
+  <nav class="toc"><span class="detail-label">ON THIS PAGE</span><ol><li><a href="#question">The question</a></li><li><a href="#formal">Formal statement</a></li><li><a href="#priority">Priority</a></li><li><a href="#campaign">Campaign</a></li><li><a href="#probe-hadwiger">Exact probe</a></li><li><a href="#milestones">Milestones</a></li><li><a href="#claim-review">Claim triage</a></li><li><a href="#work">Open work</a></li><li><a href="#provenance">Provenance</a></li></ol></nav>
   <div class="side-actions">
     <a class="button button-outline" href="https://github.com/Svyable/100/issues/new?template=evidence_update.yml&amp;title=%5BEvidence%5D%20M071%20%2014%20" rel="noopener noreferrer">Submit evidence ↗</a>
     <a class="text-link" href="../../problems/M071/" data-permalink>Permalink: /problems/M071/</a>
@@ -127,8 +127,8 @@ comparator for that claim encodes the chromatic form with `SimpleGraph`.
 <span class="tk-k">def</span> complete (i j : <span class="tk-k">Nat</span>) : <span class="tk-k">Bool</span> <span class="tk-o">:=</span> i != j
 
 <span class="tk-c">/-! Fidelity: `K_3` is a graph and is 3-colourable by the identity. -/</span>
-<span class="tk-k">example</span> : IsGraph 3 complete <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span>
-<span class="tk-k">example</span> : ProperColouring 3 complete 3 (<span class="tk-k">fun</span> v =&gt; v) <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span>
+<span class="tk-k">example</span> : IsGraph 3 complete <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span> +kernel
+<span class="tk-k">example</span> : ProperColouring 3 complete 3 (<span class="tk-k">fun</span> v =&gt; v) <span class="tk-o">:=</span> <span class="tk-k">by</span> <span class="tk-k">decide</span> +kernel
 
 <span class="tk-k">end</span> Hundred.Statements.Hadwiger
 </code></pre></details>
@@ -188,6 +188,7 @@ comparator for that claim encodes the chromatic form with `SimpleGraph`.
 </dl>
 <p><a class="text-link" href="../../claims/#M071">All claim reviews →</a></p>
 </section>
+<section class="dossier-block" id="work"><h2>Open work <span class="chip">3</span></h2><p class="muted">Bounded, claimable units derived from the ledgers. Claim one before starting so parallel agents never duplicate it.</p><ul class="work-list"><li class="work-item work-runnable"><a href="../../work/J-extremal_certificates-replay_claim_witness/"><span class="work-id">J-extremal_certificates-replay_claim_witness</span><span class="work-title">Replay a claimed finite witness: Replay the object, or mine the census</span><span class="work-meta">Cohort job · Runnable · dispatch #1</span></a></li><li class="work-item work-runnable"><a href="../../work/R32/"><span class="work-id">R32</span><span class="work-title">Computational checks of claimed witnesses</span><span class="work-meta">Roadmap item · Runnable · dispatch #1</span></a></li><li class="work-item work-runnable"><a href="../../work/S-M071/"><span class="work-id">S-M071</span><span class="work-title">Exact-status audit draft for Hadwiger conjecture</span><span class="work-meta">Status audit · Runnable · dispatch #1</span></a></li></ul></section>
 <section class="dossier-block" id="provenance"><h2>Provenance &amp; status</h2>
   <dl class="kv">
     <dt>Evidence state</dt><dd><span class="status-pill status-claim_needs_review" title="A 2026 proof or counterexample claim exists and has not been independently validated.">Claim under review</span> A 2026 proof or counterexample claim exists and has not been independently validated. This classification is not a universal proof-status certification.</dd>
@@ -211,7 +212,7 @@ comparator for that claim encodes the chromatic form with `SimpleGraph`.
 <footer class="site-footer">
   <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
   <div class="footer-links">
-    <a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
+    <a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../feed.xml">Atom feed</a>
     <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
   </div>
   <small>Generated from the validated ledgers · data as of 2026-10-31 · no tracking, no external scripts</small>

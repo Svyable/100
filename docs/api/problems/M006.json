@@ -132,8 +132,8 @@
     ],
     "kernel_checked": [
       {
-        "decl": "holds_upTo_1000",
-        "claim": "The statement holds for every even 4 ≤ n ≤ 1000 (least-prime witness table re-checked by the kernel).",
+        "decl": "holds_upTo_100",
+        "claim": "The statement holds for every even 4 ≤ n ≤ 100 (least-prime witness table re-checked by the kernel; the lab covers far larger ranges in Python).",
         "mirrors_probe": "goldbach"
       }
     ],

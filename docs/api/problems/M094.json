@@ -119,7 +119,7 @@
     "kernel_checked": [
       {
         "decl": "order_12",
-        "claim": "Explicit Hadamard matrices of orders 4, 8, 16 (Sylvester) and 12 (Paley), re-checked by the kernel (order_4, order_8, order_12, order_16).",
+        "claim": "Explicit Hadamard matrices of orders 4, 8 (Sylvester) and 12 (Paley), re-checked by the kernel (order_4, order_8, order_12).",
         "mirrors_probe": "hadamard"
       }
     ],

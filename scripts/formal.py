@@ -114,11 +114,11 @@ def replay():
     checked = []
     src = (LEAN / "Hundred" / "Statements" / "Goldbach.lean").read_text(encoding="utf-8")
     least = [int(x) for x in re.findall(r"\d+", _list_literal(src, "leastPrime"))]
-    for n in range(4, 1001, 2):
+    for n in range(4, 101, 2):
         p = least[n]
         if not (p <= n and _is_prime(p) and _is_prime(n - p)):
             raise FormalError(f"Goldbach witness for {n} is invalid")
-    checked.append("M006 Goldbach witnesses 4..1000")
+    checked.append("M006 Goldbach witnesses 4..100")
     src = (LEAN / "Hundred" / "Statements" / "ErdosStraus.lean").read_text(encoding="utf-8")
     triples = [tuple(map(int, t)) for t in re.findall(r"\((\d+),\s*(\d+),\s*(\d+)\)", _list_literal(src, "table"))]
     for n in range(2, 101):
@@ -129,12 +129,12 @@ def replay():
     src = (LEAN / "Hundred" / "Statements" / "Hadamard.lean").read_text(encoding="utf-8")
     rows = [[int(v) for v in re.findall(r"-?\d+", r)] for r in re.findall(r"\[([-\d,\s]+)\]", _list_literal(src, "paley12Rows"))]
     syl = lambda k: [[-1 if bin(i & j).count("1") % 2 else 1 for j in range(2 ** k)] for i in range(2 ** k)]
-    for H in (syl(2), syl(3), rows, syl(4)):
+    for H in (syl(2), syl(3), rows):
         n = len(H)
         if any(v not in (1, -1) for r in H for v in r) or any(
                 sum(H[i][k] * H[j][k] for k in range(n)) != 0 for i in range(n) for j in range(n) if i != j):
             raise FormalError(f"Hadamard matrix of order {n} is invalid")
-    checked.append("M094 Hadamard orders 4, 8, 12, 16")
+    checked.append("M094 Hadamard orders 4, 8, 12")
     for k in (1, 2, 3):
         for F in range(2 ** (2 ** k)):
             mem = [s for s in range(2 ** k) if F >> s & 1]

@@ -138,6 +138,6 @@ theorem holds_upTo_100 : ∀ n, n ≤ 100 → 2 ≤ n → ∃ x y z, Solves n x 
   fun n hn h2 => ⟨_, _, _, certified_100 n (Nat.lt_succ_of_le hn) h2⟩
 
 /-! Fidelity: `4/5 = 1/2 + 1/4 + 1/20`. -/
-example : Solves 5 2 4 20 := by decide
+example : Solves 5 2 4 20 := by decide +kernel
 
 end Hundred.Statements.ErdosStraus
