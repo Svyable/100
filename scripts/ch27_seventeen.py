@@ -22,6 +22,8 @@ MISSING_TYPES = {
 
 
 def enumerate_orientation_class(missing):
+    if len(missing) != 4 or len(set(missing)) != 4 or any(p not in PAIRS for p in missing):
+        raise ValueError("Expected four distinct valid missing pairs")
     excluded = set(missing)
     edges = tuple(edge for edge in PAIRS if edge not in excluded)
     if len(edges) != 17:
