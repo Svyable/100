@@ -37,8 +37,10 @@ When `k` is even, using all paths once is a connected Eulerian spanning multigra
 
     python3 scripts/m097_multitheta.py --check
     python3 -m unittest discover -s tests -p 'test_m097_multitheta.py' -v
+    # Optional, with NumPy and SciPy installed:
+    python3 scripts/m097_multitheta_lp.py --check
 
-The standard-library checker independently constructs shortest paths by BFS, the rational LP point, every degree and every proper cut, and an integer subset-DP tour optimum **without using the parity proof**. The default sweep covers all **63** nondecreasing tuples with `2<=k<=5`, `2<=L_i<=6`, and at most 11 vertices: seven have fractional gap, with maximum `7/6`. Eleven adversarial tests cover the `L_i=2` coincidence, even/odd parity, path permutations, invalid parameters, tampered spoke and shortcut weights and the wrong `TSP=m` shortcut.
+The standard-library checker independently constructs shortest paths by BFS, the rational LP point, every degree and every proper cut, and an integer subset-DP tour optimum **without using the parity proof**. The default sweep covers all **63** nondecreasing tuples with `2<=k<=5`, `2<=L_i<=6`, and at most 11 vertices: seven have fractional gap, with maximum `7/6`. Twelve adversarial tests cover the `L_i=2` coincidence, even/odd parity, path permutations, invalid parameters, tampered spoke and shortcut weights and the wrong `TSP=m` shortcut.
 
 A separately written SciPy HiGHS formulation, using a different edge/cut construction, was run for all 63 tuples. Every proposed optimum was reconstructed into exact rational primal/dual vectors, checked against all inequalities and nonnegative reduced costs, and matched `SEP=m`. This is **author-side cross-checking, not independent mathematical review**. SciPy is optional and not required by repository CI.
 
