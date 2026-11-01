@@ -36,11 +36,11 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 **Witness obligation for M071**
 
 - Problems: M071
-- Deliverable: Audit Lean quantifiers against the theorem; extract an explicit graph and an independently checkable minor-bound obstruction, or record a precise gap.
-- Boundary: Chromatic number at most 6 is already settled by Robertson–Seymour–Thomas; a claimed counterexample must be reproduced, not assumed. This is a claim-audit target, not a new attack on the open t >= 7 regime.
+- Deliverable: Obtain an explicit finite graph with independent chromatic and minor certificates, or specialist reviews of the existential proof. Do not treat the frozen no_explicit_finite_graph ledger entry as a discharged witness.
+- Boundary: Chromatic number at most 6 is already settled by Robertson–Seymour–Thomas. The extractability audit (research/M071_M073_WITNESSES.md) found an existential/asymptotic Lean family with no published finite adjacency list; comparator acceptance alone cannot discharge this node.
 - Falsifier: The graph admits a K_t minor, its chromatic lower bound fails an independent check, or the encoding does not match the claimed manuscript object.
 - Claim: `[Claim] O-M071-01 — Witness obligation for M071`
-- Digest: `2d86b49f8d1bf016…`
+- Digest: `ea132cbc69c33d37…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -51,11 +51,11 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 **Witness obligation for M073**
 
 - Problems: M073
-- Deliverable: Independently reconstruct H and the host; compute exact densities; record a precise gap if the witness cannot be reproduced.
-- Boundary: A claimed finite host is an audit target. Small unweighted hosts already checked in this repository are not that object and do not settle the conjecture.
+- Deliverable: Derive or obtain the claimed host G and compute exact densities with two independent methods, or keep the pattern_reconstructed_host_missing gap. Pattern H alone does not discharge this node.
+- Boundary: The extractability audit reconstructed pattern H (35 vertices, 66 edges) in data/reference/sidorenko_faces.json; the claimed host G remains unpublished. Small unweighted hosts already checked here are not that object.
 - Falsifier: Exact densities that obey the Sidorenko inequality, a mismatch with the manuscript construction, or a host that cannot be reconstructed from the cited data.
 - Claim: `[Claim] O-M073-01 — Witness obligation for M073`
-- Digest: `a5991c5469db7a51…`
+- Digest: `b44b983f1a94a78a…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
