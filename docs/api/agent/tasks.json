@@ -2,7 +2,7 @@
   "schema_version": 1,
   "snapshot_as_of": "2026-11-01",
   "selection": "First 20 runnable items in the derived work queue's priority order; use api/work.json for all tasks and other statuses.",
-  "runnable_in_snapshot": 341,
+  "runnable_in_snapshot": 342,
   "live_claim_status": "unknown; check existing_claims_url immediately before claiming",
   "task_count": 20,
   "tasks": [
@@ -249,6 +249,28 @@
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M079-01%20%E2%80%94%20Lemma%20obligation%20for%20M079"
     },
     {
+      "id": "O-M079-02",
+      "kind": "obligation",
+      "title": "Lemma obligation for M079",
+      "priority_rank": 12,
+      "status": "runnable",
+      "problems": [
+        "M079"
+      ],
+      "deliverable": "Prove the all-orders insertion-gap reduction and exact finite residual bound, independently replay the sharp example and attack the 67392 normalized cases; then obtain specialist and novelty review.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M079-02 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "The unrestricted one-third–two-thirds conjecture is open. The previously proposed chain-plus-two 4/11 bound is a different class; finite verification and source searches do not establish historical novelty or independent mathematical acceptance.",
+      "depends_on": [],
+      "scope_sha256": "6f875a09c8b9a70a5312f268148ad4bdf3da80dd807cd9f8ec3a8c67a431ab44",
+      "task_url": "https://svyable.github.io/100/work/O-M079-02/",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M079-02%22",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M079-02%20%E2%80%94%20Lemma%20obligation%20for%20M079"
+    },
+    {
       "id": "O-M096-01",
       "kind": "obligation",
       "title": "Witness obligation for M096",
@@ -423,28 +445,6 @@
       "task_url": "https://svyable.github.io/100/work/O-M006-01/",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M006-01%22",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M006-01%20%E2%80%94%20Lemma%20obligation%20for%20M006"
-    },
-    {
-      "id": "O-M041-01",
-      "kind": "obligation",
-      "title": "Lemma obligation for M041",
-      "priority_rank": 98,
-      "status": "runnable",
-      "problems": [
-        "M041"
-      ],
-      "deliverable": "Name one Newton-polygon family outside the degree-100 bound and state the coefficient ring before any search; do not enumerate degree-4 maps with coefficients in {-1,0,1}.",
-      "acceptance": [
-        "Discharge evidence recorded on O-M041-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
-        "Independent review recorded before the node is marked discharged",
-        "python3 scripts/regen.py && python3 scripts/regen.py --check"
-      ],
-      "boundary": "Wang covers degree <= 2 and Moh covers plane degree <= 100; enumerating degree-4 maps with coefficients in {-1,0,1} is refused as dominated.",
-      "depends_on": [],
-      "scope_sha256": "aad6e6707d2c15e9ab7098ea1da8504ef377649dc1439c655a04252fb6c68ac9",
-      "task_url": "https://svyable.github.io/100/work/O-M041-01/",
-      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M041-01%22",
-      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M041-01%20%E2%80%94%20Lemma%20obligation%20for%20M041"
     }
   ]
 }
