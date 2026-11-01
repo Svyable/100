@@ -70,7 +70,7 @@ Apply Lemma 2 with r=8. Both induced 8-vertex graphs D[A] and the arc-reversal o
 
 On the other hand, Lemma 2 permits an arc b→a only when α(a)+β(b)>=9. Lemma 3 says there are at most **15** such ordered pairs. Hence **22<=t<=15**, a contradiction. QED.
 
-## Earlier irregular-branch reduction (followed by a full finite candidate proof)
+## What remains for the *full finite* (24,8) statement
 
 **Proposition (necessary irregularity and an exact nine-indegree pivot).** In a hypothetical 24-vertex directed-triangle-free oriented graph with minimum outdegree eight, delete excess outgoing arcs to make all outdegrees exactly eight. No vertex can have indegree >=10: if a root has indegree b>=10, its eight outneighbors have at least b−7>=3 outgoing neighbors within their own eight-vertex induced graph, contrary to Lemma 1(3). Thus all indegrees are at most nine. If no vertex had indegree nine, their average eight would make the graph 8-in/8-out-regular, excluded above. Therefore a remaining hypothetical counterexample **must** have an indegree-nine vertex and some vertex of indegree at most seven.
 
@@ -80,7 +80,7 @@ There are at most 48−e(A,C)<=5 arcs C→A, because digons are forbidden. The s
 
 This gives a tighter necessary structure: *every indegree-nine root has an outneighbor of indegree at most seven*. This is an irregular-branch obligation, not a contradiction and not a resolution of the full finite case.
 
-This was the **previously unresolved** indegree-nine branch. The subsequent [exact-profile and global contradiction argument](M074_IRREGULAR_24.md) gives a review-ready **candidate full finite proof** without assuming indegree regularity. Independent mathematical review is still required. Do not infer a result for arbitrary \((n,r)\).
+This isolates the **next mathematical task**: exclude the indegree-nine branch without assuming exact in/out regularity; alternatively produce a genuinely independent and reviewable finite certificate. Do not import the 8-inregular assumption into the missing branch.
 
 ## Verifying the arithmetic without a SAT solver
 
