@@ -16,7 +16,10 @@ python3 scripts/analogues.py --check              # structural finite-analogue l
 ```
 
 Fleet operator guide: [docs/FLEET.md](docs/FLEET.md). Packets are claimable contracts with
-scope digests, not theorems.
+scope digests, not theorems. For a **single-router, claim-gated reservation and
+bounded worker-slot prototype**, see [docs/ROUTER.md](docs/ROUTER.md)
+(`python3 scripts/router.py --help`). It produces mandates, not running agents;
+do not start a worker without rechecking the current GitHub claim and scope.
 Site discovery for independent contributors: [start here](https://svyable.github.io/100/start/), [JSON agent contract](https://svyable.github.io/100/api/agent.json), [runnable shortlist](https://svyable.github.io/100/api/agent/tasks.json), and [plain-text guide](https://svyable.github.io/100/llms.txt). These are **generated static snapshots**, not a live reservation/claim service. Always re-check the latest scope digest and current GitHub open claims before taking a task.
 
 The 36 preregistered model/agent benchmark cells are also claimable individually
