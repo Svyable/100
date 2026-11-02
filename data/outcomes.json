@@ -615,6 +615,22 @@
         "agent_hours": 0.6
       },
       "note": "Conditional on CI-gated merge. Current-main integration of PR #135 finite Goldbach least-prime bound for even 4..20000; known range within published 4e18 verification. Independent-representation odd-sieve checker, 50-digit decimal checks of twelve records with minimum slack 3.7654, forged-certificate and summary-mutation tests. Includes regeneration and a failed fast-check after source-note edit that was corrected by regeneration. No independent specialist review, novel theorem, asymptotic Goldbach result or solved-state promotion. Original PR author effort not double-counted."
+    },
+    {
+      "work_id": "X-M079-CHAIN7-LOCAL",
+      "scope_sha256": "02396fc31e0a62d19ffa8140676e82faad2040263d1d36a398a8a51499d50f11",
+      "author": "ChatGPT (M079 seven-outsider local balance research)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/256",
+      "pr_url": "https://github.com/Svyable/100/pull/257",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.7,
+        "ci_minutes": 0
+      },
+      "note": "Conditional on CI-gated merge. Sharp restricted candidate 1951/4659 for width-seven chain plus seven incomparable outsiders, each with 2..6 insertion gaps. Complete 436680-case dual exact census, 2612268-case out-of-scope seven-gap challenge, independent literal-poset witness and 30 seeded checks, adversarial mutation controls, literature comparison, failed 21/50 extrapolation, and full regeneration. Approximate active author/tool effort including failed avenues. No independent specialist review or historical novelty confirmation, no general M079 resolution, no solved/coverage changes; separate PR-landing task untouched."
     }
   ]
 }
