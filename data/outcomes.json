@@ -446,6 +446,21 @@
         "agent_hours": 0.8
       },
       "note": "Prime 1129 forbids both fixed shifts c=3 and c=7 by exact divisor and subgroup checks, but shift c=11 works. Universal wording of O-M019-01 is infeasible; no full Erdős–Straus counterexample, no novelty or independent review. Prior art Mordell 1963 and Dahan 2026."
+    },
+    {
+      "work_id": "X-M076-F43-EIGHT",
+      "scope_sha256": "b22d7b8a1bc3115b51cc948c3068fca1c255d6622f0edcc05e58eb4077688a9e",
+      "author": "ChatGPT (M076 eight-deletion exact restricted proof candidate)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/212",
+      "pr_url": "https://github.com/Svyable/100/pull/213",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 1
+      },
+      "note": "Approximate active research, exact cover computation, literature comparison, independent-style literal adversarial replay, 10 tests and full regeneration/test effort. Sharp eight-deletion four-insertion restricted candidate with 68,211 exact cover patterns; no global sunflower bound, no 55-set witness, no independent mathematical review or historical novelty determination. Outcome conditional on CI-gated PR merge; no coverage slot, new benchmark cell or solved/evidence-state change."
     }
   ]
 }
