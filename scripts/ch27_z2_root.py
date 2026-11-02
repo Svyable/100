@@ -13,6 +13,10 @@ P2=(2,2,2,3,3,3,3,3,8)
 P3=(2,2,2,2,4,4,4,4,5)
 P4=(2,2,2,2,4,4,4,4,4)
 FORBIDDEN=(P1,P2,P3,P4)
+Q1=(2,2,2,2,3,3,3,4,8)
+Q2=(2,2,2,3,3,3,3,4,7)
+Q3=(2,2,2,2,3,3,3,3,8)
+LAST_K=(0,0,3,4,5,6,6,6,6,6)
 
 def alphas():
     return (a for a in combinations_with_replacement(range(2,9),9) if sum(a)<=29)
@@ -39,16 +43,31 @@ def classify(a,k):
         return "B_two_missing_pairs"
     return "relaxed_survivor"
 
+def final_classify(a,k):
+    """Additional exact necessary filters; imports pending nine-vertex three-low lemma."""
+    f=b_floors(a,k)
+    # Seven-vertex min-outdegree-two orientations have exactly 14 arcs.
+    if f[6]>=5 and sum(f[:7])>35: return "seven_vertex_14_arc_cap"
+    # Eight-vertex min-outdegree-two orientations have at most 21 arcs.
+    if f[7]>=4 and sum(f[:8])>37: return "eight_vertex_21_arc_cap"
+    if a.count(2)<3: return "conditional_three_low"
+    if a in FORBIDDEN: return "four_forbidden_profiles"
+    if a in (Q1,Q2): return "final_indegree_budget"
+    if a==Q3 and k==LAST_K: return "eight_vertex_26_arc_extremal"
+    return "unresolved"
+
 def audit():
-    counts=Counter();patterns=Counter()
+    counts=Counter();patterns=Counter();final=Counter()
     for a in alphas():
         for k in ks():
             stage=classify(a,k)
             counts[stage]+=1
-            if stage=="relaxed_survivor":patterns[a]+=1
+            if stage=="relaxed_survivor":
+                patterns[a]+=1
+                final[final_classify(a,k)]+=1
     three={a:n for a,n in patterns.items() if a.count(2)>=3}
     forbidden={a:three.get(a,0) for a in FORBIDDEN}
-    return counts,patterns,three,forbidden
+    return counts,patterns,three,forbidden,final
 
 def directed_four_cycle_control():
     pairs=list(combinations(range(4),2));good=0
@@ -67,7 +86,7 @@ def directed_four_cycle_control():
     return good
 
 def run():
-    counts,patterns,three,forbidden=audit()
+    counts,patterns,three,forbidden,final=audit()
     return {
         "total_profiles":166*3003,
         "stages":dict(sorted(counts.items())),
@@ -77,6 +96,7 @@ def run():
         "after_both_gates":sum(three.values())-sum(forbidden.values()),
         "forbidden_multiplicities":{str(a):n for a,n in forbidden.items()},
         "four_cycle_labelled_controls":directed_four_cycle_control(),
+        "final_stages":dict(sorted(final.items())),
         "boundary":"necessary integer profiles only; no 27-vertex graph census",
     }
 
@@ -95,6 +115,13 @@ def main():
         assert result["excluded_by_four_forbidden_profiles"]==226
         assert result["after_both_gates"]==61
         assert result["four_cycle_labelled_controls"]==6
+        assert result["final_stages"]=={
+            "seven_vertex_14_arc_cap":75,
+            "eight_vertex_21_arc_cap":83,
+            "conditional_three_low":144,
+            "four_forbidden_profiles":156,
+            "final_indegree_budget":16,
+            "eight_vertex_26_arc_extremal":1}
     print(json.dumps(result,indent=2,sort_keys=True))
 
 if __name__=="__main__":
