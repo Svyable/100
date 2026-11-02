@@ -166,9 +166,19 @@
       "url": "https://svyable.github.io/100/library/lab-campaigns/"
     },
     {
+      "title": "M097 — exact metric TSP and subtour LP on trees of multitheta blocks",
+      "source": "research/M097_BLOCK_SUM.md",
+      "url": "https://svyable.github.io/100/library/m097-block-sum/"
+    },
+    {
       "title": "M097 — eight-vertex graph-metric subtour gap census",
       "source": "research/M097_GRAPH8.md",
       "url": "https://svyable.github.io/100/library/m097-graph8/"
+    },
+    {
+      "title": "M097 — exact subtour LP and TSP on subdivided parallel-path graphs",
+      "source": "research/M097_MULTITHETA.md",
+      "url": "https://svyable.github.io/100/library/m097-multitheta/"
     },
     {
       "title": "Proof-driven research engine",
