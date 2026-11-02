@@ -445,7 +445,7 @@
       "resources": {
         "agent_hours": 0.8
       },
-      "note": "Prime 1129 forbids both fixed shifts c=3 and c=7 by exact divisor and subgroup checks, but shift c=11 works. Universal wording of O-M019-01 is infeasible; no full Erdős–Straus counterexample, no novelty or independent review. Prior art Mordell 1963 and Dahan 2026."
+      "note": "Prime 1129 forbids both fixed shifts c=3 and c=7 by exact divisor and subgroup checks, but shift c=11 works. Universal wording of O-M019-01 is infeasible; no full Erd\u0151s\u2013Straus counterexample, no novelty or independent review. Prior art Mordell 1963 and Dahan 2026."
     },
     {
       "work_id": "X-M076-F43-EIGHT",
@@ -555,6 +555,21 @@
         "ci_minutes": 0
       },
       "note": "Complete 23-coefficient polynomial delivered with spin-transform/parity-DP agreement and exact edge-factor replays. The acceptance gap is independent mathematical review, so O-M073-02 remains open; no independently accepted or historically novel theorem claimed. Approximate active author/tool time including source inspection and verification; this record closes the bounded author contribution on merge."
+    },
+    {
+      "work_id": "X-M097-DEEP-CHORD-NET",
+      "scope_sha256": "ebd4e155b0221930f6f52a6bbf4a6ace8091747dbec90b63121a29cd4570c163",
+      "author": "ChatGPT (M097 separated interior chord network)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/243",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 1.0,
+        "ci_minutes": 0
+      },
+      "note": "Conditional on CI-gated merge. Author-derived all-orders restricted theorem candidate: arbitrary networks of well-separated interior chords preserve exact graphic-metric subtour LP and TSP values; joint geodesic-mass optimal-face inequality and sharp 13/12 ratio for at least two chords. Exact rational all-cut and subset-DP checks on 57 graph instances, seven separately formulated full-cut SciPy LP optimizations, ten adversarial tests and two shallow-boundary falsifiers. No historical novelty, independent specialist mathematical acceptance, global 4/3 bound, solved-state or coverage change. Project 100 PR Landing automation unchanged."
     }
   ]
 }
