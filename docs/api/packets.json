@@ -4,9 +4,9 @@
   "by_kind": {
     "benchmark": 0,
     "comparator": 0,
-    "job": 19,
+    "job": 18,
     "lean": 9,
-    "obligation": 25,
+    "obligation": 26,
     "review": 47,
     "roadmap": 0,
     "status_audit": 0
@@ -16,7 +16,7 @@
   "frontier_counts": {
     "discharged": 0,
     "externally_blocked": 1,
-    "runnable": 25,
+    "runnable": 26,
     "waiting_on_dependencies": 3
   },
   "naive_one_agent_per_problem": 100,
@@ -211,6 +211,18 @@
       "prior_art_boundary": "The unrestricted one-third–two-thirds conjecture remains open. This restricted all-orders proof candidate is not independently reviewed or historically established as novel; its 3,456,151-case finite core and 25/61 witness require independent specialist and prior-art review.",
       "problem_id": "M079",
       "statement": "Every finite poset of width exactly four consisting of a chain and four pairwise incomparable outsiders, each incomparable with a chain vertex, has balance constant at least 25/61, with a nine-element sharp witness.",
+      "unmet": []
+    },
+    {
+      "category": "runnable",
+      "falsifier": "A valid chain-plus-five width-five interval tuple with balance below 3/8; a missed normalized interval multiset; disagreement between the two exact recurrences or the relation-matrix checker; a flawed gap-atom cutoff; or a primary prior-art theorem covering this class and constant.",
+      "id": "O-M079-04",
+      "immediate_dependents": 0,
+      "kind": "lemma",
+      "next_action": "Independently audit the all-orders gap-atom and Helly reductions, the 40,355,371-case exact dual recurrence and 1405-extension witness in research/M079_CHAIN_PLUS_FIVE.md; obtain external mathematical and historical-novelty review. Do not change solved status.",
+      "prior_art_boundary": "The unrestricted 1/3–2/3 conjecture remains open. The earlier chain-plus-four 25/61 candidate is a different class; 2026 large-width asymptotic theorems and finite order-14 computations do not by themselves establish this all-orders fixed-width-five bound. Historical novelty and independent mathematical acceptance are not established.",
+      "problem_id": "M079",
+      "statement": "Every finite width-five poset consisting of a chain and five pairwise incomparable outsiders, each incomparable with at least one chain element, has balance constant at least 3/8; a 13-element witness has balance 2/5.",
       "unmet": []
     },
     {
@@ -416,13 +428,11 @@
     "M080",
     "M081",
     "M082",
-    "M083",
     "M084",
     "M085",
     "M086",
     "M087",
     "M088",
-    "M089",
     "M090",
     "M092",
     "M093",
@@ -432,7 +442,7 @@
     "M097",
     "M100"
   ],
-  "problems_touched": 53,
+  "problems_touched": 51,
   "protocol": "svyable.proof-exchange.v2",
   "refused": [
     {
@@ -465,7 +475,7 @@
     }
   ],
   "refused_count": 7,
-  "runnable_in_queue": 344,
+  "runnable_in_queue": 345,
   "selected_packets": [
     {
       "acceptance": [
@@ -884,6 +894,36 @@
         "scout": "Produce the exact artifact or restricted statement named in the deliverable."
       },
       "scope_sha256": "84935e9af0432bebe93d36668c13cfeef420b1f6da0720eac3fad96d36fb8f2c",
+      "status": "runnable",
+      "title": "Lemma obligation for M079"
+    },
+    {
+      "acceptance": [
+        "Discharge evidence recorded on O-M079-04 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "The unrestricted 1/3–2/3 conjecture remains open. The earlier chain-plus-four 25/61 candidate is a different class; 2026 large-width asymptotic theorems and finite order-14 computations do not by themselves establish this all-orders fixed-width-five bound. Historical novelty and independent mathematical acceptance are not established.",
+      "claim_title": "[Claim] O-M079-04 — Lemma obligation for M079",
+      "deliverable": "Independently audit the all-orders gap-atom and Helly reductions, the 40,355,371-case exact dual recurrence and 1405-extension witness in research/M079_CHAIN_PLUS_FIVE.md; obtain external mathematical and historical-novelty review. Do not change solved status.",
+      "depends_on": [],
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M079-04%22",
+      "falsifier": "A valid chain-plus-five width-five interval tuple with balance below 3/8; a missed normalized interval multiset; disagreement between the two exact recurrences or the relation-matrix checker; a flawed gap-atom cutoff; or a primary prior-art theorem covering this class and constant.",
+      "id": "O-M079-04",
+      "interpretation": "One claimable slot. Roles are a recommended split under that claim, not three independent truth votes.",
+      "kind": "obligation",
+      "leverage": 1188,
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M079-04%20%E2%80%94%20Lemma%20obligation%20for%20M079",
+      "priority_rank": 12,
+      "problems": [
+        "M079"
+      ],
+      "roles": {
+        "adversary": "Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.",
+        "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
+        "scout": "Produce the exact artifact or restricted statement named in the deliverable."
+      },
+      "scope_sha256": "74d7e0cf719ff8e1e5f52a2c5e93c54257f93fbaa43b0d396511457a9e435604",
       "status": "runnable",
       "title": "Lemma obligation for M079"
     },
@@ -3464,41 +3504,9 @@
       "scope_sha256": "e3ec9d514236416eb2f9844983b5671d054524310c204e85fbd00ed978186e18",
       "status": "runnable",
       "title": "Audit claim scope: One set, dimension and measure enclosed"
-    },
-    {
-      "acceptance": [
-        "Every problem on the job moves by the same action, or a precise gap is recorded per problem",
-        "Evidence lands in the ledger the action names (lab, claim review, campaign or obligation)",
-        "python3 scripts/regen.py && python3 scripts/regen.py --check",
-        "python3 -m unittest discover -s tests"
-      ],
-      "boundary": "A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.",
-      "claim_title": "[Claim] J-algebraic_complexity-specify_shape — Fill the shared attack shape: One format, replayed exactly",
-      "deliverable": "Shape algebraic_complexity (4 problems, one write-up): Fix the field and the format, then replay a published certificate or state the class a new hitting set claims to cover. Full shape, certificate and falsifier are in APPROACH.md.",
-      "depends_on": [],
-      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20J-algebraic_complexity-specify_shape%22",
-      "falsifier": "",
-      "id": "J-algebraic_complexity-specify_shape",
-      "interpretation": "One claimable slot. Roles are a recommended split under that claim, not three independent truth votes.",
-      "kind": "job",
-      "leverage": 782,
-      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-algebraic_complexity-specify_shape%20%E2%80%94%20Fill%20the%20shared%20attack%20shape%3A%20One%20format%2C%20replayed%20exactly",
-      "priority_rank": 28,
-      "problems": [
-        "M083",
-        "M089"
-      ],
-      "roles": {
-        "adversary": "Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.",
-        "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
-        "scout": "Produce the exact artifact or restricted statement named in the deliverable."
-      },
-      "scope_sha256": "cb0ed16006dfd483219a1999c5ec27aeda038a3d357c3b3dc142ebf8d1700cbc",
-      "status": "runnable",
-      "title": "Fill the shared attack shape: One format, replayed exactly"
     }
   ],
   "shape_count": 30,
   "slots_filled": 100,
-  "work_queue_size": 351
+  "work_queue_size": 352
 }

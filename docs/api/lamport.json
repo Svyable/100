@@ -1,7 +1,7 @@
 {
   "protocol": "svyable.lamport.v1",
   "meaning": "Structural proof-obligation registry, not proof validity",
-  "count": 29,
+  "count": 30,
   "obligations": [
     {
       "id": "O-M074-01",
@@ -354,6 +354,18 @@
       "prior_art_boundary": "The high-temperature expansion and Fourier/code duality are classical. Source-specific coefficients are new to this project only; no historical novelty, full Sidorenko resolution, finite counterexample host or independent acceptance is claimed.",
       "falsifier": "A coefficient differs between the monochromatic-face transform and the direct parity-state dynamic program, or an exact graphon evaluation disagrees with the polynomial.",
       "next_action": "Derive the representation bridge, record all exact coefficients for the pinned H, cross-check every coefficient with a parity-state algorithm and small exhaustive controls, and obtain independent mathematical review of research/M073_INFORMATION_ALIGNMENT.md before discharge.",
+      "depends_on": [],
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "O-M079-04",
+      "problem_id": "M079",
+      "kind": "lemma",
+      "statement": "Every finite width-five poset consisting of a chain and five pairwise incomparable outsiders, each incomparable with at least one chain element, has balance constant at least 3/8; a 13-element witness has balance 2/5.",
+      "prior_art_boundary": "The unrestricted 1/3–2/3 conjecture remains open. The earlier chain-plus-four 25/61 candidate is a different class; 2026 large-width asymptotic theorems and finite order-14 computations do not by themselves establish this all-orders fixed-width-five bound. Historical novelty and independent mathematical acceptance are not established.",
+      "falsifier": "A valid chain-plus-five width-five interval tuple with balance below 3/8; a missed normalized interval multiset; disagreement between the two exact recurrences or the relation-matrix checker; a flawed gap-atom cutoff; or a primary prior-art theorem covering this class and constant.",
+      "next_action": "Independently audit the all-orders gap-atom and Helly reductions, the 40,355,371-case exact dual recurrence and 1405-extension witness in research/M079_CHAIN_PLUS_FIVE.md; obtain external mathematical and historical-novelty review. Do not change solved status.",
       "depends_on": [],
       "status": "open",
       "evidence": null
