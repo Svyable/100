@@ -248,6 +248,11 @@
       "url": "https://svyable.github.io/100/library/m073-assortative-two-block/"
     },
     {
+      "title": "M073 — two-square edge neighborhoods sharpen the source-pinned Ising bound",
+      "source": "research/M073_EDGE_NEIGHBORHOOD.md",
+      "url": "https://svyable.github.io/100/library/m073-edge-neighborhood/"
+    },
+    {
       "title": "M073: aligning binary labels, parity constraints and graphon densities",
       "source": "research/M073_INFORMATION_ALIGNMENT.md",
       "url": "https://svyable.github.io/100/library/m073-information-alignment/"

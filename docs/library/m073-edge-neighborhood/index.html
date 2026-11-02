@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M073 — two-square edge neighborhoods sharpen the source-pinned Ising bound · 100</title>
+<meta name="description" content="November 2, 2026 · work ID X-M073-EDGE-NEIGHBORHOOD · claim #272. Evidence level: author-derived restricted continuum inequality and finite exact source certificate; no independent specialist proof review and no historical novelty determina">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m073-edge-neighborhood/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M073 — two-square edge neighborhoods sharpen the source-pinned Ising bound · 100">
+<meta property="og:description" content="November 2, 2026 · work ID X-M073-EDGE-NEIGHBORHOOD · claim #272. Evidence level: author-derived restricted continuum inequality and finite exact source certificate; no independent specialist proof review and no historical novelty determina">
+<meta property="og:url" content="https://svyable.github.io/100/library/m073-edge-neighborhood/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M073 — two-square edge neighborhoods sharpen the source-pinned Ising bound</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#precisely-bounded-result">Precisely bounded result</a></li><li class="toc-l2"><a href="#local-graph-construction-and-finite-source-premise">Local graph construction and finite source premise</a></li><li class="toc-l2"><a href="#exact-local-correlations-and-strict-gain">Exact local correlations and strict gain</a></li><li class="toc-l2"><a href="#exact-rational-boundary-witness">Exact rational boundary witness</a></li><li class="toc-l2"><a href="#reproduction-adversaria-and-failure-log">Reproduction, adversaria and failure log</a></li><li class="toc-l2"><a href="#literature-and-priority-boundary">Literature and priority boundary</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M073/" title="Sidorenko conjecture">M073</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M073_EDGE_NEIGHBORHOOD.md" rel="noopener noreferrer">research/M073_EDGE_NEIGHBORHOOD.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M073 — two-square edge neighborhoods sharpen the source-pinned Ising bound</h1>
+<p><strong>November 2, 2026 · work ID <code>X-M073-EDGE-NEIGHBORHOOD</code> · <a href="https://github.com/Svyable/100/issues/272" rel="noopener noreferrer">claim #272</a>.</strong> <strong>Evidence level:</strong> author-derived restricted continuum inequality and finite exact source certificate; <strong>no independent specialist proof review and no historical novelty determination</strong>. This is not a construction of the external finite Sidorenko host and does not resolve, affirm or refute the universal conjecture.</p>
+<h2 id="precisely-bounded-result">Precisely bounded result<a class="anchor" href="#precisely-bounded-result" aria-label="Link to this section">#</a></h2>
+<p>Let <code>H</code> be the 35-vertex, 66-edge point–face incidence graph of the 22 triples in <a href="https://github.com/Svyable/100/blob/main/data/reference/sidorenko_faces.json" rel="noopener noreferrer">the pinned source table</a>. For an equal-mass symmetric two-block graphon with matrix</p>
+<pre><code class="lang-text">           [ u + delta       b ]
+       W = [                   ],
+           [     b       u - delta ]</code></pre>
+<p>assume <code>0 &lt; u &lt;= b &lt;= 1</code>, <code>0 &lt;= delta &lt;= u</code>, and <code>u + delta &lt;= 1</code>. Put</p>
+<pre><code class="lang-text">p=(u+b)/2, q=(b-u)/(b+u), h=delta/u, R=1-h^2.</code></pre>
+<p>Define three polynomials (variable <code>q</code>):</p>
+<pre><code class="lang-text">D  = 1 + 5q^4 + 6q^6 + 11q^8 + 6q^10 + 3q^12,
+NA = q + 2q^3 + 7q^5 + 6q^7 + 11q^9 + 4q^11 + q^13,
+NB = q + 2q^3 + 6q^5 + 9q^7 +  8q^9 + 5q^11 + q^13.
+KA=NA/D, KB=NB/D.</code></pre>
+<p>Let <code>Z_H(q)=sum_{k=0}^{22} c_k q^(2k)</code> be the complete even-subgraph polynomial already proved by two finite recurrences in <a href="../../library/m073-information-alignment/">M073_INFORMATION_ALIGNMENT.md</a>. The coefficients <code>c_k</code> are the 23 entries in <a href="https://github.com/Svyable/100/blob/main/data/experiments/m073_information_alignment.json" rel="noopener noreferrer">data/experiments/m073_information_alignment.json</a>; in particular <code>c_0=1, c_2=33, c_3=88</code>, and all are nonnegative.</p>
+<p><strong>Restricted theorem candidate (with a source-table finite premise).</strong> For all real parameters in the domain above,</p>
+<pre><code class="lang-text">t(H,W) &gt;= p^66 * Z_H(q) * R^E(q),
+E(q) = (66 - 54 KA(q) - 12 KB(q))/4.                       (1)</code></pre>
+<p>At <code>h=1</code> the right side is interpreted as zero. For <code>0&lt;q&lt;1</code>, <code>0&lt;h&lt;1</code>, this is a <strong>strict improvement</strong> over the previous seven-vertex rung/Jensen/GKS certificate even after that older certificate is strengthened by the <strong>full</strong> even-subgraph factor <code>Z_H(q)</code>, rather than only its 4- and 6-cycle truncation. The old exponent is <code>66(1-K0(q))/4</code> where</p>
+<pre><code class="lang-text">K0(q) = (q + 2q^3 + 3q^5 + 2q^7)/(1+3q^4+4q^6).</code></pre>
+<p>This theorem is confined to the stated two-block family and the source-pinned <code>H</code>; the exact host claimed in the September 2026 manuscript is not checked here.</p>
+<h2 id="local-graph-construction-and-finite-source-premise">Local graph construction and finite source premise<a class="anchor" href="#local-graph-construction-and-finite-source-premise" aria-label="Link to this section">#</a></h2>
+<p>Fix a point–face incidence edge <code>i-f</code>, with <code>f={i,j,k}</code> and <code>j&lt;k</code>. Each occurring point pair lies in exactly two source triples. Write <code>g_ij,g_ik,g_jk</code> for the other faces containing the respective pairs. These four faces and the three points <code>i,j,k</code> form the seven-vertex, nine-edge rung graph of <a href="../../library/m073-rung-correlation/">M073_RUNG_CORRELATION.md</a>.</p>
+<p>Let <code>x_ij,x_ik,x_jk</code> be the third points of the three alternate faces (outside <code>f</code>). The three points are distinct for the pinned table. Let <code>h_ij</code> be the other face containing <code>{i,x_ij}</code>, <code>h_ik</code> the other face containing <code>{i,x_ik}</code>, and <code>h_jk</code> the other face containing <code>{j,x_jk}</code>.</p>
+<p>A <strong>square graft</strong> along <code>i-g_ij</code> adds the three-edge path <code>i-h_ij-x_ij-g_ij</code>, making a four-cycle. Graft a second square along <code>i-g_ik</code> if <code>h_ij != h_ik</code>; otherwise graft along <code>j-g_jk</code>. The source table has the following <strong>complete finite classification</strong>:</p>
+<div class="table-wrap"><table><thead><tr><th>Type</th><th>Condition</th><th class="al-right">Rooted incidences</th><th>Grafted rung edges</th></tr></thead><tbody><tr><td>A</td><td><code>h_ij != h_ik</code></td><td class="al-right">54</td><td><code>i-g_ij</code>, <code>i-g_ik</code></td></tr><tr><td>B</td><td><code>h_ij = h_ik</code></td><td class="al-right">12</td><td><code>i-g_ij</code>, <code>j-g_jk</code></td></tr></tbody></table></div>
+<p>For all 66 roots, <code>h_ij != h_jk</code>. Thus the two selected new points and two new faces are distinct, and the construction contains <strong>11 vertices and 15 specified edges</strong>. Four source neighborhoods have one <em>additional</em> incidence edge: the argument deliberately uses only the specified 15-edge subgraph, not an unjustified claim that every induced neighborhood has 15 edges.</p>
+<p>This finite premise is checked in two ways: an explicit pair-to-faces map and a separate incidence-neighbor search. Both enumerate all 66 roots and confirm the 54/12 split; both reject an adversarially mutated source triple. The SHA-256 guard on the 22-triple table is inherited from <code>m073_assortative2.load_faces</code>. The 54/12 split is <strong>not asserted</strong> for arbitrary pair-twice triple systems.</p>
+<h2 id="exact-local-correlations-and-strict-gain">Exact local correlations and strict gain<a class="anchor" href="#exact-local-correlations-and-strict-gain" aria-label="Link to this section">#</a></h2>
+<p>For a finite graph <code>G</code>, assign uniform spins <code>tau_v in {-1,+1}</code> and weight each edge by <code>1+q*tau_v*tau_w</code>. The high-temperature expansion gives</p>
+<pre><code class="lang-text">E_G[tau_i tau_f] =
+  (sum_{S subset E(G), boundary(S)={i,f}} q^|S|)
+  / (sum_{S subset E(G), boundary(S)=empty} q^|S|).</code></pre>
+<p>Direct enumeration of all <code>2^15=32768</code> edge subsets of each abstract two-square graph yields the common denominator <code>D</code> and the numerators <code>NA</code> and <code>NB</code> above. A <em>separate</em> direct sum over all <code>2^11=2048</code> spin assignments agrees exactly for rational values <code>q=0,1/3,3/4</code> (and additional test values). This is algorithmic cross-verification, not outside mathematical review.</p>
+<p>The strict polynomial identities are</p>
+<pre><code class="lang-text">KA-KB = q^5 (1-q^2)^3 / D,                              (2)
+
+KB-K0 = q^5 (1-q^2)^3 (1+q^2)
+        * (1+3q^2+2q^4+2q^6) / (D * D0),               (3)
+
+D0 = 1+3q^4+4q^6.</code></pre>
+<p>Every denominator is positive on <code>[0,1)</code>, and every numerator in (2)–(3) is strictly positive for <code>0&lt;q&lt;1</code>. Consequently the two-square correlations are uniformly better than the rung bound, and the 54 A-type roots have a further strict gain.</p>
+<p>To pass from local to full <code>H</code>, give each graph edge ferromagnetic coupling <code>atanh(q)&gt;=0</code>. The classical Griffiths–Kelly–Sherman second inequality implies that adding all remaining edges of <code>H</code> cannot decrease <code>E[tau_i tau_f]</code>. Thus each full-graph incidence correlation is at least <code>KA</code> on the 54 A roots and <code>KB</code> on the 12 B roots.</p>
+<p>For completeness, the earlier <a href="../../library/m073-antiferro-stability/">AM–GM/Jensen spin-flip proof</a> pairs each spin assignment with its global reversal, obtaining</p>
+<pre><code class="lang-text">t(H,W)/t(H,W0) &gt;= R^( E_mu0[M] / 2 ),
+W0=[[u,b],[b,u]],</code></pre>
+<p>where <code>M</code> is the number of edges monochromatic in the original spin labels. Flipping one bipartition turns the baseline into a ferromagnet; for each edge <code>e</code>, <code>Pr(e monochromatic)=(1-E[tau_i tau_f])/2</code>. The edgewise bounds give</p>
+<pre><code class="lang-text">E_mu0[M] &lt;= (66 - 54 KA - 12 KB)/2.</code></pre>
+<p>Because <code>0&lt;R&lt;=1</code>, the Jensen inequality yields <code>t(H,W)/t(H,W0) &gt;= R^E(q)</code>. Finally the exact high-temperature identity <code>t(H,W0)=p^66 Z_H(q)</code> proves (1). The case <code>h=1</code> follows by continuity.</p>
+<h2 id="exact-rational-boundary-witness">Exact rational boundary witness<a class="anchor" href="#exact-rational-boundary-witness" aria-label="Link to this section">#</a></h2>
+<p>Choose</p>
+<pre><code class="lang-text">(a,b,c)=(12443/20000, 1, 7557/20000),
+u=1/2, p=3/4, q=1/3, h=2443/10000,
+R=94031751/100000000.</code></pre>
+<p>At <code>q=1/3</code> the exact source spectrum and local correlations give</p>
+<pre><code class="lang-text">Z_H(1/3) = 598495823780642816000 / 328256967394537077627,
+KA(1/3) = 21899/53397,
+KB(1/3) = 21755/53397,
+E_new = 10199/1047,
+E_rung = 187/19.</code></pre>
+<p>The checker proves both strict inequalities <strong>by rational integer powers</strong>, without floating-point tolerance:</p>
+<pre><code class="lang-text">Z_H(1/3)^19   * R^187   &lt; 1,
+Z_H(1/3)^1047 * R^10199 &gt; 1.                          (4)</code></pre>
+<p>The corresponding old/new lower ratios are approximately <code>0.994975110</code> and <code>1.001174748</code>. This witness is certified by (1) but <strong>not by the rung inequality even when the rung uses the complete 23-coefficient spectrum</strong>. The exact actual density ratio, computed by direct 8192-point-label summation and independently by the source-profile histogram, is approximately <code>4.061229761</code>. The result is a stronger <em>sufficient certificate</em>, not a near-violation or a counterexample to Sidorenko.</p>
+<h2 id="reproduction-adversaria-and-failure-log">Reproduction, adversaria and failure log<a class="anchor" href="#reproduction-adversaria-and-failure-log" aria-label="Link to this section">#</a></h2>
+<p>From repository root:</p>
+<pre><code class="lang-sh">python3 scripts/m073_edge_neighborhood.py --check
+python3 -m unittest discover -s tests -p &#x27;test_m073_edge_neighborhood.py&#x27; -v
+python3 scripts/regen.py --check --fast
+python3 scripts/regen.py --check
+python3 -m unittest discover -s tests</code></pre>
+<p>The checker rederives the 54/12 source classification by two independently written searches, enumerates parity polynomials from edge subsets, checks them against direct spin sums, verifies the strict factorization identities and uses <strong>both</strong> the source spin and parity recurrences for <code>Z_H</code>. The rational witness uses exact large-integer inequalities. Tests corrupt a source triple, introduce a repeated point, break a square edge, test the <code>q</code> domain and challenge both strict-gain identities.</p>
+<p><strong>Failed or corrected avenues:</strong></p>
+<ul><li>Adding only the three third points of the alternate faces makes dangling leaves and <strong>does not</strong> improve endpoint correlation.</li><li>A uniform choice of the two squares attached at <code>i</code> fails at 12 roots because their completion faces coincide. The B-type alternative restores a distinct two-square motif.</li><li>Assuming every resulting <strong>induced</strong> 11-vertex neighborhood has exactly 15 edges is false at four roots; the proof uses a 15-edge <em>subgraph</em>, with monotonicity handling extras.</li><li>The first rational separation used only <code>1+33q^4+88q^6</code>, already dominated by the repository&#x27;s full even-subgraph polynomial. The final witness (4) challenges the stronger <strong>full-spectrum</strong> rung certificate instead.</li><li>A three-square 13-vertex uniform extension is obstructed by repeated completion faces at 12 roots; no three-square bound is asserted. Nothing here certifies all off-diagonal-dominant two-block parameters.</li></ul>
+<p><strong>Next falsifiers:</strong> independent external proof audit of the 54/12 source classification and the Jensen/GKS transfer; independently reimplement the two-square spin polynomials without this code; seek a larger uniformly embeddable motif or an actual two-block negative Sidorenko gap outside (1)&#x27;s sufficient tube. The full conjecture, the 2026 claimed finite host, and historical novelty remain separate questions.</p>
+<h2 id="literature-and-priority-boundary">Literature and priority boundary<a class="anchor" href="#literature-and-priority-boundary" aria-label="Link to this section">#</a></h2>
+<ul><li><a href="https://github.com/openai/math/tree/main/preprints/A-counterexample-to-Sidorenkos-conjecture-September-23-2026" rel="noopener noreferrer">OpenAI, <em>A counterexample to Sidorenko&#x27;s conjecture</em>, September 23, 2026</a>: source of the pinned incidence graph and the claimed external finite host; this work does not independently validate that claim.</li><li><a href="https://doi.org/10.1063/1.1705219" rel="noopener noreferrer">Griffiths, <em>Correlations in Ising Ferromagnets. I</em> (1967)</a> and <a href="https://doi.org/10.1063/1.1664600" rel="noopener noreferrer">Kelly–Sherman, <em>General Griffiths&#x27; Inequalities</em> (1968)</a>: classical ferromagnetic correlation monotonicity.</li><li><a href="https://www.unige.ch/math/folks/velenik/smbook/Ising_Model.pdf" rel="noopener noreferrer">Friedli–Velenik, <em>The Ising Model</em>, §3.5</a>: high-temperature parity expansion.</li><li><a href="https://doi.org/10.37236/614" rel="noopener noreferrer">Lovász, <em>Subgraph Densities in Signed Graphons and the Local Simonovits–Sidorenko Conjecture</em> (2011)</a>: relevant local graphon inequality context.</li><li>Existing <a href="../../library/m073-rung-correlation/">rung proof</a> and <a href="../../library/m073-information-alignment/">complete spectrum</a>, both author-derived and not independently accepted.</li></ul>
+<p>The 11-vertex motif polynomials and weighted 54/12 edgewise certificate are <strong>new to this repository</strong>. They are <strong>not claimed historically new</strong>: no exhaustive literature-priority search or independent specialist review has been completed. No problem status, solved entry, coverage allocation or separate PR-landing workflow changes.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>
