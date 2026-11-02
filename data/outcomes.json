@@ -383,6 +383,22 @@
         "agent_hours": 0.9
       },
       "note": "Approximate active work including literature/source audit, initial failed <=4-swap avenue, orbit matching derivation, two five-cover enumeration paths, independent 7261-candidate sweep, adversarial controls and regeneration. Author-derived sharp restricted local stability candidate only; no 55-set witness, no new global sunflower bound, no independent mathematical or historical novelty review. Status conditional on PR merge; The custom packet adds no proof-obligation or coverage slot; independent review remains open."
+    },
+    {
+      "work_id": "X-BENCHMARK-READINESS",
+      "scope_sha256": "3794e22615fefe0950f21503921a21edaf273d6d575c8a70ea927ed2d0574af8",
+      "author": "ChatGPT (matched-trial benchmark readiness guard)",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/192",
+      "pr_url": "https://github.com/Svyable/100/pull/194",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.6,
+        "ci_minutes": 0
+      },
+      "note": "Scoped infrastructure: separate 36-cell record coverage from successful completed trials, explicit timeout/error counts by arm, synthetic complete/timeout/error/missing-grid negative controls, 12 dedicated passing tests. No real agent trials (0/36), no mathematical result or independent review; pending-review outcome is conditional on PR merge."
     }
   ]
 }

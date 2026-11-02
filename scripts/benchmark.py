@@ -162,6 +162,8 @@ def summarize(doc, runs):
         by_arm[arm] = {
             "recorded": len(subset),
             "completed": sum(r["status"] == "completed" for r in subset),
+            "timeouts": sum(r["status"] == "timeout" for r in subset),
+            "errors": sum(r["status"] == "error" for r in subset),
             "known_reproductions": sum(r["classification"] == "known_reproduction" for r in subset),
             "unreviewed_restricted": sum(r["classification"] == "restricted_unreviewed" for r in subset),
             "reviewed_restricted": sum(r["classification"] == "externally_reviewed_restricted" for r in subset),
@@ -174,7 +176,14 @@ def summarize(doc, runs):
         "expected_trials": len(doc["tasks"]) * len(doc["arms"]) * len(doc["seeds"]),
         "recorded_trials": len(runs),
         "missing_trials": len(missing),
-        "comparable": not missing and len(runs) > 0 and not contaminated,
+        "completed_trials": sum(r["status"] == "completed" for r in runs),
+        "timeout_trials": sum(r["status"] == "timeout" for r in runs),
+        "error_trials": sum(r["status"] == "error" for r in runs),
+        "all_cells_recorded": not missing,
+        "matched_trials_completed": not missing and len(runs) > 0
+                                    and all(r["status"] == "completed" for r in runs),
+        "comparable": not missing and len(runs) > 0
+                      and all(r["status"] == "completed" for r in runs) and not contaminated,
         "novelty_contaminated_tasks": contaminated,
         "by_arm": by_arm,
         "warning": ("No experimental speedup can be claimed until all matched trials "
@@ -199,8 +208,10 @@ def main():
     elif args.json:
         print(json.dumps(summary, indent=2, sort_keys=True))
     else:
-        print("Proof-exchange benchmark: {} / {} matched trials recorded".format(
-            summary["recorded_trials"], summary["expected_trials"]))
+        print("Proof-exchange benchmark: {} / {} matched trials recorded ({} completed, {} timeout, {} error)".format(
+            summary["recorded_trials"], summary["expected_trials"],
+            summary["completed_trials"], summary["timeout_trials"], summary["error_trials"]))
+        print("All matched trials completed: " + ("yes" if summary["matched_trials_completed"] else "no"))
         print("Comparable completed experimental evidence: " + ("yes" if summary["comparable"] else "no"))
         for arm, row in summary["by_arm"].items():
             print("{}: {} completed, {} reviewed restricted, {} known reproductions".format(
