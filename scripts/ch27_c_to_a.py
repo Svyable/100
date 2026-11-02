@@ -74,20 +74,45 @@ def classify(alpha, k):
 
 def report():
     counts = Counter()
+    # The C-to-A proof was independently derived before the z4-sink lemma.
+    # Preserve its 288 exclusions (including four also excluded by the sink
+    # lemma), while separately showing the DISJOINT sequential accounting.
+    staged = Counter()
+    overlaps = []
     survivors = []
     for a in b_internal.alpha_profiles():
         for k in b_internal.k_profiles_with_four_zeros():
+            prior = b_internal.classify(a, k)
             classification = classify(a, k)
             counts[classification] += 1
+            if prior == "z4_sink_cut":
+                lower, upper = bound_C_to_A(a, k)
+                if classification != "c_to_a_bottleneck" or upper >= lower:
+                    raise AssertionError("Previously excluded sink profile is not independently C-to-A excluded")
+                staged["z4_sink_cut"] += 1
+                overlaps.append({"alpha": a, "k": k,
+                                 "needed_c_to_a": lower, "possible_c_to_a_upper": upper})
+            elif prior == "unresolved":
+                staged[classification] += 1
             if classification == "unresolved":
                 lower, upper = bound_C_to_A(a, k)
                 survivors.append({"alpha": a, "k": k,
                                   "needed_c_to_a": lower, "possible_c_to_a_upper": upper})
+    # Under precedence, the sink proof takes credit for four profiles, which
+    # MUST NOT be counted again as new incremental C-to-A exclusions.
+    if (staged["z4_sink_cut"] + staged["c_to_a_bottleneck"]
+            != counts["c_to_a_bottleneck"]):
+        raise AssertionError("Overlapping sink/C-to-A exclusions double counted")
     return {"scope": "Necessary integer profiles for one CH(27,9) indegree-ten root with z=4; not graphs",
             "total_profiles": sum(counts.values()),
             "stages": dict(sorted(counts.items())),
+            "disjoint_late_stages": dict(sorted(staged.items())),
+            "sink_and_c_to_a_overlap": overlaps,
             "survivors": survivors,
-            "claim": "All 295 formerly unresolved z=4 integer profiles excluded, conditional on the stated local prerequisites"}
+            "claim": ("All 295 formerly unresolved z=4 integer profiles excluded: "
+                      "288 by the independent C-to-A classifier, or disjointly "
+                      "4 earlier sink + 284 incremental C-to-A + 7 terminal; "
+                      "conditional on stated local prerequisites")}
 
 
 def main(argv=None):
@@ -105,6 +130,14 @@ def main(argv=None):
             "protected_A_forces_C_tournament_sink": 3,
             "eight_vertex_degree_defect": 3,
         }
+        assert result["disjoint_late_stages"] == {
+            "z4_sink_cut": 4, "c_to_a_bottleneck": 284,
+            "five_protected_threes_overfill_five_vertices": 1,
+            "protected_A_forces_C_tournament_sink": 3,
+            "eight_vertex_degree_defect": 3,
+        }
+        assert len(result["sink_and_c_to_a_overlap"]) == 4
+        assert sum(result["disjoint_late_stages"].values()) == 295
     print(json.dumps(result, sort_keys=True, indent=2))
 
 
