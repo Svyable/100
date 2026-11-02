@@ -44,11 +44,15 @@ For even `k`, all long paths once and no direct edge form a connected Eulerian s
 ```sh
 python3 -m scripts.m097_chorded_multitheta --max-vertices 12 --json
 python3 -m unittest discover -s tests -p 'test_m097_chorded_multitheta.py' -v
+python3 -m scripts.m097_chorded_mincut
+python3 -m unittest discover -s tests -p 'test_m097_chorded_mincut.py' -v
 ```
 
 Observed author-side exact sweep: **92** nondecreasing tuples, `2<=k<=5`, `2<=L_i<=7`, and at most 12 vertices; 45 even-k, 35 odd-k with a length-two path, 12 odd-k with all lengths at least three. Each instance reconstructs the shortest-path metric by BFS, verifies the proposed rational LP point against every degree and nontrivial cut, and independently computes the exact Hamiltonian tour optimum by subset DP (not by the parity formula). **Seven** targeted adversarial tests pass, including altered LP degree, invalid parameters, the direct edge's presence, parity boundaries and a false naive extension.
 
 A separate, optional SciPy HiGHS implementation, written with a different graph representation and all full-subtour inequalities, independently optimized **20** instances of at most eight vertices and matched `SEP=m`. This is author-side cross-checking, **not** an independent specialist review.
+
+**Additional adversarial min-cut replay (same author, separate algorithm).** The standalone `scripts/m097_chorded_mincut.py` reconstructs the rational witness from scratch as an integer-capacity weighted graph scaled by `k(k-1)`, without importing the original checker. It checks degree `2k(k-1)` at every vertex, cost `m k(k-1)`, and the **global** cut minimum `2k(k-1)` via a separately implemented Stoer–Wagner algorithm. The cut algorithm is itself compared with brute-force bipartitions on 210 seeded arbitrary weighted graphs with 2–8 vertices, including disconnected cases. The seven large/boundary examples include 20 length-two paths (22 vertices, cut 760 at scale 380), 13 length-three paths (28 vertices, cut 312 at scale 156), and four lengths (5,7,9,11) (30 vertices, cut 24 at scale 12). A one-unit edge-capacity tamper reduces a singleton cut below the bound, and invalid-length inputs are rejected. The independent algorithm and representation reduce shared implementation risk, but are still **author-produced checks, not external mathematical review**. These checks do not establish historical novelty or the completeness of the paper search.
 
 **Failed extrapolations and boundaries:** (1) Treating the direct edge as a length-one path in the old unchorded formula predicts `SEP=m+1`, which is false already for `k=2,L=(2,2)` (actual `SEP=4`, not 5). (2) A direct hub edge does not always eliminate the fractional gap: `k=3,L=(3,3,3)` has `SEP=9,TSP=10`. (3) The restriction `k>=2` matters: with only one long path, `G` is a simple cycle and `SEP=TSP=L+1`, not `L`. (4) Adding the hub edge does not necessarily shorten the optimal tour; for even `k`, both chorded and unchorded formulas equal `m`.
 
