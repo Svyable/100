@@ -1,0 +1,31 @@
+name: One-time Ramsey integrity generated-ledger refresh
+on:
+  push:
+    branches: [fix/ramsey-witness-integrity-rebase]
+permissions:
+  contents: write
+jobs:
+  regenerate:
+    if: github.ref == 'refs/heads/fix/ramsey-witness-integrity-rebase'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/ramsey-witness-integrity-rebase
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 scripts/regen.py
+      - run: python3 scripts/regen.py --check --fast
+      - run: python3 -m unittest discover -s tests -p 'test_ramsey_witness_integrity.py' -v
+      - name: Commit generated files and remove temporary workflow
+        run: |
+          rm .github/workflows/regen-ramsey-once.yml
+          git add -A
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --cached --quiet; then
+            git commit -m "Refresh generated ledgers after Ramsey certificate hardening"
+            git push origin HEAD:fix/ramsey-witness-integrity-rebase
+          fi
