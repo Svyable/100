@@ -1,0 +1,32 @@
+name: One-shot eight-deletion integration regeneration
+on:
+  push:
+    branches: [fix/m076-eight-current]
+permissions:
+  contents: write
+jobs:
+  regenerate:
+    if: github.ref == 'refs/heads/fix/m076-eight-current'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/m076-eight-current
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 -m scripts.m076_f43_eight --check --json
+      - run: python3 -m unittest discover -s tests -p 'test_m076_f43_eight.py' -v
+      - run: python3 scripts/regen.py
+      - run: python3 scripts/regen.py --check --fast
+      - name: Commit regeneration and remove temporary workflow
+        run: |
+          rm .github/workflows/regen-m076-eight-once.yml
+          git add -A
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --cached --quiet; then
+            git commit -m "Refresh generated M076 eight-deletion ledger and site"
+            git push origin HEAD:fix/m076-eight-current
+          fi
