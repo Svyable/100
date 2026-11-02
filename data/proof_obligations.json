@@ -331,6 +331,18 @@
       "depends_on": [],
       "status": "open",
       "evidence": null
+    },
+    {
+      "id": "O-M079-03",
+      "problem_id": "M079",
+      "kind": "lemma",
+      "statement": "Every finite poset of width exactly four consisting of a chain and four pairwise incomparable outsiders, each incomparable with a chain vertex, has balance constant at least 25/61, with a nine-element sharp witness.",
+      "prior_art_boundary": "The unrestricted one-third–two-thirds conjecture remains open. This restricted all-orders proof candidate is not independently reviewed or historically established as novel; its 3,456,151-case finite core and 25/61 witness require independent specialist and prior-art review.",
+      "falsifier": "An admissible chain-plus-four poset with balance below 25/61, a missed normalized interval multiset, a failed exact counter comparison, a flaw in the conditional 3/4 atom bound, or an earlier theorem proving this class and constant.",
+      "next_action": "Independently audit the common-gap/width-four reduction, 19-gap atom lemma, 3,456,151-case exhaustive transcript and 183-extension witness; search historical interval-order literature and obtain independent mathematical and novelty reviews.",
+      "depends_on": [],
+      "status": "open",
+      "evidence": null
     }
   ]
 }

@@ -399,6 +399,22 @@
         "ci_minutes": 0
       },
       "note": "Scoped infrastructure: separate 36-cell record coverage from successful completed trials, explicit timeout/error counts by arm, synthetic complete/timeout/error/missing-grid negative controls, 12 dedicated passing tests. No real agent trials (0/36), no mathematical result or independent review; pending-review outcome is conditional on PR merge."
+    },
+    {
+      "work_id": "O-M079-03",
+      "scope_sha256": "36362184e179a52f5dfa06a25f1b26725de83f0120ba68c3aaeecb7005e6541c",
+      "author": "ChatGPT (M079 chain-plus-four proof candidate)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/183",
+      "pr_url": "https://github.com/Svyable/100/pull/184",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.9,
+        "ci_minutes": 0
+      },
+      "note": "Estimated 0.9 active agent-hours, including unsuccessful 4/L threshold and 5/12 strengthening. New all-orders 25/61 width-four chain-plus-four proof candidate with two integer counters over 3,456,151 normalized cases and literal sharp-witness enumeration; no historical novelty or independent mathematical review. PR #184; pending independent review and novelty audit."
     }
   ]
 }
