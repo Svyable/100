@@ -118,10 +118,27 @@ def exact_tour(d):
                if mask == full)
 
 
+def verify_optimal_geodesic_exclusion(adj, paths, a, b, x):
+    """Adversarial check on the explicit optimum; not a universal LP proof."""
+    d = metric(adj)
+    for u, v in ((0, 1), (paths[0][a], paths[1][b])):
+        adj[u].remove(v)
+        adj[v].remove(u)
+        d0 = metric(adj)
+        adj[u].add(v)
+        adj[v].add(u)
+        for (i, j), weight in x.items():
+            if weight and min(d0[i][u]+1+d0[v][j],
+                              d0[i][v]+1+d0[u][j]) == d[i][j]:
+                raise AssertionError(("geodesic-support violation", i, j, u, v))
+
+
 def check_instance(lengths, a, b):
     adj, paths = instance(lengths, a, b)
     m = sum(lengths)
-    cost = verify_witness(adj, paths, rational_witness(paths))
+    x = rational_witness(paths)
+    cost = verify_witness(adj, paths, x)
+    verify_optimal_geodesic_exclusion(adj, paths, a, b, x)
     tour = exact_tour(metric(adj))
     expected = m + (len(lengths) % 2)*int(min(lengths) >= 3)
     if cost != m or tour != expected:
