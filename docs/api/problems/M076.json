@@ -78,9 +78,19 @@
       "url": "https://svyable.github.io/100/library/m076-f43-eight/"
     },
     {
+      "title": "M076 — seven insertions after eleven deletions, and an exact one-step neighborhood",
+      "source": "research/M076_F43_ELEVEN_WITNESS.md",
+      "url": "https://svyable.github.io/100/library/m076-f43-eleven-witness/"
+    },
+    {
       "title": "M076 — sharp nine-deletion stability of the 54-set sunflower family",
       "source": "research/M076_F43_NINE.md",
       "url": "https://svyable.github.io/100/library/m076-f43-nine/"
+    },
+    {
+      "title": "M076 — biclique conflict graphs and the exact one-insertion deletion spectrum",
+      "source": "research/M076_F43_ORBIT_THRESHOLDS.md",
+      "url": "https://svyable.github.io/100/library/m076-f43-orbit-thresholds/"
     },
     {
       "title": "M076 — sharp seven-deletion rigidity around the classical 54-set family",
