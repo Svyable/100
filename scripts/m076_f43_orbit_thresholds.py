@@ -95,6 +95,44 @@ def structural_colors(family, c):
     return colors
 
 
+
+def biclique_decomposition(edges, colors, n):
+    """Exact complete-bipartite connected-component certificate.
+
+    Isolated vertices are omitted. Every nontrivial connected component
+    must have every possible cross-color edge and no within-color edge.
+    """
+    adj = [set() for _ in range(n)]
+    for i, j in edges:
+        assert colors[i] != colors[j]
+        adj[i].add(j)
+        adj[j].add(i)
+    seen = set()
+    components = []
+    for root in range(n):
+        if root in seen:
+            continue
+        seen.add(root)
+        q = deque([root])
+        vertices = []
+        while q:
+            u = q.popleft()
+            vertices.append(u)
+            for v in adj[u]:
+                if v not in seen:
+                    seen.add(v)
+                    q.append(v)
+        if len(vertices) == 1:
+            continue
+        left = tuple(sorted(i for i in vertices if colors[i] == 0))
+        right = tuple(sorted(i for i in vertices if colors[i] == 1))
+        assert left and right
+        assert all(adj[i] == set(right) for i in left)
+        assert all(adj[j] == set(left) for j in right)
+        components.append((left, right))
+    return tuple(components)
+
+
 def matching_and_cover(edges, colors, n):
     """Construct matching and same-size vertex cover (Koenig certificate)."""
     left = sorted(i for i in range(n) if colors[i] == 0)
@@ -186,7 +224,9 @@ def independent_bitmask_sweep(family, expected):
                         q.append(v)
                     else:
                         assert color[v] != color[u], (c, u, v)
+        components = biclique_decomposition(edges, color, 54)
         matching, cover = matching_and_cover(edges, color, 54)
+        assert sum(min(len(a), len(b)) for a, b in components) == len(cover)
         key = orbit_key(frozenset(c))
         assert len(matching) == expected[key], (c, key, len(matching), expected[key])
         checked += 1
@@ -204,13 +244,16 @@ def check(full_sweep=True):
     for key, c in sorted(reps.items()):
         edges = conflict_edges(family, c)
         colors = structural_colors(family, c)
+        components = biclique_decomposition(edges, colors, len(family))
         matching, cover = matching_and_cover(edges, colors, len(family))
+        assert sum(min(len(a), len(b)) for a, b in components) == len(cover)
         assert verify_witness(family, c, cover) == 55 - len(cover)
         thresholds[key] = len(cover)
         table.append({"outsiders": key[0], "blocks": [list(v) for v in key[1]],
                       "representative": sorted(c), "orbit_size_on_22": sizes[key],
                       "edges": len(edges), "minimum_deletions": len(cover),
                       "matching": [list(pair) for pair in matching],
+                      "biclique_sides": [[len(a), len(b)] for a, b in components],
                       "cover": list(cover)})
     expected = (5, 6, 9, 11, 12, 13, 15, 15, 16, 18, 18, 19, 19, 21, 21, 24, 27, 27)
     assert tuple(sorted(thresholds.values())) == expected
@@ -223,6 +266,7 @@ def check(full_sweep=True):
             "candidates_on_22": sum(sizes.values()),
             "orbit_free_candidates_checked": swept,
             "bipartite_conflict_graphs": len(reps),
+            "biclique_decomposable_graphs": len(reps),
             "threshold_multiset": list(expected), "table_sha256": digest,
             "independent_mathematical_review": False, "table": table}
 

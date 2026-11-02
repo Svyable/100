@@ -65,5 +65,29 @@ class OrbitThresholdTests(unittest.TestCase):
             m.matching_and_cover(edges, {i: i % 2 for i in range(5)}, 5)
 
 
+    def test_every_conflict_component_is_complete_bipartite(self):
+        for c in self.reps.values():
+            edges = m.conflict_edges(self.family, c)
+            colors = m.structural_colors(self.family, c)
+            components = m.biclique_decomposition(edges, colors, 54)
+            self.assertEqual(len(edges), sum(len(a)*len(b) for a, b in components))
+            matching, _ = m.matching_and_cover(edges, colors, 54)
+            self.assertEqual(len(matching), sum(min(len(a), len(b))
+                                                for a, b in components))
+
+    def test_hand_eleven_and_arbitrary_cardinality(self):
+        c = frozenset((0, 1, 3, 9))
+        parts = m.biclique_decomposition(m.conflict_edges(self.family, c),
+                                         m.structural_colors(self.family, c), 54)
+        self.assertEqual(sorted(tuple(sorted((len(a), len(b)))) for a, b in parts),
+                         [(1, 1), (1, 3), (3, 3), (3, 3), (3, 15)])
+        import random
+        rng = random.Random(20261102)
+        for _ in range(256):
+            c = frozenset(i for i in range(25) if rng.getrandbits(1))
+            m.biclique_decomposition(m.conflict_edges(self.family, c),
+                                     m.structural_colors(self.family, c), 54)
+
+
 if __name__ == "__main__":
     unittest.main()
