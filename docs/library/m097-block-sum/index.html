@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M097 — exact metric TSP and subtour LP on trees of multitheta blocks · 100</title>
+<meta name="description" content="Claim: #189. Work ID: X-M097-BLOCK-SUM. Scope SHA-256: a30860c84ceb8a1d24b6bedb10bbdc085b6560e7060888dff6ceb675846f974f. Date: 2026-11-01.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m097-block-sum/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M097 — exact metric TSP and subtour LP on trees of multitheta blocks · 100">
+<meta property="og:description" content="Claim: #189. Work ID: X-M097-BLOCK-SUM. Scope SHA-256: a30860c84ceb8a1d24b6bedb10bbdc085b6560e7060888dff6ceb675846f974f. Date: 2026-11-01.">
+<meta property="og:url" content="https://svyable.github.io/100/library/m097-block-sum/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M097 — exact metric TSP and subtour LP on trees of multitheta blocks</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#exact-statement">Exact statement</a></li><li class="toc-l2"><a href="#proof-a-fractional-articulation-gluing">Proof A: fractional articulation gluing</a></li><li class="toc-l2"><a href="#proof-b-explicit-global-rational-cut-dual-lower-bound">Proof B: explicit global rational cut-dual lower bound</a></li><li class="toc-l2"><a href="#proof-c-integer-tour-additivity">Proof C: integer tour additivity</a></li><li class="toc-l2"><a href="#reproduction-independent-algorithmic-paths-and-negative-controls">Reproduction, independent algorithmic paths, and negative controls</a></li><li class="toc-l2"><a href="#literature-provenance-and-next-falsifiers">Literature, provenance and next falsifiers</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M097/" title="Metric TSP four-thirds conjecture">M097</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M097_BLOCK_SUM.md" rel="noopener noreferrer">research/M097_BLOCK_SUM.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M097 — exact metric TSP and subtour LP on trees of multitheta blocks</h1>
+<p><strong>Claim:</strong> <a href="https://github.com/Svyable/100/issues/189" rel="noopener noreferrer">#189</a>. <strong>Work ID:</strong> <code>X-M097-BLOCK-SUM</code>. <strong>Scope SHA-256:</strong> <code>a30860c84ceb8a1d24b6bedb10bbdc085b6560e7060888dff6ceb675846f974f</code>. <strong>Date:</strong> 2026-11-01.</p>
+<p><strong>Classification:</strong> author-derived all-orders restricted proof candidate, with exact rational certificates and separate tour/LP checks. <strong>Historical novelty is unestablished and independent mathematical review has not occurred.</strong> The unrestricted metric-TSP 4/3 conjecture is not resolved.</p>
+<h2 id="exact-statement">Exact statement<a class="anchor" href="#exact-statement" aria-label="Link to this section">#</a></h2>
+<p>Let G be a finite connected <strong>simple unweighted</strong> graph with at least two vertices, constructed by repeatedly identifying exactly one vertex of a new block with one existing vertex. Each block is one of: a bridge (single edge); a simple cycle of length at least 3; or a subdivided parallel-path graph with k&gt;=2 internally vertex-disjoint paths between two hubs, of integer lengths L_i&gt;=2, and no additional edges. These are genuine blocks in a block-cut tree, not arbitrary overlapping subgraphs.</p>
+<p>Let c_G be the shortest-path metric. The symmetric Held–Karp subtour LP has nonnegative complete-graph edge variables, degree exactly two at every vertex, and cut weight at least two for every nontrivial cut. A two-vertex local bridge uses edge weight two, without an upper-bound-one convention.</p>
+<p>Let b be the number of bridge blocks. For each cycle C let |C| be its edge count. For each multitheta block B put m_B=sum_i L_i, k_B=number of paths, and ell_B=min_i L_i. Then</p>
+<p>[ \operatorname{SEP}(c_G)=2b+\sum_C |C|+\sum_B m_B, ]</p>
+<p>[ \operatorname{TSP}(c_G)=2b+\sum_C |C|+ \sum_B\bigl(m_B+(k_B\bmod 2)(\ell_B-2)\bigr). ]</p>
+<p>Consequently the ratio is exactly</p>
+<p>[ 1+\frac{\sum_{B:\ k_B\ {\rm odd}}(\ell_B-2)} {2b+\sum_C|C|+\sum_Bm_B}&lt;4/3. ]</p>
+<p>It is one for every cactus graph (all blocks bridges or cycles), and can be greater than one even with bridges: theta(3,3,3) plus one pendant edge has SEP=11, TSP=12. The 4/3 limit is approached by a single classical theta(L,L,L) as L grows, not newly discovered here.</p>
+<h2 id="proof-a-fractional-articulation-gluing">Proof A: fractional articulation gluing<a class="anchor" href="#proof-a-fractional-articulation-gluing" aria-label="Link to this section">#</a></h2>
+<p>Suppose G1 and G2 meet only in vertex v. Let x1,x2 be feasible subtour points for their respective shortest-path metrics, with degree of v equal to two in each. Write a_u=x1(v,u), b_w=x2(v,w), so sum_u a_u=sum_w b_w=2. Retain every edge not incident to v; halve all weights on v-u and v-w; add cross-edge weight a_u b_w/4 between u in G1-v and w in G2-v.</p>
+<p>Every other vertex retains degree two: the removed a_u/2 is replaced by sum_w a_u b_w/4=a_u/2. At v degree is (2+2)/2=2. All weights remain nonnegative.</p>
+<p>For a cut with v outside, write A⊆V(G1)-v, B⊆V(G2)-v, a=sum_{u∈A}a_u, b=sum_{w∈B}b_w, and d_i the original x_i cut weights for A and B. Direct expansion gives the new cut weight</p>
+<p>[ d_1+d_2-\frac{ab}{2}. ]</p>
+<p>If only one of A,B is nonempty, the cut is at least two. If both are nonempty, d1,d2≥2 and 0≤a,b≤2, so the result is at least 4-2=2. Cuts containing v follow by complementation. Every cross-block shortest path passes through v. Replacing half of each v-edge with cross weights preserves total objective exactly, since each side&#x27;s removed cost is replaced by its contribution to cross-edge distances. Iterate to glue arbitrarily many blocks.</p>
+<p><strong>Failed first approach:</strong> simply taking the union of local subtour points gives articulation degree four, not two. The cross-edge gluing is necessary.</p>
+<h2 id="proof-b-explicit-global-rational-cut-dual-lower-bound">Proof B: explicit global rational cut-dual lower bound<a class="anchor" href="#proof-b-explicit-global-rational-cut-dual-lower-bound" aria-label="Link to this section">#</a></h2>
+<p>For any complete-metric feasible x, route each x_ab along any shortest path in G. Let y_e be the resulting nonnegative load on original graph edge e. Routing preserves objective, and y(δ(S))≥x(δ(S))≥2 for every cut S.</p>
+<p>The following nonnegative weighted cuts have total coefficient <strong>exactly one on every original edge</strong>:</p>
+<ul><li>For each bridge e, remove e and take either component, with cut weight 1. Its boundary is {e}.</li><li>For each cycle vertex w, remove its two cycle edges and take the component containing w, including any attached blocks. Give that cut weight 1/2. Each cycle edge occurs in exactly two cuts.</li><li>For each multitheta path of length L, for each pair i&lt;j of its L edges, remove those two edges and take the component containing the internal path segment between them, including attached blocks. Give that cut weight 1/(L-1). Each path edge occurs in L-1 cuts.</li></ul>
+<p>The block-cut-tree assumption ensures that these boundaries contain exactly the claimed original edges: an outside detour joining two distinct vertices of a block would destroy the decomposition. Summing weighted cut inequalities yields</p>
+<p>[ \sum_{e\in E(G)}y_e\ \ge\ 2b+\sum_C |C|+\sum_Bm_B. ]</p>
+<p><code>dual_cut_cover</code> checks every boundary and coefficient in exact rational arithmetic; the proof does not rely on a general graphical-TSP splitting-off theorem. Bridge and cycle blocks have evident matching local primal points (edge weight two for a bridge, one per cycle edge). For multitheta blocks use the explicit rational point from <a href="../../library/m097-multitheta/">the prior M097 multitheta dossier</a>, including its cut analysis. Proof A glues the local points without changing their summed objective. This matches the lower bound exactly.</p>
+<h2 id="proof-c-integer-tour-additivity">Proof C: integer tour additivity<a class="anchor" href="#proof-c-integer-tour-additivity" aria-label="Link to this section">#</a></h2>
+<p>A metric tour expands into a closed spanning walk on G at equal cost; conversely such a walk shortcuts to a metric tour at no greater cost. In a 1-sum, every excursion from one side into the other returns through the same articulation vertex. Therefore the walk restricted to each side is itself a closed spanning walk. Conversely concatenate optimal closed walks at the articulation. Induction gives TSP additivity.</p>
+<p>A bridge must be traversed twice, a cycle has optimum its length, and the <a href="../../library/m097-multitheta/">multitheta Eulerian parity argument</a> gives m_B+(k_B mod 2)(ell_B-2). This proves the integer formula. For each odd k_B≥3, ell_B-2&lt;m_B/3; the aggregate ratio is strictly below 4/3.</p>
+<h2 id="reproduction-independent-algorithmic-paths-and-negative-controls">Reproduction, independent algorithmic paths, and negative controls<a class="anchor" href="#reproduction-independent-algorithmic-paths-and-negative-controls" aria-label="Link to this section">#</a></h2>
+<p>Run:</p>
+<pre><code class="lang-sh">python3 scripts/m097_block_sum.py --check --json
+python3 -m unittest discover -s tests -p &#x27;test_m097_block_sum.py&#x27; -v
+python3 scripts/regen.py --check</code></pre>
+<p>The standard-library script checks all degree equations and all complete-graph subtour cuts for a rational glued primal; every component-cut boundary and exact coefficient for the cut dual; and a separate iterative Held–Karp tour DP that ignores the block formula, including the 15-vertex two-theta case. Direct permutation enumeration checks a small glued-cycle example. Sixteen tests include 40 seeded random block trees, tampered primal and dual certificates, invalid blocks, bridge pitfalls and parity boundaries.</p>
+<p>A separately authored SciPy HiGHS full-subtour-LP formulation (outside the committed standard-library script) returned optima <strong>9, 11, 12, 13</strong> for theta(3,3,3), that theta plus a leaf, plus a triangle, and plus a square, respectively. These numerical checks are secondary to the exact rational certificates and are <strong>not</strong> independent specialist review.</p>
+<p><strong>Negative results:</strong> (i) naive union of block LP points violates the degree equation at an articulation; (ii) &quot;any graph with a bridge has an integral Held–Karp optimum&quot; is false (nine-vertex theta plus leaf: 12/11); (iii) attaching blocks cannot increase the maximum block ratio within this class, by the weighted-average formula. (iv) extending block additivity to two-vertex overlap fails: two triangles sharing an edge have a four-edge Hamiltonian cycle, not the naive six-edge sum. No exhaustive search over all graph metrics was attempted.</p>
+<h2 id="literature-provenance-and-next-falsifiers">Literature, provenance and next falsifiers<a class="anchor" href="#literature-provenance-and-next-falsifiers" aria-label="Link to this section">#</a></h2>
+<ul><li>Held and Karp, <em>The Traveling-Salesman Problem and Minimum Spanning Trees</em>, Operations Research 18 (1970), <a href="https://doi.org/10.1287/opre.18.6.1138" rel="noopener noreferrer">DOI 10.1287/opre.18.6.1138</a>: classical LP framework.</li><li>Sebő and Vygen, <em>Shorter Tours by Nicer Ears</em>, <a href="https://arxiv.org/abs/1201.1870" rel="noopener noreferrer">arXiv:1201.1870</a> (2012): graphic TSP and 2-edge-connectivity context.</li><li>Cook, Hougardy and Petrich, <em>Extending Exact Integrality Gap Computations for the Metric TSP</em>, <a href="https://arxiv.org/abs/2603.12995" rel="noopener noreferrer">arXiv:2603.12995</a> (2026): recent small-n baseline.</li><li><a href="../../library/m097-multitheta/">Merged M097 multitheta proof candidate</a>, claim #187 / PR #188: the local block formula, not independent novelty certification.</li><li>A targeted search for articulation-additive subtour bounds and cactus graphic TSP did not locate this exact cut-cover and gluing presentation. This <strong>does not establish historical novelty</strong>: articulation decomposition and graphical subtour relaxations are classical, and a specialist may find it implied by prior work.</li></ul>
+<p><strong>Next falsifiers:</strong> independently audit the gluing cut identity and the two-removed-edges boundary in arbitrary block trees; find prior published 1-sum/additivity results subsuming the statement; independently regenerate rational primal/dual objects; test whether any analogous decomposition survives <strong>two-vertex</strong> attachment (cross-block paths may bypass the interface). No change to <code>data/solved.json</code>, evidence states or PR-landing cadence is justified.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>
