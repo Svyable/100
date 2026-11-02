@@ -31,6 +31,22 @@ Suppose now `k` is odd and **every** `L_i>=3`. Assume for contradiction that a c
 
 Therefore `TSP>=m+1` in this case. The connected Eulerian multigraph containing every long path once and the direct edge `uv` once has cost `m+1`. The integral formula follows.
 
+## Quantitative LP stability and optimal-face exclusion
+
+The same proof yields an all-orders inequality stronger than the optimum-value formula. For any feasible subtour point of objective `m+epsilon` with `epsilon>=0`, let `B_xy` consist of complete-metric pairs admitting **at least one** shortest route through the added cross-edge `xy`. Then
+
+```
+sum_{ab in B_xy} x_ab <= epsilon.
+```
+
+The same inequality holds separately for the set `B_uv` of pairs admitting a shortest route through the direct hub edge. In particular, **every subtour optimum gives zero weight to every metric pair admitting a geodesic through either added edge**, even when shortest paths are tied.
+
+Proof: route every positive metric pair along any shortest original-graph path. Write `delta_A=sum_{e in A} y_e-|A|>=0` for each of the disjoint original-path segments `A` from step 1. The exact cost decomposition is `epsilon=y_uv+y_xy+sum_A delta_A`. To bound the mass on `B_xy`, independently choose a shortest route through `xy` for each pair in that set. This gives `y_xy>=sum_{ab in B_xy}x_ab` and `y_xy<=epsilon`. Repeat with a separate route selection for `uv`. No claim is made that both bounds can be added without accounting for pairs admitting both kinds of routes.
+
+For each segment `A` of length `s>=3`, its pair-cut inequalities and `delta_A<=epsilon` additionally give `1-epsilon/(s-2) <= y_e <= 1+epsilon` for every segment edge `e` under **any** shortest-route selection. Indeed, writing `z_e=y_e-1`, every pair satisfies `z_e+z_f>=0`; a negative deviation `-t` forces all other deviations at least `t`, hence `delta_A>=(s-2)t`, while a positive deviation `t` forces `delta_A>=t`. At optimum every edge on every segment of length at least three has routed load exactly one. The length-two exception is real: only the sum of its two loads is forced to two.
+
+This stability statement is author-derived and has **not** been independently reviewed or checked for historical priority.
+
 ## Reproduction, adversarial checks, failed hypotheses
 
 `python3 -m scripts.m097_interior_cross --check` reconstructs the graph and BFS metric, verifies the explicit primal in exact `Fraction` arithmetic against every degree and nontrivial subtour cut, and independently computes the tour optimum with a subset dynamic program. **83** parameter-and-position instances of at most 12 vertices passed, including asymmetric path lengths, length-two uncrossed paths, odd/even path counts and both deep-cross endpoint positions. A separate author-written, independently formulated SciPy/HiGHS full-cut LP optimization matched `SEP=m` on **all 83** cases (floating-point cross-check only; not committed as an independent mathematical review). Additional exact tour DP probes included `(5,5,5)`, `(6,6,4)`, and larger even-path cases. The test rejects a tampered LP witness with spurious hub-edge mass.
