@@ -431,6 +431,21 @@
         "ci_minutes": 0
       },
       "note": "Fixes previously demonstrated empty-certificate vacuity and unbound M095 summaries; 16 adversarial regressions plus prior lab tests. Outcome is conditional on exact-head CI and merge. No theorem, novelty, independent specialist review or accepted work item."
+    },
+    {
+      "work_id": "O-M073-02",
+      "scope_sha256": "f530835caa13124e",
+      "author": "ChatGPT (M073 information alignment)",
+      "outcome": "gap_reported",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/195",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.35,
+        "ci_minutes": 0
+      },
+      "note": "Complete 23-coefficient polynomial delivered with spin-transform/parity-DP agreement and exact edge-factor replays. The acceptance gap is independent mathematical review, so O-M073-02 remains open; no independently accepted or historically novel theorem claimed. Approximate active author/tool time including source inspection and verification; this record closes the bounded author contribution on merge."
     }
   ]
 }
