@@ -185,21 +185,24 @@ Z_H(1/3) = 598495823780642816000 / 328256967394537077627,
 KA(1/3) = 21899/53397,
 KB(1/3) = 21755/53397,
 E_new = 10199/1047,
+E_uniform_B = 174031/17799,
 E_rung = 187/19.
 ```
 
-The checker proves both strict inequalities **by rational integer
+The checker proves all three strict inequalities **by rational integer
 powers**, without floating-point tolerance:
 
 ```text
-Z_H(1/3)^19   * R^187   < 1,
-Z_H(1/3)^1047 * R^10199 > 1.                          (4)
+Z_H(1/3)^19    * R^187    < 1,     (rung + full spectrum)
+Z_H(1/3)^17799 * R^174031 < 1,     (uniform B + full spectrum)
+Z_H(1/3)^1047  * R^10199  > 1.     (54/12 weighted bound) (4)
 ```
 
-The corresponding old/new lower ratios are approximately
-`0.994975110` and `1.001174748`. This witness is certified by
-(1) but **not by the rung inequality even when the rung uses the
-complete 23-coefficient spectrum**. The exact actual density ratio,
+The corresponding rung/uniform-B/weighted lower ratios are approximately
+`0.994975110`, `0.998934253` and `1.001174748`. This witness is
+certified by (1) but **not even by the uniform two-square B inequality
+with the complete 23-coefficient spectrum**. The 54/12 source-specific
+weighting is necessary for this particular certificate. The exact actual density ratio,
 computed by direct 8192-point-label summation and independently
 by the source-profile histogram, is approximately `4.061229761`.
 The result is a stronger *sufficient certificate*, not a near-violation

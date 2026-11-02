@@ -90,7 +90,9 @@ class EdgeNeighborhoodTests(unittest.TestCase):
         self.assertEqual(sample["weights"],
                          ["12443/20000", "1", "7557/20000"])
         self.assertTrue(sample["rung_plus_full_spectrum_below_one"])
-        self.assertTrue(sample["two_square_plus_full_spectrum_above_one"])
+        self.assertEqual(sample["uniform_exponent"], "174031/17799")
+        self.assertTrue(sample["uniform_two_square_plus_full_spectrum_below_one"])
+        self.assertTrue(sample["weighted_two_square_plus_full_spectrum_above_one"])
         self.assertTrue(sample["density_paths_agree"])
 
     def test_bad_q_rejected(self):

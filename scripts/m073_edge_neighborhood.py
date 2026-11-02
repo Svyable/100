@@ -172,14 +172,22 @@ def source_sample(faces):
     k0 = evaluate(RUNG_NUM, q) / evaluate(RUNG_DEN, q)
     exponent = (Q(66) - 54 * ka - 12 * kb) / 4
     old_exponent = Q(66, 4) * (1 - k0)
-    if (ka, kb, exponent, old_exponent) != (
-            Q(21899, 53397), Q(21755, 53397), Q(10199, 1047), Q(187, 19)):
+    uniform_exponent = Q(66, 4) * (1 - kb)
+    if (ka, kb, exponent, old_exponent, uniform_exponent) != (
+            Q(21899, 53397), Q(21755, 53397), Q(10199, 1047),
+            Q(187, 19), Q(174031, 17799)):
         raise AssertionError("exact exponent drift")
     # Exact integer-power comparisons; no floating-point proof.
     old = margin**old_exponent.denominator * R**old_exponent.numerator
+    # The large uniform-B comparison uses direct integer powers to avoid
+    # expensive repeated Fraction gcds on million-bit numerators.
+    uniform_below = (margin.numerator**uniform_exponent.denominator *
+                     R.numerator**uniform_exponent.numerator <
+                     margin.denominator**uniform_exponent.denominator *
+                     R.denominator**uniform_exponent.numerator)
     new = margin**exponent.denominator * R**exponent.numerator
-    if not old < 1 < new:
-        raise AssertionError("strict new-only certificate failed")
+    if not old < 1 or not uniform_below or not new > 1:
+        raise AssertionError("strict weighted-only certificate failed")
     weights = ((12443, 20000), (20000, 7557))
     direct = numerator_by_faces(faces, weights)
     factors = [12443**z * 20000**(3 - z) +
@@ -197,11 +205,14 @@ def source_sample(faces):
         "full_even_subgraph_factor_at_q": str(margin),
         "q": str(q), "h": str(h), "R": str(R),
         "K_A": str(ka), "K_B": str(kb),
-        "old_exponent": str(old_exponent), "new_exponent": str(exponent),
+        "old_exponent": str(old_exponent), "uniform_exponent": str(uniform_exponent),
+        "new_exponent": str(exponent),
         "rung_plus_full_spectrum_below_one": old < 1,
-        "two_square_plus_full_spectrum_above_one": new > 1,
+        "uniform_two_square_plus_full_spectrum_below_one": uniform_below,
+        "weighted_two_square_plus_full_spectrum_above_one": new > 1,
         "density_paths_agree": direct == compressed,
         "old_lower_ratio_approx": round(float(margin) * float(R)**float(old_exponent), 9),
+        "uniform_lower_ratio_approx": round(float(margin) * float(R)**float(uniform_exponent), 9),
         "new_lower_ratio_approx": round(float(margin) * float(R)**float(exponent), 9),
         "actual_ratio_approx": round(float(actual_ratio), 9),
     }
