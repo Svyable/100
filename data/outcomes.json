@@ -633,6 +633,22 @@
       "note": "Conditional on CI-gated merge. Sharp restricted candidate 1951/4659 for width-seven chain plus seven incomparable outsiders, each with 2..6 insertion gaps. Complete 436680-case dual exact census, 2612268-case out-of-scope seven-gap challenge, independent literal-poset witness and 30 seeded checks, adversarial mutation controls, literature comparison, failed 21/50 extrapolation, and full regeneration. Approximate active author/tool effort including failed avenues. No independent specialist review or historical novelty confirmation, no general M079 resolution, no solved/coverage changes; separate PR-landing task untouched."
     },
     {
+      "work_id": "X-M078-S4-NINE",
+      "scope_sha256": "d4e86c4ea0c6af8aa1668d0dd37e1e13dcb1022b3ff62fc1b3a7b08923f040ce",
+      "author": "ChatGPT (M078 paired-card-signature obstruction)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/262",
+      "pr_url": "https://github.com/Svyable/100/pull/263",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.4,
+        "ci_minutes": 0
+      },
+      "note": "Conditional on successful CI-gated merge. Author-derived all-orders connected planar subcubic unicyclic counterexamples to the paired degree/cycle-count card signature S_k for each k>=4 and n>=k+5; explicit nine-vertex S4 failure, bipartiteness separation, degree-neighborhood-profile proof, two exact card counting implementations and adversarial tests. Failed isomorphic and dense search avenues recorded. No historical-novelty confirmation, independent specialist acceptance, full graph reconstruction counterexample, solved-state or coverage change. Separate PR-landing task untouched."
+    },
+    {
       "work_id": "X-M079-CHAIN8-FIVEGAP",
       "scope_sha256": "942df0b779572efeb770428d95ebce6bda37b9a4bd0247465706c50ff21da08b",
       "author": "ChatGPT (M079 eight-outsider five-gap research)",
