@@ -21,6 +21,8 @@ class TenDeletionTests(unittest.TestCase):
         self.assertEqual(
             self.result["high_capacity_visits_with_multiplicity"], 18730)
         self.assertEqual(self.result["distinct_high_capacity_ten_covers"], 9841)
+        self.assertEqual(self.result["high_capacity_mask_sha256"],
+                         "531d31cdc363cd14d072d1871065e5f10fbb99e02b133a41d785cf17f0c08d01")
 
     def test_high_capacity_distribution(self):
         self.assertEqual(self.result["high_capacity_distribution"],

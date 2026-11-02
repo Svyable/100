@@ -8,6 +8,7 @@ high-capacity masks using literal sets and all outsider equality partitions.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import math
 import os
@@ -97,11 +98,27 @@ def inputs():
     catalog = sum(nine.candidates(), ())
     assert len(catalog) == 306
     edge_map = tuple(eight.forbidden_edges(c) for c in catalog)
+    # A spurious forbidden edge could incorrectly exclude a genuine
+    # insertion. Replay *all* 306 graphs with a distinct set representation,
+    # not merely the individually allowed candidates in the final census.
+    for c, edges in zip(catalog, edge_map):
+        candidate = frozenset(i for i in range(19) if c & (1 << i))
+        literal_edges = {((1 << i) | (1 << j))
+                         for i in range(54) for j in range(i)
+                         if old[i] & old[j] == old[i] & candidate
+                         == old[j] & candidate}
+        assert literal_edges == set(edges)
     supers = tuple(
         sum(1 << j for j, a in enumerate(eight.FAMILY)
             if (a & c & eight.SUPPORT) == (c & eight.SUPPORT))
         if 162 <= i < 270 else 0
         for i, c in enumerate(catalog))
+    for i, c in enumerate(catalog):
+        if 162 <= i < 270:
+            triple = frozenset(j for j in range(18) if c & (1 << j))
+            literal_supers = sum(1 << j for j, a in enumerate(old)
+                                 if triple <= a)
+            assert literal_supers == supers[i]
     raw = [str(len(mins)), *(str(d) for d in sorted(mins)),
            str(len(catalog))]
     for i, edges in enumerate(edge_map):
@@ -142,7 +159,10 @@ def scan_cpp(data):
             assert masks[d] == cap
         masks[d] = cap
     assert len(masks) == 9841
-    return masks, visited, high_raw
+    digest = hashlib.sha256(("\n".join(map(str, sorted(masks)))
+                             + "\n").encode("ascii")).hexdigest()
+    assert digest == "531d31cdc363cd14d072d1871065e5f10fbb99e02b133a41d785cf17f0c08d01"
+    return masks, visited, high_raw, digest
 
 
 def literal_sunflower(a, b, c):
@@ -226,7 +246,7 @@ def verify_no_six(masks, catalog, edge_map, supers):
 
 def check():
     data, catalog, edges, supers, cover_types = inputs()
-    masks, visited, raw_high = scan_cpp(data)
+    masks, visited, raw_high, digest = scan_cpp(data)
     caps, selections, partitions = verify_no_six(masks, catalog, edges, supers)
     size, triples = verify_witness()
     return {
@@ -239,6 +259,7 @@ def check():
         "ten_cover_superset_visits_with_multiplicity": visited,
         "high_capacity_visits_with_multiplicity": raw_high,
         "distinct_high_capacity_ten_covers": len(masks),
+        "high_capacity_mask_sha256": digest,
         "high_capacity_distribution": caps,
         "six_slot_subsets_checked": selections,
         "outsider_equality_patterns_checked": partitions,
