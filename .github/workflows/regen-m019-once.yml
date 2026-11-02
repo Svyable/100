@@ -1,0 +1,32 @@
+name: One-time M019 fixed-shift generated-ledger refresh
+on:
+  push:
+    branches: [fix/m019-fixed-shift-integration]
+permissions:
+  contents: write
+jobs:
+  regenerate:
+    if: github.ref == 'refs/heads/fix/m019-fixed-shift-integration'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/m019-fixed-shift-integration
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 scripts/straus_shift_gate.py --check
+      - run: python3 -m unittest discover -s tests -p 'test_straus_shift_gate.py' -v
+      - run: python3 scripts/regen.py
+      - run: python3 scripts/regen.py --check --fast
+      - name: Commit regenerated files and remove this bootstrap
+        run: |
+          rm .github/workflows/regen-m019-once.yml
+          git add -A
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --cached --quiet; then
+            git commit -m "Refresh generated source-bound M019 fixed-shift results"
+            git push origin HEAD:fix/m019-fixed-shift-integration
+          fi
