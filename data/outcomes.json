@@ -355,6 +355,21 @@
       "note": "Submitted all-orders restricted proof candidate with 63-case exact primal and tour checks, separate HiGHS rational primal/dual audit, 12 adversarial tests. Pending merge and independent mathematical/novelty review; classic three-path lower-bound family is known. Includes failed nine-vertex extrapolation leads."
     },
     {
+      "work_id": "X-M097-BLOCK-SUM",
+      "scope_sha256": "a30860c84ceb8a1d24b6bedb10bbdc085b6560e7060888dff6ceb675846f974f",
+      "author": "ChatGPT (M097 block-tree restricted proof candidate)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/189",
+      "pr_url": "https://github.com/Svyable/100/pull/190",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 1.0
+      },
+      "note": "Submitted exact all-orders articulation-gluing and cut-dual certificate proof candidate for graph metrics with bridge, cycle and multitheta blocks. Sixteen adversarial tests, 40 seeded random block trees, exact rational primal/dual verification, independent integer tour DP and separate small SciPy LP cross-check. Naive block-LP union fails degree constraints; two-vertex overlap fails additivity; a bridge does not imply LP integrality. Classical block decomposition may subsume historical novelty. No external proof or novelty review; conditional on PR merge, not a resolution of metric TSP four-thirds."
+    },
+    {
       "work_id": "X-M095-WITNESS-REPLAY",
       "scope_sha256": "330f9bc2c7095364cf2091fefa545f760eeea36530f7cc3c84ad681cf082d182",
       "author": "ChatGPT (M095 verifier integrity repair)",
