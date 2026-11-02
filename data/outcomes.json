@@ -662,6 +662,22 @@
         "agent_hours": 0.35
       },
       "note": "Conditional on CI-gated merge; all-orders restricted negative theorem candidate with author-run Python and independent-algorithm C++ census; no independent specialist proof review, historical novelty audit, or full-deck reconstruction counterexample. Failed shorter-leg extrapolations included in effort."
+    },
+    {
+      "work_id": "X-M079-CHAIN8-FIVEGAP",
+      "scope_sha256": "942df0b779572efeb770428d95ebce6bda37b9a4bd0247465706c50ff21da08b",
+      "author": "ChatGPT (M079 eight-outsider five-gap research)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/264",
+      "pr_url": "https://github.com/Svyable/100/pull/265",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.4,
+        "ci_minutes": 0
+      },
+      "note": "Conditional on successful CI-gated merge. All-orders width-eight chain-plus-eight incomparable outsiders with 2..5 gaps, sharp candidate 22648/50201 from 156157 normalized multisets with two exact recurrences, full-poset and forced-relation cross-checks, explicit dual sharp witnesses, 10-element literal permutation control, 11 dedicated adversarial tests, and six-gap boundary counterexample 59392/133057. Full regeneration and fast checks passed; the optional local repository-wide suite was stopped after 509 tests without reported failure to avoid duplicating CI. Approximate active author/tool time including failed extrapolation and primary-source audit. No independent specialist proof or novelty acceptance, no general M079 resolution, no solved/coverage change, and separate PR Landing unchanged."
     }
   ]
 }
