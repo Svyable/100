@@ -95,6 +95,52 @@ class EdgeNeighborhoodTests(unittest.TestCase):
         self.assertTrue(sample["weighted_two_square_plus_full_spectrum_above_one"])
         self.assertTrue(sample["density_paths_agree"])
 
+    def test_surface_link_structural_lemma_on_two_other_spheres(self):
+        # Octahedron: six degree-four points, eight faces, all B.
+        octa = [tuple(sorted((pole, 2+i, 2+(i+1) % 4)))
+                for pole in (0, 1) for i in range(4)]
+        # Icosahedron: twelve degree-five points, twenty faces, all A.
+        ico = []
+        for i in range(5):
+            a, b = 1+i, 1+(i+1) % 5
+            c, d = 6+i, 6+(i+1) % 5
+            ico.extend(((0, a, b), (11, c, d), (a, b, c), (b, c, d)))
+        for faces, n, expected, degrees in (
+                (octa, 6, {"A": 0, "B": 24}, {4: 6}),
+                (ico, 12, {"A": 60, "B": 0}, {5: 12})):
+            with self.subTest(points=n):
+                classes, hist = target.surface_link_certificate(faces, n)
+                self.assertEqual(classes, expected)
+                self.assertEqual(hist, degrees)
+                # Independently build both square-completion faces at every root.
+                for fi, f in enumerate(faces):
+                    for i in f:
+                        j, k = sorted(set(f) - {i})
+                        g = [next(t for t, tri in enumerate(faces)
+                                  if t != fi and set(pair) <= set(tri))
+                             for pair in ((i, j), (i, k), (j, k))]
+                        x = [next(v for v in faces[t] if v not in f) for t in g]
+                        h = [next(t for t, tri in enumerate(faces)
+                                  if t != g0 and {v, p} <= set(tri))
+                             for v, p, g0 in zip((i, i, j), x, g)]
+                        self.assertNotEqual(h[0], h[2])
+                        kind = "A" if h[0] != h[1] else "B"
+                        self.assertEqual(kind, "B" if n == 6 else "A")
+                        z = 1 if kind == "A" else 2
+                        vertices = (i, n+fi, j, k, n+g[0], n+g[1],
+                                    n+g[2], x[0], n+h[0], x[z], n+h[z])
+                        self.assertEqual(len(set(vertices)), 11)
+
+    def test_nonmanifold_or_low_degree_surface_rejected(self):
+        octa = [tuple(sorted((pole, 2+i, 2+(i+1) % 4)))
+                for pole in (0, 1) for i in range(4)]
+        with self.assertRaises(ValueError):
+            target.surface_link_certificate(octa[:-1], 6)
+        # Boundary of tetrahedron has degree three: squares collide.
+        tetra = [(0, 1, 2), (0, 1, 3), (0, 2, 3), (1, 2, 3)]
+        with self.assertRaises(ValueError):
+            target.surface_link_certificate(tetra, 4)
+
     def test_bad_q_rejected(self):
         for q in (Q(-1, 10), Q(1), Q(11, 10)):
             with self.assertRaises(ValueError):

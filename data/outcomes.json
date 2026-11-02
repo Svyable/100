@@ -693,7 +693,7 @@
         "agent_hours": 0.3,
         "ci_minutes": 0
       },
-      "note": "Conditional on CI-gated merge. Source-pinned 11-vertex 15-edge two-square Ising motifs at all 66 M073 incidences, 54/12 exact class split, two independently coded incidence searches, 2^15 edge-subset and 2^11 spin checks, exact positive factorizations and a full-23-coefficient-spectrum rational boundary witness. Ten adversarial tests, full regeneration and fast regeneration passed before ledger update. No independent specialist mathematical review or historical novelty assessment; no universal Sidorenko resolution or finite host. PR Landing task unchanged."
+      "note": "Conditional on CI-gated merge. General link-cycle lemma for incidence graphs of closed simplicial triangulated surfaces with minimum point degree four: every incidence edge contains an 11-vertex 15-edge A/B two-square Ising motif, B iff point degree four; source H has 54 A and 12 B. Exact 2^15 parity and 2^11 spin checks, three independent-style source/link enumerators, octahedral/icosahedral controls, full 23-coefficient spectrum and a rational witness separating rung, uniform B and weighted bounds. Twelve adversarial tests and full regeneration passed locally; repository-wide tests/CI separately tracked. Historical novelty and independent specialist review unestablished; no universal Sidorenko resolution or finite host. PR Landing unchanged."
     }
   ]
 }

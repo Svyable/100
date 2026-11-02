@@ -60,9 +60,60 @@ exponent is `66(1-K0(q))/4` where
 K0(q) = (q + 2q^3 + 3q^5 + 2q^7)/(1+3q^4+4q^6).
 ```
 
-This theorem is confined to the stated two-block family and the
-source-pinned `H`; the exact host claimed in the September 2026
-manuscript is not checked here.
+Formula (1) is confined to the stated two-block family and the
+source-pinned `H`; the structural mechanism extends to the surface
+incidence class in (1s) below. The exact host claimed in the September
+2026 manuscript is not checked here.
+
+## Structural link-cycle lemma (not limited to the pinned table)
+
+The two-square mechanism has a general geometric formulation. Let `T` be
+any finite closed simplicial triangulated surface, possibly disconnected,
+whose every vertex has degree at least four. Let `H(T)` be its
+point–triangle incidence graph, let `m=3|F(T)|`, and let `v4` be
+the number of degree-four vertices of `T`. **Link-cycle lemma:** every
+point–face incidence edge of `H(T)` contains the same 11-vertex
+15-edge A- or B-type two-square subgraph, and its type is B **if and
+only if** its point vertex has degree four. Hence exactly `4*v4`
+rooted incidences have type B and `m-4*v4` have type A.
+
+**Proof.** The link of a vertex `i` is a simple cycle of length
+`d(i)>=4`. The face `{i,j,k}` corresponds to the link edge `jk`.
+The two other faces on `ij` and `ik` correspond to the preceding
+and succeeding edges of that cycle. The third points of these faces
+are distinct because the link is not a triangle. Their further
+completions `h_ij` and `h_ik` coincide precisely when the
+preceding and succeeding two-step link edges coincide, which occurs
+exactly for a four-cycle, `d(i)=4`. If they coincide, use instead
+the square along `j-g_jk`; its completion face cannot contain
+`i`, since `ij` already belongs to the two distinct faces
+`f` and `g_ij`. Thus it is distinct from `h_ij`. All the
+required new vertices are distinct: a third-point collision would
+make the link of one of `i,j,k` a triangle, forbidden by the
+degree-four minimum. Every specified edge belongs to an actual
+point–face incidence, so the 11-vertex 15-edge subgraph exists.
+There are exactly `d(i)` incidence roots at each point `i`,
+giving the count. □
+
+The same GKS/Jensen proof consequently gives the **general surface
+incidence bound**
+
+```text
+t(H(T),W) >= p^m Z_H(T)(q) *
+ R^[(m - (m-4*v4)*KA(q) - 4*v4*KB(q))/4].                (1s)
+```
+
+Here `Z_H(T)(q)` denotes the even-subgraph generating polynomial of
+`H(T)`; no particular surface topology, genus or source-table
+spectrum is assumed. This is a restricted **two-block** statement,
+not a general Sidorenko theorem. The pinned 22-triangle system is
+checked to have connected cycle links with degree histogram
+`{4:3,5:6,6:4}`; hence `v4=3`, `m=66`, and the general lemma
+explains the 54/12 classification without depending on label
+ordering. An independent link-graph checker confirms this premise,
+and the test suite challenges the lemma on the octahedral sphere
+(all 24 roots B) and icosahedral sphere (all 60 roots A), as well
+as a boundary and a degree-three negative control.
 
 ## Local graph construction and finite source premise
 

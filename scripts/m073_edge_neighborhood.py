@@ -106,6 +106,46 @@ def independent_source_counts(faces):
     return dict(kinds)
 
 
+def surface_link_certificate(faces, points):
+    """Link-cycle theorem premise for a closed simplicial triangulated surface.
+
+    Returns the degree-four count and predicted A/B incidence counts.
+    Uses only triangle links, not the square-completion search above.
+    """
+    if points < 1 or len(set(map(frozenset, faces))) != len(faces):
+        raise ValueError("invalid simplicial complex")
+    links = [dict() for _ in range(points)]
+    pair_count = Counter()
+    for face in faces:
+        if len(face) != 3 or len(set(face)) != 3 or any(
+                not isinstance(v, int) or not 0 <= v < points for v in face):
+            raise ValueError("invalid face")
+        for i in face:
+            j, k = (v for v in face if v != i)
+            links[i].setdefault(j, set()).add(k)
+            links[i].setdefault(k, set()).add(j)
+            pair_count[frozenset((j, k))] += 1
+    if any(n != 2 for n in pair_count.values()):
+        raise ValueError("surface has a boundary or nonmanifold edge")
+    degrees = []
+    for neighbors in links:
+        if len(neighbors) < 4 or any(len(adj) != 2 for adj in neighbors.values()):
+            raise ValueError("vertex link is not a cycle of length at least four")
+        seen = {next(iter(neighbors))}
+        frontier = list(seen)
+        while frontier:
+            for x in neighbors[frontier.pop()]:
+                if x not in seen:
+                    seen.add(x)
+                    frontier.append(x)
+        if len(seen) != len(neighbors):
+            raise ValueError("vertex link has disconnected cycles")
+        degrees.append(len(neighbors))
+    b = 4 * sum(d == 4 for d in degrees)
+    a = 3 * len(faces) - b
+    return {"A": a, "B": b}, Counter(degrees)
+
+
 def boundary_polynomial(edges, odd=()):
     """Direct high-temperature parity enumeration, all 2^15 edge subsets."""
     masks = [(1 << a) ^ (1 << b) for a, b in edges]
@@ -222,8 +262,11 @@ def audit():
     faces = load_faces()
     witnesses = source_motifs(faces)
     counts = dict(Counter(kind for _, _, kind, _ in witnesses))
-    if counts != {"A": 54, "B": 12} or independent_source_counts(faces) != counts:
-        raise AssertionError("source incidence class census drift")
+    surface_counts, degree_hist = surface_link_certificate(faces, 13)
+    if (counts != {"A": 54, "B": 12} or
+            independent_source_counts(faces) != counts or
+            surface_counts != counts or degree_hist != {4: 3, 5: 6, 6: 4}):
+        raise AssertionError("source incidence or surface-link census drift")
     for edges, expected_num in ((EDGES_A, NUM_A), (EDGES_B, NUM_B)):
         if boundary_polynomial(edges) != DEN:
             raise AssertionError("even boundary polynomial drift")
@@ -240,6 +283,7 @@ def audit():
     return {
         "rooted_incidence_edges": len(witnesses),
         "class_counts": counts,
+        "surface_link_degrees": dict(degree_hist),
         "motif_vertices": 11, "motif_edges": 15,
         "even_boundary": DEN, "odd_boundary_A": NUM_A, "odd_boundary_B": NUM_B,
         "strict_A_over_B": "q^5(1-q^2)^3/D(q)",
