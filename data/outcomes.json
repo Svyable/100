@@ -477,6 +477,21 @@
         "ci_minutes": 0
       },
       "note": "Estimated active research, failed individual-capacity-six proof route, two exact nine-cover enumerators, 878401-cover census, literal no-five equality-pattern search, independent-style orbit-free sweep, primary-source comparison, tests and regeneration. Sharp nine-deletion four-insertion restricted candidate; no new global sunflower bound or 55-set witness. Outcome is conditional on exact-head CI-gated PR merge. Historical novelty and independent mathematical review unestablished; no solved/evidence-state or coverage changes."
+    },
+    {
+      "work_id": "X-M076-F43-SEVEN",
+      "scope_sha256": "d3ade778162787dd0a8d73f28bb188b4139aefd6afecc22d5ac2a41e9bc62510",
+      "author": "ChatGPT (M076 seven-deletion restricted rigidity candidate)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/206",
+      "pr_url": "https://github.com/Svyable/100/pull/207",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.4
+      },
+      "note": "Author-derived sharp restricted seven-deletion two-insertion upper bound for one classical 54-set sunflower-free family over arbitrary ambient supports. Two exact seven-cover enumerators agree on all 3762 representative cover patterns, literal frozenset edge replay and orbit-free 7261-candidate sweep, 11 adversarial tests and explicit 49-set two-insertion witness. Stronger one-insertion hypothesis fails; no 55-set global bound or independent mathematical/historical novelty review. Outcome conditional on PR merge, not an accepted theorem. No new proof obligation, coverage slot or solved-status change."
     }
   ]
 }
