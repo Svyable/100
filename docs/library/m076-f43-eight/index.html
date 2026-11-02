@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M076 — sharp eight-deletion stability of the classical 54-set family · 100</title>
+<meta name="description" content="Date: 2026-11-02 UTC. Claim: #212. Work ID: X-M076-F43-EIGHT. Scope SHA-256: b22d7b8a1bc3115b51cc948c3068fca1c255d6622f0edcc05e58eb4077688a9e.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m076-f43-eight/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M076 — sharp eight-deletion stability of the classical 54-set family · 100">
+<meta property="og:description" content="Date: 2026-11-02 UTC. Claim: #212. Work ID: X-M076-F43-EIGHT. Scope SHA-256: b22d7b8a1bc3115b51cc948c3068fca1c255d6622f0edcc05e58eb4077688a9e.">
+<meta property="og:url" content="https://svyable.github.io/100/library/m076-f43-eight/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M076 — sharp eight-deletion stability of the classical 54-set family</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#statement">Statement</a></li><li class="toc-l2"><a href="#exact-certificate-and-completeness-proof">Exact certificate and completeness proof</a></li><li class="toc-l2"><a href="#reproduction-and-negative-controls">Reproduction and negative controls</a></li><li class="toc-l2"><a href="#primary-sources-and-historical-boundary">Primary sources and historical boundary</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M076/" title="Erdős–Rado sunflower conjecture">M076</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M076_F43_EIGHT.md" rel="noopener noreferrer">research/M076_F43_EIGHT.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M076 — sharp eight-deletion stability of the classical 54-set family</h1>
+<p><strong>Date:</strong> 2026-11-02 UTC. <strong>Claim:</strong> <a href="https://github.com/Svyable/100/issues/212" rel="noopener noreferrer">#212</a>. <strong>Work ID:</strong> <code>X-M076-F43-EIGHT</code>. <strong>Scope SHA-256:</strong> <code>b22d7b8a1bc3115b51cc948c3068fca1c255d6622f0edcc05e58eb4077688a9e</code>.</p>
+<p><strong>Status:</strong> Author-derived exact <strong>restricted theorem candidate</strong>, supported by two algorithmically distinct exhaustive cover enumerators, a separate literal set-intersection/cover-existence sweep, and a sharp explicit witness. <strong>No independent mathematical review or historical priority audit.</strong> This is not a global bound on the sunflower function or a resolution of the Erdős–Rado conjecture.</p>
+<h2 id="statement">Statement<a class="anchor" href="#statement" aria-label="Link to this section">#</a></h2>
+<p>Let <code>F</code> be the following explicitly defined 54-member family on <code>U={0,...,17}</code>: partition <code>U</code> into two nine-point components, each partitioned into three blocks of size three; in each component take every four-set with two points from each of two different blocks. There are <code>2 × 3 × 3 × 3 = 54</code> such sets. A three-sunflower is <strong>three distinct sets with identical pairwise intersections</strong>, including the empty intersection.</p>
+<p><strong>Eight-deletion theorem candidate (sharp):</strong> For every ambient set <code>V ⊇ U</code>, every <code>D ⊆ F</code> with <code>|D| ≤ 8</code>, and every collection <code>I ⊆ binom(V,4) \\ F</code> of distinct new sets, if <code>(F \\ D) ∪ I</code> is three-sunflower-free, then <strong><code>|I| ≤ 4</code></strong>. The bound is attained with eight deletions:</p>
+<ul><li>Delete the old sets at <code>base_family()</code> indices <code>{0,1,10,11,18,21,25,26}</code>.</li><li>Insert <code>{0,1,3,6}</code>, <code>{0,1,3,7}</code>, <code>{0,1,4,8}</code>, <code>{0,1,5,8}</code>.</li></ul>
+<p>The resulting 50-set family is checked against <strong>all 19,600 triples</strong>, with zero sunflowers. The stronger extension of the seven-deletion <code>|I|≤2</code> claim to eight deletions is <strong>false</strong>. The new upper bound does not yield a 55-set construction: eight deletions would require <strong>nine</strong> insertions to exceed 54.</p>
+<h2 id="exact-certificate-and-completeness-proof">Exact certificate and completeness proof<a class="anchor" href="#exact-certificate-and-completeness-proof" aria-label="Link to this section">#</a></h2>
+<ol><li><strong>All ambient universes reduce to 18 candidate orbits.</strong> Permute elements within each three-point block, blocks within components, the two components, and all outside points. A new four-set is characterized by the number of outsiders <code>r∈{0,...,4}</code> and the unordered pair of sorted block-occupancy triples. All 18 types are realized on the 22-point set <code>U∪{18,19,20,21}</code> (8, 5, 3, 1, 1 types for <code>r=0,1,2,3,4</code>), comprising 7,261 nonmembers. The arbitrary number of outsider <em>labels</em> cannot introduce a new type; their multiplicity is handled below.</li></ol>
+<ol start="2"><li><strong>Nine-disjoint-pair obstruction for 16 types.</strong> For a candidate <code>C</code>, make a graph on the 54 old sets, joining <code>i,j</code> when <code>F_i,F_j,C</code> form a sunflower. Any deletion set allowing <code>C</code> is a vertex cover of this graph. The source file contains <strong>nine vertex-disjoint verified edges</strong> for each of 16 candidate orbit representatives, excluding those types under eight deletions. The only survivors are the inside type <code>(0,(2,1,1),(0,0,0))</code> and one-outsider type <code>(1,(2,1,0),(0,0,0))</code>. Their candidates are exactly <strong>162 inside four-sets</strong> and <strong>108 old-support triples</strong>, the latter completed by an arbitrary single outside point.</li></ol>
+<ol start="3"><li><strong>Every eight-cover, two enumerations.</strong> For the inside and outside representatives, greedy disjoint matchings have respectively six and five edges. Choosing an endpoint from each matched edge and respectively two or three further old vertices, then testing all forbidden edges, gives <strong>32,416</strong> and <strong>35,811</strong> eight-covers. A different recursion branches on an uncovered forbidden edge, prunes by a disjoint-matching lower bound, and expands all discovered covers to size eight. It agrees <strong>as a set</strong> on both counts. There are <strong>16</strong> covers common to the two representatives, hence <strong>68,211 distinct eight-cover patterns</strong> relative to the fixed orbit representatives (not a count of globally distinct labeled deletion sets).</li></ol>
+<ol start="4"><li><strong>Simultaneous insertion upper bound.</strong> For each of those 68,211 covers, test all 270 admissible old-support patterns against their full forbidden-pair graphs. Each inside candidate contributes at most one new set. For each outside triple <code>T</code>, if an old set containing <code>T</code> survives, at most one <code>T∪{x}</code> completion can be inserted (two completions plus that old set form a sunflower). Otherwise at most two completions can be inserted (three completions form a sunflower). Sum these <em>individual</em> upper bounds, deliberately ignoring any conflicts between distinct candidates. The exhaustive distribution is:</li></ol>
+<div class="table-wrap"><table><thead><tr><th class="al-right">Admissible patterns</th><th class="al-right">Sum of insertion upper bounds</th><th class="al-right">Covers</th></tr></thead><tbody><tr><td class="al-right">1</td><td class="al-right">1</td><td class="al-right">62,552</td></tr><tr><td class="al-right">1</td><td class="al-right">2</td><td class="al-right">1,107</td></tr><tr><td class="al-right">2</td><td class="al-right">2</td><td class="al-right">4,372</td></tr><tr><td class="al-right">2</td><td class="al-right">3</td><td class="al-right">40</td></tr><tr><td class="al-right">3</td><td class="al-right">3</td><td class="al-right">120</td></tr><tr><td class="al-right">4</td><td class="al-right">4</td><td class="al-right">20</td></tr><tr><td class="al-right"><strong>Total</strong></td><td class="al-right"></td><td class="al-right"><strong>68,211</strong></td></tr></tbody></table></div>
+<p>Every row has upper bound at most four. Combined with the explicit 50-set sharpness witness, this proves the claimed local optimum <strong>conditional on the correctness of the finite certificate</strong>. For <code>|D|&lt;8</code>, extend <code>D</code> to eight old sets: deleting more old sets can only relax insertion constraints.</p>
+<ol start="5"><li><strong>Separate literal adversary.</strong> An orbit-free <code>frozenset</code> implementation checks each of the <strong>7,261</strong> nonmember four-sets on 22 points, rebuilding forbidden pairs from literal intersections. A recursive cover-existence test, with an independently computed greedy matching lower bound, retains exactly <strong>594</strong> labeled candidates (162 inside, 432 outside completions). Normalizing outsider labels gives precisely the 270 patterns above. The sharp witness is also checked by independently represented literal sets against all triples. These are separate computational paths <strong>by the same author</strong>, not independent specialist proof acceptance.</li></ol>
+<h2 id="reproduction-and-negative-controls">Reproduction and negative controls<a class="anchor" href="#reproduction-and-negative-controls" aria-label="Link to this section">#</a></h2>
+<pre><code class="lang-sh">python3 -m scripts.m076_f43_eight --check --json
+python3 -m unittest discover -s tests -p &#x27;test_m076_f43_eight.py&#x27; -v
+python3 scripts/regen.py --check --fast
+python3 scripts/regen.py --check
+python3 -m unittest discover -s tests</code></pre>
+<p>Ten dedicated tests exercise exact cover agreement, forbidden-pair witness validity, a forged eight-deletion cover, a malformed repeated vertex pair, outside orbit exclusion, the independent 22-point sweep, the sharp four-insertion witness, rejection of a fifth candidate, and all 19,600 triples of the final 50-set family. No SAT/ILP verdict is used in the proof certificate; SciPy and NetworkX were used only for <em>exploration</em> of minimum covers/matchings, and their outputs were reduced to literal verified matching witnesses.</p>
+<p><strong>Exploratory failures:</strong> Extrapolating the seven-deletion two-insertion upper bound fails: four insertions are possible after eight deletions. An eight-edge matching is not sufficient to exclude the <code>(3,1,0)</code> inside type; it has a nine-edge witness, which is essential at this threshold. Counting admissible patterns alone would overestimate multiplicities of outside completions; the surviving-old-superset rule is needed. The local eight-deletion maximum <strong>does not</strong> improve the global lower bound.</p>
+<p><strong>Next falsifiers:</strong> A candidate type missing from the 18 orbits; an invalid nine-edge witness; an eight-cover omitted by either enumerator; a cover allowing a fifth unit of insertion capacity; a new set with two outsiders surviving the literal sweep; a sunflower in the 50-set sharp witness; or a prior published theorem already implying the same eight-deletion bound. The nine-deletion neighborhood and general 55-set search remain untouched. Independent combinatorics and historical novelty review are necessary before any acceptance claim.</p>
+<h2 id="primary-sources-and-historical-boundary">Primary sources and historical boundary<a class="anchor" href="#primary-sources-and-historical-boundary" aria-label="Link to this section">#</a></h2>
+<ul><li>Erdős and Rado, <em>Intersection Theorems for Systems of Sets</em>, J. London Math. Soc. <strong>35</strong> (1960), 85–90, <a href="https://doi.org/10.1112/jlms/s1-35.1.85" rel="noopener noreferrer">DOI</a>.</li><li>Abbott, Hanson and Sauer, <em>Intersection Theorems for Systems of Sets</em>, JCTA <strong>12</strong> (1972), 381–389, <a href="https://doi.org/10.1016/0097-3165(72)90103-3" rel="noopener noreferrer">DOI</a>.</li><li>Abbott and Hanson, <em>On finite Δ-systems</em>, Discrete Mathematics <strong>8</strong> (1974), 1–12, <a href="https://doi.org/10.1016/0012-365X(74)90103-4" rel="noopener noreferrer">DOI</a>; <em>On finite Δ-systems II</em> (1977), <a href="https://doi.org/10.1016/0012-365X(77)90139-X" rel="noopener noreferrer">DOI</a>. Contemporary accounts attribute the 54-member lower bound specifically to Abbott–Hanson (1974); the repository&#x27;s broader Abbott–Hanson–Sauer label is construction context, not a priority finding.</li><li>Axante, Budala, Chitic, Dumitru and Nacu, <em>Sunflower-Free Uniform Families: Recursive Constructions and Explicit Bounds</em>, <a href="https://arxiv.org/abs/2609.06175" rel="noopener noreferrer">arXiv:2609.06175</a>, September 5, 2026: reports <code>54≤f(4,3)≤83</code>, not the exact local eight-deletion statement.</li><li>Rao, <em>The story of sunflowers</em>, J. London Math. Soc. <strong>113</strong> (2026), <a href="https://doi.org/10.1112/jlms.70380" rel="noopener noreferrer">DOI</a>: general survey, not a review of this candidate.</li><li>Previous five-deletion certificate <a href="../../library/m076-f43-stability/">on main</a>, and separate unmerged <a href="https://github.com/Svyable/100/pull/204" rel="noopener noreferrer">six-deletion PR #204</a> and <a href="https://github.com/Svyable/100/pull/207" rel="noopener noreferrer">seven-deletion PR #207</a>.</li></ul>
+<p>A targeted primary-source comparison did not identify this particular local eight-deletion theorem. <strong>Absence of a search hit is not proof of historical novelty.</strong> No evidence state, solved status, coverage allocation or independent-acceptance metric should change. The Project 100 PR Landing workflow is separate and unchanged.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>
