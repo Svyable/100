@@ -15,7 +15,7 @@ SEP(c_G) = m
 TSP(c_G) = m + (k mod 2) * min(1, min_i(L_i)-2).
 ```
 
-Thus one *deep* cross-edge changes neither optimum relative to the direct-hub-edge-only chorded multitheta, even though it changes the metric. The maximum gap in this class is `12/11`, attained for `k=3`, lengths `(4,4,3)`, and the unique deep crossing of the two length-four paths. This is a **class-specific** gap, not a new global TSP lower bound. [The previously claimed chorded formula](M097_CHORDED_MULTITHETA.md) is used only for the explicit upper constructions, which are also specified here.
+Thus one *deep* cross-edge changes neither optimum relative to the direct-hub-edge-only chorded multitheta, even though it changes the metric. The maximum gap in this class is `12/11`, attained for `k=3`, lengths `(4,4,3)`, and the unique deep crossing of the two length-four paths. Indeed, a nonintegral case requires odd `k` and all `L_i>=3`; the two crossed lengths are at least four, so `m>=4+4+3(k-2)>=11`, with equality only at `k=3` and `(4,4,3)` up to order. This is a **class-specific** gap, not a new global TSP lower bound. [The previously claimed chorded formula](M097_CHORDED_MULTITHETA.md) is used only for the explicit upper constructions, which are also specified here.
 
 ## All-orders proof
 
