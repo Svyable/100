@@ -193,7 +193,7 @@
 <link href="https://svyable.github.io/100/ledger/#B-HADAMARD-001"/>
 <id>tag:svyable.github.io,2026:100/milestone-B-HADAMARD-001</id>
 <updated>2026-10-31T00:00:00Z</updated>
-<summary>Sylvester, Paley I/II, Williamson n=23 (order 92), and published propus quadruples for orders 116, 156 and 172, closed under Kronecker products. Each matrix is checked as H H^T = nI. Smoke covers all 32 orders 4k &lt;= 128. Deep covers 91 of the 100 orders 4k &lt;= 400; the first remaining engine gap is 188. Order 668 is still the smallest open case. Scope: Known constructions; not a new matrix and not a proof that every multiple of 4 works</summary>
+<summary>Sylvester, Paley I/II, Williamson n=23 (order 92), and published propus quadruples for orders 116, 156 and 172, closed under Kronecker products. Each matrix is checked as H H^T = nI. Smoke covers all 32 orders 4k &lt;= 128. Deep covers 91 of the 100 orders 4k &lt;= 400; the first remaining engine gap is 188. Order 668 was constructed and independently verified in 2026; 2396 is now the smallest order without a known matrix (arXiv:2610.27175). Scope: Known constructions; not a new matrix and not a proof that every multiple of 4 works</summary>
 </entry>
 <entry>
 <title>Milestone: Goldbach partitions certified for every even n &lt;= 200,000</title>

@@ -175,9 +175,9 @@
         "Independent review recorded before the node is marked discharged",
         "python3 scripts/regen.py && python3 scripts/regen.py --check"
       ],
-      "boundary": "These orders are constructed in the literature; the open case begins at order 668. Closing engine gaps is reproduction, not a new existence theorem.",
+      "boundary": "These orders are constructed in the literature; the smallest order without a known matrix is now 2396 (Egan et al., 2026, arXiv:2610.27175). Closing engine gaps is reproduction, not a new existence theorem.",
       "depends_on": [],
-      "scope_sha256": "34e16102d6f22db90d9148603d18b052bb3c6829a7a55994f9c3e433b1a1d86f",
+      "scope_sha256": "06a4fbc249fabef8b31b7abe5b43555e9c7538ac5a0ab65132033bd73791aa40",
       "task_url": "https://svyable.github.io/100/work/O-M094-01/",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M094-01%22",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M094-01%20%E2%80%94%20Witness%20obligation%20for%20M094"

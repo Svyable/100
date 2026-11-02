@@ -241,7 +241,7 @@
       "problem_id": "M094",
       "kind": "witness",
       "statement": "Hadamard matrices of orders 116, 156 and 172 are constructed by the symmetry-reduced Williamson or Goethals–Seidel engines and pass exact orthogonality certificates.",
-      "prior_art_boundary": "These orders are constructed in the literature; the open case begins at order 668. Closing engine gaps is reproduction, not a new existence theorem.",
+      "prior_art_boundary": "These orders are constructed in the literature; the smallest order without a known matrix is now 2396 (Egan et al., 2026, arXiv:2610.27175). Closing engine gaps is reproduction, not a new existence theorem.",
       "falsifier": "A constructed matrix failing H H^T = n I, or a symmetry reduction that omits a published construction class needed for these orders.",
       "next_action": "Add multiplier-group symmetry for Williamson n = 29 and Goethals–Seidel arrays for 156 and 172; document the first order no implemented method reaches.",
       "depends_on": [],

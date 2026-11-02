@@ -587,6 +587,21 @@
       "note": "Conditional on merge. Ports published propus quadruples for orders 116,156,172 from source PR #127; exact row orthogonality, tamper rejection, smoke/deep ledger replay and regenerated site. Known constructions, not independent review, new theorem, or global Hadamard progress. Integration work time estimated; original PR author effort not double-counted."
     },
     {
+      "work_id": "X-M094-FRONTIER-2026",
+      "scope_sha256": "e4373d4be33463f75a7c081967d17838068b43436331a0c1ab696d779474d3a4",
+      "author": "ChatGPT (M094 2026 frontier provenance correction)",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/250",
+      "pr_url": "https://github.com/Svyable/100/pull/251",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.5
+      },
+      "note": "Conditional on merge. Corrects stale 668-as-smallest-open Hadamard claim to 2396 using Egan et al. arXiv:2610.27175 (19 Oct 2026), with verified 2026 finite matrices. Distinguishes next local engine gap 188 from open existence frontier. Source-linked research note, regression test, smoke/deep lab replay and regenerated site. Known literature status correction, not independent mathematical acceptance, new construction, universal proof or solved-state promotion."
+    },
+    {
       "work_id": "X-M006-GOLDBACH-135",
       "scope_sha256": "c7c338cabdada61beb6ff74443182c4ca3937195b11ac3c1beea8946804a7bfa",
       "author": "ChatGPT (PR #135 current-main Goldbach integration)",

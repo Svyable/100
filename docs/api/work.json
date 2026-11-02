@@ -208,12 +208,12 @@
         "Independent review recorded before the node is marked discharged",
         "python3 scripts/regen.py && python3 scripts/regen.py --check"
       ],
-      "boundary": "These orders are constructed in the literature; the open case begins at order 668. Closing engine gaps is reproduction, not a new existence theorem.",
+      "boundary": "These orders are constructed in the literature; the smallest order without a known matrix is now 2396 (Egan et al., 2026, arXiv:2610.27175). Closing engine gaps is reproduction, not a new existence theorem.",
       "falsifier": "A constructed matrix failing H H^T = n I, or a symmetry reduction that omits a published construction class needed for these orders.",
       "depends_on": [],
       "source": "data/proof_obligations.json",
       "priority_rank": 8,
-      "scope_sha256": "34e16102d6f22db90d9148603d18b052bb3c6829a7a55994f9c3e433b1a1d86f",
+      "scope_sha256": "06a4fbc249fabef8b31b7abe5b43555e9c7538ac5a0ab65132033bd73791aa40",
       "claim_title": "[Claim] O-M094-01 — Witness obligation for M094",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M094-01%20%E2%80%94%20Witness%20obligation%20for%20M094",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M094-01%22"
@@ -913,12 +913,12 @@
         "Any mismatch is filed as a gap on the target's scope_gap, not silently fixed",
         "python3 scripts/regen.py && python3 scripts/regen.py --check"
       ],
-      "boundary": "A scope review checks that the encoded statement matches the claim; it does not add mathematics. Small known orders only; the smallest open order is 668. Independent statement review pending.",
+      "boundary": "A scope review checks that the encoded statement matches the claim; it does not add mathematics. Small known orders only; the smallest order without a known construction is 2396 after independently verified 2026 finite matrices (arXiv:2610.27175). Independent statement review pending.",
       "falsifier": "A quantifier, domain or convention in the Lean statement that differs from the registered claim.",
       "source": "data/lean_targets.json",
       "depends_on": [],
       "priority_rank": 8,
-      "scope_sha256": "f9d0af0255bae075e882fb3ab1391df05fa315583bb17982c2a73de2fef40c8d",
+      "scope_sha256": "5b3745b8d3369c752e00cdee5a669f602a2b2c572a7e06266344731b701aacaf",
       "claim_title": "[Claim] V-L007 — Independent scope review of Lean target L007 (M094)",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L007%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L007%20%28M094%29",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-L007%22"
@@ -2913,12 +2913,12 @@
         "A negative case in lean/Negative.lean that a weakened statement would fail",
         "python3 scripts/regen.py && python3 scripts/regen.py --check"
       ],
-      "boundary": "Small known orders only; the smallest open order is 668. Independent statement review pending.",
+      "boundary": "Small known orders only; the smallest order without a known construction is 2396 after independently verified 2026 finite matrices (arXiv:2610.27175). Independent statement review pending.",
       "falsifier": "",
       "source": "data/lean_targets.json",
       "depends_on": [],
       "priority_rank": 8,
-      "scope_sha256": "b08428f7a2a7f5260d4c22dc97ef6c965f8d68cfb251fc0c59d3c2c4593834e7",
+      "scope_sha256": "abbf9487ff96ec046981c76685cd3e2a3f59708599177d2034884a186f81f2bd",
       "claim_title": "[Claim] L007 — Extend Lean target L007 (M094)",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20L007%20%E2%80%94%20Extend%20Lean%20target%20L007%20%28M094%29",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20L007%22"
@@ -3196,7 +3196,7 @@
         "M096"
       ],
       "title": "Replay a published certificate: Replay a published geometric object",
-      "deliverable": "M092: Extend the cyclotomic engine to the number fields needed for d = 4..8 and replay published exact fiducials there. M093: Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9. M094: Import one published quadruple for the smallest remaining engine gap above 172. Order 668 is still the smallest order with no known Hadamard matrix; do not search for it. M096: Encode order-12 planes with a prescribed collineation as SAT with DRAT proof output, starting from cases the literature already excludes.",
+      "deliverable": "M092: Extend the cyclotomic engine to the number fields needed for d = 4..8 and replay published exact fiducials there. M093: Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9. M094: Import a published construction for the smallest remaining engine gap, 188. This is an implementation gap, not an open existence case; the smallest order without a known matrix is 2396 after the 2026 verified constructions (arXiv:2610.27175). M096: Encode order-12 planes with a prescribed collineation as SAT with DRAT proof output, starting from cases the literature already excludes.",
       "context": "",
       "acceptance": [
         "Every problem on the job moves by the same action, or a precise gap is recorded per problem",
@@ -3209,7 +3209,7 @@
       "source": "scripts/approach.py",
       "depends_on": [],
       "priority_rank": 6,
-      "scope_sha256": "57734e33046d860292ef37a781a99161a4a48cf809097b1a9c9fa1864ceee431",
+      "scope_sha256": "ca6bbbd5cd493861705e57fdc7e877a4c68a2a8fefc72c935d92b482d48ac3b1",
       "claim_title": "[Claim] J-finite_geometry-replay_published — Replay a published certificate: Replay a published geometric object",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-finite_geometry-replay_published%20%E2%80%94%20Replay%20a%20published%20certificate%3A%20Replay%20a%20published%20geometric%20object",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20J-finite_geometry-replay_published%22"

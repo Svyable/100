@@ -20,7 +20,7 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 | 5 | M074 | Caccetta–Häggkvist conjecture | `replay_published` | 94 | +7 | +12 | 113 | Replay the external fixed-r=6 proof corpus on an independent host, verify its published hash and proof traces, and audit the hand-reduction steps before launching duplicate SAT search. |
 | 6 | M092 | Zauner SIC conjecture | `replay_published` | 94 | +7 | +12 | 113 | Extend the cyclotomic engine to the number fields needed for d = 4..8 and replay published exact fiducials there. |
 | 7 | M093 | Linear MDS code main conjecture | `replay_published` | 91 | +7 | +12 | 110 | Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9. |
-| 8 | M094 | Hadamard matrix conjecture | `replay_published` | 91 | +7 | +12 | 110 | Import one published quadruple for the smallest remaining engine gap above 172. Order 668 is still the smallest order with no known Hadamard matrix; do not search for it. |
+| 8 | M094 | Hadamard matrix conjecture | `replay_published` | 91 | +7 | +12 | 110 | Import a published construction for the smallest remaining engine gap, 188. This is an implementation gap, not an open existence case; the smallest order without a known matrix is 2396 after the 2026 verified constructions (arXiv:2610.27175). |
 | 9 | M088 | Deterministic polynomial identity testing | `lock_restriction` | 94 | +2 | +10 | 106 | Lock paragraph is complete in research/M088_LOCK.md; implement the falsifier against that exact GF(2) degree-≤3 ≤20-gate black-box class before attaching a verifier or widening the class. |
 | 10 | M075 | Frankl union-closed sets conjecture | `mine_structure` | 91 | +7 | +6 | 104 | The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5). |
 | 11 | M078 | Graph reconstruction conjecture | `mine_structure` | 91 | +7 | +6 | 104 | The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two. |
@@ -224,15 +224,15 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 
 ### M094 — Hadamard matrix conjecture
 
-**Dispatch:** `replay_published` · rank 8 · Orders 116, 156 and 172 are engine gaps. The literature already constructs them. They are not the open case, which the probe frontier places at order 668.
+**Dispatch:** `replay_published` · rank 8 · The engine now constructs orders 116, 156 and 172; its next gap is 188, a known constructed order. Published exact verifications cover every multiple of four below 2000; 2396 is the smallest currently without a known matrix (arXiv:2610.27175).
 
 **Proof obligation:** Name the smallest order 4k > 172 that this engine still does not build, and import one published quadruple for it.
 
 **Falsifier:** A proof that no Hadamard matrix of some order 4k exists; a finite search failure is not sufficient.
 
-**Recommended step:** Import one published quadruple for the smallest remaining engine gap above 172. Order 668 is still the smallest order with no known Hadamard matrix; do not search for it.
+**Recommended step:** Import a published construction for the smallest remaining engine gap, 188. This is an implementation gap, not an open existence case; the smallest order without a known matrix is 2396 after the 2026 verified constructions (arXiv:2610.27175).
 
-**Current blocker:** Every order 4k <= 172 is now an explicit matrix. The common-multiplier Williamson search at n = 29 is a proved dead end, and order 668 remains the smallest open case.
+**Current blocker:** Every order 4k <= 172 is now explicit in this engine; its next gap is 188. The common-multiplier Williamson search at n = 29 is a proved dead end, but 668 was settled by a verified 2026 construction. The smallest currently unknown order is 2396.
 
 **Stage:** `benchmark_reproduced` · [Dossier](research/LAB_CAMPAIGNS.md)
 

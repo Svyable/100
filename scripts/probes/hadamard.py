@@ -16,10 +16,12 @@ PROBE = {
     "problem_id": "M094",
     "title": "Exact Hadamard matrices from Sylvester, Paley I/II and Kronecker products",
     "engines": ["finite_fields"],
-    "frontier": ("Known: constructions exist for every order 4k < 668; 668 is the smallest "
-                 "order with no known Hadamard matrix (after order 428, Kharaghani & "
-                 "Tayfeh-Rezaie 2005). Orders 116, 156 and 172 are published propus "
-                 "quadruples (arXiv:1503.04226, arXiv:1708.05098), not new matrices. "
+    "frontier": ("Known: Hadamard matrices exist for every order 4k < 2000. "
+                 "Order 668, formerly the smallest open case after order 428, was "
+                 "constructed in August 2026 and independently verified by Egan et al. "
+                 "(arXiv:2610.27175, 19 October 2026). The smallest order without "
+                 "a known matrix is now 2396. Orders 116, 156 and 172 are published "
+                 "propus quadruples (arXiv:1503.04226, arXiv:1708.05098). "
                  "Engine gaps below are NOT open cases."),
     "levels": {"smoke": {"limit": 128, "williamson_max": 23},
                "deep": {"limit": 400, "williamson_max": 23}},

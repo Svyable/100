@@ -142,10 +142,10 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 
 - Problems: M094
 - Deliverable: Add multiplier-group symmetry for Williamson n = 29 and Goethals–Seidel arrays for 156 and 172; document the first order no implemented method reaches.
-- Boundary: These orders are constructed in the literature; the open case begins at order 668. Closing engine gaps is reproduction, not a new existence theorem.
+- Boundary: These orders are constructed in the literature; the smallest order without a known matrix is now 2396 (Egan et al., 2026, arXiv:2610.27175). Closing engine gaps is reproduction, not a new existence theorem.
 - Falsifier: A constructed matrix failing H H^T = n I, or a symmetry reduction that omits a published construction class needed for these orders.
 - Claim: `[Claim] O-M094-01 — Witness obligation for M094`
-- Digest: `fb826fa95b7b7e58…`
+- Digest: `c06e27f61360974c…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -553,10 +553,10 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 
 - Problems: M094
 - Deliverable: Compare every registered declaration of L007 with the registry statement and its primary source: domains, quantifiers, nonemptiness and distinctness conditions, strict versus weak inequalities, encodings. State exactly what is and is not established.
-- Boundary: A scope review checks that the encoded statement matches the claim; it does not add mathematics. Small known orders only; the smallest open order is 668. Independent statement review pending.
+- Boundary: A scope review checks that the encoded statement matches the claim; it does not add mathematics. Small known orders only; the smallest order without a known construction is 2396 after independently verified 2026 finite matrices (arXiv:2610.27175). Independent statement review pending.
 - Falsifier: A quantifier, domain or convention in the Lean statement that differs from the registered claim.
 - Claim: `[Claim] V-L007 — Independent scope review of Lean target L007 (M094)`
-- Digest: `7952d83b00b42356…`
+- Digest: `175ff6d34321f23e…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -1099,9 +1099,9 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 
 - Problems: M094
 - Deliverable: Prove Sylvester doubling as a general theorem (order n to 2n) instead of instance by instance.
-- Boundary: Small known orders only; the smallest open order is 668. Independent statement review pending.
+- Boundary: Small known orders only; the smallest order without a known construction is 2396 after independently verified 2026 finite matrices (arXiv:2610.27175). Independent statement review pending.
 - Claim: `[Claim] L007 — Extend Lean target L007 (M094)`
-- Digest: `ffe2ef2b0f9bef39…`
+- Digest: `b7c198eff36fed8e…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1238,10 +1238,10 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 **Replay a published certificate: Replay a published geometric object**
 
 - Problems: M092, M093, M094, M096
-- Deliverable: M092: Extend the cyclotomic engine to the number fields needed for d = 4..8 and replay published exact fiducials there. M093: Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9. M094: Import one published quadruple for the smallest remaining engine gap above 172. Order 668 is still the smallest order with no known Hadamard matrix; do not search for it. M096: Encode order-12 planes with a prescribed collineation as SAT with DRAT proof output, starting from cases the literature already excludes.
+- Deliverable: M092: Extend the cyclotomic engine to the number fields needed for d = 4..8 and replay published exact fiducials there. M093: Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9. M094: Import a published construction for the smallest remaining engine gap, 188. This is an implementation gap, not an open existence case; the smallest order without a known matrix is 2396 after the 2026 verified constructions (arXiv:2610.27175). M096: Encode order-12 planes with a prescribed collineation as SAT with DRAT proof output, starting from cases the literature already excludes.
 - Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
 - Claim: `[Claim] J-finite_geometry-replay_published — Replay a published certificate: Replay a published geometric object`
-- Digest: `aeeac4fedd50494e…`
+- Digest: `d8f2e9756482bd55…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
