@@ -51,6 +51,13 @@ class ElevenWitnessTests(unittest.TestCase):
         self.assertEqual(len(structure['inside_conflicts']), 5)
         self.assertFalse(eleven.literal_verify(19, (0, 1, 2, 3)))
 
+    def test_empty_core_across_components_is_not_omitted(self):
+        # A common failure in local searches is to forget the second
+        # nine-point component and its empty-core sunflowers.
+        self.assertTrue(sunflower(mask((0, 1, 2, 3)),
+                                  mask((5, 6, 8, 18)),
+                                  base_family()[27]))
+
     def test_ambient_outside_relabeling(self):
         self.assertTrue(eleven.literal_verify(19, (3, 6, 8, 10_000)))
         self.assertTrue(eleven.literal_verify(23, (3, 7, 8, 23_000)))

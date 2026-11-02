@@ -507,7 +507,7 @@
         "agent_hours": 0.5,
         "ci_minutes": 0
       },
-      "note": "Approximate active derivation, 22 one-step extension pairs, 36 independently reconstructed individually admissible candidates, elementary fixed-D11 upper bound seven, explicit 50-set seven-insertion witness, 19,600-triple literal checks, eight adversarial tests, primary-source comparison and regeneration. Fixed deletion set only; no all-11 upper bound, 55-set improvement, historical novelty or independent mathematical review. Outcome conditional on exact-head CI and merge; no coverage, benchmark, solved-status or PR-landing task change."
+      "note": "Approximate active derivation, 22 one-step extension pairs, 36 independently reconstructed individually admissible candidates, elementary fixed-D11 upper bound seven, explicit 50-set seven-insertion witness, 19,600-triple literal checks, nine adversarial tests, primary-source comparison and regeneration. Fixed deletion set only; no all-11 upper bound, 55-set improvement, historical novelty or independent mathematical review. Outcome conditional on exact-head CI and merge; no coverage, benchmark, solved-status or PR-landing task change."
     }
   ]
 }
