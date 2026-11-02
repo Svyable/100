@@ -649,6 +649,21 @@
       "note": "Conditional on successful CI-gated merge. Author-derived all-orders connected planar subcubic unicyclic counterexamples to the paired degree/cycle-count card signature S_k for each k>=4 and n>=k+5; explicit nine-vertex S4 failure, bipartiteness separation, degree-neighborhood-profile proof, two exact card counting implementations and adversarial tests. Failed isomorphic and dense search avenues recorded. No historical-novelty confirmation, independent specialist acceptance, full graph reconstruction counterexample, solved-state or coverage change. Separate PR-landing task untouched."
     },
     {
+      "work_id": "X-M078-TREE-LOCAL-MOTIF",
+      "scope_sha256": "7642e875424b6b4d3a433be1030a9dca00da1b6b7403b3dc16841a741a22b91a",
+      "author": "ChatGPT (tree-card local-motif research)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/267",
+      "pr_url": "https://github.com/Svyable/100/pull/268",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.35
+      },
+      "note": "Conditional on CI-gated merge; all-orders restricted negative theorem candidate with author-run Python and independent-algorithm C++ census; no independent specialist proof review, historical novelty audit, or full-deck reconstruction counterexample. Failed shorter-leg extrapolations included in effort."
+    },
+    {
       "work_id": "X-M079-CHAIN8-FIVEGAP",
       "scope_sha256": "942df0b779572efeb770428d95ebce6bda37b9a4bd0247465706c50ff21da08b",
       "author": "ChatGPT (M079 eight-outsider five-gap research)",
