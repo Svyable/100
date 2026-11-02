@@ -662,6 +662,21 @@
         "agent_hours": 0.35
       },
       "note": "Conditional on CI-gated merge; all-orders restricted negative theorem candidate with author-run Python and independent-algorithm C++ census; no independent specialist proof review, historical novelty audit, or full-deck reconstruction counterexample. Failed shorter-leg extrapolations included in effort."
+    },
+    {
+      "work_id": "X-M079-CHAIN8-SEVENGAP",
+      "scope_sha256": "25964eaa7731a1810499577dcc89eb37b7586c5b6c3c9eb68cbdf579ed2b5703",
+      "author": "ChatGPT (M079 eight-outsider seven-gap research)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/269",
+      "pr_url": "https://github.com/Svyable/100/pull/270",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.25
+      },
+      "note": "Conditional on CI-gated merge. Author-derived sharp restricted balance candidate 46531/104389 for width-eight chain-plus-eight antichain outsiders with 2..7 insertion gaps, attained by a 20-element self-dual witness. Distinct-interval transposition lemma discharges 10440234 repeated cases; two exact C++ algorithms agree on 1819530 distinct configurations, independent-representation Python and forced-relation controls verify witness and 25 seeded cases. Explicit seven-gap witness strictly falsifies six-gap sharp extrapolation. Includes failed unpruned census and source comparisons. No independent mathematical acceptance or historical-novelty audit, no unrestricted conjecture proof, no solved/coverage changes; separate PR-landing task untouched."
     }
   ]
 }
