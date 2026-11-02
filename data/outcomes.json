@@ -631,6 +631,22 @@
         "ci_minutes": 0
       },
       "note": "Conditional on CI-gated merge. Sharp restricted candidate 1951/4659 for width-seven chain plus seven incomparable outsiders, each with 2..6 insertion gaps. Complete 436680-case dual exact census, 2612268-case out-of-scope seven-gap challenge, independent literal-poset witness and 30 seeded checks, adversarial mutation controls, literature comparison, failed 21/50 extrapolation, and full regeneration. Approximate active author/tool effort including failed avenues. No independent specialist review or historical novelty confirmation, no general M079 resolution, no solved/coverage changes; separate PR-landing task untouched."
+    },
+    {
+      "work_id": "X-M079-CHAIN7-EIGHTGAP",
+      "scope_sha256": "a09c31bdbaa1c05a78547da092212181b6655d9aa8007610a3a9e91a26cd37a0",
+      "author": "ChatGPT (M079 seven-outsider eight-gap boundary research)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/259",
+      "pr_url": "https://github.com/Svyable/100/pull/260",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.5,
+        "ci_minutes": 0
+      },
+      "note": "Conditional on CI-gated merge. Sharp seven-outsider width-seven 2..8 insertion-gap restricted candidate 1951/4659; 12,610,738 normalized configurations with two exact C++ recurrences and 33 literal-poset checks, nine adversarial tests, a new-to-project all-orders noncentral gap-atom inequality, and a full-poset-checked counterexample to widening monotonicity. The six-gap equality witness persists; this is an exact scope extension, not a claimed historically novel constant. Nine-gap exploratory samples negative only. Includes source comparison, failed paths, and full regeneration. Approximate active author/tool effort includes failed approaches and computation. No independent specialist review, no global M079 resolution, solved-state/coverage change, benchmark claim, or PR-landing task change."
     }
   ]
 }
