@@ -188,7 +188,7 @@ int main(int argc,char **argv){
         else if(s=="--max-length" && i+1<argc)limit=atoi(argv[++i]);
         else {cerr<<"Unknown option "<<s<<"\n";return 2;}
     }
-    if(limit<2 || limit>7 || (witness && !instance.empty()) ||
+    if(limit<2 || limit>8 || (witness && !instance.empty()) ||
        (mutate_tie && !witness && instance.empty())){
         cerr<<"Invalid or unsafe command-line scope\n";return 2;
     }
