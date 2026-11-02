@@ -171,6 +171,11 @@
       "url": "https://svyable.github.io/100/library/m097-graph8/"
     },
     {
+      "title": "M097 — exact subtour LP and TSP on subdivided parallel-path graphs",
+      "source": "research/M097_MULTITHETA.md",
+      "url": "https://svyable.github.io/100/library/m097-multitheta/"
+    },
+    {
       "title": "Proof-driven research engine",
       "source": "docs/RESEARCH_ENGINE.md",
       "url": "https://svyable.github.io/100/library/research-engine/"
