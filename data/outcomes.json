@@ -431,6 +431,21 @@
         "ci_minutes": 0
       },
       "note": "Fixes previously demonstrated empty-certificate vacuity and unbound M095 summaries; 16 adversarial regressions plus prior lab tests. Outcome is conditional on exact-head CI and merge. No theorem, novelty, independent specialist review or accepted work item."
+    },
+    {
+      "work_id": "O-M019-01",
+      "scope_sha256": "aed22f7409b059e5deaf541ca1c7bd9873dc7a471be1e4879d23c4c96216720b",
+      "author": "ChatGPT (M019 fixed-shift scope falsifier)",
+      "outcome": "gap_reported",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/121",
+      "pr_url": "https://github.com/Svyable/100/pull/125",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.8
+      },
+      "note": "Prime 1129 forbids both fixed shifts c=3 and c=7 by exact divisor and subgroup checks, but shift c=11 works. Universal wording of O-M019-01 is infeasible; no full Erdős–Straus counterexample, no novelty or independent review. Prior art Mordell 1963 and Dahan 2026."
     }
   ]
 }

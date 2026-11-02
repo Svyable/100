@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M019 — exact failure of the universal fixed shifts 3 and 7 · 100</title>
+<meta name="description" content="2026-11-01 · Work item O-M019-01 · claim #121">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m019-fixed-shift-gate/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M019 — exact failure of the universal fixed shifts 3 and 7 · 100">
+<meta property="og:description" content="2026-11-01 · Work item O-M019-01 · claim #121">
+<meta property="og:url" content="https://svyable.github.io/100/library/m019-fixed-shift-gate/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M019 — exact failure of the universal fixed shifts 3 and 7</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#exact-statement-and-proof">Exact statement and proof</a></li><li class="toc-l2"><a href="#essential-positive-control">Essential positive control</a></li><li class="toc-l2"><a href="#reproduce-and-falsify">Reproduce and falsify</a></li><li class="toc-l2"><a href="#prior-art-and-novelty-caution">Prior art and novelty caution</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M019/" title="Erdős–Straus conjecture">M019</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M019_FIXED_SHIFT_GATE.md" rel="noopener noreferrer">research/M019_FIXED_SHIFT_GATE.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M019 — exact failure of the universal fixed shifts 3 and 7</h1>
+<p><strong>2026-11-01 · Work item <code>O-M019-01</code> · <a href="https://github.com/Svyable/100/issues/121" rel="noopener noreferrer">claim #121</a></strong></p>
+<p><strong>Result type:</strong> a rigorous, bounded <em>negative</em> result about two proposed first denominators. This is <strong>not a novel theorem</strong>, an Erdős–Straus counterexample, a proof of the conjecture, or an independently reviewed result.</p>
+<h2 id="exact-statement-and-proof">Exact statement and proof<a class="anchor" href="#exact-statement-and-proof" aria-label="Link to this section">#</a></h2>
+<p>Fix positive integers <code>n,c</code> with <code>4 | n+c</code>, and insist on the first denominator <code>x=(n+c)/4</code>. Set <code>m=nx</code>. Then positive integers <code>y,z</code> satisfy</p>
+<pre><code class="lang-text">4/n = 1/x + 1/y + 1/z</code></pre>
+<p>if and only if a positive divisor <code>d | m²</code> exists with</p>
+<pre><code class="lang-text">d ≡ -m (mod c),      m²/d ≡ -m (mod c).</code></pre>
+<p>Indeed, subtracting <code>1/x</code> gives <code>1/y+1/z=c/m</code>, hence <code>(cy-m)(cz-m)=m²</code>. Both factors are positive: if <code>cy≤m</code>, then <code>1/y≥c/m</code> contradicts the positive remaining summand. Conversely, given the two congruences, <code>y=(m+d)/c</code> and <code>z=(m+m²/d)/c</code> are positive integers and satisfy the original identity. If <code>gcd(m,c)=1</code>, the second congruence follows from the first, but the checker tests <strong>both</strong> directly.</p>
+<p>For <code>n=1129</code>, trial division through <code>floor(sqrt(1129))=33</code> proves primality, and <code>1129≡1 (mod 24)</code>.</p>
+<ul><li><strong>Shift 3:</strong> <code>x=283</code> (prime), <code>m=1129·283</code>. Both prime factors are <code>1 (mod 3)</code>, so every positive divisor of <code>m²</code> is <code>1 (mod 3)</code>. But the required divisor must be <code>-m≡2 (mod 3)</code>. Impossible.</li><li><strong>Shift 7:</strong> <code>x=284=2²·71</code>, <code>m=1129·284</code>. The prime-factor residues modulo 7 are <code>1129≡2</code>, <code>2≡2</code>, <code>71≡1</code>. Every divisor of <code>m²</code> therefore lies in the multiplicative subgroup <code>{1,2,4}</code> modulo 7. Yet <code>m≡1 (mod 7)</code>, so the required divisor residue is <code>6</code>, outside that subgroup. Impossible.</li></ul>
+<p>Thus <strong>neither</strong> <code>4x-n=3</code> <strong>nor</strong> <code>4x-n=7</code> can work at the prime <code>n=1129</code>. In particular, a universally valid positive-integer identity for <em>all</em> primes <code>n≡1 (mod 24)</code> under either fixed shift cannot exist. This directly falsifies the universal wording of <code>O-M019-01</code>, not the underlying Erdős–Straus conjecture.</p>
+<p>The independent divisor-enumeration path checks every divisor of <code>m²</code> for each shift, with no numerical tolerance or bounded-denominator search. A separate prime-factor subgroup proof gives the obstruction without enumerating divisors. The checker also exhausts primes <code>n≡1 (mod 24)</code> below 1129, finding at least one of these two shifts for each; <strong>1129 is the first joint failure in that bounded scan</strong>, not a new global number-theoretic bound.</p>
+<h2 id="essential-positive-control">Essential positive control<a class="anchor" href="#essential-positive-control" aria-label="Link to this section">#</a></h2>
+<p>The same prime <strong>does</strong> have an Egyptian-fraction representation using shift <code>11</code>:</p>
+<pre><code class="lang-text">4/1129 = 1/285 + 1/29260 + 1/99103620.</code></pre>
+<p>The checker verifies this as an exact <code>fractions.Fraction</code> identity. It also accepts shift 3 at <code>n=97</code> and shift 7 at <code>n=73</code>, guarding against a vacuous all-negative test.</p>
+<h2 id="reproduce-and-falsify">Reproduce and falsify<a class="anchor" href="#reproduce-and-falsify" aria-label="Link to this section">#</a></h2>
+<pre><code class="lang-sh">python3 scripts/straus_shift_gate.py --check
+python3 -m unittest discover -s tests -p &#x27;test_straus_shift_gate.py&#x27; -v</code></pre>
+<p>Eight adversarial tests cover prime-factor certificates, the two independent modular obstructions, a positive witness for <code>1129</code>, two other positive controls, brute divisor comparison for small instances, first-joint-failure enumeration, and invalid inputs. Mutation targets include a spurious divisor residue, a missing prime factor, and a false assertion that no decomposition exists.</p>
+<p><strong>Boundary:</strong> Only the two forced first denominators are excluded. Other values of <code>x</code> remain available; no conjecture-wide result follows. This does not meet the original obligation&#x27;s constructive acceptance criterion and does not discharge it. The appropriate next step is to re-scope the obligation away from universal fixed shifts and toward a genuinely new restricted family or a new analytic mechanism.</p>
+<h2 id="prior-art-and-novelty-caution">Prior art and novelty caution<a class="anchor" href="#prior-art-and-novelty-caution" aria-label="Link to this section">#</a></h2>
+<ul><li>L. J. Mordell, <strong>“A Congruence Problem of E. G. Straus”</strong>, <em>Journal of the London Mathematical Society</em> 38 (1963), 108–110, https://doi.org/10.1112/jlms/s1-38.1.108 .</li><li>Benjamin Dahan, <strong>“Sieve dimension and search depth for the Erdős–Straus conjecture, n ≡ 1 (mod 24)”</strong>, arXiv:2608.24035 (posted 2026-08-25), https://arxiv.org/abs/2608.24035 . The abstract explicitly studies fixed-shift <code>c=7</code> obstructions and subgroup-based approaches, substantially preempting novelty claims for this elementary divisor obstruction.</li><li>Existing project identities and finite mine: <a href="../../library/m019-identities/">M019_IDENTITIES.md</a>, which already warns that polynomial coverings cannot settle the entire hard class.</li></ul>
+<p><strong>Novelty classification:</strong> <code>known_or_reproduction</code>. This work adds a transparent, self-contained, exact <strong>scope falsifier</strong> for the current repository obligation, not an independently validated discovery.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>
