@@ -171,6 +171,11 @@
       "url": "https://svyable.github.io/100/library/m097-block-sum/"
     },
     {
+      "title": "M097 — one cross-end edge: exact subtour LP and metric tour",
+      "source": "research/M097_CROSS_END.md",
+      "url": "https://svyable.github.io/100/library/m097-cross-end/"
+    },
+    {
       "title": "M097 — eight-vertex graph-metric subtour gap census",
       "source": "research/M097_GRAPH8.md",
       "url": "https://svyable.github.io/100/library/m097-graph8/"

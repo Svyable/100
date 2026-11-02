@@ -445,7 +445,7 @@
       "resources": {
         "agent_hours": 0.8
       },
-      "note": "Prime 1129 forbids both fixed shifts c=3 and c=7 by exact divisor and subgroup checks, but shift c=11 works. Universal wording of O-M019-01 is infeasible; no full Erdős–Straus counterexample, no novelty or independent review. Prior art Mordell 1963 and Dahan 2026."
+      "note": "Prime 1129 forbids both fixed shifts c=3 and c=7 by exact divisor and subgroup checks, but shift c=11 works. Universal wording of O-M019-01 is infeasible; no full Erd\u0151s\u2013Straus counterexample, no novelty or independent review. Prior art Mordell 1963 and Dahan 2026."
     },
     {
       "work_id": "X-M076-F43-EIGHT",
@@ -540,6 +540,21 @@
         "ci_minutes": 0
       },
       "note": "Estimated active research, initial false MILP lead corrected by cross-component empty-core check, failed sharp-eight-witness extension, incomplete nine-high-cover heuristic, complete 10,073,118-visit minimal-cover superset scan, 9,841 critical masks, independent-style literal no-six equality-partition replay, explicit five-insertion sharpness witness, 10 tests and regeneration. Outcome conditional on CI-gated merge. Restricted local candidate only; historical novelty and independent mathematical review unestablished. No global bound, solved/evidence-state or coverage change."
+    },
+    {
+      "work_id": "X-M097-CROSS-END",
+      "scope_sha256": "02d08444ece094863fee99a31f711888197222f15b840f8718452cbf561d3a57",
+      "author": "ChatGPT (M097 cross-end restricted proof candidate)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/232",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.6,
+        "ci_minutes": 0
+      },
+      "note": "Conditional on PR merge, not independent acceptance. Author-derived all-orders exact SEP and TSP formula for a single cross-end edge in chorded multitheta graphs; two-hub component-cut lower bound, sharp 12/11 restricted ratio, parity rigidity, exact rational LP witness, 166 labeled exact cut/tour tests and separate full LP optimization, 8 adversarial tests, failed first-first extension. Historical novelty and external mathematical review unestablished; no global 4/3 progress, solved/evidence/coverage/benchmark change or PR-landing task change."
     }
   ]
 }

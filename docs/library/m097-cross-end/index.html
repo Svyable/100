@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M097 — one cross-end edge: exact subtour LP and metric tour · 100</title>
+<meta name="description" content="Date: 2026-11-02 UTC. Claim: #232. Work ID: X-M097-CROSS-END. Scope SHA-256: 02d08444ece094863fee99a31f711888197222f15b840f8718452cbf561d3a57.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m097-cross-end/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M097 — one cross-end edge: exact subtour LP and metric tour · 100">
+<meta property="og:description" content="Date: 2026-11-02 UTC. Claim: #232. Work ID: X-M097-CROSS-END. Scope SHA-256: 02d08444ece094863fee99a31f711888197222f15b840f8718452cbf561d3a57.">
+<meta property="og:url" content="https://svyable.github.io/100/library/m097-cross-end/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M097 — one cross-end edge: exact subtour LP and metric tour</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#exact-statement">Exact statement</a></li><li class="toc-l2"><a href="#reusable-two-hub-component-cut-lemma">Reusable two-hub component-cut lemma</a></li><li class="toc-l2"><a href="#exact-fractional-optimum">Exact fractional optimum</a></li><li class="toc-l2"><a href="#exact-integral-optimum-and-parity-obstruction">Exact integral optimum and parity obstruction</a></li><li class="toc-l2"><a href="#exact-checks-and-adversarial-boundary">Exact checks and adversarial boundary</a></li><li class="toc-l2"><a href="#primary-sources-limitations-and-next-falsifier">Primary sources, limitations and next falsifier</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M097/" title="Metric TSP four-thirds conjecture">M097</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M097_CROSS_END.md" rel="noopener noreferrer">research/M097_CROSS_END.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M097 — one cross-end edge: exact subtour LP and metric tour</h1>
+<p><strong>Date:</strong> 2026-11-02 UTC. <strong>Claim:</strong> <a href="https://github.com/Svyable/100/issues/232" rel="noopener noreferrer">#232</a>. <strong>Work ID:</strong> X-M097-CROSS-END. <strong>Scope SHA-256:</strong> 02d08444ece094863fee99a31f711888197222f15b840f8718452cbf561d3a57.</p>
+<p><strong>Evidence:</strong> Author-derived all-orders restricted theorem <strong>candidate</strong> with a written proof, rational primal, independent-formulation finite LP optimization, exact Hamiltonian DP and adversarial controls. Neither historical novelty nor independent mathematical acceptance has been established. This is <strong>not</strong> a proof of the metric-TSP 4/3 conjecture, and is distinct from the chorded but cross-edge-free family in <a href="https://github.com/Svyable/100/pull/231" rel="noopener noreferrer">draft PR #231</a>.</p>
+<h2 id="exact-statement">Exact statement<a class="anchor" href="#exact-statement" aria-label="Link to this section">#</a></h2>
+<p>Fix k &gt;= 3 and integers L_1,...,L_k &gt;= 2. Take two hubs u,v joined by a direct edge, and k otherwise internally vertex-disjoint u-v paths P_i of lengths L_i. Add exactly one edge from the <strong>first internal vertex of P_1</strong> (next to u) to the <strong>last internal vertex of P_2</strong> (next to v). No other edges are allowed. Let m = sum_i L_i. Let SEP denote the symmetric complete-metric subtour LP with degree equations x(delta(w))=2, cut inequalities x(delta(S))&gt;=2 and x&gt;=0; TSP is the shortest Hamiltonian cycle in the unweighted graph&#x27;s shortest-path metric.</p>
+<p><strong>Restricted theorem candidate:</strong></p>
+<p>SEP = m - 1. TSP = m - 1 + [k even and min_i L_i &gt;= 3].</p>
+<p>Consequently TSP/SEP &lt;= 12/11 in this class, with equality at k=4 and L=(3,3,3,3). The inequality is a restricted-class statement only; the known global 4/3 lower bound is larger.</p>
+<h2 id="reusable-two-hub-component-cut-lemma">Reusable two-hub component-cut lemma<a class="anchor" href="#reusable-two-hub-component-cut-lemma" aria-label="Link to this section">#</a></h2>
+<p><strong>Lemma (author-derived; historical priority unverified).</strong> For any connected simple unweighted graph G with distinguished vertices u,v, suppose the nonempty connected components of G-{u,v} are W_1,...,W_r. Then for the shortest-path metric of G,</p>
+<p>SEP &gt;= |V(G)| - 2 + r.</p>
+<p><strong>Proof.</strong> For a feasible complete-metric subtour point x, route each positive x_ab on any shortest a-b path in G, obtaining nonnegative original-edge loads y_e. This preserves the objective: sum_e y_e = sum_ab c_G(a,b)x_ab. For every vertex subset S, y(delta(S)) &gt;= x(delta(S)) &gt;= 2, since each routed path joining opposite sides crosses the cut at least once.</p>
+<p>For each W_j write a_j for total load on edges internal to W_j, b_j for load between W_j and {u,v}. No edge joins distinct W_j. The cut W_j gives b_j&gt;=2; summing singleton cuts at vertices of W_j gives 2a_j+b_j&gt;=2|W_j|. Thus a_j+b_j &gt;= |W_j|+b_j/2 &gt;= |W_j|+1. Summing over j and ignoring the nonnegative load on uv gives the claimed bound.</p>
+<p><strong>Equality rigidity.</strong> If equality holds, the uv load is zero, each b_j=2, and every internal vertex has routed degree exactly two. For a metric tour expanded along shortest routes, y is an <strong>integral connected spanning Eulerian multigraph</strong>. If a W_j induces a path, equality forces all its internal path edges to have multiplicity one and its two boundary edges to attach at its two endpoints: every connected piece of the selected edges inside W_j has an even number of incident boundary-edge copies; since the total is two and the full multigraph is connected, there is exactly one such piece, containing every vertex of W_j. A connected spanning degree-two subgraph of an induced path must use all its internal edges once.</p>
+<p>The lemma is a general lower bound; no claim is made that it is sharp for arbitrary G. It is not a new global TSP integrality-gap bound.</p>
+<h2 id="exact-fractional-optimum">Exact fractional optimum<a class="anchor" href="#exact-fractional-optimum" aria-label="Link to this section">#</a></h2>
+<p>Let x_1 be the first internal vertex of P_1 and y_2 the last internal vertex of P_2. Replace P_1 and P_2 by a single u-v path Q_0: traverse P_2 from u to y_2, the new cross edge y_2-x_1, then P_1 from x_1 to v. Its length is L_1+L_2-1. Together with P_3,...,P_k these are r=k-1 internally disjoint u-v paths of lengths &gt;=2. Their union H is a spanning subgraph of G, and H plus the direct hub edge is a chorded multitheta.</p>
+<p>The component-cut lemma applies to G with r=k-1 internal components, since |V|-2=m-k. Hence SEP(G)&gt;=m-1.</p>
+<p>For the upper bound construct the following rational point on the complete metric, using the r recombined paths Q_i. Put alpha=2/r on the first and last edge of each Q_i, weight one on all other edges of Q_i, and gamma=(r-2)/(r(r-1)) on each pair of first internal vertices of different Q_i and each pair of last internal vertices. Add coincident shortcut weights for length-two paths; all other variables are zero. Every vertex has x-degree two.</p>
+<p>For a hub with t adjacent internal vertices across a cut, the hub spokes and same-hub shortcuts contribute F(t)=alpha<em>t+gamma</em>t*(r-t). This is concave, F(0)=0, F(1)=1, F(r)=2, so F(t)&gt;=1 for 1&lt;=t&lt;=r. If both hubs have positive t, or either has t=r, the cut has weight at least two. If exactly one has 0&lt;t&lt;r, at least one interior unit edge crosses, giving weight at least two. If both have t=0, a nontrivial cut either crosses two interior unit edges on a path or, when hubs are opposite, at least one interior unit edge on each of r&gt;=2 paths. This also covers length-two paths, whose first and last internal vertices coincide. Thus every cut is feasible.</p>
+<p>All Q_i edges cost one in G and same-hub shortcuts cost at most two. The displayed point has cost at most</p>
+<p>(m-1)-2r + 2r<em>alpha + 2</em>r<em>(r-1)</em>gamma = m-1.</p>
+<p>The lower bound forces equality. This proof does not require accepting the earlier chorded-multitheta theorem on trust.</p>
+<h2 id="exact-integral-optimum-and-parity-obstruction">Exact integral optimum and parity obstruction<a class="anchor" href="#exact-integral-optimum-and-parity-obstruction" aria-label="Link to this section">#</a></h2>
+<p>The union of all r recombined paths Q_i once is connected, spans every vertex and has degree r at both hubs, degree two elsewhere. If k is odd, r is even, so this is an Eulerian spanning multigraph of cost m-1 and shortcuts to a metric tour.</p>
+<p>If k is even and any L_i=2, change one path component to a same-hub excursion at no cost: for i&gt;=3, replace u-z-v by two copies of u-z; if i=1, replace the final edge x_1-v of Q_0 by u-x_1; if i=2, replace the initial edge u-y_2 of Q_0 by y_2-v. The other r-1&gt;=2 recombined paths keep the graph connected and join the hubs. Both hub degrees become even, so TSP=m-1.</p>
+<p>If k is even and every L_i&gt;=3, adding the direct edge uv to all Q_i once gives an Eulerian spanning multigraph of cost m.</p>
+<p>To exclude a tour of cost m-1 in the last case, expand such a metric tour to a connected Eulerian spanning multigraph y on G. Equality rigidity in the component-cut lemma forces uv to have zero load, each internal component to have boundary load exactly two, and every internal vertex to have degree exactly two. Each W_i for i&gt;=3 induces a path whose endpoints can attach only to u and v respectively, so it contributes exactly one u-v path. The merged component W_1 union W_2 also induces a path, with endpoints the first internal vertex of P_2 and the last internal vertex of P_1. Because L_1,L_2&gt;=3, those endpoints have only the respective hub attachments u and v. Thus it too contributes one u-v path. There are r=k-1 such paths; for even k, r is odd, contradicting the even degree of each hub in an Eulerian multigraph. Hence TSP&gt;=m, proving the formula.</p>
+<p>For even k and all L_i&gt;=3, m&gt;=3k&gt;=12, so m/(m-1)&lt;=12/11, with equality at k=4, all lengths three.</p>
+<h2 id="exact-checks-and-adversarial-boundary">Exact checks and adversarial boundary<a class="anchor" href="#exact-checks-and-adversarial-boundary" aria-label="Link to this section">#</a></h2>
+<p>Run:</p>
+<p>python3 -m scripts.m097_cross_end --max-vertices 10 --json python3 -m unittest discover -s tests -p &#x27;test_m097_cross_end.py&#x27; -v python3 -m scripts.m097_cross_end_lp --max-vertices 10  # optional SciPy</p>
+<p>The repository checker uses exact Fraction arithmetic for the rational LP witness, enumerates every nontrivial cut, reconstructs BFS metric distances, checks an explicit connected Eulerian multigraph and computes TSP independently by Held-Karp subset DP. It checks <strong>166 labeled ordered length tuples</strong> with 3&lt;=k&lt;=5, 2&lt;=L_i&lt;=5 and &lt;=10 vertices (100 odd-k, 65 even-k with a length-two path, one even-k with all lengths &gt;=3). The 8 adversarial tests include altered edge location, malformed inputs, the 12/11 sharp example, and a tampered fractional witness.</p>
+<p><strong>Independent computational formulation, still same author:</strong> a separate container script built graphs independently, optimized the <em>complete</em> symmetric subtour LP with SciPy HiGHS over all cuts, and ran an independent Held-Karp DP on the same 166 ordered tuples. Every optimum agreed with the theorem. The independently represented optional implementation is committed in <code>scripts/m097_cross_end_lp.py</code>; SciPy is not required by the base checker or repository tests. This remains exploratory author-side verification, not independent mathematical review.</p>
+<p><strong>Failed stronger extension:</strong> Moving the cross edge to join the <strong>first</strong> internal vertices of P_1 and P_2 breaks the formula. For k=3, L=(3,3,3), the cross-end graph has an eight-edge Hamiltonian cycle, but the first-first graph has TSP=9 by exact DP, and a separately optimized subtour value 17/2 (numerical HiGHS output, not an exact dual certificate). Thus the cross-end placement is essential. The general two-hub component-cut lemma gives only the lower bound eight for this modified graph; it is not asserted sharp there.</p>
+<h2 id="primary-sources-limitations-and-next-falsifier">Primary sources, limitations and next falsifier<a class="anchor" href="#primary-sources-limitations-and-next-falsifier" aria-label="Link to this section">#</a></h2>
+<ul><li>Held and Karp, <em>The Traveling-Salesman Problem and Minimum Spanning Trees</em>, Operations Research 18 (1970), https://doi.org/10.1287/opre.18.6.1138 — classical subtour-LP background.</li><li>Sebő and Vygen, <em>Shorter Tours by Nicer Ears</em>, 2012, https://arxiv.org/abs/1201.1870 — graphic TSP and ear-structure context.</li><li>Boyd, Sitters, van der Ster and Stougie, <em>The Traveling Salesman Problem on Cubic and Subcubic Graphs</em>, 2014, https://doi.org/10.1007/s10107-012-0620-1 — distinct restricted graphic-TSP bounds.</li><li>Cook, Hougardy and Petrich, <em>Extending Exact Integrality Gap Computations for the Metric TSP</em>, arXiv:2603.12995, first posted 2026-03-13, https://arxiv.org/abs/2603.12995 — contemporary global computational context, not an exact source for this family.</li><li>Project-local <a href="../../library/m097-multitheta/">M097_MULTITHETA.md</a>, <a href="../../library/m097-block-sum/">M097_BLOCK_SUM.md</a>, and <a href="https://github.com/Svyable/100/pull/231" rel="noopener noreferrer">draft chorded multitheta PR #231</a> — antecedents, none independently reviewed.</li></ul>
+<p>A targeted search did not locate this exact cross-end formula or the two-hub component-cut lemma. <strong>Absence from a targeted search is not evidence of historical novelty.</strong> The lower-bound lemma may be a known partition/degree inequality in graphic TSP. Specialist comparison with the literature on 2-edge-connected spanning subgraphs, graphic-TSP LP duals, and theta subdivisions is essential. A reviewer should attack the routing inequality, fractional cut case split, equality rigidity (especially length-two endpoints), and Eulerian construction independently. The next genuine falsifier is an explicit rational feasible point violating the m-1 bound, an Eulerian tour of length m-1 when k is even and all L_i&gt;=3, or a shorter counterexample to the asserted first-first boundary.</p>
+<p><strong>Workflow:</strong> This packet is a candidate pending external mathematical and historical review, not an independently accepted theorem. Do not change data/solved.json, evidence states, coverage, benchmark outcomes or the separate Project 100 PR Landing task. Regenerate derived files and run full tests and exact-head CI before any mergeable PR; do not bypass checks or merge automatically.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>
