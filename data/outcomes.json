@@ -399,6 +399,21 @@
         "ci_minutes": 0
       },
       "note": "Scoped infrastructure: separate 36-cell record coverage from successful completed trials, explicit timeout/error counts by arm, synthetic complete/timeout/error/missing-grid negative controls, 12 dedicated passing tests. No real agent trials (0/36), no mathematical result or independent review; pending-review outcome is conditional on PR merge."
+    },
+    {
+      "work_id": "X-M076-F43-SEVEN",
+      "scope_sha256": "d3ade778162787dd0a8d73f28bb188b4139aefd6afecc22d5ac2a41e9bc62510",
+      "author": "ChatGPT (M076 seven-deletion restricted rigidity candidate)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/206",
+      "pr_url": "https://github.com/Svyable/100/pull/207",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.4
+      },
+      "note": "Author-derived sharp restricted seven-deletion two-insertion upper bound for one classical 54-set sunflower-free family over arbitrary ambient supports. Two exact seven-cover enumerators agree on all 3762 representative cover patterns, literal frozenset edge replay and orbit-free 7261-candidate sweep, 11 adversarial tests and explicit 49-set two-insertion witness. Stronger one-insertion hypothesis fails; no 55-set global bound or independent mathematical/historical novelty review. Outcome conditional on PR merge, not an accepted theorem. No new proof obligation, coverage slot or solved-status change."
     }
   ]
 }
