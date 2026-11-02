@@ -294,6 +294,11 @@
       "url": "https://svyable.github.io/100/library/m078-s4-nine-unicyclic/"
     },
     {
+      "title": "M078: local-ball obstruction to compressed tree-card reconstruction",
+      "source": "research/M078_TREE_LOCAL_MOTIFS.md",
+      "url": "https://svyable.github.io/100/library/m078-tree-local-motifs/"
+    },
+    {
       "title": "Proof-driven research engine",
       "source": "docs/RESEARCH_ENGINE.md",
       "url": "https://svyable.github.io/100/library/research-engine/"

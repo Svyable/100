@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M078: local-ball obstruction to compressed tree-card reconstruction · 100</title>
+<meta name="description" content="2026-11-02. Claim #267, X-M078-TREE-LOCAL-MOTIF, SHA-256 7642e875424b6b4d3a433be1030a9dca00da1b6b7403b3dc16841a741a22b91a. Author-checked restricted negative result; no independent specialist review or historical-novelty assessment. Not a c">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m078-tree-local-motifs/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M078: local-ball obstruction to compressed tree-card reconstruction · 100">
+<meta property="og:description" content="2026-11-02. Claim #267, X-M078-TREE-LOCAL-MOTIF, SHA-256 7642e875424b6b4d3a433be1030a9dca00da1b6b7403b3dc16841a741a22b91a. Author-checked restricted negative result; no independent specialist review or historical-novelty assessment. Not a c">
+<meta property="og:url" content="https://svyable.github.io/100/library/m078-tree-local-motifs/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M078: local-ball obstruction to compressed tree-card reconstruction</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side">
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M078/" title="Graph reconstruction conjecture">M078</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M078_TREE_LOCAL_MOTIFS.md" rel="noopener noreferrer">research/M078_TREE_LOCAL_MOTIFS.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M078: local-ball obstruction to compressed tree-card reconstruction</h1>
+<p><strong>2026-11-02.</strong> Claim <a href="https://github.com/Svyable/100/issues/267" rel="noopener noreferrer">#267</a>, <code>X-M078-TREE-LOCAL-MOTIF</code>, SHA-256 <code>7642e875424b6b4d3a433be1030a9dca00da1b6b7403b3dc16841a741a22b91a</code>. <strong>Author-checked restricted negative result; no independent specialist review or historical-novelty assessment.</strong> Not a counterexample to graph reconstruction: trees are reconstructible from the <em>full</em> vertex-deleted deck.</p>
+<p>Let <code>i_F(X)</code> count vertex subsets inducing unlabeled graph <code>F</code>. Define <code>M_k(G)</code> as the multiset over vertices <code>v</code> of vectors <code>(i_F(G-v): |V(F)|&lt;=k)</code> over <em>all</em> unlabeled motifs, including disconnected ones. The vector for each card stays paired. Write <code>S_deg(G)</code> for the multiset of sorted degree sequences of the cards.</p>
+<p><strong>General lemma.</strong> If two graphs have the same multiset of rooted radius-<code>(k-1)</code> induced balls, their <code>M_k</code> are equal. Proof: for connected <code>F</code> of order <code>t&lt;=k</code>, the number <code>a_F(G,v)</code> of induced copies containing <code>v</code> is determined by that rooted ball. Since <code>t*i_F(G)=sum_v a_F(G,v)</code>, the global connected counts and paired card counts <code>i_F(G-v)=i_F(G)-a_F(G,v)</code> match. For disconnected <code>F=C_1 disjoint-union ... disjoint-union C_c</code>, the product <code>prod_i i_{C_i}(X)</code> equals a positive multiple of <code>i_F(X)</code> plus an integer linear combination of induced counts of graphs of order at most <code>|F|</code> with <strong>fewer</strong> connected components: overlapping selected copies or cross-edges reduce the number of components. Induct on <code>c</code> to recover every disconnected count from connected counts, separately for each card. No assumption that the graphs are trees is needed.</p>
+<p><strong>All-orders theorem.</strong> For each <code>k&gt;=3</code>, <code>n&gt;=6k-6</code>, set <code>L=2k-3</code>, <code>s=n-(6k-6)</code>. The nonisomorphic subcubic trees <code>S(L,L,L+2+s)</code> and <code>S(L,L+1,L+1+s)</code> have identical <code>M_k</code> <strong>and</strong> <code>S_deg</code>, where <code>S(a,b,c)</code> is the tree with one degree-three center and three pendant paths of edge lengths <code>a,b,c</code>. The unordered leg-length triples differ. Put <code>r=k-1</code>. Every leg has length at least <code>2r-1</code>, so no vertex lies both within distance <code>r-1</code> of the center and distance <code>r-1</code> of a leaf. Rooted radius-<code>r</code> balls split into center-near types (center and <code>r-1</code> vertices per leg), leaf-near types (<code>r</code> per leg), and middle rooted paths (remaining <code>sum(leg lengths)-3(2r-1)</code> vertices). Each type and multiplicity depends only on <code>r</code>, the number of legs and their total length, not their individual lengths. At a radius boundary a branch or leaf is truncated and its special degree is invisible. Apply the lemma. As <code>r&gt;=2</code>, the rooted balls also determine each root&#x27;s degree and neighbor degrees; together with the global degree multiset, these determine the card degree sequence. Thus <code>S_deg</code> agrees.</p>
+<p><strong>Sharp small-degree boundary.</strong> The first nonisomorphic trees with equal <code>S_deg</code> have <strong>10 vertices</strong>, witnessed by <code>S(1,3,5)</code> and <code>S(1,4,4)</code>. More generally <code>S(1,3,n-5)</code> and <code>S(1,4,n-6)</code> work for every <code>n&gt;=10</code>: both have the same degree-neighbor profile multiset (one degree-three vertex adjacent to degrees <code>1,2,2</code>; one leaf adjacent to degree three; two leaves adjacent to degree two; matching degree-two neighbor types), and a vertex&#x27;s card degree sequence depends only on this profile and the global degrees. The minimality assertion is a <em>finite exact census</em>: a separate C++17 program enumerates all Prüfer sequences for <code>3&lt;=n&lt;=9</code>, independently canonicalizes whole trees by AHU, and finds no collision among respectively <code>1,2,3,6,11,23,47</code> isomorphism types. Orders 1 and 2 each have one tree.</p>
+<p><strong>Reproduce:</strong> <code>python3 scripts/m078_tree_local_motifs.py --check</code>; <code>python3 -m unittest discover -s tests -p &#x27;test_m078_tree_local_motifs.py&#x27; -v</code>; <code>g++ -std=c++17 -O3 -o /tmp/m078_tree_census scripts/m078_tree_degree_census.cpp &amp;&amp; /tmp/m078_tree_census</code>. Python directly enumerates and canonically relabels every induced motif up to <code>k=4</code> in every card, independently of its rooted-ball check: <code>(k,n)=(2,12),(3,12),(4,18)</code> and one-vertex extensions for <code>k=3,4</code> pass. Seven adversarial tests pass. The C++ labeled-Prüfer census examines <code>3,16,125,1296,16807,262144,4782969</code> labeled trees for orders 3 through 9, with zero card-degree collisions. A separate exploratory NetworkX unlabeled-tree enumeration also first collides at order 10. These are <strong>author-controlled code paths</strong>, not independent mathematical acceptance.</p>
+<p><strong>Prior art and scope:</strong> Kelly (1957), <a href="https://doi.org/10.2140/pjm.1957.7.961" rel="noopener noreferrer">DOI 10.2140/pjm.1957.7.961</a>, proves reconstruction of trees from <em>full</em> cards. Groenland–Johnston–Scott–Tan (2025), <a href="https://doi.org/10.1007/s11856-025-2858-3" rel="noopener noreferrer">DOI 10.1007/s11856-025-2858-3</a>, treats induced decks of much larger card order. Spinoza–West, <a href="https://arxiv.org/abs/1609.00284" rel="noopener noreferrer">arXiv:1609.00284</a>, develops bounded <code>k</code>-deck collisions in maximum-degree-two graphs. Bondy–Hemminger (1977), <a href="https://doi.org/10.1002/jgt.3190010306" rel="noopener noreferrer">DOI 10.1002/jgt.3190010306</a>, surveys reconstruction. Existing repo <a href="../../library/m078-s4-nine-unicyclic/">M078 unicyclic obstruction</a>, #262, concerns a different graph class/statistic. Similar local indistinguishability ideas are known; <strong>historical novelty is not established</strong>.</p>
+<p><strong>Failed stronger avenues:</strong> The shorter <code>S(k,k,k+2)</code> / <code>S(k,k+1,k+1)</code> template is distinguished by paired motif counts at <code>k=4</code> and <code>k=5</code>. Shortening <code>L=2k-3</code> to <code>2k-4</code> fails for tested <code>k=3,4,5</code>. The sufficient <code>6k-6</code> order bound is <strong>not claimed optimal</strong> among all trees. <strong>Next falsifiers:</strong> independently audit the disconnected-motif induction and radius-boundary classification; independently reimplement unlabeled induced-subgraph counting for <code>k&gt;=5</code>; seek smaller <code>M_k</code> collisions and test augmentations by card diameter/component-size vectors; audit historical priority. No Solved, evidence-state, coverage, accepted outcome or PR-landing changes.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>
