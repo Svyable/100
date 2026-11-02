@@ -1,5 +1,7 @@
 """Adversarial and independently represented checks for M079 eight-outsider seven-gap result."""
 import sys
+import subprocess
+import tempfile
 import unittest
 from functools import cache
 from pathlib import Path
@@ -79,6 +81,13 @@ class ChainEightSevenGapTests(unittest.TestCase):
         self.assertEqual(total, E)
         self.assertEqual(counts, before)
         self.assertEqual(2 * B, E)
+
+    def test_cpp_witness_flag_matches_new_seven_gap_witness(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            binary = mod.compile_cpp(Path(tmp))
+            proc = subprocess.run([str(binary), "--witness"], check=True,
+                                  capture_output=True, text=True)
+            self.assertIn("E=939501 best=418779", proc.stdout)
 
     def test_witness_full_poset(self):
         E, B, before = mod.literal_balance(mod.WITNESS)

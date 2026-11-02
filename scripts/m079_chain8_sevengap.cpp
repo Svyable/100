@@ -201,7 +201,7 @@ int main(int argc,char **argv){
     }
     if(witness || !instance.empty()){
         Intervals iv{};
-        if(witness)iv={{{-4,0},{-3,1},{-2,0},{-2,1},{-1,1},{0,1},{0,2},{0,4}}};
+        if(witness)iv={{{-6,0},{-3,0},{-2,0},{-1,0},{0,1},{0,2},{0,3},{0,6}}};
         else if(!parse_instance(instance,iv)){
             cerr<<"Invalid interval tuple: requires eight intervals of length >=2 and unique common gap\n";
             return 2;
