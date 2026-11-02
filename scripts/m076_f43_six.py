@@ -121,12 +121,52 @@ def literal_edges(candidate):
     )
 
 
+
+def direct_22_sweep():
+    """No orbit keys or forbidden-edge table: literal 22-point negative sweep.
+
+    The 22-point universe realizes all 0..4 outsider patterns. Normalize the
+    one-outside survivors to label 18 only after the direct scan.
+    """
+    old = [
+        frozenset(v for v in range(18) if member & (1 << v))
+        for member in FAMILY
+    ]
+    old_masks = set(FAMILY)
+    survivors = []
+    for points in combinations(range(22), 4):
+        if base.mask(points) in old_masks:
+            continue
+        c = frozenset(points)
+        used, count = set(), 0
+        for i in range(54):
+            if i in used:
+                continue
+            for j in range(i):
+                if j in used:
+                    continue
+                if old[i] & old[j] == old[i] & c == old[j] & c:
+                    used.update((i, j))
+                    count += 1
+                    break
+            if count >= 7:
+                break
+        if count < 7:
+            survivors.append(points)
+    normalized = {base.mask(tuple(18 if v >= 18 else v for v in points))
+                  for points in survivors}
+    return len(survivors), normalized
+
+
 def check(include_literal=True):
     reps, orbit_counts = base.orbit_representatives()
     assert len(reps) == 18 and sum(orbit_counts.values()) == 7261
     assert base.verify_family(FAMILY)
     inside, outside = candidate_catalog()
     catalog = inside + outside
+    if include_literal:
+        total, normalized = direct_22_sweep()
+        assert total == 594 and normalized == set(catalog)
     forbidden = {c: forbidden_edges(c) for c in catalog}
     if include_literal:
         for key, points in reps.items():
@@ -197,6 +237,7 @@ def check(include_literal=True):
         "max_insertions_after_six_deletions": 2,
         "sharp_witness_final_size": len(kept + two),
         "independent_literal_intersections": include_literal,
+        "literal_22_point_survivors": 594 if include_literal else None,
     }
 
 
