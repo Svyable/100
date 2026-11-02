@@ -185,7 +185,7 @@ def circulant_from_support(v, support):
 
 # Propus supplementary difference sets. A position list is the set of −1 entries.
 # Sources: Di Matteo–Đoković–Kotsireas, arXiv:1503.04226 (v = 29, 43) and
-# Đoković–Kotsireas, arXiv:1708.05098 (v = 39). Each quadruple is one published
+# Balonin–Balonin–Đoković–Karbovskiy–Sergeev, arXiv:1708.05098 (v = 39). Each quadruple is one published
 # example, not a search. Plugged in as [A, B, C, D] with C = B.
 PROPUS = {
     29: (
