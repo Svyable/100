@@ -182,11 +182,11 @@
 <summary>Each graph carries a proper t-colouring and a K_t minor model (t = chromatic number); the census is complete by Burnside counting. Deep run: all 1,252 graphs on &lt;= 7 vertices. Scope: Known case (chromatic number &lt;= 6 theorem); not new</summary>
 </entry>
 <entry>
-<title>Milestone: Exact Hadamard matrices for 31 of the 32 orders 4k &lt;= 128, including order 92</title>
+<title>Milestone: Exact Hadamard matrices for every order 4k &lt;= 172, including 116, 156 and 172</title>
 <link href="https://svyable.github.io/100/ledger/#B-HADAMARD-001"/>
 <id>tag:svyable.github.io,2026:100/milestone-B-HADAMARD-001</id>
 <updated>2026-10-31T00:00:00Z</updated>
-<summary>Sylvester, Paley I/II, a Williamson quadruple of symmetric circulants of order 23 (order 92, found by meet-in-the-middle on periodic autocorrelations) and Kronecker products; each matrix checked as H H^T = nI. The deep run certifies 87 of the 100 orders up to 400. Scope: Known orders; the remaining engine gap 116 is not an open case</summary>
+<summary>Sylvester, Paley I/II, Williamson n=23 (order 92), and published propus quadruples for orders 116, 156 and 172, closed under Kronecker products. Each matrix is checked as H H^T = nI. Smoke covers all 32 orders 4k &lt;= 128. Deep covers 91 of the 100 orders 4k &lt;= 400; the first remaining engine gap is 188. Order 668 is still the smallest open case. Scope: Known constructions; not a new matrix and not a proof that every multiple of 4 works</summary>
 </entry>
 <entry>
 <title>Milestone: Goldbach partitions certified for every even n &lt;= 200,000</title>
