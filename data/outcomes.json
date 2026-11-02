@@ -631,6 +631,22 @@
         "ci_minutes": 0
       },
       "note": "Conditional on CI-gated merge. Sharp restricted candidate 1951/4659 for width-seven chain plus seven incomparable outsiders, each with 2..6 insertion gaps. Complete 436680-case dual exact census, 2612268-case out-of-scope seven-gap challenge, independent literal-poset witness and 30 seeded checks, adversarial mutation controls, literature comparison, failed 21/50 extrapolation, and full regeneration. Approximate active author/tool effort including failed avenues. No independent specialist review or historical novelty confirmation, no general M079 resolution, no solved/coverage changes; separate PR-landing task untouched."
+    },
+    {
+      "work_id": "X-MUTATION-ATTEST",
+      "scope_sha256": "768ff9c1b9408bf66e86650f7bd8ed94b390e01e0ed2c4ecaf3a2929db1bc2ba",
+      "author": "Claude (original PR #160); ChatGPT (current-main integration)",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/141",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 1.5,
+        "ci_minutes": 0
+      },
+      "note": "Infrastructure-only source #160 integrated against current main with 0.3 additional estimated agent-hours. Current smoke attestation: all 21 probes replay; 453/467 certificate mutants rejected, 78/242 published summary leaves bound, 10 probes accept a flipped holds verdict, and no probe accepts an empty certificate. The Ramsey witness checker was repaired independently in #211 and now passes its mandatory controls (clean); old #160 counts were stale. No probe fixed by this integration, no review recorded or accepted. Source author estimate 1.2 agent-hours preserved within total; historical novelty not applicable.",
+      "pr_url": "https://github.com/Svyable/100/pull/160"
     }
   ]
 }

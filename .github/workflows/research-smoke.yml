@@ -37,3 +37,5 @@ jobs:
         run: python3 scripts/research.py --check
       - name: Exact probe lab, deep level (all probes re-searched and independently re-checked)
         run: python3 scripts/lab.py --level deep --check
+      - name: Mechanical attestations (replay, negative controls, seeded certificate mutants)
+        run: python3 scripts/attest.py --check
