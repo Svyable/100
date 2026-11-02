@@ -555,6 +555,21 @@
         "ci_minutes": 0
       },
       "note": "Complete 23-coefficient polynomial delivered with spin-transform/parity-DP agreement and exact edge-factor replays. The acceptance gap is independent mathematical review, so O-M073-02 remains open; no independently accepted or historically novel theorem claimed. Approximate active author/tool time including source inspection and verification; this record closes the bounded author contribution on merge."
+    },
+    {
+      "work_id": "O-M079-04",
+      "scope_sha256": "5629ffe92a7529266dc2a522e885ab96934a4d780f7cf38dbdf325fb9bbab844",
+      "author": "ChatGPT (M079 chain-plus-five quantitative proof candidate)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/201",
+      "pr_url": "https://github.com/Svyable/100/pull/242",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.5
+      },
+      "note": "Approximate active derivation, 20,000-tuple exploratory search and failed 25/61 transfer, exact 1405-extension counterexample to the four-outsider extrapolation, all-orders k/(L+k-1) atom lemma, 40,355,371-case full dual integer census, third explicit-poset witness checker, adversarial mutation tests, current primary-literature audit and regeneration. Restricted 3/8 width-five chain-plus-five theorem candidate only; no independent human mathematical or historical-novelty review, no full M079 resolution, no solved-status change. Submitted on PR #202; merged_pending_review is conditional on successful CI-gated merge. Integration source: PR #202; canonical current-main landing: PR #242."
     }
   ]
 }
