@@ -26,6 +26,11 @@ region; the classical method and independent novelty boundary remain explicit.
 
 ## Exact statement
 
+The subsequent [information-alignment calculation](M073_INFORMATION_ALIGNMENT.md)
+recovers the complete even-subgraph polynomial by spin and parity-state
+algorithms, adding the exact terms 823r^8 + 4232r^10 + 24831r^12 and all
+higher coefficients. It retains the same restricted domain and review boundary.
+
 **Proposition (balanced, equal-diagonal, two-step graphons).** Let
 \(a,b\in[0,1]\) and let \(W\) be the symmetric graphon on two measurable
 classes of measure \(1/2\) each, having block matrix
