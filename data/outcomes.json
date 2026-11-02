@@ -570,6 +570,21 @@
         "agent_hours": 0.5
       },
       "note": "Approximate active derivation, 20,000-tuple exploratory search and failed 25/61 transfer, exact 1405-extension counterexample to the four-outsider extrapolation, all-orders k/(L+k-1) atom lemma, 40,355,371-case full dual integer census, third explicit-poset witness checker, adversarial mutation tests, current primary-literature audit and regeneration. Restricted 3/8 width-five chain-plus-five theorem candidate only; no independent human mathematical or historical-novelty review, no full M079 resolution, no solved-status change. Submitted on PR #202; merged_pending_review is conditional on successful CI-gated merge. Integration source: PR #202; canonical current-main landing: PR #242."
+    },
+    {
+      "work_id": "X-M094-PROPUS-127",
+      "scope_sha256": "5ce6daa629043b33b7cba01f95809363a6b9d43145a9152cf986151387c6dd14",
+      "author": "ChatGPT (PR #127 current-main Hadamard integration)",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/244",
+      "pr_url": "https://github.com/Svyable/100/pull/245",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.7
+      },
+      "note": "Conditional on merge. Ports published propus quadruples for orders 116,156,172 from source PR #127; exact row orthogonality, tamper rejection, smoke/deep ledger replay and regenerated site. Known constructions, not independent review, new theorem, or global Hadamard progress. Integration work time estimated; original PR author effort not double-counted."
     }
   ]
 }
