@@ -1,6 +1,6 @@
 # M074 — five-low obstruction at a zero-free CH(27,9) high root
 
-**2026-11-02 UTC.** Work ID \`X-M074-Z0-ROOT\`; [claim #252](https://github.com/Svyable/100/issues/252); scope SHA-256 \`1885916a20816601272789f54ca2cc3e538a45c04ccccd7b3e5a579fe4fe3ed6\`.
+**2026-11-02 UTC.** Work ID `X-M074-Z0-ROOT`; [claim #252](https://github.com/Svyable/100/issues/252); scope SHA-256 `1885916a20816601272789f54ca2cc3e538a45c04ccccd7b3e5a579fe4fe3ed6`.
 
 **Status:** Author-derived, precisely restricted elementary theorem **candidate**, with two algorithmically distinct exact finite audits and literal graph controls. No independent specialist mathematical review or historical-novelty confirmation. No full CH(27,9) result or global Caccetta–Häggkvist resolution. Imported local lemmas are themselves unreviewed; the pending three-low theorem and z=2 exclusion are **not** proof dependencies.
 
@@ -65,10 +65,10 @@ The proof is a handwritten counting argument, not a MILP or SAT infeasibility cl
 
 ## Reproduction and adversarial checks
 
-\`\`\`sh
+```sh
 python3 -m scripts.ch27_z0_five_low --check --json
 python3 -m unittest discover -s tests -p 'test_ch27_z0_five_low.py' -v
-\`\`\`
+```
 
 The main checker enumerates **35** sorted nine-vertex outdegree profiles with exactly five twos and sum at most 29, and **8,008** sorted ten-tuples with 1≤k≤7. Of **280,280** relaxed degree pairs, **200,489** fail the missing-pair lower bound K≥73−m; the remaining **79,791** fail the high-B eligibility count. Zero unresolved pairs remain. This challenges the algebra but does **not** enumerate 27-vertex digraphs.
 
