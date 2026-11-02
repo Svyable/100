@@ -32,6 +32,7 @@ STEPS = (
     (["next.py"], ["next.py", "--check"], ["docs/data/next.json"]),
     (None, ["portfolio_triage.py", "--check"], []),
     (None, ["proof_obligations.py", "--check"], []),
+    (None, ["m073_information_alignment.py", "--check"], []),
     (None, ["transfer.py", "--check"], []),
     (None, ["verify_frankl_triple_cert.py", "--check"], []),
     (None, ["discovery.py", "--check"], []),
