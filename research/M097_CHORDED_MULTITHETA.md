@@ -39,12 +39,98 @@ An odd-mode path costs at least `L_i`. An even-mode path has at most one edge of
 
 For even `k`, all long paths once and no direct edge form a connected Eulerian spanning graph of cost `m`, which meets the pathwise lower bound. For odd `k`, all long paths once plus the direct edge form an Eulerian spanning graph of cost `m+1`. If `ell=2`, a better graph of cost `m` uses every long path except a length-two path once, and on that short path doubles one edge and omits the other (the internal vertex remains attached); the direct edge is omitted. If `ell>=3`, every even-mode path costs at least one above its baseline, while all-odd mode requires the direct edge an odd number of times, so every tour costs at least `m+1`. This establishes the formula.
 
+## New optimal-face rigidity and quantitative stability (2026-11-02)
+
+**Additional author-derived lemma (same claimed class, not a second claim).**
+Let (x) be *any* feasible symmetric subtour-LP point on the chorded graph's
+complete shortest-path metric, with objective (m+arepsilon). Let
+(B) be the set of unordered vertex pairs ({a,b}) for which **at least
+one** shortest (a)-(b) route in the original graph uses the direct hub edge
+(uv). Then
+
+[
+arepsilonge 0,qquad sum_{{a,b}in B}x_{ab}learepsilon.
+]
+
+In particular **every** LP optimum has (x_{ab}=0) for every pair in
+(B), including (x_{uv}=0). This is a statement about the *entire
+optimal face*, not merely the displayed fractional witness. It is stronger
+than observing that one optimum avoids the chord. It does not assert that
+optimal *integral tours* always avoid the chord: when (k) is odd and all
+(L_ige3), the integral optimum has value (m+1), not (m).
+
+There is also a pathwise stability conclusion. For any choice of shortest
+routes used to expand (x) to original-edge loads (y), and any constituent
+path of length (Lge3), each of its edge loads satisfies
+
+[
+1-rac{arepsilon}{L-2} le y_e le 1+arepsilon.
+]
+
+Thus all loads on paths of length at least three are **exactly one** at
+an LP optimum, irrespective of shortest-path tie-breaking. A path of length
+two is exceptional: its two loads are forced to sum to two but need not
+individually equal one by this argument.
+
+**Proof.** Route every positive metric edge (ab) along an arbitrary
+shortest (a)-(b) path in the original graph, obtaining nonnegative
+loads (y) with total load equal to (m+arepsilon). Every cut of the
+original graph has load at least two because its routed metric-edge
+cut load is at least the original subtour cut. For any two edges (e,f)
+on the same long path, the internal vertices strictly between them
+have original graph boundary precisely ({e,f}). Hence
+(y_e+y_fge2). Summing all such pairs gives
+(sum_{ein P}y_ege L). Put
+(delta_P=sum_{ein P}y_e-Lge0). Since the original edges consist of
+the long paths and (uv),
+
+[
+arepsilon=y_{uv}+sum_Pdelta_P.
+]
+
+Choose the shortest route through (uv) for **every** pair in (B)
+simultaneously; this is allowed because shortest paths are routed
+independently. Then (y_{uv}gesum_{abin B}x_{ab}), proving the first
+inequality. For the second, fix a path of length (Lge3) and set
+(z_e=y_e-1). The pair inequalities say (z_e+z_fge0). If one
+(z_e=-t<0), every other (z_fge t), so
+(delta_P=sum z_fge(L-2)t). If one (z_e=t>0),
+either all other deviations are nonnegative, or exactly one is
+negative and the remaining (L-2) deviations compensate for it;
+in either case (delta_Pge t). Because
+(0ledelta_Plearepsilon), the claimed interval follows.
+This proof is all-orders and does not invoke numerical optimization.
+
+**Adversarial exact checks.** A separate script
+`scripts/m097_chorded_optimal_face.py` builds the graph independently,
+identifies all chord-geodesic pairs by comparing distances with and without
+the chord, routes exact rational LP points, and checks both inequalities
+against 26 optimum witnesses and 52 feasible tour/convex-combination
+perturbations (at most nine vertices). Five dedicated tests additionally
+compare the chord-geodesic set against a separate exhaustive DFS over all
+simple shortest paths, test a deliberately infeasible perturbation, and
+exercise a 13-pair forbidden set for the (k=3,L=(3,3,3)) instance.
+The initially overstrong test assertion that every length-two example
+has multiple chord-geodesic pairs was falsified: for ((2,2)) and
+((2,2,2)), only ({u,v}) qualifies. The test was corrected; the
+mathematical lemma was unaffected. These are same-author computational
+cross-checks, **not** independent specialist acceptance.
+
+The next meaningful falsifier is a feasible rational subtour point
+with objective (m+arepsilon) but forbidden-pair mass greater than
+(arepsilon), or a path-edge load outside the stated interval.
+An external reviewer should separately audit the cut-routing implication,
+the pairwise-boundary cuts, and the geodesic tie case. No historical
+novelty is asserted.
+
 ## Reproduction and adversarial checks
 
 ```sh
 python3 -m scripts.m097_chorded_multitheta --max-vertices 12 --json
 python3 -m unittest discover -s tests -p 'test_m097_chorded_multitheta.py' -v
 python3 -m scripts.m097_chorded_mincut
+python3 -m scripts.m097_chorded_optimal_face --max-vertices 9 --json
+python3 -m unittest discover -s tests -p 'test_m097_chorded_optimal_face.py' -v
 python3 -m unittest discover -s tests -p 'test_m097_chorded_mincut.py' -v
 ```
 
