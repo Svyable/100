@@ -383,6 +383,21 @@
         "agent_hours": 0.9
       },
       "note": "Approximate active work including literature/source audit, initial failed <=4-swap avenue, orbit matching derivation, two five-cover enumeration paths, independent 7261-candidate sweep, adversarial controls and regeneration. Author-derived sharp restricted local stability candidate only; no 55-set witness, no new global sunflower bound, no independent mathematical or historical novelty review. Status conditional on PR merge; The custom packet adds no proof-obligation or coverage slot; independent review remains open."
+    },
+    {
+      "work_id": "X-M076-F43-SIX",
+      "scope_sha256": "4f496055dfe5e04510c70e69ad478b502c4cb25fb17c5c4ae9fc591d1c70ab09",
+      "author": "ChatGPT (M076 six-deletion restricted proof candidate)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/203",
+      "pr_url": "https://github.com/Svyable/100/pull/204",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.9
+      },
+      "note": "Conditional on PR merge. Sharp two-insertion bound for at most six deletions of the classical 54-set 4-uniform sunflower-free construction; 18 candidate orbits, 16 excluded by seven-edge matchings, 32 inside and 97 outside six-covers independently enumerated, 270 candidate support patterns checked with two intersection representations, explicit two-insertion witness falsifying the stronger one-insertion guess. Prior-art search did not establish historical novelty. No independent mathematical or novelty review, no global f(4,3) improvement, and no solved/evidence-state change."
     }
   ]
 }
