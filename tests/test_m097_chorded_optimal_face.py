@@ -67,6 +67,18 @@ class OptimalFaceTests(unittest.TestCase):
         self.assertGreater(report["forbidden_mass"], 0)
         self.assertLessEqual(report["forbidden_mass"], report["slack"])
 
+    def test_stability_coefficient_is_sharp(self):
+        # A shortest-path metric tour of length 10, with the chord used once.
+        # Here m=9 and its entire forbidden-pair mass is exactly 1.
+        cycle = (0, 1, 3, 2, 4, 5, 7, 6)
+        edges = [tuple(sorted((a, b))) for a, b in
+                 zip(cycle, cycle[1:] + cycle[:1])]
+        x = {e: Fraction(1) for e in edges}
+        report = audit((3, 3, 3), x)
+        self.assertEqual(report["cost"], 10)
+        self.assertEqual(report["slack"], 1)
+        self.assertEqual(report["forbidden_mass"], 1)
+
     def test_forged_infeasible_point_rejected(self):
         lengths = (3, 3, 3)
         n, edges, paths = graph(lengths)

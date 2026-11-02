@@ -101,12 +101,21 @@ in either case (delta_Pge t). Because
 (0ledelta_Plearepsilon), the claimed interval follows.
 This proof is all-orders and does not invoke numerical optimization.
 
+**Sharp coefficient and the integral boundary.** For three paths
+`0-2-3-1`, `0-4-5-1`, `0-6-7-1`, the metric Hamiltonian
+cycle `0-1-3-2-4-5-7-6-0` has cost 10, exactly (m+1).
+Among its metric edges, only ({0,1}) belongs to (B), so
+(sum_{abin B}x_{ab}=1=arepsilon). Therefore the coefficient
+**one** in the stability bound cannot be reduced. This optimal
+*integral* tour uses the chord even though no optimum of the
+fractional subtour LP (value 9) can use it.
+
 **Adversarial exact checks.** A separate script
 `scripts/m097_chorded_optimal_face.py` builds the graph independently,
 identifies all chord-geodesic pairs by comparing distances with and without
 the chord, routes exact rational LP points, and checks both inequalities
 against 26 optimum witnesses and 52 feasible tour/convex-combination
-perturbations (at most nine vertices). Five dedicated tests additionally
+perturbations (at most nine vertices). Six dedicated tests additionally
 compare the chord-geodesic set against a separate exhaustive DFS over all
 simple shortest paths, test a deliberately infeasible perturbation, and
 exercise a 13-pair forbidden set for the (k=3,L=(3,3,3)) instance.
