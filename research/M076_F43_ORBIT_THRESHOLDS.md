@@ -55,6 +55,35 @@ Every trace graph is bipartite, so their disjoint union is bipartite. The argume
 
 For a new four-set `C`, a triple sunflower in `(F\D)∪{C}` either lies entirely in `F\D` (impossible by construction) or contains `C` and two surviving old sets. The latter exists exactly when an edge of `H_C` survives. Therefore admissible deletion sets are exactly vertex covers. Bipartiteness and the classical König matching-cover theorem imply `d(C)=\nu(H_C)`.
 
+## Hand calculation of the first eleven-deletion orbit
+
+The new cross-component representative at deletion radius eleven is
+\(C=\{0,1,3,9\}\). The conflict edges split into trace components,
+and the **nontrivial** ones have the following exact graph structures:
+
+| Common trace \(T=A\cap C\) | Conflict graph | Maximum matching |
+|---|---|---:|
+| Empty | \(K_{3,15}\) | 3 |
+| \(\{9\}\) | Two disjoint copies of \(K_{3,3}\) | 6 |
+| \(\{0,1\}\) | \(K_{1,3}\) | 1 |
+| \(\{0,1,3\}\) | \(K_2\) | 1 |
+
+All other trace classes are edgeless. These counts follow directly
+from choosing two points in each of two three-point blocks: the empty
+trace has three first-component and fifteen second-component old
+members; the trace \(\{9\}\) splits by the two possible pairs
+containing point 9, with three opposite choices on either side;
+\(\{0,1\}\) has one eligible second-block choice versus three
+third-block choices; and \(\{0,1,3\}\) has two eligible completions.
+Therefore the exact deletion threshold is
+\[
+d(\{0,1,3,9\})=3+6+1+1=11.
+\]
+This is a hand-checkable lower bound by disjoint matchings and an
+attained upper bound by taking a minimum vertex cover in each of
+these four complete bipartite pieces. It does not require trusting
+the 7,261-candidate census or an integer-programming solver.
+
 ## Finite numerical certificate and completeness
 
 The automorphisms permuting points inside each three-block, the three blocks in each component, the two components, and outside labels preserve `F`. A four-set uses at most four outside labels; consequently every orbit has a representative on 22 points. The invariant (outside count, unordered sorted component occupancy vectors) is complete under this action. Enumerating all `C(22,4)-54=7,261` nonmembers yields exactly 18 orbits, with distribution `8+5+3+1+1` by outsider count.
