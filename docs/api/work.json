@@ -1,8 +1,8 @@
 {
   "protocol": "svyable.work.v1",
-  "count": 349,
+  "count": 350,
   "by_kind": {
-    "obligation": 27,
+    "obligation": 28,
     "review": 47,
     "benchmark": 36,
     "lean": 9,
@@ -12,7 +12,7 @@
     "status_audit": 89
   },
   "by_status": {
-    "runnable": 342,
+    "runnable": 343,
     "externally_blocked": 4,
     "waiting_on_dependencies": 3
   },
@@ -317,6 +317,31 @@
       "claim_title": "[Claim] O-M079-02 — Lemma obligation for M079",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M079-02%20%E2%80%94%20Lemma%20obligation%20for%20M079",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M079-02%22"
+    },
+    {
+      "id": "O-M079-03",
+      "kind": "obligation",
+      "status": "runnable",
+      "problems": [
+        "M079"
+      ],
+      "title": "Lemma obligation for M079",
+      "deliverable": "Independently audit the common-gap/width-four reduction, 19-gap atom lemma, 3,456,151-case exhaustive transcript and 183-extension witness; search historical interval-order literature and obtain independent mathematical and novelty reviews.",
+      "context": "Every finite poset of width exactly four consisting of a chain and four pairwise incomparable outsiders, each incomparable with a chain vertex, has balance constant at least 25/61, with a nine-element sharp witness.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M079-03 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "The unrestricted one-third–two-thirds conjecture remains open. This restricted all-orders proof candidate is not independently reviewed or historically established as novel; its 3,456,151-case finite core and 25/61 witness require independent specialist and prior-art review.",
+      "falsifier": "An admissible chain-plus-four poset with balance below 25/61, a missed normalized interval multiset, a failed exact counter comparison, a flaw in the conditional 3/4 atom bound, or an earlier theorem proving this class and constant.",
+      "depends_on": [],
+      "source": "data/proof_obligations.json",
+      "priority_rank": 12,
+      "scope_sha256": "36362184e179a52f5dfa06a25f1b26725de83f0120ba68c3aaeecb7005e6541c",
+      "claim_title": "[Claim] O-M079-03 — Lemma obligation for M079",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M079-03%20%E2%80%94%20Lemma%20obligation%20for%20M079",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M079-03%22"
     },
     {
       "id": "O-M096-01",

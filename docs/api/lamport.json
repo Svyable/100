@@ -1,7 +1,7 @@
 {
   "protocol": "svyable.lamport.v1",
   "meaning": "Structural proof-obligation registry, not proof validity",
-  "count": 27,
+  "count": 28,
   "obligations": [
     {
       "id": "O-M074-01",
@@ -330,6 +330,18 @@
       "prior_art_boundary": "The unrestricted one-third–two-thirds conjecture is open. The previously proposed chain-plus-two 4/11 bound is a different class; finite verification and source searches do not establish historical novelty or independent mathematical acceptance.",
       "falsifier": "A poset meeting the exact hypotheses with all incomparable-pair probabilities outside [11/28,17/28], a gap-coordinate counterexample, or an earlier source proving the same bound.",
       "next_action": "Prove the all-orders insertion-gap reduction and exact finite residual bound, independently replay the sharp example and attack the 67392 normalized cases; then obtain specialist and novelty review.",
+      "depends_on": [],
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "O-M079-03",
+      "problem_id": "M079",
+      "kind": "lemma",
+      "statement": "Every finite poset of width exactly four consisting of a chain and four pairwise incomparable outsiders, each incomparable with a chain vertex, has balance constant at least 25/61, with a nine-element sharp witness.",
+      "prior_art_boundary": "The unrestricted one-third–two-thirds conjecture remains open. This restricted all-orders proof candidate is not independently reviewed or historically established as novel; its 3,456,151-case finite core and 25/61 witness require independent specialist and prior-art review.",
+      "falsifier": "An admissible chain-plus-four poset with balance below 25/61, a missed normalized interval multiset, a failed exact counter comparison, a flaw in the conditional 3/4 atom bound, or an earlier theorem proving this class and constant.",
+      "next_action": "Independently audit the common-gap/width-four reduction, 19-gap atom lemma, 3,456,151-case exhaustive transcript and 183-extension witness; search historical interval-order literature and obtain independent mathematical and novelty reviews.",
       "depends_on": [],
       "status": "open",
       "evidence": null

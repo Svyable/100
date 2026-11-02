@@ -43,19 +43,31 @@ class CToATests(unittest.TestCase):
         self.assertEqual(kk,set(old.k_profiles_with_four_zeros()))
         counts=Counter()
         endpoints=Counter()
+        sink_overlaps=set()
         for a in aa:
             for k in kk:
-                if old.classify(a,k) not in ('unresolved', 'z4_sink_cut'):
+                prior=old.classify(a,k)
+                if prior not in ('unresolved', 'z4_sink_cut'):
                     continue
                 lower=max(2,42-sum(k))
                 upper=upper_independent(a)
                 self.assertEqual((lower,upper),new.bound_C_to_A(a,k))
+                if prior=='z4_sink_cut':
+                    sink_overlaps.add((a,k))
+                    self.assertLess(upper,lower)
+                    self.assertEqual(new.classify(a,k),'c_to_a_bottleneck')
                 if upper<lower:
                     counts['coarse']+=1
+                    if prior=='unresolved':
+                        counts['incremental']+=1
                 else:
                     endpoints[(a,sum(k))]+=1
                     self.assertNotEqual(new.classify(a,k),'unresolved')
+        self.assertEqual(len(sink_overlaps),4)
         self.assertEqual(counts['coarse'],288)
+        self.assertEqual(counts['incremental'],284)
+        self.assertEqual(counts['coarse'],counts['incremental']+len(sink_overlaps))
+        self.assertEqual(counts['incremental']+len(sink_overlaps)+sum(endpoints.values()),295)
         self.assertEqual(endpoints,{
             ((2,)*3+(3,)*5+(8,),37):1,
             ((2,)*2+(3,)*5+(4,6),34):3,
@@ -67,6 +79,15 @@ class CToATests(unittest.TestCase):
         self.assertEqual(r['total_profiles'],153384)
         self.assertEqual(r['survivors'],[])
         self.assertEqual(r['stages']['c_to_a_bottleneck'],288)
+        self.assertEqual(r['disjoint_late_stages'],{
+            'z4_sink_cut':4, 'c_to_a_bottleneck':284,
+            'five_protected_threes_overfill_five_vertices':1,
+            'protected_A_forces_C_tournament_sink':3,
+            'eight_vertex_degree_defect':3,
+        })
+        self.assertEqual(len(r['sink_and_c_to_a_overlap']),4)
+        self.assertTrue(all(x['needed_c_to_a']>x['possible_c_to_a_upper']
+                            for x in r['sink_and_c_to_a_overlap']))
         self.assertEqual(r['stages']['five_protected_threes_overfill_five_vertices'],1)
         self.assertEqual(r['stages']['protected_A_forces_C_tournament_sink'],3)
         self.assertEqual(r['stages']['eight_vertex_degree_defect'],3)
