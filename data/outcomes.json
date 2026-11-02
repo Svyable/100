@@ -477,6 +477,22 @@
         "ci_minutes": 0
       },
       "note": "Estimated active research, failed individual-capacity-six proof route, two exact nine-cover enumerators, 878401-cover census, literal no-five equality-pattern search, independent-style orbit-free sweep, primary-source comparison, tests and regeneration. Sharp nine-deletion four-insertion restricted candidate; no new global sunflower bound or 55-set witness. Outcome is conditional on exact-head CI-gated PR merge. Historical novelty and independent mathematical review unestablished; no solved/evidence-state or coverage changes."
+    },
+    {
+      "work_id": "X-M076-F43-TEN-FIVE",
+      "scope_sha256": "ab92a6f1f2243e7be174b8eadd16105947d0542f92a71ffc1d8587cf750ad295",
+      "author": "ChatGPT (M076 ten-deletion exact restricted proof candidate)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/220",
+      "pr_url": "https://github.com/Svyable/100/pull/221",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 1.0,
+        "ci_minutes": 0
+      },
+      "note": "Estimated active research, initial false MILP lead corrected by cross-component empty-core check, failed sharp-eight-witness extension, incomplete nine-high-cover heuristic, complete 10,073,118-visit minimal-cover superset scan, 9,841 critical masks, independent-style literal no-six equality-partition replay, explicit five-insertion sharpness witness, 10 tests and regeneration. Outcome conditional on CI-gated merge. Restricted local candidate only; historical novelty and independent mathematical review unestablished. No global bound, solved/evidence-state or coverage change."
     }
   ]
 }
