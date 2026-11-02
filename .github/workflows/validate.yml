@@ -47,6 +47,7 @@ jobs:
       - run: python3 scripts/verify_frankl_triple_cert.py --check
       - run: python3 scripts/frankl_subfamily_minimal.py examples/FRANKL_SARVATE_RENAUD.json --assert-minimal
       - run: python3 scripts/ch27_local.py --check
+      - run: python3 scripts/ch9_two_low.py --check
       - run: node --check docs/assets/app.js
       - run: node --check docs/assets/handoff.js
       - run: node --test tests/test_handoff.cjs
