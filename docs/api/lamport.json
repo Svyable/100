@@ -1,7 +1,7 @@
 {
   "protocol": "svyable.lamport.v1",
   "meaning": "Structural proof-obligation registry, not proof validity",
-  "count": 27,
+  "count": 28,
   "obligations": [
     {
       "id": "O-M074-01",
@@ -330,6 +330,18 @@
       "prior_art_boundary": "The unrestricted one-third–two-thirds conjecture is open. The previously proposed chain-plus-two 4/11 bound is a different class; finite verification and source searches do not establish historical novelty or independent mathematical acceptance.",
       "falsifier": "A poset meeting the exact hypotheses with all incomparable-pair probabilities outside [11/28,17/28], a gap-coordinate counterexample, or an earlier source proving the same bound.",
       "next_action": "Prove the all-orders insertion-gap reduction and exact finite residual bound, independently replay the sharp example and attack the 67392 normalized cases; then obtain specialist and novelty review.",
+      "depends_on": [],
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "O-M073-02",
+      "problem_id": "M073",
+      "kind": "lemma",
+      "statement": "For the pinned 13-point, 22-triple incidence graph H, the full even-edge-subgraph weight enumerator equals the monochromatic-face spin transform, yielding an exact polynomial for every equal-mass equal-diagonal two-block graphon.",
+      "prior_art_boundary": "The high-temperature expansion and Fourier/code duality are classical. Source-specific coefficients are new to this project only; no historical novelty, full Sidorenko resolution, finite counterexample host or independent acceptance is claimed.",
+      "falsifier": "A coefficient differs between the monochromatic-face transform and the direct parity-state dynamic program, or an exact graphon evaluation disagrees with the polynomial.",
+      "next_action": "Derive the representation bridge, record all exact coefficients for the pinned H, cross-check every coefficient with a parity-state algorithm and small exhaustive controls, and obtain independent mathematical review of research/M073_INFORMATION_ALIGNMENT.md before discharge.",
       "depends_on": [],
       "status": "open",
       "evidence": null

@@ -4,19 +4,19 @@
   "by_kind": {
     "benchmark": 0,
     "comparator": 0,
-    "job": 21,
+    "job": 20,
     "lean": 9,
-    "obligation": 23,
+    "obligation": 24,
     "review": 47,
     "roadmap": 0,
     "status_audit": 0
   },
-  "cohort_shapes_touched": 16,
+  "cohort_shapes_touched": 15,
   "evidence_boundary": "A filled slot is a claimable work packet with a scope digest. It is not a solved theorem, a readiness change, or a measured speedup.",
   "frontier_counts": {
     "discharged": 0,
     "externally_blocked": 1,
-    "runnable": 23,
+    "runnable": 24,
     "waiting_on_dependencies": 3
   },
   "naive_one_agent_per_problem": 100,
@@ -151,6 +151,18 @@
       "prior_art_boundary": "The extractability audit reconstructed pattern H (35 vertices, 66 edges) in data/reference/sidorenko_faces.json; the claimed host G remains unpublished. Small unweighted hosts already checked here are not that object.",
       "problem_id": "M073",
       "statement": "The finite host G cited in the 2026 Sidorenko claim review, together with the stated bipartite pattern H, satisfies t(H,G) < t(K2,G)^e(H) under exact rational homomorphism densities computed by two independent methods.",
+      "unmet": []
+    },
+    {
+      "category": "runnable",
+      "falsifier": "A coefficient differs between the monochromatic-face transform and the direct parity-state dynamic program, or an exact graphon evaluation disagrees with the polynomial.",
+      "id": "O-M073-02",
+      "immediate_dependents": 0,
+      "kind": "lemma",
+      "next_action": "Derive the representation bridge, record all exact coefficients for the pinned H, cross-check every coefficient with a parity-state algorithm and small exhaustive controls, and obtain independent mathematical review of research/M073_INFORMATION_ALIGNMENT.md before discharge.",
+      "prior_art_boundary": "The high-temperature expansion and Fourier/code duality are classical. Source-specific coefficients are new to this project only; no historical novelty, full Sidorenko resolution, finite counterexample host or independent acceptance is claimed.",
+      "problem_id": "M073",
+      "statement": "For the pinned 13-point, 22-triple incidence graph H, the full even-edge-subgraph weight enumerator equals the monochromatic-face spin transform, yielding an exact polynomial for every equal-mass equal-diagonal two-block graphon.",
       "unmet": []
     },
     {
@@ -374,9 +386,7 @@
     "M048",
     "M049",
     "M053",
-    "M054",
     "M056",
-    "M060",
     "M061",
     "M062",
     "M063",
@@ -415,7 +425,7 @@
     "M097",
     "M100"
   ],
-  "problems_touched": 60,
+  "problems_touched": 58,
   "protocol": "svyable.proof-exchange.v2",
   "refused": [
     {
@@ -448,7 +458,7 @@
     }
   ],
   "refused_count": 7,
-  "runnable_in_queue": 342,
+  "runnable_in_queue": 343,
   "selected_packets": [
     {
       "acceptance": [
@@ -509,6 +519,36 @@
       "scope_sha256": "b44b983f1a94a78aa75ba749db78ba7965e007544f5964b6af5d09851654ee0a",
       "status": "runnable",
       "title": "Witness obligation for M073"
+    },
+    {
+      "acceptance": [
+        "Discharge evidence recorded on O-M073-02 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "The high-temperature expansion and Fourier/code duality are classical. Source-specific coefficients are new to this project only; no historical novelty, full Sidorenko resolution, finite counterexample host or independent acceptance is claimed.",
+      "claim_title": "[Claim] O-M073-02 — Lemma obligation for M073",
+      "deliverable": "Derive the representation bridge, record all exact coefficients for the pinned H, cross-check every coefficient with a parity-state algorithm and small exhaustive controls, and obtain independent mathematical review of research/M073_INFORMATION_ALIGNMENT.md before discharge.",
+      "depends_on": [],
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M073-02%22",
+      "falsifier": "A coefficient differs between the monochromatic-face transform and the direct parity-state dynamic program, or an exact graphon evaluation disagrees with the polynomial.",
+      "id": "O-M073-02",
+      "interpretation": "One claimable slot. Roles are a recommended split under that claim, not three independent truth votes.",
+      "kind": "obligation",
+      "leverage": 1198,
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M073-02%20%E2%80%94%20Lemma%20obligation%20for%20M073",
+      "priority_rank": 2,
+      "problems": [
+        "M073"
+      ],
+      "roles": {
+        "adversary": "Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.",
+        "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
+        "scout": "Produce the exact artifact or restricted statement named in the deliverable."
+      },
+      "scope_sha256": "dddf6ab8c17a8667e886f54667d1bd471a60ff436de7984dda28892b04132eb8",
+      "status": "runnable",
+      "title": "Lemma obligation for M073"
     },
     {
       "acceptance": [
@@ -3454,41 +3494,9 @@
       "scope_sha256": "6fd0afc0b424f720ee7e48b3e8ab39e38c03eaf121724d3ae30492e3e0c6a261",
       "status": "runnable",
       "title": "Fill the shared attack shape: Explicit sieve gaps"
-    },
-    {
-      "acceptance": [
-        "Every problem on the job moves by the same action, or a precise gap is recorded per problem",
-        "Evidence lands in the ledger the action names (lab, claim review, campaign or obligation)",
-        "python3 scripts/regen.py && python3 scripts/regen.py --check",
-        "python3 -m unittest discover -s tests"
-      ],
-      "boundary": "A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.",
-      "claim_title": "[Claim] J-pde_regularity-scope_audit — Audit claim scope: One ansatz, one enclosure",
-      "deliverable": "M054: Compare Hintz v2 and Szeftel hypotheses and companion dependencies, and seek expert adjudication of scattering and asymptotic completeness. M060: Compare v3 withdrawal notice with v5, audit the set-valued fixed-point and laminate-to-gradient argument, and request a calculus-of-variations review.",
-      "depends_on": [],
-      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20J-pde_regularity-scope_audit%22",
-      "falsifier": "",
-      "id": "J-pde_regularity-scope_audit",
-      "interpretation": "One claimable slot. Roles are a recommended split under that claim, not three independent truth votes.",
-      "kind": "job",
-      "leverage": 780,
-      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20J-pde_regularity-scope_audit%20%E2%80%94%20Audit%20claim%20scope%3A%20One%20ansatz%2C%20one%20enclosure",
-      "priority_rank": 38,
-      "problems": [
-        "M054",
-        "M060"
-      ],
-      "roles": {
-        "adversary": "Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.",
-        "checker": "Replay on an independent path or proof kernel; report exactly what remains unproved.",
-        "scout": "Produce the exact artifact or restricted statement named in the deliverable."
-      },
-      "scope_sha256": "fd23fdba282035c8048aa729ff8542b678a5b39e451ec6647793f67fb9f5f72b",
-      "status": "runnable",
-      "title": "Audit claim scope: One ansatz, one enclosure"
     }
   ],
   "shape_count": 30,
   "slots_filled": 100,
-  "work_queue_size": 349
+  "work_queue_size": 350
 }

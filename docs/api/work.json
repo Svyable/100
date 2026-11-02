@@ -1,8 +1,8 @@
 {
   "protocol": "svyable.work.v1",
-  "count": 349,
+  "count": 350,
   "by_kind": {
-    "obligation": 27,
+    "obligation": 28,
     "review": 47,
     "benchmark": 36,
     "lean": 9,
@@ -12,7 +12,7 @@
     "status_audit": 89
   },
   "by_status": {
-    "runnable": 342,
+    "runnable": 343,
     "externally_blocked": 4,
     "waiting_on_dependencies": 3
   },
@@ -67,6 +67,31 @@
       "claim_title": "[Claim] O-M073-01 — Witness obligation for M073",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M073-01%20%E2%80%94%20Witness%20obligation%20for%20M073",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M073-01%22"
+    },
+    {
+      "id": "O-M073-02",
+      "kind": "obligation",
+      "status": "runnable",
+      "problems": [
+        "M073"
+      ],
+      "title": "Lemma obligation for M073",
+      "deliverable": "Derive the representation bridge, record all exact coefficients for the pinned H, cross-check every coefficient with a parity-state algorithm and small exhaustive controls, and obtain independent mathematical review of research/M073_INFORMATION_ALIGNMENT.md before discharge.",
+      "context": "For the pinned 13-point, 22-triple incidence graph H, the full even-edge-subgraph weight enumerator equals the monochromatic-face spin transform, yielding an exact polynomial for every equal-mass equal-diagonal two-block graphon.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M073-02 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "The high-temperature expansion and Fourier/code duality are classical. Source-specific coefficients are new to this project only; no historical novelty, full Sidorenko resolution, finite counterexample host or independent acceptance is claimed.",
+      "falsifier": "A coefficient differs between the monochromatic-face transform and the direct parity-state dynamic program, or an exact graphon evaluation disagrees with the polynomial.",
+      "depends_on": [],
+      "source": "data/proof_obligations.json",
+      "priority_rank": 2,
+      "scope_sha256": "f530835caa13124e4132d78c39d9ade91b32004adabdbec2ea7469bfa14c083b",
+      "claim_title": "[Claim] O-M073-02 — Lemma obligation for M073",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M073-02%20%E2%80%94%20Lemma%20obligation%20for%20M073",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M073-02%22"
     },
     {
       "id": "O-M044-01",

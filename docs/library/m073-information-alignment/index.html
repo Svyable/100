@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M073: aligning binary labels, parity constraints and graphon densities · 100</title>
+<meta name="description" content="November 1, 2026. Work item O-M073-02, claim #195.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m073-information-alignment/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M073: aligning binary labels, parity constraints and graphon densities · 100">
+<meta property="og:description" content="November 1, 2026. Work item O-M073-02, claim #195.">
+<meta property="og:url" content="https://svyable.github.io/100/library/m073-information-alignment/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M073: aligning binary labels, parity constraints and graphon densities</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#align-meanings-before-manipulating-symbols">Align meanings before manipulating symbols</a></li><li class="toc-l2"><a href="#exact-representation-theorem">Exact representation theorem</a></li><li class="toc-l2"><a href="#complete-pinned-spectrum-and-consequences">Complete pinned spectrum and consequences</a></li><li class="toc-l2"><a href="#checks-limits-and-next-useful-transfer">Checks, limits and next useful transfer</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M073/" title="Sidorenko conjecture">M073</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M073_INFORMATION_ALIGNMENT.md" rel="noopener noreferrer">research/M073_INFORMATION_ALIGNMENT.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M073: aligning binary labels, parity constraints and graphon densities</h1>
+<p>November 1, 2026. Work item <strong>O-M073-02</strong>, <a href="https://github.com/Svyable/100/issues/195" rel="noopener noreferrer">claim #195</a>.</p>
+<p><strong>Result:</strong> the complete even-subgraph polynomial of the pinned 35-vertex, 66-edge incidence graph is now computed by two different exact algorithms. The newly recorded coefficients strengthen the previous quantitative bound. This is a source-specific calculation using classical mathematics, with independent mathematical and historical-novelty review still outstanding. It does not resolve Sidorenko or produce a counterexample host.</p>
+<h2 id="align-meanings-before-manipulating-symbols">Align meanings before manipulating symbols<a class="anchor" href="#align-meanings-before-manipulating-symbols" aria-label="Link to this section">#</a></h2>
+<p>Let H be the incidence graph of the <a href="https://github.com/Svyable/100/blob/main/data/reference/sidorenko_faces.json" rel="noopener noreferrer">pinned 22 triples on 13 points</a>. The two graphon classes have mass 1/2 and block matrix W=((a,b),(b,a)), with a,b in [0,1]. Put p=(a+b)/2, r=(a-b)/(a+b) when p&gt;0.</p>
+<div class="table-wrap"><table><thead><tr><th>Representation</th><th>Object</th><th>Exactly preserved quantity</th></tr></thead><tbody><tr><td>Graphon</td><td>Product of 66 edge weights averaged over vertex labels</td><td>t(H,W)/p^66</td></tr><tr><td>Spin system</td><td>Independent uniform signs at all 35 vertices</td><td>E product over uv of (1+r sigma_u sigma_v)</td></tr><tr><td>Binary linear code</td><td>Kernel of the incidence matrix over F_2</td><td>Sum of r^weight over all codewords</td></tr><tr><td>Hypergraph coloring</td><td>Binary labels on the 13 points; A monochromatic triples</td><td>E[(1+3r^2)^A (1-r^2)^(22-A)]</td></tr></tbody></table></div>
+<p>These are equalities with explicit normalization, not analogies between similar notation. The spin and parity identities are classical high-temperature/Fourier expansions; see <a href="https://www.unige.ch/math/folks/velenik/smbook/Ising_Model.pdf" rel="noopener noreferrer">Friedli–Velenik, Section 3.5</a>. The wider code/partition-function connection is classical too: <a href="https://arxiv.org/abs/0911.5508" rel="noopener noreferrer">Forney, <em>Codes on graphs: Duality and MacWilliams identities</em></a>. The source-specific complete spectrum below is the new-to-project output; these citations are not evidence of its historical novelty.</p>
+<h2 id="exact-representation-theorem">Exact representation theorem<a class="anchor" href="#exact-representation-theorem" aria-label="Link to this section">#</a></h2>
+<p>The following identity applies to the incidence graph of <strong>any finite family of triples</strong>, including repeated triples as distinct face vertices. Let n be the number of points and f the number of faces. For a point-sign assignment s, let A(s) be the number of faces with three identical signs. Then</p>
+<p>[ Z_H(r):=\sum_{S\subseteq E(H):\,\partial S=0}r^{|S|} =2^{-n}\sum_{s\in\{-1,1\}^n} (1+3r^2)^{A(s)}(1-r^2)^{f-A(s)}. \tag{1} ]</p>
+<p>Here partial S is the vector of vertex degrees modulo two; every edge subset has coefficient one before collecting by cardinality. Equation (1) is a polynomial identity for all real r, independent of graphon restrictions.</p>
+<p><strong>Proof.</strong> Expand the spin product over all edges. Independence and E[sigma^k]=0 for odd k, 1 for even k, annihilate exactly the subsets with nonzero degree parity. This gives the left side. Alternatively integrate the sign tau at a face {u,v,w} first:</p>
+<p>[ \tfrac12\sum_{\tau=\pm1} (1+r\tau s_u)(1+r\tau s_v)(1+r\tau s_w) =1+r^2(s_us_v+s_us_w+s_vs_w). ]</p>
+<p>The parenthesized sum is 3 when the three signs agree and -1 otherwise. Face signs are independent conditional on point signs. Multiplying these f factors and then averaging over all point signs proves (1). Finally W(s,t)=p(1+rst), so t(H,W)=p^(3f) Z_H(r) for the stated graphons.</p>
+<p>There is a complementary direct recurrence. At each degree-three face, an even edge subset chooses either no edges or one of its three edge pairs. Track the XOR of the selected point endpoints and the number k of chosen pairs. Starting from state (0,0) with count one, each face adds the four possible transitions. At the end the counts in parity state zero are exactly the coefficients of r^(2k). Every selection has a unique sequence of local choices, so this recurrence neither omits nor duplicates a subset. It uses no spin transform or cancellation and checks every coefficient.</p>
+<h2 id="complete-pinned-spectrum-and-consequences">Complete pinned spectrum and consequences<a class="anchor" href="#complete-pinned-spectrum-and-consequences" aria-label="Link to this section">#</a></h2>
+<p>Writing x=r^2, Z_H(r)=sum from k=0 to 22 of c_k x^k, the coefficient vector is</p>
+<pre><code class="lang-text">[1, 0, 33, 88, 823, 4232, 24831, 127584,
+ 603274, 2540960, 9417578, 30237520, 83066126,
+ 192776048, 373654910, 599077600, 785645157,
+ 830015520, 690493733, 436109080, 196772043,
+ 56595016, 7805139]</code></pre>
+<p>The <a href="https://github.com/Svyable/100/blob/main/data/experiments/m073_information_alignment.json" rel="noopener noreferrer">machine-readable certificate</a> also records the full histogram of A and the source digest. This recovers the weight distribution of all <strong>2^32 = 4,294,967,296</strong> even subgraphs from <strong>2^13 = 8,192</strong> point-label assignments. These are state counts, not a claim of a measured 524,288-fold runtime speedup. No individual enumeration of billions of subgraphs is performed. The previous face-elimination engine already exploited the 13-point structure for numeric evaluation; this work extracts the entire polynomial and adds a combinatorial coefficient check.</p>
+<p>Because every c_k is nonnegative, for all graphons in the stated family,</p>
+<p>[ t(H,W)\ge p^{66}\bigl(1+33r^4+88r^6+ 823r^8+4232r^{10}+24831r^{12}\bigr). \tag{2} ]</p>
+<p>For p&gt;0 and a unequal to b, (2) is strict since c_7=127584&gt;0. The displayed bound strictly improves the earlier 1+33r^4+88r^6 bound whenever a differs from b. At a=b it equals p^66. When a=b=0, treat the case separately: the density and bound are both zero, and r is undefined.</p>
+<p>Three additional concrete deductions illustrate what the alignment reveals:</p>
+<ol><li><strong>823 is not the eight-cycle count.</strong> It splits as 361 simple eight-cycles plus 462 distinct unions of two edge-disjoint four-cycles. Such unions may share a point vertex. A separate cycle DFS and edge-set census verify this split; confusing cycle counts with even-subgraph counts would miss it.</li><li>The leading coefficient <strong>7,805,139</strong> counts the even subgraphs containing two edges at every face (44 edges total). Larger even subgraphs cannot exist, because each of the 22 degree-three face vertices has selected degree zero or two.</li><li>There are <strong>96 labeled two-colorings of the 13 points with no monochromatic face</strong> (48 up to global color reversal), from histogram entry A=0. This is a coloring fact about the pinned hypergraph, not a Sidorenko counterexample.</li></ol>
+<h2 id="checks-limits-and-next-useful-transfer">Checks, limits and next useful transfer<a class="anchor" href="#checks-limits-and-next-useful-transfer" aria-label="Link to this section">#</a></h2>
+<p>Run:</p>
+<pre><code class="lang-sh">python3 scripts/m073_information_alignment.py --check
+python3 -m unittest discover -s tests -p &#x27;test_m073_information_alignment.py&#x27; -v
+python3 scripts/regen.py --check</code></pre>
+<p>Validation compares all coefficients from the spin-histogram transform and the parity-state recurrence, and separately evaluates six exact weight pairs using the existing pairwise-edge factor eliminator. Tests exhaust all 16 triple systems on four points by direct edge-subset enumeration, include isolated points and repeated triples, and reject changed coefficients, changed histograms and invalid domains. Relabeling and the 823 decomposition provide further controls. The coefficient sum 2^32 matches the connected graph&#x27;s cycle-space dimension 66-35+1=32; it is a checksum, not a standalone proof of each coefficient. These are separate algorithms written/run by the same author, <strong>not independent human review or Lean verification</strong>.</p>
+<p>The scalar histogram A is sufficient because the point signs are uniform and the two diagonal weights agree. Unequal class masses need at least joint information about A and label population; unequal diagonal entries need richer local face-type counts. The polynomial must not be transferred to those domains without a new identity. O-M073-01 remains open, and O-M073-02 remains open pending independent proof/scope review.</p>
+<p>The reusable research method is: specify one invariant, give exact maps between representations, carry normalization and assumptions through every map, derive a consequence that was not recorded, and check it through a different representation. Symbol alignment exposes previously uncomputed consequences of the input; it does not supply new empirical information or establish priority by itself.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

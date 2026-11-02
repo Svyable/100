@@ -368,6 +368,21 @@
         "agent_hours": 1.0
       },
       "note": "Submitted exact all-orders articulation-gluing and cut-dual certificate proof candidate for graph metrics with bridge, cycle and multitheta blocks. Sixteen adversarial tests, 40 seeded random block trees, exact rational primal/dual verification, independent integer tour DP and separate small SciPy LP cross-check. Naive block-LP union fails degree constraints; two-vertex overlap fails additivity; a bridge does not imply LP integrality. Classical block decomposition may subsume historical novelty. No external proof or novelty review; conditional on PR merge, not a resolution of metric TSP four-thirds."
+    },
+    {
+      "work_id": "O-M073-02",
+      "scope_sha256": "f530835caa13124e",
+      "author": "ChatGPT (M073 information alignment)",
+      "outcome": "gap_reported",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/195",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.35,
+        "ci_minutes": 0
+      },
+      "note": "Complete 23-coefficient polynomial delivered with spin-transform/parity-DP agreement and exact edge-factor replays. The acceptance gap is independent mathematical review, so O-M073-02 remains open; no independently accepted or historically novel theorem claimed. Approximate active author/tool time including source inspection and verification; this record closes the bounded author contribution on merge."
     }
   ]
 }
