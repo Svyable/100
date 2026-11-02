@@ -492,6 +492,22 @@
         "agent_hours": 0.4
       },
       "note": "Author-derived sharp restricted seven-deletion two-insertion upper bound for one classical 54-set sunflower-free family over arbitrary ambient supports. Two exact seven-cover enumerators agree on all 3762 representative cover patterns, literal frozenset edge replay and orbit-free 7261-candidate sweep, 11 adversarial tests and explicit 49-set two-insertion witness. Stronger one-insertion hypothesis fails; no 55-set global bound or independent mathematical/historical novelty review. Outcome conditional on PR merge, not an accepted theorem. No new proof obligation, coverage slot or solved-status change."
+    },
+    {
+      "work_id": "X-M076-F43-ELEVEN-WITNESS",
+      "scope_sha256": "e8fe0b925f5dc99324f41ae75572ad91d2d5557355adf54763d6cbac6b910f1a",
+      "author": "ChatGPT (M076 exact one-step extension classification)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/225",
+      "pr_url": "https://github.com/Svyable/100/pull/226",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.5,
+        "ci_minutes": 0
+      },
+      "note": "Approximate active derivation, 22 one-step extension pairs, 36 independently reconstructed individually admissible candidates, elementary fixed-D11 upper bound seven, explicit 50-set seven-insertion witness, 19,600-triple literal checks, eight adversarial tests, primary-source comparison and regeneration. Fixed deletion set only; no all-11 upper bound, 55-set improvement, historical novelty or independent mathematical review. Outcome conditional on exact-head CI and merge; no coverage, benchmark, solved-status or PR-landing task change."
     }
   ]
 }

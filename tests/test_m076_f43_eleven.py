@@ -24,13 +24,32 @@ class ElevenWitnessTests(unittest.TestCase):
 
     def test_independent_literal_witness(self):
         dropped = eleven.TEN_DROP | {19}
-        added = [mask(x) for x in eleven.TEN_INSERT] + [mask((3, 6, 8, 18))]
+        added = [mask(x) for x in eleven.TEN_INSERT]
+        added += [mask((3, 6, 8, 18)), mask((5, 6, 8, 18))]
         family = [a for j, a in enumerate(base_family()) if j not in dropped]
         family += added
-        self.assertEqual(len(family), 49)
-        self.assertEqual(len(set(family)), 49)
+        self.assertEqual(len(family), 50)
+        self.assertEqual(len(set(family)), 50)
         self.assertEqual(sum(sunflower(a, b, c)
                              for a, b, c in combinations(family, 3)), 0)
+
+    def test_fixed_drop_candidate_supports_and_upper_bound(self):
+        candidates = eleven.fixed_drop_candidates()
+        self.assertEqual(len(candidates), 36)
+        structure = eleven.fixed_drop_structural_bound(candidates)
+        self.assertEqual(structure['max_simultaneous_insertions'], 7)
+        self.assertEqual(len(structure['outside_triples']), 7)
+        self.assertEqual(len(structure['inside_conflicts']), 5)
+        self.assertTrue(all(structure['old_supersets'].values()))
+
+    def test_inside_candidate_conflicts_with_existing_inserts(self):
+        candidates = eleven.fixed_drop_candidates()
+        structure = eleven.fixed_drop_structural_bound(candidates)
+        self.assertEqual(structure['inside'], (0, 1, 2, 3))
+        # The seven outside triples already occur once each in the witness.
+        # The only remaining support is the inside candidate, which conflicts.
+        self.assertEqual(len(structure['inside_conflicts']), 5)
+        self.assertFalse(eleven.literal_verify(19, (0, 1, 2, 3)))
 
     def test_ambient_outside_relabeling(self):
         self.assertTrue(eleven.literal_verify(19, (3, 6, 8, 10_000)))

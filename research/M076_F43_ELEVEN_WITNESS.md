@@ -1,4 +1,4 @@
-# M076 — an exact six-insertion eleven-deletion witness and its one-step neighborhood
+# M076 — seven insertions after eleven deletions, and an exact one-step neighborhood
 
 **Date:** 2026-11-02 UTC. **Claim:** [#225](https://github.com/Svyable/100/issues/225).
 **Work ID:** `X-M076-F43-ELEVEN-WITNESS`.
@@ -48,13 +48,16 @@ This table gives exactly **22 labeled (extra deletion, insertion) pairs**
 on the representative universe `{0,...,22}`, and a complete symbolic
 description on *arbitrary* ambient universes.
 
-In particular, deleting
-`D0∪{19}={0,2,3,5,6,8,18,19,24,25,26}` and adding
-`I0∪{{3,6,8,18}}` produces a 49-member sunflower-free family on just
-19 points: **11 deletions and 6 insertions**. Its
-`binom(49,3)=18,424` distinct triples were checked literally. This
-falsifies the extension of the ten-deletion five-insertion cap to eleven
-deletions, *without* establishing any sharp upper bound at eleven.
+**Stronger sharp fixed-deletion result (candidate).** For the *particular*
+eleven-deletion set
+`D11=D0∪{19}={0,2,3,5,6,8,18,19,24,25,26}`, the maximum number of
+simultaneously insertable new four-sets over **any** ambient universe is
+exactly **seven**. A sharp witness uses
+`I7=I0∪{{3,6,8,18},{5,6,8,18}}`. The resulting family contains
+`54−11+7=50` distinct four-sets on 19 points, and passes a literal
+check of all `binom(50,3)=19,600` triples. Thus even a six-insertion
+upper bound does **not** persist at eleven deletions. This result fixes
+`D11` and does **not** bound all eleven-deletion neighborhoods.
 
 ## Proof of the bounded classification
 
@@ -90,12 +93,36 @@ deletions, *without* establishing any sharp upper bound at eleven.
    and all 8,796 candidate four-sets, and tests the new set directly
    against every pair of the resulting 48-member family. It independently
    returns exactly the same 22 pairs. A third, `frozenset`-based Python
-   representation replays all 18,424 triples for each positive witness
+   representation replays all 18,424 triples for each one-step witness
    and tests adversarial negative modifications.
 
-Thus the finite calculation and the outsider-relabeling argument together
-cover the stated arbitrary-universe quantifier. They do not classify other
-eleven-deletion neighborhoods of `F`.
+5. **Fixed-`D11` seven-insertion upper bound.** A second direct C++ sweep
+   and a separately written Python forbidden-pair scan independently
+   classify the new sets compatible with the 43 retained old sets
+   `F\{F_j:j∈D11}`. On the 23-point representative universe, there
+   are **36** individually admissible candidates: the single inside set
+   `{0,1,2,3}` and the seven old-support triples
+   `{0,1,3}`, `{0,2,3}`, `{1,2,3}`, `{3,6,7}`,
+   `{3,6,8}`, `{5,6,7}`, `{5,6,8}`, each completed
+   by any of five outsider labels 18–22. By the same ambient reduction,
+   this list is exhaustive for *each individual* new set over arbitrary
+   universes. Each of the seven triples is contained in a surviving
+   old set (respectively indices **1, 4, 7, 21, 22, 21, 22**).
+   Therefore two distinct completions of the *same* triple with
+   different outsiders would form a sunflower with that surviving old
+   set. At most **one** new set per triple can be selected. The inside
+   set conflicts with five of the seven triples (the first three and
+   the last two), because it and a completion of those triples form
+   a sunflower with a retained old set. Hence any simultaneous
+   insertion family has at most seven members if it excludes the inside
+   set, and at most `1+2=3` if it includes it. The seven-insertion
+   witness `I7` meets this upper bound. Independent integer-mask and frozenset
+   all-triples verifiers check all **19,600** triples of its 50 sets.
+
+Thus the finite classifications, elementary retained-superset argument,
+and outsider-relabeling reduction establish the *fixed-`D11`* sharp
+bound and one-step classification as exact restricted candidates.
+They do not classify other eleven-deletion neighborhoods of `F`.
 
 ## Reproduction, failures, and next falsifiers
 
@@ -109,19 +136,24 @@ python3 -m unittest discover -s tests
 
 The C++17 checker is `scripts/m076_f43_eleven_direct.cpp`, compiled with
 `CXX` or `c++`. The independent-style Python edge checker and literal
-replay are `scripts/m076_f43_eleven.py`. All 22 positives are checked;
+replay are `scripts/m076_f43_eleven.py`. All 22 one-step positives are
+checked, as are the 36 fixed-deletion individually admissible candidates;
 negative controls reject a wrong deleted index, a repeated point, a
 previously inserted set, and a proposed fresh-outsider completion not in
 the table. No random seed is used.
 
-**Failed stronger claims:** The previous ten-deletion cap of five insertions
-does not persist after eleven deletions: the explicit witness refutes it.
+**Failed stronger claims and corrected lead:** The ten-deletion cap of
+five insertions does not persist after eleven deletions. Initially the
+first extra set `{3,6,8,18}` suggested six insertions; an adversarial
+sweep found `{5,6,8,18}` also compatible with the same deletion set,
+so the **six-insertion cap is false even for this fixed `D11`**.
 A tempting extra deletion at index 21 combined with `{3,6,8,18}` is
 invalid. The 22 extensions exhaust *only* the one-old-deletion/one-new-set
-extensions of this particular pinned ten-deletion configuration. No claim
-about all eleven-deletion configurations, seven simultaneous insertions,
-or a 55-member family follows. To exceed the classical 54-set lower bound
-after eleven deletions would require **twelve** insertions.
+extensions of this particular pinned ten-deletion configuration. The
+sharp seven bound applies to the fixed `D11` only; it does not assert
+a bound for *all* eleven-deletion configurations. No 55-member family
+follows. To exceed the classical 54-set lower bound after eleven
+deletions would require **twelve** insertions.
 
 **Literature comparison and limits:** Abbott–Hanson–Sauer,
 *Intersection Theorems for Systems of Sets*, JCTA 12 (1972), 381–389,
@@ -140,6 +172,6 @@ are not independent mathematical acceptance.
 **Next falsifiers:** Independently reimplement the 23-point direct
 enumeration without sharing code; have a specialist check the old-index
 convention and all-ambient reduction; search all eleven-deletion
-neighborhoods for **seven** simultaneous insertions, rather than
-extrapolating from this fixed ten-deletion seed. No solved status,
+neighborhoods for **eight** simultaneous insertions, rather than
+extrapolating from this fixed eleven-deletion seed. No solved status,
 independently accepted outcome, coverage slot, or benchmark result changes.

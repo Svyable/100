@@ -43,4 +43,23 @@ int main(){
  }
  cout<<"tested "<<tested<<" solutions "<<result.size()<<"\n";
  for(auto const& [drop,a]:result)cout<<drop<<" "<<a[0]<<" "<<a[1]<<" "<<a[2]<<" "<<a[3]<<"\n";
+ // Second direct sweep: classify all individually insertable candidates
+ // after the fixed eleven deletions, with no prior insertions assumed.
+ set<int> D11=D;D11.insert(19);
+ vector<M> old11;
+ for(int i=0;i<54;i++)if(!D11.count(i))old11.push_back(F[i]);
+ vector<array<int,4>> allowed;
+ for(int a=0;a<23;a++)for(int b=a+1;b<23;b++)
+ for(int c=b+1;c<23;c++)for(int d=c+1;d<23;d++){
+   M x=m({a,b,c,d});
+   if(find(F.begin(),F.end(),x)!=F.end())continue;
+   bool ok=true;
+   for(size_t i=0;i<old11.size()&&ok;i++)
+     for(size_t j=0;j<i;j++)
+       if(sun(old11[i],old11[j],x)){ok=false;break;}
+   if(ok)allowed.push_back({a,b,c,d});
+ }
+ cout<<"allowed "<<allowed.size()<<"\n";
+ for(auto const& a:allowed)
+   cout<<"A "<<a[0]<<" "<<a[1]<<" "<<a[2]<<" "<<a[3]<<"\n";
 }

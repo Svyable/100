@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M076 — seven insertions after eleven deletions, and an exact one-step neighborhood · 100</title>
+<meta name="description" content="Date: 2026-11-02 UTC. Claim: #225. Work ID: X-M076-F43-ELEVEN-WITNESS. Scope SHA-256: e8fe0b925f5dc99324f41ae75572ad91d2d5557355adf54763d6cbac6b910f1a.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m076-f43-eleven-witness/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M076 — seven insertions after eleven deletions, and an exact one-step neighborhood · 100">
+<meta property="og:description" content="Date: 2026-11-02 UTC. Claim: #225. Work ID: X-M076-F43-ELEVEN-WITNESS. Scope SHA-256: e8fe0b925f5dc99324f41ae75572ad91d2d5557355adf54763d6cbac6b910f1a.">
+<meta property="og:url" content="https://svyable.github.io/100/library/m076-f43-eleven-witness/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M076 — seven insertions after eleven deletions, and an exact one-step neighborhood</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#construction-and-exact-statement">Construction and exact statement</a></li><li class="toc-l2"><a href="#proof-of-the-bounded-classification">Proof of the bounded classification</a></li><li class="toc-l2"><a href="#reproduction-failures-and-next-falsifiers">Reproduction, failures, and next falsifiers</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M076/" title="Erdős–Rado sunflower conjecture">M076</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M076_F43_ELEVEN_WITNESS.md" rel="noopener noreferrer">research/M076_F43_ELEVEN_WITNESS.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M076 — seven insertions after eleven deletions, and an exact one-step neighborhood</h1>
+<p><strong>Date:</strong> 2026-11-02 UTC. <strong>Claim:</strong> <a href="https://github.com/Svyable/100/issues/225" rel="noopener noreferrer">#225</a>. <strong>Work ID:</strong> <code>X-M076-F43-ELEVEN-WITNESS</code>. <strong>Scope SHA-256:</strong> <code>e8fe0b925f5dc99324f41ae75572ad91d2d5557355adf54763d6cbac6b910f1a</code>.</p>
+<p><strong>Status:</strong> author-derived restricted computational theorem <strong>candidate</strong> and explicit finite witness, with two differently structured exhaustive checkers. Neither checker is an independent mathematical reviewer. Historical priority has not been established. No improvement to the global four-uniform sunflower bound is claimed.</p>
+<h2 id="construction-and-exact-statement">Construction and exact statement<a class="anchor" href="#construction-and-exact-statement" aria-label="Link to this section">#</a></h2>
+<p>Let <code>F=(F_0,...,F_53)</code> be the ordered 54-set family returned by <code>scripts.m076_f43_stability.base_family()</code>. On each of two disjoint nine-point components, partition into three blocks of size three and take all four-sets with two points from each of two different blocks. A sunflower is a triple of <strong>distinct</strong> sets with all three pairwise intersections equal, including the empty intersection.</p>
+<p>Start with the ten-deletion/five-insertion configuration described in <a href="https://github.com/Svyable/100/pull/221" rel="noopener noreferrer">PR #221</a>:</p>
+<pre><code class="lang-text">D0 = {0,2,3,5,6,8,18,24,25,26}        # old-set indices
+I0 = {{0,1,3,18}, {0,2,3,18}, {1,2,3,18},
+      {3,6,7,18}, {5,6,7,18}}          # new four-sets</code></pre>
+<p><strong>Exact one-step classification (candidate).</strong> Let <code>V</code> be any ambient set containing <code>{0,...,18}</code>. For <code>j∉D0</code> and any four-set <code>C⊆V</code> not in <code>F∪I0</code>, the family <code>(F \ {F_i : i∈D0∪{j}}) ∪ I0 ∪ {C}</code> is sunflower-free <strong>if and only if</strong> one of the following holds, where <code>x</code> is <em>any</em> point of <code>V\{0,...,17}</code>:</p>
+<div class="table-wrap"><table><thead><tr><th>Extra deleted old index</th><th>Added four-set</th></tr></thead><tbody><tr><td>19 or 22</td><td><code>{3,6,8,x}</code></td></tr><tr><td>20 or 23</td><td><code>{3,7,8,x}</code></td></tr><tr><td>19</td><td><code>{5,6,8,18}</code></td></tr><tr><td>20</td><td><code>{5,7,8,18}</code></td></tr></tbody></table></div>
+<p>The four potentially deleted old sets are respectively <code>F19={3,4,6,8}</code>, <code>F20={3,4,7,8}</code>, <code>F22={3,5,6,8}</code>, and <code>F23={3,5,7,8}</code>. This table gives exactly <strong>22 labeled (extra deletion, insertion) pairs</strong> on the representative universe <code>{0,...,22}</code>, and a complete symbolic description on <em>arbitrary</em> ambient universes.</p>
+<p><strong>Stronger sharp fixed-deletion result (candidate).</strong> For the <em>particular</em> eleven-deletion set <code>D11=D0∪{19}={0,2,3,5,6,8,18,19,24,25,26}</code>, the maximum number of simultaneously insertable new four-sets over <strong>any</strong> ambient universe is exactly <strong>seven</strong>. A sharp witness uses <code>I7=I0∪{{3,6,8,18},{5,6,8,18}}</code>. The resulting family contains <code>54−11+7=50</code> distinct four-sets on 19 points, and passes a literal check of all <code>binom(50,3)=19,600</code> triples. Thus even a six-insertion upper bound does <strong>not</strong> persist at eleven deletions. This result fixes <code>D11</code> and does <strong>not</strong> bound all eleven-deletion neighborhoods.</p>
+<h2 id="proof-of-the-bounded-classification">Proof of the bounded classification<a class="anchor" href="#proof-of-the-bounded-classification" aria-label="Link to this section">#</a></h2>
+<ol><li><strong>One-deletion edge lemma.</strong> Fix the 49-member sunflower-free family <code>G=(F\{F_i:i∈D0})∪I0</code>. For a new four-set <code>C</code>, define <code>E_C</code> to contain every pair <code>{A,B}⊆G</code> for which <code>A,B,C</code> form a sunflower. Then <code>(G\{F_j})∪{C}</code> is sunflower-free exactly when <strong>every</strong> pair in <code>E_C</code> contains <code>F_j</code>. This follows because all new sunflowers must contain <code>C</code>; the old family <code>G</code> is already sunflower-free. The requirement that <code>j</code> index an <em>old retained</em> set is essential.</li></ol>
+<ol start="2"><li><strong>Finite ambient reduction.</strong> The five existing inserted sets use only one outsider, point 18. Any candidate <code>C</code> has at most four outsider points, so every candidate on any <code>V</code> is equivalent, under a permutation fixing <code>0,...,18</code>, to one supported in <code>{0,...,22}</code>. This equivalence preserves <code>F</code>, <code>I0</code>, and the sunflower predicate. Conversely, a representative solution with one fresh outsider relabels to any such point of <code>V</code>.</li></ol>
+<ol start="3"><li><strong>Complete edge-intersection enumeration.</strong> There are <code>binom(23,4)=8,855</code> four-sets on the representative universe. Exclude the 54 members of <code>F</code> and five of <code>I0</code>, leaving <strong>8,796</strong> candidates. For each, construct all <code>binom(49,2)=1,176</code> pair intersections of <code>G</code> and intersect the allowed old-deletion endpoints of every forbidden pair. The resulting 22 pairs are precisely the table above. The procedure evaluates <code>44×8,796=387,024</code> potential old-deletion/new-insertion pairs, without an orbit assumption or randomized pruning.</li></ol>
+<ol start="4"><li><strong>Separate direct enumeration.</strong> A standalone C++17 program rebuilds <code>F</code> from the block definition, checks that the 49-member baseline is sunflower-free, loops over all 44 retained old deletion indices and all 8,796 candidate four-sets, and tests the new set directly against every pair of the resulting 48-member family. It independently returns exactly the same 22 pairs. A third, <code>frozenset</code>-based Python representation replays all 18,424 triples for each one-step witness and tests adversarial negative modifications.</li></ol>
+<ol start="5"><li><strong>Fixed-<code>D11</code> seven-insertion upper bound.</strong> A second direct C++ sweep and a separately written Python forbidden-pair scan independently classify the new sets compatible with the 43 retained old sets <code>F\{F_j:j∈D11}</code>. On the 23-point representative universe, there are <strong>36</strong> individually admissible candidates: the single inside set <code>{0,1,2,3}</code> and the seven old-support triples <code>{0,1,3}</code>, <code>{0,2,3}</code>, <code>{1,2,3}</code>, <code>{3,6,7}</code>, <code>{3,6,8}</code>, <code>{5,6,7}</code>, <code>{5,6,8}</code>, each completed by any of five outsider labels 18–22. By the same ambient reduction, this list is exhaustive for <em>each individual</em> new set over arbitrary universes. Each of the seven triples is contained in a surviving old set (respectively indices <strong>1, 4, 7, 21, 22, 21, 22</strong>). Therefore two distinct completions of the <em>same</em> triple with different outsiders would form a sunflower with that surviving old set. At most <strong>one</strong> new set per triple can be selected. The inside set conflicts with five of the seven triples (the first three and the last two), because it and a completion of those triples form a sunflower with a retained old set. Hence any simultaneous insertion family has at most seven members if it excludes the inside set, and at most <code>1+2=3</code> if it includes it. The seven-insertion witness <code>I7</code> meets this upper bound. Independent integer-mask and frozenset all-triples verifiers check all <strong>19,600</strong> triples of its 50 sets.</li></ol>
+<p>Thus the finite classifications, elementary retained-superset argument, and outsider-relabeling reduction establish the <em>fixed-<code>D11</code></em> sharp bound and one-step classification as exact restricted candidates. They do not classify other eleven-deletion neighborhoods of <code>F</code>.</p>
+<h2 id="reproduction-failures-and-next-falsifiers">Reproduction, failures, and next falsifiers<a class="anchor" href="#reproduction-failures-and-next-falsifiers" aria-label="Link to this section">#</a></h2>
+<pre><code class="lang-sh">python3 -m scripts.m076_f43_eleven --check --json
+python3 -m unittest discover -s tests -p &#x27;test_m076_f43_eleven.py&#x27; -v
+python3 scripts/regen.py --check --fast
+python3 scripts/regen.py --check
+python3 -m unittest discover -s tests</code></pre>
+<p>The C++17 checker is <code>scripts/m076_f43_eleven_direct.cpp</code>, compiled with <code>CXX</code> or <code>c++</code>. The independent-style Python edge checker and literal replay are <code>scripts/m076_f43_eleven.py</code>. All 22 one-step positives are checked, as are the 36 fixed-deletion individually admissible candidates; negative controls reject a wrong deleted index, a repeated point, a previously inserted set, and a proposed fresh-outsider completion not in the table. No random seed is used.</p>
+<p><strong>Failed stronger claims and corrected lead:</strong> The ten-deletion cap of five insertions does not persist after eleven deletions. Initially the first extra set <code>{3,6,8,18}</code> suggested six insertions; an adversarial sweep found <code>{5,6,8,18}</code> also compatible with the same deletion set, so the <strong>six-insertion cap is false even for this fixed <code>D11</code></strong>. A tempting extra deletion at index 21 combined with <code>{3,6,8,18}</code> is invalid. The 22 extensions exhaust <em>only</em> the one-old-deletion/one-new-set extensions of this particular pinned ten-deletion configuration. The sharp seven bound applies to the fixed <code>D11</code> only; it does not assert a bound for <em>all</em> eleven-deletion configurations. No 55-member family follows. To exceed the classical 54-set lower bound after eleven deletions would require <strong>twelve</strong> insertions.</p>
+<p><strong>Literature comparison and limits:</strong> Abbott–Hanson–Sauer, <em>Intersection Theorems for Systems of Sets</em>, JCTA 12 (1972), 381–389, <a href="https://doi.org/10.1016/0097-3165(72)90103-3" rel="noopener noreferrer">DOI</a>; Abbott–Hanson, <em>On finite Δ-systems</em>, Discrete Mathematics 8 (1974), 1–12, <a href="https://doi.org/10.1016/0012-365X(74)90103-4" rel="noopener noreferrer">DOI</a>; Axante et al., <em>Sunflower-Free Uniform Families: Recursive Constructions and Explicit Bounds</em>, <a href="https://arxiv.org/abs/2609.06175" rel="noopener noreferrer">arXiv:2609.06175</a>, posted 2026-09-05, reports <code>54≤f(4,3)≤83</code>. The older papers establish construction/bound context; the 2026 paper studies global extremal bounds, not this pinned one-step deletion classification. A targeted search found no matching local statement, but absence from a search is <strong>not</strong> proof of novelty. Both algorithmic paths were written by the same author and are not independent mathematical acceptance.</p>
+<p><strong>Next falsifiers:</strong> Independently reimplement the 23-point direct enumeration without sharing code; have a specialist check the old-index convention and all-ambient reduction; search all eleven-deletion neighborhoods for <strong>eight</strong> simultaneous insertions, rather than extrapolating from this fixed eleven-deletion seed. No solved status, independently accepted outcome, coverage slot, or benchmark result changes.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>
