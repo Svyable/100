@@ -242,7 +242,7 @@
       "claimed_on": "2026-11-01",
       "closed_on": "2026-11-01",
       "resources": {
-        "agent_hours": 1.0
+        "agent_hours": 1
       },
       "note": "Approximate active author/tool work. General bipartite relative Ising stability inequality, source-specific two-disjoint-bypass GKS-II sharpening, and two exact M073 off-diagonal rational certificates; 11 dedicated tests and negative triangle control. Classical Ising/GKS dependencies; originality and independent mathematical review unverified. Outcome status conditional on PR merge; not full Sidorenko or finite-host proof."
     },
@@ -272,7 +272,7 @@
       "claimed_on": "2026-11-01",
       "closed_on": "2026-11-01",
       "resources": {
-        "agent_hours": 1.0,
+        "agent_hours": 1,
         "ci_minutes": 0
       },
       "note": "Bounded partial O-M080-01 step only: exact 4,141,145 S4 orbit count and 42,840 repeated-basis GF(2)^4 grid witnesses, independent Leibniz checker, 7 adversarial tests. 4,111,138 all-distinct orbits unverified. Cheung 2012 reported rank-four computational result; no new theorem or independent mathematical review. Outcome classification conditional on PR #171 merge; the original obligation remains open."
@@ -365,7 +365,7 @@
       "claimed_on": "2026-11-01",
       "closed_on": "2026-11-01",
       "resources": {
-        "agent_hours": 1.0
+        "agent_hours": 1
       },
       "note": "Submitted exact all-orders articulation-gluing and cut-dual certificate proof candidate for graph metrics with bridge, cycle and multitheta blocks. Sixteen adversarial tests, 40 seeded random block trees, exact rational primal/dual verification, independent integer tour DP and separate small SciPy LP cross-check. Naive block-LP union fails degree constraints; two-vertex overlap fails additivity; a bridge does not imply LP integrality. Classical block decomposition may subsume historical novelty. No external proof or novelty review; conditional on PR merge, not a resolution of metric TSP four-thirds."
     },
@@ -415,6 +415,37 @@
         "ci_minutes": 0
       },
       "note": "Estimated 0.9 active agent-hours, including unsuccessful 4/L threshold and 5/12 strengthening. New all-orders 25/61 width-four chain-plus-four proof candidate with two integer counters over 3,456,151 normalized cases and literal sharp-witness enumeration; no historical novelty or independent mathematical review. PR #184; pending independent review and novelty audit."
+    },
+    {
+      "work_id": "X-M095-WITNESS-REPLAY",
+      "scope_sha256": "330f9bc2c7095364cf2091fefa545f760eeea36530f7cc3c84ad681cf082d182",
+      "author": "ChatGPT (M095 verifier integrity repair)",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/191",
+      "pr_url": "https://github.com/Svyable/100/pull/193",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.6,
+        "ci_minutes": 0
+      },
+      "note": "Fixes previously demonstrated empty-certificate vacuity and unbound M095 summaries; 16 adversarial regressions plus prior lab tests. Outcome is conditional on exact-head CI and merge. No theorem, novelty, independent specialist review or accepted work item."
+    },
+    {
+      "work_id": "X-M076-F43-EIGHT",
+      "scope_sha256": "b22d7b8a1bc3115b51cc948c3068fca1c255d6622f0edcc05e58eb4077688a9e",
+      "author": "ChatGPT (M076 eight-deletion exact restricted proof candidate)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/212",
+      "pr_url": "https://github.com/Svyable/100/pull/213",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 1.0
+      },
+      "note": "Approximate active research, exact cover computation, literature comparison, independent-style literal adversarial replay, 10 tests and full regeneration/test effort. Sharp eight-deletion four-insertion restricted candidate with 68,211 exact cover patterns; no global sunflower bound, no 55-set witness, no independent mathematical review or historical novelty determination. Outcome conditional on CI-gated PR merge; no coverage slot, new benchmark cell or solved/evidence-state change."
     }
   ]
 }
