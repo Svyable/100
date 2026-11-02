@@ -90,20 +90,20 @@ A separate adversarial control is the oriented circulant on \(\mathbb Z/9\mathbb
 
 Suppose, *only hypothetically*, that \(D\) is an oriented, directed-triangle-free graph on 27 vertices with all outdegrees nine. Earlier work shows every global indegree is at most ten and eliminates the indegree-nine-regular branch. Fix **any** vertex \(v\) of indegree ten and use the root sets \(A=N^+(v)\) (nine), \(B=N^-(v)\) (ten), \(C\) (seven).
 
-The proven [\(z\le3\) root theorem](M074_ZERO_K_THREE.md) says at most three \(b\in B\) have \(k(b)=d_C^-(b)=0\). Every \(a\in A\) sends at least two outgoing arcs inside \(A\), so the present nine-vertex theorem gives **two distinct \(a_1,a_2\in A\) with \(d_A^+(a_i)=2\)**. Each sends all seven remaining outgoing arcs to every \(c\in C\). Such an \(a_i\):
+The previously proved [\(z\le3\) root theorem](M074_ZERO_K_THREE.md), strengthened by the [rank-and-girth exclusion of \(z=3\)](M074_ZERO_K_TWO.md), says at most **two** \(b\in B\) have \(k(b)=d_C^-(b)=0\). Every \(a\in A\) sends at least two outgoing arcs inside \(A\), so the present nine-vertex theorem gives **two distinct \(a_1,a_2\in A\) with \(d_A^+(a_i)=2\)**. Each sends all seven remaining outgoing arcs to every \(c\in C\). Such an \(a_i\):
 
 - receives one arc from \(v\);
 - receives at most four arcs from within \(A\) (nine-vertex local indegree cap);
 - receives **no** arc from \(C\) (orientation);
-- receives at most three arcs from \(B\), since \(a_i\to c\to b\to a_i\) forbids every \(b\) with \(k(b)>0\).
+- receives at most **two** arcs from \(B\), since \(a_i\to c\to b\to a_i\) forbids every \(b\) with \(k(b)>0\).
 
 Therefore
 
 \[
-\boxed{d_D^-(a_i)\le1+4+3=8 \quad (i=1,2).}
+\boxed{d_D^-(a_i)\le1+4+2=7 \quad (i=1,2).}
 \]
 
-**Every indegree-ten vertex has at least two distinct outneighbors of ambient indegree at most eight.** This improves the previously recorded one-low-outneighbor condition, but does not prove the finite \((27,9)\) case.
+**Every indegree-ten vertex has at least two distinct outneighbors of ambient indegree at most seven.** This improves the previously recorded one-low-outneighbor condition, but does not prove the finite \((27,9)\) case.
 
 For a global necessary inequality, let \(H_{10}=\{v:d_D^-(v)=10\}\) with size \(h\), and \(L_8=\{v:d_D^-(v)\le8\}\) with size \(\ell\). Degree-sum balance gives \(h=\sum_{u\in L_8}(9-d_D^-(u))\ge\ell\). Every high vertex has two low outneighbors, so
 
@@ -112,7 +112,7 @@ For a global necessary inequality, let \(H_{10}=\{v:d_D^-(v)=10\}\) with size \(
 \qquad\boxed{h\le3\ell.}
 \]
 
-The inequalities \( \ell\le h\le3\ell \) remain consistent; **there is no global contradiction**. The next task is to strengthen the local statement further using the *actual* rooted \(A/B/C\) incidence and the \(z=0,1,2,3\) cases, not assume the degree-defect saturation hypothesis of eight low outneighbors.
+In fact let \(K_7=\{v:d_D^-(v)\le7\}\) have size \(k\). The two stronger low outneighbors per high vertex give \(2h\le e(H_{10},K_7)\le7k\), while degree balance gives \(h\ge2k\). Hence \(2k\le h\le(7/2)k\). These necessary inequalities are compatible: **there is no global contradiction**. The next task is to strengthen the local statement further using the *actual* rooted \(A/B/C\) incidence and the \(z=0,1,2\) cases, not assume the degree-defect saturation hypothesis of eight low outneighbors.
 
 ## Reproduction and scope audit
 
