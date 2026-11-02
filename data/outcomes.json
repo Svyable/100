@@ -338,6 +338,51 @@
         "agent_hours": 0.8
       },
       "note": "Approximate active derivation, exact enumeration, independent algorithmic checks, failed 2/5 strengthening, and targeted literature audit. Sharp all-orders 11/28 bound for width-three chain plus three pairwise incomparable outsiders, each incomparable to some chain element; 67392 residual cases independently DP-checked and literal sharp-witness permutation replay. No external proof review, no established historical novelty, no full M079 solution; outcome conditional on PR merge and O-M079-02 remains open pending review."
+    },
+    {
+      "work_id": "X-M097-MULTITHETA",
+      "scope_sha256": "b188c14d987d1307f3d5d21815b83c486f38145f1865af15c799b04604aa1ba4",
+      "author": "ChatGPT (M097 multitheta restricted proof candidate)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/187",
+      "pr_url": "https://github.com/Svyable/100/pull/188",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.8
+      },
+      "note": "Submitted all-orders restricted proof candidate with 63-case exact primal and tour checks, separate HiGHS rational primal/dual audit, 12 adversarial tests. Pending merge and independent mathematical/novelty review; classic three-path lower-bound family is known. Includes failed nine-vertex extrapolation leads."
+    },
+    {
+      "work_id": "X-M097-BLOCK-SUM",
+      "scope_sha256": "a30860c84ceb8a1d24b6bedb10bbdc085b6560e7060888dff6ceb675846f974f",
+      "author": "ChatGPT (M097 block-tree restricted proof candidate)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/189",
+      "pr_url": "https://github.com/Svyable/100/pull/190",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 1.0
+      },
+      "note": "Submitted exact all-orders articulation-gluing and cut-dual certificate proof candidate for graph metrics with bridge, cycle and multitheta blocks. Sixteen adversarial tests, 40 seeded random block trees, exact rational primal/dual verification, independent integer tour DP and separate small SciPy LP cross-check. Naive block-LP union fails degree constraints; two-vertex overlap fails additivity; a bridge does not imply LP integrality. Classical block decomposition may subsume historical novelty. No external proof or novelty review; conditional on PR merge, not a resolution of metric TSP four-thirds."
+    },
+    {
+      "work_id": "X-M076-F43-SEARCH",
+      "scope_sha256": "5237be0b42bf54171a3f31bd8bc90f7bad55dd7898469fe2912e2a348267c1b4",
+      "author": "ChatGPT (M076 54-set local stability proof candidate)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/185",
+      "pr_url": "https://github.com/Svyable/100/pull/186",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.9
+      },
+      "note": "Approximate active work including literature/source audit, initial failed <=4-swap avenue, orbit matching derivation, two five-cover enumeration paths, independent 7261-candidate sweep, adversarial controls and regeneration. Author-derived sharp restricted local stability candidate only; no 55-set witness, no new global sunflower bound, no independent mathematical or historical novelty review. Status conditional on PR merge; The custom packet adds no proof-obligation or coverage slot; independent review remains open."
     }
   ]
 }
