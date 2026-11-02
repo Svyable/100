@@ -39,98 +39,192 @@ An odd-mode path costs at least `L_i`. An even-mode path has at most one edge of
 
 For even `k`, all long paths once and no direct edge form a connected Eulerian spanning graph of cost `m`, which meets the pathwise lower bound. For odd `k`, all long paths once plus the direct edge form an Eulerian spanning graph of cost `m+1`. If `ell=2`, a better graph of cost `m` uses every long path except a length-two path once, and on that short path doubles one edge and omits the other (the internal vertex remains attached); the direct edge is omitted. If `ell>=3`, every even-mode path costs at least one above its baseline, while all-odd mode requires the direct edge an odd number of times, so every tour costs at least `m+1`. This establishes the formula.
 
-## New optimal-face rigidity and quantitative stability (2026-11-02)
+## Optimal-face rigidity, support theorem, and quantitative stability (2026-11-02)
 
-**Additional author-derived lemma (same claimed class, not a second claim).**
-Let (x) be *any* feasible symmetric subtour-LP point on the chorded graph's
-complete shortest-path metric, with objective (m+arepsilon). Let
-(B) be the set of unordered vertex pairs ({a,b}) for which **at least
-one** shortest (a)-(b) route in the original graph uses the direct hub edge
-(uv). Then
+**Author-derived restricted lemmas (same claim #228).** Let \(x\) be any feasible
+symmetric subtour-LP point on the complete shortest-path metric, with objective
+\(m+\varepsilon\), where \(\varepsilon\ge0\). Let \(B\) be the set of unordered
+vertex pairs \(\{a,b\}\) for which **at least one** shortest route in the
+original graph uses the direct hub edge \(uv\). Then
 
-[
-arepsilonge 0,qquad sum_{{a,b}in B}x_{ab}learepsilon.
-]
+\[
+\sum_{\{a,b\}\in B}x_{ab}\le\varepsilon.
+\]
 
-In particular **every** LP optimum has (x_{ab}=0) for every pair in
-(B), including (x_{uv}=0). This is a statement about the *entire
-optimal face*, not merely the displayed fractional witness. It is stronger
-than observing that one optimum avoids the chord. It does not assert that
-optimal *integral tours* always avoid the chord: when (k) is odd and all
-(L_ige3), the integral optimum has value (m+1), not (m).
+Consequently, every optimum vanishes on every pair in \(B\), not just on
+\(uv\). For every long path of length \(L\ge3\), every shortest-route load
+\(y_e\) satisfies
 
-There is also a pathwise stability conclusion. For any choice of shortest
-routes used to expand (x) to original-edge loads (y), and any constituent
-path of length (Lge3), each of its edge loads satisfies
+\[
+1-\frac{\varepsilon}{L-2}\le y_e\le1+\varepsilon.
+\]
 
-[
-1-rac{arepsilon}{L-2} le y_e le 1+arepsilon.
-]
+In particular, at an optimum all loads on each path of length at least three
+equal one, regardless of shortest-route tie-breaking. A length-two path is
+exceptional: its two loads sum to two, but they need not separately equal one.
 
-Thus all loads on paths of length at least three are **exactly one** at
-an LP optimum, irrespective of shortest-path tie-breaking. A path of length
-two is exceptional: its two loads are forced to sum to two but need not
-individually equal one by this argument.
+**Stronger quantitative sparse-support theorem.** Define \(H\) as the
+set of original long-path edges together with all same-hub shortcuts
+joining the first internal vertices of different paths or the last
+internal vertices of different paths. Then for **every** feasible
+subtour point, not only optimal points,
 
-**Proof.** Route every positive metric edge (ab) along an arbitrary
-shortest (a)-(b) path in the original graph, obtaining nonnegative
-loads (y) with total load equal to (m+arepsilon). Every cut of the
-original graph has load at least two because its routed metric-edge
-cut load is at least the original subtour cut. For any two edges (e,f)
-on the same long path, the internal vertices strictly between them
-have original graph boundary precisely ({e,f}). Hence
-(y_e+y_fge2). Summing all such pairs gives
-(sum_{ein P}y_ege L). Put
-(delta_P=sum_{ein P}y_e-Lge0). Since the original edges consist of
-the long paths and (uv),
+\[
+\boxed{\sum_{\{a,b\}\notin H}x_{ab}\le\varepsilon.}
+\]
 
-[
-arepsilon=y_{uv}+sum_Pdelta_P.
-]
+The coefficient **one is sharp**, including for the three-path length-three
+example below. In particular, the entire optimal face is supported on
+\(H\). This strictly strengthens the chord-geodesic inequality: for
+\(k=3\), lengths \((4,4,4)\), there are 24 metric pairs outside \(H\)
+which are **not** in the chord-geodesic set \(B\).
 
-Choose the shortest route through (uv) for **every** pair in (B)
-simultaneously; this is allowed because shortest paths are routed
-independently. Then (y_{uv}gesum_{abin B}x_{ab}), proving the first
-inequality. For the second, fix a path of length (Lge3) and set
-(z_e=y_e-1). The pair inequalities say (z_e+z_fge0). If one
-(z_e=-t<0), every other (z_fge t), so
-(delta_P=sum z_fge(L-2)t). If one (z_e=t>0),
-either all other deviations are nonnegative, or exactly one is
-negative and the remaining (L-2) deviations compensate for it;
-in either case (delta_Pge t). Because
-(0ledelta_Plearepsilon), the claimed interval follows.
-This proof is all-orders and does not invoke numerical optimization.
+**Tight-cut theorem.** At *every* subtour optimum,
+each cut separating a nonempty contiguous segment of internal vertices of
+any constituent long path from the remaining graph is tight:
+\(x(\delta(S))=2\). This includes the \(\binom{L}{2}\) interval cuts
+specified by two distinct boundary edges of a length-\(L\) path. Moreover,
+every positive variable \(x_{ab}\) is supported on one of the following
+pairs: (i) an original long-path edge; (ii) the two first internal vertices
+of different long paths, adjacent to \(u\); or (iii) the two last internal
+vertices of different long paths, adjacent to \(v\). In particular,
+**no other metric edge can belong to the optimal face**, even if its
+shortest route avoids the hub chord. For length-two paths the first and last
+internal vertices coincide, and coincident shortcut types are understood
+as one unordered pair. The support has exactly
+\(m+k(k-1)-\binom{t}{2}\) pairs, where \(t\) is the number of
+length-two paths (the only duplication occurs when both endpoints
+of a pair of paths coincide). This is a support *necessity*, not a claim that
+every feasible assignment on the displayed support is optimal.
 
-**Sharp coefficient and the integral boundary.** For three paths
-`0-2-3-1`, `0-4-5-1`, `0-6-7-1`, the metric Hamiltonian
-cycle `0-1-3-2-4-5-7-6-0` has cost 10, exactly (m+1).
-Among its metric edges, only ({0,1}) belongs to (B), so
-(sum_{abin B}x_{ab}=1=arepsilon). Therefore the coefficient
-**one** in the stability bound cannot be reduced. This optimal
-*integral* tour uses the chord even though no optimum of the
-fractional subtour LP (value 9) can use it.
+For \(k=3\) and lengths \((4,4,4)\), this rules out **24 additional
+metric pairs** beyond the 13 chord-geodesic pairs: only 18 of the 55
+complete-graph edges can support a subtour optimum. These counts are
+exact and independently replayable, not a global graph-metric theorem.
 
-**Adversarial exact checks.** A separate script
-`scripts/m097_chorded_optimal_face.py` builds the graph independently,
-identifies all chord-geodesic pairs by comparing distances with and without
-the chord, routes exact rational LP points, and checks both inequalities
-against 26 optimum witnesses and 52 feasible tour/convex-combination
-perturbations (at most nine vertices). Six dedicated tests additionally
-compare the chord-geodesic set against a separate exhaustive DFS over all
-simple shortest paths, test a deliberately infeasible perturbation, and
-exercise a 13-pair forbidden set for the (k=3,L=(3,3,3)) instance.
-The initially overstrong test assertion that every length-two example
-has multiple chord-geodesic pairs was falsified: for ((2,2)) and
-((2,2,2)), only ({u,v}) qualifies. The test was corrected; the
-mathematical lemma was unaffected. These are same-author computational
-cross-checks, **not** independent specialist acceptance.
+**Proof of quantitative bounds.** Route every positive metric edge along
+an arbitrary shortest path in the original graph, obtaining nonnegative
+loads \(y\) with total load \(m+\varepsilon\). Every original cut has
+load at least two: routing can only increase the load of a cut. For any
+two distinct edges \(e,f\) on the same long path, the internal segment
+between them has boundary exactly \(\{e,f\}\), hence \(y_e+y_f\ge2\).
+Summing over pairs gives \(\sum_{e\in P}y_e\ge L\). Write
+\(\delta_P=\sum_{e\in P}y_e-L\ge0\). Because the original graph consists
+of the long paths and \(uv\),
 
-The next meaningful falsifier is a feasible rational subtour point
-with objective (m+arepsilon) but forbidden-pair mass greater than
-(arepsilon), or a path-edge load outside the stated interval.
-An external reviewer should separately audit the cut-routing implication,
-the pairwise-boundary cuts, and the geodesic tie case. No historical
-novelty is asserted.
+\[
+\varepsilon=y_{uv}+\sum_P\delta_P.
+\]
+
+Choose a shortest route through \(uv\) for *every* pair in \(B\);
+routes for different pairs can be selected independently. Then
+\(y_{uv}\ge\sum_{ab\in B}x_{ab}\), proving the first inequality.
+
+For a path of length \(L\ge3\), put \(z_e=y_e-1\). The pair inequalities
+give \(z_e+z_f\ge0\). If \(z_e=-t<0\), every other \(z_f\ge t\), whence
+\(\delta_P\ge(L-2)t\). If \(z_e=t>0\), at most one other deviation is
+negative, and the remaining deviations compensate it, so
+\(\delta_P\ge t\). As \(0\le\delta_P\le\varepsilon\), both bounds follow.
+
+**Proof of the quantitative sparse-support inequality.** For each
+internal vertex \(w\), let \(\tau_w\) be the total \(x\)-mass of
+metric pairs whose *chosen* shortest route passes through \(w\) as an
+interior vertex. Every routed path is simple, so
+
+\[
+2\tau_w=y(\delta(\{w\}))-x(\delta(\{w\})).
+\]
+
+For a constituent path \(P\) with edge loads \(y_1,\ldots,y_L\), put
+\(T_P=\sum_{w\in P^\circ}\tau_w\). Summing the singleton identities and
+using the LP degree equations gives the **exact identity**
+
+\[
+2T_P=2\delta_P-(y_1+y_L-2).
+\]
+
+The segment cut between the first and last edges gives
+\(y_1+y_L\ge2\), even when \(L=2\). Thus \(T_P\le\delta_P\).
+
+Every metric pair outside \(H\), on **any** shortest route, must either
+traverse the chord \(uv\) or pass through at least one internal path
+vertex other than its endpoints: otherwise its route has no interior
+vertices except possibly a single hub and is precisely one of the
+pairs defining \(H\). Counting such a pair against the chord load or
+one of the transit masses (and allowing overcounting) gives
+
+\[
+\sum_{ab\notin H}x_{ab}
+\le y_{uv}+\sum_{w\text{ internal}}\tau_w
+= y_{uv}+\sum_P T_P
+\le y_{uv}+\sum_P\delta_P
+=\varepsilon.
+\]
+
+The argument works for **all** path lengths at least two, any number
+of paths \(k\ge2\), and arbitrary shortest-path tie-breaking. It
+requires the degree equations as well as the subtour inequalities.
+At \(\varepsilon=0\), all mass outside \(H\) vanishes.
+
+**Proof of tight cuts and support.** At an optimum, \(\varepsilon=0\).
+Every length-\(L\ge3\) path therefore has \(y_e=1\) on each edge.
+For \(L=2\), its two edge loads sum to two. Thus for every contiguous
+nonempty segment \(S\) of internal vertices, its boundary consists of
+two path edges with total load \(y(\delta(S))=2\). Since
+\(2\le x(\delta(S))\le y(\delta(S))\), the cut is tight.
+
+In particular, for each internal vertex \(w\), the singleton cut is
+tight and \(y(\delta(\{w\}))=x(\delta(\{w\}))=2\). For any choice of
+shortest routes, a routed metric edge with \(w\) as an **internal**
+vertex contributes two to the routed singleton-cut load but zero to
+the original metric singleton-cut load. Hence
+
+\[
+y(\delta(\{w\}))-x(\delta(\{w\}))
+=2\sum_{\substack{\{a,b\}:\\w\text{ internal to chosen }a-b\text{ route}}}x_{ab}=0.
+\]
+
+Every term is nonnegative. Because shortest routes can be selected
+independently and arbitrarily, **no positive metric pair can admit any
+shortest route through an internal path vertex other than its endpoints**.
+The chord-geodesic inequality also excludes any pair admitting a shortest
+route through \(uv\). A shortest route between distinct endpoints whose
+interior contains neither an internal path vertex nor \(uv\) must therefore
+be a single original long-path edge, or a two-edge route via one hub.
+The latter connects first internal vertices on different paths or last
+internal vertices on different paths. This proves the support claim.
+
+**Sharp coefficient and integral boundary.** For three paths
+\(0-2-3-1\), \(0-4-5-1\), \(0-6-7-1\), the metric Hamiltonian cycle
+\(0-1-3-2-4-5-7-6-0\) has cost ten, exactly \(m+1\).
+Its only metric edge in \(B\) is \(\{0,1\}\), so
+\(\sum_{ab\in B}x_{ab}=1=\varepsilon\). Thus coefficient one is sharp.
+This optimal *integral* tour uses the chord, although the fractional
+optimum (value nine) cannot use it.
+
+**Adversarial checks and falsifiers.** The separately represented
+checker in scripts/m097_chorded_optimal_face.py builds shortest routes,
+checks the chord-geodesic set and all subtour cuts, and tests exact
+optimal and perturbed feasible points. The new support/tight-cut audit
+checks the **quantitative outside-support mass bound**, tests all \(\binom{L}{2}\) interval cuts, all singleton transit loads,
+and every positive metric pair against the predicted sparse support.
+It also uses exhaustive simple-path DFS to challenge the shortest-path
+classification, and independent Hamiltonian-permutation sweeps to
+attack the coefficient-one bound on all tours of selected small graphs. In total, **10,950** complete Hamiltonian tours across six small
+instances were checked against the outside-support mass bound, with
+no violations and many nonzero equality cases; this is a finite
+adversarial check, not the all-orders proof. The initially stronger claim that every length-two
+instance has multiple chord-geodesic pairs was falsified: for lengths
+(2,2) and (2,2,2), only \(\{u,v\}\) qualifies. The test was corrected;
+the mathematical lemmas were unaffected.
+
+A falsifier would be a feasible rational point of cost \(m+\varepsilon\)
+with outside-support mass exceeding \(\varepsilon\), a non-tight
+internal interval cut at optimum, or a violation of either pathwise
+stability inequality.
+An external reviewer should audit cut-routing, shortest-path tie cases,
+the equality step for singleton cuts, and prior literature. Same-author
+code paths are **not** independent specialist mathematical acceptance.
 
 ## Reproduction and adversarial checks
 
@@ -163,4 +257,4 @@ A separate, optional SciPy HiGHS implementation, written with a different graph 
 
 The 8-vertex sharp example k=3, L=(3,3,3) lies within the repository's existing eight-vertex graph-metric census [M097_GRAPH8.md](M097_GRAPH8.md); its 10/9 ratio is **not** a new global lower-bound example. Targeted primary-literature searches did not identify this **exact** chorded formula. That is insufficient to claim historical priority: subdivided-dipole graphic TSP and the parity argument may be implicit in earlier work. An external specialist should check that the LP cut case split is complete, that the Eulerian mode argument covers arbitrary multiplicities, and that no published exact family formula subsumes this one. The one-cross-edge extension has now been **falsified by the explicit 8-vertex cycle above**. A genuinely different next falsifier is whether a controlled cross-edge class admits a revised formula in terms of the placement of the extra edge; that would require a new nonoverlapping claim and a separate literature audit. **No** full 4/3 bound, accepted outcome, solved status, coverage slot, benchmark result, or independent novelty credit follows.
 
-**Workflow boundary:** The research branch carries this note, script and tests. Full repository regeneration, the complete repository test suite and exact-head CI have **not** been run in this environment; no mergeable PR is asserted. Add a conditional outcomes-ledger record and regenerate all derived files before opening a CI-gated PR. The separate Project 100 PR Landing task and cadence remain untouched.
+**Workflow boundary:** The work is in [draft PR #231](https://github.com/Svyable/100/pull/231), with a conditional outcomes-ledger record and generated Pages files. After any revision, regenerate the derived site and rerun fast/full regeneration, targeted tests, the full repository suite and exact-head CI. A same-author passed check is not independent mathematical review. Do not merge before required CI passes, and leave the separate Project 100 PR Landing task and cadence untouched.

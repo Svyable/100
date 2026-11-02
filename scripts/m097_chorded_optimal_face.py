@@ -77,6 +77,16 @@ def forbidden_and_routes(lengths):
     return n, edges, paths, forbidden, routes
 
 
+
+def sparse_optimal_support(edges, paths):
+    """The proven necessary support of every optimum (not a sufficiency test)."""
+    support = set(edges) - {(0, 1)}
+    for i, j in combinations(range(len(paths)), 2):
+        support.add(tuple(sorted((paths[i][1], paths[j][1]))))
+        support.add(tuple(sorted((paths[i][-2], paths[j][-2]))))
+    return support
+
+
 def optimal_point(lengths, paths):
     k = len(lengths)
     alpha = Fraction(2, k)
@@ -126,16 +136,47 @@ def audit(lengths, x, check_feasible=True):
     eps = cost - m
     mass = sum(x.get(e, 0) for e in forbidden)
     assert eps >= 0 and mass <= y[(0, 1)] <= eps, (lengths, mass, y[(0, 1)], eps)
+    # Exact routing identity for all singleton cuts, including nonoptimal x.
+    # Transit through an internal vertex contributes two extra crossings.
+    transit_by_w = {}
+    for path in paths:
+        for w in path[1:-1]:
+            routed = sum(weight for e, weight in y.items() if w in e)
+            metric = sum(weight for e, weight in x.items() if w in e)
+            transit = sum(weight for e, weight in x.items()
+                          if w in routes[e][1:-1])
+            assert routed - metric == 2 * transit, (lengths, w)
+            transit_by_w[w] = transit
+    support = sparse_optimal_support(edges, paths)
+    outside_mass = sum(weight for pair, weight in x.items() if pair not in support)
+    transit_total = sum(transit_by_w.values())
+    assert outside_mass <= y[(0, 1)] + transit_total <= eps, (
+        lengths, outside_mass, transit_total, eps)
+    tight_intervals = 0
+    if eps == 0:
+        assert all(pair in support for pair, weight in x.items() if weight), (lengths, set(x) - support)
+        for path in paths:
+            for i in range(1, len(path) - 1):
+                for j in range(i, len(path) - 1):
+                    segment = set(path[i:j + 1])
+                    metric_cut = sum(weight for (a, b), weight in x.items()
+                                     if (a in segment) != (b in segment))
+                    routed_cut = sum(weight for (a, b), weight in y.items()
+                                     if (a in segment) != (b in segment))
+                    assert metric_cut == routed_cut == 2, (lengths, segment)
+                    tight_intervals += 1
     for length, path in zip(lengths, paths):
         loads = [y[tuple(sorted((a, b)))] for a, b in zip(path, path[1:])]
         delta = sum(loads) - length
         assert delta >= 0
+        assert sum(transit_by_w[w] for w in path[1:-1]) <= delta
         for a, b in combinations(loads, 2):
             assert a + b >= 2
         if length >= 3:
             assert all(1 - delta / (length - 2) <= w <= 1 + delta for w in loads)
     return dict(cost=cost, slack=eps, forbidden_mass=mass, chord_load=y[(0, 1)],
-                forbidden_count=len(forbidden))
+                forbidden_count=len(forbidden), tight_intervals=tight_intervals,
+                outside_support_mass=outside_mass, internal_transit_mass=transit_total)
 
 
 def run(max_vertices=9):
