@@ -353,6 +353,22 @@
         "agent_hours": 0.8
       },
       "note": "Submitted all-orders restricted proof candidate with 63-case exact primal and tour checks, separate HiGHS rational primal/dual audit, 12 adversarial tests. Pending merge and independent mathematical/novelty review; classic three-path lower-bound family is known. Includes failed nine-vertex extrapolation leads."
+    },
+    {
+      "work_id": "X-M095-WITNESS-REPLAY",
+      "scope_sha256": "330f9bc2c7095364cf2091fefa545f760eeea36530f7cc3c84ad681cf082d182",
+      "author": "ChatGPT (M095 verifier integrity repair)",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/191",
+      "pr_url": "https://github.com/Svyable/100/pull/193",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.6,
+        "ci_minutes": 0
+      },
+      "note": "Fixes previously demonstrated empty-certificate vacuity and unbound M095 summaries; 16 adversarial regressions plus prior lab tests. Outcome is conditional on exact-head CI and merge. No theorem, novelty, independent specialist review or accepted work item."
     }
   ]
 }
