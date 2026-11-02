@@ -563,13 +563,13 @@
       "outcome": "merged_pending_review",
       "novelty": "not_assessed",
       "claim_url": "https://github.com/Svyable/100/issues/201",
-      "pr_url": "https://github.com/Svyable/100/pull/202",
+      "pr_url": "https://github.com/Svyable/100/pull/242",
       "claimed_on": "2026-11-01",
       "closed_on": "2026-11-01",
       "resources": {
         "agent_hours": 0.5
       },
-      "note": "Approximate active derivation, 20,000-tuple exploratory search and failed 25/61 transfer, exact 1405-extension counterexample to the four-outsider extrapolation, all-orders k/(L+k-1) atom lemma, 40,355,371-case full dual integer census, third explicit-poset witness checker, adversarial mutation tests, current primary-literature audit and regeneration. Restricted 3/8 width-five chain-plus-five theorem candidate only; no independent human mathematical or historical-novelty review, no full M079 resolution, no solved-status change. Submitted on PR #202; merged_pending_review is conditional on successful CI-gated merge."
+      "note": "Approximate active derivation, 20,000-tuple exploratory search and failed 25/61 transfer, exact 1405-extension counterexample to the four-outsider extrapolation, all-orders k/(L+k-1) atom lemma, 40,355,371-case full dual integer census, third explicit-poset witness checker, adversarial mutation tests, current primary-literature audit and regeneration. Restricted 3/8 width-five chain-plus-five theorem candidate only; no independent human mathematical or historical-novelty review, no full M079 resolution, no solved-status change. Submitted on PR #202; merged_pending_review is conditional on successful CI-gated merge. Integration source: PR #202; canonical current-main landing: PR #242."
     }
   ]
 }
