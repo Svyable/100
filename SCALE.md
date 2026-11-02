@@ -13,7 +13,7 @@ A filled slot is a claimable work packet with a scope digest. It is not a solved
 | Claimable slots filled / budget | **100** / 100 | One agent claim per slot; not theorems |
 | Active problems touched | **51** / 100 | Coverage of the registry, not resolutions |
 | Cohort shapes touched (via jobs) | 14 / 30 | Shared attack templates |
-| Derived work-queue size | 352 (345 runnable) | Source: `scripts/work.py` |
+| Derived work-queue size | 351 (344 runnable) | Source: `scripts/work.py` |
 | Refused this wave | 7 | stop_range, externally blocked or dependency-blocked |
 | Proof-obligation frontier | runnable=26, blocked=1, waiting=3, discharged=0 | Acceptance DAG only |
 
@@ -1238,10 +1238,10 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 **Replay a published certificate: Replay a published geometric object**
 
 - Problems: M092, M093, M094, M096
-- Deliverable: M092: Extend the cyclotomic engine to the number fields needed for d = 4..8 and replay published exact fiducials there. M093: Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9. M094: Add multiplier-group symmetry reduction to the Williamson meet-in-the-middle search so that n = 29 (order 116) becomes feasible, then implement Goethals-Seidel arrays for orders 156 and 172. M096: Encode order-12 planes with a prescribed collineation as SAT with DRAT proof output, starting from cases the literature already excludes.
+- Deliverable: M092: Extend the cyclotomic engine to the number fields needed for d = 4..8 and replay published exact fiducials there. M093: Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9. M094: Import one published quadruple for the smallest remaining engine gap above 172. Order 668 is still the smallest order with no known Hadamard matrix; do not search for it. M096: Encode order-12 planes with a prescribed collineation as SAT with DRAT proof output, starting from cases the literature already excludes.
 - Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
 - Claim: `[Claim] J-finite_geometry-replay_published — Replay a published certificate: Replay a published geometric object`
-- Digest: `6319a37bb334dd18…`
+- Digest: `aeeac4fedd50494e…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.

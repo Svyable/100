@@ -20,7 +20,7 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 | 5 | M074 | Caccetta–Häggkvist conjecture | `replay_published` | 94 | +7 | +12 | 113 | Replay the external fixed-r=6 proof corpus on an independent host, verify its published hash and proof traces, and audit the hand-reduction steps before launching duplicate SAT search. |
 | 6 | M092 | Zauner SIC conjecture | `replay_published` | 94 | +7 | +12 | 113 | Extend the cyclotomic engine to the number fields needed for d = 4..8 and replay published exact fiducials there. |
 | 7 | M093 | Linear MDS code main conjecture | `replay_published` | 91 | +7 | +12 | 110 | Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9. |
-| 8 | M094 | Hadamard matrix conjecture | `replay_published` | 91 | +7 | +12 | 110 | Add multiplier-group symmetry reduction to the Williamson meet-in-the-middle search so that n = 29 (order 116) becomes feasible, then implement Goethals-Seidel arrays for orders 156 and 172. |
+| 8 | M094 | Hadamard matrix conjecture | `replay_published` | 91 | +7 | +12 | 110 | Import one published quadruple for the smallest remaining engine gap above 172. Order 668 is still the smallest order with no known Hadamard matrix; do not search for it. |
 | 9 | M088 | Deterministic polynomial identity testing | `lock_restriction` | 94 | +2 | +10 | 106 | Lock paragraph is complete in research/M088_LOCK.md; implement the falsifier against that exact GF(2) degree-≤3 ≤20-gate black-box class before attaching a verifier or widening the class. |
 | 10 | M075 | Frankl union-closed sets conjecture | `mine_structure` | 91 | +7 | +6 | 104 | The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5). |
 | 11 | M078 | Graph reconstruction conjecture | `mine_structure` | 91 | +7 | +6 | 104 | The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two. |
@@ -226,13 +226,13 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 
 **Dispatch:** `replay_published` · rank 8 · Orders 116, 156 and 172 are engine gaps. The literature already constructs them. They are not the open case, which the probe frontier places at order 668.
 
-**Proof obligation:** Close the remaining engine gaps (116, 156, 172, ...) with symmetry-reduced Williamson and Goethals-Seidel constructions, then document the first order no implemented method reaches.
+**Proof obligation:** Name the smallest order 4k > 172 that this engine still does not build, and import one published quadruple for it.
 
 **Falsifier:** A proof that no Hadamard matrix of some order 4k exists; a finite search failure is not sufficient.
 
-**Recommended step:** Add multiplier-group symmetry reduction to the Williamson meet-in-the-middle search so that n = 29 (order 116) becomes feasible, then implement Goethals-Seidel arrays for orders 156 and 172.
+**Recommended step:** Import one published quadruple for the smallest remaining engine gap above 172. Order 668 is still the smallest order with no known Hadamard matrix; do not search for it.
 
-**Current blocker:** Plain meet-in-the-middle over symmetric circulants is practical up to n = 23 in pure Python; n = 29 needs symmetry reduction, and order 668 remains the smallest open case.
+**Current blocker:** Every order 4k <= 172 is now an explicit matrix. The common-multiplier Williamson search at n = 29 is a proved dead end, and order 668 remains the smallest open case.
 
 **Stage:** `benchmark_reproduced` · [Dossier](research/LAB_CAMPAIGNS.md)
 

@@ -324,6 +324,21 @@ class TamperTests(unittest.TestCase):
         del bad["certificate"]["matrices"]["20"]
         self.assertRejects(m, params, bad)
 
+    def test_propus_hadamard_orders(self):
+        had = probes.load("hadamard")
+        for v, order in ((29, 116), (39, 156), (43, 172)):
+            rows = had.propus(v)
+            self.assertEqual(len(rows), order)
+            half = order // 2
+            self.assertTrue(all(bin(rows[i] ^ rows[j]).count("1") == half
+                                for i in range(order) for j in range(i + 1, order)))
+            broken = list(rows)
+            broken[0] ^= 1
+            self.assertFalse(all(bin(broken[i] ^ broken[j]).count("1") == half
+                                 for i in range(order) for j in range(i + 1, order)))
+        plan = had.recipes(172, 23)
+        self.assertFalse([n for n in range(4, 173, 4) if n not in plan])
+
     def test_williamson_quadruples(self):
         had = probes.load("hadamard")
         for n in (3, 5, 7, 9):

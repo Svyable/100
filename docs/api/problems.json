@@ -274,7 +274,7 @@
       "action_bonus": 12,
       "method_id": "finite_geometry",
       "method_title": "Replay a published geometric object",
-      "dispatch_next": "Add multiplier-group symmetry reduction to the Williamson meet-in-the-middle search so that n = 29 (order 116) becomes feasible, then implement Goethals-Seidel arrays for orders 156 and 172.",
+      "dispatch_next": "Import one published quadruple for the smallest remaining engine gap above 172. Order 668 is still the smallest order with no known Hadamard matrix; do not search for it.",
       "dispatch_why": "Orders 116, 156 and 172 are engine gaps. The literature already constructs them. They are not the open case, which the probe frontier places at order 668.",
       "campaign_stage": "benchmark_reproduced",
       "milestone_count": 1,
