@@ -524,6 +524,22 @@
         "ci_minutes": 0
       },
       "note": "Approximate active derivation, 22 one-step extension pairs, 36 independently reconstructed individually admissible candidates, elementary fixed-D11 upper bound seven, explicit 50-set seven-insertion witness, 19,600-triple literal checks, nine adversarial tests, primary-source comparison and regeneration. Fixed deletion set only; no all-11 upper bound, 55-set improvement, historical novelty or independent mathematical review. Outcome conditional on exact-head CI and merge; no coverage, benchmark, solved-status or PR-landing task change."
+    },
+    {
+      "work_id": "X-M076-F43-TEN-FIVE",
+      "scope_sha256": "ab92a6f1f2243e7be174b8eadd16105947d0542f92a71ffc1d8587cf750ad295",
+      "author": "ChatGPT (M076 ten-deletion exact restricted proof candidate)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/220",
+      "pr_url": "https://github.com/Svyable/100/pull/221",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 1.0,
+        "ci_minutes": 0
+      },
+      "note": "Estimated active research, initial false MILP lead corrected by cross-component empty-core check, failed sharp-eight-witness extension, incomplete nine-high-cover heuristic, complete 10,073,118-visit minimal-cover superset scan, 9,841 critical masks, independent-style literal no-six equality-partition replay, explicit five-insertion sharpness witness, 10 tests and regeneration. Outcome conditional on CI-gated merge. Restricted local candidate only; historical novelty and independent mathematical review unestablished. No global bound, solved/evidence-state or coverage change."
     }
   ]
 }
