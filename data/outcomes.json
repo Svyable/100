@@ -554,7 +554,8 @@
         "agent_hours": 0.6,
         "ci_minutes": 0
       },
-      "note": "Conditional on PR merge, not independent acceptance. Author-derived all-orders exact SEP and TSP formula for a single cross-end edge in chorded multitheta graphs; two-hub component-cut lower bound, sharp 12/11 restricted ratio, parity rigidity, exact rational LP witness, 166 labeled exact cut/tour tests and separate full LP optimization, 8 adversarial tests, failed first-first extension. Historical novelty and external mathematical review unestablished; no global 4/3 progress, solved/evidence/coverage/benchmark change or PR-landing task change."
+      "note": "Conditional on PR merge, not independent acceptance. Author-derived all-orders exact SEP and TSP formula for a single cross-end edge in chorded multitheta graphs; two-hub component-cut lower bound, sharp 12/11 restricted ratio, parity rigidity, exact rational LP witness, 166 labeled exact cut/tour tests and separate full LP optimization, 8 adversarial tests, failed first-first extension. Historical novelty and external mathematical review unestablished; no global 4/3 progress, solved/evidence/coverage/benchmark change or PR-landing task change.",
+      "pr_url": "https://github.com/Svyable/100/pull/233"
     }
   ]
 }
