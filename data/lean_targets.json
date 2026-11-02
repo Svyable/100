@@ -95,7 +95,7 @@
     "problem_id": "M094",
     "stage": "implemented",
     "statement": "Explicit Hadamard matrices of orders 4, 8 (Sylvester) and 12 (Paley I, q = 11), re-checked by the kernel against Hundred.Statements.Hadamard.IsHadamard.",
-    "scope_gap": "Small known orders only; the smallest open order is 668. Independent statement review pending.",
+    "scope_gap": "Small known orders only; the smallest order without a known construction is 2396 after independently verified 2026 finite matrices (arXiv:2610.27175). Independent statement review pending.",
     "next_step": "Prove Sylvester doubling as a general theorem (order n to 2n) instead of instance by instance.",
     "declarations": [
       "Hundred.Statements.Hadamard.order_4",

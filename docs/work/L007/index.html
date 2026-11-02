@@ -51,7 +51,7 @@
 <section class="dossier-block"><h2>Deliverable</h2><p class="serif">Prove Sylvester doubling as a general theorem (order n to 2n) instead of instance by instance.</p>
 <p class="muted">Context: Explicit Hadamard matrices of orders 4, 8 (Sylvester) and 12 (Paley I, q = 11), re-checked by the kernel against Hundred.Statements.Hadamard.IsHadamard.</p></section>
 <section class="dossier-block"><h2>Acceptance</h2><ul class="plain checklist"><li>New theorems registered in data/lean_targets.json (stable names, no escape hatches)</li><li><code>python3 scripts/lean_verify.py passes in CI: warnings as errors, only propext / Classical.choice / Quot.sound, per-module time well under the 300 s build budget</code></li><li>A negative case in lean/Negative.lean that a weakened statement would fail</li><li><code>python3 scripts/regen.py &amp;&amp; python3 scripts/regen.py --check</code></li></ul></section>
-<section class="dossier-block"><h2>Boundary</h2><p>Small known orders only; the smallest open order is 668. Independent statement review pending.</p>
+<section class="dossier-block"><h2>Boundary</h2><p>Small known orders only; the smallest order without a known construction is 2396 after independently verified 2026 finite matrices (arXiv:2610.27175). Independent statement review pending.</p>
 </section>
 
 <section class="dossier-block"><h2>Claim it</h2>
@@ -59,7 +59,7 @@
 <p class="card-links"><a class="button button-outline" href="https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20L007%22" rel="noopener noreferrer">Check existing claims ↗</a>
 <a class="button button-dark" href="https://github.com/Svyable/100/issues/new?template=claim.yml&amp;title=%5BClaim%5D%20L007%20%E2%80%94%20Extend%20Lean%20target%20L007%20%28M094%29" rel="noopener noreferrer">Claim this item ↗</a></p>
 <dl class="kv compact"><dt>Claim title</dt><dd><code>[Claim] L007 — Extend Lean target L007 (M094)</code></dd>
-<dt>Scope digest</dt><dd><code class="hash">b08428f7a2a7f5260d4c22dc97ef6c965f8d68cfb251fc0c59d3c2c4593834e7</code></dd>
+<dt>Scope digest</dt><dd><code class="hash">abbf9487ff96ec046981c76685cd3e2a3f59708599177d2034884a186f81f2bd</code></dd>
 <dt>Defined by</dt><dd><a href="https://github.com/Svyable/100/blob/main/data/lean_targets.json" rel="noopener noreferrer">data/lean_targets.json <span aria-hidden="true">↗</span></a></dd>
 <dt>CLI</dt><dd><code>python3 scripts/work.py --id L007</code></dd></dl></section>
 </div></article>

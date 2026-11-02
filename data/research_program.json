@@ -192,9 +192,9 @@
       "method": "Algebraic constructions (Sylvester, Paley, Williamson, propus) with exact orthogonality certificates",
       "hypothesis": "A Hadamard matrix exists for every order divisible by 4.",
       "first_proof_obligation": "Name the smallest order 4k > 172 that this engine still does not build, and import one published quadruple for it.",
-      "next_experiment": "Import one published quadruple for the smallest remaining engine gap above 172. Order 668 is still the smallest order with no known Hadamard matrix; do not search for it.",
+      "next_experiment": "Import a published construction for the smallest remaining engine gap, 188. This is an implementation gap, not an open existence case; the smallest order without a known matrix is 2396 after the 2026 verified constructions (arXiv:2610.27175).",
       "falsification": "A proof that no Hadamard matrix of some order 4k exists; a finite search failure is not sufficient.",
-      "blocker": "Every order 4k <= 172 is now an explicit matrix. The common-multiplier Williamson search at n = 29 is a proved dead end, and order 668 remains the smallest open case.",
+      "blocker": "Every order 4k <= 172 is now explicit in this engine; its next gap is 188. The common-multiplier Williamson search at n = 29 is a proved dead end, but 668 was settled by a verified 2026 construction. The smallest currently unknown order is 2396.",
       "dossier": "research/LAB_CAMPAIGNS.md",
       "verifier": "python3 scripts/lab.py --probe hadamard"
     },
@@ -446,7 +446,7 @@
       "classification": "reproduced_known",
       "title": "Exact Hadamard matrices for every order 4k <= 172, including 116, 156 and 172",
       "scope": "Known constructions; not a new matrix and not a proof that every multiple of 4 works",
-      "description": "Sylvester, Paley I/II, Williamson n=23 (order 92), and published propus quadruples for orders 116, 156 and 172, closed under Kronecker products. Each matrix is checked as H H^T = nI. Smoke covers all 32 orders 4k <= 128. Deep covers 91 of the 100 orders 4k <= 400; the first remaining engine gap is 188. Order 668 is still the smallest open case.",
+      "description": "Sylvester, Paley I/II, Williamson n=23 (order 92), and published propus quadruples for orders 116, 156 and 172, closed under Kronecker products. Each matrix is checked as H H^T = nI. Smoke covers all 32 orders 4k <= 128. Deep covers 91 of the 100 orders 4k <= 400; the first remaining engine gap is 188. Order 668 was constructed and independently verified in 2026; 2396 is now the smallest order without a known matrix (arXiv:2610.27175).",
       "verifier": "python3 scripts/lab.py --probe hadamard",
       "artifact": "scripts/probes/hadamard.py",
       "verified_on": "2026-10-31"

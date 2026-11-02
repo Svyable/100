@@ -324,6 +324,13 @@ class TamperTests(unittest.TestCase):
         del bad["certificate"]["matrices"]["20"]
         self.assertRejects(m, params, bad)
 
+    def test_hadamard_frontier_is_not_stale(self):
+        frontier = probes.load("hadamard").PROBE["frontier"]
+        self.assertIn("2396", frontier)
+        self.assertIn("arXiv:2610.27175", frontier)
+        self.assertNotIn("668 is the smallest", frontier)
+        self.assertIn("Engine gaps below are NOT open cases", frontier)
+
     def test_propus_hadamard_orders(self):
         had = probes.load("hadamard")
         for v, order in ((29, 116), (39, 156), (43, 172)):

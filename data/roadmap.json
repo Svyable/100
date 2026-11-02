@@ -385,7 +385,7 @@
       "track": "lab",
       "horizon": "shipped",
       "title": "Explicit Hadamard matrices for every order 4k <= 172",
-      "outcome": "Published propus quadruples fill the last three engine gaps at 116, 156 and 172. Every order 4k <= 172 now has a matrix whose rows the checker proves orthogonal. These are known constructions, not new matrices, and 668 remains the smallest open order.",
+      "outcome": "Published propus quadruples fill the last three engine gaps at 116, 156 and 172. Every order 4k <= 172 now has a matrix whose rows the checker proves orthogonal. These are known constructions, not new matrices. The formerly open order 668 was settled in 2026; 2396 is now the smallest order without a known matrix (arXiv:2610.27175).",
       "evidence": "scripts/probes/hadamard.py",
       "problems": [
         "M093",
