@@ -36,7 +36,7 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 | 21 | M085 | Unique Games conjecture | `scope_audit` | 83 | +0 | +8 | 91 | Independently audit the reduction's completeness and soundness estimates and its quantitative dependence on gap parameters. |
 | 22 | M042 | Dixmier conjecture A1 | `specify_shape` | 89 | +0 | +0 | 89 | Shape polynomial_maps (2 problems, one write-up): Name a polynomial or Weyl family that published degree bounds do not cover, and refuse exhaustive search inside those bounds. Full shape, certificate and falsifier are in APPROACH.md. |
 | 23 | M100 | Falconer distance-set conjecture | `scope_audit` | 80 | +0 | +8 | 88 | Audit FalconerAllDimensions.lean definition fidelity, measure conventions and proof dependencies; obtain independent harmonic-analysis review. |
-| 24 | M006 | Strong Goldbach conjecture | `mine_structure` | 72 | +7 | +6 | 85 | The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification. |
+| 24 | M006 | Strong Goldbach conjecture | `mine_structure` | 72 | +7 | +6 | 85 | The goldbach_bound mine certifies p <= floor(3 (ln n)^2) for every even n <= 20000 (research/M006_BOUND.md). State a sharper restricted lemma (named residue class, or a constant below 3 with a proof idea that could leave this window), without extending the range toward 4*10^18. |
 | 25 | M072 | Erdős–Hajnal conjecture | `specify_shape` | 85 | +0 | +0 | 85 | Shape extremal_asymptotics (3 problems, one write-up): Name a structured family and an explicit constant, and compare it with a cited general bound before calling it an improvement. Full shape, certificate and falsifier are in APPROACH.md. |
 | 26 | M077 | Komlós discrepancy conjecture | `specify_shape` | 85 | +0 | +0 | 85 | Shape extremal_asymptotics (3 problems, one write-up): Name a structured family and an explicit constant, and compare it with a cited general bound before calling it an improvement. Full shape, certificate and falsifier are in APPROACH.md. |
 | 27 | M082 | NP versus coNP | `specify_shape` | 83 | +0 | +0 | 83 | Shape complexity_barriers (6 problems, one write-up): Name the model and audit any claimed reduction's alphabet, completeness and soundness before writing a new reduction. Full shape, certificate and falsifier are in APPROACH.md. |
@@ -398,17 +398,17 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 
 ### M006 — Strong Goldbach conjecture
 
-**Dispatch:** `mine_structure` · rank 24 · The goldbach_growth mine already lists the record least primes through 20,000. A longer verified range cannot compete with the published 4*10^18 check.
+**Dispatch:** `mine_structure` · rank 24 · The goldbach_bound mine already certifies p <= floor(3 (ln n)^2) through 20,000. A longer verified range cannot compete with the published 4*10^18 check.
 
 **Proof obligation:** State a restricted, checkable lemma (for example an explicit bound on the least Goldbach prime in a named residue class or range) that is not already implied by the 4*10^18 verification or by the ternary Goldbach theorem.
 
 **Falsifier:** An even n >= 4 with no prime p <= n/2 such that n - p is prime, confirmed by an independent primality oracle.
 
-**Recommended step:** The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification.
+**Recommended step:** The goldbach_bound mine certifies p <= floor(3 (ln n)^2) for every even n <= 20000 (research/M006_BOUND.md). State a sharper restricted lemma (named residue class, or a constant below 3 with a proof idea that could leave this window), without extending the range toward 4*10^18.
 
 **Current blocker:** Range extension cannot compete with the published 4*10^18 verification; real progress needs a new restricted theorem.
 
-**Stage:** `benchmark_reproduced` · [Dossier](research/LAB_CAMPAIGNS.md)
+**Stage:** `benchmark_reproduced` · [Dossier](research/M006_BOUND.md)
 
 ### M041 — Plane Jacobian conjecture
 
