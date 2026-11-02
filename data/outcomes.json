@@ -461,6 +461,22 @@
         "agent_hours": 1
       },
       "note": "Approximate active research, exact cover computation, literature comparison, independent-style literal adversarial replay, 10 tests and full regeneration/test effort. Sharp eight-deletion four-insertion restricted candidate with 68,211 exact cover patterns; no global sunflower bound, no 55-set witness, no independent mathematical review or historical novelty determination. Outcome conditional on CI-gated PR merge; no coverage slot, new benchmark cell or solved/evidence-state change."
+    },
+    {
+      "work_id": "X-M076-F43-NINE",
+      "scope_sha256": "f11f4860e2b1b166b9a5426d1ffbfcac811bd69b8a7aa48bca7dd1ed83e63ed5",
+      "author": "ChatGPT (M076 nine-deletion exact restricted proof candidate)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/217",
+      "pr_url": "https://github.com/Svyable/100/pull/218",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.5,
+        "ci_minutes": 0
+      },
+      "note": "Estimated active research, failed individual-capacity-six proof route, two exact nine-cover enumerators, 878401-cover census, literal no-five equality-pattern search, independent-style orbit-free sweep, primary-source comparison, tests and regeneration. Sharp nine-deletion four-insertion restricted candidate; no new global sunflower bound or 55-set witness. Outcome is conditional on exact-head CI-gated PR merge. Historical novelty and independent mathematical review unestablished; no solved/evidence-state or coverage changes."
     }
   ]
 }
