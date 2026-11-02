@@ -1,8 +1,8 @@
 {
   "protocol": "svyable.work.v1",
-  "count": 349,
+  "count": 350,
   "by_kind": {
-    "obligation": 27,
+    "obligation": 28,
     "review": 47,
     "benchmark": 36,
     "lean": 9,
@@ -12,7 +12,7 @@
     "status_audit": 89
   },
   "by_status": {
-    "runnable": 342,
+    "runnable": 343,
     "externally_blocked": 4,
     "waiting_on_dependencies": 3
   },
@@ -317,6 +317,31 @@
       "claim_title": "[Claim] O-M079-02 — Lemma obligation for M079",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M079-02%20%E2%80%94%20Lemma%20obligation%20for%20M079",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M079-02%22"
+    },
+    {
+      "id": "O-M079-04",
+      "kind": "obligation",
+      "status": "runnable",
+      "problems": [
+        "M079"
+      ],
+      "title": "Lemma obligation for M079",
+      "deliverable": "Independently audit the all-orders gap-atom and Helly reductions, the 40,355,371-case exact dual recurrence and 1405-extension witness in research/M079_CHAIN_PLUS_FIVE.md; obtain external mathematical and historical-novelty review. Do not change solved status.",
+      "context": "Every finite width-five poset consisting of a chain and five pairwise incomparable outsiders, each incomparable with at least one chain element, has balance constant at least 3/8; a 13-element witness has balance 2/5.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M079-04 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "The unrestricted 1/3–2/3 conjecture remains open. The earlier chain-plus-four 25/61 candidate is a different class; 2026 large-width asymptotic theorems and finite order-14 computations do not by themselves establish this all-orders fixed-width-five bound. Historical novelty and independent mathematical acceptance are not established.",
+      "falsifier": "A valid chain-plus-five width-five interval tuple with balance below 3/8; a missed normalized interval multiset; disagreement between the two exact recurrences or the relation-matrix checker; a flawed gap-atom cutoff; or a primary prior-art theorem covering this class and constant.",
+      "depends_on": [],
+      "source": "data/proof_obligations.json",
+      "priority_rank": 12,
+      "scope_sha256": "5629ffe92a7529266dc2a522e885ab96934a4d780f7cf38dbdf325fb9bbab844",
+      "claim_title": "[Claim] O-M079-04 — Lemma obligation for M079",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M079-04%20%E2%80%94%20Lemma%20obligation%20for%20M079",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M079-04%22"
     },
     {
       "id": "O-M096-01",
