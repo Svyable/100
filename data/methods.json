@@ -113,7 +113,7 @@
     },
     "M094": {
       "action": "replay_published",
-      "why": "Orders 116, 156 and 172 are engine gaps. The literature already constructs them. They are not the open case, which the probe frontier places at order 668."
+      "why": "The engine now constructs orders 116, 156 and 172; its next gap is 188, a known constructed order. Published exact verifications cover every multiple of four below 2000; 2396 is the smallest currently without a known matrix (arXiv:2610.27175)."
     },
     "M095": {
       "action": "replay_published",
