@@ -325,8 +325,8 @@ separate questions.
   [complete spectrum](M073_INFORMATION_ALIGNMENT.md), both
   author-derived and not independently accepted.
 
-The 11-vertex motif polynomials and weighted 54/12 edgewise
-certificate are **new to this repository**. They are **not claimed
+The general surface link-cycle reduction, 11-vertex motif polynomials,
+and weighted 54/12 edgewise certificate are **new to this repository**. They are **not claimed
 historically new**: no exhaustive literature-priority search or
 independent specialist review has been completed. No problem
 status, solved entry, coverage allocation or separate PR-landing
