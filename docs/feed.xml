@@ -14,6 +14,13 @@
 <summary>The argument principle certifies N(100) = 29 exactly from interval boxes along 2 -&gt; 2+100i -&gt; 1/2+100i, and Hardy&#x27;s Z(t) has 29 certified sign changes on (0, 100]. All arithmetic is rigorous interval arithmetic with explicit series remainders, repeated by the checker at another precision and truncation. The deep run certifies all 649 zeros below height 1000 the same way. Scope: Known small range; not new</summary>
 </entry>
 <entry>
+<title>Milestone: Least Goldbach prime bounded by floor(3 (ln n)^2) through 20,000</title>
+<link href="https://svyable.github.io/100/ledger/#B-MINE-006-BOUND"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-MINE-006-BOUND</id>
+<updated>2026-11-01T00:00:00Z</updated>
+<summary>Every even n &lt;= 20000 has least Goldbach prime p &lt;= floor(3 (ln n)^2). The twelve growth-mine records dominate; an odd-only sieve recomputes each least prime and the bound. Scope: Explicit inequality inside the published 4*10^18 verification; not an asymptotic theorem</summary>
+</entry>
+<entry>
 <title>Milestone: GRH to height 20 for the real primitive characters of conductor 3, 4 and 5</title>
 <link href="https://svyable.github.io/100/ledger/#B-GRH-001"/>
 <id>tag:svyable.github.io,2026:100/milestone-B-GRH-001</id>

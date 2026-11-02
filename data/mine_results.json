@@ -64,6 +64,83 @@
       },
       "title": "Orbits of union-closed families under ground-set permutation"
     },
+    "goldbach_bound": {
+      "certificate_sha256": "214ce0288086c66a2943fbe6de27cdf4a2673c541b3a8e0ac51a0b76bdcc0910",
+      "engines": [
+        "primes"
+      ],
+      "frontier": "Known through 4*10^18 (Oliveira e Silva, Herzog and Pardi, 2014). The inequality p <= floor(3 (ln n)^2) is certified only for 4 <= n <= 20000; it is not an asymptotic theorem and cannot enter Solved.",
+      "holds": true,
+      "mine": "goldbach_bound",
+      "params": {
+        "limit": 20000
+      },
+      "problem_id": "M006",
+      "scope": "For every even n with 4 <= n <= 20000, the least prime p such that n-p is prime satisfies p <= floor(3 (ln n)^2).",
+      "summary": {
+        "bound_factor": 3,
+        "bound_formula": "floor(3*(ln n)^2)",
+        "even_integers": 9999,
+        "limit": 20000,
+        "record_count": 12,
+        "records": [
+          [
+            4,
+            2
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            30,
+            7
+          ],
+          [
+            98,
+            19
+          ],
+          [
+            220,
+            23
+          ],
+          [
+            308,
+            31
+          ],
+          [
+            556,
+            47
+          ],
+          [
+            992,
+            73
+          ],
+          [
+            2642,
+            103
+          ],
+          [
+            5372,
+            139
+          ],
+          [
+            7426,
+            173
+          ]
+        ],
+        "records_sha256": "0382974f247c86f7d0a52cb4ab1b04ab68f58aa7e2761d9efd782221d77e00a0",
+        "worst_record_bound": 238,
+        "worst_record_n": 7426,
+        "worst_record_prime": 173,
+        "worst_record_ratio": 2.177827
+      },
+      "title": "Explicit least-Goldbach-prime bound through 20,000"
+    },
     "goldbach_growth": {
       "certificate_sha256": "aec113d543d3caf78326a8c5c9e2e9128159a670363b398402f58e7d0d18f36f",
       "engines": [
