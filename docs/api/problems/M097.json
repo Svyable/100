@@ -191,6 +191,11 @@
       "url": "https://svyable.github.io/100/library/m097-subdivision-core/"
     },
     {
+      "title": "M097 — arbitrary weighted subdivision TSP and the limit of subdivision-based LP bounds",
+      "source": "research/M097_WEIGHTED_SUBDIVISION.md",
+      "url": "https://svyable.github.io/100/library/m097-weighted-subdivision/"
+    },
+    {
       "title": "Proof-driven research engine",
       "source": "docs/RESEARCH_ENGINE.md",
       "url": "https://svyable.github.io/100/library/research-engine/"

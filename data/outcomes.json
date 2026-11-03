@@ -769,6 +769,22 @@
         "agent_hours": 1.2
       },
       "note": "Unconditional all-ranks restricted matroid matching characterization, exact permanent × Latin-grid count and sharp two-sided bound by paper proof. Lean kernel audits cyclic completion from a supplied matching, NOT the matroid basis-exchange/Hall argument or counting bijection. 12 adversarial tests, 512 exhaustive GF(2)^3 rows, 6 exact fixtures. Novelty and independent mathematical review not established; full RBC remains open."
+    },
+    {
+      "work_id": "X-M097-WEIGHTED-SUBDIVISION",
+      "scope_sha256": "43428220042675fcd9e9c4811b28c098a254c3912344a664a46a1ea1b9291e1d",
+      "author": "ChatGPT (weighted subdivision TSP research)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/287",
+      "pr_url": "https://github.com/Svyable/100/pull/289",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 1.1,
+        "ci_minutes": 0
+      },
+      "note": "Conditional on CI-gated merge. All-orders positive weighted full-subdivision graphic-TSP exact parity/MST identity, path-total/max-weight compression and 2^cycle-rank state formula; all-metric symmetric-subtour gap universality via zero-twin invariance, classical parsimonious cut LP and epsilon subdivisions of simple bipartite 2-degenerate girth>=6 graphs. 2508 seeded plus 6843 exhaustive author-side rational expanded-metric Hamiltonian DP checks, explicit connected Eulerian walks, 15 adversarial tests including primal/dual LP clone tests; bibliographic priority and independent specialist review unestablished. No full 4/3 conjecture resolution, new lower bound, Lean theorem, solved status, benchmark or coverage promotion."
     }
   ]
 }
