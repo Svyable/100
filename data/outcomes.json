@@ -445,7 +445,7 @@
       "resources": {
         "agent_hours": 0.8
       },
-      "note": "Prime 1129 forbids both fixed shifts c=3 and c=7 by exact divisor and subgroup checks, but shift c=11 works. Universal wording of O-M019-01 is infeasible; no full Erdős–Straus counterexample, no novelty or independent review. Prior art Mordell 1963 and Dahan 2026."
+      "note": "Prime 1129 forbids both fixed shifts c=3 and c=7 by exact divisor and subgroup checks, but shift c=11 works. Universal wording of O-M019-01 is infeasible; no full Erd\u0151s\u2013Straus counterexample, no novelty or independent review. Prior art Mordell 1963 and Dahan 2026."
     },
     {
       "work_id": "X-M076-F43-EIGHT",
@@ -754,6 +754,37 @@
         "ci_minutes": 0
       },
       "note": "Conditional on successful CI-gated merge. Author-derived all-orders corollary from M097 exact subdivision formula and the classical integral Edmonds-Johnson T-join polyhedron: exact subtour LP zero-gap iff, and sharp TSP <= 4M/3+2B/3-2 unless deleting all bridges leaves an even core (then TSP=SEP). Includes unequal path lengths, articulation and bridge handling, theta and pendant-bridge exact sharpness, 9183 enumerated falsifier instances, eight targeted tests, odd-cut mutation, and a counterexample to coordinate-wise ratio monotonicity. No independent mathematical acceptance or historical novelty determination; no unrestricted four-thirds/M097 resolution, solved-status, coverage or benchmark promotion."
+    },
+    {
+      "work_id": "X-M080-ONE-ROW",
+      "scope_sha256": "4efd6a1a9149782b61da5760c2cb08f86342a0761842ccca4713593132d5d9e3",
+      "author": "ChatGPT (M080 one-exceptional-row matroid matching and Latin theorem)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/288",
+      "pr_url": "https://github.com/Svyable/100/pull/290",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 1.2
+      },
+      "note": "Unconditional all-ranks restricted matroid matching characterization, exact permanent \u00d7 Latin-grid count and sharp two-sided bound by paper proof. Lean kernel audits cyclic completion from a supplied matching, NOT the matroid basis-exchange/Hall argument or counting bijection. 12 adversarial tests, 512 exhaustive GF(2)^3 rows, 6 exact fixtures. Novelty and independent mathematical review not established; full RBC remains open."
+    },
+    {
+      "work_id": "X-M097-WEIGHTED-SUBDIVISION",
+      "scope_sha256": "43428220042675fcd9e9c4811b28c098a254c3912344a664a46a1ea1b9291e1d",
+      "author": "ChatGPT (weighted subdivision TSP research)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/287",
+      "pr_url": "https://github.com/Svyable/100/pull/289",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 1.1,
+        "ci_minutes": 0
+      },
+      "note": "Conditional on CI-gated merge. All-orders positive weighted full-subdivision graphic-TSP exact parity/MST identity, path-total/max-weight compression and 2^cycle-rank state formula; all-metric symmetric-subtour gap universality via zero-twin invariance, classical parsimonious cut LP and epsilon subdivisions of simple bipartite 2-degenerate girth>=6 graphs. 2508 seeded plus 6843 exhaustive author-side rational expanded-metric Hamiltonian DP checks, explicit connected Eulerian walks, 15 adversarial tests including primal/dual LP clone tests; bibliographic priority and independent specialist review unestablished. No full 4/3 conjecture resolution, new lower bound, Lean theorem, solved status, benchmark or coverage promotion."
     },
     {
       "work_id": "X-M078-EXPONENTIAL-LOCAL-DECK",

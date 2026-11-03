@@ -1,0 +1,763 @@
+{
+  "schema_version": 1,
+  "problem_id": "M080",
+  "claim_id": "X-M080-ONE-ROW",
+  "scope": "n-1 identical copies of a basis B and one arbitrary labeled row C; all n >= 1",
+  "theorem": "transversal basis grid iff exchange-support matching; count = permanent * fixed-first-row Latin completions; for a second basis, sharp bounds Lambda_n <= grids <= n!*Lambda_n",
+  "lean_scope": "general n combinatorial cyclic completion from a supplied injective support matching",
+  "literature_novelty": "not assessed; matching and Latin-square ingredients are classical",
+  "examples": [
+    {
+      "name": "gf2_rank4_all_equal",
+      "field_prime": 2,
+      "rank": 4,
+      "exceptional_is_basis": true,
+      "status": "grid",
+      "support_masks": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "support_permanent": 1,
+      "missing_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rows": [
+        [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ]
+      ],
+      "latin_fixed_first_row": 24,
+      "grid_count_formula": 24,
+      "grid_count_independent": 24
+    },
+    {
+      "name": "gf2_rank4_dependent_matchable",
+      "field_prime": 2,
+      "rank": 4,
+      "exceptional_is_basis": false,
+      "status": "grid",
+      "support_masks": [
+        9,
+        10,
+        12,
+        15
+      ],
+      "support_permanent": 4,
+      "missing_indices": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "rows": [
+        [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "latin_fixed_first_row": 24,
+      "grid_count_formula": 96,
+      "grid_count_independent": 96
+    },
+    {
+      "name": "gf2_rank4_hall_failure",
+      "field_prime": 2,
+      "rank": 4,
+      "exceptional_is_basis": false,
+      "status": "hall_obstruction",
+      "support_masks": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "support_permanent": 0,
+      "hall_obstruction": {
+        "columns": [
+          0,
+          1,
+          2
+        ],
+        "neighbor_indices": [
+          0
+        ]
+      },
+      "latin_fixed_first_row": 24,
+      "grid_count_formula": 0,
+      "grid_count_independent": 0
+    },
+    {
+      "name": "gf7_rank4_two_distinct_bases",
+      "field_prime": 7,
+      "rank": 4,
+      "exceptional_is_basis": true,
+      "status": "grid",
+      "support_masks": [
+        3,
+        6,
+        12,
+        9
+      ],
+      "support_permanent": 2,
+      "missing_indices": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "rows": [
+        [
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            2
+          ],
+          [
+            2,
+            2,
+            0,
+            1
+          ]
+        ]
+      ],
+      "latin_fixed_first_row": 24,
+      "grid_count_formula": 48,
+      "grid_count_independent": 48
+    },
+    {
+      "name": "gf7_rank4_all_exchanges",
+      "field_prime": 7,
+      "rank": 4,
+      "exceptional_is_basis": true,
+      "status": "grid",
+      "support_masks": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "support_permanent": 24,
+      "missing_indices": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "rows": [
+        [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            2
+          ]
+        ]
+      ],
+      "latin_fixed_first_row": 24,
+      "grid_count_formula": 576,
+      "grid_count_independent": 576
+    },
+    {
+      "name": "gf3_rank5_two_distinct_bases",
+      "field_prime": 3,
+      "rank": 5,
+      "exceptional_is_basis": true,
+      "status": "grid",
+      "support_masks": [
+        3,
+        6,
+        12,
+        24,
+        17
+      ],
+      "support_permanent": 2,
+      "missing_indices": [
+        1,
+        2,
+        3,
+        4,
+        0
+      ],
+      "rows": [
+        [
+          [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        ]
+      ]
+    }
+  ]
+}

@@ -125,5 +125,17 @@
       "Hundred.Statements.ProjectivePlane.exists_order_2",
       "Hundred.Statements.ProjectivePlane.exists_order_3"
     ]
+  },
+  {
+    "id": "L010",
+    "problem_id": "M080",
+    "stage": "implemented",
+    "statement": "For every positive rank n, an injective omitted-symbol matching can be completed by n-1 cyclic rows, each a permutation, with distinct symbols in every column and its matched omitted symbol excluded. The matched exchange predicate is preserved for each column.",
+    "scope_gap": "Only the matching-to-cyclic-grid construction is formal. Hall matching existence from a second basis, rank-n matroid exchange, vector-space determinant logic, exact permanent/Latin counts and full RBC remain outside Lean. Author checked, no independent specialist acceptance.",
+    "next_step": "Formalize vector-space/matroid basis exchange and Hall matching in a richer library, then transport the paper-level all-rank theorem to an actual matroid model.",
+    "declarations": [
+      "Hundred.Research.M080.cyclic_rows_permutations",
+      "Hundred.Research.M080.matching_gives_cyclic_grid"
+    ]
   }
 ]

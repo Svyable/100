@@ -1,18 +1,18 @@
 {
   "protocol": "svyable.work.v1",
-  "count": 351,
+  "count": 353,
   "by_kind": {
     "obligation": 30,
-    "review": 47,
+    "review": 48,
     "benchmark": 36,
-    "lean": 9,
+    "lean": 10,
     "job": 45,
     "roadmap": 9,
     "comparator": 86,
     "status_audit": 89
   },
   "by_status": {
-    "runnable": 344,
+    "runnable": 346,
     "externally_blocked": 4,
     "waiting_on_dependencies": 3
   },
@@ -1379,6 +1379,31 @@
       "claim_title": "[Claim] V-P-M095 — Independent certificate and scope audit for M095",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-P-M095%20%E2%80%94%20Independent%20certificate%20and%20scope%20audit%20for%20M095",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-P-M095%22"
+    },
+    {
+      "id": "V-L010",
+      "kind": "review",
+      "status": "runnable",
+      "problems": [
+        "M080"
+      ],
+      "title": "Independent scope review of Lean target L010 (M080)",
+      "deliverable": "Compare every registered declaration of L010 with the registry statement and its primary source: domains, quantifiers, nonemptiness and distinctness conditions, strict versus weak inequalities, encodings. State exactly what is and is not established.",
+      "context": "For every positive rank n, an injective omitted-symbol matching can be completed by n-1 cyclic rows, each a permutation, with distinct symbols in every column and its matched omitted symbol excluded. The matched exchange predicate is preserved for each column.",
+      "acceptance": [
+        "The reviewer is not an author of the artifact (check git log of its files) and records the review in data/outcomes.json as accepted_independent or gap_reported, with a public review_url",
+        "Any mismatch is filed as a gap on the target's scope_gap, not silently fixed",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "A scope review checks that the encoded statement matches the claim; it does not add mathematics. Only the matching-to-cyclic-grid construction is formal. Hall matching existence from a second basis, rank-n matroid exchange, vector-space determinant logic, exact permanent/Latin counts and full RBC remain outside Lean. Author checked, no independent specialist acceptance.",
+      "falsifier": "A quantifier, domain or convention in the Lean statement that differs from the registered claim.",
+      "source": "data/lean_targets.json",
+      "depends_on": [],
+      "priority_rank": 16,
+      "scope_sha256": "91d0322d099f27fca92c88c8b51d6901464c5b66d40623b4b03befd2f7a30402",
+      "claim_title": "[Claim] V-L010 — Independent scope review of Lean target L010 (M080)",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20V-L010%20%E2%80%94%20Independent%20scope%20review%20of%20Lean%20target%20L010%20%28M080%29",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20V-L010%22"
     },
     {
       "id": "V-P-M080",
@@ -3052,6 +3077,32 @@
       "claim_title": "[Claim] L008 — Extend Lean target L008 (M095)",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20L008%20%E2%80%94%20Extend%20Lean%20target%20L008%20%28M095%29",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20L008%22"
+    },
+    {
+      "id": "L010",
+      "kind": "lean",
+      "status": "runnable",
+      "problems": [
+        "M080"
+      ],
+      "title": "Extend Lean target L010 (M080)",
+      "deliverable": "Formalize vector-space/matroid basis exchange and Hall matching in a richer library, then transport the paper-level all-rank theorem to an actual matroid model.",
+      "context": "For every positive rank n, an injective omitted-symbol matching can be completed by n-1 cyclic rows, each a permutation, with distinct symbols in every column and its matched omitted symbol excluded. The matched exchange predicate is preserved for each column.",
+      "acceptance": [
+        "New theorems registered in data/lean_targets.json (stable names, no escape hatches)",
+        "python3 scripts/lean_verify.py passes in CI: warnings as errors, only propext / Classical.choice / Quot.sound, per-module time well under the 300 s build budget",
+        "A negative case in lean/Negative.lean that a weakened statement would fail",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "Only the matching-to-cyclic-grid construction is formal. Hall matching existence from a second basis, rank-n matroid exchange, vector-space determinant logic, exact permanent/Latin counts and full RBC remain outside Lean. Author checked, no independent specialist acceptance.",
+      "falsifier": "",
+      "source": "data/lean_targets.json",
+      "depends_on": [],
+      "priority_rank": 16,
+      "scope_sha256": "56a7433706df208b28bec166a4e30e9ce3f49e660e000b1395ca5cebbacaa1de",
+      "claim_title": "[Claim] L010 — Extend Lean target L010 (M080)",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20L010%20%E2%80%94%20Extend%20Lean%20target%20L010%20%28M080%29",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20L010%22"
     },
     {
       "id": "L005",
