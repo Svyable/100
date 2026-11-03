@@ -113,6 +113,34 @@ class WeightedSubdivisionTests(unittest.TestCase):
             cloned = w.clone_metric(d, v)
             self.assertEqual((w.subtour_lp(cloned), w.hamiltonian_dp(cloned)), base)
 
+    def test_effective_integer_weight_gap_reduction(self):
+        # The epsilon certificate depends only on n, min and max distances,
+        # not on the unknown optimal tour or LP values.
+        original = [(0, 1, 3), (0, 2, 7), (1, 2, 5)]
+        d = w.metric_closure(3, original)
+        tolerance = Fraction(1, 10)
+        epsilon = w.epsilon_for_ratio_tolerance(d, tolerance)
+        self.assertGreater(epsilon, 0)
+        self.assertLess(epsilon, 1)
+        source_ratio = w.hamiltonian_dp(d) / w.subtour_lp(d)
+        N, expanded, _ = w.expand(3, w.weighted_2_subdivision(3, original, epsilon))
+        dst = w.metric_closure(N, expanded)
+        target_ratio = w.hamiltonian_dp(dst) / w.subtour_lp(dst)
+        self.assertLessEqual(abs(target_ratio - source_ratio), tolerance)
+        # Multiply every weight by the denominator to get strictly
+        # positive integer edge weights without changing the metric ratio.
+        common_denominator = epsilon.denominator
+        integer_paths = [
+            (u, v, (epsilon * common_denominator, Fraction(weight * common_denominator)))
+            for u, v, weight in original
+        ]
+        self.assertTrue(all(x.denominator == 1 for _, _, pair in integer_paths for x in pair))
+        integer_n, int_edges, _ = w.expand(3, integer_paths)
+        dint = w.metric_closure(integer_n, int_edges)
+        self.assertEqual(w.hamiltonian_dp(dint) / w.subtour_lp(dint), target_ratio)
+        with self.assertRaises(ValueError):
+            w.epsilon_for_ratio_tolerance(d, 0)
+
     def test_two_edge_weighted_subdivision_converges_to_clones(self):
         # K3 source metric: one subdivision vertex is an epsilon-near
         # duplicate of one endpoint of each original edge.

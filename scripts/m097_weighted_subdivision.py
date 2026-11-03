@@ -285,6 +285,35 @@ def clone_metric(d, v):
     return [list(row) + [row[v]] for row in d] + [list(d[v]) + [Fraction(0)]]
 
 
+def epsilon_for_ratio_tolerance(d, tolerance):
+    """Finite rational ε ensuring |gap_ratio(G_ε) − gap_ratio(d)| <= tolerance.
+
+    For a positive n-point metric d, the proof gives
+    |R_ε − R| <= N(N-1)D*ε/(n*μ²), N=n+binom(n,2).
+    No TSP or LP solver is needed to choose ε.
+    """
+    n = len(d)
+    if n < 3 or any(len(row) != n for row in d):
+        raise ValueError("metric with at least three vertices required")
+    tolerance = Fraction(tolerance)
+    if tolerance <= 0:
+        raise ValueError("positive ratio tolerance required")
+    distances = [Fraction(d[i][j]) for i in range(n) for j in range(i+1, n)]
+    if any(z <= 0 for z in distances):
+        raise ValueError("strictly positive off-diagonal distances required")
+    mu, D = min(distances), max(distances)
+    for i in range(n):
+        if d[i][i] != 0:
+            raise ValueError("metric diagonal must be zero")
+        for j in range(n):
+            if d[i][j] != d[j][i] or any(
+                    Fraction(d[i][j]) > Fraction(d[i][k]) + Fraction(d[k][j])
+                    for k in range(n)):
+                raise ValueError("input must be a symmetric triangle metric")
+    N = n + n*(n-1)//2
+    return tolerance * n * mu * mu / (N * (N - 1) * D)
+
+
 def weighted_2_subdivision(n, original_edges, epsilon):
     """Each original edge w becomes two edges epsilon,w (twin at first endpoint)."""
     return [(u, v, (epsilon, w)) for u, v, w in original_edges]

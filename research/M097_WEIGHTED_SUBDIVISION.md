@@ -100,6 +100,20 @@ Every pairwise shortest-path distance in \(G_\epsilon\) is a minimum over finite
 
 Thus TSP(G_ε)→TSP(d) and SEP(G_ε)→SEP(d)>0, proving ratio convergence in (2). For (3), the left-hand class is a subset of all finite positive metric instances, giving ≤. Conversely every finite positive metric d supplies a sequence from that left-hand class whose ratio tends to d's ratio, giving ≥ after taking suprema. QED.
 
+### Quantitative epsilon bound and integer-weight version
+
+Let μ be the minimum positive off-diagonal original distance, D the maximum, N=n+binom(n,2), and K=N(N−1). Every original instance satisfies the explicit **ratio-error certificate**
+
+\[
+\left|\frac{\operatorname{TSP}(G_\epsilon)}{\operatorname{SEP}(G_\epsilon)}
+-\frac{\operatorname{TSP}(d)}{\operatorname{SEP}(d)}\right|
+\le \frac{KD}{n\mu^2}\,\epsilon.\tag{4}
+\]
+
+Thus any rational tolerance δ>0 can be achieved by choosing a rational \(0<\epsilon\le\delta n\mu^2/(KD)\). For rational metric inputs the choice has polynomial binary encoding length. Scale all rational edge weights by a common denominator to make them **positive integers** without changing the ratio. Rational metric instances are dense among real metric instances: rationally approximate complete-graph edge costs and take shortest-path closure. Consequently the supremum equality in (3) holds even over **positive-integer-weighted** bipartite one-subdivisions.
+
+**Proof.** A zero-clone shortest path can be taken simple, so it uses at most N−1 edges. Increasing the zero edges to ε therefore changes any shortest-path distance by between zero and (N−1)ε. Every Hamiltonian cycle has N metric edges, and every symmetric-subtour feasible point has total x-weight N by the degree constraints. Both objective optima therefore increase from their zero-clone values by amounts between zero and Kε. If A=TSP(d), B=SEP(d), and Aε,Bε are their subdivided values, then A≤Aε≤A+Kε and B≤Bε≤B+Kε. Because A≥B>0, elementary fraction subtraction gives \(|Aε/Bε-A/B|\le (A/B)Kε/B\). Also A≤nD (any tour) and B≥nμ (every subtour point has x-sum n), giving A/B≤D/μ and proving (4). Neither the unknown optimum A nor B is needed to select ε.
+
 **Why the graph class really is sparse:** In each one-subdivision of a simple K_n, originals have no direct edges, every new subdivision vertex has degree exactly two and joins two originals, and there are no 4-cycles because original pairs have a unique subdividing vertex. Every cycle has at least six edges; every induced subgraph containing a subdivider has a vertex of degree at most two, and any induced subgraph without a subdivider has no edges. This proves bipartiteness, girth≥6 and 2-degeneracy, rather than assuming them.
 
 ## Verifiers and deliberately false extensions
