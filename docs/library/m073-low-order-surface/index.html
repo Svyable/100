@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M073 — low-order Ising coefficients detect separating triangles in surface triangulations · 100</title>
+<meta name="description" content="2026-11-02 · Work ID X-M073-LOW-ORDER-SPECTRUM · claim #274. Evidence: author-derived combinatorial identities, an explicit pair of nine-vertex triangulated spheres, and independently formulated exact algorithms. No independent specialist r">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m073-low-order-surface/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M073 — low-order Ising coefficients detect separating triangles in surface triangulations · 100">
+<meta property="og:description" content="2026-11-02 · Work ID X-M073-LOW-ORDER-SPECTRUM · claim #274. Evidence: author-derived combinatorial identities, an explicit pair of nine-vertex triangulated spheres, and independently formulated exact algorithms. No independent specialist r">
+<meta property="og:url" content="https://svyable.github.io/100/library/m073-low-order-surface/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M073 — low-order Ising coefficients detect separating triangles in surface triangulations</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#precise-theorem">Precise theorem</a></li><li class="toc-l2"><a href="#proof-of-the-coefficients">Proof of the coefficients</a></li><li class="toc-l2"><a href="#sharp-nine-vertex-boundary-and-explicit-same-f-vector-falsifier">Sharp nine-vertex boundary and explicit same-f-vector falsifier</a></li><li class="toc-l2"><a href="#exact-source-pinned-m073-application">Exact source-pinned M073 application</a></li><li class="toc-l2"><a href="#reproducibility-independent-representations-and-failures">Reproducibility, independent representations and failures</a></li><li class="toc-l2"><a href="#literature--provenance-checked-2026-11-02">Literature / provenance checked 2026-11-02</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M073/" title="Sidorenko conjecture">M073</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M073_LOW_ORDER_SURFACE.md" rel="noopener noreferrer">research/M073_LOW_ORDER_SURFACE.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M073 — low-order Ising coefficients detect separating triangles in surface triangulations</h1>
+<p><strong>2026-11-02 · Work ID <code>X-M073-LOW-ORDER-SPECTRUM</code> · <a href="https://github.com/Svyable/100/issues/274" rel="noopener noreferrer">claim #274</a>.</strong> <strong>Evidence:</strong> author-derived combinatorial identities, an explicit pair of nine-vertex triangulated spheres, and independently formulated exact algorithms. No independent specialist review or historical-novelty assessment. No result for arbitrary graphons, no claimed counterexample host, and no resolution of Sidorenko&#x27;s conjecture.</p>
+<h2 id="precise-theorem">Precise theorem<a class="anchor" href="#precise-theorem" aria-label="Link to this section">#</a></h2>
+<p>Let <code>T</code> be a finite <strong>closed simplicial triangulated surface</strong> (connected or not), with <code>v</code> vertices, <code>e</code> edges, and <code>f</code> triangular faces. Every edge is in exactly two distinct faces and every vertex link is a cycle. Let <code>s(T)</code> be the number of <strong>nonfacial triangles</strong>: three vertices pairwise adjacent in the one-skeleton that do not constitute a face. Let <code>H(T)</code> be the bipartite graph with point vertices and distinct face vertices, and one incidence edge per point in each face. Define</p>
+<pre><code class="lang-text">Z_T(q) = sum_{A subset E(H(T)), all vertex degrees in A even} q^|A|
+       = 1 + c4 q^4 + c6 q^6 + c8 q^8 + ...</code></pre>
+<p><strong>Low-order coefficient theorem (candidate, elementary proof below):</strong></p>
+<pre><code class="lang-text">c4 = e,
+c6 = 4f + 8s(T),
+c8 = C8(H(T)) + binom(e,2) - 3f.                    (1)</code></pre>
+<p>Here <code>C8(H)</code> is the number of <strong>unoriented simple eight-cycles</strong>, not closed walks. It has an exact one-skeleton formula: sum over all unoriented simple four-cycles <code>(a,b,c,d)</code> of <code>T</code> of the number of assignments of <strong>four distinct faces</strong> to the edges <code>ab,bc,cd,da</code>, choosing each face from the two incident with its edge. Thus the entire displayed polynomial prefix is determined by the triangulation&#x27;s incidence structure without enumerating its exponentially many even subgraphs.</p>
+<p>The first two identities, and the decomposition of the third, hold more generally for finite simple 2-dimensional triangle complexes in which each edge is in exactly two faces; connected vertex links are not needed for those identities. They do <strong>not</strong> hold as written for boundary edges, repeated faces, or arbitrary hypergraphs.</p>
+<p><strong>Sphere corollary.</strong> For a connected triangulated 2-sphere, Euler gives <code>e=3v-6</code>, <code>f=2v-4</code>, and every nonfacial triangle is a separating 3-cycle. Hence</p>
+<pre><code class="lang-text">c6 = 8v - 16 + 8 * (number of separating triangles).</code></pre>
+<p>For <code>v&gt;=5</code>, the one-skeleton is 4-vertex-connected <strong>if and only if</strong> <code>c6=8v-16</code>, using the standard separating-triangle characterization of 4-connected plane triangulations. This is a restricted, exactly testable connection between a high-temperature Ising coefficient and graph connectivity, not a new characterization of planar 4-connectivity itself.</p>
+<h2 id="proof-of-the-coefficients">Proof of the coefficients<a class="anchor" href="#proof-of-the-coefficients" aria-label="Link to this section">#</a></h2>
+<p>An even edge set of a simple bipartite graph with exactly four or six edges must be a single simple cycle of that length: all cycles have length at least four, and two cycles need at least eight edges.</p>
+<p>A four-cycle of <code>H(T)</code> consists of two point vertices and two faces containing both points. Every edge <code>ab</code> of <code>T</code> belongs to exactly two faces, so it determines exactly one such square; no nonedge can. Thus <code>c4=e</code>.</p>
+<p>A six-cycle consists of three distinct point vertices <code>a,b,c</code> and three <strong>distinct</strong> face vertices assigned in cyclic order to <code>ab,bc,ca</code>. The three point edges must form a triangle in the one-skeleton. If <code>abc</code> is <strong>not</strong> a face, all <code>2^3=8</code> assignments are valid: a face assigned to two of these edges would contain all three points, contrary to nonfaciality. If <code>abc</code> <strong>is</strong> a face <code>F</code>, each point edge has choices <code>F</code> and its distinct opposite face. An assignment repeats a face exactly when it chooses <code>F</code> on at least two edges: there are <code>binom(3,2)+1=4</code> such assignments, leaving four valid ones. The other three faces cannot coincide because each contains exactly two of <code>a,b,c</code> and a third point outside <code>abc</code>. There are <code>f</code> facial and <code>s(T)</code> nonfacial triangles, proving <code>c6=4f+8s(T)</code>.</p>
+<p>An eight-edge even set is either one simple eight-cycle or a union of two edge-disjoint four-cycles. Each four-cycle corresponds to an edge of <code>T</code>. Two such squares share an incidence edge precisely when the corresponding edges of <code>T</code> belong to a common triangular face. Every face contains three unordered pairs of its edges, and any pair of distinct edges can belong to at most one common face. Thus the number of edge-disjoint pairs of squares is <code>binom(e,2)-3f</code>. Such a pair has a <strong>unique union</strong>: two squares whose incidence-edge sets are disjoint cannot share a face vertex (two edges of one triangle necessarily share an incidence edge if both squares use that face); they may share at most one point vertex, and in either case their two four-cycles are uniquely recovered. They cannot also be an eight-cycle. This proves the last identity in (1). Finally every simple eight-cycle alternates four distinct point vertices with four distinct faces, yielding the stated four-cycle face-assignment formula, with no multiplicity.</p>
+<h2 id="sharp-nine-vertex-boundary-and-explicit-same-f-vector-falsifier">Sharp nine-vertex boundary and explicit same-f-vector falsifier<a class="anchor" href="#sharp-nine-vertex-boundary-and-explicit-same-f-vector-falsifier" aria-label="Link to this section">#</a></h2>
+<p>In a simplicial triangulated sphere with minimum vertex degree <strong>at least four</strong>, a separating triangle has <strong>at least three interior vertices on each side</strong>. Indeed, cap either side with its boundary triangle. With one interior vertex, the capped sphere is a tetrahedron and that interior vertex has degree three. With two interior vertices, the capped sphere is the unique five-vertex maximal planar graph <code>K5</code> minus one edge. Its two degree-three vertices are nonadjacent, so the triangular boundary cannot contain both; an interior vertex has degree three. The degree of an interior vertex is unchanged by capping. Both possibilities contradict the minimum-degree hypothesis. Hence <code>v&gt;=3+3+3=9</code>.</p>
+<p>This bound is attained. Two explicit closed, connected, minimum-degree-four triangulated spheres on <strong>the same nine vertices, 21 edges, and 14 faces</strong> have different spectra:</p>
+<div class="table-wrap"><table><thead><tr><th>Construction</th><th class="al-right">Nonfacial triangles</th><th class="al-right"><code>c4</code></th><th class="al-right"><code>c6</code></th><th class="al-right"><code>C8(H)</code></th><th class="al-right"><code>c8</code></th></tr></thead><tbody><tr><td>Glue two octahedral spheres along one removed face</td><td class="al-right">1</td><td class="al-right">21</td><td class="al-right"><strong>64</strong></td><td class="al-right">357</td><td class="al-right">525</td></tr><tr><td>Split the octahedral edges <code>(0,2)</code>, <code>(0,3)</code>, <code>(1,2)</code> successively</td><td class="al-right">0</td><td class="al-right">21</td><td class="al-right"><strong>56</strong></td><td class="al-right">413</td><td class="al-right">581</td></tr></tbody></table></div>
+<p>For the first, take octahedron faces <code>{(a,b,c): a in {0,1}, b in {2,3}, c in {4,5}}</code>. Remove <code>(0,2,4)</code> from each of two copies and identify their boundary points; label the three nonboundary vertices of the second copy <code>6,7,8</code>. For the second, an edge split replaces the two triangles <code>(u,v,a),(u,v,b)</code> by <code>(u,x,a),(v,x,a),(u,x,b),(v,x,b)</code> with a new point <code>x</code>. The code constructs the complete face lists literally, verifies links, Euler characteristic, connectivity and minimum degree, and counts cycles.</p>
+<p>Consequently the stronger proposal <strong><code>c6=4f</code> for every closed triangulation is false</strong>, and even the entire f-vector plus the minimum-degree-four condition does not determine <code>c6</code>. This is a counterexample to an auxiliary spectral extrapolation, <strong>not</strong> to Sidorenko&#x27;s conjecture.</p>
+<h2 id="exact-source-pinned-m073-application">Exact source-pinned M073 application<a class="anchor" href="#exact-source-pinned-m073-application" aria-label="Link to this section">#</a></h2>
+<p>The 22-face, 13-point <a href="https://github.com/Svyable/100/blob/main/data/reference/sidorenko_faces.json" rel="noopener noreferrer">pinned M073 triangulation</a> has <code>e=33</code>, <code>s(T)=0</code>, and the new formulas give <code>c4=33</code>, <code>c6=88</code>, <code>C8(H)=361</code>, and <code>c8=361+binom(33,2)-66=823</code>. These agree with the independently generated <a href="../../library/m073-information-alignment/">23-coefficient parity spectrum</a>, but <strong>reproducing those four pinned numbers is not the novel claim</strong>: the contribution is the structural formula for all closed simplicial surfaces and the separating-triangle boundary/falsifier.</p>
+<p>For the equal-mass symmetric two-block graphon <code>W=[[a,b],[b,a]]</code>, let <code>p=(a+b)/2&gt;0</code>, <code>q=(a-b)/(a+b)</code>. The classical spin/high-temperature expansion gives exactly</p>
+<pre><code class="lang-text">t(H(T),W)/p^(3f) = 1 + e q^4 + (4f+8s(T)) q^6
+                   + (C8(H(T))+binom(e,2)-3f) q^8 + ...</code></pre>
+<p>The series is a <strong>finite polynomial identity</strong>. It is not an inequality for arbitrary block masses or asymmetric diagonal entries. Its coefficients are nonnegative, but it does not by itself resolve Sidorenko&#x27;s conjecture.</p>
+<h2 id="reproducibility-independent-representations-and-failures">Reproducibility, independent representations and failures<a class="anchor" href="#reproducibility-independent-representations-and-failures" aria-label="Link to this section">#</a></h2>
+<pre><code class="lang-sh">python3 scripts/m073_low_order_surface.py
+python3 -m unittest discover -s tests -p &#x27;test_m073_low_order_surface.py&#x27; -v
+python3 scripts/regen.py --check --fast
+python3 scripts/regen.py --check
+python3 -m unittest discover -s tests</code></pre>
+<p>The checker validates edge multiplicities and cyclic vertex links, computes nonfacial triangles and eight-cycles <strong>from the one-skeleton</strong>, and separately counts literal length-four/six/eight cycles by DFS <strong>in the bipartite incidence graph</strong>. Tests additionally use the existing <strong>parity-state face-elimination recurrence</strong> to count even subgraphs without either cycle formula, and apply seeded topology-preserving diagonal flips, relabelings, a nonmanifold wedge, a boundary, a repeated face and a corrupted face. These are three author-controlled exact representations, <strong>not</strong> independent mathematical review. No random sampling is substituted for the proof of the all-orders identities.</p>
+<p>Failed stronger avenue: <code>c6=4f</code> appears to hold for the octahedron, icosahedron and the 22-face source, but fails on the glued octahedra by exactly eight. A pure f-vector formula therefore cannot capture the sixth-order coefficient. Counting only simple eight-cycles also fails: for the source it would give 361 rather than 823 because the 462 unions of disjoint squares contribute. A naive count of <strong>all</strong> pairs of squares overcounts by <code>3f</code>.</p>
+<p><strong>Boundary:</strong> The proof assumes a simplicial complex with distinct faces and exactly two faces per edge; a generic triple system, a surface with boundary, or a graphon with unequal class masses is outside scope. The nine-vertex minimality uses the <strong>sphere</strong> and minimum degree four, not arbitrary closed surfaces. The source-pinned 22-face table does not provide the unknown counterexample host from the September 2026 Sidorenko manuscript.</p>
+<p><strong>Next falsifiers:</strong> challenge the unique decomposition of eight-edge even sets with a face-sharing square pair; enumerate nonorientable closed triangulations and pseudomanifolds; test whether the same <code>c6</code> formula appears in earlier incidence-spectrum or simplicial-complex literature; seek an independent specialist proof/scope audit before promoting the result.</p>
+<h2 id="literature--provenance-checked-2026-11-02">Literature / provenance checked 2026-11-02<a class="anchor" href="#literature--provenance-checked-2026-11-02" aria-label="Link to this section">#</a></h2>
+<ul><li>Friedli and Velenik, <em>Statistical Mechanics of Lattice Systems</em> (Cambridge, 2017), <a href="https://doi.org/10.1017/9781316882603" rel="noopener noreferrer">DOI 10.1017/9781316882603</a>: the Ising high-temperature even-subgraph identity is classical.</li><li>Jackson and Yu, <em>Hamilton cycles in plane triangulations</em> (J. Graph Theory 41, 2002), <a href="https://doi.org/10.1002/jgt.10057" rel="noopener noreferrer">DOI 10.1002/jgt.10057</a>: separating triangles and 4-connected triangulation structure are classical; this paper does <strong>not</strong> establish novelty of the coefficient formula.</li><li>Lo and Qian, <em>Hamiltonian Cycles in 4-Connected Planar and Projective Planar Triangulations with Few 4-Separators</em> (SIAM J. Discrete Math. 36, 2022), <a href="https://doi.org/10.1137/21M1419556" rel="noopener noreferrer">DOI 10.1137/21M1419556</a>: modern primary context for 4-connected triangulations.</li><li><a href="../../library/m073-information-alignment/">M073_INFORMATION_ALIGNMENT.md</a> and <a href="../../library/m073-edge-neighborhood/">M073_EDGE_NEIGHBORHOOD.md</a>: earlier repository source-pinned spectrum and surface-incidence correlation inequality. Neither is asserted independently accepted.</li></ul>
+<p>No targeted search identified this exact <code>4f+8s(T)</code> coefficient formula, but absence from the searched sources does <strong>not</strong> establish historical priority. The theorem remains an author-derived restricted candidate pending independent specialist review. No solved, accepted, coverage, benchmark or PR-landing workflow state changes.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

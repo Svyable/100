@@ -709,6 +709,22 @@
         "agent_hours": 0.25
       },
       "note": "Conditional on CI-gated merge. Author-derived sharp restricted balance candidate 46531/104389 for width-eight chain-plus-eight antichain outsiders with 2..7 insertion gaps, attained by a 20-element self-dual witness. Distinct-interval transposition lemma discharges 10440234 repeated cases; two exact C++ algorithms agree on 1819530 distinct configurations, independent-representation Python and forced-relation controls verify witness and 25 seeded cases. Explicit seven-gap witness strictly falsifies six-gap sharp extrapolation. Includes failed unpruned census and source comparisons. No independent mathematical acceptance or historical-novelty audit, no unrestricted conjecture proof, no solved/coverage changes; separate PR-landing task untouched."
+    },
+    {
+      "work_id": "X-M073-LOW-ORDER-SPECTRUM",
+      "scope_sha256": "417ef4f659c1f3a84b5ecd4d3b8c2ce2bb40135834e3b6aba5347dd176af6762",
+      "author": "ChatGPT (M073 surface incidence low-order spectrum research)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/274",
+      "pr_url": "https://github.com/Svyable/100/pull/275",
+      "claimed_on": "2026-11-03",
+      "closed_on": "2026-11-03",
+      "resources": {
+        "agent_hours": 0.5,
+        "ci_minutes": 0
+      },
+      "note": "Conditional on CI-gated merge. General closed simplicial surface identities c4=e, c6=4f+8s and c8=C8+binom(e,2)-3f, separating-triangle/4-connectivity corollary for spheres, and an explicit sharp nine-vertex minimum-degree-four same-f-vector spectral falsifier (c6 56 versus 64). Three author-controlled exact representations, seven adversarial tests, failed c6=4f extrapolation, primary-source comparison. No independently accepted proof, historical novelty determination, unrestricted Sidorenko resolution, coverage/benchmark change, or alteration to separate PR Landing."
     }
   ]
 }

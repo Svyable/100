@@ -258,6 +258,11 @@
       "url": "https://svyable.github.io/100/library/m073-information-alignment/"
     },
     {
+      "title": "M073 — low-order Ising coefficients detect separating triangles in surface triangulations",
+      "source": "research/M073_LOW_ORDER_SURFACE.md",
+      "url": "https://svyable.github.io/100/library/m073-low-order-surface/"
+    },
+    {
       "title": "M073: an unequal-mass, unequal-diagonal Sidorenko margin on an ordered cone",
       "source": "research/M073_MONOTONE_TWO_BLOCK.md",
       "url": "https://svyable.github.io/100/library/m073-monotone-two-block/"
