@@ -82,7 +82,12 @@ review burden. Always publish individual run records, including failed and
 timed-out attempts.
 
 **No causal performance conclusion is permitted until the full 36-cell grid
-is complete under the preregistered protocol.** Even then three seeds per arm
+is completed under the preregistered protocol.** A filled ledger cell is not a
+completed trial: timeout and error records count toward coverage, but fail
+`matched_trials_completed` and `comparable` in the JSON summary. Check
+`completed_trials`, `timeout_trials`, `error_trials` and the per-arm counts
+before drawing any comparison. The post-freeze CH24 contamination gate is
+separate and remains in force. Even then three seeds per arm
 have low statistical power: report raw denominators and uncertainty, and do
 not interpret one task's result as general performance.
 

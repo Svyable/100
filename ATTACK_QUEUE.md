@@ -20,7 +20,7 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 | 5 | M074 | Caccetta–Häggkvist conjecture | `replay_published` | 94 | +7 | +12 | 113 | Replay the external fixed-r=6 proof corpus on an independent host, verify its published hash and proof traces, and audit the hand-reduction steps before launching duplicate SAT search. |
 | 6 | M092 | Zauner SIC conjecture | `replay_published` | 94 | +7 | +12 | 113 | Extend the cyclotomic engine to the number fields needed for d = 4..8 and replay published exact fiducials there. |
 | 7 | M093 | Linear MDS code main conjecture | `replay_published` | 91 | +7 | +12 | 110 | Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9. |
-| 8 | M094 | Hadamard matrix conjecture | `replay_published` | 91 | +7 | +12 | 110 | Add multiplier-group symmetry reduction to the Williamson meet-in-the-middle search so that n = 29 (order 116) becomes feasible, then implement Goethals-Seidel arrays for orders 156 and 172. |
+| 8 | M094 | Hadamard matrix conjecture | `replay_published` | 91 | +7 | +12 | 110 | Import a published construction for the smallest remaining engine gap, 188. This is an implementation gap, not an open existence case; the smallest order without a known matrix is 2396 after the 2026 verified constructions (arXiv:2610.27175). |
 | 9 | M088 | Deterministic polynomial identity testing | `lock_restriction` | 94 | +2 | +10 | 106 | Lock paragraph is complete in research/M088_LOCK.md; implement the falsifier against that exact GF(2) degree-≤3 ≤20-gate black-box class before attaching a verifier or widening the class. |
 | 10 | M075 | Frankl union-closed sets conjecture | `mine_structure` | 91 | +7 | +6 | 104 | The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5). |
 | 11 | M078 | Graph reconstruction conjecture | `mine_structure` | 91 | +7 | +6 | 104 | The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two. |
@@ -36,7 +36,7 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 | 21 | M085 | Unique Games conjecture | `scope_audit` | 83 | +0 | +8 | 91 | Independently audit the reduction's completeness and soundness estimates and its quantitative dependence on gap parameters. |
 | 22 | M042 | Dixmier conjecture A1 | `specify_shape` | 89 | +0 | +0 | 89 | Shape polynomial_maps (2 problems, one write-up): Name a polynomial or Weyl family that published degree bounds do not cover, and refuse exhaustive search inside those bounds. Full shape, certificate and falsifier are in APPROACH.md. |
 | 23 | M100 | Falconer distance-set conjecture | `scope_audit` | 80 | +0 | +8 | 88 | Audit FalconerAllDimensions.lean definition fidelity, measure conventions and proof dependencies; obtain independent harmonic-analysis review. |
-| 24 | M006 | Strong Goldbach conjecture | `mine_structure` | 72 | +7 | +6 | 85 | The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification. |
+| 24 | M006 | Strong Goldbach conjecture | `mine_structure` | 72 | +7 | +6 | 85 | The goldbach_bound mine certifies p <= floor(3 (ln n)^2) for every even n <= 20000 (research/M006_BOUND.md). State a sharper restricted lemma (named residue class, or a constant below 3 with a proof idea that could leave this window), without extending the range toward 4*10^18. |
 | 25 | M072 | Erdős–Hajnal conjecture | `specify_shape` | 85 | +0 | +0 | 85 | Shape extremal_asymptotics (3 problems, one write-up): Name a structured family and an explicit constant, and compare it with a cited general bound before calling it an improvement. Full shape, certificate and falsifier are in APPROACH.md. |
 | 26 | M077 | Komlós discrepancy conjecture | `specify_shape` | 85 | +0 | +0 | 85 | Shape extremal_asymptotics (3 problems, one write-up): Name a structured family and an explicit constant, and compare it with a cited general bound before calling it an improvement. Full shape, certificate and falsifier are in APPROACH.md. |
 | 27 | M082 | NP versus coNP | `specify_shape` | 83 | +0 | +0 | 83 | Shape complexity_barriers (6 problems, one write-up): Name the model and audit any claimed reduction's alphabet, completeness and soundness before writing a new reduction. Full shape, certificate and falsifier are in APPROACH.md. |
@@ -224,15 +224,15 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 
 ### M094 — Hadamard matrix conjecture
 
-**Dispatch:** `replay_published` · rank 8 · Orders 116, 156 and 172 are engine gaps. The literature already constructs them. They are not the open case, which the probe frontier places at order 668.
+**Dispatch:** `replay_published` · rank 8 · The engine now constructs orders 116, 156 and 172; its next gap is 188, a known constructed order. Published exact verifications cover every multiple of four below 2000; 2396 is the smallest currently without a known matrix (arXiv:2610.27175).
 
-**Proof obligation:** Close the remaining engine gaps (116, 156, 172, ...) with symmetry-reduced Williamson and Goethals-Seidel constructions, then document the first order no implemented method reaches.
+**Proof obligation:** Name the smallest order 4k > 172 that this engine still does not build, and import one published quadruple for it.
 
 **Falsifier:** A proof that no Hadamard matrix of some order 4k exists; a finite search failure is not sufficient.
 
-**Recommended step:** Add multiplier-group symmetry reduction to the Williamson meet-in-the-middle search so that n = 29 (order 116) becomes feasible, then implement Goethals-Seidel arrays for orders 156 and 172.
+**Recommended step:** Import a published construction for the smallest remaining engine gap, 188. This is an implementation gap, not an open existence case; the smallest order without a known matrix is 2396 after the 2026 verified constructions (arXiv:2610.27175).
 
-**Current blocker:** Plain meet-in-the-middle over symmetric circulants is practical up to n = 23 in pure Python; n = 29 needs symmetry reduction, and order 668 remains the smallest open case.
+**Current blocker:** Every order 4k <= 172 is now explicit in this engine; its next gap is 188. The common-multiplier Williamson search at n = 29 is a proved dead end, but 668 was settled by a verified 2026 construction. The smallest currently unknown order is 2396.
 
 **Stage:** `benchmark_reproduced` · [Dossier](research/LAB_CAMPAIGNS.md)
 
@@ -398,17 +398,17 @@ benchmark never counts as a new theorem. The bonus is not evidence.
 
 ### M006 — Strong Goldbach conjecture
 
-**Dispatch:** `mine_structure` · rank 24 · The goldbach_growth mine already lists the record least primes through 20,000. A longer verified range cannot compete with the published 4*10^18 check.
+**Dispatch:** `mine_structure` · rank 24 · The goldbach_bound mine already certifies p <= floor(3 (ln n)^2) through 20,000. A longer verified range cannot compete with the published 4*10^18 check.
 
 **Proof obligation:** State a restricted, checkable lemma (for example an explicit bound on the least Goldbach prime in a named residue class or range) that is not already implied by the 4*10^18 verification or by the ternary Goldbach theorem.
 
 **Falsifier:** An even n >= 4 with no prime p <= n/2 such that n - p is prime, confirmed by an independent primality oracle.
 
-**Recommended step:** The certified mine goldbach_growth lists the 12 record least primes through 20,000; the largest is 173 at n = 7426. Test an explicit upper bound against those 12 pairs. Do not extend the range toward the published 4*10^18 verification.
+**Recommended step:** The goldbach_bound mine certifies p <= floor(3 (ln n)^2) for every even n <= 20000 (research/M006_BOUND.md). State a sharper restricted lemma (named residue class, or a constant below 3 with a proof idea that could leave this window), without extending the range toward 4*10^18.
 
 **Current blocker:** Range extension cannot compete with the published 4*10^18 verification; real progress needs a new restricted theorem.
 
-**Stage:** `benchmark_reproduced` · [Dossier](research/LAB_CAMPAIGNS.md)
+**Stage:** `benchmark_reproduced` · [Dossier](research/M006_BOUND.md)
 
 ### M041 — Plane Jacobian conjecture
 

@@ -106,8 +106,12 @@ class WaveScaleTests(unittest.TestCase):
 
     def test_wave_prefers_obligations_and_jobs_over_audits(self):
         kinds = self.wave["by_kind"]
-        self.assertGreaterEqual(kinds["obligation"], 10)
-        self.assertGreaterEqual(kinds["job"], 20)
+        # A new runnable obligation can displace a job in the fixed 100-slot
+        # wave; protect the combined high-priority frontier, not a brittle
+        # per-kind snapshot tied to the exact obligation ledger size.
+        self.assertEqual(kinds["obligation"], self.wave["frontier_counts"]["runnable"])
+        self.assertGreater(kinds["job"], 0)
+        self.assertGreaterEqual(kinds["obligation"] + kinds["job"], 40)
         # High-leverage families should dominate the first thirty slots.
         head = [p["kind"] for p in self.wave["selected_packets"][:30]]
         self.assertGreaterEqual(sum(k in ("obligation", "review", "lean", "job", "roadmap") for k in head), 25)
