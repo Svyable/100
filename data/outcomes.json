@@ -739,6 +739,21 @@
         "agent_hours": 0.75
       },
       "note": "Conditional on successful merge. Author-derived all-orders arbitrary-degree unequal-length subdivision TSP formula, explicit rational subtour primal/dual including bridges and articulations, exact uniform stabilization threshold, and an elementary all-length two-octahedron family with a parity-choice transition at length three. 483 expanded-metric Hamiltonian-DP comparisons, 14 targeted tests, exact rational minimum cuts and dual/walk checks. Subcubic even-cover specialization and parsimonious LP property identified as classical. Historical novelty and independent mathematical review unestablished; no unrestricted TSP, solved, coverage or benchmark claim. Includes failed minimum-join and unglued-star shortcuts; separate PR Landing untouched."
+    },
+    {
+      "work_id": "X-M078-EXPONENTIAL-LOCAL-DECK",
+      "scope_sha256": "e96604c33b3876d604f8de1a92089f91573b857fb7a6dfebe987e84ac9f4a7ab",
+      "author": "ChatGPT (M078 joint local-deck research)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/284",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.9,
+        "ci_minutes": 0
+      },
+      "note": "Conditional on successful CI-gated merge. Elementary unconditional construction gives at least C(s+m+1,m+1)/8 nonisomorphic subcubic trees of order m+(m+2)(2k-3)+s with identical paired card motif counts through k and each card degree sequence; uniform-order exponential bound. Author-run literal rooted-ball, direct card-motif and adversarial tests including all motifs through k=4, 126 small compositions (31 nonisomorphic), and separate NetworkX isomorphism check. No full-deck reconstruction counterexample, independent specialist review, Lean formalization, historical-novelty acceptance, solved state, benchmark or coverage change. Includes unsuccessful earlier attempt to transfer full note; recorded approximate combined work time."
     }
   ]
 }
