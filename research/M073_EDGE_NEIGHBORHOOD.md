@@ -1,6 +1,6 @@
 # M073 — two-square edge neighborhoods sharpen the source-pinned Ising bound
 
-**November 2, 2026 · work ID `X-M073-EDGE-NEIGHBORHOOD` · [claim #272](https://github.com/Svyable/100/issues/272).**  
+**November 2, 2026 · work ID `X-M073-EDGE-NEIGHBORHOOD` · [claim #272](https://github.com/Svyable/100/issues/272).**
 **Evidence level:** author-derived restricted continuum inequality and finite exact
 source certificate; **no independent specialist proof review and no historical
 novelty determination**. This is not a construction of the external finite
