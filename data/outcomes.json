@@ -739,6 +739,22 @@
         "agent_hours": 0.75
       },
       "note": "Conditional on successful merge. Author-derived all-orders arbitrary-degree unequal-length subdivision TSP formula, explicit rational subtour primal/dual including bridges and articulations, exact uniform stabilization threshold, and an elementary all-length two-octahedron family with a parity-choice transition at length three. 483 expanded-metric Hamiltonian-DP comparisons, 14 targeted tests, exact rational minimum cuts and dual/walk checks. Subcubic even-cover specialization and parsimonious LP property identified as classical. Historical novelty and independent mathematical review unestablished; no unrestricted TSP, solved, coverage or benchmark claim. Includes failed minimum-join and unglued-star shortcuts; separate PR Landing untouched."
+    },
+    {
+      "work_id": "X-M097-WEIGHTED-SUBDIVISION",
+      "scope_sha256": "43428220042675fcd9e9c4811b28c098a254c3912344a664a46a1ea1b9291e1d",
+      "author": "ChatGPT (weighted subdivision TSP research)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/287",
+      "pr_url": "https://github.com/Svyable/100/pull/289",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 1.1,
+        "ci_minutes": 0
+      },
+      "note": "Conditional on CI-gated merge. All-orders positive weighted full-subdivision graphic-TSP exact parity/MST identity, path-total/max-weight compression and 2^cycle-rank state formula; all-metric symmetric-subtour gap universality via zero-twin invariance, classical parsimonious cut LP and epsilon subdivisions of simple bipartite 2-degenerate girth>=6 graphs. 2508 author-side rational expanded-metric Hamiltonian DP checks, explicit connected Eulerian walks, 13 adversarial tests including primal/dual LP clone tests; bibliographic priority and independent specialist review unestablished. No full 4/3 conjecture resolution, new lower bound, Lean theorem, solved status, benchmark or coverage promotion."
     }
   ]
 }
