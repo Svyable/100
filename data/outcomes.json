@@ -725,6 +725,20 @@
         "ci_minutes": 0
       },
       "note": "Conditional on CI-gated merge. General closed simplicial surface identities c4=e, c6=4f+8s and c8=C8+binom(e,2)-3f, separating-triangle/4-connectivity corollary for spheres, and an explicit sharp nine-vertex minimum-degree-four same-f-vector spectral falsifier (c6 56 versus 64). Three author-controlled exact representations, seven adversarial tests, failed c6=4f extrapolation, primary-source comparison. No independently accepted proof, historical novelty determination, unrestricted Sidorenko resolution, coverage/benchmark change, or alteration to separate PR Landing."
+    },
+    {
+      "work_id": "X-M097-SUBDIVISION-CORE",
+      "scope_sha256": "3f60aa554a30aab86bcaedb85492f47ffc13881a2dbd252d9bd3d346639062c9",
+      "author": "ChatGPT (M097 subdivision-core research)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/278",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.75
+      },
+      "note": "Conditional on successful merge. Author-derived all-orders arbitrary-degree unequal-length subdivision TSP formula, explicit rational subtour primal/dual including bridges and articulations, exact uniform stabilization threshold, and an elementary all-length two-octahedron family with a parity-choice transition at length three. 483 expanded-metric Hamiltonian-DP comparisons, 14 targeted tests, exact rational minimum cuts and dual/walk checks. Subcubic even-cover specialization and parsimonious LP property identified as classical. Historical novelty and independent mathematical review unestablished; no unrestricted TSP, solved, coverage or benchmark claim. Includes failed minimum-join and unglued-star shortcuts; separate PR Landing untouched."
     }
   ]
 }
