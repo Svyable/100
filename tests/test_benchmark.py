@@ -4,6 +4,7 @@ import tempfile
 import sys
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -79,6 +80,48 @@ class BenchmarkTests(unittest.TestCase):
         report = benchmark.summarize(self.doc, [])
         self.assertIn("CH24-IRREGULAR", report["novelty_contaminated_tasks"])
         self.assertFalse(report["comparable"])
+
+    def test_full_trial_coverage_does_not_mean_completed_trials(self):
+        # Synthetic records cover every preregistered cell, not observed runs.
+        rows = [{
+            "manifest_sha256": benchmark.digest(self.doc),
+            "task_id": task["id"], "arm": arm, "seed": seed,
+            "status": "completed", "classification": "none",
+            "resources": {"model_tokens": 200, "tool_calls": 2, "elapsed_seconds": 10},
+            "evidence": None,
+        } for task in self.doc["tasks"]
+          for arm in self.doc["arms"] for seed in self.doc["seeds"]]
+        with patch.dict(benchmark.NOVELTY_CONTAMINATED, {}, clear=True):
+            all_complete = benchmark.summarize(self.doc, rows)
+            self.assertEqual(all_complete["recorded_trials"], 36)
+            self.assertTrue(all_complete["all_cells_recorded"])
+            self.assertTrue(all_complete["matched_trials_completed"])
+            self.assertTrue(all_complete["comparable"])
+
+            # No rows went missing; failure is observational, not coverage.
+            rows[0]["status"] = "timeout"
+            rows[-1]["status"] = "error"
+            interrupted = benchmark.summarize(self.doc, rows)
+            self.assertEqual(interrupted["missing_trials"], 0)
+            self.assertTrue(interrupted["all_cells_recorded"])
+            self.assertEqual(interrupted["completed_trials"], 34)
+            self.assertEqual(interrupted["timeout_trials"], 1)
+            self.assertEqual(interrupted["error_trials"], 1)
+            self.assertFalse(interrupted["matched_trials_completed"])
+            self.assertFalse(interrupted["comparable"])
+            self.assertEqual(sum(a["timeouts"] for a in interrupted["by_arm"].values()), 1)
+            self.assertEqual(sum(a["errors"] for a in interrupted["by_arm"].values()), 1)
+
+            # A missing row is not a successful completed-grid claim either.
+            missing = benchmark.summarize(self.doc, rows[:-1])
+            self.assertFalse(missing["all_cells_recorded"])
+            self.assertFalse(missing["matched_trials_completed"])
+            self.assertFalse(missing["comparable"])
+
+        # Post-freeze exposure still blocks comparability in the real design.
+        self.assertFalse(benchmark.summarize(self.doc, [
+            {**row, "status": "completed"} for row in rows
+        ])["comparable"])
 
     def test_scope_drift_refused(self):
         row = self.run_row()

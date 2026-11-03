@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M080 — exact GF(2)^4 orbit gate and repeated-basis grid certificate · 100</title>
+<meta name="description" content="Research checkpoint, 2026-11-01. Work item O-M080-01, bounded claim #170. Result: a complete, replayable finite certificate for all four-row instances with at least two equal underlying bases, plus an exact orbit count for the still-uncheck">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m080-repeated-orbit-gate/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M080 — exact GF(2)^4 orbit gate and repeated-basis grid certificate · 100">
+<meta property="og:description" content="Research checkpoint, 2026-11-01. Work item O-M080-01, bounded claim #170. Result: a complete, replayable finite certificate for all four-row instances with at least two equal underlying bases, plus an exact orbit count for the still-uncheck">
+<meta property="og:url" content="https://svyable.github.io/100/library/m080-repeated-orbit-gate/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M080 — exact GF(2)^4 orbit gate and repeated-basis grid certificate</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#exact-theorem-and-boundary">Exact theorem and boundary</a></li><li class="toc-l2"><a href="#proof-of-the-orbit-count">Proof of the orbit count</a></li><li class="toc-l2"><a href="#proof-of-the-repeated-basis-finite-theorem">Proof of the repeated-basis finite theorem</a></li><li class="toc-l2"><a href="#prior-art-and-failedremaining-avenues">Prior art and failed/remaining avenues</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M080/" title="Rota basis conjecture">M080</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M080_REPEATED_ORBIT_GATE.md" rel="noopener noreferrer">research/M080_REPEATED_ORBIT_GATE.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M080 — exact GF(2)^4 orbit gate and repeated-basis grid certificate</h1>
+<p><strong>Research checkpoint, 2026-11-01.</strong> Work item O-M080-01, bounded <a href="https://github.com/Svyable/100/issues/170" rel="noopener noreferrer">claim #170</a>. <strong>Result:</strong> a complete, replayable finite certificate for all four-row instances with at least two equal underlying bases, plus an exact orbit count for the still-unchecked all-distinct search. This <strong>does not discharge O-M080-01</strong>, solve Rota&#x27;s basis conjecture, establish a new rank-four case, or demonstrate historical novelty. Outside mathematical review is pending.</p>
+<h2 id="exact-theorem-and-boundary">Exact theorem and boundary<a class="anchor" href="#exact-theorem-and-boundary" aria-label="Link to this section">#</a></h2>
+<p>Let B1,B2,B3,B4 be bases of F_2^4, where each row is an <strong>unordered set</strong> of four distinct vectors, and equal vectors in different rows are separate <strong>labeled occurrences</strong>.</p>
+<p><strong>Finite restricted theorem (exhaustive certificate).</strong> If at least two of the Bi are equal as sets, there exist permutations of the four vectors within each row such that all four columns are bases of F_2^4.</p>
+<p><strong>Orbit count (exact Burnside calculation).</strong> Fix B1=E, the standard basis, and regard the remaining three rows as an unordered multiset. Under the residual coordinate-permutation action of S4, the 99,137,080 normalized input multisets form exactly <strong>4,141,145 orbits</strong>:</p>
+<div class="table-wrap"><table><thead><tr><th>Multiplicity among B2,B3,B4</th><th class="al-right">Orbits</th><th>Certified here</th></tr></thead><tbody><tr><td>All three equal</td><td class="al-right">51</td><td>Yes</td></tr><tr><td>Exactly two equal</td><td class="al-right">29,956</td><td>Yes</td></tr><tr><td>All three distinct</td><td class="al-right"><strong>4,111,138</strong></td><td><strong>No</strong></td></tr><tr><td>Total</td><td class="al-right"><strong>4,141,145</strong></td><td>30,007 orbits</td></tr></tbody></table></div>
+<p>These counts concern <strong>rooted/first-row-distinguished</strong> normalized input instances under the residual S4 action, not full GL(4,2)-and-all-row-permutation equivalence classes. Different choices of the first row can still identify two counted orbits; 4,141,145 is a sufficient rooted search count, not the optimal unrooted orbit count. No representative/certificate is supplied for the all-distinct class.</p>
+<h2 id="proof-of-the-orbit-count">Proof of the orbit count<a class="anchor" href="#proof-of-the-orbit-count" aria-label="Link to this section">#</a></h2>
+<p>There are (16−1)(16−2)(16−4)(16−8)/4! = 840 unordered bases of F_2^4. The action of GL(4,2) sends any ordered first basis to E; its setwise stabilizer is precisely the 24 coordinate-permutation matrices. Permuting rows 2,3,4 changes no existence question, so normalized instances are 3-multisets of the 840 bases, totaling C(842,3)=99,137,080.</p>
+<p>For an element g in S4, let c_j(g) count its j-cycles on the 840 bases. A 3-multiset fixed by g is a union of complete orbits with multiplicities constant around each orbit. The coefficient of t^3 in the generating function product_j (1−t^j)^(−c_j) is</p>
+<p>F(g) = C(c1+2,3) + c1*c2 + c3.</p>
+<p>Exact action on the 840 rank-four vector sets yields:</p>
+<div class="table-wrap"><table><thead><tr><th>Coordinate cycle type</th><th class="al-right">Number of permutations</th><th>c1,c2,c3,c4 on bases</th><th class="al-right">F(g)</th></tr></thead><tbody><tr><td>1^4</td><td class="al-right">1</td><td>840,0,0,0</td><td class="al-right">99,137,080</td></tr><tr><td>2 1^2</td><td class="al-right">6</td><td>48,396,0,0</td><td class="al-right">38,608</td></tr><tr><td>2^2</td><td class="al-right">3</td><td>12,414,0,0</td><td class="al-right">5,332</td></tr><tr><td>3 1</td><td class="al-right">8</td><td>6,0,278,0</td><td class="al-right">334</td></tr><tr><td>4</td><td class="al-right">6</td><td>2,5,0,207</td><td class="al-right">14</td></tr></tbody></table></div>
+<p>Burnside&#x27;s lemma gives</p>
+<p>[99,137,080 + 6(38,608) + 3(5,332) + 8(334) + 6(14)] / 24 = 4,141,145.</p>
+<p>For all-equal multisets the fixed count is c1; for exactly-two-equal it is c1(c1−1); for three-distinct it is C(c1,3)+c1*c2+c3. Averaging yields respectively 51, 29,956, and 4,111,138. The independent test derives c2,c3 from fixed points of g^2,g^3, instead of the generator&#x27;s orbit walks.</p>
+<h2 id="proof-of-the-repeated-basis-finite-theorem">Proof of the repeated-basis finite theorem<a class="anchor" href="#proof-of-the-repeated-basis-finite-theorem" aria-label="Link to this section">#</a></h2>
+<p>Any original four-row instance with a repeated basis can be reordered so that <strong>two of the last three rows are equal</strong>: choose a nonrepeated first row if one exists, and otherwise choose a first row from the other repeated pair. Normalize the first row by an invertible linear map to E. Use the residual S4 to transform the repeated basis to one of its <strong>51</strong> orbit representatives; the fourth row is then some arbitrary one of the <strong>840</strong> bases. Thus the exhaustive search space is exactly 51*840=42,840 representative pairs (B,C), each representing the row collection E,B,B,C.</p>
+<p>For each such pair, the generator loops over the 24^2 ordered assignments of the two repeated B-rows. It rejects a pair if any of the four partial columns (e_i,b_i,b&#x27;_i) is dependent. For each surviving pair, it computes which of the four C-vectors completes each partial column to a basis and tries all 24 perfect matchings. It found a complete assignment for <strong>every one</strong> of the 42,840 pairs, and records the three row-permutation indices as a <strong>128,520-byte binary certificate</strong>.</p>
+<p>A <strong>separate checker</strong> reads the archive, reconstructs all 840 bases and all 51 orbit representatives, and checks <strong>all 171,360 columns</strong> by a Leibniz determinant expansion modulo two. It does <strong>not</strong> use the generator&#x27;s XOR elimination to accept a witness. The 840-base list is also independently checked against the exact group-order formula. Negative controls include dependent columns, a nonbasis, invalid permutation codes, a truncated archive, and wrong action cycle counts.</p>
+<p><strong>Archive SHA-256:</strong> 6cee3dfcf6e5f9359b69d0e1e9244a37c9dd4cdacfa4d2d7c61e30552e5eb24b</p>
+<p>Reproduce from the repository root:</p>
+<p>python3 scripts/m080_repeated.py --check python3 -m unittest discover -s tests -p &#x27;test_m080_repeated.py&#x27; -v # Only to regenerate the committed archive, then compare the digest: python3 scripts/m080_repeated.py --write python3 scripts/regen.py --check</p>
+<p>The certificate is a finite exhaustive proof, conditional on the auditability of the enumerator, orbit coverage and independent checker. It is <strong>not</strong> a Lean kernel proof, DRAT certificate, or specialist-reviewed mathematical proof. In particular, a passed test does not constitute independent acceptance.</p>
+<h2 id="prior-art-and-failedremaining-avenues">Prior art and failed/remaining avenues<a class="anchor" href="#prior-art-and-failedremaining-avenues" aria-label="Link to this section">#</a></h2>
+<p>The broad rank-four Rota case has a <strong>2012 unpublished computational proof by M. Cheung</strong> (<a href="https://educ.jmu.edu/~duceyje/undergrad/2012/mike.pdf" rel="noopener noreferrer">primary manuscript</a>), cited in Alexey Pokrovskiy&#x27;s 2025 <a href="https://doi.org/10.1090/proc/16581" rel="noopener noreferrer">AMS paper</a>. The DOI belongs to <strong>Pokrovskiy&#x27;s paper</strong>, not to Cheung&#x27;s unpublished manuscript. Therefore even a full finite rank-four certificate would not automatically be a new rank-four theorem. The current contribution is a narrower, independently replayable reduction and certificate, not an originality claim. The general problem remains open; see <a href="https://arxiv.org/abs/2508.05601" rel="noopener noreferrer">Montgomery–Sauermann (2025)</a> and <a href="https://arxiv.org/abs/math/0504367" rel="noopener noreferrer">Chow&#x27;s three-basis reduction</a>.</p>
+<p><strong>Failed avenue:</strong> Raw enumeration of the 99,137,080 normalized three-multisets repeats equivalent inputs roughly 24-fold. Burnside compression reduces the rooted normalized search to 4,141,145 orbits, but <strong>does not</strong> by itself supply one canonical representative or a grid for each. The repeated-basis theorem removes only 30,007 of those orbits; <strong>4,111,138 all-distinct orbits remain</strong>. A 42,840-pair finite certificate cannot be extrapolated to those.</p>
+<p><strong>Next falsifier:</strong> Build a canonical representative enumerator for the 4,111,138 all-distinct orbits, with a second orbit-count/uniqueness checker. Then produce a grid for each representative, or an exhaustive nonexistence certificate for a specific one. Verify every column by an independent determinant engine, and compare the full finite claim against Cheung&#x27;s 2012 corpus before any novelty or O-M080-01 discharge.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

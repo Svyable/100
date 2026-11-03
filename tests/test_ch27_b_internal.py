@@ -51,17 +51,19 @@ class CH27BInternalTests(unittest.TestCase):
             "triangle_three": 132,
             "minout_two_5": 22,
             "minout_two_6": 24,
-            "unresolved": 295,
+            "z4_sink_cut": 4,
+            "unresolved": 291,
         })
         self.assertEqual(r["sample_unresolved_profile"],
-                         ((2,)*7 + (6,8), (0,)*4 + (4,6,6,6,7,7)))
+                         ((2,)*7 + (7,7), (0,)*4 + (5,5,6,6,7,7)))
 
     def test_triangle_rule_mutation_detected(self):
         exact = b.audit()
         weak = b.audit(include_triangle=False)
-        self.assertEqual(weak["stages"]["unresolved"]-
-                         exact["stages"]["unresolved"], 132)
-        self.assertEqual(weak["stages"]["unresolved"], 427)
+        self.assertEqual(
+            (weak["stages"]["unresolved"] + weak["stages"]["z4_sink_cut"]) -
+            (exact["stages"]["unresolved"] + exact["stages"]["z4_sink_cut"]), 132)
+        self.assertEqual(weak["stages"]["unresolved"], 421)
 
     def test_independent_floors_and_boundary_controls(self):
         a=(2,)*7+(6,8)
@@ -71,7 +73,7 @@ class CH27BInternalTests(unittest.TestCase):
                          independent_floors(a,false_survivor))
         self.assertEqual(b.classify(a,false_survivor), "triangle_three")
         self.assertTrue(b.subset_capacity_ok(b.internal_B_floors(a,false_survivor)))
-        self.assertEqual(b.classify(a,actual), "unresolved")
+        self.assertEqual(b.classify(a,actual), "z4_sink_cut")
         self.assertEqual(b.internal_B_floors(a,actual),
                          independent_floors(a,actual))
 

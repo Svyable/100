@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M074 — a saturated-shadow obstruction across the (3r,r) frontier · 100</title>
+<meta name="description" content="Research candidate · 2026-11-01. A self-contained conditional structural lemma for directed-triangle-free orientations. The derivation is written below and independently audited by scripts/ch_saturated_shadow.py and tests/test_ch_saturated_">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m074-saturated-shadow/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M074 — a saturated-shadow obstruction across the (3r,r) frontier · 100">
+<meta property="og:description" content="Research candidate · 2026-11-01. A self-contained conditional structural lemma for directed-triangle-free orientations. The derivation is written below and independently audited by scripts/ch_saturated_shadow.py and tests/test_ch_saturated_">
+<meta property="og:url" content="https://svyable.github.io/100/library/m074-saturated-shadow/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M074 — a saturated-shadow obstruction across the (3r,r) frontier</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#exact-statement">Exact statement</a></li><li class="toc-l2"><a href="#proof-the-shadow-cut">Proof: the shadow cut</a></li><li class="toc-l3"><a href="#why-the-exact-assumptions-matter">Why the exact assumptions matter</a></li><li class="toc-l2"><a href="#consequence-at-248-an-alternate-elimination-of-the-final-local-profile">Consequence at (24,8): an alternate elimination of the final local profile</a></li><li class="toc-l2"><a href="#consequence-at-279-seven-saturated-low-vertices">Consequence at (27,9): seven saturated low vertices</a></li><li class="toc-l2"><a href="#audit-controls-and-originality-boundary">Audit, controls and originality boundary</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M074/" title="Caccetta–Häggkvist conjecture">M074</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M074_SATURATED_SHADOW.md" rel="noopener noreferrer">research/M074_SATURATED_SHADOW.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M074 — a saturated-shadow obstruction across the (3r,r) frontier</h1>
+<p><strong>Research candidate · 2026-11-01.</strong> A self-contained conditional structural lemma for directed-triangle-free orientations. The derivation is written below and independently audited by <code>scripts/ch_saturated_shadow.py</code> and <code>tests/test_ch_saturated_shadow.py</code>. <strong>External priority, originality, and specialist mathematical review are not established.</strong> The lemma does <strong>not</strong> solve Caccetta–Häggkvist for any new order; the full (27,9) irregular branch remains open in this repository.</p>
+<h2 id="exact-statement">Exact statement<a class="anchor" href="#exact-statement" aria-label="Link to this section">#</a></h2>
+<p>Let <code>r &gt;= 3</code> and let <code>D</code> be a loopless <strong>oriented</strong> graph on <code>3r</code> vertices, with <strong>every outdegree exactly <code>r</code></strong>, with <strong>no directed 3-cycle</strong>, and with <strong>maximum indegree at most <code>r+1</code></strong>. Fix a vertex <code>v</code> of indegree <code>r+1</code>. Let</p>
+<ul><li><code>A = N+(v)</code>, of size <code>r</code>;</li><li><code>B = N-(v)</code>, of size <code>r+1</code>;</li><li><code>C = V minus ({v} ∪ A ∪ B)</code>, of size <code>r−2</code>;</li><li><code>X = {a∈A : d+_A(a)=2}</code>, and <code>t=|X|</code>.</li></ul>
+<p><strong>Saturated-shadow theorem.</strong> For each <code>s∈{1,2,3}</code>, if <code>r &gt;= 4s+5</code>, then</p>
+<p><code>|X| &lt;= r−s−1.</code></p>
+<p>There is an <strong>additional strict improvement at <code>(r,s)=(8,1)</code></strong>, using the known six-vertex lemma. Thus the first exclusions for <code>s=1,2,3</code> occur respectively at <strong><code>r=8,13,17</code></strong>. Equivalently, at these thresholds an indegree-<code>r+1</code> root cannot have at least <code>r−1</code>, <code>r−2</code>, or <code>r−3</code> internally degree-two outneighbors.</p>
+<p>This is a <em>conditional</em> theorem. In particular, for <code>r&gt;9</code> the needed ambient maximum-indegree bound is <strong>not</strong> claimed to follow from earlier nine-vertex lemmas.</p>
+<h2 id="proof-the-shadow-cut">Proof: the shadow cut<a class="anchor" href="#proof-the-shadow-cut" aria-label="Link to this section">#</a></h2>
+<p>Suppose <code>t&gt;=r−s</code>, and put <code>h=r−t&lt;=s&lt;=3</code>. There are no <code>A→B</code> arcs (such an arc closes <code>v→A→B→v</code>) and no <code>A→v</code> arcs (digons are forbidden). A vertex <code>x∈X</code> therefore sends its two internal arcs into <code>A</code> and <strong>all</strong> its other <code>r−2</code> outgoing arcs into <code>C</code>. In particular, <code>x→c</code> for every <code>c∈C</code> and every <code>x∈X</code>.</p>
+<p>Any <code>y∈A minus X</code> has internal outdegree at least three: every A-vertex needs at least two internal outneighbors, and <code>y</code> is not in <code>X</code>. At most <code>h−1&lt;=2</code> of these outneighbors belong to <code>A minus X</code>. Consequently <code>y→x</code> for some <code>x∈X</code>. If <code>c→y</code> for some <code>c∈C</code>, then <code>c→y→x→c</code> is a directed triangle. Thus no such arc exists. Since also no <code>C→X</code> arc is possible (it would be a digon), we have the exact <em>shadow</em> restriction</p>
+<p><code>e(C,A)=0.</code>                                                            (1)</p>
+<p>Every <code>c∈C</code> already receives at least <code>t&gt;=r−s</code> arcs from <code>X</code>. The global indegree ceiling <code>r+1</code> implies <code>d−_C(c)&lt;=s+1</code>. Hence</p>
+<p><code>e(C,C)&lt;= (s+1)(r−2).</code>                                                (2)</p>
+<p>All <code>r−2</code> vertices in <code>C</code> have outdegree <code>r</code>, and none points to <code>v</code>. Equations (1)–(2) force</p>
+<p><code>S := e(C,B) &gt;= r(r−2) − (s+1)(r−2) = (r−s−1)(r−2).</code>                 (3)</p>
+<p>For each <code>b∈B</code>, put <code>k_b = d−_C(b)</code>. Let <code>P={b∈B:k_b&gt;0}</code>. For a vertex <code>b∈P</code>, an arc <code>b→x</code> with <code>x∈X</code> would close <code>x→c→b→x</code> using one of its C-predecessors. So <code>b</code> sends at most <code>h&lt;=s</code> arcs to <code>A</code>. It sends one arc to <code>v</code> and at most <code>(r−2)−k_b</code> arcs to <code>C</code> (orientation forbids the reverse of each <code>C→b</code> arc). Its outdegree <code>r</code> yields</p>
+<p><code>d+_B(b) &gt;= r−1−s−[(r−2)−k_b] = k_b−(s−1).</code></p>
+<p>Summing only over <code>P</code>, and noting that <code>|P|&lt;=r+1</code>, gives</p>
+<p><code>e(B,B) &gt;= S−(s−1)|P| &gt;= (r−s−1)(r−2)−(s−1)(r+1).</code>              (4)</p>
+<p>But <code>D[B]</code> is oriented on <code>r+1</code> vertices, so</p>
+<p><code>e(B,B) &lt;= r(r+1)/2.</code>                                                  (5)</p>
+<p>Subtracting twice the right side of (5) from twice the last lower bound in (4) gives the integer polynomial</p>
+<p><code>Q(r,s) = r² − (4s+5)r + 2(s+3).</code>                                      (6)</p>
+<p>If <code>r&gt;=4s+5</code>, then <code>Q(r,s)&gt;=2(s+3)&gt;0</code> (the quadratic is increasing on this range). So (4) exceeds (5), contradiction.</p>
+<p><strong>The exceptional six-vertex improvement.</strong> Set <code>r=8,s=1</code>. Then <code>|C|=6</code> and each C-vertex has internal indegree at most two. The generic bound <code>e(C,C)&lt;=12</code> is <strong>not attainable</strong>: equality would force every vertex of <code>D[C]</code> to have internal indegree exactly two. Reversing all arcs would give a directed-triangle-free oriented graph on six vertices of <strong>minimum outdegree two</strong>, excluded by the independently proved <a href="../../library/m074-elementary-18/">six-vertex lemma</a>. Hence <code>e(C,C)&lt;=11</code>. Equations (1) and (3) now force <code>e(C,B)&gt;=8*6−11=37</code>. For every positive-<code>k_b</code> B-vertex, at most one A-target is allowed, so <code>d+_B(b)&gt;=k_b</code> and <code>e(B,B)&gt;=37</code>, but <code>|B|=9</code> gives <code>e(B,B)&lt;=36</code>. Contradiction.</p>
+<p>This extra argument proves the <code>r=8,s=1</code> case as well. <strong>QED.</strong></p>
+<h3 id="why-the-exact-assumptions-matter">Why the exact assumptions matter<a class="anchor" href="#why-the-exact-assumptions-matter" aria-label="Link to this section">#</a></h3>
+<p>The proof uses <strong>all</strong> of: outregularity, orientation/no digons, absence of directed 3-cycles, a root of indegree precisely <code>r+1</code>, and an ambient indegree ceiling of <code>r+1</code>. It does not follow from an arbitrary average degree condition. The threshold is the strict boundary of this <em>particular count</em>, not an optimality or sharpness theorem for graphs.</p>
+<p>At <code>r=4s+4</code>, the <strong>generic</strong> count does <strong>not</strong> contradict (5): the excess in (6) is <code>2−2s&lt;=0</code>. The only improvement asserted here is the proved six-vertex exception <code>(8,1)</code>; for <code>s=2,3</code> the generic near misses remain. Integer consistency below a threshold is not a counterexample graph.</p>
+<h2 id="consequence-at-248-an-alternate-elimination-of-the-final-local-profile">Consequence at (24,8): an alternate elimination of the final local profile<a class="anchor" href="#consequence-at-248-an-alternate-elimination-of-the-final-local-profile" aria-label="Link to this section">#</a></h2>
+<p>The existing <a href="https://github.com/Svyable/100/blob/main/proofs/M074_IRREGULAR_24.md" rel="noopener noreferrer">complete finite (24,8) research candidate</a> reduces an indegree-nine root to two internal A-outdegree profiles after exact integer cut checks. An elementary triangle obstruction excludes <code>(2^6,3,6)</code>, leaving <code>(2^7,7)</code>, a profile with <strong>seven</strong> saturated degree-two outneighbors.</p>
+<p>The exceptional <code>(r,s)=(8,1)</code> theorem above directly excludes <strong>that remaining profile</strong>, using only the earlier six-vertex lemma and the root indegree-nine ceiling. This gives an alternate final step to the existing global high/low-degree contradiction. It does <strong>not</strong> independently verify the preceding 19×5005 profile classification, establish priority over the earlier reported computational finite exclusion, or prove any larger case.</p>
+<h2 id="consequence-at-279-seven-saturated-low-vertices">Consequence at (27,9): seven saturated low vertices<a class="anchor" href="#consequence-at-279-seven-saturated-low-vertices" aria-label="Link to this section">#</a></h2>
+<p>Here the hypotheses are applicable to any hypothetical directed-triangle-free orientation on 27 vertices with outdegree exactly nine: the nine-vertex local lemma rules out indegree eleven or more. The in/out-regular case is already excluded <a href="https://github.com/Svyable/100/blob/main/proofs/M074_27_REGULAR.md" rel="noopener noreferrer">in the previous note</a>, so a hypothetical counterexample must have an indegree-ten root <code>v</code>.</p>
+<p>The <code>s=1,r=9</code> case gives <strong>at most seven</strong> vertices of internal outdegree two in <code>A=N+(v)</code>. If there are exactly seven, call them <code>X</code>, and let <code>m=e(A,A)</code>. The argument above gives <code>e(C,A)=0</code>. Each <code>c∈C</code> receives seven arcs from <code>X</code>, so its internal indegree in <code>C</code> is at most three. The separately checked <a href="https://github.com/Svyable/100/blob/main/proofs/M074_SEVEN_VERTEX_CAP.md" rel="noopener noreferrer">seven-vertex sharp cap</a> gives <code>e(C,C)&lt;=16</code>, improving the generic bound of 21. Thus</p>
+<p><code>e(C,B) = 7*9−e(C,C) &gt;=47.</code></p>
+<p>Each <code>b∈B</code> receives at most seven C-arcs; at least seven of the ten B-vertices therefore receive some. <strong>At most three</strong> have no C-predecessor. Such a predecessor prevents <code>b→x</code> for every <code>x∈X</code>. Furthermore <code>C→x</code> is forbidden, <code>v→x</code>, and the nine-vertex lemma bounds <code>d−_A(x)&lt;=4</code>. Therefore</p>
+<p><code>d−_D(x) &lt;= 1+4+0+3 = 8</code> for <strong>all seven distinct</strong> <code>x∈X</code>.</p>
+<p>There is also a nontrivial induced low-degree subgraph. The other two A-vertices, <code>Y=A minus X</code>, have internal outdegrees totaling <code>m−14</code>. Each has at most one outneighbor in <code>Y</code>, hence together they send at least <code>m−16</code> arcs into <code>X</code>. Orientation then gives <code>e(X,Y)&lt;=14−(m−16)=30−m</code>; the seven vertices of <code>X</code> each have two A-outneighbors, so</p>
+<p><code>e(X,X)=14−e(X,Y)&gt;=m−16&gt;=4</code> (since both Y-vertices have internal outdegree at least three and hence <code>m&gt;=20</code>).</p>
+<p><strong>Conditional corollary.</strong> A hypothetical <code>(27,9)</code> counterexample cannot have eight or nine saturated neighbors at an indegree-ten root. If a root has seven, these seven are all globally low-indegree (at most eight) and induce at least <code>m−16&gt;=4</code> directed arcs. This does <strong>not</strong> eliminate profiles with zero through seven saturated neighbors, nor does it establish a new finite (27,9) theorem.</p>
+<h2 id="audit-controls-and-originality-boundary">Audit, controls and originality boundary<a class="anchor" href="#audit-controls-and-originality-boundary" aria-label="Link to this section">#</a></h2>
+<p>Run:</p>
+<pre><code class="lang-sh">python3 scripts/ch_saturated_shadow.py --check
+python3 -m unittest discover -s tests -p &#x27;test_ch_saturated_shadow.py&#x27; -v</code></pre>
+<p>The checker recomputes both sides of the B-capacity inequality using independent integer expressions, verifies the first strict thresholds (8, 13, 17), the exceptional six-vertex gain, and the one-step weaker negative controls, checks the seven-neighbor <code>(27,9)</code> budget, and validates the independently existing nine-vertex C3-free local example. It does <strong>not</strong> enumerate 27-vertex digraphs or check novelty.</p>
+<p>Prior-art starting points: <a href="https://arxiv.org/abs/0908.2791" rel="noopener noreferrer">Hladký–Král&#x27;–Norin&#x27;s directed-triangle threshold</a>, <a href="https://arxiv.org/abs/math/0604317" rel="noopener noreferrer">Razborov&#x27;s forbidden-subgraph analysis</a>, and <a href="https://github.com/wustep/maths/blob/main/problems/caccetta-haggkvist-k3/ATTACK.md" rel="noopener noreferrer">independently reported finite exclusions</a>. A targeted public search did not establish that the saturated-shadow inequality is unpublished. Treat it as <strong>new-to-this-repository, originality unverified</strong>, and seek a graph-theory referee before claiming novelty. The main M074 status, Solved ledger, and all proof-obligation discharge gates remain untouched.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

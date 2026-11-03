@@ -1113,7 +1113,7 @@ def discovery_steps(site, page, trail):
       <p><strong>Reusable move:</strong> {linked_move}</p>
       {('<p><strong>Motivated by:</strong></p><ul>' + motivations + '</ul>') if motivations else '<p>Starting observation: no prior trail dependency.</p>'}
       <p><strong>Source records:</strong></p><ul>{sources}</ul>
-      {('<p><strong>Related proof obligation:</strong> <code>' + E(n["obligation_id"]) + '</code></p>') if n.get("obligation_id") else ''}
+{('      <p><strong>Related proof obligation:</strong> <code>' + E(n["obligation_id"]) + '</code></p>') if n.get("obligation_id") else ''}
     </details>
   </div>
 </li>""")

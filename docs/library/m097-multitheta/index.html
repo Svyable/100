@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M097 — exact subtour LP and TSP on subdivided parallel-path graphs · 100</title>
+<meta name="description" content="Claim: #187. Work packet: X-M097-MULTITHETA, scope SHA-256 b188c14d987d1307f3d5d21815b83c486f38145f1865af15c799b04604aa1ba4. Date: 2026-11-01. Classification: author-derived all-orders restricted proof candidate, checked computationally; hi">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m097-multitheta/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M097 — exact subtour LP and TSP on subdivided parallel-path graphs · 100">
+<meta property="og:description" content="Claim: #187. Work packet: X-M097-MULTITHETA, scope SHA-256 b188c14d987d1307f3d5d21815b83c486f38145f1865af15c799b04604aa1ba4. Date: 2026-11-01. Classification: author-derived all-orders restricted proof candidate, checked computationally; hi">
+<meta property="og:url" content="https://svyable.github.io/100/library/m097-multitheta/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M097 — exact subtour LP and TSP on subdivided parallel-path graphs</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#exact-statement">Exact statement</a></li><li class="toc-l2"><a href="#all-orders-proof-candidate-lp-lower-bound">All-orders proof candidate: LP lower bound</a></li><li class="toc-l2"><a href="#explicit-rational-lp-point-including-all-subtour-cuts">Explicit rational LP point, including all subtour cuts</a></li><li class="toc-l2"><a href="#integer-tour-optimum-by-eulerian-parity">Integer tour optimum by Eulerian parity</a></li><li class="toc-l2"><a href="#reproduction-adversarial-controls-and-failed-leads">Reproduction, adversarial controls and failed leads</a></li><li class="toc-l2"><a href="#prior-art-and-next-falsifier">Prior art and next falsifier</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M097/" title="Metric TSP four-thirds conjecture">M097</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M097_MULTITHETA.md" rel="noopener noreferrer">research/M097_MULTITHETA.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M097 — exact subtour LP and TSP on subdivided parallel-path graphs</h1>
+<p><strong>Claim:</strong> <a href="https://github.com/Svyable/100/issues/187" rel="noopener noreferrer">#187</a>. <strong>Work packet:</strong> <code>X-M097-MULTITHETA</code>, scope SHA-256 <code>b188c14d987d1307f3d5d21815b83c486f38145f1865af15c799b04604aa1ba4</code>. <strong>Date:</strong> 2026-11-01. <strong>Classification:</strong> author-derived all-orders restricted proof candidate, checked computationally; historical novelty and independent specialist review <strong>not established</strong>. No unrestricted metric-TSP 4/3 conjecture claim.</p>
+<h2 id="exact-statement">Exact statement<a class="anchor" href="#exact-statement" aria-label="Link to this section">#</a></h2>
+<p>Let <code>k&gt;=2</code> and integers <code>L_1,...,L_k&gt;=2</code>. Form a simple unweighted graph <code>G</code> from <code>k</code> internally vertex-disjoint paths of lengths <code>L_i</code> between two common hubs <code>u,v</code>, with no other edges. Let <code>c_G(a,b)</code> be shortest-path distance. Put <code>m=sum L_i</code>, <code>ell=min L_i</code>. For the <strong>symmetric subtour-elimination LP</strong> on the complete graph (degree equations <code>x(delta(v))=2</code>, all nonempty proper-cut inequalities <code>x(delta(S))&gt;=2</code>, and <code>x&gt;=0</code>), the exact formula claimed is</p>
+<p>SEP(c_G) = m, TSP(c_G) = m + (k mod 2)*(ell-2).</p>
+<p>The ratio is one for even <code>k</code>, and <code>1+(ell-2)/m</code> for odd <code>k</code>. For odd <code>k</code>, <code>m&gt;=k*ell</code> gives ratio strictly below <code>1+1/k&lt;=4/3</code>, approaching <code>4/3</code> for three equal paths of increasing length. The three-path graphic-TSP lower-bound family is <strong>classical</strong>; this note does not claim its discovery.</p>
+<h2 id="all-orders-proof-candidate-lp-lower-bound">All-orders proof candidate: LP lower bound<a class="anchor" href="#all-orders-proof-candidate-lp-lower-bound" aria-label="Link to this section">#</a></h2>
+<p>Given any feasible complete-metric subtour point <code>x</code>, route every edge of weight <code>x_ab</code> along a fixed shortest <code>a-b</code> path in <code>G</code>. Let <code>y_e</code> be the sum of weights routed over original graph edge <code>e</code>. The routing preserves cost: <code>sum_e y_e = sum_{a&lt;b} c_G(a,b)x_ab</code>. Every path connecting vertices on opposite sides of a cut crosses that cut at least once, so <code>y(delta(S))&gt;=x(delta(S))&gt;=2</code>.</p>
+<p>On a constituent path with <code>L</code> edges <code>e_1,...,e_L</code>, any two distinct edges <code>e_i,e_j</code> delimit a nonempty internal-vertex segment whose <strong>entire graph boundary</strong> is precisely those two edges. Hence <code>y(e_i)+y(e_j)&gt;=2</code>. Summing all <code>L(L-1)/2</code> pair inequalities gives <code>(L-1)sum_i y(e_i)&gt;=L(L-1)</code>, so <code>sum_i y(e_i)&gt;=L</code>. The path-edge sets partition <code>E(G)</code>, giving <code>SEP(c_G)&gt;=m</code>.</p>
+<h2 id="explicit-rational-lp-point-including-all-subtour-cuts">Explicit rational LP point, including all subtour cuts<a class="anchor" href="#explicit-rational-lp-point-including-all-subtour-cuts" aria-label="Link to this section">#</a></h2>
+<p>Let <code>p_i</code> be the first internal vertex of path <code>i</code> next to <code>u</code>, and <code>q_i</code> the last internal vertex next to <code>v</code>. They coincide when <code>L_i=2</code>. Set <code>alpha=2/k</code>, <code>gamma=(k-2)/(k(k-1))</code>. Assign weight <code>alpha</code> to every original edge incident to a hub, weight one to every other original path edge, and for every distinct pair of paths <code>i,j</code>, add <code>gamma</code> on complete-graph edge <code>p_i p_j</code> and another <code>gamma</code> on <code>q_i q_j</code>. Coincident shortcut edges <strong>add</strong> weights rather than overwrite. Every hub has degree <code>k alpha=2</code>; internal vertices have degree two because <code>(k-1)gamma=1-alpha</code>, including the length-two case with contributions from both hubs.</p>
+<p>For an arbitrary cut, let <code>t_u,t_v</code> count how many of each hub&#x27;s adjacent internal vertices lie opposite that hub. The contribution of one hub&#x27;s spokes and shortcut clique is <code>F(t)=alpha*t+gamma*t*(k-t)</code>. Here <code>F(0)=0</code>, <code>F(1)=1</code>, <code>F(k)=2</code>, and <code>F(t)&gt;=1</code> for <code>1&lt;=t&lt;=k</code> (the function is concave for <code>k&gt;2</code>; for <code>k=2</code>, <code>F(t)=t</code>). If both <code>t_u,t_v</code> are positive, the cut already has weight at least two. If exactly one is positive and equals <code>k</code>, it contributes two. Otherwise a constituent path has terminal-neighbor memberships forcing at least one <em>interior</em> unit-edge crossing: when hubs lie together, a first/last neighbor is on opposite sides; when hubs are separated, some path&#x27;s first and last neighbors lie on their respective hubs&#x27; sides. Together with <code>F(t)&gt;=1</code> this gives two. If both counts vanish and hubs are separated, each of the <code>k&gt;=2</code> paths has an interior crossing. If both vanish and hubs are together, any nontrivial cut contains an internal segment with at least two interior crossings. Thus <strong>every</strong> cut has weight at least two, including length-two paths.</p>
+<p>The original edges cost <code>m-2k+2k alpha=m-2k+4</code>. Each shortcut costs exactly two through its hub, and the two shortcut cliques contribute <code>2k(k-1)gamma=2k-4</code>. Total cost is <code>m</code>; therefore <code>SEP(c_G)=m</code>.</p>
+<h2 id="integer-tour-optimum-by-eulerian-parity">Integer tour optimum by Eulerian parity<a class="anchor" href="#integer-tour-optimum-by-eulerian-parity" aria-label="Link to this section">#</a></h2>
+<p>A metric Hamiltonian tour expands to a closed spanning walk on <code>G</code> at equal cost; conversely a closed spanning walk shortcuts to a metric tour at no greater cost. Thus TSP equals the minimum length of a connected spanning Eulerian edge-multigraph on <code>G</code>.</p>
+<p>At each internal degree-two vertex, its two path-edge multiplicities have the same parity. Hence each path is either <strong>odd-mode</strong> (every edge multiplicity odd, cost at least <code>L_i</code>) or <strong>even-mode</strong> (all multiplicities even). An even-mode path cannot have two zero-multiplicity edges, because internal vertices between them would be disconnected from the spanning walk. Therefore at least <code>L_i-1</code> edges are used at least twice, costing at least <code>2(L_i-1)=L_i+(L_i-2)</code>. Even degree at either hub forces an <strong>even number of odd-mode paths</strong>.</p>
+<p>When <code>k</code> is even, using all paths once is a connected Eulerian spanning multigraph of cost <code>m</code>. When <code>k</code> is odd, at least one path is even-mode, giving lower bound <code>m+ell-2</code>. Equality is achieved by taking the other <code>k-1&gt;=2</code> paths once and, on a shortest path, deleting one edge and doubling every other edge. The result is connected, spanning and Eulerian. This proves the stated integer formula.</p>
+<h2 id="reproduction-adversarial-controls-and-failed-leads">Reproduction, adversarial controls and failed leads<a class="anchor" href="#reproduction-adversarial-controls-and-failed-leads" aria-label="Link to this section">#</a></h2>
+<p>python3 scripts/m097_multitheta.py --check python3 -m unittest discover -s tests -p &#x27;test_m097_multitheta.py&#x27; -v # Optional, with NumPy and SciPy installed: python3 scripts/m097_multitheta_lp.py --check</p>
+<p>The standard-library checker independently constructs shortest paths by BFS, the rational LP point, every degree and every proper cut, and an integer subset-DP tour optimum <strong>without using the parity proof</strong>. The default sweep covers all <strong>63</strong> nondecreasing tuples with <code>2&lt;=k&lt;=5</code>, <code>2&lt;=L_i&lt;=6</code>, and at most 11 vertices: seven have fractional gap, with maximum <code>7/6</code>. Twelve adversarial tests cover the <code>L_i=2</code> coincidence, even/odd parity, path permutations, invalid parameters, tampered spoke and shortcut weights and the wrong <code>TSP=m</code> shortcut.</p>
+<p>A separately written SciPy HiGHS formulation, using a different edge/cut construction, was run for all 63 tuples. Every proposed optimum was reconstructed into exact rational primal/dual vectors, checked against all inequalities and nonnegative reduced costs, and matched <code>SEP=m</code>. This is <strong>author-side cross-checking, not independent mathematical review</strong>. SciPy is optional and not required by repository CI.</p>
+<p>Negative leads: the nine-vertex theta <code>(3,3,4)</code> has ratio <code>11/10</code>, below the eight-vertex <code>(3,3,3)</code> ratio <code>10/9</code>; adding vertices does not automatically increase the gap. A sampled nine-vertex diameter-four graph with a bridge had ratio <code>22/21</code>, defeating a naive extension of the eight-vertex diameter-four integral observation, but bridge attachments make it a weak structural lead. <strong>No exhaustive nine-vertex census</strong> was attempted.</p>
+<h2 id="prior-art-and-next-falsifier">Prior art and next falsifier<a class="anchor" href="#prior-art-and-next-falsifier" aria-label="Link to this section">#</a></h2>
+<ul><li>Hougardy, <a href="https://arxiv.org/abs/1402.5904" rel="noopener noreferrer"><em>On the Integrality Ratio of the Subtour LP for Euclidean TSP</em></a> (2014): discusses the classical graphic-metric constructions approaching <code>4/3</code>.</li><li>Qian, Schalekamp, Williamson and van Zuylen, <a href="https://arxiv.org/abs/1107.1630" rel="noopener noreferrer"><em>On the Integrality Gap of the Subtour LP for the 1,2-TSP</em></a> (2015): a different restricted metric class, including exact small-instance results.</li><li>Cook, Hougardy and Petrich, <a href="https://arxiv.org/abs/2603.12995" rel="noopener noreferrer"><em>Extending Exact Integrality Gap Computations for the Metric TSP</em></a> (2026): recent small-dimensional general-metric baseline, not audited for whether it implies this all-orders formula.</li><li><a href="../../library/m097-graph8/">Prior M097 eight-vertex graphic-metric census</a>, merged PR #176: a finite classification, not the present all-orders family theorem.</li></ul>
+<p>A targeted literature search did not locate this <strong>precise all-<code>k</code>, all-length formula</strong>, but that is <strong>not evidence of historical novelty</strong>. The three-path lower-bound construction is known. Next falsifiers: specialist search for subdivided dipoles/multitheta TSP formulas; a separately authored audit of the cut case split and Eulerian parity argument; and a second implementation of the rational certificate for uneven, larger path lengths. No <code>data/solved.json</code> or problem-status change is warranted.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

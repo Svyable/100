@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M079 — sharp 11/28 balance for a width-three chain-plus-three class · 100</title>
+<meta name="description" content="Work packet: O-M079-02, scope digest 6f875a09c8b9a70a. Claim: #180. Classification: author-derived restricted all-orders proof candidate, with two exact finite implementations and literal permutation controls. Neither an independent mathema">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m079-chain-plus-three/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M079 — sharp 11/28 balance for a width-three chain-plus-three class · 100">
+<meta property="og:description" content="Work packet: O-M079-02, scope digest 6f875a09c8b9a70a. Claim: #180. Classification: author-derived restricted all-orders proof candidate, with two exact finite implementations and literal permutation controls. Neither an independent mathema">
+<meta property="og:url" content="https://svyable.github.io/100/library/m079-chain-plus-three/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M079 — sharp 11/28 balance for a width-three chain-plus-three class</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#exact-statement">Exact statement</a></li><li class="toc-l2"><a href="#all-orders-reduction">All-orders reduction</a></li><li class="toc-l3"><a href="#long-interval-lemma">Long-interval lemma</a></li><li class="toc-l3"><a href="#finite-residual">Finite residual</a></li><li class="toc-l2"><a href="#sharpness-falsified-strengthening-and-scope">Sharpness, falsified strengthening and scope</a></li><li class="toc-l2"><a href="#reproduction-and-adversarial-controls">Reproduction and adversarial controls</a></li><li class="toc-l2"><a href="#primary-literature-comparison-2026-11-01">Primary literature comparison (2026-11-01)</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M079/" title="One-third–two-thirds conjecture">M079</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M079_CHAIN_PLUS_THREE.md" rel="noopener noreferrer">research/M079_CHAIN_PLUS_THREE.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M079 — sharp 11/28 balance for a width-three chain-plus-three class</h1>
+<p><strong>Work packet:</strong> <code>O-M079-02</code>, scope digest <code>6f875a09c8b9a70a</code>. <strong>Claim:</strong> <a href="https://github.com/Svyable/100/issues/180" rel="noopener noreferrer">#180</a>. <strong>Classification:</strong> author-derived restricted all-orders <strong>proof candidate</strong>, with two exact finite implementations and literal permutation controls. Neither an independent mathematical review nor historical novelty is established. The original 1/3–2/3 conjecture remains open. The new obligation remains open for review.</p>
+<h2 id="exact-statement">Exact statement<a class="anchor" href="#exact-statement" aria-label="Link to this section">#</a></h2>
+<p>Let <code>P</code> be a finite poset with a specified chain <code>c1 &lt; ... &lt; cm</code> and three elements <code>x,y,z</code> outside the chain. Assume:</p>
+<ol><li><code>x,y,z</code> are <strong>pairwise incomparable</strong>;</li><li><code>P</code> has <strong>width exactly three</strong>;</li><li>each of <code>x,y,z</code> is incomparable with <strong>at least one</strong> chain element.</li></ol>
+<p>For a uniformly chosen linear extension let <code>delta(P) = max_(u!=v) min(Pr(u&lt;v), Pr(v&lt;u))</code>.</p>
+<p><strong>Claim (sharp restricted theorem):</strong> <code>delta(P) &gt;= 11/28</code>. This is sharp, already for a seven-element poset with four chain elements. In particular it proves the one-third–two-thirds inequality for this infinite class with a quantitative margin. It says nothing about a general width-three poset, about three outsiders that are not an antichain, or about historical novelty.</p>
+<p>The requirement that all three outsiders have a chain incomparability is material: it excludes the chain-plus-two subclass treated separately in <a href="../../library/m079-chain-plus-two/">M079_CHAIN_PLUS_TWO.md</a>. The sharp seven-element example below has no chain of five elements, so it cannot be placed in that earlier class.</p>
+<h2 id="all-orders-reduction">All-orders reduction<a class="anchor" href="#all-orders-reduction" aria-label="Link to this section">#</a></h2>
+<p>Number chain insertion gaps <code>0,...,m</code>. The allowable gaps for an outsider <code>u</code> form a <strong>nonempty integer interval</strong> <code>I_u=[a_u,b_u]</code>: any earlier chain vertex must precede <code>u</code>, and any later one must follow it. Conversely every gap in the interval is legal.</p>
+<p>Two outsiders are incomparable only if their intervals intersect (otherwise the chain forces their order). By the interval Helly property the three intervals have a common gap. If their common intersection included <strong>two consecutive gaps</strong>, the chain vertex between those gaps would be incomparable with all three outsiders, giving a four-element antichain, contrary to width three. Therefore the triple intersection consists of <strong>exactly one gap</strong>. Translate that gap to zero. Each interval then has length at least two by hypothesis, contains zero, and the unique common gap is zero. Arbitrary chain vertices entirely outside the union of intervals are comparable with every outsider and do not affect any incomparable-pair probability.</p>
+<p>Let <code>I,J,K</code> be the three gap sets with lengths <code>L,M,N</code>. For fixed gaps <code>i,j,k</code>, the number of linear extensions is the product of factorials of the multiplicities of equal gaps. Exactly, <code>w(i,j,k) = 1 + [i=j] + [i=k] + [j=k] + 2[i=j=k]</code>. Consequently, writing <code>r_AB=|A intersect B|</code> and <code>t=|I intersect J intersect K|=1</code>, the total number of extensions is</p>
+<p><code>E = LMN + r_IJ*N + r_IK*M + r_JK*L + 2t.</code></p>
+<p>For a fixed insertion gap <code>i in I</code> of <code>x</code>, its extension weight is</p>
+<p><code>w_x(i) = MN + r_JK + N*[i in J] + M*[i in K] + 2*[i in J intersect K].</code></p>
+<p>For outsider pair <code>x,y</code>, the exact numerator <code>E Pr(x&lt;y)</code> is</p>
+<p><code>sum_(i in I, j in J, i&lt;j) (N+[i in K]+[j in K]) + sum_(i in I intersect J) (N+2*[i in K]).</code></p>
+<p>For chain vertex <code>c_q</code>, the numerator <code>E Pr(x&lt;c_q)</code> is <code>sum_(i in I, i&lt;q) w_x(i)</code>. Permuting <code>x,y,z</code> gives every remaining incomparable pair. All computations use integers, not floats.</p>
+<h3 id="long-interval-lemma">Long-interval lemma<a class="anchor" href="#long-interval-lemma" aria-label="Link to this section">#</a></h3>
+<p>Put <code>B=MN+r_JK</code>. The intervals <code>J,K</code> intersect, so <code>B&gt;=MN+1</code>. For positive integers <code>M,N</code>, <code>M+N&lt;=2MN</code>, hence <code>w_x(i) &lt;= B+M+N+2 &lt;= 3B</code>. As <code>E=sum_(i in I) w_x(i)&gt;=LB</code>, every atom of the insertion-gap distribution of <code>x</code> has probability at most <code>3/L</code>.</p>
+<p>If <strong>any</strong> of <code>L,M,N</code> is at least <strong>14</strong>, its atom masses are at most <code>3/14</code>. Scan the chain thresholds from left to right. The first cumulative probability reaching <code>11/28</code> is at most <code>11/28+3/14=17/28</code>. The crossing occurs at a genuine chain vertex: the final atom is at most <code>3/14</code>, so the preceding cumulative value is at least <code>11/14</code>. Thus an <code>11/28</code>-balanced pair exists. This is a symbolic, all-orders argument; no bound on the original chain length is assumed.</p>
+<h3 id="finite-residual">Finite residual<a class="anchor" href="#finite-residual" aria-label="Link to this section">#</a></h3>
+<p>It remains to check <code>2&lt;=L,M,N&lt;=13</code>. For each length <code>L</code>, all intervals containing zero are <code>[a,a+L-1]</code> with <code>1-L&lt;=a&lt;=0</code>. Enumerate all ordered triples of such intervals and retain precisely those with <code>max(a_x,a_y,a_z)=min(b_x,b_y,b_z)=0</code>. This produces <strong>67,392 labeled normalized triples</strong>; they are actual possible width-three posets up to irrelevant outer chain padding. There is no symmetry quotient and no omitted interval configuration.</p>
+<p>For each triple, <code>scripts/m079_chain3_balance.py</code> evaluates every outsider–outsider and outsider–chain pair using the closed formulas above, and separately reconstructs <strong>all</strong> extension counts by a state recurrence over order ideals <code>(chain-prefix length, outsider-mask)</code>. It asserts exact agreement for every pair and tests <code>28*best &gt;= 11*E</code>. The smallest balance is exactly <strong>11/28</strong>, attained in <strong>12 labeled normalized triples</strong>. The deterministic full-census transcript digest is:</p>
+<p><code>0414a61f4d9cbc33afa4fd6aeea4c0e70304498bb5a7e4a066d686fa8eb3facf</code></p>
+<p>The recurrence counts each legal next chain or outsider insertion, using prefix/suffix path counts to reconstruct pair events. It is algorithmically distinct from the closed multiplicity formula, although both are implementations by the same author and neither substitutes for external mathematical review.</p>
+<h2 id="sharpness-falsified-strengthening-and-scope">Sharpness, falsified strengthening and scope<a class="anchor" href="#sharpness-falsified-strengthening-and-scope" aria-label="Link to this section">#</a></h2>
+<p>Take the chain <code>c1&lt;c2&lt;c3&lt;c4</code> and outsiders with allowed gap intervals <code>I_x=[0,3], I_y=[2,3], I_z=[3,4]</code>; leave <code>x,y,z</code> pairwise incomparable. Their triple intersection is gap three, each interval has length at least two, and the width is exactly three. There are exactly <strong>28</strong> linear extensions. Direct enumeration of all <code>7!=5040</code> permutations gives the same 28 and all pair numerators as both other checkers. The best pair has probability <code>11/28</code> (for example <code>y&lt;c3</code>); all other pairs are no better. The exact nontrivial numerators out of 28 are <code>x&lt;y:19</code>, <code>x&lt;z:24</code>, <code>y&lt;z:22</code>, <code>x&lt;c1:5</code>, <code>x&lt;c2:10</code>, <code>x&lt;c3:17</code>, <code>y&lt;c3:11</code>, and <code>z&lt;c4:18</code>; the remaining outsider-chain pairs are comparable. The sharp witness also contains an induced N on <code>{x,c4,c1,z}</code> with relations <code>x&lt;c4</code>, <code>c1&lt;c4</code>, <code>c1&lt;z</code> only, so N-free theorems do not cover this example. Therefore the proposed stronger <code>2/5</code> bound is <strong>false</strong>, with a concrete seven-element counterexample.</p>
+<p>The poset has height four, so is not covered merely by a height-two result. The class has unbounded incomparability degree (take <code>I_x=[-h,0], I_y=[-1,0], I_z=[0,1]</code> for arbitrarily large <code>h</code>), so a fixed-thinness theorem alone does not cover it. These exclusions are not a complete novelty audit.</p>
+<p><strong>Failed avenues and limits:</strong> The atom bound <code>3/L</code> does <strong>not</strong> by itself close length 13, since <code>3/13&gt;3/14</code>; those cases are genuinely in the finite residual. The naive <code>LMN</code> denominator is false because ties within gaps create multiple extensions. The <code>2/5</code> strengthening fails at the sharp witness. Dropping the antichain, width-three, or minimum-two-gap hypotheses invalidates this reduction and is not certified.</p>
+<h2 id="reproduction-and-adversarial-controls">Reproduction and adversarial controls<a class="anchor" href="#reproduction-and-adversarial-controls" aria-label="Link to this section">#</a></h2>
+<pre><code class="lang-sh">python3 scripts/m079_chain3_balance.py --check --json
+python3 -m unittest discover -s tests -p &#x27;test_m079_chain3_balance.py&#x27; -v
+python3 scripts/regen.py --check
+python3 -m unittest discover -s tests</code></pre>
+<p>The first command checks all <strong>67,392</strong> cases twice and prints the SHA-256 digest. The tests additionally use a <strong>third</strong> implementation that literally enumerates permutations on small instances, including the sharp example, and check translation, order duality, interval invalidity, width-four exclusion, the singleton boundary, the false <code>2/5</code> bound, and a mutation omitting same-gap multiplicity. No random seeds or external numerical solvers are used. The independent-DP label means an independent <em>algorithmic path</em>, not an independent reviewer.</p>
+<h2 id="primary-literature-comparison-2026-11-01">Primary literature comparison (2026-11-01)<a class="anchor" href="#primary-literature-comparison-2026-11-01" aria-label="Link to this section">#</a></h2>
+<ul><li><a href="https://doi.org/10.1137/0405037" rel="noopener noreferrer">Brightwell and Wright, <em>The 1/3–2/3 Conjecture for 5-Thin Posets</em> (1992)</a>: fixed incomparability-degree bound, unlike this unbounded-degree family.</li><li><a href="https://doi.org/10.37236/2345" rel="noopener noreferrer">Zaguia, <em>The 1/3–2/3 Conjecture for N-Free Ordered Sets</em> (2012)</a>: a different forbidden-poset restriction; overlap not comprehensively audited.</li><li><a href="https://arxiv.org/abs/1706.04985" rel="noopener noreferrer">Olson and Sagan, <em>On the 1/3–2/3 Conjecture</em> (2018)</a>: known families and balanced-pair arguments, no exact matching sharp <code>11/28</code> theorem found in this targeted search.</li><li><a href="https://doi.org/10.37236/7337" rel="noopener noreferrer">Chen, <em>A Family of Partially Ordered Sets with Small Balance Constant</em> (2018)</a>: constructions with balance near <code>0.3488999</code>, so this bound cannot hold universally.</li><li><a href="https://arxiv.org/abs/2607.23926" rel="noopener noreferrer">Gupta, <em>The Gold Partition Conjecture Holds through Fourteen Elements</em> (2026)</a>: finite exhaustive work; it does not establish the all-orders statement here.</li><li><a href="../../library/m079-chain-plus-two/">M079 chain-plus-two prior result in this repository</a>: a different, previously proposed sharp <code>4/11</code> class, itself unreviewed.</li></ul>
+<p>A targeted search for the phrase <code>11/28</code> with poset balance and for chain-deletion-three results did not identify an exact precedent, but <strong>absence from search is not proof of novelty</strong>. An expert should audit older near-chain, interval-insertion, dimension-two, and width-three literature.</p>
+<p><strong>Next falsifier:</strong> Independent human proof audit of the Helly/width reduction, 14-gap threshold, finite enumeration and seven-element sharp example; independently reimplement the 67,392-case enumeration from poset relations; search historical literature for an equal or stronger theorem; then try allowing one comparability among the three outsiders. Do not discharge <code>O-M079-02</code>, change <code>data/solved.json</code>, or classify novelty without that review.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

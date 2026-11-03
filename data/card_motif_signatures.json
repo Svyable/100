@@ -1,0 +1,271 @@
+{
+  "schema": "svyable.deck-motif-signatures.v1",
+  "as_of": "2026-11-01",
+  "claim": "The deck-computable S3 is complete for 3<=n<=7, not n=8. S4 is complete for 3<=n<=8.",
+  "mathematical_novelty": "unconfirmed; finite computation inside previously verified full reconstruction range",
+  "method": "all unlabeled 7-vertex parents extended in every one-vertex neighborhood; independent Burnside class count",
+  "table": {
+    "3": {
+      "tested_graphs": 4,
+      "isomorphism_classes_burnside": 4,
+      "degree_triangle_card_signatures": 4,
+      "degree_triangle_square_card_signatures": 4,
+      "degree_triangle_excess": 0,
+      "degree_triangle_square_excess": 0,
+      "degree_triangle_digest": "d84d3df66c40e6b9abd3ee7faa83f2840174e83cf7b1471d8c83778b544a8b1c",
+      "degree_triangle_square_digest": "2ef5ae273fa39d2804782c636e6255298164921ab5a99df24ec3e4cf8057cccb"
+    },
+    "4": {
+      "tested_graphs": 11,
+      "isomorphism_classes_burnside": 11,
+      "degree_triangle_card_signatures": 11,
+      "degree_triangle_square_card_signatures": 11,
+      "degree_triangle_excess": 0,
+      "degree_triangle_square_excess": 0,
+      "degree_triangle_digest": "972a46f85640fdf84207d1fed40564effbf9865d08625a29ad2d2773eb01c348",
+      "degree_triangle_square_digest": "092589790dc5cfb1f02f7d47e8a99cd42911f3226e12bff118f5be7c81dd75b5"
+    },
+    "5": {
+      "tested_graphs": 34,
+      "isomorphism_classes_burnside": 34,
+      "degree_triangle_card_signatures": 34,
+      "degree_triangle_square_card_signatures": 34,
+      "degree_triangle_excess": 0,
+      "degree_triangle_square_excess": 0,
+      "degree_triangle_digest": "56ad33d4229d6d52960d264b6ff0934a1782ebb88b5fca47a9115e6471f23a54",
+      "degree_triangle_square_digest": "ad062454c2f791e57328560dc1f3fc14c4dd9a29475d39ac2335a34d42b301cd"
+    },
+    "6": {
+      "tested_graphs": 156,
+      "isomorphism_classes_burnside": 156,
+      "degree_triangle_card_signatures": 156,
+      "degree_triangle_square_card_signatures": 156,
+      "degree_triangle_excess": 0,
+      "degree_triangle_square_excess": 0,
+      "degree_triangle_digest": "e8222cab6224b3161c2d81b37d16c4050b34e8088f9d39b896a7dc68e06bcfba",
+      "degree_triangle_square_digest": "cd996cd81473f332eb4d62462e3e63b5b520a42470882473b71a843b784d5b36"
+    },
+    "7": {
+      "tested_graphs": 1044,
+      "isomorphism_classes_burnside": 1044,
+      "degree_triangle_card_signatures": 1044,
+      "degree_triangle_square_card_signatures": 1044,
+      "degree_triangle_excess": 0,
+      "degree_triangle_square_excess": 0,
+      "degree_triangle_digest": "8c59ba9c35e8b02db72cf288eb61317a79db3e4b8dc970bbd37e01a227545ff2",
+      "degree_triangle_square_digest": "3e96e0e1d2d9e7ba36f5dd93d807d24ab87a5f57ce450c8332b417bff82ab2e6"
+    },
+    "8": {
+      "tested_graphs": 133632,
+      "isomorphism_classes_burnside": 12346,
+      "degree_triangle_card_signatures": 12257,
+      "degree_triangle_square_card_signatures": 12346,
+      "degree_triangle_excess": 89,
+      "degree_triangle_square_excess": 0,
+      "degree_triangle_digest": "99f25b948020ce4a3a170ac74d15d6e4204ebfa43ca355ffb38e3e01d77b740b",
+      "degree_triangle_square_digest": "363cf9481ca26a802612e0acf9f7f3f8af068cdb4e232431ed1d2db707b7ebc0"
+    }
+  },
+  "counterexample_S3_n8": {
+    "edges": [
+      [
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          6
+        ]
+      ],
+      [
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          6
+        ]
+      ]
+    ],
+    "degree_sequence": [
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3
+    ],
+    "triangles": 0,
+    "S3": [
+      [
+        [
+          1,
+          1,
+          2,
+          2,
+          2,
+          3,
+          3
+        ],
+        0
+      ],
+      [
+        [
+          1,
+          1,
+          2,
+          2,
+          2,
+          3,
+          3
+        ],
+        0
+      ],
+      [
+        [
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          3
+        ],
+        0
+      ],
+      [
+        [
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          3
+        ],
+        0
+      ],
+      [
+        [
+          1,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3
+        ],
+        0
+      ],
+      [
+        [
+          1,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3
+        ],
+        0
+      ],
+      [
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          3,
+          3
+        ],
+        0
+      ],
+      [
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          3,
+          3
+        ],
+        0
+      ]
+    ],
+    "four_cycles": [
+      2,
+      1
+    ],
+    "note": "Both are triangle-free, share S3, and differ in C4. They are NOT a same-deck pair."
+  }
+}

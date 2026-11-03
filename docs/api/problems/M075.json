@@ -226,6 +226,11 @@
       "url": "https://svyable.github.io/100/library/scale/"
     },
     {
+      "title": "M075 — Canonical parents can fail; safe augmentation survives",
+      "source": "research/M075_AUGMENTATION.md",
+      "url": "https://svyable.github.io/100/library/m075-augmentation/"
+    },
+    {
       "title": "M075: Burnside-certified full-support orbit counts through n=5",
       "source": "research/M075_BURNSIDE.md",
       "url": "https://svyable.github.io/100/library/m075-burnside/"

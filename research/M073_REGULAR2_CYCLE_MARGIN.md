@@ -19,7 +19,17 @@ Its exact triple table is frozen, source-identified and SHA-256 checked at
 The manuscript claims an existential finite host violating Sidorenko; the
 independent finite-host witness gate in this repository remains **open**.
 
+**Independent complementary extension:** [M073_MONOTONE_TWO_BLOCK.md](M073_MONOTONE_TWO_BLOCK.md) proves a quantitative
+real-parameter inequality for all ordered asymmetric two-block graphons with
+*arbitrary* class masses. Neither theorem covers the entire nonmonotone two-block
+region; the classical method and independent novelty boundary remain explicit.
+
 ## Exact statement
+
+The subsequent [information-alignment calculation](M073_INFORMATION_ALIGNMENT.md)
+recovers the complete even-subgraph polynomial by spin and parity-state
+algorithms, adding the exact terms 823r^8 + 4232r^10 + 24831r^12 and all
+higher coefficients. It retains the same restricted domain and review boundary.
 
 **Proposition (balanced, equal-diagonal, two-step graphons).** Let
 \(a,b\in[0,1]\) and let \(W\) be the symmetric graphon on two measurable

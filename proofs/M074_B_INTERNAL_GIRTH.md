@@ -76,6 +76,18 @@ An explicit **unexcluded relaxed pair** remains:
 \]
 It meets the root cut, the total subset capacities and the new small-subset restrictions. It is *not* a constructed digraph and does not establish incidence feasibility.
 
+## Follow-on C-to-A obstruction (2026-11-01)
+
+The 295 pairs above are the **pre-cross-cut** frontier, not a current
+claim that any `z=4` pair remains feasible. A subsequent elementary
+[dual C-to-A cut proof](M074_C_TO_A_BOTTLENECK.md) removes 288 via
+mandatory-vs-eligible arcs and excludes the last seven via three local
+degree-counting arguments. The new filtered frontier has **zero**
+remaining `z=4` integer profiles, conditional on all prior rooted
+lemmas. The `z<=3` indegree-ten branch remains open; neither the
+full finite (27,9) case nor the conjecture is resolved. The argument
+requires independent specialist review and originality audit.
+
 ## Reproduction and falsification
 
 From the repository root:

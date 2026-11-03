@@ -6,6 +6,8 @@ Mathematics: proofs/M074_B_INTERNAL_GIRTH.md.
 """
 from collections import Counter
 from itertools import combinations_with_replacement
+
+import ch27_z4_sink
 import json
 
 
@@ -52,7 +54,14 @@ def classify(alpha, k, include_triangle=True):
     floors = internal_B_floors(alpha, k)
     if not subset_capacity_ok(floors):
         return "subset_capacity"
-    return forbidden_small_set(floors, include_triangle) or "unresolved"
+    prior_cut = forbidden_small_set(floors, include_triangle)
+    if prior_cut:
+        return prior_cut
+    # Scope: z=4 and alpha=(2^7,a,8), 2<=a<=6, ONLY.
+    # Hand proof: proofs/M074_27_Z4_SINK.md (seven-vertex cap prerequisite).
+    if ch27_z4_sink.target_profile(alpha, k):
+        return "z4_sink_cut"
+    return "unresolved"
 
 
 def audit(include_triangle=True):
@@ -95,9 +104,10 @@ def main():
         "triangle_three": 132,
         "minout_two_5": 22,
         "minout_two_6": 24,
-        "unresolved": 295,
+        "z4_sink_cut": 4,
+        "unresolved": 291,
     }
-    if baseline["stages"] != expected or mutated["stages"].get("unresolved") != 427:
+    if baseline["stages"] != expected or mutated["stages"].get("unresolved") != 421:
         raise SystemExit("INVALID: small-set cut audit drift")
     if result["former_boundary_case"]["rejection"] != "triangle_three":
         raise SystemExit("INVALID: triangle guard did not reject control")

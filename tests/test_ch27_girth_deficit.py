@@ -142,9 +142,9 @@ class GirthDeficitTests(unittest.TestCase):
         self.assertIsNone(target.first_girth_subset_violation(
             (8,7,7,7,0,0,0,0,0,0), missing=1))
         self.assertEqual(target.audit(missing=1)["remaining"],191)
-        self.assertEqual(target.audit(missing=0)["remaining"],275)
+        self.assertEqual(target.audit(missing=0)["remaining"],274)
         self.assertEqual(target.audit(include_rigidity=False)["remaining"],128)
-        self.assertEqual(target.audit(include_c=False,include_rigidity=False)["remaining"],143)
+        self.assertEqual(target.audit(include_c=False,include_rigidity=False)["remaining"],142)
         self.assertEqual(target.first_rigidity_violation(
             (8,6,6,6,6,5,0,0,0,0)),6)
         self.assertIsNone(target.first_rigidity_violation(

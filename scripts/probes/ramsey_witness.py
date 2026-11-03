@@ -90,14 +90,69 @@ def search(params):
 
 
 def check(params, result):
-    for name, w in result["certificate"].items():
-        m, s, t = w["vertices"], w["s"], w["t"]
-        E = {(a, b) for a, b in w["edges"]}
-        require(all(0 <= a < b < m for a, b in E), f"{name}: malformed edges")
-        def edge(a, b):
+    """Replay every requested witness, then bind the public claim to the replay.
+
+    In particular, an empty/partial certificate is never evidence of a bound.
+    The checker intentionally verifies the colouring, not that it was generated
+    by the named Paley/circulant constructor: a distinct valid graph on the
+    same number of vertices would prove the same lower bound.
+    """
+    names = params.get("witnesses")
+    require(isinstance(names, list) and bool(names) and
+            all(isinstance(name, str) and name in CLAIMS for name in names) and
+            len(names) == len(set(names)), "invalid or duplicate witness requests")
+    require(isinstance(result, dict), "result must be an object")
+    found = result.get("certificate")
+    require(isinstance(found, dict) and set(found) == set(names),
+            "certificate must contain exactly the requested witnesses")
+    require(result.get("holds") is True, "all registered witnesses must certify")
+
+    summary = {}
+    for name in names:
+        w = found[name]
+        require(isinstance(w, dict) and set(w) == {
+            "vertices", "s", "t", "clique_number", "independence_number",
+            "edges", "certifies",
+        }, f"{name}: incomplete or extra witness fields")
+        m = graph(name)[0]
+        s, t = CLAIMS[name]
+        require(type(w["vertices"]) is int and w["vertices"] == m and
+                type(w["s"]) is int and w["s"] == s and
+                type(w["t"]) is int and w["t"] == t,
+                f"{name}: graph order or Ramsey thresholds differ from claim")
+
+        edges = w["edges"]
+        require(isinstance(edges, list) and all(
+            isinstance(pair, list) and len(pair) == 2 and
+            all(type(x) is int for x in pair) and
+            0 <= pair[0] < pair[1] < m for pair in edges
+        ), f"{name}: malformed edge list")
+        E = {tuple(pair) for pair in edges}
+        require(len(E) == len(edges), f"{name}: duplicate edges")
+
+        def is_red(a, b):
             return (min(a, b), max(a, b)) in E
-        mono_red = any(all(edge(a, b) for a, b in combinations(S, 2)) for S in combinations(range(m), s))
-        mono_blue = any(not any(edge(a, b) for a, b in combinations(S, 2)) for S in combinations(range(m), t))
-        require(w["certifies"] == (not mono_red and not mono_blue),
-                f"{name}: certification flag disagrees with exhaustive subset check")
-        require(w["certifies"], f"{name}: colouring has a monochromatic clique")
+
+        def has_clique(k, red):
+            return any(all(is_red(a, b) is red for a, b in combinations(S, 2))
+                       for S in combinations(range(m), k))
+
+        require(not has_clique(s, True) and not has_clique(t, False),
+                f"{name}: monochromatic forbidden clique")
+        # No s/t clique exists, so the maximum lies below s/t respectively.
+        # Compute the reported maxima by a separate exhaustive subset scan.
+        omega = next((k for k in range(s - 1, 0, -1)
+                      if has_clique(k, True)), 0)
+        alpha = next((k for k in range(t - 1, 0, -1)
+                      if has_clique(k, False)), 0)
+        require(type(w["clique_number"]) is int and
+                w["clique_number"] == omega and
+                type(w["independence_number"]) is int and
+                w["independence_number"] == alpha and
+                w["certifies"] is True,
+                f"{name}: incorrect witness statistics or certification flag")
+        summary[name] = f"R({s},{t}) > {m}"
+
+    summary["witnesses_sha256"] = digest(found)
+    require(result.get("summary") == summary,
+            "published summary or digest does not match verified witnesses")

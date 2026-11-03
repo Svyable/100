@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M078 — induced P₄ separates the six-vertex degree–triangle collisions · 100</title>
+<meta name="description" content="Work packet: O-M078-01, scope digest c25d1f1ccd3a55bdd178da6dcb4747199d51a0190d9321ccb7e1b21af505fe62. Claim: #126. Classification: exact finite proposition with computational exhaustion and a double-path verifier. Independent mathematical ">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m078-p4-separator/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M078 — induced P₄ separates the six-vertex degree–triangle collisions · 100">
+<meta property="og:description" content="Work packet: O-M078-01, scope digest c25d1f1ccd3a55bdd178da6dcb4747199d51a0190d9321ccb7e1b21af505fe62. Claim: #126. Classification: exact finite proposition with computational exhaustion and a double-path verifier. Independent mathematical ">
+<meta property="og:url" content="https://svyable.github.io/100/library/m078-p4-separator/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M078 — induced P₄ separates the six-vertex degree–triangle collisions</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#precise-finite-proposition">Precise finite proposition</a></li><li class="toc-l2"><a href="#explicit-obstruction-at-seven-vertices-and-every-larger-order">Explicit obstruction at seven vertices and every larger order</a></li><li class="toc-l2"><a href="#why-the-invariant-really-comes-from-the-deck">Why the invariant really comes from the deck</a></li><li class="toc-l2"><a href="#exhaustive-proof-certificate-and-independent-verifier">Exhaustive proof certificate and independent verifier</a></li><li class="toc-l2"><a href="#limits-and-useful-next-question">Limits and useful next question</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M078/" title="Graph reconstruction conjecture">M078</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M078_P4_SEPARATOR.md" rel="noopener noreferrer">research/M078_P4_SEPARATOR.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M078 — induced P₄ separates the six-vertex degree–triangle collisions</h1>
+<p><strong>Work packet:</strong> O-M078-01, scope digest <code>c25d1f1ccd3a55bdd178da6dcb4747199d51a0190d9321ccb7e1b21af505fe62</code>. <strong>Claim:</strong> <a href="https://github.com/Svyable/100/issues/126" rel="noopener noreferrer">#126</a>. <strong>Classification:</strong> exact finite proposition with computational exhaustion and a double-path verifier. <strong>Independent mathematical and statement-fidelity review pending. Novelty in the wider literature has NOT been established.</strong> This does not resolve the unrestricted graph reconstruction conjecture.</p>
+<h2 id="precise-finite-proposition">Precise finite proposition<a class="anchor" href="#precise-finite-proposition" aria-label="Link to this section">#</a></h2>
+<p>Let G be a simple, undirected graph on exactly six vertices. Define</p>
+<ul><li>D(G): the <em>sorted degree sequence</em>, an isomorphism invariant readable from the deck of vertex-deleted cards;</li><li>T(G): the number of triangles;</li><li>P₄(G): the number of <strong>four-element vertex subsets inducing a path of length three</strong>, not the number of arbitrary non-induced length-three walks.</li></ul>
+<p><strong>Sharp signature theorem (finite proof plus explicit obstruction):</strong> among the 156 isomorphism classes of six-vertex graphs, the signature</p>
+<p><code>(D(G), T(G), P₄(G))</code></p>
+<p>is injective. The weaker signature <code>(D(G), T(G))</code> has exactly 20 collision classes, each containing two nonisomorphic graphs. In 14 of those pairs, the P₄ counts differ by one; in the other six, by three. No pair remains ambiguous. Conversely, for <strong>every n &gt;= 7</strong>, there exist two nonisomorphic n-vertex graphs having the same three-coordinate signature. The positive side n &lt;= 6 follows by census; the negative side for all n &gt;= 7 follows from one explicit seven-vertex pair and isolate padding.</p>
+<p><strong>Illustrative certificate pair:</strong> edge codes 10376 and 25601 share degree sequence (1,1,1,1,2,2), with zero triangles, but have 0 and 1 induced P₄ instances respectively. These codes are <strong>not graph identifiers independent of our bit convention</strong>: bit positions represent the edge pairs (0,1), (0,2), …, (4,5), ordered lexicographically.</p>
+<h2 id="explicit-obstruction-at-seven-vertices-and-every-larger-order">Explicit obstruction at seven vertices and every larger order<a class="anchor" href="#explicit-obstruction-at-seven-vertices-and-every-larger-order" aria-label="Link to this section">#</a></h2>
+<p>Set (G = K_{1,3} \sqcup K_3), a four-vertex star disjoint from a triangle. Set (H=P_3 \sqcup W), where (P_3) is a three-vertex path and (W) is the <strong>paw</strong>: a triangle with a pendant leaf.</p>
+<p>The two degree multisets are identical:</p>
+<p>[ D(G)=D(H)=(1,1,1,2,2,2,3). ]</p>
+<p>Each graph contains exactly one triangle. Neither contains an induced four-vertex path: each of the two components in each graph is too small to contribute an induced P₄ except its own four-vertex component, and neither (K_{1,3}) nor the paw is (P_4). Thus (P₄(G)=P₄(H)=0), so the signatures agree.</p>
+<p>They are <strong>not isomorphic</strong>: the triangle in (G) constitutes an entire connected component of size 3; the triangle in (H) lies in a connected component of size 4. Equivalently, the size-4 components are a star versus a paw, which have different edge counts.</p>
+<p>For any integer (t \ge 0), the graphs (G\sqcup tK_1) and (H\sqcup tK_1) remain nonisomorphic, while their degrees acquire the same (t) zeros and their triangle and induced-P₄ counts stay unchanged. This <strong>proves failure for every n=7+t</strong>, without requiring an exhaustive large-n search. The explicit edge lists and edge-bit codes are stored under <code>sharpness_witness_n7</code> in the certificate.</p>
+<h2 id="why-the-invariant-really-comes-from-the-deck">Why the invariant really comes from the deck<a class="anchor" href="#why-the-invariant-really-comes-from-the-deck" aria-label="Link to this section">#</a></h2>
+<p>We use the classical <strong>Kelly double-counting identity</strong> (1957), not a new lemma. Let s_H(G) count induced vertex subsets of G whose induced graph is isomorphic to a fixed H with h vertices, where h&lt;n=|V(G)|. Each copy of H occurs in precisely n−h vertex-deleted cards: deleting any vertex outside that copy retains it, and deleting one inside destroys it. Hence</p>
+<p>[ (n-h)\,s_H(G) = \sum_{v\in V(G)} s_H(G-v). ]</p>
+<p>For H=P₄ and n=6 this becomes</p>
+<p>[ P₄(G) = \frac{1}{2}\sum_{v\in V(G)}P₄(G-v). ]</p>
+<p>Therefore P₄(G) is determined by the <strong>unordered multiset</strong> of vertex-deleted cards; it does not require reconstructing G first. Similarly T(G) is obtained from the card triangles divided by n−3=3. The edge count is recovered from card edge totals divided by n−2=4; then the degree multiset follows by subtracting each card&#x27;s edge count from the recovered edge count. Thus <strong>all three coordinates are deck-readable</strong>, rather than merely directly computable on a labelled graph.</p>
+<p>A source for Kelly&#x27;s identity and its induced-subgraph form is Dalili et al., <em>Discrete Mathematics</em> 308 (2008), Lemma 3.2: <a href="https://www.usna.edu/Users/math/traves/_files/documents/reconstruction.pdf" rel="noopener noreferrer">reconstruction.pdf</a>. See also the discussion of induced k-decks in <a href="https://people.maths.ox.ac.uk/scott/Papers/smalltreerecon.pdf" rel="noopener noreferrer">Groenland–Johnston–Scott–Tan, Reconstruction from smaller cards</a>. Neither source should be read as claiming this particular six-vertex three-coordinate signature is novel.</p>
+<h2 id="exhaustive-proof-certificate-and-independent-verifier">Exhaustive proof certificate and independent verifier<a class="anchor" href="#exhaustive-proof-certificate-and-independent-verifier" aria-label="Link to this section">#</a></h2>
+<p>Run from the repository root:</p>
+<pre><code class="lang-sh">python3 scripts/m078_p4_separator.py --check --json
+python3 -m unittest tests/test_m078_p4_separator.py -v</code></pre>
+<p>The committed certificate is <a href="https://github.com/Svyable/100/blob/main/data/reference/m078_p4_pairs.json" rel="noopener noreferrer"><code>data/reference/m078_p4_pairs.json</code></a>. It lists the 20 colliding pairs in lexicographic edge-bit-code order, their common degree sequence and triangle count, and both P₄ counts. A SHA-256 hash pins the canonical JSON serialization of those 20 records:</p>
+<p><code>f00c172f4d827c71b6cfaf3c83f7a9b00cf6fce1c620be6a47f78b03d634120e</code></p>
+<p>The checker is not a printout of a trusted search result. It independently:</p>
+<ol><li>Constructs the complete 156-isomorphism-class census using orderly graph extension.</li><li>Certifies the count by Burnside&#x27;s lemma and independently validates nonisomorphism with degree-respecting canonical edge-list forms.</li><li>Counts P₄ <strong>directly</strong> from induced degree patterns (1,1,2,2).</li><li>Recounts P₄ from all five-vertex cards using a separate predicate: a connected three-edge tree whose maximum degree is at most two. The star K₁,₃ is an adversarial negative control; <strong>connected and three edges alone are not sufficient</strong>.</li><li>Reconstructs the other signature coordinates from card edge and triangle counts, rebuilds all collision pairs from these independently computed values, and compares them with the committed certificate.</li><li>Rejects mutated records and digests through automated tests.</li></ol>
+<p>Completeness of the <strong>finite</strong> claim follows from the census certification plus verification that every collision pair has unequal P₄ counts. It does <em>not</em> provide a symbolic classification of arbitrary n-vertex graphs.</p>
+<h2 id="limits-and-useful-next-question">Limits and useful next question<a class="anchor" href="#limits-and-useful-next-question" aria-label="Link to this section">#</a></h2>
+<p>This is an exact statement only for n=6. At n=5, degree sequence and triangle count already distinguish the 34 graph classes. Neither number, nor P₄, has been shown here to distinguish every graph for n≥7. Proving that a universal finite list of such signatures separates all graphs would be far stronger and is <strong>not</strong> claimed.</p>
+<p>The immediate next mathematical experiment is to find the first n and pair of nonisomorphic graphs with matching (D,T,P₄), and classify what new deck-reconstructible induced-subgraph statistic separates that pair. That work must use independently checked census, rather than extrapolating this n=6 result.</p>
+<p><strong>Status:</strong> O-M078-01 remains pending a separate person&#x27;s mathematical and statement-fidelity review; its current automated check is not independent human acceptance. The project&#x27;s solved ledger and conjecture evidence states are unchanged.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

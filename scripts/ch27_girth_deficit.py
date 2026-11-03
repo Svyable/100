@@ -116,8 +116,9 @@ def main(argv=None):
             "cut": 149396, "subset_capacity": 3515,
             "triangle_three": 132, "minout_two_5": 22,
             "minout_two_6": 24,
-            "girth_subset_4": 74, "girth_subset_5": 49,
-            "girth_subset_6": 29, "seven_vertex_c_cut": 15,
+            "girth_subset_4": 74, "girth_subset_5": 47,
+            "girth_subset_6": 28, "seven_vertex_c_cut": 14,
+            "z4_sink_cut": 4,
             "equality_rigidity_6": 25, "unresolved": 103,
         }, x["classification"]
         assert x["first_remaining_relaxed_profile"] == (
@@ -125,7 +126,7 @@ def main(argv=None):
         )
         assert result["no_rigidity"]["remaining"] == 128
         assert result["weakened_one_missing_edge"]["remaining"] == 191
-        assert result["no_new_B_cut"]["remaining"] == 275
+        assert result["no_new_B_cut"]["remaining"] == 274
         assert result["girth4_missing_edge_deficit"] == 2
         assert result["girth5_missing_edge_deficit"] == 5
 
