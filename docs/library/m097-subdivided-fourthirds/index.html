@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M097 — sharp four-thirds bound and exact LP equality in fully subdivided graph metrics · 100</title>
+<meta name="description" content="Claim: #283. Work ID: X-M097-SUBDIVIDED-FOURTHIRDS. Scope SHA-256: 2e3b6f583bf4c2a9a49143f8ceea86d2b2d441179abb32c91e36119e43b6ada4. Date: 2026-11-02 (America/Chicago).">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m097-subdivided-fourthirds/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M097 — sharp four-thirds bound and exact LP equality in fully subdivided graph metrics · 100">
+<meta property="og:description" content="Claim: #283. Work ID: X-M097-SUBDIVIDED-FOURTHIRDS. Scope SHA-256: 2e3b6f583bf4c2a9a49143f8ceea86d2b2d441179abb32c91e36119e43b6ada4. Date: 2026-11-02 (America/Chicago).">
+<meta property="og:url" content="https://svyable.github.io/100/library/m097-subdivided-fourthirds/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M097 — sharp four-thirds bound and exact LP equality in fully subdivided graph metrics</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#1-theorem-and-sharp-boundary">1. Theorem and sharp boundary</a></li><li class="toc-l2"><a href="#2-exact-zero-gap-characterization--proof">2. Exact zero-gap characterization — proof</a></li><li class="toc-l2"><a href="#3-sharp-four-thirds-inequality--unconditional-proof">3. Sharp four-thirds inequality — unconditional proof</a></li><li class="toc-l2"><a href="#4-exact-sharpness-length-sensitive-falsifier-and-boundaries">4. Exact sharpness, length-sensitive falsifier, and boundaries</a></li><li class="toc-l2"><a href="#5-reproduction-and-falsification">5. Reproduction and falsification</a></li><li class="toc-l2"><a href="#6-prior-art-and-novelty-boundary">6. Prior art and novelty boundary</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M097/" title="Metric TSP four-thirds conjecture">M097</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M097_SUBDIVIDED_FOURTHIRDS.md" rel="noopener noreferrer">research/M097_SUBDIVIDED_FOURTHIRDS.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M097 — sharp four-thirds bound and exact LP equality in fully subdivided graph metrics</h1>
+<p><strong>Claim:</strong> <a href="https://github.com/Svyable/100/issues/283" rel="noopener noreferrer">#283</a>. <strong>Work ID:</strong> <code>X-M097-SUBDIVIDED-FOURTHIRDS</code>. <strong>Scope SHA-256:</strong> <code>2e3b6f583bf4c2a9a49143f8ceea86d2b2d441179abb32c91e36119e43b6ada4</code>. <strong>Date:</strong> 2026-11-02 (America/Chicago).</p>
+<p><strong>Status:</strong> author-derived all-orders restricted proof candidate. The argument is <strong>unconditional</strong> in the mathematical sense: it uses only the already established Edmonds–Johnson theorem for the <code>T</code>-join polyhedron and the exact core-parity/subtour formulas proved in <a href="../../library/m097-subdivision-core/">M097 subdivision core</a>. No unproved conjecture or computation-to-infinity extrapolation is used. The proposed corollaries <strong>have not received independent mathematical review, Lean verification, or historical-novelty certification</strong>. This is <strong>not</strong> the four-thirds conjecture for arbitrary metric TSP.</p>
+<h2 id="1-theorem-and-sharp-boundary">1. Theorem and sharp boundary<a class="anchor" href="#1-theorem-and-sharp-boundary" aria-label="Link to this section">#</a></h2>
+<p>Let <code>H=(V,E)</code> be a finite, connected, undirected <strong>loopless multigraph</strong>, at least two vertices, with individually indexed parallel edges allowed. Replace each core edge <code>e</code> by an internally vertex-disjoint simple path of integer length <code>L_e&gt;=2</code>; denote the resulting unweighted graph <code>G_L</code>, and take the complete shortest-path metric on its vertices. Write</p>
+<p>[ M=\sum_{e\in E}L_e,\qquad B=\sum_{e\in\operatorname{Br}(H)}L_e,\qquad b=|\operatorname{Br}(H)|. ]</p>
+<p>The symmetric metric subtour LP (SEP) has value (\operatorname{SEP}(G_L)=M+B), by the exact subdivision-core theorem. Then:</p>
+<p><strong>(A) Exact zero-gap criterion.</strong> (\operatorname{TSP}(G_L)=\operatorname{SEP}(G_L)) <strong>if and only if</strong> there exists an even-degree spanning edge subset (F\subseteq E(H)) satisfying both</p>
+<ol><li>every nonbridge edge of (E\setminus F) has path length <strong>exactly two</strong>, and</li><li>the graph ((V,F)), counting isolated core vertices as components, has <strong>exactly (b+1)</strong> components.</li></ol>
+<p>Consequently, for uniform length two and bridgeless <code>H</code>, LP exactness is equivalent to <code>H</code> having a <strong>connected spanning Eulerian subgraph</strong> (the classical <code>supereulerian</code> property). If <strong>every nonbridge length is at least three</strong>, LP exactness is equivalent to all degrees of (H-\operatorname{Br}(H)) being even. There is no claim of a new characterization of supereulerian graphs.</p>
+<p><strong>(B) Sharp four-thirds bound with additive slack.</strong> If every degree of (H-\operatorname{Br}(H)) is even, then</p>
+<p>[ \boxed{\operatorname{TSP}(G_L)=\operatorname{SEP}(G_L)=M+B.} ]</p>
+<p>Otherwise,</p>
+<p>[ \boxed{\operatorname{TSP}(G_L)\leq \frac43 M+\frac23 B-2 =\frac43\operatorname{SEP}(G_L)-\frac23B-2.}\tag{1} ]</p>
+<p>In both cases, (\operatorname{TSP}(G_L)&lt;\frac43\operatorname{SEP}(G_L)) for every finite instance; the coefficient (\frac43) is <strong>asymptotically sharp</strong> over this class, and the additive constant <strong>2 is sharp</strong> in (1), both with and without bridges. This includes unequal path lengths and articulation vertices, and does not require a degree bound on the core.</p>
+<p><strong>(C) Algorithmic scope.</strong> A minimum-weight <code>T</code>-join in the core (obtainable by standard shortest-path/matching algorithms) and the Eulerian-walk/shortcut construction in the base note yield a polynomial-time certifiable tour satisfying (1). This is an approximation guarantee for this restricted family, not an algorithm for arbitrary metric TSP.</p>
+<h2 id="2-exact-zero-gap-characterization--proof">2. Exact zero-gap characterization — proof<a class="anchor" href="#2-exact-zero-gap-characterization--proof" aria-label="Link to this section">#</a></h2>
+<p>Let (T\subseteq V) be the odd-degree vertices of <code>H</code>; (|T|) is even. For every even-degree edge subset (F\subseteq E), its complement (D=E\setminus F) is a <code>T</code>-join. Every bridge of <code>H</code> belongs to <code>D</code>: cut at that bridge, and the number of odd-degree vertices on either shore is odd, forcing every <code>T</code>-join to cross the singleton cut.</p>
+<p>Recall the <strong>exact</strong> formulas from the base note, which apply for arbitrary lengths (L_e\ge 2):</p>
+<p>[ \operatorname{TSP}(G_L) =M+\min_{F\text{ even}}\left[ \sum_{e\notin F}(L_e-2)+2(c(F)-1)\right], \qquad\operatorname{SEP}(G_L)=M+B, ]</p>
+<p>where (c(F)) counts <strong>all</strong> connected components, including isolates.</p>
+<p>Deleting all (b) bridges from a connected multigraph leaves exactly (b+1) components. Since every even <code>F</code> omits all bridges, (c(F)\ge b+1). For each <code>F</code>, subtract the SEP value from its candidate tour cost:</p>
+<p>[ \begin{aligned} &amp;M+\sum_{e\in D}(L_e-2)+2(c(F)-1)-(M+B)\ &amp;\quad= \sum_{e\in D\setminus\operatorname{Br}(H)}(L_e-2) +2(c(F)-b-1).\tag{2} \end{aligned} ]</p>
+<p>Both terms on the last line are <strong>nonnegative integers</strong>, by the length restriction and component bound. Their sum vanishes precisely under the two conditions in part (A). As there are finitely many even <code>F</code>, the minimum is equal to the SEP value precisely when at least one <code>F</code> satisfies them. This proves the iff, not merely a sufficient condition.</p>
+<p>For the stated uniform-length-two specialization with (b=0), every (L_e-2=0) and the sole condition is (c(F)=1). For the every-nonbridge-length-at-least-three specialization, equality forces <code>D</code> to contain <strong>no nonbridge</strong>, so <code>D</code> is the set of all bridges, equivalent to the edge subset <code>H-Br(H)</code> having even degrees. If that evenness condition holds, the same <code>F=E\setminus Br(H)</code> gives equality for <strong>all</strong> lengths at least two.</p>
+<h2 id="3-sharp-four-thirds-inequality--unconditional-proof">3. Sharp four-thirds inequality — unconditional proof<a class="anchor" href="#3-sharp-four-thirds-inequality--unconditional-proof" aria-label="Link to this section">#</a></h2>
+<p><strong>Step 1: A fractional <code>T</code>-join.</strong> For each core edge set</p>
+<p>[ x_e=\begin{cases} 1,&amp;e\in\operatorname{Br}(H),\ 1/3,&amp;e\notin\operatorname{Br}(H). \end{cases}\tag{3} ]</p>
+<p>For every shore (S\subsetneq V) with (|S\cap T|) odd, the handshake identity says (|\delta_H(S)|\equiv |S\cap T|\pmod2). Thus the cut has <strong>odd</strong> cardinality. If it contains a core bridge, its <code>x</code>-capacity is at least one; otherwise it has at least <strong>three</strong> nonbridge edges (a one-edge cut would itself be a bridge), so again (\sum_{e\in\delta(S)}x_e\ge1).</p>
+<p>The <strong>Edmonds–Johnson (1973) integral <code>T</code>-join polyhedron theorem</strong> states that for nonnegative edge weights the minimum <code>T</code>-join weight equals the minimum of the linear program (x\ge0,\ x(\delta(S))\ge1) for every <code>T</code>-odd cut. This established theorem is a named external input, <strong>not</strong> a result claimed here. Applying it to positive weights (w_e=L_e) and candidate (3), there exists a <code>T</code>-join <code>D</code> with</p>
+<p>[ w(D)\le \sum_{e}L_ex_e=B+\frac{M-B}{3}.\tag{4} ]</p>
+<p>All bridges are forced into <code>D</code>.</p>
+<p><strong>Step 2: When there is no nonbridge parity correction.</strong> If all degrees of (H-\operatorname{Br}(H)) are even, take (F=E\setminus\operatorname{Br}(H)). It is even, has (c(F)=b+1), and its cost equals (M+B) by (2). The SEP lower bound proves (B)&#x27;s first branch.</p>
+<p><strong>Step 3: When a nonbridge correction is necessary.</strong> Otherwise <strong>every</strong> <code>T</code>-join contains a nonbridge. In particular the <code>D</code> from Step 1 contains some (e) that was not a bridge of the connected core. Delete this edge <strong>first</strong>; the graph remains connected. Delete the other (|D|-1) edges next; each can increase the number of components by <strong>at most one</strong>. Therefore</p>
+<p>[ c(E\setminus D)\le |D|,\qquad |D|-c(E\setminus D)+1\ge1.\tag{5} ]</p>
+<p>Use the even subset (F=E\setminus D) in the exact tour formula. It gives</p>
+<p>[ \begin{aligned} \operatorname{TSP}(G_L) &amp;\le M+\sum_{e\in D}(L_e-2)+2(c(F)-1)\ &amp;=M+w(D)-2(|D|-c(F)+1)\ &amp;\le M+B+\frac{M-B}{3}-2\ &amp;=\frac43 M+\frac23 B-2. \end{aligned} ]</p>
+<p>Since (\frac43(M+B)-(\frac43 M+\frac23 B-2)=\frac23 B+2&gt;0), the integrality ratio is strictly below (4/3) in this branch. In the even branch it is exactly one. This completes the all-orders argument, without requiring a numerical verifier, a conjectural input, or an unspecified constant.</p>
+<h2 id="4-exact-sharpness-length-sensitive-falsifier-and-boundaries">4. Exact sharpness, length-sensitive falsifier, and boundaries<a class="anchor" href="#4-exact-sharpness-length-sensitive-falsifier-and-boundaries" aria-label="Link to this section">#</a></h2>
+<p><strong>Three-parallel-edge theta.</strong> Take a loopless two-vertex core with exactly three parallel edges, each subdivided to length (L\ge2). It has (M=3L,B=0,T=V). The only even <code>F</code> are the empty edge subset and the three two-edge subsets. Choosing two edges gives a one-component <code>F</code> and cost (3L+(L-2)=4L-2); the empty subset costs (6L-4), which is always larger. Thus</p>
+<p>[ \boxed{\operatorname{SEP}=3L,\qquad\operatorname{TSP}=4L-2,\qquad \frac{\operatorname{TSP}}{\operatorname{SEP}}=\frac43-\frac{2}{3L}.} ]</p>
+<p>This exactly attains bound (1) for each (L\ge2) and approaches (4/3) as (L\to\infty). <strong>This lower-bound family is related to classical graphic-TSP examples; we do not claim priority for it.</strong></p>
+<p><strong>Sharp with bridges.</strong> Add a single pendant core edge of length (K\ge2) to one of the theta endpoints. The pendant path must be doubled in any spanning Eulerian walk, hence (\operatorname{SEP}=3L+2K) and (\operatorname{TSP}=4L-2+2K). Here (M=3L+K,B=K), and (1) is attained <strong>with equality</strong>.</p>
+<p><strong>Coordinate-wise monotonicity is false.</strong> For the three parallel core edges, lengths ((3,3,3)) give (\operatorname{SEP}=9,\operatorname{TSP}=10), ratio (10/9). Lengthening the first edge to ((4,3,3)) gives (\operatorname{SEP}=10,\operatorname{TSP}=11), ratio (11/10&lt;10/9). This does <strong>not</strong> contradict the uniform-length monotonicity corollary recorded on #279. The theorem here does not assert coordinate-wise monotonicity.</p>
+<p><strong>Length-one exclusion.</strong> The formula (\operatorname{SEP}=M+B) is not valid without (L_e\ge2): an unsubdivided <code>K4</code> has (\operatorname{SEP}=\operatorname{TSP}=4) although (|E|=6). No statement is made about length-one edges or arbitrary metrics.</p>
+<h2 id="5-reproduction-and-falsification">5. Reproduction and falsification<a class="anchor" href="#5-reproduction-and-falsification" aria-label="Link to this section">#</a></h2>
+<pre><code class="lang-sh">python3 scripts/m097_subdivision_fourthirds.py --check
+python3 -m unittest discover -s tests -p &#x27;test_m097_subdivision_fourthirds.py&#x27; -v
+python3 scripts/regen.py --check</code></pre>
+<p>The new standard-library script <strong>independently enumerates every <code>T</code>-join</strong>, computes bridge indices by literal deletion, checks all <code>T</code>-odd cuts of the rational fractional certificate, enumerates all candidate exact costs and tests the iff classification and the strict/branched inequalities. Its exhaustive simple-core sweep uses all connected labeled simple graphs on 2–4 core vertices, with each edge of length two or three; it adds all connected loopless 2–4-vertex multigraphs of at most five edges (parallel edges included; lengths two or three), all two-vertex parallel-edge cores with up to five parallel edges of lengths two to four, and seeded connected small-multigraph cases. The source script records the exact count in its JSON output. It also checks the theta family, pendant bridges, a nonuniform-ratio counterexample, and two negative controls.</p>
+<p>The dedicated tests cross-check selected instances against the <strong>different</strong> core-parity implementation from #279. The finite checks are falsifiers and regression controls; <strong>the proof rests on Sections 2–3</strong>, not on extrapolation from any finite range. Both checkers are project/author-side, not independent specialist review.</p>
+<h2 id="6-prior-art-and-novelty-boundary">6. Prior art and novelty boundary<a class="anchor" href="#6-prior-art-and-novelty-boundary" aria-label="Link to this section">#</a></h2>
+<p>Sources checked 2026-11-02 (America/Chicago):</p>
+<ul><li>J. Edmonds and E. L. Johnson, <em>Matching, Euler Tours and the Chinese Postman</em>, Mathematical Programming 5 (1973), 88–124: the integral <code>T</code>-join cut polyhedron. A standard modern formulation is Theorem 12.18 in <a href="https://www.mathematik.uni-muenchen.de/~kpanagio/KombOpt/book.pdf" rel="noopener noreferrer">Korte–Vygen, <em>Combinatorial Optimization</em>, Chapter 12</a>. The odd-cut bound in Step 1 is <strong>entirely classical</strong>.</li><li>M. Goemans and D. Bertsimas, <em>Survivable Networks, Linear Programming Relaxations and the Parsimonious Property</em> (1993), <a href="https://www.mit.edu/~dbertsim/papers/ApproximationAlgorithms/Survivable%20networks%2C%20LP%20relaxations%20and%20the%20parsimonious%20property.pdf" rel="noopener noreferrer">author-hosted text</a>. The degree-restricted subtour value is related to this established property, not claimed as novel here.</li><li>S. Boyd, R. Sitters, S. van der Ster and L. Stougie, <em>The traveling salesman problem on cubic and subcubic graphs</em>, Mathematical Programming 144 (2014), 227–245, <a href="https://doi.org/10.1007/s10107-012-0620-1" rel="noopener noreferrer">DOI</a>. Stronger (4/3)-type results exist for subcubic graph metrics; this note must <strong>not</strong> advertise a new first four-thirds theorem for that class.</li><li>Wigal, Yoo and Yu, <em>Approximating TSP walks in subcubic graphs</em>, JCTB 158 (2023), <a href="https://doi.org/10.1016/j.jctb.2022.09.002" rel="noopener noreferrer">DOI</a>. Subcubic even-cover results and the relationship to subdivision are prior art.</li><li>Project 100&#x27;s merged <a href="../../library/m097-subdivision-core/">M097 subdivision-core identity</a>, whose general formulas are used verbatim and whose novelty is not independently settled.</li></ul>
+<p><strong>Potentially useful restricted deliverables:</strong> the exact LP-zero-gap iff for arbitrary unequal subdivisions, the additive-two sharp bridge-sensitive inequality, and the explicit rational/parity test suite. Their <strong>historical originality is unestablished</strong>; this is an exact scoped synthesis with an unconditional proof, not an independently confirmed breakthrough or a resolution of M097.</p>
+<p><strong>Next independent review:</strong> verify that the minimum <code>T</code>-join polyhedron theorem is used with precisely the stated odd-cut and nonnegative-weight conventions; independently audit the bridge-deletion and zero-gap iff; search literature for pre-existing arbitrary-degree subdivided-TSP inequalities or supereulerian characterizations. Do not mark <code>solved</code>, modify the 100-problem evidence state, or claim theorem acceptance without such review.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

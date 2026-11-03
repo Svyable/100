@@ -181,6 +181,11 @@
       "url": "https://svyable.github.io/100/library/m097-multitheta/"
     },
     {
+      "title": "M097 — sharp four-thirds bound and exact LP equality in fully subdivided graph metrics",
+      "source": "research/M097_SUBDIVIDED_FOURTHIRDS.md",
+      "url": "https://svyable.github.io/100/library/m097-subdivided-fourthirds/"
+    },
+    {
       "title": "M097 — exact subdivision costs from core parity and connectivity",
       "source": "research/M097_SUBDIVISION_CORE.md",
       "url": "https://svyable.github.io/100/library/m097-subdivision-core/"
