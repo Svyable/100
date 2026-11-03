@@ -754,7 +754,7 @@
         "agent_hours": 1.1,
         "ci_minutes": 0
       },
-      "note": "Conditional on CI-gated merge. All-orders positive weighted full-subdivision graphic-TSP exact parity/MST identity, path-total/max-weight compression and 2^cycle-rank state formula; all-metric symmetric-subtour gap universality via zero-twin invariance, classical parsimonious cut LP and epsilon subdivisions of simple bipartite 2-degenerate girth>=6 graphs. 2508 author-side rational expanded-metric Hamiltonian DP checks, explicit connected Eulerian walks, 13 adversarial tests including primal/dual LP clone tests; bibliographic priority and independent specialist review unestablished. No full 4/3 conjecture resolution, new lower bound, Lean theorem, solved status, benchmark or coverage promotion."
+      "note": "Conditional on CI-gated merge. All-orders positive weighted full-subdivision graphic-TSP exact parity/MST identity, path-total/max-weight compression and 2^cycle-rank state formula; all-metric symmetric-subtour gap universality via zero-twin invariance, classical parsimonious cut LP and epsilon subdivisions of simple bipartite 2-degenerate girth>=6 graphs. 2508 seeded plus 6843 exhaustive author-side rational expanded-metric Hamiltonian DP checks, explicit connected Eulerian walks, 15 adversarial tests including primal/dual LP clone tests; bibliographic priority and independent specialist review unestablished. No full 4/3 conjecture resolution, new lower bound, Lean theorem, solved status, benchmark or coverage promotion."
     }
   ]
 }

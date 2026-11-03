@@ -120,11 +120,13 @@ Thus any rational tolerance δ>0 can be achieved by choosing a rational \(0<\eps
 
 Run:
 
-    python3 scripts/m097_weighted_subdivision.py --check
+    python3 scripts/m097_weighted_subdivision.py --check --grid
     python3 -m unittest discover -s tests -p 'test_m097_weighted_subdivision.py' -v
     python3 scripts/regen.py --check
 
 The new independent-in-code checks use: a cycle-space basis of the indexed multigraph rather than an unrestricted core-edge mask; exact fractional Kruskal MSTs on component contractions; a literal edge-copy expansion and an actual Hierholzer Eulerian walk; and a **separately programmed all-pairs shortest-path plus Hamiltonian subset DP** on the expanded graph. Small rational subtour LP instances use a separate exact rational simplex with independently replayed primal/dual optimality certificates. Negative tests cover path-length-one inputs, disconnected cores, zero/negative weights, false certificate cost, bridges, parallel edges, articulations, and the failure of naive unweighted cost substitution.
+
+The exhaustive three-weight grid separately checked 6,843 connected core/weight instances (including parallel edges) by full-metric Hamiltonian DP and literal Eulerian walks. A seeded independent weighted sweep checked another 2,508 instances. Fifteen dedicated adversarial tests cover the theorem and the explicit epsilon bound.
 
 The proof of Theorem A does not rely on the finite tests; Theorem B relies on the **established parsimonious property**, the explicit twin construction, cut projection and elementary continuity. A Lean kernel execution for these full statements has **not** been performed. Neither theorem says that arbitrary weighted full subdivisions satisfy 4/3.
 

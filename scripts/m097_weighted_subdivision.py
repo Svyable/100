@@ -8,7 +8,7 @@ the all-orders theorem is proved in research/M097_WEIGHTED_SUBDIVISION.md.
 import argparse
 import json
 from fractions import Fraction
-from itertools import combinations, combinations_with_replacement
+from itertools import combinations, combinations_with_replacement, product
 from random import Random
 
 
@@ -319,6 +319,30 @@ def weighted_2_subdivision(n, original_edges, epsilon):
     return [(u, v, (epsilon, w)) for u, v, w in original_edges]
 
 
+def exhaustive_weight_grid():
+    """Every connected indexed 2-edge core with n<=4, m<=4, weights
+    from (1,3), (3,1), (2,2), with parallel edges allowed.
+    Independent Hamiltonian DP and literal Eulerian witness must agree.
+    """
+    checks = 0
+    for n in (2, 3, 4):
+        links = list(combinations(range(n), 2))
+        for m in range(n-1, 5):
+            for core in combinations_with_replacement(links, m):
+                for assignment in product(((1, 3), (3, 1), (2, 2)), repeat=m):
+                    paths = [(u, v, w) for (u, v), w in zip(core, assignment)]
+                    try:
+                        plan = exact_core_tsp(n, paths)
+                    except ValueError as exc:
+                        if "connected" in str(exc):
+                            continue
+                        raise
+                    assert plan["cost"] == full_metric_tsp(n, paths)
+                    assert plan["cost"] == certificate(n, paths, plan)["weight"]
+                    checks += 1
+    return checks
+
+
 def run_check(trials=750, seed=20261102):
     rng = Random(seed)
     cases = 0
@@ -382,5 +406,10 @@ if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("--check", action="store_true")
     p.add_argument("--trials", type=int, default=750)
+    p.add_argument("--grid", action="store_true",
+                   help="also replay the exhaustive small weighted multicore grid")
     args = p.parse_args()
-    print(json.dumps(run_check(trials=args.trials), sort_keys=True))
+    result = run_check(trials=args.trials)
+    if args.grid:
+        result["exhaustive_grid"] = exhaustive_weight_grid()
+    print(json.dumps(result, sort_keys=True))

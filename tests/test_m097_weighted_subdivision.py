@@ -159,6 +159,9 @@ class WeightedSubdivisionTests(unittest.TestCase):
             self.assertLessEqual(tsp - target_tsp, N * N * eps)
             self.assertLessEqual(sep - target_sep, N * N * eps)
 
+    def test_exhaustive_three_weight_grid(self):
+        self.assertEqual(w.exhaustive_weight_grid(), 6843)
+
     def test_seeded_independent_full_metric_dp_sweep(self):
         result = w.run_check(trials=60, seed=287)
         self.assertTrue(result["all_passed"])
