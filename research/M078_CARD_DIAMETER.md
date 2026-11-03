@@ -73,7 +73,7 @@ The Python implementation builds literal adjacency sets, verifies tree order and
 | 4 | 64 | equal | equal | 16:1, 34:63 |
 | 5 | 80 | rooted-ball and diameter only | not enumerated | 20:1, 42:79 |
 
-Ten dedicated tests check all residue classes, paired motifs, every card diameter, malformed inputs, a false added edge, and a moved spur leaf. The latter shortens one spur below L and produces **unequal** rooted balls and unequal literal paired-card motifs. Optional same-author NetworkX graph-isomorphism checks reject isomorphism at (3,48),(3,49),(3,50),(4,64),(5,80). These algorithmic paths were controlled by the same author: **not independent specialist review**. The all-orders assertion rests on the proof, not the finite enumeration.
+Eleven dedicated tests check all residue classes, paired motifs, every card diameter, malformed inputs, a false added edge, and a moved spur leaf. The latter shortens one spur below L and produces **unequal** rooted balls and unequal literal paired-card motifs. Optional same-author NetworkX graph-isomorphism checks reject isomorphism at (3,48),(3,49),(3,50),(4,64),(5,80). These algorithmic paths were controlled by the same author: **not independent specialist review**. The all-orders assertion rests on the proof, not the finite enumeration.
 
 ## Failed avenue and literature boundary
 
