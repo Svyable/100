@@ -357,3 +357,19 @@ def check(params, result):
     require(sorted(targets - {int(k) for k in matrices}) == result["summary"]["engine_gaps"],
             "engine gap list inconsistent with certificate")
     require(result["summary"]["matrices_sha256"] == digest(matrices), "summary hash mismatch")
+    # Certificate validity alone does not bind the published scope and provenance.
+    # Recompute these fields deterministically, without trusting their claims.
+    summary = result["summary"]
+    require(result["holds"] is True, "Hadamard construction verdict must be true")
+    require(summary["limit"] == params["limit"], "summary limit differs from checked scope")
+    require(summary["constructed_orders"] == len(matrices), "constructed-order count mismatch")
+    require(summary["orders_divisible_by_4"] == len(targets), "target-order count mismatch")
+    require(all(k.isdecimal() and str(int(k)) == k and int(k) >= 4 for k in matrices),
+            "matrix keys must be canonical positive orders")
+    plan = recipes(params["limit"], params.get("williamson_max", 0))
+    expected_recipes = {str(n): "/".join(map(str, plan[n]))
+                        for n in sorted(plan) if n % 4 == 0}
+    require(summary["recipes"] == expected_recipes,
+            "recipe provenance differs from the deterministic construction plan")
+    require(set(matrices) == set(expected_recipes),
+            "certificate omits a matrix promised by its recipe provenance")

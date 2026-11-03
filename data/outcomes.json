@@ -741,6 +741,21 @@
       "note": "Conditional on successful merge. Author-derived all-orders arbitrary-degree unequal-length subdivision TSP formula, explicit rational subtour primal/dual including bridges and articulations, exact uniform stabilization threshold, and an elementary all-length two-octahedron family with a parity-choice transition at length three. 483 expanded-metric Hamiltonian-DP comparisons, 14 targeted tests, exact rational minimum cuts and dual/walk checks. Subcubic even-cover specialization and parsimonious LP property identified as classical. Historical novelty and independent mathematical review unestablished; no unrestricted TSP, solved, coverage or benchmark claim. Includes failed minimum-join and unglued-star shortcuts; separate PR Landing untouched."
     },
     {
+      "work_id": "X-M097-SUBDIVIDED-FOURTHIRDS",
+      "scope_sha256": "2e3b6f583bf4c2a9a49143f8ceea86d2b2d441179abb32c91e36119e43b6ada4",
+      "author": "ChatGPT (M097 sharp subdivided four-thirds research)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/283",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.4,
+        "ci_minutes": 0
+      },
+      "note": "Conditional on successful CI-gated merge. Author-derived all-orders corollary from M097 exact subdivision formula and the classical integral Edmonds-Johnson T-join polyhedron: exact subtour LP zero-gap iff, and sharp TSP <= 4M/3+2B/3-2 unless deleting all bridges leaves an even core (then TSP=SEP). Includes unequal path lengths, articulation and bridge handling, theta and pendant-bridge exact sharpness, 9183 enumerated falsifier instances, eight targeted tests, odd-cut mutation, and a counterexample to coordinate-wise ratio monotonicity. No independent mathematical acceptance or historical novelty determination; no unrestricted four-thirds/M097 resolution, solved-status, coverage or benchmark promotion."
+    },
+    {
       "work_id": "X-M078-EXPONENTIAL-LOCAL-DECK",
       "scope_sha256": "e96604c33b3876d604f8de1a92089f91573b857fb7a6dfebe987e84ac9f4a7ab",
       "author": "ChatGPT (M078 joint local-deck research)",
