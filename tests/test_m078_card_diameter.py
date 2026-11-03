@@ -36,6 +36,21 @@ class M078CardDiameterTests(unittest.TestCase):
         validate(a)
         self.assertNotEqual(balls(a,2),balls(b,2))
         self.assertNotEqual(joint_signature(a,3),joint_signature(b,3))
+    def test_component_size_boundary(self):
+        def sizes(g,omit):
+            seen={omit};out=[]
+            for v in range(len(g)):
+                if v in seen:continue
+                todo=[v];seen.add(v);count=0
+                while todo:
+                    u=todo.pop();count+=1
+                    for w in g[u]:
+                        if w not in seen:seen.add(w);todo.append(w)
+                out.append(count)
+            return sorted(out)
+        for k,n in ((3,48),(3,49),(3,50),(4,64)):
+            a,b=tree(k,n,0),tree(k,n,1)
+            self.assertNotEqual(sizes(a,0),sizes(b,0))
     def test_invalid_graph(self):
         g=tree(3,48,0);g[0].add(47);g[47].add(0)
         with self.assertRaises(AssertionError):validate(g)
