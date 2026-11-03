@@ -86,7 +86,7 @@ def joint_signature(g,k):
             mask=sum(1<<i for i,(a,b) in enumerate(pairs) if vs[b] in g[vs[a]])
             key=(t,tables[t][mask]);total[key]+=1
             for v in vs:incident[v][key]+=1
-    keys=sorted(total)
+    keys=[(t,m) for t in range(1,k+1) for m in sorted(set(tables[t]))]
     return Counter((tuple(total[key]-incident[v][key] for key in keys),
                     degree_card(g,v),diameter(g,v)) for v in range(n))
 
