@@ -59,6 +59,27 @@ class FiberTests(unittest.TestCase):
         self.assertEqual(f.direct_joint_cards(x,3),f.direct_joint_cards(y,3))
         self.assertEqual(f.balls(x,3),f.balls(y,3))
 
+    def test_arbitrary_weak_compositions_keep_joint_cards(self):
+        # Go beyond the binary-extra family: move all four units between
+        # endpoints and internal hubs while preserving 26 vertices.
+        allocations=((4,0,0,0,0,0),(0,0,4,0,0,0),
+                     (0,0,1,1,1,1),(0,0,0,0,0,4))
+        graphs=[f.fiber_tree(3,4,x) for x in allocations]
+        self.assertEqual(len({f.spine_code(g) for g in graphs}),3)
+        self.assertTrue(all(f.direct_joint_cards(g,3)==f.direct_joint_cards(graphs[0],3)
+                            for g in graphs))
+
+    def test_every_sufficiently_large_order_arithmetic(self):
+        for k in range(3,8):
+            L=2*k-3
+            for n in range(12*k-10,12*k+31):
+                m=(n-2*L)//(L+2)
+                s=n-2*L-(L+1)*m
+                self.assertGreaterEqual(m,4)
+                self.assertGreaterEqual(s,m)
+                self.assertEqual(n,m+(m+2)*L+s)
+                self.assertGreaterEqual((m+1)*comb(s+m+1,m+1),4**m)
+
     def test_card_perturbation_is_detected(self):
         g=f.family_tree(3,5,(1,))
         h=f.family_tree(3,5,(2,))
