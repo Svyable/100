@@ -242,7 +242,7 @@
       "claimed_on": "2026-11-01",
       "closed_on": "2026-11-01",
       "resources": {
-        "agent_hours": 1.0
+        "agent_hours": 1
       },
       "note": "Approximate active author/tool work. General bipartite relative Ising stability inequality, source-specific two-disjoint-bypass GKS-II sharpening, and two exact M073 off-diagonal rational certificates; 11 dedicated tests and negative triangle control. Classical Ising/GKS dependencies; originality and independent mathematical review unverified. Outcome status conditional on PR merge; not full Sidorenko or finite-host proof."
     },
@@ -272,7 +272,7 @@
       "claimed_on": "2026-11-01",
       "closed_on": "2026-11-01",
       "resources": {
-        "agent_hours": 1.0,
+        "agent_hours": 1,
         "ci_minutes": 0
       },
       "note": "Bounded partial O-M080-01 step only: exact 4,141,145 S4 orbit count and 42,840 repeated-basis GF(2)^4 grid witnesses, independent Leibniz checker, 7 adversarial tests. 4,111,138 all-distinct orbits unverified. Cheung 2012 reported rank-four computational result; no new theorem or independent mathematical review. Outcome classification conditional on PR #171 merge; the original obligation remains open."
@@ -365,7 +365,7 @@
       "claimed_on": "2026-11-01",
       "closed_on": "2026-11-01",
       "resources": {
-        "agent_hours": 1.0
+        "agent_hours": 1
       },
       "note": "Submitted exact all-orders articulation-gluing and cut-dual certificate proof candidate for graph metrics with bridge, cycle and multitheta blocks. Sixteen adversarial tests, 40 seeded random block trees, exact rational primal/dual verification, independent integer tour DP and separate small SciPy LP cross-check. Naive block-LP union fails degree constraints; two-vertex overlap fails additivity; a bridge does not imply LP integrality. Classical block decomposition may subsume historical novelty. No external proof or novelty review; conditional on PR merge, not a resolution of metric TSP four-thirds."
     },
@@ -383,21 +383,6 @@
         "agent_hours": 0.9
       },
       "note": "Approximate active work including literature/source audit, initial failed <=4-swap avenue, orbit matching derivation, two five-cover enumeration paths, independent 7261-candidate sweep, adversarial controls and regeneration. Author-derived sharp restricted local stability candidate only; no 55-set witness, no new global sunflower bound, no independent mathematical or historical novelty review. Status conditional on PR merge; The custom packet adds no proof-obligation or coverage slot; independent review remains open."
-    },
-    {
-      "work_id": "X-M076-F43-SIX",
-      "scope_sha256": "4f496055dfe5e04510c70e69ad478b502c4cb25fb17c5c4ae9fc591d1c70ab09",
-      "author": "ChatGPT (M076 six-deletion restricted proof candidate)",
-      "outcome": "merged_pending_review",
-      "novelty": "not_assessed",
-      "claim_url": "https://github.com/Svyable/100/issues/203",
-      "pr_url": "https://github.com/Svyable/100/pull/204",
-      "claimed_on": "2026-11-02",
-      "closed_on": "2026-11-02",
-      "resources": {
-        "agent_hours": 0.9
-      },
-      "note": "Conditional on PR merge. Sharp two-insertion bound for at most six deletions of the classical 54-set 4-uniform sunflower-free construction; 18 candidate orbits, 16 excluded by seven-edge matchings, 32 inside and 97 outside six-covers independently enumerated, 270 candidate support patterns checked with two intersection representations, explicit two-insertion witness falsifying the stronger one-insertion guess. Prior-art search did not establish historical novelty. No independent mathematical or novelty review, no global f(4,3) improvement, and no solved/evidence-state change."
     },
     {
       "work_id": "X-BENCHMARK-READINESS",
@@ -646,6 +631,37 @@
         "ci_minutes": 0
       },
       "note": "Conditional on CI-gated merge. Sharp restricted candidate 1951/4659 for width-seven chain plus seven incomparable outsiders, each with 2..6 insertion gaps. Complete 436680-case dual exact census, 2612268-case out-of-scope seven-gap challenge, independent literal-poset witness and 30 seeded checks, adversarial mutation controls, literature comparison, failed 21/50 extrapolation, and full regeneration. Approximate active author/tool effort including failed avenues. No independent specialist review or historical novelty confirmation, no general M079 resolution, no solved/coverage changes; separate PR-landing task untouched."
+    },
+    {
+      "work_id": "X-MUTATION-ATTEST",
+      "scope_sha256": "768ff9c1b9408bf66e86650f7bd8ed94b390e01e0ed2c4ecaf3a2929db1bc2ba",
+      "author": "Claude (original PR #160); ChatGPT (current-main integration)",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/141",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 1.5,
+        "ci_minutes": 0
+      },
+      "note": "Infrastructure-only source #160 integrated against current main with 0.3 additional estimated agent-hours. Current smoke attestation: all 21 probes replay; 453/467 certificate mutants rejected, 78/242 published summary leaves bound, 10 probes accept a flipped holds verdict, and no probe accepts an empty certificate. The Ramsey witness checker was repaired independently in #211 and now passes its mandatory controls (clean); old #160 counts were stale. No probe fixed by this integration, no review recorded or accepted. Source author estimate 1.2 agent-hours preserved within total; historical novelty not applicable.",
+      "pr_url": "https://github.com/Svyable/100/pull/160"
+    },
+    {
+      "work_id": "X-M076-F43-SIX",
+      "scope_sha256": "4f496055dfe5e04510c70e69ad478b502c4cb25fb17c5c4ae9fc591d1c70ab09",
+      "author": "ChatGPT (M076 six-deletion restricted proof candidate)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/203",
+      "pr_url": "https://github.com/Svyable/100/pull/204",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.9
+      },
+      "note": "Conditional on PR merge. Sharp two-insertion bound for at most six deletions of the classical 54-set 4-uniform sunflower-free construction; 18 candidate orbits, 16 excluded by seven-edge matchings, 32 inside and 97 outside six-covers independently enumerated, 270 candidate support patterns checked with two intersection representations, explicit two-insertion witness falsifying the stronger one-insertion guess. Prior-art search did not establish historical novelty. No independent mathematical or novelty review, no global f(4,3) improvement, and no solved/evidence-state change."
     },
     {
       "work_id": "X-M078-S4-NINE",
