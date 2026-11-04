@@ -4,7 +4,7 @@
 
 ## Current status & strongest results
 
-Last refreshed: 2026-11-03 (UTC). **Nothing is solved:** the [Solved archive](data/solved.json) is empty, and **0** work items or restricted results have been independently accepted ([YIELD.md](YIELD.md)). Everything below is either known mathematics re-checked, or a candidate awaiting someone else's review.
+Last refreshed: 2026-11-04 (UTC). **Nothing is solved:** the [Solved archive](data/solved.json) is empty, and **0** work items or restricted results have been independently accepted ([YIELD.md](YIELD.md)). Everything below is either known mathematics re-checked, or a candidate awaiting someone else's review.
 
 **At a glance:** 20 of 100 problems have an exact, independently checked verifier (all 19 computable ones) via 21 probes on 14 reusable engines ([LAB.md](LAB.md)); 14 Lean comparator statements, 9 implemented Lean targets and 40 axiom-audited declarations ([LEAN.md](LEAN.md)); roadmap 31 shipped / 5 now / 4 next / 4 later ([ROADMAP.md](ROADMAP.md)); work queue 353 items (346 runnable, 48 open review packets); outcomes ledger 55 records, 40.1 agent-hours, yield 0.0 accepted items per 10 agent-hours; mechanical attestations for all 21 probes (1 clean, 10 triage, 10 weak; [docs/ATTESTATION.md](docs/ATTESTATION.md)).
 
