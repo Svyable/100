@@ -84,6 +84,8 @@ class WaveScaleTests(unittest.TestCase):
         cls.wave = scale.report(budget=100, mode="wave")
 
     def test_wave_fills_budget_without_stop_range_or_waiting(self):
+        import work
+        work_digests = {w["id"]: w["scope_sha256"] for w in work.snapshot()["items"]}
         self.assertEqual(self.wave["protocol"], scale.PROTOCOL)
         self.assertEqual(self.wave["budget_slots"], 100)
         self.assertEqual(self.wave["slots_filled"], 100)
@@ -94,7 +96,9 @@ class WaveScaleTests(unittest.TestCase):
             self.assertEqual(p["status"], "runnable")
             self.assertNotIn("stop_range", p["id"])
             self.assertIn("scout", p["roles"])
-            self.assertEqual(p["scope_sha256"], scale.packet_digest(p))
+            self.assertEqual(p["packet_sha256"], scale.packet_digest(p))
+            self.assertEqual(p["scope_sha256"], work_digests[p["id"]],
+                             "wave packets must carry the claimable work-queue digest the router admits")
             self.assertTrue(p["claim_title"].startswith("[Claim]"))
 
     def test_external_blocker_not_claimable(self):

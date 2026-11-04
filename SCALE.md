@@ -40,7 +40,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Chromatic number at most 6 is already settled by Robertson–Seymour–Thomas. The extractability audit (research/M071_M073_WITNESSES.md) found an existential/asymptotic Lean family with no published finite adjacency list; comparator acceptance alone cannot discharge this node.
 - Falsifier: The graph admits a K_t minor, its chromatic lower bound fails an independent check, or the encoding does not match the claimed manuscript object.
 - Claim: `[Claim] O-M071-01 — Witness obligation for M071`
-- Digest: `ea132cbc69c33d37…`
+- Digest: `cdf456098afd4384…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -55,7 +55,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: The extractability audit reconstructed pattern H (35 vertices, 66 edges) in data/reference/sidorenko_faces.json; the claimed host G remains unpublished. Small unweighted hosts already checked here are not that object.
 - Falsifier: Exact densities that obey the Sidorenko inequality, a mismatch with the manuscript construction, or a host that cannot be reconstructed from the cited data.
 - Claim: `[Claim] O-M073-01 — Witness obligation for M073`
-- Digest: `b44b983f1a94a78a…`
+- Digest: `4f163ace79697a26…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -70,7 +70,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: The high-temperature expansion and Fourier/code duality are classical. Source-specific coefficients are new to this project only; no historical novelty, full Sidorenko resolution, finite counterexample host or independent acceptance is claimed.
 - Falsifier: A coefficient differs between the monochromatic-face transform and the direct parity-state dynamic program, or an exact graphon evaluation disagrees with the polynomial.
 - Claim: `[Claim] O-M073-02 — Lemma obligation for M073`
-- Digest: `dddf6ab8c17a8667…`
+- Digest: `f530835caa13124e…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -85,7 +85,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: The OpenAI math manuscript claims a counterexample to direct finiteness; this node only asks for independent replay. Matching the registered statement is not novelty credit.
 - Falsifier: A multiplication trace where ab≠1, or ba=1, or the presentation/supports disagree with the cited source.
 - Claim: `[Claim] O-M044-01 — Witness obligation for M044`
-- Digest: `66b5994711bfd489…`
+- Digest: `4f9c55ca7a8b68eb…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -100,7 +100,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: An accepted UNSAT trace does not prove that the originating CNFs exhaust the mathematical cases. The published fixed-r=6 argument is not a resolution of the unrestricted Caccetta-Häggkvist conjecture.
 - Falsifier: A digraph admissible under the restricted statement is not represented by any certified case, or a reduction changes an outdegree/cycle quantifier.
 - Claim: `[Claim] O-M074-02 — Reduction obligation for M074`
-- Digest: `0f17dfaa5dd9b51d…`
+- Digest: `2d1754ba3eaac302…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -115,7 +115,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Exact fiducials beyond d = 3 are published; floating-point SICs are not proofs. Replaying them tests the number-field engine, not a uniform existence theorem.
 - Falsifier: A failed Gram identity, a missing vector under the stated construction, or a number-field encoding that does not match the published fiducial.
 - Claim: `[Claim] O-M092-01 — Witness obligation for M092`
-- Digest: `bb7e9961db8cbad8…`
+- Digest: `eaba3c39e8db2ecb…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -130,7 +130,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: The MDS conjecture is proved for prime q (Ball 2012); k = 3 is the Segre–Bose range. Reproducing known maxima for small q is not a new bound.
 - Falsifier: An n-arc exceeding the cited maximum with verified determinants, or a search that misses a published arc.
 - Claim: `[Claim] O-M093-01 — Witness obligation for M093`
-- Digest: `af2cd27761d95862…`
+- Digest: `e0d611142957b847…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -145,7 +145,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: These orders are constructed in the literature; the smallest order without a known matrix is now 2396 (Egan et al., 2026, arXiv:2610.27175). Closing engine gaps is reproduction, not a new existence theorem.
 - Falsifier: A constructed matrix failing H H^T = n I, or a symmetry reduction that omits a published construction class needed for these orders.
 - Claim: `[Claim] O-M094-01 — Witness obligation for M094`
-- Digest: `c06e27f61360974c…`
+- Digest: `06a4fbc249fabef8…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -160,7 +160,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: The restricted GF(2) degree-≤3 ≤20-gate black-box class is locked in-repo. A hitting set for that class would be a restricted lemma, not a resolution of unrestricted PIT.
 - Falsifier: A nonzero circuit in the locked class that vanishes at every hitting-set point, or a lock paragraph that leaves characteristic, shape, degree or oracle unspecified.
 - Claim: `[Claim] O-M088-01 — Lemma obligation for M088`
-- Digest: `4dddac3de80a8e37…`
+- Digest: `5204bcc35834d938…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -175,7 +175,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: The existing n=4 census and its 366 relabeling orbits are known finite benchmark data; an n=5 canonicalization lemma is a proposed structural step, not established.
 - Falsifier: Two relabeling-equivalent families receive different codes, or two inequivalent families receive the same code.
 - Claim: `[Claim] O-M075-01 — Lemma obligation for M075`
-- Digest: `9715133821a9e4f3…`
+- Digest: `db036d38e93ee0f8…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -190,7 +190,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Computer verification of reconstruction already reaches at least 11 vertices; degree-plus-triangles through 5 vertices with 20 collisions at 6 vertices is a certified reproduction, not a new theorem.
 - Falsifier: Two non-isomorphic 6-vertex graphs with identical proposed invariants and identical decks, or a proof that the invariant is equivalent to degree sequence plus triangles.
 - Claim: `[Claim] O-M078-01 — Lemma obligation for M078`
-- Digest: `0b9fea8033229973…`
+- Digest: `c25d1f1ccd3a55bd…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -205,7 +205,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Linial settled width 2; published verification reaches 11 elements; the poset_balance mine's tight examples on at most 6 elements all have width 2.
 - Falsifier: A non-chain poset of width at least 3 in the named class whose every incomparable pair has balance strictly outside [1/3, 2/3], with two independent exact extension counts.
 - Claim: `[Claim] O-M079-01 — Lemma obligation for M079`
-- Digest: `689967b7e922c89e…`
+- Digest: `964d45559b467d0b…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -220,7 +220,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: The unrestricted one-third–two-thirds conjecture is open. The previously proposed chain-plus-two 4/11 bound is a different class; finite verification and source searches do not establish historical novelty or independent mathematical acceptance.
 - Falsifier: A poset meeting the exact hypotheses with all incomparable-pair probabilities outside [11/28,17/28], a gap-coordinate counterexample, or an earlier source proving the same bound.
 - Claim: `[Claim] O-M079-02 — Lemma obligation for M079`
-- Digest: `482e9640e9ec4ffa…`
+- Digest: `6f875a09c8b9a70a…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -235,7 +235,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: The unrestricted one-third–two-thirds conjecture remains open. This restricted all-orders proof candidate is not independently reviewed or historically established as novel; its 3,456,151-case finite core and 25/61 witness require independent specialist and prior-art review.
 - Falsifier: An admissible chain-plus-four poset with balance below 25/61, a missed normalized interval multiset, a failed exact counter comparison, a flaw in the conditional 3/4 atom bound, or an earlier theorem proving this class and constant.
 - Claim: `[Claim] O-M079-03 — Lemma obligation for M079`
-- Digest: `84935e9af0432beb…`
+- Digest: `36362184e179a52f…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -250,7 +250,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: The unrestricted 1/3–2/3 conjecture remains open. The earlier chain-plus-four 25/61 candidate is a different class; 2026 large-width asymptotic theorems and finite order-14 computations do not by themselves establish this all-orders fixed-width-five bound. Historical novelty and independent mathematical acceptance are not established.
 - Falsifier: A valid chain-plus-five width-five interval tuple with balance below 3/8; a missed normalized interval multiset; disagreement between the two exact recurrences or the relation-matrix checker; a flawed gap-atom cutoff; or a primary prior-art theorem covering this class and constant.
 - Claim: `[Claim] O-M079-04 — Lemma obligation for M079`
-- Digest: `74d7e0cf719ff8e1…`
+- Digest: `5629ffe92a752926…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -265,7 +265,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Order-10 nonexistence required a massive computation; unconstrained order-12 search is out of reach. Replaying a published restriction is not a decision of existence.
 - Falsifier: A SAT encoding whose models are not planes of the stated class, a proof that fails an independent checker, or a restriction weaker than the cited published one.
 - Claim: `[Claim] O-M096-01 — Witness obligation for M096`
-- Digest: `cdf105599685709d…`
+- Digest: `6c6bd61ca4fc4882…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -280,7 +280,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Small-format ranks cannot beat laser-method bounds below 2.372; replaying a published decomposition is certificate infrastructure, not progress toward omega = 2.
 - Falsifier: A bilinear identity failure under the checker, or a scheme whose published rank does not match the imported tensors.
 - Claim: `[Claim] O-M084-01 — Witness obligation for M084`
-- Digest: `23fd32201cbbb666…`
+- Digest: `e11d5c806c6a6068…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -295,7 +295,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: A known K42 witness would reproduce a published Ramsey lower bound. It does not yield an upper bound or determine R(5,5).
 - Falsifier: An explicit five-vertex monochromatic clique in the imported colouring, or a vertex/edge count inconsistent with K42.
 - Claim: `[Claim] O-M095-01 — Witness obligation for M095`
-- Digest: `34ae5d1849082180…`
+- Digest: `708c592ad664734f…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -310,7 +310,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Chan (1995) covers rank at most 3; GF(2)^4 is the next finite case and is not yet orbit-reduced in this repository.
 - Falsifier: An orbit with neither a valid grid nor a complete negative certificate, or a stabilizer quotient that drops an orbit.
 - Claim: `[Claim] O-M080-01 — Lemma obligation for M080`
-- Digest: `4ea4afd0bee1af7c…`
+- Digest: `df2853bdff4922bf…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -325,7 +325,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Graphic metrics through 7 vertices are a certified reproduction of known small-n gaps; extending vertices inside that published range is not the next experiment.
 - Falsifier: A metric whose certified Held–Karp value and optimal tour give a gap above both the claimed bound and the published graphic maximum, or a duality certificate that fails independent replay.
 - Claim: `[Claim] O-M097-01 — Lemma obligation for M097`
-- Digest: `873699d1f7f30422…`
+- Digest: `ab4ed431000250b2…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -340,7 +340,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Classical Mordell-type identities leave quadratic-residue classes uncovered; the straus_patterns mine through 8000 is a certified table, not a symbolic identity.
 - Falsifier: A prime n = 1 (mod 24) in the claimed residue for which the proposed identity fails to give positive integers, or a citation showing the identity is already classical.
 - Claim: `[Claim] O-M019-01 — Lemma obligation for M019`
-- Digest: `588ecb5bd736f7d8…`
+- Digest: `aed22f7409b059e5…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -355,7 +355,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: The existing chi_4 certificate to height 17 is a known-method reproduction; GRH concerns all characters, so one more character tests the reusable contour, not the conjecture.
 - Falsifier: A mismatch between the certified argument count and the number of critical-line sign changes, or an incorrect root number/gamma-factor convention.
 - Claim: `[Claim] O-M002-01 — Witness obligation for M002`
-- Digest: `6f48bd43704cc23b…`
+- Digest: `2e0d373691a3218e…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -370,7 +370,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Even Goldbach through 4*10^18 and the ternary Goldbach theorem are known; the certified mine of record least primes through 20,000 is a reproduction, not a new bound.
 - Falsifier: An even n in the named class whose least Goldbach prime exceeds B, or a proof that B follows from already-published verification alone.
 - Claim: `[Claim] O-M006-01 — Lemma obligation for M006`
-- Digest: `0dddf50a9635bcb0…`
+- Digest: `d8f798d252c5dd73…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -385,7 +385,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Wang covers degree <= 2 and Moh covers plane degree <= 100; enumerating degree-4 maps with coefficients in {-1,0,1} is refused as dominated.
 - Falsifier: A family that collapses into degree <= 100 over C, or a Jacobian-nonvanishing map in the family with a certified missing inverse under Gabber's bound.
 - Claim: `[Claim] O-M041-01 — Lemma obligation for M041`
-- Digest: `f455fbbb47258571…`
+- Digest: `aad6e6707d2c15e9…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -400,7 +400,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: The named-group probe through A5, and the published verification for every group of order at most 100, are known finite benchmarks. A restricted block-family lemma is not established here.
 - Falsifier: A block in the named family whose independently recomputed weight count differs from its Brauer-character count, or a definition of the family that collapses into the order-100 census.
 - Claim: `[Claim] O-M048-01 — Lemma obligation for M048`
-- Digest: `ef476581aa6540bf…`
+- Digest: `f53f152e85e7b958…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -415,7 +415,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: The interval verifier to T = 36 is far below Platt–Trudgian; extending that tiny height inside the published range is refused as dominated.
 - Falsifier: A proof that the proposed statement follows from existing published zero computations alone, or a counterexample inside the claimed region.
 - Claim: `[Claim] O-M001-01 — Lemma obligation for M001`
-- Digest: `d8f2840ab46a8bb8…`
+- Digest: `8d5c4952da434409…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -430,7 +430,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Fidelity review certifies the encoding, never the conjecture.
 - Falsifier: A hand-checked instance on which the comparator and the registry statement disagree.
 - Claim: `[Claim] V-F-M071 — Independent fidelity review of the Hadwiger conjecture comparator`
-- Digest: `d28898bcec906d11…`
+- Digest: `df84b307c1074d4a…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -444,7 +444,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.
 - Falsifier: A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.
 - Claim: `[Claim] V-P-M071 — Independent certificate and scope audit for M071`
-- Digest: `78e4acfdd300b965…`
+- Digest: `8cecc1d9aa290f8c…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -458,7 +458,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Fidelity review certifies the encoding, never the conjecture.
 - Falsifier: A hand-checked instance on which the comparator and the registry statement disagree.
 - Claim: `[Claim] V-F-M073 — Independent fidelity review of the Sidorenko conjecture comparator`
-- Digest: `862974f28afa0f63…`
+- Digest: `914c04419ced5b1a…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -472,7 +472,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.
 - Falsifier: A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.
 - Claim: `[Claim] V-P-M073 — Independent certificate and scope audit for M073`
-- Digest: `3b416c53d39ea87b…`
+- Digest: `e8d226fc468a8aac…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -486,7 +486,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Fidelity review certifies the encoding, never the conjecture.
 - Falsifier: A hand-checked instance on which the comparator and the registry statement disagree.
 - Claim: `[Claim] V-F-M074 — Independent fidelity review of the Caccetta–Häggkvist conjecture comparator`
-- Digest: `e4428d7f85899733…`
+- Digest: `695bc9c004a27d7f…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -500,7 +500,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.
 - Falsifier: A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.
 - Claim: `[Claim] V-P-M074 — Independent certificate and scope audit for M074`
-- Digest: `a3c3acb14f8b52ac…`
+- Digest: `07ae7c3f4b6052bf…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -514,7 +514,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.
 - Falsifier: A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.
 - Claim: `[Claim] V-P-M092 — Independent certificate and scope audit for M092`
-- Digest: `49853322dead1021…`
+- Digest: `c60c75c457077a13…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -528,7 +528,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.
 - Falsifier: A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.
 - Claim: `[Claim] V-P-M093 — Independent certificate and scope audit for M093`
-- Digest: `7c51e8c8519eb30e…`
+- Digest: `77a065d73c988fcd…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -542,7 +542,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Fidelity review certifies the encoding, never the conjecture.
 - Falsifier: A hand-checked instance on which the comparator and the registry statement disagree.
 - Claim: `[Claim] V-F-M094 — Independent fidelity review of the Hadamard matrix conjecture comparator`
-- Digest: `fb4e8fdde7378da9…`
+- Digest: `a1e9bc7a9b45d5f0…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -556,7 +556,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: A scope review checks that the encoded statement matches the claim; it does not add mathematics. Small known orders only; the smallest order without a known construction is 2396 after independently verified 2026 finite matrices (arXiv:2610.27175). Independent statement review pending.
 - Falsifier: A quantifier, domain or convention in the Lean statement that differs from the registered claim.
 - Claim: `[Claim] V-L007 — Independent scope review of Lean target L007 (M094)`
-- Digest: `175ff6d34321f23e…`
+- Digest: `5b3745b8d3369c75…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -570,7 +570,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.
 - Falsifier: A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.
 - Claim: `[Claim] V-P-M094 — Independent certificate and scope audit for M094`
-- Digest: `35231ac47ef70388…`
+- Digest: `e81a7880b403bfbb…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -584,7 +584,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Fidelity review certifies the encoding, never the conjecture.
 - Falsifier: A hand-checked instance on which the comparator and the registry statement disagree.
 - Claim: `[Claim] V-F-M088 — Independent fidelity review of the Deterministic polynomial identity testing comparator`
-- Digest: `d2b45ae158701212…`
+- Digest: `9a886fbf5007551b…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -598,7 +598,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Fidelity review certifies the encoding, never the conjecture.
 - Falsifier: A hand-checked instance on which the comparator and the registry statement disagree.
 - Claim: `[Claim] V-F-M075 — Independent fidelity review of the Frankl union-closed sets conjecture comparator`
-- Digest: `90a76bd04c12b7f7…`
+- Digest: `1628b1da36451191…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -612,7 +612,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: A scope review checks that the encoded statement matches the claim; it does not add mathematics. Only the two-element ground universe, encoded as Fin 16. No proof for arbitrary ground-set sizes, no novelty claim; independent scope review pending.
 - Falsifier: A quantifier, domain or convention in the Lean statement that differs from the registered claim.
 - Claim: `[Claim] V-L002 — Independent scope review of Lean target L002 (M075)`
-- Digest: `3aec4a59bad58b1b…`
+- Digest: `11be65017b30a387…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -626,7 +626,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: A scope review checks that the encoded statement matches the claim; it does not add mathematics. Elementary finite k=1..3 cases only. The model-equivalence and explicit family packing theorems are proved only for k=2; the k=3 case is supplied independently, not derived from k=2. No unrestricted Frankl theorem, and no independent scope review.
 - Falsifier: A quantifier, domain or convention in the Lean statement that differs from the registered claim.
 - Claim: `[Claim] V-L006 — Independent scope review of Lean target L006 (M075)`
-- Digest: `bd0f9514f174804d…`
+- Digest: `2b4ce1c4cb754d5a…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -640,7 +640,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.
 - Falsifier: A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.
 - Claim: `[Claim] V-P-M075 — Independent certificate and scope audit for M075`
-- Digest: `0fae4c56e5ae7623…`
+- Digest: `576409e402dc37c9…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -654,7 +654,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Fidelity review certifies the encoding, never the conjecture.
 - Falsifier: A hand-checked instance on which the comparator and the registry statement disagree.
 - Claim: `[Claim] V-F-M078 — Independent fidelity review of the Graph reconstruction conjecture comparator`
-- Digest: `a53b54a78f19e63c…`
+- Digest: `a431014c54b558be…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -668,7 +668,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.
 - Falsifier: A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.
 - Claim: `[Claim] V-P-M078 — Independent certificate and scope audit for M078`
-- Digest: `dc540713dc60f13c…`
+- Digest: `3f515bc8cb22c0c7…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -682,7 +682,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Fidelity review certifies the encoding, never the conjecture.
 - Falsifier: A hand-checked instance on which the comparator and the registry statement disagree.
 - Claim: `[Claim] V-F-M079 — Independent fidelity review of the One-third–two-thirds conjecture comparator`
-- Digest: `78664d304845bcb8…`
+- Digest: `ec4ff300ba15b879…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -696,7 +696,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.
 - Falsifier: A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.
 - Claim: `[Claim] V-P-M079 — Independent certificate and scope audit for M079`
-- Digest: `1266fe0a753342ad…`
+- Digest: `177625f6b1ddc7fe…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -710,7 +710,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Fidelity review certifies the encoding, never the conjecture.
 - Falsifier: A hand-checked instance on which the comparator and the registry statement disagree.
 - Claim: `[Claim] V-F-M096 — Independent fidelity review of the Projective plane order 12 comparator`
-- Digest: `fe0ceb5c537a2078…`
+- Digest: `f85c48b8684bdbfe…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -724,7 +724,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: A scope review checks that the encoded statement matches the claim; it does not add mathematics. Satisfiability of the axioms only; says nothing about order 12. Independent statement review pending.
 - Falsifier: A quantifier, domain or convention in the Lean statement that differs from the registered claim.
 - Claim: `[Claim] V-L009 — Independent scope review of Lean target L009 (M096)`
-- Digest: `553a147303bcc80c…`
+- Digest: `3a97d5e187aefdd5…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -738,7 +738,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.
 - Falsifier: A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.
 - Claim: `[Claim] V-P-M096 — Independent certificate and scope audit for M096`
-- Digest: `644ee2809691ddea…`
+- Digest: `4097a54af7cf913d…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -752,7 +752,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.
 - Falsifier: A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.
 - Claim: `[Claim] V-P-M084 — Independent certificate and scope audit for M084`
-- Digest: `b932a011bd8bebc2…`
+- Digest: `9b202bd3997b330e…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -766,7 +766,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Fidelity review certifies the encoding, never the conjecture.
 - Falsifier: A hand-checked instance on which the comparator and the registry statement disagree.
 - Claim: `[Claim] V-F-M095 — Independent fidelity review of the Exact Ramsey number R(5,5) comparator`
-- Digest: `8926980106069c73…`
+- Digest: `acc7cc3cab63680f…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -780,7 +780,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: A scope review checks that the encoded statement matches the claim; it does not add mathematics. Known R(3,3) lower-bound witness only. No R(3,3) upper bound or R(5,5) determination. Independent statement review pending.
 - Falsifier: A quantifier, domain or convention in the Lean statement that differs from the registered claim.
 - Claim: `[Claim] V-L001 — Independent scope review of Lean target L001 (M095)`
-- Digest: `aa06d126fb7e2c83…`
+- Digest: `0cec74a625dd0891…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -794,7 +794,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: A scope review checks that the encoded statement matches the claim; it does not add mathematics. Same known R(3,3) lower bound as L001 in a second, independent encoding. Exoo's K42 colouring and the 46 upper bound are cited, not re-proved. Independent statement review pending.
 - Falsifier: A quantifier, domain or convention in the Lean statement that differs from the registered claim.
 - Claim: `[Claim] V-L008 — Independent scope review of Lean target L008 (M095)`
-- Digest: `cd26274626088e1d…`
+- Digest: `7d5eaf8f697b94ed…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -808,7 +808,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.
 - Falsifier: A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.
 - Claim: `[Claim] V-P-M095 — Independent certificate and scope audit for M095`
-- Digest: `856ea749fcbfb528…`
+- Digest: `9f8271210d947076…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -822,7 +822,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: A scope review checks that the encoded statement matches the claim; it does not add mathematics. Only the matching-to-cyclic-grid construction is formal. Hall matching existence from a second basis, rank-n matroid exchange, vector-space determinant logic, exact permanent/Latin counts and full RBC remain outside Lean. Author checked, no independent specialist acceptance.
 - Falsifier: A quantifier, domain or convention in the Lean statement that differs from the registered claim.
 - Claim: `[Claim] V-L010 — Independent scope review of Lean target L010 (M080)`
-- Digest: `c2d00e03206f7e76…`
+- Digest: `91d0322d099f27fc…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -836,7 +836,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.
 - Falsifier: A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.
 - Claim: `[Claim] V-P-M080 — Independent certificate and scope audit for M080`
-- Digest: `a49e3b9310e269b1…`
+- Digest: `ede9619aebb723f8…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -850,7 +850,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Fidelity review certifies the encoding, never the conjecture.
 - Falsifier: A hand-checked instance on which the comparator and the registry statement disagree.
 - Claim: `[Claim] V-F-M097 — Independent fidelity review of the Metric TSP four-thirds conjecture comparator`
-- Digest: `1b71db39b0c06f3b…`
+- Digest: `685a835ff21dad4f…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -864,7 +864,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.
 - Falsifier: A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.
 - Claim: `[Claim] V-P-M097 — Independent certificate and scope audit for M097`
-- Digest: `897177bc2389b71e…`
+- Digest: `26b68744fbea48d3…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -878,7 +878,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Fidelity review certifies the encoding, never the conjecture.
 - Falsifier: A hand-checked instance on which the comparator and the registry statement disagree.
 - Claim: `[Claim] V-F-M019 — Independent fidelity review of the Erdős–Straus conjecture comparator`
-- Digest: `1357b6c6e559c1da…`
+- Digest: `aee753e3dd5df21c…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -892,7 +892,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: A scope review checks that the encoded statement matches the claim; it does not add mathematics. Classical residue class only; does not prove the unrestricted conjecture. Repeated denominators allowed. Independent statement review pending.
 - Falsifier: A quantifier, domain or convention in the Lean statement that differs from the registered claim.
 - Claim: `[Claim] V-L005 — Independent scope review of Lean target L005 (M019)`
-- Digest: `8e789ea03ae67639…`
+- Digest: `620d8cbd723707a3…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -906,7 +906,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.
 - Falsifier: A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.
 - Claim: `[Claim] V-P-M019 — Independent certificate and scope audit for M019`
-- Digest: `bbe547f6bb8fb7c8…`
+- Digest: `4b78b0e38d05a0bf…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -920,7 +920,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.
 - Falsifier: A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.
 - Claim: `[Claim] V-P-M002 — Independent certificate and scope audit for M002`
-- Digest: `d4647680fcc9d08d…`
+- Digest: `31c93752a89c0d3b…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -934,7 +934,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Fidelity review certifies the encoding, never the conjecture.
 - Falsifier: A hand-checked instance on which the comparator and the registry statement disagree.
 - Claim: `[Claim] V-F-M006 — Independent fidelity review of the Strong Goldbach conjecture comparator`
-- Digest: `69902992dce5dd26…`
+- Digest: `394138ea68cb9ef2…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -948,7 +948,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: A scope review checks that the encoded statement matches the claim; it does not add mathematics. Known range only (verified to 4·10^18 in the literature); no bound on the least prime and no progress on the unrestricted conjecture. Independent statement review pending.
 - Falsifier: A quantifier, domain or convention in the Lean statement that differs from the registered claim.
 - Claim: `[Claim] V-L004 — Independent scope review of Lean target L004 (M006)`
-- Digest: `01fc92a8cd1b46eb…`
+- Digest: `0c06bb9d670560bc…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -962,7 +962,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.
 - Falsifier: A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.
 - Claim: `[Claim] V-P-M006 — Independent certificate and scope audit for M006`
-- Digest: `acf25006ba1268dd…`
+- Digest: `eae1629c8b8d81de…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -976,7 +976,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Reviewing a draft is not an open-status certification by itself.
 - Falsifier: A dated source showing the drafted statement is already resolved or misstated.
 - Claim: `[Claim] V-S-M056 — Independent review of the status draft for Fourier restriction conjecture`
-- Digest: `84e3c8dde2fef985…`
+- Digest: `e3ea2bfcfcb9d9ed…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -990,7 +990,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Reviewing a draft is not an open-status certification by itself.
 - Falsifier: A dated source showing the drafted statement is already resolved or misstated.
 - Claim: `[Claim] V-S-M063 — Independent review of the status draft for Planar first-passage KPZ exponent`
-- Digest: `9713d2af6b91c6dd…`
+- Digest: `99056ace0acd6657…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -1004,7 +1004,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Reviewing a draft is not an open-status certification by itself.
 - Falsifier: A dated source showing the drafted statement is already resolved or misstated.
 - Claim: `[Claim] V-S-M070 — Independent review of the status draft for 3D Ising conformal scaling conjecture`
-- Digest: `e45361dea0bef56b…`
+- Digest: `b0b66f9a9dcdc982…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -1018,7 +1018,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Reviewing a draft is not an open-status certification by itself.
 - Falsifier: A dated source showing the drafted statement is already resolved or misstated.
 - Claim: `[Claim] V-S-M017 — Independent review of the status draft for Global Langlands functoriality`
-- Digest: `10a713a6d6bc2702…`
+- Digest: `aabd15a06c68480e…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -1032,7 +1032,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Reviewing a draft is not an open-status certification by itself.
 - Falsifier: A dated source showing the drafted statement is already resolved or misstated.
 - Claim: `[Claim] V-S-M053 — Independent review of the status draft for Weak cosmic censorship`
-- Digest: `3ea51a3b2cf93aac…`
+- Digest: `dad048849db378a7…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -1046,7 +1046,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.
 - Falsifier: A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.
 - Claim: `[Claim] V-P-M041 — Independent certificate and scope audit for M041`
-- Digest: `8a0fc249ea6068d3…`
+- Digest: `5b62fde57b937f03…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -1060,7 +1060,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Fidelity review certifies the encoding, never the conjecture.
 - Falsifier: A hand-checked instance on which the comparator and the registry statement disagree.
 - Claim: `[Claim] V-F-M048 — Independent fidelity review of the Alperin weight conjecture comparator`
-- Digest: `552bb670ad7e53fd…`
+- Digest: `f15db15455a96905…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -1074,7 +1074,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.
 - Falsifier: A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.
 - Claim: `[Claim] V-P-M048 — Independent certificate and scope audit for M048`
-- Digest: `e8e40fa721c47bca…`
+- Digest: `43dadb65c3606f72…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -1088,7 +1088,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Boundary: Reproduction and fidelity only. Even an independently accepted finite checker is not a new restricted result, a universal proof, or a claim to have established untested ranges.
 - Falsifier: A tampered certificate passes, checker and search share an unjustified assumption, or a claimed scope exceeds the exact run.
 - Claim: `[Claim] V-P-M001 — Independent certificate and scope audit for M001`
-- Digest: `12ef0108d12b83f0…`
+- Digest: `9b2ca3af79affc16…`
 - Roles:
   - `scout`: Review as someone who did not author the artifact: compare the encoded or drafted statement with the claim and its source.
   - `adversary`: Try to break it: a mismatched quantifier, a missing hypothesis, an instance where encoding and claim disagree.
@@ -1101,7 +1101,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Deliverable: Formalize graph semantics and assignment decoder before attempting the 18-vertex target.
 - Boundary: SAT search output alone is not a theorem. UNSAT requires a checked proof and a separately proved encoding completeness theorem.
 - Claim: `[Claim] L003 — Implement Lean target L003 (M074)`
-- Digest: `607dfb3dd1f2f9f1…`
+- Digest: `e8f3a6e6f1e9d9e7…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1115,7 +1115,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Deliverable: Prove Sylvester doubling as a general theorem (order n to 2n) instead of instance by instance.
 - Boundary: Small known orders only; the smallest order without a known construction is 2396 after independently verified 2026 finite matrices (arXiv:2610.27175). Independent statement review pending.
 - Claim: `[Claim] L007 — Extend Lean target L007 (M094)`
-- Digest: `b7c198eff36fed8e…`
+- Digest: `abbf9487ff96ec04…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1129,7 +1129,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Deliverable: Prove a representation theorem for arbitrary extensional set families on Fin 2, then generalize counting and union semantics to Fin n.
 - Boundary: Only the two-element ground universe, encoded as Fin 16. No proof for arbitrary ground-set sizes, no novelty claim; independent scope review pending.
 - Claim: `[Claim] L002 — Extend Lean target L002 (M075)`
-- Digest: `8337faf0a92d8e4f…`
+- Digest: `8c0f4e4999e0cbb4…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1143,7 +1143,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Deliverable: Extend the family packing and semantic bridge to k=3 or to a uniform Fin (2^k) representation; connect genuine families of subsets of Fin k, not only the bitmask model.
 - Boundary: Elementary finite k=1..3 cases only. The model-equivalence and explicit family packing theorems are proved only for k=2; the k=3 case is supplied independently, not derived from k=2. No unrestricted Frankl theorem, and no independent scope review.
 - Claim: `[Claim] L006 — Extend Lean target L006 (M075)`
-- Digest: `2042b0bf8c0727a2…`
+- Digest: `d382570be457c911…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1157,7 +1157,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Deliverable: Formalise the Bruck–Ryser condition as a checkable criterion and verify it for small orders.
 - Boundary: Satisfiability of the axioms only; says nothing about order 12. Independent statement review pending.
 - Claim: `[Claim] L009 — Extend Lean target L009 (M096)`
-- Digest: `0bd45275bb85efa8…`
+- Digest: `d688a32214de3701…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1171,7 +1171,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Deliverable: Match every edge to examples/R33_C5.json; then generalize certificate replay to clique sizes s and t.
 - Boundary: Known R(3,3) lower-bound witness only. No R(3,3) upper bound or R(5,5) determination. Independent statement review pending.
 - Claim: `[Claim] L001 — Extend Lean target L001 (M095)`
-- Digest: `efd6774db2498058…`
+- Digest: `c0ae46e29a8b5ebc…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1185,7 +1185,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Deliverable: Prove the two Ramsey encodings agree on triangles (L001 TriangleFree vs HasMonoClique with s = 3).
 - Boundary: Same known R(3,3) lower bound as L001 in a second, independent encoding. Exoo's K42 colouring and the 46 upper bound are cited, not re-proved. Independent statement review pending.
 - Claim: `[Claim] L008 — Extend Lean target L008 (M095)`
-- Digest: `fbcbde307f4bdabc…`
+- Digest: `c189832d67ff92c4…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1199,7 +1199,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Deliverable: Formalize vector-space/matroid basis exchange and Hall matching in a richer library, then transport the paper-level all-rank theorem to an actual matroid model.
 - Boundary: Only the matching-to-cyclic-grid construction is formal. Hall matching existence from a second basis, rank-n matroid exchange, vector-space determinant logic, exact permanent/Latin counts and full RBC remain outside Lean. Author checked, no independent specialist acceptance.
 - Claim: `[Claim] L010 — Extend Lean target L010 (M080)`
-- Digest: `19afedd5a185d669…`
+- Digest: `56a7433706df208b…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1213,7 +1213,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Deliverable: Prove a scaling lemma: a solution for n gives a solution for every positive multiple of n, then compose it with residue_three.
 - Boundary: Classical residue class only; does not prove the unrestricted conjecture. Repeated denominators allowed. Independent statement review pending.
 - Claim: `[Claim] L005 — Extend Lean target L005 (M019)`
-- Digest: `d75d7d4950fb1bb4…`
+- Digest: `85b0ec576fbcfef9…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1227,7 +1227,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Deliverable: Connect the witness table to the lab goldbach certificate hash and add a downstream lemma that uses Statement.
 - Boundary: Known range only (verified to 4·10^18 in the literature); no bound on the least prime and no progress on the unrestricted conjecture. Independent statement review pending.
 - Claim: `[Claim] L004 — Extend Lean target L004 (M006)`
-- Digest: `8336fc776900240b…`
+- Digest: `5f2b50f1a48eb0c8…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1241,7 +1241,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Deliverable: M071: Extract a concrete finite graph from the binary-frame construction, or obtain two independent specialist reviews of the existential proof; do not treat comparator or second-kernel replay as a finite witness. M073: Derive an explicit finite host G (order n and edges) from the counter-kernel parameters and replay t(H,G)<t(K2,G)^66 with two independent homomorphism counts, or obtain specialist acceptance of the existence proof without a listed witness.
 - Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
 - Claim: `[Claim] J-extremal_certificates-replay_claim_witness — Replay a claimed finite witness: Replay the object, or mine the census`
-- Digest: `80f0447f9e75a809…`
+- Digest: `cac94bda7f479aff…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1255,7 +1255,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Deliverable: M044: Reproduce a finite presentation and a,b products using a genuinely independent group-ring checker; check the claimed equalities and non-equality. M049: Independently verify M044's group algebra witness, then audit the Elek–Szabó implication from soficity to direct finiteness in the claimed coefficient field.
 - Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
 - Claim: `[Claim] J-group_rings-replay_claim_witness — Replay a claimed finite witness: One presentation, one product`
-- Digest: `b18de3995e597eb0…`
+- Digest: `d61cd62859cb7815…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1269,7 +1269,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Deliverable: M092: Extend the cyclotomic engine to the number fields needed for d = 4..8 and replay published exact fiducials there. M093: Generalise the arc engine to PG(3,q) with 5-point frames and reproduce known maximum arc sizes for q <= 9. M094: Import a published construction for the smallest remaining engine gap, 188. This is an implementation gap, not an open existence case; the smallest order without a known matrix is 2396 after the 2026 verified constructions (arXiv:2610.27175). M096: Encode order-12 planes with a prescribed collineation as SAT with DRAT proof output, starting from cases the literature already excludes.
 - Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
 - Claim: `[Claim] J-finite_geometry-replay_published — Replay a published certificate: Replay a published geometric object`
-- Digest: `d8f2e9756482bd55…`
+- Digest: `ca6bbbd5cd493861…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1283,7 +1283,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Deliverable: M075: The certified mine frankl_orbits quotients the n <= 4 census by ground-set permutations: 4,958 families become 366 orbits at n = 4, and the minimum abundance is exactly 1/2. The next lemma has to generate canonical representatives without enumerating 2^(2^5). M078: The certified mine deck_invariants reads degree sequence and triangle count from decks. Together they separate every graph through 5 vertices and leave 20 excess graphs at 6 vertices. A reconstruction lemma needs a deck invariant strictly stronger than those two. M079: The certified mine poset_balance finds 11 posets on at most 6 elements with best balance exactly 1/3, and every one of them has width 2, which Linial already settled. A new lemma has to treat width at least 3; this census has no tight example there. M080: Quotient instances by the stabiliser of the standard basis so that GF(2)^4 becomes exhaustive, storing one grid certificate per orbit.
 - Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
 - Claim: `[Claim] J-extremal_certificates-mine_structure — Mine structure from certificates: Replay the object, or mine the census`
-- Digest: `dd74bb5d9a117fcf…`
+- Digest: `7c5ad134da84615e…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1297,7 +1297,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Deliverable: Shape complexity_barriers (6 problems, one write-up): Name the model and audit any claimed reduction's alphabet, completeness and soundness before writing a new reduction. Full shape, certificate and falsifier are in APPROACH.md.
 - Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
 - Claim: `[Claim] J-complexity_barriers-specify_shape — Fill the shared attack shape: One model, one gap`
-- Digest: `a096af37f3dc1eed…`
+- Digest: `b2132a1b1efb66f7…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1311,7 +1311,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Deliverable: Replay the external fixed-r=6 proof corpus on an independent host, verify its published hash and proof traces, and audit the hand-reduction steps before launching duplicate SAT search.
 - Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
 - Claim: `[Claim] J-extremal_certificates-replay_published — Replay a published certificate: Replay the object, or mine the census`
-- Digest: `852a50ff3b7360a6…`
+- Digest: `e8df0d87027f9418…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1325,7 +1325,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Deliverable: Lock paragraph is complete in research/M088_LOCK.md; implement the falsifier against that exact GF(2) degree-≤3 ≤20-gate black-box class before attaching a verifier or widening the class.
 - Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
 - Claim: `[Claim] J-algebraic_complexity-lock_restriction — Lock a restricted class: One format, replayed exactly`
-- Digest: `245bc80009bd19a0…`
+- Digest: `762a51e861ce8772…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1339,7 +1339,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Deliverable: Shape extremal_asymptotics (3 problems, one write-up): Name a structured family and an explicit constant, and compare it with a cited general bound before calling it an improvement. Full shape, certificate and falsifier are in APPROACH.md.
 - Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
 - Claim: `[Claim] J-extremal_asymptotics-specify_shape — Fill the shared attack shape: One family, one explicit constant`
-- Digest: `3ed899ffd066ab6a…`
+- Digest: `755e836959851d9a…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1353,7 +1353,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Deliverable: Import one published exact decomposition, such as a cited rank-23 scheme for the <3,3,3> tensor, and replay it on the tensor checker. A flip-graph search is not the next step: small formats cannot beat the laser-method bounds the blocker cites.
 - Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
 - Claim: `[Claim] J-algebraic_complexity-replay_published — Replay a published certificate: One format, replayed exactly`
-- Digest: `8f68591c9c5a303e…`
+- Digest: `5303a9b53023c363…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1367,7 +1367,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Deliverable: M019: Nine polynomial identities from the straus_identities mine now cover 106 of the 117 primes n <= 8000 with n = 1 (mod 24), including the primary progressions n = 120t+73 and n = 120t+97. The 11 uncovered primes all lie in {1, 49} (mod 120). Attack those two remaining classes with a non-Mordell idea, or name an explicit family outside the recorded progressions; do not extend the verified search range. M006: The goldbach_bound mine certifies p <= floor(3 (ln n)^2) for every even n <= 20000 (research/M006_BOUND.md). State a sharper restricted lemma (named residue class, or a constant below 3 with a proof idea that could leave this window), without extending the range toward 4*10^18.
 - Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
 - Claim: `[Claim] J-effective_diophantine-mine_structure — Mine structure from certificates: Explicit Diophantine certificates`
-- Digest: `a5ac7f33ffaad080…`
+- Digest: `1e15c3563aaa413f…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1381,7 +1381,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Deliverable: Import and check the published K42 witness; reproduce a small structural exclusion with a trusted proof checker.
 - Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
 - Claim: `[Claim] J-ramsey_parameter-replay_published — Replay a published certificate: A colouring with a proof trace`
-- Digest: `9dbc2f9c9c41dde8…`
+- Digest: `eb87c7b7849e86e0…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1395,7 +1395,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Deliverable: Reproduce a published primitive character modulo 3 or 5 with the correct root number, branch conventions and independently checked zero count; document why this is known mathematics, not GRH progress.
 - Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
 - Claim: `[Claim] J-critical_zeros-replay_published — Replay a published certificate: Certified zero counts`
-- Digest: `7bbb2408a64d4638…`
+- Digest: `ccabccf578bbab89…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1409,7 +1409,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Deliverable: Shape lattice_models (5 problems, one write-up): Name the lattice and the exponent, then certify an exact count or inequality on one finite torus. Full shape, certificate and falsifier are in APPROACH.md.
 - Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
 - Claim: `[Claim] J-lattice_models-specify_shape — Fill the shared attack shape: Exact counts on a finite torus`
-- Digest: `34aa8f6fd585d65c…`
+- Digest: `b5f094592374174a…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1423,7 +1423,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Deliverable: Shape galois_representations (6 problems, one write-up): Pick one explicit number field or elliptic curve and one finite invariant the conjecture predicts, and compute it two ways. Full shape, certificate and falsifier are in APPROACH.md.
 - Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
 - Claim: `[Claim] J-galois_representations-specify_shape — Fill the shared attack shape: One field, two computations`
-- Digest: `6831835847fb7565…`
+- Digest: `09f67e9b07ebc1db…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1437,7 +1437,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Deliverable: Extend from graphic metrics to 1-2 and vertex-weighted metrics, and enumerate extreme points of the subtour polytope at n = 8 to search for gap-maximising instances.
 - Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
 - Claim: `[Claim] J-tsp_gap-mine_structure — Mine structure from certificates: A new metric class, both optima certified`
-- Digest: `e3172396f1e4e88e…`
+- Digest: `1fbbc76d3191b359…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
@@ -1451,7 +1451,7 @@ Full agent protocol: [AGENTS.md](AGENTS.md). Work queue: `python3 scripts/work.p
 - Deliverable: Shape rigidity_dynamics (5 problems, one write-up): Name the map or the billiard, and certify one periodic orbit, one entropy enclosure, or one correlation check. Full shape, certificate and falsifier are in APPROACH.md.
 - Boundary: A cohort job is a scheduling unit, not a claim that the shape works for every listed problem.
 - Claim: `[Claim] J-rigidity_dynamics-specify_shape — Fill the shared attack shape: One map, one enclosure`
-- Digest: `682cb00bb07e05c5…`
+- Digest: `d2810b8de4a7655b…`
 - Roles:
   - `scout`: Produce the exact artifact or restricted statement named in the deliverable.
   - `adversary`: Search for scope mismatches, missing hypotheses, counterexamples and contamination from known results.
