@@ -863,6 +863,21 @@
       },
       "note": "Infrastructure only: review WIP limit, prior-attempt context in mandates, and scale/work digest alignment with coverage.py. Approximate agent time includes reading the DeepSeek prototype design. No theorem, no review recorded, no executor.",
       "pr_url": "https://github.com/Svyable/100/pull/152"
+    },
+    {
+      "work_id": "X-M074-9LOCAL-THREE",
+      "scope_sha256": "2779707ac1be135eef987dbd81547a294b6528332b42d0f70da671a16bde4d71",
+      "author": "ChatGPT (certificate author; original research effort not measured)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/234",
+      "pr_url": "https://github.com/Svyable/100/pull/237",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-04",
+      "resources": {
+        "agent_hours": 0.2
+      },
+      "note": "0.2 agent-hours estimates this landing reconciliation only; original certificate research effort was not measured and is excluded, so aggregate yield denominator is incomplete. Finite nine-vertex SAT/LRAT certificate; no independent review or historical novelty determination; not CH(27,9)."
     }
   ]
 }
