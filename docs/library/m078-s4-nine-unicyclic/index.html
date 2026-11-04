@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M078 — connected unicyclic obstructions to paired card-motif signatures · 100</title>
+<meta name="description" content="Date: 2026-11-02. Work ID: X-M078-S4-NINE; claim #262. Scope SHA-256: d4e86c4ea0c6af8aa1668d0dd37e1e13dcb1022b3ff62fc1b3a7b08923f040ce.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m078-s4-nine-unicyclic/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M078 — connected unicyclic obstructions to paired card-motif signatures · 100">
+<meta property="og:description" content="Date: 2026-11-02. Work ID: X-M078-S4-NINE; claim #262. Scope SHA-256: d4e86c4ea0c6af8aa1668d0dd37e1e13dcb1022b3ff62fc1b3a7b08923f040ce.">
+<meta property="og:url" content="https://svyable.github.io/100/library/m078-s4-nine-unicyclic/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M078 — connected unicyclic obstructions to paired card-motif signatures</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#precise-result">Precise result</a></li><li class="toc-l2"><a href="#explicit-nine-vertex-pair">Explicit nine-vertex pair</a></li><li class="toc-l2"><a href="#proof">Proof</a></li><li class="toc-l2"><a href="#reproduction-and-adversarial-verification">Reproduction and adversarial verification</a></li><li class="toc-l2"><a href="#prior-art-and-novelty-boundary-checked-2026-11-02">Prior art and novelty boundary (checked 2026-11-02)</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M078/" title="Graph reconstruction conjecture">M078</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M078_S4_NINE_UNICYCLIC.md" rel="noopener noreferrer">research/M078_S4_NINE_UNICYCLIC.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M078 — connected unicyclic obstructions to paired card-motif signatures</h1>
+<p><strong>Date:</strong> 2026-11-02. <strong>Work ID:</strong> <code>X-M078-S4-NINE</code>; <a href="https://github.com/Svyable/100/issues/262" rel="noopener noreferrer">claim #262</a>. <strong>Scope SHA-256:</strong> <code>d4e86c4ea0c6af8aa1668d0dd37e1e13dcb1022b3ff62fc1b3a7b08923f040ce</code>.</p>
+<p><strong>Evidence status:</strong> elementary all-orders proof written by the author, plus two distinct exact card-counting algorithms and adversarial tests. <strong>Not independently reviewed; historical novelty is unestablished.</strong> This is a failure of a <em>compressed deck statistic</em>, <strong>not</strong> a counterexample to graph reconstruction. No M078 solved-status or independent-outcome promotion is justified.</p>
+<h2 id="precise-result">Precise result<a class="anchor" href="#precise-result" aria-label="Link to this section">#</a></h2>
+<p>For a finite simple graph <code>G</code>, write <code>D(H)</code> for the sorted degree multiset of <code>H</code>, and <code>c_j(H)</code> for its number of simple (not necessarily induced) cycles of length <code>j</code>. Define the <strong>paired</strong> card statistic</p>
+<p><code>S_k(G) = multiset_{v in V(G)} (D(G-v), c_3(G-v), ..., c_k(G-v))</code>.</p>
+<p>For <code>k=4</code>, this is exactly the prior repository&#x27;s <code>S4</code>: degrees, triangles and four-cycles in each card, kept together before sorting.</p>
+<p><strong>Proposition (connected, all-orders counterexamples).</strong> For every integer <code>k &gt;= 4</code> and every <code>n &gt;= k+5</code>, there are two <strong>connected, unicyclic, nonisomorphic</strong> simple graphs <code>G_{k,n},H_{k,n}</code> on <code>n</code> vertices such that <code>S_k(G_{k,n})=S_k(H_{k,n})</code>. Their unique cycle lengths are respectively <code>k+2</code> and <code>k+1</code>. Both are <strong>planar and subcubic</strong> (maximum degree three). Since these cycle lengths have opposite parity, <strong>one graph is bipartite and the other is not</strong>. In particular, <strong>S4 is not injective for any n &gt;= 9, even on connected unicyclic graphs, and cannot determine bipartiteness there.</strong> Relative to the repository&#x27;s exact n&lt;=8 S4 certificate, nine is the sharp first failure order; that smaller-order census has not been independently specialist-reviewed.</p>
+<p>The proposition is an exact negative result about <em>every fixed finite cutoff of cycle-count augmentations</em>. It does not imply failure of the full vertex-deleted deck, or of richer card invariants such as induced five-vertex subgraph counts.</p>
+<h2 id="explicit-nine-vertex-pair">Explicit nine-vertex pair<a class="anchor" href="#explicit-nine-vertex-pair" aria-label="Link to this section">#</a></h2>
+<p>Use vertices <code>0,...,8</code>, and the following unordered edge lists:</p>
+<pre><code class="lang-text">A9: (0,1) (1,2) (2,3) (3,4) (4,5) (5,0) (0,6) (5,7) (7,8)
+B9: (0,1) (1,2) (2,3) (3,4) (4,0) (0,5) (5,6) (5,7) (7,8)</code></pre>
+<p>Both have nine edges and are connected. <code>A9</code> has a unique six-cycle; <code>B9</code> has a unique five-cycle. Their shared degree multiset is <code>(1,1,2,2,2,2,2,3,3)</code>. Every triangle and four-cycle count in every card is zero. The exact paired card-degree multisets are equal; the independently counted direct-card transcript is:</p>
+<pre><code class="lang-text">degree multiset of card              multiplicity
+(0,1,1,2,2,2,2,2)                     1
+(0,1,2,2,2,2,2,3)                     1
+(1,1,1,1,2,2,2,2)                     1
+(1,1,1,1,2,2,3,3)                     2
+(1,1,1,2,2,2,2,3)                     2
+(1,1,2,2,2,2,3,3)                     1
+(1,2,2,2,2,2,2,3)                     1</code></pre>
+<p>The full decks <strong>are</strong> different: <code>B9</code> has a five-cycle and <code>A9</code> does not. Deleting a vertex outside the five-cycle retains it. Equivalently, Kelly&#x27;s double-counting identity recovers <code>c_5(G)</code> from the full deck whenever <code>n&gt;5</code>.</p>
+<h2 id="proof">Proof<a class="anchor" href="#proof" aria-label="Link to this section">#</a></h2>
+<p><strong>Degree-neighborhood lemma.</strong> Define <code>P(G)</code> as the multiset over vertices <code>v</code> of pairs <code>(d_G(v), multiset{d_G(u): u adjacent to v})</code>. If <code>P(G)=P(H)</code>, then the multisets <code>{D(G-v):v in G}</code> and <code>{D(H-w):w in H}</code> are equal. Indeed, <code>P</code> determines the global degree multiset <code>D</code>; for a vertex of profile <code>(d,N)</code>, the card degree multiset is obtained from <code>D</code> by deleting one occurrence of <code>d</code> and, for every neighbor-degree occurrence <code>q</code> in <code>N</code>, replacing one occurrence of <code>q</code> by <code>q-1</code>. This is exact even when degree values repeat.</p>
+<p>The two base graphs have <strong>identical</strong> profile multisets:</p>
+<div class="table-wrap"><table><thead><tr><th class="al-right">Degree</th><th>Multiset of neighbor degrees</th><th class="al-right">Multiplicity</th></tr></thead><tbody><tr><td class="al-right">1</td><td>(2)</td><td class="al-right">1</td></tr><tr><td class="al-right">1</td><td>(3)</td><td class="al-right">1</td></tr><tr><td class="al-right">2</td><td>(1,3)</td><td class="al-right">1</td></tr><tr><td class="al-right">2</td><td>(2,2)</td><td class="al-right">2</td></tr><tr><td class="al-right">2</td><td>(2,3)</td><td class="al-right">2</td></tr><tr><td class="al-right">3</td><td>(1,2,3)</td><td class="al-right">1</td></tr><tr><td class="al-right">3</td><td>(2,2,3)</td><td class="al-right">1</td></tr></tbody></table></div>
+<p>Since each is unicyclic with unique cycle longer than four, all triangle and four-cycle card counts vanish. The lemma proves <code>S4(A9)=S4(B9)</code> without relying on enumeration.</p>
+<p><strong>Cycle subdivision.</strong> In each base graph, the cycle edge <code>(1,2)</code> has degree-two endpoints. Subdivide that edge once in both graphs. All existing degree-neighborhood profiles remain unchanged (a degree-two neighbor is replaced by a degree-two neighbor), and each graph gains exactly one profile <code>(2,(2,2))</code>. Repeat <code>s=k-4</code> times, always subdividing a degree-two-to-degree-two edge in the same cycle segment. The unique cycles now have lengths <code>6+s=k+2</code> and <code>5+s=k+1</code>. Both are longer than <code>k</code>, so every card has <code>c_3=...=c_k=0</code>. The degree-neighborhood lemma gives <code>S_k</code> equality at order <code>9+s=k+5</code>.</p>
+<p><strong>Connected extension to every larger order.</strong> Both original graphs have the common terminal leaf <code>8</code>, whose neighbor <code>7</code> has degree two and whose other neighbor <code>5</code> has degree three. The cycle subdivision leaves this tail unchanged. Append one new leaf to the current terminal leaf <strong>in both graphs</strong>. The old leaf changes degree 1 to 2, its degree-two neighbor&#x27;s profile changes by replacing a neighbor-degree 1 by 2, and the new leaf has profile <code>(1,(2))</code>. The corresponding affected profiles are identical in both graphs. Inductively this remains true for any number of appended vertices (after the first step the other neighbor of the degree-two predecessor has degree two). No new cycles arise, and connectivity is preserved. Thus the construction works at every <code>n &gt;= k+5</code>.</p>
+<p><strong>Nonisomorphism.</strong> A connected unicyclic graph has exactly one simple cycle; an isomorphism preserves its length. The constructed graphs have unequal cycle lengths. QED.</p>
+<h2 id="reproduction-and-adversarial-verification">Reproduction and adversarial verification<a class="anchor" href="#reproduction-and-adversarial-verification" aria-label="Link to this section">#</a></h2>
+<pre><code class="lang-sh">python3 scripts/m078_s4_nine.py --check --json
+python3 -m unittest discover -s tests -p &#x27;test_m078_s4_nine.py&#x27; -v
+python3 scripts/regen.py --check --fast
+python3 scripts/regen.py --check
+python3 -m unittest discover -s tests</code></pre>
+<p>The direct checker physically deletes each vertex, recounts triangles over vertex triples, and recounts four-cycles via the three undirected cyclic orders on each four-set. A separate bitset implementation counts triangles by edge/common-neighbor incidences and four-cycles by opposite-pair common neighbors. The tests compare the two on 75 seeded random graphs of orders 5, 7, 9, including motif-rich graphs; positive controls include a four-cycle and <code>K4</code> (three four-cycles). Mutation, duplicate-edge and disconnected-unicyclic controls must fail. The all-orders argument itself is <strong>structural</strong>, not an extrapolation from tested orders.</p>
+<p><strong>Discovery and failed avenues.</strong> A seeded random nine-vertex graph scan first produced many signature collisions that were merely relabelings. A later 18-edge pair had matching S4 but 36 versus 37 five-cycles; it was correct but unnecessarily dense. A fixed-nine-edge sample found the sparse pair above, with zero versus one five-cycle. Random sampling is a discovery heuristic, not proof of minimality or a complete nine-vertex census. The deterministic proof above replaces the sampling assumption. The independent card counter was implemented separately from the bitset search counter. No full census of all 274,668 nine-vertex unlabeled graphs is claimed.</p>
+<h2 id="prior-art-and-novelty-boundary-checked-2026-11-02">Prior art and novelty boundary (checked 2026-11-02)<a class="anchor" href="#prior-art-and-novelty-boundary-checked-2026-11-02" aria-label="Link to this section">#</a></h2>
+<ul><li>Brendan D. McKay, <a href="https://arxiv.org/abs/2102.01942" rel="noopener noreferrer"><em>Reconstruction of small graphs and digraphs</em></a> (2021/2022): the <strong>full deck</strong> reconstructs graphs through order 13. Our pair does not contradict that, because S4 forgets most of each card.</li><li>Wendy Myrvold, <a href="https://doi.org/10.1016/0012-365X(92)90053-I" rel="noopener noreferrer"><em>The degree sequence is reconstructible from n-1 cards</em></a> (1992): reconstructing the original degree sequence from cards is different from reconstructing the graph from only the cards&#x27; degree sequences.</li><li>Groenland, Johnston, Kupavskii, Meeks, Scott and Tan, <a href="https://doi.org/10.1016/j.jctb.2022.07.004" rel="noopener noreferrer"><em>Reconstructing the degree sequence of a sparse graph from a partial deck</em></a> (2022): partial-deck degree recovery, not the paired S4 threshold.</li><li><a href="../../library/m078-card-signature/">Existing repository M078 card-signature dossier</a>: author-checked injectivity through order eight and an explicit failure of the weaker S3 at order eight. Our connected S4 failure at order nine is a new <strong>repository-side</strong> negative boundary, not an assertion of historical mathematical priority.</li></ul>
+<p>The degree-neighborhood profile is a standard first-round color-refinement statistic, and its limitations are classical. No exhaustive literature search or specialist priority adjudication has established that the precise paired S4 statement or the fixed-cutoff family is unpublished.</p>
+<p><strong>Next falsifiers:</strong> Independently check the seven-row profile table and the all-orders subdivision/extension argument; replay the n&lt;=8 completeness certificate with a separate graph-isomorphism implementation; compare against prior literature on vertex-deleted degree decks and color refinement. Challenge whether any additional <strong>fixed-radius</strong> card invariant defeats this construction, and test an induced-five-vertex motif augmentation on the nine-vertex witness. No independent review, accepted outcome, new coverage slot or Solved-ledger change is recorded.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>
