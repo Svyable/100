@@ -445,7 +445,7 @@
       "resources": {
         "agent_hours": 0.8
       },
-      "note": "Prime 1129 forbids both fixed shifts c=3 and c=7 by exact divisor and subgroup checks, but shift c=11 works. Universal wording of O-M019-01 is infeasible; no full Erd\u0151s\u2013Straus counterexample, no novelty or independent review. Prior art Mordell 1963 and Dahan 2026."
+      "note": "Prime 1129 forbids both fixed shifts c=3 and c=7 by exact divisor and subgroup checks, but shift c=11 works. Universal wording of O-M019-01 is infeasible; no full Erdős–Straus counterexample, no novelty or independent review. Prior art Mordell 1963 and Dahan 2026."
     },
     {
       "work_id": "X-M076-F43-EIGHT",
@@ -555,6 +555,345 @@
         "ci_minutes": 0
       },
       "note": "Complete 23-coefficient polynomial delivered with spin-transform/parity-DP agreement and exact edge-factor replays. The acceptance gap is independent mathematical review, so O-M073-02 remains open; no independently accepted or historically novel theorem claimed. Approximate active author/tool time including source inspection and verification; this record closes the bounded author contribution on merge."
+    },
+    {
+      "work_id": "O-M079-04",
+      "scope_sha256": "5629ffe92a7529266dc2a522e885ab96934a4d780f7cf38dbdf325fb9bbab844",
+      "author": "ChatGPT (M079 chain-plus-five quantitative proof candidate)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/201",
+      "pr_url": "https://github.com/Svyable/100/pull/242",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.5
+      },
+      "note": "Approximate active derivation, 20,000-tuple exploratory search and failed 25/61 transfer, exact 1405-extension counterexample to the four-outsider extrapolation, all-orders k/(L+k-1) atom lemma, 40,355,371-case full dual integer census, third explicit-poset witness checker, adversarial mutation tests, current primary-literature audit and regeneration. Restricted 3/8 width-five chain-plus-five theorem candidate only; no independent human mathematical or historical-novelty review, no full M079 resolution, no solved-status change. Submitted on PR #202; merged_pending_review is conditional on successful CI-gated merge. Integration source: PR #202; canonical current-main landing: PR #242."
+    },
+    {
+      "work_id": "X-M094-PROPUS-127",
+      "scope_sha256": "5ce6daa629043b33b7cba01f95809363a6b9d43145a9152cf986151387c6dd14",
+      "author": "ChatGPT (PR #127 current-main Hadamard integration)",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/244",
+      "pr_url": "https://github.com/Svyable/100/pull/245",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.7
+      },
+      "note": "Conditional on merge. Ports published propus quadruples for orders 116,156,172 from source PR #127; exact row orthogonality, tamper rejection, smoke/deep ledger replay and regenerated site. Known constructions, not independent review, new theorem, or global Hadamard progress. Integration work time estimated; original PR author effort not double-counted."
+    },
+    {
+      "work_id": "X-M094-FRONTIER-2026",
+      "scope_sha256": "e4373d4be33463f75a7c081967d17838068b43436331a0c1ab696d779474d3a4",
+      "author": "ChatGPT (M094 2026 frontier provenance correction)",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/250",
+      "pr_url": "https://github.com/Svyable/100/pull/251",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.5
+      },
+      "note": "Conditional on merge. Corrects stale 668-as-smallest-open Hadamard claim to 2396 using Egan et al. arXiv:2610.27175 (19 Oct 2026), with verified 2026 finite matrices. Distinguishes next local engine gap 188 from open existence frontier. Source-linked research note, regression test, smoke/deep lab replay and regenerated site. Known literature status correction, not independent mathematical acceptance, new construction, universal proof or solved-state promotion."
+    },
+    {
+      "work_id": "X-M006-GOLDBACH-135",
+      "scope_sha256": "c7c338cabdada61beb6ff74443182c4ca3937195b11ac3c1beea8946804a7bfa",
+      "author": "ChatGPT (PR #135 current-main Goldbach integration)",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/248",
+      "pr_url": "https://github.com/Svyable/100/pull/249",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.6
+      },
+      "note": "Conditional on CI-gated merge. Current-main integration of PR #135 finite Goldbach least-prime bound for even 4..20000; known range within published 4e18 verification. Independent-representation odd-sieve checker, 50-digit decimal checks of twelve records with minimum slack 3.7654, forged-certificate and summary-mutation tests. Includes regeneration and a failed fast-check after source-note edit that was corrected by regeneration. No independent specialist review, novel theorem, asymptotic Goldbach result or solved-state promotion. Original PR author effort not double-counted."
+    },
+    {
+      "work_id": "X-M079-CHAIN7-LOCAL",
+      "scope_sha256": "02396fc31e0a62d19ffa8140676e82faad2040263d1d36a398a8a51499d50f11",
+      "author": "ChatGPT (M079 seven-outsider local balance research)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/256",
+      "pr_url": "https://github.com/Svyable/100/pull/257",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.7,
+        "ci_minutes": 0
+      },
+      "note": "Conditional on CI-gated merge. Sharp restricted candidate 1951/4659 for width-seven chain plus seven incomparable outsiders, each with 2..6 insertion gaps. Complete 436680-case dual exact census, 2612268-case out-of-scope seven-gap challenge, independent literal-poset witness and 30 seeded checks, adversarial mutation controls, literature comparison, failed 21/50 extrapolation, and full regeneration. Approximate active author/tool effort including failed avenues. No independent specialist review or historical novelty confirmation, no general M079 resolution, no solved/coverage changes; separate PR-landing task untouched."
+    },
+    {
+      "work_id": "X-MUTATION-ATTEST",
+      "scope_sha256": "768ff9c1b9408bf66e86650f7bd8ed94b390e01e0ed2c4ecaf3a2929db1bc2ba",
+      "author": "Claude (original PR #160); ChatGPT (current-main integration)",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/141",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 1.5,
+        "ci_minutes": 0
+      },
+      "note": "Infrastructure-only source #160 integrated against current main with 0.3 additional estimated agent-hours. Current smoke attestation: all 21 probes replay; 453/467 certificate mutants rejected, 78/242 published summary leaves bound, 10 probes accept a flipped holds verdict, and no probe accepts an empty certificate. The Ramsey witness checker was repaired independently in #211 and now passes its mandatory controls (clean); old #160 counts were stale. No probe fixed by this integration, no review recorded or accepted. Source author estimate 1.2 agent-hours preserved within total; historical novelty not applicable.",
+      "pr_url": "https://github.com/Svyable/100/pull/160"
+    },
+    {
+      "work_id": "X-M076-F43-SIX",
+      "scope_sha256": "4f496055dfe5e04510c70e69ad478b502c4cb25fb17c5c4ae9fc591d1c70ab09",
+      "author": "ChatGPT (M076 six-deletion restricted proof candidate)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/203",
+      "pr_url": "https://github.com/Svyable/100/pull/204",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.9
+      },
+      "note": "Conditional on PR merge. Sharp two-insertion bound for at most six deletions of the classical 54-set 4-uniform sunflower-free construction; 18 candidate orbits, 16 excluded by seven-edge matchings, 32 inside and 97 outside six-covers independently enumerated, 270 candidate support patterns checked with two intersection representations, explicit two-insertion witness falsifying the stronger one-insertion guess. Prior-art search did not establish historical novelty. No independent mathematical or novelty review, no global f(4,3) improvement, and no solved/evidence-state change."
+    },
+    {
+      "work_id": "X-M078-S4-NINE",
+      "scope_sha256": "d4e86c4ea0c6af8aa1668d0dd37e1e13dcb1022b3ff62fc1b3a7b08923f040ce",
+      "author": "ChatGPT (M078 paired-card-signature obstruction)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/262",
+      "pr_url": "https://github.com/Svyable/100/pull/263",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.4,
+        "ci_minutes": 0
+      },
+      "note": "Conditional on successful CI-gated merge. Author-derived all-orders connected planar subcubic unicyclic counterexamples to the paired degree/cycle-count card signature S_k for each k>=4 and n>=k+5; explicit nine-vertex S4 failure, bipartiteness separation, degree-neighborhood-profile proof, two exact card counting implementations and adversarial tests. Failed isomorphic and dense search avenues recorded. No historical-novelty confirmation, independent specialist acceptance, full graph reconstruction counterexample, solved-state or coverage change. Separate PR-landing task untouched."
+    },
+    {
+      "work_id": "X-M078-TREE-LOCAL-MOTIF",
+      "scope_sha256": "7642e875424b6b4d3a433be1030a9dca00da1b6b7403b3dc16841a741a22b91a",
+      "author": "ChatGPT (tree-card local-motif research)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/267",
+      "pr_url": "https://github.com/Svyable/100/pull/268",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.35
+      },
+      "note": "Conditional on CI-gated merge; all-orders restricted negative theorem candidate with author-run Python and independent-algorithm C++ census; no independent specialist proof review, historical novelty audit, or full-deck reconstruction counterexample. Failed shorter-leg extrapolations included in effort."
+    },
+    {
+      "work_id": "X-M079-CHAIN8-FIVEGAP",
+      "scope_sha256": "942df0b779572efeb770428d95ebce6bda37b9a4bd0247465706c50ff21da08b",
+      "author": "ChatGPT (M079 eight-outsider five-gap research)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/264",
+      "pr_url": "https://github.com/Svyable/100/pull/265",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.4,
+        "ci_minutes": 0
+      },
+      "note": "Conditional on successful CI-gated merge. All-orders width-eight chain-plus-eight incomparable outsiders with 2..5 gaps, sharp candidate 22648/50201 from 156157 normalized multisets with two exact recurrences, full-poset and forced-relation cross-checks, explicit dual sharp witnesses, 10-element literal permutation control, 11 dedicated adversarial tests, and six-gap boundary counterexample 59392/133057. Full regeneration and fast checks passed; the optional local repository-wide suite was stopped after 509 tests without reported failure to avoid duplicating CI. Approximate active author/tool time including failed extrapolation and primary-source audit. No independent specialist proof or novelty acceptance, no general M079 resolution, no solved/coverage change, and separate PR Landing unchanged."
+    },
+    {
+      "work_id": "X-M073-EDGE-NEIGHBORHOOD",
+      "scope_sha256": "c962ebd46a54512e8df0f6e85150ab77261e85cf1e2fb7bca870efcdbc54d6a8",
+      "author": "ChatGPT (M073 two-square edge-correlation research)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/272",
+      "pr_url": "https://github.com/Svyable/100/pull/273",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.3,
+        "ci_minutes": 0
+      },
+      "note": "Conditional on CI-gated merge. General link-cycle lemma for incidence graphs of closed simplicial triangulated surfaces with minimum point degree four: every incidence edge contains an 11-vertex 15-edge A/B two-square Ising motif, B iff point degree four; source H has 54 A and 12 B. Exact 2^15 parity and 2^11 spin checks, three independent-style source/link enumerators, octahedral/icosahedral controls, full 23-coefficient spectrum and a rational witness separating rung, uniform B and weighted bounds. Twelve adversarial tests and full regeneration passed locally; repository-wide tests/CI separately tracked. Historical novelty and independent specialist review unestablished; no universal Sidorenko resolution or finite host. PR Landing unchanged."
+    },
+    {
+      "work_id": "X-M079-CHAIN8-SEVENGAP",
+      "scope_sha256": "25964eaa7731a1810499577dcc89eb37b7586c5b6c3c9eb68cbdf579ed2b5703",
+      "author": "ChatGPT (M079 eight-outsider seven-gap research)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/269",
+      "pr_url": "https://github.com/Svyable/100/pull/270",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.25
+      },
+      "note": "Conditional on CI-gated merge. Author-derived sharp restricted balance candidate 46531/104389 for width-eight chain-plus-eight antichain outsiders with 2..7 insertion gaps, attained by a 20-element self-dual witness. Distinct-interval transposition lemma discharges 10440234 repeated cases; two exact C++ algorithms agree on 1819530 distinct configurations, independent-representation Python and forced-relation controls verify witness and 25 seeded cases. Explicit seven-gap witness strictly falsifies six-gap sharp extrapolation. Includes failed unpruned census and source comparisons. No independent mathematical acceptance or historical-novelty audit, no unrestricted conjecture proof, no solved/coverage changes; separate PR-landing task untouched."
+    },
+    {
+      "work_id": "X-M073-LOW-ORDER-SPECTRUM",
+      "scope_sha256": "417ef4f659c1f3a84b5ecd4d3b8c2ce2bb40135834e3b6aba5347dd176af6762",
+      "author": "ChatGPT (M073 surface incidence low-order spectrum research)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/274",
+      "pr_url": "https://github.com/Svyable/100/pull/275",
+      "claimed_on": "2026-11-03",
+      "closed_on": "2026-11-03",
+      "resources": {
+        "agent_hours": 0.5,
+        "ci_minutes": 0
+      },
+      "note": "Conditional on CI-gated merge. General closed simplicial surface identities c4=e, c6=4f+8s and c8=C8+binom(e,2)-3f, separating-triangle/4-connectivity corollary for spheres, and an explicit sharp nine-vertex minimum-degree-four same-f-vector spectral falsifier (c6 56 versus 64). Three author-controlled exact representations, seven adversarial tests, failed c6=4f extrapolation, primary-source comparison. No independently accepted proof, historical novelty determination, unrestricted Sidorenko resolution, coverage/benchmark change, or alteration to separate PR Landing."
+    },
+    {
+      "work_id": "X-M097-SUBDIVISION-CORE",
+      "scope_sha256": "3f60aa554a30aab86bcaedb85492f47ffc13881a2dbd252d9bd3d346639062c9",
+      "author": "ChatGPT (M097 subdivision-core research)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/278",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.75
+      },
+      "note": "Conditional on successful merge. Author-derived all-orders arbitrary-degree unequal-length subdivision TSP formula, explicit rational subtour primal/dual including bridges and articulations, exact uniform stabilization threshold, and an elementary all-length two-octahedron family with a parity-choice transition at length three. 483 expanded-metric Hamiltonian-DP comparisons, 14 targeted tests, exact rational minimum cuts and dual/walk checks. Subcubic even-cover specialization and parsimonious LP property identified as classical. Historical novelty and independent mathematical review unestablished; no unrestricted TSP, solved, coverage or benchmark claim. Includes failed minimum-join and unglued-star shortcuts; separate PR Landing untouched."
+    },
+    {
+      "work_id": "X-M097-SUBDIVIDED-FOURTHIRDS",
+      "scope_sha256": "2e3b6f583bf4c2a9a49143f8ceea86d2b2d441179abb32c91e36119e43b6ada4",
+      "author": "ChatGPT (M097 sharp subdivided four-thirds research)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/283",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.4,
+        "ci_minutes": 0
+      },
+      "note": "Conditional on successful CI-gated merge. Author-derived all-orders corollary from M097 exact subdivision formula and the classical integral Edmonds-Johnson T-join polyhedron: exact subtour LP zero-gap iff, and sharp TSP <= 4M/3+2B/3-2 unless deleting all bridges leaves an even core (then TSP=SEP). Includes unequal path lengths, articulation and bridge handling, theta and pendant-bridge exact sharpness, 9183 enumerated falsifier instances, eight targeted tests, odd-cut mutation, and a counterexample to coordinate-wise ratio monotonicity. No independent mathematical acceptance or historical novelty determination; no unrestricted four-thirds/M097 resolution, solved-status, coverage or benchmark promotion."
+    },
+    {
+      "work_id": "X-M080-ONE-ROW",
+      "scope_sha256": "4efd6a1a9149782b61da5760c2cb08f86342a0761842ccca4713593132d5d9e3",
+      "author": "ChatGPT (M080 one-exceptional-row matroid matching and Latin theorem)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/288",
+      "pr_url": "https://github.com/Svyable/100/pull/290",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 1.2
+      },
+      "note": "Unconditional all-ranks restricted matroid matching characterization, exact permanent × Latin-grid count and sharp two-sided bound by paper proof. Lean kernel audits cyclic completion from a supplied matching, NOT the matroid basis-exchange/Hall argument or counting bijection. 12 adversarial tests, 512 exhaustive GF(2)^3 rows, 6 exact fixtures. Novelty and independent mathematical review not established; full RBC remains open."
+    },
+    {
+      "work_id": "X-M097-WEIGHTED-SUBDIVISION",
+      "scope_sha256": "43428220042675fcd9e9c4811b28c098a254c3912344a664a46a1ea1b9291e1d",
+      "author": "ChatGPT (weighted subdivision TSP research)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/287",
+      "pr_url": "https://github.com/Svyable/100/pull/289",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 1.1,
+        "ci_minutes": 0
+      },
+      "note": "Conditional on CI-gated merge. All-orders positive weighted full-subdivision graphic-TSP exact parity/MST identity, path-total/max-weight compression and 2^cycle-rank state formula; all-metric symmetric-subtour gap universality via zero-twin invariance, classical parsimonious cut LP and epsilon subdivisions of simple bipartite 2-degenerate girth>=6 graphs. 2508 seeded plus 6843 exhaustive author-side rational expanded-metric Hamiltonian DP checks, explicit connected Eulerian walks, 15 adversarial tests including primal/dual LP clone tests; bibliographic priority and independent specialist review unestablished. No full 4/3 conjecture resolution, new lower bound, Lean theorem, solved status, benchmark or coverage promotion."
+    },
+    {
+      "work_id": "X-M078-EXPONENTIAL-LOCAL-DECK",
+      "scope_sha256": "e96604c33b3876d604f8de1a92089f91573b857fb7a6dfebe987e84ac9f4a7ab",
+      "author": "ChatGPT (M078 joint local-deck research)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/284",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.9,
+        "ci_minutes": 0
+      },
+      "note": "Conditional on successful CI-gated merge. Elementary unconditional construction gives at least C(s+m+1,m+1)/8 nonisomorphic subcubic trees of order m+(m+2)(2k-3)+s with identical paired card motif counts through k and each card degree sequence; uniform-order exponential bound. Author-run literal rooted-ball, direct card-motif and adversarial tests including all motifs through k=4, 126 small compositions (31 nonisomorphic), and separate NetworkX isomorphism check. No full-deck reconstruction counterexample, independent specialist review, Lean formalization, historical-novelty acceptance, solved state, benchmark or coverage change. Includes unsuccessful earlier attempt to transfer full note; recorded approximate combined work time.",
+      "pr_url": "https://github.com/Svyable/100/pull/286"
+    },
+    {
+      "work_id": "X-M074-GIRTH-DEFICIT",
+      "scope_sha256": "b772e6a73edda56e9e551680b3fce860acc38e1451fd065159853e48341cbf72",
+      "author": "ChatGPT (M074 girth-deficit research)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/128",
+      "pr_url": "https://github.com/Svyable/100/pull/134",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 1,
+        "ci_minutes": 0
+      },
+      "note": "Approximate active research/tool time. Sharp directed-girth deficit and equality rigidity with direct proofs; new CH27 irregular z=4 integer necessary-profile reduction 295 to 103. Not a full finite counterexample exclusion, no claimed priority, no independent mathematical review."
+    },
+    {
+      "work_id": "X-ROUTER-THROUGHPUT",
+      "scope_sha256": "05483e8bf643e40ee79e47a4e4503e450cbfc0cbaa847d4aa2ddc6e719ffaa56",
+      "author": "Claude (Claude Code session for Svyable)",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/142",
+      "claimed_on": "2026-11-01",
+      "closed_on": "2026-11-01",
+      "resources": {
+        "agent_hours": 0.7
+      },
+      "note": "Infrastructure only: review WIP limit, prior-attempt context in mandates, and scale/work digest alignment with coverage.py. Approximate agent time includes reading the DeepSeek prototype design. No theorem, no review recorded, no executor.",
+      "pr_url": "https://github.com/Svyable/100/pull/152"
+    },
+    {
+      "work_id": "X-M074-9LOCAL-THREE",
+      "scope_sha256": "2779707ac1be135eef987dbd81547a294b6528332b42d0f70da671a16bde4d71",
+      "author": "ChatGPT (certificate author; original research effort not measured)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/234",
+      "pr_url": "https://github.com/Svyable/100/pull/237",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-04",
+      "resources": {
+        "agent_hours": 0.2
+      },
+      "note": "0.2 agent-hours estimates this landing reconciliation only; original certificate research effort was not measured and is excluded, so aggregate yield denominator is incomplete. Finite nine-vertex SAT/LRAT certificate; no independent review or historical novelty determination; not CH(27,9)."
+    },
+    {
+      "work_id": "X-M079-CHAIN7-EIGHTGAP",
+      "scope_sha256": "a09c31bdbaa1c05a78547da092212181b6655d9aa8007610a3a9e91a26cd37a0",
+      "author": "ChatGPT (M079 seven-outsider eight-gap boundary research)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/259",
+      "pr_url": "https://github.com/Svyable/100/pull/260",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.5,
+        "ci_minutes": 0
+      },
+      "note": "Conditional on CI-gated merge. Sharp seven-outsider width-seven 2..8 insertion-gap restricted candidate 1951/4659; 12,610,738 normalized configurations with two exact C++ recurrences and 33 literal-poset checks, nine adversarial tests, a new-to-project all-orders noncentral gap-atom inequality, and a full-poset-checked counterexample to widening monotonicity. The six-gap equality witness persists; this is an exact scope extension, not a claimed historically novel constant. Nine-gap exploratory samples negative only. Includes source comparison, failed paths, and full regeneration. Approximate active author/tool effort includes failed approaches and computation. No independent specialist review, no global M079 resolution, solved-state/coverage change, benchmark claim, or PR-landing task change."
     },
     {
       "work_id": "X-M097-DEEP-CHORD-NET",
