@@ -28,6 +28,7 @@
   <url><loc>https://svyable.github.io/100/library/agents/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/approach/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/attack-queue/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/attestation/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/audit-queue/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/campaigns/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/claim-reviews-2026/</loc><lastmod>2026-11-01</lastmod></url>
@@ -48,7 +49,9 @@
   <url><loc>https://svyable.github.io/100/library/m071-m073-witnesses/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m073-antiferro-stability/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m073-assortative-two-block/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/m073-edge-neighborhood/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m073-information-alignment/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/m073-low-order-surface/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m073-monotone-two-block/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m073-regular2-cycle-margin/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m073-rung-correlation/</loc><lastmod>2026-11-01</lastmod></url>
@@ -72,16 +75,23 @@
   <url><loc>https://svyable.github.io/100/library/m076-f43-nine/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m076-f43-orbit-thresholds/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m076-f43-seven/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/m076-f43-six/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m076-f43-stability/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m076-f43-ten/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m078-card-signature/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/m078-exponential-local-deck/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m078-p4-separator/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/m078-s4-nine-unicyclic/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/m078-tree-local-motifs/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m079-chain-plus-five/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m079-chain-plus-four/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m079-chain-plus-three/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m079-chain-plus-two/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m079-chain7-eightgap/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m079-chain7-local/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/m079-chain8-fivegap/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/m079-chain8-sevengap/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/m080-one-exceptional/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m080-repeated-orbit-gate/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m088-gf2-falsifier/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m088-lock/</loc><lastmod>2026-11-01</lastmod></url>
@@ -94,6 +104,9 @@
   <url><loc>https://svyable.github.io/100/library/m097-block-sum/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m097-graph8/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m097-multitheta/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/m097-subdivided-fourthirds/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/m097-subdivision-core/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/library/m097-weighted-subdivision/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/m098-vaught/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/mines/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/library/next-100/</loc><lastmod>2026-11-01</lastmod></url>
@@ -387,6 +400,7 @@
   <url><loc>https://svyable.github.io/100/work/L007/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/L008/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/L009/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/L010/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/O-M001-01/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/O-M002-01/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/O-M006-01/</loc><lastmod>2026-11-01</lastmod></url>
@@ -537,6 +551,7 @@
   <url><loc>https://svyable.github.io/100/work/V-L007/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/V-L008/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/V-L009/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://svyable.github.io/100/work/V-L010/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/V-P-M001/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/V-P-M002/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://svyable.github.io/100/work/V-P-M006/</loc><lastmod>2026-11-01</lastmod></url>

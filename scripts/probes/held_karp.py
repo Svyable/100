@@ -137,6 +137,7 @@ def check(params, result):
     require({(r["n"], r["graph"]) for r in rows} == expected and len(rows) == len(expected),
             "instances must be exactly the connected graphs of the census")
     worst = Fraction(0)
+    worst_instance = None
     for r in rows:
         n = r["n"]
         adj = to_adjacency(n, r["graph"])
@@ -175,6 +176,14 @@ def check(params, result):
         require(length == r["opt"] == brute, f"n={n} graph {r['graph']}: tour is not optimal")
         ratio = Fraction(r["opt"]) / hk
         require(ratio <= Fraction(4, 3) or not result["holds"], "4/3 bound violated")
-        worst = max(worst, ratio)
-    require(fraction_text(worst) == result["summary"]["max_ratio"], "summary ratio mismatch")
-    require(result["summary"]["certificate_sha256"] == digest(rows), "certificate hash mismatch")
+        if ratio > worst:
+            worst = ratio
+            worst_instance = {"n": r["n"], "graph": r["graph"]}
+    summary = result["summary"]
+    require(fraction_text(worst) == summary["max_ratio"], "summary ratio mismatch")
+    require(summary["instances"] == len(rows), "summary instance count mismatch")
+    require(summary["max_ratio_instance"] == worst_instance,
+            "reported worst instance is not the certified maximum")
+    require(result["holds"] is (worst <= Fraction(4, 3)),
+            "verdict does not match the certified 4/3 threshold")
+    require(summary["certificate_sha256"] == digest(rows), "certificate hash mismatch")
