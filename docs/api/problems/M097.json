@@ -171,6 +171,11 @@
       "url": "https://svyable.github.io/100/library/m097-block-sum/"
     },
     {
+      "title": "M097 — same-hub cross-edge: exact graphic-metric TSP and subtour LP",
+      "source": "research/M097_CROSS_SAME.md",
+      "url": "https://svyable.github.io/100/library/m097-cross-same/"
+    },
+    {
       "title": "M097 — separated chord networks preserve exact graphic-metric TSP and subtour optima",
       "source": "research/M097_DEEP_CHORD_NET.md",
       "url": "https://svyable.github.io/100/library/m097-deep-chord-net/"

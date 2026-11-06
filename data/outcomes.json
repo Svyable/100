@@ -909,6 +909,22 @@
         "ci_minutes": 0
       },
       "note": "Conditional on CI-gated merge. Author-derived all-orders restricted theorem candidate: arbitrary networks of well-separated interior chords preserve exact graphic-metric subtour LP and TSP values; joint geodesic-mass optimal-face inequality and sharp 13/12 ratio for at least two chords. Exact rational all-cut and subset-DP checks on 57 graph instances, seven separately formulated full-cut SciPy LP optimizations, ten adversarial tests and two shallow-boundary falsifiers. No historical novelty, independent specialist mathematical acceptance, global 4/3 bound, solved-state or coverage change. Project 100 PR Landing automation unchanged."
+    },
+    {
+      "work_id": "X-M097-CROSS-SAME",
+      "scope_sha256": "a45c367b8d2a08b894810c63ca97c29b7c6c0b6b16561c276cacf5adae1f2802",
+      "author": "ChatGPT (M097 same-hub cross-edge all-orders restricted candidate)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/238",
+      "pr_url": "https://github.com/Svyable/100/pull/239",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 0.7,
+        "ci_minutes": 0
+      },
+      "note": "Approximate author/tool derivation time including the failed sorted-length extrapolation and the disconnected k=3 short-path tour. Exact all-orders same-hub cross-edge graphic-metric SEP/TSP candidate: half-unit three-path exception, fractional ear lemma, Eulerian parity rigidity and sharp 15/14 class ratio. 371 ordered exact rational cut/DP checks, 112 separately implemented SciPy LP/DP checks, 11 adversarial tests. Conditional on CI-gated PR merge; no historical-novelty or independent specialist acceptance, no global 4/3 improvement, no solved/evidence state, coverage, benchmark or PR-landing task change."
     }
   ]
 }
