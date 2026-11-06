@@ -110,15 +110,57 @@ def scope_matches(claimed, canonical):
         isinstance(claimed, str) and len(claimed) == 16 and claimed == canonical[:16])
 
 
-def plan(work_items, claims_snapshot, state, reports=(), events=(), max_workers=3, now=None):
+PROBLEM = re.compile(r"M\d{3}")
+PRIOR_LIMIT = 8
+PRIOR_NOTE_CHARS = 600
+
+
+def review_backlog(outcomes):
+    """Merged artifacts that still await an independent reviewer (YIELD.md backlog)."""
+    return sum(1 for o in outcomes if isinstance(o, dict) and o.get("outcome") == "merged_pending_review")
+
+
+def prior_attempts(item, outcomes):
+    """Earlier outcome records on the same work item or problems, newest first.
+
+    A worker that starts from the recorded gaps and falsifiers of earlier attempts
+    does not spend its budget rediscovering them. This is context, never evidence.
+    """
+    problems = set(item.get("problems") or PROBLEM.findall(item["id"]))
+    found = []
+    for o in outcomes:
+        if not isinstance(o, dict) or not isinstance(o.get("work_id"), str):
+            continue
+        if o["work_id"] != item["id"] and not problems & set(PROBLEM.findall(o["work_id"])):
+            continue
+        note = o.get("note") if isinstance(o.get("note"), str) else ""
+        found.append({"work_id": o["work_id"], "outcome": o.get("outcome"),
+                      "closed_on": o.get("closed_on"), "pr_url": o.get("pr_url"),
+                      "note": note[:PRIOR_NOTE_CHARS]})
+    found.sort(key=lambda r: (str(r["closed_on"] or ""), r["work_id"]), reverse=True)
+    return found[:PRIOR_LIMIT]
+
+
+def plan(work_items, claims_snapshot, state, reports=(), events=(), max_workers=3, now=None,
+         outcomes=(), review_wip=None):
     """Return reservable ticket mandates; only a separate executor runs workers.
 
     No claim is created here. A slot is never freed on a stale or missing issue;
     it stays quarantined until an explicit terminal report is recorded.
+
+    ``review_wip`` is a work-in-progress limit on the review bottleneck: once the
+    number of merged artifacts awaiting independent review reaches it, only
+    ``review`` work is admitted and every other valid claim waits as ``queued``.
+    Producing more unreviewed artifacts does not raise accepted yield.
     """
     now = now or datetime.now(timezone.utc)
     if type(max_workers) is not int or not 1 <= max_workers <= 100:
         raise ValueError("max_workers must be an integer from 1 to 100")
+    if review_wip is not None and (type(review_wip) is not int or review_wip < 1):
+        raise ValueError("review_wip must be a positive integer or None")
+    outcomes = list(outcomes)
+    backlog = review_backlog(outcomes)
+    review_only = review_wip is not None and backlog >= review_wip
     issues = checked_snapshot(claims_snapshot, now)
     tickets = checked_state(state)
     work = {}
@@ -186,6 +228,9 @@ def plan(work_items, claims_snapshot, state, reports=(), events=(), max_workers=
         if any(t["claim_number"] == issue["number"] for t in tickets):
             decisions.append({"work_id": wid, "decision": "refuse", "reason": "claim_already_ended"})
             continue
+        if review_only and item.get("kind") != "review":
+            decisions.append({"work_id": wid, "decision": "queued", "reason": "review_wip_exceeded"})
+            continue
         if used >= max_workers:
             decisions.append({"work_id": wid, "decision": "queued", "reason": "worker_slots_full"})
             continue
@@ -201,7 +246,8 @@ def plan(work_items, claims_snapshot, state, reports=(), events=(), max_workers=
                             "work_id": wid, "scope_sha256": digest,
                             "deliverable": item["deliverable"], "acceptance": item["acceptance"],
                             "boundary": item["boundary"], "falsifier": item.get("falsifier", ""),
-                            "instructions": "Work only within this contract. Follow AGENTS.md, regenerate, run checks; never self-accept mathematical claims."}})
+                            "prior_attempts": prior_attempts(item, outcomes),
+                            "instructions": "Work only within this contract. Follow AGENTS.md, regenerate, run checks; never self-accept mathematical claims. Read prior_attempts first: do not repeat a recorded gap or falsified route without saying what is different."}})
     # Human comments stay with the Ticket owning the claim, not a new task.
     seen_events = set(state.get("seen_comment_ids", []))
     if len(seen_events) > 10000:
@@ -225,7 +271,8 @@ def plan(work_items, claims_snapshot, state, reports=(), events=(), max_workers=
             actions.append({"action": "operator_review_followup", "issue_number": event["issue_number"],
                             "comment_id": event["comment_id"]})
     return {"protocol": PROTOCOL, "mode": "reservation_only", "slots_total": max_workers,
-            "slots_occupied": used, "decisions": decisions, "actions": actions,
+            "slots_occupied": used, "review_backlog": backlog, "review_wip": review_wip,
+            "review_only": review_only, "decisions": decisions, "actions": actions,
             "state": {"protocol": PROTOCOL, "tickets": tickets,
                       "seen_comment_ids": sorted(seen_events)}}
 
@@ -238,6 +285,10 @@ def main():
     p.add_argument("--reports", type=Path, help="optional explicit worker status reports JSON list")
     p.add_argument("--events", type=Path, help="optional issue-comment followup events JSON list")
     p.add_argument("--max-workers", type=int, default=3)
+    p.add_argument("--outcomes", type=Path, default=Path(__file__).resolve().parents[1] / "data" / "outcomes.json",
+                   help="outcome ledger used for the review backlog and prior attempts")
+    p.add_argument("--review-wip", type=int, default=10,
+                   help="admit only review work once this many merged artifacts await review (0 disables)")
     p.add_argument("--commit", action="store_true", help="atomically persist reservations with an exclusive local lock")
     args = p.parse_args()
     if args.work:
@@ -248,12 +299,17 @@ def main():
     snapshot = json.loads(args.claims.read_text(encoding="utf-8"))
     reports = json.loads(args.reports.read_text(encoding="utf-8")) if args.reports else []
     events = json.loads(args.events.read_text(encoding="utf-8")) if args.events else []
+    outcomes = json.loads(args.outcomes.read_text(encoding="utf-8")).get("outcomes", [])
+    if args.review_wip < 0:
+        p.error("--review-wip must be nonnegative")
+    review_wip = args.review_wip or None
     # This lock is local to one state path / filesystem. It is NOT a distributed
     # claim lease and does not authorize launches against an unrefreshed GitHub API.
     with open(str(args.state) + ".lock", "a+", encoding="utf-8") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX)
         state = json.loads(args.state.read_text(encoding="utf-8"))
-        result = plan(items, snapshot, state, reports=reports, events=events, max_workers=args.max_workers)
+        result = plan(items, snapshot, state, reports=reports, events=events, max_workers=args.max_workers,
+                      outcomes=outcomes, review_wip=review_wip)
         if args.commit:
             fd, tmp = tempfile.mkstemp(prefix=".router-", dir=str(args.state.parent))
             try:

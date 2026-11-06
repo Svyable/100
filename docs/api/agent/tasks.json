@@ -2,7 +2,7 @@
   "schema_version": 1,
   "snapshot_as_of": "2026-11-01",
   "selection": "First 20 runnable items in the derived work queue's priority order; use api/work.json for all tasks and other statuses.",
-  "runnable_in_snapshot": 343,
+  "runnable_in_snapshot": 346,
   "live_claim_status": "unknown; check existing_claims_url immediately before claiming",
   "task_count": 20,
   "tasks": [
@@ -49,6 +49,28 @@
       "task_url": "https://svyable.github.io/100/work/O-M073-01/",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M073-01%22",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M073-01%20%E2%80%94%20Witness%20obligation%20for%20M073"
+    },
+    {
+      "id": "O-M073-02",
+      "kind": "obligation",
+      "title": "Lemma obligation for M073",
+      "priority_rank": 2,
+      "status": "runnable",
+      "problems": [
+        "M073"
+      ],
+      "deliverable": "Derive the representation bridge, record all exact coefficients for the pinned H, cross-check every coefficient with a parity-state algorithm and small exhaustive controls, and obtain independent mathematical review of research/M073_INFORMATION_ALIGNMENT.md before discharge.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M073-02 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "The high-temperature expansion and Fourier/code duality are classical. Source-specific coefficients are new to this project only; no historical novelty, full Sidorenko resolution, finite counterexample host or independent acceptance is claimed.",
+      "depends_on": [],
+      "scope_sha256": "f530835caa13124e4132d78c39d9ade91b32004adabdbec2ea7469bfa14c083b",
+      "task_url": "https://svyable.github.io/100/work/O-M073-02/",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M073-02%22",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M073-02%20%E2%80%94%20Lemma%20obligation%20for%20M073"
     },
     {
       "id": "O-M044-01",
@@ -153,9 +175,9 @@
         "Independent review recorded before the node is marked discharged",
         "python3 scripts/regen.py && python3 scripts/regen.py --check"
       ],
-      "boundary": "These orders are constructed in the literature; the open case begins at order 668. Closing engine gaps is reproduction, not a new existence theorem.",
+      "boundary": "These orders are constructed in the literature; the smallest order without a known matrix is now 2396 (Egan et al., 2026, arXiv:2610.27175). Closing engine gaps is reproduction, not a new existence theorem.",
       "depends_on": [],
-      "scope_sha256": "34e16102d6f22db90d9148603d18b052bb3c6829a7a55994f9c3e433b1a1d86f",
+      "scope_sha256": "06a4fbc249fabef8b31b7abe5b43555e9c7538ac5a0ab65132033bd73791aa40",
       "task_url": "https://svyable.github.io/100/work/O-M094-01/",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M094-01%22",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M094-01%20%E2%80%94%20Witness%20obligation%20for%20M094"
@@ -293,6 +315,28 @@
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M079-03%20%E2%80%94%20Lemma%20obligation%20for%20M079"
     },
     {
+      "id": "O-M079-04",
+      "kind": "obligation",
+      "title": "Lemma obligation for M079",
+      "priority_rank": 12,
+      "status": "runnable",
+      "problems": [
+        "M079"
+      ],
+      "deliverable": "Independently audit the all-orders gap-atom and Helly reductions, the 40,355,371-case exact dual recurrence and 1405-extension witness in research/M079_CHAIN_PLUS_FIVE.md; obtain external mathematical and historical-novelty review. Do not change solved status.",
+      "acceptance": [
+        "Discharge evidence recorded on O-M079-04 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
+        "Independent review recorded before the node is marked discharged",
+        "python3 scripts/regen.py && python3 scripts/regen.py --check"
+      ],
+      "boundary": "The unrestricted 1/3–2/3 conjecture remains open. The earlier chain-plus-four 25/61 candidate is a different class; 2026 large-width asymptotic theorems and finite order-14 computations do not by themselves establish this all-orders fixed-width-five bound. Historical novelty and independent mathematical acceptance are not established.",
+      "depends_on": [],
+      "scope_sha256": "5629ffe92a7529266dc2a522e885ab96934a4d780f7cf38dbdf325fb9bbab844",
+      "task_url": "https://svyable.github.io/100/work/O-M079-04/",
+      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M079-04%22",
+      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M079-04%20%E2%80%94%20Lemma%20obligation%20for%20M079"
+    },
+    {
       "id": "O-M096-01",
       "kind": "obligation",
       "title": "Witness obligation for M096",
@@ -401,50 +445,6 @@
       "task_url": "https://svyable.github.io/100/work/O-M097-01/",
       "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M097-01%22",
       "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M097-01%20%E2%80%94%20Lemma%20obligation%20for%20M097"
-    },
-    {
-      "id": "O-M019-01",
-      "kind": "obligation",
-      "title": "Lemma obligation for M019",
-      "priority_rank": 18,
-      "status": "runnable",
-      "problems": [
-        "M019"
-      ],
-      "deliverable": "Prove a symbolic identity for residue 3 or residue 7; treat the certified table as a guide, not as the lemma.",
-      "acceptance": [
-        "Discharge evidence recorded on O-M019-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
-        "Independent review recorded before the node is marked discharged",
-        "python3 scripts/regen.py && python3 scripts/regen.py --check"
-      ],
-      "boundary": "Classical Mordell-type identities leave quadratic-residue classes uncovered; the straus_patterns mine through 8000 is a certified table, not a symbolic identity.",
-      "depends_on": [],
-      "scope_sha256": "aed22f7409b059e5deaf541ca1c7bd9873dc7a471be1e4879d23c4c96216720b",
-      "task_url": "https://svyable.github.io/100/work/O-M019-01/",
-      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M019-01%22",
-      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M019-01%20%E2%80%94%20Lemma%20obligation%20for%20M019"
-    },
-    {
-      "id": "O-M002-01",
-      "kind": "obligation",
-      "title": "Witness obligation for M002",
-      "priority_rank": 19,
-      "status": "runnable",
-      "problems": [
-        "M002"
-      ],
-      "deliverable": "Replay a published primitive character modulo 3 or 5 with independent Gauss-sum and zero-count checks; document that this is known mathematics, not GRH progress.",
-      "acceptance": [
-        "Discharge evidence recorded on O-M002-01 in data/proof_obligations.json, passing python3 scripts/proof_obligations.py --check",
-        "Independent review recorded before the node is marked discharged",
-        "python3 scripts/regen.py && python3 scripts/regen.py --check"
-      ],
-      "boundary": "The existing chi_4 certificate to height 17 is a known-method reproduction; GRH concerns all characters, so one more character tests the reusable contour, not the conjecture.",
-      "depends_on": [],
-      "scope_sha256": "2e0d373691a3218efc8ca90cfb182d98f871468cf028691e54cb651ce137c186",
-      "task_url": "https://svyable.github.io/100/work/O-M002-01/",
-      "existing_claims_url": "https://github.com/Svyable/100/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%22%5BClaim%5D%20O-M002-01%22",
-      "open_claim_url": "https://github.com/Svyable/100/issues/new?template=claim.yml&title=%5BClaim%5D%20O-M002-01%20%E2%80%94%20Witness%20obligation%20for%20M002"
     }
   ]
 }

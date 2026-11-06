@@ -9,7 +9,7 @@ import Hundred.Statements.Basic
 are pairwise orthogonal (`H Hᵀ = n I`; the diagonal is automatic for `±1` entries).
 
 **Not encoded.** Orders 1 and 2 (trivial), constructions (Sylvester, Paley,
-Williamson). **Frontier:** the smallest open order is 668.
+Williamson). **Frontier:** the smallest order without a known matrix is 2396 (Egan et al., arXiv:2610.27175, October 2026).
 -/
 
 namespace Hundred.Statements.Hadamard

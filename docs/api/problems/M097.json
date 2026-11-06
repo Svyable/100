@@ -176,6 +176,16 @@
       "url": "https://svyable.github.io/100/library/m097-cross-end/"
     },
     {
+      "title": "M097 — same-hub cross-edge: exact graphic-metric TSP and subtour LP",
+      "source": "research/M097_CROSS_SAME.md",
+      "url": "https://svyable.github.io/100/library/m097-cross-same/"
+    },
+    {
+      "title": "M097 — separated chord networks preserve exact graphic-metric TSP and subtour optima",
+      "source": "research/M097_DEEP_CHORD_NET.md",
+      "url": "https://svyable.github.io/100/library/m097-deep-chord-net/"
+    },
+    {
       "title": "M097 — eight-vertex graph-metric subtour gap census",
       "source": "research/M097_GRAPH8.md",
       "url": "https://svyable.github.io/100/library/m097-graph8/"
@@ -184,6 +194,21 @@
       "title": "M097 — exact subtour LP and TSP on subdivided parallel-path graphs",
       "source": "research/M097_MULTITHETA.md",
       "url": "https://svyable.github.io/100/library/m097-multitheta/"
+    },
+    {
+      "title": "M097 — sharp four-thirds bound and exact LP equality in fully subdivided graph metrics",
+      "source": "research/M097_SUBDIVIDED_FOURTHIRDS.md",
+      "url": "https://svyable.github.io/100/library/m097-subdivided-fourthirds/"
+    },
+    {
+      "title": "M097 — exact subdivision costs from core parity and connectivity",
+      "source": "research/M097_SUBDIVISION_CORE.md",
+      "url": "https://svyable.github.io/100/library/m097-subdivision-core/"
+    },
+    {
+      "title": "M097 — arbitrary weighted subdivision TSP and the limit of subdivision-based LP bounds",
+      "source": "research/M097_WEIGHTED_SUBDIVISION.md",
+      "url": "https://svyable.github.io/100/library/m097-weighted-subdivision/"
     },
     {
       "title": "Proof-driven research engine",
