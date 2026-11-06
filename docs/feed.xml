@@ -14,6 +14,13 @@
 <summary>The argument principle certifies N(100) = 29 exactly from interval boxes along 2 -&gt; 2+100i -&gt; 1/2+100i, and Hardy&#x27;s Z(t) has 29 certified sign changes on (0, 100]. All arithmetic is rigorous interval arithmetic with explicit series remainders, repeated by the checker at another precision and truncation. The deep run certifies all 649 zeros below height 1000 the same way. Scope: Known small range; not new</summary>
 </entry>
 <entry>
+<title>Milestone: Least Goldbach prime bounded by floor(3 (ln n)^2) through 20,000</title>
+<link href="https://svyable.github.io/100/ledger/#B-MINE-006-BOUND"/>
+<id>tag:svyable.github.io,2026:100/milestone-B-MINE-006-BOUND</id>
+<updated>2026-11-01T00:00:00Z</updated>
+<summary>Every even n &lt;= 20000 has least Goldbach prime p &lt;= floor(3 (ln n)^2). The twelve growth-mine records dominate; an odd-only sieve recomputes each least prime and the bound. Scope: Explicit inequality inside the published 4*10^18 verification; not an asymptotic theorem</summary>
+</entry>
+<entry>
 <title>Milestone: GRH to height 20 for the real primitive characters of conductor 3, 4 and 5</title>
 <link href="https://svyable.github.io/100/ledger/#B-GRH-001"/>
 <id>tag:svyable.github.io,2026:100/milestone-B-GRH-001</id>
@@ -182,11 +189,11 @@
 <summary>Each graph carries a proper t-colouring and a K_t minor model (t = chromatic number); the census is complete by Burnside counting. Deep run: all 1,252 graphs on &lt;= 7 vertices. Scope: Known case (chromatic number &lt;= 6 theorem); not new</summary>
 </entry>
 <entry>
-<title>Milestone: Exact Hadamard matrices for 31 of the 32 orders 4k &lt;= 128, including order 92</title>
+<title>Milestone: Exact Hadamard matrices for every order 4k &lt;= 172, including 116, 156 and 172</title>
 <link href="https://svyable.github.io/100/ledger/#B-HADAMARD-001"/>
 <id>tag:svyable.github.io,2026:100/milestone-B-HADAMARD-001</id>
 <updated>2026-10-31T00:00:00Z</updated>
-<summary>Sylvester, Paley I/II, a Williamson quadruple of symmetric circulants of order 23 (order 92, found by meet-in-the-middle on periodic autocorrelations) and Kronecker products; each matrix checked as H H^T = nI. The deep run certifies 87 of the 100 orders up to 400. Scope: Known orders; the remaining engine gap 116 is not an open case</summary>
+<summary>Sylvester, Paley I/II, Williamson n=23 (order 92), and published propus quadruples for orders 116, 156 and 172, closed under Kronecker products. Each matrix is checked as H H^T = nI. Smoke covers all 32 orders 4k &lt;= 128. Deep covers 91 of the 100 orders 4k &lt;= 400; the first remaining engine gap is 188. Order 668 was constructed and independently verified in 2026; 2396 is now the smallest order without a known matrix (arXiv:2610.27175). Scope: Known constructions; not a new matrix and not a proof that every multiple of 4 works</summary>
 </entry>
 <entry>
 <title>Milestone: Goldbach partitions certified for every even n &lt;= 200,000</title>

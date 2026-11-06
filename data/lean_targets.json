@@ -95,7 +95,7 @@
     "problem_id": "M094",
     "stage": "implemented",
     "statement": "Explicit Hadamard matrices of orders 4, 8 (Sylvester) and 12 (Paley I, q = 11), re-checked by the kernel against Hundred.Statements.Hadamard.IsHadamard.",
-    "scope_gap": "Small known orders only; the smallest open order is 668. Independent statement review pending.",
+    "scope_gap": "Small known orders only; the smallest order without a known construction is 2396 after independently verified 2026 finite matrices (arXiv:2610.27175). Independent statement review pending.",
     "next_step": "Prove Sylvester doubling as a general theorem (order n to 2n) instead of instance by instance.",
     "declarations": [
       "Hundred.Statements.Hadamard.order_4",
@@ -124,6 +124,18 @@
     "declarations": [
       "Hundred.Statements.ProjectivePlane.exists_order_2",
       "Hundred.Statements.ProjectivePlane.exists_order_3"
+    ]
+  },
+  {
+    "id": "L010",
+    "problem_id": "M080",
+    "stage": "implemented",
+    "statement": "For every positive rank n, an injective omitted-symbol matching can be completed by n-1 cyclic rows, each a permutation, with distinct symbols in every column and its matched omitted symbol excluded. The matched exchange predicate is preserved for each column.",
+    "scope_gap": "Only the matching-to-cyclic-grid construction is formal. Hall matching existence from a second basis, rank-n matroid exchange, vector-space determinant logic, exact permanent/Latin counts and full RBC remain outside Lean. Author checked, no independent specialist acceptance.",
+    "next_step": "Formalize vector-space/matroid basis exchange and Hall matching in a richer library, then transport the paper-level all-rank theorem to an actual matroid model.",
+    "declarations": [
+      "Hundred.Research.M080.cyclic_rows_permutations",
+      "Hundred.Research.M080.matching_gives_cyclic_grid"
     ]
   }
 ]
