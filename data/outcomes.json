@@ -941,6 +941,22 @@
       },
       "note": "Conditional on PR merge, not independent acceptance. Author-derived all-orders exact SEP and TSP formula for a single cross-end edge in chorded multitheta graphs; two-hub component-cut lower bound, sharp 12/11 restricted ratio, parity rigidity, exact rational LP witness, 166 labeled exact cut/tour tests and separate full LP optimization, 8 adversarial tests, failed first-first extension. Historical novelty and external mathematical review unestablished; no global 4/3 progress, solved/evidence/coverage/benchmark change or PR-landing task change.",
       "pr_url": "https://github.com/Svyable/100/pull/233"
+    },
+    {
+      "work_id": "X-M097-CHORDED-MULTITHETA",
+      "scope_sha256": "66124a539f83fe23968a5896b795c2361a3a8ddc8acd1da4afce68093819c5ab",
+      "author": "ChatGPT (M097 chorded multitheta proof candidate and stability lemma)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/228",
+      "pr_url": "https://github.com/Svyable/100/pull/231",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 2.5,
+        "ci_minutes": 0
+      },
+      "note": "Estimated cumulative active research/tool effort across the claim, including failed direct-edge-as-length-one extrapolation, one-cross-edge falsifier, all-orders exact LP and tour derivation, independent integer mincut and exhaustive shortest-path checks, quantitative optimal-face stability with sharp integral boundary, exact rational and optional numerical controls. Outcome conditional on CI-gated PR merge and subsequent claim closure; not an assertion that it has merged. Historical priority and independent mathematical review unestablished. No global 4/3 result, new coverage slot, solved status or PR-landing workflow change."
     }
   ]
 }
