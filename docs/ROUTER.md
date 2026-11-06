@@ -14,6 +14,17 @@ The portfolio already has the work queue (scripts/work.py), proof dependencies (
 5. **Stop / Retry:** a vanished claim, duplicate, scope change or newly blocked work quarantines the ticket and retains its slot. An operator must stop the actual executor and supply an explicit ended report; quarantine never silently frees capacity. Ended claims cannot auto-relaunch.
 6. **Replies:** issue-comment identifiers route to their existing ticket; unknown/unowned comments go to operator_review_followup rather than spawning a second worker. Delivered comment IDs persist in router state to prevent replay (10,000 ID safety cap).
 
+## Bottleneck-aware admission
+
+Throughput here is set by independent review, not by how many workers run ([YIELD.md](../YIELD.md): accepted items per agent-hour). Adding worker slots in front of a stalled review queue only grows the pile of `merged_pending_review` artifacts. Two rules keep the router pointed at the constraint:
+
+- **Review WIP limit.** The router reads data/outcomes.json. Once the number of `merged_pending_review` records reaches `--review-wip` (default 10; `0` disables), only `review` work items are reserved; every other valid claim stays `queued` with reason `review_wip_exceeded`, keeps its claim, and is admitted automatically once reviews land. The output reports `review_backlog`, `review_wip` and `review_only`.
+- **Failure memory in every mandate.** `prepare_worker` mandates carry `prior_attempts`: up to 8 earlier outcome records on the same work item or the same problem ids, newest first, with outcome, PR link and a truncated note. Workers must read them first and must not repeat a recorded gap or falsified route without saying what is different. These records are context, never evidence.
+
+Wave packets from scripts/scale.py now carry the work-queue digest as `scope_sha256` (the value the claim form pins and this router admits) and the role-binding hash separately as `packet_sha256`. Before this change, a claim copied from SCALE.md or docs/api/packets.json carried a digest the router refused as `missing_or_stale_scope_digest`.
+
+To cut the cost of each review instead of only rationing it, see the mechanical attestation lane in [docs/ATTESTATION.md](ATTESTATION.md) when it is present.
+
 The 16-character digest accepted from the current GitHub claim form is compared against the current **full** work-queue digest; the ticket always stores all 64 characters. A different prefix fails closed. Change the template and router together if this prefix policy changes.
 
 The result is a **reservation and mandate document**, not a GitHub lease, lock service, accepted research result, or worker runtime. Worker starts/stops/replies and independent review are external responsibilities.
@@ -35,9 +46,10 @@ gh api --paginate --slurp 'repos/Svyable/100/issues?state=open&per_page=100' \
 # Initialize durable state ONCE. Never erase a state file to free busy slots.
 printf '{"protocol":"svyable.router.v1","tickets":[]}\n' > /tmp/100-router-state.json
 
-# Preview actions with no writes or agent execution.
+# Preview actions with no writes or agent execution (reads data/outcomes.json for the
+# review backlog and prior attempts; --review-wip 0 disables the limit).
 python3 scripts/router.py --claims /tmp/100-open-claims.json \
-  --state /tmp/100-router-state.json --max-workers 3
+  --state /tmp/100-router-state.json --max-workers 3 --review-wip 10
 
 # Persist new reservations, locally/atomically, while holding an advisory file lock.
 python3 scripts/router.py --claims /tmp/100-open-claims.json \

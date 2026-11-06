@@ -25,8 +25,17 @@ class MineTests(unittest.TestCase):
         gold = tables["goldbach_growth"]["summary"]
         self.assertEqual(gold["record_count"], 12)
         self.assertEqual([gold["largest_least_prime"], gold["attained_at"]], [173, 7426])
-        self.assertIn("173", campaigns["M006"]["next_experiment"])
-        self.assertIn("goldbach_growth", campaigns["M006"]["additional_verifiers"][0])
+        self.assertIn("goldbach_bound", campaigns["M006"]["next_experiment"])
+        self.assertEqual(campaigns["M006"]["dossier"], "research/M006_BOUND.md")
+        bound = tables["goldbach_bound"]["summary"]
+        self.assertEqual(bound["bound_factor"], 3)
+        self.assertEqual(bound["record_count"], 12)
+        self.assertEqual(bound["worst_record_n"], 7426)
+        self.assertEqual(bound["worst_record_prime"], 173)
+        self.assertIn(
+            "python3 scripts/mine.py --mine goldbach_bound",
+            campaigns["M006"]["additional_verifiers"],
+        )
 
         straus = tables["straus_patterns"]["summary"]
         self.assertEqual(straus["primes"], 117)
@@ -60,6 +69,28 @@ class MineTests(unittest.TestCase):
         for mine_id, record in tables.items():
             self.assertTrue(record["holds"])
             self.assertIn(mines.command(mine_id), research.RUNNABLE)
+
+    def test_goldbach_bound_rejects_summary_and_certificate_mutations(self):
+        bound = mines.load("goldbach_bound")
+        params = bound.MINE["levels"]["smoke"]
+        result = bound.search(params)
+        bound.check(params, result)
+        for key, replacement in (
+            ("limit", 20002),
+            ("even_integers", 1),
+            ("bound_formula", "floor(4*(ln n)^2)"),
+            ("worst_record_ratio", 0),
+            ("worst_record_bound", 0),
+        ):
+            bad = copy.deepcopy(result)
+            bad["summary"][key] = replacement
+            with self.subTest(key=key), self.assertRaises(ProbeFailure):
+                bound.check(params, bad)
+        bad = copy.deepcopy(result)
+        bad["certificate"]["least"][0] = 4
+        with self.assertRaises(ProbeFailure):
+            bound.check(params, bad)
+        self.assertEqual(bound.high_precision_bound(7426), bound.bound(7426))
 
     def test_width_and_height_of_a_chain_and_an_antichain(self):
         chain = (0, 1, 3)          # 0 < 1 < 2

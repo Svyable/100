@@ -290,7 +290,10 @@ def wave(budget=100, root=ROOT):
             "existing_claims_url": item["existing_claims_url"],
             "interpretation": "One claimable slot. Roles are a recommended split under that claim, not three independent truth votes.",
         }
-        packet["scope_sha256"] = packet_digest(packet)
+        # The claim digest is the work-queue digest: it is what the claim form pins and
+        # what scripts/router.py admits. packet_sha256 additionally binds the role plan.
+        packet["scope_sha256"] = item["scope_sha256"]
+        packet["packet_sha256"] = packet_digest(packet)
         packets.append(packet)
     by_kind = {k: sum(p["kind"] == k for p in packets) for k in FAMILY_BASE}
     return {

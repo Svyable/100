@@ -40,7 +40,7 @@ def choose_breadth_first(packets, budget):
             raise ValueError("cannot dispatch blocked or unscoped packet " + p["id"])
         if len(p["problems"]) != len(set(p["problems"])):
             raise ValueError("duplicate problem in packet " + p["id"])
-        if scale.packet_digest(p) != p["scope_sha256"]:
+        if scale.packet_digest(p) != p.get("packet_sha256"):
             raise ValueError("packet digest mismatch for " + p["id"])
 
     remaining = {p["id"]: p for p in packets}

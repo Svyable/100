@@ -49,9 +49,10 @@ Legendre symbol modulo 5. **Next:** a complex character, where Lambda is not rea
 ### M006 — Strong Goldbach (`goldbach`, engine `primes`)
 Certifies the least Goldbach prime for every even n up to the run limit. The search side uses a
 sieve; the check side uses deterministic Miller–Rabin, or an independent odd-only sieve for large
-runs. The deep run reproduces the known record least prime 751 at n = 3,807,404. **Frontier:**
-4·10^18 (Oliveira e Silva, Herzog & Pardi 2014). A larger range has no research value; the
-useful output is the least-partition table, as data for restricted lemmas.
+runs. The deep run reproduces the known record least prime 751 at n = 3,807,404. The growth mine’s
+twelve records yield the explicit finite bound $p\le\lfloor 3(\ln n)^2\rfloor$ through 20,000
+([`research/M006_BOUND.md`](M006_BOUND.md)). **Frontier:** 4·10^18 (Oliveira e Silva, Herzog &
+Pardi 2014). A larger range has no research value.
 
 ### M019 — Erdős–Straus (`erdos_straus`, engine `primes`)
 Gives an explicit triple for every n, found with a divisor solver for 1/y + 1/z = a/b. The checker

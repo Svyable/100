@@ -36,6 +36,11 @@ V-P-<problem> review packets: independent researchers rerun the exact
 certificate, attack the checker with negative controls and audit the scope.
 An AI author, unverified self-review or automated replay is never independent
 acceptance. Outcome records require a real review by someone else.
+The mechanical part of these reviews is done in advance: `python3 scripts/attest.py`
+records the replay, negative controls and seeded certificate mutants for every lab probe
+in `data/attestations.json` ([docs/ATTESTATION.md](docs/ATTESTATION.md)). A reviewer
+starts from its surviving mutants and the scope question. `weak` probes, whose checker
+accepts a flipped verdict or an empty certificate, need a probe fix before acceptance.
 
 The queue is derived from the ledgers (proof obligations, Lean targets, the dispatcher,
 the roadmap, the formal catalogue and the status-audit drafts). It is browsable at

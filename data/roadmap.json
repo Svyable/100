@@ -383,10 +383,9 @@
     {
       "id": "R24",
       "track": "lab",
-      "horizon": "now",
-      "title": "Arcs in PG(3,q) and Hadamard orders 116, 156, 172",
-      "outcome": "5-point frames for q <= 9; multiplier symmetry for Williamson n=29; Goethals-Seidel arrays.",
-      "exit": "All Hadamard orders 4k <= 172 constructed except literature-open ones.",
+      "horizon": "shipped",
+      "title": "Explicit Hadamard matrices for every order 4k <= 172",
+      "outcome": "Published propus quadruples fill the last three engine gaps at 116, 156 and 172. Every order 4k <= 172 now has a matrix whose rows the checker proves orthogonal. These are known constructions, not new matrices. The formerly open order 668 was settled in 2026; 2396 is now the smallest order without a known matrix (arXiv:2610.27175).",
       "evidence": "scripts/probes/hadamard.py",
       "problems": [
         "M093",
@@ -607,6 +606,17 @@
         "M095",
         "M075",
         "M074"
+      ]
+    },
+    {
+      "id": "R51",
+      "track": "campaigns",
+      "horizon": "shipped",
+      "title": "Explicit least-Goldbach-prime bound through 20,000",
+      "outcome": "For every even n <= 20000, the least Goldbach prime satisfies p <= floor(3 (ln n)^2); certified on records and on the full range.",
+      "evidence": "research/M006_BOUND.md",
+      "problems": [
+        "M006"
       ]
     }
   ]
