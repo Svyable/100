@@ -445,7 +445,7 @@
       "resources": {
         "agent_hours": 0.8
       },
-      "note": "Prime 1129 forbids both fixed shifts c=3 and c=7 by exact divisor and subgroup checks, but shift c=11 works. Universal wording of O-M019-01 is infeasible; no full Erd\u0151s\u2013Straus counterexample, no novelty or independent review. Prior art Mordell 1963 and Dahan 2026."
+      "note": "Prime 1129 forbids both fixed shifts c=3 and c=7 by exact divisor and subgroup checks, but shift c=11 works. Universal wording of O-M019-01 is infeasible; no full Erdős–Straus counterexample, no novelty or independent review. Prior art Mordell 1963 and Dahan 2026."
     },
     {
       "work_id": "X-M076-F43-EIGHT",
@@ -799,7 +799,7 @@
       "resources": {
         "agent_hours": 1.2
       },
-      "note": "Unconditional all-ranks restricted matroid matching characterization, exact permanent \u00d7 Latin-grid count and sharp two-sided bound by paper proof. Lean kernel audits cyclic completion from a supplied matching, NOT the matroid basis-exchange/Hall argument or counting bijection. 12 adversarial tests, 512 exhaustive GF(2)^3 rows, 6 exact fixtures. Novelty and independent mathematical review not established; full RBC remains open."
+      "note": "Unconditional all-ranks restricted matroid matching characterization, exact permanent × Latin-grid count and sharp two-sided bound by paper proof. Lean kernel audits cyclic completion from a supplied matching, NOT the matroid basis-exchange/Hall argument or counting bijection. 12 adversarial tests, 512 exhaustive GF(2)^3 rows, 6 exact fixtures. Novelty and independent mathematical review not established; full RBC remains open."
     },
     {
       "work_id": "X-M097-WEIGHTED-SUBDIVISION",
@@ -894,6 +894,21 @@
         "ci_minutes": 0
       },
       "note": "Conditional on CI-gated merge. Sharp seven-outsider width-seven 2..8 insertion-gap restricted candidate 1951/4659; 12,610,738 normalized configurations with two exact C++ recurrences and 33 literal-poset checks, nine adversarial tests, a new-to-project all-orders noncentral gap-atom inequality, and a full-poset-checked counterexample to widening monotonicity. The six-gap equality witness persists; this is an exact scope extension, not a claimed historically novel constant. Nine-gap exploratory samples negative only. Includes source comparison, failed paths, and full regeneration. Approximate active author/tool effort includes failed approaches and computation. No independent specialist review, no global M079 resolution, solved-state/coverage change, benchmark claim, or PR-landing task change."
+    },
+    {
+      "work_id": "X-M097-DEEP-CHORD-NET",
+      "scope_sha256": "ebd4e155b0221930f6f52a6bbf4a6ace8091747dbec90b63121a29cd4570c163",
+      "author": "ChatGPT (M097 separated interior chord network)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/243",
+      "claimed_on": "2026-11-02",
+      "closed_on": "2026-11-02",
+      "resources": {
+        "agent_hours": 1.0,
+        "ci_minutes": 0
+      },
+      "note": "Conditional on CI-gated merge. Author-derived all-orders restricted theorem candidate: arbitrary networks of well-separated interior chords preserve exact graphic-metric subtour LP and TSP values; joint geodesic-mass optimal-face inequality and sharp 13/12 ratio for at least two chords. Exact rational all-cut and subset-DP checks on 57 graph instances, seven separately formulated full-cut SciPy LP optimizations, ten adversarial tests and two shallow-boundary falsifiers. No historical novelty, independent specialist mathematical acceptance, global 4/3 bound, solved-state or coverage change. Project 100 PR Landing automation unchanged."
     }
   ]
 }
