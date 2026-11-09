@@ -164,28 +164,44 @@
   if (!dialog || typeof dialog.showModal !== "function") return;
   const input = $("#palette-input");
   const results = $("#palette-results");
-  let index = null;
+  // Explicit async lifecycle. One shared request, but each dialog open has its own session.
+  const searchState = { phase: "idle", items: null, pending: null };
   let matches = [];
   let active = 0;
+  let paletteSession = 0;
   const kinds = { problem: "Problem", field: "Field", campaign: "Campaign", probe: "Probe",
     engine: "Engine", claim: "Claim", formal: "Lean", proof: "Proof", work: "Work", document: "Document", page: "Page" };
   const normalize = s => String(s || "").toLocaleLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
 
-  async function loadIndex() {
-    if (index) return index;
-    const response = await fetch(root + "api/search.json");
-    if (!response.ok) throw new Error("HTTP " + response.status);
-    index = (await response.json()).map(item => ({
-      ...item, n: normalize(item.t), h: normalize([item.id, item.t, item.s, item.x].join(" "))
-    }));
-    return index;
+  function loadIndex() {
+    if (searchState.phase === "ready") return Promise.resolve(searchState.items);
+    if (searchState.phase === "loading") return searchState.pending;
+    searchState.phase = "loading";
+    searchState.pending = (async () => {
+      const response = await fetch(root + "api/search.json");
+      if (!response.ok) throw new Error("HTTP " + response.status);
+      const payload = await response.json();
+      if (!Array.isArray(payload)) throw new Error("Invalid search index");
+      return payload.map(item => ({
+        ...item, n: normalize(item.t), h: normalize([item.id, item.t, item.s, item.x].join(" "))
+      }));
+    })().then(items => {
+      searchState.phase = "ready";
+      searchState.items = items;
+      return items;
+    }, error => {
+      searchState.phase = "error";
+      searchState.items = null;
+      throw error;
+    }).finally(() => { searchState.pending = null; });
+    return searchState.pending;
   }
   function rank(query) {
     const q = normalize(query).trim();
-    if (!q) return index.filter(i => i.k === "page" || i.k === "problem").slice(0, 12);
+    if (!q) return searchState.items.filter(i => i.k === "page" || i.k === "problem").slice(0, 12);
     const terms = q.split(/\s+/);
     const scored = [];
-    for (const item of index) {
+    for (const item of searchState.items) {
       if (!terms.every(t => item.h.includes(t))) continue;
       let score = 0;
       if (item.id && normalize(item.id) === q) score += 100;
@@ -229,18 +245,35 @@
     if (current) current.scrollIntoView({ block: "nearest" });
   }
   async function open() {
-    if (dialog.open) return;
+    if (dialog.open) { input.focus(); return; }
+    const session = ++paletteSession;
     dialog.showModal();
     input.value = "";
+    matches = [];
+    active = 0;
+    const waiting = document.createElement("li");
+    waiting.className = "palette-empty";
+    waiting.textContent = "Loading search…";
+    waiting.setAttribute("role", "status");
+    results.replaceChildren(waiting);
+    results.setAttribute("aria-busy", "true");
+    input.setAttribute("aria-activedescendant", "");
+    input.focus(); // Search is usable immediately, even on a slow connection.
     try {
       await loadIndex();
-      matches = rank("");
+      if (session !== paletteSession || !dialog.open) return;
+      matches = rank(input.value); // Keep any query typed during the fetch.
       active = 0;
       draw();
     } catch (e) {
-      results.innerHTML = '<li class="palette-empty">Search index unavailable.</li>';
+      if (session !== paletteSession || !dialog.open) return;
+      const message = document.createElement("li");
+      message.className = "palette-empty";
+      message.textContent = "Search index unavailable. Close and reopen to retry.";
+      results.replaceChildren(message);
+    } finally {
+      if (session === paletteSession) results.setAttribute("aria-busy", "false");
     }
-    input.focus();
   }
   for (const button of $$("[data-palette-open]")) button.addEventListener("click", open);
   document.addEventListener("keydown", event => {
@@ -251,7 +284,7 @@
     }
   });
   input.addEventListener("input", () => {
-    if (!index) return;
+    if (searchState.phase !== "ready") return;
     matches = rank(input.value);
     active = 0;
     draw();
@@ -269,4 +302,8 @@
     }
   });
   dialog.addEventListener("click", event => { if (event.target === dialog) dialog.close(); });
+  dialog.addEventListener("close", () => {
+    paletteSession += 1; // An in-flight response must not repaint a closed or newer dialog.
+    results.setAttribute("aria-busy", "false");
+  });
 })();

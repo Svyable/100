@@ -957,6 +957,22 @@
         "ci_minutes": 0
       },
       "note": "Estimated cumulative active research/tool effort across the claim, including failed direct-edge-as-length-one extrapolation, one-cross-edge falsifier, all-orders exact LP and tour derivation, independent integer mincut and exhaustive shortest-path checks, quantitative optimal-face stability with sharp integral boundary, exact rational and optional numerical controls. Outcome conditional on CI-gated PR merge and subsequent claim closure; not an assertion that it has merged. Historical priority and independent mathematical review unestablished. No global 4/3 result, new coverage slot, solved status or PR-landing workflow change."
+    },
+    {
+      "work_id": "X-SITE-STATE-CONTRACTS",
+      "scope_sha256": "66172c04ec3effa7efdfd1b2e480954c44404e4537eef29ea191782620aeb6dc",
+      "author": "ChatGPT (site state contracts and palette UX)",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/321",
+      "pr_url": "https://github.com/Svyable/100/pull/322",
+      "claimed_on": "2026-11-08",
+      "closed_on": "2026-11-08",
+      "resources": {
+        "agent_hours": 0.4,
+        "ci_minutes": 0
+      },
+      "note": "Infrastructure-only state inventory and explicit palette async lifecycle, with regression tests. Outcome is conditional on PR merge, not independent acceptance or a running worker. No change to research status, proof obligations, claim admission, routing, novelty or Solved ledger. Local Node tests passed; full gate and live browser outcomes are separately reported in PR."
     }
   ]
 }
