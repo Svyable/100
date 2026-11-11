@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M044 finite-group-ring arithmetic: exact control suite, not a witness · 100</title>
+<meta name="description" content="Claim: #329, X-M044-GROUP-RING-CORE|finite-groups|F2-group-ring|exact-convolution|adversarial-controls|v1.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m044-group-ring-core/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M044 finite-group-ring arithmetic: exact control suite, not a witness · 100">
+<meta property="og:description" content="Claim: #329, X-M044-GROUP-RING-CORE|finite-groups|F2-group-ring|exact-convolution|adversarial-controls|v1.">
+<meta property="og:url" content="https://svyable.github.io/100/library/m044-group-ring-core/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M044 finite-group-ring arithmetic: exact control suite, not a witness</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side">
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M044/" title="Kaplansky direct-finiteness conjecture">M044</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M044_GROUP_RING_CORE.md" rel="noopener noreferrer">research/M044_GROUP_RING_CORE.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M044 finite-group-ring arithmetic: exact control suite, not a witness</h1>
+<p><strong>Claim:</strong> <a href="https://github.com/Svyable/100/issues/329" rel="noopener noreferrer">#329</a>, <code>X-M044-GROUP-RING-CORE|finite-groups|F2-group-ring|exact-convolution|adversarial-controls|v1</code>.</p>
+<p><strong>Source and boundary.</strong> The pinned October 4, 2026 OpenAI/math manuscript is linked and source-hashed in <a href="../../library/m044-type-parity-audit/">the prior M044 type-parity audit</a>. That audit establishes that no explicit matched graph and group presentation are provided for exact group-ring witness replay. The present code implements only the elementary definition of multiplication in the finite group algebra F2[G], for explicit Cayley tables. It cannot check a torsion-free infinite presentation, prove nonzero elements of such a group ring, or settle direct finiteness.</p>
+<p><strong>Exact algorithm.</strong> A coefficient vector is a nonnegative bit mask. For each occupied pair of basis terms, the output coefficient at their Cayley product is toggled. An independently written dense reference sums all coefficient pairs separately for each output basis element modulo two. The table validator requires Latin rows, a unique two-sided identity and associativity. No word problem is solved.</p>
+<p><strong>Reproduction.</strong> Run <code>python3 scripts/m044_group_ring_core.py</code> and <code>python3 -m unittest discover -s tests -p &#x27;test_m044_group_ring_core.py&#x27;</code>. All 8×8 products in F2[C3] and 64×64 products in F2[S3] are compared exactly (4160 pairs); both finite algebras are exhaustively checked for <code>ab=1 =&gt; ba=1</code>. This is known finite-ring mathematics, not evidence for the infinite-group claim. The nonzero factors <code>(1+g)(1+g+g²)=0</code> in F2[C3] test zero-divisor handling. Malformed tables, a Latin quasigroup without identity, a corrupted table and out-of-range coefficient masks are negative controls. All tests are deterministic and use Python standard library only.</p>
+<p><strong>Failure boundary.</strong> The two convolution implementations share the same multiplication table and are author-produced, not independently reviewed. An incorrect but internally consistent table could pass both convolutions; table validity alone does not identify the intended abstract group. Finite ring direct finiteness is not a new result. The next decisive falsifier for the published M044 claim remains a concrete, source-pinned matching-graph witness with relators and exact group words; only then could two independent word-reduction engines check <code>ab=1</code>, <code>ac=0</code>, <code>c≠0</code> and <code>ba≠1</code>.</p>
+<p><strong>Outcome:</strong> exact arithmetic substrate and negative controls, no claimed new theorem, no change to solved/evidence status or proof-obligation discharge. No independent mathematical review.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>
