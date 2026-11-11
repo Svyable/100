@@ -153,6 +153,11 @@
       "url": "https://svyable.github.io/100/library/lab-campaigns/"
     },
     {
+      "title": "M093: exact binary projective 4-arc baseline",
+      "source": "research/M093_PG32_ARC_CENSUS.md",
+      "url": "https://svyable.github.io/100/library/m093-pg32-arc-census/"
+    },
+    {
       "title": "M093 — exact 4-arcs in PG(3,q), q ≤ 9 (known finite reproduction)",
       "source": "research/M093_PG3_ARCS.md",
       "url": "https://svyable.github.io/100/library/m093-pg3-arcs/"
