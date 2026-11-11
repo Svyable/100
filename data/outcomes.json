@@ -988,6 +988,22 @@
         "agent_hours": 0.35
       },
       "note": "Known finite binary projective 4-arc sanity reproduction: 840 four-sets, 168 five-sets, zero six-sets; independent rank and determinant implementations, positive/negative controls. Does not discharge M093 PG(3,q), q<=9. Local standalone script passed; full repo CI pending, no independent review."
+    },
+    {
+      "work_id": "X-M044-REGULAR-RANK",
+      "scope_sha256": "c71c29aaa0aa7b979c7f6ad0635d3dd36b4e1fc55fc14bdc33d2c241d6e23afe",
+      "author": "ChatGPT (finite group-ring regular rank cross-check)",
+      "outcome": "gap_reported",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/332",
+      "pr_url": "https://github.com/Svyable/100/pull/333",
+      "claimed_on": "2026-11-11",
+      "closed_on": "2026-11-11",
+      "resources": {
+        "agent_hours": 0.3,
+        "ci_minutes": 0
+      },
+      "note": "Finite GF(2) left-regular rank cross-check of all 72 elements of C3 and S3 group algebras; 3/5 and 12/52 unit/nonunit counts, exhaustive two-sided inverse comparison, adversarial controls. No torsion-free group presentation, M044 counterexample, independent review or solved-status change. PR URL conditional on creation."
     }
   ]
 }
