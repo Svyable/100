@@ -128,6 +128,11 @@
       "url": "https://svyable.github.io/100/library/m044-group-ring-core/"
     },
     {
+      "title": "M044 finite group-ring left-regular rank cross-check",
+      "source": "research/M044_REGULAR_RANK.md",
+      "url": "https://svyable.github.io/100/library/m044-regular-rank/"
+    },
+    {
       "title": "M044: exact type-parity replay and missing-witness boundary",
       "source": "research/M044_TYPE_PARITY_AUDIT.md",
       "url": "https://svyable.github.io/100/library/m044-type-parity-audit/"
