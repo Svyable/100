@@ -1,0 +1,13 @@
+# M044 finite-group-ring arithmetic: exact control suite, not a witness
+
+**Claim:** [#329](https://github.com/Svyable/100/issues/329), `X-M044-GROUP-RING-CORE|finite-groups|F2-group-ring|exact-convolution|adversarial-controls|v1`.
+
+**Source and boundary.** The pinned October 4, 2026 OpenAI/math manuscript is linked and source-hashed in [the prior M044 type-parity audit](M044_TYPE_PARITY_AUDIT.md). That audit establishes that no explicit matched graph and group presentation are provided for exact group-ring witness replay. The present code implements only the elementary definition of multiplication in the finite group algebra F2[G], for explicit Cayley tables. It cannot check a torsion-free infinite presentation, prove nonzero elements of such a group ring, or settle direct finiteness.
+
+**Exact algorithm.** A coefficient vector is a nonnegative bit mask. For each occupied pair of basis terms, the output coefficient at their Cayley product is toggled. An independently written dense reference sums all coefficient pairs separately for each output basis element modulo two. The table validator requires Latin rows, a unique two-sided identity and associativity. No word problem is solved.
+
+**Reproduction.** Run `python3 scripts/m044_group_ring_core.py` and `python3 -m unittest discover -s tests -p 'test_m044_group_ring_core.py'`. All 8×8 products in F2[C3] and 64×64 products in F2[S3] are compared exactly (4160 pairs); both finite algebras are exhaustively checked for `ab=1 => ba=1`. This is known finite-ring mathematics, not evidence for the infinite-group claim. The nonzero factors `(1+g)(1+g+g²)=0` in F2[C3] test zero-divisor handling. Malformed tables, a Latin quasigroup without identity, a corrupted table and out-of-range coefficient masks are negative controls. All tests are deterministic and use Python standard library only.
+
+**Failure boundary.** The two convolution implementations share the same multiplication table and are author-produced, not independently reviewed. An incorrect but internally consistent table could pass both convolutions; table validity alone does not identify the intended abstract group. Finite ring direct finiteness is not a new result. The next decisive falsifier for the published M044 claim remains a concrete, source-pinned matching-graph witness with relators and exact group words; only then could two independent word-reduction engines check `ab=1`, `ac=0`, `c≠0` and `ba≠1`.
+
+**Outcome:** exact arithmetic substrate and negative controls, no claimed new theorem, no change to solved/evidence status or proof-obligation discharge. No independent mathematical review.
