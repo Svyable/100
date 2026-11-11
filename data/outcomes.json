@@ -536,7 +536,7 @@
       "claimed_on": "2026-11-02",
       "closed_on": "2026-11-02",
       "resources": {
-        "agent_hours": 1.0,
+        "agent_hours": 1,
         "ci_minutes": 0
       },
       "note": "Estimated active research, initial false MILP lead corrected by cross-component empty-core check, failed sharp-eight-witness extension, incomplete nine-high-cover heuristic, complete 10,073,118-visit minimal-cover superset scan, 9,841 critical masks, independent-style literal no-six equality-partition replay, explicit five-insertion sharpness witness, 10 tests and regeneration. Outcome conditional on CI-gated merge. Restricted local candidate only; historical novelty and independent mathematical review unestablished. No global bound, solved/evidence-state or coverage change."
@@ -905,7 +905,7 @@
       "claimed_on": "2026-11-02",
       "closed_on": "2026-11-02",
       "resources": {
-        "agent_hours": 1.0,
+        "agent_hours": 1,
         "ci_minutes": 0
       },
       "note": "Conditional on CI-gated merge. Author-derived all-orders restricted theorem candidate: arbitrary networks of well-separated interior chords preserve exact graphic-metric subtour LP and TSP values; joint geodesic-mass optimal-face inequality and sharp 13/12 ratio for at least two chords. Exact rational all-cut and subset-DP checks on 57 graph instances, seven separately formulated full-cut SciPy LP optimizations, ten adversarial tests and two shallow-boundary falsifiers. No historical novelty, independent specialist mathematical acceptance, global 4/3 bound, solved-state or coverage change. Project 100 PR Landing automation unchanged."
@@ -973,6 +973,21 @@
         "ci_minutes": 0
       },
       "note": "Infrastructure-only state inventory and explicit palette async lifecycle, with regression tests. Outcome is conditional on PR merge, not independent acceptance or a running worker. No change to research status, proof obligations, claim admission, routing, novelty or Solved ledger. Local Node tests passed; full gate and live browser outcomes are separately reported in PR."
+    },
+    {
+      "work_id": "X-M093-PG32-ARC-CENSUS",
+      "scope_sha256": "6043c0a3c92b19171160bad828d8ba28c105f70f76066c8c69d08a84a15ade43",
+      "author": "ChatGPT (PG(3,2) independent rank/determinant census)",
+      "outcome": "gap_reported",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/325",
+      "pr_url": "https://github.com/Svyable/100/pull/326",
+      "claimed_on": "2026-11-11",
+      "closed_on": "2026-11-11",
+      "resources": {
+        "agent_hours": 0.35
+      },
+      "note": "Known finite binary projective 4-arc sanity reproduction: 840 four-sets, 168 five-sets, zero six-sets; independent rank and determinant implementations, positive/negative controls. Does not discharge M093 PG(3,q), q<=9. Local standalone script passed; full repo CI pending, no independent review."
     }
   ]
 }
