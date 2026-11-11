@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M093: binary projective 4-arc orbit–stabilizer replay · 100</title>
+<meta name="description" content="Claim #328. Scope: exact projective 4-arcs in PG(3,2) only, using the GL(4,2) action rather than the prior rank/determinant-only census of #326. Known finite mathematics, no new MDS result or independent mathematical review.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m093-pg32-orbits/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M093: binary projective 4-arc orbit–stabilizer replay · 100">
+<meta property="og:description" content="Claim #328. Scope: exact projective 4-arcs in PG(3,2) only, using the GL(4,2) action rather than the prior rank/determinant-only census of #326. Known finite mathematics, no new MDS result or independent mathematical review.">
+<meta property="og:url" content="https://svyable.github.io/100/library/m093-pg32-orbits/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M093: binary projective 4-arc orbit–stabilizer replay</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side">
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M093/" title="Linear MDS code main conjecture">M093</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M093_PG32_ORBITS.md" rel="noopener noreferrer">research/M093_PG32_ORBITS.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M093: binary projective 4-arc orbit–stabilizer replay</h1>
+<p>Claim <a href="https://github.com/Svyable/100/issues/328" rel="noopener noreferrer">#328</a>. Scope: exact projective 4-arcs in PG(3,2) only, using the GL(4,2) action rather than the prior rank/determinant-only census of <a href="https://github.com/Svyable/100/pull/326" rel="noopener noreferrer">#326</a>. Known finite mathematics, no new MDS result or independent mathematical review.</p>
+<p>The 15 nonzero vectors of GF(2)^4 are unique representatives of the projective points. The number of ordered bases, hence |GL(4,2)|, is (16−1)(16−2)(16−4)(16−8)=20160. Every invertible transformation preserves independence of every four columns. For the ordered standard basis, the setwise stabilizer is precisely its 24 coordinate permutations. Its orbit therefore has 20160/24=840 four-arcs. Every five-arc consists of a basis and the sum of its four vectors, so the five-set stabilizer permutes the five points and has order 5!=120: any four of the five form a basis, and their fifth is forced as the sum. Hence its orbit has 20160/120=168 five-arcs. All four-arcs are bases, and all five-arcs are images of the standard parity extension, proving transitivity without relying on the exhaustive counts.</p>
+<p><code>python3 scripts/pg32_orbits.py --check</code> enumerates all 20160 invertible matrices via ordered independent columns, computes both setwise stabilizers and image orbits, and <strong>separately</strong> enumerates all 4- and 5-subsets satisfying the independence predicate to verify completeness. Exact observed output on 2026-11-11:</p>
+<pre><code>n=4 orbit=840 stabilizer=24
+n=5 orbit=168 stabilizer=120
+GL4 order=20160; controls passed</code></pre>
+<p>Negative controls reject a dependent four-set and verify a singular linear transformation maps an independent basis to a rank-three image. All calculations are integer XOR, no external dependencies or random seeds. This is a distinct group-action cross-check of the already known census, not independent human review. The exhaustive candidate sweep shares a rank predicate with the group-action construction; the orbit-stabilizer proof supplies the separate algebraic justification. The original six-point impossibility argument remains in <code>research/M093_PG32_ARC_CENSUS.md</code>; this work does not test q&gt;2 or discharge O-M093-01. Falsifiers: any invertible matrix producing a dependent image, orbit-stabilizer disagreement, or an arc outside the computed orbit.</p>
+<p>Primary mathematical basis: classical orbit–stabilizer theorem and elementary linear algebra over GF(2); for MDS scope, see the Ball (2012) prime-field theorem cited in <code>research/M093_PG3_ARCS.md</code>. No claim of historical priority.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

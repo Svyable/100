@@ -988,6 +988,21 @@
         "agent_hours": 0.35
       },
       "note": "Known finite binary projective 4-arc sanity reproduction: 840 four-sets, 168 five-sets, zero six-sets; independent rank and determinant implementations, positive/negative controls. Does not discharge M093 PG(3,q), q<=9. Local standalone script passed; full repo CI pending, no independent review."
+    },
+    {
+      "work_id": "X-M093-PG32-ORBIT",
+      "scope_sha256": "d22ccd369c95990a251e2b0749e559f9e9bdb31a0d7fb8329ac1e9c7d403fd63",
+      "author": "ChatGPT (PG32 GL4 orbit certificate)",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/328",
+      "pr_url": "https://github.com/Svyable/100/pull/329",
+      "claimed_on": "2026-11-11",
+      "closed_on": "2026-11-11",
+      "resources": {
+        "agent_hours": 0.35
+      },
+      "note": "Conditional on PR merge; GL(4,2) orbit-stabilizer proof and exact group-action replay of known PG(3,2) four/five-arc counts. No independent mathematical review, q>2 conclusion or MDS resolution."
     }
   ]
 }
