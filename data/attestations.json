@@ -634,12 +634,9 @@
     "held_karp@smoke": {
       "certificate_mutants_requested": 24,
       "certificate_sha256": "705abe69797b7a55f2124926eb17eeae816ae0a8f4c536c0f3484358023ba60b",
-      "code_sha256": "0d6bb6555b75e4f122ec2825f28149cfc7e40b7700f528293f03eea89d6a7bf0",
+      "code_sha256": "58a18e44b04390666756b066f72e0ea4a8781c5412d65082ffcdc633c29e953d",
       "command": "python3 scripts/lab.py --probe held_karp",
-      "flags": [
-        "control_survived:holds_flip",
-        "unbound_summary"
-      ],
+      "flags": [],
       "level": "smoke",
       "probe": "held_karp",
       "problem_id": "M097",
@@ -649,43 +646,22 @@
           "tried": 24
         },
         "control": {
-          "rejected": 1,
+          "rejected": 2,
           "tried": 2
         },
         "summary": {
-          "rejected": 2,
+          "rejected": 5,
           "tried": 5
         }
       },
       "replay": "match",
       "seed": 13310410357260409708,
-      "status": "weak",
-      "survivors": [
-        {
-          "op": "holds_flip",
-          "path": "holds",
-          "region": "control"
-        },
-        {
-          "op": "int_dec",
-          "path": "summary/instances",
-          "region": "summary"
-        },
-        {
-          "op": "int_dec",
-          "path": "summary/max_ratio_instance/graph",
-          "region": "summary"
-        },
-        {
-          "op": "int_inc",
-          "path": "summary/max_ratio_instance/n",
-          "region": "summary"
-        }
-      ],
+      "status": "clean",
+      "survivors": [],
       "tally": {
         "crashed": 3,
-        "killed": 24,
-        "survived": 4,
+        "killed": 28,
+        "survived": 0,
         "timeout": 0
       }
     },

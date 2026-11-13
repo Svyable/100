@@ -1004,6 +1004,21 @@
         "ci_minutes": 0
       },
       "note": "Finite GF(2) left-regular rank cross-check of all 72 elements of C3 and S3 group algebras; 3/5 and 12/52 unit/nonunit counts, exhaustive two-sided inverse comparison, adversarial controls. No torsion-free group presentation, M044 counterexample, independent review or solved-status change. PR URL conditional on creation."
+    },
+    {
+      "work_id": "X-M097-ATTEST-REFRESH",
+      "scope_sha256": "0194ff3930d148b7edadfcea7f06634a4d7c0b7160751c64c1c25852e49d6237",
+      "author": "ChatGPT (M097 attestation refresh)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/339",
+      "claimed_on": "2026-11-13",
+      "closed_on": "2026-11-13",
+      "resources": {
+        "agent_hours": 0.25,
+        "ci_minutes": 0
+      },
+      "note": "Conditional on PR merge: refreshed current-code smoke attestation at original 24-mutant budget. Exact certificate digest unchanged; 24/24 certificate mutants, 2/2 mandatory controls and 5/5 summary mutations rejected, 3 fail-closed checker exceptions, no survivors. Previously recorded weak verdict and summary survivors were stale relative to current code. Mechanical author-side verification only; no independent review, global TSP theorem, or evidence promotion."
     }
   ]
 }
