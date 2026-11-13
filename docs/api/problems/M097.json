@@ -216,6 +216,11 @@
       "url": "https://svyable.github.io/100/library/m097-weighted-subdivision/"
     },
     {
+      "title": "Mechanical attestations — making independent review cheap",
+      "source": "docs/ATTESTATION.md",
+      "url": "https://svyable.github.io/100/library/attestation/"
+    },
+    {
       "title": "Proof-driven research engine",
       "source": "docs/RESEARCH_ENGINE.md",
       "url": "https://svyable.github.io/100/library/research-engine/"
