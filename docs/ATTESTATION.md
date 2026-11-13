@@ -44,7 +44,7 @@ The weekly research workflow runs `--check`. When a probe's code changes, its at
 
 ## Current smoke readout (2026-11-02)
 
-On the refreshed current-main probe implementations, all 21 certificates replay. Of 467 certificate mutants, 453 were rejected; 78 of 242 published summary leaves were bound by the checker. Ten probes accept a flipped `holds` verdict; no probe accepts an empty certificate. The Ramsey witness checker, which was weak in the original PR #160 snapshot, was repaired in #211 and is now `clean`. These are mechanical author-side tests, not independent mathematical reviews.
+On the refreshed current-main probe implementations, all 21 certificates replay. Of 467 certificate mutants, 453 were rejected; 81 of 242 published summary leaves were bound by the checker. Nine probes accept a flipped `holds` verdict; no probe accepts an empty certificate. Two probes are `clean`: the Ramsey witness checker, which was weak in the original PR #160 snapshot and was repaired in #211, and the M097 Held–Karp checker, whose earlier `weak` record was stale relative to the current code and was refreshed in #340 (24/24 certificate mutants, 2/2 controls and 5/5 summary mutations rejected). These are mechanical author-side tests, not independent mathematical reviews.
 
 ## How a reviewer uses it
 
