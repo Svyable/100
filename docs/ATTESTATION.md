@@ -42,9 +42,9 @@ python3 scripts/attest.py --render                   # Markdown table, marks pro
 
 The weekly research workflow runs `--check`. When a probe's code changes, its attestation goes stale. Rerun the tool and review the diff in the same PR as the probe change.
 
-## Current smoke readout (2026-11-02)
+## Current smoke readout (2026-11-14)
 
-On the refreshed current-main probe implementations, all 21 certificates replay. Of 467 certificate mutants, 453 were rejected; 81 of 242 published summary leaves were bound by the checker. Nine probes accept a flipped `holds` verdict; no probe accepts an empty certificate. Two probes are `clean`: the Ramsey witness checker, which was weak in the original PR #160 snapshot and was repaired in #211, and the M097 Held–Karp checker, whose earlier `weak` record was stale relative to the current code and was refreshed in #340 (24/24 certificate mutants, 2/2 controls and 5/5 summary mutations rejected). These are mechanical author-side tests, not independent mathematical reviews.
+On the refreshed current-main probe implementations, all 21 certificates replay. Of 467 certificate mutants, 453 were rejected; 116 of 242 published summary leaves were bound by the checker. Eight probes accept a flipped `holds` verdict; no probe accepts an empty certificate. Three probes are `clean`: the Ramsey witness checker, which was weak in the original PR #160 snapshot and was repaired in #211; the M097 Held–Karp checker, whose earlier `weak` record was stale relative to the current code and was refreshed in #340 (24/24 certificate mutants, 2/2 controls and 5/5 summary mutations rejected); and the M094 Hadamard checker, likewise refreshed from a stale `weak` record in #344 (24/24 certificate mutants, 2/2 controls and 36/36 summary mutations rejected). These are mechanical author-side tests, not independent mathematical reviews.
 
 ## How a reviewer uses it
 
