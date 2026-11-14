@@ -186,6 +186,11 @@
       "url": "https://svyable.github.io/100/library/m094-multiplier-gate/"
     },
     {
+      "title": "Mechanical attestations — making independent review cheap",
+      "source": "docs/ATTESTATION.md",
+      "url": "https://svyable.github.io/100/library/attestation/"
+    },
+    {
       "title": "OpenAI/math transfer intake: evidence before claims",
       "source": "docs/OPENAI_MATH_TRANSFER.md",
       "url": "https://svyable.github.io/100/library/openai-math-transfer/"
