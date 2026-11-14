@@ -338,12 +338,9 @@
     "hadamard@smoke": {
       "certificate_mutants_requested": 24,
       "certificate_sha256": "00a4eca9a74a88965b6b0ccc1e96ff97c139e4b291fe3cbbff4e46c742d3ff37",
-      "code_sha256": "021d35f133c76bc4bc7f66797a5fd6ef23463bed911bef6c3d0181088d039ec5",
+      "code_sha256": "7b0afed6994a294ea3916676767a8ce7550fc0e7364e7ee64b5ee4628514bf01",
       "command": "python3 scripts/lab.py --probe hadamard",
-      "flags": [
-        "control_survived:holds_flip",
-        "unbound_summary"
-      ],
+      "flags": [],
       "level": "smoke",
       "probe": "hadamard",
       "problem_id": "M094",
@@ -353,203 +350,22 @@
           "tried": 24
         },
         "control": {
-          "rejected": 1,
+          "rejected": 2,
           "tried": 2
         },
         "summary": {
-          "rejected": 1,
+          "rejected": 36,
           "tried": 36
         }
       },
       "replay": "match",
       "seed": 13728329720261640153,
-      "status": "weak",
-      "survivors": [
-        {
-          "op": "holds_flip",
-          "path": "holds",
-          "region": "control"
-        },
-        {
-          "op": "int_inc",
-          "path": "summary/constructed_orders",
-          "region": "summary"
-        },
-        {
-          "op": "int_dec",
-          "path": "summary/limit",
-          "region": "summary"
-        },
-        {
-          "op": "int_inc",
-          "path": "summary/orders_divisible_by_4",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/100",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/104",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/108",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/112",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/116",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/12",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/120",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/124",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/128",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/16",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/20",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/24",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/28",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/32",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/36",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/4",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/40",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/44",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/48",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/52",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/56",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/60",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/64",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/68",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/72",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/76",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/8",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/80",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/84",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/88",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/92",
-          "region": "summary"
-        },
-        {
-          "op": "text_append",
-          "path": "summary/recipes/96",
-          "region": "summary"
-        }
-      ],
+      "status": "clean",
+      "survivors": [],
       "tally": {
         "crashed": 1,
-        "killed": 25,
-        "survived": 36,
+        "killed": 61,
+        "survived": 0,
         "timeout": 0
       }
     },

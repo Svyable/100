@@ -1019,6 +1019,21 @@
         "ci_minutes": 0
       },
       "note": "Conditional on PR merge: refreshed current-code smoke attestation at original 24-mutant budget. Exact certificate digest unchanged; 24/24 certificate mutants, 2/2 mandatory controls and 5/5 summary mutations rejected, 3 fail-closed checker exceptions, no survivors. Previously recorded weak verdict and summary survivors were stale relative to current code. Mechanical author-side verification only; no independent review, global TSP theorem, or evidence promotion."
+    },
+    {
+      "work_id": "X-M094-ATTEST-REFRESH",
+      "scope_sha256": "9bd3413246075420ef9767e342c4a2f4f25f9cae91321fc890e0e209ad6aa68d",
+      "author": "ChatGPT (M094 attestation refresh)",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/343",
+      "claimed_on": "2026-11-14",
+      "closed_on": "2026-11-14",
+      "resources": {
+        "agent_hours": 0.3,
+        "ci_minutes": 0
+      },
+      "note": "Conditional on PR merge: stale Hadamard smoke attestation refreshed with existing current-main checker and original 24 certificate mutants. 24/24 certificate mutants, 2/2 mandatory controls, 36/36 summary mutations rejected; one fail-closed exception, no survivors. Exploratory attestation preceded claim and is disclosed in issue. Mechanical author-side replay only, no new Hadamard construction, no independent mathematical review, no evidence promotion."
     }
   ]
 }
