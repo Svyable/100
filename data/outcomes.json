@@ -445,7 +445,7 @@
       "resources": {
         "agent_hours": 0.8
       },
-      "note": "Prime 1129 forbids both fixed shifts c=3 and c=7 by exact divisor and subgroup checks, but shift c=11 works. Universal wording of O-M019-01 is infeasible; no full Erdős–Straus counterexample, no novelty or independent review. Prior art Mordell 1963 and Dahan 2026."
+      "note": "Prime 1129 forbids both fixed shifts c=3 and c=7 by exact divisor and subgroup checks, but shift c=11 works. Universal wording of O-M019-01 is infeasible; no full Erd\u0151s\u2013Straus counterexample, no novelty or independent review. Prior art Mordell 1963 and Dahan 2026."
     },
     {
       "work_id": "X-M076-F43-EIGHT",
@@ -799,7 +799,7 @@
       "resources": {
         "agent_hours": 1.2
       },
-      "note": "Unconditional all-ranks restricted matroid matching characterization, exact permanent × Latin-grid count and sharp two-sided bound by paper proof. Lean kernel audits cyclic completion from a supplied matching, NOT the matroid basis-exchange/Hall argument or counting bijection. 12 adversarial tests, 512 exhaustive GF(2)^3 rows, 6 exact fixtures. Novelty and independent mathematical review not established; full RBC remains open."
+      "note": "Unconditional all-ranks restricted matroid matching characterization, exact permanent \u00d7 Latin-grid count and sharp two-sided bound by paper proof. Lean kernel audits cyclic completion from a supplied matching, NOT the matroid basis-exchange/Hall argument or counting bijection. 12 adversarial tests, 512 exhaustive GF(2)^3 rows, 6 exact fixtures. Novelty and independent mathematical review not established; full RBC remains open."
     },
     {
       "work_id": "X-M097-WEIGHTED-SUBDIVISION",
@@ -1034,6 +1034,21 @@
         "ci_minutes": 0
       },
       "note": "Conditional on PR merge: stale Hadamard smoke attestation refreshed with existing current-main checker and original 24 certificate mutants. 24/24 certificate mutants, 2/2 mandatory controls, 36/36 summary mutations rejected; one fail-closed exception, no survivors. Exploratory attestation preceded claim and is disclosed in issue. Mechanical author-side replay only, no new Hadamard construction, no independent mathematical review, no evidence promotion."
+    },
+    {
+      "work_id": "X-M078-FOUR-HUB-LEAF-PROFILES",
+      "scope_sha256": "52cf8f411eb539129a04cbd215c8d387444495f759abce92f8b189e49fdade86",
+      "author": "ChatGPT (four-hub leaf-row inverse author)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/375",
+      "claimed_on": "2026-11-16",
+      "closed_on": "2026-11-17",
+      "resources": {
+        "agent_hours": 0.5,
+        "ci_minutes": 0
+      },
+      "note": "Conditional on merge: exact six-leaf row-multiset inverse checker, 1024 bounded source tuples and 10000 seeded cases; no observed cross-topology collision. No independent review, no all-orders theorem, no full graph reconstruction claim. Author-side time estimate; integrator regenerated derived files."
     }
   ]
 }
