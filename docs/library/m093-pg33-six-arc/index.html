@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M093: six-point 4-arcs in PG(3,3) (known finite obstruction) · 100</title>
+<meta name="description" content="Scope. In projective 3-space over GF(3), a 4-arc is a set of points for which every four representatives are linearly independent. No six-point 4-arc exists, while a five-point 4-arc does. This is elementary, known finite MDS mathematics, n">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m093-pg33-six-arc/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M093: six-point 4-arcs in PG(3,3) (known finite obstruction) · 100">
+<meta property="og:description" content="Scope. In projective 3-space over GF(3), a 4-arc is a set of points for which every four representatives are linearly independent. No six-point 4-arc exists, while a five-point 4-arc does. This is elementary, known finite MDS mathematics, n">
+<meta property="og:url" content="https://svyable.github.io/100/library/m093-pg33-six-arc/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M093: six-point 4-arcs in PG(3,3) (known finite obstruction)</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#all-orders-in-this-field-proof">All-orders-in-this-field proof</a></li><li class="toc-l2"><a href="#exact-executable-control">Exact executable control</a></li><li class="toc-l2"><a href="#boundary-and-falsifier">Boundary and falsifier</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M093/" title="Linear MDS code main conjecture">M093</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M093_PG33_SIX_ARC.md" rel="noopener noreferrer">research/M093_PG33_SIX_ARC.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M093: six-point 4-arcs in PG(3,3) (known finite obstruction)</h1>
+<p><strong>Scope.</strong> In projective 3-space over GF(3), a 4-arc is a set of points for which every four representatives are linearly independent. No six-point 4-arc exists, while a five-point 4-arc does. This is elementary, known finite MDS mathematics, <strong>not</strong> a new bound or the full MDS conjecture. Claim: <a href="https://github.com/Svyable/100/issues/379" rel="noopener noreferrer">#379</a>. It does not discharge O-M093-01 (all q through 9), or overlap the PG(3,2) orbit census.</p>
+<h2 id="all-orders-in-this-field-proof">All-orders-in-this-field proof<a class="anchor" href="#all-orders-in-this-field-proof" aria-label="Link to this section">#</a></h2>
+<p>Suppose six projective points form a 4-arc. Any four are independent, so apply an invertible change of coordinates to make the first four the standard basis e1,e2,e3,e4. Every coordinate of either remaining representative u or v must be nonzero: replacing any basis vector with that representative must preserve independence. In GF(3), the nonzero values are {1,2}. For every pair of basis vectors replaced by u,v, independence requires the corresponding 2-by-2 minor u_i v_j - u_j v_i to be nonzero. Equivalently the four ratios u_i/v_i must be pairwise distinct. There are only two possible nonzero ratios in GF(3), a contradiction. Conversely the four standard basis points together with (1,1,1,1) form a five-point 4-arc: each of the five possible 4-by-4 determinants is nonzero.</p>
+<h2 id="exact-executable-control">Exact executable control<a class="anchor" href="#exact-executable-control" aria-label="Link to this section">#</a></h2>
+<p><code>python3 research/m093_pg33_six_arc.py</code> implements Gaussian-elimination determinants modulo 3 and checks every four-subset. It verifies the five-point witness, enumerates all 8 normalized choices for a fifth point, checks all 28 unordered distinct pairs as potential fifth/sixth points, and finds zero six-arcs. Controls reject a point with a zero coordinate and duplicate points. An independent ratio-count argument cross-checks the 28 rejected pairs. The finite enumeration is redundant to the symbolic proof, not independent external review.</p>
+<h2 id="boundary-and-falsifier">Boundary and falsifier<a class="anchor" href="#boundary-and-falsifier" aria-label="Link to this section">#</a></h2>
+<p>A six-point set with all 15 four-by-four minors nonzero would falsify the claim; a disagreement between determinant and ratio checks would falsify the implementation. The argument is specific to GF(3) and 4-arcs; it neither establishes maximum sizes over GF(4) through GF(9) nor resolves O-M093-01. Historical novelty is <strong>not claimed</strong>. Primary baseline: Simeon Ball, <em>On sets of vectors of a finite vector space in which every subset of basis size is a basis</em>, JEMS 14 (2012), https://doi.org/10.4171/JEMS/342 (the general prime-field MDS literature); the short proof above is elementary and self-contained.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>
