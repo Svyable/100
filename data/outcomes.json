@@ -1064,6 +1064,21 @@
         "ci_minutes": 0
       },
       "note": "Bounded three-hub subcubic tree leaf-distance profile census: weighted-skeleton enumerator checked 14250 canonical classes at all seven edge lengths 1..5 and found no collisions. Author-controlled computation, not independently reviewed. Does not prove all-orders injectivity or graph reconstruction."
+    },
+    {
+      "work_id": "X-M093-PG33-SIX-ARC",
+      "scope_sha256": "f764af6fa5c46f836cba7204cd2a01e42eb4f04faa3f6bf3e405397c052aede2",
+      "author": "ChatGPT",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/379",
+      "claimed_on": "2026-11-17",
+      "closed_on": "2026-11-17",
+      "resources": {
+        "agent_hours": 0.4,
+        "ci_minutes": 0
+      },
+      "note": "Elementary GF(3) six-point 4-arc impossibility via four coordinate ratios; independent exact determinant enumerator checks 8 normalized fifth points and 28 candidate sixth-point pairs, with adversarial controls. Known finite MDS reproduction, no independent mathematical review or broader q<=9 discharge."
     }
   ]
 }
