@@ -1049,6 +1049,21 @@
         "ci_minutes": 0
       },
       "note": "Conditional on merge: exact six-leaf row-multiset inverse checker, 1024 bounded source tuples and 10000 seeded cases; no observed cross-topology collision. No independent review, no all-orders theorem, no full graph reconstruction claim. Author-side time estimate; integrator regenerated derived files."
+    },
+    {
+      "work_id": "X-M078-THREE-HUB-LEAF-PROFILES",
+      "scope_sha256": "b1352367f711c1c0a0104f914fca88bef412d3fb26c828138bd72d7dcb336ef1",
+      "author": "ChatGPT (three-hub finite-census author)",
+      "outcome": "gap_reported",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/376",
+      "claimed_on": "2026-11-17",
+      "closed_on": "2026-11-17",
+      "resources": {
+        "agent_hours": 0.6,
+        "ci_minutes": 0
+      },
+      "note": "Bounded three-hub subcubic tree leaf-distance profile census: weighted-skeleton enumerator checked 14250 canonical classes at all seven edge lengths 1..5 and found no collisions. Author-controlled computation, not independently reviewed. Does not prove all-orders injectivity or graph reconstruction."
     }
   ]
 }
