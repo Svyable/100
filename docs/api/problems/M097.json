@@ -201,6 +201,11 @@
       "url": "https://svyable.github.io/100/library/m097-multitheta/"
     },
     {
+      "title": "M097 — exact subtour value with one unsubdivided core edge",
+      "source": "research/M097_ONE_SHORT_EDGE_SEP.md",
+      "url": "https://svyable.github.io/100/library/m097-one-short-edge-sep/"
+    },
+    {
       "title": "M097 — sharp four-thirds bound and exact LP equality in fully subdivided graph metrics",
       "source": "research/M097_SUBDIVIDED_FOURTHIRDS.md",
       "url": "https://svyable.github.io/100/library/m097-subdivided-fourthirds/"

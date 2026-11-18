@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M097 — exact subtour value with one unsubdivided core edge · 100</title>
+<meta name="description" content="Claim: #383. Work ID: X-M097-ONE-SHORT-EDGE-SEP. Date: 2026-11-17.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/m097-one-short-edge-sep/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="M097 — exact subtour value with one unsubdivided core edge · 100">
+<meta property="og:description" content="Claim: #383. Work ID: X-M097-ONE-SHORT-EDGE-SEP. Date: 2026-11-17.">
+<meta property="og:url" content="https://svyable.github.io/100/library/m097-one-short-edge-sep/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">M097 — exact subtour value with one unsubdivided core edge</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#precise-theorem">Precise theorem</a></li><li class="toc-l2"><a href="#proof-with-external-dependency-made-explicit">Proof, with external dependency made explicit</a></li><li class="toc-l2"><a href="#exact-tour-formula-survives-unit-edges-separate-observation">Exact tour formula survives unit edges (separate observation)</a></li><li class="toc-l2"><a href="#adversarial-controls-and-boundary">Adversarial controls and boundary</a></li><li class="toc-l2"><a href="#sources-and-review-gate">Sources and review gate</a></li></ol></nav>
+<div class="doc-mentions"><span class="detail-label">PROBLEMS MENTIONED</span><div class="chips"><a class="chip chip-link" href="../../problems/M097/" title="Metric TSP four-thirds conjecture">M097</a></div></div>
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/research/M097_ONE_SHORT_EDGE_SEP.md" rel="noopener noreferrer">research/M097_ONE_SHORT_EDGE_SEP.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">RESEARCH DOSSIERS</p><h1>M097 — exact subtour value with one unsubdivided core edge</h1>
+<p><strong>Claim:</strong> <a href="https://github.com/Svyable/100/issues/383" rel="noopener noreferrer">#383</a>. <strong>Work ID:</strong> <code>X-M097-ONE-SHORT-EDGE-SEP</code>. <strong>Date:</strong> 2026-11-17.</p>
+<p><strong>Status:</strong> Author-side restricted proof candidate. Not independently reviewed or certified historically novel. No implication that the general four-thirds conjecture is solved. This scope differs from <a href="../../library/m097-subdivision-core/">the all-subdivided formula</a>, which assumes every core path has length at least two.</p>
+<h2 id="precise-theorem">Precise theorem<a class="anchor" href="#precise-theorem" aria-label="Link to this section">#</a></h2>
+<p>Let <code>H=(V,E)</code> be a finite connected <strong>bridgeless loopless multigraph</strong>, with <code>|V|&gt;=2</code>; parallel core edges are indexed separately. Choose one edge <code>e</code> and replace it by a <strong>unit</strong> edge. Replace each other edge <code>f</code> by an internally vertex-disjoint unweighted path of integer length <code>L_f&gt;=2</code>. Write <code>G</code> for the resulting graph and <code>M=1+sum_{f != e} L_f</code>. Let <code>SEP(G)</code> be the symmetric complete-shortest-path-metric subtour LP (degree equalities 2 and every proper cut at least 2). Then</p>
+<p>[ \boxed{\operatorname{SEP}(G)= \begin{cases} M,&amp;\text{if }e\text{ belongs to a two-edge cut of }H,\ M-1,&amp;\text{otherwise.} \end{cases}} ]</p>
+<p>The first condition is equivalent to <code>H-e</code> having a bridge. The theorem is <strong>not</strong> asserted for two or more unit edges, nonunit edge weights, or a core with bridges.</p>
+<h2 id="proof-with-external-dependency-made-explicit">Proof, with external dependency made explicit<a class="anchor" href="#proof-with-external-dependency-made-explicit" aria-label="Link to this section">#</a></h2>
+<p>Define <code>z_2cut(G)</code> as the minimum of <code>sum_{a in E(G)} y_a</code> over nonnegative graph-edge loads satisfying <code>y(delta_G(S))&gt;=2</code> for every proper nonempty shore <code>S</code>. The classical <strong>parsimonious property</strong> (Goemans–Bertsimas, 1993) identifies the complete-metric degree-two subtour optimum with the complete-metric cut-cover optimum for metric costs. The latter equals <code>z_2cut(G)</code>: any original-graph edge solution embeds at the same cost into the complete-metric cut cover, while routing each complete-metric edge along a shortest original-graph path preserves cost and yields graph-edge loads meeting every graph cut. Hence <code>SEP(G)=z_2cut(G)</code>. This classical theorem is an essential named input; the proof below is otherwise elementary.</p>
+<p>For each subdivided core path <code>f</code> with <code>L=L_f&gt;=2</code> and expanded edges <code>f_1,...,f_L</code>, the internal-vertex segment between <code>f_i</code> and <code>f_j</code> has boundary exactly those two edges. Thus <code>y_{f_i}+y_{f_j}&gt;=2</code> for every <code>i&lt;j</code>. Sum all <code>L(L-1)/2</code> inequalities and divide by <code>L-1</code> to get <code>sum_i y_{f_i}&gt;=L</code>. Summing over <code>f != e</code> gives the universal lower bound <code>SEP(G)&gt;=M-1</code>.</p>
+<p>If <code>H-e</code> is bridgeless, the expanded <code>G-e</code> is a connected bridgeless spanning graph. Set <code>y_e=0</code> and every other graph-edge load to 1. Every nontrivial cut has at least two edges of <code>G-e</code>, so this is feasible and costs <code>M-1</code>. The lower bound is attained.</p>
+<p>Otherwise <code>H-e</code> has a bridge <code>f</code>. Since <code>H</code> is bridgeless, <code>{e,f}</code> is a two-edge cut of <code>H</code>. Choose a core shore <code>A</code> whose boundary is precisely <code>{e,f}</code>. For each expanded path edge <code>f_i</code>, lift <code>A</code> to a shore in <code>G</code> with boundary exactly <code>{e,f_i}</code>: place internal vertices of every other core path on their endpoints&#x27; common side, and take the appropriate prefix of the path for <code>f</code>. Hence <code>y_e+y_{f_i}&gt;=2</code> for every <code>i</code>.</p>
+<p>Write <code>L=L_f</code>. We already know <code>sum_i y_{f_i}&gt;=L</code>. If <code>y_e&gt;=1</code>, then <code>y_e+sum_i y_{f_i}&gt;=L+1</code>. If <code>0&lt;=y_e&lt;=1</code>, each <code>y_{f_i}&gt;=2-y_e</code>, and <code>y_e+sum_i y_{f_i}&gt;=2L-(L-1)y_e&gt;=L+1</code>. All other subdivided paths cost at least their lengths, so <code>z_2cut(G)&gt;=M</code>. Finally <code>G</code> is bridgeless, so <code>y=1</code> on every edge satisfies every cut and costs <code>M</code>. This proves both cases for arbitrary core size.</p>
+<h2 id="exact-tour-formula-survives-unit-edges-separate-observation">Exact tour formula survives unit edges (separate observation)<a class="anchor" href="#exact-tour-formula-survives-unit-edges-separate-observation" aria-label="Link to this section">#</a></h2>
+<p>For any connected loopless multigraph core with positive integer path lengths <strong>including 1</strong>, let <code>F</code> range over core edge subsets of even degree at every core vertex, and let <code>c(F)</code> count components of <code>(V,F)</code>, including isolates. The graphic metric tour optimum satisfies</p>
+<p>[ \operatorname{TSP}(G)=M+\min_{F\text{ even}} \left[\sum_{f\notin F}(L_f-2)+2(c(F)-1)\right]. ]</p>
+<p>Proof: expand any metric tour into a connected spanning Eulerian multigraph. Multiplicity parity is constant along each expanded path. Odd paths cost at least <code>L_f</code>. An even path may omit at most one edge, or else it strands an internal segment; a broken even path costs at least <code>2(L_f-1)</code> and a through even path at least <code>2L_f</code>. At least <code>c(F)-1</code> through paths connect the odd-path components. Conversely, choose a spanning tree on those components in the contracted core, use each odd path once, double each selected through path, and for every other even path omit its first edge and double the remaining edges. This is connected, spanning, Eulerian, and has the displayed cost. A unit even path not selected simply disappears. This extends the existing author-side derivation; the underlying even-subgraph method is classical and <strong>novelty is not asserted</strong>.</p>
+<h2 id="adversarial-controls-and-boundary">Adversarial controls and boundary<a class="anchor" href="#adversarial-controls-and-boundary" aria-label="Link to this section">#</a></h2>
+<ul><li><code>H=K4</code>, one edge length 1 and all other core edges length 2: <code>M=11</code>, no two-edge cut containing the short edge, <code>SEP=10</code>. Thus extending the old all-lengths-at-least-two formula <code>SEP=M+B</code> to unit lengths is false.</li><li><code>H=C3</code>, core path lengths <code>(1,2,2)</code>: <code>M=5</code>, the short edge lies in a two-edge cut, <code>SEP=5</code>. Thus the naive universal <code>SEP=M-1</code> claim is false.</li><li>Local author-side test artifact <code>check.py</code> used 115 expanded graphs of at most 11 vertices, comparing an independently formulated complete-metric subtour LP and graph-edge cut-cover LP using HiGHS, and exact Held–Karp metric TSP against even-core-subset enumeration. Results: 65 two-edge-cut cases, 50 other cases, all passing. Both LPs used the same numerical solver, and this is <strong>not</strong> independent specialist validation. The test code and full output must be attached or independently reimplemented before accepting this as reproducible computational evidence. The theorem does not depend on this test count.</li></ul>
+<p><strong>Failed avenue:</strong> Extending <code>SEP=M+B</code> verbatim fails on the K4 control. <strong>Next falsifier:</strong> find a bridgeless core and exactly one unit edge for which the two-edge-cut classification disagrees with a rational cut-LP primal/dual certificate, or demonstrate the cited parsimonious property does not apply to this formulation.</p>
+<h2 id="sources-and-review-gate">Sources and review gate<a class="anchor" href="#sources-and-review-gate" aria-label="Link to this section">#</a></h2>
+<ul><li>M. X. Goemans and D. J. Bertsimas, <a href="https://www.mit.edu/~dbertsim/papers/ApproximationAlgorithms/Survivable%20networks%2C%20LP%20relaxations%20and%20the%20parsimonious%20property.pdf" rel="noopener noreferrer"><em>Survivable networks, linear programming relaxations and the parsimonious property</em></a>, <em>Mathematical Programming</em> <strong>60</strong> (1993), 145–166 (external LP theorem).</li><li>Cornuéjols, Fonlupt and Naddef, <em>The Traveling Salesman Problem on a Graph and Some Related Integer Polyhedra</em> (1985), background on graphic TSP.</li><li><a href="../../library/m097-subdivision-core/">Earlier project core-parity proof</a>, <code>L&gt;=2</code> scope only.</li></ul>
+<p><strong>Stage A:</strong> precise author-side proof candidate. <strong>Stage B:</strong> third-party proof audit and exhaustive prior-art check not performed. <strong>Stage C:</strong> no demonstrated customer/algorithmic advantage, so no commercial handoff. No claim of patentable exclusivity, independently accepted novelty, or general metric TSP progress.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>
