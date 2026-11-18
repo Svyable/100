@@ -445,7 +445,7 @@
       "resources": {
         "agent_hours": 0.8
       },
-      "note": "Prime 1129 forbids both fixed shifts c=3 and c=7 by exact divisor and subgroup checks, but shift c=11 works. Universal wording of O-M019-01 is infeasible; no full Erd\u0151s\u2013Straus counterexample, no novelty or independent review. Prior art Mordell 1963 and Dahan 2026."
+      "note": "Prime 1129 forbids both fixed shifts c=3 and c=7 by exact divisor and subgroup checks, but shift c=11 works. Universal wording of O-M019-01 is infeasible; no full Erdős–Straus counterexample, no novelty or independent review. Prior art Mordell 1963 and Dahan 2026."
     },
     {
       "work_id": "X-M076-F43-EIGHT",
@@ -799,7 +799,7 @@
       "resources": {
         "agent_hours": 1.2
       },
-      "note": "Unconditional all-ranks restricted matroid matching characterization, exact permanent \u00d7 Latin-grid count and sharp two-sided bound by paper proof. Lean kernel audits cyclic completion from a supplied matching, NOT the matroid basis-exchange/Hall argument or counting bijection. 12 adversarial tests, 512 exhaustive GF(2)^3 rows, 6 exact fixtures. Novelty and independent mathematical review not established; full RBC remains open."
+      "note": "Unconditional all-ranks restricted matroid matching characterization, exact permanent × Latin-grid count and sharp two-sided bound by paper proof. Lean kernel audits cyclic completion from a supplied matching, NOT the matroid basis-exchange/Hall argument or counting bijection. 12 adversarial tests, 512 exhaustive GF(2)^3 rows, 6 exact fixtures. Novelty and independent mathematical review not established; full RBC remains open."
     },
     {
       "work_id": "X-M097-WEIGHTED-SUBDIVISION",
@@ -1079,6 +1079,22 @@
         "ci_minutes": 0
       },
       "note": "Elementary GF(3) six-point 4-arc impossibility via four coordinate ratios; independent exact determinant enumerator checks 8 normalized fifth points and 28 candidate sixth-point pairs, with adversarial controls. Known finite MDS reproduction, no independent mathematical review or broader q<=9 discharge."
+    },
+    {
+      "work_id": "X-M097-ONE-SHORT-EDGE-SEP",
+      "scope_sha256": "4d9dd99336a7508dc311b13d88a0bc0a18dc959f0d00ec81c0233a153757ecbc",
+      "author": "ChatGPT (M097 candidate proof author)",
+      "outcome": "merged_pending_review",
+      "novelty": "not_assessed",
+      "claim_url": "https://github.com/Svyable/100/issues/383",
+      "pr_url": "https://github.com/Svyable/100/pull/384",
+      "claimed_on": "2026-11-17",
+      "closed_on": "2026-11-17",
+      "resources": {
+        "agent_hours": 1.5,
+        "ci_minutes": 0
+      },
+      "note": "Estimated author-side proof, numerical testing, and integration time; 115 numerical cases reported in claim discussion but original script not committed. Candidate restricted dichotomy, no independent review or prior-art certification; acceptance pending. Record outcome only upon PR merge."
     }
   ]
 }
