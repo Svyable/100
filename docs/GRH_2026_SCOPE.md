@@ -65,4 +65,15 @@ These are **reported upstream** hashes and results, not local Project 100 hash c
 
 The MIT verification also reports an **independent proof composition** with the Robin1984 Lean formalization (commit `acab1a3`), yielding unconditional, kernel-checked statements of Robin's inequality for all integers above 5040 and Lagarias's divisor-sum inequality. This is a stronger practical exemplar for Project 100 than simply recording a headline: it demonstrates a pathway from a newly checked theorem to independent downstream arithmetic definitions. See the [MIT arithmetic consequences section](https://math.mit.edu/~drew/grh/#arithmetic-consequences). Project 100 **has not reconstructed** that bridge.
 
-**Next bounded deliverable:** encode an auditable dependency map (which target or algorithm requires which *L-function family*), then select one small, published corollary as a separately pinned formal transfer. Never infer a general prime-time search guarantee from a numerical bound polynomial in a modulus.
+## Machine-readable dependency deliverable
+
+The source-of-truth [18-case dependency audit](../data/grh_dependency_audit.json) separates five **eligible for precise corollary audit**, seven **requiring exact theorem matching**, and six **blocked by stronger-family assumptions**. “Eligible” means worth verifying against the original mathematical literature, **not** mathematically accepted by Project 100. Active targets M001/M002 are mapped to the external theorem *names* and remain pending independent scope audit.
+
+The [validator](../scripts/grh_dependency_audit.py) rejects treating Dedekind/Hecke/Artin/automorphic cases as certified by the Dirichlet proof and checks the active registry’s question wording so a future scope change is caught. [Negative-control tests](../tests/test_grh_dependency_audit.py) cover false local replay attestations, target substitution, invalid provenance URLs, and dependency promotion. It runs in the repository's portfolio CI:
+
+```sh
+python3 scripts/grh_dependency_audit.py
+python3 -m unittest discover -s tests -p 'test_grh_dependency_audit.py' -v
+```
+
+**Next bounded deliverable:** choose one small, published corollary (preferably a direct arithmetic transfer with an independently defined statement), pin its exact proof-dependency graph, replay its checker without custom axioms, and obtain a separate semantic scope review. Never infer a general polynomial-bit-time prime search guarantee from a numerical bound polynomial in the modulus.
