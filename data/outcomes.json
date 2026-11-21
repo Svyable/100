@@ -1095,6 +1095,22 @@
         "ci_minutes": 0
       },
       "note": "Estimated author-side proof, numerical testing, and integration time; 115 numerical cases reported in claim discussion but original script not committed. Candidate restricted dichotomy, no independent review or prior-art certification; acceptance pending. Record outcome only upon PR merge."
+    },
+    {
+      "work_id": "X-GRH-2026-SCOPE",
+      "scope_sha256": "0b46c7a8177ced730c624a11288fb2cb6fa9b40dd0ced8916100b369581d6139",
+      "author": "ChatGPT (2026 RH/Dirichlet GRH scope and dependency audit)",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/392",
+      "pr_url": "https://github.com/Svyable/100/pull/393",
+      "claimed_on": "2026-11-21",
+      "closed_on": "2026-11-21",
+      "resources": {
+        "agent_hours": 1.1,
+        "ci_minutes": 1
+      },
+      "note": "Source-pinned external formal certification audit, active M001/M002 scope mapping, 18 machine-validated consequence dependencies, and adversarial schema tests. No local replay of the 17M-line proof, independent scope acceptance, new theorem, or solved-state change. Pending merge and independent review."
     }
   ]
 }

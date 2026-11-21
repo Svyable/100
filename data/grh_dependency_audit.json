@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-21",
+  "source_lean": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/",
+  "source_mit": "https://math.mit.edu/~drew/grh/",
+  "verified_families": [
+    "riemann",
+    "dirichlet"
+  ],
+  "other_families_not_covered": [
+    "dedekind",
+    "hecke",
+    "artin",
+    "automorphic"
+  ],
+  "project_replayed": false,
+  "project_independently_reviewed": false,
+  "active_targets": [
+    {
+      "id": "M001",
+      "requires_family": "riemann",
+      "external_theorem": "riemannHypothesis",
+      "scope_relation": "matches_as_reported",
+      "project_status": "pending_scope_audit"
+    },
+    {
+      "id": "M002",
+      "requires_family": "dirichlet",
+      "external_theorem": "LFunction_eq_zero_re",
+      "scope_relation": "matches_as_reported",
+      "project_status": "pending_scope_audit"
+    }
+  ],
+  "consequences": [
+    {
+      "id": "C01",
+      "topic": "RH prime gaps",
+      "requires_family": "riemann",
+      "triage": "eligible_audit",
+      "next_test": "Pin an explicit interval theorem and constants; distinguish length of interval from binary-time primality search."
+    },
+    {
+      "id": "C02",
+      "topic": "Least prime in a coprime residue class",
+      "requires_family": "dirichlet",
+      "triage": "eligible_audit",
+      "next_test": "Check exact bound in q and log q, and coprimality assumptions; search polynomial in q is not polynomial in log q."
+    },
+    {
+      "id": "C03",
+      "topic": "Miller deterministic primality witnesses",
+      "requires_family": "dirichlet",
+      "triage": "eligible_audit",
+      "next_test": "Match the original conditional witness theorem; compare with unconditional AKS."
+    },
+    {
+      "id": "C04",
+      "topic": "Quadratic nonresidues and modular square roots",
+      "requires_family": "dirichlet",
+      "triage": "eligible_audit",
+      "next_test": "Find a published bound for the least nonresidue and verify deterministic bit complexity."
+    },
+    {
+      "id": "C05",
+      "topic": "Higher modular root extraction",
+      "requires_family": "dirichlet",
+      "triage": "needs_theorem_matching",
+      "next_test": "Fix exponent, factorization assumptions and allowed input representation before claiming deterministic polynomial time."
+    },
+    {
+      "id": "C06",
+      "topic": "Finite-field polynomial factorization",
+      "requires_family": "dirichlet",
+      "triage": "needs_theorem_matching",
+      "next_test": "Audit Evdokimov-style quasipolynomial guarantees and whether a stronger hypothesis is invoked."
+    },
+    {
+      "id": "C07",
+      "topic": "Deterministic finite-field construction",
+      "requires_family": "dirichlet",
+      "triage": "needs_theorem_matching",
+      "next_test": "Identify exact irreducible-polynomial construction theorem, parameters and required L-function family."
+    },
+    {
+      "id": "C08",
+      "topic": "Totient oracle to factoring",
+      "requires_family": "dirichlet",
+      "triage": "needs_theorem_matching",
+      "next_test": "Check conditional deterministic reduction and its uniformity, not a practical factoring attack."
+    },
+    {
+      "id": "C09",
+      "topic": "Polynomial equations in AM",
+      "requires_family": "dedekind",
+      "triage": "blocked_stronger_family",
+      "next_test": "Inspect Koiran's prime-ideal hypotheses and do not infer from Dirichlet GRH alone."
+    },
+    {
+      "id": "C10",
+      "topic": "VP/VNP and algebraic complexity",
+      "requires_family": "unresolved",
+      "triage": "needs_theorem_matching",
+      "next_test": "Replace a vague P-versus-NP equivalence claim with an exact cited theorem and field/model."
+    },
+    {
+      "id": "C11",
+      "topic": "744-state Turing machine nonhalting",
+      "requires_family": "riemann",
+      "triage": "needs_theorem_matching",
+      "next_test": "Pin the specific machine encoding, its equivalence to RH and a formal proof source."
+    },
+    {
+      "id": "C12",
+      "topic": "Number-field class-group libraries",
+      "requires_family": "dedekind",
+      "triage": "blocked_stronger_family",
+      "next_test": "Audit each PARI/GP or Magma routine and discriminate unconditionally certified results from GRH-conditioned ones."
+    },
+    {
+      "id": "C13",
+      "topic": "Elliptic-curve generation running times",
+      "requires_family": "dedekind",
+      "triage": "blocked_stronger_family",
+      "next_test": "Identify construction algorithm and number-field analytic assumptions."
+    },
+    {
+      "id": "C14",
+      "topic": "Elliptic-curve isogeny-graph reductions",
+      "requires_family": "hecke",
+      "triage": "blocked_stronger_family",
+      "next_test": "Do not promote a general ECC hardness reduction without the specified Hecke L-function hypothesis."
+    },
+    {
+      "id": "C15",
+      "topic": "Quantum attacks on ideal-lattice schemes",
+      "requires_family": "unresolved",
+      "triage": "needs_theorem_matching",
+      "next_test": "Name the structured lattice family, attack theorem and its exact analytic assumptions."
+    },
+    {
+      "id": "C16",
+      "topic": "Quantum algorithms for isogeny problems",
+      "requires_family": "hecke",
+      "triage": "blocked_stronger_family",
+      "next_test": "Specify curve family and precise speed theorem; not a general isogeny cryptosystem break."
+    },
+    {
+      "id": "C17",
+      "topic": "BIKE prime-parameter existence",
+      "requires_family": "artin",
+      "triage": "blocked_stronger_family",
+      "next_test": "Check Artin/Hooley-style assumptions for the relevant primitive-root primes and field extensions."
+    },
+    {
+      "id": "C18",
+      "topic": "Robin and Lagarias inequalities",
+      "requires_family": "riemann",
+      "triage": "eligible_audit",
+      "next_test": "Audit the separate Robin1984 formalization and composition reported by MIT; do not count as local replay."
+    }
+  ]
+}
