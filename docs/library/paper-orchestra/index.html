@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evidence-first paper production · 100</title>
+<meta name="description" content="Upstream inspiration: PaperOrchestra, pinned revision d9bae997, paper, CLI. Apache-2.0 upstream; this adapter is independently implemented, not vendored. PaperOrchestra transforms raw research materials into manuscripts; it is not a proof c">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://svyable.github.io/100/library/paper-orchestra/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="100 — Svyable research">
+<meta property="og:title" content="Evidence-first paper production · 100">
+<meta property="og:description" content="Upstream inspiration: PaperOrchestra, pinned revision d9bae997, paper, CLI. Apache-2.0 upstream; this adapter is independently implemented, not vendored. PaperOrchestra transforms raw research materials into manuscripts; it is not a proof c">
+<meta property="og:url" content="https://svyable.github.io/100/library/paper-orchestra/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" type="application/atom+xml" title="100 — research updates" href="../../feed.xml">
+<link rel="alternate" type="application/json" title="100 — machine-readable API" href="../../api/index.json">
+<link rel="alternate" type="application/json" title="100 — agent research contract" href="../../api/agent.json">
+<link rel="alternate" type="text/plain" title="100 — machine-readable site guide" href="../../llms.txt">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "The 100", "item": "https://svyable.github.io/100/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://svyable.github.io/100/library/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+  <a class="brand" href="../../" aria-label="100, home">
+    <span class="brand-mark">100<span class="brand-dot">.</span></span>
+    <span class="brand-caption">SVYABLE<br>RESEARCH</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary navigation"><a href="../../">The 100</a><a href="../../start/">Start here</a><a href="../../work/">Work</a><a href="../../discovery/">Discovery</a><a href="../../next/">Next 100</a><a href="../../campaigns/">Campaigns</a><a href="../../lab/">Lab</a><a href="../../formal/">Formal</a><a href="../../claims/">Claims</a><a href="../../roadmap/">Roadmap</a><a href="../../ledger/">Ledger</a><a href="../../library/" aria-current="page">Library</a></nav>
+  <div class="header-tools">
+    <button class="tool-button" type="button" data-palette-open aria-label="Search everything (press /)"><span aria-hidden="true">⌕</span><span class="tool-label">Search</span><kbd>/</kbd></button>
+    <button class="tool-button" type="button" data-theme-toggle aria-label="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    <a class="tool-button nav-source" href="https://github.com/Svyable/100" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../">The 100</a><span aria-hidden="true">/</span><a href="../../library/">Library</a><span aria-hidden="true">/</span><span aria-current="page">Evidence-first paper production</span></nav>
+<main id="main">
+<div class="doc-layout">
+<aside class="doc-side"><nav class="toc"><span class="detail-label">CONTENTS</span><ol><li class="toc-l2"><a href="#operating-sequence">Operating sequence</a></li><li class="toc-l2"><a href="#reproduce-the-handoff">Reproduce the handoff</a></li><li class="toc-l2"><a href="#competitive-measurement">Competitive measurement</a></li><li class="toc-l2"><a href="#author-side-validation">Author-side validation</a></li><li class="toc-l2"><a href="#scientisttwo-inspired-integrity-loop-2026-11-25">ScientistTwo-inspired integrity loop (2026-11-25)</a></li></ol></nav>
+
+<p class="muted small">Source: <a href="https://github.com/Svyable/100/blob/main/docs/PAPER_ORCHESTRA.md" rel="noopener noreferrer">docs/PAPER_ORCHESTRA.md <span aria-hidden="true">↗</span></a></p></aside>
+<article class="prose"><p class="eyebrow">METHOD &amp; GOVERNANCE</p><h1>Evidence-first paper production</h1>
+<p>Upstream inspiration: <a href="https://github.com/google-research/paper-orchestra/tree/d9bae997e793a015ed38bb1605be9eb58c00284f" rel="noopener noreferrer">PaperOrchestra, pinned revision d9bae997</a>, <a href="https://arxiv.org/abs/2604.05018" rel="noopener noreferrer">paper</a>, <a href="https://github.com/google-research/paper-orchestra/blob/d9bae997e793a015ed38bb1605be9eb58c00284f/paper_writing_cli.py" rel="noopener noreferrer">CLI</a>. Apache-2.0 upstream; this adapter is independently implemented, not vendored. PaperOrchestra transforms raw research materials into manuscripts; it is not a proof checker or the Cogentic discovery harness.</p>
+<h2 id="operating-sequence">Operating sequence<a class="anchor" href="#operating-sequence" aria-label="Link to this section">#</a></h2>
+<ol><li>Scout: pin literature, exact target and novelty boundary. Claim the scope before work.</li><li>Prover and adversary: separate hypotheses, proof attempts, falsifiers and raw logs; exchange only scope-bound evidence. Use the existing router and proof obligation DAG rather than creating a parallel task queue.</li><li>Checker: exact replay, Lean theorem/axiom audit, adversarial controls, measured costs; independent reviewer is a different author. Preserve negative and timeout outcomes. CI success is not mathematical acceptance.</li><li>Publication adapter: export the selected outcome and committed evidence at one full Git commit. By default only structurally independently accepted records are exportable; an explicit draft opt-in permits pending, gap or falsifier outcomes. Every export remains a draft, even if the underlying record is accepted.</li><li>Writing: specialized outline, literature, sections, figures and refinement agents. Use a pinned model and cutoff, preserve raw prompts and responses, and turn plotting off by default. Plots must be generated from archived data with exact units, seeds and scripts. Never fabricate citations, performance or novelty.</li><li>Publication audit: trace every claim to a source or theorem, check hypotheses and references, regenerate figures, compile LaTeX in a restricted environment without shell escape, independently review final text and archive its digest. No automatic submission or solved-ledger update. A paper can be scientifically invalid despite a checked underlying lemma.</li></ol>
+<h2 id="reproduce-the-handoff">Reproduce the handoff<a class="anchor" href="#reproduce-the-handoff" aria-label="Link to this section">#</a></h2>
+<p>From a full Project 100 checkout (example uses the merged RH/GRH source audit, not an accepted theorem):</p>
+<p>python3 scripts/paper_orchestra_export.py \ --commit 5703a54e036edefc1b38335f078da706f337fa0a \ --work-id X-GRH-2026-SCOPE \ --evidence docs/GRH_2026_SCOPE.md \ --evidence data/grh_dependency_audit.json \ --output /tmp/p100-grh-materials --allow-draft</p>
+<p>The export contains idea_sparse.md, experimental_log.md and manifest.json. It reads committed blobs, not dirty working files, rejects symlinks, unsafe paths and overwrites, and records SHA-256 digests. The caller chooses evidence paths: their mathematical relevance to the work ID is not authenticated. Review metadata checks are structural only; do not equate them with authenticated expert review. Text can contain hostile instructions, so use a sandboxed writer without privileged tools; never pass credentials or confidential material.</p>
+<p>With a separately installed, pinned PaperOrchestra checkout, configured model credentials and approved budget, run its CLI manually (not executed in this PR):</p>
+<p>python paper_writing_cli.py \ --raw_materials_dir /tmp/p100-grh-materials \ --latex_template_dir templates/iclr2025 \ --output_dir /tmp/p100-grh-paper \ --research_cutoff 2026-11 \ --use_plotting false</p>
+<p>Select an actually available template and pinned writer/reflection model in the installed release. No external service is invoked by the adapter.</p>
+<h2 id="competitive-measurement">Competitive measurement<a class="anchor" href="#competitive-measurement" aria-label="Link to this section">#</a></h2>
+<p>Keep the existing 36-cell proof-exchange preregistration unchanged (issue #55). A separate publication experiment should freeze identical evidence packets, cutoff, templates, model versions and total token/dollar/time budgets, compare a single-writer baseline, PaperOrchestra upstream and evidence-gated Project 100 workflow. Blind reviewers score source fidelity, theorem scope, citation accuracy, reproducibility and review time; report unsupported claims and all failed runs. Do not claim a performance advantage from fixtures or paper volume. Primary scientific metric remains independently accepted, novelty-audited results per total resource, with publication quality a separate metric. Google and OpenAI have not been beaten until measured under comparable conditions.</p>
+<h2 id="author-side-validation">Author-side validation<a class="anchor" href="#author-side-validation" aria-label="Link to this section">#</a></h2>
+<p>Claim <a href="https://github.com/Svyable/100/issues/407" rel="noopener noreferrer">#407</a>. Seven isolated Python unittest cases passed (0.315 s); exact tested Git blob IDs be616e27d22c61edf0960ef080eb343a70544914 and 26cdebfd121aff655fb17bea6be3d78ba79bdd1a. Full repository checkout failed DNS; full regeneration and outcome ledger integration still pending. No manuscript, model trial, independent review or new mathematical result produced.</p>
+<h2 id="scientisttwo-inspired-integrity-loop-2026-11-25">ScientistTwo-inspired integrity loop (2026-11-25)<a class="anchor" href="#scientisttwo-inspired-integrity-loop-2026-11-25" aria-label="Link to this section">#</a></h2>
+<p>Source: <a href="https://scientist-two.github.io/" rel="noopener noreferrer">ScientistTwo project</a> and <a href="https://arxiv.org/abs/2609.19644" rel="noopener noreferrer">preprint</a>. The empirical benchmark gains and simulated review ratings are not mathematical proof or publication acceptance. Use inexpensive exact falsifiers first, then preregister larger instances and budgets, isolate the contribution of each hypothesis or computational shortcut, and require new evidence for substantive objections. Freeze scope before running; preserve failed screens, cost, and counterexamples. Compare matched-budget arms under the existing benchmark rather than alter the frozen experiment.</p>
+<p>For the publication handoff, rerun the export command with <code>--verify</code> appended. This independently reconstructs the packet bytes from the caller-selected commit, work ID and evidence paths, rejects changed, missing, extra or symlinked files, and applies the canonical outcomes validator (including normalized reviewer identity, review dates and novelty prerequisites). This is a mechanical data integrity gate only: the four scientific audit axes remain separate: exact replay of reported numbers, hypothesis/specification fidelity, source existence and relevance, and manuscript-to-proof/code correspondence. Route any failure back to the prover or experimenter; do not clear it by rewriting the manuscript or lowering the gate. Independent review and novelty review remain unchanged. No ScientistTwo model execution or benchmark superiority is claimed.</p>
+</article></div>
+</main>
+<footer class="site-footer">
+  <div><span class="footer-mark">100.</span><span>A public research index by Svyable.<br>Proofs over promises.</span></div>
+  <div class="footer-links">
+    <a href="../../start/">Start here</a><a href="../../atlas/">Atlas</a><a href="../../library/">Library</a><a href="../../api/">Data &amp; API</a><a href="../../api/agent.json">For agents</a><a href="../../feed.xml">Atom feed</a>
+    <a href="https://github.com/Svyable/100" rel="noopener noreferrer">Repository ↗</a><a href="https://github.com/Svyable/100/issues" rel="noopener noreferrer">Research issues ↗</a>
+  </div>
+  <small>Generated from the validated ledgers · data as of 2026-11-01 · no tracking, no external scripts</small>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="Search the portfolio">
+  <form method="dialog" class="palette-form" role="search">
+    <input id="palette-input" type="search" placeholder="Jump to a problem, field, probe, campaign or document…" autocomplete="off" aria-controls="palette-results" aria-describedby="palette-hint">
+    <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="palette-hint" id="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+  </form>
+</dialog>
+</body>
+</html>

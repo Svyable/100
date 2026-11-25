@@ -131,3 +131,7 @@ a new theorem; only a separately audited `novelty: new_restricted_result` counts
 Independence here is structural (reviewer is not the author, public link), not authenticated
 expertise. Review is the bottleneck, so `review` items in the queue (`V-...`) are the
 highest-value work for anyone who did not write the artifact.
+
+## 8. Publication handoff
+
+For writing a paper from a recorded research outcome, follow [evidence-first paper production](docs/PAPER_ORCHESTRA.md). Use `scripts/paper_orchestra_export.py` to freeze the exact Git commit, outcome and evidence blobs before sending materials to any writing agent. Unaccepted work needs explicit draft opt-in; all outputs remain drafts. Keep discovery, mechanical checking, independent review, novelty assessment and manuscript audit separate. Never treat generated prose or plots as new evidence, and never submit automatically. Measure publication throughput separately from independently accepted mathematical yield.
