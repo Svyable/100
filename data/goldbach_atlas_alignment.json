@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "publication_id": "proofatlas.open-problem-ranking.top500.v35",
+  "edition": "2026-11-12",
+  "source": "https://www.proofatlas.ai/data/open-problems/top500-v35.json",
+  "full_snapshot_sha256": null,
+  "scope": "selected rows only; full snapshot not downloaded",
+  "project_base": "5703a54e036edefc1b38335f078da706f337fa0a",
+  "top_ten": [
+    {
+      "rank": 1,
+      "local": "M081"
+    },
+    {
+      "rank": 2,
+      "local": "M001"
+    },
+    {
+      "rank": 3,
+      "local": "M091"
+    },
+    {
+      "rank": 4,
+      "local": "M021"
+    },
+    {
+      "rank": 5,
+      "local": null,
+      "proposal": "Fefferman A unforced whole-space Navier-Stokes"
+    },
+    {
+      "rank": 6,
+      "local": "M003"
+    },
+    {
+      "rank": 7,
+      "local": "M017"
+    },
+    {
+      "rank": 8,
+      "local": null,
+      "proposal": "Unconditional existence of one-way functions"
+    },
+    {
+      "rank": 9,
+      "local": "M004"
+    },
+    {
+      "rank": 10,
+      "local": "M002"
+    }
+  ],
+  "relationship": "topic alignment only; no exact equivalence or evidence promotion",
+  "additional_rank_mappings": {
+    "11": "M082",
+    "23": "M022",
+    "24": "M006",
+    "26": "M011",
+    "27": "M084",
+    "31": "M083",
+    "169": "M097",
+    "170": null
+  },
+  "historical_status_leads": [
+    "M038",
+    "M077",
+    "M014"
+  ],
+  "goldbach": {
+    "repository": "elliotglazer/ternary-goldbach",
+    "revision": "a664692883ac3deeea2c5471dba897147c728f89",
+    "receipt_blob": "e7c7ccfe20139557f3fe549f3935246d4cef3d56",
+    "theorem_blob": "0a7359658e75b884d9731b454fe4442dec1c57a9",
+    "join_blob": "32d4439426508ea2fa234f445ffbbd37ffefff54",
+    "statement_revision": "23b2d68ca344203d4384e0aff7affa4ec034bef9",
+    "statement_blob": "245b5f227bd2e9303bca04f243c571898e298503",
+    "theorem": "CompletedGoldbach.ternary_goldbach",
+    "compiler": "4.33.1",
+    "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "axioms_reported": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "binary_prefix": 564386325504,
+    "join_prefix": 564383557524,
+    "odd_endpoint": "20000000000000000000",
+    "analytic_intervals": 223,
+    "tail_log_threshold": 56,
+    "release_main_sha256": "9146dfb4148e24d2252e04c50742f3e49dd126dfcc5006d10bf5f873ddf796ad",
+    "object_sha256": "b13579410a20c49d91c353a59a011727fd8c266959922089694d1e7e8352acc3",
+    "rebuilt_release_from_source": false,
+    "local_replay": false,
+    "related": [
+      "M001",
+      "M002",
+      "M006"
+    ],
+    "classification": "known_theorem_formalization_external_receipt_not_replayed"
+  }
+}
