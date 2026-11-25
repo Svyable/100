@@ -1,0 +1,194 @@
+{
+  "version": 1,
+  "source_repo": "google-research/google-research",
+  "revision": "4a7bc8ab0bc770e71a259b7966c500496b99010a",
+  "collection_readme_blob": "53130e6df6b1a98945087fc96748bff57236f1aa",
+  "claim_issue": "https://github.com/Svyable/100/issues/404",
+  "scope_sha256": "d0a7e546bac0d395c365897091f53634119e07247cf2aab6514db823cfe1f34e",
+  "papers": [
+    {
+      "id": "integer_factorization",
+      "date": "2026-11-25",
+      "source_url": "https://github.com/google-research/google-research/tree/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/integer_factorization",
+      "readme_blob": "6f5a38e10c3b1ee2d8508e7f37ced5f55c95c2c9",
+      "pdf": "paper.pdf",
+      "pdf_blob": "19f36b2f189ed41ec8e112b92aa9b88a96c6bd1e",
+      "claim": "Las Vegas uniform multitape Turing machine; full certified prime factorization, expected L_N[1/3,105] time and deterministic workspace L_N[1/3,40].",
+      "relation": "reservoir_candidate",
+      "related": [
+        "M081",
+        "M087"
+      ],
+      "scope_limit": "Does not give deterministic polynomial time, or resolve P vs NP/BPP. Constants and bit model matter.",
+      "next_task": "Audit uniformity, tail bounds, smoothness and all conditional dependencies; replay primality and product certificates on public synthetic integers; algorithm timing only after executable source.",
+      "lean_version_claimed": "4.35.0",
+      "lean_source_status": "promised_not_in_directory",
+      "evidence": "author_claim_readme_only"
+    },
+    {
+      "id": "discrete_logarithm",
+      "date": "2026-11-25",
+      "source_url": "https://github.com/google-research/google-research/tree/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/discrete_logarithm",
+      "readme_blob": "31e23a13c4449208b7a40cdbf7c1cc7706e9a0a1",
+      "pdf": "paper.pdf",
+      "pdf_blob": "aa05dcb57e15feedb1ec8bf72e6e1ac42a160e71",
+      "claim": "Zero-error classical DLP in F_(p^n), with explicit nonmembership certificate; exp((2+o(1)) (ln n)^2 / ln ln ln n) for fixed p, stated uniform extensions.",
+      "relation": "reservoir_candidate",
+      "related": [
+        "M087",
+        "M081"
+      ],
+      "scope_limit": "Not general prime-field, elliptic-curve, or all-characteristic DLP; expected not deterministic time.",
+      "next_task": "Check field presentation and subgroup certificate, characteristic growth hypotheses and uniformity; exhaustive tiny extension-field controls on synthetic inputs.",
+      "lean_version_claimed": "4.35.0",
+      "lean_source_status": "promised_not_in_directory",
+      "evidence": "author_claim_readme_only"
+    },
+    {
+      "id": "bimatrix_nash_equilibrium",
+      "date": "2026-11-25",
+      "source_url": "https://github.com/google-research/google-research/tree/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/bimatrix_nash_equilibrium",
+      "readme_blob": "175681099b510795a0fc191aaa6222c9ad0a8035",
+      "pdf": "paper.pdf",
+      "pdf_blob": "ace37421def2812d90c437ad80d2cfaeb91f2294",
+      "claim": "Deterministic polynomial bit-time rational 1/5-approximate Nash profile in rational [0,1] bimatrix games, maximum unilateral regret <=1/5.",
+      "relation": "reservoir_candidate",
+      "related": [
+        "M081",
+        "M085",
+        "M089"
+      ],
+      "scope_limit": "Fixed approximation threshold, not arbitrary-epsilon PTAS or exact Nash; not Unique Games or strongly polynomial LP.",
+      "next_task": "Check MaximinKiteNE branches, LP bit complexity and both regret inequalities; exact rational small-game controls and adversarial near-boundary payoffs.",
+      "lean_version_claimed": "4.35.0",
+      "lean_source_status": "promised_not_in_directory",
+      "evidence": "author_claim_readme_only"
+    },
+    {
+      "id": "deterministic_factoring_l34",
+      "date": "2026-11-25",
+      "source_url": "https://github.com/google-research/google-research/tree/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/deterministic_factoring_l34",
+      "readme_blob": "0ace537853fa19ebe20edca585a27197d3f6a4a4",
+      "pdf": "paper.pdf",
+      "pdf_blob": "973002e0eb92acf3964fc020ca52ba6f1ac384ac",
+      "claim": "Deterministic nontrivial divisor of every composite N in O(exp(3 (ln N)^(.75))); order splitting with supplied exponent and prime quadratic nonresidues.",
+      "relation": "reservoir_candidate",
+      "related": [
+        "M087",
+        "M088"
+      ],
+      "scope_limit": "Subexponential is not polynomial; supplied p-1 multiple is an assumption. README equates exp(O(sqrt(log p) loglog p)) with L_p[1/2,O(1)], which does not follow by algebra; check exact theorem.",
+      "next_task": "Audit annihilation exponent bit-length and construction, perfect-power cases, order splitting and nonresidue bound; test only public synthetic instances and record exact gate/cost conventions.",
+      "lean_version_claimed": "4.33.0",
+      "lean_source_status": "promised_not_in_directory",
+      "evidence": "author_claim_readme_only"
+    },
+    {
+      "id": "logrank_conjecture",
+      "date": "2026-11-25",
+      "source_url": "https://github.com/google-research/google-research/tree/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/logrank_conjecture",
+      "readme_blob": "d08c189255a9bbf27dcafbd3f416b14ad9d13a17",
+      "pdf": "paper.pdf",
+      "pdf_blob": "2cd2ccbaa563485719aa5edd84efc08788aa9f90",
+      "claim": "For Boolean matrices of real rank r, Dcc <= 750*2^38*r^(1/2-5e-6) for r>=2 and monochromatic rectangle density >=2^(-2^38*r^(1/2-5e-6)).",
+      "relation": "reservoir_candidate",
+      "related": [
+        "M081",
+        "M083"
+      ],
+      "scope_limit": "Exponent improvement is not polylog rank; enormous threshold and constants preclude ordinary finite tests of asymptotic gain.",
+      "next_task": "Audit Gaussian rounding, KL-stability reduction and threshold; exact small Boolean rank and monochromatic rectangle witnesses as definition fidelity only.",
+      "lean_version_claimed": "4.33.0",
+      "lean_source_status": "promised_not_in_directory",
+      "evidence": "author_claim_readme_only"
+    },
+    {
+      "id": "edge_reconstruction",
+      "date": "2026-11-25",
+      "source_url": "https://github.com/google-research/google-research/tree/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/edge_reconstruction",
+      "readme_blob": "c3a316f5bacea30f3b17ae5d74ab6851f02c2687",
+      "pdf": "paper.pdf",
+      "pdf_blob": "14a020d1b5a184d1ae4acc41521808f3b39f3e96",
+      "claim": "Simple undirected graphs on n>=4 with m>=1000n reconstructible from edge-deleted multiset; minimum degree >=2000 corollary.",
+      "relation": "related_not_equivalent",
+      "related": [
+        "M078",
+        "M090"
+      ],
+      "scope_limit": "M078 is vertex-deleted deck conjecture. Edge threshold first feasible at n=2001; no tiny graph can test theorem range. Edge reconstruction does not imply polynomial GI.",
+      "next_task": "Audit edge-vs-vertex deck convention, multiplicities, isolated vertices and density reduction; verify min-degree implication and known small edge-deck collision as out-of-scope negative control.",
+      "lean_version_claimed": "4.33.0",
+      "lean_source_status": "promised_not_in_directory",
+      "evidence": "author_claim_readme_only"
+    },
+    {
+      "id": "fictitious_play_convergence",
+      "date": "2026-11-23",
+      "source_url": "https://github.com/google-research/google-research/tree/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/fictitious_play_convergence",
+      "readme_blob": "2750273cfc71d698d8f4fa35b37e6619c59b5bcb",
+      "pdf": "Fictitious_Play_Convergence.pdf",
+      "pdf_blob": "31fbaf122bc80e68e6d2f729ce4ab1c622e1aad9",
+      "claim": "Explicit rational skew-symmetric zero-sum games with N_d=4d^2+14d-10 and fixed lexicographic simultaneous FP, tie-free t>=2, gap >=kappa_d*T^(-1/(d+1)) eventually.",
+      "relation": "reservoir_candidate",
+      "related": [
+        "M081"
+      ],
+      "scope_limit": "Lower bound on one dynamical algorithm, not hardness of finding equilibrium. Concurrent independent work arXiv:2610.08768; novelty not assessed.",
+      "next_task": "Reproduce published rational gadgets and initial conditions, tie audit and exact gap traces; compare concurrent construction; finite traces cannot prove eventual rate.",
+      "lean_version_claimed": null,
+      "lean_source_status": "not_asserted_in_readme",
+      "evidence": "author_claim_readme_only"
+    },
+    {
+      "id": "subadditive_prophet_inequalities",
+      "date": "2026-11-23",
+      "source_url": "https://github.com/google-research/google-research/tree/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/subadditive_prophet_inequalities",
+      "readme_blob": "48a7413ad80469ede4b15aabf55b9fc7929c6824",
+      "pdf": "Subadditive_Prophet_Inequalities.pdf",
+      "pdf_blob": "9a43382537bba2b07435ca752093a257541791e4",
+      "claim": "Independent monotone subadditive buyers, static anonymous prices: O(log log log m) upper approximation and Omega(log log log m/log log log log m) lower bound with two buyers.",
+      "relation": "reservoir_candidate",
+      "related": [],
+      "scope_limit": "Not all pricing or adaptive mechanisms; asymptotic iterated logarithms need large m. Gap remains.",
+      "next_task": "Audit valuation subadditivity, independence, arrival/tie model and randomized price lower bound; enumerate tiny valuations and welfare for definition fidelity.",
+      "lean_version_claimed": null,
+      "lean_source_status": "not_asserted_in_readme",
+      "evidence": "author_claim_readme_only"
+    },
+    {
+      "id": "vc_sample_compression",
+      "date": "2026-11-18",
+      "source_url": "https://github.com/google-research/google-research/tree/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/vc_sample_compression",
+      "readme_blob": "6cf32d46712c987c869140a0f281055113a571fd",
+      "pdf": "Near_Quadratic_Sample_Compression.pdf",
+      "pdf_blob": "66940810177a642e7aa214fbfc821455158248a4",
+      "claim": "Binary VC dimension d admits compression O(d^2 log^2 d), a claimed polynomial-size resolution.",
+      "relation": "reservoir_candidate",
+      "related": [],
+      "scope_limit": "Linear O(d) conjecture remains; size vs side information, reconstruction model and small d need precise theorem.",
+      "next_task": "Audit compression/decompression, consistency and side-information accounting; exhaust finite concept classes with exact VC dimension and reconstruction controls.",
+      "lean_version_claimed": null,
+      "lean_source_status": "not_asserted_in_readme",
+      "evidence": "author_claim_readme_only"
+    },
+    {
+      "id": "ce_convex_games",
+      "date": "2026-10-30",
+      "source_url": "https://github.com/google-research/google-research/tree/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/ce_convex_games",
+      "readme_blob": "9370113d09be5a025b63e5b61cbd052d1b8294bd",
+      "pdf": "CE_in_Convex_Games.pdf",
+      "pdf_blob": "44a1c377b5e2035b39e6ff9fd80b24ab6b3d6074",
+      "claim": "Randomized algorithms for 1/d-approximate normal-form CE in two-player strongly convex quadratic games on unit balls need exp(Omega(d^(1/16))) first-order oracle queries at success >=2/3.",
+      "relation": "reservoir_candidate",
+      "related": [
+        "M081",
+        "M089"
+      ],
+      "scope_limit": "Oracle-query lower bound not explicit-input Turing hardness, not Nash, not unrestricted computational intractability.",
+      "next_task": "Audit first-order indistinguishability, cost range, convexity/Lipschitz and CE deviations; small exact quadratic controls with oracle-vs-explicit model separation.",
+      "lean_version_claimed": null,
+      "lean_source_status": "not_asserted_in_readme",
+      "evidence": "author_claim_readme_only"
+    }
+  ]
+}
