@@ -1111,6 +1111,21 @@
         "ci_minutes": 1
       },
       "note": "Source-pinned external formal certification audit, active M001/M002 scope mapping, 18 machine-validated consequence dependencies, and adversarial schema tests. No local replay of the 17M-line proof, independent scope acceptance, new theorem, or solved-state change. Pending merge and independent review."
+    },
+    {
+      "work_id": "X-PAPER-ORCHESTRA-EXPORT",
+      "scope_sha256": "176d0108316e11ea9b7b9d7dd27994a209a5d80dbcac3c255876674e2b796479",
+      "author": "ChatGPT",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/407",
+      "pr_url": "https://github.com/Svyable/100/pull/408",
+      "claimed_on": "2026-11-25",
+      "closed_on": "2026-11-25",
+      "resources": {
+        "agent_hours": 0.15
+      },
+      "note": "Infrastructure only. Approximately 0.15 agent-hours estimated across initial authoring and ScientistTwo-inspired follow-up including failed attempts; no independent acceptance or new theorem. CI minutes not yet measured; closure record takes effect only if merged. Canonical ledger validation, deterministic packet replay, and adversarial packet mutation controls."
     }
   ]
 }

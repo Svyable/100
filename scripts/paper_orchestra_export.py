@@ -5,6 +5,12 @@ import json
 from pathlib import Path, PurePosixPath
 import re
 import subprocess
+import tempfile
+
+if __package__:
+    from .outcomes import validate
+else:
+    from outcomes import validate
 
 UPSTREAM = "https://github.com/google-research/paper-orchestra/tree/d9bae997e793a015ed38bb1605be9eb58c00284f"
 
@@ -31,17 +37,14 @@ def export(root, commit, work_id, paths, output, allow_draft=False):
     if not re.fullmatch(r'[0-9a-f]{40}', commit) or git(root, 'rev-parse', commit+'^{commit}').decode().strip() != commit:
         raise ValueError('full commit SHA required')
     ledger = read_blob(root, commit, 'data/outcomes.json')
-    matches = [r for r in json.loads(ledger)['outcomes'] if r['work_id'] == work_id]
+    matches = [r for r in validate(json.loads(ledger))['outcomes'] if r['work_id'] == work_id]
     if len(matches) != 1:
         raise ValueError('one unambiguous recorded outcome required')
     record = matches[0]
     status = record['outcome']
     if status not in {'accepted_independent', 'merged_pending_review', 'gap_reported', 'falsified'}:
         raise ValueError('unsupported outcome')
-    if status == 'accepted_independent':
-        if not record.get('reviewer') or record['reviewer'] == record.get('author') or not str(record.get('review_url','')).startswith('https://') or not record.get('accepted_on'):
-            raise ValueError('invalid independent-review metadata')
-    elif not allow_draft:
+    if status != 'accepted_independent' and not allow_draft:
         raise ValueError('unaccepted outcome requires --allow-draft')
     if not paths or len(set(paths)) != len(paths):
         raise ValueError('supply distinct evidence paths')
@@ -71,6 +74,23 @@ def export(root, commit, work_id, paths, output, allow_draft=False):
     return manifest
 
 
+def verify(root, commit, work_id, paths, output, allow_draft=False):
+    # Reconstruct from trusted caller inputs, never from the possibly tampered manifest.
+    with tempfile.TemporaryDirectory() as tmp:
+        expected = Path(tmp) / 'expected'
+        manifest = export(root, commit, work_id, paths, expected, allow_draft)
+        actual = Path(output)
+        if actual.is_symlink() or not actual.is_dir():
+            raise ValueError('packet must be a regular directory')
+        if {p.name for p in actual.iterdir()} != {p.name for p in expected.iterdir()}:
+            raise ValueError('packet file set changed')
+        for p in expected.iterdir():
+            q = actual / p.name
+            if q.is_symlink() or not q.is_file() or p.read_bytes() != q.read_bytes():
+                raise ValueError('packet drift: ' + p.name)
+    return manifest
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', default='.')
@@ -79,8 +99,12 @@ def main():
     parser.add_argument('--evidence', action='append', required=True)
     parser.add_argument('--output', required=True)
     parser.add_argument('--allow-draft', action='store_true')
+    parser.add_argument('--verify', action='store_true', help='reconstruct and compare every packet byte')
     a = parser.parse_args()
-    export(a.root, a.commit, a.work_id, a.evidence, a.output, a.allow_draft)
+    action = verify if a.verify else export
+    action(a.root, a.commit, a.work_id, a.evidence, a.output, a.allow_draft)
+    if a.verify:
+        print('packet bytes match committed evidence; not scientific acceptance')
 
 
 if __name__ == '__main__':

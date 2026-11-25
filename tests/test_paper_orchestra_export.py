@@ -3,7 +3,7 @@ from pathlib import Path
 import subprocess
 import tempfile
 import unittest
-from scripts.paper_orchestra_export import export
+from scripts.paper_orchestra_export import export, verify
 
 
 class ExportTests(unittest.TestCase):
@@ -15,7 +15,9 @@ class ExportTests(unittest.TestCase):
         self.git('config', 'user.email', 'test@example.invalid')
         self.git('config', 'user.name', 'Test')
         (self.root/'data').mkdir()
-        self.record = {'work_id':'X-TEST', 'author':'a', 'outcome':'merged_pending_review'}
+        self.record = {'work_id':'X-TEST', 'scope_sha256':'a'*64, 'author':'a',
+                       'outcome':'merged_pending_review', 'claimed_on':'2026-11-25',
+                       'closed_on':'2026-11-25', 'resources':{'agent_hours':0}}
         (self.root/'proof.txt').write_text('original proof\n')
         (self.root/'link').symlink_to('proof.txt')
         self.commit = self.save()
@@ -24,7 +26,7 @@ class ExportTests(unittest.TestCase):
         return subprocess.check_output(['git','-C',str(self.root),*a]).decode().strip()
 
     def save(self):
-        (self.root/'data/outcomes.json').write_text(json.dumps({'outcomes':[self.record]}))
+        (self.root/'data/outcomes.json').write_text(json.dumps({'version':1, 'resource_unit':'agent_hour', 'outcomes':[self.record]}))
         self.git('add','data','proof.txt','link')
         self.git('commit','-qm','fixture')
         return self.git('rev-parse','HEAD')
@@ -64,3 +66,38 @@ class ExportTests(unittest.TestCase):
 
     def test_reject_branch_ref(self):
         with self.assertRaises(ValueError): self.run_export(commit='HEAD')
+
+    def test_casefolded_self_review(self):
+        self.record.update(outcome='accepted_independent', reviewer=' A ', review_url='https://example.invalid/review', accepted_on='2026-11-25')
+        with self.assertRaises(ValueError): self.run_export(commit=self.save(), draft=False)
+
+    def test_invalid_review_date(self):
+        self.record.update(outcome='accepted_independent', reviewer='b', review_url='https://example.invalid/review', accepted_on='not-a-date')
+        with self.assertRaises(ValueError): self.run_export(commit=self.save(), draft=False)
+
+    def test_novelty_without_review(self):
+        self.record.update(novelty='new_restricted_result')
+        with self.assertRaises(ValueError): self.run_export(commit=self.save())
+
+    def test_verify_packet_and_tampering(self):
+        m = self.run_export()
+        def check():
+            return verify(self.root, self.commit, 'X-TEST', ['proof.txt'], self.root/'out', True)
+        self.assertEqual(m, check())
+        for name in ('idea_sparse.md', 'experimental_log.md', 'manifest.json'):
+            p = self.root/'out'/name
+            original = p.read_bytes()
+            p.write_bytes(original + b' altered')
+            with self.subTest(name=name), self.assertRaises(ValueError):
+                check()
+            p.write_bytes(original)
+        (self.root/'out'/'extra').touch()
+        with self.assertRaises(ValueError): check()
+        (self.root/'out'/'extra').unlink()
+        p = self.root/'out'/'manifest.json'
+        original = p.read_bytes()
+        p.unlink()
+        with self.assertRaises(ValueError): check()
+        (self.root/'replacement').write_bytes(original)
+        p.symlink_to(self.root/'replacement')
+        with self.assertRaises(ValueError): check()
