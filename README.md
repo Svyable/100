@@ -1,6 +1,10 @@
-# 100 — A living portfolio of mathematical grand challenges
+# 100 — A living compendium of consequential mathematics
 
-**Purpose:** Preserve, refine, and stack-rank 100 concrete mathematical proof/counterexample targets, looking for results and methods that create new branches of discovery.
+**Purpose:** Map the world's most important mathematics: foundational theorems, landmark resolutions and refutations, sharp quantitative bounds, and the open questions they create. Preserve every stable research ID and its proof history. The research portfolio remains a focused, evidence-gated component of this broader compendium.
+
+**[Read the world mathematics compendium →](COMPENDIUM.md)** — established foundations, the 2026 frontier, ProofAtlas 500, and the implications and remaining questions of recent breakthroughs.
+
+External results in the compendium may be treated as true for owner-directed editorial planning, with sources and scope explicitly retained; that does not constitute independent acceptance by Project 100. The existing research registry and evidence gates continue to govern research dispatch and solved status.
 
 ## Current status & strongest results
 
