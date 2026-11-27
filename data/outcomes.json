@@ -1111,6 +1111,21 @@
         "ci_minutes": 1
       },
       "note": "Source-pinned external formal certification audit, active M001/M002 scope mapping, 18 machine-validated consequence dependencies, and adversarial schema tests. No local replay of the 17M-line proof, independent scope acceptance, new theorem, or solved-state change. Pending merge and independent review."
+    },
+    {
+      "work_id": "X-COMPENDIUM-20261127",
+      "scope_sha256": "98e1902b2b270de2940e48cc5793d01cd588b569e642e7950ca23cdcacc11904",
+      "author": "ChatGPT (compendium editorial contributor)",
+      "outcome": "merged_pending_review",
+      "novelty": "known_or_reproduction",
+      "claim_url": "https://github.com/Svyable/100/issues/412",
+      "claimed_on": "2026-11-27",
+      "closed_on": "2026-11-27",
+      "resources": {
+        "agent_hours": 0.12,
+        "ci_minutes": 0
+      },
+      "note": "Estimated author time; owner-directed editorial compendium, 100 stable dossier index, foundational theorem shelf and 18 external frontier entries. Assumed-true planning view only, no proof verification, novel theorem or canonical evidence change. This record takes effect on merge; full regeneration pending in checkout-capable environment."
     }
   ]
 }
